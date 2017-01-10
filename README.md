@@ -31,3 +31,7 @@ Water does not appear correctly
 -Nintendo Land
 
 Title screen is completely white
+
+-Splatoon
+
+Squid Sisters screen is blurry
