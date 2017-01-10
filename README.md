@@ -3,6 +3,8 @@
 
 -Captain Toad: Treasure Tracker (1080p, 1440p, 2160p)
 
+-Donkey Kong Country: Tropical Freeze (1080p, 1440p, 2160p)
+
 -Mario Kart 8 (1080p, 1440p, 2160p)
 
 -New Super Luigi U (1080p, 1440p, 2160p)
@@ -20,3 +22,12 @@
 -Super Mario Maker (720p Gamepad)
 
 -Xenoblade Chronicles X (1080p, 1440p, 2160p)
+
+#Issues
+-Donkey Kong Country: Tropical Freeze
+
+Water does not appear correctly
+
+-Nintendo Land
+
+Title screen is completely white
