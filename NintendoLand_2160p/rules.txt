@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010101F00,0005000010102000,0005000010102100
+name = "Nintendo Land - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+# formatsExcluded = 0x01A # exclude the title screen texture # currently broken
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160

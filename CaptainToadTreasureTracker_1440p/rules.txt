@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010180600,0005000010180700,0005000010180500
+name = "Captain Toad: Treasure Tracker - 1440p (2K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x41A,0x034 # exclude the intro background texture
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1440

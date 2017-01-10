@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 000500001010ec00,0005000e1010ed00,0005000e1010eb00
+name = "Mario Kart 8 - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x41A # exclude the intro background texture
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160

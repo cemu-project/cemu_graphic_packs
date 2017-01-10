@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100
+name = "Super Mario 3D World - 1080p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 1920
+overwriteHeight = 1080

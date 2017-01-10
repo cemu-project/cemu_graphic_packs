@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00
+name = "Splatoon - 1440p (2K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1440

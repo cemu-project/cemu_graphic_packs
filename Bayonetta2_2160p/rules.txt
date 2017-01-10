@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011b900
+name = "Bayonetta 2 - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160

@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 000500001018DC00,000500001018DD00,000500001018DB00
+name = "Super Mario Maker - 720p (Gamepad)"
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 1280
+overwriteHeight = 720
