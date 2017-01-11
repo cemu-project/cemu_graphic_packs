@@ -32,6 +32,8 @@ Water does not appear correctly
 
 Title screen is completely white
 
+Gamepad screen is blurry during attraction gameplay
+
 -Splatoon
 
 Squid Sisters screen is blurry
