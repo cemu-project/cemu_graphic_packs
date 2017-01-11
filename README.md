@@ -23,6 +23,8 @@
 
 -Super Smash Bros. (1440p, 2160p)
 
+-Twilight Princess HD (1080p Gamepad, 1440p, 2160p)
+
 -Xenoblade Chronicles X (1080p, 1440p, 2160p)
 
 #Issues

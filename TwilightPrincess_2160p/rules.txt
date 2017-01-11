@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "Twilight Princess HD - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160
