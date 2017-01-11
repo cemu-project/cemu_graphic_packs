@@ -13,6 +13,8 @@
 
 -Nintendo Land (1080p, 1440p, 2160p)
 
+ONEPIECEUnlimitedWorldRed (1080p, 1440p, 2160p)
+
 -Pikmin 3 (1080p, 1440p, 2160p)
 
 -Splatoon (1080p, 1440p, 2160p)
@@ -24,6 +26,8 @@
 -Super Smash Bros. (1440p, 2160p)
 
 -The Wind Waker HD (1080p Gamepad, 1440p, 2160p)
+
+-The Wind Waker HD - Reduced Bloom (1080p Gamepad, 1440p, 2160p)
 
 -Twilight Princess HD (1080p Gamepad, 1440p, 2160p)
 
