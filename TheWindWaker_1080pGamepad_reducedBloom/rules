@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010143500
+name = "The Wind Waker HD - Reduced bloom"
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 1920
+overwriteHeight = 1080
