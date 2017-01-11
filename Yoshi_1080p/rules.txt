@@ -1,6 +1,6 @@
 [Definition]
-titleIds = 00050000101c4c00,00050000101C4D00
-name = "Xenoblade Chronicles X - 1080p"
+titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
+name = "Yoshi's Woolly World - 1080p"
 
 [TextureRedefine] # tv
 width = 1280
