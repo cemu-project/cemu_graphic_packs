@@ -1,0 +1,20 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = "The Wind Waker HD - Reduced bloom - 2160p (4K)"
+
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+
+
+width = 1920
+height = 1920
+overwriteWidth = 3840
+overwriteHeight = 2160
