@@ -1,0 +1,44 @@
+[Definition]
+titleIds = 0000050000101b0400,00050000101b0500
+name = "Star Fox Zero - 1080p"
+
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 1920
+
+overwriteHeight = 1080
+
+[TextureRedefine] # tv
+width = 1152
+height = 720
+
+
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 1920
+
+overwriteHeight = 1080
+
+[TextureRedefine] # gamepad
+
+width = 854
+
+height = 480
+
+overwriteWidth = 1280
+overwriteHeight = 720
+
+[TextureRedefine] # gamepad
+
+width = 640
+height = 480
+
+overwriteWidth = 1280
+overwriteHeight = 720
