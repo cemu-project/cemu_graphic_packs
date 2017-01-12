@@ -5,5 +5,7 @@ name = "The Wind Waker HD - 2160p (4K)"
 [TextureRedefine] # tv
 width = 1920
 height = 1080
+
+formatsExcluded = 0x41A # exclude the intro background texture 
 overwriteWidth = 3840
 overwriteHeight = 2160
