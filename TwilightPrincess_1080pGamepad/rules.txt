@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 000500001019C800,000500001019E600,000500001019E500
-name = "Twilight Princess HD - 1080p (Gamepad)"
-
-[TextureRedefine] # gamepad
-width = 854
-height = 480
-overwriteWidth = 1920
-overwriteHeight = 1080
