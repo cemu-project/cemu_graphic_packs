@@ -7,3 +7,10 @@ width = 1280
 height = 720
 overwriteWidth = 1920
 overwriteHeight = 1080
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 960
+overwriteHeight = 540
