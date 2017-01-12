@@ -14,3 +14,9 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 720
+
+[TextureRedefine] # squid sisters
+width = 1024
+height = 576
+overwriteWidth = 2048
+overwriteHeight = 1152
