@@ -1,5 +1,4 @@
 # Supported Games
--Bayonetta 2 (1080p, 1440p, 2160p)
 
 -Captain Toad: Treasure Tracker (1080p, 1440p, 2160p)
 
@@ -36,16 +35,11 @@ ONEPIECEUnlimitedWorldRed (1080p, 1440p, 2160p)
 -Yoshi's Woolly World (1080p, 1440p, 2160p)
 
 #Issues
--Donkey Kong Country: Tropical Freeze
+Donkey Kong Country: Tropical Freeze
 
-Water does not appear correctly
+- Water does not appear correctly
 
--Nintendo Land
+Nintendo Land
 
-Title screen is completely white
-
-Gamepad screen is blurry during attraction gameplay
-
--Splatoon
-
-Squid Sisters screen is blurry
+- Title screen is completely white
+- Gamepad screen is blurry during attraction gameplay
