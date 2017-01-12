@@ -15,8 +15,8 @@ overwriteHeight = 2160
 width = 640
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 3840
-overwriteHeight = 2160
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 # MKTV output
 [TextureRedefine]
@@ -32,12 +32,12 @@ width = 960
 height = 536
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 2880
-overwriteHeight = 1620
+overwriteHeight = 1608
 
 # MKTV half res alpha
 [TextureRedefine]
 width = 480
 height = 268
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 2880
-overwriteHeight = 1620
+overwriteWidth = 1440
+overwriteHeight = 804
