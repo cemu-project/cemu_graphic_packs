@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 00050000101ba000,00050000101ba900
+name = "Severed - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160

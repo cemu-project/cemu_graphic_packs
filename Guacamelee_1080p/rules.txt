@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010176800,0005000010179700
+name = "Guacamelee! Super Turbo Championship Edition - 1080p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080

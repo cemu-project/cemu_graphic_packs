@@ -1,0 +1,10 @@
+[Definition]
+titleIds = ffffffff0796e931,0005000010112900,0005000010111300,000500001010AB00
+name = "Batman Arkham City Armored Edition - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 3840
+overwriteHeight = 2160

@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 000500001010c700,000500001010c800
+name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160

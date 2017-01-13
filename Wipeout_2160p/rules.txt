@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 000500001010e800,0005000010145500
+name = "Wipeout 3 + Wipeout Create & Crash - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160

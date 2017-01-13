@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010157e00,0005000010157f00
+name = "Bayonetta - 1080p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080
