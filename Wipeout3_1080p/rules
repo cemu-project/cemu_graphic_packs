@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 000500001010e800
+name = "Wipeout 3 - 1080p"
+
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 1920
+
+overwriteHeight = 1080

@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010145500
+name = "Wipeout Create & Crash - 1440p (2K)"
+
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 2560
+
+overwriteHeight = 1440

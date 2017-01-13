@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010175c00,0005000010175d00
+name = "ONE PIECE Unlimited World Red - 1080p"
+
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 1920
+
+overwriteHeight = 1080
