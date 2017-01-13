@@ -9,3 +9,9 @@ height = 720
 # currently disabled, for some reason the game never upscales with the exclusion
 overwriteWidth = 3840
 overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160

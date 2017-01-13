@@ -20,12 +20,12 @@
 - Severed (1080p, 1440p, 2160p)
 - Shovel Knight (1080p, 1440p, 2160p)
 - Splatoon (1080p, 1440p, 2160p)
-- SpongeBob SquarePants Plankton's Robotic Revenge (1080p, 1440p, 2160p)
+- SpongeBob SquarePants: Plankton's Robotic Revenge (1080p, 1440p, 2160p)
 - Star Fox Guard (1080p, 1440p, 2160p)
 - Star Fox Zero (1080p, 1440p, 2160p)
 - Super Mario 3D World (1080p, 1440p, 2160p)
 - Super Smash Bros. (1440p, 2160p)
-- Tekken Tag Tournament 2 Wii U Edition (1080p, 1440p, 2160p)
+- Tekken Tag Tournament 2: Wii U Edition (1080p, 1440p, 2160p)
 - The Wind Waker HD (1440p, 2160p)
 - Twilight Princess HD (1440p, 2160p)
 - Wipeout 3 (1080p, 1440p, 2160p)
@@ -38,11 +38,11 @@ Donkey Kong Country: Tropical Freeze
 
 - Water does not appear correctly
 
+Mario & Sonic at the Sochi 2014 Olympic Winter Games
+
+- Characters on Character Selection are blurry
+
 Nintendo Land
 
 - Title screen is completely white
 - Gamepad screen is blurry during attraction gameplay
-
-Mario & Sonic at the Sochi 2014 Olympic Winter Games
-
-- Characters on Character Selection are blurry
