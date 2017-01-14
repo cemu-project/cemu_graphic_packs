@@ -24,6 +24,7 @@
 - Star Fox Guard (1080p, 1440p, 2160p)
 - Star Fox Zero (1080p, 1440p, 2160p)
 - Super Mario 3D World (1080p, 1440p, 2160p)
+- Super Mario Maker (1080p, 1440p, 2160p)
 - Super Smash Bros. (1440p, 2160p)
 - Tekken Tag Tournament 2: Wii U Edition (1080p, 1440p, 2160p)
 - The Wind Waker HD (1440p, 2160p)
@@ -46,3 +47,7 @@ Nintendo Land
 
 - Title screen is completely white
 - Gamepad screen is blurry during attraction gameplay
+
+Super Mario Maker
+
+- NSMBU theme is completely broken, please avoid using it.
