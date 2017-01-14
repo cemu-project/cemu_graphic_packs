@@ -8,3 +8,9 @@ height = 720
 formatsExcluded = 0x008,0x41A,0x034 # exclude the intro background texture
 overwriteWidth = 1920
 overwriteHeight = 1080
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 1920
+overwriteHeight = 1080
