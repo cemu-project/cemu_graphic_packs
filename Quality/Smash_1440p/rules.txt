@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00
+name = "Super Smash Bros. - 1440p (2K)"
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 2560
+overwriteHeight = 1440

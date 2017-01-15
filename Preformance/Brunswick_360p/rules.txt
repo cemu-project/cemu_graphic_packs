@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 00050000101d4200
+name = "Brunswick Pro Bowling - 360p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360

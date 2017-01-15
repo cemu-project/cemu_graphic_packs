@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 000500001012be00,000500001012bd00,000500001012bc00
+name = "Pikmin 3 - 360p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360

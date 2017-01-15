@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100,0005000010180600,0005000010180700,0005000010180500
+name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 360p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x41A,0x034 # exclude the intro background texture
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

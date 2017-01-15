@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010170700
+name = "Kamen Rider - Battride War II - 360p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360

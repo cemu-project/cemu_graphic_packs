@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010178f00
+name = "Shovel Knight - 2160p (4K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160

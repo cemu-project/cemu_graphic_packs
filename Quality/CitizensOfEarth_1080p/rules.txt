@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010180b00,0005000010177200
+name = "Citizens Of Earth - 1080p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080

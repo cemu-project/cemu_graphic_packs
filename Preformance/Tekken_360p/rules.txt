@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 000500001010f800
+name = "TEKKEN TAG TOURNAMENT 2 - 360p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360

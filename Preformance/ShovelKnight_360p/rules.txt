@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010178f00
+name = "Shovel Knight - 360p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360
