@@ -14,7 +14,7 @@ Nintendo Land
 
 Splatoon
 
-- Gamepad on multiplayer is all blurry (Quality - Gamepad)
+- [Gamepad is blurry in Multiplayer](http://imgur.com/a/1YecH) (Quality - Gamepad)
 
 Super Mario 3D World + Captain Toad: Treasure Tracker
 
