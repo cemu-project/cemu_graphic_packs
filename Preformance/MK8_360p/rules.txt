@@ -10,6 +10,12 @@ formatsExcluded = 0x41A,0x431 # exclude the intro background texture, race end b
 overwriteWidth = 640
 overwriteHeight = 360
 
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
 # Half Res Alpha (and DOF)
 [TextureRedefine]
 width = 640

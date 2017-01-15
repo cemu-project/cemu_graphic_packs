@@ -7,3 +7,9 @@ width = 1920
 height = 1080
 overwriteWidth = 960
 overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
