@@ -11,5 +11,5 @@ overwriteHeight = 2160
 [TextureRedefine] # shadows
 width = 384
 height = 384
-overwriteWidth = 1152
-overwriteHeight = 1152
+overwriteWidth = 768
+overwriteHeight = 768
