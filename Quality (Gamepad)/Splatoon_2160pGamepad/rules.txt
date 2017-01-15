@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00,000500001018DB00,000500001018DC00,000500001018DD00
-name = "Splatoon + Super Mario Maker - 2160p (4K)"
+name = "Splatoon + Super Mario Maker - 2160p (Gamepad) (4K)"
 
 [TextureRedefine] # tv
 width = 1280

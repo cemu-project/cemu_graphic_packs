@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010139400
-name = "Phineas and Ferb Quest for Cool Stuff - 1080p"
+name = "Phineas and Ferb Quest for Cool Stuff - 1080p (Gamepad)"
 
 [TextureRedefine] # tv
 width = 1280

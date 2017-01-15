@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001019ae00,00050000101a2c00,ffffffff36325ea6
-name = "Family Tennis SP - 1440p (2K)"
+name = "Family Tennis SP - 1440p (Gamepad) (2K)"
 
 [TextureRedefine] # tv
 width = 1280

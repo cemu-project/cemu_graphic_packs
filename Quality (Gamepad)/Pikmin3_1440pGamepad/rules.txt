@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001012be00,000500001012bd00,000500001012bc00
-name = "Pikmin 3 - 1440p (2K)"
+name = "Pikmin 3 - 1440p (Gamepad) (2K)"
 
 [TextureRedefine] # tv
 width = 1280

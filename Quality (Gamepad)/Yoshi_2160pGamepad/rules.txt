@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
-name = "Yoshi's Woolly World - 2160p (4K)"
+name = "Yoshi's Woolly World - 2160p (Gamepad) (4K)"
 
 [TextureRedefine] # tv
 width = 1280

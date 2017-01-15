@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101ba000,00050000101ba900
-name = "Severed - 1440p (2K)"
+name = "Severed - 1440p (Gamepad) (2K)"
 
 [TextureRedefine] # tv
 width = 1280

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010e800,0005000010145500
-name = "Wipeout 3 + Wipeout Create & Crash - 1440p (2K)"
+name = "Wipeout 3 + Wipeout Create & Crash - 1440p (Gamepad) (2K)"
 
 [TextureRedefine] # tv
 width = 1280

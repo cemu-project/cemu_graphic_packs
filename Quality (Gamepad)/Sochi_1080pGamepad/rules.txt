@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010c700,000500001010c800
-name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 1080p"
+name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 1080p (Gamepad)"
 
 [TextureRedefine] # tv
 width = 1280

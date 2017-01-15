@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010178f00
-name = "Shovel Knight - 2160p (4K)"
+name = "Shovel Knight - 2160p (Gamepad) (4K)"
 
 [TextureRedefine] # tv
 width = 1280

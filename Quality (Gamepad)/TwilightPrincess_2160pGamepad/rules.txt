@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500
-name = "Twilight Princess HD - 2160p (4K)"
+name = "Twilight Princess HD - 2160p (Gamepad) (4K)"
 
 [TextureRedefine] # tv
 width = 1920
