@@ -1,24 +1,28 @@
 #Issues
 Donkey Kong Country: Tropical Freeze
 
-- Water does not appear correctly
+- Water does not appear correctly (All)
 
 Mario & Sonic at the Sochi 2014 Olympic Winter Games
 
-- Characters on Character Selection are blurry
+- Characters on Character Selection are blurry (Quality)
 
 Nintendo Land
 
-- Title screen is completely white
-- Gamepad screen is blurry during attraction gameplay
+- Title screen is completely white (All)
+- Gamepad screen is blurry during attraction gameplay (Quality - Gamepad)
+
+Splatoon
+
+- Gamepad on multiplayer is all blurry (Quality - Gamepad)
 
 Super Mario 3D World + Captain Toad: Treasure Tracker
 
-- Distortion filter (ex w2-1 in 3D World) doesn't render properly
+- Distortion filter (ex w2-1 in 3D World) doesn't render properly (All)
 
 Super Mario Maker
 
-- NSMBU theme is completely broken, please avoid using it.
+- NSMBU theme is completely broken, please avoid using it. (Quality)
 
 # Supported Games
 - Batman Arkham City Armored Edition
