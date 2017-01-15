@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010ec00,0005000e1010ed00,0005000e1010eb00,ffffffff85887bc1
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
 name = "Mario Kart 8 - 1080p"
 
 # Main Screen Resolution
