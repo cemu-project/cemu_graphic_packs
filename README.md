@@ -19,6 +19,7 @@ Splatoon
 Super Mario 3D World + Captain Toad: Treasure Tracker
 
 - [Sky is completely gone](http://i.imgur.com/YwnNN2w.jpg) (All)
+- Resolution drops when zooming in on stages with Distortion filter (Quality)
 
 Super Mario Maker
 
