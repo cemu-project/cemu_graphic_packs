@@ -1,0 +1,8 @@
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Xenoblade Chronicles X - AMD GCN4 Workaround"
+
+[TextureRedefine] # No artifacts
+width = 320
+height = 180
+overwriteWidth = 0
+overwriteHeight = 0
