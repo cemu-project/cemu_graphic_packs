@@ -16,10 +16,9 @@ Splatoon
 
 - [Gamepad is blurry in Multiplayer](http://imgur.com/a/1YecH) (Quality - Gamepad)
 
-Super Mario 3D World + Captain Toad: Treasure Tracker
+Super Mario 3D World
 
-- [Sky is completely gone](http://i.imgur.com/YwnNN2w.jpg) (All)
-- Resolution drops when zooming in on stages with Distortion filter (Quality)
+- [Sky is completely gone in 1-1](http://i.imgur.com/YwnNN2w.jpg) (All)
 
 Super Mario Maker
 

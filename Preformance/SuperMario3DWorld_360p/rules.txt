@@ -16,6 +16,12 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 320
 overwriteHeight = 180
 
+[TextureRedefine] # zoomed in
+width = 1128
+height = 720
+overwriteWidth = 564
+overwriteHeight = 360
+
 [TextureRedefine] # gamepad
 width = 854
 height = 480
@@ -28,3 +34,9 @@ height = 240
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 214
 overwriteHeight = 120
+
+[TextureRedefine] # half-res (zoomed in)
+width = 564
+height = 360
+overwriteWidth = 282
+overwriteHeight = 180

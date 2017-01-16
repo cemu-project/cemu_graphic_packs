@@ -15,6 +15,12 @@ height = 480
 overwriteWidth = 3840
 overwriteHeight = 2160
 
+[TextureRedefine] # zoomed in
+width = 1128
+height = 720
+overwriteWidth = 3384
+overwriteHeight = 2160
+
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
@@ -27,4 +33,10 @@ width = 427
 height = 240
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine] # half-res (zoomed in)
+width = 564
+height = 360
+overwriteWidth = 1692
 overwriteHeight = 1080
