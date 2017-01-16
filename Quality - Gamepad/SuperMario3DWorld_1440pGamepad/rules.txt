@@ -18,6 +18,6 @@ overwriteHeight = 1440
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x034,0x035 # exclude obvious textures
+formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 720
