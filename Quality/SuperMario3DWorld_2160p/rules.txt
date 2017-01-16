@@ -5,7 +5,7 @@ name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 2160p (4K)"
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude the intro background texture,map
+formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
 overwriteWidth = 3840
 overwriteHeight = 2160
 

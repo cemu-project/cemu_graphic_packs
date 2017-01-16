@@ -5,7 +5,7 @@ name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 1440p (Gamepad) 
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x008,0x41A,0x034 # exclude the intro background texture
+formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
 overwriteWidth = 2560
 overwriteHeight = 1440
 
@@ -14,3 +14,10 @@ width = 854
 height = 480
 overwriteWidth = 2560
 overwriteHeight = 1440
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x034,0x035 # exclude obvious textures
+overwriteWidth = 1280
+overwriteHeight = 720
