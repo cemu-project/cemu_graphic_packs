@@ -27,6 +27,12 @@ height = 600
 overwriteWidth = 3000
 overwriteHeight = 1800
 
+[TextureRedefine] # zoom transition 2
+width = 1000
+height = 720
+overwriteWidth = 3000
+overwriteHeight = 2160
+
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
@@ -52,3 +58,9 @@ width = 500
 height = 300
 overwriteWidth = 1500
 overwriteHeight = 900
+
+[TextureRedefine] # half-res (zoom transition 2)
+width = 500
+height = 360
+overwriteWidth = 1500
+overwriteHeight = 1080

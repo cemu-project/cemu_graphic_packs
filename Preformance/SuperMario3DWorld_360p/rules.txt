@@ -9,13 +9,6 @@ formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
 overwriteWidth = 640
 overwriteHeight = 360
 
-[TextureRedefine] # half-res alpha
-width = 640
-height = 360
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 320
-overwriteHeight = 180
-
 [TextureRedefine] # zoomed in
 width = 1128
 height = 720
@@ -28,11 +21,24 @@ height = 600
 overwriteWidth = 500
 overwriteHeight = 300
 
+[TextureRedefine] # zoom transition 2
+width = 1000
+height = 720
+overwriteWidth = 500
+overwriteHeight = 360
+
 [TextureRedefine] # gamepad
 width = 854
 height = 480
 overwriteWidth = 427
 overwriteHeight = 240
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 320
+overwriteHeight = 180
 
 [TextureRedefine] # half-res (gamepad)
 width = 427
@@ -52,3 +58,9 @@ width = 500
 height = 300
 overwriteWidth = 250
 overwriteHeight = 150
+
+[TextureRedefine] # half-res (zoom transition)
+width = 500
+height = 360
+overwriteWidth = 250
+overwriteHeight = 180
