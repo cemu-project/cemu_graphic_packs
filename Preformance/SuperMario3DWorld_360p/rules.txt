@@ -22,6 +22,12 @@ height = 720
 overwriteWidth = 564
 overwriteHeight = 360
 
+[TextureRedefine] # zoom transition
+width = 1000
+height = 600
+overwriteWidth = 500
+overwriteHeight = 300
+
 [TextureRedefine] # gamepad
 width = 854
 height = 480
@@ -40,3 +46,9 @@ width = 564
 height = 360
 overwriteWidth = 282
 overwriteHeight = 180
+
+[TextureRedefine] # half-res (zoom transition)
+width = 500
+height = 300
+overwriteWidth = 250
+overwriteHeight = 150
