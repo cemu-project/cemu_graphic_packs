@@ -59,7 +59,7 @@ height = 300
 overwriteWidth = 250
 overwriteHeight = 150
 
-[TextureRedefine] # half-res (zoom transition)
+[TextureRedefine] # half-res (zoom transition 2)
 width = 500
 height = 360
 overwriteWidth = 250
