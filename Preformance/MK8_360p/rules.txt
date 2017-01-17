@@ -24,6 +24,22 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 320
 overwriteHeight = 160
 
+# Multiplayer-Mode Resolution (2p)
+[TextureRedefine]
+width = 640
+height = 720
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 360
+
+# Multiplayer-Mode Resolution (4p)
+[TextureRedefine]
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 360
+
 # MKTV screen
 [TextureRedefine]
 width = 960
