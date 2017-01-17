@@ -14,9 +14,3 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 960
 overwriteHeight = 540
-
-[TextureRedefine] # AMD GCN4 workaround
-width = 320
-height = 180
-overwriteWidth = 0
-overwriteHeight = 0
