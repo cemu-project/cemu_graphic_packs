@@ -40,6 +40,13 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1080
 
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 960
+overwriteHeight = 540
+
 [TextureRedefine] # half-res (gamepad)
 width = 427
 height = 240

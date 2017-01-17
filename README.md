@@ -16,10 +16,6 @@ Splatoon
 
 - [Gamepad is blurry in Multiplayer](http://imgur.com/a/1YecH) (Quality - Gamepad)
 
-Super Mario 3D World
-
-- [Sky is completely gone in 1-1](http://i.imgur.com/YwnNN2w.jpg) (All)
-
 Super Mario Maker
 
 - [NSMBU theme is completely broken](http://i.imgur.com/OumJaa6.png) (Quality)

@@ -34,6 +34,13 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 720
 
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 640
+overwriteHeight = 360
+
 [TextureRedefine] # half-res (zoomed in)
 width = 564
 height = 360
