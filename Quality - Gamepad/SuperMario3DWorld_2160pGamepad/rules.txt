@@ -40,13 +40,6 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1080
 
-[TextureRedefine] # quarter-res alpha
-width = 320
-height = 180
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 960
-overwriteHeight = 540
-
 [TextureRedefine] # half-res (gamepad)
 width = 427
 height = 240
@@ -71,3 +64,35 @@ width = 500
 height = 360
 overwriteWidth = 1500
 overwriteHeight = 1080
+
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # q-res (gamepad)
+width = 214
+height = 120
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 642
+overwriteHeight = 360
+
+[TextureRedefine] # q-res (zoomed in)
+width = 282
+height = 180
+overwriteWidth = 846
+overwriteHeight = 540
+
+[TextureRedefine] # q-res (zoom transition)
+width = 250
+height = 150
+overwriteWidth = 750
+overwriteHeight = 450
+
+[TextureRedefine] # q-res (zoom transition 2)
+width = 250
+height = 180
+overwriteWidth = 750
+overwriteHeight = 540
