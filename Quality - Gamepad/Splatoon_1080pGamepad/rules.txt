@@ -15,6 +15,20 @@ formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 960
 overwriteHeight = 540
 
+[TextureRedefine] # half-res alpha (gamepad)
+width = 427
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 954
+overwriteHeight = 540
+
 [TextureRedefine] # squid sisters
 width = 1024
 height = 576
