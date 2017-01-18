@@ -96,3 +96,10 @@ width = 250
 height = 180
 overwriteWidth = 125
 overwriteHeight = 90
+
+[TextureRedefine] # shadows
+width = 1024
+height = 1024
+formatsExcluded = 0x008,0x41A,0x033,0x034,0x035,0x431,0x235,0x433 # exclude everything but shadowmap
+overwriteWidth = 512
+overwriteHeight = 512

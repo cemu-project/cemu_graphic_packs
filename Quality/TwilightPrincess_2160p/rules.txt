@@ -7,9 +7,3 @@ width = 1920
 height = 1080
 overwriteWidth = 3840
 overwriteHeight = 2160
-
-[TextureRedefine] # shadows
-width = 384
-height = 384
-overwriteWidth = 768
-overwriteHeight = 768
