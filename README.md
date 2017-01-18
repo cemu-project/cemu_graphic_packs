@@ -12,10 +12,6 @@ Nintendo Land
 - [Title screen is completely white](http://i.imgur.com/Jmbpj0h.png) (All)
 - [Gamepad screen is blurry during attraction gameplay](http://i.imgur.com/B22muq6.jpg) (Quality - Gamepad)
 
-Splatoon
-
-- [Gamepad is blurry in Multiplayer](http://imgur.com/a/1YecH) (Quality - Gamepad)
-
 Super Mario Maker
 
 - [NSMBU theme is completely broken](http://i.imgur.com/OumJaa6.png) (Quality)

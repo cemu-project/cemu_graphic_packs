@@ -26,3 +26,9 @@ width = 854
 height = 480
 overwriteWidth = 2560
 overwriteHeight = 1440
+
+[TextureRedefine] # multiplayer gamepad
+width = 848
+height = 480
+overwriteWidth = 2544
+overwriteHeight = 1440
