@@ -15,3 +15,30 @@ width = 854
 height = 480
 overwriteWidth = 427
 overwriteHeight = 240
+
+[TextureRedefine] # multiplayer
+width = 848
+height = 480
+overwriteWidth = 424
+overwriteHeight = 240
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine] # half-res alpha (gamepad)
+width = 427
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 214
+overwriteHeight = 120
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 212
+overwriteHeight = 120

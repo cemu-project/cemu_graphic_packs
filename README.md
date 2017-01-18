@@ -6,7 +6,6 @@ Donkey Kong Country: Tropical Freeze
 Nintendo Land
 
 - [Title screen is completely white](http://i.imgur.com/Jmbpj0h.png) (All)
-- [Gamepad screen is blurry during attraction gameplay](http://i.imgur.com/B22muq6.jpg) (Quality - Gamepad)
 
 Super Mario Maker
 
