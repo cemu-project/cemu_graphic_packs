@@ -3,10 +3,6 @@ Donkey Kong Country: Tropical Freeze
 
 - [Water does not appear correctly](http://i.imgur.com/0X194fi.jpg) (All)
 
-Mario & Sonic at the Sochi 2014 Olympic Winter Games
-
-- Characters on Character Selection are blurry (Quality)
-
 Nintendo Land
 
 - [Title screen is completely white](http://i.imgur.com/Jmbpj0h.png) (All)

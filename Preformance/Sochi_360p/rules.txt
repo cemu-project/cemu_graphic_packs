@@ -14,3 +14,15 @@ width = 854
 height = 480
 overwriteWidth = 427
 overwriteHeight = 240
+
+[TextureRedefine] # character select
+width = 601
+height = 624
+overwriteWidth = 301
+overwriteHeight = 312
+
+[TextureRedefine] # mii
+width = 192
+height = 180
+overwriteWidth = 96
+overwriteHeight = 90
