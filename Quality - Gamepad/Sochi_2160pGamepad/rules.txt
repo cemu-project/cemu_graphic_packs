@@ -15,11 +15,23 @@ height = 480
 overwriteWidth = 3840
 overwriteHeight = 2160
 
-[TextureRedefine] # character select
+[TextureRedefine] # character select (1 character)
 width = 601
 height = 624
 overwriteWidth = 1803
 overwriteHeight = 1872
+
+[TextureRedefine] # character select (2 characters)
+width = 305
+height = 620
+overwriteWidth = 915
+overwriteHeight = 1860
+
+[TextureRedefine] # character select (4 characters)
+width = 155
+height = 630
+overwriteWidth = 465
+overwriteHeight = 1890
 
 [TextureRedefine] # mii
 width = 192
