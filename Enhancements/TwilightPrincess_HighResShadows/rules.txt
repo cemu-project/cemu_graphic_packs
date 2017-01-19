@@ -1,4 +1,5 @@
 # Found by Esppiral on GBATemp http://gbatemp.net/threads/release-cemu-wii-u-emulator.399524/page-898#post-7016504
+# FYI: Enhancements are meant to be edited!
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = "Twilight Princess HD - High Res Shadows"
