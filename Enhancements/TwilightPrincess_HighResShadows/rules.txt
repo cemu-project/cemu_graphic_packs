@@ -7,5 +7,5 @@ name = "Twilight Princess HD - High Res Shadows"
 [TextureRedefine]
 width = 384
 height = 384
-overwriteWidth = 4096
-overwriteHeight = 4096
+overwriteWidth = 768
+overwriteHeight = 768
