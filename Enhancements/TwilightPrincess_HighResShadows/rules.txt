@@ -1,4 +1,5 @@
 # Found by Esppiral on GBATemp http://gbatemp.net/threads/release-cemu-wii-u-emulator.399524/page-898#post-7016504
+# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = "Twilight Princess HD - High Res Shadows"
@@ -6,5 +7,5 @@ name = "Twilight Princess HD - High Res Shadows"
 [TextureRedefine]
 width = 384
 height = 384
-overwriteWidth = 4096
-overwriteHeight = 4096
+overwriteWidth = 768
+overwriteHeight = 768

@@ -1,16 +1,3 @@
-#Issues
-Donkey Kong Country: Tropical Freeze
-
-- [Water does not appear correctly](http://i.imgur.com/0X194fi.jpg) (All)
-
-Nintendo Land
-
-- [Title screen is completely white](http://i.imgur.com/Jmbpj0h.png) (All)
-
-Super Mario Maker
-
-- [NSMBU theme is completely broken](http://i.imgur.com/OumJaa6.png) (Quality)
-
 # Supported Games
 - Batman Arkham City Armored Edition
 - Bayonetta
