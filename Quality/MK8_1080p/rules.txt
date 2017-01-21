@@ -26,6 +26,14 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 960
 overwriteHeight = 1080
 
+# Multiplayer-Mode Half Res Alpha (2p)
+[TextureRedefine]
+width = 320
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 540
+
 # MKTV screen
 [TextureRedefine]
 width = 960
