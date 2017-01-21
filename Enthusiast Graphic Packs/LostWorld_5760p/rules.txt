@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = "Sonic Lost World - 5760p (10K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 10240
+overwriteHeight = 5760
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1440
