@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00
+name = "Super Smash Bros. - 720p"
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280
+overwriteHeight = 720
+
+[TextureRedefine] # half-res alpha
+overwriteWidth = 960
+overwriteHeight = 540
+overwriteWidth = 640
+overwriteHeight = 360
