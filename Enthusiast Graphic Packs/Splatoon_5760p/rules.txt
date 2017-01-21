@@ -17,17 +17,17 @@ overwriteHeight = 2880
 
 [TextureRedefine] # half-res alpha (gamepad)
 width = 427
-height = 180
+height = 240
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 5120
-overwriteHeight = 2880
+overwriteWidth = 1280
+overwriteHeight = 720
 
 [TextureRedefine] # half-res alpha (multiplayer)
 width = 424
 height = 240
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 5120
-overwriteHeight = 2880
+overwriteWidth = 1272
+overwriteHeight = 720
 
 [TextureRedefine] # squid sisters
 width = 1024
@@ -38,11 +38,11 @@ overwriteHeight = 4608
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-overwriteWidth = 10240
-overwriteHeight = 5760
+overwriteWidth = 2560
+overwriteHeight = 1440
 
 [TextureRedefine] # multiplayer gamepad
 width = 848
 height = 480
-overwriteWidth = 10240
-overwriteHeight = 5760
+overwriteWidth = 2544
+overwriteHeight = 1440
