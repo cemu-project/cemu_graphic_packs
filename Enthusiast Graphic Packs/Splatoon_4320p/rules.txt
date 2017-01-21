@@ -1,0 +1,48 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = "Splatoon - 4320p (8K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # half-res alpha (gamepad)
+width = 427
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # squid sisters
+width = 1024
+height = 576
+overwriteWidth = 6144
+overwriteHeight = 3456
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+[TextureRedefine] # multiplayer gamepad
+width = 848
+height = 480
+overwriteWidth = 7680
+overwriteHeight = 4320
