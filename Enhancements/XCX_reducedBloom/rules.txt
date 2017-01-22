@@ -1,0 +1,3 @@
+[Definition]
+titleIds = 00050000101c4c00,00050000101C4D00
+name = "Xenoblade Chronicles - 1080p less bloom"
