@@ -24,7 +24,6 @@
 - Star Fox Guard
 - Star Fox Zero
 - Super Mario 3D World
-- Super Mario Maker
 - Super Smash Bros.
 - Tekken Tag Tournament 2: Wii U Edition
 - The Wind Waker HD
