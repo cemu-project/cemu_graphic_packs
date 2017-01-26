@@ -1,12 +1,12 @@
 [Definition]
 titleIds = 0005000010178f00
-name = "Shovel Knight - 360p"
+name = "Shovel Knight - 540p"
 
 [TextureRedefine] # tv
-width = 1280
-height = 720
-overwriteWidth = 640
-overwriteHeight = 360
+width = 1920
+height = 1080
+overwriteWidth = 960
+overwriteHeight = 540
 
 [TextureRedefine] # gamepad
 width = 854

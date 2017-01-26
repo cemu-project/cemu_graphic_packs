@@ -1,9 +1,9 @@
 [Definition]
 titleIds = 0005000010178f00
-name = "Shovel Knight - 1440p (2K)"
+name = "Shovel Knight - 720p"
 
 [TextureRedefine] # tv
 width = 1920
 height = 1080
-overwriteWidth = 2560
-overwriteHeight = 1440
+overwriteWidth = 1280
+overwriteHeight = 720
