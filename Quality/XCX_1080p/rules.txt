@@ -14,3 +14,9 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 960
 overwriteHeight = 540
+
+[TextureRedefine] # Gear menu
+width = 1024
+height = 720
+overwriteWidth = 1536
+overwriteHeight = 1080
