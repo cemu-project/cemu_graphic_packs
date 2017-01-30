@@ -30,6 +30,7 @@
 - The Legend of Zelda: The Wind Waker HD
 - The Legend of Zelda: Twilight Princess HD
 - TNT Racers Nitro Machines Edition
+- Tokyo Mirage Sessions ♯FE
 - Wipeout 3
 - Wipeout Create & Crash
 - Xenoblade Chronicles X
