@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
 name = "Xenoblade Chronicles X - 4320p (8K)"
 
 [TextureRedefine] # tv
@@ -14,6 +14,12 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 3840
 overwriteHeight = 2560
+
+[TextureRedefine] # Gear menu
+width = 1024
+height = 720
+overwriteWidth = 4096
+overwriteHeight = 2880
 
 [TextureRedefine] # gamepad
 width = 854

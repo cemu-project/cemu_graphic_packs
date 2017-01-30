@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
 name = "Xenoblade Chronicles X - 2160p (4K)"
 
 [TextureRedefine] # tv
@@ -14,3 +14,9 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1080
+
+[TextureRedefine] # Gear menu
+width = 1024
+height = 720
+overwriteWidth = 3072
+overwriteHeight = 2160
