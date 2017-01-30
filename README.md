@@ -6,6 +6,7 @@
 - Captain Toad: Treasure Tracker
 - Citizens Of Earth
 - Donkey Kong Country: Tropical Freeze
+- DuckTales Remastered
 - Family Tennis SP
 - Guacamelee! Super Turbo Championship Edition
 - Kamen Rider - Battride War II
@@ -26,8 +27,9 @@
 - Super Mario 3D World
 - Super Smash Bros.
 - Tekken Tag Tournament 2: Wii U Edition
-- The Wind Waker HD
-- Twilight Princess HD
+- The Legend of Zelda: The Wind Waker HD
+- The Legend of Zelda: Twilight Princess HD
+- TNT Racers Nitro Machines Edition
 - Wipeout 3
 - Wipeout Create & Crash
 - Xenoblade Chronicles X
