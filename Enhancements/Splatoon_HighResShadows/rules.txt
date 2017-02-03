@@ -4,6 +4,13 @@ titleIds = 0005000010176900,0005000010176A00,0005000010162B000
 name = "Splatoon - High Res Shadows"
 
 [TextureRedefine]
+width = 1024
+height = 1024
+formatsExcluded = 0x008,0x41A,0x033,0x034,0x035,0x431,0x235,0x433 # exclude everything but shadowmap
+overwriteWidth = 2048
+overwriteHeight = 2048
+
+[TextureRedefine]
 width = 2048
 height = 2048
 formatsExcluded = 0x008,0x41A,0x033,0x034,0x035,0x431,0x235,0x433 # exclude everything but shadowmap
