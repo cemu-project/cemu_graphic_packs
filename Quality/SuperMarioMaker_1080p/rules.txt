@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 0005000e1018db00,0005000e1018dc00,0005000e1018dd00,000500001018db00,000500001018dc00,000500001018dd00
+name = "Super Mario Maker - 1080p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720 
+formatsExcluded = 0x34,0x35 # exclude map
+overwriteWidth = 1920
+overwriteHeight = 1080
+

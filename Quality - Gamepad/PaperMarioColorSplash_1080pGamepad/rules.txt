@@ -1,14 +1,14 @@
 [Definition]
 titleIds = 500001f600a00
-name = "Paper Mario: Color Splash - 1080p"
+name = "Paper Mario: Color Splash - 1080p (Gamepad)"
 
-[TextureRedefine]
+[TextureRedefine] # tv
 width = 1280
 height = 720
 overwriteWidth = 1920
 overwriteHeight = 1080
 
-[TextureRedefine]
+[TextureRedefine] # gamepad
 width = 854
 height = 480
 overwriteWidth = 1920
