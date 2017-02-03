@@ -1,0 +1,18 @@
+[Definition]
+titleIds = 0005000e1018db00,0005000e1018dc00,0005000e1018dd00,000500001018db00,000500001018dc00,000500001018dd00
+name = "Super Mario Maker - 2160p (Gamepad)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x34,0x35 # exclude map
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+

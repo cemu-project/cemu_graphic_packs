@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 500001f600a00
-name = "Paper Mario: Color Splash - 1440p (2K)"
-
-[TextureRedefine]
-width = 1280
-height = 720
-overwriteWidth = 2560
-overwriteHeight = 1440

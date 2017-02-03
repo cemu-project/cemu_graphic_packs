@@ -2,7 +2,7 @@
 titleIds = 500001f600a00
 name = "Paper Mario: Color Splash - 2160p (4K)"
 
-[TextureRedefine]
+[TextureRedefine] # tv
 width = 1280
 height = 720
 overwriteWidth = 3840
