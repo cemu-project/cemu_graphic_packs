@@ -16,6 +16,7 @@
 - New Super Mario Bros. U
 - Nintendo Land
 - One Piece: Unlimited World Red
+- Paper Mario: Color Splash
 - Phineas and Ferb: Quest for Cool Stuff
 - Pikmin 3
 - Severed
