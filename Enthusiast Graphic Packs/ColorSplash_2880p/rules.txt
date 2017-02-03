@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 500001f600a00
+name = "Paper Mario: Color Splash - 2880p (5K)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1440

@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 500001f600a00
+name = "Paper Mario: Color Splash - 360p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360
