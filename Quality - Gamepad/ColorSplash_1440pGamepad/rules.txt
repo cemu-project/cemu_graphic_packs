@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 500001f600a00
-name = "Paper Mario: Color Splash - 1440p (2K)"
+name = "Paper Mario: Color Splash - 1440p (2K) (Gamepad)"
 
 [TextureRedefine]
 width = 1280
