@@ -7,8 +7,8 @@ name = "Super Smash Bros. - High Res Shadows"
 width = 512
 height = 512
 formatsExcluded = 0x008,0x41A,0x031,0x033,0x034,0x035,0x431,0x235,0x433,0x01a # exclude everything but shadowmap
-overwriteWidth = 1024
-overwriteHeight = 1024
+overwriteWidth = 2048
+overwriteHeight = 2048
 
 [TextureRedefine]
 width = 1024
