@@ -26,7 +26,7 @@ overwriteHeight = 1080
 width = 424
 height = 240
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 1272
+overwriteWidth = 1920
 overwriteHeight = 1080
 
 [TextureRedefine] # squid sisters
@@ -44,5 +44,5 @@ overwriteHeight = 2160
 [TextureRedefine] # multiplayer gamepad
 width = 848
 height = 480
-overwriteWidth = 3816
+overwriteWidth = 3840
 overwriteHeight = 2160

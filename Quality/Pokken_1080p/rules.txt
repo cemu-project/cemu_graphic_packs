@@ -7,3 +7,9 @@ width = 1280
 height = 720
 overwriteWidth = 1920
 overwriteHeight = 1080
+
+[TextureRedefine]
+width = 960
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080
