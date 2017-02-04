@@ -1,0 +1,13 @@
+# Found by jediyoshi on NeoGAF http://www.neogaf.com/forum/showpost.php?p=229621652&postcount=775
+# Shadow format found by SunBroDave on NeoGAF http://www.neogaf.com/forum/showpost.php?p=229677345&postcount=782
+# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = "The Wind Waker HD - High Res Shadows"
+
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 2048
+overwriteHeight = 2048
