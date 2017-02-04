@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 50000101df400
+name = "Pokken Tournament - 1080p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080

@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 50000101df400
+name = "Pokken Tournament - 1440p (2K) (Gamepad)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1440

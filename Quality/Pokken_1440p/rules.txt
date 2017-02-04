@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 50000101df400
+name = "Pokken Tournament - 1440p (2K)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1440

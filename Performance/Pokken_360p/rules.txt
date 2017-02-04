@@ -1,6 +1,6 @@
 [Definition]
-titleIds = 500001f600a00
-name = "Paper Mario: Color Splash - 360p"
+titleIds = 50000101df400
+name = "Pokken Tournament - 360p"
 
 [TextureRedefine]
 width = 1280

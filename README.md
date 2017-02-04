@@ -19,6 +19,7 @@
 - Paper Mario: Color Splash
 - Phineas and Ferb: Quest for Cool Stuff
 - Pikmin 3
+- Pokkén Tournament
 - Severed
 - Shovel Knight
 - Splatoon
