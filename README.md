@@ -22,6 +22,7 @@
 - Pokkén Tournament
 - Severed
 - Shovel Knight
+- Sonic Lost World
 - Splatoon
 - SpongeBob SquarePants: Plankton's Robotic Revenge
 - Star Fox Guard

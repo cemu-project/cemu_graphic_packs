@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = "Sonic Lost World - 1080p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 1080
