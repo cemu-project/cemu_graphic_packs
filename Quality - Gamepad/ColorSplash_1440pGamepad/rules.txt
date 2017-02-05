@@ -5,6 +5,7 @@ name = "Paper Mario: Color Splash - 1440p (2K) (Gamepad)"
 [TextureRedefine]
 width = 1280
 height = 720
+formatsExcluded = 0x431
 overwriteWidth = 2560
 overwriteHeight = 1440
 
