@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010f800
+titleIds = 000500001010f800,5000010110000
 name = "TEKKEN TAG TOURNAMENT 2 - 360p"
 
 [TextureRedefine] # tv
