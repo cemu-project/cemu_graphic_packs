@@ -1,19 +1,15 @@
 [Definition]
-titleIds = 0005000010178f00,00050000101d9300
+titleIds = 0005000010178f00,00050000101d9300,500001016e100
 name = "Shovel Knight - 1440p (2K)"
 
 [TextureRedefine] # tv
-
 width = 1920
 height = 1080
-
 overwriteWidth = 2560
 overwriteHeight = 1440
 
 [TextureRedefine] # tv
-
 width = 1600
 height = 960
-
 overwriteWidth = 2134
 overwriteHeight = 1280
