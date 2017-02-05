@@ -14,12 +14,6 @@ overwriteHeight = 540
 overwriteWidth = 640
 overwriteHeight = 360
 
-[TextureRedefine] # gamepad
-width = 854
-height = 480
-overwriteWidth = 0
-overwriteHeight = 0
-
 [TextureRedefine] # boxing ring screen
 width = 220
 height = 124
