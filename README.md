@@ -10,6 +10,7 @@
 - Family Tennis SP
 - Guacamelee! Super Turbo Championship Edition
 - Kamen Rider - Battride War II
+- Mario & Sonic at the Rio 2016 Olympic Games
 - Mario & Sonic at the Sochi 2014 Olympic Winter Games
 - Mario Kart 8
 - New Super Luigi U

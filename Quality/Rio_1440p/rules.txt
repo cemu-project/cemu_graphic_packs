@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 50000101e5300
+name = "Mario & Sonic at the Rio 2016 Olympic Games - 1440p (2K)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1440
