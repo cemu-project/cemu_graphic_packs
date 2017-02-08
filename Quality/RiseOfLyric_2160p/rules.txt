@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 5000010175b00
+name = "Sonic Boom: Rise of Lyric - 2160p (4K)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160

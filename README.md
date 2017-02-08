@@ -13,6 +13,7 @@
 - Mario & Sonic at the Rio 2016 Olympic Games
 - Mario & Sonic at the Sochi 2014 Olympic Winter Games
 - Mario Kart 8
+- Mighty No. 9
 - New Super Luigi U
 - New Super Mario Bros. U
 - Nintendo Land
@@ -23,6 +24,7 @@
 - Pokkén Tournament
 - Severed
 - Shovel Knight
+- Sonic Boom: Rise of Lyric
 - Sonic Lost World
 - Splatoon
 - SpongeBob SquarePants: Plankton's Robotic Revenge
