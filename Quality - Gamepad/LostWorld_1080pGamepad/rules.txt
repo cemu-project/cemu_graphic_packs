@@ -9,6 +9,12 @@ overwriteWidth = 1920
 overwriteHeight = 1080
 
 [TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]
 width = 854
 height = 480
 overwriteWidth = 1920
