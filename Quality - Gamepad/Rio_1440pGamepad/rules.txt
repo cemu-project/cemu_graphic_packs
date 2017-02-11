@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 50000101e5300
-name = "Sonic Lost World - 1440p (2K) (Gamepad)"
+name = "Mario & Sonic at the Rio 2016 Olympic Games - 1440p (2K) (Gamepad)"
 
 [TextureRedefine]
 width = 1280
