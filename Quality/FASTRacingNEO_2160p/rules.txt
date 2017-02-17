@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 500001012f000
+name = "FAST Racing NEO - 2160p (4K)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 1920
+overwriteHeight = 1080
