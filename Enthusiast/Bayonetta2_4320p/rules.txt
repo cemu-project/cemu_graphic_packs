@@ -1,30 +1,33 @@
 [Definition]
 titleIds = 0005000010172600,0005000010172700,000500001011b900,000500001014db00,0005000010157e00,0005000010157f00
-name = "Bayonetta 1 + 2 - 1440p (Gamepad) (2K)"
+name = "Bayonetta 1 + 2 - 4320p (8K)"
 
 [TextureRedefine] # tv
-width = 1280
-height = 720
-overwriteWidth = 2560
-overwriteHeight = 1440
 
-[TextureRedefine]#half-res
+width = 1280
+
+height = 720
+
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+[TextureRedefine] # half-res
 width = 640
 height = 360
-overwriteWidth = 1280
-overwriteHeight = 720
+overwriteWidth = 3840
+overwriteHeight = 2160
 
-[TextureRedefine]#q-res1
+[TextureRedefine] # q-res1
 width = 320
 height = 176
-overwriteWidth = 640
-overwriteHeight = 352
+overwriteWidth = 1920
+overwriteHeight = 1056
 
-[TextureRedefine]# q-res2
+[TextureRedefine] # q-res2
 width = 320
 height = 180
-overwriteWidth = 640
-overwriteHeight = 362
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # gamepad
 width = 854

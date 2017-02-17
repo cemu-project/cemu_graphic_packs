@@ -8,6 +8,24 @@ height = 720
 overwriteWidth = 1920
 overwriteHeight = 1080
 
+[TextureRedefine]#half-res
+width = 640
+height = 360
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]#q-res1
+width = 320
+height = 176
+overwriteWidth = 480
+overwriteHeight = 264
+
+[TextureRedefine]# q-res2
+width = 320
+height = 180
+overwriteWidth = 480
+overwriteHeight = 270
+
 [TextureRedefine] # gamepad
 width = 854
 height = 480
