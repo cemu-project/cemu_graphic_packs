@@ -2,13 +2,9 @@
 titleIds = 0005000010172600,0005000010172700,000500001011b900,000500001014db00,0005000010157e00,0005000010157f00
 name = "Bayonetta 1 + 2 - 2880p (5K)"
 
-
 [TextureRedefine] # tv
-
 width = 1280
-
 height = 720
-
 overwriteWidth = 5120
 overwriteHeight = 2880
 

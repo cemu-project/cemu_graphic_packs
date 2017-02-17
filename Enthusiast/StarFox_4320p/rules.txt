@@ -1,14 +1,9 @@
 [Definition]titleIds = 00050000101BEB00,00050000101BEC00,00050000101BED00,00050000101AFF00,00050000101B0400,00050000101B0500
 name = "Star Fox Zero + Star Fox Guard - 4320p (8K)"
 
-
-
 [TextureRedefine] # tv
-
 width = 1280
-
 height = 720
-
 formatsExcluded = 0x41A # exclude the intro background texture 
 overwriteWidth = 7680
 overwriteHeight = 4320
@@ -21,18 +16,13 @@ overwriteWidth = 6912
 overwriteHeight = 4320
 
 [TextureRedefine] # gamepad
-
 width = 854
-
 height = 480
 overwriteWidth = 2560
-
 overwriteHeight = 1440
-
 
 [TextureRedefine] # gamepad
 width = 680
 height = 480
 overwriteWidth = 2560
-
 overwriteHeight = 1440
