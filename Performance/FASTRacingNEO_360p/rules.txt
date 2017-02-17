@@ -5,6 +5,7 @@ name = "FAST Racing NEO - 360p"
 [TextureRedefine]
 width = 1280
 height = 720
+formatsExcluded = 0x41A,0x433
 overwriteWidth = 640
 overwriteHeight = 360
 
