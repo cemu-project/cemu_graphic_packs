@@ -7,3 +7,21 @@ width = 1280
 height = 720
 overwriteWidth = 3840
 overwriteHeight = 2160
+
+[TextureRedefine]#half-res
+width = 640
+height = 360
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine]#q-res1
+width = 320
+height = 176
+overwriteWidth = 960
+overwriteHeight = 528
+
+[TextureRedefine]# q-res2
+width = 320
+height = 180
+overwriteWidth = 960
+overwriteHeight = 540

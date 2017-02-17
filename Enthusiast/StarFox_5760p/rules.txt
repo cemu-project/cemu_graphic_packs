@@ -1,20 +1,24 @@
-[Definition]
-titleIds = 00050000101BEB00,00050000101BEC00,00050000101BED00,00050000101AFF00,00050000101B0400,00050000101B0500
-name = "Star Fox Zero + Star Fox Guard - 1080p"
+[Definition]titleIds = 00050000101BEB00,00050000101BEC00,00050000101BED00,00050000101AFF00,00050000101B0400,00050000101B0500
+name = "Star Fox Zero + Star Fox Guard - 5760p (10K)"
+
+
 
 [TextureRedefine] # tv
+
 width = 1280
+
 height = 720
+
 formatsExcluded = 0x41A # exclude the intro background texture 
-overwriteWidth = 1920
-overwriteHeight = 1080
+overwriteWidth = 10240
+overwriteHeight = 5760
 
 [TextureRedefine] # tv
 width = 1152
 height = 720
 formatsExcluded = 0x41A # exclude the intro background texture 
-overwriteWidth = 1728
-overwriteHeight = 1080
+overwriteWidth = 9216
+overwriteHeight = 5760
 
 [TextureRedefine] # gamepad
 
@@ -27,7 +31,8 @@ overwriteHeight = 1440
 
 
 [TextureRedefine] # gamepad
-width = 640
+width = 680
 height = 480
-overwriteWidth = 960
-overwriteHeight = 540
+overwriteWidth = 2560
+
+overwriteHeight = 1440
