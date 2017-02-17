@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 500001012f000
+name = "FAST Racing NEO - 360p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x41A,0x433
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

@@ -8,6 +8,7 @@
 - Donkey Kong Country: Tropical Freeze
 - DuckTales Remastered
 - Family Tennis SP
+- FAST Racing NEO
 - Guacamelee! Super Turbo Championship Edition
 - Kamen Rider - Battride War II
 - Mario & Sonic at the Rio 2016 Olympic Games

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010f800,5000010110000
-name = "TEKKEN TAG TOURNAMENT 2 - 1440p (2K)"
+name = "TEKKEN TAG TOURNAMENT 2 - 1440p (2K) (Gamepad)"
 
 [TextureRedefine] # tv
 width = 1280

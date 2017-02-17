@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 500001012f000
+name = "FAST Racing NEO - 1080p (Gamepad)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x41A,0x433
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 1920
+overwriteHeight = 1080

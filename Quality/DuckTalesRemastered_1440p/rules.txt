@@ -2,22 +2,14 @@
 titleIds 0005000010129000,0005000010129200
 name = "DuckTales Remastered - 1440p (2K)"
 
-
-
 [TextureRedefine] # tv
-
 width = 1280
-
 height = 720
-
 overwriteWidth = 2560
-
 overwriteHeight = 1440
-
 
 [TextureRedefine] # q-res
 width = 480
 height = 270
-
 overwriteWidth = 640
 overwriteHeight = 360
