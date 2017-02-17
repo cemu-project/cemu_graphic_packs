@@ -1,16 +1,34 @@
 [Definition]
-titleIds = 500001012f000
+titleIds = 500001012f000,ffffffff057b4449
 name = "FAST Racing NEO - 2160p (4K)"
 
-[TextureRedefine]
+[TextureRedefine] # TV
 width = 1280
 height = 720
-formatsExcluded = 0x41A,0x433
+formatsExcluded = 0x433
 overwriteWidth = 3840
 overwriteHeight = 2160
 
-[TextureRedefine]
+[TextureRedefine] # Half-width 1
+width = 640
+height = 720
+overwriteWidth = 1920
+overwriteHeight = 2160
+
+[TextureRedefine] # Half-res
 width = 640
 height = 360
 overwriteWidth = 1920
 overwriteHeight = 1080
+
+[TextureRedefine] # Half-width 2
+width = 320
+height = 360
+overwriteWidth = 960
+overwriteHeight = 1080
+
+[TextureRedefine] # Q-res
+width = 160
+height = 180
+overwriteWidth = 480
+overwriteHeight = 540
