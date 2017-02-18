@@ -1,21 +1,15 @@
 [Definition]
-titleIds 0005000010142800,000500001014f000
+titleIds = 0005000010142800,000500001014f000
 name = "TNT Racers Nitro Machines Edition - 1440p (2K)"
 
-
-
 [TextureRedefine] # tv
-
 width = 1920
 height = 1080
 overwriteWidth = 2560
-
 overwriteHeight = 1440
-
 
 [TextureRedefine] # q-res
 width = 480
 height = 270
-
 overwriteWidth = 640
 overwriteHeight = 360

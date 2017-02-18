@@ -2,29 +2,20 @@
 titleIds = 0005000010142800,000500001014f000
 name = "TNT Racers Nitro Machines Edition - 2160p (Gamepad) (4K)"
 
-
-
 [TextureRedefine] # tv
-
 width = 1920
 height = 1080
-
 overwriteWidth = 3840
-
 overwriteHeight = 2160
 
 [TextureRedefine] # q-res
 width = 480
 height = 270
-
 overwriteWidth = 960
 overwriteHeight = 540
 
 [TextureRedefine] # gamepad
 width = 1280
-
 height = 720
-
-
 overwriteWidth = 2560
 overwriteHeight = 1440
