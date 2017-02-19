@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = "The Wind Waker HD - No Bloom"
+
+[TextureRedefine]
+width = 480
+height = 270
+formats = 0x816
+overwriteWidth = 0
+overwriteHeight = 0

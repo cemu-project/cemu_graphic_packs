@@ -1,4 +1,4 @@
-# todo: Finish HUD on Super Mario 3D World
+# todo: Finish HUD on Super Mario 3D World, get HUD formats
 [Definition]
 titleIds = 0005000010145d00,0005000010145c00,0005000010106100,0005000010180600,0005000010180700,0005000010180500
 name = "Super Mario 3D World + Captain Toad: Treasure Tracker - No HUD (WIP)"
@@ -6,36 +6,42 @@ name = "Super Mario 3D World + Captain Toad: Treasure Tracker - No HUD (WIP)"
 [TextureRedefine] # character icons
 width = 256
 height = 512
-formatsExcluded = 0x235,0x431 # exclude actual textures
+formatsExcluded = 0x235,0x431
+# formats = 0x000
 overwriteWidth = 257
 overwriteHeight = 513
 
 [TextureRedefine] # icons
 width = 256
 height = 1024
+# formats = 0x000
 overwriteWidth = 257
 overwriteHeight = 1025
 
 [TextureRedefine] # gamepad gyro icon
 width = 128
 height = 100
+# formats = 0x000
 overwriteWidth = 129
 overwriteHeight = 101
 
 [TextureRedefine] # item slot
 width = 92
 height = 92
+# formats = 0x000
 overwriteWidth = 93
 overwriteHeight = 93
 
 [TextureRedefine] # item icon
 width = 70
 height = 70
+# formats = 0x000
 overwriteWidth = 71
 overwriteHeight = 71
 
 [TextureRedefine] # item icon
 width = 80
 height = 80
+# formats = 0x000
 overwriteWidth = 81
 overwriteHeight = 81
