@@ -13,9 +13,3 @@ overwriteWidth = 960
 overwriteHeight = 540
 overwriteWidth = 640
 overwriteHeight = 360
-
-[TextureRedefine] # boxing ring screen
-width = 220
-height = 124
-overwriteWidth = 0
-overwriteHeight = 0
