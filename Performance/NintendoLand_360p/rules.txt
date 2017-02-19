@@ -5,8 +5,7 @@ name = "Nintendo Land - 360p"
 [TextureRedefine] # tv
 width = 1280
 height = 720
-# formatsExcluded = 0x01A # exclude the intro background texture
-# currently disabled, for some reason the game never upscales with the exclusion
+textures = 0x1f712000
 overwriteWidth = 640
 overwriteHeight = 360
 

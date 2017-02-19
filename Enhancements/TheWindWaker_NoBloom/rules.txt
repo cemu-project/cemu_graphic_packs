@@ -6,5 +6,6 @@ name = "The Wind Waker HD - No Bloom"
 width = 480
 height = 270
 formats = 0x816
+textures = 0xf4000800
 overwriteWidth = 0
 overwriteHeight = 0
