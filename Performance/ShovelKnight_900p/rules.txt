@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010178f00,00050000101d9300,500001016e100
+name = "Shovel Knight - 900p"
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # tv
+width = 1600
+height = 960
+overwriteWidth = 1333
+overwriteHeight = 800

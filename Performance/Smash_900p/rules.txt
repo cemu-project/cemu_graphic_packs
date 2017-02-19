@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
+name = "Super Smash Bros. - 900p"
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # half-res alpha
+overwriteWidth = 960
+overwriteHeight = 540
+overwriteWidth = 800
+overwriteHeight = 450

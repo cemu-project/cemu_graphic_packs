@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "Twilight Princess HD - 900p"
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1600
+overwriteHeight = 900

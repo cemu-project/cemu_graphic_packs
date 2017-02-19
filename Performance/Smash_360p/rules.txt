@@ -1,18 +1,18 @@
 [Definition]
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
-name = "Super Smash Bros. - 540p"
+name = "Super Smash Bros. - 360p"
 
 [TextureRedefine] # tv
 width = 1920
 height = 1080
-overwriteWidth = 960
-overwriteHeight = 540
+overwriteWidth = 640
+overwriteHeight = 360
 
 [TextureRedefine] # half-res alpha
 overwriteWidth = 960
 overwriteHeight = 540
-overwriteWidth = 480
-overwriteHeight = 270
+overwriteWidth = 320
+overwriteHeight = 180
 
 [TextureRedefine] # shadow 1
 width = 512
