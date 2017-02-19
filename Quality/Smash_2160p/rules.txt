@@ -7,3 +7,21 @@ width = 1920
 height = 1080
 overwriteWidth = 3840
 overwriteHeight = 2160
+
+[TextureRedefine] # 2nd
+width = 820
+height = 410
+overwriteWidth = 1640
+overwriteHeight = 820
+
+[TextureRedefine] # 3rd
+width = 730
+height = 365
+overwriteWidth = 1460
+overwriteHeight = 730
+
+[TextureRedefine] # 4th
+width = 420
+height = 210
+overwriteWidth = 840
+overwriteHeight = 420
