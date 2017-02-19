@@ -7,9 +7,3 @@ width = 1920
 height = 1080
 overwriteWidth = 1600
 overwriteHeight = 900
-
-[TextureRedefine] # half-res alpha
-overwriteWidth = 960
-overwriteHeight = 540
-overwriteWidth = 800
-overwriteHeight = 450

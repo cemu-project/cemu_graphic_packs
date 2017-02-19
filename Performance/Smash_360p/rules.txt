@@ -8,12 +8,6 @@ height = 1080
 overwriteWidth = 640
 overwriteHeight = 360
 
-[TextureRedefine] # half-res alpha
-overwriteWidth = 960
-overwriteHeight = 540
-overwriteWidth = 320
-overwriteHeight = 180
-
 [TextureRedefine] # shadow 1
 width = 512
 height = 512
