@@ -1,0 +1,21 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = "Sonic Lost World - 540p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

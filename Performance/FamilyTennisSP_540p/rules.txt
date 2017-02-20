@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 000500001019ae00,00050000101a2c00,ffffffff36325ea6
+name = "Family Tennis SP - 540p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
