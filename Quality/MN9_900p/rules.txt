@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 50000101c9600
+name = "Mighty No. 9 - 900p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 1600
+overwriteHeight = 900

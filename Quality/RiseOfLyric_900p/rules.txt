@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 5000010175b00
+name = "Sonic Boom: Rise of Lyric - 900p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x031
+overwriteWidth = 1600
+overwriteHeight = 900

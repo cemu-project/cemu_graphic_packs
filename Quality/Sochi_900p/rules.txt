@@ -1,0 +1,34 @@
+[Definition]
+titleIds = 000500001010c700,000500001010c800
+name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 900p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x031 # exclude the intro background texture
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # character select (1 character)
+width = 601
+height = 624
+overwriteWidth = 751
+overwriteHeight = 780
+
+[TextureRedefine] # character select (2 characters)
+width = 305
+height = 620
+overwriteWidth = 381
+overwriteHeight = 775
+
+[TextureRedefine] # character select (4 characters)
+width = 155
+height = 630
+overwriteWidth = 291
+overwriteHeight = 788
+
+[TextureRedefine] # mii
+width = 192
+height = 180
+overwriteWidth = 240
+overwriteHeight = 225

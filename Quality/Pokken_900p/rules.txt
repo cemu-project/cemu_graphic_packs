@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 50000101df400
+name = "Pokken Tournament - 900p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine]
+width = 960
+height = 720
+overwriteWidth = 1600
+overwriteHeight = 900
