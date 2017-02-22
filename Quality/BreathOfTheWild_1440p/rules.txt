@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 00050000101C9400
+name = "The Legend of Zelda: Breath of the Wild - 1440p (2K)"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 1280
+overwriteHeight = 720

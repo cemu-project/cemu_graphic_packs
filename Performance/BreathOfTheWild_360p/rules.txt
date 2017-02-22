@@ -1,0 +1,21 @@
+[Definition]
+titleIds = 00050000101C9400
+name = "The Legend of Zelda: Breath of the Wild - 360p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

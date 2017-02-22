@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 00050000101C9400
+name = "The Legend of Zelda: Breath of the Wild - 900p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteHeight = 800
+overwriteHeight = 450
