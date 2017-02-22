@@ -5,6 +5,7 @@ name = "TEKKEN TAG TOURNAMENT 2 - 1440p (2K) (Gamepad)"
 [TextureRedefine] # tv
 width = 1280
 height = 720
+formatsExcluded = 0x033
 overwriteWidth = 2560
 overwriteHeight = 1440
 
