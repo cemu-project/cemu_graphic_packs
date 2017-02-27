@@ -1,0 +1,19 @@
+# Found by sunbroDave
+# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
+name = "Xenoblade Chronicles X - High Res Shadows"
+
+[TextureRedefine] #XCX shadow
+width = 1024
+height = 1024
+formats = 0x005
+#overwriteWidth = 2048
+#overwriteHeight = 2048
+	
+[TextureRedefine] #XCX Medium distance shadow	
+width = 512
+height = 512
+formats = 0x005	
+#overwriteWidth = 1024
+#overwriteHeight = 1024
