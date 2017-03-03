@@ -1,0 +1,15 @@
+[Definition]# USA title		# Set GPU buffer accuracy to High
+titleIds = 50000101ffc00 #		
+name = "Ghost Blade HD  - 3x scale (2160p)" #		
+		
+[TextureRedefine] # internal resolution x3
+width =	1280	#
+height = 	720	#
+overwriteWidth = 	3840	#
+overwriteHeight = 	2160	#
+
+[TextureRedefine] # gamepad view resolution. No point in rendering, just mirrors screen. 
+width =	854	#
+height =	480	#
+overwriteWidth =	256 #Nearest integer
+overwriteHeight =	144	#
