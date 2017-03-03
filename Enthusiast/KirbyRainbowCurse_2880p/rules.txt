@@ -2,83 +2,64 @@
 titleIds = 00050000101abc00,
 name = "Kirby and the Rainbow Curse - 2880p (5K)"
 
-
-
 [TextureRedefine] # tv
-
 width = 1024
 height = 576
 overwriteWidth = 5120
 overwriteHeight = 2880
 
 [TextureRedefine] # tv
-
 width = 1025
 height = 577
 overwriteWidth = 5125
-
 overwriteHeight = 2885
 
-[TextureRedefine] # tv
- ui 1
+[TextureRedefine] # tv ui 1
 width = 1280
 height = 720
 formatsExcluded = 0x41a,0x034
 overwriteWidth = 5120
 overwriteHeight = 2880
 
-[TextureRedefine] # tv
- ui 2
+[TextureRedefine] # tv ui 2
 width = 1281
 height = 721
 formatsExcluded = 0x41a,0x034
 overwriteWidth = 5124
-
 overwriteHeight = 2884
-
 
 [TextureRedefine] # half-res
 width = 512
 height = 288
 overwriteWidth = 2560
-
 overwriteHeight = 1440
 
 [TextureRedefine] # q-res
 width = 256
 height = 144
 overwriteWidth = 1280
-
 overwriteHeight = 720
 
-[TextureRedefine] # gamepad
-
-1width = 854
-
+[TextureRedefine] # gamepad 1
+width = 854
 height = 480
-
 overwriteWidth = 2560
-
 overwriteHeight = 1440
 
 [TextureRedefine] # gamepad
-
 width = 855
 height = 481
 overwriteWidth = 2563
-
 overwriteHeight = 1442
 
 [TextureRedefine] # gamepad half-res
 width = 427
 height = 240
 overwriteWidth = 1280
-
 overwriteHeight = 719
 
 [TextureRedefine] # gamepad q-res
 width = 213
 height = 120
 overwriteWidth = 639
-
 overwriteHeight = 360

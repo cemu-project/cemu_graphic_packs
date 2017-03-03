@@ -2,40 +2,31 @@
 titleIds = 00050000101abc00,
 name = "Kirby and the Rainbow Curse - 1440p (2K)"
 
-
-
 [TextureRedefine] # tv
-
 width = 1024
 height = 576
 overwriteWidth = 2048
 overwriteHeight = 1152
 
 [TextureRedefine] # tv
-
 width = 1025
 height = 577
 overwriteWidth = 2050
-
 overwriteHeight = 1154
 
-[TextureRedefine] # tv
- ui 1
+[TextureRedefine] # tv ui 1
 width = 1280
 height = 720
 formatsExcluded = 0x41a,0x034
 overwriteWidth = 2560
 overwriteHeight = 1440
 
-[TextureRedefine] # tv
- ui 2
+[TextureRedefine] # tv ui 2
 width = 1281
 height = 721
 formatsExcluded = 0x41a,0x034
 overwriteWidth = 2562
-
 overwriteHeight = 1442
-
 
 [TextureRedefine] # half-res
 width = 512
@@ -47,5 +38,4 @@ overwriteHeight = 578
 width = 256
 height = 144
 overwriteWidth = 513
-
 overwriteHeight = 289

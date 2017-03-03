@@ -50,13 +50,13 @@ overwriteHeight = 240
 [TextureRedefine] # shadows
 width = 1024
 height = 1024
-formatsExcluded = 0x008,0x41A,0x033,0x034,0x035,0x431,0x235,0x433 # exclude everything but shadowmap
+formats = 0x005
 overwriteWidth = 512
 overwriteHeight = 512
 
 [TextureRedefine] # shadows
 width = 2048
 height = 2048
-formatsExcluded = 0x008,0x41A,0x033,0x034,0x035,0x431,0x235,0x433 # exclude everything but shadowmap
+formats = 0x005
 overwriteWidth = 1024
 overwriteHeight = 1024
