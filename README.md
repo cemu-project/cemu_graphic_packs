@@ -11,6 +11,7 @@
 - FAST Racing NEO
 - Guacamelee! Super Turbo Championship Edition
 - Kamen Rider - Battride War II
+- Kirby and the Rainbow Curse
 - Mario & Sonic at the Rio 2016 Olympic Games
 - Mario & Sonic at the Sochi 2014 Olympic Winter Games
 - Mario Kart 8
@@ -34,6 +35,7 @@
 - Super Mario 3D World
 - Super Smash Bros.
 - Tekken Tag Tournament 2: Wii U Edition
+- The Legend of Zelda: Breath of the Wild
 - The Legend of Zelda: The Wind Waker HD
 - The Legend of Zelda: Twilight Princess HD
 - TNT Racers Nitro Machines Edition
