@@ -11,7 +11,7 @@ overwriteHeight = 2880
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A # exclude obvious textures
+formatsExcluded = 0x41A, 0x033, 0x001  # exclude obvious textures, dialog fade screen,  Intro movie partial fix 
 overwriteWidth = 2560
 overwriteHeight = 1440
 
@@ -33,11 +33,11 @@ height = 240
 overwriteWidth = 1704
 overwriteHeight = 960
 
-[TextureRedefine] # gamepad
+[TextureRedefine] # gamepad, scale in proportion to tv or probe list view breaks
 width = 854
 height = 480
-overwriteWidth = 2560
-overwriteHeight = 1440
+overwriteWidth = 3413
+overwriteHeight = 1920
 
 // vvvv credits to Getdls & GITech vvvv //
 
