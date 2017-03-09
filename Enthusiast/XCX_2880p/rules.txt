@@ -5,13 +5,14 @@ name = "Xenoblade Chronicles X - 2880p (5K)"
 [TextureRedefine] # tv
 width = 1280
 height = 720
+formatsExcluded = 0x001	 # intro FMV background
 overwriteWidth = 5120
 overwriteHeight = 2880
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A, 0x033, 0x001  # exclude obvious textures, dialog fade screen,  Intro movie partial fix 
+formatsExcluded = 0x41A,0x033,0x001,0x432  # exclude obvious textures, dialog fade screen,  Intro movie partial fix, NLA logo
 overwriteWidth = 2560
 overwriteHeight = 1440
 
