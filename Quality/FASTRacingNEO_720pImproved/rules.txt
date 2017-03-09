@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 500001012f000,ffffffff057b4449
+name = "FAST Racing NEO - Improved 720p"
+
+[TextureRedefine] # Half-width 1
+width = 640
+height = 720
+overwriteWidth = 1280
+overwriteHeight = 720
+
+[TextureRedefine] # Half-width 2
+width = 320
+height = 360
+overwriteWidth = 640
+overwriteHeight = 360

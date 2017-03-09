@@ -9,6 +9,7 @@
 - DuckTales Remastered
 - Family Tennis SP
 - FAST Racing NEO
+- Ghost Blade HD
 - Guacamelee! Super Turbo Championship Edition
 - Kamen Rider - Battride War II
 - Kirby and the Rainbow Curse

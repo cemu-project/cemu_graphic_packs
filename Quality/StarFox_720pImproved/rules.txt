@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 00050000101BEB00,00050000101BEC00,00050000101BED00,00050000101AFF00,00050000101B0400,00050000101B0500
+name = "Star Fox Zero + Star Fox Guard - Improved 720p"
+
+[TextureRedefine] # tv
+width = 1152
+height = 720
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 1280
+overwriteHeight = 720
