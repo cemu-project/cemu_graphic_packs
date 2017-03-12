@@ -39,6 +39,7 @@
 - The Legend of Zelda: Breath of the Wild
 - The Legend of Zelda: The Wind Waker HD
 - The Legend of Zelda: Twilight Princess HD
+- The Wonderful 101
 - TNT Racers Nitro Machines Edition
 - Tokyo Mirage Sessions ♯FE
 - Wipeout 3
