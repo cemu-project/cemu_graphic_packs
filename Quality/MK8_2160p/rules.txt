@@ -18,6 +18,14 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1080
 
+# Quarter Res Alpha (motion blur effect around edges of screen)
+[TextureRedefine]
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 960
+overwriteHeight = 540
+
 # Multiplayer-Mode Resolution (2p)
 [TextureRedefine]
 width = 640
@@ -33,6 +41,14 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 960
 overwriteHeight = 1080
+
+# Multiplayer-Mode Quarter Res Alpha (2p)
+[TextureRedefine]
+width = 160
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 540
 
 # MKTV output
 [TextureRedefine]
@@ -57,3 +73,11 @@ height = 268
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1440
 overwriteHeight = 804
+
+# MKTV quarter res alpha
+[TextureRedefine]
+width = 240
+height = 134
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 720
+overwriteHeight = 402

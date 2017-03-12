@@ -62,17 +62,17 @@ overwriteHeight = 225
 [TextureRedefine] # q-res (zoomed in)
 width = 282
 height = 180
-overwriteWidth = 353
+overwriteWidth = 352
 overwriteHeight = 225
 
 [TextureRedefine] # q-res (zoom transition)
 width = 250
 height = 150
-overwriteWidth = 313
-overwriteHeight = 188
+overwriteWidth = 312
+overwriteHeight = 187
 
 [TextureRedefine] # q-res (zoom transition 2)
 width = 250
 height = 180
-overwriteWidth = 313
+overwriteWidth = 312
 overwriteHeight = 225

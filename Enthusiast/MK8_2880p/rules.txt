@@ -18,6 +18,14 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 2560
 overwriteHeight = 1440
 
+# Quarter Res Alpha (motion blur effect around edges of screen)
+[TextureRedefine]
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 1280
+overwriteHeight = 720
+
 # Multiplayer-Mode Resolution (2p)
 [TextureRedefine]
 width = 640
@@ -33,6 +41,14 @@ height = 360
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 1440
+
+# Multiplayer-Mode Quarter Res Alpha (2p)
+[TextureRedefine]
+width = 160
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 640
+overwriteHeight = 720
 
 # MKTV output
 [TextureRedefine]
@@ -58,8 +74,16 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1074
 
+# MKTV quarter res alpha
+[TextureRedefine]
+width = 240
+height = 134
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 960
+overwriteHeight = 537
+
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-overwriteWidth = 2562
+overwriteWidth = 2560
 overwriteHeight = 1440
