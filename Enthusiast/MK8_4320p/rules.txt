@@ -74,14 +74,6 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 2880
 overwriteHeight = 1608
 
-# MKTV quarter res alpha
-[TextureRedefine]
-width = 240
-height = 134
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1440
-overwriteHeight = 804
-
 [TextureRedefine] # gamepad
 width = 854
 height = 480

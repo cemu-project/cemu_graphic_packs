@@ -73,11 +73,3 @@ height = 268
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 3840
 overwriteHeight = 2144
-
-# MKTV quarter res alpha
-[TextureRedefine]
-width = 240
-height = 134
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1920
-overwriteHeight = 1072

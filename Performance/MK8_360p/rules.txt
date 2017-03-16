@@ -80,14 +80,6 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 240
 overwriteHeight = 134
 
-# MKTV quarter res alpha
-[TextureRedefine]
-width = 240
-height = 134
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 120
-overwriteHeight = 67
-
 [TextureRedefine] # shadows
 width = 1024
 height = 1024
