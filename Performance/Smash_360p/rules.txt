@@ -8,18 +8,47 @@ height = 1080
 overwriteWidth = 640
 overwriteHeight = 360
 
-[TextureRedefine] # shadows
-width = 512
-height = 512
-formats = 0x00f,0x00b
-overwriteWidth = 256
-overwriteHeight = 256
+[TextureRedefine] # half-res
+width = 960
+height = 540
+overwriteWidth = 
+overwriteHeight = 
 
-[TextureRedefine] # boxing ring screen
-width = 220
-height = 124
-overwriteWidth = 0
-overwriteHeight = 0
+[TextureRedefine] # q-res
+width = 480
+height = 270
+overwriteWidth = 
+overwriteHeight = 
+
+[TextureRedefine] # o-res 
+width = 240
+height = 135
+overwriteWidth = 
+overwriteHeight = 
+
+[TextureRedefine] # half-res 2
+width = 120
+height = 67
+overwriteWidth = 
+overwriteHeight = 
+
+[TextureRedefine] # q-res 2
+width = 60
+height = 33
+overwriteWidth = 
+overwriteHeight = 
+
+[TextureRedefine] # o-res 2
+width = 30
+height = 16
+overwriteWidth = 
+overwriteHeight = 
+
+[TextureRedefine] # o-res 3
+width = 8
+height = 1
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # 2nd
 width = 820
@@ -38,3 +67,16 @@ width = 420
 height = 210
 overwriteWidth = 210
 overwriteHeight = 105
+
+[TextureRedefine] # shadows
+width = 512
+height = 512
+formats = 0x00f,0x00b
+overwriteWidth = 256
+overwriteHeight = 256
+
+[TextureRedefine] # boxing ring screen
+width = 220
+height = 124
+overwriteWidth = 0
+overwriteHeight = 0

@@ -5,16 +5,60 @@ name = "The Legend of Zelda: Breath of the Wild - 1440p (2K) (Gamepad)"
 [TextureRedefine]
 width = 1280
 height = 720
+formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1440
 
-[TextureRedefine]
+[TextureRedefine] #TV2
+width = 1280
+height = 608
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 2560
+overwriteHeight = 1216
+
+[TextureRedefine] #half-res1
 width = 640
 height = 360
-overwriteWidth = 1280
-overwriteHeight = 720
+overwriteWidth = 1282
+overwriteHeight = 722
 
-[TextureRedefine]
+[TextureRedefine] #half-res2
+width = 640
+height = 290
+overwriteWidth = 1280
+overwriteHeight = 580
+
+[TextureRedefine] #half-res3
+width = 640
+height = 288
+overwriteWidth = 1280
+overwriteHeight = 576
+
+[TextureRedefine] #q-res1
+width = 320
+height = 180
+overwriteWidth = 641
+overwriteHeight = 361
+
+[TextureRedefine] #q-res2
+width = 320
+height = 145
+overwriteWidth = 641
+overwriteHeight = 291
+
+[TextureRedefine] #q-res3
+width = 320
+height = 144
+overwriteWidth = 641
+overwriteHeight = 289
+
+[TextureRedefine] #o-res1
+width = 160
+height = 90
+overwriteWidth = 321
+overwriteHeight = 181
+
+[TextureRedefine] #Gamepad
 width = 854
 height = 480
 overwriteWidth = 2560

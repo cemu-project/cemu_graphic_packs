@@ -8,6 +8,48 @@ height = 1080
 overwriteWidth = 3840
 overwriteHeight = 2160
 
+[TextureRedefine] # half-res
+width = 960
+height = 540
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine] # q-res
+width = 480
+height = 270
+overwriteWidth = 962
+overwriteHeight = 542
+
+[TextureRedefine] # o-res 
+width = 240
+height = 135
+overwriteWidth = 481
+overwriteHeight = 271
+
+[TextureRedefine] # half-res 2
+width = 120
+height = 67
+overwriteWidth = 240
+overwriteHeight = 134
+
+[TextureRedefine] # q-res 2
+width = 60
+height = 33
+overwriteWidth = 120
+overwriteHeight = 66
+
+[TextureRedefine] # o-res 2
+width = 30
+height = 16
+overwriteWidth = 60
+overwriteHeight = 32
+
+[TextureRedefine] # o-res 3
+width = 8
+height = 1
+overwriteWidth = 16
+overwriteHeight = 2
+
 [TextureRedefine] # 2nd
 width = 820
 height = 410

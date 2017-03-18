@@ -1,69 +1,69 @@
 [Definition]
-titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
-name = "Super Smash Bros. - 900p"
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00
+name = "Super Smash Bros. - 4320p (8K)"
 
 [TextureRedefine] # tv
 width = 1920
 height = 1080
-overwriteWidth = 1600
-overwriteHeight = 900
+overwriteWidth = 7680
+overwriteHeight = 4320
 
 [TextureRedefine] # half-res
 width = 960
 height = 540
-overwriteWidth = 800
-overwriteHeight = 450
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine] # q-res
 width = 480
 height = 270
-overwriteWidth = 400
-overwriteHeight = 225
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # o-res 
 width = 240
 height = 135
-overwriteWidth = 200
-overwriteHeight = 113
+overwriteWidth = 960
+overwriteHeight = 540
 
 [TextureRedefine] # half-res 2
 width = 120
 height = 67
-overwriteWidth = 100
-overwriteHeight = 56
+overwriteWidth = 480
+overwriteHeight = 268
 
 [TextureRedefine] # q-res 2
 width = 60
 height = 33
-overwriteWidth = 50
-overwriteHeight = 23
+overwriteWidth = 240
+overwriteHeight = 132
 
 [TextureRedefine] # o-res 2
 width = 30
 height = 16
-overwriteWidth = 25
-overwriteHeight = 13
+overwriteWidth = 120
+overwriteHeight = 64
 
 [TextureRedefine] # o-res 3
 width = 8
 height = 1
-overwriteWidth = 7
-overwriteHeight = 1
+overwriteWidth = 32
+overwriteHeight = 4
 
 [TextureRedefine] # 2nd
 width = 820
 height = 410
-overwriteWidth = 683
-overwriteHeight = 342
+overwriteWidth = 3280
+overwriteHeight = 1640
 
 [TextureRedefine] # 3rd
 width = 730
 height = 365
-overwriteWidth = 608
-overwriteHeight = 304
+overwriteWidth = 2920
+overwriteHeight = 1460
 
 [TextureRedefine] # 4th
 width = 420
 height = 210
-overwriteWidth = 350
-overwriteHeight = 175
+overwriteWidth = 1680
+overwriteHeight = 840
