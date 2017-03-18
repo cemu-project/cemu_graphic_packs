@@ -16,11 +16,11 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1216
 
-[TextureRedefine] #half-res1
-width = 640
-height = 360
-overwriteWidth = 1282
-overwriteHeight = 722
+#[TextureRedefine] #half-res1
+#width = 640
+#height = 360
+#overwriteWidth = 1282
+#overwriteHeight = 722
 
 [TextureRedefine] #half-res2
 width = 640
