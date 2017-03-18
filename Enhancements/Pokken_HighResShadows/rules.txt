@@ -1,0 +1,11 @@
+# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
+[Definition]
+titleIds = 50000101df400
+name = "Pokken Tournament - High Res Shadows"
+
+[TextureRedefine]
+width = 512
+height = 512
+formats = 0x005
+overwriteWidth = 1024
+overwriteHeight = 1024
