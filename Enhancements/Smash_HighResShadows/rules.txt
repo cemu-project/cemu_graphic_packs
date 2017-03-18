@@ -9,3 +9,10 @@ height = 512
 formats = 0x00f,0x00b
 overwriteWidth = 1024
 overwriteHeight = 1024
+
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 2048
+overwriteHeight = 2048
