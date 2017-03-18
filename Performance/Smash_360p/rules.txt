@@ -79,8 +79,8 @@ overwriteHeight = 256
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = 2048
-overwriteHeight = 2048
+overwriteWidth = 512
+overwriteHeight = 512
 
 [TextureRedefine] # boxing ring screen
 width = 220
