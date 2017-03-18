@@ -16,7 +16,7 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 3840
 overwriteHeight = 1824
 
-[TextureRedefine] #half-res1
+[TextureRedefine] #half-res1, soft pass toon shader, 
 width = 640
 height = 360
 overwriteWidth = 1920
@@ -34,9 +34,10 @@ height = 288
 overwriteWidth = 1920
 overwriteHeight = 864
 
-[TextureRedefine] #q-res1
+[TextureRedefine] #q-res1 Main bloom pass, AO 
 width = 320
 height = 180
+#formatsExcluded = 0x816  #upscale of bloom may oversharpen	
 overwriteWidth = 960
 overwriteHeight = 540
 
@@ -52,8 +53,16 @@ height = 144
 overwriteWidth = 960
 overwriteHeight = 432
 
-[TextureRedefine] #o-res1
+[TextureRedefine] #o-res1 medium bloom pass
 width = 160
 height = 90
+#formatsExcluded = 0x816  #upscale of bloom may oversharpen	
 overwriteWidth = 480
 overwriteHeight = 270
+
+[TextureRedefine] # low detail bloom pass	
+width =	40
+height =	22
+#formatsExcluded = 0x816  #upscale of bloom may oversharpen	
+overwriteWidth =	120
+overwriteHeight =	68
