@@ -41,3 +41,10 @@ height = 240
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 212
 overwriteHeight = 120
+
+[TextureRedefine]
+width = 2048
+height = 2048
+formats = 0x005
+overwriteWidth = 1024
+overwriteHeight = 1024
