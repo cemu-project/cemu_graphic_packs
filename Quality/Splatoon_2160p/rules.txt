@@ -20,3 +20,21 @@ width = 1024
 height = 576
 overwriteWidth = 3072
 overwriteHeight = 1728
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # multiplayer
+width = 848
+height = 480
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+overwriteWidth = 1920
+overwriteHeight = 1080
