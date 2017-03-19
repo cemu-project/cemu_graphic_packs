@@ -20,3 +20,17 @@ width = 848
 height = 480
 overwriteWidth = 2560
 overwriteHeight = 1440
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 1280
+overwriteHeight = 720
+
+[TextureRedefine] # half-res alpha (gamepad)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 1280
+overwriteHeight = 720
