@@ -25,6 +25,7 @@
 - Phineas and Ferb: Quest for Cool Stuff
 - Pikmin 3
 - Pokkén Tournament
+- Scribblenauts Unlimited and Unmasked
 - Severed
 - Shovel Knight
 - Sonic Boom: Rise of Lyric
