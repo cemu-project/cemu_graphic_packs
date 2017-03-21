@@ -1,0 +1,12 @@
+[Definition]# All titles	# Set GPU buffer accuracy to High
+titleIds = 0005000010132d00,000500001010b200,000500001010f900,0005000010111e00,0005000010132c00,0005000010132d00 #		
+name = "Scribblenauts Unlimited and Unmasked - 3x scale (2160p)" #		
+		
+
+[TextureRedefine] # 2D games, clean upscaling and rotations
+width =			1280	
+height = 		720	
+formatsExcluded = 	0x001 # FMV
+overwriteWidth = 	3840	
+overwriteHeight = 	2160	
+
