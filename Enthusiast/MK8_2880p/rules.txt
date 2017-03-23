@@ -73,9 +73,3 @@ height = 268
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1074
-
-[TextureRedefine] # gamepad
-width = 854
-height = 480
-overwriteWidth = 2560
-overwriteHeight = 1440
