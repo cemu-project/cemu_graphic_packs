@@ -1,0 +1,36 @@
+[Definition]
+titleIds = 0005000010101F00,0005000010102000,0005000010102100
+name = "Nintendo Land - 2880p (5K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+textures = 0x1f712000
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine] # gamepad
+width = 848
+height = 480
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # half-res alpha (gamepad)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 2560
+overwriteHeight = 1440
