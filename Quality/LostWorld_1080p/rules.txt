@@ -8,8 +8,26 @@ height = 720
 overwriteWidth = 1920
 overwriteHeight = 1080
 
-[TextureRedefine]
-width = 640
-height = 360
-overwriteWidth = 960
-overwriteHeight = 540
+#[TextureRedefine]
+#width = 640
+#height = 360
+#overwriteWidth = 960
+#overwriteHeight = 540
+
+#[TextureRedefine]
+#width = 320
+#height = 180
+#overwriteWidth = 480
+#overwriteHeight = 270
+
+#[TextureRedefine]
+#width = 160
+#height = 90
+#overwriteWidth = 240
+#overwriteHeight = 135
+
+#[TextureRedefine]
+#width = 32
+#height = 32
+#overwriteWidth = 48
+#overwriteHeight = 48
