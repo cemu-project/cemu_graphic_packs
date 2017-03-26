@@ -7,3 +7,23 @@ width = 1280
 height = 720
 overwriteWidth = 3840
 overwriteHeight = 2160
+
+[TextureRedefine] # AA pass, shadows viewport		
+width =	640	
+height =	360	
+overwriteWidth =	1920	
+overwriteHeight =	1080	
+		
+[TextureRedefine] # 		
+width =	320	
+height =	180	
+overwriteWidth =	960	
+overwriteHeight =	540	
+		
+##Textures		
+[TextureRedefine] # Dynamic shadows texture 3d overworld		
+width = 	1024	
+height = 	1024	
+formats = 0x005 		#0x034 static shadow texture, don't scale
+overwriteWidth = 	2048	
+overwriteHeight = 	2048	
