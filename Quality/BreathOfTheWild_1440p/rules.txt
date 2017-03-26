@@ -34,12 +34,12 @@ height = 288
 overwriteWidth = 1280
 overwriteHeight = 576
 
-[TextureRedefine] #q-res1, main bloom, AO
-width = 320
-height = 180
+#[TextureRedefine] #q-res1, main bloom, AO
+#width = 320
+#height = 180
 #formatsExcluded = 0x816  #upscale of bloom may oversharpen
-overwriteWidth = 640      # nearest integer
-overwriteHeight = 360
+#overwriteWidth = 640      # nearest integer
+#overwriteHeight = 360
 
 [TextureRedefine] #q-res2
 width = 320

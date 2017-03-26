@@ -34,11 +34,11 @@ height = 288
 overwriteWidth = 960
 overwriteHeight = 432
 
-[TextureRedefine] #q-res1
-width = 320
-height = 180
-overwriteWidth = 480
-overwriteHeight = 270
+#[TextureRedefine] #q-res1
+#width = 320
+#height = 180
+#overwriteWidth = 480
+#overwriteHeight = 270
 
 [TextureRedefine] #q-res2
 width = 320
