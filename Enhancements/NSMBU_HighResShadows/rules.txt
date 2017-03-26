@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+name = "New Super Mario Bros. U + New Super Luigi U - 2160p (4K)"
+
+##Textures		
+[TextureRedefine] # Dynamic shadows texture 3d overworld		
+width = 	1024	
+height = 	1024	
+formats = 0x005 		#0x034 static shadow texture, don't scale
+overwriteWidth = 	2048	
+overwriteHeight = 	2048	
