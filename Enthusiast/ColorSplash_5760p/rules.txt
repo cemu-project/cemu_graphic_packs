@@ -5,7 +5,7 @@ name = "Paper Mario: Color Splash - 5760p (10K)"
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x431
+formatsExcluded = 0x431,0x001
 overwriteWidth = 10240
 overwriteHeight = 5760
 

@@ -17,7 +17,7 @@ overwriteHeight = 4616
 [TextureRedefine] # tv ui 1
 width = 1280
 height = 720
-formatsExcluded = 0x41a,0x034
+formatsExcluded = 0x41a,0x034,0x001
 overwriteWidth = 10240
 overwriteHeight = 5760
 
