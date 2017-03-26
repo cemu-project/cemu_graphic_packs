@@ -5,6 +5,6 @@ name = "Donkey Kong Country: Tropical Freeze - 1080p"
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x031,0x001 # exclude the intro background texture
+formatsExcluded = 0x031 # exclude the intro background texture
 overwriteWidth = 1920
 overwriteHeight = 1080
