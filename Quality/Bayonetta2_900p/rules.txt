@@ -5,6 +5,7 @@ name = "Bayonetta 1 + 2 - 900p"
 [TextureRedefine] # tv
 width = 1280
 height = 720
+formatsExcluded = 0x001 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
 overwriteWidth = 1600
 overwriteHeight = 900
 

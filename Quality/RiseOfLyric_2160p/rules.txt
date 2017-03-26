@@ -5,6 +5,6 @@ name = "Sonic Boom: Rise of Lyric - 2160p (4K)"
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x031
+formatsExcluded = 0x031,0x001
 overwriteWidth = 3840
 overwriteHeight = 2160
