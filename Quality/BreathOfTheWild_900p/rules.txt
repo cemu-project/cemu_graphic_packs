@@ -5,7 +5,7 @@ name = "The Legend of Zelda: Breath of the Wild - 900p"
 [TextureRedefine] #TV
 width = 1280
 height = 720
-formatsExcluded = 0x008 # exclude the intro background texture
+formatsExcluded = 0x008,0x001 # exclude the intro background texture
 overwriteWidth = 1600
 overwriteHeight = 900
 
@@ -16,11 +16,11 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 1600
 overwriteHeight = 760
 
-#[TextureRedefine] #half-res1
-#width = 640
-#height = 360
-#overwriteHeight = 800
-#overwriteHeight = 450
+[TextureRedefine] #half-res1
+width = 640
+height = 360
+overwriteHeight = 800
+overwriteHeight = 450
 
 [TextureRedefine] #half-res2
 width = 640
@@ -34,11 +34,11 @@ height = 288
 overwriteWidth = 800
 overwriteHeight = 360
 
-#[TextureRedefine] #q-res1
-#width = 320
-#height = 180
-#overwriteWidth = 400
-#overwriteHeight = 225
+[TextureRedefine] #q-res1
+width = 320
+height = 180
+overwriteWidth = 400
+overwriteHeight = 225
 
 [TextureRedefine] #q-res2
 width = 320
