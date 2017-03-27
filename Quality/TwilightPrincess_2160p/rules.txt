@@ -1,9 +1,39 @@
-[Definition]
-titleIds = 000500001019C800,000500001019E600,000500001019E500
-name = "Twilight Princess HD - 2160p (4K)"
-
-[TextureRedefine] # tv
-width = 1920
-height = 1080
-overwriteWidth = 3840
-overwriteHeight = 2160
+[Definition]		
+titleIds = 000500001019C800,000500001019E600,000500001019E500		
+name ="Twilight Princess HD 	2160p"	
+		
+[TextureRedefine] # 
+width =	1920	
+height = 	1080	
+formatsExcluded = 0x41A # exclude the intro background texture 		
+overwriteWidth = 	3840	
+overwriteHeight = 	2160	
+		
+#[TextureRedefine] # gamepad view 		
+#width =	854	
+#height =	480	
+#formatsExcluded = 		
+#overwriteWidth =	1707	#Nearest integer
+#overwriteHeight =	960	
+		
+[TextureRedefine] # Blur, bloom		
+width =	960	
+height =	540	
+#formatsExcluded = 		
+overwriteWidth =	1920	
+overwriteHeight =	1080	
+		
+#[TextureRedefine] #colour grading		
+#width =	480	
+#height =	270	
+#formats = 0x01a		
+#overwriteWidth =	960	#Nearest integer
+#overwriteHeight =	540	
+		
+##Textures		
+[TextureRedefine] # Link shadow n light		
+width = 	384	
+height = 	384	
+formats = 0x01a		
+overwriteWidth = 	1536	
+overwriteHeight = 	1536	
