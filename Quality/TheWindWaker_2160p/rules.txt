@@ -16,31 +16,31 @@ overwriteHeight = 	2160
 #overwriteWidth =	1707
 #overwriteHeight =	960
 	
-[TextureRedefine] # Blur, bloom	
-width =	960
+#[TextureRedefine] # Blur, bloom	
+#width =	960
 height =	540
 #formatsExcluded = 	
-overwriteWidth =	1920
-overwriteHeight =	1080
+#overwriteWidth =	1920
+#overwriteHeight =	1080
 	
-[TextureRedefine] # AO	
-width =	240
-height =	135
+#[TextureRedefine] # AO	
+#width =	240
+#height =	135
 #formatsExcluded =	
-overwriteWidth =	480
-overwriteHeight =	270
+#overwriteWidth =	480
+#overwriteHeight =	270
 	
-[TextureRedefine] # AO	
-width =	480
-height =	240
+#[TextureRedefine] # AO	
+#width =	480
+#height =	240
 #formatsExcluded =	
-overwriteWidth =	960
-overwriteHeight =	480
+#overwriteWidth =	960
+#overwriteHeight =	480
 	
 ##Textures	
-[TextureRedefine] # 3 lod shadows	
-width = 	1024
-height = 	1024
-formats = 0x005 	
-overwriteWidth = 	2048
-overwriteHeight = 	2048
+#[TextureRedefine] # 3 lod shadows	
+#width = 	1024
+#height = 	1024
+#formats = 0x005 	
+#overwriteWidth = 	2048
+#overwriteHeight = 	2048
