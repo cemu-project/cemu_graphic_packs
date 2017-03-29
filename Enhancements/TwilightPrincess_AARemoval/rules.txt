@@ -1,0 +1,3 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "Twilight Princess HD - AA Removal"

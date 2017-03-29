@@ -1,0 +1,3 @@
+[Definition]
+titleIds = 0005000010137F00,0005000010138300,0005000010144800
+name = "Donkey Kong Country: Tropical Freeze - AA Removal"

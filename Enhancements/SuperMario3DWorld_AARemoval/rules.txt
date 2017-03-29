@@ -1,0 +1,3 @@
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100
+name = "Super Mario 3D World - AA Removal"
