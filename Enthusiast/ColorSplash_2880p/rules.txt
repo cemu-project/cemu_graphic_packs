@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 500001f600a00,500001f600b00
+titleIds = 500001f600900,500001f600a00,500001f600b00
 name = "Paper Mario: Color Splash - 2880p (5K)"
 
 [TextureRedefine]
