@@ -15,6 +15,12 @@ height = 480
 overwriteWidth = 427
 overwriteHeight = 240
 
+[TextureRedefine] # character select (legends showdown)
+width = 708
+height = 624
+overwriteWidth = 531
+overwriteHeight = 468
+
 [TextureRedefine] # character select (1 character)
 width = 601
 height = 624

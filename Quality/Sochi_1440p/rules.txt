@@ -9,6 +9,12 @@ formatsExcluded = 0x031,0x001 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1440
 
+[TextureRedefine] # character select (legends showdown)
+width = 708
+height = 624
+overwriteWidth = 1416
+overwriteHeight = 1248
+
 [TextureRedefine] # character select (1 character)
 width = 601
 height = 624
