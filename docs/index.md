@@ -66,7 +66,7 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 
 ### I need help!
 
-Feel free to ask for help at one of the [Cemu communities](http://cemu.info/community.html) or the #gfx-packs channel in the [official Cemu Discord](https://www.patreon.com/posts/cemu-official-8483901). (Just please don't ping slashiee for anything related to BotW and Graphic Packs..please don't.)
+Feel free to ask for help at one of the [Cemu communities](http://cemu.info/community.html) or the #gfx_packs channel in the [official Cemu Discord](https://www.patreon.com/posts/cemu-official-8483901). (Just please don't ping slashiee about anything related to BotW and Graphic Packs..please don't.)
 
 ### Want to contribute?
 
