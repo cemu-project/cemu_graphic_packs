@@ -1,4 +1,6 @@
-## What's recommended?
+## Cemu Graphic Packs
+
+### What's recommended?
 
 If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_packs/tree/master/Quality) is the way to go.
 
