@@ -1,49 +1,50 @@
 # Supported Games
-- Batman Arkham City Armored Edition
-- Bayonetta
-- Bayonetta 2
-- Brunswick Pro Bowling
-- Captain Toad: Treasure Tracker
-- Citizens Of Earth
-- Donkey Kong Country: Tropical Freeze
-- DuckTales Remastered
-- Family Tennis SP
-- FAST Racing NEO
+- [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
+- [Bayonetta](http://compat.cemu.info/wiki/Bayonetta)
+- [Bayonetta 2](http://compat.cemu.info/wiki/Bayonetta_2)
+- [Brunswick Pro Bowling](http://compat.cemu.info/wiki/Brunswick_Pro_Bowling)
+- [Captain Toad: Treasure Tracker](http://compat.cemu.info/wiki/Captain_Toad:_Treasure_Tracker)
+- [Citizens Of Earth](http://compat.cemu.info/wiki/Citizens_of_Earth)
+- [Donkey Kong Country: Tropical Freeze](http://compat.cemu.info/wiki/Donkey_Kong_Country:_Tropical_Freeze)
+- [DuckTales Remastered](http://compat.cemu.info/wiki/DuckTales_Remastered)
+- [Family Tennis SP](http://compat.cemu.info/wiki/Family_Tennis_SP)
+- [FAST Racing NEO](http://compat.cemu.info/wiki/Fast_Racing_Neo)
 - Ghost Blade HD
-- Guacamelee! Super Turbo Championship Edition
-- Kamen Rider - Battride War II
-- Kirby and the Rainbow Curse
-- Mario & Sonic at the Rio 2016 Olympic Games
-- Mario & Sonic at the Sochi 2014 Olympic Winter Games
-- Mario Kart 8
-- Mighty No. 9
-- New Super Luigi U
-- New Super Mario Bros. U
-- Nintendo Land
-- One Piece: Unlimited World Red
-- Paper Mario: Color Splash
-- Phineas and Ferb: Quest for Cool Stuff
-- Pikmin 3
-- Pokkén Tournament
-- Scribblenauts Unlimited and Unmasked
-- Severed
-- Shovel Knight
-- Sonic Boom: Rise of Lyric
-- Sonic Lost World
-- Splatoon
-- SpongeBob SquarePants: Plankton's Robotic Revenge
-- Star Fox Guard
-- Star Fox Zero
-- Super Mario 3D World
-- Super Smash Bros.
-- Tekken Tag Tournament 2: Wii U Edition
-- The Legend of Zelda: Breath of the Wild
-- The Legend of Zelda: The Wind Waker HD
-- The Legend of Zelda: Twilight Princess HD
-- The Wonderful 101
-- TNT Racers Nitro Machines Edition
-- Tokyo Mirage Sessions ♯FE
-- Wipeout 3
-- Wipeout Create & Crash
-- Xenoblade Chronicles X
-- Yoshi's Woolly World
+- [Guacamelee! Super Turbo Championship Edition](http://compat.cemu.info/wiki/Guacamelee:_Super_Turbo_Championship_Edition)
+- [Kamen Rider - Battride War II](http://compat.cemu.info/wiki/Kamen_Rider:_Battride_War_II)
+- [Kirby and the Rainbow Curse](http://compat.cemu.info/wiki/Kirby_and_the_Rainbow_Curse)
+- [Mario & Sonic at the Rio 2016 Olympic Games](http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Rio_2016_Olympic_Games)
+- [Mario & Sonic at the Sochi 2014 Olympic Winter Games](http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Sochi_2014_Olympic_Winter_Games)
+- [Mario Kart 8](http://compat.cemu.info/wiki/Mario_Kart_8)
+- [Mighty No. 9](http://compat.cemu.info/wiki/Mighty_No._9)
+- [New Super Luigi U](http://compat.cemu.info/wiki/New_Super_Luigi_U)
+- [New Super Mario Bros. U](http://compat.cemu.info/wiki/New_Super_Mario_Bros._U)
+- [Nintendo Land](http://compat.cemu.info/wiki/Nintendo_Land)
+- [One Piece: Unlimited World Red](http://compat.cemu.info/wiki/One_Piece:_Unlimited_World_Red)
+- [Paper Mario: Color Splash](http://compat.cemu.info/wiki/Paper_Mario:_Color_Splash)
+- [Phineas and Ferb: Quest for Cool Stuff](http://compat.cemu.info/wiki/Phineas_and_Ferb:_Quest_for_Cool_Stuff)
+- [Pikmin 3](http://compat.cemu.info/wiki/Pikmin_3)
+- [Pokkén Tournament](http://compat.cemu.info/wiki/Pokk%C3%A9n_Tournament)
+- [Scribblenauts Unlimited](http://compat.cemu.info/wiki/Scribblenauts_Unlimited)
+- [Scribblenauts Unmasked: A DC Comics Adventure](http://compat.cemu.info/wiki/Scribblenauts_Unmasked:_A_DC_Comics_Adventure)
+- [Severed](http://compat.cemu.info/wiki/Severed)
+- [Shovel Knight](http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows)
+- [Sonic Boom: Rise of Lyric](http://compat.cemu.info/wiki/Sonic_Boom:_Rise_of_Lyric)
+- [Sonic Lost World](http://compat.cemu.info/wiki/Sonic_Lost_World)
+- [Splatoon](http://compat.cemu.info/wiki/Splatoon)
+- [SpongeBob SquarePants: Plankton's Robotic Revenge](http://compat.cemu.info/wiki/Spongebob_Squarepants:_Plankton's_Robotic_Revenge)
+- [Star Fox Guard](http://compat.cemu.info/wiki/Star_Fox_Guard)
+- [Star Fox Zero](http://compat.cemu.info/wiki/Star_Fox_Zero)
+- [Super Mario 3D World](http://compat.cemu.info/wiki/Super_Mario_3D_World)
+- [Super Smash Bros.](http://compat.cemu.info/wiki/Super_Smash_Bros._U)
+- [Tekken Tag Tournament 2: Wii U Edition](http://compat.cemu.info/wiki/Tekken_Tag_Tournament_2)
+- [The Legend of Zelda: Breath of the Wild](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild)
+- [The Legend of Zelda: The Wind Waker HD](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_The_Wind_Waker_HD)
+- [The Legend of Zelda: Twilight Princess HD](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Twilight_Princess_HD)
+- [The Wonderful 101](http://compat.cemu.info/wiki/The_Wonderful_101)
+- [TNT Racers Nitro Machines Edition](http://compat.cemu.info/wiki/TNT_Racers_Nitro_Machines_Edition)
+- [Tokyo Mirage Sessions ♯FE](http://compat.cemu.info/wiki/Tokyo_Mirage_Sessions_#FE)
+- [Wipeout 3](http://compat.cemu.info/wiki/Wipeout_3)
+- [Wipeout Create & Crash](http://compat.cemu.info/wiki/Wipeout:_Create_&_Crash)
+- [Xenoblade Chronicles X](http://compat.cemu.info/wiki/Xenoblade_Chronicles_X)
+- [Yoshi's Woolly World](http://compat.cemu.info/wiki/Yoshi's_Woolly_World)
