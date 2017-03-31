@@ -1,7 +1,3 @@
-## Community-Made Graphic Packs for Cemu 1.7.0+
-
-uiogdfiougiopsdfgsdfbiopg
-
 ### Supported Games
 
 - [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
