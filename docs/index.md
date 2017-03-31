@@ -12,7 +12,7 @@ If you want to enhance your game experience, [Enhancement](https://github.com/sl
 
 If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/tree/master/Workaround) to see if there's a workaround for it.
 
-### Supported Games
+### Games with Graphic Packs
 
 - [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
 - [Bayonetta](http://compat.cemu.info/wiki/Bayonetta)
@@ -66,6 +66,6 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 
 ### Want to contribute?
 
-If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. Please make sure that you're using your fork of the repo.
+If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. Please make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
 
 If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so.
