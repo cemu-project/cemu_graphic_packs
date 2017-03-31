@@ -64,6 +64,8 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 - [Xenoblade Chronicles X](http://compat.cemu.info/wiki/Xenoblade_Chronicles_X)
 - [Yoshi's Woolly World](http://compat.cemu.info/wiki/Yoshi's_Woolly_World)
 
-### Want to help out?
+### Want to contribute?
 
-Coming soon™
+If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. Please make sure that you're using your fork of the repo.
+
+If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so.
