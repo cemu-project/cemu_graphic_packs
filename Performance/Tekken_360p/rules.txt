@@ -5,7 +5,7 @@ name = "TEKKEN TAG TOURNAMENT 2 - 360p"
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x033
+formatsExcluded = 0x033,0x001
 overwriteWidth = 640
 overwriteHeight = 360
 
