@@ -64,6 +64,10 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 - [Xenoblade Chronicles X](http://compat.cemu.info/wiki/Xenoblade_Chronicles_X)
 - [Yoshi's Woolly World](http://compat.cemu.info/wiki/Yoshi's_Woolly_World)
 
+### I need help!
+
+Feel free to ask for help at one of the [Cemu communities](http://cemu.info/community.html) or the #gfx-packs channel in the [official Cemu Discord](https://www.patreon.com/posts/cemu-official-8483901). (Just please don't ping slashiee for anything related to BotW and Graphic Packs..please don't.)
+
 ### Want to contribute?
 
 If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. Please make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
