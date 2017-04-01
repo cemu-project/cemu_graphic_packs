@@ -35,7 +35,6 @@ overwriteHeight = 1944
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
 [TextureRedefine] #half-res1, soft pass toon shader, 
->>>>>>> origin/master
 width = 640
 height = 360
 overwriteWidth = 1920
