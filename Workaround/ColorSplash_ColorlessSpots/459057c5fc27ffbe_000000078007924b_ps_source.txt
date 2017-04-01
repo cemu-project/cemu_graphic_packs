@@ -1,0 +1,122 @@
+#version 400
+#extension GL_ARB_texture_gather : enable
+// shader 459057c5fc27ffbe
+layout(std140) uniform uniformBlockPS7
+{
+vec4 uf_blockPS7[1024];
+};
+
+layout(std140) uniform uniformBlockPS8
+{
+vec4 uf_blockPS8[1024];
+};
+
+layout(std140) uniform uniformBlockPS9
+{
+vec4 uf_blockPS9[1024];
+};
+
+uniform sampler2D textureUnitPS1;// Tex1 addr 0xf4519800 res 1280x720x1 dim 1 tm: 4 format 021a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
+uniform sampler2D textureUnitPS2;// Tex2 addr 0x00000000 res 1280x720x1 dim 1 tm: 4 format 0011 compSel: 0 0 0 0 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 2 2 2 border: 0
+uniform sampler2D textureUnitPS4;// Tex4 addr 0xf4c23000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler4 ClampX/Y/Z: 2 2 2 border: 0
+uniform sampler2D textureUnitPS6;// Tex6 addr 0x4eefd800 res 1280x720x1 dim 1 tm: 4 format 0201 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler6 ClampX/Y/Z: 2 2 2 border: 0
+uniform samplerCubeArray textureUnitPS15;// Tex15 addr 0x132a0000 res 128x128x1 dim 3 tm: 4 format 0033 compSel: 0 1 2 3 mipView: 0x0 (num 0x8) sliceView: 0x0 (num 0x6) Sampler15 ClampX/Y/Z: 2 2 2 border: 0
+in vec4 passParameter0;
+layout(location = 0) out vec4 passPixelColor0;
+layout(location = 4) out vec4 passPixelColor4;
+void redcCUBE(vec4 src0, vec4 src1, inout vec3 stm, inout int faceId)
+{
+// stm -> x .. s, y .. t, z .. MajorAxis*2.0
+vec3 inputCoord = normalize(vec3(src1.y, src1.x, src0.x));
+float rx = inputCoord.x;
+float ry = inputCoord.y;
+float rz = inputCoord.z;
+if( abs(rx) > abs(ry) && abs(rx) > abs(rz) )
+{
+stm.z = rx*2.0;
+stm.xy = vec2(ry,rz);	
+if( rx >= 0.0 )
+{
+faceId = 0;
+}
+else
+{
+faceId = 1;
+}
+}
+else if( abs(ry) > abs(rx) && abs(ry) > abs(rz) )
+{
+stm.z = ry*2.0;
+stm.xy = vec2(rx,rz);	
+if( ry >= 0.0 )
+{
+faceId = 2;
+}
+else
+{
+faceId = 3;
+}
+}
+else //if( abs(rz) > abs(ry) && abs(rz) > abs(rx) )
+{
+stm.z = rz*2.0;
+stm.xy = vec2(rx,ry);	
+if( rz >= 0.0 )
+{
+faceId = 4;
+}
+else
+{
+faceId = 5;
+}
+}
+}
+vec3 redcCUBEReverse(vec2 st, int faceId)
+{
+st.yx = st.xy;
+vec3 v;
+float majorAxis = 1.0;
+if( faceId == 0 )
+{
+v.yz = (st-vec2(1.5))*(majorAxis*2.0);
+v.x = 1.0;
+}
+else if( faceId == 1 )
+{
+v.yz = (st-vec2(1.5))*(majorAxis*2.0);
+v.x = -1.0;
+}
+else if( faceId == 2 )
+{
+v.xz = (st-vec2(1.5))*(majorAxis*2.0);
+v.y = 1.0;
+}
+else if( faceId == 3 )
+{
+v.xz = (st-vec2(1.5))*(majorAxis*2.0);
+v.y = -1.0;
+}
+else if( faceId == 4 )
+{
+v.xy = (st-vec2(1.5))*(majorAxis*2.0);
+v.z = 1.0;
+}
+else
+{
+v.xy = (st-vec2(1.5))*(majorAxis*2.0);
+v.z = -1.0;
+}
+return v;
+}
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+}
