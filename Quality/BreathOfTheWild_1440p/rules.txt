@@ -25,7 +25,6 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1216
 
-<<<<<<< HEAD
 [TextureRedefine] #TV4
 width = 1152
 height = 648
@@ -33,10 +32,8 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2304
 overwriteHeight = 1296
 
-=======
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
->>>>>>> origin/master
 [TextureRedefine] #half-res1
 width = 640
 height = 360
@@ -55,13 +52,9 @@ height = 288
 overwriteWidth = 1280
 overwriteHeight = 576
 
-<<<<<<< HEAD
-[TextureRedefine] #q-res1
-=======
 #Makes bloom look "pixelated" when scaled.
 #Disabling this breaks ambient occlusion
 [TextureRedefine] #q-res1, main bloom, AO
->>>>>>> origin/master
 width = 320
 height = 180
 overwriteWidth = 641

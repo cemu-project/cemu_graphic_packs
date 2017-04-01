@@ -25,7 +25,6 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 5120
 overwriteHeight = 2432
 
-<<<<<<< HEAD
 [TextureRedefine] #TV4
 width = 1152
 height = 648
@@ -33,10 +32,8 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 4608
 overwriteHeight = 2592
 
-=======
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
->>>>>>> origin/master
 [TextureRedefine] #half-res1
 width = 640
 height = 360
@@ -79,7 +76,6 @@ overwriteHeight = 576
 width = 160
 height = 90
 overwriteWidth = 720
-<<<<<<< HEAD
 overwriteHeight = 360
 
 [TextureRedefine] # O
@@ -111,6 +107,3 @@ width = 854
 height = 480
 overwriteWidth = 2560
 overwriteHeight = 1440
-=======
-overwriteHeight = 360
->>>>>>> origin/master

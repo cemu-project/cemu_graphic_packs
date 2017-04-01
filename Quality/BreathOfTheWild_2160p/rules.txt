@@ -25,7 +25,6 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 3840
 overwriteHeight = 1824
 
-<<<<<<< HEAD
 [TextureRedefine] #TV4
 width = 1152
 height = 648
@@ -33,8 +32,6 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 3456
 overwriteHeight = 1944
 
-[TextureRedefine] #half-res1
-=======
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
 [TextureRedefine] #half-res1, soft pass toon shader, 
@@ -56,13 +53,9 @@ height = 288
 overwriteWidth = 1920
 overwriteHeight = 864
 
-<<<<<<< HEAD
-[TextureRedefine] #q-res1
-=======
 #Makes bloom look "pixelated" when scaled.
 #Disabling this breaks ambient occlusion
 [TextureRedefine] #q-res1 Main bloom pass, AO 
->>>>>>> origin/master
 width = 320
 height = 180
 overwriteWidth = 960
