@@ -1,0 +1,149 @@
+[Definition]
+titleIds = 000500001018DC00,000500001018DD00,000500001018DB00
+name = "Super Mario Maker - 1440p (2K)"
+
+
+
+[TextureRedefine] #TV   
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # ?
+width = 640
+height = 360
+overwriteWidth = 1282
+overwriteHeight = 722
+
+[TextureRedefine] # ?
+width = 320
+height = 240
+overwriteWidth = 641
+overwriteHeight = 361
+
+[TextureRedefine] # ? 
+width = 768
+height = 384
+overwriteWidth = 1536
+overwriteHeight = 768
+
+[TextureRedefine] # ?
+width = 384
+height = 192
+overwriteWidth = 768
+overwriteHeight = 384
+
+[TextureRedefine] # ?
+width = 192
+height = 86
+overwriteWidth = 384
+overwriteHeight = 192
+
+[TextureRedefine] # A
+width = 106
+height = 60
+overwriteWidth = 212
+overwriteHeight = 120
+
+[TextureRedefine] # P
+width = 900
+height = 508
+overwriteWidth = 2700
+overwriteHeight = 1152
+
+[TextureRedefine] # R
+width = 892
+height = 504
+overwriteWidth = 2676
+overwriteHeight = 1512
+
+[TextureRedefine] # I
+width = 880
+height = 496
+overwriteWidth = 2640
+overwriteHeight = 1488
+
+[TextureRedefine] # L
+width = 868
+height = 488
+overwriteWidth = 2604
+overwriteHeight = 1464
+
+[TextureRedefine] # F
+width = 856
+height = 483
+overwriteWidth = 2568
+overwriteHeight = 1449
+
+[TextureRedefine] # O
+width = 844
+height = 476
+overwriteWidth = 2553
+overwriteHeight = 1401
+
+[TextureRedefine] # O
+width = 832
+height = 467
+overwriteWidth = 2496
+overwriteHeight = 1401
+
+[TextureRedefine] # L
+width = 820
+height = 460
+overwriteWidth = 2460
+overwriteHeight = 1380
+
+[TextureRedefine] # S
+width = 808
+height = 456
+overwriteWidth = 2424
+overwriteHeight = 1368
+
+[TextureRedefine] # !
+width = 800
+height = 448
+overwriteWidth = 2400
+overwriteHeight = 1344
+
+[TextureRedefine] # !
+width = 788
+height = 444
+overwriteWidth = 2364
+overwriteHeight = 1332
+
+[TextureRedefine] # !
+width = 780
+height = 440
+overwriteWidth = 2340
+overwriteHeight = 1320
+
+[TextureRedefine] # ?
+width = 776
+height = 436
+overwriteWidth = 2328
+overwriteHeight = 1308
+
+[TextureRedefine] # ?
+width = 772
+height = 432
+overwriteWidth = 2316
+overwriteHeight = 1296
+
+[TextureRedefine] # ?
+width = 1152
+height = 648
+overwriteWidth = 3456
+overwriteHeight = 1944
+
+[TextureRedefine] # ?
+width = 512
+height = 512
+overwriteWidth = 1536
+overwriteHeight = 1536
+
+[TextureRedefine] # ?
+width = 1024
+height = 1024
+overwriteWidth = 3072
+overwriteHeight = 3072

@@ -1,0 +1,267 @@
+[Definition]
+titleIds = 000500001018DC00,000500001018DD00,000500001018DB00
+name = "Super Mario Maker - 2160p (4K)"
+
+
+
+
+[TextureRedefine] #? 
+width = 1280
+height = 720
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] #?
+width = 640
+height = 360
+overwriteWidth = 1920
+overwriteHeight = 1280
+
+[TextureRedefine] #?
+width = 320
+height = 240
+overwriteWidth = 960
+overwriteHeight = 720
+
+[TextureRedefine] #?  
+width = 768
+height = 384
+overwriteWidth = 2304
+overwriteHeight = 1152
+
+[TextureRedefine] #? 
+width = 384
+height = 192
+overwriteWidth = 1152
+overwriteHeight = 576
+
+[TextureRedefine] #?   
+width = 1024
+height = 1088
+overwriteWidth = 3072
+overwriteHeight = 3264
+
+[TextureRedefine] # A
+width = 854
+height = 480
+overwriteWidth = 2562
+overwriteHeight = 1440
+
+[TextureRedefine] # P
+width = 427
+height = 240
+overwriteWidth = 1281
+overwriteHeight = 720
+
+[TextureRedefine] # R
+width = 160
+height = 90
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine] # I  
+width = 106
+height = 60
+overwriteWidth = 318
+overwriteHeight = 180
+
+[TextureRedefine] # L  
+width = 48
+height = 48
+overwriteWidth = 144
+overwriteHeight = 144
+
+[TextureRedefine] # F
+width = 24
+height = 24
+overwriteWidth = 72
+overwriteHeight = 72
+
+[TextureRedefine] # O  
+width = 32
+height = 32
+overwriteWidth = 96
+overwriteHeight = 96
+
+[TextureRedefine] # O  
+width = 16
+height = 16
+overwriteWidth = 48
+overwriteHeight = 48
+
+[TextureRedefine] # L 
+width = 8
+height = 8
+overwriteWidth = 24
+overwriteHeight = 24
+
+[TextureRedefine] # S  
+width = 4
+height = 4
+overwriteWidth = 12
+overwriteHeight = 12
+
+[TextureRedefine] # !
+width = 2
+height = 2
+overwriteWidth = 6
+overwriteHeight = 6
+
+[TextureRedefine] # ! 
+width = 912
+height = 516
+overwriteWidth = 2736
+overwriteHeight = 1548
+
+[TextureRedefine] # !  
+width = 512
+height = 256
+overwriteWidth = 1536
+overwriteHeight = 768
+
+[TextureRedefine] #? 
+width = 512
+height = 64
+verwriteWidth = 1536
+overwriteHeight = 192
+
+[TextureRedefine] #? 
+width = 320
+height = 240
+overwriteWidth = 960
+overwriteHeight = 720
+
+[TextureRedefine] #?
+width = 243
+height = 81
+overwriteWidth = 729
+overwriteHeight = 243
+
+
+[TextureRedefine] #????  
+width = 320
+height = 240
+overwriteWidth = 960
+overwriteHeight = 720
+
+
+[TextureRedefine] #????  
+width = 384
+height = 216
+overwriteWidth = 960
+overwriteHeight = 720
+
+[TextureRedefine] # ?  
+width = 768
+height = 384
+
+overwriteWidth = 2304
+overwriteHeight = 1152
+
+[TextureRedefine] # ?
+width = 384
+height = 192
+overwriteWidth = 1152
+overwriteHeight = 576
+
+[TextureRedefine] # ?
+width = 900
+height = 508
+overwriteWidth = 2700
+overwriteHeight = 1152
+
+[TextureRedefine] # ?
+width = 892
+height = 504
+overwriteWidth = 2676
+overwriteHeight = 1512
+
+[TextureRedefine] # ?
+width = 880
+height = 496
+overwriteWidth = 2640
+overwriteHeight = 1488
+
+[TextureRedefine] # ?
+width = 868
+height = 488
+overwriteWidth = 2604
+overwriteHeight = 1464
+
+[TextureRedefine] # ?
+width = 856
+height = 483
+overwriteWidth = 2568
+overwriteHeight = 1449
+
+[TextureRedefine] # ?
+width = 844
+height = 476
+overwriteWidth = 2553
+overwriteHeight = 1401
+
+[TextureRedefine] # ?
+width = 832
+height = 467
+overwriteWidth = 2496
+overwriteHeight = 1401
+
+[TextureRedefine] # ?
+width = 820
+height = 460
+overwriteWidth = 2460
+overwriteHeight = 1380
+
+[TextureRedefine] # ?
+width = 808
+height = 456
+overwriteWidth = 2424
+overwriteHeight = 1368
+
+[TextureRedefine] # ?
+width = 800
+height = 448
+overwriteWidth = 2400
+overwriteHeight = 1344
+
+[TextureRedefine] # ?
+width = 788
+height = 444
+overwriteWidth = 2364
+overwriteHeight = 1332
+
+[TextureRedefine] # ?
+width = 780
+height = 440
+overwriteWidth = 2340
+overwriteHeight = 1320
+
+[TextureRedefine] # ?
+width = 776
+height = 436
+overwriteWidth = 2328
+overwriteHeight = 1308
+
+[TextureRedefine] # ?
+width = 772
+height = 432
+overwriteWidth = 2316
+overwriteHeight = 1296
+
+[TextureRedefine] # ?
+width = 1152
+height = 648
+overwriteWidth = 3456
+overwriteHeight = 1944
+
+[TextureRedefine] # ?
+width = 512
+height = 512
+overwriteWidth = 1536
+overwriteHeight = 1536
+
+[TextureRedefine] # ?
+width = 1024
+height = 10244
+overwriteWidth = 3072
+overwriteHeight = 3072
