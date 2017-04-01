@@ -13,13 +13,30 @@ overwriteHeight = 1440
 
 [TextureRedefine] #TV2
 width = 1280
+height = 721
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 2560
+overwriteHeight = 1442
+
+[TextureRedefine] #TV3
+width = 1280
 height = 608
 formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1216
 
+<<<<<<< HEAD
+[TextureRedefine] #TV4
+width = 1152
+height = 648
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 2304
+overwriteHeight = 1296
+
+=======
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
+>>>>>>> origin/master
 [TextureRedefine] #half-res1
 width = 640
 height = 360
@@ -38,13 +55,16 @@ height = 288
 overwriteWidth = 1280
 overwriteHeight = 576
 
+<<<<<<< HEAD
+[TextureRedefine] #q-res1
+=======
 #Makes bloom look "pixelated" when scaled.
 #Disabling this breaks ambient occlusion
 [TextureRedefine] #q-res1, main bloom, AO
+>>>>>>> origin/master
 width = 320
 height = 180
-#formatsExcluded = 0x816  #upscale of bloom may oversharpen
-overwriteWidth = 640      # nearest integer
+overwriteWidth = 641
 overwriteHeight = 360
 
 [TextureRedefine] #q-res2
@@ -59,16 +79,32 @@ height = 144
 overwriteWidth = 641
 overwriteHeight = 289
 
-[TextureRedefine] #o-res1, medium bloom
+[TextureRedefine] #o-res1
 width = 160
 height = 90
-#formatsExcluded = 0x816  #upscale of bloom may oversharpen
-overwriteWidth = 320      #Nearest integer
+overwriteWidth = 320
 overwriteHeight = 180
 
-[TextureRedefine] # low detail bloom		
-width =	40
+[TextureRedefine] # O
+width = 80
+height = 45
+overwriteWidth = 160
+overwriteHeight = 91
+
+[TextureRedefine] # M
+width = 80
+height = 44
+overwriteWidth = 160
+overwriteHeight = 88
+
+[TextureRedefine] # G
+width = 40
 height = 22
-#formatsExcluded = 0x816 		#upscale of bloom may oversharpen
 overwriteWidth = 80
-overwriteHeight = 45	
+overwriteHeight = 43
+
+[TextureRedefine] #fog
+width = 720
+height = 360
+overwriteWidth = 1440
+overwriteHeight = 720

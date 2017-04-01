@@ -13,13 +13,30 @@ overwriteHeight = 900
 
 [TextureRedefine] #TV2
 width = 1280
+height = 721
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 1600
+overwriteHeight = 902
+
+[TextureRedefine] #TV3
+width = 1280
 height = 608
 formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 1600
 overwriteHeight = 760
 
+<<<<<<< HEAD
+[TextureRedefine] #TV4
+width = 1152
+height = 648
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 1440
+overwriteHeight = 810
+
+=======
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
+>>>>>>> origin/master
 [TextureRedefine] #half-res1
 width = 640
 height = 360
@@ -63,3 +80,27 @@ width = 160
 height = 90
 overwriteWidth = 200
 overwriteHeight = 113
+
+[TextureRedefine] # O
+width = 80
+height = 45
+overwriteWidth = 100
+overwriteHeight = 56
+
+[TextureRedefine] # M
+width = 80
+height = 44
+overwriteWidth = 100
+overwriteHeight = 55
+
+[TextureRedefine] # G
+width = 40
+height = 22
+overwriteWidth = 50
+overwriteHeight = 28
+
+[TextureRedefine] #fog
+width = 720
+height = 360
+overwriteWidth = 900
+overwriteHeight = 450

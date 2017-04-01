@@ -13,13 +13,30 @@ overwriteHeight = 540
 
 [TextureRedefine] #TV2
 width = 1280
+height = 721
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 960
+overwriteHeight = 541
+
+[TextureRedefine] #TV3
+width = 1280
 height = 608
 formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 960
 overwriteHeight = 456
 
+<<<<<<< HEAD
+[TextureRedefine] #TV4
+width = 1152
+height = 648
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 864
+overwriteHeight = 486
+
+=======
 #Breaks lighting effects when scaled.
 #Disabling this breaks heatwaves and shadow LODs
+>>>>>>> origin/master
 [TextureRedefine] #half-res1
 width = 640
 height = 360
@@ -63,6 +80,30 @@ width = 160
 height = 90
 overwriteWidth = 120
 overwriteHeight = 68
+
+[TextureRedefine] # O
+width = 80
+height = 45
+overwriteWidth = 60
+overwriteHeight = 34
+
+[TextureRedefine] # M
+width = 80
+height = 44
+overwriteWidth = 60
+overwriteHeight = 33
+
+[TextureRedefine] # G
+width = 40
+height = 22
+overwriteWidth = 30
+overwriteHeight = 17
+
+[TextureRedefine] #fog
+width = 720
+height = 360
+overwriteWidth = 540
+overwriteHeight = 270
 
 [TextureRedefine] #Gamepad
 width = 854
