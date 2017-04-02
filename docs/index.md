@@ -8,9 +8,11 @@ If you want better performance, [Performance](https://github.com/slashiee/cemu_g
 
 If you want to kill your GPU, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enthusiast) is the way to go..but I wouldn't recommended it.
 
-If you want to enhance your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enhancement) is right up your ally.
+If you want to upgrade your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enhancement) is right up your ally.
 
 If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/tree/master/Workaround) to see if there's a workaround for it.
+
+If you just want to see how Graphic Packs can mess around with games, [Fun](https://github.com/slashiee/cemu_graphic_packs/tree/master/Fun) is for you.
 
 ### Games with Graphic Packs
 
