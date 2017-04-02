@@ -16,28 +16,23 @@ height = 720
 overwriteWidth = 1440
 overwriteHeight = 1440
 
-#[TextureRedefine]
-#width = 256
-#height = 256
-#overwriteWidth = 768
-#overwriteHeight = 768
+[TextureRedefine]
+width = 256
+height = 256
+formats = 0x005
+overwriteWidth = 512
+overwriteHeight = 512
 
-#[TextureRedefine]
-#width = 1024
-#height = 1024
-#formats = 0x005
-#overwriteWidth = 2048
-#overwriteHeight = 2048
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 2048
+overwriteHeight = 2048
 
-#[TextureRedefine]
-#width = 2048
-#height = 2048
-#formats = 0x005
-#overwriteWidth = 4096
-#overwriteHeight = 4096
-
-#[TextureRedefine] #4117
-#width = 64
-#height = 64
-#overwriteWidth = 256
-#overwriteHeight = 256
+[TextureRedefine]
+width = 2048
+height = 2048
+formats = 0x005
+overwriteWidth = 4096
+overwriteHeight = 4096
