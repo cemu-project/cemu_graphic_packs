@@ -5,7 +5,7 @@ name = "Nintendo Land - 2880p (5K)"
 [TextureRedefine] # tv
 width = 1280
 height = 720
-textures = 0x1f712000
+texturesExcluded = 0x1f712000
 overwriteWidth = 5120
 overwriteHeight = 2880
 

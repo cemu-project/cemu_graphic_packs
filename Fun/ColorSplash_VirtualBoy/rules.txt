@@ -5,4 +5,5 @@ name = "Paper Mario: Color Splash - Virtual Boy Mode"
 [TextureRedefine]
 width = 1280
 height = 720
+formats = 0x816
 overwriteFormat = 0x005
