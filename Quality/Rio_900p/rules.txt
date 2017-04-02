@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 50000101e5300
-name = "Mario & Sonic at the Rio 2016 Olympic Games - 900p"
-
-[TextureRedefine]
-width = 1280
-height = 720
-overwriteWidth = 1600
-overwriteHeight = 900
