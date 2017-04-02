@@ -1,6 +1,7 @@
+#Made by Exzap himself, comes included with Cemu 1.7.4+
 [Definition]
 titleIds = 0005000010145000,0005000010144F00,0005000010110E00
-name = "Smash 4 - NVIDIA brightness fix (Experimental)"
+name = "Smash Smash Bros. - NVIDIA Brightness Fix (Experimental)"
 
 [TextureRedefine] # replace SNORM framebuffer with float format (On Nvidia, rendering to SNORM textures truncates colors to [0.0,1.0] range, despite SNORM supporting [-1.0,1.0] range)
 width = 1920
