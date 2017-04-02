@@ -36,7 +36,6 @@
 - [Star Fox Guard](http://compat.cemu.info/wiki/Star_Fox_Guard)
 - [Star Fox Zero](http://compat.cemu.info/wiki/Star_Fox_Zero)
 - [Super Mario 3D World](http://compat.cemu.info/wiki/Super_Mario_3D_World)
-- [Super Mario Maker](http://compat.cemu.info/wiki/Super_Mario_Maker)
 - [Super Smash Bros.](http://compat.cemu.info/wiki/Super_Smash_Bros._U)
 - [Tekken Tag Tournament 2: Wii U Edition](http://compat.cemu.info/wiki/Tekken_Tag_Tournament_2)
 - [The Legend of Zelda: Breath of the Wild](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild)
