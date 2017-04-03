@@ -51,7 +51,6 @@ overwriteHeight = 144
 [TextureRedefine] #q-res1
 width = 320
 height = 180
-formatsExcluded = 0x816
 overwriteWidth = 160
 overwriteHeight = 90
 
