@@ -1,5 +1,3 @@
-#PLEASE READ THE COMMENTS NEXT TO THE TEXTURE REDEFINES, IT TELLS YOU THE CURRENT ISSUES OF THE GAME
-#I ADDED THOSE LINES SO THAT PEOPLE CAN STOP MENTIONING THE SAME ISSUES OVER AND OVER AGAIN
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "The Legend of Zelda: Breath of the Wild - 1080p"
@@ -32,8 +30,6 @@ formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 1728
 overwriteHeight = 972
 
-#Breaks lighting effects when scaled.
-#Disabling this breaks heatwaves and shadow LODs
 [TextureRedefine] #half-res1
 width = 640
 height = 360
@@ -52,11 +48,10 @@ height = 288
 overwriteWidth = 960
 overwriteHeight = 432
 
-#Makes bloom look "pixelated" when scaled.
-#Disabling this breaks ambient occlusion
 [TextureRedefine] #q-res1
 width = 320
 height = 180
+formatsExcluded = 0x816
 overwriteWidth = 480
 overwriteHeight = 270
 
