@@ -51,7 +51,7 @@ overwriteHeight = 1152
 [TextureRedefine] #q-res1
 width = 320
 height = 180
-#formatsExcluded = 0x816,0x01a #Completely gets rid of bloom
+formatsExcluded = 0x816,0x01a #Need to enter a shrine and leave for bloom to work
 overwriteWidth = 1280
 overwriteHeight = 720
 
