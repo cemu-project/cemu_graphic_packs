@@ -105,11 +105,13 @@ overwriteHeight = 240
 [TextureRedefine]
 width = 360
 height = 360
+formats = 0x005
 overwriteWidth = 180
 overwriteHeight = 180
 
 [TextureRedefine]
 width = 720
 height = 720
+formats = 0x005
 overwriteWidth = 360
 overwriteHeight = 360
