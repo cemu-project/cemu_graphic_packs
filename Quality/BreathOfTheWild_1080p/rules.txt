@@ -51,7 +51,7 @@ overwriteHeight = 432
 [TextureRedefine] #q-res1
 width = 320
 height = 180
-#formatsExcluded = 0x816,0x01a #Bloom only works on AMD if we exclude the format
+#formatsExcluded = 0x816,0x01a #Completely gets rid of bloom
 overwriteWidth = 480
 overwriteHeight = 270
 
