@@ -12,21 +12,18 @@ overwriteHeight = 1440
 [TextureRedefine] #TV2
 width = 1280
 height = 721
-formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1442
 
 [TextureRedefine] #TV3
 width = 1280
 height = 608
-formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2560
 overwriteHeight = 1216
 
 [TextureRedefine] #TV4
 width = 1152
 height = 648
-formatsExcluded = 0x008 # exclude the intro background texture
 overwriteWidth = 2304
 overwriteHeight = 1296
 
@@ -48,30 +45,30 @@ height = 288
 overwriteWidth = 1280
 overwriteHeight = 576
 
-[TextureRedefine] #q-res1, main bloom, AO
-width = 320
-height = 180
-formatsExcluded = 0x01a #0x816 doesn't cooperate, bloom is entirely missing in-game
-overwriteWidth = 640
-overwriteHeight = 360
+#[TextureRedefine] #q-res1, main bloom, AO
+#width = 320
+#height = 180
+#formatsExcluded = 0x01a #0x816 doesn't cooperate, bloom is entirely missing in-game
+#overwriteWidth = 640
+#overwriteHeight = 360
 
-[TextureRedefine] #q-res2
-width = 320
-height = 145
-overwriteWidth = 641
-overwriteHeight = 291
+#[TextureRedefine] #q-res2
+#width = 320
+#height = 145
+#overwriteWidth = 641
+#overwriteHeight = 291
 
-[TextureRedefine] #q-res3
-width = 320
-height = 144
-overwriteWidth = 641
-overwriteHeight = 289
+#[TextureRedefine] #q-res3
+#width = 320
+#height = 144
+#overwriteWidth = 641
+#overwriteHeight = 289
 
-[TextureRedefine] #o-res1
-width = 160
-height = 90
-overwriteWidth = 320
-overwriteHeight = 180
+#[TextureRedefine] #o-res1
+#width = 160
+#height = 90
+#overwriteWidth = 320
+#overwriteHeight = 180
 
 [TextureRedefine] # O
 width = 80
