@@ -119,20 +119,31 @@ height = 360
 overwriteWidth = 360
 overwriteHeight = 181
 
-[TextureRedefine] #Gamepad
+[TextureRedefine] #gamepad
 width = 854
 height = 480
-overwriteWidth = 427
-overwriteHeight = 240
+formatsExcluded = 0x034,0x019
+overwriteWidth = 640
+overwriteHeight = 480
+
+[TextureRedefine] #Gamepad Filter
+width = 854
+height = 480
+formats = 0x019
+overwriteFormat = 0x00b
+overwriteWidth = 640
+overwriteHeight = 480
 
 [TextureRedefine]
 width = 360
 height = 360
+formats = 0x005
 overwriteWidth = 180
 overwriteHeight = 180
 
 [TextureRedefine]
 width = 720
 height = 720
+formats = 0x005
 overwriteWidth = 360
 overwriteHeight = 360
