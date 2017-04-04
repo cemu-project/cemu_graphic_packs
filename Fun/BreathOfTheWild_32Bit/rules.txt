@@ -5,6 +5,13 @@ name = "The Legend of Zelda: Breath of the Wild - 32-Bit Mode"
 [TextureRedefine] #TV
 width = 1280
 height = 720
+formatsExcluded = 0x008,0x019
+overwriteWidth = 640
+overwriteHeight = 480
+
+[TextureRedefine] #TV Filter
+width = 1280
+height = 720
 formats = 0x019
 overwriteFormat = 0x00b
 overwriteWidth = 640
