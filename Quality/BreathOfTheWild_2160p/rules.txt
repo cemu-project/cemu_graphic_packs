@@ -51,7 +51,7 @@ overwriteHeight = 864
 [TextureRedefine] #q-res1 Main bloom pass, AO 
 width = 320
 height = 180
-#formatsExcluded = 0x816,0x01a #Completely gets rid of bloom
+formatsExcluded = 0x01a #0x816 doesn't cooperate, bloom is entirely missing in-game
 overwriteWidth = 960
 overwriteHeight = 540
 
