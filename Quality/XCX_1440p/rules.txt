@@ -36,28 +36,28 @@ overwriteHeight = 480
 
 // vvvv credits to Getdls & GITech vvvv //
 
-[TextureRedefine] # Sun, Light Sources (plants, armor etc)	
+[TextureRedefine] # Sun, Light Sources (plants, armor etc)
 width =	512
 height = 288
 overwriteWidth = 1024
 overwriteHeight = 576
 
-[TextureRedefine] # "God rays" size (not quality), lens reflections.	
+[TextureRedefine] # "God rays" size (not quality), lens reflections.
 width =	256
 height = 144
 overwriteWidth = 513
 overwriteHeight = 290
 
-[TextureRedefine]# Probe glow. Does not increase sample amount, only scales up	
-width =	160
-height = 90
-formatsExcluded = 0x816  #fix probe glow	
+#[TextureRedefine]# Probe glow. Does not increase sample amount, only scales up
+#width = 160
+#height = 90
+#formatsExcluded = 0x816  #fix probe glow
 #overwriteWidth = 322
 #overwriteHeight = 180
 	
-[TextureRedefine]# Probe Beacon glow. 	
-width =	80
-height = 46
-formatsExcluded = 0x816  #fix probe glow	
+#[TextureRedefine]# Probe Beacon glow.
+#width = 80
+#height = 46
+#formatsExcluded = 0x816  #fix probe glow
 #overwriteWidth = 161
 #overwriteHeight = 90
