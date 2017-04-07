@@ -35,7 +35,7 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 - [Mario & Sonic at the Rio 2016 Olympic Games](http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Rio_2016_Olympic_Games)
 - [Mario & Sonic at the Sochi 2014 Olympic Winter Games](http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Sochi_2014_Olympic_Winter_Games)
 - [Mario Kart 8](http://compat.cemu.info/wiki/Mario_Kart_8)
-- [Mighty No. Why](http://compat.cemu.info/wiki/Mighty_No._9)
+- [Mighty No. 9](http://compat.cemu.info/wiki/Mighty_No._9)
 - [New Super Luigi U](http://compat.cemu.info/wiki/New_Super_Luigi_U)
 - [New Super Mario Bros. U](http://compat.cemu.info/wiki/New_Super_Mario_Bros._U)
 - [Nintendo Land](http://compat.cemu.info/wiki/Nintendo_Land)
