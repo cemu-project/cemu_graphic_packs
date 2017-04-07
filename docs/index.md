@@ -70,7 +70,7 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 
 ### I need help!
 
-Feel free to ask for help at one of the [Cemu communities](http://cemu.info/community.html) or the #gfx_packs channel in the [official Cemu Discord](https://www.patreon.com/posts/cemu-official-8483901). (Just please don't ping slashiee about anything related to BotW and Graphic Packs..please don't.)
+Try checking the [issues](https://github.com/slashiee/cemu_graphic_packs/issues) on the repo to see if an issue that you have found has been documented. If not, feel free to ask for help at one of the [Cemu communities](http://cemu.info/community.html) or the #gfx_packs channel in the [official Cemu Discord](https://www.patreon.com/posts/cemu-official-8483901).
 
 ### Want to contribute?
 
