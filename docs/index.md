@@ -57,7 +57,7 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 - [Super Mario 3D World](http://compat.cemu.info/wiki/Super_Mario_3D_World)
 - [Super Smash Bros.](http://compat.cemu.info/wiki/Super_Smash_Bros._U)
 - [Tekken Tag Tournament 2: Wii U Edition](http://compat.cemu.info/wiki/Tekken_Tag_Tournament_2)
-- [The Legend of Zelda: Breath of the Wild](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild)
+- [The Legend of Zelda: Breath of the Wild](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild) ([Showcase](https://www.youtube.com/watch?v=EVRO5pV2eAg))
 - [The Legend of Zelda: The Wind Waker HD](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_The_Wind_Waker_HD)
 - [The Legend of Zelda: Twilight Princess HD](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Twilight_Princess_HD)
 - [The Wonderful 101](http://compat.cemu.info/wiki/The_Wonderful_101)
