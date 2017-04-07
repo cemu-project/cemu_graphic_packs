@@ -7,3 +7,5 @@ width = 1280
 height = 720
 formats = 0x019
 overwriteFormat = 0x005
+overwriteWidth = 384
+overwriteHeight = 224
