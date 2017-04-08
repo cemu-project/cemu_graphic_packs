@@ -19,10 +19,10 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 ### Games with Graphic Packs
 
 - [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
-- [Bayonetta](http://compat.cemu.info/wiki/Bayonetta)
+- [Bayonetta](http://compat.cemu.info/wiki/Bayonetta) [Part of [Bayonetta 2](http://compat.cemu.info/wiki/Bayonetta_2)]
 - [Bayonetta 2](http://compat.cemu.info/wiki/Bayonetta_2)
 - [Brunswick Pro Bowling](http://compat.cemu.info/wiki/Brunswick_Pro_Bowling)
-- [Captain Toad: Treasure Tracker](http://compat.cemu.info/wiki/Captain_Toad:_Treasure_Tracker)
+- [Captain Toad: Treasure Tracker](http://compat.cemu.info/wiki/Captain_Toad:_Treasure_Tracker) [Part of [Super Mario 3D World](http://compat.cemu.info/wiki/Super_Mario_3D_World)]
 - [Citizens Of Earth](http://compat.cemu.info/wiki/Citizens_of_Earth)
 - [Donkey Kong Country: Tropical Freeze](http://compat.cemu.info/wiki/Donkey_Kong_Country:_Tropical_Freeze)
 - [DuckTales Remastered](http://compat.cemu.info/wiki/DuckTales_Remastered)
@@ -44,7 +44,7 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 - [Phineas and Ferb: Quest for Cool Stuff](http://compat.cemu.info/wiki/Phineas_and_Ferb:_Quest_for_Cool_Stuff)
 - [Pikmin 3](http://compat.cemu.info/wiki/Pikmin_3)
 - [Pokkén Tournament](http://compat.cemu.info/wiki/Pokk%C3%A9n_Tournament)
-- [Scribblenauts Unlimited](http://compat.cemu.info/wiki/Scribblenauts_Unlimited)
+- [Scribblenauts Unlimited](http://compat.cemu.info/wiki/Scribblenauts_Unlimited) [Part of [Scribblenauts Unmasked](http://compat.cemu.info/wiki/Scribblenauts_Unmasked:_A_DC_Comics_Adventure)]
 - [Scribblenauts Unmasked: A DC Comics Adventure](http://compat.cemu.info/wiki/Scribblenauts_Unmasked:_A_DC_Comics_Adventure)
 - [Severed](http://compat.cemu.info/wiki/Severed)
 - [Shovel Knight](http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows)
@@ -52,7 +52,7 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 - [Sonic Lost World](http://compat.cemu.info/wiki/Sonic_Lost_World)
 - [Splatoon](http://compat.cemu.info/wiki/Splatoon)
 - [SpongeBob SquarePants: Plankton's Robotic Revenge](http://compat.cemu.info/wiki/Spongebob_Squarepants:_Plankton's_Robotic_Revenge)
-- [Star Fox Guard](http://compat.cemu.info/wiki/Star_Fox_Guard)
+- [Star Fox Guard](http://compat.cemu.info/wiki/Star_Fox_Guard) [Part of [Star Fox Zero](http://compat.cemu.info/wiki/Star_Fox_Zero)]
 - [Star Fox Zero](http://compat.cemu.info/wiki/Star_Fox_Zero)
 - [Super Mario 3D World](http://compat.cemu.info/wiki/Super_Mario_3D_World)
 - [Super Smash Bros.](http://compat.cemu.info/wiki/Super_Smash_Bros._U)
