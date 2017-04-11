@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 00050000101d4200
-name = "Brunswick Pro Bowling - 900p"
-
-[TextureRedefine] # tv
-width = 1280
-height = 720
-overwriteWidth = 1600
-overwriteHeight = 900

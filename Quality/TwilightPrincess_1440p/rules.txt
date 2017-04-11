@@ -1,6 +1,6 @@
 [Definition]	
 titleIds = 000500001019C800,000500001019E600,000500001019E500	
-name ="Twilight Princess HD 1440p"
+name ="Twilight Princess HD - 1440p (2K)"
 	
 [TextureRedefine] # game rendering resolution. 	#
 width =	1920
@@ -8,13 +8,6 @@ height = 	1080
 formatsExcluded = 0x41A # exclude the intro background texture 	
 overwriteWidth = 	2560
 overwriteHeight = 	1440
-	
-#[TextureRedefine] # gamepad view 	
-#width =	854
-#height =	480
-#formatsExcluded = 	
-#overwriteWidth =	1138
-#overwriteHeight =	640
 	
 [TextureRedefine] # Blur, bloom	
 width =	960
@@ -29,11 +22,3 @@ overwriteHeight =	720
 #formats = 0x01a	
 #overwriteWidth =	640
 #overwriteHeight =	360
-	
-##Textures	
-[TextureRedefine] # Link shadow n light	
-width = 	384
-height = 	384
-formats = 0x01a	
-overwriteWidth = 	1536
-overwriteHeight = 	1536

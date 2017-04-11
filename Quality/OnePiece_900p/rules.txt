@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 0005000010175c00,0005000010175d00
-name = "ONE PIECE Unlimited World Red - 900p"
-
-[TextureRedefine] # tv
-width = 1280
-height = 720
-overwriteWidth = 1600
-overwriteHeight = 900

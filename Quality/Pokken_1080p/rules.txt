@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 50000101df400
+titleIds = 50000101df400,00050002101DF401
 name = "Pokken Tournament - 1080p"
 
 [TextureRedefine]

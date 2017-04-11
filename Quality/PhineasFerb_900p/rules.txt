@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 0005000010139400
-name = "Phineas and Ferb Quest for Cool Stuff - 900p"
-
-[TextureRedefine] # tv
-width = 1280
-height = 720
-overwriteWidth = 1600
-overwriteHeight = 900

@@ -1,6 +1,6 @@
 [Definition]# EUR, USA, JPN titles	
 titleIds =  0005000010143400,0005000010143600,0005000010143500 #	
-name ="The Wind Waker HD 1440p"
+name ="The Wind Waker HD - 1440p (2K)"
 	
 [TextureRedefine] # TV
 width =	1920
@@ -8,13 +8,6 @@ height = 	1080
 formatsExcluded = 0x41A # exclude the intro background texture 	
 overwriteWidth = 	2560
 overwriteHeight = 	1440
-	
-#[TextureRedefine] # gamepad view 	
-#width =	854
-#height =	480
-#formatsExcluded = 	
-#overwriteWidth =	1138
-#overwriteHeight =	640
 	
 #[TextureRedefine] # Blur, bloom	
 #width =	960
@@ -36,11 +29,3 @@ overwriteHeight = 	1440
 #formatsExcluded =	
 #overwriteWidth =	640
 #overwriteHeight =	320
-	
-##Textures	
-#[TextureRedefine] # 3 lod shadows	
-#width = 	1024
-#height = 	1024
-#formats = 0x005 	
-#overwriteWidth = 	2048
-#overwriteHeight = 	2048

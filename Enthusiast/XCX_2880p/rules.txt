@@ -47,22 +47,22 @@ height = 288
 overwriteWidth = 2048
 overwriteHeight = 1152
 
-[TextureRedefine] # "God rays" size (not quality), lens reflections.	
+[TextureRedefine] # "God rays" size (not quality), lens reflections.
 width =	256
 height = 144
 overwriteWidth = 1024
 overwriteHeight = 576
 
-[TextureRedefine]# Probe glow. Does not increase sample amount, only scales up	
-width =	160
-height = 90
-formatsExcluded = 0x816  #fix probe glow	
+#[TextureRedefine]# Probe glow. Does not increase sample amount, only scales up
+#width = 160
+#height = 90
+#formatsExcluded = 0x816  #fix probe glow
 #overwriteWidth = 642
 #overwriteHeight = 362
 	
-[TextureRedefine]# Probe Beacon glow. 	
-width =	80
-height = 46
-formatsExcluded = 0x816  #fix probe glow	
+#[TextureRedefine]# Probe Beacon glow.
+#width = 80
+#height = 46
+#formatsExcluded = 0x816  #fix probe glow
 #overwriteWidth = 320
 #overwriteHeight = 184

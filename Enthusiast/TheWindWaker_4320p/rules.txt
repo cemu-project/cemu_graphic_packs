@@ -1,6 +1,6 @@
 [Definition]# EUR, USA, JPN titles	
 titleIds =  0005000010143400,0005000010143600,0005000010143500 #	
-name ="The Wind Waker HD	4320p"
+name ="The Wind Waker HD - 4320p (8K)"
 	
 [TextureRedefine] # game rendering resolution. 	#Change this value
 width =	1920
@@ -8,13 +8,6 @@ height = 	1080
 formatsExcluded = 0x41A # exclude the intro background texture 	
 overwriteWidth = 	7680
 overwriteHeight = 	4320
-	
-#[TextureRedefine] # gamepad view 	
-#width =	854
-#height =	480
-#formatsExcluded = 	
-#overwriteWidth =	3413
-#overwriteHeight =	1920
 	
 #[TextureRedefine] # Blur, bloom	
 #width =	960
@@ -32,15 +25,7 @@ overwriteHeight = 	4320
 	
 [TextureRedefine] # AO	
 #width =	480
-height =	240
+#height =	240
 #formatsExcluded =	
 #overwriteWidth =	1920
 #overwriteHeight =	960
-	
-##Textures	
-[TextureRedefine] # 3 lod shadows	
-width = 	1024
-height = 	1024
-formats = 0x005 	
-overwriteWidth = 	2048
-overwriteHeight = 	2048

@@ -7,11 +7,13 @@ name = "The Legend of Zelda: Breath of the Wild - High Res Shadows"
 [TextureRedefine]
 width = 360
 height = 360
+formats = 0x005
 overwriteWidth = 720
 overwriteHeight = 720
 
 [TextureRedefine]
 width = 720
 height = 720
+formats = 0x005
 overwriteWidth = 1440
 overwriteHeight = 1440

@@ -5,6 +5,15 @@ name = "Super Smash Bros. - 1440p (2K)"
 [TextureRedefine] # tv
 width = 1920
 height = 1080
+formatsExcluded = 0x219
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # nvidia
+width = 1920
+height = 1080
+formats = 0x219
+overwriteFormat = 0x820
 overwriteWidth = 2560
 overwriteHeight = 1440
 
