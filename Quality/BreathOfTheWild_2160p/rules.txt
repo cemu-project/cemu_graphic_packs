@@ -24,8 +24,8 @@ overwriteHeight = 1824
 [TextureRedefine] #TV4
 width = 1152
 height = 648
-overwriteWidth = 3456
-overwriteHeight = 1944
+overwriteWidth = 3840 #Scale to TV, not performance target 
+overwriteHeight = 2160
 
 [TextureRedefine] #half-res1, soft pass toon shader, 
 width = 640
@@ -45,12 +45,12 @@ height = 288
 overwriteWidth = 1920
 overwriteHeight = 864
 
-#[TextureRedefine] #q-res1 Main bloom pass, AO 
-#width = 320
-#height = 180
-#formatsExcluded = 0x01a #0x816 doesn't cooperate, bloom is entirely missing in-game
-#overwriteWidth = 960
-#overwriteHeight = 540
+[TextureRedefine] #q-res1 Main bloom pass, AO 
+width = 320
+height = 180
+formats = 0x001		#Scale depth masking, not bloom
+overwriteWidth = 960
+overwriteHeight = 540
 
 #[TextureRedefine] #q-res2
 #width = 320
@@ -64,15 +64,17 @@ overwriteHeight = 864
 #overwriteWidth = 960
 #overwriteHeight = 432
 
-#[TextureRedefine] #o-res1
-#width = 160
-#height = 90
-#overwriteWidth = 480
-#overwriteHeight = 270
+[TextureRedefine] #o-res1
+width = 160
+height = 90
+formats = 0x001		#Scale depth masking, not bloom
+overwriteWidth = 480
+overwriteHeight = 270
 
 [TextureRedefine] # O
 width = 80
 height = 45
+formats = 0x001		#Scale depth masking, not bloom
 overwriteWidth = 240
 overwriteHeight = 135
 

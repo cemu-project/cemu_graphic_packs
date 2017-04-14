@@ -1,5 +1,7 @@
 #version 400
 #extension GL_ARB_texture_gather : enable
+const float bloomFactor = 1.0; // bloom strength, just for debug purposes. 
+const  float contrastFactor = 1.0; // 1.05 increases contrast for screenshots etc, will crush black levels in dark areas. 
 // shader b650afd18c646005 // BOTW AA removal
 uniform ivec4 uf_remappedPS[4];
 uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4713800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -43,7 +45,8 @@ activeMaskStackC[1] = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameter0;
+vec4 colour = (texture(textureUnitPS0, R0f.xy).xyzw *bloomFactor);
+vec3 contrastFactored = (colour.xyz - 0.5) * contrastFactor + 0.5;
 
-R2f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
-passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
+passPixelColor0 = vec4(contrastFactored.x, contrastFactored.y, contrastFactored.z, colour.w);
 }
