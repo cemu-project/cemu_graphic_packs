@@ -55,14 +55,14 @@ overwriteHeight = 360
 #[TextureRedefine] #q-res2
 #width = 320
 #height = 145
-#overwriteWidth = 641
-#overwriteHeight = 291
+#overwriteWidth = 640
+#overwriteHeight = 290
 
 #[TextureRedefine] #q-res3
 #width = 320
 #height = 144
-#overwriteWidth = 641
-#overwriteHeight = 289
+#overwriteWidth = 640
+#overwriteHeight = 288
 
 [TextureRedefine] #o-res1
 width = 160
@@ -76,7 +76,7 @@ width = 80
 height = 45
 formats = 0x001		#Scale depth masking, not bloom
 overwriteWidth = 160
-overwriteHeight = 91
+overwriteHeight = 90
 
 [TextureRedefine] # M
 width = 80
@@ -88,7 +88,7 @@ overwriteHeight = 88
 width = 40
 height = 22
 overwriteWidth = 80
-overwriteHeight = 43
+overwriteHeight = 44
 
 [TextureRedefine] #fog
 width = 720
