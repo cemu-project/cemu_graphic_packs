@@ -41,10 +41,8 @@ int cubeMapFaceId;
 R1i = floatBitsToInt(gl_FragCoord.xyzw);
 R0i = floatBitsToInt(passParameter1);
 // 0
-
-vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); // factor = newResolution / expectedResolution
-	R1i.xy = floatBitsToInt(intBitsToFloat(R1i.xy) / scaleFactor);
-
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0);
+R1i.xy = floatBitsToInt(intBitsToFloat(R1i.xy) / scaleFactor);
 backupReg0i = R1i.x;
 backupReg1i = R1i.y;
 R1i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(backupReg0i), intBitsToFloat(uf_remappedPS[0].x)));

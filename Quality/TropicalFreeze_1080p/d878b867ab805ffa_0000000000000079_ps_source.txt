@@ -1,6 +1,5 @@
 #version 400
 #extension GL_ARB_texture_gather : enable
-
 const float overwriteWidth = 1920.0;  //overwidth value.0 
 const float overwriteHeight = 1080.0;
 // shader d878b867ab805ffa
