@@ -11,44 +11,44 @@ overwriteHeight = 360
 [TextureRedefine] # half-res
 width = 960
 height = 540
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 320
+overwriteHeight = 180
 
 [TextureRedefine] # q-res
 width = 480
 height = 270
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 160
+overwriteHeight = 90
 
 [TextureRedefine] # o-res 
 width = 240
 height = 135
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 80
+overwriteHeight = 45
 
 [TextureRedefine] # half-res 2
 width = 120
 height = 67
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 40
+overwriteHeight = 22
 
 [TextureRedefine] # q-res 2
 width = 60
 height = 33
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 20
+overwriteHeight = 11
 
 [TextureRedefine] # o-res 2
 width = 30
 height = 16
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 10
+overwriteHeight = 5
 
 [TextureRedefine] # o-res 3
 width = 8
 height = 1
-overwriteWidth = 
-overwriteHeight = 
+overwriteWidth = 2
+overwriteHeight = 1
 
 [TextureRedefine] # 2nd
 width = 820
