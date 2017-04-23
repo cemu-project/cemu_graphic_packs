@@ -5,59 +5,50 @@ name = "Super Smash Bros. - 360p"
 [TextureRedefine] # tv
 width = 1920
 height = 1080
-formatsExcluded = 0x219
-overwriteWidth = 640
-overwriteHeight = 360
-
-[TextureRedefine] # nvidia
-width = 1920
-height = 1080
-formats = 0x219
-overwriteFormat = 0x820
 overwriteWidth = 640
 overwriteHeight = 360
 
 [TextureRedefine] # half-res
 width = 960
 height = 540
-overwriteWidth = 320
-overwriteHeight = 180
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # q-res
 width = 480
 height = 270
-overwriteWidth = 160
-overwriteHeight = 90
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # o-res 
 width = 240
 height = 135
-overwriteWidth = 80
-overwriteHeight = 45
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # half-res 2
 width = 120
 height = 67
-overwriteWidth = 40
-overwriteHeight = 22
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # q-res 2
 width = 60
 height = 33
-overwriteWidth = 20
-overwriteHeight = 11
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # o-res 2
 width = 30
 height = 16
-overwriteWidth = 10
-overwriteHeight = 5
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # o-res 3
 width = 8
 height = 1
-overwriteWidth = 2
-overwriteHeight = 1
+overwriteWidth = 
+overwriteHeight = 
 
 [TextureRedefine] # 2nd
 width = 820

@@ -1,0 +1,10 @@
+#Made by Exzap himself, comes included with Cemu 1.7.4+
+[Definition]
+titleIds = 0005000010145000,0005000010144F00,0005000010110E00
+name = "Super Smash Bros. - NVIDIA Brightness Fix (Experimental)"
+
+[TextureRedefine] # replace SNORM framebuffer with float format (On Nvidia, rendering to SNORM textures truncates colors to [0.0,1.0] range, despite SNORM supporting [-1.0,1.0] range)
+width = 1920
+height = 1080
+formats = 0x219 # R10_G10_B10_A2_SNORM
+overwriteFormat = 0x820 # R16_G16_B16_A16_FLOAT
