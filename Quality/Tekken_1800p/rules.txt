@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 000500001010f800,5000010110000
+name = "TEKKEN TAG TOURNAMENT 2 - 1800p (3K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x033,0x001
+overwriteWidth = 3200
+overwriteHeight = 1800
