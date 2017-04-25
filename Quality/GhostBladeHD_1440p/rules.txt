@@ -1,9 +1,9 @@
 [Definition]
 titleIds = 50000101ffc00
-name = "Ghost Blade HD - 2160p (4K)" 
+name = "Ghost Blade HD - 1400p (2K)" 
 
 [TextureRedefine]
 width = 1280
 height = 720
-overwriteWidth = 3840
-overwriteHeight = 2160
+overwriteWidth = 2560
+overwriteHeight = 1440
