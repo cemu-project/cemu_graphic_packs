@@ -1,0 +1,41 @@
+[Definition]
+titleIds = 00050000101abc00,
+name = "Kirby and the Rainbow Curse - 1800p (3K)"
+
+[TextureRedefine] # tv
+width = 1024
+height = 576
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # tv
+width = 1025
+height = 577
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # tv ui 1
+width = 1280
+height = 720
+formatsExcluded = 0x41a,0x034,0x001
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # tv ui 2
+width = 1281
+height = 721
+formatsExcluded = 0x41a,0x034
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # half-res
+width = 512
+height = 288
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # q-res
+width = 256
+height = 144
+overwriteWidth = 800
+overwriteHeight = 450
