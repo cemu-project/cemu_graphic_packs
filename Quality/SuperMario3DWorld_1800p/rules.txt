@@ -1,0 +1,78 @@
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100,0005000010180600,0005000010180700,0005000010180500
+name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 1800p (3K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # zoomed in
+width = 1128
+height = 720
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # zoom transition
+width = 1000
+height = 600
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # zoom transition 2
+width = 1000
+height = 720
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # half-res (zoomed in)
+width = 564
+height = 360
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # half-res (zoom transition)
+width = 500
+height = 300
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # half-res (zoom transition 2)
+width = 500
+height = 360
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 800
+overwriteHeight = 450
+
+[TextureRedefine] # q-res (zoomed in)
+width = 282
+height = 180
+overwriteWidth = 800
+overwriteHeight = 450
+
+[TextureRedefine] # q-res (zoom transition)
+width = 250
+height = 150
+overwriteWidth = 800
+overwriteHeight = 450
+
+[TextureRedefine] # q-res (zoom transition 2)
+width = 250
+height = 180
+overwriteWidth = 800
+overwriteHeight = 450

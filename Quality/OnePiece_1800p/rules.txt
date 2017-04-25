@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010175c00,0005000010175d00
+name = "One Piece: Unlimited World Red - 1800p (3K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3200
+overwriteHeight = 1800

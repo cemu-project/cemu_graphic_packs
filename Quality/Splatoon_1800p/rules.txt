@@ -1,0 +1,40 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = "Splatoon - 1800p (3K)"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 1600
+overwriteHeight = 900
+
+[TextureRedefine] # squid sisters
+width = 1024
+height = 576
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # multiplayer
+width = 848
+height = 480
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+overwriteWidth = 1600
+overwriteHeight = 900
