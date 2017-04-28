@@ -12,25 +12,43 @@ overwriteHeight = 2880
 [TextureRedefine] # zoomed in
 width = 1128
 height = 720
-overwriteWidth = 4512
+overwriteWidth = 5120
 overwriteHeight = 2880
 
 [TextureRedefine] # zoom transition
 width = 1000
 height = 600
-overwriteWidth = 4000
-overwriteHeight = 2400
+overwriteWidth = 5120
+overwriteHeight = 2880
 
 [TextureRedefine] # zoom transition 2
 width = 1000
 height = 720
-overwriteWidth = 4000
+overwriteWidth = 5120
 overwriteHeight = 2880
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # half-res (zoomed in)
+width = 564
+height = 360
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # half-res (zoom transition)
+width = 500
+height = 300
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # half-res (zoom transition 2)
+width = 500
+height = 360
 overwriteWidth = 2560
 overwriteHeight = 1440
 
@@ -41,48 +59,40 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 720
 
-[TextureRedefine] # half-res (zoomed in)
-width = 564
-height = 360
-overwriteWidth = 2256
-overwriteHeight = 1080
+[TextureRedefine] # q-res (zoomed in)
+width = 282
+height = 180
+overwriteWidth = 1280
+overwriteHeight = 720
 
-[TextureRedefine] # half-res (zoom transition)
-width = 500
-height = 300
-overwriteWidth = 2000
-overwriteHeight = 1200
+[TextureRedefine] # q-res (zoom transition)
+width = 250
+height = 150
+overwriteWidth = 1280
+overwriteHeight = 720
 
-[TextureRedefine] # half-res (zoom transition 2)
-width = 500
-height = 360
-overwriteWidth = 2000
-overwriteHeight = 1440
-
+[TextureRedefine] # q-res (zoom transition 2)
+width = 250
+height = 180
+overwriteWidth = 1280
+overwriteHeight = 720
 
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-overwriteWidth = 2562
+overwriteWidth = 2560
 overwriteHeight = 1440
 
 [TextureRedefine] # half-res (gamepad)
 width = 427
 height = 240
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1281
+overwriteWidth = 1280
 overwriteHeight = 720
 
 [TextureRedefine] # q-res (gamepad)
 width = 214
 height = 120
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 642
+overwriteWidth = 640
 overwriteHeight = 360
-
-[TextureRedefine] # Shadows 
-width = 1024
-height = 1024
-formatsExcluded = 0x008,0x41A,0x033,0x034,0x035,0x431,0x235,0x433 # exclude everything but shadowmap
-overwriteWidth = 2048
-overwriteHeight = 2048

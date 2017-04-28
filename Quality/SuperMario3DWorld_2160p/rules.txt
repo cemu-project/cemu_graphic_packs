@@ -12,19 +12,19 @@ overwriteHeight = 2160
 [TextureRedefine] # zoomed in
 width = 1128
 height = 720
-overwriteWidth = 3384
+overwriteWidth = 3840
 overwriteHeight = 2160
 
 [TextureRedefine] # zoom transition
 width = 1000
 height = 600
-overwriteWidth = 3000
-overwriteHeight = 1800
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine] # zoom transition 2
 width = 1000
 height = 720
-overwriteWidth = 3000
+overwriteWidth = 3840
 overwriteHeight = 2160
 
 [TextureRedefine] # half-res alpha
@@ -37,19 +37,19 @@ overwriteHeight = 1080
 [TextureRedefine] # half-res (zoomed in)
 width = 564
 height = 360
-overwriteWidth = 1692
+overwriteWidth = 1920
 overwriteHeight = 1080
 
 [TextureRedefine] # half-res (zoom transition)
 width = 500
 height = 300
-overwriteWidth = 1500
-overwriteHeight = 900
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # half-res (zoom transition 2)
 width = 500
 height = 360
-overwriteWidth = 1500
+overwriteWidth = 1920
 overwriteHeight = 1080
 
 [TextureRedefine] # quarter-res alpha
@@ -62,17 +62,17 @@ overwriteHeight = 540
 [TextureRedefine] # q-res (zoomed in)
 width = 282
 height = 180
-overwriteWidth = 846
+overwriteWidth = 960
 overwriteHeight = 540
 
 [TextureRedefine] # q-res (zoom transition)
 width = 250
 height = 150
-overwriteWidth = 750
-overwriteHeight = 450
+overwriteWidth = 960
+overwriteHeight = 540
 
 [TextureRedefine] # q-res (zoom transition 2)
 width = 250
 height = 180
-overwriteWidth = 750
+overwriteWidth = 960
 overwriteHeight = 540
