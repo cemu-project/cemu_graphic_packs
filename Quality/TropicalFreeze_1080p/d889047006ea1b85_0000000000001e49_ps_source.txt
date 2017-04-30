@@ -1,0 +1,131 @@
+#version 400
+#extension GL_ARB_texture_gather : enable
+const float overwriteWidth = 1920.0;  //overwidth value.0 
+const float overwriteHeight = 1080.0;
+// shader d889047006ea1b85  //Cutscene fixes
+uniform ivec4 uf_remappedPS[2];
+uniform sampler2D textureUnitPS0;// Tex0 addr 0x19f9c000 res 128x128x1 dim 1 tm: 4 format 0033 compSel: 0 1 2 3 mipView: 0x0 (num 0x8) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 0 0 0 border: 0
+uniform sampler2D textureUnitPS1;// Tex1 addr 0xf4708800 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
+uniform sampler2D textureUnitPS2;// Tex2 addr 0x19f99000 res 64x64x1 dim 1 tm: 4 format 0031 compSel: 0 1 2 3 mipView: 0x0 (num 0x7) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 0 0 0 border: 0
+in Vertex2
+{
+ vec4 passG2PParameter0;
+ vec4 passG2PParameter1;
+ vec4 passG2PParameter2;
+ vec4 passG2PParameter3;
+ vec4 passG2PParameter4;
+} g2p;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R5f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R5f = gl_FragCoord.xyzw;
+R0f = g2p.passG2PParameter0;
+R1f = g2p.passG2PParameter1;
+R2f = g2p.passG2PParameter2;
+R3f = g2p.passG2PParameter3;
+R4f = g2p.passG2PParameter4;
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0);
+R5f.xy = R5f.xy / scaleFactor;
+R2f.xy = (texture(textureUnitPS2, R2f.xy).xy);
+R1f.xyzw = (texture(textureUnitPS0, R1f.xy).xyzw);
+// 0
+PV0f.x = R3f.y;
+PV0f.x = clamp(PV0f.x, 0.0, 1.0);
+PV0f.y = R3f.x;
+PV0f.y = clamp(PV0f.y, 0.0, 1.0);
+PV0f.z = mul_nonIEEE(R2f.x, intBitsToFloat(0x437f0000));
+PV0f.w = mul_nonIEEE(R2f.y, intBitsToFloat(0x437f0000));
+R127f.w = 1.0 / intBitsToFloat(uf_remappedPS[0].x);
+PS0f = R127f.w;
+// 1
+PV1f.x = PV0f.w * intBitsToFloat(0x3b800000);
+PV1f.x *= 2.0;
+PV1f.y = PV0f.z * intBitsToFloat(0x3b800000);
+PV1f.y *= 2.0;
+R127f.z = mul_nonIEEE(PV0f.y, intBitsToFloat(uf_remappedPS[0].z));
+PV1f.z = R127f.z;
+R126f.w = mul_nonIEEE(PV0f.x, intBitsToFloat(uf_remappedPS[0].z));
+PV1f.w = R126f.w;
+PS1f = 1.0 / intBitsToFloat(uf_remappedPS[0].y);
+// 2
+R127f.x = R5f.x * R127f.w;
+PV0f.x = R127f.x;
+R127f.y = R5f.y * PS1f;
+PV0f.y = R127f.y;
+PV0f.z = PV1f.y + -(1.0);
+PV0f.w = PV1f.x + -(1.0);
+R5f.y = mul_nonIEEE(R0f.x, intBitsToFloat(uf_remappedPS[1].x));
+PS0f = R5f.y;
+// 3
+backupReg0f = R0f.y;
+backupReg1f = R0f.w;
+PV1f.x = mul_nonIEEE(PV0f.w, R126f.w);
+PV1f.y = mul_nonIEEE(PV0f.z, R127f.z);
+R2f.z = mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedPS[1].x));
+PV1f.z = R2f.z;
+R0f.w = mul_nonIEEE(R0f.z, intBitsToFloat(uf_remappedPS[1].x));
+PV1f.w = R0f.w;
+R3f.w = mul_nonIEEE(backupReg1f, R1f.w);
+PS1f = R3f.w;
+// 4
+R0f.x = PV1f.y + R127f.x;
+PV0f.x = R0f.x;
+PV0f.z = -(PV1f.x);
+// 5
+R0f.y = PV0f.z + R127f.y;
+PV1f.y = R0f.y;
+R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);
+// 0
+backupReg0f = R0f.x;
+backupReg1f = R0f.z;
+PV0f.x = R1f.x + backupReg0f;
+PV0f.z = R1f.z + backupReg1f;
+PV0f.w = R1f.y + R0f.y;
+// 1
+R127f.x = mul_nonIEEE(R2f.z, PV0f.w);
+PV1f.x = R127f.x;
+R127f.y = mul_nonIEEE(R5f.y, PV0f.x);
+PV1f.y = R127f.y;
+R127f.z = mul_nonIEEE(R0f.w, PV0f.z);
+PV1f.z = R127f.z;
+// 2
+PV0f.x = R4f.y + -(PV1f.x);
+PV0f.y = R4f.x + -(PV1f.y);
+PV0f.w = R4f.z + -(PV1f.z);
+// 3
+R3f.x = (PV0f.y * R4f.w + R127f.y);
+PV1f.x = R3f.x;
+R3f.y = (PV0f.x * R4f.w + R127f.x);
+PV1f.y = R3f.y;
+R3f.z = (PV0f.w * R4f.w + R127f.z);
+PV1f.z = R3f.z;
+// export
+passPixelColor0 = vec4(R3f.x, R3f.y, R3f.z, R3f.w);
+}

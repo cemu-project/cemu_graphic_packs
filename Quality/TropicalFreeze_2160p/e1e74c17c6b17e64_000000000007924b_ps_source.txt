@@ -1,0 +1,427 @@
+#version 400
+#extension GL_ARB_texture_gather : enable
+const float overwriteWidth = 3840.0;  //overwidth value.0 
+const float overwriteHeight = 2160.0;
+// shader e1e74c17c6b17e64 // night water, roller coaster and war water
+uniform ivec4 uf_remappedPS[13];
+uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4a8c800 res 1280x720x1 dim 1 tm: 4 format 080e compSel: 0 0 0 0 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+uniform sampler2D textureUnitPS1;// Tex1 addr 0x2c210000 res 512x512x1 dim 1 tm: 4 format 0035 compSel: 0 1 4 5 mipView: 0x0 (num 0xa) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 0 0 0 border: 0
+uniform sampler2D textureUnitPS2;// Tex2 addr 0x2c210000 res 512x512x1 dim 1 tm: 4 format 0035 compSel: 0 1 4 5 mipView: 0x0 (num 0xa) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 0 0 0 border: 0
+uniform sampler2D textureUnitPS3;// Tex3 addr 0x364c6000 res 256x256x1 dim 1 tm: 4 format 0031 compSel: 0 1 2 3 mipView: 0x0 (num 0x9) sliceView: 0x0 (num 0x1) Sampler3 ClampX/Y/Z: 0 0 0 border: 0
+uniform samplerCubeArray textureUnitPS4;// Tex4 addr 0x29db2000 res 128x128x1 dim 3 tm: 4 format 0033 compSel: 0 1 2 3 mipView: 0x0 (num 0x8) sliceView: 0x0 (num 0x6) Sampler4 ClampX/Y/Z: 2 2 2 border: 0
+in vec4 passParameter0;
+in vec4 passParameter1;
+in vec4 passParameter2;
+in vec4 passParameter3;
+in vec4 passParameter4;
+in vec4 passParameter5;
+in vec4 passParameter6;
+layout(location = 0) out vec4 passPixelColor0;
+void redcCUBE(vec4 src0, vec4 src1, inout vec3 stm, inout int faceId)
+{
+// stm -> x .. s, y .. t, z .. MajorAxis*2.0
+vec3 inputCoord = normalize(vec3(src1.y, src1.x, src0.x));
+float rx = inputCoord.x;
+float ry = inputCoord.y;
+float rz = inputCoord.z;
+if( abs(rx) > abs(ry) && abs(rx) > abs(rz) )
+{
+stm.z = rx*2.0;
+stm.xy = vec2(ry,rz);	
+if( rx >= 0.0 )
+{
+faceId = 0;
+}
+else
+{
+faceId = 1;
+}
+}
+else if( abs(ry) > abs(rx) && abs(ry) > abs(rz) )
+{
+stm.z = ry*2.0;
+stm.xy = vec2(rx,rz);	
+if( ry >= 0.0 )
+{
+faceId = 2;
+}
+else
+{
+faceId = 3;
+}
+}
+else //if( abs(rz) > abs(ry) && abs(rz) > abs(rx) )
+{
+stm.z = rz*2.0;
+stm.xy = vec2(rx,ry);	
+if( rz >= 0.0 )
+{
+faceId = 4;
+}
+else
+{
+faceId = 5;
+}
+}
+}
+vec3 redcCUBEReverse(vec2 st, int faceId)
+{
+st.yx = st.xy;
+vec3 v;
+float majorAxis = 1.0;
+if( faceId == 0 )
+{
+v.yz = (st-vec2(1.5))*(majorAxis*2.0);
+v.x = 1.0;
+}
+else if( faceId == 1 )
+{
+v.yz = (st-vec2(1.5))*(majorAxis*2.0);
+v.x = -1.0;
+}
+else if( faceId == 2 )
+{
+v.xz = (st-vec2(1.5))*(majorAxis*2.0);
+v.y = 1.0;
+}
+else if( faceId == 3 )
+{
+v.xz = (st-vec2(1.5))*(majorAxis*2.0);
+v.y = -1.0;
+}
+else if( faceId == 4 )
+{
+v.xy = (st-vec2(1.5))*(majorAxis*2.0);
+v.z = 1.0;
+}
+else
+{
+v.xy = (st-vec2(1.5))*(majorAxis*2.0);
+v.z = -1.0;
+}
+return v;
+}
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R5f = vec4(0.0);
+vec4 R6f = vec4(0.0);
+vec4 R7f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R124f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+float cubeMapArrayIndex4 = 0.0;
+R6f = gl_FragCoord.xyzw;
+R0f = passParameter1;
+R1f = passParameter2;
+R2f = passParameter3;
+R3f = passParameter4;
+R4f = passParameter5;
+R5f = passParameter6;
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0);
+R6f.xy = R6f.xy / scaleFactor;
+R7f.xy = (texture(textureUnitPS1, R4f.xy).xy);
+R4f.xy = (texture(textureUnitPS2, R4f.zw).xy);
+R5f.xyz = (texture(textureUnitPS3, R5f.xy).xyz);
+// 0
+R127f.x = (R4f.y * intBitsToFloat(0x3fff0000) + -(1.0));
+PV0f.x = R127f.x;
+R123f.y = (R7f.x * intBitsToFloat(0x3fff0000) + -(1.0));
+PV0f.y = R123f.y;
+R127f.z = (R7f.y * intBitsToFloat(0x3fff0000) + -(1.0));
+PV0f.z = R127f.z;
+R123f.w = (R4f.x * intBitsToFloat(0x3fff0000) + -(1.0));
+PV0f.w = R123f.w;
+R4f.x = mul_nonIEEE(R6f.x, intBitsToFloat(uf_remappedPS[0].x));
+PS0f = R4f.x;
+// 1
+PV1f.x = mul_nonIEEE(PV0f.y, PV0f.y);
+R127f.y = PV0f.y + PV0f.w;
+PV1f.y = R127f.y;
+PV1f.z = mul_nonIEEE(PV0f.w, PV0f.w);
+R125f.w = PV0f.z + PV0f.x;
+PV1f.w = R125f.w;
+R4f.y = mul_nonIEEE(R6f.y, intBitsToFloat(uf_remappedPS[0].y));
+PS1f = R4f.y;
+// 2
+R6f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[1].w), 1.0);
+PV0f.x = R6f.x;
+R123f.y = (R127f.x * R127f.x + PV1f.z);
+R123f.y = clamp(R123f.y, 0.0, 1.0);
+PV0f.y = R123f.y;
+R4f.z = mul_nonIEEE(intBitsToFloat(uf_remappedPS[1].z), 1.0);
+PV0f.z = R4f.z;
+R123f.w = (R127f.z * R127f.z + PV1f.x);
+R123f.w = clamp(R123f.w, 0.0, 1.0);
+PV0f.w = R123f.w;
+PS0f = 1.0 / R1f.z;
+// 3
+R7f.x = R1f.x * PS0f;
+PV1f.x = R7f.x;
+PV1f.y = -(PV0f.w) + 1.0;
+R6f.z = R1f.y * PS0f;
+PV1f.z = R6f.z;
+R127f.w = -(PV0f.y) + 1.0;
+PV1f.w = R127f.w;
+R126f.z = R5f.x + 0.0;
+PS1f = R126f.z;
+// 4
+backupReg0f = R0f.x;
+backupReg0f = R0f.x;
+backupReg1f = R0f.y;
+backupReg1f = R0f.y;
+backupReg2f = R0f.z;
+backupReg2f = R0f.z;
+tempf.x = backupReg0f * backupReg0f + backupReg1f * backupReg1f + backupReg2f * backupReg2f + intBitsToFloat(0x80000000) * 0.0;
+PV0f.x = tempf.x;
+PV0f.y = tempf.x;
+PV0f.z = tempf.x;
+PV0f.w = tempf.x;
+R126f.w = tempf.x;
+R127f.z = sqrt(PV1f.y);
+PS0f = R127f.z;
+// 5
+R127f.x = R2f.x * R2f.x + R2f.y * R2f.y + R2f.z * R2f.z + intBitsToFloat(0x80000000) * 0.0;
+PV1f.x = R127f.x;
+PV1f.y = R127f.x;
+PV1f.z = R127f.x;
+PV1f.w = R127f.x;
+PS1f = sqrt(R127f.w);
+// 6
+R5f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].x), R126f.z);
+PV0f.x = R5f.x;
+R124f.y = R5f.z + 0.0;
+PV0f.y = R124f.y;
+R126f.z = R127f.z + PS1f;
+PV0f.z = R126f.z;
+R127f.w = R5f.y + 0.0;
+PV0f.w = R127f.w;
+tempResultf = 1.0 / sqrt(R126f.w);
+R126f.x = tempResultf;
+PS0f = R126f.x;
+// 7
+tempf.x = R127f.y * R127f.y + R125f.w * R125f.w + PV0f.z * PV0f.z + intBitsToFloat(0x80000000) * 0.0;
+PV1f.x = tempf.x;
+PV1f.y = tempf.x;
+PV1f.z = tempf.x;
+PV1f.w = tempf.x;
+tempResultf = 1.0 / sqrt(R127f.x);
+R127f.z = tempResultf;
+PS1f = R127f.z;
+// 8
+R124f.x = mul_nonIEEE(R2f.z, PS1f);
+PV0f.x = R124f.x;
+R126f.y = mul_nonIEEE(R0f.y, R126f.x);
+PV0f.y = R126f.y;
+R124f.z = mul_nonIEEE(R0f.x, R126f.x);
+PV0f.z = R124f.z;
+R126f.w = mul_nonIEEE(R0f.z, R126f.x);
+PV0f.w = R126f.w;
+tempResultf = 1.0 / sqrt(PV1f.x);
+R125f.z = tempResultf;
+PS0f = R125f.z;
+// 9
+R126f.x = mul_nonIEEE(R126f.z, PS0f);
+PV1f.x = R126f.x;
+R125f.y = mul_nonIEEE(R2f.x, R127f.z);
+PV1f.y = R125f.y;
+PV1f.z = mul_nonIEEE(PV0f.y, PV0f.x);
+R4f.w = mul_nonIEEE(R2f.y, R127f.z);
+PV1f.w = R4f.w;
+R127f.x = mul_nonIEEE(R125f.w, PS0f);
+PS1f = R127f.x;
+// 10
+backupReg0f = R127f.y;
+R123f.x = (-(PV1f.w) * R126f.w + PV1f.z);
+PV0f.x = R123f.x;
+R127f.y = mul_nonIEEE(R126f.w, PV1f.y);
+PV0f.y = R127f.y;
+PV0f.z = mul_nonIEEE(R124f.z, PV1f.x);
+R125f.w = mul_nonIEEE(R124f.z, PV1f.w);
+PV0f.w = R125f.w;
+R2f.y = mul_nonIEEE(backupReg0f, R125f.z);
+PS0f = R2f.y;
+// 11
+tempf.x = R3f.x * R3f.x + R3f.y * R3f.y + R3f.z * R3f.z + intBitsToFloat(0x80000000) * 0.0;
+PV1f.x = tempf.x;
+PV1f.y = tempf.x;
+PV1f.z = tempf.x;
+PV1f.w = tempf.x;
+R124f.w = (R127f.x * PV0f.x + PV0f.z);
+PS1f = R124f.w;
+// 12
+backupReg0f = R126f.x;
+backupReg0f = R126f.x;
+R126f.x = mul_nonIEEE(R126f.w, backupReg0f);
+PV0f.x = R126f.x;
+PV0f.y = mul_nonIEEE(R126f.y, backupReg0f);
+R123f.z = (-(R124f.x) * R124f.z + R127f.y);
+PV0f.z = R123f.z;
+R0f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].y), R127f.w);
+PV0f.w = R0f.w;
+tempResultf = 1.0 / sqrt(PV1f.x);
+R125f.x = tempResultf;
+PS0f = R125f.x;
+// 13
+backupReg0f = R126f.y;
+R2f.x = (R2f.y * R125f.y + R124f.w);
+PV1f.x = R2f.x;
+R126f.y = mul_nonIEEE(R3f.x, PS0f);
+PV1f.y = R126f.y;
+R123f.z = (R127f.x * PV0f.z + PV0f.y);
+PV1f.z = R123f.z;
+R123f.w = (-(R125f.y) * backupReg0f + R125f.w);
+PV1f.w = R123f.w;
+R125f.y = mul_nonIEEE(R3f.z, PS0f);
+PS1f = R125f.y;
+// 14
+backupReg0f = R127f.x;
+R127f.x = mul_nonIEEE(R3f.y, R125f.x);
+PV0f.x = R127f.x;
+R123f.y = (backupReg0f * PV1f.w + R126f.x);
+PV0f.y = R123f.y;
+PV0f.z = mul_nonIEEE(PV1f.x, PV1f.y);
+R125f.w = (R2f.y * R4f.w + PV1f.z);
+PV0f.w = R125f.w;
+R4f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].z), R124f.y);
+PS0f = R4f.w;
+// 15
+R123f.x = (PV0f.w * PV0f.x + PV0f.z);
+PV1f.x = R123f.x;
+R124f.z = (R2f.y * R124f.x + PV0f.y);
+PV1f.z = R124f.z;
+R3f.w = (R1f.w * intBitsToFloat(uf_remappedPS[3].x) + intBitsToFloat(uf_remappedPS[3].y));
+R3f.w = clamp(R3f.w, 0.0, 1.0);
+PV1f.w = R3f.w;
+// 16
+R123f.w = (PV1f.z * R125f.y + PV1f.x)*2.0;
+PV0f.w = R123f.w;
+// 17
+backupReg0f = R127f.x;
+backupReg1f = R124f.z;
+R127f.x = (-(R125f.w) * PV0f.w + backupReg0f);
+PV1f.x = R127f.x;
+R123f.y = (-(R2f.x) * PV0f.w + R126f.y);
+PV1f.y = R123f.y;
+R124f.z = (-(backupReg1f) * PV0f.w + R125f.y);
+PV1f.z = R124f.z;
+// 18
+PV0f.x = mul_nonIEEE(PV1f.y, intBitsToFloat(uf_remappedPS[4].z));
+PV0f.z = mul_nonIEEE(PV1f.y, intBitsToFloat(uf_remappedPS[4].y));
+PV0f.w = mul_nonIEEE(PV1f.y, intBitsToFloat(uf_remappedPS[4].x));
+// 19
+R123f.x = (R127f.x * intBitsToFloat(uf_remappedPS[5].y) + PV0f.z);
+PV1f.x = R123f.x;
+R123f.y = (R127f.x * intBitsToFloat(uf_remappedPS[5].x) + PV0f.w);
+PV1f.y = R123f.y;
+R123f.w = (R127f.x * intBitsToFloat(uf_remappedPS[5].z) + PV0f.x);
+PV1f.w = R123f.w;
+// 20
+R123f.x = (R124f.z * intBitsToFloat(uf_remappedPS[6].x) + PV1f.y);
+PV0f.x = R123f.x;
+R123f.y = (R124f.z * intBitsToFloat(uf_remappedPS[6].y) + PV1f.x);
+PV0f.y = R123f.y;
+R123f.z = (R124f.z * intBitsToFloat(uf_remappedPS[6].z) + PV1f.w);
+PV0f.z = R123f.z;
+// 21
+redcCUBE(vec4(PV0f.z,PV0f.z,PV0f.x,PV0f.y),vec4(PV0f.y,PV0f.x,PV0f.z,PV0f.z),cubeMapSTM,cubeMapFaceId);
+R2f.x = cubeMapSTM.x;
+R2f.y = cubeMapSTM.y;
+R2f.z = cubeMapSTM.z;
+R2f.w = intBitsToFloat(cubeMapFaceId);
+PV1f.x = R2f.x;
+PV1f.y = R2f.y;
+PV1f.z = R2f.z;
+PV1f.w = R2f.w;
+// 22
+PS0f = 1.0 / abs(PV1f.z);
+// 23
+backupReg0f = R2f.x;
+backupReg1f = R2f.y;
+R2f.x = (backupReg0f * PS0f + intBitsToFloat(0x3fc00000));
+PV1f.x = R2f.x;
+R2f.y = (backupReg1f * PS0f + intBitsToFloat(0x3fc00000));
+PV1f.y = R2f.y;
+R4f.x = (texture(textureUnitPS0, R4f.xy).x);
+R2f.xyzw = (texture(textureUnitPS4, vec4(redcCUBEReverse(R2f.yx,floatBitsToInt(R2f.w)),cubeMapArrayIndex4)).xyzw);
+// 0
+PV0f.x = mul_nonIEEE(R2f.x, intBitsToFloat(uf_remappedPS[7].x));
+R123f.y = (R4f.x * intBitsToFloat(0x40000000) + -(1.0));
+PV0f.y = R123f.y;
+PV0f.z = mul_nonIEEE(R2f.y, intBitsToFloat(uf_remappedPS[7].y));
+PV0f.w = mul_nonIEEE(R2f.z, intBitsToFloat(uf_remappedPS[7].z));
+// 1
+R123f.x = (R5f.x * PV0f.x + 0.0);
+PV1f.x = R123f.x;
+R123f.y = (PV0f.y * intBitsToFloat(uf_remappedPS[8].w) + R6f.x);
+PV1f.y = R123f.y;
+R123f.z = (PV0f.y * intBitsToFloat(uf_remappedPS[8].z) + R4f.z);
+PV1f.z = R123f.z;
+R123f.w = (R0f.w * PV0f.z + 0.0);
+PV1f.w = R123f.w;
+R127f.x = (R4f.w * PV0f.w + 0.0);
+PS1f = R127f.x;
+// 2
+R123f.x = (R6f.z * intBitsToFloat(uf_remappedPS[9].z) + PV1f.z);
+PV0f.x = R123f.x;
+R126f.y = (intBitsToFloat(uf_remappedPS[10].x) * R2f.w + PV1f.x);
+PV0f.y = R126f.y;
+R125f.z = (intBitsToFloat(uf_remappedPS[10].y) * R2f.w + PV1f.w);
+PV0f.z = R125f.z;
+R123f.w = (R6f.z * intBitsToFloat(uf_remappedPS[9].w) + PV1f.y);
+PV0f.w = R123f.w;
+// 3
+backupReg0f = R127f.x;
+R127f.x = (intBitsToFloat(uf_remappedPS[10].z) * R2f.w + backupReg0f);
+PV1f.x = R127f.x;
+R123f.y = (R7f.x * intBitsToFloat(uf_remappedPS[11].w) + PV0f.w);
+PV1f.y = R123f.y;
+R124f.z = (R7f.x * intBitsToFloat(uf_remappedPS[11].z) + PV0f.x);
+PV1f.z = R124f.z;
+// 4
+PV0f.x = -(PV1f.x) + intBitsToFloat(uf_remappedPS[12].z);
+PV0f.y = -(R125f.z) + intBitsToFloat(uf_remappedPS[12].y);
+PV0f.z = -(R126f.y) + intBitsToFloat(uf_remappedPS[12].x);
+PS0f = 1.0 / PV1f.y;
+// 5
+R3f.x = (PV0f.z * R3f.w + R126f.y);
+PV1f.x = R3f.x;
+R3f.y = (PV0f.y * R3f.w + R125f.z);
+PV1f.y = R3f.y;
+R3f.z = (PV0f.x * R3f.w + R127f.x);
+PV1f.z = R3f.z;
+PV1f.w = R124f.z * PS0f;
+// 6
+PV0f.x = -(R1f.w) + -(PV1f.w);
+// 7
+R3f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].w), PV0f.x);
+R3f.w = clamp(R3f.w, 0.0, 1.0);
+PV1f.w = R3f.w;
+// export
+passPixelColor0 = vec4(R3f.x, R3f.y, R3f.z, R3f.w);
+}

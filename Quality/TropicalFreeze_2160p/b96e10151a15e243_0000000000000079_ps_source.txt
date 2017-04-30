@@ -1,5 +1,5 @@
 #version 400
-#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_texture_gather : enable //water 1.2  //ne
 const float overwriteWidth = 3840.0;  //overwidth value.0 
 const float overwriteHeight = 2160.0;
 // shader b96e10151a15e243

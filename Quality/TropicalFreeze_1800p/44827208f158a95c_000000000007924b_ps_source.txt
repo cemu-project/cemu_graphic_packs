@@ -149,7 +149,7 @@ R4f.xy = (texture(textureUnitPS2, R4f.zw).xy);
 R5f.xyz = (texture(textureUnitPS3, R5f.xy).xyz);
 // 0
 vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0);
-R6f.xy = floatBitsToInt(intBitsToFloat(R6f.xy) / scaleFactor);
+R6f.xy = R6f.xy / scaleFactor;
 R123f.x = (R4f.x * intBitsToFloat(0x3fff0000) + -(1.0));
 PV0f.x = R123f.x;
 R127f.y = (R7f.y * intBitsToFloat(0x3fff0000) + -(1.0));

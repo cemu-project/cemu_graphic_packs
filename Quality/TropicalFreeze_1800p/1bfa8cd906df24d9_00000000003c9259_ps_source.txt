@@ -1,5 +1,5 @@
 #version 400
-#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_texture_gather : enable //water 1.2 opening
 const float overwriteWidth = 3200.0;  //overwidth value.0 
 const float overwriteHeight = 1800.0;
 // shader 1bfa8cd906df24d9
@@ -153,11 +153,8 @@ R7i.xy = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R4i.xy)).xy);
 R4i.xy = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R4i.zw)).xy);
 R8i.xyz = floatBitsToInt(texture(textureUnitPS3, intBitsToFloat(R5i.xy)).xyz);
 // 0
-vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); // factor = newResolution / expectedResolution
-	// //R4i.xyzw = floatBitsToInt(textureGather(textureUnitPS1, intBitsToFloat(R0i.xy)).wzxy);
-	//vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(textureGather(textureUnitPS5.x), textureGather(textureUnitPS5.y));
-	R6i.xy = floatBitsToInt(intBitsToFloat(R6i.xy) / scaleFactor);
-
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); 
+R6i.xy = floatBitsToInt(intBitsToFloat(R6i.xy) / scaleFactor);
 R9i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R6i.x), intBitsToFloat(uf_remappedPS[0].x)));
 PV0i.x = R9i.x;
 R9i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R6i.y), intBitsToFloat(uf_remappedPS[0].y)));

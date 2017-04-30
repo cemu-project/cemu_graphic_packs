@@ -150,9 +150,8 @@ R5f = passParameter6;
 R7f.xy = (texture(textureUnitPS1, R4f.xy).xy);
 R4f.xy = (texture(textureUnitPS2, R4f.zw).xy);
 R8f.xyz = (texture(textureUnitPS3, R5f.xy).xyz);
-// 0
 vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0);
-R6f.xy = floatBitsToInt(intBitsToFloat(R6f.xy) / scaleFactor);
+R6f.xy = R6f.xy / scaleFactor;
 R5f.x = mul_nonIEEE(R6f.x, intBitsToFloat(uf_remappedPS[0].x));
 PV0f.x = R5f.x;
 R5f.y = mul_nonIEEE(R6f.y, intBitsToFloat(uf_remappedPS[0].y));
