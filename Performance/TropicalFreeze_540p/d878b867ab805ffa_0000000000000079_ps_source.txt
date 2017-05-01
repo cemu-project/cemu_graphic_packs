@@ -1,6 +1,5 @@
 #version 400
-#extension GL_ARB_texture_gather : enable
-
+#extension GL_ARB_texture_gather : enable // water 1.2 // surface trp. 
 const float overwriteWidth = 960.0;  //overwidth value.0 
 const float overwriteHeight = 540.0;
 // shader d878b867ab805ffa
@@ -41,9 +40,8 @@ int cubeMapFaceId;
 R1i = floatBitsToInt(gl_FragCoord.xyzw);
 R0i = floatBitsToInt(passParameter1);
 // 0
-vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); // factor = newResolution / expectedResolution
-	R1i.xy = floatBitsToInt(intBitsToFloat(R1i.xy) / scaleFactor);
-
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); 
+R1i.xy = floatBitsToInt(intBitsToFloat(R1i.xy) / scaleFactor);
 
 backupReg0i = R1i.x;
 backupReg1i = R1i.y;

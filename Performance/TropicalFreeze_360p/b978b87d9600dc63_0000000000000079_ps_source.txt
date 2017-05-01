@@ -1,8 +1,7 @@
 #version 400 // water tropical freeze
-#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_texture_gather : enable //water 1.2 //opening water l2
 const float overwriteWidth = 640.0;  //overwidth value.0 
 const float overwriteHeight = 360.0;
-
 // shader b978b87d9600dc63
 uniform ivec4 uf_remappedPS[6];
 uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4a8c800 res 1280x720x1 dim 1 tm: 4 format 080e compSel: 0 0 0 0 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
@@ -41,9 +40,8 @@ int cubeMapFaceId;
 R1i = floatBitsToInt(gl_FragCoord.xyzw);
 R0i = floatBitsToInt(passParameter1);
 // 0
-
-vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); // factor = newResolution / expectedResolution
-	R1i.xy = floatBitsToInt(intBitsToFloat(R1i.xy) / scaleFactor);
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); 
+R1i.xy = floatBitsToInt(intBitsToFloat(R1i.xy) / scaleFactor);
 
 backupReg0i = R1i.x;
 backupReg1i = R1i.y;

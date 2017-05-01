@@ -50,11 +50,8 @@ R0i = floatBitsToInt(g2p.passG2PParameter0);
 R1i = floatBitsToInt(g2p.passG2PParameter1);
 R2i = floatBitsToInt(g2p.passG2PParameter2);
 R3i = floatBitsToInt(g2p.passG2PParameter3);
-
-vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0); // factor = newResolution / expectedResolution
-	R4i.xy = floatBitsToInt(intBitsToFloat(R4i.xy) / scaleFactor);
-
-
+vec2 scaleFactor = vec2(overwriteWidth,overwriteHeight)/vec2(1280.0,720.0);
+R4i.xy = floatBitsToInt(intBitsToFloat(R4i.xy) / scaleFactor);
 R2i.xy = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R2i.xy)).xy);
 R1i.xyzw = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).xyzw);
 // 0
