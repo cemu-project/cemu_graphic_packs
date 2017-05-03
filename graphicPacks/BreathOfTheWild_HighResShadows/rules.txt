@@ -1,8 +1,7 @@
 # Found by Esppiral on GBATemp http://gbatemp.net/threads/release-cemu-wii-u-emulator.399524/page-975#post-7167278
-# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - High Res Shadows"
+name = "The Legend of Zelda: Breath of the Wild - 2x Resolution Shadows"
 
 [TextureRedefine]
 width = 360

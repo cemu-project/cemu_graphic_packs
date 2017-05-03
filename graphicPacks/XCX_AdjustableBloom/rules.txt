@@ -1,3 +1,3 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
-name = "Xenoblade Chronicles X - Adjustable Bloom" #Github ver
+name = "Xenoblade Chronicles X - Adjustable Bloom (REQUIRES FILE EDITING)"

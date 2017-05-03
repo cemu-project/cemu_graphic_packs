@@ -1,7 +1,6 @@
-# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B000
-name = "Splatoon - High Res Shadows"
+name = "Splatoon - 2x Resolution Shadows"
 
 [TextureRedefine]
 width = 1024
