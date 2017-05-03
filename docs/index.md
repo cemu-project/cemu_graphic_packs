@@ -14,8 +14,6 @@ If you want to upgrade your game experience, [Enhancement](https://github.com/sl
 
 If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/wiki/Workaround-Packs) to see if there's a workaround for it.
 
-If you just want to see how Graphic Packs can mess around with games, [Fun](https://github.com/slashiee/cemu_graphic_packs/wiki/Fun-Packs) is for you.
-
 ### Games with Graphic Packs
 
 - [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
