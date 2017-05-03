@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 50000101df400,00050002101DF401
-name = "Pokken Tournament - Improved 720p"
-
-[TextureRedefine]
-width = 960
-height = 720
-overwriteWidth = 1280
-overwriteHeight = 720
