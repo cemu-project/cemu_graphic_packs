@@ -4,17 +4,15 @@
 
 It's recommended to download all the graphic packs. This [archive](https://github.com/slashiee/cemu_graphic_packs/archive/master.zip) contains all of them.
 
-If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_packs/tree/master/Quality) is the way to go.
+If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_packs/wiki/Quality-Packs) is the way to go.
 
-If you want better performance, [Performance](https://github.com/slashiee/cemu_graphic_packs/tree/master/Performance) is the way to go.
+If you want better performance, [Performance](https://github.com/slashiee/cemu_graphic_packs/wiki/Performance-Packs) is the way to go.
 
-If you want to kill your GPU, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enthusiast) is the way to go..but I wouldn't recommended it.
+If you want to kill your GPU, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/wiki/Enthusiast-Packs) is the way to go..but I wouldn't recommended it.
 
-If you want to upgrade your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enhancement) is right up your ally.
+If you want to upgrade your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/wiki/Enhancement-Packs) is right up your ally.
 
-If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/tree/master/Workaround) to see if there's a workaround for it.
-
-If you just want to see how Graphic Packs can mess around with games, [Fun](https://github.com/slashiee/cemu_graphic_packs/tree/master/Fun) is for you.
+If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/wiki/Workaround-Packs) to see if there's a workaround for it.
 
 ### Games with Graphic Packs
 

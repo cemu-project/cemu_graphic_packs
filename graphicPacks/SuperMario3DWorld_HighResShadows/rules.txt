@@ -1,0 +1,11 @@
+# Found by Dario FF on NeoGAF http://www.neogaf.com/forum/showpost.php?p=228502082&postcount=506
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100,0005000010180600,0005000010180700,0005000010180500
+name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 2x Resolution Shadows"
+
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 2048
+overwriteHeight = 2048
