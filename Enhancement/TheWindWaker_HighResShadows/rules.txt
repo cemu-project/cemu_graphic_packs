@@ -4,6 +4,7 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
 name = "The Wind Waker HD - High Res Shadows"
+version = 2
 
 [TextureRedefine]
 width = 1024

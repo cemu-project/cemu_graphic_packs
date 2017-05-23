@@ -2,6 +2,7 @@
 [Definition]
 titleIds = 0005000010101F00,0005000010102000,0005000010102100
 name = "Nintendo Land - High Res Shadows"
+version = 2
 
 [TextureRedefine]
 width = 2048

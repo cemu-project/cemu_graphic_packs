@@ -2,6 +2,7 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B000
 name = "Splatoon - High Res Shadows"
+version = 2
 
 [TextureRedefine]
 width = 1024
