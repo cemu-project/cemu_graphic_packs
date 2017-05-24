@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 000500001010f800,5000010110000
 name = "TEKKEN TAG TOURNAMENT 2 - 1080p"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
