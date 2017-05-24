@@ -1,40 +1,40 @@
 [Definition]
 titleIds = 0005000010116300,000500001012DC00,0005000010135300
-name = "The Wonderful 101 - 1800p (3K)"
+name = "The Wonderful 101 - 2160p (4K)"
 version = 2
 
 [TextureRedefine]
 width = 1280
 height = 720
-overwriteWidth = 3200
-overwriteHeight = 1800
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine]
 width = 640
 height = 360
-overwriteWidth = 1600
-overwriteHeight = 900
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine]
 width = 320
 height = 180
-overwriteWidth = 800
-overwriteHeight = 450
+overwriteWidth = 960
+overwriteHeight = 540
 
 [TextureRedefine]
 width = 160
 height = 90
-overwriteWidth = 400
-overwriteHeight = 225
+overwriteWidth = 480
+overwriteHeight = 270
 
 [TextureRedefine]
 width = 80
 height = 22
-overwriteWidth = 200
-overwriteHeight = 112
+overwriteWidth = 240
+overwriteHeight = 134
 
 [TextureRedefine]
 width = 40
 height = 45
-overwriteWidth = 100
-overwriteHeight = 56
+overwriteWidth = 120
+overwriteHeight = 66
