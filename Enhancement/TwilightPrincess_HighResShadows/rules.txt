@@ -3,6 +3,7 @@
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = "Twilight Princess HD - High Res Shadows"
+version = 2
 
 [TextureRedefine]
 width = 384

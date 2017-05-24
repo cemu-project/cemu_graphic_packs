@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010145d00,0005000010145c00,0005000010106100,0005000010180600,0005000010180700,0005000010180500
 name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 540p"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280

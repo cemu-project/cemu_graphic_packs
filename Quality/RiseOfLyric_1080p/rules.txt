@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 5000010175b00,0005000210175B01
 name = "Sonic Boom: Rise of Lyric - 1080p"
+version = 2
 
 [TextureRedefine]
 width = 1280

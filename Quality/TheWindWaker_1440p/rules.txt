@@ -1,6 +1,7 @@
 [Definition]# EUR, USA, JPN titles	
 titleIds =  0005000010143400,0005000010143600,0005000010143500 #	
-name ="The Wind Waker HD - 1440p (2K)"
+name = "The Wind Waker HD - 1440p (2K)"
+version = 2
 	
 [TextureRedefine] # TV
 width =	1920

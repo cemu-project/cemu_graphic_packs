@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00
 name = "Super Smash Bros. - 4320p (8K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1920

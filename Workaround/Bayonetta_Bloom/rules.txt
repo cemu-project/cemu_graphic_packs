@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 000500001014db00,0005000010157e00,0005000010157f00
 name = "Bayonetta 1 - Bloom Workaround"
+version = 2
 
 [TextureRedefine]
 width = 320

@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
 name = "Mario Kart 8 - 2880p (5K)"
+version = 2
 
 # Main Screen Resolution
 [TextureRedefine]
