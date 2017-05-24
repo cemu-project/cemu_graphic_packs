@@ -1,6 +1,7 @@
 [Definition]	
 titleIds = 000500001019C800,000500001019E600,000500001019E500	
 name ="Twilight Princess HD - 4320p (8K)"
+version = 2
 	
 [TextureRedefine] # 
 width =	1920
