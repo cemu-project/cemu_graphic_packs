@@ -1,6 +1,7 @@
 [Definition]# EUR, USA, JPN titles	
 titleIds =  0005000010143400,0005000010143600,0005000010143500 #	
-name ="The Wind Waker HD - 2160p (4K)"
+name = "The Wind Waker HD - 2160p (4K)"
+version = 2
 	
 [TextureRedefine] # game rendering resolution. 	#Change this value
 width =	1920
