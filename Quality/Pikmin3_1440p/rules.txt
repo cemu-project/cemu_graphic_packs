@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 000500001012be00,000500001012bd00,000500001012bc00
 name = "Pikmin 3 - 1440p (2K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
