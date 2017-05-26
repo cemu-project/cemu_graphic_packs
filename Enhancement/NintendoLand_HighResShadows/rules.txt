@@ -1,7 +1,7 @@
 # FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
 [Definition]
 titleIds = 0005000010101F00,0005000010102000,0005000010102100
-name = "Nintendo Land - High Res Shadows"
+name = "Nintendo Land - Higher Quality Shadows"
 version = 2
 
 [TextureRedefine]

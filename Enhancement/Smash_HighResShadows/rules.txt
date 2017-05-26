@@ -1,7 +1,7 @@
 # FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width.
 [Definition]
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
-name = "Super Smash Bros. - High Res Shadows"
+name = "Super Smash Bros. - Higher Quality Shadows"
 version = 2
 
 [TextureRedefine]

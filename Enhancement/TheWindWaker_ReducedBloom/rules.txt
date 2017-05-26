@@ -1,4 +1,4 @@
 [Definition]
 titleIds = 0005000010143500
-name = "The Wind Waker HD - Reduced bloom"
+name = "The Wind Waker HD - Reduced Bloom"
 version = 2
