@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B000
 name = "Splatoon - 360p"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
