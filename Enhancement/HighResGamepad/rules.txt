@@ -1,7 +1,7 @@
-# FYI: Enhancements are meant to be edited, just make sure to edit the overwrite height and width, and add the necessary game ID.
 [Definition]
 titleIds = 0 # Replace 0 with game title ids here
-name = "High Res Gamepad"
+name = "Higher Quality Gamepad"
+version = 2
 
 [TextureRedefine]
 width = 854
