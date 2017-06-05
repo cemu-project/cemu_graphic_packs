@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 00050000101abc00,
 name = "Kirby and the Rainbow Curse - 360p"
+version = 2
 
 [TextureRedefine] # tv
 width = 1024
