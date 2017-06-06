@@ -1,4 +1,4 @@
-# Found by StripTheSoul on GBATemp http://gbatemp.net/threads/release-cemu-wii-u-emulator.399524/page-924#post-7065207
+# Found by StripTheSoul
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
 name = "Mario Kart 8 - Higher Quality Shadows"

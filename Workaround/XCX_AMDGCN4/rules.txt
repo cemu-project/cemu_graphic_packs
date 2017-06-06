@@ -1,4 +1,4 @@
-# Found by Esppiral on GBATemp http://gbatemp.net/threads/release-cemu-wii-u-emulator.399524/page-899#post-7018186
+# Found by Esppiral
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Xenoblade Chronicles X - AMD GCN4 Workaround"

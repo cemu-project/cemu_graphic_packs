@@ -1,4 +1,4 @@
-# Found by Esppiral on GBATemp http://gbatemp.net/threads/release-cemu-wii-u-emulator.399524/page-975#post-7167278
+# Found by Esppiral
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "The Legend of Zelda: Breath of the Wild - Higher Quality Shadows"
