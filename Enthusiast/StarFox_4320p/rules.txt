@@ -6,14 +6,13 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x41A,0x001 # exclude the intro background texture 
+formatsExcluded = 0x41A # exclude the intro background texture 
 overwriteWidth = 7680
 overwriteHeight = 4320
 
 [TextureRedefine] # tv
 width = 1152
 height = 720
-formatsExcluded = 0x41A # exclude the intro background texture 
 overwriteWidth = 6912
 overwriteHeight = 4320
 

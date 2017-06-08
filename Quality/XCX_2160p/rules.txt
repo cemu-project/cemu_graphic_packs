@@ -6,7 +6,6 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-#formatsExcluded = 0x001	#intro FMV background
 overwriteWidth = 3840
 overwriteHeight = 2160
 

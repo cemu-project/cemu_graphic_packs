@@ -4,7 +4,6 @@ name ="Scribblenauts Unlimited and Unmasked 1440p"
 		
 [TextureRedefine] # game internal rendering resolution. x2
 width =	1280	
-height = 	720	
-formatsExcluded = 0x001 #FMV		
+height = 	720		
 overwriteWidth = 	2560	
 overwriteHeight = 	1440	

@@ -5,6 +5,5 @@ name = "Scribblenauts Unlimited and Unmasked - 1800p (3K)"
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x001 # FMV
 overwriteWidth = 3200
 overwriteHeight = 1800
