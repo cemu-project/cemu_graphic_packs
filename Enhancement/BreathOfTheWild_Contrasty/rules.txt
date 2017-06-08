@@ -1,4 +1,4 @@
 [Definition]	
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500 # ALZP01	
-name = "The Legend of Zelda: BOTW - Contrasty" # Set preferred levels in shader, v3 Git
+name = "The Legend of Zelda: Breath of the Wild - Contrasty" # Set preferred levels in shader, v3 Git
 version = 2
