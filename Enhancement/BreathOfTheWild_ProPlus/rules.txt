@@ -16,6 +16,12 @@ formats = 0x034
 overwriteFormat = 0x234
 
 [TextureRedefine] # Disable Stamina
+width = 84
+height = 84
+formats = 0x034
+overwriteFormat = 0x234
+
+[TextureRedefine] # Disable Stamina
 width = 56
 height = 56
 formats = 0x035
