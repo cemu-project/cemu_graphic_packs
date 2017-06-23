@@ -6,8 +6,20 @@ version = 2
 [TextureRedefine] # Disable Hearts
 width = 48
 height = 48
-formats = 0x001,0x007
+formats = 0x001,0x007,0x035
 overwriteFormat = 0x005
+
+[TextureRedefine] # Disable Hearts
+width = 64
+height = 64
+formats = 0x035 # don't overwrite 0x034
+overwriteFormat = 0x235
+
+[TextureRedefine] # Disable Hearts
+width = 32
+height = 32
+formats = 0x034
+overwriteFormat = 0x234
 
 [TextureRedefine] # Disable Stamina
 width = 34
