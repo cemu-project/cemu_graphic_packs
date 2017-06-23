@@ -26,9 +26,3 @@ width = 160
 height = 90
 overwriteWidth = 320
 overwriteHeight = 180
-
-[TextureRedefine]
-width = 32
-height = 32
-overwriteWidth = 64
-overwriteHeight = 64
