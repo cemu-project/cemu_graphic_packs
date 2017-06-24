@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 000500001019ae00,00050000101a2c00,ffffffff36325ea6
+titleIds = 000500001019ae00,00050000101a2c00
 name = "Family Tennis SP - 360p"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280

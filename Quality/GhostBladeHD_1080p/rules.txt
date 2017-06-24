@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 50000101ffc00
 name = "Ghost Blade HD - 1080p" 
+version = 2
 
 [TextureRedefine]
 width = 1280

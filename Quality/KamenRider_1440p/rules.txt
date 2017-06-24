@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010170700
 name = "Kamen Rider - Battride War II - 1440p (2K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280

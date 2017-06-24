@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010176800,0005000010179700
 name = "Guacamelee! Super Turbo Championship Edition - 1440p (2K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
