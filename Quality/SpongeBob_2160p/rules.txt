@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010146900,0005000010147d00
 name = "SpongeBob SquarePants Plankton's Robotic Revenge - 2160p (4K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
