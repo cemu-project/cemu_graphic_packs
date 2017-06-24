@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010175c00,0005000010175d00
 name = "One Piece: Unlimited World Red - 1440p (2K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
