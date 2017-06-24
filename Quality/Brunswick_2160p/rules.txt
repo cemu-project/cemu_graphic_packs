@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 00050000101d4200
 name = "Brunswick Pro Bowling - 2160p (4K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280

@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 0005000010180b00,0005000010177200
 name = "Citizens Of Earth - 1800p (3K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
