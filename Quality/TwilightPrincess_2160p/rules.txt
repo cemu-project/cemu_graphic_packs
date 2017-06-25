@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500	
-name = "Twilight Princess HD - 2160p (2K)"
+name = "Twilight Princess HD - 2160p (4K)"
 version = 2
 
 [TextureRedefine] # game rendering resolution
