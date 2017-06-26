@@ -6,7 +6,7 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x033
+formatsExcluded = 0x031,0x033
 overwriteWidth = 3200
 overwriteHeight = 1800
 
