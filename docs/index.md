@@ -46,7 +46,7 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 - [Phineas and Ferb: Quest for Cool Stuff](http://compat.cemu.info/wiki/Phineas_and_Ferb:_Quest_for_Cool_Stuff)
 - [Pikmin 3](http://compat.cemu.info/wiki/Pikmin_3)
 - [Pokkén Tournament](http://compat.cemu.info/wiki/Pokk%C3%A9n_Tournament)
-- [Scribblenauts Unlimited](http://compat.cemu.info/wiki/Scribblenauts_Unlimited) [Part of [Scribblenauts Unmasked](http://compat.cemu.info/wiki/Scribblenauts_Unmasked:_A_DC_Comics_Adventure)]
+- [Scribblenauts Unlimited](http://compat.cemu.info/wiki/Scribblenauts_Unlimited)
 - [Scribblenauts Unmasked: A DC Comics Adventure](http://compat.cemu.info/wiki/Scribblenauts_Unmasked:_A_DC_Comics_Adventure)
 - [Severed](http://compat.cemu.info/wiki/Severed)
 - [Shovel Knight](http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows)
