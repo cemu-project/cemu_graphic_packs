@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 0005000010146300,0005000010147900,000500001014F300,000500001017E600,000500001017E500,0005000010182300
+name = "PAC-MAN & the Ghostly Adventures 1 & 2 - 1080p"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x033
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]
+width = 320
+height = 180
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine]
+width = 160
+height = 90
+overwriteWidth = 240
+overwriteHeight = 135
