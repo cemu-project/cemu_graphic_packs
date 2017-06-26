@@ -40,6 +40,8 @@ If you just want to see how Graphic Packs can mess around with games, [Fun](http
 - [New Super Mario Bros. U](http://compat.cemu.info/wiki/New_Super_Mario_Bros._U)
 - [Nintendo Land](http://compat.cemu.info/wiki/Nintendo_Land)
 - [One Piece: Unlimited World Red](http://compat.cemu.info/wiki/One_Piece:_Unlimited_World_Red)
+- [PAC-MAN & the Ghostly Adventures](http://compat.cemu.info/wiki/Pac-Man_and_the_Ghostly_Adventures_1)
+- [PAC-MAN & the Ghostly Adventures 2](http://compat.cemu.info/wiki/Pac-Man_and_the_Ghostly_Adventures_2)
 - [Paper Mario: Color Splash](http://compat.cemu.info/wiki/Paper_Mario:_Color_Splash)
 - [Phineas and Ferb: Quest for Cool Stuff](http://compat.cemu.info/wiki/Phineas_and_Ferb:_Quest_for_Cool_Stuff)
 - [Pikmin 3](http://compat.cemu.info/wiki/Pikmin_3)
