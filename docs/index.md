@@ -6,7 +6,7 @@ It's recommended to download all the graphic packs. This [archive](https://githu
 
 If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_packs/tree/master/Quality) is the way to go.
 
-If you want better performance, [Performance](https://github.com/slashiee/cemu_graphic_packs/tree/master/Performance) is the way to go.
+If you want better performance, [Performance](https://github.com/slashiee/gfx_packs_misc/tree/master/Performance) is the way to go.
 
 If you want to kill your GPU, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enthusiast) is the way to go..but I wouldn't recommended it.
 
@@ -14,7 +14,7 @@ If you want to upgrade your game experience, [Enhancement](https://github.com/sl
 
 If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/tree/master/Workaround) to see if there's a workaround for it.
 
-If you just want to see how Graphic Packs can mess around with games, [Fun](https://github.com/slashiee/cemu_graphic_packs/tree/master/Fun) is for you.
+If you just want to see how Graphic Packs can mess around with games, [Fun](https://github.com/slashiee/gfx_packs_misc/tree/master/Fun) is for you.
 
 ### Games with Graphic Packs
 
