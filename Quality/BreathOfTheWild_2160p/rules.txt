@@ -46,6 +46,12 @@ height = 288
 overwriteWidth = 1920
 overwriteHeight = 864
 
+[TextureRedefine] #half-res4
+width = 640
+height = 361
+overwriteWidth = 1920
+overwriteHeight = 1082
+
 [TextureRedefine] #q-res1 Main bloom pass, AO 
 width = 320
 height = 180
