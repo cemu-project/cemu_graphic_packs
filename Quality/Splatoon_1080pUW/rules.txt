@@ -1,0 +1,41 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = "Splatoon - 1080p (21:9)"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 2560
+overwriteHeight = 1080
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 1280
+overwriteHeight = 540
+
+[TextureRedefine] # squid sisters
+width = 1024
+height = 576
+overwriteWidth = 1536
+overwriteHeight = 864
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1080
+
+[TextureRedefine] # multiplayer
+width = 848
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1080
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+overwriteWidth = 1280
+overwriteHeight = 540

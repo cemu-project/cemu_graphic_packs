@@ -1,0 +1,11 @@
+[Definition]# EUR, USA, JPN titles		
+titleIds =  0005000010143400,0005000010143600,0005000010143500 #		
+name = "The Wind Waker HD - 1080p (21:9)"
+version = 2	
+		
+[TextureRedefine] # game rendering resolution
+width = 1920	
+height = 1080	
+formatsExcluded = 0x41A # exclude the intro background texture 		
+overwriteWidth = 2560 
+overwriteHeight = 1080 

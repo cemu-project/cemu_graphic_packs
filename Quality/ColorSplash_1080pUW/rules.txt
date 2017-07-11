@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 500001f600900,500001f600a00,500001f600b00
+name = "Paper Mario: Color Splash - 1080p (21:9)"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x431,0x001
+overwriteWidth = 2560
+overwriteHeight = 1080
