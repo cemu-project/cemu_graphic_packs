@@ -1,0 +1,66 @@
+[Definition]
+titleIds = 00050000101abc00,
+name = "Kirby and the Rainbow Curse - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1024
+height = 576
+overwriteWidth = 512
+overwriteHeight = 287
+
+[TextureRedefine] # tv
+width = 1025
+height = 577
+overwriteWidth = 513
+overwriteHeight = 289
+
+[TextureRedefine] # tv ui 1
+width = 1280
+height = 720
+formatsExcluded = 0x41a,0x034,0x001
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # tv ui 2
+width = 1281
+height = 721
+formatsExcluded = 0x41a,0x034
+overwriteWidth = 641
+overwriteHeight = 361
+
+[TextureRedefine] # half-res
+width = 512
+height = 288
+overwriteWidth = 255
+overwriteHeight = 145
+
+[TextureRedefine] # q-res
+width = 256
+height = 144
+overwriteWidth = 128
+overwriteHeight = 73
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 855
+height = 481
+overwriteWidth = 641
+overwriteHeight = 361
+
+[TextureRedefine] # gamepad half-res
+width = 427
+height = 240
+overwriteWidth = 320
+overwriteHeight = 181
+
+[TextureRedefine] # gamepad q-res
+width = 213
+height = 120
+overwriteWidth = 160
+overwriteHeight = 91

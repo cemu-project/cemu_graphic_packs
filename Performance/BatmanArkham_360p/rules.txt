@@ -1,0 +1,17 @@
+[Definition]
+titleIds = ffffffff0796e931,0005000010112900,0005000010111300,000500001010AB00
+name = "Batman Arkham City Armored Edition - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

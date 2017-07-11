@@ -1,0 +1,44 @@
+[Definition]
+titleIds = 0005000010101F00,0005000010102000,0005000010102100
+name = "Nintendo Land - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+texturesExcluded = 0x1f712000
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine] # gamepad
+width = 848
+height = 480
+overwriteWidth = 424
+overwriteHeight = 240
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine] # half-res alpha (gamepad)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 212
+overwriteHeight = 120
+
+[TextureRedefine]
+width = 2048
+height = 2048
+formats = 0x005
+overwriteWidth = 1024
+overwriteHeight = 1024

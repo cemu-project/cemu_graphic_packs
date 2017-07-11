@@ -1,0 +1,63 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B000
+name = "Splatoon - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine] # half-res alpha (gamepad)
+width = 427
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 214
+overwriteHeight = 120
+
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 212
+overwriteHeight = 120
+
+[TextureRedefine] # squid sisters
+width = 1024
+height = 576
+overwriteWidth = 768
+overwriteHeight = 432
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine] # multiplayer
+width = 848
+height = 480
+overwriteWidth = 424
+overwriteHeight = 240
+
+[TextureRedefine] # shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 512
+overwriteHeight = 512
+
+[TextureRedefine] # shadows
+width = 2048
+height = 2048
+formats = 0x005
+overwriteWidth = 1024
+overwriteHeight = 1024

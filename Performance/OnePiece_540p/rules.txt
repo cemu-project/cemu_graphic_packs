@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 0005000010175c00,0005000010175d00
+name = "One Piece: Unlimited World Red - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x001 # FMV fix: place forceTextureUpdate = true under [Graphics] in game profile when using cemuhook 0.4.2.0+
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

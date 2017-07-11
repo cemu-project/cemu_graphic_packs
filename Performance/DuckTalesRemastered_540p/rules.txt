@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 0005000010129000,0005000010129200
+name = "DuckTales Remastered - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # q-res
+width = 480
+height = 270
+overwriteWidth = 240
+overwriteHeight = 135
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

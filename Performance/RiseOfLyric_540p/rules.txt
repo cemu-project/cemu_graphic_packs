@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 5000010175b00,0005000210175B01
+name = "Sonic Boom: Rise of Lyric - 540p"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x031,0x001
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

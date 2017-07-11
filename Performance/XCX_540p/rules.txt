@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
+name = "Xenoblade Chronicles X - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine] # Gear menu
+width = 1024
+height = 720
+overwriteWidth = 768
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

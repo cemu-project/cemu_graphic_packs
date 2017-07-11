@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "Twilight Princess HD - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine] # shadows
+width = 384
+height = 384
+overwriteWidth = 192
+overwriteHeight = 192

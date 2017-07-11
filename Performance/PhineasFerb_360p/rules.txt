@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010139400
+name = "Phineas & Ferb: Quest for Cool Stuff - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

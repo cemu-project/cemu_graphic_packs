@@ -1,0 +1,90 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
+name = "Super Smash Bros. - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # half-res
+width = 960
+height = 540
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine] # q-res
+width = 480
+height = 270
+overwriteWidth = 160
+overwriteHeight = 90
+
+[TextureRedefine] # o-res 
+width = 240
+height = 135
+overwriteWidth = 80
+overwriteHeight = 45
+
+[TextureRedefine] # half-res 2
+width = 120
+height = 67
+overwriteWidth = 40
+overwriteHeight = 22
+
+[TextureRedefine] # q-res 2
+width = 60
+height = 33
+overwriteWidth = 20
+overwriteHeight = 11
+
+[TextureRedefine] # o-res 2
+width = 30
+height = 16
+overwriteWidth = 10
+overwriteHeight = 5
+
+[TextureRedefine] # o-res 3
+width = 8
+height = 1
+overwriteWidth = 2
+overwriteHeight = 1
+
+[TextureRedefine] # 2nd
+width = 820
+height = 410
+overwriteWidth = 410
+overwriteHeight = 205
+
+[TextureRedefine] # 3rd
+width = 730
+height = 365
+overwriteWidth = 365
+overwriteHeight = 183
+
+[TextureRedefine] # 4th
+width = 420
+height = 210
+overwriteWidth = 210
+overwriteHeight = 105
+
+[TextureRedefine] # shadows
+width = 512
+height = 512
+formats = 0x00f,0x00b
+overwriteWidth = 256
+overwriteHeight = 256
+
+[TextureRedefine] # shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 512
+overwriteHeight = 512
+
+[TextureRedefine] # boxing ring screen
+width = 220
+height = 124
+overwriteWidth = 0
+overwriteHeight = 0

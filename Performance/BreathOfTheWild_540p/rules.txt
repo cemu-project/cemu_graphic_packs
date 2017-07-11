@@ -1,0 +1,119 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - 540p"
+version = 2
+
+[TextureRedefine] #TV
+width = 1280
+height = 720
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] #TV2
+width = 1280
+height = 721
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 960
+overwriteHeight = 541
+
+[TextureRedefine] #TV3
+width = 1280
+height = 608
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 960
+overwriteHeight = 456
+
+[TextureRedefine] #TV4
+width = 1152
+height = 648
+formatsExcluded = 0x008 # exclude the intro background texture
+overwriteWidth = 864
+overwriteHeight = 486
+
+[TextureRedefine] #half-res1
+width = 640
+height = 360
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine] #half-res2
+width = 640
+height = 290
+overwriteWidth = 480
+overwriteHeight = 218
+
+[TextureRedefine] #half-res3
+width = 640
+height = 288
+overwriteWidth = 480
+overwriteHeight = 216
+
+[TextureRedefine] #q-res1
+width = 320
+height = 180
+overwriteWidth = 240
+overwriteHeight = 135
+
+[TextureRedefine] #q-res2
+width = 320
+height = 145
+overwriteWidth = 240
+overwriteHeight = 109
+
+[TextureRedefine] #q-res3
+width = 320
+height = 144
+overwriteWidth = 240
+overwriteHeight = 108
+
+[TextureRedefine] #o-res1
+width = 160
+height = 90
+overwriteWidth = 120
+overwriteHeight = 68
+
+[TextureRedefine] # O
+width = 80
+height = 45
+overwriteWidth = 60
+overwriteHeight = 34
+
+[TextureRedefine] # M
+width = 80
+height = 44
+overwriteWidth = 60
+overwriteHeight = 33
+
+[TextureRedefine] # G
+width = 40
+height = 22
+overwriteWidth = 30
+overwriteHeight = 17
+
+[TextureRedefine] #fog
+width = 720
+height = 360
+overwriteWidth = 540
+overwriteHeight = 270
+
+[TextureRedefine] #Gamepad
+width = 854
+height = 480
+formatsExcluded = 0x034
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine]
+width = 360
+height = 360
+formats = 0x005
+overwriteWidth = 180
+overwriteHeight = 180
+
+[TextureRedefine]
+width = 720
+height = 720
+formats = 0x005
+overwriteWidth = 360
+overwriteHeight = 360

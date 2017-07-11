@@ -1,0 +1,41 @@
+[Definition]
+titleIds = 500001012f000,ffffffff057b4449
+name = "FAST Racing NEO - 360p"
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x433
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # Half-width 1
+width = 640
+height = 720
+overwriteWidth = 320
+overwriteHeight = 362
+
+[TextureRedefine] # Half-res
+width = 640
+height = 360
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine] # Half-width 2
+width = 320
+height = 360
+overwriteWidth = 160
+overwriteHeight = 182
+
+[TextureRedefine] # Q-res
+width = 160
+height = 180
+overwriteWidth = 80
+overwriteHeight = 90
+
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

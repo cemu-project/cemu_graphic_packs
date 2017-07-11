@@ -1,0 +1,69 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
+name = "Xenoblade Chronicles X - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 322
+overwriteHeight = 182
+
+[TextureRedefine] # q-res alpha (Previously not added due to potential conflict, please remove rule when using Xeno GCN4 workaround)
+width = 320
+height = 180
+overwriteWidth = 161
+overwriteHeight = 91
+
+[TextureRedefine] # Gear menu
+width = 1024
+height = 720
+overwriteWidth = 512
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine] # Fog
+width =	426
+height = 240
+overwriteWidth = 213
+overwriteHeight = 120
+
+// vvvv credits to Getdls & GITech vvvv //
+
+[TextureRedefine] # Sun, Light Sources (plants, armor etc)
+width =	512
+height = 288
+overwriteWidth = 258
+overwriteHeight = 146
+
+[TextureRedefine] # "God rays" size (not quality), lens reflections.
+width =	256
+height = 144
+overwriteWidth = 123
+overwriteHeight = 72
+
+#[TextureRedefine]# Probe glow. Does not increase sample amount, only scales up
+#width = 160
+#height = 90
+#formatsExcluded = 0x816  #fix probe glow
+#overwriteWidth = 82
+#overwriteHeight = 48
+	
+#[TextureRedefine]# Probe Beacon glow.
+#width = 80
+#height = 46
+#formatsExcluded = 0x816  #fix probe glow
+#overwriteWidth = 41
+#overwriteHeight = 24

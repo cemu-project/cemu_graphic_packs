@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 0005000010137F00,0005000010138300,0005000010144800
+name = "Donkey Kong Country: Tropical Freeze - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x031 # exclude the intro background texture
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

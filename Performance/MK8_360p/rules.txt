@@ -1,0 +1,89 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
+name = "Mario Kart 8 - 360p"
+version = 2
+
+# Main Screen Resolution
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x41A,0x431 # exclude the intro background texture, race end background
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+# Half Res Alpha (and DOF)
+[TextureRedefine]
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 320
+overwriteHeight = 180
+
+# Quarter Res Alpha (motion blur effect around edges of screen)
+[TextureRedefine]
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 160
+overwriteHeight = 90
+
+# Multiplayer-Mode Resolution (2p)
+[TextureRedefine]
+width = 640
+height = 720
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 360
+
+# Multiplayer-Mode Half Res Alpha (2p)
+[TextureRedefine]
+width = 320
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 240
+overwriteHeight = 180
+
+# Multiplayer-Mode Quarter Res Alpha (2p)
+[TextureRedefine]
+width = 160
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 120
+overwriteHeight = 90
+
+# MKTV screen
+[TextureRedefine]
+width = 960
+height = 540
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 270
+
+# MKTV internal render targets
+[TextureRedefine]
+width = 960
+height = 536
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 480
+overwriteHeight = 268
+
+# MKTV half res alpha
+[TextureRedefine]
+width = 480
+height = 268
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 240
+overwriteHeight = 134
+
+[TextureRedefine] # shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 512
+overwriteHeight = 512

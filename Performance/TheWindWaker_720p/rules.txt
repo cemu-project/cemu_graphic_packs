@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = "The Wind Waker HD - 720p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 1280
+overwriteHeight = 720

@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 0005000010178f00,00050000101d9300,500001016e100
+name = "Shovel Knight - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # tv
+width = 1600
+height = 960
+overwriteWidth = 533
+overwriteHeight = 320
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

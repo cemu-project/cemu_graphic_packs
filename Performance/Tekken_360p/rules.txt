@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 000500001010f800,5000010110000
+name = "TEKKEN TAG TOURNAMENT 2 - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x033,0x001
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

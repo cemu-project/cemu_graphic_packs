@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 00050000101BEB00,00050000101BEC00,00050000101BED00,00050000101AFF00,00050000101B0400,00050000101B0500,00050000101DCD00,0005000010201B00
+name = "Star Fox Zero + Star Fox Guard - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x41A,0x001 # exclude the intro background texture 
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # tv
+width = 1152
+height = 720
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 576
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine] # gamepad
+width = 640
+height = 480
+overwriteWidth = 320
+overwriteHeight = 240

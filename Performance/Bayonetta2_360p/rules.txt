@@ -1,0 +1,35 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011b900,000500001014db00,0005000010157e00,0005000010157f00
+name = "Bayonetta 1 + 2 - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x001 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine]#half-res
+width = 640
+height = 360
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine]#q-res1
+width = 320
+height = 176
+overwriteWidth = 160
+overwriteHeight = 88
+
+[TextureRedefine]# q-res2
+width = 320
+height = 180
+overwriteWidth = 160
+overwriteHeight = 90
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

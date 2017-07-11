@@ -1,0 +1,106 @@
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100,0005000010180600,0005000010180700,0005000010180500
+name = "Super Mario 3D World + Captain Toad: Treasure Tracker - 360p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # zoomed in
+width = 1128
+height = 720
+overwriteWidth = 564
+overwriteHeight = 360
+
+[TextureRedefine] # zoom transition
+width = 1000
+height = 600
+overwriteWidth = 500
+overwriteHeight = 300
+
+[TextureRedefine] # zoom transition 2
+width = 1000
+height = 720
+overwriteWidth = 500
+overwriteHeight = 360
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine] # half-res (gamepad)
+width = 427
+height = 240
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 214
+overwriteHeight = 120
+
+[TextureRedefine] # half-res (zoomed in)
+width = 564
+height = 360
+overwriteWidth = 282
+overwriteHeight = 180
+
+[TextureRedefine] # half-res (zoom transition)
+width = 500
+height = 300
+overwriteWidth = 250
+overwriteHeight = 150
+
+[TextureRedefine] # half-res (zoom transition 2)
+width = 500
+height = 360
+overwriteWidth = 250
+overwriteHeight = 180
+
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 160
+overwriteHeight = 90
+
+[TextureRedefine] # q-res (gamepad)
+width = 124
+height = 120
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 62
+overwriteHeight = 60
+
+[TextureRedefine] # q-res (zoomed in)
+width = 282
+height = 180
+overwriteWidth = 141
+overwriteHeight = 90
+
+[TextureRedefine] # q-res (zoom transition)
+width = 250
+height = 150
+overwriteWidth = 125
+overwriteHeight = 75
+
+[TextureRedefine] # q-res (zoom transition 2)
+width = 250
+height = 180
+overwriteWidth = 125
+overwriteHeight = 90
+
+[TextureRedefine] # shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = 512
+overwriteHeight = 512

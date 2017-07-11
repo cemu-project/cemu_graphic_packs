@@ -1,0 +1,70 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
+name = "Super Smash Bros. - 720p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280
+overwriteHeight = 720
+
+[TextureRedefine] # half-res
+width = 960
+height = 540
+overwriteWidth = 640
+overwriteHeight = 360
+
+[TextureRedefine] # q-res
+width = 480
+height = 270
+overwriteWidth = 320
+overwriteHeight = 180
+
+[TextureRedefine] # o-res 
+width = 240
+height = 135
+overwriteWidth = 160
+overwriteHeight = 90
+
+[TextureRedefine] # half-res 2
+width = 120
+height = 67
+overwriteWidth = 80
+overwriteHeight = 45
+
+[TextureRedefine] # q-res 2
+width = 60
+height = 33
+overwriteWidth = 40
+overwriteHeight = 22
+
+[TextureRedefine] # o-res 2
+width = 30
+height = 16
+overwriteWidth = 20
+overwriteHeight = 11
+
+[TextureRedefine] # o-res 3
+width = 8
+height = 1
+overwriteWidth = 5
+overwriteHeight = 1
+
+[TextureRedefine] # 2nd
+width = 820
+height = 410
+overwriteWidth = 547
+overwriteHeight = 273
+
+[TextureRedefine] # 3rd
+width = 730
+height = 365
+overwriteWidth = 487
+overwriteHeight = 243
+
+[TextureRedefine] # 4th
+width = 420
+height = 210
+overwriteWidth = 280
+overwriteHeight = 140

@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 000500001012be00,000500001012bd00,000500001012bc00
+name = "Pikmin 3 - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x001 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

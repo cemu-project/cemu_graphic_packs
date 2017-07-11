@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
+name = "Super Smash Bros. - No Boxing Ring Screen"
+version = 2
+
+[TextureRedefine] # boxing ring screen
+width = 220
+height = 124
+overwriteWidth = 0
+overwriteHeight = 0

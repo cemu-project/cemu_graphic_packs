@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 00050000101ED700,0005000010131D00
+name = "Tokyo Mirage Sessions FE - 540p"
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

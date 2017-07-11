@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+name = "New Super Mario Bros. U + New Super Luigi U - 540p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

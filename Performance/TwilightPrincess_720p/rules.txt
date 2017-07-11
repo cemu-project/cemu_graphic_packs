@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "Twilight Princess HD - 720p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280
+overwriteHeight = 720

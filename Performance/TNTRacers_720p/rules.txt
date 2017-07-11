@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010142800,000500001014f000
+name = "TNT Racers Nitro Machines Edition - 720p"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280
+overwriteHeight = 720
+
+[TextureRedefine] # q-res
+width = 480
+height = 270
+overwriteWidth = 320
+overwriteHeight = 180
