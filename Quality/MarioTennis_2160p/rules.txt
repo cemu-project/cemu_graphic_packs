@@ -80,6 +80,7 @@ overwriteHeight = 68
 [TextureRedefine]
 width = 854
 height = 480
+formatsExcluded = 0x41a
 overwriteWidth = 3840
 overwriteHeight = 2160
 
@@ -129,4 +130,40 @@ overwriteHeight = 84
 width = 11
 height = 14
 overwriteWidth = 33
+overwriteHeight = 42
+
+[TextureRedefine]
+width = 216
+height = 448
+overwriteWidth = 648
+overwriteHeight = 1344
+
+[TextureRedefine]
+width = 108
+height = 224
+overwriteWidth = 324
+overwriteHeight = 672
+
+[TextureRedefine]
+width = 54
+height = 112
+overwriteWidth = 162
+overwriteHeight = 336
+
+[TextureRedefine]
+width = 27
+height = 56
+overwriteWidth = 81
+overwriteHeight = 336
+
+[TextureRedefine]
+width = 13
+height = 28
+overwriteWidth = 40
+overwriteHeight = 84
+
+[TextureRedefine]
+width = 6
+height = 14
+overwriteWidth = 20
 overwriteHeight = 42
