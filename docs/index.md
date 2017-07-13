@@ -16,8 +16,8 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 
 ### Games with Graphic Packs
 
-- [Adventure Time Explore the Dungeon Because I DON'T KNOW](http://compat.cemu.info/wiki/Adventure_Time:_Finn_And_Jake_Investigations)
-- [Adventure Time Finn And Jake Investigations](http://compat.cemu.info/wiki/Adventure_Time:_Explore_the_Dungeon_Because_I_Don't_Know!)
+- [Adventure Time: Explore the Dungeon Because I DON'T KNOW](http://compat.cemu.info/wiki/Adventure_Time:_Finn_And_Jake_Investigations)
+- [Adventure Time: Finn And Jake Investigations](http://compat.cemu.info/wiki/Adventure_Time:_Explore_the_Dungeon_Because_I_Don't_Know!)
 - Aqua TV
 - [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
 - [Bayonetta](http://compat.cemu.info/wiki/Bayonetta) [Part of [Bayonetta 2](http://compat.cemu.info/wiki/Bayonetta_2)]
