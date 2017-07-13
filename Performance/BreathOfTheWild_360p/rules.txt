@@ -34,8 +34,8 @@ overwriteHeight = 324
 [TextureRedefine] #half-res1
 width = 640
 height = 360
-overwriteWidth = 322
-overwriteHeight = 182
+overwriteWidth = 320
+overwriteHeight = 180
 
 [TextureRedefine] #half-res2
 width = 640
@@ -48,6 +48,12 @@ width = 640
 height = 288
 overwriteWidth = 320
 overwriteHeight = 144
+
+[TextureRedefine] #half-res3
+width = 640
+height = 360
+overwriteWidth = 320
+overwriteHeight = 181
 
 [TextureRedefine] #q-res1
 width = 320

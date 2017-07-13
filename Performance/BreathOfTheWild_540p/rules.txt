@@ -49,6 +49,12 @@ height = 288
 overwriteWidth = 480
 overwriteHeight = 216
 
+[TextureRedefine] #half-res3
+width = 640
+height = 361
+overwriteWidth = 480
+overwriteHeight = 271
+
 [TextureRedefine] #q-res1
 width = 320
 height = 180
@@ -73,8 +79,6 @@ height = 90
 overwriteWidth = 120
 overwriteHeight = 68
 
-<<<<<<< HEAD
-=======
 [TextureRedefine] # O
 width = 80
 height = 45
@@ -93,7 +97,6 @@ height = 22
 overwriteWidth = 30
 overwriteHeight = 17
 
->>>>>>> origin/master
 [TextureRedefine] #fog
 width = 720
 height = 360
