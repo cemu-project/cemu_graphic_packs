@@ -1,0 +1,22 @@
+[Definition]
+titleIds = ffffffff0796e931
+name = "Batman Arkham City Armored Edition - 5760p (10K)"
+
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 10240
+overwriteHeight = 5760
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 2562
+#overwriteHeight = 1440

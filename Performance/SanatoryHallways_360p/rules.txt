@@ -1,0 +1,24 @@
+[Definition]
+titleIds = 00050000101c5f00
+name = "Sanatory Hallways - 360p"
+
+
+
+
+version = 2
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 640
+overwriteHeight = 361
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

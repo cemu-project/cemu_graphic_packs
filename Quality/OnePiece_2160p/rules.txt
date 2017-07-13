@@ -9,3 +9,10 @@ height = 720
 formatsExcluded = 0x001 # FMV fix: place forceTextureUpdate = true under [Graphics] in game profile when using cemuhook 0.4.2.0+
 overwriteWidth = 3840
 overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080

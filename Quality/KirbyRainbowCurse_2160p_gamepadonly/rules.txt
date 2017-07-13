@@ -1,0 +1,35 @@
+[Definition]
+titleIds = 00050000101abc00,
+name = "Kirby and the Rainbow Curse - 2160p gamepad (4K)"
+
+
+
+
+[TextureRedefine] # gamepad
+
+1width = 854
+
+height = 480
+
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+
+width = 855
+height = 481
+overwriteWidth = 3845
+
+overwriteHeight = 2165
+
+[TextureRedefine] # gamepad half-res
+width = 427
+height = 240
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine] # gamepad q-res
+width = 213
+height = 120
+overwriteWidth = 960
+overwriteHeight = 540

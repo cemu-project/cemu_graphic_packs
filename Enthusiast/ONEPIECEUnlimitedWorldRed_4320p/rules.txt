@@ -1,0 +1,31 @@
+[Definition]
+titleIds = 0005000010175c00,0005000010175d00
+name = "ONE PIECE Unlimited World Red - 4320p (8K)"
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+[TextureRedefine] # half-res alpha
+
+width = 640
+height = 360
+
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 2562
+#overwriteHeight = 1440

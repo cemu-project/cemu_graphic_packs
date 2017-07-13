@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 000500001010da00,0005000010112f00
+name = "NBA 2K13 - 2160p (4K)"
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+
+overwriteWidth = 3840
+
+overwriteHeight = 2160
+
+[TextureRedefine]#half-res
+width = 640
+height = 360
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080

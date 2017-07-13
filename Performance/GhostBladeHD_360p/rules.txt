@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 50000101ffc00
+name = "Ghost Blade HD - 360p" 
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = 640
+overwriteHeight = 361
+
+[TextureRedefine] #Gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

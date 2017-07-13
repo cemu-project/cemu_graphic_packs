@@ -37,7 +37,7 @@ overwriteHeight = 1440
 [TextureRedefine] # gamepad,  Scale proprotionally or probe list view breaks
 width = 854
 height = 480
-overwriteWidth = 5120
+overwriteWidth = 5124
 overwriteHeight = 2880
 
 // vvvv credits to Getdls & GITech vvvv //

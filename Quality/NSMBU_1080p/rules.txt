@@ -8,3 +8,22 @@ width = 1280
 height = 720
 overwriteWidth = 1920
 overwriteHeight = 1080
+
+TextureRedefine] # AA pass, shadows viewport
+width = 640
+height = 360
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine]
+width = 320
+height = 180
+overwriteWidth = 480
+overwriteHeight = 270
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080

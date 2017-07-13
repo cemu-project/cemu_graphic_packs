@@ -1,0 +1,25 @@
+[Definition]
+titleIds = 000500001015b100,0005000010155b00,00050000101b6500
+name = " Tengami - 1440p (2K)"
+
+
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 2560
+
+overwriteHeight = 1440
+
+[TextureRedefine] # gamepad
+
+width = 854
+height = 480
+#overwriteWidth = 1920
+#overwriteHeight = 1080

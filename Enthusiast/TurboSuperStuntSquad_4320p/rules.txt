@@ -1,0 +1,36 @@
+[Definition]
+titleIds = 0005000010133900,0005000010136700
+name = "Turbo Super Stunt Squad - 4320p (8K)"
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+formatsExcluded = 0x031 #exclude intro/menu background
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+
+[TextureRedefine] # half-res	
+width =	640	
+height = 360	
+overwriteWidth = 3840
+overwriteHeight = 2160
+		
+[TextureRedefine] # q-res	
+width =	320	
+height = 180	
+overwriteWidth = 1920
+overwriteHeight = 1079
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 2562
+#overwriteHeight = 1440

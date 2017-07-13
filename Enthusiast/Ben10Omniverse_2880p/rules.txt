@@ -1,0 +1,43 @@
+[Definition]
+titleIds = 000500001010ac00,0005000010111000
+name = "Ben 10 Omniverse - 2880p (5K)"
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+
+[TextureRedefine] # half-res	
+width =	640	
+height = 360	
+overwriteWidth = 2560
+overwriteHeight = 1440
+		
+[TextureRedefine] # q-res	
+width =	320	
+height = 180	
+overwriteWidth = 1280
+overwriteHeight = 721
+
+[TextureRedefine] #o-res
+width = 160
+height = 90
+overwriteWidth = 480
+overwriteHeight = 361
+
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 2562
+#overwriteHeight = 1440

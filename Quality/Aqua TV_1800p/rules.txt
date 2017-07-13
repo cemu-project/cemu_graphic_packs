@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 0005000010205f00
+name = "Aqua TV - 1800p (3K)"
+
+
+version = 2
+
+[TextureRedefine] # tv
+ 1
+width = 1280
+
+height = 720
+
+overwriteWidth = 3200
+overwriteHeight = 1800
+
+
+[TextureRedefine] # tv 2	
+width =	1280
+height = 480
+overwriteWidth = 3200
+overwriteHeight = 1200
+		
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+overwriteWidth = 1920
+overwriteHeight = 1080

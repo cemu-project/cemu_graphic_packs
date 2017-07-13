@@ -1,0 +1,23 @@
+[Definition]
+titleIds = 000500001012be00,000500001012bd00,000500001012bc00
+
+name = "Pikmin 3 - 4320p (8K)"
+
+
+
+[TextureRedefine] # tv
+width = 1280
+
+height = 720
+
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+[TextureRedefine] # gamepad
+
+width = 854
+
+height = 480
+
+#overwriteWidth = 2560
+#overwriteHeight = 1440

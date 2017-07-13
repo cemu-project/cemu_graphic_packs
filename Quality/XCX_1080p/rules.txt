@@ -34,6 +34,13 @@ height = 240
 overwriteWidth = 639
 overwriteHeight = 360
 
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080
+
 // vvvv credits to Getdls & GITech vvvv //
 
 [TextureRedefine] # Sun, Light Sources (plants, armor etc)

@@ -5,7 +5,11 @@ name = "Pokken Tournament - 540p"
 [TextureRedefine]
 width = 1280
 height = 720
+<<<<<<< HEAD
+formatsExcluded = 0x001 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
+=======
 formatsExcluded = 0x001,0x033 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
+>>>>>>> origin/master
 overwriteWidth = 960
 overwriteHeight = 540
 

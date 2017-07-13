@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 500001f600900,500001f600a00,500001f600b00
+name = "Paper Mario: Color Splash - Virtual Boy Mode"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x005

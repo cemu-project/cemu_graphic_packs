@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 0005000010205f00
+name = "Aqua TV - 1080p"
+
+
+version = 2
+
+[TextureRedefine] # tv
+ 1
+width = 1280
+
+height = 720
+
+overwriteWidth = 1920
+
+overwriteHeight = 1080
+
+
+[TextureRedefine] # tv 2	
+width =	1280
+height = 480
+overwriteWidth = 1920
+overwriteHeight = 720
+		
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+overwriteWidth = 1920
+overwriteHeight = 1080

@@ -1,0 +1,150 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - 32-Bit Mode"
+version = 2
+
+[TextureRedefine] #TV
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x019
+overwriteWidth = 640
+overwriteHeight = 480
+
+[TextureRedefine] #TV Filter
+width = 1280
+height = 720
+formats = 0x019
+overwriteFormat = 0x00b
+overwriteWidth = 640
+overwriteHeight = 480
+
+[TextureRedefine] #TV2
+width = 1280
+height = 721
+overwriteWidth = 640
+overwriteHeight = 481
+
+[TextureRedefine] #TV3
+width = 1280
+height = 608
+overwriteWidth = 640
+overwriteHeight = 405
+
+[TextureRedefine] #TV4
+width = 1152
+height = 648
+overwriteWidth = 576
+overwriteHeight = 432
+
+[TextureRedefine] #half-res1
+width = 640
+height = 360
+overwriteWidth = 320
+overwriteHeight = 240
+
+[TextureRedefine] #half-res2
+width = 640
+height = 290
+overwriteWidth = 320
+overwriteHeight = 241
+
+[TextureRedefine] #half-res3
+width = 640
+height = 288
+overwriteWidth = 320
+overwriteHeight = 203
+
+[TextureRedefine] #half-res4
+width = 576
+height = 324
+overwriteWidth = 288
+overwriteHeight = 108
+
+[TextureRedefine] #q-res1
+width = 320
+height = 180
+overwriteWidth = 160
+overwriteHeight = 120
+
+[TextureRedefine] #q-res2
+width = 320
+height = 145
+overwriteWidth = 160
+overwriteHeight = 121
+
+[TextureRedefine] #q-res3
+width = 320
+height = 144
+overwriteWidth = 160
+overwriteHeight = 102
+
+[TextureRedefine] #q-res4
+width = 288
+height = 162
+overwriteWidth = 144
+overwriteHeight = 54
+
+[TextureRedefine] #o-res1
+width = 160
+height = 90
+overwriteWidth = 80
+overwriteHeight = 60
+
+[TextureRedefine] # O
+width = 80
+height = 45
+overwriteWidth = 40
+overwriteHeight = 30
+
+[TextureRedefine] # M
+width = 80
+height = 44
+overwriteWidth = 40
+overwriteHeight = 29
+
+[TextureRedefine] # F
+width = 40
+height = 23
+overwriteWidth = 20
+overwriteHeight = 15
+
+[TextureRedefine] # G
+width = 40
+height = 22
+overwriteWidth = 20
+overwriteHeight = 15
+
+[TextureRedefine] #fog
+width = 720
+height = 360
+overwriteWidth = 360
+overwriteHeight = 181
+
+[TextureRedefine] #gamepad
+width = 854
+height = 480
+formatsExcluded = 0x034,0x019
+overwriteWidth = 640
+overwriteHeight = 480
+
+[TextureRedefine] #Gamepad Filter
+width = 854
+height = 480
+formats = 0x019
+overwriteFormat = 0x00b
+overwriteWidth = 640
+overwriteHeight = 480
+
+[TextureRedefine]
+width = 360
+height = 360
+formats = 0x005
+overwriteWidth = 180
+overwriteHeight = 180
+
+[TextureRedefine]
+width = 720
+height = 720
+formats = 0x005
+overwriteWidth = 360
+overwriteHeight = 360

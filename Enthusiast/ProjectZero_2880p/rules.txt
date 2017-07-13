@@ -1,0 +1,42 @@
+[Definition]
+titleIds = 00050000101d0300,00050000101d0600,000500001014d200
+name = "Project Zero Maiden of Black Water - 2880p (5K)"
+
+
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine] # tv
+
+width = 1278
+
+height = 718
+
+
+overwriteWidth = 5112
+overwriteHeight = 2872
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+
+overwriteWidth = 2560
+overwriteHeight = 1440
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+overwriteWidth = 2560
+overwriteHeight = 1440

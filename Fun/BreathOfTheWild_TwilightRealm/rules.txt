@@ -1,0 +1,42 @@
+#Was made for April Fools 2017 (pack made by Darkemaste)
+#NOTE: This (might) override any BotW High Res Shadow resolutions!
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Twilight Realm"
+version = 2
+
+[TextureRedefine]
+width = 360
+height = 360
+overwriteWidth = 270
+overwriteHeight = 270
+
+[TextureRedefine]
+width = 720
+height = 720
+overwriteWidth = 0144
+overwriteHeight = 0144
+
+[TextureRedefine]
+width = 256
+height = 256
+overwriteWidth = 768
+overwriteHeight = 768
+
+[TextureRedefine]
+width = 1024
+height = 1024
+overwriteWidth = 2048
+overwriteHeight = 2048
+
+[TextureRedefine]
+width = 2048
+height = 2048
+overwriteWidth = 4096
+overwriteHeight = 4096
+
+[TextureRedefine] #4117
+width = 64
+height = 64
+overwriteWidth = 256
+overwriteHeight = 256

@@ -1,0 +1,37 @@
+[Definition]
+titleIds = 00050000101a9e00,00050000101a9c00
+name = "Chompy Chomp Chomp Party - 360p"
+
+
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 640
+overwriteHeight = 361
+
+
+[TextureRedefine] # half-res	
+width =	640	
+height = 360	
+overwriteWidth = 320
+overwriteHeight = 181
+		
+[TextureRedefine] # q-res	
+width =	320	
+height = 180	
+overwriteWidth = 160
+overwriteHeight = 91
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+overwriteWidth = 427
+overwriteHeight = 240

@@ -1,0 +1,34 @@
+[Definition]
+titleIds = 000500001017dc00,0005000010182800
+name = "Frenchy Bird - 1440p (2K)"
+
+
+
+
+version = 2
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 2560
+
+overwriteHeight = 1440
+
+
+
+[TextureRedefine] # half-res	
+width =	640	
+height = 360	
+overwriteWidth = 1280
+overwriteHeight = 721
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080

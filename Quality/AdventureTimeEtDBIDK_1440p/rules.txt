@@ -1,0 +1,25 @@
+[Definition]
+titleIds = 0005000010144000,000500001014e100
+name = "Adventure Time Explore the Dungeon Because I DON'T KNOW - 1440p (2K)"
+
+
+
+
+version = 2
+
+[TextureRedefine] # tv
+
+width = 1920
+height = 1080
+
+overwriteWidth = 2560
+
+overwriteHeight = 1440
+
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+overwriteWidth = 1920
+overwriteHeight = 1080

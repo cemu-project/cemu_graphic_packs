@@ -1,0 +1,24 @@
+[Definition]
+titleIds = 000500001014dd00
+name = "Chimpuzzle Pro - 2880p (5K)"
+
+
+
+
+version = 2
+
+
+[TextureRedefine] # tv
+
+width = 1920
+
+height = 1080
+
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 2560
+overwriteHeight = 1440

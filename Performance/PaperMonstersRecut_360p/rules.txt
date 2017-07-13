@@ -1,0 +1,37 @@
+[Definition]
+titleIds = 0005000010175400,00050000101a1300
+name = "Paper Monsters Recut - 360p"
+
+
+
+
+version = 2
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 640
+overwriteHeight = 361
+
+
+[TextureRedefine] # TV 2	
+width =	960
+height = 540
+overwriteWidth = 480
+overwriteHeight = 271
+		
+[TextureRedefine] # TV 2 half-res	
+width =	480
+height = 270
+overwriteWidth = 240
+overwriteHeight = 135
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 427
+overwriteHeight = 240

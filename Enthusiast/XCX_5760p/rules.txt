@@ -37,8 +37,8 @@ overwriteHeight = 1920
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-overwriteWidth = 2562
-overwriteHeight = 1440
+overwriteWidth = 6832
+overwriteHeight = 3840
 
 // vvvv credits to Getdls & GITech vvvv //
 

@@ -5,21 +5,29 @@ version = 2
 	
 [TextureRedefine] # 
 width =	1920
-height = 	1080
+height = 1080
 formatsExcluded = 0x41A # exclude the intro background texture 	
-overwriteWidth = 	7680
-overwriteHeight = 	4320
+overwriteWidth = 7680
+overwriteHeight = 4320
 	
 [TextureRedefine] # Blur, bloom	
 width =	960
-height =	540
+height = 540
 #formatsExcluded = 	
-overwriteWidth =	3840
-overwriteHeight =	2160
+overwriteWidth = 3840
+overwriteHeight = 2160
 	
 #[TextureRedefine] #colour grading	
-#width =	480
-#height =	270
+#width = 480
+#height = 270
 #formats = 0x01a	
-#overwriteWidth =	1920
-#overwriteHeight =	1080
+#overwriteWidth = 1920
+#overwriteHeight = 1080
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+overwriteWidth = 2560
+
+overwriteHeight = 1440

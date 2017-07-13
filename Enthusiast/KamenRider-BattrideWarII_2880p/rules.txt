@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 0005000010170700
+name = "Kamen Rider - Battride War II - 2880p (5K)"
+
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+
+overwriteWidth = 5120
+overwriteHeight = 2880
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 2562
+#overwriteHeight = 1440

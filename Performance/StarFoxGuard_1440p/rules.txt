@@ -1,0 +1,45 @@
+[Definition]
+titleIds = 00050000101bec00,00050000101bed00
+name = "Star Fox Guard - 1440p (2K)"
+
+
+
+
+version = 2
+
+
+[TextureRedefine] # tv
+
+width = 1280
+
+height = 720
+
+overwriteWidth = 2560
+
+overwriteHeight = 1440
+
+
+
+[TextureRedefine] # half-res	
+width =	640	
+height = 360	
+overwriteWidth = 1280
+overwriteHeight = 721
+		
+[TextureRedefine] # q-res 1	
+width =	320	
+height = 180	
+overwriteWidth = 640
+overwriteHeight = 361
+
+[TextureRedefine] # q-res 2	
+width =	320	
+height = 176	
+overwriteWidth = 640
+overwriteHeight = 352
+
+[TextureRedefine] #o-res
+width = 160
+height = 90
+overwriteWidth = 320
+overwriteHeight = 181

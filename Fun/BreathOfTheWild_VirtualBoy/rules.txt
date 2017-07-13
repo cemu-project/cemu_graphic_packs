@@ -1,0 +1,12 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Virtual Boy Mode"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x019
+overwriteFormat = 0x005
+overwriteWidth = 384
+overwriteHeight = 224

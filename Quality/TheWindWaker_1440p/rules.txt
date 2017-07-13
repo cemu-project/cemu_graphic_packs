@@ -5,28 +5,35 @@ version = 2
 	
 [TextureRedefine] # TV
 width =	1920
-height = 	1080
+height = 1080
 formatsExcluded = 0x41A # exclude the intro background texture 	
-overwriteWidth = 	2560
-overwriteHeight = 	1440
+overwriteWidth = 2560
+overwriteHeight = 1440
 	
 #[TextureRedefine] # Blur, bloom	
-#width =	960
-#height =	540
+#width = 960
+#height = 540
 #formatsExcluded = 	
-#overwriteWidth =	1280
-#overwriteHeight =	720
+#overwriteWidth = 1280
+#overwriteHeight = 720
 	
 #[TextureRedefine] # AO	
-#width =	240
-#height =	135
+#width = 240
+#height = 135
 #formatsExcluded =	
-#overwriteWidth =	320
-#overwriteHeight =	180
+#overwriteWidth = 320
+#overwriteHeight = 180
 	
 #[TextureRedefine] # AO	
-#width =	480
-#height =	240
+#width = 480
+#height = 240
 #formatsExcluded =	
-#overwriteWidth =	640
-#overwriteHeight =	320
+#overwriteWidth = 640
+#overwriteHeight = 320
+
+[TextureRedefine] # gamepad
+
+width = 854
+height = 480
+#overwriteWidth = 1920
+#overwriteHeight = 1080

@@ -6,7 +6,7 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x031,0x033
+formatsExcluded = 0x031,0x033 # 33 = pacman 1 title screen + pacman 2 / pacman 2 menu
 overwriteWidth = 3840
 overwriteHeight = 2160
 
@@ -27,3 +27,10 @@ width = 160
 height = 90
 overwriteWidth = 480
 overwriteHeight = 270
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080
