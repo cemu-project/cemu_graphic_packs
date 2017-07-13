@@ -1,0 +1,25 @@
+[Definition]
+titleIds = 0005000010197300
+name = "Electronic Super Joy Groove City - 2160p (4K)"
+
+
+
+
+version = 2
+
+
+[TextureRedefine] # tv
+
+width = 1920
+
+height = 1080
+
+overwriteWidth = 3840
+
+overwriteHeight = 2160
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+#overwriteWidth = 1920
+#overwriteHeight = 1080
