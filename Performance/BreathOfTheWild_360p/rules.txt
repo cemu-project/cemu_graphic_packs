@@ -49,9 +49,9 @@ height = 288
 overwriteWidth = 320
 overwriteHeight = 144
 
-[TextureRedefine] #half-res3
+[TextureRedefine] #half-res4
 width = 640
-height = 360
+height = 361
 overwriteWidth = 320
 overwriteHeight = 181
 
