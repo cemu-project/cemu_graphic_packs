@@ -8,7 +8,7 @@ If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_p
 
 If you want better performance, [Performance](https://github.com/slashiee/cemu_graphic_packs/tree/master/Performance) is the way to go.
 
-If you want to kill your GPU, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enthusiast) is the way to go..but I wouldn't recommended it.
+If you want to push your GPU to it's limits, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enthusiast) is the way to go... although I wouldn't recommended it.
 
 If you want to upgrade your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enhancement) is right up your ally.
 
@@ -89,7 +89,7 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 
 ### I need help!
 
-If you need help with the basics, follow the [tutorial](http://compat.cemu.info/wiki/Tutorial:Graphic_pack) on the compatiblity wiki. Afterwards, try checking the [issues](https://github.com/slashiee/cemu_graphic_packs/issues) on the repo to see if an issue that you have found has been documented. If not, feel free to ask for help at one of the [Cemu communities](http://cemu.info/community.html) or the #gfx_packs channel in the [official Cemu Discord](https://www.patreon.com/posts/cemu-official-8483901).
+If you need help with the basics, follow the [tutorial](http://compat.cemu.info/wiki/Tutorial:Graphic_pack) on the compatiblity wiki. Afterwards, try checking the [issues](https://github.com/slashiee/cemu_graphic_packs/issues) on the repo to see if an issue that you have found has been documented. If not, feel free to ask for help at the #gfx_packs channel in the [official Cemu Discord](https://discord.gg/5psYsup).
 
 ### Want to contribute?
 
