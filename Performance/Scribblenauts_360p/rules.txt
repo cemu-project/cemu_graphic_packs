@@ -6,7 +6,7 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x001 # FMV
+tileModesExcluded = 0x001 # FMV
 overwriteWidth = 640
 overwriteHeight = 361
 

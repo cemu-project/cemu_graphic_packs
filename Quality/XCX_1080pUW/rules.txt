@@ -6,6 +6,7 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
+tileModesExcluded = 0x001
 overwriteWidth = 2560
 overwriteHeight = 1080
 
@@ -13,6 +14,7 @@ overwriteHeight = 1080
 width = 640
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
+tileModesExcluded = 0x001
 overwriteWidth = 1280
 overwriteHeight = 540
 

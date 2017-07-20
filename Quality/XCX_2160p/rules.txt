@@ -6,14 +6,15 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-#formatsExcluded = 0x001	#intro FMV background
+tileModesExcluded = 0x001	#intro FMV background
 overwriteWidth = 3840
 overwriteHeight = 2160
 
 [TextureRedefine] # half-res alpha 
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x033,0x001,0x432 # exclude obvious textures, dialog fade screen,  Intro movie partial fix, XCX LogoNLA 
+formatsExcluded = 0x41A,0x033,0x432 # exclude obvious textures, dialog fade screen, XCX LogoNLA 
+tileModesExcluded = 0x001
 overwriteWidth = 1920
 overwriteHeight = 1080
 

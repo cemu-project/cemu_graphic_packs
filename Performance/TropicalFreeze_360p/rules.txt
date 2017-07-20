@@ -6,6 +6,7 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
+tileModesExcluded = 0x001
 formatsExcluded = 0x031 # exclude the intro background texture
 overwriteWidth = 640
 overwriteHeight = 360

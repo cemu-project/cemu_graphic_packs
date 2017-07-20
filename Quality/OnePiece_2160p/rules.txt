@@ -6,7 +6,7 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x001 # FMV fix: place forceTextureUpdate = true under [Graphics] in game profile when using cemuhook 0.4.2.0+
+tileModesExcluded = 0x001 # FMV fix: place forceTextureUpdate = true under [Graphics] in game profile when using cemuhook 0.4.2.0+
 overwriteWidth = 3840
 overwriteHeight = 2160
 

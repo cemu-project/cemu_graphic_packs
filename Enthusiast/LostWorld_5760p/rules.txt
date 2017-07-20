@@ -6,14 +6,14 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x001 # FMV fix: place forceTextureUpdate = true under [Graphics] in game profile when using cemuhook 0.4.2.0+
+tileModesExcluded = 0x001
 overwriteWidth = 10240
 overwriteHeight = 5760
 
 [TextureRedefine]
 width = 640
 height = 360
-formatsExcluded = 0x001 # FMV fix: place forceTextureUpdate = true under [Graphics] in game profile when using cemuhook 0.4.2.0+
+tileModesExcluded = 0x001
 overwriteWidth = 5120
 overwriteHeight = 2880
 
@@ -32,6 +32,5 @@ overwriteHeight = 720
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-
-overwriteWidth = 2562
+overwriteWidth = 2560
 overwriteHeight = 1440

@@ -6,6 +6,7 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
+tileModesExcluded = 0x001
 overwriteWidth = 7680
 overwriteHeight = 4320
 
@@ -13,6 +14,7 @@ overwriteHeight = 4320
 width = 640
 height = 360
 formatsExcluded = 0x41A,0x033,0x432 # exclude obvious textures, dialog fade screen,  Intro movie partial fix
+tileModesExcluded = 0x001
 overwriteWidth = 3840
 overwriteHeight = 2560
 

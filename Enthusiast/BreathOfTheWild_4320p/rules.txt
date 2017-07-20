@@ -7,6 +7,7 @@ version = 2
 width = 1280
 height = 720
 formatsExcluded = 0x008 # exclude the intro background texture
+tileModesExcluded = 0x001
 overwriteWidth = 7680
 overwriteHeight = 4320
 
@@ -31,6 +32,7 @@ overwriteHeight = 4320
 [TextureRedefine] #half-res1
 width = 640
 height = 360
+tileModesExcluded = 0x001
 overwriteWidth = 3840
 overwriteHeight = 2160
 

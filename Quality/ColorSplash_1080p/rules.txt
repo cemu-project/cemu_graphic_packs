@@ -6,7 +6,8 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x431,0x001
+formatsExcluded = 0x431
+tileModesExcluded = 0x001
 overwriteWidth = 1920
 overwriteHeight = 1080
 
