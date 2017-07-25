@@ -9,3 +9,9 @@ height = 1080
 formatsExcluded = 0x41A # exclude the intro background texture 		
 overwriteWidth = 5120
 overwriteHeight = 2160
+
+[TextureRedefine] # gamepad rendering resolution
+width = 854
+height = 480	
+overwriteWidth = 5120
+overwriteHeight = 2160
