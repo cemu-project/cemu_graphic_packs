@@ -57,7 +57,7 @@ overwriteHeight = 721
 [TextureRedefine] #q-res1, main bloom, AO
 width = 320
 height = 180
-formatsExcluded = 0x001,0x01a		#Scale depth masking, not bloom
+formats = 0x001		#Scale depth masking, not bloom
 overwriteWidth = 860
 overwriteHeight = 360
 
