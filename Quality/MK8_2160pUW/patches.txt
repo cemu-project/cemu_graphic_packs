@@ -78,7 +78,7 @@ _scaleAddr = 0x00000000
 #replace math with branch
 0x024AEBEC = bla _scaleAspect
 
-[MK8AspectVer4.1]
+[MK8AspectVer4_1]
 moduleMatches = 0xD09700CE
 0x100C359C = .float 2.370
 0x10121E30 = .float 2.370
