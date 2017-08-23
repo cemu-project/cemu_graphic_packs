@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 000500001010c700,000500001010c800
 name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 2160p (4K)"
+version = 2
 
 [TextureRedefine] # tv
 width = 1280
