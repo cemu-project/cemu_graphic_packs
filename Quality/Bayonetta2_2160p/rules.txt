@@ -13,6 +13,7 @@ overwriteHeight = 2160
 [TextureRedefine]#half-res
 width = 640
 height = 360
+tileModesExcluded = 0x001
 overwriteWidth = 1920
 overwriteHeight = 1080
 
