@@ -1,39 +1,29 @@
 [Definition]
-titleIds 00050000101d0300,00050000101d0600,000500001014d200
+titleIds = 00050000101d0300,00050000101d0600,000500001014d200,00050000101d3f00
 name = "Project Zero Maiden of Black Water - 540p"
-
-
-
-
-
-
 version = 2
 
 [TextureRedefine] # tv
-
 width = 1280
-
 height = 720
-
+tileModesExcluded = 0x001
 overwriteWidth = 960
 overwriteHeight = 540
 
 [TextureRedefine] # tv
 width = 1278
 height = 718
-
 overwriteWidth = 959
 overwriteHeight = 539
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-
+tileModesExcluded = 0x001
 overwriteWidth = 480
 overwriteHeight = 270
 
 [TextureRedefine] # gamepad
-
 width = 854
 height = 480
 overwriteWidth = 427
