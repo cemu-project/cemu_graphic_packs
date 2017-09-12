@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010146300,0005000010147900,000500001014F300,000500001017E600,000500001017E500,0005000010182300
-name = "PAC-MAN & the Ghostly Adventures 1 & 2 - 1440p (2K)"
+name = "PAC-MAN & the Ghostly Adventures 1 & 2 - 2560x1440"
 version = 2
 
 [TextureRedefine]

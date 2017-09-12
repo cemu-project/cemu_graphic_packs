@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
-name = "Mario Kart 8 - 1800p (3K)"
+name = "Mario Kart 8 - 3200x1800"
 version = 2
 
 # Main Screen Resolution

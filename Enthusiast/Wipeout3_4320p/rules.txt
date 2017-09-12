@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010e800
-name = "Wipeout 3 - 4320p (8K)"
+name = "Wipeout 3 - 7680x4320"
 
 
 

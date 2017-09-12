@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - 1440p (2K) (21:9)"
+name = "The Legend of Zelda: Breath of the Wild - 2560x1440 (21:9)"
 version = 2
 
 [TextureRedefine] #TV

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010e800,0005000010145500
-name = "Wipeout 3 + Wipeout Create & Crash - 360p"
+name = "Wipeout 3 + Wipeout Create & Crash - 640x360"
 version = 2
 
 [TextureRedefine] # tv

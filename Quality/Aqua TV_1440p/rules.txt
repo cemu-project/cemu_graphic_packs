@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010205f00
-name = "Aqua TV - 1440p (2K)"
+name = "Aqua TV - 2560x1440"
 version = 2
 
 [TextureRedefine] # tv

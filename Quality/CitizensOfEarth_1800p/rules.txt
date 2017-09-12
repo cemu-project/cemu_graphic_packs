@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010180b00,0005000010177200
-name = "Citizens Of Earth - 1800p (3K)"
+name = "Citizens Of Earth - 3200x1800"
 version = 2
 
 [TextureRedefine] # tv

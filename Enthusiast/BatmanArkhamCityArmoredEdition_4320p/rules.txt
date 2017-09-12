@@ -1,6 +1,6 @@
 [Definition]
 titleIds = ffffffff0796e931
-name = "Batman Arkham City Armored Edition - 4320p (8K)"
+name = "Batman Arkham City Armored Edition - 7680x4320"
 
 
 

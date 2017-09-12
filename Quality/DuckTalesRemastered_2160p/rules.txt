@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010129000,0005000010129200
-name = "DuckTales Remastered - 2160p (4K)"
+name = "DuckTales Remastered - 3840x2160"
 version = 2
 
 [TextureRedefine] # tv

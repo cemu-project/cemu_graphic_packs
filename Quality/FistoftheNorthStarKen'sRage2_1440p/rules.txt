@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010116600
-name = "Fist of the North Star - Ken's Rage 2 - 1440p (2K)"
+name = "Fist of the North Star - Ken's Rage 2 - 2560x1440"
 
 
 version = 2

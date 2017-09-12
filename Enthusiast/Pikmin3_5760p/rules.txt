@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 000500001012be00,000500001012bd00,000500001012bc00
 
-name = "Pikmin 3 - 5760p (10K)"
+name = "Pikmin 3 - 10240x5760"
 
 
 

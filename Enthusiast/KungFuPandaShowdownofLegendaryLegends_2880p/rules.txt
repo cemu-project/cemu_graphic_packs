@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101a6500,00050000101aa500
-name = "Kung Fu Panda Showdown of Legendary Legends - 2880p (5K)"
+name = "Kung Fu Panda Showdown of Legendary Legends - 5120x2880"
 
 
 version = 2

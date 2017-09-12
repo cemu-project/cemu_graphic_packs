@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001015b100,0005000010155b00,00050000101b6500
-name = " Tengami - 1800p (3K)"
+name = " Tengami - 3200x1800"
 
 
 

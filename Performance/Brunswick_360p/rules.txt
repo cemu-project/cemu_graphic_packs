@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101d4200
-name = "Brunswick Pro Bowling - 360p"
+name = "Brunswick Pro Bowling - 640x360"
 version = 2
 
 [TextureRedefine] # tv

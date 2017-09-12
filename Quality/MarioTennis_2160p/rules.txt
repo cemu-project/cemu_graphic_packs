@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101A3500,00050000101A3600,0005000010199000
-name = "Mario Tennis: Ultra Smash - 2160p (4K)"
+name = "Mario Tennis: Ultra Smash - 3840x2160"
 version = 2
 
 [TextureRedefine]

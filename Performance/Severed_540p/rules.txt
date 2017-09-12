@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101ba000,00050000101ba900
-name = "Severed - 540p"
+name = "Severed - 960x540"
 version = 2
 
 [TextureRedefine] # tv

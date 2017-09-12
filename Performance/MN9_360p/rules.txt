@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 50000101c9600
-name = "Mighty No. 9 - 360p"
+name = "Mighty No. 9 - 640x360"
 
 [TextureRedefine]
 width = 1280

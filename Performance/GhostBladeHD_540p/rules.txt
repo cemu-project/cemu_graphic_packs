@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 50000101ffc00
-name = "Ghost Blade HD - 540p" 
+name = "Ghost Blade HD - 960x540" 
 version = 2
 
 [TextureRedefine]

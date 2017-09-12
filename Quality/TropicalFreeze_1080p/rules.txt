@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010137F00,0005000010138300,0005000010144800
-name = "Donkey Kong Country: Tropical Freeze - 1080p"
+name = "Donkey Kong Country: Tropical Freeze - 1920x1080"
 version = 2
 
 [TextureRedefine] # tv

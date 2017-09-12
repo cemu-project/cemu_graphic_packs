@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010139400
-name = "Phineas & Ferb: Quest for Cool Stuff - 1440p (2K)"
+name = "Phineas & Ferb: Quest for Cool Stuff - 2560x1440"
 version = 2
 
 [TextureRedefine] # tv

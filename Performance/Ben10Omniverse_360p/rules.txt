@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010ac00,0005000010111000
-name = "Ben 10 Omniverse - 360p"
+name = "Ben 10 Omniverse - 640x360"
 
 
 version = 2

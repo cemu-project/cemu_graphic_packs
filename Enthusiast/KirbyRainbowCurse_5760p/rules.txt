@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101abc00,
-name = "Kirby and the Rainbow Curse - 5760p (10K)"
+name = "Kirby and the Rainbow Curse - 10240x5760"
 version = 2
 
 [TextureRedefine] # tv

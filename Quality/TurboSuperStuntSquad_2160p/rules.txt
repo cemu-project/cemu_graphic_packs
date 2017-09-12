@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010133900,0005000010136700
-name = "Turbo Super Stunt Squad - 2160p (4K)"
+name = "Turbo Super Stunt Squad - 3840x2160"
 
 
 version = 2

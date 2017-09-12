@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010101a00,0005000010101b00
-name = "LEGO City Undercover - 540p"
+name = "LEGO City Undercover - 960x540"
 
 
 version = 2

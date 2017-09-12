@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010205f00
-name = "Aqua TV - 1080p"
+name = "Aqua TV - 1920x1080"
 
 
 version = 2

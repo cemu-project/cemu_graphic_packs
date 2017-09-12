@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010da00,0005000010112f00
-name = "NBA 2K13 - 2880p (5K)"
+name = "NBA 2K13 - 5120x2880"
 
 
 version = 2

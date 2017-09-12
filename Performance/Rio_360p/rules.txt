@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 50000101e5300
-name = "Mario & Sonic at the Rio 2016 Olympic Games - 360p"
+name = "Mario & Sonic at the Rio 2016 Olympic Games - 640x360"
 
 [TextureRedefine]
 width = 1280

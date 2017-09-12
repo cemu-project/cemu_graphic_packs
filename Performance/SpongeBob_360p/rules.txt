@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010146900,0005000010147d00
-name = "SpongeBob SquarePants Plankton's Robotic Revenge - 360p"
+name = "SpongeBob SquarePants Plankton's Robotic Revenge - 640x360"
 version = 2
 
 [TextureRedefine] # tv

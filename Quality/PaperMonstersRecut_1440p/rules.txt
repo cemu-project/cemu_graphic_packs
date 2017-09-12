@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010175400,00050000101a1300
-name = "Paper Monsters Recut - 1440p (2K)"
+name = "Paper Monsters Recut - 2560x1440"
 
 
 

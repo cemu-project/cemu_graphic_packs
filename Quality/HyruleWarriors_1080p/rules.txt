@@ -1,0 +1,18 @@
+[Definition]
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = "Hyrule Warriors - 1920x1080"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+tileModesExcluded = 0x001
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine]
+width = 640
+height = 360
+tileModesExcluded = 0x001
+overwriteWidth = 960
+overwriteHeight = 540

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101c5f00
-name = "Sanatory Hallways - 360p"
+name = "Sanatory Hallways - 640x360"
 
 
 

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010175c00,0005000010175d00
-name = "ONE PIECE Unlimited World Red - 4320p (8K)"
+name = "ONE PIECE Unlimited World Red - 7680x4320"
 
 
 version = 2

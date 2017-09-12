@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010144000,000500001014e100
-name = "Adventure Time Explore the Dungeon Because I DON'T KNOW - 2160p (4K)"
+name = "Adventure Time Explore the Dungeon Because I DON'T KNOW - 3840x2160"
 
 
 version = 2

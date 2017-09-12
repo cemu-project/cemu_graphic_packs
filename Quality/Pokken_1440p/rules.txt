@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 50000101df400,00050002101DF401
-name = "Pokken Tournament - 1440p (2K)"
+name = "Pokken Tournament - 2560x1440"
 
 [TextureRedefine]
 width = 1280

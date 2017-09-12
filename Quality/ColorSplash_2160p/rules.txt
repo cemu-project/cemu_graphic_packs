@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 500001f600900,500001f600a00,500001f600b00
-name = "Paper Mario: Color Splash - 2160p (4K)"
+name = "Paper Mario: Color Splash - 3840x2160"
 version = 2
 
 [TextureRedefine]

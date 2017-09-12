@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001017e600,000500001017e500
-name = "Pac-Man and the Ghostly Adventures 2 - 4320p (8K)"
+name = "Pac-Man and the Ghostly Adventures 2 - 7680x4320"
 
 
 

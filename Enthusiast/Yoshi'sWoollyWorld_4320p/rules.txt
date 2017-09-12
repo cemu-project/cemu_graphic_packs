@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010184d00,
-name = "Yoshi's Woolly World - 4320p (8K)"
+name = "Yoshi's Woolly World - 7680x4320"
 
 
 

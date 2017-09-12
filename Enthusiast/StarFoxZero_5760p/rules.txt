@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0000050000101b0400,00050000101b0500
-name = "Star Fox Zero - 5760p (10K)"
+name = "Star Fox Zero - 10240x5760"
 
 
 

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
-name = "The Wind Waker HD - 5760p (10K)"
+name = "The Wind Waker HD - 10240x5760"
 version = 2
 
 [TextureRedefine] # tv

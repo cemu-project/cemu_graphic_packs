@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010183c00,0005000010184400
-name = "Infinity Runner - 2880p (5K)"
+name = "Infinity Runner - 5120x2880"
 
 
 

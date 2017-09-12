@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010175c00,0005000010175d00
-name = "One Piece: Unlimited World Red - 1800p (3K)"
+name = "One Piece: Unlimited World Red - 3200x1800"
 version = 2
 
 [TextureRedefine] # tv

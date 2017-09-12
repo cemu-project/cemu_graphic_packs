@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010c700,000500001010c800
-name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 1800p (3K)"
+name = "Mario & Sonic at the Sochi 2014 Olympic Winter Games - 3200x1800"
 version = 2
 
 [TextureRedefine] # tv

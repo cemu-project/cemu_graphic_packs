@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
-name = "Yoshi's Woolly World - 1800p (3K)"
+name = "Yoshi's Woolly World - 3200x1800"
 version = 2
 
 [TextureRedefine] # tv

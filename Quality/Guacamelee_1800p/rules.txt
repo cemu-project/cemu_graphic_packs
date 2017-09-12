@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010176800,0005000010179700
-name = "Guacamelee! Super Turbo Championship Edition - 1800p (3K)"
+name = "Guacamelee! Super Turbo Championship Edition - 3200x1800"
 version = 2
 
 [TextureRedefine] # tv

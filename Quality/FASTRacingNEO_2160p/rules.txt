@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 500001012f000,ffffffff057b4449
-name = "FAST Racing NEO - 2160p (4K)"
+name = "FAST Racing NEO - 3840x2160"
 
 [TextureRedefine] # TV
 width = 1280

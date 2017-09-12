@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010101F00,0005000010102000,0005000010102100
-name = "Nintendo Land - 4320p (8K)"
+name = "Nintendo Land - 7680x4320"
 version = 2
 
 [TextureRedefine] # tv

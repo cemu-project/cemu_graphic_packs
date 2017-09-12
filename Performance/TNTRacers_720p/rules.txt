@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010142800,000500001014f000
-name = "TNT Racers Nitro Machines Edition - 720p"
+name = "TNT Racers Nitro Machines Edition - 1280x720"
 version = 2
 
 [TextureRedefine] # tv

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101bec00,00050000101bed00
-name = "Star Fox Guard - 2160p (4K)"
+name = "Star Fox Guard - 3840x2160"
 
 
 

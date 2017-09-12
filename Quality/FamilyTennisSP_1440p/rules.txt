@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001019ae00,00050000101a2c00
-name = "Family Tennis SP - 1440p (2K)"
+name = "Family Tennis SP - 2560x1440"
 version = 2
 
 [TextureRedefine] # tv

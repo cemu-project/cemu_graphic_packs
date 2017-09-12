@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 500001012f000,ffffffff057b4449
-name = "FAST Racing NEO - 360p"
+name = "FAST Racing NEO - 640x360"
 
 [TextureRedefine]
 width = 1280

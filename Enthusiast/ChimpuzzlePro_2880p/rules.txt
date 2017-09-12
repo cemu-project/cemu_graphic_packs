@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001014dd00
-name = "Chimpuzzle Pro - 2880p (5K)"
+name = "Chimpuzzle Pro - 5120x2880"
 
 
 

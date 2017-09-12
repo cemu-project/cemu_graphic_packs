@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101dc300,00050000101d9700
-name = "Kick and Fennick - 2880p (5K)"
+name = "Kick and Fennick - 5120x2880"
 version = 2
 
 [TextureRedefine] # tv

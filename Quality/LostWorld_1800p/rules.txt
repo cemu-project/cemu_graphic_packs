@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010135700,000500001012B100,0005000010128F00,0005000210128F01
-name = "Sonic Lost World - 1800p (3K)"
+name = "Sonic Lost World - 3200x1800"
 version = 2
 
 [TextureRedefine]

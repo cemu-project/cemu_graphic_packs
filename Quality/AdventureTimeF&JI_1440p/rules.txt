@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101ac700,00050000101afe00
-name = "Adventure Time Finn And Jake Investigations - 1440p (2K)"
+name = "Adventure Time Finn And Jake Investigations - 2560x1440"
 
 
 version = 2

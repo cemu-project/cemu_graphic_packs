@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00
-name = "Super Smash Bros. - 2880p (5K)"
+name = "Super Smash Bros. - 5120x2880"
 version = 2
 
 [TextureRedefine] # tv

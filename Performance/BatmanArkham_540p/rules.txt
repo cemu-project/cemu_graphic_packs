@@ -1,6 +1,6 @@
 [Definition]
 titleIds = ffffffff0796e931,0005000010112900,0005000010111300,000500001010AB00
-name = "Batman Arkham City Armored Edition - 540p"
+name = "Batman Arkham City Armored Edition - 960x540"
 version = 2
 
 [TextureRedefine] # tv

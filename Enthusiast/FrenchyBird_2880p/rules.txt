@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001017dc00,0005000010182800
-name = "Frenchy Bird - 2880p (5K)"
+name = "Frenchy Bird - 5120x2880"
 
 
 

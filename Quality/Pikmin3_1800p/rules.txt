@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001012be00,000500001012bd00,000500001012bc00
-name = "Pikmin 3 - 1800p (3K)"
+name = "Pikmin 3 - 3200x1800"
 version = 2
 
 [TextureRedefine] # tv

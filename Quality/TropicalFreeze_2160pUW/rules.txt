@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010137F00,0005000010138300,0005000010144800
-name = "Donkey Kong Country: Tropical Freeze - 2160p (4K) (21:9)" # 
+name = "Donkey Kong Country: Tropical Freeze - 5120x2160 (21:9)" # 
 version = 2
 		
 [TextureRedefine] # game rendering resolution

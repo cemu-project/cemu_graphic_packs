@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101ED700,0005000010131D00
-name = "Tokyo Mirage Sessions FE - 2160p (4K)"
+name = "Tokyo Mirage Sessions FE - 3840x2160"
 
 [TextureRedefine] # tv
 width = 1280

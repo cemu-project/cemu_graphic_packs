@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010132d00,000500001010b200,000500001010f900,0005000010111e00,0005000010132c00,0005000010132d00
-name = "Scribblenauts Unlimited and Unmasked - 1800p (3K)"
+name = "Scribblenauts Unlimited and Unmasked - 3200x1800"
 version = 2
 
 [TextureRedefine]

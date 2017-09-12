@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101BEB00,00050000101BEC00,00050000101BED00,00050000101AFF00,00050000101B0400,00050000101B0500,00050000101DCD00,0005000010201B00
-name = "Star Fox Zero + Star Fox Guard - 360p"
+name = "Star Fox Zero + Star Fox Guard - 640x360"
 version = 2
 
 [TextureRedefine] # tv

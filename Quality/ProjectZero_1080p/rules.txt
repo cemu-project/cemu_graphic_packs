@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101d0300,00050000101d0600,000500001014d200,00050000101d3f00
-name = "Project Zero Maiden of Black Water - 1080p"
+name = "Project Zero Maiden of Black Water - 1920x1080"
 version = 2
 
 [TextureRedefine] # tv

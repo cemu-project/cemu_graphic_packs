@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010129000,0005000010129200
-name = "DuckTales Remastered - 2880p (5K)"
+name = "DuckTales Remastered - 5120x2880"
 
 
 

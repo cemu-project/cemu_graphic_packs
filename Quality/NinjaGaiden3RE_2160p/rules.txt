@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010110900,0005000010110A00,0005000010110B00
-name = "Ninja Gaiden 3: Razor's Edge - 2160p (4K)"
+name = "Ninja Gaiden 3: Razor's Edge - 3840x2160"
 version = 2
 
 [TextureRedefine] #TV

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010197300
-name = "Electronic Super Joy Groove City - 2160p (4K)"
+name = "Electronic Super Joy Groove City - 3840x2160"
 
 
 

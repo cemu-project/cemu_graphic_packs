@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101a9e00,00050000101a9c00
-name = "Chompy Chomp Chomp Party - 2880p (5K)"
+name = "Chompy Chomp Chomp Party - 5120x2880"
 
 
 

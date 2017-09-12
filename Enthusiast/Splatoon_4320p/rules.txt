@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = "Splatoon - 4320p (8K)"
+name = "Splatoon - 7680x4320"
 version = 2
 
 [TextureRedefine] # tv

@@ -1,19 +1,11 @@
 [Definition]
 titleIds = 00050000101c5f00
-name = "Sanatory Hallways - 1440p (2K)"
-
-
-
-
+name = "Sanatory Hallways - 2560x1440"
 version = 2
 
-
 [TextureRedefine] # tv
-
 width = 1280
-
 height = 720
-
 overwriteWidth = 2560
 overwriteHeight = 1440
 

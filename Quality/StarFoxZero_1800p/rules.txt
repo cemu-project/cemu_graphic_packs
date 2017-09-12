@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0000050000101b0400,00050000101b0500
-name = "Star Fox Zero - 1800p (3K)"
+name = "Star Fox Zero - 3200x1800"
 
 
 version = 2

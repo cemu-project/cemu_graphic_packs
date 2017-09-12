@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 5000010175b00,0005000210175B01
-name = "Sonic Boom: Rise of Lyric - 540p"
+name = "Sonic Boom: Rise of Lyric - 960x540"
 version = 2
 
 [TextureRedefine]

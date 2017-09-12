@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010170700
-name = "Kamen Rider - Battride War II - 5760p (10K)"
+name = "Kamen Rider - Battride War II - 10240x5760"
 
 
 
