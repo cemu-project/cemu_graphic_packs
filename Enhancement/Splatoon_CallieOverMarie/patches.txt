@@ -1,0 +1,14 @@
+[Gambit16]
+moduleMatches = 0x08ED6677
+
+0x100D2F5C = .string "Npc_IdolA"
+0x100D3534 = .string "Npc_IdolA"
+0x100D5560 = .string "Npc_IdolA"
+
+[Gambit272]
+moduleMatches = 0xF7A78809
+
+0x100E38F0 = .string "Npc_IdolA"
+0x100E5A4C = .string "Npc_IdolA"
+0x100E5DC4 = .string "Npc_IdolA"
+0x100E85F8 = .string "Npc_IdolA"
