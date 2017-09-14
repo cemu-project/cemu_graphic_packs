@@ -1,0 +1,6 @@
+[Splat2120]
+moduleMatches = 0xF7A78809
+
+0x100EC3B0 = .string "Rival00"
+0x100EC3BC = .string "Rival00_Hlf"
+#0x100EC3CC = .string "Rival_Squid" #Broken bones, just like safe Octohax

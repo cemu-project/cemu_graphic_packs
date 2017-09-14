@@ -1,0 +1,7 @@
+[Splat2120]
+moduleMatches = 0xF7A78809
+
+0x100E38E4 = .string "Npc_IdolB"
+0x100E5A40 = .string "Npc_IdolB"
+0x100E5DB8 = .string "Npc_IdolB"
+0x100E85EC = .string "Npc_IdolB"
