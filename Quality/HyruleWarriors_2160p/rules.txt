@@ -1,0 +1,78 @@
+[Definition]
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = "Hyrule Warriors - 3840x2160"
+version = 2
+
+[TextureRedefine] #Game Resolution
+width = 1280
+height = 720
+formatsExcluded = 0x431,0x433
+tileModesExcluded = 0x001
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] #Only saw depth in Nsight
+width = 640
+height = 360
+tileModesExcluded = 0x001
+overwriteWidth = 1920
+overwriteHeight = 1080
+
+[TextureRedefine] #Lighting?
+width = 322
+height = 182
+overwriteWidth = 966
+overwriteHeight = 546
+
+[TextureRedefine] #Dupe of Main Game
+width = 320
+height = 180
+overwriteWidth = 960
+overwriteHeight = 540
+
+[TextureRedefine] #Lighting Blur?
+width = 162
+height = 92
+overwriteWidth = 486
+overwriteHeight = 276
+
+[TextureRedefine] #Lighting Blur?
+width = 160
+height = 90
+overwriteWidth = 480
+overwriteHeight = 270
+
+#[TextureRedefine] #Shadows?
+#width = 1024
+#height = 2048
+#formats = 0x005
+#overwriteWidth = 2048
+#overwriteHeight = 4096
+
+[TextureRedefine] #Dupe of Main Game?
+width = 64
+height = 64
+formats = 0x005
+overwriteWidth = 192
+overwriteHeight = 192
+
+[TextureRedefine] #Dupe of Main Game?
+width = 16
+height = 16
+formats = 0x005
+overwriteWidth = 48
+overwriteHeight = 48
+
+[TextureRedefine] #Dupe of Main Game?
+width = 4
+height = 4
+formats = 0x005
+overwriteWidth = 12
+overwriteHeight = 12
+
+[TextureRedefine] #Dupe of Main Game?
+width = 1
+height = 1
+formats = 0x005
+overwriteWidth = 3
+overwriteHeight = 3
