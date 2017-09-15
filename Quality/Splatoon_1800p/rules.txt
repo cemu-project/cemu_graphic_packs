@@ -16,6 +16,13 @@ formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 1600
 overwriteHeight = 900
 
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
+overwriteWidth = 800
+overwriteHeight = 450
+
 [TextureRedefine] # squid sisters
 width = 1024
 height = 576
