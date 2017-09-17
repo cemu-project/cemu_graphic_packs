@@ -34,3 +34,9 @@ width = 854
 height = 480
 overwriteWidth = 3200
 overwriteHeight = 1800
+
+[TextureRedefine]
+width = 560
+height = 315
+overwriteWidth = 1390
+overwriteHeight = 788
