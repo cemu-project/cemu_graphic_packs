@@ -1,0 +1,49 @@
+[SplatoonV272uw]
+moduleMatches = 0xF7A78809
+
+#rodata constants
+
+0x1004364C = .float 2.37
+0x10124BE0 = .float 2.37
+0x10158FE0 = .float 2.37
+0x10160454 = .float 2.37
+
+_aspectAddr = 0x1004364C
+
+#patches
+
+0x028B1910 = lis r29, _aspectAddr@ha ;hud
+0x028B1914 = lfs f13, _aspectAddr@l(r29) ;hud
+
+0x02014864 = lis r4, _aspectAddr@ha ;master ar
+0x0201486C = lfs f9, _aspectAddr@l(r4) ;master ar
+
+0x02014570 = lis r4, _aspectAddr@ha ;transition frames
+0x02014578 = lfs f9, _aspectAddr@l(r4)
+0x0201434C = lis r4, _aspectAddr@ha
+0x02014354 = lfs f9, _aspectAddr@l(r4)
+
+[SplatoonV0uw]
+moduleMatches = 0x08ED6677
+
+#rodata constants
+0x1003C670 = .float 2.37
+0x101092B0 = .float 2.37
+0x10144564 = .float 2.37
+0x1014A514 = .float 2.37
+
+_aspectAddr = 0x1003C670
+
+#patches
+
+0x027E6400 = lis r29, _aspectAddr@ha ;hud
+0x027E6404 = lfs f13, _aspectAddr@l(r29) ;hud
+
+0x02015690 = lis r4, _aspectAddr@ha ;master AR
+0x02015698 = lfs f9, _aspectAddr@l(r4)
+
+0x0201539C = lis r4, _aspectAddr@ha ;Transition frames
+0x020153A4 = lfs f9, _aspectAddr@l(r4)
+
+0x02015178 = lis r4, _aspectAddr@ha ;Transition frames
+0x02015180 = lfs f9, _aspectAddr@l(r4) 
