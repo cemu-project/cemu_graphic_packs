@@ -1,11 +1,11 @@
 version: v2-{build}
 install:
- - xcopy c:\projects\cemu_graphic_packs\Cheats c:\projects\cemu_graphic_packs\AppVeyor /E /I
- - xcopy c:\projects\cemu_graphic_packs\Enhancement c:\projects\cemu_graphic_packs\AppVeyor /E /I
- - xcopy c:\projects\cemu_graphic_packs\Enthusiast c:\projects\cemu_graphic_packs\AppVeyor /E /I
- - xcopy c:\projects\cemu_graphic_packs\Performance c:\projects\cemu_graphic_packs\AppVeyor /E /I
- - xcopy c:\projects\cemu_graphic_packs\Quality c:\projects\cemu_graphic_packs\AppVeyor /E /I
- - xcopy c:\projects\cemu_graphic_packs\Workaround c:\projects\cemu_graphic_packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Cheats C:\projects\cemu-graphic-packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Enhancement C:\projects\cemu-graphic-packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Enthusiast C:\projects\cemu-graphic-packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Performance C:\projects\cemu-graphic-packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Quality C:\projects\cemu-graphic-packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Workaround C:\projects\cemu-graphic-packs\AppVeyor /E /I
 build: off
 artifacts:
  - path: AppVeyor
