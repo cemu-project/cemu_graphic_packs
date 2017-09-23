@@ -6,7 +6,16 @@ version = 2
 [TextureRedefine] #TV
 width = 1280
 height = 720
-formatsExcluded = 0x008 # exclude the intro background texture
+formats = 0x19,0x1a
+overwriteFormat = 0x823
+tileModesExcluded = 0x001
+overwriteWidth = 7680
+overwriteHeight = 4320
+
+[TextureRedefine] #TV
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x19,0x1a # exclude the intro background texture
 tileModesExcluded = 0x001
 overwriteWidth = 7680
 overwriteHeight = 4320
@@ -32,6 +41,7 @@ overwriteHeight = 4320
 [TextureRedefine] #half-res1
 width = 640
 height = 360
+formatsExcluded = 0x431
 tileModesExcluded = 0x001
 overwriteWidth = 3840
 overwriteHeight = 2160
@@ -98,3 +108,107 @@ width = 720
 height = 360
 overwriteWidth = 4320
 overwriteHeight = 2160
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+
+#overwriteWidth = 1920
+#overwriteHeight = 1080
+
+[TextureRedefine] #dyeing inventory
+width = 1280
+height = 400
+overwriteWidth = 7680
+overwriteHeight = 2400
+
+[TextureRedefine] #blur behind stable and shop menu
+width = 960
+height = 540
+tileModesExcluded = 0x001 #for 1080p video
+overwriteWidth = 5760
+overwriteHeight = 3240
+
+[TextureRedefine] #dialog box
+width = 612
+height = 128
+overwriteWidth = 3708
+overwriteHeight = 768
+
+[TextureRedefine] #campfire ui box
+width = 564
+height = 128
+overwriteWidth = 3384
+overwriteHeight = 768
+
+[TextureRedefine] #selection boxes
+width = 247
+height = 52
+overwriteWidth = 1482
+overwriteHeight = 312
+
+[TextureRedefine] #new item box
+width = 566
+height = 216
+overwriteWidth = 3396
+overwriteHeight = 1296
+[TextureRedefine] #some blur related shit
+width = 480
+height = 270
+formatsExcluded = 0x431
+overwriteWidth = 2880
+overwriteHeight = 1620
+
+[TextureRedefine] #divine beast 3d minimap
+width = 512
+height = 288
+overwriteWidth = 3072
+overwriteHeight = 1728
+
+[TextureRedefine] #minimap
+width = 192
+height = 192
+formats = 0x019
+overwriteWidth = 1152
+overwriteHeight = 1152
+
+[TextureRedefine] #map
+width = 1500
+height = 720
+overwriteWidth = 9000
+overwriteHeight = 4320
+
+[TextureRedefine] #hero mode path
+width = 1920
+height = 912
+overwriteWidth = 11520
+overwriteHeight = 5472
+
+[TextureRedefine] #open inventory and use weapon boxes
+width = 495
+height = 355
+overwriteWidth = 2970
+overwriteHeight = 2130
+
+[TextureRedefine] #choose weapon box
+width = 555
+height = 355
+overwriteWidth = 3330
+overwriteHeight = 2130
+
+[TextureRedefine] #choose bow box
+width = 675
+height = 355
+overwriteWidth = 4050
+overwriteHeight = 2130
+
+[TextureRedefine] #inventory background blur
+width = 320
+height = 180
+#formats = 0x19
+#overwriteWidth = 3840
+#overwriteHeight = 2160
+
+[TextureRedefine] #lines on map
+width = 13
+height = 305
+#overwriteFormat = 0x234
