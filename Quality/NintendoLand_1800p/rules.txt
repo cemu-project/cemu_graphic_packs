@@ -6,7 +6,6 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-texturesExcluded = 0x1f712000
 overwriteWidth = 3200
 overwriteHeight = 1800
 

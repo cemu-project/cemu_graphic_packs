@@ -2,7 +2,7 @@
 
 ### What's recommended?
 
-It's recommended to download all the graphic packs. This [archive](https://github.com/slashiee/cemu_graphic_packs/archive/master.zip) contains all of them.
+It's recommended to download all the graphic packs. This [archive](https://ci.appveyor.com/project/slashiee/cemu-graphic-packs/build/artifacts) contains all of them.
 
 If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_packs/tree/master/Quality) is the way to go.
 
