@@ -208,15 +208,15 @@ height = 355
 overwriteWidth = 2025
 overwriteHeight = 1065
 
-[TextureRedefine] #inventory background blur
+[TextureRedefine] #inventory and title menu background blur
 width = 320
 height = 180
 formats = 0x19
-overwriteFormat = 0x1f
-#overwriteWidth = 3840
-#overwriteHeight = 2160
+overwriteFormat = 0x823
+overwriteWidth = 960
+overwriteHeight = 540
 
-[TextureRedefine] #lines on map
+[TextureRedefine] #lines on map and camera rune removal
 width = 13
 height = 305
 #overwriteFormat = 0x234
