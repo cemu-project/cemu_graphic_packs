@@ -41,6 +41,7 @@ overwriteHeight = 972
 [TextureRedefine] #half-res1
 width = 640
 height = 360
+formatsExcluded = 0x431
 tileModesExcluded = 0x001
 overwriteWidth = 1280
 overwriteHeight = 540
@@ -204,7 +205,8 @@ overwriteHeight = 533
 [TextureRedefine] #inventory background blur
 width = 320
 height = 180
-#formats = 0x19
+formats = 0x19
+overwriteFormat = 0x1f
 #overwriteWidth = 3840
 #overwriteHeight = 2160
 
