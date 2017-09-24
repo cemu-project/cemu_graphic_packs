@@ -204,8 +204,8 @@ overwriteHeight = 2840
 [TextureRedefine] #inventory background blur
 width = 320
 height = 180
-#formats = 0x19
-#overwriteFormat = 0x1f
+formats = 0x19
+overwriteFormat = 0x1f
 #overwriteWidth = 3840
 #overwriteHeight = 2160
 
