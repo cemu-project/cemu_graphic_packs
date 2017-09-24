@@ -4,6 +4,13 @@ name = "Nintendo Land - Higher Quality Shadows"
 version = 2
 
 [TextureRedefine]
+width = 856
+height = 856
+formats = 0x005
+overwriteWidth = 1712
+overwriteHeight = 1712
+
+[TextureRedefine]
 width = 2048
 height = 2048
 formats = 0x005
