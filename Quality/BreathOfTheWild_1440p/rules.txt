@@ -222,6 +222,14 @@ overwriteFormat = 0x823
 overwriteWidth = 640
 overwriteHeight = 360
 
+[TextureRedefine] #inventory and title menu background bloom
+width = 320
+height = 180
+formats = 0x1a
+overwriteFormat = 0x823
+overwriteWidth = 640
+overwriteHeight = 360
+
 [TextureRedefine] #lines on map and camera rune removal
 width = 13
 height = 305

@@ -32,8 +32,8 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 
-R0f.z = (R0f.z - 0.0018518518518519 * 1.5);
-R0f.y = (R0f.y + 0.0018518518518519 * 1.5);
+R0f.z = (R0f.z - 0.0018518518518519 * 1);
+R0f.y = (R0f.y + 0.0018518518518519 * 1);
 
 R1f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
 R2f.xyzw = (texture(textureUnitPS0, R0f.xw).xyzw);

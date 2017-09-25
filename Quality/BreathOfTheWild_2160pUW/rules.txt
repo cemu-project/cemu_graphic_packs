@@ -212,9 +212,17 @@ overwriteHeight = 699
 width = 320
 height = 180
 formats = 0x19
-overwriteFormat = 0x1f
-#overwriteWidth = 3840
-#overwriteHeight = 2160
+overwriteFormat = 0x823
+overwriteWidth = 1280
+overwriteHeight = 540
+
+[TextureRedefine] #inventory background bloom
+width = 320
+height = 180
+formats = 0x19
+overwriteFormat = 0x823
+overwriteWidth = 1280
+overwriteHeight = 540
 
 [TextureRedefine] #lines on map
 width = 13

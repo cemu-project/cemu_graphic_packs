@@ -218,9 +218,17 @@ overwriteHeight = 467
 width = 320
 height = 180
 formats = 0x19
-overwriteFormat = 0x1f
-#overwriteWidth = 3840
-#overwriteHeight = 2160
+overwriteFormat = 0x823
+overwriteWidth = 860
+overwriteHeight = 360
+
+[TextureRedefine] #title menu background bloom
+width = 320
+height = 180
+formats = 0x1a
+overwriteFormat = 0x823
+overwriteWidth = 860
+overwriteHeight = 360
 
 [TextureRedefine] #lines on map
 width = 13

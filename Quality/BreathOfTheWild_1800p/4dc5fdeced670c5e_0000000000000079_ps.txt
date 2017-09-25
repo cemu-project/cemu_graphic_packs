@@ -1,7 +1,7 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader 45d85f1d25e7d0de //vertical blur
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4601800 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
+// shader 4dc5fdeced670c5e // horizontal blur
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf45c5000 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
@@ -32,12 +32,12 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 
-R0f.z = (R0f.z - 0.0018518518518519 * 1.5);
-R0f.y = (R0f.y + 0.0018518518518519 * 1.5);
+R0f.z = (R0f.z - 0.0010416666666667 * 2.7);
+R0f.y = (R0f.y + 0.0010416666666667 * 2.7);
 
-R1f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
-R2f.xyzw = (texture(textureUnitPS0, R0f.xw).xyzw);
-R0f.xyzw = (texture(textureUnitPS0, R0f.xz).xyzw);
+R1f.xyzw = (texture(textureUnitPS0, R0f.yx).xyzw);
+R2f.xyzw = (texture(textureUnitPS0, R0f.wx).xyzw);
+R0f.xyzw = (texture(textureUnitPS0, R0f.zx).xyzw);
 // 0
 R123f.x = (R1f.w * intBitsToFloat(0x3eb4b4b5) + 0.0);
 PV0f.x = R123f.x;
