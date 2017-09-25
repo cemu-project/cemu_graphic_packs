@@ -208,6 +208,12 @@ height = 355
 overwriteWidth = 1350
 overwriteHeight = 710
 
+[TextureRedefine] #action blur
+width = 416
+height = 233
+overwriteWidth = 832
+overwriteHeight = 467
+
 [TextureRedefine] #inventory and title menu background blur
 width = 320
 height = 180
