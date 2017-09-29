@@ -27,8 +27,12 @@ for (int i=0; i<r; i++) {
 	float m = (1-r)/2 + float(i);
 	for (int k=0; k<r; k++){
 		float n = (1-r)/2 + float(k);
-		R1f += texture( textureUnitPS0, R0f+ vec2(m,n)/res )/pow(r,2);
+		R1f += texture( textureUnitPS0, R0f+ vec2(m,n) * 2.0 /res )/(pow(r,2)-4); //assume 2px offset as well
 		}
 	}
+R1f -= texture( textureUnitPS0, R0f+ vec2((1-r)/2,(1-r)/2) * 2.0 /res )/(pow(r,2)-4);
+R1f -= texture( textureUnitPS0, R0f+ vec2((1-r)/2,(r-1)/2) * 2.0 /res )/(pow(r,2)-4);
+R1f -= texture( textureUnitPS0, R0f+ vec2((r-1)/2,(1-r)/2) * 2.0 /res )/(pow(r,2)-4);
+R1f -= texture( textureUnitPS0, R0f+ vec2((r-1)/2,(r-1)/2) * 2.0 /res )/(pow(r,2)-4); //workaround, less like a square, needs proper bokeh
 passPixelColor0 = R1f;
 }
