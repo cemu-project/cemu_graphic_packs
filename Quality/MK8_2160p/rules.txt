@@ -19,6 +19,13 @@ formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1080
 
+[TextureRedefine]
+width = 640
+height = 320
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = 1920
+overwriteHeight = 960
+
 # Quarter Res Alpha (motion blur effect around edges of screen)
 [TextureRedefine]
 width = 320
