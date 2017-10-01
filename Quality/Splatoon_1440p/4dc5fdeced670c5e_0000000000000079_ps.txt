@@ -14,7 +14,7 @@ uniform float weight[] = float[](0.18571429, 0.28870130, 0.10363636, 0.01480519)
 uniform float offset[] = float[](0.00000000, 1.42105263, 3.31578947, 5.21052632);
 
 ivec2 inputRes = textureSize(textureUnitPS0, 0);
-vec2 outputRes = vec2(float(inputRes.x), float(inputRes.y));
+vec2 outputRes = vec2(float(inputRes.x), float(inputRes.y)*uf_fragCoordScale);
 vec2 scale = outputRes * blurFactor;
 void main()
 {
