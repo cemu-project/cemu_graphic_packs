@@ -3,21 +3,11 @@ titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
 name = "Mario Kart 8 - 3840x2160"
 version = 2
 
-# Main Screen Resolution better color depth
-[TextureRedefine] 
-width = 1280
-height = 720
-formats = 0x19,0x1a
-overwriteFormat = 0x1f
-tileModesExcluded = 0x001
-overwriteWidth = 3840
-overwriteHeight = 2160
-
 # Main Screen Resolution
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x41A,0x431,0x19,0x1a # exclude the intro background texture, race end background
+formatsExcluded = 0x41A,0x431 # exclude the intro background texture, race end background
 overwriteWidth = 3840
 overwriteHeight = 2160
 

@@ -4,6 +4,7 @@
 // Used for: Vertical Blur
 const float blurFactor = 1.0; //Higher is less blur
 
+
 // Implementation of http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
 layout(binding = 0) uniform sampler2D textureUnitPS0;
 layout(location = 0) in vec4 passParameterSem0;
@@ -14,7 +15,7 @@ uniform float weight[] = float[](0.18571429, 0.28870130, 0.10363636, 0.01480519)
 uniform float offset[] = float[](0.00000000, 1.42105263, 3.31578947, 5.21052632);
 
 ivec2 inputRes = textureSize(textureUnitPS0, 0);
-vec2 outputRes = vec2(float(inputRes.x), float(inputRes.y)*uf_fragCoordScale);
+vec2 outputRes = vec2(float(inputRes.x), float(inputRes.y));
 vec2 scale = outputRes * blurFactor;
 void main()
 {

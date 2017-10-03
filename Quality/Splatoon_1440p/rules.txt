@@ -6,45 +6,20 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x816
-overwriteWidth = 2560
-overwriteHeight = 1440
-
-[TextureRedefine] # tv (increased depth)
-width = 1280
-height = 720
-formats = 0x816
-overwriteFormat = 0x823
 overwriteWidth = 2560
 overwriteHeight = 1440
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x431,0x816 # exclude obvious textures
-overwriteWidth = 1280
-overwriteHeight = 720
-
-[TextureRedefine] # half-res alpha (increased depth)
-width = 640
-height = 360
-formats = 0x816
-overwriteFormat = 0x823
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 720
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
-formatsExcluded = 0x41A,0x431,0x816 # exclude obvious textures
-overwriteWidth = 640
-overwriteHeight = 360
-
-[TextureRedefine] # quarter-res alpha (increased depth)
-width = 320
-height = 180
-formats = 0x816
-overwriteFormat = 0x823
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 640
 overwriteHeight = 360
 

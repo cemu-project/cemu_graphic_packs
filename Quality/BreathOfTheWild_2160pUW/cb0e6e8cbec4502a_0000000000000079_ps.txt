@@ -23,17 +23,15 @@ ivec2 ires = textureSize(textureUnitPS0,0);
 vec2 res = vec2( float(ires.x), float(ires.y) );
 int r = int(floor(2.0 / uf_fragCoordScale.y + 0.5));
 vec4 R1f = vec4(0.0);
-
-for (int i=0; i<r; i++) {
-	float m = (1-r)/2 + float(i);
-	for (int k=0; k<r; k++){
-		float n = (1-r)/2 + float(k);
-		R1f += texture( textureUnitPS0, R0f+ vec2(m,n) * 2.0 /res )/(pow(r,2)-4); //assume 2px offset as well
+float count = 0.0;
+for( int x=-r; x<=r; x++ ) {
+	for( int y=-r; y<=r; y++ ) {
+		if( pow(x,2) + pow(y,2) <= pow(r,2) ) {
+			R1f += texture( textureUnitPS0, R0f + vec2(x,y)/res );
+			count += 1.0;
+			}
 		}
 	}
-R1f -= texture( textureUnitPS0, R0f+ vec2((1-r)/2,(1-r)/2) * 2.0 /res )/(pow(r,2)-4);
-R1f -= texture( textureUnitPS0, R0f+ vec2((1-r)/2,(r-1)/2) * 2.0 /res )/(pow(r,2)-4);
-R1f -= texture( textureUnitPS0, R0f+ vec2((r-1)/2,(1-r)/2) * 2.0 /res )/(pow(r,2)-4);
-R1f -= texture( textureUnitPS0, R0f+ vec2((r-1)/2,(r-1)/2) * 2.0 /res )/(pow(r,2)-4); //workaround, less like a square, needs proper bokeh
-passPixelColor0 = R1f;
+passPixelColor0 = R1f/count;
 }
+
