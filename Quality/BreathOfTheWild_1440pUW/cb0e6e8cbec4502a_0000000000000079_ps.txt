@@ -23,6 +23,7 @@ ivec2 ires = textureSize(textureUnitPS0,0);
 vec2 res = vec2( float(ires.x), float(ires.y) );
 int r = int(floor(2.0 / uf_fragCoordScale.y + 0.5));
 vec4 R1f = vec4(0.0);
+
 for (int i=0; i<r; i++) {
 	float m = (1-r)/2 + float(i);
 	for (int k=0; k<r; k++){
