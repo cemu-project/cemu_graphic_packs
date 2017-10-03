@@ -133,7 +133,7 @@ if( activeMaskStackC[2] == true ) {
 vec2 R9f = vec2((passParameterSem2.x + passParameterSem2.z) , (passParameterSem2.y + passParameterSem2.w)); //center point
 ivec2 ires = textureSize(textureUnitPS1,0);
 vec2 res = vec2( float(ires.x), float(ires.y) );
-int r = int(floor(2.0 / uf_fragCoordScale.y + 0.5));
+int r = int(floor(1.0 / uf_fragCoordScale.y + 0.5));
 vec3 R10f = vec3(0.0);
 float count = 0.0;
 for( int x=-r; x<=r; x++ ) {
