@@ -3,8 +3,8 @@
 // shader c92c1c4c0a2fb839
 uniform ivec4 uf_remappedPS[5];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e91800 res 1280x720x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf45c6000 res 640x360x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0xf4756800 res 640x360x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x4) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 2 2 2 border: 1
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf46ac800 res 640x360x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
+layout(binding = 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0xf4813000 res 640x360x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x4) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
@@ -16,7 +16,7 @@ else if( v == 0xFFFFFFFF )
 	return floatBitsToInt(0.0);
 return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
-float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
 void main()
 {
 ivec4 R0i = ivec4(0);
@@ -128,9 +128,7 @@ R4i.xyz = floatBitsToInt(textureLod(textureUnitPS1, intBitsToFloat(R4i.zy),intBi
 }
 if( activeMaskStackC[2] == true ) {
 
-
-
-vec2 R9f = vec2((passParameterSem2.x + passParameterSem2.z) , (passParameterSem2.y + passParameterSem2.w)); //center point
+vec2 R9f = vec2( passParameterSem2.x, passParameterSem2.y ); //center point
 ivec2 ires = textureSize(textureUnitPS1,0);
 vec2 res = vec2( float(ires.x), float(ires.y) );
 int r = int(floor(1.0 / uf_fragCoordScale.y + 0.5));
@@ -139,14 +137,12 @@ float count = 0.0;
 for( int x=-r; x<=r; x++ ) {
 	for( int y=-r; y<=r; y++ ) {
 		if( pow(x,2) + pow(y,2) <= pow(r,2) ) {
-			R10f += textureLod( textureUnitPS1, R9f + vec2(x,y)/res, R1i.w ).xyz;
+			R10f += textureLod( textureUnitPS1, R9f + vec2(x,y)/res, intBitsToFloat(R1i.w) ).xyz;
 			count += 1.0;
 			}
 		}
 	}
 R2i.xyz = floatBitsToInt(R10f/count);
-
-
 
 }
 activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
