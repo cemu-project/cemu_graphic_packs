@@ -6,7 +6,7 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x816,0x19,0x1a
+formatsExcluded = 0x19,0x1a
 overwriteWidth = 3840
 overwriteHeight = 2160
 
@@ -15,45 +15,20 @@ width = 1280
 height = 720
 formats = 0x19,0x1a
 overwriteFormat = 0x1f
-tileModesExcluded = 0x001
-overwriteWidth = 3840
-overwriteHeight = 2160
-
-[TextureRedefine] # tv (increased depth)
-width = 1280
-height = 720
-formats = 0x816
-overwriteFormat = 0x823
 overwriteWidth = 3840
 overwriteHeight = 2160
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x431,0x816 # exclude obvious textures
-overwriteWidth = 1920
-overwriteHeight = 1080
-
-[TextureRedefine] # half-res alpha (increased depth)
-width = 640
-height = 360
-formats = 0x816
-overwriteFormat = 0x823
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 1920
 overwriteHeight = 1080
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
-formatsExcluded = 0x41A,0x431,0x816 # exclude obvious textures
-overwriteWidth = 960
-overwriteHeight = 540
-
-[TextureRedefine] # quarter-res alpha (increased depth)
-width = 320
-height = 180
-formats = 0x816
-overwriteFormat = 0x823
+formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = 960
 overwriteHeight = 540
 
