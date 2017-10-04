@@ -6,6 +6,15 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
+formatsExcluded = 0x19,0x1a
+overwriteWidth = 3840
+overwriteHeight = 2160
+
+[TextureRedefine] #TV
+width = 1280
+height = 720
+formats = 0x19,0x1a
+overwriteFormat = 0x1f
 overwriteWidth = 3840
 overwriteHeight = 2160
 
