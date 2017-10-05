@@ -7,6 +7,12 @@
 
 #define ENABLE_FXAA 1
 
+const float EDGE_THRESHOLD_MIN = 0.0312;
+const float EDGE_THRESHOLD_MAX = 0.125;
+const float SUBPIXEL_QUALITY = 0.75;
+const float[] QUALITY = {1.5, 2.0, 2.0, 2.0, 2.0, 4.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0};
+const int ITERATIONS = 12;
+
 uniform ivec4 uf_remappedPS[2];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf49b1800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x38784000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
@@ -14,21 +20,9 @@ layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-//using const here will not compile on AMD
-ivec2 res = textureSize(textureUnitPS0, 0);
-vec2 frameBufSize = vec2(float(res.x), float(res.y));
-vec2 inverseScreenSize = vec2(1.0 / frameBufSize.x, 1.0 / frameBufSize.y);
-
-const float EDGE_THRESHOLD_MIN = 0.0312;
-const float EDGE_THRESHOLD_MAX = 0.125;
-const float SUBPIXEL_QUALITY = 0.75;
-const float[] QUALITY = {1.5, 2.0, 2.0, 2.0, 2.0, 4.0, 8.0, 8.0, 8.0, 8.0, 8.0, 8.0};
-const int ITERATIONS = 12;
-
 float rgb2luma(vec3 rgb) {
 	return sqrt(dot(rgb, vec3(0.299, 0.587, 0.114)));
 }
-
 
 void main(void) {
 	vec2 texCoords = passParameterSem2.xy;
@@ -36,6 +30,10 @@ void main(void) {
 	passPixelColor0.rgb = colorCenter;
 
 #if (ENABLE_FXAA == 1)
+	ivec2 texSize = textureSize(textureUnitPS0, 0);
+	vec2 framebufferSize = vec2(float(texSize.x), float(texSize.y));
+	vec2 invFramebufferSize = vec2(1.0 / framebufferSize.x, 1.0 / framebufferSize.y);
+	
 	// Luma at the current fragment
 	float lumaCenter = rgb2luma(colorCenter);
 
@@ -91,7 +89,7 @@ void main(void) {
 		float gradientScaled = 0.25*max(abs(gradient1), abs(gradient2));
 
 		// Choose the step size (one pixel) according to the edge direction.
-		float stepLength = isHorizontal ? inverseScreenSize.y : inverseScreenSize.x;
+		float stepLength = isHorizontal ? invFramebufferSize.y : invFramebufferSize.x;
 
 		// Average luma in the correct direction.
 		float lumaLocalAverage = 0.0;
@@ -115,7 +113,7 @@ void main(void) {
 		}
 
 		// Compute offset (for each iteration step) in the right direction.
-		vec2 offset = isHorizontal ? vec2(inverseScreenSize.x, 0.0) : vec2(0.0, inverseScreenSize.y);
+		vec2 offset = isHorizontal ? vec2(invFramebufferSize.x, 0.0) : vec2(0.0, invFramebufferSize.y);
 		// Compute UVs to explore on each side of the edge, orthogonally. The QUALITY allows us to step faster.
 		vec2 uv1 = currentUv - offset;
 		vec2 uv2 = currentUv + offset;
