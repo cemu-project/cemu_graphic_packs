@@ -97,6 +97,6 @@ If you need help with the basics, follow the [tutorial](http://compat.cemu.info/
 
 ### Want to contribute?
 
-If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. For beginners, please follow the [tutorial](http://compat.cemu.info/wiki/Tutorial:How_to_create_graphic_pack) on the compatiblity wiki. For getting into more advanced stuff, feel free to [set up NVIDIA Nsignt](https://github.com/slashiee/cemu_graphic_packs/issues/38#issuecomment-309265292). Make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
+If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. For beginners, please follow the [tutorial](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-Graphic-Packs) on the compatiblity wiki. For getting into more advanced stuff, feel free to [set up NVIDIA Nsignt](https://github.com/slashiee/cemu_graphic_packs/issues/38#issuecomment-309265292). Make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
 
 If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so.
