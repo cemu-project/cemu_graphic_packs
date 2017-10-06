@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010184d00,
-name = "Yoshi's Woolly World - 7680x4320"
-
+name = "Yoshi's Woolly World - 10240x5760"
+version = 2
 
 
 [TextureRedefine] # tv
@@ -11,8 +11,8 @@ width = 1280
 height = 720
 
 
-overwriteWidth = 7680
-overwriteHeight = 4320
+overwriteWidth = 10240
+overwriteHeight = 5760
 
 [TextureRedefine] # gamepad
 width = 854
