@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010184d00,
 name = "Yoshi's Woolly World - 5120x2880"
-
+version = 2
 
 
 [TextureRedefine] # tv

@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010145500
 name = "Wipeout Create & Crash - 10240x5760"
-
+version = 2
 
 
 [TextureRedefine] # tv

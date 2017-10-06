@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101d4200
 name = "Brunswick Pro Bowling - 7680x4320"
-
+version = 2
 
 
 [TextureRedefine] # tv
