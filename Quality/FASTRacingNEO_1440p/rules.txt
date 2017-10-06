@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 500001012f000,ffffffff057b4449
 name = "FAST Racing NEO - 2560x1440"
+version = 2
 
 [TextureRedefine] # TV
 width = 1280

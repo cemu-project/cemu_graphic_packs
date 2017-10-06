@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010170700
 name = "Kamen Rider - Battride War II - 7680x4320"
-
+version = 2
 
 
 [TextureRedefine] # tv

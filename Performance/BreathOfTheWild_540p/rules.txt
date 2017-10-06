@@ -110,8 +110,8 @@ overwriteHeight = 270
 width = 854
 height = 480
 formatsExcluded = 0x034
-overwriteWidth = 427
-overwriteHeight = 240
+#overwriteWidth = 427
+#overwriteHeight = 240
 
 [TextureRedefine]
 width = 360

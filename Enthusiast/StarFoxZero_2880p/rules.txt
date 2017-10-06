@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0000050000101b0400,00050000101b0500
 name = "Star Fox Zero - 5120x2880"
-
+version = 2
 
 
 [TextureRedefine] # tv

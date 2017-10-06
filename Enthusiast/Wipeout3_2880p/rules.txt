@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 000500001010e800
 name = "Wipeout 3 - 5120x2880"
-
+version = 2
 
 
 [TextureRedefine] # tv
