@@ -219,3 +219,17 @@ overwriteFormat = 0x1f
 width = 13
 height = 305
 #overwriteFormat = 0x234
+
+[TextureRedefine] #shadows
+width = 360
+height = 360
+formats = 0x005
+overwriteWidth = 2160
+overwriteHeight = 2160
+
+[TextureRedefine] #shadows
+width = 720
+height = 720
+formats = 0x005
+overwriteWidth = 4320
+overwriteHeight = 4320
