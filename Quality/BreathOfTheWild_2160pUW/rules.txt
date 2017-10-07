@@ -67,7 +67,6 @@ overwriteHeight = 1082
 [TextureRedefine] #q-res1
 width = 320
 height = 180
-formats = 0x001		#Scale depth masking, not bloom
 overwriteWidth = 1280
 overwriteHeight = 540
 
@@ -86,13 +85,11 @@ overwriteHeight = 540
 [TextureRedefine] #o-res1
 width = 160
 height = 90
-formats = 0x001		#Scale depth masking, not bloom
 overwriteWidth = 640
 overwriteHeight = 270
 
 [TextureRedefine] # O
 width = 80
-formats = 0x001		#Scale depth masking, not bloom
 height = 45
 overwriteWidth = 320
 overwriteHeight = 136
