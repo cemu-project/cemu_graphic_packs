@@ -6,6 +6,7 @@ version = 2
 [TextureRedefine]
 width = 360
 height = 360
+formats = 0x005
 overwriteWidth = 360
 overwriteHeight = 360
 
