@@ -74,3 +74,11 @@ width = 848
 height = 480
 overwriteWidth = 2560
 overwriteHeight = 1440
+
+
+[TextureRedefine] # a bloom mip
+width = 160
+height = 90
+formats = 0x816
+overwriteWidth = 1280
+overwriteHeight = 720
