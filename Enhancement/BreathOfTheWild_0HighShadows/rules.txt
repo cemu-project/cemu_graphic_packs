@@ -1,0 +1,18 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - High Resolution Shadows"
+version = 2
+
+[TextureRedefine]
+width = 360
+height = 360
+formats = 0x005
+overwriteWidth = 1440 #x4
+overwriteHeight = 1440 #x4
+
+[TextureRedefine]
+width = 720
+height = 720
+formats = 0x005
+overwriteWidth = 2880 #x4
+overwriteHeight = 2880 #x4
