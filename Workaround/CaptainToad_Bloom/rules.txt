@@ -1,4 +1,0 @@
-[Definition]
-titleIds = 0005000010180600,0005000010180700,0005000010180500
-name = "Captain Toad: Treasure Tracker - Reduce Bloom Artifacts"
-version = 2

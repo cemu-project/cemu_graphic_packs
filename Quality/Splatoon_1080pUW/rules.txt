@@ -35,6 +35,26 @@ height = 480
 overwriteWidth = 2560
 overwriteHeight = 1080
 
+[TextureRedefine] # zoom blur
+width = 512
+height = 288
+overwriteWidth = 1024
+overwriteHeight = 432
+
+[TextureRedefine] # sub zoom blur
+width = 448
+height = 252
+overwriteWidth = 896
+overwriteHeight = 378
+
+[TextureRedefine] # player icon - GL_SRGB8_ALPHA8
+width = 128
+height = 128
+
+[TextureRedefine] # player icon - GL_RGBA8
+width = 256
+height = 256
+
 [TextureRedefine] # multiplayer
 width = 848
 height = 480

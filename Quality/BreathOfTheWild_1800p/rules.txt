@@ -67,7 +67,6 @@ overwriteHeight = 901
 [TextureRedefine] #q-res1 Main bloom pass, AO 
 width = 320
 height = 180
-formats = 0x001		#Scale depth masking, not bloom
 overwriteWidth = 800
 overwriteHeight = 450
 
@@ -226,3 +225,17 @@ overwriteHeight = 450
 width = 13
 height = 305
 #overwriteFormat = 0x234
+
+[TextureRedefine] #shadows
+width = 360
+height = 360
+formats = 0x005
+overwriteWidth = 900
+overwriteHeight = 900
+
+[TextureRedefine] #shadows
+width = 720
+height = 720
+formats = 0x005
+overwriteWidth = 1800
+overwriteHeight = 1800
