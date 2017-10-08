@@ -1,27 +1,36 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader 9fad3b3505a6d831
-// Used for: Vertical Blur
-const float blurFactor = 1.0; //Higher is less blur
-
-// Implementation of http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
-layout(binding = 0) uniform sampler2D textureUnitPS0;
+// shader 12d8627fe9906695 // vertical bloom 2880
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4240800 res 96x96x1 dim 1 tm: 4 format 0005 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
 
-uniform float weight[] = float[](0.18571429, 0.28870130, 0.10363636, 0.01480519);
-uniform float offset[] = float[](0.00000000, 1.42105263, 3.31578947, 5.21052632);
+float data = passParameterSem0.z - passParameterSem0.w;
+float h = data / 1.38461538 * uf_fragCoordScale.y;
 
-ivec2 inputRes = textureSize(textureUnitPS0, 0);
-vec2 outputRes = vec2(float(inputRes.x), float(inputRes.y));
-vec2 scale = outputRes * blurFactor;
+uniform float o_weight[] = float[]( 0.29411765, 0.35294118 );
+uniform float o_offset[] = float[]( 0.00000000, 1.33333333 );
+
+uniform float weight[] = float[]( 0.11011604, 0.20071416, 0.13842356, 0.07060718, 0.02643049, 0.00717399, 0.00138786, 0.00018683, 0.00001693, 0.00000098 );
+uniform float offset[] = float[]( 0.00000000, 1.47169811, 3.43396226, 5.39622642, 7.35849057, 9.32075472, 11.28301887, 13.24528302, 15.20754717, 17.16981132 );
+
 void main()
 {
-	vec2 R0f = vec2(passParameterSem0.x, passParameterSem0.w);
-	vec4 R1f = texture(textureUnitPS0, R0f) * weight[0];
-	for (int i = 1; i<4; i++) {
-		R1f += texture(textureUnitPS0, R0f + (vec2(0.0, offset[i]) / scale)) * weight[i];
-		R1f += texture(textureUnitPS0, R0f - (vec2(0.0, offset[i]) / scale)) * weight[i];
+vec2 R0f = vec2(passParameterSem0.x, passParameterSem0.w);
+
+vec4 R1f = texture( textureUnitPS0, R0f ) * weight[0];
+for (int i=1; i<10; i++) {
+	R1f += texture( textureUnitPS0, R0f + vec2(0.0, offset[i]*h) ) * weight[i];
+	R1f += texture( textureUnitPS0, R0f - vec2(0.0, offset[i]*h) ) * weight[i];
 	}
-	passPixelColor0 = R1f;
+
+vec4 R2f = texture( textureUnitPS0, R0f ) * o_weight[0];
+for (int i=1; i<2; i++) {
+	R2f += texture( textureUnitPS0, R0f + vec2(0.0, o_offset[i]*h) ) * o_weight[i];
+	R2f += texture( textureUnitPS0, R0f - vec2(0.0, o_offset[i]*h) ) * o_weight[i];
+	}
+
+passPixelColor0 = ( (uf_fragCoordScale.y == 1.0) ? R2f : R1f );
 }

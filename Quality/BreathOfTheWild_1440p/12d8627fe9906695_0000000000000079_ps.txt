@@ -7,9 +7,6 @@ layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-//ivec2 ires = textureSize(textureUnitPS0,0);
-//vec2 res = vec2( float(ires.x), float(ires.y) );
-
 float data = passParameterSem0.z - passParameterSem0.w;
 float h = data / 1.38461538 * uf_fragCoordScale.y;
 
@@ -37,5 +34,3 @@ for (int i=1; i<2; i++) {
 
 passPixelColor0 = ( (uf_fragCoordScale.y == 1.0) ? R2f : R1f );
 }
-
-//py blurninja.py --expand 4 --reduce 4 17 --linear
