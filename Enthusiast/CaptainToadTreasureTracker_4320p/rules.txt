@@ -1,82 +1,82 @@
 [Definition]
-titleIds = 0005000010145d00,0005000010145c00,0005000010106100
-name = "Super Mario 3D World - 10240x5760"
+titleIds = 0005000010180600,0005000010180700,0005000010180500
+name = "Captain Toad Treasure Tracker - 7680x4320"
 version = 2
 
 [TextureRedefine] # tv
 width = 1280
 height = 720
 formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
-overwriteWidth = 10240
-overwriteHeight = 5760
+overwriteWidth = 7680
+overwriteHeight = 4320
 
 [TextureRedefine] # zoomed in
 width = 1128
 height = 720
-overwriteWidth = 10240
-overwriteHeight = 5760
+overwriteWidth = 7680
+overwriteHeight = 4320
 
 [TextureRedefine] # zoom transition
 width = 1000
 height = 600
-overwriteWidth = 10240
-overwriteHeight = 5760
+overwriteWidth = 7680
+overwriteHeight = 4320
 
 [TextureRedefine] # zoom transition 2
 width = 1000
 height = 720
-overwriteWidth = 10240
-overwriteHeight = 5760
+overwriteWidth = 7680
+overwriteHeight = 4320
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 5120
-overwriteHeight = 2880
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine] # half-res (zoomed in)
 width = 564
 height = 360
-overwriteWidth = 5120
-overwriteHeight = 2880
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine] # half-res (zoom transition)
 width = 500
 height = 300
-overwriteWidth = 5120
-overwriteHeight = 2880
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine] # half-res (zoom transition 2)
 width = 500
 height = 360
-overwriteWidth = 5120
-overwriteHeight = 2880
+overwriteWidth = 3840
+overwriteHeight = 2160
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 2560
-overwriteHeight = 1440
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # q-res (zoomed in)
 width = 282
 height = 180
-overwriteWidth = 2560
-overwriteHeight = 1440
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # q-res (zoom transition)
 width = 250
 height = 150
-overwriteWidth = 2560
-overwriteHeight = 1440
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # q-res (zoom transition 2)
 width = 250
 height = 180
-overwriteWidth = 2560
-overwriteHeight = 1440
+overwriteWidth = 1920
+overwriteHeight = 1080
 
 [TextureRedefine] # gamepad
 width = 854
@@ -87,7 +87,7 @@ overwriteHeight = 1440
 [TextureRedefine] # half-res (gamepad)
 width = 427
 height = 240
-formatsExcluded = 0x41A # exclude obvious textures1
+formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = 1280
 overwriteHeight = 720
 
