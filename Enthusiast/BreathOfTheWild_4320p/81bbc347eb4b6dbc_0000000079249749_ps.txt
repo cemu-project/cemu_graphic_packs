@@ -146,8 +146,8 @@ R1i = floatBitsToInt(passParameterSem4);
 R2i = floatBitsToInt(passParameterSem6);
 R3i.w = floatBitsToInt(texture(textureUnitPS4, intBitsToFloat(R0i.xy)).x);
 R7i.xyzw = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R2i.zw)).xyzw);
-R4i.xyzw = floatBitsToInt(textureGather(textureUnitPS6, intBitsToFloat(R0i.xy)).xyzw);
-R5i.xyzw = floatBitsToInt(textureGather(textureUnitPS7, intBitsToFloat(R0i.xy)).xyzw);
+//R4i.xyzw = floatBitsToInt(textureGather(textureUnitPS6, intBitsToFloat(R0i.xy)).xyzw);// 80e
+//R5i.xyzw = floatBitsToInt(textureGather(textureUnitPS7, intBitsToFloat(R0i.xy)).xyzw);//0001
 R9i.xyzw = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R2i.zw)).xyzw);
 // 0
 R127i.x = floatBitsToInt(-(intBitsToFloat(R3i.w)) + intBitsToFloat(R4i.y));
