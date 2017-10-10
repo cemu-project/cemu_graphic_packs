@@ -1,8 +1,8 @@
 version: v2-{build}
 install:
- - xcopy C:\projects\cemu-graphic-packs\Cheats C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Enhancement C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Enthusiast C:\projects\cemu-graphic-packs\AppVeyor /E /I
+ - xcopy C:\projects\cemu-graphic-packs\Modifications C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Performance C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Quality C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Workaround C:\projects\cemu-graphic-packs\AppVeyor /E /I
