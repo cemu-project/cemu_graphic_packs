@@ -12,7 +12,7 @@ If you want to push your GPU to it's limits, [Enthusiast](https://github.com/sla
 
 If you want to upgrade your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enhancement) is right up your ally.
 
-If you want game patches ([Cemuhook](http://sshnuke.net/cemuhook/) required), [Cheats](https://github.com/slashiee/cemu_graphic_packs/tree/master/Cheats) is there.
+If you want game patches ([Cemuhook](http://sshnuke.net/cemuhook/) required), [Modifications](https://github.com/slashiee/cemu_graphic_packs/tree/master/Modifications) is there.
 
 If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/tree/master/Workaround) to see if there's a workaround for it.
 
