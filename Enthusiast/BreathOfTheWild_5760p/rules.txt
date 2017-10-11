@@ -221,12 +221,12 @@ height = 305
 width = 360
 height = 360
 formats = 0x005
-overwriteWidth = 900 #x2.5
-overwriteHeight = 900 #x2.5
+overwriteWidth = 2880 #x8
+overwriteHeight = 2880 #x8
 
 [TextureRedefine] #shadows
 width = 720
 height = 720
 formats = 0x005
-overwriteWidth = 1800 #x2.5
-overwriteHeight = 1800 #x2.5
+overwriteWidth = 5760 #x8
+overwriteHeight = 5760 #x8
