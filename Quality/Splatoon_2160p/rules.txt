@@ -53,10 +53,16 @@ overwriteHeight = 756
 [TextureRedefine] # player icon - GL_SRGB8_ALPHA8
 width = 128
 height = 128
+#formats = 0x41A
+#overwriteWidth = 384
+#overwriteHeight = 384 #Need working confirmation on next Cemu version
 
 [TextureRedefine] # player icon - GL_RGBA8
 width = 256
 height = 256
+#formats = 0x
+#overwriteWidth = 768
+#overwriteHeight = 768 #Need working confirmation on next Cemu version
 
 [TextureRedefine] # gamepad
 width = 854
