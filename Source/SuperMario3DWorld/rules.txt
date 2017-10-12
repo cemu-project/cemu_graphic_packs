@@ -1,0 +1,101 @@
+<?
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$halfWidth = $fullWidth / 2;
+$halfHeight = $fullHeight / 2;
+$quarterWidth = $fullWidth / 4;
+$quarterHeight = $fullHeight / 4;
+
+$title = $fullWidth . "x" . $fullHeight;
+
+$aspect = $fullWidth / (float)$fullHeight;
+if (round($aspect*10) == 23 || round($aspect*10) == 24)
+	$title = $title . " (21:9)";
+
+?>
+[Definition]
+titleIds = 0005000010145d00,0005000010145c00,0005000010106100
+name = "Super Mario 3D World - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
+overwriteWidth = <?=$fullWidth?> 
+overwriteHeight = <?=$fullHeight?> 
+
+[TextureRedefine] # zoomed in
+width = 1128
+height = 720
+overwriteWidth = <?=$fullWidth?> 
+overwriteHeight = <?=$fullHeight?> 
+
+[TextureRedefine] # zoom transition
+width = 1000
+height = 600
+overwriteWidth = <?=$fullWidth?> 
+overwriteHeight = <?=$fullHeight?> 
+
+[TextureRedefine] # zoom transition 2
+width = 1000
+height = 720
+overwriteWidth = <?=$fullWidth?> 
+overwriteHeight = <?=$fullHeight?> 
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=$halfWidth?> 
+overwriteHeight = <?=$halfHeight?> 
+
+[TextureRedefine] # half-res (zoomed in)
+width = 564
+height = 360
+overwriteWidth = <?=$halfWidth?> 
+overwriteHeight = <?=$halfHeight?> 
+
+[TextureRedefine] # half-res (zoom transition)
+width = 500
+height = 300
+overwriteWidth = <?=$halfWidth?> 
+overwriteHeight = <?=$halfHeight?> 
+
+[TextureRedefine] # half-res (zoom transition 2)
+width = 500
+height = 360
+overwriteWidth = <?=$halfWidth?> 
+overwriteHeight = <?=$halfHeight?> 
+
+[TextureRedefine] # quarter-res alpha
+width = 320
+height = 180
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=$quarterWidth?> 
+overwriteHeight = <?=$quarterHeight?> 
+
+[TextureRedefine] # q-res (zoomed in)
+width = 282
+height = 180
+overwriteWidth = <?=$quarterWidth?> 
+overwriteHeight = <?=$quarterHeight?> 
+
+[TextureRedefine] # q-res (zoom transition)
+width = 250
+height = 150
+overwriteWidth = <?=$quarterWidth?> 
+overwriteHeight = <?=$quarterHeight?> 
+
+[TextureRedefine] # q-res (zoom transition 2)
+width = 250
+height = 180
+overwriteWidth = <?=$quarterWidth?> 
+overwriteHeight = <?=$quarterHeight?> 
+
+[TextureRedefine] # gamepad
+
+width = 854
+height = 480
+#overwriteWidth = <?=$fullWidth?> 
+#overwriteHeight = <?=$fullHeight?> 
