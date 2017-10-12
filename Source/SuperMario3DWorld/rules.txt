@@ -1,4 +1,4 @@
-<?
+<?php
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
 $halfWidth = $fullWidth / 2;

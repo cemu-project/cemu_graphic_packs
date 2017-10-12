@@ -1,4 +1,4 @@
-<?
+<?php
 $width = $argv[1];
 $height = $argv[2];
 

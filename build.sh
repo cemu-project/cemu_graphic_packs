@@ -29,7 +29,7 @@ build_dir () {
 		filename=`basename $f`
 		outName="$dstDir/$filename"
 		echo "Building $f to $outName with params ${rest[@]}"
-		php5 "$f" ${rest[*]} > "$outName"
+		php "$f" ${rest[*]} > "$outName"
 		if [ $? -ne 0 ]; then
 			rm "$outName"
 		fi
