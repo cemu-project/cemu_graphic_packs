@@ -7,12 +7,12 @@ version = 2
 width = 360
 height = 360
 formats = 0x005
-overwriteWidth = 1440 #x4
-overwriteHeight = 1440 #x4
+overwriteWidth = 5760 #x16
+overwriteHeight = 5760 #x16
 
 [TextureRedefine]
 width = 720
 height = 720
 formats = 0x005
-overwriteWidth = 2880 #x4
-overwriteHeight = 2880 #x4
+overwriteWidth = 11520 #x16
+overwriteHeight = 11520 #x16
