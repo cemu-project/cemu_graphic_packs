@@ -10,8 +10,8 @@ uniform vec2 uf_fragCoordScale;
 float data = passParameterSem0.z - passParameterSem0.w;
 float h = data / 1.38461538 * uf_fragCoordScale.y;
 
-uniform float o_weight[] = float[]( 0.29411765, 0.35294118 );
-uniform float o_offset[] = float[]( 0.00000000, 1.33333333 );
+uniform float o_weight[] = float[]( 0.22702703, 0.31621622, 0.07027027 );
+uniform float o_offset[] = float[]( 0.00000000, 1.38461538, 3.23076923 );
 
 uniform float weight[] = float[]( 0.11011604, 0.20071416, 0.13842356, 0.07060718, 0.02643049, 0.00717399, 0.00138786, 0.00018683, 0.00001693, 0.00000098 );
 uniform float offset[] = float[]( 0.00000000, 1.47169811, 3.43396226, 5.39622642, 7.35849057, 9.32075472, 11.28301887, 13.24528302, 15.20754717, 17.16981132 );
@@ -27,7 +27,7 @@ for (int i=1; i<10; i++) {
 	}
 
 vec4 R2f = texture( textureUnitPS0, R0f ) * o_weight[0];
-for (int i=1; i<2; i++) {
+for (int i=1; i<3; i++) {
 	R2f += texture( textureUnitPS0, R0f + vec2(0.0, o_offset[i]*h) ) * o_weight[i];
 	R2f += texture( textureUnitPS0, R0f - vec2(0.0, o_offset[i]*h) ) * o_weight[i];
 	}

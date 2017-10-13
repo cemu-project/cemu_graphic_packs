@@ -1,36 +1,38 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-
-const float factor = 2.0; //higher is less blur
-
-// shader 4dc5fdeced670c5e // horizontal blur
+// shader 4dc5fdeced670c5e // horizontal blur 1080
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf45c5000 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
-int clampFI32(int v)
-{
-if( v == 0x7FFFFFFF )
-	return floatBitsToInt(1.0);
-else if( v == 0xFFFFFFFF )
-	return floatBitsToInt(0.0);
-return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
-}
-float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
 
-uniform float weight[] = float[]( 0.18571429, 0.28870130, 0.10363636, 0.01480519 );
-uniform float offset[] = float[]( 0.00000000, 1.42105263, 3.31578947, 5.21052632 );
+float data = passParameterSem0.z - passParameterSem0.w;
+float w = data / 1.38461538 * uf_fragCoordScale.x;
 
-ivec2 ires = textureSize(textureUnitPS0,0);
-vec2 ores = vec2( float(ires.x), float(ires.y) ) * uf_fragCoordScale;
-vec2 scale = ores * factor;
+uniform float o_weight[] = float[]( 0.29411765, 0.35294118 );
+uniform float o_offset[] = float[]( 0.00000000, 1.33333333 );
+
+uniform float weight[] = float[]( 0.20064856, 0.30320227, 0.09647345 );
+uniform float offset[] = float[]( 0.00000000, 1.41176471, 3.29411765 );
+
 void main()
 {
 vec2 R0f = vec2(passParameterSem0.w, passParameterSem0.x);
+
 vec4 R1f = texture( textureUnitPS0, R0f ) * weight[0];
-for (int i=1; i<4; i++) {
-	R1f += texture( textureUnitPS0, R0f+(vec2(offset[i], 0.0) / scale) ) * weight[i];
-	R1f += texture( textureUnitPS0, R0f-(vec2(offset[i], 0.0) / scale) ) * weight[i];
+for (int i=1; i<3; i++) {
+	R1f += texture( textureUnitPS0, R0f + vec2(offset[i]*w, 0.0) ) * weight[i];
+	R1f += texture( textureUnitPS0, R0f - vec2(offset[i]*w, 0.0) ) * weight[i];
 	}
-passPixelColor0 = R1f;
+
+vec4 R2f = texture( textureUnitPS0, R0f ) * o_weight[0];
+for (int i=1; i<2; i++) {
+	R2f += texture( textureUnitPS0, R0f + vec2(o_offset[i]*w, 0.0) ) * o_weight[i];
+	R2f += texture( textureUnitPS0, R0f - vec2(o_offset[i]*w, 0.0) ) * o_weight[i];
+	}
+
+passPixelColor0 = ( (uf_fragCoordScale.y == 1.0) ? R2f : R1f );
 }
+
+//py blurninja.py --expand 4 --reduce 4 9 --linear
+//game original py blurninja.py --expand 2 --reduce 2 5 --linear

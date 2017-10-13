@@ -1,36 +1,35 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-
-const float factor = 2.0; //higher is less blur
-
-// shader 45d85f1d25e7d0de // vertical blur
+// shader 45d85f1d25e7d0de // vertical blur 5760
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4601800 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
-int clampFI32(int v)
-{
-if( v == 0x7FFFFFFF )
-	return floatBitsToInt(1.0);
-else if( v == 0xFFFFFFFF )
-	return floatBitsToInt(0.0);
-return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
-}
-float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
 
-uniform float weight[] = float[]( 0.18571429, 0.28870130, 0.10363636, 0.01480519 );
-uniform float offset[] = float[]( 0.00000000, 1.42105263, 3.31578947, 5.21052632 );
+float data = passParameterSem0.z - passParameterSem0.w;
+float h = data / 1.38461538 * uf_fragCoordScale.y;
 
-ivec2 ires = textureSize(textureUnitPS0,0);
-vec2 ores = vec2( float(ires.x), float(ires.y) ) * uf_fragCoordScale;
-vec2 scale = ores * factor;
+uniform float o_weight[] = float[]( 0.29411765, 0.35294118 );
+uniform float o_offset[] = float[]( 0.00000000, 1.33333333 );
+
+uniform float weight[] = float[]( 0.04202302, 0.08289284, 0.07843703, 0.07101047, 0.06150497, 0.05096469, 0.04039985, 0.03063492, 0.02222034, 0.01541512, 0.01022743, 0.00648881, 0.00393634, 0.00228295, 0.00126565, 0.00067063, 0.00033957, 0.00016428, 0.00007592, 0.00003351, 0.00001412, 0.00000568, 0.00000218, 0.00000080, 0.00000028, 0.00000009 );
+uniform float offset[] = float[]( 0.00000000, 1.49584488, 3.49030471, 5.48476454, 7.47922438, 9.47368421, 11.46814404, 13.46260388, 15.45706371, 17.45152355, 19.44598338, 21.44044321, 23.43490305, 25.42936288, 27.42382271, 29.41828255, 31.41274238, 33.40720222, 35.40166205, 37.39612188, 39.39058172, 41.38504155, 43.37950139, 45.37396122, 47.36842105, 49.36288089 );
+
 void main()
 {
 vec2 R0f = vec2(passParameterSem0.x, passParameterSem0.w);
+
 vec4 R1f = texture( textureUnitPS0, R0f ) * weight[0];
-for (int i=1; i<4; i++) {
-	R1f += texture( textureUnitPS0, R0f+(vec2(0.0, offset[i]) / scale) ) * weight[i];
-	R1f += texture( textureUnitPS0, R0f-(vec2(0.0, offset[i]) / scale) ) * weight[i];
+for (int i=1; i<26; i++) {
+	R1f += texture( textureUnitPS0, R0f + vec2(0.0, offset[i]*h) ) * weight[i];
+	R1f += texture( textureUnitPS0, R0f - vec2(0.0, offset[i]*h) ) * weight[i];
 	}
-passPixelColor0 = R1f;
+
+vec4 R2f = texture( textureUnitPS0, R0f ) * o_weight[0];
+for (int i=1; i<2; i++) {
+	R2f += texture( textureUnitPS0, R0f + vec2(0.0, o_offset[i]*h) ) * o_weight[i];
+	R2f += texture( textureUnitPS0, R0f - vec2(0.0, o_offset[i]*h) ) * o_weight[i];
+	}
+
+passPixelColor0 = ( (uf_fragCoordScale.y == 1.0) ? R2f : R1f );
 }

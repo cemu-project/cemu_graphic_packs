@@ -1,6 +1,6 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader 12d8627fe9906695 // vertical bloom 1080
+// shader 12d8627fe9906695 // vertical bloom 720
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4240800 res 96x96x1 dim 1 tm: 4 format 0005 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;
@@ -10,15 +10,15 @@ uniform vec2 uf_fragCoordScale;
 float data = passParameterSem0.z - passParameterSem0.w;
 float h = data / 1.38461538 * uf_fragCoordScale.y;
 
-uniform float o_weight[] = float[]( 0.29411765, 0.35294118 );
-uniform float o_offset[] = float[]( 0.00000000, 1.33333333 );
+uniform float o_weight[] = float[]( 0.22702703, 0.31621622, 0.07027027 );
+uniform float o_offset[] = float[]( 0.00000000, 1.38461538, 3.23076923 );
 
 void main()
 {
 vec2 R0f = vec2(passParameterSem0.x, passParameterSem0.w);
 
 vec4 R2f = texture( textureUnitPS0, R0f ) * o_weight[0];
-for (int i=1; i<2; i++) {
+for (int i=1; i<3; i++) {
 	R2f += texture( textureUnitPS0, R0f + vec2(0.0, o_offset[i]*h) ) * o_weight[i];
 	R2f += texture( textureUnitPS0, R0f - vec2(0.0, o_offset[i]*h) ) * o_weight[i];
 	}
