@@ -7,7 +7,7 @@ layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
 float data = passParameterSem0.z - passParameterSem0.w;
-float w = data / 1.38461538 * uf_fragCoordScale.x;
+float w = data / 1.33333333 * uf_fragCoordScale.x;
 
 uniform float o_weight[] = float[]( 0.29411765, 0.35294118 );
 uniform float o_offset[] = float[]( 0.00000000, 1.33333333 );
