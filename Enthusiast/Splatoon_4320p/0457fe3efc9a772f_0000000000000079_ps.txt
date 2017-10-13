@@ -1,0 +1,38 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+// shader 0457fe3efc9a772f
+// Used for: Vertical Bloom 4320
+// Implementation of http://rastergrid.com/blog/2010/09/efficient-gaussian-blur-with-linear-sampling/
+
+layout(binding = 0) uniform sampler2D textureUnitPS0;
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+
+float data = passParameterSem0.z - passParameterSem0.w;
+float w = data / 1.38461538 * uf_fragCoordScale.x;
+
+uniform float o_weight[] = float[]( 0.22558594, 0.31420898, 0.06982422, 0.00317383 );
+uniform float o_offset[] = float[]( 0.00000000, 1.38461538, 3.23076923, 5.07692308 );
+
+uniform float weight[] = float[]( 0.07731484, 0.14762709, 0.12265258, 0.08781380, 0.05412785, 0.02868527, 0.01304628, 0.00508044, 0.00168915, 0.00047786, 0.00011455, 0.00002316, 0.00000393, 0.00000055, 0.00000006, 0.00000001 );
+uniform float offset[] = float[]( 0.00000000, 1.48598131, 3.46728972, 5.44859813, 7.42990654, 9.41121495, 11.39252336, 13.37383178, 15.35514019, 17.33644860, 19.31775701, 21.29906542, 23.28037383, 25.26168224, 27.24299065, 29.22429907 );
+
+void main()
+{
+vec2 R0f = vec2(passParameterSem0.x, passParameterSem0.w);
+
+vec4 R1f = texture( textureUnitPS0, R0f ) * weight[0];
+for (int i=1; i<16; i++) {
+	R1f += texture( textureUnitPS0, R0f + vec2(0.0, offset[i]*w) ) * weight[i];
+	R1f += texture( textureUnitPS0, R0f - vec2(0.0, offset[i]*w) ) * weight[i];
+	}
+
+vec4 R2f = texture( textureUnitPS0, R0f ) * o_weight[0];
+for (int i=1; i<4; i++) {
+	R2f += texture( textureUnitPS0, R0f + vec2(0.0, o_offset[i]*w) ) * o_weight[i];
+	R2f += texture( textureUnitPS0, R0f - vec2(0.0, o_offset[i]*w) ) * o_weight[i];
+	}
+
+passPixelColor0 = ( (uf_fragCoordScale.y == 1.0) ? R2f : R1f );
+}
