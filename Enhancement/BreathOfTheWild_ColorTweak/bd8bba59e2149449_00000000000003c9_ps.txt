@@ -31,7 +31,7 @@ else if( v == 0xFFFFFFFF )
 	return floatBitsToInt(0.0);
 return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
-float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
 void main()
 {
 vec4 R0f = vec4(0.0);
