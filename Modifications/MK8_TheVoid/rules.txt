@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = "Mario Kart 8 - The Void"
+version = 2
