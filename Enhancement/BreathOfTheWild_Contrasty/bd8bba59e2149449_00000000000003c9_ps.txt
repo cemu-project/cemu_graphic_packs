@@ -5,7 +5,7 @@
 // Credit to bestminr for vibrance logic, and getdls
 // original shader dumped using cemu 1.10.0f, BotW 1.3.1
 
-/*Gamma, exposure, vibrance and crushContrast can be modified */
+/*BloomFactor, gamma, exposure, vibrance and crushContrast can be modified */
 const float bloomFactor = 0.4; // 1.0 is neutral
 const float gamma = 0.81; // 1.0 is neutral  Botw is already colour graded at this stage
 const float exposure = 1.17; // 1.0 is neutral
