@@ -6,7 +6,7 @@ install:
  - xcopy C:\projects\cemu-graphic-packs\Performance C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Quality C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Workaround C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - xcopy C:\projects\cemu-graphic-packs\readme.txt C:\projects\cemu-graphic-packs\AppVeyor & D
+ - echo D | xcopy C:\projects\cemu-graphic-packs\readme.txt C:\projects\cemu-graphic-packs\AppVeyor
 build: off
 artifacts:
  - path: AppVeyor
