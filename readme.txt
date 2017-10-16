@@ -1,9 +1,9 @@
-Go to the [GitHub Site](https://slashiee.github.io/cemu_graphic_packs/) for more information.
+Go to the GitHub Site for more information: https://slashiee.github.io/cemu_graphic_packs/
 
 Please delete any current graphics packs that you are going to replace! This is necessary if, for example, any shader edits in an older installed version are deleted from a pack in a future downloaded version.
 
 Contributors:
-slashiee - 416 commits: 117,760 line additions and 131,297 line deletions.
+slashiee - 417 commits: 117,762 line additions and 131,299 line deletions.
 getdls - 31 commits: 30,136 line additions and 1,317 line deletions.
 Darkemaste - 23 commits: 14,684 line additions and 747 line deletions.
 JoelAlone - 17 commits: 22,529 line additions and 1,797 line deletions.
