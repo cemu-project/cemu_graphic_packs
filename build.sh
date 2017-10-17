@@ -41,4 +41,16 @@ build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1080pUW" 2560 10
 build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1440p" 2560 1440
 build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1800p" 3200 1800
 build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_2160p" 3840 2160
-
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1080p" 1920 1080
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1080pUW" 2560 1080
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1440p" 2560 1440
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1440pUW" 3440 1440
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1800p" 3200 1800
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_2160p" 3840 2160
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_2160pUW" 5120 2160
+build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_Switch" 1600 900
+build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_2880p" 5120 2880
+build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_4320p" 7680 4320
+build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_5760p" 10240 5760
+build_dir "Source/BreathOfTheWild" "Performance/BreathOfTheWild_360p" 640 360
+build_dir "Source/BreathOfTheWild" "Performance/BreathOfTheWild_540p" 960 540
