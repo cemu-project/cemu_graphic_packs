@@ -3,10 +3,10 @@ moduleMatches = 0xF7A78809
 
 #rodata constants
 
-0x1004364C = .float 2.370 
-0x10124BE0 = .float 2.370 
-0x10158FE0 = .float 2.370 
-0x10160454 = .float 2.370 
+0x1004364C = .float 2.389 
+0x10124BE0 = .float 2.389 
+0x10158FE0 = .float 2.389 
+0x10160454 = .float 2.389 
 
 _aspectAddr = 0x1004364C
 
@@ -27,10 +27,10 @@ _aspectAddr = 0x1004364C
 moduleMatches = 0x08ED6677
 
 #rodata constants
-0x1003C670 = .float 2.370 
-0x101092B0 = .float 2.370 
-0x10144564 = .float 2.370 
-0x1014A514 = .float 2.370 
+0x1003C670 = .float 2.389 
+0x101092B0 = .float 2.389 
+0x10144564 = .float 2.389 
+0x1014A514 = .float 2.389 
 
 _aspectAddr = 0x1003C670
 

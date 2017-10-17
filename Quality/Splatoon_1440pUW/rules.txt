@@ -1,13 +1,13 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = "Splatoon - 2560x1440"
+name = "Splatoon - 3440x1440 (21:9)"
 version = 2
 
 [TextureRedefine] # tv
 width = 1280
 height = 720
 formatsExcluded = 0x19,0x1a
-overwriteWidth = 2560 
+overwriteWidth = 3440 
 overwriteHeight = 1440 
 
 [TextureRedefine] # tv
@@ -15,45 +15,45 @@ width = 1280
 height = 720
 formats = 0x19,0x1a
 overwriteFormat = 0x1f
-overwriteWidth = 2560 
+overwriteWidth = 3440 
 overwriteHeight = 1440 
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 1280 
+overwriteWidth = 1720 
 overwriteHeight = 720 
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 640 
+overwriteWidth = 860 
 overwriteHeight = 360 
 
 [TextureRedefine] # squid sisters
 width = 1024
 height = 576
-overwriteWidth = 2048 
+overwriteWidth = 2752 
 overwriteHeight = 1152 
 
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-overwriteWidth = 2560 
+overwriteWidth = 3440 
 overwriteHeight = 1440 
 
 [TextureRedefine] # zoom blur
 width = 512
 height = 288
-overwriteWidth = 1024 
+overwriteWidth = 1376 
 overwriteHeight = 576 
 
 [TextureRedefine] # sub zoom blur
 width = 448
 height = 252
-overwriteWidth = 896 
+overwriteWidth = 1204 
 overwriteHeight = 504 
 
 [TextureRedefine] # player icon - GL_SRGB8_ALPHA8
@@ -73,18 +73,18 @@ formats = 0x01a
 [TextureRedefine] # multiplayer
 width = 848
 height = 480
-overwriteWidth = 2560 
+overwriteWidth = 3440 
 overwriteHeight = 1440 
 
 [TextureRedefine] # half-res alpha (multiplayer)
 width = 424
 height = 240
-overwriteWidth = 1280 
+overwriteWidth = 1720 
 overwriteHeight = 720 
 
 [TextureRedefine] # a bloom mip
 width = 160
 height = 90
 formats = 0x816
-overwriteWidth = 320 
+overwriteWidth = 430 
 overwriteHeight = 180 

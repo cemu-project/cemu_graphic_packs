@@ -1,70 +1,90 @@
 [Definition]
-titleIds = 0005000010176900,0005000010176A00,0005000010162B000
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = "Splatoon - 640x360"
 version = 2
 
 [TextureRedefine] # tv
 width = 1280
 height = 720
-overwriteWidth = 640
-overwriteHeight = 360
+formatsExcluded = 0x19,0x1a
+overwriteWidth = 640 
+overwriteHeight = 360 
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formats = 0x19,0x1a
+overwriteFormat = 0x1f
+overwriteWidth = 640 
+overwriteHeight = 360 
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 320
-overwriteHeight = 180
+overwriteWidth = 320 
+overwriteHeight = 180 
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
 formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 160
-overwriteHeight = 90
-
-[TextureRedefine] # half-res alpha (gamepad)
-width = 427
-height = 240
-formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 214
-overwriteHeight = 120
-
-[TextureRedefine] # half-res alpha (multiplayer)
-width = 424
-height = 240
-formatsExcluded = 0x41A,0x431 # exclude obvious textures
-overwriteWidth = 212
-overwriteHeight = 120
+overwriteWidth = 160 
+overwriteHeight = 90 
 
 [TextureRedefine] # squid sisters
 width = 1024
 height = 576
-overwriteWidth = 512
-overwriteHeight = 288
+overwriteWidth = 512 
+overwriteHeight = 288 
 
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-overwriteWidth = 427
-overwriteHeight = 240
+overwriteWidth = 640 
+overwriteHeight = 360 
+
+[TextureRedefine] # zoom blur
+width = 512
+height = 288
+overwriteWidth = 256 
+overwriteHeight = 144 
+
+[TextureRedefine] # sub zoom blur
+width = 448
+height = 252
+overwriteWidth = 224 
+overwriteHeight = 126 
+
+[TextureRedefine] # player icon - GL_SRGB8_ALPHA8
+width = 128
+height = 128
+formats = 0x41A
+#overwriteWidth = 384
+#overwriteHeight = 384 #Need to confirm on next Cemu version
+
+[TextureRedefine] # player icon - GL_RGBA8
+width = 256
+height = 256
+formats = 0x01a
+#overwriteWidth = 768
+#overwriteHeight = 768 #Need to confirm on next Cemu version
 
 [TextureRedefine] # multiplayer
 width = 848
 height = 480
-overwriteWidth = 424
-overwriteHeight = 240
+overwriteWidth = 640 
+overwriteHeight = 360 
 
-[TextureRedefine] # shadows
-width = 1024
-height = 1024
-formats = 0x005
-overwriteWidth = 512
-overwriteHeight = 512
+[TextureRedefine] # half-res alpha (multiplayer)
+width = 424
+height = 240
+overwriteWidth = 320 
+overwriteHeight = 180 
 
-[TextureRedefine] # shadows
-width = 2048
-height = 2048
-formats = 0x005
-overwriteWidth = 1024
-overwriteHeight = 1024
+[TextureRedefine] # a bloom mip
+width = 160
+height = 90
+formats = 0x816
+overwriteWidth = 80 
+overwriteHeight = 45 
