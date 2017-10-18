@@ -14,8 +14,8 @@ if (round($aspect*10) == 23 || round($aspect*10) == 24)
 
 ?>
 [Definition]
-titleIds = 0005000010145D00,0005000010145C00,0005000010106100
-name = "Super Mario 3D World - <?=$title?>"
+titleIds = 0005000010180600,0005000010180700,0005000010180500
+name = "Captain Toad: Treasure Tracker - <?=$title?>"
 version = 2
 
 [TextureRedefine] # tv
