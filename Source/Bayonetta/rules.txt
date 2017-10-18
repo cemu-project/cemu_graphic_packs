@@ -16,7 +16,7 @@ width = 1280
 height = 720
 tileModesExcluded = 0x001 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine]#half-res
 width = 640
