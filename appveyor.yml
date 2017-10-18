@@ -1,17 +1,53 @@
+# Appveyor configuration file for bash build of packs
 version: v2-{build}
-branches:
-  only:
-    - master
+environment:
+    CYG_MIRROR: http://cygwin.mirror.constant.com
+    CYG_PACKAGES: bash,php,dos2unix
+    matrix:
+        - BUILD_TYPE: 64bit
+          CYG_ROOT: C:\mycygwin64
+          CYG_CACHE: C:\mycygwin64\var\cache\setup
+          CYG_SETUP: setup-x86_64.exe
+          BASH: C:\mycygwin64\bin\bash
+#        - BUILD_TYPE: 32bit
+#          CYG_ROOT: C:\mycygwin
+#          CYG_CACHE: C:\mycygwin\var\cache\setup
+#          CYG_SETUP: setup-x86.exe
+#          BASH: C:\mycygwin\bin\bash
+
+# Cache Cygwin files to speed up build
+cache:
+    - '%CYG_SETUP%'
+    - '%CYG_CACHE%'
+clone_depth: 1
+
+# We want to convert line endings to CRLF because thats what the txt files in the zip should end up as
+init:
+    - git config --global core.autocrlf true
+# Use appveyor http proxy
+    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-http-proxy.ps1'))
+# Allows RDP
+#    - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
+# Install needed build dependencies
 install:
- - xcopy C:\projects\cemu-graphic-packs\Enhancement C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - xcopy C:\projects\cemu-graphic-packs\Enthusiast C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - xcopy C:\projects\cemu-graphic-packs\Modifications C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - xcopy C:\projects\cemu-graphic-packs\Performance C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - xcopy C:\projects\cemu-graphic-packs\Quality C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - xcopy C:\projects\cemu-graphic-packs\Workaround C:\projects\cemu-graphic-packs\AppVeyor /E /I
- - echo D | xcopy C:\projects\cemu-graphic-packs\readme.txt C:\projects\cemu-graphic-packs\AppVeyor
-build: off
+    - ps: if (Test-Path Env:\CYG_ROOT) { Start-FileDownload "http://cygwin.com/$env:CYG_SETUP" -FileName "cygsetup.exe" -Timeout 30000 }
+    - ps: if ((Get-Content "cygsetup.exe") -eq $Null) { Copy-Item "$env:CYG_SETUP" -Destination "cygsetup.exe" -Force } else { Copy-Item "cygsetup.exe" -Destination "$env:CYG_SETUP" -Force }
+    - if defined CYG_ROOT (%CYG_SETUP% --quiet-mode --no-shortcuts --only-site --root "%CYG_ROOT%" --site "%CYG_MIRROR%" --local-package-dir "%CYG_CACHE%" --packages "%CYG_PACKAGES%" --upgrade-also)
+build_script:
+    - if defined BASH (%BASH% -lc "cd $(cygpath ${APPVEYOR_BUILD_FOLDER}) && dos2unix build.sh && sh build.sh")
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Enhancement %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Enthusiast %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Modifications %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Performance %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Quality %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Workaround %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - echo D | xcopy %APPVEYOR_BUILD_FOLDER%\readme.txt %APPVEYOR_BUILD_FOLDER%\AppVeyor
+# waits for RDP confirmation before finishing
+#on_finish:
+#    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
 artifacts:
- - path: AppVeyor
-   name: 'graphic_packs_$(appveyor_build_version)'
-   type: zip
+    - path: AppVeyor
+      name: 'graphic_packs_$(appveyor_build_version)'
+      type: zip
