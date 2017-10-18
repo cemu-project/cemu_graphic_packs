@@ -91,5 +91,5 @@ R0f.y = (mul_nonIEEE(R126f.z,PV1f.z) + R125f.w);
 R0f.z = (mul_nonIEEE(R126f.x,PV1f.z) + R127f.y);
 R0f.w = mul_nonIEEE(backupReg0f, PV1f.x);
 // export
-passPixelColor0 = vec4(1.0, R0f.y, 1.0, 1.1);
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, 1.0);
 }
