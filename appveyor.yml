@@ -1,4 +1,7 @@
 version: v2-{build}
+branches:
+  only:
+    - master
 install:
  - xcopy C:\projects\cemu-graphic-packs\Enhancement C:\projects\cemu-graphic-packs\AppVeyor /E /I
  - xcopy C:\projects\cemu-graphic-packs\Enthusiast C:\projects\cemu-graphic-packs\AppVeyor /E /I
