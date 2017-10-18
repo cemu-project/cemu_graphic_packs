@@ -1,6 +1,18 @@
+<?php
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = $fullWidth . "x" . $fullHeight;
+
+$aspect = $fullWidth / (float)$fullHeight;
+if (round($aspect*10) == 23 || round($aspect*10) == 24)
+	$title = $title . " (21:9)";
+?>
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
-name = "Mario Kart 8 - 2560x1080 (21:9)"
+name = "Mario Kart 8 - <?=$title?>"
 version = 2
 
 # Main Screen Resolution
@@ -8,77 +20,77 @@ version = 2
 width = 1280
 height = 720
 formatsExcluded = 0x41A,0x431 # exclude the intro background texture, race end background
-overwriteWidth = 2560
-overwriteHeight = 1080
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 # Half Res Alpha (and DOF)
 [TextureRedefine]
 width = 640
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1280
-overwriteHeight = 540
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 # Quarter Res Alpha (motion blur effect around edges of screen)
 [TextureRedefine]
 width = 320
 height = 180
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 640
-overwriteHeight = 270
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 # Multiplayer-Mode Resolution (2p)
 [TextureRedefine]
 width = 640
 height = 720
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1280
-overwriteHeight = 1080
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 # Multiplayer-Mode Half Res Alpha (2p)
 [TextureRedefine]
 width = 320
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 640
-overwriteHeight = 540
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*640)?> 
 
 # Multiplayer-Mode Quarter Res Alpha (2p)
 [TextureRedefine]
 width = 160
 height = 180
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 320
-overwriteHeight = 270
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 # MKTV screen
 [TextureRedefine]
 width = 960
 height = 540
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1920
-overwriteHeight = 810
+overwriteWidth = <?=round($scaleFactorX*960)?> 
+overwriteHeight = <?=round($scaleFactorY*540)?> 
 
 # MKTV internal render targets
 [TextureRedefine]
 width = 960
 height = 536
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 1920
-overwriteHeight = 804
+overwriteWidth = <?=round($scaleFactorX*960)?> 
+overwriteHeight = <?=round($scaleFactorY*536)?> 
 
 # MKTV half res alpha
 [TextureRedefine]
 width = 480
 height = 268
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 960
-overwriteHeight = 402
+overwriteWidth = <?=round($scaleFactorX*960)?> 
+overwriteHeight = <?=round($scaleFactorY*268)?> 
 
 # MKTV quarter res alpha
 [TextureRedefine]
 width = 240
 height = 134
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = 480
-overwriteHeight = 201
+overwriteWidth = <?=round($scaleFactorX*240)?> 
+overwriteHeight = <?=round($scaleFactorY*134)?> 
