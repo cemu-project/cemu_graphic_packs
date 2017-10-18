@@ -72,15 +72,22 @@ overwriteHeight = <?=round($scaleFactorY*252)?>
 width = 128
 height = 128
 formats = 0x41A
-#overwriteWidth = 384
-#overwriteHeight = 384 #Need to confirm on next Cemu version
+#overwriteWidth = <?=round($scaleFactorY*128)?> 
+#overwriteHeight = <?=round($scaleFactorY*128)?>  #Need to confirm on next Cemu version
 
 [TextureRedefine] # player icon - GL_RGBA8
 width = 256
 height = 256
 formats = 0x01a
-#overwriteWidth = 768
-#overwriteHeight = 768 #Need to confirm on next Cemu version
+#overwriteWidth = <?=round($scaleFactorY*256)?>
+#overwriteHeight = <?=round($scaleFactorY*256)?> #Need to confirm on next Cemu version
+
+[TextureRedefine] # player name - GL_RGBA8
+width = 128
+height = 32
+formats = 0x01a
+overwriteWidth = <?=round($scaleFactorX*128)?>
+overwriteHeight = <?=round($scaleFactorY*32)?>
 
 [TextureRedefine] # multiplayer
 width = 848
