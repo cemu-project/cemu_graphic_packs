@@ -1,0 +1,52 @@
+<?php
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = $fullWidth . "x" . $fullHeight;
+?>
+[Definition]
+titleIds = 000500001014DB00,0005000010157E00,0005000010157F00
+name = "Bayonetta - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+tileModesExcluded = 0x001 # Excludes FMV B&W layer (only viewable with rajkosto's implementation)
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*1280)?> 
+
+[TextureRedefine]#half-res
+width = 640
+height = 360
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]#q-res1
+width = 320
+height = 176
+formatsExcluded = 0x01a
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*176)?> 
+
+[TextureRedefine]#bloom workaround
+width = 320
+height = 176
+formats = 0x01a
+overwriteWidth = 0
+overwriteHeight = 0
+
+[TextureRedefine]#q-res2
+width = 320
+height = 180
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+#overwriteWidth = <?=round($scaleFactorX*1280)?> 
+#overwriteHeight = <?=round($scaleFactorY*720)?> 

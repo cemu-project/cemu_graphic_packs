@@ -36,6 +36,26 @@ build_dir () {
 	done
 }
 
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_2880p" 5120 2880
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_4320p" 7680 4320
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_5760p" 10240 5760
+build_dir "Source/Bayonetta" "Performance/Bayonetta_360p" 640 360
+build_dir "Source/Bayonetta" "Performance/Bayonetta_540p" 960 540
+build_dir "Source/Bayonetta" "Quality/Bayonetta_1080p" 1920 1080
+build_dir "Source/Bayonetta" "Quality/Bayonetta_1440p" 2560 1440
+build_dir "Source/Bayonetta" "Quality/Bayonetta_1800p" 3200 1800
+build_dir "Source/Bayonetta" "Quality/Bayonetta_2160p" 3840 2160
+build_dir "Source/Bayonetta" "Quality/Bayonetta_900p" 1600 900
+build_dir "Source/Bayonetta2" "Enthusiast/Bayonetta2_2880p" 5120 2880
+build_dir "Source/Bayonetta2" "Enthusiast/Bayonetta2_4320p" 7680 4320
+build_dir "Source/Bayonetta2" "Enthusiast/Bayonetta2_5760p" 10240 5760
+build_dir "Source/Bayonetta2" "Performance/Bayonetta2_360p" 640 360
+build_dir "Source/Bayonetta2" "Performance/Bayonetta2_540p" 960 540
+build_dir "Source/Bayonetta2" "Quality/Bayonetta2_1080p" 1920 1080
+build_dir "Source/Bayonetta2" "Quality/Bayonetta2_1440p" 2560 1440
+build_dir "Source/Bayonetta2" "Quality/Bayonetta2_1800p" 3200 1800
+build_dir "Source/Bayonetta2" "Quality/Bayonetta2_2160p" 3840 2160
+build_dir "Source/Bayonetta2" "Quality/Bayonetta2_900p" 1600 900
 build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_2880p" 5120 2880
 build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_4320p" 7680 4320
 build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_5760p" 10240 5760
