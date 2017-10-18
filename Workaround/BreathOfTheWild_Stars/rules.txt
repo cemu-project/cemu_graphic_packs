@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Stars"
+version = 2
+
+#[TextureRedefine]
+#width = 160
+#height = 90
+#formats = 0x806
+#overwriteWidth = 480
+#overwriteHeight = 270
