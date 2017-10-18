@@ -68,19 +68,19 @@ height = 252
 overwriteWidth = <?=round($scaleFactorX*448)?> 
 overwriteHeight = <?=round($scaleFactorY*252)?> 
 
-[TextureRedefine] # player icon - GL_SRGB8_ALPHA8
+[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; Need to confirm on Cemu 1.11.0
 width = 128
 height = 128
 formats = 0x41A
 #overwriteWidth = <?=round($scaleFactorY*128)?> 
-#overwriteHeight = <?=round($scaleFactorY*128)?>  #Need to confirm on next Cemu version
+#overwriteHeight = <?=round($scaleFactorY*128)?> 
 
-[TextureRedefine] # player icon - GL_RGBA8
+[TextureRedefine] # player icon - GL_RGBA8; Need to confirm on Cemu 1.11.0
 width = 256
 height = 256
 formats = 0x01a
 #overwriteWidth = <?=round($scaleFactorY*256)?>
-#overwriteHeight = <?=round($scaleFactorY*256)?> #Need to confirm on next Cemu version
+#overwriteHeight = <?=round($scaleFactorY*256)?>
 
 [TextureRedefine] # player name - GL_RGBA8
 width = 128
