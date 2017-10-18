@@ -1,5 +1,5 @@
 <?php
-include 'functions.php';
+include 'Source/functions.php';
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
 $scaleFactorX = always_decimal_format($fullWidth / 1280.0);

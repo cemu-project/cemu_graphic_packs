@@ -1,10 +1,11 @@
 <?php
+include 'Source/functions.php';
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
 $scaleFactorX = $fullWidth / 1280.0;
 $scaleFactorY = $fullHeight / 720.0;
 
-$title = $fullWidth . "x" . $fullHeight;
+$title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
 titleIds = 000500001017D800,000500001017D900,000500001017CD00

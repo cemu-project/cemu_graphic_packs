@@ -36,6 +36,14 @@ build_dir () {
 	done
 }
 
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_1280×800" 1280 800
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_1440×900" 1440 900
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_1680×1050" 1680 1050
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_1920×1200" 1920 1200
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_2560x1600" 2560 1600
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_640×480" 640 480
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_720x480" 720 480
+build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_800x480" 800 480
 build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_2880p" 5120 2880
 build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_4320p" 7680 4320
 build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_5760p" 10240 5760

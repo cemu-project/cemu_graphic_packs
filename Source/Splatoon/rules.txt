@@ -1,14 +1,11 @@
 <?php
+include 'Source/functions.php';
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
 $scaleFactorX = $fullWidth / 1280.0;
 $scaleFactorY = $fullHeight / 720.0;
 
-$title = $fullWidth . "x" . $fullHeight;
-
-$aspect = $fullWidth / (float)$fullHeight;
-if (round($aspect*10) == 23 || round($aspect*10) == 24)
-	$title = $title . " (21:9)";
+$title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
