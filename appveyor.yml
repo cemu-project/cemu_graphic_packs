@@ -33,7 +33,7 @@ init:
 install:
     - ps: if (Test-Path Env:\CYG_ROOT) { Start-FileDownload "http://cygwin.com/$env:CYG_SETUP" -FileName "cygsetup.exe" -Timeout 30000 }
     - ps: if ((Get-Content "cygsetup.exe") -eq $Null) { Copy-Item "$env:CYG_SETUP" -Destination "cygsetup.exe" -Force } else { Copy-Item "cygsetup.exe" -Destination "$env:CYG_SETUP" -Force }
-    - if defined CYG_ROOT (%CYG_SETUP% --quiet-mode --no-shortcuts --only-site --root "%CYG_ROOT%" --site "%CYG_MIRROR%" --local-package-dir "%CYG_CACHE%" --packages "%CYG_PACKAGES%" --upgrade-also)
+    - if defined CYG_ROOT (%CYG_SETUP% --quiet-mode --no-shortcuts --only-site --root "%CYG_ROOT%" --local-package-dir "%CYG_CACHE%" --packages "%CYG_PACKAGES%" --upgrade-also)
 build_script:
     - if defined BASH (%BASH% -lc "cd $(cygpath ${APPVEYOR_BUILD_FOLDER}) && dos2unix build.sh && sh build.sh")
     - xcopy %APPVEYOR_BUILD_FOLDER%\Enhancement %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
