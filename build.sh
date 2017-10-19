@@ -72,7 +72,7 @@ std_respack () {
 			
 			#width="${subparams[0]}"
 			#height="${subparams[1]}"
-			3echo "$arrg w: $width h: $height inFolder: $inFolder outFolder: $outFolder"
+			#echo "$arrg w: $width h: $height inFolder: $inFolder outFolder: $outFolder"
 			build_dir "$inFolder" "$outFolder" "${subparams[@]}"
 		else
 			echo "$arrg resolution not defined, define it in build.sh"
