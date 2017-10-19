@@ -1,7 +1,6 @@
 #!/bin/bash
 BGREEN='\033[1;32m'
 GREEN='\033[0;32m'
-CYAN='\033[0;36m'
 BCYAN='\033[1;36m'
 RED='\033[0;31m'
 
@@ -64,7 +63,7 @@ std_respack () {
 	params=( "$@" )
 	rest=( "${params[@]:1}" )
 	
-	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${CYAN}to ${params[@]:1}"
+	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${NC}to ${params[@]:1}"
 	for arrg in "${rest[@]}"
 	do
 		resvarname="res_${arrg}[@]"
