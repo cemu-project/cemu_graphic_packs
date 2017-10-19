@@ -84,7 +84,7 @@ std_respack () {
 res16by9=( "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p" )
 res21by9=( "1080p219" "1440p219" "2160p219" )
 
-std_respack "Bayonetta" 
+std_respack "Bayonetta" "${res16by9[@]}"
 std_respack "Bayonetta2" "${res16by9[@]}"
 std_respack "BreathOfTheWild" "${res16by9[@]}" "${res21by9[@]}"
 std_respack "CaptainToad" "${res16by9[@]}" "${res21by9[@]}"
