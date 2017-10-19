@@ -29,141 +29,66 @@ build_dir () {
 		filename=`basename $f`
 		outName="$dstDir/$filename"
 		echo "Building $f to $outName with params ${rest[@]}"
-		php "$f" ${rest[*]} > "$outName"
+		php "$f" "${rest[@]}" > "$outName"
 		if [ $? -ne 0 ]; then
 			rm "$outName"
 		fi
 	done
 }
 
-build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_2880p" 5120 2880
-build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_4320p" 7680 4320
-build_dir "Source/Bayonetta" "Enthusiast/Bayonetta_5760p" 10240 5760
-build_dir "Source/Bayonetta" "Performance/Bayonetta_360p" 640 360
-build_dir "Source/Bayonetta" "Performance/Bayonetta_540p" 960 540
-build_dir "Source/Bayonetta" "Quality/Bayonetta_1080p" 1920 1080
-build_dir "Source/Bayonetta" "Quality/Bayonetta_1440p" 2560 1440
-build_dir "Source/Bayonetta" "Quality/Bayonetta_1800p" 3200 1800
-build_dir "Source/Bayonetta" "Quality/Bayonetta_2160p" 3840 2160
-build_dir "Source/Bayonetta" "Quality/Bayonetta_900p" 1600 900
-build_dir "Source/Bayonetta2" "Enthusiast/Bayonetta2_2880p" 5120 2880
-build_dir "Source/Bayonetta2" "Enthusiast/Bayonetta2_4320p" 7680 4320
-build_dir "Source/Bayonetta2" "Enthusiast/Bayonetta2_5760p" 10240 5760
-build_dir "Source/Bayonetta2" "Performance/Bayonetta2_360p" 640 360
-build_dir "Source/Bayonetta2" "Performance/Bayonetta2_540p" 960 540
-build_dir "Source/Bayonetta2" "Quality/Bayonetta2_1080p" 1920 1080
-build_dir "Source/Bayonetta2" "Quality/Bayonetta2_1440p" 2560 1440
-build_dir "Source/Bayonetta2" "Quality/Bayonetta2_1800p" 3200 1800
-build_dir "Source/Bayonetta2" "Quality/Bayonetta2_2160p" 3840 2160
-build_dir "Source/Bayonetta2" "Quality/Bayonetta2_900p" 1600 900
-build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_2880p" 5120 2880
-build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_4320p" 7680 4320
-build_dir "Source/BreathOfTheWild" "Enthusiast/BreathOfTheWild_5760p" 10240 5760
-build_dir "Source/BreathOfTheWild" "Performance/BreathOfTheWild_360p" 640 360
-build_dir "Source/BreathOfTheWild" "Performance/BreathOfTheWild_540p" 960 540
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1080p" 1920 1080
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1080p219" 2560 1080
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1440p" 2560 1440
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1440p219" 3440 1440
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_1800p" 3200 1800
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_2160p" 3840 2160
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_2160p219" 5120 2160
-build_dir "Source/BreathOfTheWild" "Quality/BreathOfTheWild_900p" 1600 900
-build_dir "Source/CaptainToad" "Enthusiast/CaptainToad_2880p" 5120 2880
-build_dir "Source/CaptainToad" "Enthusiast/CaptainToad_4320p" 7680 4320
-build_dir "Source/CaptainToad" "Enthusiast/CaptainToad_5760p" 10240 5760
-build_dir "Source/CaptainToad" "Performance/CaptainToad_360p" 640 360
-build_dir "Source/CaptainToad" "Performance/CaptainToad_540p" 960 540
-build_dir "Source/CaptainToad" "Quality/CaptainToad_1080p" 1920 1080
-build_dir "Source/CaptainToad" "Quality/CaptainToad_1080p219" 2560 1080
-build_dir "Source/CaptainToad" "Quality/CaptainToad_1440p" 2560 1440
-build_dir "Source/CaptainToad" "Quality/CaptainToad_1440p219" 3440 1440
-build_dir "Source/CaptainToad" "Quality/CaptainToad_1800p" 3200 1800
-build_dir "Source/CaptainToad" "Quality/CaptainToad_2160p" 3840 2160
-build_dir "Source/CaptainToad" "Quality/CaptainToad_2160p219" 5120 2160
-build_dir "Source/CaptainToad" "Quality/CaptainToad_900p" 1600 900
-build_dir "Source/HyruleWarriors" "Enthusiast/HyruleWarriors_2880p" 5120 2880
-build_dir "Source/HyruleWarriors" "Enthusiast/HyruleWarriors_4320p" 7680 4320
-build_dir "Source/HyruleWarriors" "Enthusiast/HyruleWarriors_5760p" 10240 5760
-build_dir "Source/HyruleWarriors" "Performance/HyruleWarriors_360p" 640 360
-build_dir "Source/HyruleWarriors" "Performance/HyruleWarriors_540p" 960 540
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_1080p" 1920 1080
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_1080p219" 2560 1080
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_1440p" 2560 1440
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_1440p219" 3440 1440
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_1800p" 3200 1800
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_2160p" 3840 2160
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_2160p219" 5120 2160
-build_dir "Source/HyruleWarriors" "Quality/HyruleWarriors_900p" 1600 900
-build_dir "Source/KirbyRainbowCurse" "Enthusiast/KirbyRainbowCurse_2880p" 5120 2880
-build_dir "Source/KirbyRainbowCurse" "Enthusiast/KirbyRainbowCurse_4320p" 7680 4320
-build_dir "Source/KirbyRainbowCurse" "Enthusiast/KirbyRainbowCurse_5760p" 10240 5760
-build_dir "Source/KirbyRainbowCurse" "Performance/KirbyRainbowCurse_360p" 640 360
-build_dir "Source/KirbyRainbowCurse" "Performance/KirbyRainbowCurse_540p" 960 540
-build_dir "Source/KirbyRainbowCurse" "Quality/KirbyRainbowCurse_1080p" 1920 1080
-build_dir "Source/KirbyRainbowCurse" "Quality/KirbyRainbowCurse_1440p" 2560 1440
-build_dir "Source/KirbyRainbowCurse" "Quality/KirbyRainbowCurse_1800p" 3200 1800
-build_dir "Source/KirbyRainbowCurse" "Quality/KirbyRainbowCurse_2160p" 3840 2160
-build_dir "Source/KirbyRainbowCurse" "Quality/KirbyRainbowCurse_900p" 1600 900
-build_dir "Source/MarioKart8" "Enthusiast/MarioKart8_2880p" 5120 2880
-build_dir "Source/MarioKart8" "Enthusiast/MarioKart8_4320p" 7680 4320
-build_dir "Source/MarioKart8" "Enthusiast/MarioKart8_5760p" 10240 5760
-build_dir "Source/MarioKart8" "Performance/MarioKart8_360p" 640 360
-build_dir "Source/MarioKart8" "Performance/MarioKart8_540p" 960 540
-build_dir "Source/MarioKart8" "Quality/MarioKart8_1080p" 1920 1080
-build_dir "Source/MarioKart8" "Quality/MarioKart8_1080p219" 2560 1080
-build_dir "Source/MarioKart8" "Quality/MarioKart8_1440p" 2560 1440
-build_dir "Source/MarioKart8" "Quality/MarioKart8_1440p219" 3440 1440
-build_dir "Source/MarioKart8" "Quality/MarioKart8_1800p" 3200 1800
-build_dir "Source/MarioKart8" "Quality/MarioKart8_2160p" 3840 2160
-build_dir "Source/MarioKart8" "Quality/MarioKart8_2160p219" 5120 2160
-build_dir "Source/MarioKart8" "Quality/MarioKart8_900p" 1600 900
-build_dir "Source/MarioTennis" "Enthusiast/MarioTennis_2880p" 5120 2880
-build_dir "Source/MarioTennis" "Enthusiast/MarioTennis_4320p" 7680 4320
-build_dir "Source/MarioTennis" "Enthusiast/MarioTennis_5760p" 10240 5760
-build_dir "Source/MarioTennis" "Performance/MarioTennis_360p" 640 360
-build_dir "Source/MarioTennis" "Performance/MarioTennis_540p" 960 540
-build_dir "Source/MarioTennis" "Quality/MarioTennis_1080p" 1920 1080
-build_dir "Source/MarioTennis" "Quality/MarioTennis_1440p" 2560 1440
-build_dir "Source/MarioTennis" "Quality/MarioTennis_1800p" 3200 1800
-build_dir "Source/MarioTennis" "Quality/MarioTennis_2160p" 3840 2160
-build_dir "Source/MarioTennis" "Quality/MarioTennis_900p" 1600 900
-build_dir "Source/SonicLostWorld" "Enthusiast/SonicLostWorld_2880p" 5120 2880
-build_dir "Source/SonicLostWorld" "Enthusiast/SonicLostWorld_4320p" 7680 4320
-build_dir "Source/SonicLostWorld" "Enthusiast/SonicLostWorld_5760p" 10240 5760
-build_dir "Source/SonicLostWorld" "Performance/SonicLostWorld_360p" 640 360
-build_dir "Source/SonicLostWorld" "Performance/SonicLostWorld_540p" 960 540
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_1080p" 1920 1080
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_1080p219" 2560 1080
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_1440p" 2560 1440
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_1440p219" 3440 1440
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_1800p" 3200 1800
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_2160p" 3840 2160
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_2160p219" 5120 2160
-build_dir "Source/SonicLostWorld" "Quality/SonicLostWorld_900p" 1600 900
-build_dir "Source/Splatoon" "Enthusiast/Splatoon_2880p" 5120 2880
-build_dir "Source/Splatoon" "Enthusiast/Splatoon_4320p" 7680 4320
-build_dir "Source/Splatoon" "Enthusiast/Splatoon_5760p" 10240 5760
-build_dir "Source/Splatoon" "Performance/Splatoon_360p" 640 360
-build_dir "Source/Splatoon" "Performance/Splatoon_540p" 960 540
-build_dir "Source/Splatoon" "Quality/Splatoon_1080p" 1920 1080
-build_dir "Source/Splatoon" "Quality/Splatoon_1080p219" 2560 1080
-build_dir "Source/Splatoon" "Quality/Splatoon_1440p" 2560 1440
-build_dir "Source/Splatoon" "Quality/Splatoon_1440p219" 3440 1440
-build_dir "Source/Splatoon" "Quality/Splatoon_1800p" 3200 1800
-build_dir "Source/Splatoon" "Quality/Splatoon_2160p" 3840 2160
-build_dir "Source/Splatoon" "Quality/Splatoon_2160p219" 5120 2160
-build_dir "Source/Splatoon" "Quality/Splatoon_900p" 1600 900
-build_dir "Source/SuperMario3DWorld" "Enthusiast/SuperMario3DWorld_2880p" 5120 2880
-build_dir "Source/SuperMario3DWorld" "Enthusiast/SuperMario3DWorld_4320p" 7680 4320
-build_dir "Source/SuperMario3DWorld" "Enthusiast/SuperMario3DWorld_5760p" 10240 5760
-build_dir "Source/SuperMario3DWorld" "Performance/SuperMario3DWorld_360p" 640 360
-build_dir "Source/SuperMario3DWorld" "Performance/SuperMario3DWorld_540p" 960 540
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1080p" 1920 1080
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1080p219" 2560 1080
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1440p" 2560 1440
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1440p219" 3440 1440
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_1800p" 3200 1800
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_2160p" 3840 2160
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_2160p219" 5120 2160
-build_dir "Source/SuperMario3DWorld" "Quality/SuperMario3DWorld_900p" 1600 900
+res_360p=( "Performance" 640 360 )
+res_540p=( "Performance" 960 540 )
+res_900p=( "Quality" 1600 900 )
+res_1080p=( "Quality" 1920 1080 )
+res_1440p=( "Quality" 2560 1440 )
+res_1800p=( "Quality" 3200 1800  )
+res_2160p=( "Quality" 3840 2160  )
+res_1080p219=( "Quality" 2560 1080 )
+res_1440p219=( "Quality" 3440 1440 )
+res_2160p219=( "Quality" 5120 2160 )
+res_2880p=( "Enthusiast" 5120 2880 )
+res_4320p=( "Enthusiast" 7680 4320 )
+res_5760p=( "Enthusiast" 10240 5760 )
+
+std_respack () {
+	gameName=$1
+	params=( "$@" )
+	rest=( "${params[@]:1}" )
+	
+	#echo "std_respack $gameName"
+	for arrg in "${rest[@]}"
+	do
+		resvarname="res_${arrg}[@]"
+		if [ -v "$resvarname" ]; then
+			resdata=( "${!resvarname}" )
+			prefix="${resdata[0]}"
+			subparams=( "${resdata[@]:1}" )
+						
+			inFolder="Source/$gameName"
+			outFolder="${gameName}_${arrg}"
+			if [ -n "$prefix" ]; then
+				outFolder="$prefix/$outFolder"
+			fi
+			
+			#width="${subparams[0]}"
+			#height="${subparams[1]}"
+			3echo "$arrg w: $width h: $height inFolder: $inFolder outFolder: $outFolder"
+			build_dir "$inFolder" "$outFolder" "${subparams[@]}"
+		else
+			echo "$arrg resolution not defined, define it in build.sh"
+			exit 1
+		fi
+	done
+}
+
+std_respack "Bayonetta" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
+std_respack "Bayonetta2" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
+std_respack "BreathOfTheWild" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+std_respack "CaptainToad" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+std_respack "HyruleWarriors" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+std_respack "KirbyRainbowCurse" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
+std_respack "MarioKart8" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+std_respack "MarioTennis" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
+std_respack "SonicLostWorld" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+std_respack "Splatoon" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+std_respack "SuperMario3DWorld" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
