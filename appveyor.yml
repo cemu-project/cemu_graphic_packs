@@ -42,7 +42,6 @@ build_script:
     - xcopy %APPVEYOR_BUILD_FOLDER%\Performance %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
     - xcopy %APPVEYOR_BUILD_FOLDER%\Quality %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
     - xcopy %APPVEYOR_BUILD_FOLDER%\Workaround %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
-    - echo D | xcopy %APPVEYOR_BUILD_FOLDER%\readme.txt %APPVEYOR_BUILD_FOLDER%\AppVeyor
 # waits for RDP confirmation before finishing
 #on_finish:
 #    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
