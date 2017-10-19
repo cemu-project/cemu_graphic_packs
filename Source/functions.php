@@ -29,6 +29,9 @@ function get_title($width, $height) {
 		} else if ($ratio[0] == 8 && $ratio[1] == 5) {
 			// common sense
 			$title = $title . " (16:10)";
+		} else if ($ratio[0] == 427 && $ratio[1] == 240) {
+			// common sense
+			return $title;
 		} else {
 			$title = $title . " (" . $ratio[0] .":". $ratio[1] . ")";
 		}
