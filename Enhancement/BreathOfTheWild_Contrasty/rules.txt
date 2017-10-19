@@ -2,3 +2,12 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "The Legend of Zelda: Breath of the Wild - Color Tweak + Adjustable Bloom"
 version = 2
+
+# Credit: 
+# getdls for contrasty
+# bestminr for vibrance logic
+# kiri, navras for tone mapping
+# navras seperate contrasty from AARemoval
+
+# approximate ACES Flimic ~ https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/
+# SweetFX Tone mapping by Christian Cann Schuldt Jensen ~ CeeJay.dk
