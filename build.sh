@@ -1,7 +1,7 @@
 #!/bin/bash
 BGREEN='\033[1;32m'
 GREEN='\033[0;32m'
-CYAN='\033[0;35m'
+CYAN='\033[0;37m'
 BCYAN='\033[1;36m'
 RED='\033[0;31m'
 
