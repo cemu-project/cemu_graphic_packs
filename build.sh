@@ -118,6 +118,16 @@ build_dir "Source/MarioKart8" "Quality/MarioKart8_1800p" 3200 1800
 build_dir "Source/MarioKart8" "Quality/MarioKart8_2160p" 3840 2160
 build_dir "Source/MarioKart8" "Quality/MarioKart8_2160p219" 5120 2160
 build_dir "Source/MarioKart8" "Quality/MarioKart8_900p" 1600 900
+build_dir "Source/MarioTennis" "Enthusiast/MarioTennis_2880p" 5120 2880
+build_dir "Source/MarioTennis" "Enthusiast/MarioTennis_4320p" 7680 4320
+build_dir "Source/MarioTennis" "Enthusiast/MarioTennis_5760p" 10240 5760
+build_dir "Source/MarioTennis" "Performance/MarioTennis_360p" 640 360
+build_dir "Source/MarioTennis" "Performance/MarioTennis_540p" 960 540
+build_dir "Source/MarioTennis" "Quality/MarioTennis_1080p" 1920 1080
+build_dir "Source/MarioTennis" "Quality/MarioTennis_1440p" 2560 1440
+build_dir "Source/MarioTennis" "Quality/MarioTennis_1800p" 3200 1800
+build_dir "Source/MarioTennis" "Quality/MarioTennis_2160p" 3840 2160
+build_dir "Source/MarioTennis" "Quality/MarioTennis_900p" 1600 900
 build_dir "Source/SonicLostWorld" "Enthusiast/SonicLostWorld_2880p" 5120 2880
 build_dir "Source/SonicLostWorld" "Enthusiast/SonicLostWorld_4320p" 7680 4320
 build_dir "Source/SonicLostWorld" "Enthusiast/SonicLostWorld_5760p" 10240 5760

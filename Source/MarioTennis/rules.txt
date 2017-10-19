@@ -1,0 +1,178 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 00050000101A3500,00050000101A3600,0005000010199000
+name = "Mario Tennis: Ultra Smash - <?=$title?>"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x431
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 800
+height = 720
+overwriteWidth = <?=round($scaleFactorX*800)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 640
+height = 360
+formatsExcluded = 0x41a
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 400
+height = 360
+overwriteWidth = <?=round($scaleFactorX*400)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 320
+height = 180
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine]
+width = 400
+height = 180
+overwriteWidth = <?=round($scaleFactorX*400)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine]
+width = 160
+height = 90
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine]
+width = 100
+height = 90
+overwriteWidth = <?=round($scaleFactorX*100)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine]
+width = 80
+height = 45
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+[TextureRedefine]
+width = 50
+height = 45
+overwriteWidth = <?=round($scaleFactorX*50)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+[TextureRedefine]
+width = 40
+height = 22
+overwriteWidth = <?=round($scaleFactorX*40)?> 
+overwriteHeight = <?=round($scaleFactorY*22)?> 
+
+[TextureRedefine]
+width = 25
+height = 22
+overwriteWidth = <?=round($scaleFactorX*25)?> 
+overwriteHeight = <?=round($scaleFactorY*22)?> 
+
+[TextureRedefine]
+width = 854
+height = 480
+formatsExcluded = 0x41a
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 856
+height = 480
+overwriteWidth = <?=round($scaleFactorX*1283)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 428
+height = 240
+overwriteWidth = <?=round($scaleFactorX*642)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 360
+height = 448
+overwriteWidth = <?=round($scaleFactorX*360)?> 
+overwriteHeight = <?=round($scaleFactorY*448)?> 
+
+[TextureRedefine]
+width = 180
+height = 224
+overwriteWidth = <?=round($scaleFactorX*180)?> 
+overwriteHeight = <?=round($scaleFactorY*224)?> 
+
+[TextureRedefine]
+width = 90
+height = 112
+overwriteWidth = <?=round($scaleFactorX*90)?> 
+overwriteHeight = <?=round($scaleFactorY*112)?> 
+
+[TextureRedefine]
+width = 45
+height = 56
+overwriteWidth = <?=round($scaleFactorX*45)?> 
+overwriteHeight = <?=round($scaleFactorY*56)?> 
+
+[TextureRedefine]
+width = 22
+height = 28
+overwriteWidth = <?=round($scaleFactorX*22)?> 
+overwriteHeight = <?=round($scaleFactorY*28)?> 
+
+[TextureRedefine]
+width = 11
+height = 14
+overwriteWidth = <?=round($scaleFactorX*11)?> 
+overwriteHeight = <?=round($scaleFactorY*14)?> 
+
+[TextureRedefine]
+width = 216
+height = 448
+overwriteWidth = <?=round($scaleFactorX*216)?> 
+overwriteHeight = <?=round($scaleFactorY*448)?> 
+
+[TextureRedefine]
+width = 108
+height = 224
+overwriteWidth = <?=round($scaleFactorX*108)?> 
+overwriteHeight = <?=round($scaleFactorY*224)?> 
+
+[TextureRedefine]
+width = 54
+height = 112
+overwriteWidth = <?=round($scaleFactorX*54)?> 
+overwriteHeight = <?=round($scaleFactorY*112)?> 
+
+[TextureRedefine]
+width = 27
+height = 56
+overwriteWidth = <?=round($scaleFactorX*27)?> 
+overwriteHeight = <?=round($scaleFactorY*56)?> 
+
+[TextureRedefine]
+width = 13
+height = 28
+overwriteWidth = <?=round($scaleFactorX*13)?> 
+overwriteHeight = <?=round($scaleFactorY*28)?> 
+
+[TextureRedefine]
+width = 6
+height = 14
+overwriteWidth = <?=round($scaleFactorX*6)?> 
+overwriteHeight = <?=round($scaleFactorY*14)?> 
