@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00,ffffffffd72e798a
-name = "Super Smash Bros. - Higher Quality Shadows"
+name = "Super Smash Bros. for Wii U - Higher Quality Shadows"
 version = 2
 
 [TextureRedefine]

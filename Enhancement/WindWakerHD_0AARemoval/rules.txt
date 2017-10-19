@@ -1,4 +1,4 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
-name = "The Wind Waker HD - No Anti-Aliasing"
+name = "The Legend of Zelda: The Wind Waker HD - No Anti-Aliasing"
 version = 2

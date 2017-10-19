@@ -2,10 +2,11 @@
 include 'Source/functions.php';
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
-$halfWidth = $fullWidth / 2;
-$halfHeight = $fullHeight / 2;
-$quarterWidth = $fullWidth / 4;
-$quarterHeight = $fullHeight / 4;
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+if ($fullWidth == 1280 && $fullHeight == 720)
+	exit(1);
 
 $title = get_title($fullWidth, $fullHeight);
 ?>
@@ -18,93 +19,93 @@ version = 2
 width = 1280
 height = 720
 formatsExcluded = 0x008,0x41A,0x034,0x035 # exclude obvious textures
-overwriteWidth = <?=$fullWidth?> 
-overwriteHeight = <?=$fullHeight?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # zoomed in
 width = 1128
 height = 720
-overwriteWidth = <?=$fullWidth?> 
-overwriteHeight = <?=$fullHeight?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # zoom transition
 width = 1000
 height = 600
-overwriteWidth = <?=$fullWidth?> 
-overwriteHeight = <?=$fullHeight?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # zoom transition 2
 width = 1000
 height = 720
-overwriteWidth = <?=$fullWidth?> 
-overwriteHeight = <?=$fullHeight?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=$halfWidth?> 
-overwriteHeight = <?=$halfHeight?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # half-res (zoomed in)
 width = 564
 height = 360
-overwriteWidth = <?=$halfWidth?> 
-overwriteHeight = <?=$halfHeight?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # half-res (zoom transition)
 width = 500
 height = 300
-overwriteWidth = <?=$halfWidth?> 
-overwriteHeight = <?=$halfHeight?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # half-res (zoom transition 2)
 width = 500
 height = 360
-overwriteWidth = <?=$halfWidth?> 
-overwriteHeight = <?=$halfHeight?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=$quarterWidth?> 
-overwriteHeight = <?=$quarterHeight?> 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # q-res (zoomed in)
 width = 282
 height = 180
-overwriteWidth = <?=$quarterWidth?> 
-overwriteHeight = <?=$quarterHeight?> 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # q-res (zoom transition)
 width = 250
 height = 150
-overwriteWidth = <?=$quarterWidth?> 
-overwriteHeight = <?=$quarterHeight?> 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # q-res (zoom transition 2)
 width = 250
 height = 180
-overwriteWidth = <?=$quarterWidth?> 
-overwriteHeight = <?=$quarterHeight?> 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # gamepad
 width = 854
 height = 480
-#overwriteWidth = <?=$fullWidth?> 
-#overwriteHeight = <?=$fullHeight?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # half-res (gamepad)
 width = 427
 height = 240
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=$halfWidth?> 
-overwriteHeight = <?=$halfHeight?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # q-res (gamepad)
 width = 214
 height = 120
 formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=$quarterWidth?> 
-overwriteHeight = <?=$quarterHeight?> 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 

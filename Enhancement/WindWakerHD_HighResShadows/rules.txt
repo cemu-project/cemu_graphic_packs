@@ -2,7 +2,7 @@
 # Shadow format found by SunBroDave on NeoGAF http://www.neogaf.com/forum/showpost.php?p=229677345&postcount=782
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
-name = "The Wind Waker HD - Higher Quality Shadows"
+name = "The Legend of Zelda: The Wind Waker HD - Higher Quality Shadows"
 version = 2
 
 [TextureRedefine]
