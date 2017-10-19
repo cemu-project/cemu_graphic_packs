@@ -1,0 +1,21 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010137F00,0005000010138300,0005000010144800
+name = "Donkey Kong Country: Tropical Freeze - <?=$title?>"
+version = 2
+
+[TextureRedefine] # game rendering resolution
+width = 1280
+height = 720
+tileModesExcluded = 0x001
+formatsExcluded = 0x41A # exclude the intro background texture	
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
