@@ -1,0 +1,23 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$halfWidth = $fullWidth / 2;
+$halfHeight = $fullHeight / 2;
+$quarterWidth = $fullWidth / 4;
+$quarterHeight = $fullHeight / 4;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 500001f600900,500001f600a00,500001f600b00
+name = "Paper Mario: Color Splash - <?=$title?>"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x431
+tileModesExcluded = 0x001
+overwriteWidth = <?=$fullWidth?> 
+overwriteHeight = <?=$fullHeight?> 
