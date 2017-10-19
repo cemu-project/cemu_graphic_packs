@@ -64,7 +64,7 @@ std_respack () {
 	params=( "$@" )
 	rest=( "${params[@]:1}" )
 	
-	echo -e "${GREEN}Building $gameName ${CYAN}with following resolutions: ${BCYAN}${params[@]:1}"
+	echo -e "${GREEN}[Building] ${CYAN}$gameName ${GREEN}with following resolutions: ${BCYAN}${params[@]:1}"
 	for arrg in "${rest[@]}"
 	do
 		resvarname="res_${arrg}[@]"
