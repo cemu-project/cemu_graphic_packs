@@ -4,23 +4,21 @@
 // Contrasty + Adjustable Bloom
 // original shader dumped using cemu 1.10.0f, BotW 1.3.1
 
+//----------------------------settings-------------------------------------
 
 #define tone_mapping 0
-//0 is game original, 1 is ACES Filmic, 2 is from SweetFX
+//0 is game original, 1 is ACES Filmic, 2 is from SweetFX, -1 disable (not recommended).
 
-/*BloomFactor, gamma, exposure, vibrance and crushContrast can be modified */
+#define only_adjustbloom 0
+//0 false, 1 true: all features except 'adjustable bloom' in contrasty will be disabled. -1 disable all of the contrasty.
+
 const float bloomFactor = 0.4; // 1.0 is neutral
 const float gamma = 0.81; // 1.0 is neutral  Botw is already colour graded at this stage
 const float exposure = 1.17; // 1.0 is neutral
 const float vibrance = 0.008;  // 0.0 is neutral  
 const float crushContrast = 0.004; // 0.0 is neutral. Use small increments, loss of shadow detail 
 
-//Uncomment below and in body  to  scale 16-235  not recommended */
-/*
-const float floor = 16.0 / 255;
-const float scale = 255.0/(235.0-16.0);
-*/
-
+//--------------------------------------------------------------------------
 
 uniform ivec4 uf_remappedPS[1];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -57,17 +55,18 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 R1f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
+#if (only_adjustbloom == (0||1))
 R1f *= bloomFactor;
+#endif
 R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);
 // 0
 R126f.x = R1f.x + R0f.x;
-
 R127f.y = R1f.y + R0f.y;
-
 R126f.z = R1f.z + R0f.z;
-
+PV0f.xyz = vec3(R126f.x,R127f.y,R126f.z);
 R125f.w = 1.0;
 
+#if (only_adjustbloom == 0)
 //Color Tweak
 vec3 fColour = vec3(R126f.x, R127f.y, R126f.z);
 fColour = max(vec3(0.0), fColour - vec3(crushContrast));
@@ -80,13 +79,14 @@ float sat = (1.0-(mx - mn)) * (1.0-mx) * luminance * 5.0;
 vec3 lightness = vec3((mn + mx)/2.0);
 // vibrance
 fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
-//vec3 fColour = (fColour.xyz - floor) * scale;  // Not recommended 0-255->16-235..
 
-#if (tone_mapping == 0)
 R126f.x = fColour.x;
 R127f.y = fColour.y;
 R126f.z = fColour.z;
 PV0f.xyz = fColour;
+#endif
+
+#if (tone_mapping == 0)
 // 1
 tempf.x = dot(vec4(PV0f.x,PV0f.y,PV0f.z,-0.0),vec4(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f162b6b),intBitsToFloat(0x3dea4a8c),0.0));
 PV1f.x = tempf.x;
@@ -173,18 +173,17 @@ R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
 #endif
 
 #if (tone_mapping == 1)
-R0f.xyz = fColour * intBitsToFloat(0x3f2aaaab);
+R0f.xyz = PV0f * intBitsToFloat(0x3f2aaaab);
 R0f.xyz = (R0f.xyz*(2.51*R0f.xyz+0.03))/(R0f.xyz*(2.43*R0f.xyz+0.59)+0.14);
 R0f.xyz = clamp(R0f.xyz,0.0,1.0);
 #endif
 
 #if (tone_mapping == 2)
-
 //dummy
 const float Saturation = 0.00; // [-1.0 ~ 1.0] Saturates Colors
 const float Bleach = 0.0;
 
-vec3 color = fColour;
+vec3 color = PV0f;
 color *= intBitsToFloat(0x3f2aaaab); // Exposure
 const vec3 coefLuma = vec3(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f162b6b),intBitsToFloat(0x3dea4a8c));
 float lum = dot(coefLuma, color);
