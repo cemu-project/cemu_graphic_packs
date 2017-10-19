@@ -23,6 +23,9 @@ function get_title($width, $height) {
 		if ($ratio[0] == 64 && $ratio[1] == 27) {
 			// 64:27 is the true ratio, but 21:9 is the common approximation
 			$title = $title . " (21:9)";
+		} else if ($ratio[0] == 43 && $ratio[1] == 18) {
+			// 43:18 is the true ratio for 3440x1440, but 21:9 is the common approximation
+			$title = $title . " (21:9)";
 		} else if ($ratio[0] == 8 && $ratio[1] == 5) {
 			// common sense
 			$title = $title . " (16:10)";
