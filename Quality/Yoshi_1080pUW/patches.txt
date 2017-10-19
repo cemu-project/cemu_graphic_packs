@@ -1,4 +1,0 @@
-[WoollyUW]
-moduleMatches = 0x363CA665
-0x10274058 = .float 2.37 ;world map
-0x10001A44 = .float 2.37 ;ingame
