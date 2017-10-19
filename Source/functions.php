@@ -19,7 +19,7 @@ function simplify($num,$den) {
 function get_title($width, $height) {
 	$title = $width . "x" . $height;
 	$ratio = simplify($width, $height);
-	if ($ratio[0] != 16 && $ratio[1] != 9) {
+	if (!($ratio[0] == 16 && $ratio[1] == 9)) {
 		if ($ratio[0] == 64 && $ratio[1] == 27) {
 			// 64:27 is the true ratio, but 21:9 is the common approximation
 			$title = $title . " (21:9)";
