@@ -49,5 +49,5 @@ build_script:
 
 artifacts:
     - path: AppVeyor
-      name: 'graphic_packs_$(appveyor_build_version)'
+      name: 'graphicPacks'
       type: zip
