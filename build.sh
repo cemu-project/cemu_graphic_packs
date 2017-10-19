@@ -10,7 +10,7 @@ NC='\033[0m' # Removes Color
 baseOutDir=$1
 if [ -n "$baseOutDir" ]; then
         if [ ! -d "$baseOutDir" ]; then
-                echo -e "${GREEN}Making base output directory ${BGREEN} $baseOutDir\n"
+                echo -e "${GREEN}Making base output directory ${BGREEN}$baseOutDir\n"
                 mkdir "$baseOutDir"
         fi
 fi
@@ -64,7 +64,7 @@ std_respack () {
 	params=( "$@" )
 	rest=( "${params[@]:1}" )
 	
-	echo -e "${GREEN}[Building] ${CYAN}$gameName ${GREEN}with following resolutions: ${BCYAN}${params[@]:1}"
+	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${GREEN}\nResolutions: ${CYAN}${params[@]:1}"
 	for arrg in "${rest[@]}"
 	do
 		resvarname="res_${arrg}[@]"
