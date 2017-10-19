@@ -36,12 +36,12 @@ install:
     - if defined CYG_ROOT (%CYG_SETUP% --quiet-mode --no-shortcuts --only-site --root "%CYG_ROOT%" --site "%CYG_MIRROR%" --local-package-dir "%CYG_CACHE%" --packages "%CYG_PACKAGES%" --upgrade-also)
 build_script:
     - if defined BASH (%BASH% -lc "cd $(cygpath ${APPVEYOR_BUILD_FOLDER}) && dos2unix build.sh && sh build.sh")
-    - xcopy %APPVEYOR_BUILD_FOLDER%\Enhancement %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
-    - xcopy %APPVEYOR_BUILD_FOLDER%\Enthusiast %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
-    - xcopy %APPVEYOR_BUILD_FOLDER%\Modifications %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
-    - xcopy %APPVEYOR_BUILD_FOLDER%\Performance %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
-    - xcopy %APPVEYOR_BUILD_FOLDER%\Quality %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
-    - xcopy %APPVEYOR_BUILD_FOLDER%\Workaround %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Enhancement %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I /Q
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Enthusiast %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I /Q
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Modifications %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I /Q
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Performance %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I /Q
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Quality %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I /Q
+    - xcopy %APPVEYOR_BUILD_FOLDER%\Workaround %APPVEYOR_BUILD_FOLDER%\AppVeyor /E /I /Q
 # waits for RDP confirmation before finishing
 #on_finish:
 #    - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))

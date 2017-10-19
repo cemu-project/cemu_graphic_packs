@@ -5,9 +5,6 @@ $fullHeight = $argv[2];
 $scaleFactorX = $fullWidth / 1920.0;
 $scaleFactorY = $fullHeight / 1080.0;
 
-if ($fullWidth == 1920 && $fullHeight == 1080)
-	exit(1);
-
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
