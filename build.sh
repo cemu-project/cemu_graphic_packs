@@ -81,14 +81,17 @@ std_respack () {
 	done
 }
 
-std_respack "Bayonetta" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
-std_respack "Bayonetta2" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
-std_respack "BreathOfTheWild" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
-std_respack "CaptainToad" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
-std_respack "HyruleWarriors" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
-std_respack "KirbyRainbowCurse" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
-std_respack "MarioKart8" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
-std_respack "MarioTennis" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p"
-std_respack "SonicLostWorld" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
-std_respack "Splatoon" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
-std_respack "SuperMario3DWorld" "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1080p219" "1440p" "1440p219" "1800p" "2160p" "2160p219" "900p"
+res16by9=( "2880p" "4320p" "5760p" "360p" "540p" "1080p" "1440p" "1800p" "2160p" "900p" )
+res21by9=( "1080p219" "1440p219" "2160p219" )
+
+std_respack "Bayonetta" 
+std_respack "Bayonetta2" "${res16by9[@]}"
+std_respack "BreathOfTheWild" "${res16by9[@]}" "${res21by9[@]}"
+std_respack "CaptainToad" "${res16by9[@]}" "${res21by9[@]}"
+std_respack "HyruleWarriors" "${res16by9[@]}" "${res21by9[@]}"
+std_respack "KirbyRainbowCurse" "${res16by9[@]}"
+std_respack "MarioKart8" "${res16by9[@]}" "${res21by9[@]}"
+std_respack "MarioTennis" "${res16by9[@]}"
+std_respack "SonicLostWorld" "${res16by9[@]}" "${res21by9[@]}"
+std_respack "Splatoon" "${res16by9[@]}" "${res21by9[@]}"
+std_respack "SuperMario3DWorld" "${res16by9[@]}" "${res21by9[@]}"
