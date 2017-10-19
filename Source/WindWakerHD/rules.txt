@@ -1,0 +1,26 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1920.0;
+$scaleFactorY = $fullHeight / 1080.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = "The Legend of Zelda: The Wind Waker HD - <?=$title?>"
+version = 2
+
+[TextureRedefine] # game rendering resolution
+width = 1920
+height = 1080
+formatsExcluded = 0x41A # exclude the intro background texture
+overwriteWidth = <?=round($scaleFactorX*1920)?> 
+overwriteHeight = <?=round($scaleFactorY*1080)?> 
+
+[TextureRedefine] # gamepad rendering resolution
+width = 854
+height = 480
+overwriteWidth = <?=round($scaleFactorX*1920)?> 
+overwriteHeight = <?=round($scaleFactorY*1080)?> 

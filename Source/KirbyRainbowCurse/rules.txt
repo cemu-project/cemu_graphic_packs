@@ -8,7 +8,7 @@ $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 00050000101abc00,
+titleIds = 00050000101ABC00
 name = "Kirby and the Rainbow Curse - <?=$title?>"
 version = 2
 
