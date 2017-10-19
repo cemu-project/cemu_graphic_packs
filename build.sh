@@ -37,6 +37,7 @@ build_dir () {
 }
 
 res_360p=( "Performance" 640 360 )
+res_480p=( "Performance" 854 480 )
 res_540p=( "Performance" 960 540 )
 res_720p=( "Performance" 1280 720 )
 res_900p=( "Quality" 1600 900 )
@@ -82,7 +83,7 @@ std_respack () {
 	done
 }
 
-res16by9=( "360p" "540p" "720p" "900p" "1080p" "1440p" "1800p" "2160p" "2880p" "4320p" "5760p" )
+res16by9=( "360p" "480p" "540p" "720p" "900p" "1080p" "1440p" "1800p" "2160p" "2880p" "4320p" "5760p" )
 res21by9=( "1080p219" "1440p219" "2160p219" )
 
 std_respack "Bayonetta" "${res16by9[@]}"
