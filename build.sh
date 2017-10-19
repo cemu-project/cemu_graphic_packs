@@ -1,39 +1,45 @@
 #!/bin/bash
+BGREEN='\033[1;32m'
+GREEN='\033[0;32m'
+BCYAN='\033[1;36m'
+RED='\033[0;31m'
+
+NC='\033[0m' # Removes Color
+
 baseOutDir=$1
 if [ -n "$baseOutDir" ]; then
-	if [ ! -d "$baseOutDir" ]; then
-		echo "Making base output directory $baseOutDir"
-		mkdir "$baseOutDir"
-	fi
+        if [ ! -d "$baseOutDir" ]; then
+                echo -e "${GREEN}Making base output directory ${BGREEN}$baseOutDir\n"
+                mkdir "$baseOutDir"
+        fi
 fi
 
 build_dir () {
-	srcDir=$1
-	dstDir=$2
-	if [ -n "$baseOutDir" ]; then
-		dstDir="$baseOutDir/$dstDir"
-	fi
+        srcDir=$1
+        dstDir=$2
+        if [ -n "$baseOutDir" ]; then
+                dstDir="$baseOutDir/$dstDir"
+        fi
+        params=( "$@" )
+        rest=( "${params[@]:2}" )
 
-	params=( "$@" )
-	rest=( "${params[@]:2}" )
+        if [ ! -d "$dstDir" ]; then
+                mkdir -p "$dstDir"
+        else
+                rm "$dstDir"/*.txt
+        fi
 
-	if [ ! -d "$dstDir" ]; then
-		echo "Making output directory $dstDir"
-		mkdir -p "$dstDir"
-	else
-		rm "$dstDir"/*.txt
-	fi
+        for f in "$srcDir"/*.txt
+        do
+                filename=`basename $f`
+                outName="$dstDir/$filename"
+                #echo "Building $f to $outName with params ${rest[@]}"
+                php "$f" "${rest[@]}" > "$outName"
 
-	for f in "$srcDir"/*.txt
-	do
-		filename=`basename $f`
-		outName="$dstDir/$filename"
-		echo "Building $f to $outName with params ${rest[@]}"
-		php "$f" "${rest[@]}" > "$outName"
-		if [ $? -ne 0 ]; then
-			rm "$outName"
-		fi
-	done
+                if [ $? -ne 0 ]; then
+                        rm "$outName"
+                fi
+        done
 }
 
 res_360p=( "Performance" 640 360 )
@@ -57,7 +63,7 @@ std_respack () {
 	params=( "$@" )
 	rest=( "${params[@]:1}" )
 	
-	#echo "std_respack $gameName"
+	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${NC}to ${params[@]:1}"
 	for arrg in "${rest[@]}"
 	do
 		resvarname="res_${arrg}[@]"
@@ -77,7 +83,7 @@ std_respack () {
 			#echo "$arrg w: $width h: $height inFolder: $inFolder outFolder: $outFolder"
 			build_dir "$inFolder" "$outFolder" "${subparams[@]}"
 		elif [ -n "$arrg" ]; then #only if requested resolution name not empty (which happens when you remove array elem naively)
-			echo "$arrg resolution not defined, define it in build.sh"
+			echo -e "${RED}$arrg resolution not defined, define it in build.sh"
 			exit 1
 		fi
 	done
@@ -119,3 +125,4 @@ std_respack "WindWakerHD" "${res16by9[@]/$just1080p}" "${res21by9[@]}"
 std_respack "Wonderful101" "${res16by9[@]/$just720p}"
 std_respack "WoollyWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}"
 std_respack "XenobladeX" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+echo -e "${NC}"
