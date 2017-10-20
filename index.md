@@ -1,13 +1,21 @@
 ## Cemu Graphic Packs
 
-### Download Link
+### Download Instructions
 
-[This archive](https://ci.appveyor.com/api/projects/slashiee/cemu-graphic-packs/artifacts/graphicPacks.zip?branch=master) has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
+[This archive](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/#directDownload) or the green download link above has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
 
+
+We also have (partial) automation in place to create graphic packs for the various resolutions (16:9 and [more](https://www.youtube.com/watch?v=s_x-hoygpeg)).
+**Due to this, we don't recommend downloading the graphic packs the old way (download a zip from the github), which will result in old and missing packs!!!**
+
+#### Notes
+Keep in mind that all of these packs are Work-in-Progress.
+
+If you want Graphic Packs for < Cemu 1.8 you need to use legacy packs, which you can download [here](https://github.com/slashiee/cemu_graphic_packs/archive/1.zip).
 ### Games with Graphic Packs
 
-- [Adventure Time: Explore the Dungeon Because I DON'T KNOW](http://compat.cemu.info/wiki/Adventure_Time:_Finn_And_Jake_Investigations)
-- [Adventure Time: Finn And Jake Investigations](http://compat.cemu.info/wiki/Adventure_Time:_Explore_the_Dungeon_Because_I_Don't_Know!)
+- [Adventure Time: Explore the Dungeon Because I DON'T KNOW](http://compat.cemu.info/wiki/Adventure_Time:_Explore_the_Dungeon_Because_I_Don't_Know!)
+- [Adventure Time: Finn And Jake Investigations](http://compat.cemu.info/wiki/Adventure_Time:_Finn_And_Jake_Investigations)
 - [Aqua TV](http://compat.cemu.info/wiki/Aqua_TV)
 - [Batman: Arkham City Armored Edition](http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition)
 - [Bayonetta 2](http://compat.cemu.info/wiki/Bayonetta_2)
@@ -85,6 +93,6 @@ If you need help with the basics, follow the [tutorial](https://github.com/slash
 
 ### Want to contribute?
 
-If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. For beginners, please follow the [tutorial](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-Graphic-Packs) on the compatiblity wiki. For getting into more advanced stuff, feel free to [set up NVIDIA Nsignt](https://github.com/slashiee/cemu_graphic_packs/issues/38#issuecomment-309265292). Make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
+If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. For beginners, please follow the [tutorial](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-Graphic-Packs) on the compatiblity wiki. For getting into more advanced stuff, feel free to [set up NVIDIA Nsight](https://github.com/slashiee/cemu_graphic_packs/issues/38#issuecomment-309265292). Make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
 
-If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so.
+If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so. There's currently no support for RenderDoc by Cemu.
