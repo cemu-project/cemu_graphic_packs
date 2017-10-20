@@ -12,7 +12,7 @@
 #define only_adjustbloom 0
 //0 false, 1 true: all features except 'adjustable bloom' in contrasty will be disabled. -1 disable all of the contrasty.
 
-const float bloomFactor = 0.4; // 1.0 is neutral
+const float bloomFactor = 0.7; // 1.0 is neutral
 const float gamma = 0.81; // 1.0 is neutral  Botw is already colour graded at this stage
 const float exposure = 1.17; // 1.0 is neutral
 const float vibrance = 0.008;  // 0.0 is neutral  
@@ -55,8 +55,8 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 R1f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
-#if (only_adjustbloom == (0||1))
-R1f *= bloomFactor;
+#if (only_adjustbloom == 0||only_adjustbloom == 1)
+R1f.xyz *= bloomFactor;
 #endif
 R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);
 // 0
@@ -173,7 +173,7 @@ R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
 #endif
 
 #if (tone_mapping == 1)
-R0f.xyz = PV0f * intBitsToFloat(0x3f2aaaab);
+R0f.xyz = PV0f.xyz * intBitsToFloat(0x3f2aaaab);
 R0f.xyz = (R0f.xyz*(2.51*R0f.xyz+0.03))/(R0f.xyz*(2.43*R0f.xyz+0.59)+0.14);
 R0f.xyz = clamp(R0f.xyz,0.0,1.0);
 #endif
@@ -183,7 +183,7 @@ R0f.xyz = clamp(R0f.xyz,0.0,1.0);
 const float Saturation = 0.00; // [-1.0 ~ 1.0] Saturates Colors
 const float Bleach = 0.0;
 
-vec3 color = PV0f;
+vec3 color = PV0f.xyz;
 color *= intBitsToFloat(0x3f2aaaab); // Exposure
 const vec3 coefLuma = vec3(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f162b6b),intBitsToFloat(0x3dea4a8c));
 float lum = dot(coefLuma, color);
