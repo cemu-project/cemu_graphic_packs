@@ -19,26 +19,26 @@
         
     <!-- Custom Javascript code for downloads -->
     <script>
-        // Define function that crawls link to latest download
-        function downloadPacks() {
-            // Tested, should be compatible with all updated browsers. And we're also using fallbacks so we should be fine.
-            // This will use the github api to return the latest download url, making it reliable.
-            // Parses the json from the url to an object,
-            fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
-                .then(response => response.json())
-                .then((out) => {
-                    console.log(out.assets[0].browser_download_url);
-                    return out.assets[0].browser_download_url;
-                });
+        // Tested, should be compatible with all updated browsers with ES6. If not there's always a fallback.
+        // This will use the github api to return the latest download url, making it reliable.
+        // Parses the json that's fetched from the object, then navigates to the right value.
+        var test = fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
+            .then(response => response.json())
+            .then((out) => {
+                console.log(out.assets[0].browser_download_url);
+                var directDownloadLink = out.assets[0].browser_download_url;
+                return out.assets[0].browser_download_url;
+            });
         }
-        console.log(downloadPacks());
+        console.log(test);
+        console.log(directDownloadLink);
         // Look if user landed with #directDownload in their url
-        if (window.location.hash == "#directDownload") window.location.href = downloadPacks();
+        if (window.location.hash == "#directDownload") window.location.href = test;
     </script>
     <script>
         // If the window loads, we're certain the downloadButton exists.
         window.load = function(){
-            document.getElementById(downloadButton).href = downloadPacks();
+            document.getElementById(downloadButton).href = test;
         };
     </script>
   </head>
