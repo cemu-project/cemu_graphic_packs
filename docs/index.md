@@ -1,20 +1,8 @@
 ## Cemu Graphic Packs
 
-### What's recommended?
+### Download Link
 
-It's recommended to download all the graphic packs. Download [this archive](https://ci.appveyor.com/api/projects/slashiee/cemu-graphic-packs/artifacts/graphicPacks.zip?branch=master) to get all of the graphic packs. Please delete the old ones first before adding in the new ones.
-
-If you want higher quality, [Quality](https://github.com/slashiee/cemu_graphic_packs/tree/master/Quality) is the way to go.
-
-If you want better performance, [Performance](https://github.com/slashiee/cemu_graphic_packs/tree/master/Performance) is the way to go.
-
-If you want to push your GPU to it's limits, [Enthusiast](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enthusiast) is the way to go... although I wouldn't recommended it.
-
-If you want to upgrade your game experience, [Enhancement](https://github.com/slashiee/cemu_graphic_packs/tree/master/Enhancement) is right up your ally.
-
-If you want game patches ([Cemuhook](http://sshnuke.net/cemuhook/) required), [Modifications](https://github.com/slashiee/cemu_graphic_packs/tree/master/Modifications) is there.
-
-If there's a certain issue with a game that's in the current version of Cemu, you should look at [Workaround](https://github.com/slashiee/cemu_graphic_packs/tree/master/Workaround) to see if there's a workaround for it.
+[This archive](https://ci.appveyor.com/api/projects/slashiee/cemu-graphic-packs/artifacts/graphicPacks.zip?branch=master) has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
 
 ### Games with Graphic Packs
 
@@ -93,7 +81,7 @@ If there's a certain issue with a game that's in the current version of Cemu, yo
 
 ### I need help!
 
-If you need help with the basics, follow the [tutorial](http://compat.cemu.info/wiki/Tutorial:Graphic_pack) on the compatiblity wiki. Afterwards, try checking the [issues](https://github.com/slashiee/cemu_graphic_packs/issues) on the repo to see if an issue that you have found has been documented. If not, feel free to ask for help at the #gfx_packs channel in the [official Cemu Discord](https://discord.gg/5psYsup).
+If you need help with the basics, follow the [tutorial](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-Graphic-Packs) on the wiki. Afterwards, try checking the [issues](https://github.com/slashiee/cemu_graphic_packs/issues) on the repo to see if an issue that you have found has been documented. If not, feel free to ask for help at the #gfx_packs channel in the [official Cemu Discord](https://discord.gg/5psYsup).
 
 ### Want to contribute?
 
