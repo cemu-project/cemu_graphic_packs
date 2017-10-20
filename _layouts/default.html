@@ -16,9 +16,7 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Cemu Graphic Packs</title>
-    
-    <script type="text/javascript" src="https://api.github.com/repos/crementif/cemu_graphic_packs/releases/latest"></script>
-    
+        
     <!-- Custom Javascript code for downloads -->
     <script>
         // Define function that crawls link to latest download
@@ -27,7 +25,7 @@
             // This will use the github api to return the latest download url, making it reliable.
             // Parses the json from the url to an object,
             fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
-                .then(response => response.text())
+                .then(response => response.json())
                 .then((out) => {
                     // console.log(out.assets[0].browser_download_url)
                     return out.assets[0].browser_download_url;
