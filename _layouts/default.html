@@ -27,11 +27,11 @@
             fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
                 .then(response => response.json())
                 .then((out) => {
-                    // console.log(out.assets[0].browser_download_url)
+                    console.log(out.assets[0].browser_download_url);
                     return out.assets[0].browser_download_url;
                 });
         }
-            
+        console.log(downloadPacks());
         // Look if user landed with #directDownload in their url
         if (window.location.hash == "#directDownload") window.location.href = downloadPacks();
     </script>
