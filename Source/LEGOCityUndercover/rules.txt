@@ -1,0 +1,37 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010101A00,0005000010101B00
+name = "LEGO City Undercover - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # half-res	
+width =	640	
+height = 360	
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+		
+[TextureRedefine] # q-res	
+width =	320	
+height = 180	
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+#overwriteWidth = <?=round($scaleFactorX*1280)?> 
+#overwriteHeight = <?=round($scaleFactorY*720)?> 
