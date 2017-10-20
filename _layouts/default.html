@@ -27,7 +27,7 @@
                 .then(response => response.json())
                 .then((out) => {
                     if (window.location.hash == "#directDownload") window.location.href = out.assets[0].browser_download_url;
-                    document.getElementById(downloadButton).href = out.assets[0].browser_download_url;
+                    document.getElementById("downloadButton").href = out.assets[0].browser_download_url;
                 });
         }
     </script>
