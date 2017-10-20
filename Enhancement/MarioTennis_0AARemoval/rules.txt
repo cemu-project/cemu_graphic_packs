@@ -1,4 +1,0 @@
-[Definition]
-titleIds = 00050000101A3500,00050000101A3600,0005000010199000
-name = "Mario Tennis: Ultra Smash - No Anti-Aliasing"
-version = 2

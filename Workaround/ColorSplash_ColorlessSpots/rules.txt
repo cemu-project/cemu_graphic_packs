@@ -1,4 +1,0 @@
-[Definition]
-titleIds = 500001f600900,500001f600a00,500001f600b00
-name = "Paper Mario: Color Splash - No Colorless Spots"
-version = 2
