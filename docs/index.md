@@ -2,7 +2,7 @@
 
 ### Download Link
 
-[This archive](https://ci.appveyor.com/api/projects/slashiee/cemu-graphic-packs/artifacts/graphicPacks.zip?branch=master) has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
+[GitHub](https://github.com/slashiee/cemu_graphic_packs/releases/tag/AppVeyor) has a download that has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
 
 ### Games with Graphic Packs
 
