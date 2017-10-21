@@ -3,7 +3,7 @@ version: v2-{build}
 environment:
     # It's prefered to have the GithubAuthToken (encrypted) set in the UI. Follow this guide for the instructions https://www.appveyor.com/docs/deployment/github/#provider-settings.
     CommitTimestamp: 0
-    CommitDescription: "No description was added to this commit"
+    CommitDescription: '"No description was added to this commit"'
     CYG_MIRROR: http://cygwin.mirror.constant.com
     CYG_PACKAGES: bash,php,dos2unix
     matrix:
