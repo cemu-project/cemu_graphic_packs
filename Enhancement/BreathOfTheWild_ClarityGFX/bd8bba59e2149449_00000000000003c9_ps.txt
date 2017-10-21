@@ -10,7 +10,7 @@
 // Changed from shader f14bb_ps.txt to bd8bb_ps.txt
 
 // Credit to NAVras for merging to a better shader.
-// Credit to getdls for adding Exposure & Original Contrasty.
+// Credit to getdls for adding exposure & Original Contrasty.
 
 // Clarity GFX
 // Credit to Jamie for main coding.
@@ -18,37 +18,67 @@
 // Credit to Serfrost for preset values.
 // Original shader dumped using cemu 1.10.0f, BotW 1.3.1
 
+// Changelog v0.3
 
-// Being below 1.3.0 will give you double-vision with recent graphic packs. Update to 1.3.0 or above.
-// If you're experiencing any issues (due to having the previous Clarity shaders installed), please remove and redownload all of the BotW packs.
-// Changelog V0.2
-//-----------------------------------------------------------
+//##########################################################
+
+//Don't touch.
+
 highp const float floor = 0.0 / 255;
 highp const float scale = 255.0/(255.0-0.0);
-//---DO NOT Touch
 precision highp float;
-lowp uniform float brightness = 1.15;
-lowp uniform float contrast;
-lowp uniform float saturation;
-lowp uniform float alpha = 1.0;
-//-----------------------------------------------------------
-// Adjustable values:
-lowp const float gamma = 1.50;      // [1.0 Default] [2.0 Clarity]
-const float Exposure = 0.00;   // [-1.0 ~ 1.0] Exposure Adjustment
-const float Defog = 0.12;      // [0.0 ~ 1.0] How much of the far distance fog to "remove."
+
+//Don't touch.
 
 //-----------------------------------------------------------
+
+//Adjustable Values:
+
+lowp uniform float brightness = 1.15;	// [0.0 ~ 2.0] [1.0 Default] [1.15 Clarity]
+lowp uniform float contrast;			// Blank=Neutral [0.1 ~ 2.0] Contrast Adjustment
+
+lowp uniform float saturation;			// Blank=Neutral [-1.0 ~ 1.0] Color Saturation Adjustment.
+lowp uniform float alpha = 1.0;			// [Don't touch this.]
+
+lowp const float gamma = 1.50;			// [1.0 Default] [1.43 Serfrost] [1.50 Jamie]
+const float exposure = 0.00;			// [-1.0 ~ 1.0] Light exposure Adjustment.
+
+const float defog = 0.12;				// [0.0 ~ 1.0] How much of the far distance fog to "remove."
+
+//-----------------------------------------------------------
+
 // Contrast, saturation, brightness
 // For all settings: 1.0 = 100% 0.5=50% 1.5 = 150%
+
 #define GammaCorrection(color, gamma)   pow(color, 1.0 / gamma)
 vec3 ContrastSaturationBrightness(vec3 color, float brt, float sat, float con)
 {
+
+//-----------------------------------------------------------
+
 // Increase or decrease theese values to adjust r, g and b color channels seperately
+// Coeff requires Photoshop values.
+
 const float AvgLumR = 0.5;
 const float AvgLumG = 0.5;
 const float AvgLumB = 0.5;
 	
 const vec3 LumCoeff = vec3(0.2125, 0.7154, 0.0721);
+
+//End of adjustable values
+
+//###########################################################
+
+//Do not edit below this line.
+
+
+
+
+
+
+
+
+
 	
 vec3 AvgLumin = vec3(AvgLumR, AvgLumG, AvgLumB);
 	vec3 brtColor = color * brt;
@@ -59,10 +89,9 @@ vec3 AvgLumin = vec3(AvgLumR, AvgLumG, AvgLumB);
 	color.rgb = conColor;
 	return color;
 }
-	
-//End of adjustable values
+
 const float Bleach = 0.0;
-const vec3 FogColor = vec3(0.0, 0.0, 0.0); //Defog Color";
+const vec3 FogColor = vec3(0.0, 0.0, 0.0); //defog Color";
 
 uniform ivec4 uf_remappedPS[1];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -80,14 +109,14 @@ return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
 float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
 
-/*
- * Tonemap version 1.1
- * by Christian Cann Schuldt Jensen ~ CeeJay.dk
- */
+//-----------------------------------------------------------
+//   Based on CeeJay.dk's original GLSL/HLSL.
+//-----------------------------------------------------------
+
 vec3 TonemapPass(vec3 inputColor) {
 	vec3 color = inputColor;
-	color = clamp(color - Defog * FogColor * 2.55, 0.0, 1.0); // Defog
-	color *= pow(2.0f, Exposure); // Exposure
+	color = clamp(color - defog * FogColor * 2.55, 0.0, 1.0); // defog
+	color *= pow(2.0f, exposure); // exposure
 	color = pow(color, vec3(gamma)); // Gamma
 
 	const vec3 coefLuma = vec3(0.2126, 0.7152, 0.0722);
@@ -110,6 +139,56 @@ vec3 TonemapPass(vec3 inputColor) {
 	return color;
 }
 
+// -- Sharpening --
+#define sharp_strength 0.65   //[0.10 to 3.00] Strength of the sharpening
+
+#define sharp_clamp    0.035  //[0.000 to 1.000] Limits maximum amount of sharpening a pixel recieves - Default is 0.035
+
+// -- Advanced sharpening settings --
+
+#define offset_bias 1.0  //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
+                         //I designed the pattern for offset_bias 1.0, but feel free to experiment.
+
+#define CoefLuma vec3(0.2126, 0.7152, 0.0722)      // BT.709 & sRBG luma coefficient (Monitors and HD Television)
+
+vec4 texel(sampler2D tex, vec2 pos, vec2  tex_size){
+	vec4 colorInput = texture(tex, pos);
+  	
+	vec3 ori = colorInput.rgb;
+
+	// -- Combining the strength and luma multipliers --
+	vec3 sharp_strength_luma = (CoefLuma * sharp_strength); //I'll be combining even more multipliers with it later on
+	
+	// -- Gaussian filter --
+	//   [ .25, .50, .25]     [ 1 , 2 , 1 ]
+	//   [ .50,   1, .50]  =  [ 2 , 4 , 2 ]
+ 	//   [ .25, .50, .25]     [ 1 , 2 , 1 ]
+
+
+        float px = 1.0/tex_size[0];
+	float py = 1.0/tex_size[1];
+
+	vec3 blur_ori = texture(tex, pos + vec2(px,-py) * 0.5 * offset_bias).rgb; // South East
+	blur_ori += texture(tex, pos + vec2(-px,-py) * 0.5 * offset_bias).rgb;  // South West
+	blur_ori += texture(tex, pos + vec2(px,py) * 0.5 * offset_bias).rgb; // North East
+	blur_ori += texture(tex, pos + vec2(-px,py) * 0.5 * offset_bias).rgb; // North West
+
+	blur_ori *= 0.25;  // ( /= 4) Divide by the number of texture fetches
+
+	// -- Calculate the sharpening --
+	vec3 sharp = ori - blur_ori;  //Subtracting the blurred image from the original image
+
+	// -- Adjust strength of the sharpening and clamp it--
+	vec4 sharp_strength_luma_clamp = vec4(sharp_strength_luma * (0.5 / sharp_clamp),0.5); //Roll part of the clamp into the dot
+
+	float sharp_luma = clamp((dot(vec4(sharp,1.0), sharp_strength_luma_clamp)), 0.0,1.0 ); //Calculate the luma, adjust the strength, scale up and clamp
+	sharp_luma = (sharp_clamp * 2.0) * sharp_luma - sharp_clamp; //scale down
+
+	// -- Combining the values to get the final sharpened pixel	--
+
+	colorInput.rgb = colorInput.rgb + sharp_luma;    // Add the sharpening to the input color.
+	return clamp(colorInput, 0.0,1.0);
+}
 void main()
 {
 vec4 R0f = vec4(0.0);
