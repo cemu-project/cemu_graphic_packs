@@ -33,7 +33,7 @@ build_dir () {
         do
                 filename=`basename $f`
                 outName="$dstDir/$filename"
-                #echo "Building $f to $outName with params ${rest[@]}"
+                echo -e "\t${GREEN}[PHP] ${NC}Exec $f to $outName with params ${rest[@]}"
                 php "$f" "${rest[@]}" > "$outName"
 
                 if [ $? -ne 0 ]; then
@@ -63,7 +63,7 @@ std_respack () {
 	params=( "$@" )
 	rest=( "${params[@]:1}" )
 	
-	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${NC}to ${params[@]:1}"
+	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${NC}for ${rest[@]}"
 	for arrg in "${rest[@]}"
 	do
 		resvarname="res_${arrg}[@]"
