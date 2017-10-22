@@ -91,3 +91,11 @@ height = 134
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = <?=round($scaleFactorX*240)?> 
 overwriteHeight = <?=round($scaleFactorY*134)?> 
+
+# Multiplayer kart preview
+[TextureRedefine]
+width = 640
+height = 320
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*320)?> 
