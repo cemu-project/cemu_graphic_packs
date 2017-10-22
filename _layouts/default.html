@@ -69,6 +69,7 @@
             creditsText += "<figure style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar' style='width:100%;height=100%'/><figcaption>"+out[i].author.login+"</figcaption></figure>"; //<br>
           }
           document.getElementById("thanks-for-downloading-").nextElementSibling.nextElementSibling.innerText="";
+          document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerText="";
           document.getElementById("credits").innerHTML=creditsText;
         })
         </script>
