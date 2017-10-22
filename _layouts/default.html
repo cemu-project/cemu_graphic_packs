@@ -66,7 +66,7 @@
         fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/stats/contributors") .then(response => response.json()).then((out) => {
           creditsText = '';
           for (i = out.length-1; i > -1; i--) { // style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;'
-            creditsText += "<figure style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0 0.5% 0 0.5%;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar' style='width:100%;height=100%'/><figcaption>"+out[i].author.login+"</figcaption></figure>"; //<br>
+            creditsText += "<figure style='width:"+((100-out.length)/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0 0.5% 0 0.5%;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar' style='width:100%;height=100%'/><figcaption>"+out[i].author.login+"</figcaption></figure>"; //<br>
           }
           document.getElementById("thanks-for-downloading-").nextElementSibling.nextElementSibling.innerText="";
           document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerText="";
