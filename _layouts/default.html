@@ -29,6 +29,8 @@
                     // Changes the download button and check if the URL hash is #directDownload
                     if (window.location.hash == "#directDownload") window.location.href = out.assets[0].browser_download_url;
                     document.getElementById("downloadButton").href = out.assets[0].browser_download_url;
+                    document.getElementById("Credits-").innerText="Thanks for downloading!";
+                    window.scrollTo(0,document.body.scrollHeight);
                 });
         }
         downloadPack();
@@ -65,8 +67,16 @@
         // Credits script
         fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/stats/contributors") .then(response => response.json()).then((out) => {
           creditsText = '';
-          for (i = out.length-1; i > -1; i--) { // style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;'
-            creditsText += "<figure style='width:"+((100-out.length)/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0 0.5% 0 0.5%;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar' style='width:100%;height=100%'/><figcaption>"+out[i].author.login+"<br/></figcaption></figure>"; //<br>
+          for (i = out.length-1; i > -1; i--) {
+            additions = 0;
+            deletions = 0;
+            commits = 0;
+            for (p=0;p<out[i].weeks.length;p++) {
+              additions += out[i].weeks[p].a;
+              deletions += out[i].weeks[p].d;
+              commits += out[i].weeks[p].c;
+            }
+            creditsText += "<figure style='width:"+((100-out.length)/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0 0.5% 0 0.5%;text-align:center;padding:0;'><a href='"+out[i].author.html_url+"'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar' style='width:100%;height=100%'/><figcaption>"+out[i].author.login+"<br/></a><p style='color:green;margin-bottom:0;'>+ "+additions+"</p><p style='color:red;margin-bottom:0;'>- "+deletions+"</p><p>Commits "+commits+"</p></figcaption></figure>";
           }
           document.getElementById("thanks-for-downloading-").nextElementSibling.nextElementSibling.innerText="";
           document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerText="";
