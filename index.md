@@ -114,3 +114,4 @@ If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu
 **tails101** - 1 commit: 10 line additions and 0 line deletions.  
 **Keelhauled** - 1 commit: 99 line additions and 0 line deletions.  
 **And the other people that have made pull requests!**
+##### Your browser doesn't support HTML5 which is recommended for viewing certain elements.
