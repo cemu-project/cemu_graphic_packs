@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="{{ site.lang | default: "en-US" }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+{% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="{{ '/assets/js/respond.js' | relative_url }}"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="{{ '/assets/css/ie.css' | relative_url }}">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Cemu Graphic Packs</title>
+        
+    <!-- Custom Javascript code for downloads -->
+    <script>
+        function downloadPack() {
+            // Tested, should be compatible with all updated browsers with ES6. If not there's always a fallback.
+            // This will use the github api to return the latest download url, making it reliable.
+            // Parses the json that's fetched from the object, then navigates to the right value.
+            fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
+                .then(response => response.json())
+                .then((out) => {
+                    // Changes the download button and check if the URL hash is #directDownload
+                    if (window.location.hash == "#directDownload") window.location.href = out.assets[0].browser_download_url;
+                    document.getElementById("downloadButton").href = out.assets[0].browser_download_url;
+                });
+        }
+        downloadPack();
+    </script>
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
+          {% if site.show_downloads %}
+            <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
+            <li class="downloads"><a id="downloadButton" href="https://github.com/Crementif/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
+            <li class="title"></li> <!-- Label for the download button, no text currently. -->
+          {% endif %}
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>{{ site.title | default: site.github.repository_name }}</h1>
+          <p>{{ site.description | default: site.github.project_tagline }}</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="{{ site.github.owner_url }}">{{ site.github.owner_name }}</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="https://twitter.com/michigangraham">mattgraham</a></span>
+        </div>
+
+        {{ content }}   
+
+      </section>
+
+    </div>
+
+    {% if site.google_analytics %}
+      <script type="text/javascript">
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+  </body>
+</html>
