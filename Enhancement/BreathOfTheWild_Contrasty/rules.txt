@@ -5,7 +5,7 @@ version = 2
 
 # Credit: 
 # getdls for contrasty
-# bestminr for vibrance logic
+# lihe@bestminr.com for vibrance logic
 # kiri, navras for tone mapping
 # navras seperate contrasty from AARemoval
 
