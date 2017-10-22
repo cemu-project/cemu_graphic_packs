@@ -4,14 +4,12 @@
 
 [This archive](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/#directDownload) or the green download link above has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
 
-
 We also have (partial) automation in place to create graphic packs for the various resolutions (16:9 and [more](https://www.youtube.com/watch?v=s_x-hoygpeg)).
-**Due to this, we don't recommend downloading the graphic packs the old way (download a zip from the github), which will result in old and missing packs!!!**
+**Due to this, we don't recommend downloading the graphic packs the old way (downloading a zip from the GitHub), which will result in most packs being missing!**
 
-#### Notes
-Keep in mind that all of these packs are Work-in-Progress.
+Keep in mind that all of these packs are a work in progress.
 
-If you want Graphic Packs for < Cemu 1.8 you need to use legacy packs, which you can download [here](https://github.com/slashiee/cemu_graphic_packs/archive/1.zip).
+If you want Graphic Packs for < Cemu 1.8 you need to use legacy packs, which you can download [here](https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip).
 ### Games with Graphic Packs
 
 - [Adventure Time: Explore the Dungeon Because I DON'T KNOW](http://compat.cemu.info/wiki/Adventure_Time:_Explore_the_Dungeon_Because_I_Don't_Know!)
