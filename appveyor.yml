@@ -1,5 +1,8 @@
 # Appveyor configuration file for bash build of packs
 version: '{build}'
+branches:
+  only:
+    - master
 environment:
     # It's prefered to have the GithubAuthToken (encrypted) set in the UI. Follow this guide for the instructions https://www.appveyor.com/docs/deployment/github/#provider-settings.
     CommitTimestamp: 0
