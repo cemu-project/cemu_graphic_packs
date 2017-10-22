@@ -97,8 +97,8 @@ If you are willing to help contribute, feel free to [make a pull request](https:
 
 If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so. There's currently no support for RenderDoc by Cemu.
 
-### Thanks for downloading! <!-- if you change this specific fallback text you also need to change the code otherwise it won't work --->
-#### Give some love to these creators for making these packs <3
+### Credits <!-- if you change this specific fallback text you also need to change the code otherwise it won't work --->
+#### Here's only a few of the people that have helped to create these packs!
 **slashiee** - 417 commits: 117,762 line additions and 131,299 line deletions.  
 **Getdls** - 31 commits: 30,136 line additions and 1,317 line deletions.  
 **Darkemaste** - 23 commits: 14,684 line additions and 747 line deletions.  
@@ -113,5 +113,5 @@ If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu
 **riperiperi** - 1 commit: 103 line additions and 22 line deletions.  
 **tails101** - 1 commit: 10 line additions and 0 line deletions.  
 **Keelhauled** - 1 commit: 99 line additions and 0 line deletions.  
-**And the other people that have made pull requests!**
+**And the other people that have made pull requests or helped us test these!**
 ##### Your browser doesn't support HTML5 which is recommended for viewing certain elements.
