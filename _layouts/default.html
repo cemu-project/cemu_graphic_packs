@@ -42,7 +42,7 @@
           <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads"><a id="downloadButton" href="https://github.com/Crementif/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
+            <li class="downloads"><a id="downloadButton" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
             <li class="title"></li> <!-- Label for the download button, no text currently. -->
           {% endif %}
         </nav>
@@ -78,7 +78,7 @@
             }
             creditsText += "<figure style='width:"+((100-out.length)/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0 0.5% 0 0.5%;text-align:center;padding:0;'><a href='"+out[i].author.html_url+"'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar' style='width:100%;height=100%'/><figcaption>"+out[i].author.login+"<br/></a><p style='color:green;margin-bottom:0;'>+ "+additions+"</p><p style='color:red;margin-bottom:0;'>- "+deletions+"</p><p>Commits "+commits+"</p></figcaption></figure>";
           }
-          document.getElementById("thanks-for-downloading-").nextElementSibling.nextElementSibling.innerText="";
+          document.getElementById("credits-").nextElementSibling.nextElementSibling.innerText="";
           document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerText="";
           document.getElementById("credits").innerHTML=creditsText;
         })
