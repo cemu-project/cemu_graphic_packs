@@ -6,8 +6,8 @@
 
 //----------------------------settings-------------------------------------
 
-const bool only_adjustbloom = false;
-// if true, all features except 'adjustable bloom' in contrasty will be disabled.
+// #define only_adjustbloom
+// uncomment above to only use 'adjustable bloom', all other features in contrasty will be disabled.
 
 const float bloomFactor = 0.7; // 1.0 is neutral
 const float gamma = 0.81; // 1.0 is neutral  Botw is already colour graded at this stage
@@ -145,7 +145,7 @@ R0f.x = (mul_nonIEEE(R126f.x,R125f.w) + PV1f.w);
 R0f.y = (mul_nonIEEE(R126f.x,R127f.z) + PV1f.w);
 R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
 
-#if !only_adjustbloom
+#ifndef only_adjustbloom
 //Color Tweak
 vec3 fColour = R0f.xyz;
 fColour = max(vec3(0.0), fColour - vec3(crushContrast));
