@@ -1,5 +1,4 @@
-# Found by jediyoshi on NeoGAF http://www.neogaf.com/forum/showpost.php?p=229621652&postcount=775
-# Shadow format found by SunBroDave on NeoGAF http://www.neogaf.com/forum/showpost.php?p=229677345&postcount=782
+# Found by jediyoshi, Shadow format found by SunBroDave
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
 name = "The Legend of Zelda: The Wind Waker HD - Higher Quality Shadows"
