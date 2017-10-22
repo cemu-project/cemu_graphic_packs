@@ -59,14 +59,14 @@
 
         {{ content }}
     </section>
-    <div style="height:100%;width:100%;display:inline-block !important;">
+    <div style="height:100%;width:3000px;display:inline-block !important;">
       <script>
         // Credits script
         fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/stats/contributors") .then(response => response.json()).then((out) => {
           creditsText = '';
           for (i = out.length-1; i > -1; i--) {
-            creditsText += "<figure style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+"/'s Avatar'/><figcaption>"+out[i].author.login+"</figcaption></figure>"; //<br>
-          }
+            creditsText += "<figure style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+" Avatar'/><figcaption>"+out[i].author.login+"</figcaption></figure>"; //<br>
+          } // +(100/out.length)+"%;height:"+(100/out.length)+"%
           document.getElementById("thanks-for-downloading-").nextElementSibling.nextElementSibling.innerText="";
           document.getElementById("credits").innerHTML=creditsText;
         })
