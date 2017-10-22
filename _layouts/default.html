@@ -67,7 +67,7 @@
           for (i = out.length-1; i > -1; i--) {
             creditsText += "<figure style='width:"+(100/out.length)+"%;height:"+(100/out.length)+"%;float:left;margin:0;text-align:center;padding:0;'><img src='"+out[i].author.avatar_url+"' alt='"+out[i].author.login+"/'s Avatar'/><figcaption>"+out[i].author.login+"</figcaption></figure>"; //<br>
           }
-          document.getElementById("thanks-for-downloading").nextElementSibling.nextElementSibling.innerText="";
+          document.getElementById("thanks-for-downloading-").nextElementSibling.nextElementSibling.innerText="";
           document.getElementById("credits").innerHTML=creditsText;
         })
         </script>
