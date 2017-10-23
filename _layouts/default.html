@@ -19,11 +19,6 @@
         
     <!-- Custom Javascript code for downloads -->
     <script>
-        function downloadJump(url) {
-          window.scrollTo(0,document.body.scrollHeight);
-          document.getElementById("credits-").innerText="Thanks for downloading!";
-          window.location.assign(out)
-        }
         function downloadPack() {
             // Tested, should be compatible with all updated browsers with ES6. If not there's always a fallback.
             // This will use the github api to return the latest download url, making it reliable.
@@ -31,13 +26,14 @@
             fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
                 .then(response => response.json())
                 .then((out) => {
-                    // Changes the download button and check if the URL hash is #directDownload
-                    if (window.location.hash == "#directDownload") downloadJump(out.assets[0].browser_download_url);
-                    document.getElementById("downloadButton").href="#directDownload";
-                    downloadPack();
+                    // Initiates the download.
+                    window.scrollTo(0,document.body.scrollHeight);
+                    document.getElementById("credits-").innerText="Thanks for downloading!";
+                    window.location.assign(out.assets[0].browser_download_url);
                 });
         }
-        downloadPack();
+        if (window.location.hash == "#directDownload") downloadPack();
+        document.getElementById("downloadButton").href="javascript:downloadPack();";
     </script>
   </head>
   <body>
@@ -46,7 +42,7 @@
           <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads"><a id="downloadButton" onclick="downloadPack()" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
+            <li class="downloads"><a id="downloadButton" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
             <li class="title"></li> <!-- Label for the download button, no text currently. -->
           {% endif %}
         </nav>
