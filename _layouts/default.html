@@ -26,14 +26,16 @@
             fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
                 .then(response => response.json())
                 .then((out) => {
-                    // Changes the download button and check if the URL hash is #directDownload
-                    if (window.location.hash == "#directDownload") window.location.href = out.assets[0].browser_download_url;
-                    document.getElementById("downloadButton").href = out.assets[0].browser_download_url;
-                    document.getElementById("Credits-").innerText="Thanks for downloading!";
+                    // Initiate the download.
+                    document.getElementById("credits-").innerText="Thanks for downloading!";
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerHTML="<a href='"+out.assets[0].browser_download_url+"'>Click here if the download didn't start automatically.</a>";
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").previousElementSibling.previousElementSibling.style="margin:2px;"
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").previousElementSibling.style="margin:0;";
                     window.scrollTo(0,document.body.scrollHeight);
+                    window.location.assign(out.assets[0].browser_download_url);
                 });
         }
-        downloadPack();
+        if (window.location.hash == "#directDownload") downloadPack();
     </script>
   </head>
   <body>
@@ -42,7 +44,7 @@
           <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads"><a id="downloadButton" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
+            <li class="downloads"><a id="downloadButton" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
             <li class="title"></li> <!-- Label for the download button, no text currently. -->
           {% endif %}
         </nav>
@@ -64,6 +66,8 @@
   </div>
     <div style="height:100%;width:90%;margin:0 5% 0 5%;display:inline-block !important;">
       <script>
+        // Changing href here because the object didn't exist up there.
+        document.getElementById("downloadButton").href="javascript:downloadPack();";
         // Credits script
         fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/stats/contributors") .then(response => response.json()).then((out) => {
           creditsText = '';
