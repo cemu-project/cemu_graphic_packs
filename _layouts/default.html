@@ -19,6 +19,11 @@
         
     <!-- Custom Javascript code for downloads -->
     <script>
+        function downloadJump() {
+          window.scrollTo(0,document.body.scrollHeight);
+          document.getElementById("credits-").innerText="Thanks for downloading!";
+          window.location.assign(out.assets[0].browser_download_url)
+        }
         function downloadPack() {
             // Tested, should be compatible with all updated browsers with ES6. If not there's always a fallback.
             // This will use the github api to return the latest download url, making it reliable.
@@ -27,10 +32,8 @@
                 .then(response => response.json())
                 .then((out) => {
                     // Changes the download button and check if the URL hash is #directDownload
-                    if (window.location.hash == "#directDownload") window.location.assign(out.assets[0].browser_download_url);
-                    document.getElementById("downloadButton").href=out.assets[0].browser_download_url;
-                    document.getElementById("credits-").innerText="Thanks for downloading!";
-                    window.scrollTo(0,document.body.scrollHeight);
+                    if (window.location.hash == "#directDownload") downloadJump();
+                    document.getElementById("downloadButton").href="#directDownload";
                 });
         }
         downloadPack();
