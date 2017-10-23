@@ -28,7 +28,7 @@
                 .then((out) => {
                     // Changes the download button and check if the URL hash is #directDownload
                     if (window.location.hash == "#directDownload") window.location.assign(out.assets[0].browser_download_url);
-                    document.getElementById("downloadButton").onclick="function(){window.location.assign("+out.assets[0].browser_download_url+");}";
+                    document.getElementById("downloadButton").href=out.assets[0].browser_download_url;
                     document.getElementById("credits-").innerText="Thanks for downloading!";
                     window.scrollTo(0,document.body.scrollHeight);
                 });
@@ -42,7 +42,7 @@
           <li class="fork"><a href="{{ site.github.repository_url }}">View On GitHub</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads"><a id="downloadButton" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
+            <li class="downloads"><a id="downloadButton" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
             <li class="title"></li> <!-- Label for the download button, no text currently. -->
           {% endif %}
         </nav>
