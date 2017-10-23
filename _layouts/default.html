@@ -29,6 +29,7 @@
                     // Initiate the download.
                     window.scrollTo(0,document.body.scrollHeight);
                     document.getElementById("credits-").innerText="Thanks for downloading!";
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerHtml="<a href='"+out.assets[0].browser_download_url+"'>Click here if the download doesn't start automatically.</a>";
                     window.location.assign(out.assets[0].browser_download_url);
                 });
         }
