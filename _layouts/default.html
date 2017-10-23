@@ -27,9 +27,11 @@
                 .then(response => response.json())
                 .then((out) => {
                     // Initiate the download.
-                    window.scrollTo(0,document.body.scrollHeight);
                     document.getElementById("credits-").innerText="Thanks for downloading!";
-                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerHTML="<a href='"+out.assets[0].browser_download_url+"'>Click here if the download doesn't start automatically.</a>";
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerHTML="<a href='"+out.assets[0].browser_download_url+"'>Click here if the download didn't start automatically.</a>";
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").style="margin:2px;"
+                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").nextElementSibling.style="margin:0;"
+                    window.scrollTo(0,document.body.scrollHeight);
                     window.location.assign(out.assets[0].browser_download_url);
                 });
         }
