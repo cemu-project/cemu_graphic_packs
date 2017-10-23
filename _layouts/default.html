@@ -28,7 +28,7 @@
                 .then((out) => {
                     // Changes the download button and check if the URL hash is #directDownload
                     if (window.location.hash == "#directDownload") window.location.assign(out.assets[0].browser_download_url);
-                    document.getElementById("downloadButton").onclick = object.onclick = "function(){window.location.assign("+out.assets[0].browser_download_url+");}";
+                    document.getElementById("downloadButton").onclick="function(){window.location.assign("+out.assets[0].browser_download_url+");}";
                     document.getElementById("credits-").innerText="Thanks for downloading!";
                     window.scrollTo(0,document.body.scrollHeight);
                 });
