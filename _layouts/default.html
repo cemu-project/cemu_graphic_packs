@@ -26,14 +26,13 @@
             fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
                 .then(response => response.json())
                 .then((out) => {
-                    // Initiates the download.
+                    // Initiate the download.
                     window.scrollTo(0,document.body.scrollHeight);
                     document.getElementById("credits-").innerText="Thanks for downloading!";
                     window.location.assign(out.assets[0].browser_download_url);
                 });
         }
         if (window.location.hash == "#directDownload") downloadPack();
-        document.getElementById("downloadButton").href="javascript:downloadPack();";
     </script>
   </head>
   <body>
@@ -64,6 +63,8 @@
   </div>
     <div style="height:100%;width:90%;margin:0 5% 0 5%;display:inline-block !important;">
       <script>
+        // Changing href here because the object didn't exist up there.
+        document.getElementById("downloadButton").href="javascript:downloadPack();";
         // Credits script
         fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/stats/contributors") .then(response => response.json()).then((out) => {
           creditsText = '';
