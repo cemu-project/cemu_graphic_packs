@@ -23,7 +23,7 @@ Update the graphic pack.
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372205680968335370/unknown.png)
 
-Disable GPUFenceSkip in the game profile and in FPS++, and manually enable it via Cemuhook.
+Disable GPUFenceSkip in the game profile and in FPS++ and manually enable it via Cemuhook.
 
 ### I'm on AMD and the grass has black dots around it
 
@@ -62,6 +62,12 @@ Follow [this guide](https://redd.it/6qwmon) to reduce the issue.
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
 
 There is no current fix towards these issues.
+
+### Textures have turned into skittles
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372246903414325258/unknown.png)
+
+This is a Cemu issue, not a graphic pack issue.
 
 ### Can I use [insert piracy program here] to download the upda-
 
