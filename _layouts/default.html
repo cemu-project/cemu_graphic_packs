@@ -44,8 +44,11 @@
           <li class="fork"><a href="{{ site.github.repository_url }}">View on GitHub</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads"><a id="downloadButton" target="_self" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest">Download Latest Graphic Packs</a></li>
-            <li class="title"></li> <!-- Label for the download button, no text currently. -->
+            <li class="downloads" style="font-size:11px;font-family:'OpenSansLight',&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;line-height:50px;list-style:none;text-shadow:0px 1px 0px rgba(0,0,0,0.2);">
+              <a id="downloadButton" target="_self" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest" style="margin-right:6px;">Latest</a>or
+              <a id="releaseButton" target="_blank" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases" style="margin-left:6px;background-color: #434343;border-color: #191919;">See past releases</a>
+            </li>
+            <li class="title">Downloads</li> <!-- Label for the download button, no text currently. -->
           {% endif %}
         </nav>
       </div><!-- end header -->
