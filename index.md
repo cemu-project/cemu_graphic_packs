@@ -1,19 +1,16 @@
-## Cemu Graphic Packs
+### **Download Instructions**  
 
-### Download Instructions
+Only download the graphic packs from the buttons above. Please delete the old ones first before adding in the new ones.
 
-[This archive](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/#directDownload) or the green download link above has all of the graphic packs needed. Please delete the old ones first before adding in the new ones.
+**Missing the resolution packs on this Github? That's because we now automatically build the resolution packs. Follow the download instructions to download them for all the supported resolutions.**
 
-We also have (partial) automation in place to create graphic packs for the various resolutions (16:9 and [more](https://www.youtube.com/watch?v=s_x-hoygpeg)).
-**Due to this, we don't recommend downloading the graphic packs the old way (downloading a zip from the GitHub), which will result in most packs being missing!**
 
-Keep in mind that all of these packs are a work in progress.
+For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/botw). For other games see ['I need help'](#i-need-help).
+##### Keep in mind that all of these graphic packs are a work in progress.  
+##### If there's a resolution missing it's because it was done on purpose and the game natively runs on that resolution.  
+##### If you want Graphic Packs for < Cemu 1.8.0 you need to use legacy packs, which you can download [here](https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip).
 
-For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/botw).
-
-If you want Graphic Packs for < Cemu 1.8 you need to use legacy packs, which you can download [here](https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip).
-
-### Games with Graphic Packs
+### **Games with Graphic Packs**
 
 - [Adventure Time: Explore the Dungeon Because I DON'T KNOW](http://compat.cemu.info/wiki/Adventure_Time:_Explore_the_Dungeon_Because_I_Don't_Know!)
 - [Adventure Time: Finn And Jake Investigations](http://compat.cemu.info/wiki/Adventure_Time:_Finn_And_Jake_Investigations)
@@ -88,17 +85,17 @@ If you want Graphic Packs for < Cemu 1.8 you need to use legacy packs, which you
 - [Xenoblade Chronicles X](http://compat.cemu.info/wiki/Xenoblade_Chronicles_X)
 - [Yoshi's Woolly World](http://compat.cemu.info/wiki/Yoshi's_Woolly_World)
 
-### I need help!
+### **I need help!**
 
 If you need help with the basics, follow the [tutorial](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-Graphic-Packs) on the wiki. Afterwards, try checking the [issues](https://github.com/slashiee/cemu_graphic_packs/issues) on the repo to see if an issue that you have found has been documented. If not, feel free to ask for help at the #gfx_packs channel in the [official Cemu Discord](https://discord.gg/5psYsup).
 
-### Want to contribute?
+### **Want to contribute?**
 
 If you are willing to help contribute, feel free to [make a pull request](https://github.com/slashiee/cemu_graphic_packs/compare) with your edits. For beginners, please follow the [tutorial](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-Graphic-Packs) on the compatiblity wiki. For getting into more advanced stuff, feel free to [set up NVIDIA Nsight](https://github.com/slashiee/cemu_graphic_packs/issues/38#issuecomment-309265292). Make sure that you're using your fork of the repo, and that you update all resolutions that are available for that game.
 
 If you need help with finding resolutions besides from 1280x720/1920x1080, [Cemu Viewport Skimmer](https://github.com/mhvuze/CemuViewportSkimmer), [GPU PerfStudio](http://gpuopen.com/archive/gpu-perfstudio/), or [NVIDIA Nsight](http://www.nvidia.com/object/nsight.html) can help you do so. There's currently no support for RenderDoc by Cemu.
 
-### Credits <!-- if you change this specific fallback text you also need to change the code otherwise it won't work --->
+### **Credits** <!-- if you change this specific fallback text you also need to change the code otherwise it won't work --->
 #### Here's only a few of the people that have helped to create these packs!
 **slashiee** - 417 commits: 117,762 line additions and 131,299 line deletions.  
 **Getdls** - 31 commits: 30,136 line additions and 1,317 line deletions.  
