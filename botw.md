@@ -12,7 +12,7 @@ Update your game to the latest version available (1.3.1/v112) either manually or
 
 Disable anisotropic filtering for Cemu specifically.
 
-### I'm on NVIDIA and explosions don't look like what's normally seen on Wii U/Switch/AMD
+### I'm on NVIDIA and the explosion smoke doesn't look like what's normally seen on Wii U/Switch/AMD
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
 
@@ -42,7 +42,7 @@ Disable GPUFenceSkip in game profile and in FPS++, and manually enable it via Ce
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204003649388554/unknown.png)
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
 
-There is no current fix towards this issue.
+There is no current fix towards these issues.
 
 ### Can I use [insert piracy program here] to download the upda-
 
