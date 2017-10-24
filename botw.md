@@ -12,12 +12,6 @@ Update your game to the latest version available (1.3.1/v112) either manually or
 
 Disable anisotropic filtering for Cemu specifically.
 
-### I'm on NVIDIA and the explosion smoke doesn't look like what's normally seen on Wii U/Switch/AMD
-
-![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
-
-Set accurateShaderMul to min in the game profile or use the NVIDIA Explosion Smoke graphic pack.
-
 ### Heatwaves are a black mess/Bloom is blocky
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172841195536404/unknown.png)
@@ -25,17 +19,23 @@ Set accurateShaderMul to min in the game profile or use the NVIDIA Explosion Smo
 
 Update the graphic pack.
 
+### The water has turned into milk
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372205680968335370/unknown.png)
+
+Disable GPUFenceSkip in the game profile and in FPS++, and manually enable it via Cemuhook.
+
 ### I'm on AMD and the grass has black dots around it
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204881496375296/unknown.png)
 
 Use the AMD Shadows graphic pack.
 
-### The water has turned into milk
+### I'm on NVIDIA and the explosion smoke doesn't look like what's normally seen on Wii U/Switch/AMD
 
-![](https://cdn.discordapp.com/attachments/207547103726010368/372205680968335370/unknown.png)
+![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
 
-Disable GPUFenceSkip in game profile and in FPS++, and manually enable it via Cemuhook.
+Set accurateShaderMul to min in the game profile or use the NVIDIA Explosion Smoke graphic pack.
 
 ### The clouds are facing another direction/I'm on AMD and the lights are circles
 
