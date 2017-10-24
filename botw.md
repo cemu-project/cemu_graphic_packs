@@ -37,6 +37,25 @@ Use the AMD Shadows graphic pack.
 
 Set accurateShaderMul to min in the game profile or use the NVIDIA Explosion Smoke graphic pack.
 
+### I'm on NVIDIA and the hearts and stamina are corrupted
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372222567731429386/unknown.png)
+
+Disable the Pro+ HUD graphic pack.
+
+### I'm on NVIDIA and there's a black box in the bottom left corner when on Master Mode
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372222832127639552/unknown.png)
+
+Disable the No Master Mode Triforce graphic pack.
+
+### I'm on NVIDIA and lava and water is artifacting
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372217955741597706/unknown.png)
+![](https://cdn.discordapp.com/attachments/207547103726010368/372220915012075520/unknown.png)
+
+Follow [this guide](https://redd.it/6qwmon) to reduce the issue.
+
 ### The clouds are facing another direction/I'm on AMD and the lights are circles
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204003649388554/unknown.png)
