@@ -4,7 +4,7 @@
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172658118492160/unknown.png)
 
-Update your game to the latest version avaible (1.3.1/v112) either manually or through the UI.
+Update your game to the latest version available (1.3.1/v112) either manually or through the UI.
 
 ### A black line is stalking me wherever I go
 
@@ -12,7 +12,7 @@ Update your game to the latest version avaible (1.3.1/v112) either manually or t
 
 Disable anisotropic filtering for Cemu specifically.
 
-### Explosions don't look like what's normally seen in Wii U/Switch
+### Explosions don't look like what's normally seen on Wii U/Switch
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
 
