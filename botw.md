@@ -16,7 +16,7 @@ Disable anisotropic filtering for Cemu specifically.
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
 
-Set accurateShaderMul to min in the game profile or use the Bomb Arrow Smoke Fix graphic pack.
+Set accurateShaderMul to min in the game profile or use the NVIDIA Explosion Smoke graphic pack.
 
 ### Heatwaves are a black mess/Bloom is blocky
 
