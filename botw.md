@@ -12,7 +12,7 @@ Update your game to the latest version available (1.3.1/v112) either manually or
 
 Disable anisotropic filtering for Cemu specifically.
 
-### Explosions don't look like what's normally seen on Wii U/Switch
+### I'm on NVIDIA and explosions don't look like what's normally seen on Wii U/Switch/AMD
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
 
@@ -37,14 +37,9 @@ Use the AMD Shadows graphic pack.
 
 Disable GPUFenceSkip in game profile and in FPS++, and manually enable it via Cemuhook.
 
-### The clouds are facing another direction
+### The clouds are facing another direction/I'm on AMD and the lights are circles
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204003649388554/unknown.png)
-
-There is no current fix towards this issue.
-
-### I'm on AMD and the lights are circles
-
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
 
 There is no current fix towards this issue.
