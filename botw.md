@@ -27,15 +27,25 @@ Update the graphic pack.
 
 ### I'm on AMD and the grass has black dots around it
 
+![](https://cdn.discordapp.com/attachments/207547103726010368/372204881496375296/unknown.png)
+
 Use the AMD Shadows graphic pack.
 
 ### The water has turned into milk
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372205680968335370/unknown.png)
 
 Disable GPUFenceSkip in game profile and in FPS++, and manually enable it via Cemuhook.
 
 ### The clouds are facing another direction
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204003649388554/unknown.png)
+
+There is no current fix towards this issue.
+
+### I'm on AMD and the lights are circles
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
 
 There is no current fix towards this issue.
 
