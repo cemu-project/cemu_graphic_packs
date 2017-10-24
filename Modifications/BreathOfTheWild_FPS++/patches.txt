@@ -61,7 +61,7 @@ _fullspeed = 0x00000080
 0x032E4130 = bla _fullspeed
 
 #break all forms of frame limiting
-0x030D5200 = nop
+0x030D5200 = nop ;comment out this line with ';' at the beginning to disable gpufenceskip
 0x030D53D4 = nop
 0x030D53f8 = nop
 0x030D5808 = li r0, 1 
@@ -136,7 +136,7 @@ _fullspeed = 0x00000080
 0x032E31D0 = bla _fullspeed
 
 #break all forms of frame limiting
-0x030D42A0 = nop
+0x030D42A0 = nop ;comment out this line with ';' at the beginning to disable gpufenceskip
 0x030D4474 = nop
 0x030D4498 = nop
 0x030D48A8 = li r0, 1 
