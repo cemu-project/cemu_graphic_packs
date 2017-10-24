@@ -4,7 +4,7 @@
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172658118492160/unknown.png)
 
-Update your game to the latest version available (1.3.1/v112) either manually or through the UI.
+Update your game to the latest version available (1.3.1/v112) either manually or through Cemu's UI.
 
 ### A black line is stalking me wherever I go
 
