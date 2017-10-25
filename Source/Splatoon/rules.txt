@@ -75,15 +75,15 @@ formats = 0x0000041a
 width = 256
 height = 256
 formats = 0x0000001a
-#overwriteWidth = <?=round($scaleFactorY*256)?>
-#overwriteHeight = <?=round($scaleFactorY*256)?>
+#overwriteWidth = <?=round($scaleFactorY*256)?> 
+#overwriteHeight = <?=round($scaleFactorY*256)?> 
 
 [TextureRedefine] # player name - GL_RGBA8
 width = 128
 height = 32
 formats = 0x0000001a
-overwriteWidth = <?=round($scaleFactorX*128)?>
-overwriteHeight = <?=round($scaleFactorY*32)?>
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*32)?> 
 
 [TextureRedefine] # multiplayer
 width = 848
