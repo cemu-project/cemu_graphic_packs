@@ -30,17 +30,15 @@ const float scale = 255.0/(255.0-0.0);
 
 //##########################################################
 
-// Contrast, saturation, brightness
+// Contrast, saturation, Gamma , Vibrance , Defog.
 // For all settings: 1.0 = 100% 0.5=50% 1.5 = 150%
 
 //Adjustable Values:
-
-const float brt = .80;	      // [0.1 ~ 2.0] [1.0 Default] Brightness Adjustment
-const float con = 0.0;		  // [0.1 ~ 2.0] [0.5 Default] Contrast Adjustment
-const float sat = 0.0;	      // [0.1 ~ 1.0] Color Saturation Adjustment.
-const float gamma = 1.50;	  // [1.0 ~ 2.0] [1.0 Default] [1.43 Serfrost] [1.50 Jamie]
-const float vibrance = 0.008; // 0.0 is neutral  
-const float defog = 0.12;	  // [0.0 ~ 1.0] How much of the far distance fog to "remove."
+const float con = 0.50;		  // [0.0 ~ 1.5] [0.5 Default] Contrast Adjustment - or + values work
+const float sat = 0.00;	      // [0.1 ~ 1.5] [0.0 Default] Color Saturation Adjustment. - or + values work
+const float gamma = 1.43;	  // [0.0 ~ 2.5] [1.0 Default] Gamma Adjustment - or + values work
+const float vibrance = 0.012; // [0.0 ~ 1.5} [0.0 Default] Vibrance Adjustment - or + values work
+const float defog = 0.12;	  // [0.0 ~ 1.0] [0.0 Default] How much of the far distance fog to "remove."
 
 //-----------------------------------------------------------
 
@@ -49,6 +47,7 @@ const float defog = 0.12;	  // [0.0 ~ 1.0] How much of the far distance fog to "
 //###########################################################
 
 //Do not edit under this line.
+const float brt = 0.00;	
 const float exposure = 0.00;
 const float Bleach = 0.0;
 const vec3 FogColor = vec3(0.0, 0.0, 0.0); //defog Color";
@@ -217,7 +216,7 @@ passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 vec3 color = (passPixelColor0.xyz);
 const vec3 diffcolor = vec3(1.0, 1.0, 1.0); 
 color = TonemapPass(color);
-vec3 contrasted = (color - 0.5) * con + 0.5 + brt;
+vec3(color - 0.5) * con + 0.5 + brt;
 vec3(pow(abs(color.r), gamma),pow(abs(color.g), gamma),pow(abs(color.b), gamma));
 float luminance = color.r*0.2125 + color.g*0.7154 + color.b*0.0721;
 float mn = min(min(color.r, color.g), color.b);
