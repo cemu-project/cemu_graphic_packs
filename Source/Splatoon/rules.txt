@@ -15,14 +15,14 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formatsExcluded = 0x19,0x1a
+formatsExcluded = 0x00000019,0x0000001a
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # tv
 width = 1280
 height = 720
-formats = 0x19,0x1a
+formats = 0x00000019,0x0000001a
 overwriteFormat = 0x1f
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
@@ -30,14 +30,13 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x431 # exclude obvious textures
+formatsExcluded = 0x0000041a,0x00000431 # exclude obvious textures
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
-formatsExcluded = 0x41A,0x431 # exclude obvious textures
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
@@ -65,24 +64,24 @@ height = 252
 overwriteWidth = <?=round($scaleFactorX*448)?> 
 overwriteHeight = <?=round($scaleFactorY*252)?> 
 
-[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; Need to confirm on Cemu 1.11.0
+[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; need to find format
 width = 128
 height = 128
-formats = 0x41A
+formats = 0x0000041a
 #overwriteWidth = <?=round($scaleFactorY*128)?> 
 #overwriteHeight = <?=round($scaleFactorY*128)?> 
 
-[TextureRedefine] # player icon - GL_RGBA8; Need to confirm on Cemu 1.11.0
+[TextureRedefine] # player icon - GL_RGBA8; doesn't scale properly yet, uncomment with caution
 width = 256
 height = 256
-formats = 0x01a
+formats = 0x0000001a
 #overwriteWidth = <?=round($scaleFactorY*256)?>
 #overwriteHeight = <?=round($scaleFactorY*256)?>
 
 [TextureRedefine] # player name - GL_RGBA8
 width = 128
 height = 32
-formats = 0x01a
+formats = 0x0000001a
 overwriteWidth = <?=round($scaleFactorX*128)?>
 overwriteHeight = <?=round($scaleFactorY*32)?>
 
