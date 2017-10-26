@@ -68,15 +68,15 @@ overwriteHeight = <?=round($scaleFactorY*252)?>
 width = 128
 height = 128
 formats = 0x41a
-overwriteWidth = <?=round($scaleFactorY*128)?> 
-overwriteHeight = <?=round($scaleFactorY*128)?> 
+#overwriteWidth = <?=round($scaleFactorY*128)?> 
+#overwriteHeight = <?=round($scaleFactorY*128)?> 
 
 [TextureRedefine] # player icon - GL_RGBA8; doesn't scale properly yet
 width = 256
 height = 256
 formats = 0x1a
-overwriteWidth = <?=round($scaleFactorY*256)?> 
-overwriteHeight = <?=round($scaleFactorY*256)?> 
+#overwriteWidth = <?=round($scaleFactorY*256)?> 
+#overwriteHeight = <?=round($scaleFactorY*256)?> 
 
 [TextureRedefine] # player name - GL_RGBA8
 width = 128
