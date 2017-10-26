@@ -19,7 +19,7 @@
 // Credit to Serfrost for preset values.
 // Original shader dumped using cemu 1.10.0f, BotW 1.3.1
 
-// Changelog v0.3
+// Changelog v0.4
 
 //##########################################################
 
@@ -31,15 +31,19 @@ const float scale = 255.0/(255.0-0.0);
 //##########################################################
 
 // Contrast, saturation, Gamma , Vibrance , Defog.
-// For all settings: 1.0 = 100% 0.5=50% 1.5 = 150%
 
 //Adjustable Values:
-const float con = 0.50;		  // [0.0 ~ 1.5] [0.5 Default] Contrast Adjustment - or + values work
-const float sat = 0.00;	      // [0.1 ~ 1.5] [0.0 Default] Color Saturation Adjustment. - or + values work
-const float gamma = 1.43;	  // [0.0 ~ 2.5] [1.0 Default] Gamma Adjustment - or + values work
-const float vibrance = 0.012; // [0.0 ~ 1.5} [0.0 Default] Vibrance Adjustment - or + values work
-const float defog = 0.12;	  // [0.0 ~ 1.0] [0.0 Default] How much of the far distance fog to "remove."
-
+    
+const float con = 0.50;		    // [0.0 ~ 1.5] [0.5 Default] Contrast Adjustment - or + values work
+const float sat = 0.00;	        // [0.1 ~ 1.5] [0.0 Default] Color Saturation Adjustment. - or + values work
+const float gamma = 1.43;	    // [0.0 ~ 2.5] [1.0 Default] Gamma Adjustment - or + values work
+const float vibrance = 0.012;   // [0.0 ~ 1.5} [0.0 Default] Vibrance Adjustment - or + values work
+const float defog = 0.12;	    // [0.0 ~ 1.0] [0.0 Default] How much of the far distance fog to "remove."
+const float blacklift = -0.010; // [0.0 ~ 1.5] [0.0 Default] Blacklifting Adjustment - or + values work
+//Luma Values for  changing color.  Machinima tool mostly.
+const float AvgLumR = 0.0;      // [0.0 ~ 1.5] [0.0 Default] Use very small increments, as it changes RGB values.
+const float AvgLumG = -0.003;   // [0.0 ~ 1.5] [0.0 Default] Use very small increments, as it changes RGB values.
+const float AvgLumB = 0.0;      // [0.0 ~ 1.5] [0.0 Default] Use very small increments, as it changes RGB values.
 //-----------------------------------------------------------
 
 //End of adjustable values
@@ -47,9 +51,10 @@ const float defog = 0.12;	  // [0.0 ~ 1.0] [0.0 Default] How much of the far dis
 //###########################################################
 
 //Do not edit under this line.
-const float brt = 0.00;	
+	
 const float exposure = 0.00;
 const float Bleach = 0.0;
+float brt = 1.0;
 const vec3 FogColor = vec3(0.0, 0.0, 0.0); //defog Color";
 
 uniform ivec4 uf_remappedPS[1];
@@ -214,9 +219,15 @@ R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
 passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 
 vec3 color = (passPixelColor0.xyz);
-const vec3 diffcolor = vec3(1.0, 1.0, 1.0); 
+vec3 diffcolor = vec3(1.0, 1.0, 1.0); 
 color = TonemapPass(color);
-vec3(color - 0.5) * con + 0.5 + brt;
+const vec3 LumCoeff = vec3(0.2125, 0.7154, 0.0721);	
+vec3 AvgLumin = vec3(AvgLumR, AvgLumG, AvgLumB);
+vec3 brtColor = color * brt;
+vec3 intensity = vec3(dot(color, LumCoeff));
+vec3 satColor = mix(intensity, color, 1.);
+vec3 conColor = mix(AvgLumin, satColor, con);
+color = max(vec3(0.0), color - vec3(blacklift));
 vec3(pow(abs(color.r), gamma),pow(abs(color.g), gamma),pow(abs(color.b), gamma));
 float luminance = color.r*0.2125 + color.g*0.7154 + color.b*0.0721;
 float mn = min(min(color.r, color.g), color.b);
@@ -224,6 +235,8 @@ float mx = max(max(color.r, color.g), color.b);
 float sat = (1.0-(mx - mn)) * (1.0-mx) * luminance * 5.0;
 vec3 lightness = vec3((mn + mx)/2.0);
 color = mix(color, mix(color, lightness, -vibrance), sat);
+vec3((color - 0.5) * con + 0.5 + brt);
+color = vec3(conColor);
 color = (color.xyz - floor) * scale;
 passPixelColor0 = vec4(color.x, color.y, color.z, R0f.w);
 }
