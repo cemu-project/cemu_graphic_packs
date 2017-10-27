@@ -1,5 +1,6 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - No Laser Beams"
+name = "The Legend of Zelda: Breath of the Wild - Divine Laser Beam Customizer"
 version = 2
-# Completely hides the laser beams from the Divine Beasts
+# Allows customization of the color of the Divine Beasts's Laser Beam
+# Laser Beams can also be completely hidden
