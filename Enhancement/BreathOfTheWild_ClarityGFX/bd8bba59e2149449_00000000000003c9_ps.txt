@@ -220,5 +220,5 @@ vec3 brtColor = color * brt;
 vec3 intensity = vec3(dot(color, LumCoeff));
 vec3 satColor = mix(intensity, color, 1.);
 vec3 conColor = mix(AvgLumin, satColor, con);
-passPixelColor0 = vec4(conColor, R0f.w); //output conColor, above Contrasty is bypassed
+passPixelColor0 = vec4(conColor, R0f.w);
 }
