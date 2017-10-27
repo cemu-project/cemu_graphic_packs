@@ -19,14 +19,7 @@
 // Credit to Serfrost for preset values.
 // Original shader dumped using cemu 1.10.0f, BotW 1.3.1
 
-// Changelog v0.4
-
-//##########################################################
-
-//Don't touch.
-const float floor = 0.0 / 255;
-const float scale = 255.0/(255.0-0.0);
-//Don't touch.
+// Changelog v0.5
 
 //##########################################################
 
@@ -54,7 +47,7 @@ const float AvgLumB = 0.0;      // [0.0 ~ 1.5] [0.0 Default] Use very small incr
 	
 const float exposure = 0.00;
 const float Bleach = 0.0;
-float brt = 1.0;
+const float brt = 0.0;
 const vec3 FogColor = vec3(0.0, 0.0, 0.0); //defog Color";
 
 uniform ivec4 uf_remappedPS[1];
@@ -101,6 +94,10 @@ vec3 TonemapPass(vec3 inputColor) {
 	color = (color + diffcolor * sat) / (1 + (diffcolor * sat)); // saturation
 	
 	return color;
+}
+
+vec3 brightnessContrast(vec3 color, float brt, float con){
+    return (color - 0.5) * con + 0.5 + brt;
 }
 
 void main()
@@ -234,9 +231,7 @@ float mn = min(min(color.r, color.g), color.b);
 float mx = max(max(color.r, color.g), color.b);
 float sat = (1.0-(mx - mn)) * (1.0-mx) * luminance * 5.0;
 vec3 lightness = vec3((mn + mx)/2.0);
+color = brightnessContrast(color, brt, con);
 color = mix(color, mix(color, lightness, -vibrance), sat);
-vec3((color - 0.5) * con + 0.5 + brt);
-color = vec3(conColor);
-color = (color.xyz - floor) * scale;
-passPixelColor0 = vec4(color.x, color.y, color.z, R0f.w);
+passPixelColor0 = vec4(conColor, R0f.w);
 }
