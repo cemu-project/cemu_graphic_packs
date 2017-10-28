@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Square Shadows Fix"
+version = 2
+
+# Workaround for the square shadows seen around torches in Kakariko Village
+# found by Kiri
+# Shaders dumped from Cemu 1.11.0b and BotW 1.3.1
