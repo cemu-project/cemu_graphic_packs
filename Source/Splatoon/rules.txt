@@ -89,8 +89,8 @@ overwriteHeight = <?=round($scaleFactorY*32)?>
 width = 250
 height = 150
 formats = 0x1a
-overwriteWidth = <?=round($scaleFactorY*500)?> 
-overwriteHeight = <?=round($scaleFactorY*300)?> 
+overwriteWidth = <?=round($scaleFactorY*250)?> 
+overwriteHeight = <?=round($scaleFactorY*150)?> 
 
 [TextureRedefine] # multiplayer
 width = 848
