@@ -6,16 +6,21 @@
 
 Update your game to the latest version available (1.3.1/v112) either manually or through Cemu's UI.
 
+### Can I use [insert piracy program here] to download the upda-
+
+No.
+
 ### A black line is stalking me wherever I go
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172801647575040/unknown.png)
 
 Disable anisotropic filtering for Cemu specifically.
 
-### Heatwaves are a black mess/Bloom is blocky
+### Heatwaves are a black mess/Bloom is blocky/I'm on NVIDIA and hearts and stamina are corrupted
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172841195536404/unknown.png)
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172857154732042/unknown.png)
+![](https://cdn.discordapp.com/attachments/207547103726010368/372222567731429386/unknown.png)
 
 Update the graphic pack.
 
@@ -36,12 +41,6 @@ Use the AMD Shadows graphic pack.
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172637339910144/unknown.png)
 
 Set accurateShaderMul to min in the game profile or use the NVIDIA Explosion Smoke graphic pack.
-
-### I'm on NVIDIA and the hearts and stamina are corrupted
-
-![](https://cdn.discordapp.com/attachments/207547103726010368/372222567731429386/unknown.png)
-
-Disable the Pro+ HUD graphic pack.
 
 ### I'm on NVIDIA and there's a black box in the bottom left corner when on Master Mode
 
@@ -68,7 +67,3 @@ There is no current fix towards these issues.
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372246903414325258/unknown.png)
 
 This is a Cemu issue, not a graphic pack issue.
-
-### Can I use [insert piracy program here] to download the upda-
-
-No.
