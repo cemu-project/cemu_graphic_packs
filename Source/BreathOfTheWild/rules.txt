@@ -230,6 +230,12 @@ overwriteFormat = 0x823
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
+[TextureRedefine] #horse customization screen
+width = 480
+height = 720
+overwriteWidth = <?=round($scaleFactorX*480)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
 [TextureRedefine] #lines on map
 width = 13
 height = 305
