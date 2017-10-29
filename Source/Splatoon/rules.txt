@@ -82,8 +82,15 @@ formats = 0x1a
 width = 128
 height = 32
 formats = 0x1a
-overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteWidth = <?=round($scaleFactorY*128)?> 
 overwriteHeight = <?=round($scaleFactorY*32)?> 
+
+[TextureRedefine] # splat text - GL_RGBA8
+width = 250
+height = 150
+formats = 0x1a
+overwriteWidth = <?=round($scaleFactorY*500)?> 
+overwriteHeight = <?=round($scaleFactorY*300)?> 
 
 [TextureRedefine] # multiplayer
 width = 848
