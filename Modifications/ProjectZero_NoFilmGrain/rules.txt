@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 00050000101D0300,00050000101D0600,000500001014D200,00050000101D3F00
+name = "Project Zero Maiden of Black Water - No film grain"
+version = 2
