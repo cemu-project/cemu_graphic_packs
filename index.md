@@ -42,7 +42,7 @@ For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.
 - [LEGO City Undercover](http://compat.cemu.info/wiki/LEGO_City_Undercover)
 - [Mario & Sonic at the Rio 2016 Olympic Games](http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Rio_2016_Olympic_Games)
 - [Mario & Sonic at the Sochi 2014 Olympic Winter Games](http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Sochi_2014_Olympic_Winter_Games)
-- [Mario Kart 8](http://compat.cemu.info/wiki/Mario_Kart_8)
+- [Mario Kart 8](http://compat.cemu.info/wiki/Mario_Kart_8) [[Showcase](https://youtu.be/E6Z-1SwSUtI)]
 - [Mighty No. 9](http://compat.cemu.info/wiki/Mighty_No._9)
 - [NBA 2K13](http://compat.cemu.info/wiki/NBA_2K13)
 - [New Super Luigi U](http://compat.cemu.info/wiki/New_Super_Luigi_U)
@@ -65,7 +65,7 @@ For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.
 - [Shovel Knight](http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows)
 - [Sonic Boom: Rise of Lyric](http://compat.cemu.info/wiki/Sonic_Boom:_Rise_of_Lyric)
 - [Sonic Lost World](http://compat.cemu.info/wiki/Sonic_Lost_World)
-- [Splatoon](http://compat.cemu.info/wiki/Splatoon)
+- [Splatoon](http://compat.cemu.info/wiki/Splatoon) [[Showcase](https://youtu.be/rV77zXP8C8Y)]
 - [SpongeBob SquarePants: Plankton's Robotic Revenge](http://compat.cemu.info/wiki/Spongebob_Squarepants:_Plankton's_Robotic_Revenge)
 - [Star Fox Guard](http://compat.cemu.info/wiki/Star_Fox_Guard)
 - [Star Fox Zero](http://compat.cemu.info/wiki/Star_Fox_Zero)
@@ -74,7 +74,7 @@ For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.
 - [TNT Racers Nitro Machines Edition](http://compat.cemu.info/wiki/TNT_Racers_Nitro_Machines_Edition)
 - [Tekken Tag Tournament 2: Wii U Edition](http://compat.cemu.info/wiki/Tekken_Tag_Tournament_2)
 - [Tengami](http://compat.cemu.info/wiki/Tengami)
-- [The Legend of Zelda: Breath of the Wild](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild) [[Showcase](https://www.youtube.com/watch?v=EVRO5pV2eAg)]
+- [The Legend of Zelda: Breath of the Wild](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild) [[Showcase](https://youtu.be/buKACHczKoM)]
 - [The Legend of Zelda: The Wind Waker HD](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_The_Wind_Waker_HD)
 - [The Legend of Zelda: Twilight Princess HD](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Twilight_Princess_HD)
 - [The Wonderful 101](http://compat.cemu.info/wiki/The_Wonderful_101)
