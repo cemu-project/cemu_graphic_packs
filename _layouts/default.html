@@ -89,6 +89,12 @@
           document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerText="";
           document.getElementById("credits").innerHTML=creditsText;
         })
+        fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/git/trees/01fec6f21ed6018646382055782c080c10876f6e").then(response => response.json()).then((out) => {
+	          var gameLinks = header.nextElementSibling.getElementsByTagName('li');
+	          for (i = 0; i < gameLinks.length; i++) {
+    	          gameLinks[i].childNodes[0].innerText=out.tree[i].path.replace(/([a-z])([A-Z])/g, '$1 $2').replace(/\b([A-Z]+)([A-Z])([a-z])/, '$1 $2$3');
+	          }
+        })
         </script>
       <div id="credits" style="font-size: 0.7vw;">
       </div>
