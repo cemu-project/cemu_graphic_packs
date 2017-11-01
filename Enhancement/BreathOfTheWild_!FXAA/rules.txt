@@ -6,7 +6,7 @@ version = 2
 
 # Subpix:
 # Choose the amount of sub-pixel aliasing removal.
-# This can effect sharpness.
+# This can affect sharpness.
 #   1.00 - upper limit (softer)
 #   0.75 - default amount of filtering
 #   0.50 - lower limit (sharper, less sub-pixel aliasing removal)
