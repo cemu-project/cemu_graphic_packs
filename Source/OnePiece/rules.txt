@@ -15,12 +15,14 @@ version = 2
 [TextureRedefine] # tv
 width = 1280
 height = 720
+tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
+tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
