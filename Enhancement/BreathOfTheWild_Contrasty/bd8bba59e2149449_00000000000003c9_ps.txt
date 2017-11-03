@@ -7,13 +7,10 @@
 //----------------------------settings-------------------------------------
 
 #define adjust_bloom 1
-#define adjust_saturation 1
 #define contrasty 1
 // 0: disable, 1: enable.
 
 const float bloomFactor = 0.7; // 1.0 is neutral
-
-const float satFactor = 0.3; // 0.17999995 is neutral. Experimental, adjust native saturation
 
 const float gamma = 0.81; // 1.0 is neutral. Botw is already colour graded at this stage
 const float exposure = 1.17; // 1.0 is neutral
@@ -143,13 +140,7 @@ R125f.w = R126f.x + -(PS0f);
 R126f.y = backupReg1f + -(PS0f);
 PS1f = R126f.y;
 // 12
-
-#if (adjust_saturation == 1)
-R126f.x = (mul_nonIEEE(PV1f.y,satFactor) + intBitsToFloat(uf_remappedPS[0].x));
-#else
 R126f.x = (mul_nonIEEE(PV1f.y,intBitsToFloat(uf_remappedPS[0].y)) + intBitsToFloat(uf_remappedPS[0].x));
-#endif
-
 PV0f.x = R126f.x;
 PV0f.y = -(R126f.z) + PV1f.x;
 // 13
