@@ -129,7 +129,7 @@ PV0i.w = floatBitsToInt(intBitsToFloat(PV0i.w) / 2.0);
 R125i.z = floatBitsToInt(intBitsToFloat(R1i.w) + -(0.5));
 PS0i = R125i.z;
 // 1
-R123i.x = floatBitsToInt((intBitsToFloat(uf_remappedVS[3].w) * 2.0 / resXScale + intBitsToFloat(PV0i.y)));
+R123i.x = floatBitsToInt((intBitsToFloat(uf_remappedVS[3].w) * 2.0 / resYScale + intBitsToFloat(PV0i.y)));
 PV1i.x = R123i.x;
 R126i.y = floatBitsToInt(-(intBitsToFloat(uf_remappedVS[4].x)));
 R126i.y = floatBitsToInt(intBitsToFloat(R126i.y) * 2.0);

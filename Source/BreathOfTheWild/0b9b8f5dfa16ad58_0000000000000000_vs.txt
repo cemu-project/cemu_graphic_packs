@@ -10,7 +10,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 #extension GL_ARB_shading_language_packing : enable
 // shader 0b9b8f5dfa16ad58
 // Fixed radius blur
-// main menu v
+// main menu h
 const float resXScale = <?=$scaleFactorX?>;
 const float resYScale = <?=$scaleFactorY?>;
 

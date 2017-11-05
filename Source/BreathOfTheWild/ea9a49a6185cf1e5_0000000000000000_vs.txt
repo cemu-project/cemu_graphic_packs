@@ -85,9 +85,9 @@ PV0f.w = R127f.w;
 R127f.x = PV1f.x * 1.0;
 PS0f = R127f.x;
 // 3
-R126f.x = (intBitsToFloat(uf_remappedVS[0].y) * 2.0 / resXScale + PV0f.w);
+R126f.x = (intBitsToFloat(uf_remappedVS[0].y) * 2.0 / resYScale + PV0f.w);
 R0f.y = PV0f.z + 0.5;
-R123f.z = (intBitsToFloat(uf_remappedVS[0].x) * 2.0 / resYScale + PV0f.y);
+R123f.z = (intBitsToFloat(uf_remappedVS[0].x) * 2.0 / resXScale + PV0f.y);
 PV1f.z = R123f.z;
 PV1f.w = PV0f.w;
 R0f.x = PV0f.x + 0.5;
