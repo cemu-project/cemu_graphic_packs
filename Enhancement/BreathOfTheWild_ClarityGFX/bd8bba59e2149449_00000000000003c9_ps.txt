@@ -28,7 +28,9 @@
 const float bloomFactor = 0.0; //Default is 1.0
 const float gamma = 1.00;      //Default is 1.0
 const float Bleach = 0.2;      //Default is 0.0
-const float vibrance = 0.015;  // 0.0 is neutral 
+float exposure = 1.5;          //Default is 1.0
+const float defog = 0.12;	   //Default is 0.0 How much of the far distance fog to "remove."
+const float vibrance = 0.015;  //Default is 0.0 
 
 //LumaShapening
 #define sharp_strength 0.25   //[0.10 to 3.00] Strength of the sharpening Default is 0.65
@@ -45,9 +47,9 @@ const float vibrance = 0.015;  // 0.0 is neutral
 #define Technicolor2_Saturation 0.51    //Default is 1.0	
 
 //Fake High Dynamic Range.
-#define HDRPower 1.20 // 0.0 to  8.0  "Raising this seems to make the effect stronger and also brighter , Default 1.30."
-#define radius1 0.50  // 0.0 to  8.0  "Default 0.793 , will affect FX."
-#define radius2 0.50  // 0.0 to  8.0  "Default 0.87 , will affect FX."
+#define HDRPower 1.20 // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
+#define radius1 0.793  // 0.0 to  8.0  "Default 0.793 , will affect FX."
+#define radius2 0.87  // 0.0 to  8.0  "Default 0.87 , will affect FX."
 //-----------------------------------------------------------
 
 //End of adjustable values
@@ -56,7 +58,7 @@ const float vibrance = 0.015;  // 0.0 is neutral
 
 //Do not edit under this line.
 const float sat = 0.0;
-
+const vec3 FogColor = vec3(0.0, 0.0, 0.0); //defog Color";
 
 uniform ivec4 uf_remappedPS[1];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -74,18 +76,12 @@ return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
 float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
 
-float exposure(vec3 eye, vec3 L, float low, float high) {
-  return mix(
-    low,
-    high,
-    pow((1.0 - dot(normalize(eye), L)) / 2.0, 10.0)
-  );
-}
-
 //ToneMapping
 
 vec3 TonemapPass(vec3 inputColor) {
 	vec3 color = inputColor;
+	color = clamp(color - defog * FogColor * 2.55, 0.0, 1.0); // defog
+	color *= exposure/(1.0+ color / exposure);
 	
 	const vec3 coefLuma = vec3(0.2126, 0.7152, 0.0722);
 	float lum = dot(coefLuma, color);
@@ -112,7 +108,7 @@ vec3 TonemapPass(vec3 inputColor) {
 vec3 Technicolor2(vec3 inputColor) {
 	vec3 color = inputColor;
 	vec3 Color_Strength = vec3(Technicolor2_Red_Strength, Technicolor2_Green_Strength, Technicolor2_Blue_Strength);
-	vec3 source = clamp(color, 0.0, 1.0);
+	vec3 source = color; 
 	vec3 temp = 1.0 - source;
 	vec3 target = temp.grg;
 	vec3 target2 = temp.bbr;
@@ -133,7 +129,7 @@ vec3 Technicolor2(vec3 inputColor) {
 
 	color = mix(vec3(dot(color, vec3(0.333))), color, Technicolor2_Saturation);
 	
-	return clamp (color, 0.0, 1.0);
+	return color; 
 }
 
 //LumaShapening
@@ -185,38 +181,37 @@ float lumasharping(sampler2D tex, vec2 pos){
 //Fake High Dynamic Range.
 
 vec3 HDRPass(sampler2D tex, vec2 pos){
-    vec4 colorInput = texture(tex, pos);
-    vec3 color = colorInput.rgb;
+    vec3 color = texture(tex, pos).rgb;
 	
-	vec3 bloom_sum1 = texture(tex, pos + vec2(1.5, -1.5) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2(-1.5, -1.5) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2( 1.5,  1.5) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2(-1.5,  1.5) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2( 0.0, -2.5) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2( 0.0,  2.5) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2(-2.5,  0.0) * radius1).rgb;
-	bloom_sum1 += texture(tex, pos + vec2( 2.5,  0.0) * radius1).rgb;
+	vec3 bloom_sum1 = texture(tex, pos + vec2(1.5, -1.5) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2(-1.5, -1.5) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2( 1.5,  1.5) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2(-1.5,  1.5) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2( 0.0, -2.5) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2( 0.0,  2.5) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2(-2.5,  0.0) * radius1 * vec2(px,py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2( 2.5,  0.0) * radius1 * vec2(px,py)).rgb;
 
 	bloom_sum1 *= 0.005;
 
-	vec3 bloom_sum2 = texture(tex, pos + vec2(1.5, -1.5) * radius2).rgb;
-	bloom_sum2 += texture(tex, pos + vec2(-1.5, -1.5) * radius2).rgb;
-	bloom_sum2 += texture(tex, pos + vec2( 1.5,  1.5) * radius2).rgb;
-	bloom_sum2 += texture(tex, pos + vec2(-1.5,  1.5) * radius2).rgb;
-	bloom_sum2 += texture(tex, pos + vec2( 0.0, -2.5) * radius2).rgb;	
-	bloom_sum2 += texture(tex, pos + vec2( 0.0,  2.5) * radius2).rgb;
-	bloom_sum2 += texture(tex, pos + vec2(-2.5,  0.0) * radius2).rgb;
-	bloom_sum2 += texture(tex, pos + vec2( 2.5,  0.0) * radius2).rgb;
+	vec3 bloom_sum2 = texture(tex, pos + vec2(1.5, -1.5) * radius2 * vec2(px,py)).rgb;
+	bloom_sum2 += texture(tex, pos + vec2(-1.5, -1.5) * radius2 * vec2(px,py)).rgb;
+	bloom_sum2 += texture(tex, pos + vec2( 1.5,  1.5) * radius2 * vec2(px,py)).rgb;
+	bloom_sum2 += texture(tex, pos + vec2(-1.5,  1.5) * radius2 * vec2(px,py)).rgb;
+	bloom_sum2 += texture(tex, pos + vec2( 0.0, -2.5) * radius2 * vec2(px,py)).rgb;	
+	bloom_sum2 += texture(tex, pos + vec2( 0.0,  2.5) * radius2 * vec2(px,py)).rgb;
+	bloom_sum2 += texture(tex, pos + vec2(-2.5,  0.0) * radius2 * vec2(px,py)).rgb;
+	bloom_sum2 += texture(tex, pos + vec2( 2.5,  0.0) * radius2 * vec2(px,py)).rgb;
 
 	bloom_sum2 *= 0.010;
 
-	float dist = radius1 - radius2;
-	vec3 HDR = (colorInput.rgb + (bloom_sum2 - bloom_sum1)) * dist;
+	float dist = radius2 - radius1;
+	vec3 HDR = (color + (bloom_sum2 - bloom_sum1)) * dist;
 	
-	vec3 blend = HDR + colorInput.rgb;
-	colorInput.rgb = pow(abs(blend), vec3(abs(HDRPower)) + HDR);
+	vec3 blend = HDR + color;
+	color = pow(abs(blend), vec3(abs(HDRPower))) + HDR;
 	
-	return clamp(colorInput.rgb, 0.0,1.0);
+	return color;
 }
 
 void main()
