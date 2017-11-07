@@ -1,181 +1,192 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader bd8bba59e2149449
-// Contrasty + Adjustable Bloom + Adjust Saturation
-// original shader dumped using cemu 1.10.0f, BotW 1.3.1
+// Adjustable Bloom + Tone Mapping + Adjustable Vibrance(Contrasty)
 
-//----------------------------settings-------------------------------------
+/*=============================Settings=====================================*/
 
-#define adjust_bloom 1
-#define adjust_saturation 1
-#define contrasty 1
-// 0: disable, 1: enable.
-
+#define adjust_bloom 1         // 0: disable, 1: enable.
 const float bloomFactor = 0.7; // 1.0 is neutral
 
-const float satFactor = 1.3; // 1.0 is neutral. Experimental, adjust native saturation
+#define tone_mapping 0
+// -1: disable, clamp bright detail but keep [0,1] intact, however clamping could lead to desaturation as well
+// 0: (Wii U) BotW original
+// 1: ACES Filmic
+// 2: Reshade/Sweetfx Tonemap, also allow color adjusting during tone mapping
+//-----------------"Reshade Tonemap" Parameters---------------//
+const float Gamma = 1.0;       // [ 0.0, 2.0] 1.000 is neutral
+const float Exposure = 0.0;    // [-1.0, 1.0] Adjust exposure
+const float Saturation = 0.0;  // [-1.0, 1.0] Adjust saturation
+const float Bleach = 0.0;      // [ 0.0, 1.0] Brightens the shadows and fades the colors
+const float Detint = 0.0;      // [ 0.0, 1.0+] How much of the color tint to remove
+const vec3 tintColor = vec3(0.0, 0.0, 0.0); // [ 0.0, 1.0+] Which color tint to remove
+//---------------------------------------------------------------//
 
-const float gamma = 0.81; // 1.0 is neutral. Botw is already colour graded at this stage
-const float exposure = 1.17; // 1.0 is neutral
-const float vibrance = 0.008;  // 0.0 is neutral  
+#define post_process 2
+// -1: disable
+// 0: (Wii U) BotW original, only vibrance
+// 1: Reshade Vibrance
+// 2: Contrasty
+// 3: experiment, convert rgb to hsv then adjust s
+//----------------"BotW original" vibrance adjust-------------//
+const float satFactor = 1.1;   // 1.0 is neutral. Experimental, adjust native saturation
+//---------------------------------------------------------------//
+//-----------------"Reshade Vibrance" Parameters--------------//
+const float Vibrance = 0.40;   // Saturates (or desaturates if you use negative values) the pixels depending on their original saturation.
+const vec3 VibranceRGBBalance = vec3(1.0,1.0,1.0); // A per channel multiplier to the Vibrance strength so you can give more boost to certain colors over others.
+//---------------------------------------------------------------//
+//---------------------"Contrasty" Parameters-----------------//
+const float gamma = 0.81;      // 1.0 is neutral. Botw is already colour graded at this stage
+const float exposure = 1.17;   // 1.0 is neutral
+const float vibrance = 0.45;   // 0.0 is neutral  
 const float crushContrast = 0.004; // 0.0 is neutral. Use small increments, loss of shadow detail 
+//---------------------------------------------------------------//
+//------------------------"hsv experiment"---------------------//
+const float satScale = 1.5;
+//---------------------------------------------------------------//
 
-//--------------------------------------------------------------------------
+/*==========================================================================*/
 
+
+// shader bd8bba59e2149449 // bloom(add), tonemap, saturate
 uniform ivec4 uf_remappedPS[1];
-layout(binding = 0) uniform sampler2D textureUnitPS0;
-layout(binding = 1) uniform sampler2D textureUnitPS1;
+layout(binding = 0) uniform sampler2D textureUnitPS0; //bloom
+layout(binding = 1) uniform sampler2D textureUnitPS1; //texture, hdr
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
-int clampFI32(int v)
-{
-if( v == 0x7FFFFFFF )
-	return floatBitsToInt(1.0);
-else if( v == 0xFFFFFFFF )
-	return floatBitsToInt(0.0);
-return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+
+float getL601(vec3 rgb) {
+	return dot(rgb,vec3(0.2989,0.5866,0.1145));
 }
-float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+
+float getL709(vec3 rgb) {
+	return dot(rgb,vec3(0.2126,0.7152,0.0722));
+}
+
+vec3 BotWToneMap(vec3 color) {
+	float Lumn = getL601(color);
+	vec4 exptm = 1.0 - exp(-vec4(color,Lumn));
+	vec3 cpre = exptm.w / Lumn * color;
+	vec3 colorldr = mix(cpre,exptm.rgb,vec3(pow(exptm.w,2.0)));//refine
+	return colorldr;
+}
+
+vec3 ACESFilm(vec3 color) {
+	color *= 0.6;
+	return (color*(2.51*color+0.03))/(color*(2.43*color+0.59)+0.14);
+}
+
+vec3 ReshadeTM(vec3 color) {
+	color = clamp(color - Detint * tintColor,0.0,1.0); // Detint, removed 2.55
+	color *= pow(2.0f, Exposure); // Exposure
+	color = pow(color, vec3(1.0/Gamma)); // Reciprocal Gamma, like contrasty, more intuitive, not exactly midtone anyway
+
+	float lum = getL709(color);
+	
+	float L = clamp(10.0 * (lum - 0.45),0.0,1.0);
+	vec3 A2 = Bleach * color;
+
+	vec3 result1 = 2.0 * color * lum;
+	vec3 result2 = 1.0 - 2.0 * (1.0 - lum) * (1.0 - color);
+	
+	vec3 newColor = mix(result1, result2, L);
+	vec3 mixRGB = A2 * newColor;
+	color += ((1.0 - A2) * mixRGB);
+	
+	vec3 middlegray = vec3(dot(color, vec3(1.0 / 3.0)));
+	vec3 diffcolor = color - middlegray;
+	color = (color + diffcolor * Saturation) / (1.0 + (diffcolor * Saturation)); // Saturation
+	
+	return color;
+}
+
+vec3 BotWVibrance(vec3 color) {
+	float avg = (color.r + color.g + color.b)/3.0;
+	float maxc = max(color.r, max(color.g,color.b));
+	float w = 1.0 - pow(1.0 - 2.0 * avg, 2.0);
+	float weight = intBitsToFloat(uf_remappedPS[0].x) + w * intBitsToFloat(uf_remappedPS[0].y);
+	weight *= satFactor;
+	vec3 satcolor = mix(vec3(maxc), color, weight);
+	return satcolor;
+}
+
+vec3 ReshadeVibrance(vec3 color) {
+	float max_color = max(color.r, max(color.g, color.b)); // Find the strongest color
+	float min_color = min(color.r, min(color.g, color.b)); // Find the weakest color
+	float luma = getL709(color);
+	float color_saturation = max_color - min_color; // The difference between the two is the saturation
+	vec3 coeffVibrance = VibranceRGBBalance * Vibrance;
+	color = mix(vec3(luma), color, 1.0 + (coeffVibrance * (1.0 - (sign(coeffVibrance) * color_saturation))));
+	return color;
+}
+
+vec3 Contrasty(vec3 fColour) {
+	fColour = max(vec3(0.0), fColour - vec3(crushContrast));
+	fColour = clamp(exposure * fColour, 0.0, 1.0);
+	fColour = pow(fColour, vec3(1.0 / gamma));
+	float luminance = getL601(fColour);
+	float mn = min(min(fColour.r, fColour.g), fColour.b);
+	float mx = max(max(fColour.r, fColour.g), fColour.b);
+	float sat = (1.0-(mx - mn)) * (1.0-mx) * luminance * 5.0;
+	vec3 lightness = vec3((mn + mx)/2.0);
+	// vibrance
+	fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
+	return fColour;
+}
+
+vec3 rgb2hsv(vec3 c) {
+	vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+	vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+	vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+	float d = q.x - min(q.w, q.y);
+	float e = 1.0e-10;
+	return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+vec3 hsv2rgb(vec3 c) {
+	vec4 K = vec4(1.0, 2.0 / 3.0, 1.0 / 3.0, 3.0);
+	vec3 p = abs(fract(c.xxx + K.xyz) * 6.0 - K.www);
+	return c.z * mix(K.xxx, clamp(p - K.xxx, 0.0, 1.0), c.y);
+}
+
+vec3 HSV(vec3 color) {
+	vec3 hsv = rgb2hsv(color);
+	hsv.y = pow(hsv.y, 1.0/satScale);
+	color = hsv2rgb(hsv);
+	return color;
+}
+
 void main()
 {
-vec4 R0f = vec4(0.0);
-vec4 R1f = vec4(0.0);
-vec4 R123f = vec4(0.0);
-vec4 R125f = vec4(0.0);
-vec4 R126f = vec4(0.0);
-vec4 R127f = vec4(0.0);
-float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
-vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
-float PS0f = 0.0, PS1f = 0.0;
-vec4 tempf = vec4(0.0);
-float tempResultf;
-int tempResulti;
-ivec4 ARi = ivec4(0);
-bool predResult = true;
-vec3 cubeMapSTM;
-int cubeMapFaceId;
-R0f = passParameterSem0;
-R1f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
+vec3 bloom = texture(textureUnitPS0, passParameterSem0.xy).xyz;
+vec3 color = texture(textureUnitPS1, passParameterSem0.xy).xyz;
 
 #if (adjust_bloom == 1)
-R1f.xyz *= bloomFactor;
+bloom *= bloomFactor;
 #endif
 
-R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);
-// 0
-R126f.x = R1f.x + R0f.x;
-R127f.y = R1f.y + R0f.y;
-R126f.z = R1f.z + R0f.z;
-PV0f.xyz = vec3(R126f.x,R127f.y,R126f.z);
-R125f.w = 1.0;
+color += bloom;
 
-// 1
-tempf.x = dot(vec4(PV0f.x,PV0f.y,PV0f.z,-0.0),vec4(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f162b6b),intBitsToFloat(0x3dea4a8c),0.0));
-PV1f.x = tempf.x;
-PV1f.y = tempf.x;
-PV1f.z = tempf.x;
-PV1f.w = tempf.x;
-// 2
-R127f.x = -(R127f.y) * intBitsToFloat(0x3fb8aa3b);
-PV0f.y = -(PV1f.x) * intBitsToFloat(0x3fb8aa3b);
-R127f.z = -(R126f.x) * intBitsToFloat(0x3fb8aa3b);
-R127f.w = -(R126f.z) * intBitsToFloat(0x3fb8aa3b);
-R126f.w = 1.0 / PV1f.x;
-PS0f = R126f.w;
-// 3
-PS1f = exp2(PV0f.y);
-// 4
-PV0f.x = -(PS1f) + 1.0;
-PS0f = exp2(R127f.x);
-// 5
-R127f.x = -(PS0f) + 1.0;
-R126f.y = mul_nonIEEE(PV0f.x, PV0f.x);
-PV1f.z = PV0f.x * R126f.w;
-PS1f = exp2(R127f.w);
-// 6
-backupReg0f = R126f.x;
-backupReg1f = R127f.z;
-R126f.x = mul_nonIEEE(backupReg0f, PV1f.z);
-PV0f.y = -(PS1f) + 1.0;
-R127f.z = mul_nonIEEE(R126f.z, PV1f.z);
-PV0f.z = R127f.z;
-R127f.w = mul_nonIEEE(R127f.y, PV1f.z);
-PV0f.w = R127f.w;
-PS0f = exp2(backupReg1f);
-// 7
-PV1f.x = R127f.x + -(PV0f.w);
-PV1f.y = PV0f.y + -(PV0f.z);
-PV1f.w = -(PS0f) + 1.0;
-// 8
-backupReg0f = R127f.z;
-R127f.x = (mul_nonIEEE(PV1f.x,R126f.y) + R127f.w);
-R127f.x = clamp(R127f.x, 0.0, 1.0);
-PV0f.x = R127f.x;
-PV0f.y = PV1f.w + -(R126f.x);
-R127f.z = (mul_nonIEEE(PV1f.y,R126f.y) + backupReg0f);
-R127f.z = clamp(R127f.z, 0.0, 1.0);
-PV0f.z = R127f.z;
-// 9
-backupReg0f = R126f.x;
-R126f.x = (mul_nonIEEE(PV0f.y,R126f.y) + backupReg0f);
-R126f.x = clamp(R126f.x, 0.0, 1.0);
-PV1f.x = R126f.x;
-R126f.y = max(PV0f.x, PV0f.z);
-PV1f.w = min(PV0f.x, PV0f.z);
-// 10
-tempf.x = dot(vec4(PV1f.x,R127f.x,R127f.z,R125f.w),vec4(intBitsToFloat(0x3f2aaaab),intBitsToFloat(0x3f2aaaab),intBitsToFloat(0x3f2aaaab),-(1.0)));
-PV0f.x = tempf.x;
-PV0f.y = tempf.x;
-PV0f.z = tempf.x;
-PV0f.w = tempf.x;
-R126f.z = min(PV1f.x, PV1f.w);
-PS0f = R126f.z;
-// 11
-backupReg0f = R127f.x;
-backupReg1f = R127f.z;
-R127f.x = max(R126f.x, R126f.y);
-PV1f.x = R127f.x;
-R123f.y = (mul_nonIEEE(-(PV0f.x),PV0f.x) + 1.0);
-PV1f.y = R123f.y;
-R127f.z = backupReg0f + -(PS0f);
-R125f.w = R126f.x + -(PS0f);
-R126f.y = backupReg1f + -(PS0f);
-PS1f = R126f.y;
-// 12
-
-#if (adjust_saturation == 1)
-R126f.x = satFactor * (mul_nonIEEE(PV1f.y,intBitsToFloat(uf_remappedPS[0].y)) + intBitsToFloat(uf_remappedPS[0].x));
-#else
-R126f.x = (mul_nonIEEE(PV1f.y,intBitsToFloat(uf_remappedPS[0].y)) + intBitsToFloat(uf_remappedPS[0].x));
+#if (tone_mapping == -1)
+color = clamp(color,0.0,1.0);
+#elif (tone_mapping == 0)
+color = BotWToneMap(color);
+#elif (tone_mapping == 1)
+color = ACESFilm(color);
+#elif (tone_mapping == 2)
+color = ReshadeTM(color);
 #endif
 
-PV0f.x = R126f.x;
-PV0f.y = -(R126f.z) + PV1f.x;
-// 13
-R123f.w = (mul_nonIEEE(-(PV0f.x),PV0f.y) + R127f.x);
-PV1f.w = R123f.w;
-// 14
-R0f.x = (mul_nonIEEE(R126f.x,R125f.w) + PV1f.w);
-R0f.y = (mul_nonIEEE(R126f.x,R127f.z) + PV1f.w);
-R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
-
-#if (contrasty == 1)
-vec3 fColour = R0f.xyz;
-fColour = max(vec3(0.0), fColour - vec3(crushContrast));
-fColour = clamp(exposure * fColour, 0.0, 1.0);
-fColour = pow(fColour, vec3(1.0 / gamma));
-float luminance = fColour.r*intBitsToFloat(0x3e99096c) + fColour.g*intBitsToFloat(0x3f162b6b) + fColour.b*intBitsToFloat(0x3dea4a8c);
-float mn = min(min(fColour.r, fColour.g), fColour.b);
-float mx = max(max(fColour.r, fColour.g), fColour.b);
-float sat = (1.0-(mx - mn)) * (1.0-mx) * luminance * 5.0;
-vec3 lightness = vec3((mn + mx)/2.0);
-// vibrance
-fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
-
-R0f.xyz = fColour;
+#if (post_process == 0)
+color = BotWVibrance(color);
+#elif (post_process == 1)
+color = ReshadeVibrance(color);
+#elif (post_process == 2)
+color = Contrasty(color);
+#elif (post_process == 3)
+color = HSV(color);
 #endif
 
 // export
-passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+passPixelColor0 = vec4(color, passParameterSem0.w);
 }
