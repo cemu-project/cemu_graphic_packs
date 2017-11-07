@@ -28,7 +28,7 @@ const vec3 tintColor = vec3(0.0, 0.0, 0.0); // [ 0.0, 1.0+] Which color tint to 
 // 2: Contrasty
 // 3: experiment, convert rgb to hsv then adjust s
 //----------------"BotW original" vibrance adjust-------------//
-const float satFactor = 1.1;   // 1.0 is neutral. Experimental, adjust native saturation
+const float satFactor = 0.29;   // 0.18 is neutral. Experimental, adjust native saturation
 //---------------------------------------------------------------//
 //-----------------"Reshade Vibrance" Parameters--------------//
 const float Vibrance = 0.40;   // Saturates (or desaturates if you use negative values) the pixels depending on their original saturation.
@@ -104,8 +104,7 @@ vec3 BotWVibrance(vec3 color) {
 	float avg = (color.r + color.g + color.b)/3.0;
 	float maxc = max(color.r, max(color.g,color.b));
 	float w = 1.0 - pow(1.0 - 2.0 * avg, 2.0);
-	float weight = intBitsToFloat(uf_remappedPS[0].x) + w * intBitsToFloat(uf_remappedPS[0].y);
-	weight *= satFactor;
+	float weight = 1.0 + w * satFactor;
 	vec3 satcolor = mix(vec3(maxc), color, weight);
 	return satcolor;
 }
