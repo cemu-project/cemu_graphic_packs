@@ -3,11 +3,13 @@
 
 // shader bd8bba59e2149449
 
+// Possible problems
+// Being below 1.3.0 will give you double-vision with recent graphic packs. Update to 1.3.0 or above.
 // If you're experiencing any issues (due to having the previous Clarity shaders installed), please remove and redownload all of the BotW packs.
 
 // Credit to NAVras for merging to a better shader.
-// (Special thanks to NAVras for helping debug and answer silly questions.)
-// Could not have got this far without you.
+//(Thank you NAVras for debugging and answering silly questions.)
+// Couldn't have got this far without you.
 
 // Credit to getdls for adding exposure & Original Contrasty.
 
@@ -17,52 +19,56 @@
 // Credit to Serfrost for preset values.
 // Original shader dumped using cemu 1.10.0f, BotW 1.3.1
 
-// Changelog v0.8
+//v0.9
 
 //##########################################################
 
 //ToneMapping
-const float bloomFactor = 0.2;  //Default is 1.0
-const float gamma = 0.80;       //Default is 1.0
-const float Bleach = 0.0;       //Default is 0.0
-float exposure = 1.1;           //Default is 1.0
-const float defog = 0.12;       //Default is 0.0
-const float vibrance = 0.0;     //Default is 0.0 
+float bloomFactor = 0.35;       //Default is 1.0
+float Bleach = 0.0002;          //Default is 0.0
+float exposure = 1.25;          //Default is 1.0
+float defog = 0.003;	        //Default is 0.0
+
+//Lift Gamma Gain
+#define RGB_Lift  vec3(1.0, 1.0, 1.0)        //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
+#define RGB_Gamma vec3(0.90, 0.90, 0.90)     //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
+#define RGB_Gain  vec3(1.0, 1.0, 1.0)        //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+//Note that a value of 1.0 is a neutral setting that leave the color unchanged.
+
+//Curves 
+float Contrast = 0.80;      //[-1.0, 1.0]  The amount of contrast you want
+
+//Levels Control
+const int BlackPoint = 0;   //[0, 255]  The black point is the new black - literally. Everything darker than this will become completely black
+const int WhitePoint = 255; //[0, 255]  The new white point. Everything brighter than this becomes completely white
 
 //LumaShapening
-#define sharp_strength 0.65     //[0.10 to 3.00] Default 0.65 , Strength of the sharpening.
-#define sharp_clamp    0.085    //[0.000 to 1.000] Default 0.035 , Limits maximum amount of sharpening a pixel recieves.
+#define sharp_strength 0.60   //[0.10 to 3.00] Strength of the sharpening Default is 0.65
+#define sharp_clamp    0.060  //[0.000 to 1.000] Limits maximum amount of sharpening a pixel recieves - Default is 0.035
 
 //Advanced sharpening settings
-#define offset_bias 1.0         //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
+#define offset_bias 1.0       //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
 
 //Technicolor2
-#define Technicolor2_Red_Strength 0.0     //Default is 0.0	
-#define Technicolor2_Green_Strength -0.2  //Default is 0.0	
-#define Technicolor2_Blue_Strength 0.0    //Default is 0.0	
-#define Technicolor2_Brightness 0.38      //Default is 1.0
-#define Technicolor2_Strength 1.0         //Default is 1.0
-#define Technicolor2_Saturation 0.52      //Default is 1.0	
+#define Technicolor2_Red_Strength 0.0	//Default is 0.0	
+#define Technicolor2_Green_Strength 0.0	//Default is 0.0	
+#define Technicolor2_Blue_Strength 0.0	//Default is 0.0	
+#define Technicolor2_Brightness 0.95    //Default is 1.0
+#define Technicolor2_Strength 0.40		//Default is 1.0
+#define Technicolor2_Saturation 0.85    //Default is 1.0	
 
 //Fake High Dynamic Range.
-#define HDRPower 1.75  //0.0 to  8.0  Default 1.30 , Raising this seems to make the effect stronger and also darker.
-#define radius1 0.793  //0.0 to  8.0  Default 0.793 , will affect FX.
-#define radius2 0.870  //0.0 to  8.0  Default 0.870 , will affect FX.
+#define HDRPower 1.20  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
+#define radius1 0.793  // 0.0 to  8.0  "Default 0.793 , will affect FX."
+#define radius2 0.87   // 0.0 to  8.0  "Default 0.87 , will affect FX."
 
 //###########################################################
 
-
-
-
-
 //Do not edit under this line.
 
+float sat = 0.0;
 
-
-
-
-const float sat = 1.0;
-const vec3 FogColor = vec3(0.0, 0.0, 0.0); //defog Color";
+const vec3 FogColor = vec3(0.0, 1.03, 0.0); //defog Color";
 
 uniform ivec4 uf_remappedPS[1];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -107,6 +113,31 @@ vec3 TonemapPass(vec3 inputColor) {
 	return color;
 }
 
+// Levels 
+
+vec3 LevelsPass(vec3 inputColor) {
+	float black_point_float = BlackPoint / 255.0;
+	float white_point_float = WhitePoint == BlackPoint ? (255.0 / 0.00025) : (255.0 / (WhitePoint - BlackPoint)); // Avoid division by zero if the white and black point are the same
+
+	vec3 color = inputColor;
+	color = color * white_point_float - (black_point_float *  white_point_float);
+
+	return color;
+}
+
+//Curves
+
+vec3 CurvesPass(vec3 inputColor) {
+	vec3 colorInput = inputColor;
+	float Contrast_blend = Contrast * 2.0; //I multiply by two to give it a strength closer to the other curves.
+	vec3 x = colorInput.rgb; //if the curve should be applied to both Luma and Chroma
+	x = x * (x * (1.5 - x) + 0.5); //horner form - fastest version
+	vec3 color = x;  //if the curve should be applied to both Luma and Chroma
+	colorInput.rgb = mix(colorInput.rgb, color, Contrast_blend); //Blend by Contrast
+	return colorInput;
+}
+
+
 //TECHNICOLOR2
 
 vec3 Technicolor2(vec3 inputColor) {
@@ -134,6 +165,30 @@ vec3 Technicolor2(vec3 inputColor) {
 	color = mix(vec3(dot(color, vec3(0.333))), color, Technicolor2_Saturation);
 	
 	return color; 
+}
+
+
+//Lift Gamma Gain
+
+ vec3 LiftGammaGainPass( vec3 colorInput )
+{
+	// -- Get input --
+	vec3 color = colorInput.rgb;
+	
+	// -- Lift --
+	
+	color = color * (1.5-0.5 * RGB_Lift) + 0.5 * RGB_Lift - 0.5;
+	color = clamp(color, 0.0, 1. ); //isn't strictly necessary, but doesn't cost performance.
+	
+	// -- Gain --
+	color *= RGB_Gain; 
+	
+	// -- Gamma --
+	colorInput.rgb = pow(color, 1.0 / RGB_Gamma); //Gamma
+	
+	// -- Return output --
+	//return (colorInput);
+	return clamp(color, 0.0, 1. );
 }
 
 //LumaShapening
@@ -238,7 +293,8 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 R1f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
-R1f.xyz *= bloomFactor;
+vec3 bloom = texture(textureUnitPS0, passParameterSem0.xy).xyz;
+bloom *= bloomFactor;
 R0f.xyz = HDRPass(textureUnitPS1, passParameterSem0.xy);
 float smask = lumasharping(textureUnitPS1, passParameterSem0.xy);
 R0f.xyz += vec3(smask);
@@ -337,14 +393,11 @@ R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
 passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 
 vec3 color = (passPixelColor0.xyz);
-float luminance = color.r*intBitsToFloat(0x3e99096c) + color.g*intBitsToFloat(0x3f162b6b) + color.b*intBitsToFloat(0x3dea4a8c);
-float mn = min(min(color.r, color.g), color.b);
-float mx = max(max(color.r, color.g), color.b);
-float sat = (1.0-(mx - mn)) * (1.0-mx) * luminance * 5.0;
-vec3 lightness = vec3((mn + mx)/2.0);
+color += bloom;
 color = TonemapPass(color);
 color = Technicolor2(color);
-color = pow(color, vec3(1.0 / gamma));
-color = mix(color, mix(color, lightness, -vibrance), sat);
+color = LevelsPass(color);
+color = CurvesPass(color);
+color = LiftGammaGainPass(color);
 passPixelColor0 = vec4(color, R0f.w); 
 }
