@@ -24,9 +24,9 @@
 //##########################################################
 
 //ToneMapping
-float bloomFactor = 0.30;       //Default is 1.0
+float bloomFactor = 0.35;       //Default is 1.0
 float Bleach = 0.0002;          //Default is 0.0
-float exposure = 2.00;          //Default is 1.0
+float exposure = 1.25;          //Default is 1.0
 float defog = 0.003;	        //Default is 0.0
 
 //Lift Gamma Gain
@@ -55,10 +55,10 @@ const int WhitePoint = 255; //[0, 255]  The new white point. Everything brighter
 #define Technicolor2_Blue_Strength 0.0	//Default is 0.0	
 #define Technicolor2_Brightness 0.95    //Default is 1.0
 #define Technicolor2_Strength 0.40		//Default is 1.0
-#define Technicolor2_Saturation 0.75    //Default is 1.0	
+#define Technicolor2_Saturation 0.85    //Default is 1.0	
 
 //Fake High Dynamic Range.
-#define HDRPower 1.25  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
+#define HDRPower 1.20  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
 #define radius1 0.793  // 0.0 to  8.0  "Default 0.793 , will affect FX."
 #define radius2 0.87   // 0.0 to  8.0  "Default 0.87 , will affect FX."
 
