@@ -73,9 +73,9 @@ PV0f.w = R0f.w;
 R0f.y = R2f.y;
 PS0f = R0f.y;
 // 1
-PV1f.x = -(intBitsToFloat(uf_remappedVS[0].w)/resXScale);
+PV1f.x = -(intBitsToFloat(uf_remappedVS[0].w)/resYScale);
 PV1f.x /= 2.0;
-PV1f.y = -(intBitsToFloat(uf_remappedVS[0].z)/resYScale);
+PV1f.y = -(intBitsToFloat(uf_remappedVS[0].z)/resXScale);
 PV1f.y /= 2.0;
 R2f.x = (mul_nonIEEE(PV0f.w,intBitsToFloat(uf_remappedVS[0].x)*resXScale) + 0.5);
 PS1f = R2f.x;
