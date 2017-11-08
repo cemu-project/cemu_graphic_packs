@@ -90,13 +90,13 @@ float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; retu
 
 vec3 TonemapPass(vec3 inputColor) {
 	vec3 color = inputColor;
-	color = clamp(color - defog * FogColor * 2.55, 0.0, 1.0); // defog
+	color = (color - defog * FogColor * 2.55);
 	color *= exposure/(1.0+ color / exposure);
 	
 	const vec3 coefLuma = vec3(0.2126, 0.7152, 0.0722);
 	float lum = dot(coefLuma, color);
 	
-	float L = clamp(10.0 * (lum - 0.45), 0.0, 1.0);
+	float L = (10.0 * (lum - 0.45));
 	vec3 A2 = Bleach * color;
 
 	vec3 result1 = 2.0f * color * lum;
