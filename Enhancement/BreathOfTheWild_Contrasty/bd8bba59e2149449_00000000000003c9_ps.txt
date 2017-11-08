@@ -11,14 +11,8 @@ const float bloomFactor = 0.7; // 1.0 is neutral
 // -1: disable, clamp bright detail but keep [0,1] intact, however clamping could lead to desaturation as well
 // 0: (Wii U) BotW original
 // 1: ACES Filmic
-// 2: Reshade/Sweetfx Tonemap, also allow color adjusting during tone mapping
-//-----------------"Reshade Tonemap" Parameters---------------//
-const float Gamma = 1.0;       // [ 0.0, 2.0] 1.000 is neutral
-const float Exposure = 0.0;    // [-1.0, 1.0] Adjust exposure
-const float Saturation = 0.0;  // [-1.0, 1.0] Adjust saturation
-const float Bleach = 0.0;      // [ 0.0, 1.0] Brightens the shadows and fades the colors
-const float Detint = 0.0;      // [ 0.0, 1.0+] How much of the color tint to remove
-const vec3 tintColor = vec3(0.0, 0.0, 0.0); // [ 0.0, 1.0+] Which color tint to remove
+//--------------------"ACES Filmic" Parameters-----------------//
+const float Exposure = 0.6;    // [0.0, 1.0+] Adjust exposure
 //---------------------------------------------------------------//
 
 #define post_process 2
@@ -26,7 +20,7 @@ const vec3 tintColor = vec3(0.0, 0.0, 0.0); // [ 0.0, 1.0+] Which color tint to 
 // 0: (Wii U) BotW original, only vibrance
 // 1: Reshade Vibrance
 // 2: Contrasty
-// 3: experiment, convert rgb to hsv then adjust s
+// 3: Experimental, convert rgb to hsv then adjust saturation directly
 //----------------"BotW original" vibrance adjust-------------//
 const float satFactor = 0.29;   // 0.18 is neutral. Experimental, adjust native saturation
 //---------------------------------------------------------------//
@@ -41,7 +35,7 @@ const float vibrance = 0.45;   // 0.0 is neutral
 const float crushContrast = 0.004; // 0.0 is neutral. Use small increments, loss of shadow detail 
 //---------------------------------------------------------------//
 //------------------------"hsv experiment"---------------------//
-const float satScale = 1.5;
+const float satScale = 1.5;    // 1.0 is neutral
 //---------------------------------------------------------------//
 
 /*==========================================================================*/
@@ -72,32 +66,8 @@ vec3 BotWToneMap(vec3 color) {
 }
 
 vec3 ACESFilm(vec3 color) {
-	color *= 0.6;
+	color *= Exposure;
 	return (color*(2.51*color+0.03))/(color*(2.43*color+0.59)+0.14);
-}
-
-vec3 ReshadeTM(vec3 color) {
-	color = clamp(color - Detint * tintColor,0.0,1.0); // Detint, removed 2.55
-	color *= pow(2.0f, Exposure); // Exposure
-	color = pow(color, vec3(1.0/Gamma)); // Reciprocal Gamma, like contrasty, more intuitive, not exactly midtone anyway
-
-	float lum = getL709(color);
-	
-	float L = clamp(10.0 * (lum - 0.45),0.0,1.0);
-	vec3 A2 = Bleach * color;
-
-	vec3 result1 = 2.0 * color * lum;
-	vec3 result2 = 1.0 - 2.0 * (1.0 - lum) * (1.0 - color);
-	
-	vec3 newColor = mix(result1, result2, L);
-	vec3 mixRGB = A2 * newColor;
-	color += ((1.0 - A2) * mixRGB);
-	
-	vec3 middlegray = vec3(dot(color, vec3(1.0 / 3.0)));
-	vec3 diffcolor = color - middlegray;
-	color = (color + diffcolor * Saturation) / (1.0 + (diffcolor * Saturation)); // Saturation
-	
-	return color;
 }
 
 vec3 BotWVibrance(vec3 color) {
@@ -172,8 +142,6 @@ color = clamp(color,0.0,1.0);
 color = BotWToneMap(color);
 #elif (tone_mapping == 1)
 color = ACESFilm(color);
-#elif (tone_mapping == 2)
-color = ReshadeTM(color);
 #endif
 
 #if (post_process == 0)
