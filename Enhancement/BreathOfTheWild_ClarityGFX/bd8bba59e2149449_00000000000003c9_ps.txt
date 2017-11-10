@@ -173,22 +173,22 @@ vec3 Technicolor2(vec3 inputColor) {
  vec3 LiftGammaGainPass( vec3 colorInput )
 {
 	// -- Get input --
-	vec3 color = colorInput.rgb;
+	vec3 color = colorInput;
 	
 	// -- Lift --
 	
 	color = color * (1.5-0.5 * RGB_Lift) + 0.5 * RGB_Lift - 0.5;
-	color = clamp(color, 0.0, 1. ); //isn't strictly necessary, but doesn't cost performance.
+	color = clamp(color, 0.0, 1.0); //isn't strictly necessary, but doesn't cost performance.
 	
 	// -- Gain --
 	color *= RGB_Gain; 
 	
 	// -- Gamma --
-	colorInput.rgb = pow(color, 1.0 / RGB_Gamma); //Gamma
+	color = pow(color, 1.0 / RGB_Gamma); //Gamma
 	
 	// -- Return output --
-	//return (colorInput);
-	return clamp(color, 0.0, 1. );
+	
+	return clamp(color, 0.0, 1.0);
 }
 
 //LumaShapening
