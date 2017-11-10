@@ -21,13 +21,18 @@
 //##########################################################
 
 //Control Pannel 
-float bloomFactor = 0.4;         //Default is 1.0  Affacts Games bloom
-float exposure = 2.0;
-float brt = 0.0;                 //Default is 0.0  Now much brightness to add to the RGB color.
-float con = 0.75;		         // [0.0 ~ 1.5] [0.5 Default] Contrast Adjustment - or + values work
-float sat = 0.50;	             // [0.1 ~ 1.5] [0.0 Default] Color Saturation Adjustment. - or + values work
-float gamma = 0.60;	            // [0.0 ~ 2.5] [1.0 Default] Gamma Adjustment - or + values work
-float defog = 0.0;	            // [0.0 ~ 1.0] [0.0 Default] How much of the far distance fog to "remove."
+float bloomFactor = 0.4;    //Default is 1.0  Affacts Games bloom
+float exposure = 2.0;       // Exposure setting 
+float brt = 0.0;            //Default is 0.0  Now much brightness to add to the RGB color.
+float con = 0.75;		    // [0.0 ~ 1.5] [0.5 Default] Contrast Adjustment - or + values work
+float sat = 0.50;	        // [0.1 ~ 1.5] [0.0 Default] Color Saturation Adjustment. - or + values work
+float defog = 0.0;	        // [0.0 ~ 1.0] [0.0 Default] How much of the far distance fog to "remove."
+
+//Lift Gamma Gain
+#define RGB_Lift  vec3(1.0, 1.0, 1.0)        //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
+#define RGB_Gamma vec3(0.60, 0.60, 0.60)     //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
+#define RGB_Gain  vec3(1.0, 1.0, 1.0)        //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+//Note that a value of 1.0 is a neutral setting that leave the color unchanged.
 
 //Luma Values
 float AvgLumR = 0.0;      // [0.0 ~ 1.5] [0.0 Default] Use very small increments, as it changes RGB values.
@@ -93,6 +98,8 @@ vec3 ContrastSaturationBrightness( vec3 color, float brt, float sat, float con) 
 				return color;
 }
 
+//Clarity Tone Map
+
 vec3 claritytonemap(vec3 color) {
 	color = max(vec3(0.), color - vec3(0.004));
 	color = (color * (6.2 * color + .5)) / (color * (6.2 * color + 1.7) + 0.06);
@@ -101,6 +108,29 @@ vec3 claritytonemap(vec3 color) {
 	color *= toneMappedLuma / luma;
 	color *= exposure/(1. + color / exposure);
 	return color;
+}
+
+//Lift Gamma Gain
+
+ vec3 LiftGammaGainPass( vec3 colorInput )
+{
+	// -- Get input --
+	vec3 color = colorInput;
+	
+	// -- Lift --
+	
+	color = color * (1.5-0.5 * RGB_Lift) + 0.5 * RGB_Lift - 0.5;
+	color = clamp(color, 0.0, 1.0); //isn't strictly necessary, but doesn't cost performance.
+	
+	// -- Gain --
+	color *= RGB_Gain; 
+	
+	// -- Gamma --
+	color = pow(color, 1.0 / RGB_Gamma); //Gamma
+	
+	// -- Return output --
+	
+	return clamp(color, 0.0, 1.0);
 }
 
 //LumaShapening
@@ -305,6 +335,6 @@ passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 vec3 color = (passPixelColor0.xyz);
 color = claritytonemap(color);
 color = ContrastSaturationBrightness(color, brt, sat, con);
-color = pow(color, vec3(1.0 / gamma));
+color = LiftGammaGainPass(color);
 passPixelColor0 = vec4(color, R0f.w);
 }
