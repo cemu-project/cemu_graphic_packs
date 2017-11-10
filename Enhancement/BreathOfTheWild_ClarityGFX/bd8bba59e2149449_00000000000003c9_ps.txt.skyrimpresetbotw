@@ -24,8 +24,11 @@
 
 //##########################################################
 
-//ToneMapping
+///ToneMapping
 float bloomFactor = 0.33;       //Default is 1.0
+float Bleach = 0.0002;          //Default is 0.0
+float exposure = 1.25;          //Default is 1.0
+float defog = 0.003;	        //Default is 0.0
 
 //LumaShapening
 #define sharp_strength 0.25   //[0.10 to 3.00] Strength of the sharpening Default is 0.65
@@ -58,6 +61,8 @@ float bloomFactor = 0.33;       //Default is 1.0
 //###########################################################
 
 //Do not edit under this line.
+float sat = 0.0;
+const vec3 FogColor = vec3(0.0, 1.03, 0.0); //defog Color";
 
 uniform ivec4 uf_remappedPS[1];
 layout(binding = 0) uniform sampler2D textureUnitPS0;//   Bloom
@@ -74,6 +79,33 @@ else if( v == 0xFFFFFFFF )
 return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
 float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+
+//ToneMapping
+
+vec3 TonemapPass(vec3 inputColor) {
+	vec3 color = inputColor;
+	color = clamp(color - defog * FogColor * 2.55, 0.0, 1.0); // defog
+	color *= exposure/(1.0+ color / exposure);
+	
+	const vec3 coefLuma = vec3(0.2126, 0.7152, 0.0722);
+	float lum = dot(coefLuma, color);
+	
+	float L = clamp(10.0 * (lum - 0.45), 0.0, 1.0);
+	vec3 A2 = Bleach * color;
+
+	vec3 result1 = 2.0f * color * lum;
+	vec3 result2 = 1.0f - 2.0f * (1.0f - lum) * (1.0f - color);
+	
+	vec3 newColor = mix(result1, result2, L);
+	vec3 mixRGB = A2 * newColor;
+	color += ((1.0f - A2) * mixRGB);
+	
+	vec3 middlegray = vec3(dot(color, vec3(1.0 / 3.0)));
+	vec3 diffcolor = color - middlegray;
+	color = (color + diffcolor * sat) / (1 + (diffcolor * sat)); // saturation
+	
+	return color;
+}
 
 //TECHNICOLOR2
 
@@ -329,6 +361,7 @@ R0f.z = (mul_nonIEEE(R126f.x,R126f.y) + PV1f.w);
 passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 vec3 color = (passPixelColor0.xyz);
 color += bloom;
+color = TonemapPass(color);
 color = Technicolor2(color);
 color = LiftGammaGainPass(color);
 passPixelColor0 = vec4(color, R0f.w); 
