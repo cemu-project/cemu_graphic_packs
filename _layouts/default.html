@@ -89,6 +89,23 @@
           document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerText="";
           document.getElementById("credits").innerHTML=creditsText;
         })
+		fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/git/trees/01fec6f21ed6018646382055782c080c10876f6e?recursive=1", {cache:'force-cache'}).then(response => response.json()).then((out) => {
+			var gamesList = document.getElementsByTagName("ul")[0];
+			gamesList.innerHTML="";
+			for (i = 0; i < out.tree.length; i++) {
+				if (out.tree[i].type=="blob" && out.tree[i].path.split("/").pop() == "rules.txt") { // Provide alternative content as placeholder
+					fetch("https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/master/Source/"+out.tree[i].path, {cache:'force-cache'}).then(response => response.text()).then((out) => {
+						lines = out.split('\n');
+    					for(line = 0; line < lines.length; line++){
+      						if (lines[line].startsWith("name =")) {
+								gamesList.innerHTML+="<li>"+lines[line].split(' - ')[0].split('name = "')[1]+"</li>";
+								break;
+                    		}
+    					}
+            		})
+        		}
+			}
+		})
         </script>
       <div id="credits" style="font-size: 0.7vw;">
       </div>
