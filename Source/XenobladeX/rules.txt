@@ -12,6 +12,18 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Xenoblade Chronicles X - <?=$title?>"
 version = 2
 
+[TextureRedefine] # increase colour depth
+formats  = 0x01a,0x008
+replaceFormat 0x01f
+
+[TextureRedefine]  # increase colour depth 
+formats  = 0x816
+replaceFormat 0x823
+
+[TextureRedefine]  # increase colour depth
+formats = 0x0810
+replaceFormat 0x81e
+
 [TextureRedefine] # tv
 width = 1280
 height = 720
@@ -22,7 +34,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A # exclude obvious textures
+formatsExcluded = 0x41A,0x033,0x031,0x001 #dialog prompt fixes, XCX Logo NLA  exclude obvious textures
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
@@ -36,6 +48,7 @@ overwriteHeight = <?=round($scaleFactorY*180)?>
 [TextureRedefine] # Gear menu
 width = 1024
 height = 720
+formatsExcluded = 0x001 #in game movies, stasis
 overwriteWidth = <?=round($scaleFactorX*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
@@ -53,22 +66,22 @@ height = 288
 overwriteWidth = <?=round($scaleFactorX*512)?> 
 overwriteHeight = <?=round($scaleFactorY*288)?> 
 
-[TextureRedefine] # "God rays" size (not quality), lens reflections.
-width =	256
-height = 144
-overwriteWidth = <?=round($scaleFactorX*256)?> 
-overwriteHeight = <?=round($scaleFactorY*144)?> 
+#[TextureRedefine] # "God rays" size (not quality), lens reflections.
+#width =	256
+#height = 144
+#overwriteWidth = <?=round($scaleFactorX*256)?> 
+#overwriteHeight = <?=round($scaleFactorY*144)?> 
 
 [TextureRedefine]# Probe glow. Does not increase sample amount, only scales up
 width = 160
 height = 90
-formatsExcluded = 0x816  #fix probe glow
-#overwriteWidth = <?=round($scaleFactorX*160)?> 
-#overwriteHeight = <?=round($scaleFactorY*90)?> 
+#formatsExcluded = 0x816  #fixed in shader
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
 	
 [TextureRedefine]# Probe Beacon glow.
 width = 80
 height = 46
-formatsExcluded = 0x816  #fix probe glow
-#overwriteWidth = <?=round($scaleFactorX*80)?> 
-#overwriteHeight = <?=round($scaleFactorY*46)?> 
+#formatsExcluded = 0x816  #fixed in shader
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*46)?> 
