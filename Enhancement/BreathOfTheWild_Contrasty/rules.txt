@@ -6,7 +6,7 @@ version = 2
 # Credit: 
 # getdls for contrasty
 # lihe@bestminr.com for vibrance logic
-# kiri, navras for tone mapping
+# kiri hsv saturation
 # navras seperate contrasty from AARemoval
 
 # approximate ACES Filmic ~ https://knarkowicz.wordpress.com/2016/01/06/aces-filmic-tone-mapping-curve/

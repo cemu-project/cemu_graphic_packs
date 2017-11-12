@@ -10,7 +10,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 #extension GL_ARB_shading_language_packing : enable
 // shader 81eb264a750163d9
 // Fixed radius blur
-// volumetric light blur h
+// volumetric light blur v
 const float resXScale = <?=$scaleFactorX?>;
 const float resYScale = <?=$scaleFactorY?>;
 

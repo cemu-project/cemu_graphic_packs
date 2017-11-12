@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Monochromia - Sin City inspired Mod"
+version = 2
+
+# Shaders dumped from Cemu 1.11.0b and BotW 1.3.1
+# Pack made by Kiri
+# Check the readMe file for info on how to customize
+# Have fun with it

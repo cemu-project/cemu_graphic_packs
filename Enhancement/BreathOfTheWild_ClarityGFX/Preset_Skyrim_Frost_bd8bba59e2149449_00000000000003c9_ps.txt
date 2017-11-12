@@ -24,19 +24,19 @@
 //##########################################################
 
 //ToneMapping
-float bloomFactor = 0.2;   //Default is 1.0
+float bloomFactor = 0.15;   //Default is 1.0
 float Bleach = 0.3;         //Default is 0.0
-float exposure = 1.13;      //Default is 1.0
-float defog = 0.004;	    //Default is 0.0
+float exposure = 1.10;      //Default is 1.0
+float defog = 0.001;	    //Default is 0.0
 
 //Lift Gamma Gain
-#define RGB_Lift  vec3(1.05, 1.05, 1.05)  //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
+#define RGB_Lift  vec3(1.00, 1.00, 1.00)  //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
 #define RGB_Gamma vec3(0.70, 0.70, 0.70)  //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
-#define RGB_Gain  vec3(1.05, 1.00, 1.05)  //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+#define RGB_Gain  vec3(1.00, 1.00, 1.00)  //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
 //Note that a value of 1.0 is a neutral setting that leave the color unchanged.
 
 //Curves 
-float Contrast = 0.50;      //[-1.0, 1.0]  The amount of contrast you want
+float Contrast = 0.30;      //[-1.0, 1.0]  The amount of contrast you want
 
 //Levels Control
 const int BlackPoint = 0;   //[0, 255]  The black point is the new black - literally. Everything darker than this will become completely black
@@ -50,15 +50,15 @@ const int WhitePoint = 255; //[0, 255]  The new white point. Everything brighter
 #define offset_bias 1.0       //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
 
 //Technicolor2
-#define Technicolor2_Red_Strength 0.0	//Default is 0.0	
-#define Technicolor2_Green_Strength 0.0	//Default is 0.0	
-#define Technicolor2_Blue_Strength 0.0	//Default is 0.0	
-#define Technicolor2_Brightness 0.50    //Default is 1.0
-#define Technicolor2_Strength 1.0		//Default is 1.0
-#define Technicolor2_Saturation 0.70    //Default is 1.0	
+#define Technicolor2_Red_Strength -0.40	  //Default is 0.0	
+#define Technicolor2_Green_Strength -0.40 //Default is 0.0	
+#define Technicolor2_Blue_Strength -0.40  //Default is 0.0	
+#define Technicolor2_Brightness 0.10      //Default is 1.0
+#define Technicolor2_Strength 1.0         //Default is 1.0
+#define Technicolor2_Saturation 0.80      //Default is 1.0	
 
 //Fake High Dynamic Range.
-#define HDRPower 1.15  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
+#define HDRPower 1.05  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
 #define radius1 0.793  // 0.0 to  8.0  "Default 0.793 , will affect FX."
 #define radius2 0.87   // 0.0 to  8.0  "Default 0.87 , will affect FX."
 
