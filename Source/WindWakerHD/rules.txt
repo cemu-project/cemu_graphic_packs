@@ -19,6 +19,7 @@ formatsExcluded = 0x41A # exclude the intro background texture
 overwriteWidth = <?=round($scaleFactorX*1920)?> 
 overwriteHeight = <?=round($scaleFactorY*1080)?> 
 
+
 [TextureRedefine] # game half res upscaling
 width = 960
 height = 540
