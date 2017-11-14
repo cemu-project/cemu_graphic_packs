@@ -219,21 +219,7 @@ backupReg0i = R125i.x;
 R125i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(PV1i.y),intBitsToFloat(PV1i.x)) + intBitsToFloat(R2i.x)));
 R127i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(backupReg0i), intBitsToFloat(uf_remappedPS[2].y)));
 R127i.y = clampFI32(R127i.y);
-
-
-
-
-
-
-
 R126i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(PV1i.w),intBitsToFloat(uf_remappedPS[6].z)) + intBitsToFloat(uf_remappedPS[6].w)));
-
-
-
-
-
-
-
 PV0i.z = R126i.z;
 R4i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R124i.y), intBitsToFloat(R124i.y)));
 PV0i.w = R4i.w;
@@ -269,18 +255,7 @@ PS1i = floatBitsToInt(1.0 / intBitsToFloat(PV0i.w));
 // 18
 PV0i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R126i.z), intBitsToFloat(R124i.y)));
 R6i.y = floatBitsToInt((mul_nonIEEE(-(intBitsToFloat(R127i.y)),intBitsToFloat(R127i.y)) + 1.0));
-
-
-
-
-//!!!!!!!!!!!!!!!
 R3i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R126i.x),intBitsToFloat(uf_remappedPS[6].x)) + intBitsToFloat(uf_remappedPS[6].y)));
-
-
-
-
-
-
 PV0i.w = floatBitsToInt(intBitsToFloat(R0i.y) + intBitsToFloat(PS1i));
 PV0i.w = clampFI32(PV0i.w);
 tempResultf = 1.0 / sqrt(intBitsToFloat(PV1i.x));
@@ -302,26 +277,7 @@ backupReg1i = R0i.y;
 R1i.x = floatBitsToInt(intBitsToFloat(R4i.x) + intBitsToFloat(PV1i.x));
 R0i.y = floatBitsToInt(intBitsToFloat(R0i.w) + intBitsToFloat(PV1i.y));
 R0i.z = floatBitsToInt(intBitsToFloat(R1i.w) + intBitsToFloat(PV1i.z));
-
-
-
-
-
-
-
-
 R3i.w = R126i.z;
-
-
-
-
-
-
-
-
-
-
-
 R4i.y = floatBitsToInt(intBitsToFloat(backupReg1i) * intBitsToFloat(PS1i));
 PS0i = R4i.y;
 R5i.y = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R3i.ww)).x);
