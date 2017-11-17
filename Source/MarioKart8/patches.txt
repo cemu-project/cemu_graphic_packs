@@ -3,6 +3,7 @@ $width = $argv[1];
 $height = $argv[2];
 
 $aspect = $width / (float)$height;
+$ratioAdjust = $aspect/(16/9);
 
 if (round($aspect*100.0) == 178)
 	exit(1);
@@ -18,7 +19,7 @@ moduleMatches = 0x2A2DC82C
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float 1.333333
+0x00000000 = .float <?=$ratioAdjust?> 
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -38,7 +39,7 @@ moduleMatches = 0x62A5F023
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float 1.333333
+0x00000000 = .float <?=$ratioAdjust?> 
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -58,7 +59,7 @@ moduleMatches = 0xBA6B1E20
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float 1.333333
+0x00000000 = .float <?=$ratioAdjust?> 
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -78,7 +79,7 @@ moduleMatches = 0x1D398493
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float 1.333333
+0x00000000 = .float <?=$ratioAdjust?> 
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -98,7 +99,7 @@ moduleMatches = 0xD09700CE
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float 1.333333
+0x00000000 = .float <?=$ratioAdjust?> 
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
