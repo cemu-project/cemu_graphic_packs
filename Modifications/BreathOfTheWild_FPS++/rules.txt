@@ -2,3 +2,6 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "The Legend of Zelda: Breath of the Wild - FPS++"
 version = 2
+
+[Control]
+vsyncFrequency = 60
