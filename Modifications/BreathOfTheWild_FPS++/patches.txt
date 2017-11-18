@@ -1,3 +1,78 @@
+[Botw60fpsv144]
+moduleMatches = 0x9A2CA0C7
+
+#rodata constants
+
+_float1 = 0x1027AB80
+_float3 = 0x100005DC
+
+#TestCave
+codeCaveSize = 0x9C
+
+_fpsCalc =  0x00000008
+0x00000000 = .float 3 ;edit me
+_lowlimit = 0x00000000
+0x00000004 = .float 6294724
+_busSpeed = 0x00000004
+0x00000008 = stw r0, 0x78(r30)
+0x0000000C = xoris r12, r12, 0x8000
+0x00000010 = stw r12, 0x12C(r30)
+0x00000014 = lis r12, 0x4330
+0x00000018 = stw r12, 0x128(r30)
+0x0000001C = lfd f10, 0x128(r30)
+0x00000020 = stw r12, 0x138(r30)
+0x00000024 = lis r12, 0x8000
+0x00000028 = stw r12, 0x13C(r30)
+0x0000002C = lfd f12, 0x138(r30)
+0x00000030 = fsub f10, f10, f12
+0x00000034 = frsp f10, f10
+0x00000038 = lis r12, _float1@ha
+0x0000003C = lfs f12, _float1@l(r12)
+0x00000040 = fdivs f10, f12, f10
+0x00000048 = lis r12, _busSpeed@ha
+0x0000004C = lfs f12, _busSpeed@l(r12)
+0x00000050 = fmuls f10, f12, f10
+0x00000054 = lis r12, _float3@ha
+0x00000058 = lfs f12, _float3@l(r12)
+0x0000005C = fdivs f7, f12, f10
+0x00000060 = lis r12, _lowlimit@ha
+0x00000064 = lfs f12, _lowlimit@l(r12)
+0x00000068 = fcmpu cr0, f7, f12
+0x0000006C = bge .+0x0C
+0x00000070 = stfs f7, 0x130(r30)
+0x00000074 = blr
+0x00000078 = stfs f12, 0x130(r30)
+0x0000007C = blr
+
+_fullspeed = 0x00000080
+0x00000080 = lis r3, 0x112A
+0x00000084 = lis r12, 0xF634
+0x00000088 = srawi r12, r12, 0x10
+0x0000008c = xoris r12, r12, 0xFFFF
+0x00000090 = or r3, r3, r12
+0x00000094 = lfs f0, 0x0(r3)
+0x00000098 = blr
+
+#Branch
+0x03102688 = bla _fpsCalc
+0x03686FA0 = nop
+0x03686FAC = nop
+0x03686FF0 = bla _fullspeed
+0x03313C4C = bla _fullspeed
+
+#break all forms of frame limiting
+0x03102808 = nop ;disables gx2 fence
+0x031029DC = nop ;disables wait for vsync
+0x03102A00 = nop ;same
+0x03102E10 = li r0, 1;the original 60FPS hack
+0x03102DCC = li r0, 1; same
+
+#experimental
+;0x02FAA8E4 = li r3, 0 ;sets swap interval to 0
+;0x02FAA98C = li r3, 0 ;same
+;0x02FB2E50 = li r7, 1 ;sets GX2SetTVBuffer to 1
+;0x02FB30A0 = li r7, 1 ;same
+
 [Botw60fpsv112]
 moduleMatches = 0x6FD41A61
 
