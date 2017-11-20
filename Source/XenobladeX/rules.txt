@@ -34,8 +34,8 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine] # Do not remove, must be scaled to TV or probe view breaks
 width = 854
 height = 480
-overwriteWidth = <?=round($scaleFactorX*854)?>
-overwriteHeight = <?=round($scaleFactorY*480)?>
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
 
 [TextureRedefine] # half-res alpha
 width = 640
