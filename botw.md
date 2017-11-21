@@ -28,13 +28,19 @@ Update the graphic packs.
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372205680968335370/unknown.png)
 
-Disable GPUFenceSkip in the game profile and in FPS++ and manually enable it via Cemuhook.
+Disable GPUFenceSkip in the game profile and in FPS++ and manually enable it via Cemuhook once the save file has loaded.
 
 ### I'm on AMD and the grass has black dots around it
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204881496375296/unknown.png)
 
 Use the AMD Shadows graphic pack.
+
+### I'm on AMD and the lights are circles
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
+
+Use the AMD Lights graphic pack.
 
 ### I'm on NVIDIA and the explosion smoke doesn't look like what's normally seen on Wii U/Switch/AMD
 
@@ -59,13 +65,7 @@ Follow [this guide](https://redd.it/6qwmon) to reduce the issue.
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204003649388554/unknown.png)
 
-There is no current fix towards these issues.
-
-###I'm on AMD and the lights are circles
-
-![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
-
-Use the AMD Lights graphic pack.
+There is no current fix towards this issue.
 
 ### Textures have turned into skittles
 
