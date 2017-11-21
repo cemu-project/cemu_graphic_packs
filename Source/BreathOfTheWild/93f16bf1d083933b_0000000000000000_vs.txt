@@ -72,10 +72,10 @@ R1f.y = backupReg1f;
 R1f.y *= 2.0;
 R1f.z = intBitsToFloat(0xbf5fdfe0);
 R1f.w = 1.0;
-!!! R127f.y = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x3fb13a93)/resXScale;
+R127f.y = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x3fb13a93)/resXScale;
 PS0f = R127f.y;
 // 1
-!!! R127f.x = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x404ec4f0)/resXScale;
+R127f.x = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x404ec4f0)/resXScale;
 PV1f.x = R127f.x;
 R4f.y = R2f.y;
 R4f.z = R2f.x;
