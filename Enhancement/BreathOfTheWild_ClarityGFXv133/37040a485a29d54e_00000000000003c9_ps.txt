@@ -32,7 +32,7 @@ float defog = 0.004;	    //Default is 0.0
 //Lift Gamma Gain
 #define RGB_Lift  vec3(1.05, 1.05, 1.05)  //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
 #define RGB_Gamma vec3(0.70, 0.70, 0.70)  //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
-#define RGB_Gain  vec3(1.05, 1.00, 1.05)  //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+#define RGB_Gain  vec3(1.05, 1.05, 1.05)  //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
 //Note that a value of 1.0 is a neutral setting that leave the color unchanged.
 
 //Curves 
