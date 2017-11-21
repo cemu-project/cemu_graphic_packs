@@ -31,6 +31,12 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
+[TextureRedefine] # Do not remove, must be upscaled with same factor as TV or probe view breaks
+width = 854
+height = 480
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
@@ -79,9 +85,9 @@ height = 90
 overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*90)?> 
 	
-[TextureRedefine]# Probe Beacon glow.
+[TextureRedefine]# should up-scale from 35 to keep aligment with other 16:9 buffers 
 width = 80
 height = 46
 #formatsExcluded = 0x816  #fixed in shader
 overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*46)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 

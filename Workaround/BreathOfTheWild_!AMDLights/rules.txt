@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - AMD Light Circle fix"
+version = 2
+
+# credit of identifying shaders go to Kiri
+# these two shaders are based on Glow Lights Color Mod
+# works Cemu 1.11.0c and BotW 1.3.1

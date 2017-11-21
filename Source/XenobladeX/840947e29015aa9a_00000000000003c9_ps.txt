@@ -8,9 +8,10 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader 840947e29015aa9a 
+// shader 840947e29015aa9a // fix circle
 // cutscene DOF, reveal talk BG
-// To-do Review multi pass performance and bokeh depth 
+// To-do. Tweak blur scaling to resolution. Weights are funky, too bright
+
 const float resScale = <?=$scaleFactorX?>;
 //const float resScale = 3;
 uniform ivec4 uf_remappedPS[3];
@@ -21,78 +22,127 @@ layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-vec4 blur9(sampler2D image, vec2 uv, vec2 resolution, vec2 direction) {
-	vec4 color = vec4(0.0);
-	vec2 off1 = vec2(1.3846153846) * direction;
-	vec2 off2 = vec2(3.2307692308) * direction;
-	color += texture2D(image, uv) * 0.2270270270;
-	color += texture2D(image, uv + (off1 / resolution)) * 0.3162162162;
-	color += texture2D(image, uv - (off1 / resolution)) * 0.3162162162;
-	color += texture2D(image, uv + (off2 / resolution)) * 0.0702702703;
-	color += texture2D(image, uv - (off2 / resolution)) * 0.0702702703;
-	return color;
+vec2 Circle(float Start, float Points, float Point)
+{
+	float Rad = (3.141592 * 2.0 * (1.0 / Points)) * (Point + Start);
+	return vec2(sin(Rad), cos(Rad));
+}
+
+highp float lineRand(vec2 co)
+{
+	highp float a = 12.9898;
+	highp float b = 78.233;
+	highp float c = 43758.5453;
+	highp float dt = dot(co.xy, vec2(a, b));
+	highp float sn = mod(dt, 3.14);
+	return fract(sin(sn) * c);
+}
+
+vec4 circleBlur(sampler2D image, vec2 vuv, vec2 res) {
+
+	
+	vec2 uv = vuv;
+	vec2 PixelOffset = 1.25 / res.xy; //1.0
+
+	float Start = 2.0 / 14.0;
+	vec2 Scale = 0.66 * 4.0 * 2.0 * PixelOffset.xy;
+
+	vec3 N0 = texture(image, uv + Circle(Start, 14.0, 0.0) * Scale).rgb;
+	vec3 N1 = texture(image, uv + Circle(Start, 14.0, 1.0) * Scale).rgb;
+	vec3 N2 = texture(image, uv + Circle(Start, 14.0, 2.0) * Scale).rgb;
+	vec3 N3 = texture(image, uv + Circle(Start, 14.0, 3.0) * Scale).rgb;
+	vec3 N4 = texture(image, uv + Circle(Start, 14.0, 4.0) * Scale).rgb;
+	vec3 N5 = texture(image, uv + Circle(Start, 14.0, 5.0) * Scale).rgb;
+	vec3 N6 = texture(image, uv + Circle(Start, 14.0, 6.0) * Scale).rgb;
+	vec3 N7 = texture(image, uv + Circle(Start, 14.0, 7.0) * Scale).rgb;
+	vec3 N8 = texture(image, uv + Circle(Start, 14.0, 8.0) * Scale).rgb;
+	vec3 N9 = texture(image, uv + Circle(Start, 14.0, 9.0) * Scale).rgb;
+	vec3 N10 = texture(image, uv + Circle(Start, 14.0, 10.0) * Scale).rgb;
+	vec3 N11 = texture(image, uv + Circle(Start, 14.0, 11.0) * Scale).rgb;
+	vec3 N12 = texture(image, uv + Circle(Start, 14.0, 12.0) * Scale).rgb;
+	vec3 N13 = texture(image, uv + Circle(Start, 14.0, 13.0) * Scale).rgb;
+	vec3 N14 = texture(image, uv).rgb;
+
+
+	vec3 color = vec3(0, 0, 0);
+
+	color.rgb =
+		(N0 * 0.01478636) +
+		(N1 * 0.03696590) +
+		(N2 * 0.07393179) +
+		(N3 * 0.07393179) +
+		(N4 * 0.12013917) +
+		(N5 * 0.16018555) +
+		(N6 * 0.17620411) +
+		(N7 * 0.17620411) +
+		(N8 * 0.16018555) +
+		(N9 * 0.12013917) +
+		(N10 * 0.07393179) +
+		(N11 * 0.07393179) +
+		(N12 * 0.03696590) +
+		(N13 * 0.03696590) +
+		(N14 * 0.01478636);
+
+	return vec4(color.rgb, 1.0);
+
 }
 
 int clampFI32(int v)
 {
-if( v == 0x7FFFFFFF )
-	return floatBitsToInt(1.0);
-else if( v == 0xFFFFFFFF )
-	return floatBitsToInt(0.0);
-return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+	if (v == 0x7FFFFFFF)
+		return floatBitsToInt(1.0);
+	else if (v == 0xFFFFFFFF)
+		return floatBitsToInt(0.0);
+	return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
-float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+float mul_nonIEEE(float a, float b) { return min(a*b, min(abs(a)*3.40282347E+38F, abs(b)*3.40282347E+38F)); }
 void main()
 {
-vec4 R0f = vec4(0.0);
-vec4 R1f = vec4(0.0);
-vec4 R2f = vec4(0.0);
-vec4 R3f = vec4(0.0);
-vec4 R4f = vec4(0.0);
-vec4 R5f = vec4(0.0);
-vec4 R6f = vec4(0.0);
-vec4 R7f = vec4(0.0);
-vec4 R8f = vec4(0.0);
-vec4 R123f = vec4(0.0);
-vec4 R127f = vec4(0.0);
-float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
-vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
-float PS0f = 0.0, PS1f = 0.0;
-vec4 tempf = vec4(0.0);
-float tempResultf;
-int tempResulti;
-ivec4 ARi = ivec4(0);
-bool predResult = true;
-vec3 cubeMapSTM;
-int cubeMapFaceId;
-R0f = passParameterSem0;
-R1f = passParameterSem1;
-// 0
-R2f.x = R1f.x + (intBitsToFloat(uf_remappedPS[0].x)/ resScale);
-R2f.y = R1f.y + (intBitsToFloat(uf_remappedPS[0].y)/ resScale);
-R0f.z = R1f.x + (intBitsToFloat(uf_remappedPS[0].z)/ resScale);
-R0f.w = R1f.y + (intBitsToFloat(uf_remappedPS[0].w)/ resScale);
-// 1
+	vec4 R0f = vec4(0.0);
+	vec4 R1f = vec4(0.0);
+	vec4 R2f = vec4(0.0);
+	vec4 R3f = vec4(0.0);
+	vec4 R4f = vec4(0.0);
+	vec4 R5f = vec4(0.0);
+	vec4 R6f = vec4(0.0);
+	vec4 R7f = vec4(0.0);
+	vec4 R8f = vec4(0.0);
+	vec4 R123f = vec4(0.0);
+	vec4 R127f = vec4(0.0);
+	float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+	vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+	float PS0f = 0.0, PS1f = 0.0;
+	vec4 tempf = vec4(0.0);
+	float tempResultf;
+	int tempResulti;
+	ivec4 ARi = ivec4(0);
+	bool predResult = true;
+	vec3 cubeMapSTM;
+	int cubeMapFaceId;
+	R0f = passParameterSem0;
+	R1f = passParameterSem1;
+	// 0er
+	R2f.x = R1f.x + (intBitsToFloat(uf_remappedPS[0].x) / resScale);
+	R2f.y = R1f.y + (intBitsToFloat(uf_remappedPS[0].y) / resScale);
+	R0f.z = R1f.x + (intBitsToFloat(uf_remappedPS[0].z) );
+	R0f.w = R1f.y + (intBitsToFloat(uf_remappedPS[0].w) );
+	// 1
 backupReg0f = R1f.x;
 backupReg1f = R1f.y;
 backupReg0f = R1f.x;
 backupReg1f = R1f.y;
-R1f.xyz = vec3(backupReg0f,backupReg1f,backupReg0f) + vec3(intBitsToFloat(uf_remappedPS[1].x)/ resScale,intBitsToFloat(uf_remappedPS[1].y)/ resScale,intBitsToFloat(uf_remappedPS[1].z)/ resScale);
-R1f.w = backupReg1f + intBitsToFloat(uf_remappedPS[1].w)/ resScale;
+R1f.xyz = vec3(backupReg0f,backupReg1f,backupReg0f) + vec3(intBitsToFloat(uf_remappedPS[1].x) / resScale,intBitsToFloat(uf_remappedPS[1].y) / resScale,intBitsToFloat(uf_remappedPS[1].z));
+R1f.w = backupReg1f + intBitsToFloat(uf_remappedPS[1].w) ;
+R3f.xyz = (texture(textureUnitPS1, R2f.xy).xyz);
+R4f.xyz = (texture(textureUnitPS1, R0f.zw).xyz);
+R5f.xyz = (texture(textureUnitPS1, R1f.xy).xyz);
+R6f.xyz = (texture(textureUnitPS1, R1f.zw).xyz);
 
-vec2 texsizetest = vec2(1280.0, 720.0);
-//R4f = blur9(textureUnitPS0, R1f.xy, texsizetest, vec2(1.0, 1.0));
-//R3f = blur9(textureUnitPS0, R0f.zw, texsizetest, vec2(1.0, 1.0));
-
-//R3f.xyz = (texture(textureUnitPS1, R2f.xy).xyz);
-R3f = (blur9(textureUnitPS1, R2f.xy, texsizetest, vec2(1.0, 1.0))); // remove, redundant, blur on next step
-R4f = (blur9(textureUnitPS1, R0f.zw, texsizetest, vec2(1.0, 1.0)));
-R5f = (blur9(textureUnitPS1, R1f.xy, texsizetest, vec2(1.0, 1.0)));
-R6f = (blur9(textureUnitPS1, R1f.zw, texsizetest, vec2(1.0, 1.0)));
-R2f.xyz = (texture(textureUnitPS0, R2f.xy).xyz);
-R7f.xyz = (texture(textureUnitPS0, R0f.zw).xyz);
-R8f.xyz = (texture(textureUnitPS0, R1f.xy).xyz);
-R1f.xyz = (texture(textureUnitPS0, R1f.zw).xyz);
+//R6f = circleBlur(textureUnitPS0, R1f.xy, textureSize(textureUnitPS0, 0));
+R2f.xyz = (circleBlur(textureUnitPS0, R2f.xy, textureSize(textureUnitPS0, 0)).xyz);
+R7f.xyz = (circleBlur(textureUnitPS0, R0f.zw, textureSize(textureUnitPS0, 0)).xyz);
+R8f.xyz = (circleBlur(textureUnitPS0, R1f.xy, textureSize(textureUnitPS0, 0)).xyz);
+R1f.xyz = (circleBlur(textureUnitPS0, R1f.zw, textureSize(textureUnitPS0, 0)).xyz);
 // 0
 tempf.x = dot(vec4(R3f.x,R3f.y,R3f.z,-0.0),vec4(intBitsToFloat(0x3e000000),intBitsToFloat(0x41ff0000),intBitsToFloat(0x45fe0100),0.0));
 PV0f.x = tempf.x;
