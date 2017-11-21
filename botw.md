@@ -16,13 +16,13 @@ No.
 
 Disable anisotropic filtering for Cemu specifically.
 
-### Heatwaves are a black mess/Bloom is blocky/I'm on NVIDIA and hearts and stamina are corrupted
+### Heatwaves are a black mess/Bloom is blocky/I'm on NVIDIA and hearts and stamina are corrupted from using Pro+ HUD
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172841195536404/unknown.png)
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172857154732042/unknown.png)
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372222567731429386/unknown.png)
 
-Update the graphic pack.
+Update the graphic packs.
 
 ### The water has turned into milk
 
@@ -55,12 +55,17 @@ Disable the No Master Mode Triforce graphic pack.
 
 Follow [this guide](https://redd.it/6qwmon) to reduce the issue.
 
-### The clouds are facing another direction/I'm on AMD and the lights are circles
+### The clouds are facing another direction
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372204003649388554/unknown.png)
-![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
 
 There is no current fix towards these issues.
+
+###I'm on AMD and the lights are circles
+
+![](https://cdn.discordapp.com/attachments/207547103726010368/372205190901792778/unknown.png)
+
+Use the AMD Lights graphic pack.
 
 ### Textures have turned into skittles
 
