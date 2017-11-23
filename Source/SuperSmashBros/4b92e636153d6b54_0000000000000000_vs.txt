@@ -1,0 +1,128 @@
+<?php 
+include 'Source/functions.php'; 
+$fullWidth = $argv[1]; 
+$fullHeight = $argv[2]; 
+$scaleFactorX = always_decimal_format($fullWidth / 1920.0); 
+$scaleFactorY = always_decimal_format($fullHeight / 1080.0); 
+?>
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_shading_language_packing : enable
+// shader 4b92e636153d6b54
+// Used for: Horizontal blur pass end screen background
+const float resXScale = <?=$scaleFactorX?>; 
+const float resYScale = <?=$scaleFactorY?>; 
+
+uniform ivec4 uf_remappedVS[5];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+layout(location = 0) in uvec4 attrDataSem0;
+layout(location = 1) in uvec4 attrDataSem2;
+layout(location = 2) in uvec4 attrDataSem8;
+out gl_PerVertex
+{
+	vec4 gl_Position;
+	float gl_PointSize;
+};
+layout(location = 0) out vec4 passParameterSem130;
+layout(location = 1) out vec4 passParameterSem131;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+uvec4 attrDecoder;
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = floatBitsToInt(ivec4(gl_VertexID, 0, 0, gl_InstanceID));
+attrDecoder = attrDataSem0;
+attrDecoder = (attrDecoder>>24)|((attrDecoder>>8)&0xFF00)|((attrDecoder<<8)&0xFF0000)|((attrDecoder<<24));
+R1f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(int(attrDecoder.z)), intBitsToFloat(int(attrDecoder.w)));
+attrDecoder.xy = attrDataSem2.xy;
+attrDecoder.xy = ((attrDecoder.xy>>8)&0xFF)|((attrDecoder.xy<<8)&0xFF00);
+attrDecoder.z = 0;
+attrDecoder.w = 0;
+attrDecoder.xy = floatBitsToUint(unpackHalf2x16(attrDecoder.x|(attrDecoder.y<<16)));
+attrDecoder.zw = uvec2(0);
+R2f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(floatBitsToInt(0.0)), intBitsToFloat(floatBitsToInt(1.0)));
+// 0
+PV0f.x = R1f.w * intBitsToFloat(uf_remappedVS[0].y);
+PV0f.y = R1f.w * intBitsToFloat(uf_remappedVS[0].x);
+PV0f.z = R1f.w * intBitsToFloat(uf_remappedVS[0].w);
+PV0f.w = R1f.w * intBitsToFloat(uf_remappedVS[0].z);
+R127f.w = 0.0;
+PS0f = R127f.w;
+// 1
+R123f.x = (R1f.z * intBitsToFloat(uf_remappedVS[1].y) + PV0f.x);
+PV1f.x = R123f.x;
+R123f.y = (R1f.z * intBitsToFloat(uf_remappedVS[1].x) + PV0f.y);
+PV1f.y = R123f.y;
+R123f.z = (R1f.z * intBitsToFloat(uf_remappedVS[1].w) + PV0f.z);
+PV1f.z = R123f.z;
+R123f.w = (R1f.z * intBitsToFloat(uf_remappedVS[1].z) + PV0f.w);
+PV1f.w = R123f.w;
+R0f.y = R2f.y + PS0f;
+PS1f = R0f.y;
+// 2
+R123f.x = (R1f.y * intBitsToFloat(uf_remappedVS[2].y) + PV1f.x);
+PV0f.x = R123f.x;
+R123f.y = (R1f.y * intBitsToFloat(uf_remappedVS[2].x) + PV1f.y);
+PV0f.y = R123f.y;
+R123f.z = (R1f.y * intBitsToFloat(uf_remappedVS[2].w) + PV1f.z);
+PV0f.z = R123f.z;
+R123f.w = (R1f.y * intBitsToFloat(uf_remappedVS[2].z) + PV1f.w);
+PV0f.w = R123f.w;
+R3f.y = R2f.y + R127f.w;
+PS0f = R3f.y;
+// 3
+backupReg0f = R1f.x;
+backupReg0f = R1f.x;
+backupReg0f = R1f.x;
+backupReg0f = R1f.x;
+R1f.x = (backupReg0f * intBitsToFloat(uf_remappedVS[3].x) + PV0f.y);
+R1f.y = (backupReg0f * intBitsToFloat(uf_remappedVS[3].y) + PV0f.x);
+R1f.z = (backupReg0f * intBitsToFloat(uf_remappedVS[3].z) + PV0f.w);
+R1f.w = (backupReg0f * intBitsToFloat(uf_remappedVS[3].w) + PV0f.z);
+// 4
+PV0f.x = intBitsToFloat(uf_remappedVS[4].x)/resXScale * intBitsToFloat(0x3b088889);
+PV0f.y = intBitsToFloat(uf_remappedVS[4].x)/resXScale * intBitsToFloat(0x3b088889);
+// 5
+PV1f.x = PV0f.x;
+PV1f.x /= 2.0;
+PV1f.y = PV0f.y * intBitsToFloat(0xbfc00000);
+PV1f.z = -(PV0f.x);
+PV1f.z /= 2.0;
+PV1f.w = PV0f.y * 1.5;
+// 6
+R0f.x = R2f.x + PV1f.y;
+R0f.z = R2f.x + PV1f.z;
+R3f.w = R2f.x + PV1f.w;
+R3f.z = R2f.x + PV1f.x;
+PS0f = R3f.z;
+// export
+gl_Position = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+// export
+passParameterSem130 = vec4(R0f.x, R0f.y, R0f.z, R0f.y);
+// export
+passParameterSem131 = vec4(R3f.w, R3f.y, R3f.z, R3f.y);
+// 0
+}
