@@ -1,0 +1,70 @@
+<?php
+$fullHeight = $argv[2];
+$scaleFactor = $fullHeight / 720.0;
+if ($scaleFactor < 1.4)
+	exit(1); //900p 1.25 scale needs no custom blur shader
+
+$weight = "";
+$offset = "";
+
+if ($scaleFactor < 2.0) {
+	echo("//1080p 1.5 scale //py blurninja.py --expand 3 --reduce 3 13 --linear");
+	$weight = "0.18571429, 0.28870130, 0.10363636, 0.01480519";
+	$offset = "0.00000000, 1.42105263, 3.31578947, 5.21052632";
+} else if ($scaleFactor < 2.5) {
+	echo("//1440p 2 scale //py blurninja.py --expand 4 --reduce 4 17 --linear");
+	$weight = "0.16122494, 0.26575540, 0.12180456, 0.02865990, 0.00316767";
+	$offset = "0.00000000, 1.44000000, 3.36000000, 5.28000000, 7.20000000";
+} else if ($scaleFactor < 3) {
+	echo("//1800p 2.5 scale //py blurninja.py --expand 5 --reduce 5 25 --linear");
+	$weight = "0.13583460, 0.23632042, 0.13504024, 0.04857179, 0.01068579, 0.00136997, 0.00009448";
+	$offset = "0.00000000, 1.45714286, 3.40000000, 5.34285714, 7.28571429, 9.22857143, 11.17142857";
+} else if ($scaleFactor < 4) {
+	echo("//2160p 3 scale //py blurninja.py --expand 6 --reduce 6 29 --linear");
+	$weight = "0.12537086, 0.22251971, 0.13786547, 0.05769140, 0.01602539, 0.00287352, 0.00031864, 0.00002045";
+	$offset = "0.00000000, 1.46341463, 3.41463415, 5.36585366, 7.31707317, 9.26829268, 11.21951220, 13.17073171";
+} else if ($scaleFactor < 6) {
+	echo("//2880p 4 scale //py blurninja.py --expand 8 --reduce 8 37 --linear");
+	$weight = "0.11011604, 0.20071416, 0.13842356, 0.07060718, 0.02643049, 0.00717399, 0.00138786, 0.00018683, 0.00001693, 0.00000098";
+	$offset = "0.00000000, 1.47169811, 3.43396226, 5.39622642, 7.35849057, 9.32075472, 11.28301887, 13.24528302, 15.20754717, 17.16981132";
+} else if ($scaleFactor < 8) {
+	echo("//4320 6 scale //py blurninja.py --expand 14 --reduce 14 57 --linear");
+	$weight = "0.08679764, 0.16377778, 0.12975631, 0.08523885, 0.04634210, 0.02079453, 0.00767262, 0.00231673, 0.00056902, 0.00011284, 0.00001790, 0.00000225, 0.00000022, 0.00000002";
+	$offset = "0.00000000, 1.48235294, 3.45882353, 5.43529412, 7.41176471, 9.38823529, 11.36470588, 13.34117647, 15.31764706, 17.29411765, 19.27058824, 21.24705882, 23.22352941, 25.20000000";
+} else {
+	echo("//5760p 8 scale //py blurninja.py --expand 29 --reduce 29 129 --linear");
+	$weight = "0.05842515, 0.11378184, 0.10229613, 0.08445599, 0.06401931, 0.04454418, 0.02843975, 0.01665463, 0.00894132, 0.00439816, 0.00198084, 0.00081621, 0.00030743, 0.00010575, 0.00003318, 0.00000949, 0.00000247, 0.00000058, 0.00000013, 0.00000002";
+	$offset = "0.00000000, 1.49197861, 3.48128342, 5.47058824, 7.45989305, 9.44919786, 11.43850267, 13.42780749, 15.41711230, 17.40641711, 19.39572193, 21.38502674, 23.37433155, 25.36363636, 27.35294118, 29.34224599, 31.33155080, 33.32085561, 35.31016043, 37.29946524";
+}
+?> 
+#version 420
+#extension GL_ARB_texture_gather : enable
+// shader f0a615c0f6a37661
+// variable radius blur
+// reflection blur vertical
+uniform ivec4 uf_remappedPS[1];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf51d3000 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+
+float step = passParameterSem0.z - passParameterSem0.w;
+
+const float weight[] = float[]( <?=$weight?> );
+const float offset[] = float[]( <?=$offset?> );
+
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+
+void main() {
+	vec2 R0f = passParameterSem0.xw;
+	vec4 R1f = texture( textureUnitPS0, R0f ) * weight[0];
+	for (int i=1; i<weight.length(); i++) {
+		R1f += texture( textureUnitPS0, R0f + vec2(0.0, offset[i]*step) ) * weight[i];
+		R1f += texture( textureUnitPS0, R0f - vec2(0.0, offset[i]*step) ) * weight[i];
+	}
+	//alpha adjust and clamp, according to original shader
+	R1f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].x), R1f.w);
+	R1f.w = clamp(R1f.w, 0.0, 1.0);
+	passPixelColor0 = R1f;
+}
