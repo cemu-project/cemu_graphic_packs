@@ -4,8 +4,8 @@
 // To-do, .5 is daylight and 1.0 night is wiiu "correct" for nvidia
 // changes here in turn "breaks" bloom as they over or under expose depending on day/night 
 
-const float preExposure = 0.85; // old brigntess tweak. Truncates at around .45+
-const float gammaPostExposure = 0.8; // compensate pre exposure, but loss of contrast when positive. 
+const float preExposure = 0.72; // old brigntess tweak. Truncates at around .45+
+const float gammaPostExposure = 0.9; // compensate pre exposure, but loss of contrast when positive. 
 uniform ivec4 uf_remappedPS[1];
 
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
