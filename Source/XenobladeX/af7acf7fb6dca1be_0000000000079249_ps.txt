@@ -24,6 +24,15 @@ layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
+highp float lineRand(vec2 co)
+{
+	highp float a = 12.9898;
+	highp float b = 78.233;
+	highp float c = 43758.5453;
+	highp float dt = dot(co.xy, vec2(a, b));
+	highp float sn = mod(dt, 3.14);
+	return fract(sin(sn) * c);
+}
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
@@ -71,8 +80,8 @@ activeMaskStackC[0] = true;
 activeMaskStackC[1] = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
-R0i = floatBitsToInt(passParameterSem0);
-R1i = floatBitsToInt(passParameterSem1);
+R0i = floatBitsToInt(passParameterSem0)+ (lineRand(gl_FragCoord.xy)*0.0001));
+R1i = floatBitsToInt(passParameterSem1)-(lineRand(gl_FragCoord.yx)*0.0001));
 if( activeMaskStackC[1] == true ) {
 R1i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).xyz);
 }
@@ -375,10 +384,10 @@ R3i.w = PV1i.y;
 R3i.w = clampFI32(R3i.w);
 }
 if( activeMaskStackC[3] == true ) {
-R0i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R0i.xy), intBitsToFloat(R0i.w))));
-R1i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R1i.zy), intBitsToFloat(R1i.w))));
-R2i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R2i.xy), intBitsToFloat(R2i.w))));
-R3i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R3i.xz), intBitsToFloat(R3i.w))));
+R0i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R0i.xy)+ (lineRand(gl_FragCoord.xy)*0.0002), intBitsToFloat(R0i.w))));
+R1i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R1i.zy)+ (lineRand(gl_FragCoord.yx)*0.0002), intBitsToFloat(R1i.w))));
+R2i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R2i.xy)+ (lineRand(gl_FragCoord.xy)*0.0002), intBitsToFloat(R2i.w))));
+R3i.x = floatBitsToInt(texture(textureUnitPS3, vec3(intBitsToFloat(R3i.xz)+ (lineRand(gl_FragCoord.yx)*0.0002), intBitsToFloat(R3i.w))));
 }
 if( activeMaskStackC[3] == true ) {
 activeMaskStack[3] = activeMaskStack[2];
@@ -528,10 +537,10 @@ R1i.xyz = floatBitsToInt(vec3(intBitsToFloat(backupReg0i),intBitsToFloat(backupR
 R1i.w = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(uf_remappedPS[29].y) / resScale); //
 }
 if( activeMaskStackC[2] == true ) {
-R0i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.xy)).x);
-R2i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.zw)).x);
-R1i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R1i.xy)).x);
-R3i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R1i.zw)).x);
+R0i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.xy)+ (lineRand(gl_FragCoord.xy)*0.0002)).x);
+R2i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.zw)+ (lineRand(gl_FragCoord.xy)*0.0002)).x);
+R1i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R1i.xy)+ (lineRand(gl_FragCoord.xy)*0.0002)).x);
+R3i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R1i.zw)+ (lineRand(gl_FragCoord.xy)*0.0002)).x);
 }
 if( activeMaskStackC[2] == true ) {
 // 0
@@ -582,5 +591,5 @@ R0i.y = floatBitsToInt((intBitsToFloat(PV0i.y) * intBitsToFloat(uf_remappedPS[30
 R0i.z = floatBitsToInt((intBitsToFloat(PV0i.x) * intBitsToFloat(uf_remappedPS[30].x) + intBitsToFloat(uf_remappedPS[30].y)));
 }
 // export
-passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.y)*shadowExposure, intBitsToFloat(R0i.z)*shadowExposure, intBitsToFloat(R0i.w));
 }
