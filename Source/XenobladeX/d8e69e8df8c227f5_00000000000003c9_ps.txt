@@ -1,5 +1,5 @@
-<? php
-	include 'Source/functions.php';
+<?php
+include 'Source/functions.php';
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
 $scaleFactorX = always_decimal_format($fullWidth / 1280.0);
@@ -19,7 +19,7 @@ layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf4386000 res
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
-const float resScale = < ? = $scaleFactorX ? >;
+const float resScale = <?=$scaleFactorX?>;
 //const float resScale = 3.5; //3.5 looks nicer
 
 highp float lineRand(vec2 co)
