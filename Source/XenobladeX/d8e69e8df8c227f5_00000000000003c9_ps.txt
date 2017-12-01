@@ -20,6 +20,7 @@ layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 const float resScale = <?=$scaleFactorX?>;
+const int sampleScale = <?=round($scaleFactorX)?>;
 //const float resScale = 3.5; //3.5 looks nicer
 
 highp float lineRand(vec2 co)
@@ -36,7 +37,7 @@ highp float lineRand(vec2 co)
 // FabriceNeyret2, single pass gaussian by intermediate MIPmap level. https://www.shadertoy.com/view/ltScRG
 // I hereby pledge my loyalty to  the FabriceNeyret2 fanclub, this is bloody beautiful! 
 
-const int samples = 35, //check if must scale to pascal levels
+const int samples = 12 * sampleScale, //check if must scale to pascal levels
 LOD = 2,         // gaussian done on MIPmap at scale LOD
 sLOD = 1 << LOD; // tile size = 2^LOD
 const float sigma = float(samples) * .25;
