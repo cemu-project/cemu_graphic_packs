@@ -20,11 +20,11 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine]
-width = 960
-height = 720
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
+#[TextureRedefine] # Disabled because of current graphic pack scaling bugs
+#width = 960
+#height = 720
+#overwriteWidth = <?=round($scaleFactorX*1280)?> 
+#overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine] # gamepad
 width = 854
