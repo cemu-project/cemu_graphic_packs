@@ -27,6 +27,7 @@ replaceFormat 0x81e
 [TextureRedefine] # tv
 width = 1280
 height = 720
+formatsExcluded = 0x031 #NLA flyover XCX logo screen
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
