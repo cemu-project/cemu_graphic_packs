@@ -20,12 +20,13 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-#[TextureRedefine] #Only saw depth in Nsight
-#width = 640
-#height = 360
-#tileModesExcluded = 0x001
-#overwriteWidth = <?=round($scaleFactorX*640)?> 
-#overwriteHeight = <?=round($scaleFactorY*360)?> 
+[TextureRedefine] #Only saw depth in Nsight
+width = 640
+height = 360
+formatsExcluded = 0x35
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] #Lighting?
 width = 322
@@ -33,11 +34,12 @@ height = 182
 overwriteWidth = <?=round($scaleFactorX*322)?> 
 overwriteHeight = <?=round($scaleFactorY*182)?> 
 
-#[TextureRedefine] #Dupe of Main Game
-#width = 320
-#height = 180
-#overwriteWidth = <?=round($scaleFactorX*320)?> 
-#overwriteHeight = <?=round($scaleFactorY*180)?> 
+[TextureRedefine] #Dupe of Main Game
+width = 320
+height = 180
+formatsExcluded = 0x35
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] #Lighting Blur?
 width = 162
