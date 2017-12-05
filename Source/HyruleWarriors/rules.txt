@@ -53,13 +53,6 @@ height = 90
 overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*90)?> 
 
-[TextureRedefine] #Shadows?
-width = 1024
-height = 2048
-formats = 0x005
-#overwriteWidth = <?=round($scaleFactorY*1024)?> 
-#overwriteHeight = <?=round($scaleFactorY*2048)?> 
-
 [TextureRedefine] #Dupe of Main Game?
 width = 64
 height = 64
