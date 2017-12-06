@@ -22,6 +22,7 @@ overwriteHeight = <?=round($scaleFactorY*1080)?>
 [TextureRedefine] # Blur, bloom
 width =	960
 height = 540
+formatsExcluded = 0x8 # exclude the menu background textures
 overwriteWidth = <?=round($scaleFactorX*960)?> 
 overwriteHeight = <?=round($scaleFactorY*540)?> 
 
