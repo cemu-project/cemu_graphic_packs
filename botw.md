@@ -4,7 +4,7 @@
 
 ![](https://cdn.discordapp.com/attachments/207547103726010368/372172658118492160/unknown.png)
 
-Update your game to the latest version available (1.3.1/v112) either manually or through Cemu's UI.
+Update your game to v1.3.1/v112 either manually or through Cemu's UI. The latest version, v1.4.0/v176 works fine but many packs are incompatible.
 
 ### Can I use [insert piracy program here] to download the upda-
 
