@@ -222,3 +222,76 @@ _fullspeed = 0x00000080
 ;0x02F7DE00 = li r3, 0 
 ;0x02F862C4 = li r7, 1 
 ;0x02F86514 = li r7, 1 
+
+[BotwFPSv176]
+moduleMatches = 0xFD091F9F
+
+#rodata constants
+_float1 = 0x10000670
+_float30 = 0x101E78F4
+
+#TestCave
+codeCaveSize = 0x84
+
+_fpsCalc =  0x00000008
+0x00000000 = .float 3 ; Don't edit me!
+_lowlimit = 0x00000000
+0x00000004 = .float 62156250
+_busSpeed = 0x00000004
+0x00000008 = stw r0, 0x78(r30)
+0x0000000C = xoris r12, r12, 0x8000
+0x00000010 = stw r12, 0x12C(r30)
+0x00000014 = lis r12, 0x4330
+0x00000018 = stw r12, 0x128(r30)
+0x0000001C = lfd f10, 0x128(r30)
+0x00000020 = stw r12, 0x138(r30)
+0x00000024 = lis r12, 0x8000
+0x00000028 = stw r12, 0x13C(r30)
+0x0000002C = lfd f12, 0x138(r30)
+0x00000030 = fsub f10, f10, f12
+0x00000034 = frsp f10, f10
+0x00000038 = lis r12, _float1@ha
+0x0000003C = lfs f12, _float1@l(r12)
+0x00000040 = fdivs f10, f12, f10
+0x00000048 = lis r12, _busSpeed@ha
+0x0000004C = lfs f12, _busSpeed@l(r12)
+0x00000050 = fmuls f10, f12, f10
+0x00000054 = stfs f10, 0x134(r30)
+0x00000058 = lis r12, _float30@ha
+0x0000005C = lfs f12, _float30@l(r12)
+0x00000060 = fdivs f7, f12, f10
+0x00000064 = lis r12, _lowlimit@ha
+0x00000068 = lfs f12, _lowlimit@l(r12)
+0x0000006C = fcmpu cr0, f7, f12
+0x00000070 = bge .+0x0C
+0x00000074 = stfs f7, 0x130(r30)
+0x00000078 = blr
+0x0000007c = stfs f12, 0x130(r30)
+0x00000080 = blr
+
+#codeChanges
+0x031F9E80 = bla _fpsCalc
+0x03792620 = nop
+0x0379262C = nop
+0x03792670 = lis r29, 0x1134
+0x03792678 = lfs f0, 0xFE58@l(r29)
+0x03792684 = nop
+0x03414EF8 = lis r12, 0x1134
+0x03414F00 = lfs f0, 0xFE58@l(r12)
+0x03414F08 = nop
+0x02D90790 = lis r10, 0x1134
+0x02D90794 = lfs f11, 0xFE5C@l(r10)
+0x02D907EC = lis r10, 0x1134
+0x02D907F0 = lfs f11, 0xFE5C@l(r10)
+
+
+#break all forms of frame limiting
+0x031F9FEC = li r0, 1 ;Better fence
+;0x031FA004 = nop ; skip fence
+0x031FA1D4 = nop ; disable vsync
+0x031FA1F8 = nop ; disable vsync loop
+
+#Cheats
+;0x02D90724 = fmr f29, f1 ;inf stamina
+;0x02D44D44 = nop ;inf hearts
+;0x02EB61BC = nop ;inf arrows
