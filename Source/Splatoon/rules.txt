@@ -37,6 +37,7 @@ overwriteHeight = <?=round($scaleFactorY*360)?>
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
+formatsExcluded = 0x35
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
