@@ -23,6 +23,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine] #Only saw depth in Nsight
 width = 640
 height = 360
+formatsExcluded = 0x35
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
@@ -36,6 +37,7 @@ overwriteHeight = <?=round($scaleFactorY*182)?>
 [TextureRedefine] #Dupe of Main Game
 width = 320
 height = 180
+formatsExcluded = 0x35,0x433
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
@@ -51,37 +53,30 @@ height = 90
 overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*90)?> 
 
-#[TextureRedefine] #Shadows?
-#width = 1024
-#height = 2048
-#formats = 0x005
-#overwriteWidth = <?=round($scaleFactorY*1024)?> 
-#overwriteHeight = <?=round($scaleFactorY*2048)?> 
-
-#[TextureRedefine] #Dupe of Main Game?
-#width = 64
-#height = 64
-#formats = 0x005
+[TextureRedefine] #Dupe of Main Game?
+width = 64
+height = 64
+formats = 0x005
 #overwriteWidth = <?=round($scaleFactorY*64)?> 
 #overwriteHeight = <?=round($scaleFactorY*64)?> 
 
-#[TextureRedefine] #Dupe of Main Game?
-#width = 16
-#height = 16
-#formats = 0x005
+[TextureRedefine] #Dupe of Main Game?
+width = 16
+height = 16
+formats = 0x005
 #overwriteWidth = <?=round($scaleFactorY*16)?> 
 #overwriteHeight = <?=round($scaleFactorY*16)?> 
 
-#[TextureRedefine] #Dupe of Main Game?
-#width = 4
-#height = 4
-#formats = 0x005
+[TextureRedefine] #Dupe of Main Game?
+width = 4
+height = 4
+formats = 0x005
 #overwriteWidth = <?=round($scaleFactorY*6)?> 
 #overwriteHeight = <?=round($scaleFactorY*6)?> 
 
-#[TextureRedefine] #Dupe of Main Game?
-#width = 1
-#height = 1
-#formats = 0x005
+[TextureRedefine] #Dupe of Main Game?
+width = 1
+height = 1
+formats = 0x005
 #overwriteWidth = <?=round($scaleFactorY*1)?> 
 #overwriteHeight = <?=round($scaleFactorY*1)?> 

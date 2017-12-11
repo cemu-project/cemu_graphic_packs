@@ -1,0 +1,12 @@
+[Definition]
+titleIds = 000500001017D800,000500001017D900
+
+name = "Hyrule Warriors - Higher Quality Shadows"
+version = 2
+
+[TextureRedefine]
+width = 1024
+height = 2048
+formats = 0x005
+overwriteWidth = 2048
+overwriteHeight = 4096

@@ -5,13 +5,24 @@
 // changes here in turn "breaks" bloom as they over or under expose depending on day/night 
 
 const float preExposure = 0.75; // old brigntess tweak. Truncates at around .45+
-const float gammaPostExposure = 0.9; // compensate pre exposure, but loss of contrast when positive. 
+const float gammaPostExposure = 0.95; // compensate pre exposure, but loss of contrast when positive. 
 uniform ivec4 uf_remappedPS[1];
+
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(binding = 1) uniform sampler3D textureUnitPS1;// Tex1 addr 0x2603b000 res 16x16x16 dim 2 tm: 7 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x10) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
+highp float lineRand(vec2 co)
+{
+	highp float a = 12.9898;
+	highp float b = 78.233;
+	highp float c = 43758.5453;
+	highp float dt = dot(co.xy, vec2(a, b));
+	highp float sn = mod(dt, 3.14);
+	return fract(sin(sn) * c);
+}
+
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
@@ -37,7 +48,9 @@ bool predResult = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
-R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * preExposure;
+
+R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * (preExposure  -(lineRand(gl_FragCoord.xy)*0.02));
+//R0f.xyz = R0f.xyz - (lineRand(gl_FragCoord.xy)*0.1);
 // 0
 R127f.x = R0f.z * intBitsToFloat(uf_remappedPS[0].x);
 R127f.x = clamp(R127f.x, 0.0, 1.0);

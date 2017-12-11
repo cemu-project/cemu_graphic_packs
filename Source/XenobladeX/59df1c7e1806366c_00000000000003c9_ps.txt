@@ -61,7 +61,7 @@ R0i = floatBitsToInt(passParameterSem0);
 R1i = floatBitsToInt(passParameterSem1);
 if( activeMaskStackC[1] == true ) {
 //R2i.xyzw = floatBitsToInt(textureGather(textureUnitPS0, intBitsToFloat(R0i.zw)).xyzw); // cemu bug? Review later
-R0i.x = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).x); // edge blur/chromatic
+//R0i.x = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).x); // edge blur/chromatic
 }
 if( activeMaskStackC[1] == true ) {
 activeMaskStack[1] = activeMaskStack[0];

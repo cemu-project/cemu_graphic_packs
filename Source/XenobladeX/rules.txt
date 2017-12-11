@@ -27,6 +27,7 @@ replaceFormat 0x81e
 [TextureRedefine] # tv
 width = 1280
 height = 720
+formatsExcluded = 0x031 #NLA flyover XCX logo screen
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
@@ -72,11 +73,11 @@ height = 288
 overwriteWidth = <?=round($scaleFactorX*512)?> 
 overwriteHeight = <?=round($scaleFactorY*288)?> 
 
-#[TextureRedefine] # "God rays" size (not quality), lens reflections.
-#width =	256
-#height = 144
-#overwriteWidth = <?=round($scaleFactorX*256)?> 
-#overwriteHeight = <?=round($scaleFactorY*144)?> 
+[TextureRedefine] # "God rays" stencil res, lens reflections.
+width = 256
+height = 144
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*144)?> 
 
 [TextureRedefine]# Probe glow. Does not increase sample amount, only scales up
 width = 160

@@ -37,6 +37,7 @@ overwriteHeight = <?=round($scaleFactorY*360)?>
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
+formatsExcluded = 0x35
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
@@ -64,14 +65,14 @@ height = 252
 overwriteWidth = <?=round($scaleFactorX*448)?> 
 overwriteHeight = <?=round($scaleFactorY*252)?> 
 
-[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; doesn't scale properly yet
+[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; Disabled because of current graphic pack scaling bugs
 width = 128
 height = 128
 formats = 0x41a
 #overwriteWidth = <?=round($scaleFactorY*128)?> 
 #overwriteHeight = <?=round($scaleFactorY*128)?> 
 
-[TextureRedefine] # player icon - GL_RGBA8; doesn't scale properly yet
+[TextureRedefine] # player icon - GL_RGBA8; Disabled because of current graphic pack scaling bugs
 width = 256
 height = 256
 formats = 0x1a

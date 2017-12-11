@@ -13,7 +13,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 //to do - extra edge smooth pass, 
 //const float resScale = 2.0;// 2.0  looks good
 const float resScale = <?=$scaleFactorX?>;
-const float shadowExposure = 0.75; //By truncating shadow, we decrease overall exposure during day only.
+const float shadowExposure = 0.85; //By truncating shadow, we decrease overall exposure during day only.
 uniform ivec4 uf_remappedPS[31];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4386000 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf599a000 res 1024x1024x1 dim 1 tm: 4 format 0005 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 6 6 6 border: 2
@@ -582,5 +582,5 @@ R0i.y = floatBitsToInt((intBitsToFloat(PV0i.y) * intBitsToFloat(uf_remappedPS[30
 R0i.z = floatBitsToInt((intBitsToFloat(PV0i.x) * intBitsToFloat(uf_remappedPS[30].x) + intBitsToFloat(uf_remappedPS[30].y)));
 }
 // export
-passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.y)*shadowExposure, intBitsToFloat(R0i.z)*shadowExposure, intBitsToFloat(R0i.w));
 }

@@ -3,6 +3,7 @@
 // shader 49ce4bf04a654e80
 // ReflExtra - Enhanced Reflections
 // Reflections can be seen at greater distances
+// shader dumped from BotW v1.3.1, using Cemu 1.9.1
 uniform ivec4 uf_remappedPS[10];
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf45c6000 res 1280x720x1 dim 1 tm: 4 format 041a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
 layout(binding = 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0xf513a800 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 2 2 2 border: 1
