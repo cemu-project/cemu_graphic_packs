@@ -4,4 +4,4 @@ name = "The Legend of Zelda: Breath of the Wild - 30FPS Lock (Requires FPS++)"
 version = 2
 
 [Control]
-vsyncFrequency = 30
+vsyncFrequency = 32
