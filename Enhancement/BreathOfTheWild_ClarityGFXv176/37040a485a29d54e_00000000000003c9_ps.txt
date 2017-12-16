@@ -19,7 +19,7 @@
 	float bloomFactor = 0.17;                //Default is 0.20 (rough estimate based on Switch)
 
 //Fake High Dynamic Range.
-	float HDRPower = 1.035;                  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
+	float HDRPower = 1.085;                  // 0.0 to  8.0  "Raising this seems to make the effect stronger and also darker , Default 1.30."
 	float radius1 = 0.793;                   // 0.0 to  8.0  "Default 0.793 , will affect FX."
 	float radius2 = 0.87;                    // 0.0 to  8.0  "Default 0.87 , will affect FX."
 
@@ -31,9 +31,9 @@
 	float offset_bias = 1.0;                 //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
 
 //ToneMapping
-	float Bleach = 0.3;                     //Default is 0.0
+	float Bleach = 0.5;                     //Default is 0.0
 	float defog = 0.004;	                //Default is 0.0  //How much of the overall color you want removed form the values of FogColor.
-	vec3 FogColor = vec3(1.0, 1.5, 1.5);    //Color you want to Add or Remove  0.25 would add .25 percent of that color 1.25 would remove .25 percent of the color."
+	vec3 FogColor = vec3(1.0, 1.5, 1.7);    //Color you want to Add or Remove  0.25 would add .25 percent of that color 1.25 would remove .25 percent of the color."
 
 //Levels Control
 	const int BlackPoint = 6;   //[0, 255]  The black point is the new black - literally. Everything darker than this will become completely black
@@ -41,33 +41,33 @@
 
 //Lift Gamma Gain
 	vec3 RGB_Lift = vec3(1.01, 1.01, 1.01);  //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
-	vec3 RGB_Gamma = vec3(0.90, 0.90, 0.90);  //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
-	vec3 RGB_Gain = vec3(0.96, 0.96, 0.96);  //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+	vec3 RGB_Gamma = vec3(1.02, 1.02, 1.02);  //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
+	vec3 RGB_Gain = vec3(1.03, 1.03, 1.03);  //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
 //Note that a value of 1.0 is a neutral setting that leave the color unchanged.
 
 //VibrancePass
-	float Vibrance = 0.15;      //"Intelligently saturates (or desaturates if you use negative values) the pixels depending on their original saturation.";
+	float Vibrance = 0.013;      //"Intelligently saturates (or desaturates if you use negative values) the pixels depending on their original saturation.";
 	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0); //"A per channel multiplier to the Vibrance strength so you can give more boost to certain colors over others.";
 
 //Technicolor2
 	float Technicolor2_Red_Strength = 0.51;	//Default is 0.0	
 	float Technicolor2_Green_Strength = 0.51;	//Default is 0.0	
 	float Technicolor2_Blue_Strength = 0.51;	//Default is 0.0	
-	float Technicolor2_Brightness = 2.13;    //Default is 1.0
+	float Technicolor2_Brightness = 1.75;    //Default is 1.0
 	float Technicolor2_Strength = 0.80;		//Default is 1.0
-	float Technicolor2_Saturation = 0.34;    //Default is 1.0	
+	float Technicolor2_Saturation = 0.20;    //Default is 1.0	
 
 //Filmic Pass
 	float Strength = 0.85;
 	float Fade = 0.4;
-	float Contrast = 0.80;
+	float Contrast = 0.750;
 	float Linearization = 0.7;
 	float Saturation = -0.15;
 
 	float RedCurve = 1.0;
 	float GreenCurve = 1.0;
 	float BlueCurve = 1.0;
-	float BaseCurve = 1.5;
+	float BaseCurve = 1.1;
 
 	float BaseGamma = 0.98;
 	float EffectGamma = 0.97;
@@ -118,7 +118,7 @@ vec3 TonemapPass(vec3 inputColor) {
 	vec3 middlegray = vec3(dot(color, vec3(1.0 / 3.0)));
 	vec3 diffcolor = color - middlegray;
 
-	float sat = 0.0;
+	float sat = 0.050;
 	color = (color + diffcolor * sat) / (1 + (diffcolor * sat)); // saturation
 
 	return color;
