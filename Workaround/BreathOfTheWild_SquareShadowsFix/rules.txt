@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - Square Shadows Fix"
+name = "The Legend of Zelda: Breath of the Wild - Square Kakariko Torch Shadows Fix"
 version = 2
 
 # Workaround for the square shadows seen around torches in Kakariko Village

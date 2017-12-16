@@ -15,7 +15,7 @@ version = 2
 [TextureRedefine] # game rendering resolution
 width = 1280
 height = 720
-tileModesExcluded = 0x001
-formatsExcluded = 0x41A # exclude the intro background texture	
+tileModesExcluded = 0x1
+formatsExcluded = 0x31 # exclude the intro background texture	
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 

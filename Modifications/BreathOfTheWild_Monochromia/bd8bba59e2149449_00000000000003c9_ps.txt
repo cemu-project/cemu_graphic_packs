@@ -4,7 +4,7 @@
 // Monochromia
 // Simple Levels + Curves + LumaSharpening
 // Credits to Jamie, NAVras for LumaSharpening; CeeJay.dk for Levels, Curves
-// original shader dumped using cemu 1.11.c, BotW 1.3.1
+// original shader dumped using cemu 1.11.0c, BotW 1.3.1
 
 // Levels controls
 const int BlackPoint = 3; //[0, 255]  The black point is the new black - literally. Everything darker than this will become completely black
