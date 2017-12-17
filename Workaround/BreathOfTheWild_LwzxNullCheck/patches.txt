@@ -262,8 +262,8 @@ _lwzCheck = 0x00000020		; null checked version of 'lwz r8, 0(r31)'
 0x037CF734 = bla _lwzxCheck
 0x037CF740 = bla _lwzCheck
 
-[BotwPlsNoCrashV176]
-moduleMatches = 0xFD091F9F
+[BotwPlsNoCrashV176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
 #restore the 2 instructions possibly overwritten by cemu itself
 0x038E3A30 = stwu r1, -0x28(r1)
 0x038E3A34 = mflr r0
