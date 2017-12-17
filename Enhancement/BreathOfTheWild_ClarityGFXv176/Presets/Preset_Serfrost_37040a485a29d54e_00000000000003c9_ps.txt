@@ -2,126 +2,175 @@
 #extension GL_ARB_texture_gather : enable
 // shader 37040a485a29d54e
 
-// Possible problems
-// Being below 1.3.3 will give you double-vision with recent graphic packs. Update to 1.3.0 or above.
 // If you're experiencing any issues (due to having the previous Clarity shaders installed), please remove and redownload all of the BotW packs.
+
 // Clarity GFX
 // Credit to Jamie for main coding.
 // Credit to Kiri coding & Reshade logic.
 // Credit to Cremtif  for Help.
 // Credit to Serfrost for preset values.
 // Shader dumped from Cemu 1.11.2 from BotW 1.4.0
+
 // v 2.0
 // Add 1.4.0 support
 
 //##########################################################
-#define adjust_bloom 1                             // 0: disable, 1: enable.
+
+#define adjust_bloom 1           // 0: disable, 1: enable.
+
 //BloomFactor
-	float bloomFactor = 0.010;                      //Default is 0.020 (rough estimate based on Switch)
+float bloomFactor = 0.2;         //Default is 0.020 (rough estimate based on Switch)
 
-#define HDRpassing 0                               // 0: disable, 1: enable.
-//Fake High Dynamic Range.
-	float HDRPower = 1.085;                        // 0.0 to  8.0  Default 1.30.
-	float radius1 = 0.793;                         // 0.0 to  8.0  Default 0.793  
-	float radius2 = 0.87;                          // 0.0 to  8.0  Default 0.87  "Raising this seems to make the effect stronger and also brighter."
+#define HDRpassing 0             // 0: disable, 1: enable.
 
-#define lumapassing 0                              // 0: disable, 1: enable.
+//Fake High Dynamic Range
+float HDRPower = 1.085;          // 0.0 to  8.0  Default 1.30.
+float radius1 = 0.793;           // 0.0 to  8.0  Default 0.793  
+float radius2 = 0.87;            // 0.0 to  8.0  Default 0.87  "Raising this seems to make the effect stronger and also brighter."
+
+//##########################################################
+
+#define lumapassing 1            // 0: disable, 1: enable.
+
 //LumaShapening
-	float sharp_strength = 0.25;                   //[0.10 to 3.00] Strength of the sharpening Default is 0.65
-	float sharp_clamp = 0.085;                     //[0.000 to 1.000] Limits maximum amount of sharpening a pixel recieves - Default is 0.035
+float sharp_strength = 0.45;     //[0.10 to 3.00] Strength of the sharpening Default is 0.65
+float sharp_clamp = 0.085;       //[0.000 to 1.000] Limits maximum amount of sharpening a pixel recieves - Default is 0.035
 
 //Advanced sharpening settings
-	float offset_bias = 1.0;                       //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
+float offset_bias = 1.0;         //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
 
-#define Tone_map 2                                 // 0: disable, 1-8: enable.
-				// Reshade ToneMap Option 1
-				// linearToneMapping  Option 2             
-				// simpleReinhardToneMapping Option 3     
-				// lumaBasedReinhardToneMapping Option 4  
-				// whitePreservingLumaBasedReinhardToneMapping Option 5 
-				// RomBinDaHouseToneMapping Option 6	    
-				// filmicToneMapping Option 7             
-				// Uncharted2ToneMapping Option 8
+//##########################################################
+
+#define Tone_map 8                             
+
+// 0 - Disable
+
+// 1 - Reshade ToneMap
+// 2 - Linear ToneMap
+// 3 - Simple Reinhard ToneMap
+// 4 - Luma-Based Reinhard ToneMap
+// 5 - White-Preserving Luma-Based Reinhard ToneMap
+// 6 - RomBinDaHouse ToneMap
+// 7 - Filmic ToneMap
+// 8 - Uncharted 2 ToneMap
+// 9 - ACES Filmic
+
+//##########################################################
+
 //Reshade ToneMap Controls 
-	float Bleach = 0.3;                            // "More bleach means more contrasted and less colorful image" min -0.5 max 1.0 Default 0.0
-	float defog = 0.004;	                       // Default is 0.0  //How much of the overall color you want removed form the values of FogColor.
-	vec3 FogColor = vec3(1.0, 1.5, 1.7);           // Color you want to Add or Remove  0.25 would add .25 percent of that color 1.25 would remove .25 percent of the color."
-	float sat = 0.050;                             // "Adjust saturation" min -1.0 max 1.0 Default 0.0
+float Exposure = 0.6;                 // [0.0 to 1.0+] Adjust exposure
 
-#define blacknwhitepass 1                          // 0: disable, 1: enable.
+float Bleach = 0.7;                   // [-0.5 to 1.0] [Default 0] More bleach means more contrasted and less colorful image
+
+float defog = 0.0;	                  // [Default is 0.0] How much of the overall color you want removed form the values of FogColor.
+vec3 FogColor = vec3(1.0, 1.5, 1.7);  // Color you want to Add or Remove, 0.25 would add .25 percent of that color 1.25 would remove .25 percent of the color.
+
+float sat = 0.00;                     // [-1.0 to 1.0] [Default 0.0] Adjust saturation
+
+//##########################################################
+
+#define blacknwhitepass 1   // 0: disable, 1: enable.
+
 //Levels Control
-	const int BlackPoint = 6;   //[0, 255]  The black point is the new black - literally. Everything darker than this will become completely black
-	const int WhitePoint = 255; //[0, 255]  The new white point. Everything brighter than this becomes completely white
+const int BlackPoint = 5;   //[0 to 255]  The black point is the new black - literally. Everything darker than this will become completely black.
+const int WhitePoint = 200; //[0 to 255]  The new white point. Everything brighter than this becomes completely white.
 
-#define lggpass 0                                  // 0: disable, 1: enable.
+//##########################################################
+
+#define lggpass 1      // 0: disable, 1: enable.
+
 //Lift Gamma Gain
-	vec3 RGB_Lift = vec3(0.98, 0.98, 0.93);        // [0.000 to 2.000] Adjust shadows for Red, Green and Blue.
-	vec3 RGB_Gamma = vec3(0.95, 0.95, 0.90);       // [0.000 to 2.000] Adjust midtones for Red, Green and Blue
-	vec3 RGB_Gain = vec3(0.99, 0.99, 0.94);        //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+vec3 RGB_Lift = vec3(1.00, 1.00, 1.00);    //[0.000 to 2.000] Adjust shadows for Red, Green and Blue.
+vec3 RGB_Gamma = vec3(0.85, 0.85, 0.85);   //[0.000 to 2.000] Adjust midtones for Red, Green and Blue
+vec3 RGB_Gain = vec3(1.10, 1.10, 1.10);    //[0.000 to 2.000] Adjust highlights for Red, Green and Blue
+
 //Note that a value of 1.0 is a neutral setting that leave the color unchanged.
 
-#define vibpass 1                                  // 0: disable, 1: enable.
+//##########################################################
+
+#define vibpass 1      // 0: disable, 1: enable.
+
 //VibrancePass
-	float Vibrance = 0.013;                 	   // "Intelligently saturates (or desaturates if you use negative values) the pixels depending on their original saturation.";
-	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0); // "A per channel multiplier to the Vibrance strength so you can give more boost to certain colors over others.";
+float Vibrance = 1.0;  // Intelligently saturates (or desaturates if you use negative values) the pixels depending on their original saturation.
+vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0); // A per channel multiplier to the Vibrance strength so you can give more boost to certain colors over others.
 
-#define Tech 1
+//##########################################################
+
+#define Tech 1		   // 0: disable, 1: enable.						
+
 //Technicolor
-	float Power = 4.0;                             // Min 0.0 Max 8.0 Default 4.0
-	vec3 RGBNegativeAmount = vec3(0.88, 0.88, 0.88);
-//To Edit Strength scroll down to Techicolor and edit it there, to not conflict with Filmic 
-	
-#define Techine 0                                  // 0: disable, 1: enable.
+//To Edit Strength scroll down to Techicolor and edit it there, to not conflict with Filmic
+
+float Power = 8.0;     // Min 0.0 Max 8.0 Default 4.0
+vec3 RGBNegativeAmount = vec3(0.88, 0.88, 0.88);
+
+//########################################################## 
+
+#define Techine 1      // 0: disable, 1: enable.
+
 //Technicolor2
-	float Technicolor2_Red_Strength = 0.51;	       // "Higher means darker and more intense colors." Default 0.2
-	float Technicolor2_Green_Strength = 0.51;	   // "Higher means darker and more intense colors." Default 0.2
-	float Technicolor2_Blue_Strength = 0.51;	   // "Higher means darker and more intense colors." Default 0.2
-	float Technicolor2_Brightness = 1.75;          // "Higher means brighter image." min 0.5 max 1.5 Default 1.0
-	float Technicolor2_Strength = 0.80;		       // Default is 1.0
-	float Technicolor2_Saturation = 0.20;          // Default is 1.0	
+float Technicolor2_Red_Strength = 1.0;	       //[Default 0.2] "Higher means darker and more intense colors." Default 0.2
+float Technicolor2_Green_Strength = 1.0;	   //[Default 0.2] "Higher means darker and more intense colors." Default 0.2
+float Technicolor2_Blue_Strength = 1.3;	       //[Default 0.2] "Higher means darker and more intense colors." Default 0.2
+float Technicolor2_Brightness = 3.0;           //[Default 0.2] "Higher means brighter image." min 0.5 max 1.5 Default 1.0
+float Technicolor2_Strength = 0.20;		       //[Default is 1.0]
+float Technicolor2_Saturation = 0.50;          //[Default is 1.0]	
 
-//Curves / Filmic Pass Contrast
-#define CurvesPss 0                                // 0: disable, 1: enable.
-	float Contrast = 0.750;
-// 1 To use curves Contrast, 0 off or to use with Filmic Pass.
+//##########################################################
 
-#define Filmicpass 0                               // 0: disable, 1: enable.
+// Contrast - Curves /or/ Filmic Pass
+
+#define CurvesPss 0        // 1 for Curves Style, 0 for Filmic Pass Style
+
+float Contrast = 1.0;
+
+//##########################################################
+
+#define Filmicpass 1       // 0: disable, 1: enable.
+
 //Filmic Pass
-	float Strength = 0.85;     // "Strength of the color curve altering"; min 0.0 max 1.5 Default 0.85
-	float Fade = 0.4;          // "Decreases contrast to imitate faded image" min 0.0 max 0.6 Default 0.4
-	float Linearization = 0.7; // min 0.5 max 2.0 Default 0.5
-	float Saturation = -0.15;  // min -1.0 max 1.0 Default -0.15
+float Strength = 0.60;     // [0.0 to 1.5] [Default 0.85] Strength of the color curve altering
+float Fade = 0.0;          // [0.0 to 0.6] [Default 0.4] Decreases contrast to imitate faded image
+float Linearization = 1.0; // [0.5 to 2.0] [Default 0.5]
+float Saturation = -0.4;   // [-1.0 to 1.0][Default -0.15]
 
-	float RedCurve = 1.0;      // min 0.0 max  2.0 Default 1.0
-	float GreenCurve = 1.0;    // min 0.0 max  2.0 Default 1.0
-	float BlueCurve = 1.0;     // min 0.0 max  2.0 Default 1.0
-	float BaseCurve = 1.1;     // min 0.0 max  2.0 Default 1.5
+float RedCurve = 1.0;      // [0.0 to 2.0] [Default 1.0]
+float GreenCurve = 1.0;    // [0.0 to 2.0] [Default 1.0]
+float BlueCurve = 1.0;     // [0.0 to 2.0] [Default 1.0]
+float BaseCurve = 1.5;     // [0.0 to 2.0] [Default 1.5]
 
-	float BaseGamma = 0.98;    // min 0.7 max 2.0 Default 1.0
-	float EffectGamma = 0.97;  // min 0.0 max 2.0 Default 0.68
-	float EffectGammaR = 1.0;  // min 0.0 max 2.0 Default 1.0
-	float EffectGammaG = 1.0;  // min 0.0 max 2.0 Default 1.0
-	float EffectGammaB = 1.0;  // min 0.0 max 2.0 Default 1.0
+float BaseGamma = 1.0;     // [0.7 to 2.0] [Default 1.0]
+float EffectGamma = 0.1;   // [0.0 to 2.0] [Default 0.68]
+float EffectGammaR = 1.0;  // [0.0 to 2.0] [Default 1.0]
+float EffectGammaG = 1.0;  // [0.0 to 2.0] [Default 1.0]
+float EffectGammaB = 1.0;  // [0.0 to 2.0] [Default 1.0]
 
 //###########################################################
 
 //Do not edit under this line.
 
+
+
+
+
+
+
+
+
+
+float getL601(vec3 rgb) {
+	return dot(rgb, vec3(0.2989, 0.5866, 0.1145));
+}
+
+float getL709(vec3 rgb) {
+	return dot(rgb, vec3(0.2126, 0.7152, 0.0722));
+}
 uniform ivec4 uf_remappedPS[1];
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf5c7b800 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
+layout(binding = 0) uniform sampler2D textureUnitPS0; // Bloom 
+layout(binding = 1) uniform sampler2D textureUnitPS1;// HDR LumaShapening.
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
-int clampFI32(int v)
-{
-	if (v == 0x7FFFFFFF)
-		return floatBitsToInt(1.0);
-	else if (v == 0xFFFFFFFF)
-		return floatBitsToInt(0.0);
-	return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
-}
-float mul_nonIEEE(float a, float b) { if (a == 0.0 || b == 0.0) return 0.0; return a*b; }
 
 //ToneMapping
 
@@ -209,6 +258,16 @@ vec3 ReshadeToneMap(vec3 inputColor) {
 	color = (color + diffcolor * sat) / (1 + (diffcolor * sat)); // saturation
 
 	return color;
+}
+
+vec3 ACESFilm(vec3 color) {
+	color *= Exposure;
+	float Lumn = getL709(color);
+	vec4 tm = vec4(color, Lumn);
+	tm = (tm*(2.51*tm + 0.03)) / (tm*(2.43*tm + 0.59) + 0.14); // tonemap
+	vec3 cpre = tm.w / Lumn * color;
+	vec3 colorldr = mix(cpre, tm.rgb, vec3(pow(tm.w, 2.0)));//refine
+	return colorldr;
 }
 
 //Curves
@@ -393,13 +452,13 @@ vec3 LiftGammaGainPass(vec3 colorInput)
 	color = color * (1.5 - 0.5 * RGB_Lift) + 0.5 * RGB_Lift - 0.5;
 	color = clamp(color, 0.0, 1.0); //isn't strictly necessary, but doesn't cost performance.
 
-	// -- Gain --
+// -- Gain --
 	color *= RGB_Gain;
 
 	// -- Gamma --
 	color = pow(color, 1.0 / RGB_Gamma); //Gamma
 
-	// -- Return output --
+// -- Return output --
 	return clamp(color, 0.0, 1.0);
 }
 
@@ -414,7 +473,7 @@ vec3 VibrancePass(vec3 color) {
 
 	float color_saturation = max_color - min_color; // The difference between the two is the saturation
 
-	// Extrapolate between luma and original by 1 + (1-saturation) - current
+// Extrapolate between luma and original by 1 + (1-saturation) - current
 	vec3 coeffVibrance = VibranceRGBBalance * Vibrance;
 
 	color = mix(vec3(luma), color, 1.0 + (coeffVibrance * (1.0 - (sign(coeffVibrance) * color_saturation))));
@@ -448,10 +507,10 @@ float lumasharping(sampler2D tex, vec2 pos) {
 
 	blur_ori *= 0.25;  // ( /= 4) Divide by the number of texture fetches
 
-					   // -- Calculate the sharpening --
+// -- Calculate the sharpening --
 	vec3 sharp = ori - blur_ori;  //Subtracting the blurred image from the original image
 
-								  // -- Adjust strength of the sharpening and clamp it--
+// -- Adjust strength of the sharpening and clamp it--
 	vec4 sharp_strength_luma_clamp = vec4(sharp_strength_luma * (0.5 / sharp_clamp), 0.5); //Roll part of the clamp into the dot
 
 	float sharp_luma = clamp((dot(vec4(sharp, 1.0), sharp_strength_luma_clamp)), 0.0, 1.0); //Calculate the luma, adjust the strength, scale up and clamp
@@ -498,126 +557,20 @@ vec3 HDRPass(sampler2D tex, vec2 pos) {
 
 void main()
 {
-	vec4 R0f = vec4(0.0);
-	vec4 R1f = vec4(0.0);
-	vec4 R123f = vec4(0.0);
-	vec4 R125f = vec4(0.0);
-	vec4 R126f = vec4(0.0);
-	vec4 R127f = vec4(0.0);
-	float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
-	vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
-	float PS0f = 0.0, PS1f = 0.0;
-	vec4 tempf = vec4(0.0);
-	float tempResultf;
-	int tempResulti;
-	ivec4 ARi = ivec4(0);
-	bool predResult = true;
-	vec3 cubeMapSTM;
-	int cubeMapFaceId;
-	R0f = passParameterSem0;
 	vec3 bloom = texture(textureUnitPS0, passParameterSem0.xy).xyz;
 #if (adjust_bloom == 1)
 	bloom *= bloomFactor;
 #endif
 #if (HDRpassing == 1)
-	R0f.xyz = HDRPass(textureUnitPS1, passParameterSem0.xy).xyz;
+	passPixelColor0.xyz = HDRPass(textureUnitPS1, passParameterSem0.xy).xyz;
 #endif	
 #if (HDRpassing == 0)
-	R0f.xyz = texture(textureUnitPS1, passParameterSem0.xy).xyz;
+	passPixelColor0.xyz = texture(textureUnitPS1, passParameterSem0.xy).xyz;
 #endif
 #if (lumapassing == 1)	
 	float smask = lumasharping(textureUnitPS1, passParameterSem0.xy);
-	R0f.xyz += vec3(smask);
+	passPixelColor0.xyz += vec3(smask);
 #endif
-	// -- Original shader code
-	// 0
-	R126f.x = R1f.x + R0f.x;
-	PV0f.x = R126f.x;
-	R127f.y = R1f.y + R0f.y;
-	PV0f.y = R127f.y;
-	R126f.z = R1f.z + R0f.z;
-	PV0f.z = R126f.z;
-	R125f.w = 1.0;
-	// 1
-	tempf.x = dot(vec4(PV0f.x, PV0f.y, PV0f.z, -0.0), vec4(intBitsToFloat(0x3e99096c), intBitsToFloat(0x3f162b6b), intBitsToFloat(0x3dea4a8c), 0.0));
-	PV1f.x = tempf.x;
-	PV1f.y = tempf.x;
-	PV1f.z = tempf.x;
-	PV1f.w = tempf.x;
-	// 2
-	R127f.x = -(R127f.y) * intBitsToFloat(0x3fb8aa3b);
-	PV0f.y = -(PV1f.x) * intBitsToFloat(0x3fb8aa3b);
-	R127f.z = -(R126f.x) * intBitsToFloat(0x3fb8aa3b);
-	R127f.w = -(R126f.z) * intBitsToFloat(0x3fb8aa3b);
-	R126f.w = 1.0 / PV1f.x;
-	PS0f = R126f.w;
-	// 3
-	PS1f = exp2(PV0f.y);
-	// 4
-	PV0f.x = -(PS1f)+1.0;
-	PS0f = exp2(R127f.x);
-	// 5
-	R127f.x = -(PS0f)+1.0;
-	R126f.y = mul_nonIEEE(PV0f.x, PV0f.x);
-	PV1f.z = PV0f.x * R126f.w;
-	PS1f = exp2(R127f.w);
-	// 6
-	backupReg0f = R126f.x;
-	backupReg1f = R127f.z;
-	R126f.x = mul_nonIEEE(backupReg0f, PV1f.z);
-	PV0f.y = -(PS1f)+1.0;
-	R127f.z = mul_nonIEEE(R126f.z, PV1f.z);
-	PV0f.z = R127f.z;
-	R127f.w = mul_nonIEEE(R127f.y, PV1f.z);
-	PV0f.w = R127f.w;
-	PS0f = exp2(backupReg1f);
-	// 7
-	PV1f.x = R127f.x + -(PV0f.w);
-	PV1f.y = PV0f.y + -(PV0f.z);
-	PV1f.w = -(PS0f)+1.0;
-	// 8
-	backupReg0f = R127f.z;
-	R127f.x = (mul_nonIEEE(PV1f.x, R126f.y) + R127f.w);
-	R127f.x = clamp(R127f.x, 0.0, 1.0);
-	PV0f.x = R127f.x;
-	PV0f.y = PV1f.w + -(R126f.x);
-	R127f.z = (mul_nonIEEE(PV1f.y, R126f.y) + backupReg0f);
-	R127f.z = clamp(R127f.z, 0.0, 1.0);
-	PV0f.z = R127f.z;
-	// 9 
-	backupReg0f = R126f.x;
-	R126f.x = (mul_nonIEEE(PV0f.y, R126f.y) + backupReg0f);
-	R126f.x = clamp(R126f.x, 0.0, 1.0);
-	PV1f.x = R126f.x;
-	PV1f.w = max(PV0f.x, PV0f.z);
-	// 10
-	tempf.x = dot(vec4(PV1f.x, R127f.x, R127f.z, R125f.w), vec4(intBitsToFloat(0x3f2aaaab), intBitsToFloat(0x3f2aaaab), intBitsToFloat(0x3f2aaaab), -(1.0)));
-	PV0f.x = tempf.x;
-	PV0f.y = tempf.x;
-	PV0f.z = tempf.x;
-	PV0f.w = tempf.x;
-	R126f.z = max(PV1f.x, PV1f.w);
-	PS0f = R126f.z;
-	// 11
-	backupReg0f = R127f.x;
-	backupReg1f = R127f.z;
-	R127f.x = R126f.x + -(PS0f);
-	R123f.y = (mul_nonIEEE(-(PV0f.x), PV0f.x) + 1.0);
-	PV1f.y = R123f.y;
-	R127f.z = backupReg0f + -(PS0f);
-	R125f.w = backupReg1f + -(PS0f);
-	// 12
-	R123f.x = (mul_nonIEEE(PV1f.y, intBitsToFloat(uf_remappedPS[0].y)) + intBitsToFloat(uf_remappedPS[0].x));
-	PV0f.x = R123f.x;
-	// 13
-	R0f.x = (mul_nonIEEE(R127f.x, PV0f.x) + R126f.z);
-	R0f.y = (mul_nonIEEE(R127f.z, PV0f.x) + R126f.z);
-	R0f.z = (mul_nonIEEE(R125f.w, PV0f.x) + R126f.z);
-
-	// -- End original shader code
-
-	passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
-
 	vec3 color = (passPixelColor0.xyz);
 	color += bloom;
 #if (Tone_map == 1)
@@ -644,6 +597,9 @@ void main()
 #if (Tone_map == 8)
 	color = Uncharted2ToneMapping(color);
 #endif
+#if (tone_mapping == 9)
+	color = ACESFilm(color);
+#endif
 #if (blacknwhitepass == 1)	
 	color = LevelsPass(color);
 #endif
@@ -665,5 +621,5 @@ void main()
 #if (vibpass == 1)
 	color = VibrancePass(color);
 #endif
-	passPixelColor0 = vec4(color, R0f.w);
+	passPixelColor0 = vec4(color, passParameterSem0.w);
 }
