@@ -47,11 +47,13 @@ res_480p=( "Performance" 854 480 )
 res_540p=( "Performance" 960 540 )
 res_720p=( "Performance" 1280 720 )
 res_900p=( "Quality" 1600 900 )
+res_900p219=( "Quality" 2100 900 )
 res_1080p=( "Quality" 1920 1080 )
 res_1080p219=( "Quality" 2560 1080 )
 res_1440p=( "Quality" 2560 1440 )
 res_1440p219=( "Quality" 3440 1440 )
 res_1800p=( "Quality" 3200 1800  )
+res_1800p219=( "Quality" 4200 1800 )
 res_2160p=( "Quality" 3840 2160  )
 res_2160p219=( "Quality" 5120 2160 )
 res_2880p=( "Enthusiast" 5120 2880 )
@@ -90,7 +92,7 @@ std_respack () {
 }
 
 res16by9=( "360p" "480p" "540p" "720p" "900p" "1080p" "1440p" "1800p" "2160p" "2880p" "4320p" "5760p" )
-res21by9=( "1080p219" "1440p219" "2160p219" )
+res21by9=( "900p219" "1080p219" "1440p219" "1800p219" "2160p219" )
 just720p=( "720p" )
 just1080p=( "1080p" )
 
