@@ -12,7 +12,7 @@ titleIds = 00050000101DF400,00050002101DF401
 name = "Pokken Tournament - <?=$title?>"
 version = 2
 
-[TextureRedefine]
+[TextureRedefine] # TV
 width = 1280
 height = 720
 formatsExcluded = 0x033
@@ -20,14 +20,14 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine] # Disabled because of current graphic pack scaling bugs
+[TextureRedefine] # In-Game Resolution
 width = 960
 height = 720
 #overwriteWidth = <?=round($scaleFactorX*1280)?> 
 #overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine] # gamepad
+[TextureRedefine] # Gamepad
 width = 854
 height = 480
-#overwriteWidth = <?=round($scaleFactorX*1280)?> 
-#overwriteHeight = <?=round($scaleFactorY*720)?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
