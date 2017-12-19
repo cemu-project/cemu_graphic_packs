@@ -26,7 +26,6 @@ height = 480
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-
 [TextureRedefine] #Only saw depth in Nsight
 width = 640
 height = 360
