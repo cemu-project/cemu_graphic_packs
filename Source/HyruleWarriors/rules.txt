@@ -20,6 +20,13 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
+[TextureRedefine] #Gamepad
+width = 854
+height = 480
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+
 [TextureRedefine] #Only saw depth in Nsight
 width = 640
 height = 360
