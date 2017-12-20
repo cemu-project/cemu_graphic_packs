@@ -14,7 +14,6 @@ version = 2
 [TextureRedefine] # tv
 width = 1920
 height = 1080
-tileModesExcluded = 0x1
 overwriteWidth = <?=round($scaleFactorX*1920)?> 
 overwriteHeight = <?=round($scaleFactorY*1080)?> 
 
