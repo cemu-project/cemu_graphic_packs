@@ -16,6 +16,7 @@ version = 2
 width = 1280
 height = 720
 #formatsExcluded = 0x1a # disabled because shares same format as display texture itself
+tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
