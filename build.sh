@@ -42,39 +42,51 @@ build_dir () {
         done
 }
 
-res_360p=( "Performance" 640 360 )
 res_360p329=( "Performance" 1280 360 )
-res_480p=( "Performance" 854 480 )
+res_360p489=( "Performance" 1920 360 )
+res_360p=( "Performance" 640 360 )
 res_480p329=( "Performance" 1708 480 )
-res_540p=( "Performance" 960 540 )
+res_480p489=( "Performance" 2562 480 )
+res_480p=( "Performance" 854 480 )
 res_540p219=( "Performance" 1280 540 )
 res_540p329=( "Performance" 1920 540 )
-res_720p=( "Performance" 1280 720 )
+res_540p489=( "Performance" 2880 540 )
+res_540p=( "Performance" 960 540 )
 res_720p329=( "Performance" 2560 720 )
-res_900p=( "Quality" 1600 900 )
+res_720p489=( "Performance" 3840 720 )
+res_720p=( "Performance" 1280 720 )
 res_900p219=( "Quality" 2100 900 )
 res_900p329=( "Quality" 3200 900 )
-res_1080p=( "Quality" 1920 1080 )
+res_900p489=( "Quality" 4800 900 )
+res_900p=( "Quality" 1600 900 )
 res_1080p219=( "Quality" 2560 1080 )
 res_1080p329=( "Quality" 3840 1080 )
-res_1440p=( "Quality" 2560 1440 )
+res_1080p489=( "Quality" 5760 1080 )
+res_1080p=( "Quality" 1920 1080 )
 res_1440p219=( "Quality" 3440 1440 )
 res_1440p329=( "Quality" 5120 1440 )
-res_1800p=( "Quality" 3200 1800 )
+res_1440p489=( "Quality" 7680 1440 )
+res_1440p=( "Quality" 2560 1440 )
 res_1800p219=( "Quality" 4200 1800 )
 res_1800p329=( "Quality" 6400 1800 )
-res_2160p=( "Quality" 3840 2160 )
+res_1800p489=( "Quality" 9600 1800 )
+res_1800p=( "Quality" 3200 1800 )
 res_2160p219=( "Quality" 5120 2160 )
 res_2160p329=( "Quality" 7680 2160 )
-res_2880p=( "Enthusiast" 5120 2880 )
+res_2160p489=( "Quality" 11520 2160 )
+res_2160p=( "Quality" 3840 2160 )
 res_2880p219=( "Enthusiast" 6880 2880 )
 res_2880p329=( "Enthusiast" 10240 2880 )
-res_4320p=( "Enthusiast" 7680 4320 )
+res_2880p489=( "Enthusiast" 15360 2880 )
+res_2880p=( "Enthusiast" 5120 2880 )
 res_4320p219=( "Enthusiast" 10240 4320 )
 res_4320p329=( "Enthusiast" 15360 4320 )
-res_5760p=( "Enthusiast" 10240 5760 )
+res_4320p489=( "Enthusiast" 23040 4320 )
+res_4320p=( "Enthusiast" 7680 4320 )
 res_5760p219=( "Enthusiast" 13760 5760 )
 res_5760p329=( "Enthusiast" 20480 5760 )
+res_5760p489=( "Enthusiast" 30720 5760 )
+res_5760p=( "Enthusiast" 10240 5760 )
 
 std_respack () {
 	gameName=$1
@@ -110,6 +122,7 @@ std_respack () {
 res16by9=( "360p" "480p" "540p" "720p" "900p" "1080p" "1440p" "1800p" "2160p" "2880p" "4320p" "5760p" )
 res21by9=( "540p219" "900p219" "1080p219" "1440p219" "1800p219" "2160p219" "2880p219" "4320p219" "5760p219" )
 res32by9=( "360p329" "480p329" "540p329" "720p329" "900p329" "1080p329" "1440p329" "1800p329" "2160p329" "2880p329" "4320p329" "5760p329" )
+res48by9=( "360p489" "480p489" "540p489" "720p489" "900p489" "1080p489" "1440p489" "1800p489" "2160p489" "2880p489" "4320p489" "5760p489" )
 just720p=( "720p" )
 just1080p=( "1080p" )
 
@@ -120,9 +133,9 @@ std_respack "BatmanArkham" "${res16by9[@]/$just720p}"
 std_respack "Bayonetta" "${res16by9[@]/$just720p}"
 std_respack "Bayonetta2" "${res16by9[@]/$just720p}"
 std_respack "Ben10Omniverse" "${res16by9[@]/$just720p}"
-std_respack "BreathOfTheWild" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}"
+std_respack "BreathOfTheWild" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "Brunswick" "${res16by9[@]/$just720p}"
-std_respack "CaptainToad" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+std_respack "CaptainToad" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "ChimpuzzlePro" "${res16by9[@]/$just720p}"
 std_respack "ChompyChompChompParty" "${res16by9[@]/$just720p}"
 std_respack "CitizensOfEarth" "${res16by9[@]/$just720p}"
@@ -143,7 +156,7 @@ std_respack "KickandFennick" "${res16by9[@]/$just720p}"
 std_respack "KirbyRainbowCurse" "${res16by9[@]/$just720p}"
 std_respack "KungFuPanda" "${res16by9[@]/$just720p}"
 std_respack "LEGOCityUndercover" "${res16by9[@]/$just720p}"
-std_respack "MarioKart8" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+std_respack "MarioKart8" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "MarioSonicSochi" "${res16by9[@]/$just720p}"
 std_respack "MarioTennis" "${res16by9[@]/$just720p}"
 std_respack "MonsterHunter3Ultimate" "${res16by9[@]/$just1080p}"
@@ -163,25 +176,25 @@ std_respack "ScribblenautsUnlimited" "${res16by9[@]/$just720p}"
 std_respack "ScribblenautsUnmasked" "${res16by9[@]/$just720p}"
 std_respack "Severed" "${res16by9[@]/$just720p}"
 std_respack "ShovelKnight" "${res16by9[@]/$just1080p}"
-std_respack "SonicLostWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+std_respack "SonicLostWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "Splatoon" "${res16by9[@]/$just720p}" "${res21by9[@]}"
 std_respack "SpongeBob" "${res16by9[@]/$just720p}"
 std_respack "StarFoxGuard" "${res16by9[@]/$just720p}"
 std_respack "StarFoxZero" "${res16by9[@]/$just720p}"
-std_respack "SuperMario3DWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+std_respack "SuperMario3DWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "SuperSmashBros" "${res16by9[@]/$just1080p}"
 std_respack "TNTRacers" "${res16by9[@]/$just1080p}"
 std_respack "TaikoNoTatsujin" "${res16by9[@]/$just720p}"
 std_respack "Tekken" "${res16by9[@]/$just720p}"
 std_respack "Tengami" "${res16by9[@]/$just720p}"
-std_respack "TropicalFreeze" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+std_respack "TropicalFreeze" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "TurboSuperStuntSquad" "${res16by9[@]/$just720p}"
 std_respack "TwilightPrincessHD" "${res16by9[@]/$just1080p}"
 std_respack "WarriorsOrochi3" "${res16by9[@]/$just720p}"
-std_respack "WindWakerHD" "${res16by9[@]/$just1080p}" "${res21by9[@]}"
+std_respack "WindWakerHD" "${res16by9[@]/$just1080p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 std_respack "Wipeout3" "${res16by9[@]/$just720p}"
 std_respack "WipeoutCreate" "${res16by9[@]/$just720p}"
 std_respack "Wonderful101" "${res16by9[@]/$just720p}"
-std_respack "WoollyWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}"
-std_respack "XenobladeX" "${res16by9[@]/$just720p}" "${res21by9[@]}"
+std_respack "WoollyWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
+std_respack "XenobladeX" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res32by9[@]}" "${res48by9[@]}"
 echo -e "${NC}"
