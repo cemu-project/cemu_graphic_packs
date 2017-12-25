@@ -2,7 +2,7 @@
 include 'Source/functions.php'; 
 $fullWidth = $argv[1]; 
 $fullHeight = $argv[2]; 
-$scaleFactorX = always_decimal_format($fullWidth / 1280.0); 
+$scaleFactorX = always_decimal_format($fullWidth / 960.0); 
 $scaleFactorY = always_decimal_format($fullHeight / 720.0); 
 ?>
 #version 420
