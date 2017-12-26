@@ -26,6 +26,32 @@ height = 720
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
+[TextureRedefine] # Quarter-Res Resolution
+width = 640
+height = 360
+formatsExcluded = 0x033
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] # Another Resolution
+width = 128
+height = 72
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*72)?> 
+
+[TextureRedefine] # Yet Another Resolution
+width = 120
+height = 72
+overwriteWidth = <?=round($scaleFactorX*120)?> 
+overwriteHeight = <?=round($scaleFactorY*72)?> 
+
+[TextureRedefine] # Dialog Background
+width = 480
+height = 288
+overwriteWidth = <?=round($scaleFactorX*480)?> 
+overwriteHeight = <?=round($scaleFactorY*288)?> 
+
 [TextureRedefine] # Gamepad
 width = 854
 height = 480
