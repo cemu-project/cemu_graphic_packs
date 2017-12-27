@@ -1,2 +1,10 @@
 theme: jekyll-theme-midnight
 show_downloads: true
+
+
+# Clarity Page
+data_dir: _clarity/_data
+# Collections
+collections:
+  clarity:
+    output: true
