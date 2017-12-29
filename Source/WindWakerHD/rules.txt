@@ -52,7 +52,7 @@ height = 67
 #formatsExcluded = 0x816 # uncomment for original large bloom
 overwriteWidth = <?=round($scaleFactorX*240)?> 
 overwriteHeight = <?=round($scaleFactorY*135)?> 
-#should scale to 480x270 texture not 268 integer for 2880p
+
 
 [TextureRedefine] #  Bloom pyramid 4 last step
 width = 60
@@ -60,7 +60,7 @@ height = 33
 #formatsExcluded = 0x816 # uncomment for original large bloom
 overwriteWidth = <?=round($scaleFactorX*60)?> 
 overwriteHeight = <?=round($scaleFactorY*33)?> 
-#240x135x texture , not 132  integer for 2880p
+
 
 [TextureRedefine] #Shadows
 width = 1024
