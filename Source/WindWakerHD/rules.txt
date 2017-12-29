@@ -50,8 +50,8 @@ overwriteHeight = <?=round($scaleFactorY*135)?>
 width = 120
 height = 67
 #formatsExcluded = 0x816 # uncomment for original large bloom
-overwriteWidth = <?=round($scaleFactorX*240)?> 
-overwriteHeight = <?=round($scaleFactorY*135)?> 
+overwriteWidth = <?=round($scaleFactorX*120)?> 
+overwriteHeight = <?=round($scaleFactorY*67)?> 
 
 
 [TextureRedefine] #  Bloom pyramid 4 last step
