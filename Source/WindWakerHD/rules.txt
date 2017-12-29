@@ -29,7 +29,7 @@ overwriteHeight = <?=round($scaleFactorY*540)?>
 [TextureRedefine] # shadow blur, Bloom pyarmid start
 width = 480
 height = 270
-formatsExcluded = 0x816 # bloom texture lod fix
+#formatsExcluded = 0x816 # uncomment for original large bloom
 overwriteWidth = <?=round($scaleFactorX*480)?> 
 overwriteHeight = <?=round($scaleFactorX*270)?> 
 
@@ -42,14 +42,14 @@ overwriteHeight = <?=round($scaleFactorY*480)?>
 [TextureRedefine] # last shadow blur. Bloom pyramid 2
 width = 240
 height = 135
-formatsExcluded = 0x816
+#formatsExcluded = 0x816 # uncomment for original large bloom
 overwriteWidth = <?=round($scaleFactorX*240)?> 
 overwriteHeight = <?=round($scaleFactorY*135)?> 
 
 [TextureRedefine] #  Bloom pyramid 3
 width = 120
 height = 67
-formatsExcluded = 0x816
+#formatsExcluded = 0x816 # uncomment for original large bloom
 overwriteWidth = <?=round($scaleFactorX*240)?> 
 overwriteHeight = <?=round($scaleFactorY*135)?> 
 #should scale to 480x270 texture not 268 integer for 2880p
@@ -57,7 +57,7 @@ overwriteHeight = <?=round($scaleFactorY*135)?>
 [TextureRedefine] #  Bloom pyramid 4 last step
 width = 60
 height = 33
-formatsExcluded = 0x816
+#formatsExcluded = 0x816 # uncomment for original large bloom
 overwriteWidth = <?=round($scaleFactorX*60)?> 
 overwriteHeight = <?=round($scaleFactorY*33)?> 
 #240x135x texture , not 132  integer for 2880p
