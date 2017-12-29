@@ -61,3 +61,10 @@ formatsExcluded = 0x816
 overwriteWidth = <?=round($scaleFactorX*60)?> 
 overwriteHeight = <?=round($scaleFactorY*33)?> 
 #240x135x texture , not 132  integer for 2880p
+
+[TextureRedefine] #Shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*1024)?> 
