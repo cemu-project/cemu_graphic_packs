@@ -179,6 +179,7 @@ std_respack "TropicalFreeze" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res4
 std_respack "TurboSuperStuntSquad" "${res16by9[@]/$just720p}"
 std_respack "TwilightPrincessHD" "${res16by9[@]/$just1080p}"
 std_respack "WarriorsOrochi3" "${res16by9[@]/$just720p}"
+std_respack "WiiUBIOS" "${res16by9[@]/$just720p}"
 std_respack "WindWakerHD" "${res16by9[@]/$just1080p}" "${res21by9[@]}" "${res48by9[@]}"
 std_respack "Wipeout3" "${res16by9[@]/$just720p}"
 std_respack "WipeoutCreate" "${res16by9[@]/$just720p}"
