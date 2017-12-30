@@ -1,0 +1,5 @@
+# Found by jediyoshi, Shadow format found by SunBroDave
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = "The Legend of Zelda: The Wind Waker HD - GC colour grading" # aka teal is not blue... nor is purple. 
+version = 2 
