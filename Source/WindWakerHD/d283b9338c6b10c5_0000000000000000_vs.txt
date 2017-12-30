@@ -2,8 +2,8 @@
 include 'Source/functions.php';
 $fullWidth = $argv[1];
 $fullHeight = $argv[2];
-$scaleFactorX = always_decimal_format($fullWidth / 1920.0);
-$scaleFactorY = always_decimal_format($fullHeight / 1080.0);
+$scaleFactorX = always_decimal_format($fullWidth / 1920.0*2.0);
+$scaleFactorY = always_decimal_format($fullHeight / 1080.0*2.0);
 ?>
 #version 420
 #extension GL_ARB_texture_gather : enable
