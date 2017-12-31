@@ -5,8 +5,8 @@
 const float resScale = 4.0;
 
 //old contrasty, or just copy paste clarity
-const float gamma = 0.8; // 1.0 is neutral  Botw is already colour graded at this stage
-const float exposure = 1.05; // 1.0 is neutral
+const float gamma = 0.85; // 1.0 is neutral  Botw is already colour graded at this stage
+const float exposure = 1.03; // 1.0 is neutral
 const float vibrance = 0.02;  // 0.0 is neutral  
 const float crushContrast = 0.00; // 0.0 is neutral. Use small increments, loss of shadow detail 
 
