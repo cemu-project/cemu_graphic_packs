@@ -92,3 +92,17 @@ height = 46
 #formatsExcluded = 0x816  #fixed in shader
 overwriteWidth = <?=round($scaleFactorX*80)?> 
 overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+[TextureRedefine] #XCX shadow
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*1024)?> 
+	
+[TextureRedefine] #XCX Dynamic shadow scale both same for smoother transitions	
+width = 512
+height = 512
+formats = 0x005	
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*1024)?> 

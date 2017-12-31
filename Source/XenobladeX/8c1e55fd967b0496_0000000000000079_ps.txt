@@ -173,11 +173,11 @@ void main()
 	PV1f.w = R127f.w;
 	// 6
 	PV0f.x = PV1f.z + -(PV1f.w);
-	R5f.y = (PV1f.y * 0.35 + R127f.x);//degree of bloom
-	R5f.x = (PV1f.x * 0.35 + R127f.z);
+	R5f.y = (PV1f.y * 0.30 + R127f.x);//degree of bloom
+	R5f.x = (PV1f.x * 0.30 + R127f.z);
 	PS0f = R5f.x;
 	// 7
-	R5f.z = (PV0f.x * 0.35 + R127f.w);
+	R5f.z = (PV0f.x * 0.30 + R127f.w);
 	// export
 	passPixelColor0 = vec4(R5f.x, R5f.y, R5f.z, R5f.w);
 }

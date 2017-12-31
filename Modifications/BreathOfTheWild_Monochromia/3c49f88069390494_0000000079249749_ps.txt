@@ -3,7 +3,7 @@
 // shader 3c49f88069390494
 // Monochromia
 // Plants - rainy weather
-// original shader dumped using cemu 1.11.c, BotW 1.3.1
+// original shader dumped using cemu 1.11.0c, BotW 1.3.1
 #define ENABLE_COLOR_FADE 0 // set this to 1 to enable, 0 to disable the effect
 
 uniform ivec4 uf_remappedPS[10];

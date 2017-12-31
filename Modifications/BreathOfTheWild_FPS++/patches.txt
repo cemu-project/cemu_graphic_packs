@@ -223,8 +223,8 @@ _fullspeed = 0x00000080
 ;0x02F862C4 = li r7, 1 
 ;0x02F86514 = li r7, 1 
 
-[BotwFPSv176]
-moduleMatches = 0xFD091F9F
+[BotwFPSv176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
 
 #rodata constants
 _float1 = 0x10000670

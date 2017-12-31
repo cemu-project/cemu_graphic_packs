@@ -1,0 +1,62 @@
+[BotwNoVsyncV33]
+moduleMatches = 0xD91A406D 
+
+;0x03068414 = nop ;disables gx2 fence
+0x030685E4 = nop ;disables wait for vsync
+0x03068608 = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV48]
+moduleMatches = 0x0F748D9C
+
+;0x03068488 = nop ;disables gx2 fence
+0x03068658 = nop ;disables wait for vsync
+0x0306867C = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV64]
+moduleMatches = 0x9A61FF4C
+
+;0x03069B60 = nop ;disables gx2 fence
+0x03069D30 = nop ;disables wait for vsync
+0x03069D54 = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV80]
+moduleMatches = 0x8E3324A9
+
+;0x03088A68 = nop ;disables gx2 fence
+0x03088C38 = nop ;disables wait for vsync
+0x03088C5C = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV97]
+moduleMatches = 0xD71D859D
+
+;0x030D42A0 = nop ;disables gx2 fence
+0x030D4474 = nop ;disables wait for vsync
+0x030D4498 = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV112]
+moduleMatches = 0x6FD41A61
+
+;0x030D5200 = nop ;disables gx2 fence
+0x030D53D4 = nop ;disables wait for vsync
+0x030D53F8 = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV144]
+moduleMatches = 0x9A2CA0C7
+
+;0x03102808 = nop ;disables gx2 fence
+0x031029DC = nop ;disables wait for vsync
+0x03102A00 = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV160]
+moduleMatches = 0x29DBB52A
+
+;0x031026D8 = nop ;disables gx2 fence
+0x031028A8 = nop ;disables wait for vsync
+0x031028CC = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
+
+;0x031FA004 = nop ;disables gx2 fence
+0x031FA1D4 = nop ;disables wait for vsync
+0x031FA1F8 = nop ;disables wait for vsync loop

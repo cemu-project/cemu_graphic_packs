@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - 30FPS Lock (Requires FPS++)"
+name = "The Legend of Zelda: Breath of the Wild - 30FPS Lock (Requires Fence Skip or FPS++)"
 version = 2
 
 [Control]

@@ -1,0 +1,9 @@
+============================================
+
+1. Open the Preset folder and then open a preset of your choice in a text editor.  Copy the text.
+
+2. Go back to the main folder and open the original [shaderID_ps.txt] then replace the all of the text.  Save.
+
+3. Enable the pack in Cemu in order to test the preset.
+
+============================================

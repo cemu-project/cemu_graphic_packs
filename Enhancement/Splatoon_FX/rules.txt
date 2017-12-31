@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B000
+name = "Splatoon - Splat FX"
+version = 2

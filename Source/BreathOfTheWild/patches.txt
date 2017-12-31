@@ -137,8 +137,8 @@ _aspectAddr = 0x101A8A70
 0x0375AFF4 = lis r28, ha16(_aspectAddr)
 0x0375AFF8 = lfs f12, _aspectAddr(r28)
 
-[BotwAspectsV176]
-moduleMatches = 0xFD091F9F
+[BotwAspectsV176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
 # rodata constants
 0x101BF878 = .float <?=$aspect?> 
 0x1030A3F4 = .float <?=$aspect?> 

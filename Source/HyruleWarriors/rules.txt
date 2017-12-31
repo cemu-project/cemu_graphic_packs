@@ -20,6 +20,24 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
+[TextureRedefine] #Game Resolution (Co-Op)
+width = 864
+height = 480
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] #Gamepad
+width = 854
+height = 480
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] #Gamepad (Co-Op)
+width = 648
+height = 368
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
 [TextureRedefine] #Only saw depth in Nsight
 width = 640
 height = 360

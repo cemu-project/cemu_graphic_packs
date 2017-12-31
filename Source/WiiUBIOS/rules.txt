@@ -1,0 +1,179 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 000500101004b100,000500301006d10a,000500101004c100,000500301001810a,000500301001510a,000500301001210a,000500101004a100,000500301001610a,000500301001910a,000500301001410a,000500301001310a,000500101004d100,0005001010048100,0005001010047100,0005001010062100,0005001010045100,0005001010049100,000500101005a100,000500301001710a,0005001010040100
+name = "Wii U BIOS - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv 1080p
+width = 1920
+height = 1080
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # tv full 
+width = 1280
+height = 720
+formatsExcluded = 0x31,0x1a
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # tv half
+width = 640
+height = 360
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] # tv quarter
+width = 320
+height = 180
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine] # gamepad full
+width = 854
+height = 480
+formatsExcluded = 0x33
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # gamepad half
+width = 427
+height = 240
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] # browser
+width = 2176
+height = 1248
+#overwriteWidth = <?=round($scaleFactorX*2176)?> 
+#overwriteHeight = <?=round($scaleFactorY*1248)?> 
+
+#The following texture resolutions need to be checked in Nsight or PerfStudio
+
+#Daily Log
+#0, 0, 32, 32
+#0, 0, 16, 16
+#0, 0, 8, 8
+#0, 0, 48, 48
+#0, 0, 24, 24
+
+#Internet Browser
+#0, 0, 128, 128
+#0, 0, 64, 128
+#0, 0, 256, 256
+#0, 0, 128, 256
+#0, 0, 2176, 1248
+#121, 107, 1038, 544
+#81, 72, 692, 362
+#114, 104, 1052, 551
+#77, 69, 700, 368
+#105, 99, 1070, 562
+#70, 66, 714, 374
+#94, 94, 1092, 573
+#63, 63, 728, 381
+#83, 88, 1114, 585
+#55, 59, 744, 390
+#70, 82, 1140, 598
+#47, 55, 760, 399
+#57, 76, 1166, 612
+#38, 51, 778, 407
+#45, 70, 1190, 625
+#30, 47, 794, 416
+#33, 64, 1214, 637
+#22, 43, 810, 425
+#22, 59, 1236, 648
+#15, 39, 824, 433
+#13, 54, 1254, 659
+#9, 36, 836, 439
+#6, 51, 1268, 666
+#4, 34, 846, 444
+#1, 49, 1278, 670
+#1, 33, 852, 446
+#0, 48, 1280, 672
+#0, 32, 854, 448
+#0, 47, 1280, 673
+#0, 31, 854, 449
+#0, 45, 1280, 675
+#0, 30, 854, 450
+#0, 42, 1280, 678
+#0, 28, 854, 452
+#0, 37, 1280, 683
+#0, 25, 854, 455
+#0, 32, 1280, 688
+#0, 21, 854, 459
+#0, 26, 1280, 694
+#0, 17, 854, 463
+#0, 20, 1280, 700
+#0, 13, 854, 467
+#0, 14, 1280, 706
+#0, 9, 854, 471
+#0, 8, 1280, 712
+#0, 5, 854, 475
+#0, 2, 1280, 718
+#0, 1, 854, 479
+#0, 0, 170, 256
+#0, 0, 256, 120
+#0, 0, 170, 120
+#0, 0, 424, 376
+
+#Mii Maker
+#0, 0, 650, 366
+#0, 0, 256, 256
+#0, 0, 64, 64
+#0, 0, 128, 256
+#0, 0, 32, 64
+#0, 0, 128, 128
+#0, 0, 460, 460
+#0, 0, 230, 460 
+
+#Nintendo eShop
+#265, 170, 750, 381
+#177, 113, 500, 254
+#235, 134, 750, 381
+#157, 89, 500, 254
+#234, 133, 751, 382
+#234, 133, 752, 382
+#156, 89, 502, 254
+#233, 133, 753, 382
+#156, 88, 502, 255
+#233, 132, 754, 383
+#155, 88, 503, 256
+#232, 132, 756, 384
+#155, 88, 504, 256
+
+#Parental Controls
+#0, 0, 32, 32
+#0, 0, 16, 16
+#0, 0, 8, 8
+#0, 0, 48, 48
+#0, 0, 24, 24
+#0, 0, 213, 120
+
+#System Settings
+#0, 0, 32, 32
+#0, 0, 16, 16
+#0, 0, 8, 8
+#0, 0, 48, 48
+#0, 0, 24, 24
+#0, 0, 213, 120
+
+#System Transfer (Crashes)
+#0, 0, 256, 256
+#0, 0, 128, 256
+#0, 0, 128, 128
+#0, 0, 48, 48
+
+#User Settings
+#0, 0, 48, 48
+#0, 0, 24, 24
+#0, 0, 32, 32
+#0, 0, 16, 16
+#0, 0, 8, 8
+#0, 0, 213, 120

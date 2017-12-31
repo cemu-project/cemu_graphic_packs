@@ -3,7 +3,7 @@
 // shader 53422d4f43914447
 // Monochromia
 // Sky
-// original shader dumped using cemu 1.11.c, BotW 1.3.1
+// original shader dumped using cemu 1.11.0c, BotW 1.3.1
 uniform ivec4 uf_remappedPS[5];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x3da26000 res 256x256x1 dim 1 tm: 4 format 0820 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem0;

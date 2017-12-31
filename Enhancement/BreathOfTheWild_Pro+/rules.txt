@@ -9,3 +9,17 @@ height = 48
 formats = 0x007
 tilemodes = 4
 overwriteFormat = 0x005
+
+[TextureRedefine] # Disable text from subtitles, currupts some text.
+width = 1024
+height = 1024
+formats = 0x034
+# Remove the hash sign ('#') from the line below to enable.
+#overwriteFormat = 0x235
+
+[TextureRedefine] # Disable text from subtitles, currupts some text.
+width = 512
+height = 1024
+formats = 0x034
+# Remove the hash sign ('#') from the line below to enable.
+#overwriteFormat = 0x235
