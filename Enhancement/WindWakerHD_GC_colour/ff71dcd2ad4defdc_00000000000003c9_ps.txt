@@ -6,13 +6,13 @@ const float resScale = 4.0;
 
 //old contrasty, or just copy paste clarity
 const float gamma = 0.85; // 1.0 is neutral  Botw is already colour graded at this stage
-const float exposure = 1.03; // 1.0 is neutral
-const float vibrance = 0.02;  // 0.0 is neutral  
+const float exposure = 1.02; // 1.0 is neutral
+const float vibrance = 0.015;  // 0.0 is neutral  
 const float crushContrast = 0.00; // 0.0 is neutral. Use small increments, loss of shadow detail 
 
 vec3 contrasty(vec3 colour){
 	vec3 fColour = (colour.xyz);
-	fColour = max(vec3(0.0), fColour - vec3(crushContrast));
+	
 	fColour = clamp(exposure * fColour, 0.0, 1.0);
 	fColour = pow(fColour, vec3(1.0 / gamma));
 	float luminance = fColour.r*0.299 + fColour.g*0.587 + fColour.b*0.114;
@@ -22,6 +22,7 @@ vec3 contrasty(vec3 colour){
 	vec3 lightness = vec3((mn + mx) / 2.0);
 // vibrance
 	fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
+	fColour = max(vec3(0.0), fColour - vec3(crushContrast));
 	return fColour;
 }
 
