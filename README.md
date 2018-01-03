@@ -1,5 +1,9 @@
-# Don't download this repository like this! It'll result in missing packs!
-## The correct download links can only be found on the [GitHub Site](https://slashiee.github.io/cemu_graphic_packs/).
+### Don't download this repository like this! It'll result in missing packs!
+### The correct download links can only be found on the [GitHub Site](https://slashiee.github.io/cemu_graphic_packs/).
+
+
+----------
+
 
 Information
 ------
