@@ -1,42 +1,445 @@
-[Definition]	
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500 # ALZP01	
-name = "The Legend of Zelda: Breath of the Wild - Clean Camera Rune (configurable)"
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Clean Camera Rune V0.2"
 version = 2
 
-# This pack is configurable, which could make the pack more playable with some compromises.
-# You can disable shaders if you want to to remove graphical bugs that this will bring. Everything shader has a comment with the results of my limited research.
-# Here's a list with all the different parts, which you can disable (just rename the extension to .bak).
-# Installing/changing preset's should be as easy as just moving the files next towards the rules.txt file.
+# Use prohud+ to disable hearts. Affects nothing (afaik) besides text and some bugs(seen on the main menu).
+# The selfie view isn't working correctly (yet) and shows blue squares as I don't know a way to disable this yet.
+# This pack is doomed to have bugs, so only enable it when you want to make high-res screenshots.
+# Reporting bugs is helpful to improve this pack (although there's no magic, so it might stay unfixed) and can be done on github or via discord (you'll know where). 
 
-# The default presets (that are used when you've downloaded this) is Minimal mode, which doesn't have any drawback.
-# Photo mode however is much more obtrusive and has a significant impact on the menu's. You'll need to browse the menu's blindly.
-# As always, I don't discourage changing some of these out by yourself as it's all limited testing.
-# Included are screenshots of both of these presets to help you decide.
 
-# Tested:
-# 5431383136d7b11b_0000000000000000_vs.txt // Main Lines // No drawbacks
-# cb83a22cf0961e1a_000000000000007d_ps.txt // "Zoom" Text // No drawbacks
-# 156a8a37bc669fec_0000000000001e49_ps.txt // Black tint edge // No drawbacks
-# 2d0ed5b8778b1709_0000000000000000_vs.txt // Edge Bloom 1 // No drawbacks
-# 7751959c9083eebb_000000000000007d_ps.txt // Sheikah letters left&right, menu button prompts // Removes most text from menu
-# a15e2a77cef4c5e3_000000000000007d_ps.txt // Text Frame // Removes text from menu
-# ededcf8bdc3384ef_0000000000000079_ps.txt // Glow, Frame GUI // Clear UI, Removes fade on main menu, removes inventory icons, removes hearts
 
-# Don't use this!
-# 569ebe93f1ae5799_0000000000000079_ps.txt // Vintage, Remove buttons, Edge Textures, Edge Background // MASSIVE ACNE OR BLACK SCREEN
 
-# =================================
-# Presets:
-# - Minimal
-# 5431383136d7b11b_0000000000000000_vs.txt
-# cb83a22cf0961e1a_000000000000007d_ps.txt
-# 156a8a37bc669fec_0000000000001e49_ps.txt
+# >>> Camera UI <<<
+[TextureRedefine] # Disable Photo Lock, already disabled!!! # 239df000_fmt0034_mip00_200x200_tm04_sw00000000.bmp
+width = 200
+height = 200
+formats = 0x034
+tilemodes = 4
+#overwriteHeight = 1
+#overwriteWidth = 1
+# Affects leaves (and maybe more)!
 
-# - Photo
-# 569ebe93f1ae5799_0000000000000079_ps.txt
-# 7751959c9083eebb_000000000000007d_ps.txt
-# ededcf8bdc3384ef_0000000000000079_ps.txt
-# 2d0ed5b8778b1709_0000000000000000_vs.txt
-# a15e2a77cef4c5e3_000000000000007d_ps.txt
+[TextureRedefine] # Disable Sheikah Opening Animation # 238dd000_fmt0034_mip00_314x358_tm04_sw00000700.bmp
+width = 314
+height = 358
+formats = 0x034
+tilemodes = 4
+overwriteHeight = 1
+overwriteWidth = 1
 
-# There's improvements to be made so give some feedback if you find anything. You can create a new issue on the github repository and it'll be looked at.
+[TextureRedefine] # Removes Storage Numbers # f4252800_fmt001a_mip00_24x24_tm04_sw00000000.bmp
+width = 24
+height = 24
+formats = 0x001a
+tilemodes = 4
+overwriteHeight = 1
+overwriteWidth = 1
+
+[TextureRedefine] # Removes most text! Also only removes a single element... # 20340000_fmt0001_mip00_1024x1024_tm04_sw00000000.bmp
+width = 1024
+height = 1024
+formats = 0x001
+tilemodes = 4
+overwriteWidth = 1
+overwriteHeight = 1
+
+[TextureRedefine] # Remove the zoom triangle # 229f1000_fmt0034_mip00_75x75_tm04_sw00000000.bmp
+width = 75
+height = 75
+formats = 0x034
+tilemodes = 4
+overwriteWidth = 1
+overwriteHeight = 1
+
+[TextureRedefine] # Remove the zoom line # 236ad000_fmt0034_mip00_8x8_tm02_sw00000000.bmp
+width = 8
+height = 8
+formats = 0x034
+tilemodes = 2
+overwriteWidth = 1
+overwriteHeight = 1
+
+[TextureRedefine] # Remove the orange # 23379900_fmt0034_mip00_26x26_tm02_sw00000000.bmp
+width = 26
+height = 26
+formats = 0x034
+tilemodes = 2
+overwriteWidth = 1
+overwriteHeight = 1
+
+# >>> MISC <<<
+[TextureRedefine] # Disable Camera Vignette # 2330e000_fmt0034_mip00_242x162_tm04_sw00000100.bmp
+width = 242
+height = 162
+formats = 0x034
+tilemodes = 4
+overwriteHeight = 1
+overwriteWidth = 1
+
+[TextureRedefine] # Disable Background 'Lines' # 2258b000_fmt0034_mip00_13x305_tm04_sw00000400.bmp
+width = 13
+height = 305
+formats = 0x034
+tilemodes = 4
+overwriteHeight = 1
+overwriteWidth = 1
+
+[TextureRedefine] # Removing Border Runes # 2005e000_fmt0034_mip00_32x1024_tm04_sw00000000.bmp
+width = 32
+height = 1024
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # Removing Background # 228d9000_fmt0034_mip00_512x512_tm04_sw00000300.bmp
+width = 512
+height = 512
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # Removing Textures from edge # 239f3000_fmt0034_mip00_1278x387_tm04_sw00000400.bmp
+width = 1278
+height = 387
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # Removes the glow at the border, but can affect other effects. Off by default due to this. # 22456000_fmt0035_mip00_128x128_tm04_sw00000000.bmp
+width = 128
+height = 128
+formats = 0x035
+#overwriteHeight = 1
+#overwriteWidth = 1
+tilemodes = 4
+
+
+# >>> Frame Decoration <<<
+[TextureRedefine] # 23c76000_fmt0433_mip00_97x156_tm04_sw00000600.bmp
+width = 97
+height = 156
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 22a80000_fmt0433_mip00_179x40_tm04_sw00000000.bmp
+width = 179
+height = 40
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 22f42000_fmt0433_mip00_855x30_tm04_sw00000300.bmp
+width = 855
+height = 30
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23d74000_fmt0433_mip00_151x139_tm04_sw00000500.bmp
+width = 151
+height = 139
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 229d8000_fmt0433_mip00_88x77_tm04_sw00000200.bmp
+width = 88
+height = 77
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 2375e000_fmt0433_mip00_908x26_tm04_sw00000200.bmp
+width = 908
+height = 26
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 22346000_fmt0433_mip00_57x171_tm04_sw00000200.bmp
+width = 57
+height = 171
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 22360000_fmt0433_mip00_79x187_tm04_sw00000100.bmp
+width = 79
+height = 187
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 22884000_fmt0433_mip00_96x69_tm04_sw00000700.bmp
+width = 96
+height = 69
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23697100_fmt0433_mip00_107x47_tm02_sw00000000.bmp
+width = 107
+height = 47
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 2
+
+[TextureRedefine] # 23c76000_fmt0433_mip00_97x156_tm04_sw00000600.bmp
+width = 97
+height = 156
+formats = 0x433
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+# >>> Frame Glow <<<
+[TextureRedefine] # 22df3000_fmt0034_mip00_92x157_tm04_sw00000100.bmp
+width = 92
+height = 157
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 22dfe000_fmt0034_mip00_135x188_tm04_sw00000000.bmp
+width = 135
+height = 188
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23b23000_fmt0034_mip00_58x171_tm04_sw00000600.bmp
+width = 58
+height = 171
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23c46000_fmt0034_mip00_148x140_tm04_sw00000200.bmp
+width = 148
+height = 140
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 223ae000_fmt0034_mip00_159x152_tm04_sw00000500.bmp
+width = 159
+height = 152
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+# >>> Frame Decoration Edges <<<
+[TextureRedefine] # 22f03400_fmt0033_mip00_108x47_tm02_sw00000000.bmp
+width = 108
+height = 47
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 2
+
+[TextureRedefine] # 23c64000_fmt0033_mip00_97x69_tm04_sw00000500.bmp
+width = 97
+height = 69
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 224c0000_fmt0033_mip00_1086x41_tm04_sw00000600.bmp
+width = 1086
+height = 41
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 2234e000_fmt0033_mip00_110x77_tm04_sw00000000.bmp
+width = 110
+height = 77
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 2299a000_fmt0033_mip00_832x30_tm04_sw00000100.bmp
+width = 110
+height = 77
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 2365c000_fmt0033_mip00_151x149_tm04_sw00000300.bmp
+width = 151
+height = 149
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23644000_fmt0033_mip00_97x157_tm04_sw00000400.bmp
+width = 97
+height = 157
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23770000_fmt0033_mip00_57x160_tm04_sw00000000.bmp
+width = 57
+height = 160
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23784000_fmt0033_mip00_79x187_tm04_sw00000700.bmp
+width = 79
+height = 187
+formats = 0x033
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+# >>> Frame Decoration Blur <<<
+[TextureRedefine] # 23dc1000_fmt0034_mip00_97x80_tm04_sw00000700.bmp
+width = 97
+height = 80
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 227d7000_fmt0034_mip00_68x174_tm04_sw00000300.bmp
+width = 68
+height = 174
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 228c0000_fmt0034_mip00_157x148_tm04_sw00000700.bmp
+width = 157
+height = 148
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 236ae000_fmt0034_mip00_101x168_tm04_sw00000600.bmp
+width = 101
+height = 168
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 236e8000_fmt0034_mip00_144x199_tm04_sw00000500.bmp
+width = 144
+height = 199
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+# >>> Frame Decoration Edges <<<
+[TextureRedefine] # 22ac0000_fmt0034_mip00_182x152_tm04_sw00000200.bmp
+width = 182
+height = 152
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 230ed000_fmt0034_mip00_126x153_tm04_sw00000400.bmp
+width = 126
+height = 153
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23983000_fmt0034_mip00_52x133_tm04_sw00000100.bmp
+width = 52
+height = 133
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23797000_fmt0034_mip00_279x54_tm04_sw00000500.bmp
+width = 279
+height = 54
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23983000_fmt0034_mip00_52x133_tm04_sw00000100.bmp
+width = 52
+height = 133
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 238d9000_fmt0034_mip00_292x42_tm04_sw00000400.bmp
+width = 292
+height = 42
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 238d9000_fmt0034_mip00_292x42_tm04_sw00000400.bmp
+width = 292
+height = 42
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23447000_fmt0034_mip00_90x69_tm04_sw00000200.bmp
+width = 90
+height = 69
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 227e8000_fmt0034_mip00_1098x58_tm04_sw00000400.bmp
+width = 1098
+height = 58
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
+
+[TextureRedefine] # 23601000_fmt0034_mip00_997x58_tm04_sw00000100.bmp
+width = 997
+height = 58
+formats = 0x034
+overwriteHeight = 1
+overwriteWidth = 1
+tilemodes = 4
