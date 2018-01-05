@@ -4,7 +4,6 @@
 
 	
 
-	(May not work with Windows 10 Creators Update Fall Edition)
 
 	((Required storage space, Approx 2~4GB))
 	
