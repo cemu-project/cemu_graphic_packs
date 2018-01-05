@@ -1,21 +1,30 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - Clean Camera Rune Pre-Release V1.0" # First release, close to not breaking any gameplay.
+name = "The Legend of Zelda: Breath of the Wild - Minimalistic GUI V1.0".
 version = 2
 
-# Use prohud+ to disable hearts. Affects nothing major besides menu backgrounds (and in this pre-release all the text, will be fixed in the upcoming release) which will be set to a 'clean' look.
-# The selfie view is fixed, besides some spare text left over (object labeling). You can try disabling the drawdone setting to glitch out the specific object text which isn't specifically target-able in any shader form.
-# Reporting bugs is helpful to improve this pack and can be done on Github. 
+# This pack changes the GUI to a modern looking GUI and cleans up things like menu's and the camera rune.
+# Minor (random, might be better/worse) gameplay compromises.
+
+# Some small text bugs:
+# - e.g. missing the 'x' character from 'x6 Mighty Bananas'. Can be fixed in the shader file named `a8f3ec17a11d4a50_0000000000000000_vs.txt`, where you can find more info.
+# - Missing bonus modifier text from inventory screen.
+# - Holding items in the inventory or having a second or third etc.. loading screen seems to break text and HUD prompts after you've done this.
+# - Might be related to the thing above, random texture corruption from rules.txt, not aware of any solution. Probably the circumstances, but it seems like some memory leak issue. Higher GPU accuracy and drawDone could decrease how often/fast it appears.
+
+# If you find more bugs you can make an issue on the Github repository. If you don't want/have a github account, you can also leave a message in the gfx_packs channel in the official Cemu discord.
 
 
+# This pack got renamed from CleanCameraRune pack due to it no longer affecting gameplay and having several menu changes.
+# -----------------------------------------------------------------
 
 
 # >>> Camera UI <<<
-[TextureRedefine] # Disable Photo Lock, already disabled!!! # 239df000_fmt0034_mip00_200x200_tm04_sw00000000.bmp
-width = 200
-height = 200
-formats = 0x034
-tilemodes = 4
+#[TextureRedefine] # Disable Photo Lock, already disabled!!! # 239df000_fmt0034_mip00_200x200_tm04_sw00000000.bmp
+#width = 200
+#height = 200
+#formats = 0x034
+#tilemodes = 4
 #overwriteHeight = 1
 #overwriteWidth = 1
 # Affects leaves (and maybe more)!
@@ -34,14 +43,6 @@ formats = 0x001a
 tilemodes = 4
 overwriteFormat = 0x021a # UNORM -> SNORM
 
-[TextureRedefine] # Removes most text! Also only removes a single element... # 20340000_fmt0001_mip00_1024x1024_tm04_sw00000000.bmp
-width = 1024
-height = 1024
-formats = 0x001
-tilemodes = 4
-#overwriteHeight = 1
-#overwriteWidth = 1
-
 [TextureRedefine] # Remove the zoom triangle # 229f1000_fmt0034_mip00_75x75_tm04_sw00000000.bmp
 width = 75
 height = 75
@@ -56,7 +57,7 @@ formats = 0x034
 tilemodes = 2
 overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
 
-[TextureRedefine] # Remove the orange # 23379900_fmt0034_mip00_26x26_tm02_sw00000000.bmp
+[TextureRedefine] # Remove the orange borders # 23379900_fmt0034_mip00_26x26_tm02_sw00000000.bmp
 width = 26
 height = 26
 formats = 0x034

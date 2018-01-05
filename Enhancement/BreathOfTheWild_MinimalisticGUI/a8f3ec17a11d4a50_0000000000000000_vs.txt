@@ -3,8 +3,28 @@
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader a8f3ec17a11d4a50
+// Used for: Specific removing of text
 
-bool hideAllText = true; // Brings many bugs, will be off (hence fixed) on the full release.
+bool CameraObjectLabel = false;
+// Enable if you want to...
+// - See the orange colored label from any objects in the camera view. Example: The orange text shown on this photo https://i.pinimg.com/originals/dd/88/68/dd8868f7bb9cf6497ecd0307fd3ce82f.jpg
+// - See the 'x' character next to e.g. your 'x6 Mighty Bananas'. (Minor unsolvable bug).
+// False (default) if you want to...
+// - Take selfies without the orange labels of your weapon or nearby objects.
+
+
+
+bool hideAllText = false;
+// False is default, true is turned on. Does what the name suggests, affects most text, not recommended for actual gameplay.
+
+
+
+
+
+
+
+
+// -------------------------------
 
 uniform ivec4 uf_remappedVS[4];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
@@ -60,10 +80,25 @@ attrDecoder.xyz = (attrDecoder.xyz>>24)|((attrDecoder.xyz>>8)&0xFF00)|((attrDeco
 attrDecoder.w = 0;
 R2i = ivec4(int(attrDecoder.x), int(attrDecoder.y), int(attrDecoder.z), floatBitsToInt(1.0));
 
-// Check text
+// Specifically target text with code that uses constants from both uniforms and inputs. These variables and code shouldn't be touched!!! Use the options above for proper controls.
 int hideText = 1;
-if (uf_remappedVS[0].w == -1052388992 || uf_remappedVS[0].w == 1093474128 || hideAllText) {
+
+if (attrDataSem2.y <= 2000000000) { // This separates the orange label text from the inventory number. Removes the 'x' with the label, but does make the inventory numbers not disappear with the label text.
+	if (!CameraObjectLabel) {
+		hideText = 0;
+	}
+}
+
+if (uf_remappedVS[0].w == -1052388992 || uf_remappedVS[0].w == 1093474128 || (uf_remappedVS[0].w == 0 && uf_remappedVS[1].w != 0) || hideAllText) { // Code that specifically targets text. It separates the text being drawn with differences in the uniform.
 	hideText = 2;
+}
+
+
+if ((uf_remappedVS[0].x == 1069928832 && uf_remappedVS[0].y == 0 && uf_remappedVS[0].z == 0) &&
+(uf_remappedVS[1].x == 0 && uf_remappedVS[1].y == -1070606677 && uf_remappedVS[1].z == 0) &&
+(uf_remappedVS[2].x == 0 && uf_remappedVS[2].y == 0 && uf_remappedVS[2].z == -1082128754 && uf_remappedVS[2].w == 1148637833) &&
+(uf_remappedVS[3].x == 0 && uf_remappedVS[3].y == 0 && uf_remappedVS[3].z == -1082130432 && uf_remappedVS[3].w == 1148667362)) {
+	hideText += 1;
 }
 
 // 0
@@ -116,6 +151,7 @@ R5i.y = ((R127i.z == 0)?(R2i.y):(R2i.y));
 R4i.z = ((R127i.z == 0)?(R1i.z):(R1i.z));
 // 6
 R5i.w = ((R127i.z == 0)?(R126i.x):(R126i.x));
+
 // export
 gl_Position = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z)*hideText, intBitsToFloat(R0i.w));
 // export

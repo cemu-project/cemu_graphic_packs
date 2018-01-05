@@ -3,6 +3,8 @@
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 3e0262467e8add7d
+// Used for: Some leftovers from the Camera GUI
+
 uniform ivec4 uf_remappedVS[4];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;
