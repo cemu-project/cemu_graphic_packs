@@ -647,11 +647,6 @@ void main()
 	color += bloom;
 	//++++++++++++++++++++++++++++++++++
 
-	// Levels Control if we tone map to 16-235 , 0 - 255 or usr defined range.	
-#if (blacknwhitepass == 1)	
-	color = LevelsPass(color);
-#endif
-
 	// Tonemapping
 #if (Tone_map == -1)
 	color = clamp(color*Exposure, 0.0, 1.0);
@@ -677,27 +672,35 @@ void main()
 	color = ACESFilm(color);
 #endif
 
-	// Post Processing
+// Levels Control if we tone map to 16-235 , 0 - 255 or usr defined range.	
+#if (blacknwhitepass == 1)	
+	color = LevelsPass(color);
+#endif
+
+// Color matrix
+#if (cmatrix == 1)
+	color = ColorMatrixPass(color);
+#endif
+
+
+// Post Processing
 #if (Tech == 1)
 	color = TechnicolorPass(color);
 #endif
 #if (Techine == 1)
 	color = Technicolor2(color);
 #endif
-#if (cmatrix == 1)
-	color = ColorMatrixPass(color);
+#if (post_process == 0)
+	color = BotWVibrance(color);
+#endif
+#if (post_process == 1)
+	color = Contrasty(color);
 #endif
 #if (dpxpass == 1)
 	color = DPXPass(color);
 #endif
 #if (Filmicpass == 1)	
 	color = FilmPass(color);
-#endif
-#if (post_process == 0)
-	color = BotWVibrance(color);
-#endif
-#if (post_process == 1)
-	color = Contrasty(color);
 #endif
 #if (lggpass == 1)	
 	color = LiftGammaGainPass(color);
