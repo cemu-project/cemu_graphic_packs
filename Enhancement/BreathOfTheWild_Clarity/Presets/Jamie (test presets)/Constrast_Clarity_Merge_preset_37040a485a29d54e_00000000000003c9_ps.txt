@@ -32,7 +32,7 @@ const float sharp_clamp = 0.02;                       //[0.000 to 1.000] Limits 
 //Advanced sharpening settings
 const float offset_bias = 1.0;                         //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
 
-#define Tone_map 8                                     // 0: disable, -1 to 8: enable.
+#define Tone_map 8                                     // 0: disable, -1 to 9: enable.
 													   // -1: disable, loss of bright detail/color but keep [0,1] intact
 													   // 0: (Wii U) BotW original
 													   // Reshade ToneMap Option 1
@@ -44,7 +44,6 @@ const float offset_bias = 1.0;                         //[0.0 to 6.0] Offset bia
 													   // filmicToneMapping Option 7             
 													   // Uncharted2ToneMapping Option 8
 													   // ACES Filmic Option 9
-													   // BOTW Tone Map (Contrasty) Option 10
 // Reshade ToneMap Controls / "Contrasty" Parameters
 const float Exposure = 1.17;                           // [0.0, 1.0+] Adjust exposure
 const float Bleach = 0.0;                              // "More bleach means more contrasted and less colorful image" min -0.5 max 1.0 Default 0.0
@@ -676,8 +675,6 @@ void main()
 	color = Uncharted2ToneMapping(color);
 #elif (tone_mapping == 9)
 	color = ACESFilm(color);
-#elif (tone_mapping == 10)
-	color = BotWToneMap(color);
 #endif
 
 	// Post Processing
@@ -696,6 +693,12 @@ void main()
 #if (Filmicpass == 1)	
 	color = FilmPass(color);
 #endif
+#if (post_process == 0)
+	color = BotWVibrance(color);
+#endif
+#if (post_process == 1)
+	color = Contrasty(color);
+#endif
 #if (lggpass == 1)	
 	color = LiftGammaGainPass(color);
 #endif
@@ -704,11 +707,6 @@ void main()
 #endif
 #if (vibpass == 1)
 	color = VibrancePass(color);
-#endif
-#if (post_process == 0)
-	color = BotWVibrance(color);
-#elif (post_process == 1)
-	color = Contrasty(color);
 #endif
 	passPixelColor0 = vec4(color, passParameterSem0.w);
 }
