@@ -16,39 +16,17 @@
     <![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>Cemu Graphic Packs</title>
-        
-    <!-- Custom Javascript code for downloads -->
-    <script>
-        function downloadPack() {
-            // Tested, should be compatible with all updated browsers with ES6. If not there's always a fallback.
-            // This will use the github api to return the latest download url, making it reliable.
-            // Parses the json that's fetched from the object, then navigates to the right value.
-            fetch("https://api.github.com/repos/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest")
-                .then(response => response.json())
-                .then((out) => {
-                    // Initiate the download.
-                    document.getElementById("credits-").innerText="Thanks for downloading!";
-                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").innerHTML="<a href='"+out.assets[0].browser_download_url+"'>Click here if the download didn't start automatically.</a>";
-                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").previousElementSibling.previousElementSibling.style="margin:2px;"
-                    document.getElementById("your-browser-doesnt-support-html5-which-is-recommended-for-viewing-certain-elements").previousElementSibling.style="margin:0;";
-                    $("html, body").animate({scrollTop: document.body.scrollHeight}, 1000);
-                    window.location.assign(out.assets[0].browser_download_url);
-                });
-        }
-        if (window.location.hash == "#directDownload") downloadPack();
-    </script>
   </head>
   <body>
       <div id="header">
-        <nav>
-          <li class="fork"><a href="{{ site.github.repository_url }}">View on GitHub</a></li>
+        <nav style="max-width: 100% !important">
+          <li class="fork"><a href="{{ site.github.repository_url }}" style="margin-left:6px;background-color: #434343;border-color: #191919;">Help us on Github!</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads" style="font-size:11px;font-family:'OpenSansLight',&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;line-height:50px;list-style:none;text-shadow:0px 1px 0px rgba(0,0,0,0.2);">
-              <a id="downloadButton" target="_self" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest" style="margin-right:6px;">Latest</a>or
+            <li class="downloads" style="margin-right: 44%font-size:14px;font-family:'OpenSansLight',&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;line-height:50px;list-style:none;text-shadow:0px 1px 0px rgba(0,0,0,0.2);">
+              <a id="downloadButton" target="_self" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest" style="margin-right:6px;">Download Graphic Packs</a>
               <a id="releaseButton" target="_blank" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases" style="margin-left:6px;background-color: #434343;border-color: #191919;">See past releases</a>
             </li>
-            <li class="title">Downloads</li> <!-- Label for the download button, no text currently. -->
           {% endif %}
         </nav>
       </div><!-- end header -->
@@ -67,10 +45,23 @@
         {{ content }}
     </section>
   </div>
+        <!-- Custom Javascript code for downloads -->
+    <script>
+          fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/releases/latest")
+                .then(response => response.json())
+                .then((out) => {
+					if (localStorage.getItem("LastDownloaded")!==out.tag_name && localStorage.getItem("LastDownloaded")!==Null) {
+						document.getElementById("downloadButton").innerText="Update your Graphic Packs (V2-"+out.tag_name.replace( /^\D+/g, '')+")";
+					}
+					if (navigator.doNotTrack !== 1) window.localStorage.setItem("LastDownloaded",out.tag_name); // A site visit counts as a download. Tracking the link download would be too extensive, plus there wouldn't be a fallback.
+            document.getElementById("downloadButton").dataset.botVersion=out.tag_name.replace(/^\D+/g, ''); // For people who automate stuff.
+            document.getElementById("downloadButton").href=out.assets[0].browser_download_url;
+          }); // People with do not track turned on won't have an update thing.
+        if (window.location.hash == "#directDownload") document.getElementById("downloadButton").click();
+    </script>
     <div style="height:100%;width:90%;margin:0 5% 0 5%;display:inline-block !important;">
       <script>
-        // Changing href here because the object didn't exist up there.
-        document.getElementById("downloadButton").href="javascript:downloadPack();";
+        
         // Credits script
         fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/stats/contributors") .then(response => response.json()).then((out) => {
           creditsText = '';
