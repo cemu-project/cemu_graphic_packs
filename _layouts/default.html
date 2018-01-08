@@ -23,7 +23,7 @@
           <li class="fork"><a href="{{ site.github.repository_url }}" style="margin-left:6px;background-color: #434343;border-color: #191919;">Help us on Github!</a></li>
           {% if site.show_downloads %}
             <!-- Has the latest release link to fall back on, but if javascript is supported the href should change -->
-            <li class="downloads" style="margin-right: 44%font-size:14px;font-family:'OpenSansLight',&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;line-height:50px;list-style:none;text-shadow:0px 1px 0px rgba(0,0,0,0.2);">
+            <li class="downloads" style="margin-right: 42%; font-size:14px;font-family:'OpenSansLight',&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;line-height:50px;list-style:none;text-shadow:0px 1px 0px rgba(0,0,0,0.2);">
               <a id="downloadButton" target="_self" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases/latest" style="margin-right:6px;">Download Graphic Packs</a>
               <a id="releaseButton" target="_blank" href="https://github.com/{{site.github.owner_name}}/cemu_graphic_packs/releases" style="margin-left:6px;background-color: #434343;border-color: #191919;">See past releases</a>
             </li>
@@ -50,7 +50,7 @@
           fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/releases/latest")
                 .then(response => response.json())
                 .then((out) => {
-					if (localStorage.getItem("LastDownloaded")!==out.tag_name && localStorage.getItem("LastDownloaded")!==Null) {
+					if (localStorage.getItem("LastDownloaded")!==out.tag_name && typeof localStorage.getItem("LastDownloaded")==="string") {
 						document.getElementById("downloadButton").innerText="Update your Graphic Packs (V2-"+out.tag_name.replace( /^\D+/g, '')+")";
 					}
 					if (navigator.doNotTrack !== 1) window.localStorage.setItem("LastDownloaded",out.tag_name); // A site visit counts as a download. Tracking the link download would be too extensive, plus there wouldn't be a fallback.
