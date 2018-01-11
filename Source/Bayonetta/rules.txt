@@ -11,42 +11,52 @@ titleIds = 000500001014DB00,0005000010157E00,0005000010157F00
 name = "Bayonetta - <?=$title?>"
 version = 2
 
-[TextureRedefine] # tv
-width = 1280
+[TextureRedefine] # game rendering resolution. 	#Change this value
+width =	1280
 height = 720
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
-
-[TextureRedefine]#half-res
-width = 640
+	
+#[TextureRedefine] # No gamepad view found in B, uncommented	
+#width = 854
+#height = 480
+#overwriteWidth = 2560
+#overwriteHeight = 1440
+	
+[TextureRedefine] # FMV, bloom/blur initial step	
+width =	640
 height = 360
-tileModesExcluded = 0x001
+tileModesExcluded = 0x001 	
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
-
-[TextureRedefine]#q-res1
-width = 320
+	
+[TextureRedefine] # Bloom/blur pyaramid	
+width =	320
 height = 176
-formatsExcluded = 0x01a
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*176)?> 
-
-[TextureRedefine]#bloom workaround
-width = 320
-height = 176
-formats = 0x01a
-overwriteWidth = 0
-overwriteHeight = 0
-
-[TextureRedefine]#q-res2
-width = 320
-height = 180
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
-
-[TextureRedefine] # gamepad
-width = 854
-height = 480
-#overwriteWidth = <?=round($scaleFactorX*1280)?> 
-#overwriteHeight = <?=round($scaleFactorY*720)?> 
+	
+[TextureRedefine] #Bloom/blur pyaramid
+width =	160
+height = 80
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*80)?> 
+	
+[TextureRedefine] # Bloom/blur pyaramid
+width =	80
+height = 48
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*48)?> 
+	
+[TextureRedefine] # Bloom/blur pyaramid
+width =	48
+height = 32
+overwriteWidth = <?=round($scaleFactorX*48)?> 
+overwriteHeight = <?=round($scaleFactorY*32)?> 
+	
+[TextureRedefine] # Bloom/blur pyaramid	
+width =	32
+height = 16
+overwriteWidth = <?=round($scaleFactorX*32)?> 
+overwriteHeight = <?=round($scaleFactorY*16)?> 
