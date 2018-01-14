@@ -481,7 +481,7 @@ vec3 HDRPass(sampler2D tex, vec2 pos) {
 	vec3 color = texture(tex, pos).rgb;
 
 	vec3 bloom_sum1 = texture(tex, pos + vec2(1.5, -1.5) * radius1 * vec2(px, py)).rgb;
-	bloom_sum1 += texture(tex, pos + vec2(-1.5, -1.5) * radius1 * vec2(px, py)).rgb;
+	bloom_sum1 += texture(tex, pos + vec2(-1.6, -1.5) * radius1 * vec2(px, py)).rgb;
 	bloom_sum1 += texture(tex, pos + vec2(1.5, 1.5) * radius1 * vec2(px, py)).rgb;
 	bloom_sum1 += texture(tex, pos + vec2(-1.5, 1.5) * radius1 * vec2(px, py)).rgb;
 	bloom_sum1 += texture(tex, pos + vec2(0.0, -2.5) * radius1 * vec2(px, py)).rgb;
