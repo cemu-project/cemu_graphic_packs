@@ -21,9 +21,9 @@ const float bloomFactor = 0.197;                       // Default is 0.020 (roug
 
 #define HDRpassing 1 // 0: disable, 1: enable.
 //Fake High Dynamic Range.
-const float HDRPower = 1.030;                          // 0.0 to  8.0  Default 1.30.
-const float radius1 = 0.793;                           // 0.0 to  8.0  Default 0.793  
-const float radius2 = 0.870;                           // 0.0 to  8.0  Default 0.87  "Raising this seems to make the effect stronger and also brighter."
+const float HDRPower = 1.00;                           // 0.0 to  8.0  Default 1.30.
+const float radius1 = 1.00;                            // 0.0 to  8.0  Default 0.793  
+const float radius2 = 0.80 ;                           // 0.0 to  8.0  Default 0.87  "Raising this seems to make the effect stronger and also brighter."
 
 #define lumapassing 1 // 0: disable, 1: enable.
 //LumaShapening
@@ -44,7 +44,7 @@ const float offset_bias = 1.0;                         //[0.0 to 6.0] Offset bia
 													   // Uncharted2ToneMapping Option 8
 													   // ACES Filmic Option 9
 // Reshade ToneMap Controls 
-const float Exposure = 1.0;                            // [0.0, 1.0+] Adjust exposure
+const float Exposure = 1.17;                            // [0.0, 1.0+] Adjust exposure
 const float Bleach = 0.0;                              // "More bleach means more contrasted and less colorful image" min -0.5 max 1.0 Default 0.0
 const float Gamma = 1.0;                               // "Adjust midtones. 1.000 is neutral. This setting does exactly the same as the one in Lift Gamma Gain, only with less control."
 const float defog = 0.004;	                           // Default is 0.0  //How much of the overall color you want removed form the values of FogColor.
