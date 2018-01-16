@@ -7,4 +7,4 @@ version = 2
 width = 36
 height = 36
 formats = 0x034
-overwriteFormat = 0x234
+overwriteFormat = 0x001
