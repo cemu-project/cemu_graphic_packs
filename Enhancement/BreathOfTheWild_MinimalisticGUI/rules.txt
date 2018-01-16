@@ -15,51 +15,9 @@ version = 2
 # ====================================================================
 # ====================================================================
 
-[TextureRedefine]# f4252800_fmt001a_mip00_24x24_tm04_sw00000000.bmp
-width = 24
-height = 24
-formats = 0x001a
-tilemodes = 4
-overwriteFormat = 0x021a # UNORM -> SNORM
-
-[TextureRedefine]# 229f1000_fmt0034_mip00_75x75_tm04_sw00000000.bmp
-width = 75
-height = 75
-formats = 0x034
-tilemodes = 4
-overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
-
 [TextureRedefine]# 236ad000_fmt0034_mip00_8x8_tm02_sw00000000.bmp
 width = 8
 height = 8
 formats = 0x034
 tilemodes = 2
-overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
-
-[TextureRedefine]# 23379900_fmt0034_mip00_26x26_tm02_sw00000000.bmp
-width = 26
-height = 26
-formats = 0x034
-tilemodes = 2
-overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
-
-[TextureRedefine]# 2330e000_fmt0034_mip00_242x162_tm04_sw00000100.bmp
-width = 242
-height = 162
-formats = 0x034
-tilemodes = 4
-overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
-
-[TextureRedefine]# 2258b000_fmt0034_mip00_13x305_tm04_sw00000400.bmp
-width = 13
-height = 305
-formats = 0x034
-tilemodes = 4
-overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
-
-[TextureRedefine]# 2005e000_fmt0034_mip00_32x1024_tm04_sw00000000.bmp
-width = 32
-height = 1024
-formats = 0x034
-tilemodes = 4
 overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM
