@@ -448,7 +448,7 @@ vec3 FilmPass(vec3 inputColor) {
 	else
 		C.b = (2.0 * D.b - 1.0) * (sqrt(B.b) - B.b) + B.b;
 
-	vec3 F = mix(B, C, Strength);
+	vec3 F = mix(B, C, Filmic_Strength);
 
 	F = (1.0 / (1.0 + exp(-d * (F - 0.5))) - v) / (1.0 - 2.0 * v);
 
