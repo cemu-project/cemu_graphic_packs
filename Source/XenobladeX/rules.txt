@@ -197,5 +197,5 @@ overwriteHeight = <?=round($scaleFactorY*4)?>
 width = 1
 height = 1
 formats = 0x008,0x01a,081e
-overwriteWidth = <?=round($scaleFactorX*1)?>
+overwriteWidth = <?=round($scaleFactorX*1)?> 
 overwriteHeight = <?=round($scaleFactorY*1)?>
