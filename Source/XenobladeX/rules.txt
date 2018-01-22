@@ -119,7 +119,7 @@ overwriteHeight = <?=round($scaleFactorY*144)?>
 [TextureRedefine] #
 width = 255
 height = 255
-formats = 0x01a,0x810 # verify later
+formats = 0x810 # 0x01a, PR screen NLA
 overwriteWidth = <?=round($scaleFactorX*255)?> 
 overwriteHeight = <?=round($scaleFactorY*255)?> 
 
