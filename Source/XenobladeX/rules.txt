@@ -17,12 +17,20 @@ formats  = 0x01a,0x008
 replaceFormat 0x01f
 
 [TextureRedefine]  # increase colour depth 
-formats  = 0x816
+formats  = 0x816,0x820
 replaceFormat 0x823
 
 [TextureRedefine]  # increase colour depth
-formats = 0x0810
+formats = 0x810
 replaceFormat 0x81e
+
+[TextureRedefine]  # increase colour depth
+formats = 0x806
+replaceFormat 0x80e
+
+[TextureRedefine]  # increase colour depth
+formats = 0x007
+replaceFormat 0x00f
 
 [TextureRedefine] # tv
 width = 1280
