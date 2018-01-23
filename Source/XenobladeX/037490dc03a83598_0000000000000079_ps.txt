@@ -40,7 +40,7 @@ bool predResult = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
-R0f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw)* (0.995 - (lineRand(gl_FragCoord.yx)*0.1));
+R0f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw)* (0.995 - (lineRand(gl_FragCoord.yx)*0.075));
 //R0f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
 // 0
 backupReg0f = R0f.x;
