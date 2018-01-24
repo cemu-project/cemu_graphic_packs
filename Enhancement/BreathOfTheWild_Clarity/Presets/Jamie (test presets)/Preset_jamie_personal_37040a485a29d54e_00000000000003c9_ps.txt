@@ -8,7 +8,7 @@
 // Clarity GFX
 // Credit to Jamie for main coding.
 // Credit to Kiri coding & Reshade logic.
-// Credit to Cremtif  for Help.
+// Credit to Crementif  for Help.
 // Credit to Serfrost for preset values.
 // Shader dumped from Cemu 1.11.2 from BotW 1.4.0
 // v 2.1
@@ -47,7 +47,7 @@ const float offset_bias = 1.0;                         //[0.0 to 6.0] Offset bia
 // Reshade ToneMap Controls / "Contrasty" Parameters
 const float Exposure = 1.17;                           // [0.0, 1.0+] Adjust exposure
 const float Bleach = 0.4;                              // "More bleach means more contrasted and less colorful image" min -0.5 max 1.0 Default 0.0
-const float Gamma = 1.00;                             // "Adjust midtones. 1.000 is neutral. This setting does exactly the same as the one in Lift Gamma Gain, only with less control."
+const float Gamma = 1.00;                              // "Adjust midtones. 1.000 is neutral. This setting does exactly the same as the one in Lift Gamma Gain, only with less control."
 const float defog = 0.00;	                           // Default is 0.0  //How much of the overall color you want removed form the values of FogColor.
 vec3 FogColor = vec3(1.0, 1.0, 1.0);                   // Color you want to Add or Remove  0.25 would add .25 percent of that color 1.25 would remove .25 percent of the color."
 const float sat = 0.000;                               // "Adjust saturation" min -1.0 max 1.0 Default 0.0
