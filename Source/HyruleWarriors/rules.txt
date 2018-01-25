@@ -75,26 +75,26 @@ overwriteHeight = <?=round($scaleFactorY*90)?>
 width = 64
 height = 64
 formats = 0x005
-#overwriteWidth = <?=round($scaleFactorY*64)?> 
+#overwriteWidth = <?=round($scaleFactorX*64)?> 
 #overwriteHeight = <?=round($scaleFactorY*64)?> 
 
 [TextureRedefine] #Dupe of Main Game?
 width = 16
 height = 16
 formats = 0x005
-#overwriteWidth = <?=round($scaleFactorY*16)?> 
+#overwriteWidth = <?=round($scaleFactorX*16)?> 
 #overwriteHeight = <?=round($scaleFactorY*16)?> 
 
 [TextureRedefine] #Dupe of Main Game?
 width = 4
 height = 4
 formats = 0x005
-#overwriteWidth = <?=round($scaleFactorY*6)?> 
+#overwriteWidth = <?=round($scaleFactorX*6)?> 
 #overwriteHeight = <?=round($scaleFactorY*6)?> 
 
 [TextureRedefine] #Dupe of Main Game?
 width = 1
 height = 1
 formats = 0x005
-#overwriteWidth = <?=round($scaleFactorY*1)?> 
+#overwriteWidth = <?=round($scaleFactorX*1)?> 
 #overwriteHeight = <?=round($scaleFactorY*1)?> 
