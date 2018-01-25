@@ -1,0 +1,37 @@
+[HW60FPSFixv208]
+moduleMatches = 0xE159AE91
+
+# CInterMission::UpdateFrameCount() patch to halve the number of frames added, keeps the story intermission text + images in sync with the audio
+# NOTE: NOT FRAMERATE INDEPENDENT - REQUIRES 60FPS! though you can probably mod it for higher framerates if you want
+
+# address of a float with constant 2.0 value (if you want, find one with 4.0 for 120fps)
+_frameDivisor = 0x1009391C
+
+# luckily no need for a code-cave since UpdateFrameCount has a redundant 3 instruction load, which we can replace with our division code
+0x02198378 = lis r12, 1
+0x0219837C = addi r12, r12, 0x4C48
+0x02198380 = lfsx f0, r11, r12 ; f0 = r11[0x14C48] (number of frames elapsed since last update?)
+0x02198384 = lis r12, _frameDivisor@h
+0x02198388 = lfs f13, _frameDivisor@l(r12)
+0x0219838C = fdivs f0, f0, f13 ; halves number of elapsed frames
+0x02198390 = lis r12, 1 ; 0x14C24
+0x02198394 = addi r12, r12, 0x4C24
+0x02198398 = lfsx f13, r11, r12  ; f13 = r11[0x14C24] (total number of frames elapsed / frame counter)
+0x0219839C = fadds f13, f0, f13 ; add our modified count to the total count
+0x021983A0 = lis r12, 1 ; 0x14C24
+0x021983A4 = addi r12, r12, 0x4C24
+0x021983A8 = stfsx f13, r11, r12  ; r11[0x14C24] = f13 (stores the modified total count), with the total count remaining in f13 for the later instructions to use
+
+# change SetBaseFramePerSec(2) calls to SetBaseFramePerSec(1), fixes UI being too fast and allows ingame to go beyond 30FPS
+# (SetBaseFramePerSec divides the number 60 by the parameter to get the target framerate, so 2 = 30FPS, 1 = 60FPS)
+0x0219D7B0 = li r3, 1 ; CMain::InitSys()
+0x02438340 = li r3, 1 ; CDemoEventManager::TermRead()
+0x02438864 = li r3, 1 ; CDemoEventManager::ChangeFPS()
+
+# SetBaseFramePerSec defaults, these get overridden by the above changes, but we'll change them anyway to be safe
+0x10142EBC = .long 1
+0x10142EC0 = .long 60
+0x10142EC4 = .float 60.0
+0x10142EC8 = .long 1
+0x10142ECC = .long 60
+0x10142ED0 = .float 60.0
