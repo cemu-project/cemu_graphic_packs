@@ -14,7 +14,7 @@ moduleMatches = 0xE159AE91
 
 #rodata constant changes
 
-0x1009609C = .float <?=$aspect?>
-0x10096124 = .float <?=$aspect?>
-0x10096948 = .float <?=$aspect?>
-0x10096974 = .float <?=$aspect?>
+0x1009609C = .float <?=$aspect?> 
+0x10096124 = .float <?=$aspect?> 
+0x10096948 = .float <?=$aspect?> 
+0x10096974 = .float <?=$aspect?> 
