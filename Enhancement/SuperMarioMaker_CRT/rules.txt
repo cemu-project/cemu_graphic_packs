@@ -1,0 +1,5 @@
+
+[Definition]
+titleIds = 000500001018DB00,000500001018DC00,000500001018DD00
+name = "Super Mario Maker - CRT filter"
+version = 2
