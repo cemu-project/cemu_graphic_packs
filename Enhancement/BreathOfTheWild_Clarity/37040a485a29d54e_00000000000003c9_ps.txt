@@ -21,17 +21,17 @@
 const float bloomFactor = 0.020;                       // Default is 0.020 (rough estimate based on Switch)
 
 #define HDRpassing 0 // 0: disable, 1: enable.
-													   //Fake High Dynamic Range.
+//Fake High Dynamic Range.
 const float HDRPower = 1.00;                           // 0.0 to  8.0  Default 1.30.
 const float radius1 = 1.00;                            // 0.0 to  8.0  Default 0.793  
 const float radius2 = 0.80;                            // 0.0 to  8.0  Default 0.87  "Raising this seems to make the effect stronger and also brighter."
 
 #define lumapassing 0 // 0: disable, 1: enable.
-													   //LumaShapening
+//LumaShapening
 const float sharp_strength = 0.35;                     //[0.10 to 3.00] Strength of the sharpening Default is 0.65
 const float sharp_clamp = 0.85;                        //[0.000 to 1.000] Limits maximum amount of sharpening a pixel recieves - Default is 0.035
 
-													   //Advanced sharpening settings
+//Advanced sharpening settings
 const float offset_bias = 1.0;                         //[0.0 to 6.0] Offset bias adjusts the radius of the sampling pattern.
 
 #define Tone_map 0                                     // 0: disable, -1 to 9: enable.
