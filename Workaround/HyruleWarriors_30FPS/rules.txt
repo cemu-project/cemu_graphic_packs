@@ -1,6 +1,5 @@
 [Definition]
 titleIds = 000500001017D800,000500001017D900
-
 name = "Hyrule Warriors - 30FPS Lock"
 version = 2
 
