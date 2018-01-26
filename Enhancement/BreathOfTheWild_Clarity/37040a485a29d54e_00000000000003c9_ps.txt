@@ -11,7 +11,7 @@
 														// Serfrost Option 5 
 														// Sharpen Only Option 6	    
 														// The Complaning Gamer Option 7             
-														// Fillmic Preset Option 8 (kinda broken atm will fix)
+														// Fillmic Preset Option 8
 //##########################################################													   
 #if (Preset == 0)
 // User Defined 	
@@ -592,13 +592,14 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 2.5;
 	float DPX_Strength = 0.20;
 #elif (Preset == 8)												   
-	const float bloomFactor = 0.17;
+	#define adjust_bloom 1 
+	const float bloomFactor = 0.020;
 	#define HDRpassing 1
-	const float HDRPower = 3.040;
+	const float HDRPower = 1.20;
 	const float radius1 = 1.00;
 	const float radius2 = 0.80;
 	#define lumapassing 1 
-	const float sharp_strength = 0.25;
+	const float sharp_strength = 0.35;
 	const float sharp_clamp = 0.85;
 	const float offset_bias = 1.0;
 	#define Tone_map 8                                    
@@ -614,24 +615,24 @@ float DPX_Strength = 0.20;
 	#define blacknwhitepass 0 
 	const int BlackPoint = 16;
 	const int WhitePoint = 235;
-	#define lggpass 1 
-	vec3 RGB_Lift = vec3(1.000, 1.000, 1.000);
+	#define lggpass 0 
+	vec3 RGB_Lift = vec3(0.990, 0.990, 0.990);
 	vec3 RGB_Gamma = vec3(1.000, 1.000, 1.000);
 	vec3 RGB_Gain = vec3(1.000, 1.000, 1.000);
 	#define vibpass 1 
-	const float Vibrance = 0.013;
+	const float Vibrance = 0.150;
 	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0);
 	#define Tech 0 							
 	const float Power = 4.0;
 	vec3 RGBNegativeAmount = vec3(0.88, 0.88, 0.88);
 	float Strength = 0.20;
-	#define Techine 1 
-	const float Technicolor2_Red_Strength = 0.51;
-	const float Technicolor2_Green_Strength = 0.51;
-	const float Technicolor2_Blue_Strength = 0.51;
-	const float Technicolor2_Brightness = 1.75;
-	const float Technicolor2_Strength = 0.80;
-	const float Technicolor2_Saturation = 0.20;
+	#define Techine 0 
+	const float Technicolor2_Red_Strength = 0.02;
+	const float Technicolor2_Green_Strength = 0.02;
+	const float Technicolor2_Blue_Strength = 0.02;
+	const float Technicolor2_Brightness = 1.00;
+	const float Technicolor2_Strength = 1.00;
+	const float Technicolor2_Saturation = 1.00;
 	#define cmatrix 0
 	vec3 ColorMatrix_Red = vec3(0.817, 0.183, 0.000);
 	vec3 ColorMatrix_Green = vec3(0.333, 0.667, 0.000);
@@ -640,16 +641,16 @@ float DPX_Strength = 0.20;
 	#define CurvesPss 1 
 	const float Contrast = 0.65;
 	#define Filmicpass 1 
-	const float Filmic_Contrast = 0.750;
-	const float Filmic_Bleach = 0.5;
+	const float Filmic_Contrast = 1.0;
+	const float Filmic_Bleach = 0.0;
 	const float Saturation = -0.15;
 	const float Filmic_Strength = 0.85;
 	const float Fade = 0.4;
-	const float Linearization = 0.7;
-	const float BaseCurve = 1.1;
-	const float BaseGamma = 0.98;
-	const float EffectGamma = 0.97;
-	#define dpxpass 0
+	const float Linearization = 0.5;
+	const float BaseCurve = 1.5;
+	const float BaseGamma = 1.00;
+	const float EffectGamma = 0.68;
+	#define dpxpass 1
 	vec3 RGB_Curve = vec3(8.0, 8.0, 8.0);
 	vec3 RGB_C = vec3(0.36, 0.36, 0.34);
 	float DPX_Contrast = 0.1;
