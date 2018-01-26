@@ -11,7 +11,7 @@
 														// Serfrost Option 5 
 														// Sharpen Only Option 6	    
 														// The Complaning Gamer Option 7             
-														// Fillmic Preset Option 8
+														// Filmic Preset Option 8
 //##########################################################													   
 #if (Preset == 0)
 // User Defined 	
@@ -506,7 +506,7 @@ float DPX_Strength = 0.20;
 	vec3 ColorMatrix_Green = vec3(0.333, 0.667, 0.000);
 	vec3 ColorMatrix_Blue = vec3(0.000, 0.125, 0.875);
 	float CM_Strength = 1.0;
-	#define CurvesPss 1 
+	#define CurvesPss 0 
 	const float Contrast = 0.65;
 	#define Filmicpass 0 
 	const float Filmic_Contrast = 1.0;
