@@ -263,6 +263,7 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 2.5;
 	float DPX_Strength = 0.20;
 #elif (Preset == 3)
+	#define adjust_bloom 1 
 	const float bloomFactor = 0.020;
 	#define HDRpassing 1
 	const float HDRPower = 1.00;
