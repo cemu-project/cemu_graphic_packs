@@ -12,8 +12,8 @@ titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
 name = "Mario Kart 8 - <?=$title?>"
 version = 2
 
-##don't scale any compressed format
-#[TextureRedefine] #Mshadow check
+
+#[TextureRedefine] # 
 #width = 2048
 #height = 2048
 #overwriteWidth = <?=round($scaleFactorX*2048)?> 
@@ -86,7 +86,7 @@ height = 360
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
-[TextureRedefine] #Dof,Bloom 0x816
+[TextureRedefine] # Bloom first mip, motion blur effect
 width = 320
 height = 180
 overwriteWidth = <?=round($scaleFactorX*320)?> 
@@ -113,7 +113,7 @@ height = 180
 overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
-[TextureRedefine]  #Dof,Bloom 1p 0x816 
+[TextureRedefine]  #bloom 2nd  mip
 width = 160
 height = 90
 #formatsExcluded = 
@@ -163,7 +163,7 @@ formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
 overwriteWidth = <?=round($scaleFactorX*80)?> 
 overwriteHeight = <?=round($scaleFactorY*90)?> 
 
-[TextureRedefine] # bloom
+[TextureRedefine] # bloom 3rd mip
 width = 80
 height = 45
 formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
@@ -184,7 +184,7 @@ formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
 overwriteWidth = <?=round($scaleFactorX*64)?> 
 overwriteHeight = <?=round($scaleFactorY*128)?> 
 
-#[TextureRedefine] # glossmap breaks x64 cube?
+#[TextureRedefine] # glossmap breaks 64 cube?
 #width = 64
 #height = 64
 
@@ -238,7 +238,7 @@ formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
 overwriteWidth = <?=round($scaleFactorX*32)?> 
 overwriteHeight = <?=round($scaleFactorY*64)?> 
 
-#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#[TextureRedefine] #
 #width = 32
 #height = 32
 #formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x816,0x01a #0x816 exclude cube 
@@ -268,7 +268,7 @@ overwriteWidth = <?=round($scaleFactorX*16)?>
 overwriteHeight = <?=round($scaleFactorY*32)?> 
 
 
-#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#[TextureRedefine] #M
 #width = 16
 #height = 16
 #formatsExcluded = 
