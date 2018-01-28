@@ -29,12 +29,29 @@ overwriteWidth = <?=round($scaleFactorX*640)?>
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 # Quarter Res Alpha (motion blur effect around edges of screen)
+# also, bloom first mip
 [TextureRedefine]
 width = 320
 height = 180
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+# bloom 2nd  mip
+[TextureRedefine]
+width = 160
+height = 90
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+# bloom 3rd mip
+[TextureRedefine]
+width = 80
+height = 45
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
 
 # Multiplayer-Mode Resolution (2p)
 [TextureRedefine]
