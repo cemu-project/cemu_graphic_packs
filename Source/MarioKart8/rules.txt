@@ -19,12 +19,10 @@ version = 2
 #overwriteWidth = <?=round($scaleFactorX*2048)?> 
 #overwriteHeight = <?=round($scaleFactorY*2048)?> 
 
-#[TextureRedefine] #depth??
+#[TextureRedefine] #selection screen shadows
 #width = 1536
 #height = 1536
-#formatsExcluded = 0x01a
-#overwriteWidth = <?=round($scaleFactorX*1536)?> 
-#overwriteHeight = <?=round($scaleFactorY*1536)?> 
+
 
 [TextureRedefine]
 width = 1280
