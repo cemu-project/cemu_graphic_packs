@@ -15,4 +15,4 @@ _nullViewport = 0x00000000
 0x0000001C = blr
 
 # patch DoF call to ktgl::CCafeGraphicsDevice::GetViewport to use our nulling out function instead
-0x02878FAC = bl _nullViewport
+0x02878FAC = bla _nullViewport
