@@ -15,7 +15,8 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-tileModesExcluded = 0x001
+tileModesExcluded = 0x1
+formatsExcluded = 0x31
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
@@ -29,7 +30,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine]
 width = 640
 height = 360
-tileModesExcluded = 0x001
+tileModesExcluded = 0x1
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
