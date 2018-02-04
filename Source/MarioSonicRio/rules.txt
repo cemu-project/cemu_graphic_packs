@@ -8,7 +8,7 @@ $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 0005000010190300,00050000101e5300,00050000101e5400,0005000210190301,00050002101e5401
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400,0005000210190301,00050002101E5301,00050002101E5401
 name = "Mario & Sonic at the Rio 2016 Olympic Games - <?=$title?>"
 version = 2
 
@@ -51,8 +51,8 @@ overwriteHeight = <?=round($scaleFactorY*226)?>
 width = 854
 height = 480
 #formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*854)?> 
-overwriteHeight = <?=round($scaleFactorY*480)?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine]
 width = 832
