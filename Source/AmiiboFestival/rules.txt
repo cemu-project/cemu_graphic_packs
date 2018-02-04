@@ -50,7 +50,7 @@ overwriteHeight = <?=round($scaleFactorY*250)?>
 [TextureRedefine]
 width = 640
 height = 360
-#formatsExcluded = 
+tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
