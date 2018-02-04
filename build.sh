@@ -116,6 +116,7 @@ just1080p=( "1080p" )
 
 std_respack "AdventureTimeEtDBIDK" "${res16by9[@]/$just1080p}"
 std_respack "AdventureTimeFJI" "${res16by9[@]/$just720p}"
+std_respack "AnimalCrossingAmiiboFestival" "${res16by9[@]/$just720p}"
 std_respack "AquaTV" "${res16by9[@]/$just720p}"
 std_respack "BatmanArkham" "${res16by9[@]/$just720p}"
 std_respack "Bayonetta" "${res16by9[@]/$just720p}"
