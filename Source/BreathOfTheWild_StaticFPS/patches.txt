@@ -1,12 +1,17 @@
+<?php
+$targetfps = $argv[1];
+$divisor = 30/$targetfps
+?>
 [BotwFPSV208] #i.e. v1.5.0
 moduleMatches = 0x6267BFD0
 
 #Cave
 codeCaveSize = 0x1C
-_multiplier = 0x0 # edit the next line to change the multiplier
-0x00000000 = .float 0.66667 # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
+
+_divisor = 0x0 # edit the next line to change the divisor
+0x00000000 = .float <?=$divisor?> # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
 _targetfps = 0x18 # edit the next line to change the target fps
-0x18 = .float 45
+0x18 = .float <?=$targetfps?> 
 
 #"Best fence" by Rajkosto
 _fenceNeg1 = 0x00000004
@@ -21,11 +26,11 @@ _fenceNeg1 = 0x00000004
 0x031FA97C = nop
 0x03793328 = nop
 0x03793334 = nop
-0x03793378 = lis r29, _multiplier@ha
-0x03793380 = lfs f0, _multiplier@L(r29)
+0x03793378 = lis r29, _divisor@ha
+0x03793380 = lfs f0, _divisor@L(r29)
 0x0379338C = nop
-0x03415C1C = lis r12, _multiplier@ha
-0x03415C24 = lfs f0, _multiplier@l(r12)
+0x03415C1C = lis r12, _divisor@ha
+0x03415C24 = lfs f0, _divisor@l(r12)
 0x03415C2C = nop
 0x02D90D2C = lis r10, _targetfps@ha
 0x02D90D30 = lfs f11, _targetfps@l(r10)
@@ -57,10 +62,11 @@ moduleMatches = 0xFD091F9F,0xD472D8A5
 
 #Cave
 codeCaveSize = 0x1C
-_multiplier = 0x0 # edit the next line to change the multiplier
-0x00000000 = .float 0.66667 # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
+
+_divisor = 0x0 # edit the next line to change the divisor
+0x00000000 = .float <?=$divisor?> # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
 _targetfps = 0x18 # edit the next line to change the target fps
-0x18 = .float 45
+0x18 = .float <?=$targetfps?> 
 
 #"Best fence" by Rajkosto
 _fenceNeg1 = 0x00000004
@@ -75,11 +81,11 @@ _fenceNeg1 = 0x00000004
 0x031F9E80 = nop
 0x03792620 = nop
 0x0379262C = nop
-0x03792670 = lis r29, _multiplier@ha
-0x03792678 = lfs f0, _multiplier@L(r29)
+0x03792670 = lis r29, _divisor@ha
+0x03792678 = lfs f0, _divisor@L(r29)
 0x03792684 = nop
-0x03414EF8 = lis r12, _multiplier@ha
-0x03414F00 = lfs f0, _multiplier@l(r12)
+0x03414EF8 = lis r12, _divisor@ha
+0x03414F00 = lfs f0, _divisor@l(r12)
 0x03414F08 = nop
 0x02D90790 = lis r10, _targetfps@ha
 0x02D90794 = lfs f11, _targetfps@l(r10)
