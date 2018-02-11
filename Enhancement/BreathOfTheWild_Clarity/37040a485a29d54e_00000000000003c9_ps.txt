@@ -188,7 +188,7 @@ float DPX_Strength = 0.20;
 	const float Saturation = -0.3;
 	const float BaseCurve = 1.5;
 	const float BaseGamma = 1.0;
-	const float EffectGamma = 0.68;(edited)
+	const float EffectGamma = 0.68;
 	#define dpxpass 0
 	vec3 RGB_Curve = vec3(8.0, 8.0, 8.0);
 	vec3 RGB_C = vec3(0.36, 0.36, 0.34);
