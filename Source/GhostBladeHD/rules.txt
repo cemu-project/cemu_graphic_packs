@@ -6,19 +6,134 @@ $scaleFactorX = $fullWidth / 1280.0;
 $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
+
 [Definition]
 titleIds = 00050000101FFC00
-name = "Ghost Blade HD - <?=$title?>" 
+name = "Ghost Blade HD - <?=$title?> " 
 version = 2
 
 [TextureRedefine]
 width = 1280
 height = 720
+#formatsExcluded = 
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine] # gamepad
+[TextureRedefine]
+width = 1280
+height = 220
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*220)?> 
+
+[TextureRedefine]
+width = 1280
+height = 183
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*183)?> 
+
+[TextureRedefine]
+width = 1280
+height = 147
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*147)?> 
+
+[TextureRedefine]
+width = 1280
+height = 109
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*109)?> 
+
+[TextureRedefine]
+width = 1280
+height = 73
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*73)?> 
+
+[TextureRedefine]
+width = 1280
+height = 36
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*36)?> 
+
+[TextureRedefine]
 width = 854
 height = 480
-#overwriteWidth = <?=round($scaleFactorX*1280)?> 
-#overwriteHeight = <?=round($scaleFactorY*720)?> 
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 576
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*576)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 435
+height = 293
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*293)?> 
+
+[TextureRedefine]
+width = 435
+height = 256
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+[TextureRedefine]
+width = 435
+height = 220
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*220)?> 
+
+[TextureRedefine]
+width = 435
+height = 183
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*183)?> 
+
+[TextureRedefine]
+width = 435
+height = 147
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*147)?> 
+
+[TextureRedefine]
+width = 435
+height = 109
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*109)?> 
+
+[TextureRedefine]
+width = 435
+height = 73
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*73)?> 
+
+[TextureRedefine]
+width = 435
+height = 36
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*435)?> 
+overwriteHeight = <?=round($scaleFactorY*36)?> 
+
+[TextureRedefine]
+width = 352
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*352)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 

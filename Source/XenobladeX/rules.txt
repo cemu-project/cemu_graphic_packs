@@ -12,25 +12,41 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Xenoblade Chronicles X - <?=$title?>"
 version = 2
 
-[TextureRedefine] # increase colour depth
-formats  = 0x01a,0x008
-replaceFormat 0x01f
+[TextureRedefine] # increase colour depth, slower but less banding
+formats  = 0x816
+overwriteFormat =  0x820
 
-[TextureRedefine]  # increase colour depth 
-formats  = 0x816,0x820
-replaceFormat 0x823
+[TextureRedefine] #
+formats  = 0x810
+overwriteFormat =  0x81e
 
-[TextureRedefine]  # increase colour depth
-formats = 0x810
-replaceFormat 0x81e
+[TextureRedefine] #
+formats  = 0x806
+overwriteFormat =  0x80e
 
-[TextureRedefine]  # increase colour depth
-formats = 0x806
-replaceFormat 0x80e
+[TextureRedefine] #
+formats  = 0x007
+overwriteFormat =  0x00f
 
-[TextureRedefine]  # increase colour depth
-formats = 0x007
-replaceFormat 0x00f
+formats = 0x19,0x1a
+overwriteFormat = 0x1f
+tileModesExcluded = 0x001
+
+[TextureRedefine] #
+width = 320
+height = 180
+formats = 0x19
+overwriteFormat = 0x823
+
+[TextureRedefine] #
+width = 320
+height = 180
+formats = 0x1a
+overwriteFormat = 0x823
+
+#[TextureRedefine] #lod override, shimmer and possible sharper textures
+#formats  = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+#overwriteRelativeLodBias = -1 # don't reccomend more than -1
 
 [TextureRedefine] # tv
 width = 1280

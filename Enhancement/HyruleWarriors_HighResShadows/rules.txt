@@ -1,6 +1,5 @@
 [Definition]
-titleIds = 000500001017D800,000500001017D900
-
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = "Hyrule Warriors - Higher Quality Shadows"
 version = 2
 

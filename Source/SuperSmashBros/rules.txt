@@ -24,11 +24,23 @@ height = 540
 overwriteWidth = <?=round($scaleFactorX*960)?> 
 overwriteHeight = <?=round($scaleFactorY*540)?> 
 
+[TextureRedefine]
+width = 960
+height = 360
+overwriteWidth = <?=round($scaleFactorX*960)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
 [TextureRedefine] # q-res
 width = 480
 height = 270
 overwriteWidth = <?=round($scaleFactorX*480)?> 
 overwriteHeight = <?=round($scaleFactorY*270)?> 
+
+[TextureRedefine]
+width = 480
+height = 180
+overwriteWidth = <?=round($scaleFactorX*480)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # o-res 
 width = 240
@@ -77,6 +89,24 @@ width = 420
 height = 210
 overwriteWidth = <?=round($scaleFactorX*420)?> 
 overwriteHeight = <?=round($scaleFactorY*210)?> 
+
+[TextureRedefine]
+width = 249
+height = 250
+overwriteWidth = <?=round($scaleFactorX*249)?> 
+overwriteHeight = <?=round($scaleFactorY*250)?> 
+
+[TextureRedefine]
+width = 160
+height = 160
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*160)?> 
+
+[TextureRedefine]
+width = 135
+height = 135
+overwriteWidth = <?=round($scaleFactorX*135)?> 
+overwriteHeight = <?=round($scaleFactorY*135)?> 
 
 [TextureRedefine] # gamepad
 width = 854

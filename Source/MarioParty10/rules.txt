@@ -1,0 +1,188 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010162D00,0005000010162E00,0005000E10161F00
+name = "Mario Party 10 - <?=$title?>"
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x41a,0x431
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 1024
+height = 1024
+formatsExcluded = 0x34,0x35,0x431,0x433
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*1024)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 1022
+height = 1022
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1022)?> 
+overwriteHeight = <?=round($scaleFactorY*1022)?> 
+
+[TextureRedefine]
+width = 854
+height = 960
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*960)?> 
+
+[TextureRedefine]
+width = 854
+height = 480
+formatsExcluded = 0x41a
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 838
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*838)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 716
+height = 538
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*716)?> 
+overwriteHeight = <?=round($scaleFactorY*538)?> 
+
+[TextureRedefine]
+width = 640
+height = 360
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 559
+height = 480
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*559)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 552
+height = 414
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*552)?> 
+overwriteHeight = <?=round($scaleFactorY*414)?> 
+
+[TextureRedefine]
+width = 536
+height = 126
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*536)?> 
+overwriteHeight = <?=round($scaleFactorY*126)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 512
+height = 512
+formatsExcluded = 0x34,0x35,0x235,0x41a,0x431
+overwriteWidth = <?=round($scaleFactorX*512)?> 
+overwriteHeight = <?=round($scaleFactorY*512)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 510
+height = 510
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*510)?> 
+overwriteHeight = <?=round($scaleFactorY*510)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 460
+height = 460
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*460)?> 
+overwriteHeight = <?=round($scaleFactorY*460)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 370
+height = 370
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*370)?> 
+overwriteHeight = <?=round($scaleFactorY*370)?> 
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 256
+height = 256
+formatsExcluded = 0x1,0x35,0x431,0x433
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 196
+height = 196
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*196)?> 
+overwriteHeight = <?=round($scaleFactorY*196)?> 
+
+[TextureRedefine]
+width = 160
+height = 90
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 128
+height = 128
+formatsExcluded = 0x35,0x41a,0x431,0x433
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*128)?> 
+
+[TextureRedefine]
+width = 80
+height = 45
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 64
+height = 64
+formatsExcluded = 0x34,0x431,0x433
+overwriteWidth = <?=round($scaleFactorX*64)?> 
+overwriteHeight = <?=round($scaleFactorY*64)?> 
+
+[TextureRedefine]
+width = 40
+height = 22
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*40)?> 
+overwriteHeight = <?=round($scaleFactorY*22)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 32
+height = 32
+formatsExcluded = 0x1,0x35,0x431
+overwriteWidth = <?=round($scaleFactorX*32)?> 
+overwriteHeight = <?=round($scaleFactorY*32)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 16
+height = 16
+formatsExcluded = 0x1,0x35,0x433
+overwriteWidth = <?=round($scaleFactorX*16)?> 
+overwriteHeight = <?=round($scaleFactorY*16)?> 
