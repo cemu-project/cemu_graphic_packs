@@ -6,39 +6,68 @@ $scaleFactorX = $fullWidth / 1280.0;
 $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
+
 [Definition]
 titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
 name = "New Super Mario Bros. U - <?=$title?>"
 version = 2
 
-[TextureRedefine] # tv
+[TextureRedefine] # increase colour depth, slower but less banding
+formats  = 0x820
+overwriteFormat =  0x823
+
+[TextureRedefine] #
+formats  = 0x816
+overwriteFormat =  0x820
+
+##tilemap don't scale
+#width = 2048
+#height = 512
+
+[TextureRedefine]
 width = 1280
 height = 720
+#formatsExcluded = 
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine] # AA pass, shadows viewport		
-width =	640	
-height = 360	
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
-		
-[TextureRedefine] # 		
-width =	320	
-height = 180	
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
-		
-##Textures		
-[TextureRedefine] # Dynamic shadows texture 3d overworld		
-width = 1024	
-height = 1024	
-formats = 0x005 #0x034 static shadow texture, don't scale
-overwriteWidth = <?=round($scaleFactorY*1024)?> 
+
+[TextureRedefine] #map shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*1024)?> 
 
-[TextureRedefine] # gamepad
+[TextureRedefine]
 width = 854
 height = 480
-#overwriteWidth = <?=round($scaleFactorX*1280)?> 
-#overwriteHeight = <?=round($scaleFactorY*720)?> 
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 640
+height = 360
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine]
+width = 160
+height = 90
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+## Gradient don't scale
+#width = 48
+#height = 48
+

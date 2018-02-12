@@ -1,0 +1,161 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_packing : enable
+// shader a8f3ec17a11d4a50
+// Used for: Specific removing of text
+
+bool CameraObjectLabel = false;
+// Enable if you want to...
+// - See the orange colored label from any objects in the camera view. Example: The orange text shown on this photo https://i.pinimg.com/originals/dd/88/68/dd8868f7bb9cf6497ecd0307fd3ce82f.jpg
+// - See the 'x' character next to e.g. your 'x6 Mighty Bananas'. (Minor unsolvable bug).
+// False (default) if you want to...
+// - Take selfies without the orange labels of your weapon or nearby objects.
+
+
+
+bool hideAllText = false;
+// False is default, true is turned on. Does what the name suggests, affects most text, not recommended for actual gameplay.
+
+
+
+
+
+
+
+
+// -------------------------------
+
+uniform ivec4 uf_remappedVS[4];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+layout(location = 0) in uvec4 attrDataSem0;
+layout(location = 1) in uvec4 attrDataSem1;
+layout(location = 2) in uvec4 attrDataSem2;
+out gl_PerVertex
+{
+	vec4 gl_Position;
+	float gl_PointSize;
+};
+layout(location = 0) out vec4 passParameterSem0;
+layout(location = 1) out vec4 passParameterSem1;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+ivec4 R3i = ivec4(0);
+ivec4 R4i = ivec4(0);
+ivec4 R5i = ivec4(0);
+ivec4 R126i = ivec4(0);
+ivec4 R127i = ivec4(0);
+uvec4 attrDecoder;
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+ivec4 PV0i = ivec4(0), PV1i = ivec4(0);
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0i = ivec4(gl_VertexID, 0, 0, gl_InstanceID);
+attrDecoder.xyz = attrDataSem2.xyz;
+attrDecoder.xyz = (attrDecoder.xyz>>24)|((attrDecoder.xyz>>8)&0xFF00)|((attrDecoder.xyz<<8)&0xFF0000)|((attrDecoder.xyz<<24));
+attrDecoder.w = 0;
+R3i = ivec4(int(attrDecoder.x), int(attrDecoder.y), int(attrDecoder.z), floatBitsToInt(1.0));
+attrDecoder.xyzw = floatBitsToUint(vec4(attrDataSem0.xyzw)/255.0);
+R1i = ivec4(int(attrDecoder.x), int(attrDecoder.y), int(attrDecoder.z), int(attrDecoder.w));
+attrDecoder.xyz = attrDataSem1.xyz;
+attrDecoder.xyz = (attrDecoder.xyz>>24)|((attrDecoder.xyz>>8)&0xFF00)|((attrDecoder.xyz<<8)&0xFF0000)|((attrDecoder.xyz<<24));
+attrDecoder.w = 0;
+R2i = ivec4(int(attrDecoder.x), int(attrDecoder.y), int(attrDecoder.z), floatBitsToInt(1.0));
+
+// Specifically target text with code that uses constants from both uniforms and inputs. These variables and code shouldn't be touched!!! Use the options above for proper controls.
+int hideText = 1;
+
+if (attrDataSem2.y <= 2000000000) { // This separates the orange label text from the inventory number. Removes the 'x' with the label, but does make the inventory numbers not disappear with the label text.
+	if (!CameraObjectLabel) {
+		hideText = 0;
+	}
+}
+
+if (uf_remappedVS[0].w == -1052388992 || uf_remappedVS[0].w == 1093474128 || (uf_remappedVS[0].w == 0 && uf_remappedVS[1].w != 0) || hideAllText) { // Code that specifically targets text. It separates the text being drawn with differences in the uniform.
+	hideText = 2;
+}
+
+
+if ((uf_remappedVS[0].x == 1069928832 && uf_remappedVS[0].y == 0 && uf_remappedVS[0].z == 0) &&
+(uf_remappedVS[1].x == 0 && uf_remappedVS[1].y == -1070606677 && uf_remappedVS[1].z == 0) &&
+(uf_remappedVS[2].x == 0 && uf_remappedVS[2].y == 0 && uf_remappedVS[2].z == -1082128754 && uf_remappedVS[2].w == 1148637833) &&
+(uf_remappedVS[3].x == 0 && uf_remappedVS[3].y == 0 && uf_remappedVS[3].z == -1082130432 && uf_remappedVS[3].w == 1148667362)) {
+	hideText += 1;
+}
+
+// 0
+R126i.x = 0;
+PV0i.y = floatBitsToInt(-(intBitsToFloat(R1i.w)));
+R127i.z = ((0.0 > intBitsToFloat(R2i.z))?int(0xFFFFFFFF):int(0x0));
+PV0i.z = R127i.z;
+R127i.w = 0x3f800000;
+PV0i.w = R127i.w;
+R127i.x = floatBitsToInt(-(intBitsToFloat(R2i.z)) + -(1.0));
+PS0i = R127i.x;
+// 1
+R0i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R3i.x),intBitsToFloat(R3i.y),intBitsToFloat(R3i.z),intBitsToFloat(PV0i.w)),vec4(intBitsToFloat(uf_remappedVS[0].x),intBitsToFloat(uf_remappedVS[0].y),intBitsToFloat(uf_remappedVS[0].z),intBitsToFloat(uf_remappedVS[0].w))));
+PV1i.x = R0i.x;
+PV1i.y = R0i.x;
+PV1i.z = R0i.x;
+PV1i.w = R0i.x;
+R4i.w = ((PV0i.z == 0)?(R1i.w):(PV0i.y));
+PS1i = R4i.w;
+// 2
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R3i.x),intBitsToFloat(R3i.y),intBitsToFloat(R3i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[1].x),intBitsToFloat(uf_remappedVS[1].y),intBitsToFloat(uf_remappedVS[1].z),intBitsToFloat(uf_remappedVS[1].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+R0i.y = tempi.x;
+R5i.z = ((R127i.z == 0)?(R2i.z):(R127i.x));
+PS0i = R5i.z;
+// 3
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R3i.x),intBitsToFloat(R3i.y),intBitsToFloat(R3i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[2].x),intBitsToFloat(uf_remappedVS[2].y),intBitsToFloat(uf_remappedVS[2].z),intBitsToFloat(uf_remappedVS[2].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R0i.z = tempi.x;
+R4i.x = ((R127i.z == 0)?(R1i.x):(R1i.x));
+PS1i = R4i.x;
+// 4
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R3i.x),intBitsToFloat(R3i.y),intBitsToFloat(R3i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[3].x),intBitsToFloat(uf_remappedVS[3].y),intBitsToFloat(uf_remappedVS[3].z),intBitsToFloat(uf_remappedVS[3].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+R0i.w = tempi.x;
+R4i.y = ((R127i.z == 0)?(R1i.y):(R1i.y));
+PS0i = R4i.y;
+// 5
+R5i.x = ((R127i.z == 0)?(R2i.x):(R2i.x));
+R5i.y = ((R127i.z == 0)?(R2i.y):(R2i.y));
+R4i.z = ((R127i.z == 0)?(R1i.z):(R1i.z));
+// 6
+R5i.w = ((R127i.z == 0)?(R126i.x):(R126i.x));
+
+// export
+gl_Position = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z)*hideText, intBitsToFloat(R0i.w));
+// export
+passParameterSem0 = vec4(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
+// export
+passParameterSem1 = vec4(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z), intBitsToFloat(R5i.w));
+}

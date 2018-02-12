@@ -3,7 +3,7 @@
 // shader a5b3a5e5ab2938bc
 // Monochromia + AARestore v2
 // Clouds and other effects
-// original shader dumped using cemu 1.11.c, BotW 1.3.1
+// original shader dumped using cemu 1.11.0c, BotW 1.3.1
 uniform ivec4 uf_remappedPS[3];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ad000 res 640x360x1 dim 1 tm: 4 format 0820 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf4e91800 res 1280x720x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1

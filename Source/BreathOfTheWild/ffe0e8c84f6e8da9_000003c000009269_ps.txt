@@ -9,6 +9,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 #extension GL_ARB_texture_gather : enable
 // shader ffe0e8c84f6e8da9
 // Shadow 2x2 box blur fix
+// shader dumped from BotW v1.3.1, using Cemu 1.10.0
 const float resXScale = <?=$scaleFactorX?>;
 const float resYScale = <?=$scaleFactorY?>;
 layout(binding = 33, std140) uniform uniformBlockPS1

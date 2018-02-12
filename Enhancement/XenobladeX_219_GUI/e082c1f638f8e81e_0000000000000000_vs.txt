@@ -2,7 +2,11 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader e082c1f638f8e81e
-// transport flame *dumped*
+//mask is probably scaled and fixed transparency
+// transport flame,   fog and quest marking, waterfall, computer login
+
+float origRatio = 1.777f;
+float newRatio = 2.370f;
 uniform ivec4 uf_remappedVS[27];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;
@@ -182,7 +186,7 @@ R126i.z = floatBitsToInt(intBitsToFloat(R127i.z) * intBitsToFloat(0x3e22f983));
 PS0i = R126i.z;
 // 7
 backupReg0i = R126i.w;
-R0i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(R127i.w));
+R0i.x = floatBitsToInt(intBitsToFloat(PV0i.x)  + intBitsToFloat(R127i.w));
 R6i.y = floatBitsToInt(intBitsToFloat(PV0i.w) + intBitsToFloat(R127i.y));
 R6i.z = floatBitsToInt(intBitsToFloat(PV0i.z) + intBitsToFloat(R125i.x));
 R126i.w = floatBitsToInt(intBitsToFloat(R5i.x) * intBitsToFloat(R126i.y));
@@ -1347,8 +1351,7 @@ R1i.x = floatBitsToInt((intBitsToFloat(R126i.y) * intBitsToFloat(uf_remappedVS[2
 R1i.y = floatBitsToInt((intBitsToFloat(R126i.y) * intBitsToFloat(uf_remappedVS[25].y) + intBitsToFloat(R127i.z)));
 R1i.z = floatBitsToInt((intBitsToFloat(R126i.y) * intBitsToFloat(uf_remappedVS[25].z) + intBitsToFloat(PV0i.y)));
 }
-float origRatio = 1.777f;
-float newRatio = 2.370f;
+
 // *(origRatio / newRatio)
 // export
 gl_Position = vec4(intBitsToFloat(R0i.x)*(origRatio / newRatio), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
@@ -1357,7 +1360,7 @@ passParameterSem0 = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsTo
 // export
 passParameterSem1 = vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w));
 // export
-passParameterSem2 = vec4(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z), intBitsToFloat(R2i.w));
+passParameterSem2 = vec4(intBitsToFloat(R2i.x)*(origRatio / newRatio), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z), intBitsToFloat(R2i.w)); //mask!?
 // export
 passParameterSem3 = vec4(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z), intBitsToFloat(R7i.w));
 if( activeMaskStackC[1] == true ) {

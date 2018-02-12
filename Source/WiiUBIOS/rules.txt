@@ -1,0 +1,133 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 000500101004b100,000500301006d10a,000500101004c100,000500301001810a,000500301001510a,000500301001210a,000500101004a100,000500301001610a,000500301001910a,000500301001410a,000500301001310a,000500101004d100,0005001010048100,0005001010047100,0005001010062100,0005001010045100,0005001010049100,000500101005a100,000500301001710a,0005001010040100
+name = "Wii U BIOS - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv 1080p
+width = 1920
+height = 1080
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # tv full 
+width = 1280
+height = 720
+formatsExcluded = 0x31,0x1a
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 1280
+height = 504
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*504)?> 
+
+[TextureRedefine] # tv half
+width = 640
+height = 360
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 640
+height = 252
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*252)?> 
+
+[TextureRedefine] # tv quarter
+width = 320
+height = 180
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 256
+#height = 256
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*256)?> 
+#overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+[TextureRedefine]
+width = 160
+height = 90
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine]
+width = 106
+height = 60
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*106)?> 
+overwriteHeight = <?=round($scaleFactorY*60)?> 
+
+[TextureRedefine]
+width = 80
+height = 45
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 48
+#height = 48
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*48)?> 
+#overwriteHeight = <?=round($scaleFactorY*48)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 32
+#height = 32
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*32)?> 
+#overwriteHeight = <?=round($scaleFactorY*32)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 24
+#height = 24
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*24)?> 
+#overwriteHeight = <?=round($scaleFactorY*24)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 16
+#height = 16
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*16)?> 
+#overwriteHeight = <?=round($scaleFactorY*16)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 8
+#height = 8
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*8)?> 
+#overwriteHeight = <?=round($scaleFactorY*8)?> 
+
+[TextureRedefine] # gamepad full
+width = 854
+height = 480
+formatsExcluded = 0x33
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # gamepad half
+width = 427
+height = 240
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] # browser
+width = 2176
+height = 1248
+#overwriteWidth = <?=round($scaleFactorX*2176)?> 
+#overwriteHeight = <?=round($scaleFactorY*1248)?> 

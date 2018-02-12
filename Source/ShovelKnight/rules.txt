@@ -21,7 +21,7 @@ overwriteHeight = <?=round($scaleFactorY*1080)?>
 width = 1600
 height = 960
 overwriteWidth = <?=round($scaleFactorX*1600)?> 
-overwriteHeight = <?=round($scaleFactorY*1960)?> 
+overwriteHeight = <?=round($scaleFactorY*960)?> 
 
 [TextureRedefine] # gamepad
 width = 854

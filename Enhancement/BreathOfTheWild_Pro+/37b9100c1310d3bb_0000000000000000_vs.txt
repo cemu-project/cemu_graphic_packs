@@ -985,7 +985,9 @@ if ((uf_uniformRegisterVS[5].w == 1134559232 ||
 	) {
 	gl_Position.y -= 9000.0;
 }
-if (isCurrentSizeEqualTo(vec2(80, 80)) && uf_uniformRegisterVS[4].x == 1060320051) {
+if (isCurrentSizeEqualTo(vec2(80, 80)) &&
+	(uf_uniformRegisterVS[4].x == 1060320051 ||
+	 uf_uniformRegisterVS[4].x == 1060320050)) {
 	//some hearts, stamina fade, but also glowing powers in inventory
 	gl_Position.y -= 9000.0;
 }

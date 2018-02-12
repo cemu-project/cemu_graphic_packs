@@ -1,0 +1,34 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1920.0;
+$scaleFactorY = $fullHeight / 1080.0;
+$title = get_title($fullWidth, $fullHeight);
+?>
+
+[Definition]
+titleIds = 00050000101db200,0005000010203200,0005000c101db200,0005000c10203200 # All regions
+name = "Shantae: Half-Genie Hero - <?=$title?>" 
+version = 2
+
+[TextureRedefine]
+width = 1920
+height = 1080
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1920)?> 
+overwriteHeight = <?=round($scaleFactorY*1080)?> 
+
+[TextureRedefine]
+width = 854
+height = 480
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 480
+height = 270
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*480)?> 
+overwriteHeight = <?=round($scaleFactorY*270)?> 

@@ -1,0 +1,28 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_arrays_of_arrays : enable
+// shader cb0e6e8cbec4502a 
+// DoF blur effect - Battle, Camera, Scope
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf5c7b800 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
+layout(location = 0) in vec4 passParameterSem3;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+
+const float resScale = 0;
+const int radius = int(2*resScale);
+
+void main() {
+	vec2 center = (passParameterSem3.xy + passParameterSem3.zw) / 2;
+	vec2 step = passParameterSem3.xw - passParameterSem3.zy;
+	vec4 result = vec4(0.0);
+	float count = 0.0;
+	for (int x = -radius; x <= radius; x++) {
+		for (int y = -radius; y <= radius; y++) {
+			if (length(vec2(x, y)) <= radius) {
+				result += texture(textureUnitPS0, center + vec2(x, y)*step);
+				count += 1.0;
+			}
+		}
+	}
+	passPixelColor0 = result / count;
+}

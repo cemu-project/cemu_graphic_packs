@@ -37,13 +37,14 @@ overwriteHeight = <?=round($scaleFactorY*360)?>
 [TextureRedefine] # quarter-res alpha
 width = 320
 height = 180
+formatsExcluded = 0x35
 overwriteWidth = <?=round($scaleFactorX*320)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # squid sisters
 width = 1024
 height = 576
-overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteWidth = <?=round($scaleFactorY*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*576)?> 
 
 [TextureRedefine] # gamepad
@@ -64,14 +65,14 @@ height = 252
 overwriteWidth = <?=round($scaleFactorX*448)?> 
 overwriteHeight = <?=round($scaleFactorY*252)?> 
 
-[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; doesn't scale properly yet
+[TextureRedefine] # player icon - GL_SRGB8_ALPHA8; Disabled because of current graphic pack scaling bugs
 width = 128
 height = 128
 formats = 0x41a
 #overwriteWidth = <?=round($scaleFactorY*128)?> 
 #overwriteHeight = <?=round($scaleFactorY*128)?> 
 
-[TextureRedefine] # player icon - GL_RGBA8; doesn't scale properly yet
+[TextureRedefine] # player icon - GL_RGBA8; Disabled because of current graphic pack scaling bugs
 width = 256
 height = 256
 formats = 0x1a
@@ -103,3 +104,18 @@ height = 90
 formats = 0x816
 overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*1024)?> 
+
+
+[TextureRedefine]
+width = 2048
+height = 2048
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorX*2048)?> 
+overwriteHeight = <?=round($scaleFactorY*2048)?> 

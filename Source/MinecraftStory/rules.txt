@@ -1,0 +1,62 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+$title = get_title($fullWidth, $fullHeight);
+?>
+
+[Definition]
+titleIds = 00050000101E0100,000500001020A200,000500001020A300
+name = "Minecraft: Story Mode - <?=$title?>" 
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 1024
+#height = 1024
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*1024)?> 
+#overwriteHeight = <?=round($scaleFactorY*1024)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 1022
+#height = 1022
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*1022)?> 
+#overwriteHeight = <?=round($scaleFactorY*1022)?> 
+
+[TextureRedefine]
+width = 640
+height = 360
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine]
+width = 160
+height = 90
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine]
+width = 80
+height = 45
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 

@@ -64,12 +64,12 @@ moduleMatches = 0xF7A78809
 #Fld_Warehouse00_Dul #Walleye Warehouse [Dojo]
 #Fld_SeaPlant00_Dul #Saltspray Rig [Dojo]
 #Fld_UpDown00_Dul #Arowana Mall [Dojo]
-#Fld_SkatePark00_Dul #Blackberry Skatepark [Dojo]
+#Fld_SkatePark00_Dul #Blackbelly Skatepark [Dojo]
 #Fld_Crank00_Vss #Urchin Underpass
 #Fld_Warehouse00_Vss #Walleye Warehouse
 #Fld_SeaPlant00_Vss #Saltspray Rig
 #Fld_UpDown00_Vss #Arowana Mall
-#Fld_SkatePark00_Vss #Blackberry Skatepark
+#Fld_SkatePark00_Vss #Blackbelly Skatepark
 #Fld_Athletic00_Vss #Camp Triggerfish
 #Fld_Amida00_Vss #Port Mackerel
 #Fld_Maze00_Vss #Kelp Dome

@@ -24,7 +24,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine] #TV
 width = 1280
 height = 720
-formatsExcluded = 0x008,0x19,0x1a # exclude the intro background texture
+formatsExcluded = 0x008,0x19,0x1a,0x431 # exclude the intro background texture, champions' photo
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 

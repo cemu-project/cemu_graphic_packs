@@ -136,3 +136,35 @@ _aspectAddr = 0x101A8A70
 # 3d aspect (calculated every frame)
 0x0375AFF4 = lis r28, ha16(_aspectAddr)
 0x0375AFF8 = lfs f12, _aspectAddr(r28)
+
+[BotwAspectsV176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
+# rodata constants
+0x101BF878 = .float <?=$aspect?> 
+0x1030A3F4 = .float <?=$aspect?> 
+0x1036DBDC = .float <?=$aspect?> 
+_aspectAddr = 0x101BF878
+
+# menu link aspect (calculated every load)
+0x02E2BFC8 = lis r9, _aspectAddr@ha
+0x02E2BFDC = lfs f4, _aspectAddr@l(r9)
+
+# 3d aspect (calculated every frame)
+0x0386C314 = lis r28, ha16(_aspectAddr)
+0x0386C318 = lfs f12, _aspectAddr(r28)
+
+[BotwAspectsV208]
+moduleMatches = 0x6267BFD0
+# rodata constants
+0x101BF8E8 = .float <?=$aspect?> 
+0x1030A57C = .float <?=$aspect?> 
+0x1036DD4C = .float <?=$aspect?> 
+_aspectAddr = 0x101BF8E8
+
+# menu link aspect (calculated every load)
+0x02E2C564 = lis r9, _aspectAddr@ha
+0x02E2C578 = lfs f4, _aspectAddr@l(r9)
+
+# 3d aspect (calculated every frame)
+0x0386D01C = lis r28, ha16(_aspectAddr)
+0x0386D020 = lfs f12, _aspectAddr(r28)

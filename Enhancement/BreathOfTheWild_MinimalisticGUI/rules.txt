@@ -1,0 +1,23 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - Minimalistic GUI V2.0".
+version = 2
+
+# This pack changes the GUI to a modern looking GUI and only cleans up the camera menu.
+# The Minimalistic GUI pack without the experimental Clean Camera Rune files doesn't have any gameplay affect or compromise.
+# Installing the experimental clean camera rune pack should be simple, just overwrite the files from that folder in this specific folder.
+# Be sure to read the SEPERATE rules.txt which is completely stand-alone and has information about that specific pack.
+
+
+# If you find bugs you can make an issue on the Github repository. If you don't want/have a github account, you can also leave a message in the gfx_packs channel in the official Cemu discord.
+
+# ====================================================================
+# ====================================================================
+# ====================================================================
+
+[TextureRedefine]# 236ad000_fmt0034_mip00_8x8_tm02_sw00000000.bmp
+width = 8
+height = 8
+formats = 0x034
+tilemodes = 2
+overwriteFormat = 0x001 # BC4_UNORM -> R8_UNORM

@@ -8,11 +8,11 @@ $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 00050000101DF400,00050002101DF401
+titleIds = 00050000101DF400,00050002101DF401,00050000101DF500
 name = "Pokken Tournament - <?=$title?>"
 version = 2
 
-[TextureRedefine]
+[TextureRedefine] # TV
 width = 1280
 height = 720
 formatsExcluded = 0x033
@@ -20,14 +20,40 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine]
+[TextureRedefine] # In-Game Resolution
 width = 960
 height = 720
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine] # gamepad
+[TextureRedefine] # Quarter-Res Resolution
+width = 640
+height = 360
+formatsExcluded = 0x033
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] # Another Resolution
+width = 128
+height = 72
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*72)?> 
+
+[TextureRedefine] # Yet Another Resolution
+width = 120
+height = 72
+overwriteWidth = <?=round($scaleFactorX*120)?> 
+overwriteHeight = <?=round($scaleFactorY*72)?> 
+
+[TextureRedefine] # Dialog Background
+width = 480
+height = 288
+overwriteWidth = <?=round($scaleFactorX*480)?> 
+overwriteHeight = <?=round($scaleFactorY*288)?> 
+
+[TextureRedefine] # Gamepad
 width = 854
 height = 480
-#overwriteWidth = <?=round($scaleFactorX*1280)?> 
-#overwriteHeight = <?=round($scaleFactorY*720)?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
