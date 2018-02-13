@@ -7,7 +7,7 @@ $scaleFactorY = $fullHeight / 1080.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 0005000010115D00
+titleIds = 0005000010115D00, 0005000010113300
 name = "The Smurfs 2 - <?=$title?>"
 version = 2
 
