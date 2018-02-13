@@ -2,7 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 // shader 37040a485a29d54e
 //##########################################################
-#define Preset 3
+#define Preset 9
 														// User Defined  0
 														// Bruz Option 1
 														// BSOD Option 2             
@@ -688,7 +688,7 @@ float DPX_Strength = 0.20;
 	vec3 RGB_Gamma = vec3(1.000, 1.000, 1.000);
 	vec3 RGB_Gain = vec3(1.000, 1.000, 1.000);
 	#define vibpass 1 
-	const float Vibrance = 0.205;
+	const float Vibrance = 0.195;
 	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0);
 	#define Tech 0 							
 	const float Power = 4.0;
