@@ -60,7 +60,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteWidth = <?=round($scaleFactorY*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*1024)?> 
 
 [TextureRedefine] # Gear menu
@@ -88,7 +88,7 @@ overwriteHeight = <?=round($scaleFactorY*360)?>
 width = 512
 height = 512
 formats = 0x005	
-overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteWidth = <?=round($scaleFactorY*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*1024)?> 
 
 [TextureRedefine] # Sun, Light Sources (plants, armor etc)

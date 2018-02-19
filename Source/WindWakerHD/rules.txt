@@ -66,5 +66,5 @@ overwriteHeight = <?=round($scaleFactorY*33*2)?>
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = <?=round($scaleFactorX*1024*2)?> 
+overwriteWidth = <?=round($scaleFactorY*1024*2)?> 
 overwriteHeight = <?=round($scaleFactorY*1024*2)?> 

@@ -35,7 +35,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 width = 1024
 height = 1024
 formats = 0x005 #shadows 2 lod slices
-overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteWidth = <?=round($scaleFactorY*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*1024)?> 
 
 #[TextureRedefine] ##gloss, reflections, don't scale
