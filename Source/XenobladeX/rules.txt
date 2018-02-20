@@ -209,17 +209,3 @@ height = 8
 formats = 0x806 
 overwriteWidth = <?=round($scaleFactorX*8)?> 
 overwriteHeight = <?=round($scaleFactorY*8)?> 
-
-[TextureRedefine] #
-width = 4
-height = 4
-formats = 0x80e,0x81e #R16,RG16
-overwriteWidth = <?=round($scaleFactorX*4)?> 
-overwriteHeight = <?=round($scaleFactorY*4)?> 
-
-[TextureRedefine] #
-width = 1
-height = 1
-formats = 0x008,0x01a,081e
-overwriteWidth = <?=round($scaleFactorX*1)?> 
-overwriteHeight = <?=round($scaleFactorY*1)?>
