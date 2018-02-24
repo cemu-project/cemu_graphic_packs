@@ -3,6 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader a225baec4db6d89e
+//flying trails desert
 uniform ivec4 uf_remappedVS[27];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;
@@ -1374,8 +1375,11 @@ R1i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R126i.w),intBitsToFloat(uf_re
 // 14
 R1i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.x), intBitsToFloat(uf_remappedVS[19].w)));
 }
+float origRatio = 1.777f;
+float newRatio = 2.370f;
+// *(origRatio / newRatio)
 // export
-gl_Position = vec4(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
+gl_Position = vec4(intBitsToFloat(R4i.x) *(origRatio / newRatio), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
 // export
 passParameterSem0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
 // export
