@@ -109,7 +109,7 @@ void main()
 	vec2 ps = vec2(1.0) / textureSize(textureUnitPS0, 0);
 	vec2 uv = coord * ps;
 
-	R4f.xyz =	blur(textureUnitPS0, uv, ps*0.5).xyz;
+	R4f.xyz =	blur(textureUnitPS0, uv, ps*0.25).xyz;
 	R4f.xyz += (texture(textureUnitPS0, R1f.xy).xyz)/2;
 	R3f.xyz = (texture(textureUnitPS0, R0f.zw).xyz);
 	R2f.xyz = (texture(textureUnitPS0, R2f.xy).xyz);// prob?
