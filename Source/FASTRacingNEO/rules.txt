@@ -11,107 +11,39 @@ titleIds = 000500001012f000
 name = "FAST Racing NEO - <?=$title?>"
 version = 2
 
-#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
-#width = 4096
-#height = 4096
-#formatsExcluded = 
-#overwriteWidth = <?=round($scaleFactorX*4096)?> 
-#overwriteHeight = <?=round($scaleFactorY*4096)?> 
-
-[TextureRedefine]
+[TextureRedefine] # TV
 width = 1280
 height = 720
-#formatsExcluded = 
+formatsExcluded = 0x433
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine]
-width = 1280
-height = 580
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*580)?> 
+[TextureRedefine] # Half-width 1
+width = 640
+height = 720
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine]
+[TextureRedefine] # Half-res
 width = 640
 height = 360
-#formatsExcluded = 
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
-[TextureRedefine]
-width = 640
-height = 290
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*290)?> 
-
-#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
-#width = 512
-#height = 512
-#formatsExcluded = 
-#overwriteWidth = <?=round($scaleFactorX*512)?> 
-#overwriteHeight = <?=round($scaleFactorY*512)?> 
-
-[TextureRedefine]
+[TextureRedefine] # Half-width 2
 width = 320
-height = 180
-#formatsExcluded = 
+height = 360
 overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] # Q-res
+width = 160
+height = 180
+overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
-[TextureRedefine]
-width = 320
-height = 145
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*145)?> 
-
-[TextureRedefine]
-width = 196
-height = 73
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*196)?> 
-overwriteHeight = <?=round($scaleFactorY*73)?> 
-
-[TextureRedefine]
-width = 160
-height = 90
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*160)?> 
-overwriteHeight = <?=round($scaleFactorY*90)?> 
-
-[TextureRedefine]
-width = 160
-height = 72
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*160)?> 
-overwriteHeight = <?=round($scaleFactorY*72)?> 
-
-[TextureRedefine]
-width = 80
-height = 45
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*45)?> 
-
-[TextureRedefine]
-width = 80
-height = 36
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*36)?> 
-
-[TextureRedefine]
-width = 40
-height = 22
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*40)?> 
-overwriteHeight = <?=round($scaleFactorY*22)?> 
-
-[TextureRedefine]
-width = 40
-height = 18
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*40)?> 
-overwriteHeight = <?=round($scaleFactorY*18)?> 
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+#overwriteWidth = <?=round($scaleFactorX*1280)?> 
+#overwriteHeight = <?=round($scaleFactorY*720)?> 
