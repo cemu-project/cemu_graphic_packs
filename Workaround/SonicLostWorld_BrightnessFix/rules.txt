@@ -1,4 +1,4 @@
 [Definition]
 titleIds = 0005000010135700,000500001012B100,0005000010128F00,0005000210128F01
-name = "Sonic Lost World - Brightness Fix"
+name = "Sonic Lost World - Display Fixes"
 version = 2
