@@ -15,14 +15,33 @@ version = 2
 [TextureRedefine]
 width = 1280
 height = 720
-tileModesExcluded = 0x001
+formats = 0x1a
+overwriteFormat = 0x1f
+tileModesExcluded = 0x1
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x820
+tileModesExcluded = 0x1
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x1a,0x816
+tileModesExcluded = 0x1
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine]
 width = 640
 height = 360
-tileModesExcluded = 0x001
+tileModesExcluded = 0x1
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 

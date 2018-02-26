@@ -1,0 +1,34 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_packing : enable
+// shader 061c4a3b19113538
+// grass shader - WINDY HILL 1/2/4, TROPICAL COAST 1/2/4, SILENT FOREST 1/2/4, ETC.
+// dumped on cemu 1.11.5
+uniform ivec4 uf_remappedVS[20];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+uniform float uf_alphaTestRef;
+layout(location = 0) in uvec4 attrDataSem0;
+layout(location = 1) in uvec4 attrDataSem8;
+layout(location = 2) in uvec4 attrDataSem12;
+layout(location = 3) in uvec4 attrDataSem13;
+out gl_PerVertex
+{
+	vec4 gl_Position;
+	float gl_PointSize;
+};
+layout(location = 0) out vec4 passParameterSem136;
+layout(location = 1) out vec4 passParameterSem131;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+
+}

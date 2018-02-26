@@ -1,6 +1,8 @@
 <?php
 $targetfps = $argv[1];
-$divisor = 30/$targetfps
+$divisor = 30/$targetfps;
+$derivative1 = 30*$divisor;
+$derivative2 = 0.5/$divisor;
 ?>
 [BotwFPSV208] #i.e. v1.5.0
 moduleMatches = 0x6267BFD0
@@ -12,6 +14,10 @@ _divisor = 0x0 # edit the next line to change the divisor
 0x00000000 = .float <?=$divisor?> # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
 _targetfps = 0x18 # edit the next line to change the target fps
 0x18 = .float <?=$targetfps?> 
+
+#Arrows by Epigramx
+0x1001CCAC = .float <?=$derivative1?> # = 30 * divisor 
+0x1001CB18 = .float <?=$derivative2?> # = 0.5 / divisor
 
 #"Best fence" by Rajkosto
 _fenceNeg1 = 0x00000004
@@ -67,6 +73,10 @@ _divisor = 0x0 # edit the next line to change the divisor
 0x00000000 = .float <?=$divisor?> # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
 _targetfps = 0x18 # edit the next line to change the target fps
 0x18 = .float <?=$targetfps?> 
+
+#Arrows by Epigramx
+0x1001CCAC = .float <?=$derivative1?> # = 30 * divisor 
+0x1001CB18 = .float <?=$derivative2?> # = 0.5 / divisor
 
 #"Best fence" by Rajkosto
 _fenceNeg1 = 0x00000004
