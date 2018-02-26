@@ -1,0 +1,53 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 000500001014c600, 000500001014cb00
+name = "Giana Sisters Twisted Dreams - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 32
+height = 32
+overwriteWidth = <?=round($scaleFactorX*32)?> 
+overwriteHeight = <?=round($scaleFactorY*32)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 64
+height = 64
+overwriteWidth = <?=round($scaleFactorX*64)?> 
+overwriteHeight = <?=round($scaleFactorY*64)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+formatsExcluded = 0x33
+width = 128
+height = 128
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*128)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+formatsExcluded = 0x33
+width = 256
+height = 256
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
