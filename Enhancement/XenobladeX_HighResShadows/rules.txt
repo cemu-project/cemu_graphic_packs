@@ -1,6 +1,6 @@
 # Found by sunbroDave
 [Definition]
-titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00,ffffffff0cd546a9
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Xenoblade Chronicles X - Higher Quality Shadows"
 version = 2
 
