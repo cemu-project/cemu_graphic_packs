@@ -8,7 +8,7 @@ $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 0005000010190300,00050000101E5300,00050000101E5400,0005000210190301,00050002101E5301,00050002101E5401
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400,0005000210190301,00050002101E5401
 name = "Mario & Sonic at the Rio 2016 Olympic Games - <?=$title?>"
 version = 2
 
