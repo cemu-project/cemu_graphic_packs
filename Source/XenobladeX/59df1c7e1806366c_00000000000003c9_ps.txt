@@ -253,7 +253,7 @@ R4i.x = ((PV0i.w == 0)?(R127i.x):(R127i.z));
 R4i.y = ((PV0i.w == 0)?(R127i.w):(R126i.y));
 R4i.z = ((PV0i.w == 0)?(R126i.z):(R126i.w));
 }
-vec2 uv = gl_FragCoord.xy /  textureSize(textureUnitPS0, 0);
+vec2 uv = gl_FragCoord.xy / (vec2(1280.0, 720.0)*uf_fragCoordScale);
 vec4 sharpColour = vec4(texture(textureUnitPS1, uv).xyz - edgeStrength(uv) * sharpen_strength, 1.0);
 
 // export
