@@ -79,7 +79,7 @@ overwriteHeight = <?=round($scaleFactorY*480)?>
 [TextureRedefine] # half-res alpha
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x033,0x031,0x001 #dialog prompt fixes, XCX Logo NLA  exclude obvious textures
+formatsExcluded = 0x41A,0x033,0x031 #dialog prompt fixes, XCX Logo NLA  exclude obvious textures
 tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
