@@ -5,7 +5,9 @@ Only download the graphic packs from the buttons above. Please delete the old on
 **Missing the resolution packs on this Github? That's because we now automatically build the resolution packs. Follow the download instructions to download them for all the supported resolutions.**
 
 
-For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/botw). For other games see ['I need help'](#i-need-help).
+For Breath of the Wild specific help, please refer to [this FAQ](https://{{site.github.owner_name}}.github.io/cemu_graphic_packs/botw). 
+For Graphic pack descriptions, please refer to [this Cemu wiki page](http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild_Graphic_Packs). 
+For other games see ['I need help'](#i-need-help).
 ##### Keep in mind that all of these graphic packs are a work in progress.  
 ##### If there's a resolution missing it's because it was done on purpose and the game natively runs on that resolution.  
 ##### If you want Graphic Packs for < Cemu 1.8.0 you need to use legacy packs, which you can download [here](https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip).
