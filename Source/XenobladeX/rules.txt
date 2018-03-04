@@ -104,8 +104,8 @@ overwriteHeight = <?=round($scaleFactorY*288)?>
 [TextureRedefine] # Fog
 width =	426
 height = 240
-overwriteWidth = <?=round($scaleFactorX*426)?> 
-overwriteHeight = <?=round($scaleFactorY*240)?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # q-res alpha (Previously not added due to potential conflict, please remove rule when using Xeno GCN4 workaround)
 width = 320
