@@ -48,6 +48,10 @@ overwriteFormat = 0x823
 #formats  = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
 #overwriteRelativeLodBias = -1 # don't reccomend more than -1
 
+[TextureRedefine] #0x01a, super sampling
+formats  = 0x005,0x01a
+overwriteRelativeLodBias = -16 # 
+
 [TextureRedefine] # tv
 width = 1280
 height = 720
