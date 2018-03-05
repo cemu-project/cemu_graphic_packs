@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 00050000101c8d00,00050000101ca900
+name = "Monster High New Ghoul in School - 1280x720"
+version = 4
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280 
+overwriteHeight = 720 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 1280 
+overwriteHeight = 720 
