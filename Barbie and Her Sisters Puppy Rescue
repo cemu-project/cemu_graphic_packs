@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 00050000101d1000,00050000101d1d00
+name = "Barbie and Her Sisters Puppy Rescue - 3200x1800"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x41A # exclude the intro background texture 
+overwriteWidth = 3200 
+overwriteHeight = 1800 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+#overwriteWidth = 3200 
+#overwriteHeight = 1800 
