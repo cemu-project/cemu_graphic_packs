@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010106B00,000500001010f600,0005000010112400
+name = "Assassin's Creed III - 1280x720"
+version = 3
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280 
+overwriteHeight = 720 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 1280 
+overwriteHeight = 720 
