@@ -1,0 +1,16 @@
+[Definition]
+titleIds = 0005000010118200,0005000010147a00
+name = "Monster High 13 Wishes - 1280x720"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = 1280 
+overwriteHeight = 720 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = 1280 
+overwriteHeight = 720 

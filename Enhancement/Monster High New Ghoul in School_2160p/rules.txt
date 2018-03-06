@@ -1,0 +1,74 @@
+[Definition]
+titleIds = 00050000101c8d00,00050000101ca900		
+name = "Monster High New Ghoul in School- 3840x2160"
+version = 2
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 2048
+#height = 2048
+#formatsExcluded = 
+#overwriteWidth = 6144 
+#overwriteHeight = 6144 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 2046
+#height = 2046
+#formatsExcluded = 
+#overwriteWidth = 6138 
+#overwriteHeight = 6138 
+
+[TextureRedefine]
+width = 1280
+height = 720
+tileModesExcluded = 0x001
+overwriteWidth = 3840 
+overwriteHeight = 2160 
+
+[TextureRedefine]
+width = 854
+height = 480
+#formatsExcluded = 
+overwriteWidth = 3840 
+overwriteHeight = 2160 
+
+[TextureRedefine]
+width = 800
+height = 250
+#formatsExcluded = 
+overwriteWidth = 2400 
+overwriteHeight = 750 
+
+[TextureRedefine]
+width = 640
+height = 360
+tileModesExcluded = 0x001
+overwriteWidth = 1920 
+overwriteHeight = 1080 
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = 960 
+overwriteHeight = 540 
+
+[TextureRedefine]
+width = 160
+height = 90
+#formatsExcluded = 
+overwriteWidth = 480 
+overwriteHeight = 270 
+
+[TextureRedefine]
+width = 80
+height = 45
+#formatsExcluded = 
+overwriteWidth = 240 
+overwriteHeight = 135 
+
+[TextureRedefine]
+width = 40
+height = 22
+#formatsExcluded = 
+overwriteWidth = 120 
+overwriteHeight = 66 
