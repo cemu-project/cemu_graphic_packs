@@ -1,11 +1,11 @@
 [Definition]
 titleIds = 000500001010e600,0005000010110700
-name = "007™ Legends - 2160p (4K)"
+name = "007â„¢ Legends - 2160p (4K)"
 version = 2
 
 [TextureRedefine]
-width = 1280
-height = 720
-formatsExcluded = 0x41A # exclude the intro background texture
+width = 3840
+height = 2160
+formatsExcluded = 0x00000823# exclude the intro background texture
 overwriteWidth = 3840
 overwriteHeight = 2160
