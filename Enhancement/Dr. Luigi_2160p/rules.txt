@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 0005000010152a00,0005000010152b00,0005000010150300
+name = "Dr. Luigi - 2160p (4K)"
+version = 2
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formatsExcluded = 0x41A # exclude the intro background texture
+overwriteWidth = 3840
+overwriteHeight = 2160
