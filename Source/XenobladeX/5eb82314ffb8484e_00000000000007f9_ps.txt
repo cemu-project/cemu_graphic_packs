@@ -10,7 +10,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 // shader 5eb82314ffb8484e // bg scale, probably overkill to scale
 // Last step vertical blend. half tv scaled + pre-blending = aprox half step reduction
 // To-do  candidate for multi pass / bokeh replacement
-const float resScale = <?=round($scaleFactorY)/2?>;
+const float resScale = <?=round($scaleFactorY/2)?>;
 
 //const float resScale = 2.0;
 uniform ivec4 uf_remappedPS[7];
