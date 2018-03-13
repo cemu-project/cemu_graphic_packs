@@ -6,11 +6,11 @@
 // changes here in turn "breaks" bloom as they over or under expose depending on day/night 
 
 //old contrasty, or just copy paste clarity
-const float gamma = 0.95; // 1.0 is neutral  
+const float gamma = 0.92; // 1.0 is neutral  
 const float exposure = 0.52; // 1.0 is neutral, first lessen to avoid truncation prob around .25 for radeon. 
-const float vibrance = 0.3175;  // 0.0 is neutral  
-const float crushContrast = 0.000; // 0.0 is neutral. loss of shadow detail 
-const float postExposure = 1.06; // 1.0 is neutral, then slightly raise exposure back up. 
+const float vibrance = 0.318;  // 0.0 is neutral  
+const float lift = 0.001; // 0.0 is neutral. loss of shadow detail 
+const float postExposure = 1.05; // 1.0 is neutral, then slightly raise exposure back up. 
 
 vec3 contrasty(vec3 colour){
 	vec3 fColour = (colour.xyz);
@@ -24,7 +24,7 @@ vec3 contrasty(vec3 colour){
 	vec3 lightness = vec3((mn + mx) / 2.0);
 // vibrance
 	fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
-	fColour = max(vec3(0.0), fColour - vec3(crushContrast));
+	fColour = max(vec3(0.0), fColour + vec3(lift));
 	return fColour;
 }
 
@@ -72,7 +72,7 @@ bool predResult = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
-R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * (0.975  -(lineRand(gl_FragCoord.yx)*0.02));
+R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * (0.985  -(lineRand(gl_FragCoord.yx)*0.015));
 //R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) *preExposure;
 // 0
 R0f.xyz = contrasty(R0f.xyz);
