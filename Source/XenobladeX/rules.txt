@@ -85,8 +85,8 @@ width = 640
 height = 360
 formatsExcluded = 0x41A,0x033,0x031 #dialog prompt fixes, XCX Logo NLA  exclude obvious textures
 tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*(640*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(360*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] #XCX Dynamic shadow scale both same for smoother transitions	
 width = 512
@@ -98,40 +98,40 @@ overwriteHeight = <?=round($scaleFactorY)*1024?>
 [TextureRedefine] # Sun, Light Sources (plants, armor etc)
 width =	512
 height = 288
-overwriteWidth = <?=round($scaleFactorX*(512*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(288*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*512)?> 
+overwriteHeight = <?=round($scaleFactorY*288)?> 
 
 [TextureRedefine] # Fog
 width =	426
 height = 240
-overwriteWidth = <?=round($scaleFactorX*(640*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(360*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
 [TextureRedefine] # q-res alpha (Previously not added due to potential conflict, please remove rule when using Xeno GCN4 workaround)
 width = 320
 height = 180
-overwriteWidth = <?=round($scaleFactorX*(320*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(180*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine]
 width = 261
 height = 223
 #formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*(261*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(223*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*261)?> 
+overwriteHeight = <?=round($scaleFactorY*223)?> 
  
 [TextureRedefine]
 width = 256
 height = 180
 #formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*(256*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(180*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
 
 [TextureRedefine] # "God rays" stencil res, lens reflections.
 width = 256
 height = 144
-overwriteWidth = <?=round($scaleFactorX*(256*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(144*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*144)?> 
 
 #[TextureRedefine] # lod switch dithering, don't scale
 #width = 256
@@ -155,8 +155,8 @@ overwriteHeight = <?=round($scaleFactorY*255)?>
 width = 160
 height = 90
 #formatsExcluded = 0x816  #fixed in shader
-overwriteWidth = <?=round($scaleFactorX*(160*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(90*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
 
 [TextureRedefine] 
 width = 128
@@ -169,15 +169,15 @@ overwriteHeight = <?=round($scaleFactorY*128)?>
 width = 128
 height = 90
 #formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*(128*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(90*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
 	
 [TextureRedefine]# should up-scale from 35 to keep aligment with other 16:9 buffers 
 width = 80
 height = 46
 #formatsExcluded = 0x816  #fixed in shader
-overwriteWidth = <?=round($scaleFactorX*(80*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(45*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
 
 [TextureRedefine] #
 width = 64
@@ -190,8 +190,8 @@ overwriteHeight = <?=round($scaleFactorY*64)?>
 width = 64
 height = 46
 #formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*(64*2)/(1280*1.5))?> 
-overwriteHeight = <?=round($scaleFactorY*(46*2)/(720*1.5))?> 
+overwriteWidth = <?=round($scaleFactorX*64)?> 
+overwriteHeight = <?=round($scaleFactorY*46)?> 
 
 [TextureRedefine] #
 height = 32
