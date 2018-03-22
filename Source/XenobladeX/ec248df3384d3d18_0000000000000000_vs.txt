@@ -1320,7 +1320,7 @@ R1i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R126i.y),intBitsToFloat(uf_re
 R1i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R126i.y),intBitsToFloat(uf_remappedVS[25].z)) + intBitsToFloat(PV0i.y)));
 }
 float origRatio = 1.777f;
-float newRatio = <?=$aspect?> 
+float newRatio = <?=$aspect?> ;
 // *(origRatio / newRatio)
 // export
 gl_Position = vec4(intBitsToFloat(R0i.x) *(origRatio / newRatio), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
