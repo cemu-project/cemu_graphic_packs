@@ -85,8 +85,8 @@ width = 640
 height = 360
 formatsExcluded = 0x41A,0x033,0x031 #dialog prompt fixes, XCX Logo NLA  exclude obvious textures
 tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*640 * 2 / 1.5)?> 
-overwriteHeight = <?=round($scaleFactorY)*360*(2/1.5)?> 
+overwriteWidth = <?=round($scaleFactorX*640*(2/1.5))?> 
+overwriteHeight = <?=round($scaleFactorY*360*(2/1.5))?> 
 
 [TextureRedefine] #XCX Dynamic shadow scale both same for smoother transitions	
 width = 512
@@ -99,7 +99,7 @@ overwriteHeight = <?=round($scaleFactorY)*1024?>
 width =	512
 height = 288
 overwriteWidth = <?=round($scaleFactorX*512*(2/1.5))?> 
-overwriteHeight = <?=round($scaleFactorY)*(288*(2/1.5))?> 
+overwriteHeight = <?=round($scaleFactorY*288*(2/1.5))?> 
 
 [TextureRedefine] # Fog
 width =	426
