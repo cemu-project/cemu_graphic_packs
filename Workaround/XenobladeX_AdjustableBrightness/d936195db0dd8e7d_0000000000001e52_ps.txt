@@ -9,7 +9,7 @@
 const float gamma = 0.92; // 1.0 is neutral  
 const float exposure = 0.52; // 1.0 is neutral, first lessen to avoid truncation prob around .25 for radeon. 
 const float vibrance = 0.318;  // 0.0 is neutral  
-const float lift = 0.001; // 0.0 is neutral. loss of shadow detail 
+const float lift = 0.002; // 0.0 is neutral. loss of shadow detail 
 const float postExposure = 1.05; // 1.0 is neutral, then slightly raise exposure back up. 
 
 vec3 contrasty(vec3 colour){
