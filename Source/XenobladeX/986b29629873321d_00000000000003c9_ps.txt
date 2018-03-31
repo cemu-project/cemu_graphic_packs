@@ -1,17 +1,10 @@
-<?php
-include 'Source/functions.php';
-$fullWidth = $argv[1];
-$fullHeight = $argv[2];
-$scaleFactorX = always_decimal_format($fullWidth / 1280.0);
-$scaleFactorY = always_decimal_format($fullHeight / 720.0);
-?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 // shader 986b29629873321d 
 /// AO  1st pass  detection
-
+//2 = 8, 3 = 16
 const float AOScale = 1.5; // AO detail vs volume 1.5 as a compromise 1.0 default. Scale to res = 100% detail but sharp and tiny.  lines 357, 360 for comments: Needs blur++
-const float noiseScale = <?=$scaleFactorX?>;
+const float noiseScale = 4.5; // 8 banding for vertical objects, 4 is more random,less details
 //const float noiseScale = 4.0; //multiple of noise texture samples ie banding vs details
 
 uniform ivec4 uf_remappedPS[4];
@@ -187,7 +180,7 @@ R9i.xy = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R0i.xy) ).xx);
 if( activeMaskStackC[1] == true ) {
 
 R1i.x = 0xbe000000;
-R1i.y = 0x3e5db3c0  ; // to be tweaked later, cut off points
+R1i.y = 0x3e5db3c0  ; // to be tweaked later, cut off points 
 R0i.z = floatBitsToInt(intBitsToFloat(uf_remappedPS[0].z) * intBitsToFloat(0x3c75c28f)); //n
 PV0i.z = R0i.z;
 R2i.x = 0xbe800000;
@@ -199,7 +192,7 @@ R0i.w = floatBitsToInt((intBitsToFloat(uf_remappedPS[1].w) * intBitsToFloat(0x3c
 R3i.y = 0x3f000000;
 PS1i = R3i.y;
 
-R4i.x = 0x3e304eb9 ; // to be tweaked later, cut off points
+R4i.x = 0x3dff4eb9 ; // to be tweaked later, cut off points 0x3e304eb9
 R5i.x = 0x3e474d45;
 PS0i = R5i.x;
 // 3
