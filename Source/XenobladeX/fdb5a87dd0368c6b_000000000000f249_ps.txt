@@ -478,4 +478,4 @@ R0i.w = 0;
 // export
 passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.w));
 }
-}
+

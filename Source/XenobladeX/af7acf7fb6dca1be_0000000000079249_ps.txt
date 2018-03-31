@@ -583,3 +583,4 @@ R0i.z = floatBitsToInt((intBitsToFloat(PV0i.x) * intBitsToFloat(uf_remappedPS[30
 }
 // export
 passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.y)*shadowExposure, intBitsToFloat(R0i.z)*shadowExposure, intBitsToFloat(R0i.w));
+}
