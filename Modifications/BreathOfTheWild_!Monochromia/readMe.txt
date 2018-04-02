@@ -2,7 +2,6 @@ Monochromia - Sin City inspired Mod
 This mod makes almost everything in the game black and white. Only the bright lights and other special effects remain with full color. 
 
 !!! Important !!!
-Delete/rename the a5b3a5e5ab2938bc file from your resolution pack, otherwise it gets overriden and the clouds will appear coloured.
 The AA fix is implemented in this pack as well. Remember to restore the file in your resolution pack when not using this mod.
 This mod is not compatible with Clarity/Contrasty, as this mod uses custom postprocessing. Delete bd8bba59e2149449 from this pack if you wish to use those.
 
