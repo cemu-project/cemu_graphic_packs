@@ -12,6 +12,11 @@ titleIds = 0005000010143400,0005000010143600,0005000010143500
 name = "The Legend of Zelda: The Wind Waker HD - <?=$title?>"
 version = 2
 
+[TextureRedefine] #0x01a, super sampling
+formats  = 0x01a
+overwriteRelativeLodBias = -16 # 
+
+
 [TextureRedefine] # game rendering resolution
 width = 1920
 height = 1080
@@ -66,5 +71,5 @@ overwriteHeight = <?=round($scaleFactorY*33*2)?>
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = <?=round($scaleFactorX*1024*2)?> 
-overwriteHeight = <?=round($scaleFactorY*1024*2)?> 
+overwriteWidth = <?=round($scaleFactorY)*2048?> 
+overwriteHeight = <?=round($scaleFactorY)*2048?> 

@@ -10,7 +10,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 #extension GL_ARB_shading_language_packing : enable
 // shader 1f83c0d47b1c4c34
 // Used for: Background Blur
-const float resXScale = <?=$scaleFactorY?>; 
+const float resXScale = <?=$scaleFactorX?>; 
 const float resYScale = <?=$scaleFactorY?>; 
 
 uniform ivec4 uf_remappedVS[1];

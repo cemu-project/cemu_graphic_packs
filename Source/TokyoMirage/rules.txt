@@ -1,0 +1,141 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = "Tokyo Mirage Sessions FE - <?=$title?>" 
+version = 2
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x820
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x816
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 1280
+height = 340
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*340)?> 
+
+[TextureRedefine]
+width = 1147
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1147)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 1024
+height = 2048
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*2048)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 1024
+#height = 1024
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*1024)?> 
+#overwriteHeight = <?=round($scaleFactorY*1024)?> 
+
+[TextureRedefine]
+width = 1014
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1014)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 881
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*881)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 854
+height = 480
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 854
+height = 342
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*854)?> 
+overwriteHeight = <?=round($scaleFactorY*342)?> 
+
+[TextureRedefine]
+width = 853
+height = 232
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*853)?> 
+overwriteHeight = <?=round($scaleFactorY*232)?> 
+
+[TextureRedefine]
+width = 640
+height = 720
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine]
+width = 640
+height = 360
+tileModesExcluded = 0x001
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine]
+width = 300
+height = 480
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*300)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 266
+height = 480
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*266)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 254
+height = 480
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*254)?> 
+overwriteHeight = <?=round($scaleFactorY*480)?> 
+
+[TextureRedefine]
+width = 160
+height = 120
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*120)?> 

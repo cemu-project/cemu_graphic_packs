@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = "Hyrule Warriors - 30FPS Lock"
+version = 2
+
+[Control]
+vsyncFrequency = 30

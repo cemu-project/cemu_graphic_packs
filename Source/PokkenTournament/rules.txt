@@ -8,7 +8,7 @@ $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 00050000101DF400,00050002101DF401
+titleIds = 00050000101DF400,00050002101DF401,00050000101DF500
 name = "Pokken Tournament - <?=$title?>"
 version = 2
 

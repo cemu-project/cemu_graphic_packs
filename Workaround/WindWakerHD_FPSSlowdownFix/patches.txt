@@ -1,0 +1,7 @@
+[WWHDEU] ;OliveOperationMgrThread found by BenjaminLSR
+moduleMatches = 0xB7E748DE
+0x025AC21C = nop; SUSPEND OliveOperationMgrThread
+
+[WWHDUS] ;Ported to US by Slash
+moduleMatches = 0x475BD29F
+0x025AC25C = nop; SUSPEND OliveOperationMgrThread

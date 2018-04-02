@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 0005000010143500,0005000010143600
+name = "The Legend of Zelda: The Wind Waker HD - Intel Fixes" #thanks BenjaminLSR!
+version = 2

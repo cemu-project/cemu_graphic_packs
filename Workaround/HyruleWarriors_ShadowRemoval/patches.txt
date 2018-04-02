@@ -1,0 +1,7 @@
+[HWShadowRemovalv208]
+moduleMatches = 0xE159AE91
+
+# disable calls to CDisplayListMgr::RenderScene inside CShadowMapManager::Render
+# seems to stop character/item shadows being rendered to the shadowmap, while still letting the shadowmap itself get rendered (which seems needed for other effects)
+0x021CD54C = nop
+0x021CD578 = nop

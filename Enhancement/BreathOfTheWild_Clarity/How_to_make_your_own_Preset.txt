@@ -2,10 +2,6 @@
 
 	-- How to set up your own Clarity Preset -- 
 
-	
-
-	(May not work with Windows 10 Creators Update Fall Edition)
-
 	((Required storage space, Approx 2~4GB))
 	
 ===================================================================
@@ -19,6 +15,7 @@
 	There are 15 steps total.  Please read very carefully and with your full attention.  As long as you do that, it's relatively just "point and click" and the rest is changing the numbers on your own and testing them to see what they do.
 
 ===================================================================	
+	
 	
 1) Download & install Visual Studio Community 2017
 
@@ -54,8 +51,18 @@
 
 ===============\
 
-	Note 1: Transferrable ShaderCache and Precompiled ShaderCache must be either backed-up and deleted, or at least moved to a new location before the next step.  You must have an empty Transferrable and Precompiled with no shaders from BotW each time you run Nsight!
+Note 1: Transferrable ShaderCache and Precompiled ShaderCache must be either backed-up and deleted, or at least moved to a new location before the next step.  You must have an empty Transferrable and Precompiled with no shaders from BotW each time you run Nsight!  If Nsight ignores your regular Precompiled, read below.
+	
+	Note 2: This should be a one-time step.
+	
+	Visual Studio might be saving your shaderCache to a new location based on your working directory, if that happens you'll have to find that directory.  Mine was at...
 
+	C:\Users\serfr\source\repos\Clarity\Clarity\shaderCache
+
+	If it indeed does this, open that folder and clear it out.  Then right-click the folder, go to Properties, go to Security, and then edit the permissions to Deny all access to any user listed.
+
+	This prevents Visual Studio from saving any shaderCache, which is what you want, since Nsight will not be able to use shaders that have already been turned into shaderCache, effectively skipping over them and screwing up your workflow.
+	
 ===============/
 	
 	
@@ -69,10 +76,11 @@
 	only that, but it gives you a great vantage point to tune your variables.
 
 	
-10) Nsight menu at the top > Windows > Shaders
+10) Visual Studio: Nsight menu at the top > Windows > Shaders
 
 
-11) Filter: "633" > Wait for the shader to process > Expand 633 > Open Shader Program 632, this should be Clarity.
+11) Filter: "63" > Wait for the shader to process > Expand 633 > Open Shader Program 632, this should be Clarity.
+
 
 ===============\
 
@@ -86,11 +94,14 @@
 
 13) You may now edit all the variables in realtime.  To view / compile your changes hit Ctrl + Shift + C
 
+
 ===============\
 
 	Note 3: "Realtime", as in, you can view your changes by using the hotkey.  You do not have to stop the game, etc.
 
-	Pro Tip: If time changes too fast for you, you can use Cemu > Debug > Custom Timer options to slow down time to 0.125x!
+	Pro Tip 1: If time changes too fast for you, you can use Cemu > Debug > Custom Timer options to slow down time to 0.125x!  
+	
+	Pro Tip 2: If you want to chance it, you can use Visual Studio > Nsight Menu > Pause and Capture Frame ... you may then edit the shader with the frame frozen; this keeps time from progressing.  Keep in mind it may error, and keep in mind that resuming may heavily glitch the game.
 	
 	MAKE SURE YOU CHECK VARIOUS AREAS IN THE GAME TO MAKE SURE YOUR COLOR / SHADOW BALANCING IS CORRECT.
 	
@@ -104,7 +115,7 @@
 	
 	-- Make backups of files before making changes.  Keep track of your work! --
 
-	The new shader.txt file has to be put in the Clarity GFX Pack for it to be used.  Make sure you replace the original with your own, or relocate the original somewhere else.  Your file must be the same name as the original file!
+	The new shader.txt file has to be put in the Clarity GFX Pack for it to be used.  Make sure you replace the original with your own, or relocate the original somewhere else.  Your Preset must be the same name as the original file! 37040a485a29d54e_00000000000003c9_ps_.txt
 	
 	===
 	

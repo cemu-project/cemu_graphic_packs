@@ -1,0 +1,17 @@
+[WWHDEU] ;made by BenjaminLSR
+moduleMatches = 0xB7E748DE
+
+_emptyString = 0x10166948
+
+;is_useSsaoDirectDraw
+0x0278EED8 = lis r0, _emptyString@ha
+0x0278EEE4 = addic r0, r0, _emptyString@l
+
+[WWHDUS] ;ported to US by Slash
+moduleMatches = 0x475BD29F
+
+_emptyString = 0x1016693C
+
+;is_useSsaoDirectDraw
+0x0278E618 = lis r0, _emptyString@ha
+0x0278E624 = addic r0, r0, _emptyString@l

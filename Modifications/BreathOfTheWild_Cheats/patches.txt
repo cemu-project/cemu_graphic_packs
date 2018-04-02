@@ -1,0 +1,37 @@
+[BotwV208]
+moduleMatches = 0x6267BFD0
+
+#Cheats
+
+0x02D90CC0 = fmr f29, f1; Inf Stamina
+0x02D452A4 = nop; Inf Hearts
+0x02EB6758 = nop; Inf Arrows
+0x024A0164 = lfs f0, 0x100c50A0@l(r10) ; faster arrow draw
+0x024A019C = lfs f0, 0x100c50A0@l(r10) ; faster arrow draw
+0x02D91DBC = fmuls f0, f13, f12; Inf Mipha's Grace
+0x02CE0328 = nop; Inf Revali's Gale
+0x02D74498 = nop; Inf Daruk's Protection
+0x02D741C8 = nop; Inf Urbosa's Fury
+0x029E949C = mr r29, r11; Inf Amiibo
+0x020957DC = fmr f12, f0; Inf Motorcycle Energy
+0x024ACBF4 = fsub f31, f31, f31; Inf Weapons, Bows and Shields (except burn damage and throwing weapon)
+
+
+
+[BotwV176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
+
+#Cheats
+
+0x02D90724 = fmr f29, f1 ;inf stamina
+0x02D44D44 = nop ;inf hearts
+0x02EB61BC = nop ;inf arrows
+0x0249FDC0 = lfs f0, 0x100c5040@l(r10) ; faster arrow draw
+0x0249FDF8 = lfs f0, 0x100c5040@l(r10) ; faster arrow draw
+0x02D91820 = fmuls f0, f13, f12; Inf Mipha's Grace
+0x02CDFE0C = nop; Inf Revali's Gale
+0x02D73EFC = nop; Inf Daruk's Protection
+0x02D73C2C = nop; Inf Urbosa's Fury
+0x029E90F0 = mr r29, r11; Inf Amiibo
+0x0209583C = fmr f12, f0; Inf Motorcycle Energy
+0x024AC850 = fsub f31, f31, f31; Inf Weapons, Bows and Shields (except burn damage and throwing weapon)

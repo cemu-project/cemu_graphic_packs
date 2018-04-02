@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 00050000101DF400,00050002101DF401
+titleIds = 00050000101DF400,00050002101DF401,00050000101DF500
 name = "Pokken Tournament - High Res Shadows"
 version = 2
 

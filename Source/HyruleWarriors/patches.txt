@@ -1,0 +1,20 @@
+<?php
+$width = $argv[1];
+$height = $argv[2];
+
+$aspect = $width / (float)$height;
+
+if (round($aspect*100.0) == 178)
+	exit(1);
+
+$aspect = number_format((float)$aspect, 3, '.', '');
+?>
+[HyruleWarriors_219v208]
+moduleMatches = 0xE159AE91
+
+#rodata constant changes
+
+0x1009609C = .float <?=$aspect?> 
+0x10096124 = .float <?=$aspect?> 
+0x10096948 = .float <?=$aspect?> 
+0x10096974 = .float <?=$aspect?> 

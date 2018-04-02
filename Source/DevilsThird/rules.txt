@@ -1,0 +1,25 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010177700, 0005000010177600, 0005000010138F00
+name = "Devil's Third - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+#overwriteWidth = <?=round($scaleFactorX*1280)?> 
+#overwriteHeight = <?=round($scaleFactorY*720)?> 

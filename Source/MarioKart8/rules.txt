@@ -12,54 +12,278 @@ titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
 name = "Mario Kart 8 - <?=$title?>"
 version = 2
 
-# Main Screen Resolution
+
+#[TextureRedefine] # 
+#width = 2048
+#height = 2048
+#overwriteWidth = <?=round($scaleFactorX*2048)?> 
+#overwriteHeight = <?=round($scaleFactorY*2048)?> 
+
+#[TextureRedefine] #selection screen shadows
+#width = 1536
+#height = 1536
+
+
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x41A,0x431 # exclude the intro background texture, race end background
+formatsExcluded =  0x41A,0x431 # exclude the intro background texture, race end background
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-# Half Res Alpha (and DOF)
-[TextureRedefine]
-width = 640
-height = 360
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
+[TextureRedefine] #MShadows
+width = 1024
+height = 1024
+formats = 0x005 #shadows 2 lod slices
+overwriteWidth = <?=round($scaleFactorY)*1024?> 
+overwriteHeight = <?=round($scaleFactorY)*1024?> 
 
-# Quarter Res Alpha (motion blur effect around edges of screen)
-[TextureRedefine]
-width = 320
-height = 180
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
+#[TextureRedefine] ##gloss, reflections, don't scale
+#width = 768
+#width = 768
 
-# Multiplayer-Mode Resolution (2p)
-[TextureRedefine]
+[TextureRedefine] # Multiplayer-Mode Resolution (2p)
 width = 640
 height = 720
-formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-# Multiplayer-Mode Half Res Alpha (2p)
 [TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine]
+width = 640
+height = 320
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*320)?> 
+
+#[TextureRedefine] #selection fmv don't scale 
+#width = 512
+#height = 608
+#formatsExcluded = 0x001 #selection fmt
+
+#[TextureRedefine] #shadows multiplayer?
+#width = 512
+#height = 512
+#formats = 0x005 # verify later
+#overwriteWidth = <?=round($scaleFactorX*512)?> 
+#overwriteHeight = <?=round($scaleFactorY*512)?> 
+
+[TextureRedefine]
+width = 427
+height = 240
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*427)?> 
+overwriteHeight = <?=round($scaleFactorY*240)?> 
+
+[TextureRedefine] #4P?
 width = 320
 height = 360
-formatsExcluded = 0x41A # exclude obvious textures
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
 overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
 
-# Multiplayer-Mode Quarter Res Alpha (2p)
+[TextureRedefine] # Bloom first mip, motion blur effect
+width = 320
+height = 180
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*320)?> 
+overwriteHeight = <?=round($scaleFactorY*180)?> 
+
+[TextureRedefine] #
+width = 256
+height = 256
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235 #
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+[TextureRedefine]
+width = 199
+height = 116
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*199)?> 
+overwriteHeight = <?=round($scaleFactorY*116)?> 
+
 [TextureRedefine]
 width = 160
 height = 180
-formatsExcluded = 0x41A # exclude obvious textures
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
 overwriteWidth = <?=round($scaleFactorX*160)?> 
 overwriteHeight = <?=round($scaleFactorY*180)?> 
 
+[TextureRedefine]  #bloom 2nd  mip
+width = 160
+height = 90
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine]
+width = 160
+height = 80
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*160)?> 
+overwriteHeight = <?=round($scaleFactorY*80)?> 
+
+[TextureRedefine] #
+width = 148
+height = 148
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*148)?> 
+overwriteHeight = <?=round($scaleFactorY*148)?> 
+
+[TextureRedefine]
+width = 133
+height = 77
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*133)?> 
+overwriteHeight = <?=round($scaleFactorY*77)?> 
+
+[TextureRedefine]
+width = 128
+height = 256
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 128
+#height = 128
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*128)?> 
+#overwriteHeight = <?=round($scaleFactorY*128)?> 
+
+[TextureRedefine]
+width = 80
+height = 90
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*90)?> 
+
+[TextureRedefine] # bloom 3rd mip
+width = 80
+height = 45
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+[TextureRedefine]
+width = 80
+height = 40
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*80)?> 
+overwriteHeight = <?=round($scaleFactorY*40)?> 
+
+[TextureRedefine]
+width = 64
+height = 128
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*64)?> 
+overwriteHeight = <?=round($scaleFactorY*128)?> 
+
+#[TextureRedefine] # glossmap breaks 64 cube?
+#width = 64
+#height = 64
+
+
+#[TextureRedefine] #check later
+#width = 52
+#height = 52
+#formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+#overwriteWidth = 156
+#overwriteHeight = 156
+
+[TextureRedefine]
+width = 49
+height = 29
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*49)?> 
+overwriteHeight = <?=round($scaleFactorY*29)?> 
+
+[TextureRedefine]
+width = 40
+height = 45
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*40)?> 
+overwriteHeight = <?=round($scaleFactorY*45)?> 
+
+[TextureRedefine] #bloom
+width = 40
+height = 22
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*40)?> 
+overwriteHeight = <?=round($scaleFactorY*22)?> 
+
+[TextureRedefine]
+width = 40
+height = 20
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*40)?> 
+overwriteHeight = <?=round($scaleFactorY*20)?> 
+
+[TextureRedefine]
+width = 33
+height = 19
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*33)?> 
+overwriteHeight = <?=round($scaleFactorY*19)?> 
+
+[TextureRedefine]
+width = 32
+height = 64
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*32)?> 
+overwriteHeight = <?=round($scaleFactorY*64)?> 
+
+#[TextureRedefine] #
+#width = 32
+#height = 32
+#formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x816,0x01a #0x816 exclude cube 
+#overwriteWidth = 96
+#overwriteHeight = 96
+
+[TextureRedefine]
+width = 20
+height = 22
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*20)?> 
+overwriteHeight = <?=round($scaleFactorY*22)?> 
+
+
+[TextureRedefine]
+width = 20
+height = 10
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+verwriteWidth = <?=round($scaleFactorX*20)?> 
+overwriteHeight = <?=round($scaleFactorY*11)?> 
+
+[TextureRedefine]
+width = 16
+height = 32
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*16)?> 
+overwriteHeight = <?=round($scaleFactorY*32)?> 
+
+
+#[TextureRedefine] #M
+#width = 16
+#height = 16
+#formatsExcluded = 
+#overwriteWidth = <?=round($scaleFactorX*16)?> 
+#overwriteHeight = <?=round($scaleFactorY*16)?> 
+
+[TextureRedefine]
+width = 8
+height = 16
+formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteWidth = <?=round($scaleFactorX*8)?> 
+overwriteHeight = <?=round($scaleFactorY*16)?> 
+
+###MKTV###
 # MKTV screen
 [TextureRedefine]
 width = 960
@@ -91,11 +315,3 @@ height = 134
 formatsExcluded = 0x41A # exclude obvious textures
 overwriteWidth = <?=round($scaleFactorX*240)?> 
 overwriteHeight = <?=round($scaleFactorY*134)?> 
-
-# Multiplayer kart preview
-[TextureRedefine]
-width = 640
-height = 320
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*320)?> 

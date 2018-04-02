@@ -60,3 +60,10 @@ moduleMatches = 0xFD091F9F,0xD472D8A5
 ;0x031FA004 = nop ;disables gx2 fence
 0x031FA1D4 = nop ;disables wait for vsync
 0x031FA1F8 = nop ;disables wait for vsync loop
+
+[BotwNoVsyncV208]
+moduleMatches = 0x6267BFD0
+
+;0x031FAB00 = nop ;disables gx2 fence
+0x031FACD0 = nop ;disables wait for vsync
+0x031FACF4 = nop ;disables wait for vsync loop

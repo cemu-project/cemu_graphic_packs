@@ -1,0 +1,73 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1920.0;
+$scaleFactorY = $fullHeight / 1080.0;
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010115D00, 0005000010113300
+name = "The Smurfs 2 - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1920
+height = 1080
+overwriteWidth = <?=round($scaleFactorX*1920)?> 
+overwriteHeight = <?=round($scaleFactorY*1080)?> 
+
+[TextureRedefine] # gamepad
+width = 854
+height = 480
+overwriteWidth = <?=round($scaleFactorX*1920)?> 
+overwriteHeight = <?=round($scaleFactorY*1080)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 16
+#height = 16
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 64
+#height = 64
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 256
+#height = 256
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 512
+#height = 512
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 1024
+#height = 1024
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 512
+#height = 448
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+#width = 448
+#height = 448
+#formatsExcluded = 
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 

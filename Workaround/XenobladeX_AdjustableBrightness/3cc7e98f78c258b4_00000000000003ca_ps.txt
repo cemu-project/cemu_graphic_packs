@@ -4,8 +4,30 @@
 // To-do, .5 is daylight and 1.0 night is wiiu "correct" for nvidia
 // changes here in turn "breaks" bloom as they over or under expose depending on day/night 
 
-const float preExposure = 0.75; // old brigntess tweak. Truncates at around .45+
-const float gammaPostExposure = 0.95; // compensate pre exposure, but loss of contrast when positive. 
+//old contrasty, or just copy paste clarity
+const float gamma = 0.92; // 1.0 is neutral  
+const float exposure = 0.52; // 1.0 is neutral, first lessen to avoid truncation prob around .25 for radeon. 
+const float vibrance = 0.318;  // 0.0 is neutral  
+const float lift = 0.002; // 0.0 is neutral. loss of shadow detail 
+const float postExposure = 1.05; // 1.0 is neutral, then slightly raise exposure back up. 
+
+vec3 contrasty(vec3 colour){
+	vec3 fColour = (colour.xyz);
+	
+	fColour = clamp(exposure * fColour, 0.0, 1.0);
+	fColour = pow(fColour, vec3(1.0 / gamma));
+	float luminance = fColour.r*0.299 + fColour.g*0.587 + fColour.b*0.114;
+	float mn = min(min(fColour.r, fColour.g), fColour.b);
+	float mx = max(max(fColour.r, fColour.g), fColour.b);
+	float sat = (1.0 - (mx - mn)) * (1.0 - mx) * luminance * 5.0;
+	vec3 lightness = vec3((mn + mx) / 2.0);
+// vibrance
+	fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
+	fColour = max(vec3(0.0), fColour + vec3(lift));
+	return fColour;
+}
+
+
 uniform ivec4 uf_remappedPS[1];
 
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
@@ -49,9 +71,10 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 
-R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * (preExposure  -(lineRand(gl_FragCoord.xy)*0.02));
+R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * (0.985 -(lineRand(gl_FragCoord.xy)*0.015));
 //R0f.xyz = R0f.xyz - (lineRand(gl_FragCoord.xy)*0.1);
 // 0
+R0f.xyz = contrasty(R0f.xyz);
 R127f.x = R0f.z * intBitsToFloat(uf_remappedPS[0].x);
 R127f.x = clamp(R127f.x, 0.0, 1.0);
 R127f.y = R0f.y * intBitsToFloat(uf_remappedPS[0].x);
@@ -86,6 +109,7 @@ PS0f = exp2(R127f.x);
 R0f.z = (PS0f * intBitsToFloat(uf_remappedPS[0].z) + intBitsToFloat(uf_remappedPS[0].w));
 R1f.xyz = (texture(textureUnitPS1, vec3(R0f.x,R0f.y,R0f.z)).xyz);
 // export
-R1f = vec4(pow(R1f.xyz, vec3(1. / gammaPostExposure)), 1.0);
-passPixelColor0 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+//R1f = vec4(pow(R1f.xyz, vec3(1. / gammaPostExposure)), 1.0);
+
+passPixelColor0 = vec4(R1f.x, R1f.y, R1f.z, R1f.w)*postExposure;
 }

@@ -1,0 +1,124 @@
+<?php
+$targetfps = $argv[1];
+$divisor = 30/$targetfps;
+$derivative1 = 30*$divisor;
+$derivative2 = 0.5/$divisor;
+?>
+[BotwFPSV208] #i.e. v1.5.0
+moduleMatches = 0x6267BFD0
+
+#Cave
+codeCaveSize = 0x1C
+
+_divisor = 0x0 # edit the next line to change the divisor
+0x00000000 = .float <?=$divisor?> # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
+_targetfps = 0x18 # edit the next line to change the target fps
+0x18 = .float <?=$targetfps?> 
+
+#Arrows by Epigramx
+0x1001CCAC = .float <?=$derivative1?> # = 30 * divisor 
+0x1001CB18 = .float <?=$derivative2?> # = 0.5 / divisor
+
+#"Best fence" by Rajkosto
+_fenceNeg1 = 0x00000004
+0x00000004 = add r6, r12, r0 	#orig instruction we are replacing
+0x00000008 = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
+0x0000000C = blt .+0x08 	#skip subtract if less than
+0x00000010 = subi r6, r6, 1 	#do the subtract
+0x00000014 = blr 		#return
+
+#Extreme simplification of FPS++ by Xalphenos
+#codeChanges
+0x031FA97C = nop
+0x03793328 = nop
+0x03793334 = nop
+0x03793378 = lis r29, _divisor@ha
+0x03793380 = lfs f0, _divisor@L(r29)
+0x0379338C = nop
+0x03415C1C = lis r12, _divisor@ha
+0x03415C24 = lfs f0, _divisor@l(r12)
+0x03415C2C = nop
+0x02D90D2C = lis r10, _targetfps@ha
+0x02D90D30 = lfs f11, _targetfps@l(r10)
+0x02D90D88 = lis r10, _targetfps@ha
+0x02D90D8C = lfs f11, _targetfps@l(r10)
+
+#Break all forms of frame limiting
+0x031FAAFC = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
+#0x031FAAE8 = li r0, 1 #Better fence (make sure GPU is never more than 1 second? ahead)
+#0x031FAB00 = nop #skip fence (no waiting on GPU)
+0x031FACD0 = nop #disable vsync
+0x031FACF4 = nop #disable vsync loop
+
+#Additional vsync dropping
+0x0309D030 = nop #disable vsync
+0x0309D054 = nop #disable vsync loop
+
+#For testing, the original static mod lines (commented out by default):
+#0x031FB0C0 = li r0, 1
+#0x031FB104 = li r0, 1
+
+#Cheats
+#0x02D90CC0 = fmr f29, f1 #inf stamina
+#0x02D452A4 = nop #inf hearts
+#0x02EB6758 = nop #inf arrows
+
+[BotwFPSv176V192] #i.e. v1.4.0 and v1.4.1
+moduleMatches = 0xFD091F9F,0xD472D8A5
+
+#Cave
+codeCaveSize = 0x1C
+
+_divisor = 0x0 # edit the next line to change the divisor
+0x00000000 = .float <?=$divisor?> # = 30FPS / TARGET FPS, e.g. 30FPS / 18FPS = 1.66667
+_targetfps = 0x18 # edit the next line to change the target fps
+0x18 = .float <?=$targetfps?> 
+
+#Arrows by Epigramx
+0x1001CCAC = .float <?=$derivative1?> # = 30 * divisor 
+0x1001CB18 = .float <?=$derivative2?> # = 0.5 / divisor
+
+#"Best fence" by Rajkosto
+_fenceNeg1 = 0x00000004
+0x00000004 = add r6, r12, r0 	#orig instruction we are replacing
+0x00000008 = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
+0x0000000C = blt .+0x08 	#skip subtract if less than
+0x00000010 = subi r6, r6, 1 	#do the subtract
+0x00000014 = blr 		#return
+
+#Extreme simplification of FPS++ by Xalphenos
+#codeChanges
+0x031F9E80 = nop
+0x03792620 = nop
+0x0379262C = nop
+0x03792670 = lis r29, _divisor@ha
+0x03792678 = lfs f0, _divisor@L(r29)
+0x03792684 = nop
+0x03414EF8 = lis r12, _divisor@ha
+0x03414F00 = lfs f0, _divisor@l(r12)
+0x03414F08 = nop
+0x02D90790 = lis r10, _targetfps@ha
+0x02D90794 = lfs f11, _targetfps@l(r10)
+0x02D907EC = lis r10, _targetfps@ha
+0x02D907F0 = lfs f11, _targetfps@l(r10)
+
+#Break all forms of frame limiting
+0x031FA000 = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
+#0x031F9FEC = li r0, 1 #Better fence (make sure GPU is never more than 1 second? ahead)
+#0x031FA004 = nop #skip fence (no waiting on GPU)
+0x031FA1D4 = nop #disable vsync
+0x031FA1F8 = nop #disable vsync loop
+
+#Additional vsync dropping
+0x0309C9A4 = nop #disable vsync
+0x0309C9C8 = nop #disable vsync loop
+
+#For testing, the original static mod lines (commented out by default):
+#0x031FA5C4 = li r0, 1
+#0x031FA608 = li r0, 1
+
+#Cheats
+#0x02D90724 = fmr f29, f1 #inf stamina
+#0x02D44D44 = nop #inf hearts
+#0x02EB61BC = nop #inf arrows
+

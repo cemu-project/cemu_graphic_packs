@@ -1,10 +1,17 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = always_decimal_format($fullWidth / 1280.0);
+$scaleFactorY = always_decimal_format($fullHeight / 720.0);
+?>
 
 #version 420
 #extension GL_ARB_texture_gather : enable
 // shader b253dca415790207 
-// motion blur fix - static /2 factor as a compromise. fx gets lost in blend on higher scaling
-// To-do, review quarter scaling. 
-const float resScale = 2.0;
+// motion blur alpha
+ 
+const float resScale = <?=$scaleFactorX?>;
 //const float resScale = 3;
 uniform ivec4 uf_remappedPS[5];
 

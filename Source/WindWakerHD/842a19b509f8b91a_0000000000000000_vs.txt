@@ -9,7 +9,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 1080.0*2.0);
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 842a19b509f8b91a //vert scale bloom
-const float resScale = <?=$scaleFactorX?>;
+const float resScale = <?=$scaleFactorY?>;
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;

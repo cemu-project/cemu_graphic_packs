@@ -294,3 +294,36 @@ _lwzCheck = 0x00000020		; null checked version of 'lwz r8, 0(r31)'
 
 0x038E3C50 = bla _lwzxCheck
 0x038E3C5C = bla _lwzCheck
+
+[BotwPlsNoCrashV208]
+moduleMatches = 0x6267BFD0
+#restore the 2 instructions possibly overwritten by cemu itself
+0x038E46CC = stwu r1, -0x28(r1)
+0x038E46D0 = mflr r0
+
+#null check functions
+codeCaveSize = 0x40
+
+_lwzxCheck = 0x00000000		; null checked version of 'lwzx r31, r9, r0'
+0x00000000 = add r30, r9, r0
+0x00000004 = xor r31, r31, r31
+0x00000008 = cmpwi r30, 0
+0x0000000C = beq .+0x8
+0x00000010 = lwzx r31, r9, r0
+0x00000014 = blr
+
+_lwzCheck = 0x00000020		; null checked version of 'lwz r8, 0(r31)'
+0x00000020 = xor  r8, r8, r8
+0x00000024 = oris r8, r8, 0xD15A
+0x00000028 = ori  r8, r8, 0xB1ED
+0x0000002C = cmpwi r31, 0
+0x00000030 = beq .+0x8
+0x00000034 = lwz r8, 0(r31)
+0x00000038 = blr
+
+#replace simple loads with calls to these funcs
+0x038E4874 = bla _lwzxCheck
+0x038E4880 = bla _lwzCheck
+
+0x038E48EC = bla _lwzxCheck
+0x038E48F8 = bla _lwzCheck

@@ -1,0 +1,57 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = $fullWidth / 1280.0;
+$scaleFactorY = $fullHeight / 720.0;
+
+$title = get_title($fullWidth, $fullHeight);
+?>
+[Definition]
+titleIds = 0005000010179900, 000500001017AC00, 00050000101B4400
+name = "Chariot - <?=$title?>"
+version = 2
+
+[TextureRedefine] # tv
+width = 1280
+height = 720
+formatsExcluded = 0x008,0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] # half-res alpha
+width = 640
+height = 360
+formatsExcluded = 0x41A # exclude obvious textures
+overwriteWidth = <?=round($scaleFactorX*640)?> 
+overwriteHeight = <?=round($scaleFactorY*360)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 128
+height = 128
+overwriteWidth = <?=round($scaleFactorX*128)?> 
+overwriteHeight = <?=round($scaleFactorY*128)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 256
+height = 256
+overwriteWidth = <?=round($scaleFactorX*256)?> 
+overwriteHeight = <?=round($scaleFactorY*256)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 64
+height = 64
+overwriteWidth = <?=round($scaleFactorX*64)?> 
+overwriteHeight = <?=round($scaleFactorY*64)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 12
+height = 12
+overwriteWidth = <?=round($scaleFactorX*12)?> 
+overwriteHeight = <?=round($scaleFactorY*12)?> 
+
+[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
+width = 512
+height = 1024
+overwriteWidth = <?=round($scaleFactorX*512)?> 
+overwriteHeight = <?=round($scaleFactorY*1024)?> 
