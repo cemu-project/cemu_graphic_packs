@@ -1,10 +1,22 @@
+<?php
+$width = $argv[1];
+$height = $argv[2];
+
+$aspect = $width / (float)$height;
+$ratioAdjust = $aspect/(16/9);
+
+if (round($aspect*100.0) == 178)
+	exit(1);
+
+$aspect = number_format((float)$aspect, 3, '.', '');
+?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader c73bf8204f4ddceb
 // GUI UW scaling shader
-float scaleVector = 1.33333; // This works for 1080p 21:9.
+float scaleVector = <?=$ratioAdjust?>; 
 
 
 

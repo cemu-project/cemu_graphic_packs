@@ -1,10 +1,22 @@
+<?php
+$width = $argv[1];
+$height = $argv[2];
+
+$aspect = $width / (float)$height;
+$ratioAdjust = $aspect/(16/9);
+
+if (round($aspect*100.0) == 178)
+	exit(1);
+
+$aspect = number_format((float)$aspect, 3, '.', '');
+?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 4754883f71f69101
-// (Solid) backgrounds scaling shader
-float scaleVector = 1.33333; // This works for 1080p 21:9.
+// (Solid) backgrounds scaling shader - Fixes loadout and character background with the cost of other GUI elements scaling, disabled by default. (comment out 127 and uncomment 128)
+float scaleVector = <?=$ratioAdjust?>; 
 
 
 
@@ -112,7 +124,8 @@ PV0i.y = R0i.y;
 R1i.w = uf_uniformRegisterVS[2].x & 0x40000000;
 // 3
 backupReg0i = R0i.w;
-R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R4i.z),intBitsToFloat(backupReg0i)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R4i.z),intBitsToFloat(backupReg0i)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x),intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
+//R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R4i.z),intBitsToFloat(backupReg0i)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
 PV1i.x = R127i.x;
 PV1i.y = R127i.x;
 PV1i.z = R127i.x;
