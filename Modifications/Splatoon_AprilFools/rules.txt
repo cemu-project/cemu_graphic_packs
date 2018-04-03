@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = "Splatoon - April Fools"
+version = 2
+
+#some kind of shading?
+#733ee69ec9dd5e30 - b1951b6b76aa5c84
+#glass
+#acdc2cc298f22eed - 68357a3eaf8b29a8
+#bg
+#d61363e0854c74ad - 89371aa2435ecc7c
+
+#What was done:
+#-Removed shadows
+#-Removed some shading
+#-Removed some background objects
+#-Removed some glass shaders

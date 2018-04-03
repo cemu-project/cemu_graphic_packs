@@ -1,0 +1,11 @@
+[Definition]
+titleIds = 00050000101DF400,00050002101DF401,00050000101DF500
+name = "Pokken Tournament - April Fools"
+version = 2
+
+#Characters-826f5c3cbb703c6e (VS: a76d3742c770ac3c)
+#Shadows-7caa82f23221199f (VS: 3e385c973f99f97f)
+
+#What was done:
+#-Removed shaders for arena and characters
+#-Attempted to remove shadow shaders but that failed
