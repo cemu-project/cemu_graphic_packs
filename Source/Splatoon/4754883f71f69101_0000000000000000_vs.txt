@@ -104,6 +104,9 @@ attrDecoder.xy = (attrDecoder.xy>>24)|((attrDecoder.xy>>8)&0xFF00)|((attrDecoder
 attrDecoder.z = 0;
 attrDecoder.w = 0;
 R1i = ivec4(int(attrDecoder.x), int(attrDecoder.y), floatBitsToInt(0.0), floatBitsToInt(1.0));
+
+if (uf_uniformRegisterVS[5].w != 0) scaleVector = 1.0; // Disable GUI modifications by using a conditional
+
 if( activeMaskStackC[1] == true ) {
 activeMaskStack[1] = activeMaskStack[0];
 activeMaskStackC[2] = activeMaskStackC[1];
@@ -124,8 +127,7 @@ PV0i.y = R0i.y;
 R1i.w = uf_uniformRegisterVS[2].x & 0x40000000;
 // 3
 backupReg0i = R0i.w;
-R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R4i.z),intBitsToFloat(backupReg0i)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x),intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
-//R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R4i.z),intBitsToFloat(backupReg0i)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R4i.z),intBitsToFloat(backupReg0i)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
 PV1i.x = R127i.x;
 PV1i.y = R127i.x;
 PV1i.z = R127i.x;
