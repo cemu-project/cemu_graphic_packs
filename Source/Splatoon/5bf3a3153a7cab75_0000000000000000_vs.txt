@@ -5,7 +5,7 @@ $height = $argv[2];
 $aspect = $width / (float)$height;
 $ratioAdjust = $aspect/(16/9);
 
-if (round($aspect*100.0) == 178)
+if (round($ratioAdjust*100.0) != 133)
 	exit(1);
 
 $aspect = number_format((float)$aspect, 3, '.', '');
