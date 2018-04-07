@@ -57,3 +57,10 @@ width = 854
 height = 480
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
+
+[TextureRedefine] #shadows
+width = 512
+height = 512
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorY*512)?> 
+overwriteHeight = <?=round($scaleFactorY*512)?> 

@@ -98,3 +98,10 @@ height = 1
 formats = 0x005
 #overwriteWidth = <?=round($scaleFactorX*1)?> 
 #overwriteHeight = <?=round($scaleFactorY*1)?> 
+
+[TextureRedefine] # shadows
+width = 1024
+height = 2048
+formats = 0x005
+overwriteWidth = <?=round($scaleFactorY*1024)?> 
+overwriteHeight = <?=round($scaleFactorY*2048)?> 

@@ -38,3 +38,10 @@ width = 854
 height = 480
 #overwriteWidth = <?=round($scaleFactorX*1920)?> 
 #overwriteHeight = <?=round($scaleFactorY*1080)?> 
+
+[TextureRedefine] # shadows
+width = 384
+height = 384
+#formats = 0x5 # find the format
+overwriteWidth = <?=round($scaleFactorY*384)?> 
+overwriteHeight = <?=round($scaleFactorY*384)?> 
