@@ -44,10 +44,3 @@ width = 128
 height = 128
 overwriteWidth = <?=round($scaleFactorX*128)?> 
 overwriteHeight = <?=round($scaleFactorY*128)?> 
-
-[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
-formatsExcluded = 0x33
-width = 256
-height = 256
-overwriteWidth = <?=round($scaleFactorX*256)?> 
-overwriteHeight = <?=round($scaleFactorY*256)?> 
