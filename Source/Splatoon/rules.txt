@@ -79,12 +79,12 @@ formats = 0x1a
 #overwriteWidth = <?=round($scaleFactorY*256)?> 
 #overwriteHeight = <?=round($scaleFactorY*256)?> 
 
-[TextureRedefine] # player name - GL_RGBA8
+[TextureRedefine] # player name - GL_RGBA8; Disabled because they scale incorrectly in certain places
 width = 128
 height = 32
 formats = 0x1a
-overwriteWidth = <?=round($scaleFactorY*128)?> 
-overwriteHeight = <?=round($scaleFactorY*32)?> 
+#overwriteWidth = <?=round($scaleFactorY*128)?> 
+#overwriteHeight = <?=round($scaleFactorY*32)?> 
 
 [TextureRedefine] # multiplayer
 width = 848
