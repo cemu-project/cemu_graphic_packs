@@ -1,6 +1,6 @@
 # Found by StripTheSoul
 [Definition]
-titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,ffffffff85887bc1
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = "Mario Kart 8 - Higher Quality Shadows"
 version = 2
 

@@ -12,8 +12,8 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 // shadows scaling, ie 4096 = x4 
 // To do - some nice edge smoothing at higher res
 const float resScale = <?=$scaleFactorX?>;
+const float resScaleDetail = 2.0;
 const float shadowExposure = 0.85;
-//const float resScale = 4;
 uniform ivec4 uf_remappedPS[23];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4386000 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(binding = 1) uniform sampler2DShadow textureUnitPS1;// Tex1 addr 0xf551a000 res 1024x1024x1 dim 1 tm: 4 format 0005 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 6 6 6 border: 2
@@ -138,14 +138,14 @@ R2i.x = floatBitsToInt(max(intBitsToFloat(PV1i.x), -(intBitsToFloat(PV1i.x))));
 PS0i = R2i.x;
 // 9
 R127i.x = ((0.5 > intBitsToFloat(PS0i))?int(0xFFFFFFFF):int(0x0));
-PV1i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[9].z));
-PV1i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[10].z));
+PV1i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[9].z) / resScaleDetail);
+PV1i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[10].z)/ resScaleDetail);
 R0i.y = floatBitsToInt(max(intBitsToFloat(R126i.y), -(intBitsToFloat(R126i.y))));
 PS1i = R0i.y;
 // 10
 R126i.x = ((0.5 > intBitsToFloat(PS1i))?int(0xFFFFFFFF):int(0x0));
-PV0i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[11].z));
-PV0i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[12].z));
+PV0i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[11].z) / resScaleDetail);
+PV0i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[12].z) / resScaleDetail);
 R0i.w = PV1i.y;
 R0i.w = clampFI32(R0i.w);
 R1i.w = PV1i.z;
@@ -153,7 +153,7 @@ R1i.w = clampFI32(R1i.w);
 PS0i = R1i.w;
 // 11
 R0i.x = floatBitsToInt(intBitsToFloat(R126i.z) + intBitsToFloat(uf_remappedPS[9].x) / resScale);
-PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[13].z));
+PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[13].z)/ resScale);
 R0i.z = floatBitsToInt(intBitsToFloat(R127i.y) + intBitsToFloat(uf_remappedPS[9].y) / resScale);
 R2i.w = PV0i.z;
 R2i.w = clampFI32(R2i.w);
@@ -243,30 +243,30 @@ activeMaskStackC[3] = false;
 }
 if( activeMaskStackC[3] == true ) {
 // 0
-R0i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[18].x));
-R0i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[18].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[18].z));
+R0i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[18].x) / resScale);
+R0i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[18].y) / resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[18].z) / resScale);
 PV0i.z = R1i.z;
 // 1
-R8i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[19].x));
-R8i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[19].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[19].z));
+R8i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[19].x) / resScale);
+R8i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[19].y) / resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[19].z) / resScale);
 PV1i.z = R1i.z;
 R0i.w = PV0i.z;
 R0i.w = clampFI32(R0i.w);
 // 2
-R2i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[20].x));
-R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[20].z));
+R2i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[20].x) / resScale);
+R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y) / resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[20].z) / resScale);
 PV0i.z = R1i.z;
 R8i.w = PV1i.z;
 R8i.w = clampFI32(R8i.w);
 // 3
 backupReg0i = R3i.x;
 backupReg1i = R3i.y;
-R3i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[21].x));
-R3i.y = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(uf_remappedPS[21].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z));
+R3i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[21].x) / resScale);
+R3i.y = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(uf_remappedPS[21].y) / resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z) / resScale);
 PV1i.z = R1i.z;
 R2i.w = PV0i.z;
 R2i.w = clampFI32(R2i.w);
@@ -283,7 +283,7 @@ R3i.x = floatBitsToInt(texture(textureUnitPS2, vec3(intBitsToFloat(R3i.xy), intB
 if( activeMaskStackC[3] == true ) {
 // 0
 PV0i.y = floatBitsToInt(intBitsToFloat(R0i.x) + intBitsToFloat(R1i.x));
-PV0i.z = floatBitsToInt(intBitsToFloat(R5i.w) + -(intBitsToFloat(0x3eae147b)));
+PV0i.z = floatBitsToInt(intBitsToFloat(R5i.w) + -(intBitsToFloat(0x3eae147b) ));
 // 1
 PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(R2i.x));
 R127i.y = floatBitsToInt(intBitsToFloat(PV0i.z) * intBitsToFloat(0x40c80000));
@@ -347,8 +347,8 @@ activeMaskStackC[3] = false;
 if( activeMaskStackC[3] == true ) {
 // 0
 backupReg0i = R0i.z;
-R127i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[18].z));
-PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[19].z));
+R127i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[18].z) / resScale);
+PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[19].z) / resScale);
 R6i.w = floatBitsToInt(max(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y)));
 // 1
 R0i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[19].x) / resScale);
@@ -362,13 +362,13 @@ PS1i = R1i.y;
 backupReg0i = R0i.z;
 R2i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[20].x) / resScale);
 R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y) / resScale);
-PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[20].z));
+PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[20].z) / resScale);
 R1i.w = R127i.x;
 R1i.w = clampFI32(R1i.w);
 // 3
 backupReg0i = R3i.x;
 R3i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[21].x) / resScale);
-PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z));
+PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z) / resScale);
 R3i.z = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[21].y) / resScale);
 R2i.w = PV0i.z;
 R2i.w = clampFI32(R2i.w);
@@ -426,9 +426,9 @@ PV0i.y = R1i.y;
 R0i.z = floatBitsToInt((intBitsToFloat(R5i.x) * intBitsToFloat(uf_remappedPS[8].z) + intBitsToFloat(PV1i.z)));
 PV0i.z = R0i.z;
 // 3
-R4i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(uf_remappedPS[13].x));
-R4i.y = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(uf_remappedPS[13].y));
-R0i.z = floatBitsToInt(intBitsToFloat(PV0i.z) + intBitsToFloat(uf_remappedPS[13].z));
+R4i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(uf_remappedPS[13].x) / resScale);
+R4i.y = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(uf_remappedPS[13].y) / resScale);
+R0i.z = floatBitsToInt(intBitsToFloat(PV0i.z) + intBitsToFloat(uf_remappedPS[13].z) / resScale);
 PV1i.z = R0i.z;
 // 4
 R4i.w = PV1i.z;
@@ -478,3 +478,4 @@ R0i.w = 0;
 // export
 passPixelColor0 = vec4(intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.x)*shadowExposure, intBitsToFloat(R0i.w));
 }
+

@@ -11,7 +11,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 // shader af7acf7fb6dca1be
 //cutscene shadow scaling
 //to do - extra edge smooth pass, 
-//const float resScale = 2.0;// 2.0  looks good
+const float resScaleDetail = 2.0;
 const float resScale = <?=$scaleFactorX?>;
 const float shadowExposure = 0.85; //By truncating shadow, we decrease overall exposure during day only.
 uniform ivec4 uf_remappedPS[31];
@@ -139,22 +139,22 @@ R2i.x = floatBitsToInt(max(intBitsToFloat(PV1i.x), -(intBitsToFloat(PV1i.x))));
 PS0i = R2i.x;
 // 9
 R127i.x = ((0.5 > intBitsToFloat(PS0i))?int(0xFFFFFFFF):int(0x0));
-PV1i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[9].z));
-PV1i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[10].z));
+PV1i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[9].z)/resScaleDetail); //close details
+PV1i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[10].z)/resScaleDetail);//but less smooth lod transition
 R7i.y = floatBitsToInt(max(intBitsToFloat(R126i.y), -(intBitsToFloat(R126i.y))));
 PS1i = R7i.y;
 // 10
 R126i.x = ((0.5 > intBitsToFloat(PS1i))?int(0xFFFFFFFF):int(0x0));
-PV0i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[11].z));
-PV0i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[12].z));
+PV0i.y = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[11].z)/resScaleDetail);//close details
+PV0i.z = floatBitsToInt(intBitsToFloat(R126i.w) + intBitsToFloat(uf_remappedPS[12].z)/resScaleDetail);//close details
 R0i.w = PV1i.y;
 R0i.w = clampFI32(R0i.w);
 R1i.w = PV1i.z;
 R1i.w = clampFI32(R1i.w);
 PS0i = R1i.w;
 // 11
-R0i.x = floatBitsToInt(intBitsToFloat(R126i.z) + intBitsToFloat(uf_remappedPS[9].x) / resScale); //distant shadow
-PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[13].z));
+R0i.x = floatBitsToInt(intBitsToFloat(R126i.z) + intBitsToFloat(uf_remappedPS[9].x) / resScale); 
+PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[13].z)/resScale);
 R0i.z = floatBitsToInt(intBitsToFloat(R127i.y) + intBitsToFloat(uf_remappedPS[9].y) / resScale);
 R2i.w = PV0i.z;
 R2i.w = clampFI32(R2i.w);
@@ -244,28 +244,28 @@ activeMaskStackC[3] = false;
 }
 if( activeMaskStackC[3] == true ) {
 // 0
-R1i.xyz = floatBitsToInt(vec3(intBitsToFloat(R3i.x),intBitsToFloat(R3i.y),intBitsToFloat(R0i.z)) + vec3(intBitsToFloat(uf_remappedPS[18].x),intBitsToFloat(uf_remappedPS[18].y),intBitsToFloat(uf_remappedPS[18].z)));
+R1i.xyz = floatBitsToInt(vec3(intBitsToFloat(R3i.x),intBitsToFloat(R3i.y),intBitsToFloat(R0i.z)) + vec3(intBitsToFloat(uf_remappedPS[18].x)/ resScale,intBitsToFloat(uf_remappedPS[18].y)/ resScale,intBitsToFloat(uf_remappedPS[18].z)/ resScale));
 PV0i.z = R1i.z;
 // 1
-R7i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[19].x));
-R7i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[19].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[19].z));
+R7i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[19].x)/ resScale);
+R7i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[19].y)/ resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[19].z)/ resScale);
 PV1i.z = R1i.z;
 R1i.w = PV0i.z;
 R1i.w = clampFI32(R1i.w);
 // 2
-R2i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[20].x));
-R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[20].z));
+R2i.x = floatBitsToInt(intBitsToFloat(R3i.x) + intBitsToFloat(uf_remappedPS[20].x)/ resScale);
+R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y)/ resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[20].z)/ resScale);
 PV0i.z = R1i.z;
 R7i.w = PV1i.z;
 R7i.w = clampFI32(R7i.w);
 // 3
 backupReg0i = R3i.x;
 backupReg1i = R3i.y;
-R3i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[21].x));
-R3i.y = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(uf_remappedPS[21].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z));
+R3i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[21].x)/ resScale);
+R3i.y = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(uf_remappedPS[21].y)/ resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z)/ resScale);
 PV1i.z = R1i.z;
 R2i.w = PV0i.z;
 R2i.w = clampFI32(R2i.w);
@@ -346,28 +346,28 @@ activeMaskStackC[3] = false;
 if( activeMaskStackC[3] == true ) {
 // 0
 backupReg0i = R0i.z;
-R127i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[18].z));
-PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[19].z));
+R127i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[18].z)/ resScale);
+PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[19].z)/ resScale);
 R7i.w = floatBitsToInt(max(intBitsToFloat(R2i.x), intBitsToFloat(R1i.y)));
 // 1
-R0i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[19].x));
-R0i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[19].y));
-R1i.z = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[18].x));
+R0i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[19].x)/ resScale);
+R0i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[19].y)/ resScale);
+R1i.z = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[18].x)/ resScale);
 R0i.w = PV0i.z;
 R0i.w = clampFI32(R0i.w);
-R1i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[18].y));
+R1i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[18].y)/ resScale);
 PS1i = R1i.y;
 // 2
 backupReg0i = R0i.z;
-R2i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[20].x));
-R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y));
-PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[20].z));
+R2i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[20].x)/ resScale);
+R2i.y = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[20].y)/ resScale);
+PV0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(uf_remappedPS[20].z)/ resScale);
 R1i.w = R127i.x;
 R1i.w = clampFI32(R1i.w);
 // 3
-R3i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[21].x));
-PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z));
-R3i.z = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[21].y));
+R3i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(uf_remappedPS[21].x)/ resScale);
+PV1i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[21].z)/ resScale);
+R3i.z = floatBitsToInt(intBitsToFloat(R3i.y) + intBitsToFloat(uf_remappedPS[21].y)/ resScale);
 R2i.w = PV0i.z;
 R2i.w = clampFI32(R2i.w);
 // 4
@@ -424,9 +424,9 @@ PV0i.y = R4i.y;
 R0i.z = floatBitsToInt((intBitsToFloat(R5i.x) * intBitsToFloat(uf_remappedPS[8].z) + intBitsToFloat(PV1i.z)));
 PV0i.z = R0i.z;
 // 3
-R4i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(uf_remappedPS[13].x));
-R4i.y = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(uf_remappedPS[13].y));
-R0i.z = floatBitsToInt(intBitsToFloat(PV0i.z) + intBitsToFloat(uf_remappedPS[13].z));
+R4i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(uf_remappedPS[13].x)/ resScale);
+R4i.y = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(uf_remappedPS[13].y)/ resScale);
+R0i.z = floatBitsToInt(intBitsToFloat(PV0i.z) + intBitsToFloat(uf_remappedPS[13].z)/ resScale);
 PV1i.z = R0i.z;
 // 4
 R4i.w = PV1i.z;

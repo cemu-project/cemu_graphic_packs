@@ -12,6 +12,7 @@ $scaleFactorY = always_decimal_format($fullHeight / 720.0);
 // 1/4 -> 1/16  bloom pyramid . Pixelated unless scaled but still needs blur for light bleed.. 
 // To-do. Check if screen res is * samples stable
 const float resScale = <?=$scaleFactorX?>;
+const int sampleScale = <?=round($scaleFactorX)?>;
 const float lightBloom = 0.95; 
 highp float lineRand(vec2 co)
 {
@@ -31,7 +32,7 @@ uniform vec2 uf_fragCoordScale;
 // FabriceNeyret2, single pass gaussian by intermediate MIPmap level. https://www.shadertoy.com/view/ltScRG
 // I hereby pledge my loyalty to  the FabriceNeyret2 fanclub, this is bloody beautiful! 
 
-const int samples = 16, //check if must scale to pascal levels
+const int samples = 8 * sampleScale, //8 or 4 balances xy position
 LOD = 2,         // gaussian done on MIPmap at scale LOD
 sLOD = 1 << LOD; // tile size = 2^LOD
 const float sigma = float(samples) * .25;
