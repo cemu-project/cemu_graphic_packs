@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - NVIDIA Fluid Artifacts Workaround"
+version = 2
+
+# This pack fixes blocky artifacts found on fluids like lava and water.
+# However, this pack does cause tile transition issues which don't appear to smooth over.
+# If you experience these issues, it's recommended to enable this pack. Otherwise, don't.
+# This bug (and graphic pack) only affects GPU's from the Maxwell or Pascal generation (roughly everything above GTX 700).
+
+# Images of issue:
+# https://cdn.discordapp.com/attachments/207547103726010368/372217955741597706/unknown.png
+# https://cdn.discordapp.com/attachments/207547103726010368/372220915012075520/unknown.png
+
+# Image of tile transition issue:
+# https://cdn.discordapp.com/attachments/292733452590120961/433019304955609098/unknown.png
+
+
+# This graphic pack is made as an easy to install alternative to this fix by Flocker:
+# https://www.reddit.com/r/cemu/comments/6qwmon/got_blocky_artifacts_in_lava_water_and_other/ 
+# The difference is that this fix reduces it, while it doesn't have the tile transition issue.
+# It also requires an external program and might reset itself on a driver installation (unlikely).
