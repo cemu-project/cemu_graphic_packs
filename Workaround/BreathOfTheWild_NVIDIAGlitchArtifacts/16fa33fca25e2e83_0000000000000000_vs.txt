@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 16fa33fca25e2e83
-// Used for: Fixing Nvidia fluid artifacts.
+// Used for: Fixing Nvidia lava artifacts.
 // Check rules.txt for documentation and when to enable.
 
 
