@@ -1,0 +1,21 @@
+[SplatoonV272uw]
+moduleMatches = 0xF7A78809
+
+#rodata constants
+
+_zeroAddr = 0x02000000
+
+#patches
+
+0x028B1910 = lis r29, _zeroAddr@ha ;hud
+0x028B1914 = lfs f13, _zeroAddr@l(r29) ;hud
+
+[SplatoonV0uw]
+moduleMatches = 0x08ED6677
+
+_zeroAddr = 0x02000000
+
+#patches
+
+0x027E6400 = lis r29, _zeroAddr@ha ;hud
+0x027E6404 = lfs f13, _zeroAddr@l(r29) ;hud
