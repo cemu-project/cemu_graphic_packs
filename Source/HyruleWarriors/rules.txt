@@ -34,7 +34,7 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 
 [TextureRedefine] #Gamepad (Co-Op)
 width = 648
-height = 368
+height = 360
 overwriteWidth = <?=round($scaleFactorX*1280)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
