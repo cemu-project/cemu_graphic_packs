@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = "Sonic Lost World - No Time Limit"
+version = 2
