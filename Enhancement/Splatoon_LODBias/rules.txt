@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = "Splatoon - LOD Bias"
+version = 2
+
+#general
+
+[TextureRedefine]
+formats = 0x31,0x32,0x34,0x35,0x431,0x432,0x433,0x234,0x235
+overwriteLodBias = -16
+
+#ink splats - disabled by default, mainly for online sake
+
+#[TextureRedefine]
+#width = 32
+#height = 32
+#formats = 0x33
+#overwriteLodBias = -16
+
+#[TextureRedefine]
+#width = 32
+#height = 64
+#formats = 0x33
+#overwriteLodBias = -16
+
+#[TextureRedefine]
+#width = 128
+#height = 128
+#formats = 0x33
+#overwriteLodBias = -16
