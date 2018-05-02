@@ -7,7 +7,7 @@ version = 2
 
 [TextureRedefine]
 formats = 0x31,0x32,0x34,0x35,0x431,0x432,0x433,0x234,0x235
-overwriteLodBias = -16
+overwriteRelativeLodBias = -3
 
 #ink splats - disabled by default, mainly for online sake
 
