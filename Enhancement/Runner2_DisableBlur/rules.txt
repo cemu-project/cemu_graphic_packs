@@ -1,4 +1,4 @@
 [Definition]
-titleIds = 000500001011AF00
+titleIds = 00050000101DD600,000500001011AF00,0005000010136300,000500021011AF01
 name = "Runner2 - Disable Blur (use w/o resolution packs)"
 version = 2
