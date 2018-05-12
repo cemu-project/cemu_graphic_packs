@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 000500001011AF00
+name = "Runner2 - Disable Blur (use w/o resolution packs)"
+version = 2
