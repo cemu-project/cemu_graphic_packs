@@ -6,6 +6,8 @@ RED='\033[0;31m'
 
 NC='\033[0m' # Removes Color
 
+echo -e "${RED}Building $buildType resolutions of the graphic packs.\n"
+
 baseOutDir=$1
 if [ -n "$baseOutDir" ]; then
         if [ ! -d "$baseOutDir" ]; then
@@ -42,8 +44,10 @@ build_dir () {
         done
 }
 
+res_240p=( "Performance" 426 240 )
 res_360p489=( "Performance" 1920 360 )
 res_360p=( "Performance" 640 360 )
+res_420p=( "Performance" 854 480 )
 res_480p489=( "Performance" 2562 480 )
 res_480p=( "Performance" 854 480 )
 res_540p219=( "Performance" 1280 540 )
@@ -81,7 +85,7 @@ std_respack () {
 	gameName=$1
 	params=( "$@" )
 	rest=( "${params[@]:1}" )
-	
+	echo -e "travis_fold:start:$gameName"
 	echo -e "${GREEN}[Building] ${BCYAN}$gameName ${NC}for ${rest[@]}"
 	for arrg in "${rest[@]}"
 	do
@@ -106,13 +110,14 @@ std_respack () {
 			exit 1
 		fi
 	done
+	echo -e "travis_fold:end:$gameName"
 }
 
 mod_onearg () {
     params=( "$@" )
     subparams=( "${params[@]:1}" ) 
     mod_folder="${params[0]}"
- 
+	echo -e "travis_fold:start:$mod_folder"
     echo -e "${GREEN}[Building] ${BCYAN}$mod_folder ${NC}with arguments: ${subparams[@]}"
     for arrg in "${subparams[@]}"
     do
@@ -123,13 +128,21 @@ mod_onearg () {
             #echo "${arrg} inFolder: $inFolder outFolder: $outFolder"
             build_dir "$inFolder" "$outFolder" "$arrg"
     done
+	echo -e "travis_fold:end:$mod_folder"
 }
 
-res16by9=( "360p" "480p" "540p" "720p" "900p" "1080p" "1440p" "1800p" "2160p" "2880p" "4320p" "5760p" )
-res21by9=( "540p219" "720p219" "900p219" "1080p219" "1440p219" "1800p219" "2160p219" "2880p219" "4320p219" "5760p219" )
-res48by9=( "360p489" "480p489" "540p489" "720p489" "900p489" "1080p489" "1440p489" "1800p489" "2160p489" "2880p489" "4320p489" "5760p489" )
-just720p=( "720p" )
-just1080p=( "1080p" )
+if [ "$buildType" = "Common" ]; then
+        res16by9=( "480p" "720p" "900p" "1080p" "1440p" "2160p" "2880p" )
+        res21by9=( "720p219" "1080p219" "1440p219" "2160p219" "2880p219" )
+        just720p=( "720p" )
+        just1080p=( "1080p" )
+    else
+        res16by9=( "240p" "360p" "420p" "480p" "540p" "720p" "900p" "1080p" "1440p" "1800p" "2160p" "2880p" "4320p" "5760p" )
+        res21by9=( "540p219" "720p219" "900p219" "1080p219" "1440p219" "1800p219" "2160p219" "2880p219" "4320p219" "5760p219" )
+        res48by9=( "360p489" "480p489" "540p489" "720p489" "900p489" "1080p489" "1440p489" "1800p489" "2160p489" "2880p489" "4320p489" "5760p489" )
+        just720p=( "720p" )
+        just1080p=( "1080p" )
+fi
 
 std_respack "AdventureTimeEtDBIDK" "${res16by9[@]/$just1080p}"
 std_respack "AdventureTimeFJI" "${res16by9[@]/$just720p}"
@@ -171,6 +184,7 @@ std_respack "MarioSonicRio" "${res16by9[@]/$just720p}"
 std_respack "MarioSonicSochi" "${res16by9[@]/$just720p}"
 std_respack "MarioTennis" "${res16by9[@]/$just720p}"
 std_respack "MarioParty10" "${res16by9[@]/$just720p}"
+std_respack "Minecraft" "${res16by9[@]/$just720p}"
 std_respack "MinecraftStory" "${res16by9[@]/$just720p}"
 std_respack "MonsterHunter3Ultimate" "${res16by9[@]/$just1080p}"
 std_respack "NBA2K13" "${res16by9[@]/$just720p}"
@@ -185,6 +199,7 @@ std_respack "PokkenTournament" "${res16by9[@]/$just720p}"
 std_respack "ProjectZero" "${res16by9[@]/$just720p}"
 std_respack "PuyoPuyoTetris" "${res16by9[@]/$just1080p}"
 std_respack "RiseOfLyric" "${res16by9[@]/$just720p}"
+std_respack "Runner2" "${res16by9[@]/$just720p}"
 std_respack "SanatoryHallways" "${res16by9[@]/$just720p}"
 std_respack "ScribblenautsUnlimited" "${res16by9[@]/$just720p}"
 std_respack "ScribblenautsUnmasked" "${res16by9[@]/$just720p}"

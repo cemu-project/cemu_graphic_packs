@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "The Legend of Zelda: Breath of the Wild - LOD Bias"
+version = 2
+
+[TextureRedefine]
+formats = 0x31,0x32,0x34,0x35,0x431,0x432,0x433,0x234,0x235
+overwriteRelativeLodBias = -3
