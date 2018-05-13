@@ -54,7 +54,7 @@ after_success:
   # Create github release
   - |
     github-release upload \
-      --owner=Crementif \
+      --owner=slashiee \
       --repo=cemu_graphic_packs \
       --tag="Travis$TRAVIS_BUILD_NUMBER" \
       --name="Graphic Packs: version $TRAVIS_BUILD_NUMBER" \
