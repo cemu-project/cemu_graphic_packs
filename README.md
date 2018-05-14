@@ -1,6 +1,7 @@
 ### Don't download this repository like this! It'll result in missing packs!
 ### The correct download links can only be found on the [GitHub Site](https://slashiee.github.io/cemu_graphic_packs/).
-
+### If you want to know if the latest edits are available, please refer to this image:
+![Build Status](https://travis-ci.org/slashiee/cemu_graphic_packs.svg?branch=master)
 
 ----------
 
