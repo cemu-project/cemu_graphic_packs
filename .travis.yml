@@ -58,6 +58,6 @@ after_success:
       --repo=cemu_graphic_packs \
       --tag="Travis$TRAVIS_BUILD_NUMBER" \
       --name="Graphic Packs: version $TRAVIS_BUILD_NUMBER" \
-      --body="$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```')" \
-      $([ "$buildType" = "Common" ] && echo "--draft" || echo "") \
+      --body="$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n') $(if [ '$buildType' = 'Common' ]; then echo 'This is a prerelease with only the common resolutions.'; fi)" \
+      $([ "$buildType" = "Common" ] && echo "--prerelease=true" || echo "--prerelease=false") \
       "graphicPacks$buildType""_$TRAVIS_BUILD_NUMBER"".zip"
