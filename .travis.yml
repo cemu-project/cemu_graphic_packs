@@ -59,4 +59,5 @@ after_success:
       --tag="Travis$TRAVIS_BUILD_NUMBER" \
       --name="Graphic Packs: version $TRAVIS_BUILD_NUMBER" \
       --body="$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```')" \
+      $([ "$buildType" = "Common" ] && echo "--draft" || echo "") \
       "graphicPacks$buildType""_$TRAVIS_BUILD_NUMBER"".zip"
