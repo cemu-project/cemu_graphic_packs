@@ -31,9 +31,9 @@ matrix:
 # === Build steps ===
 
 # No dependencies
-install: npm install -g github-release-cli
+install: npm install -g github-release-cli@0.4.1
 
-# No need to debug the PHP code. Would slow down execution
+# No need to debug the PHP code. Keeping this enabled slows down execution.
 before_script:
   - phpenv config-rm xdebug.ini
 
@@ -52,6 +52,15 @@ after_success:
   - zip -o -9 -r -q "../graphicPacks$buildType""_$TRAVIS_BUILD_NUMBER"".zip" ./*
   - cd ..
   # Create github release
+  # Remove previous Common asset from release if making the final release with both Common and Uncommon as we need to upload it in a different order to maintain compatibility with existing tools.
+  - |
+    if [ "$buildType" = "Uncommon" ]; then
+    wget "https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis$TRAVIS_BUILD_NUMBER/graphicPacksCommon_$TRAVIS_BUILD_NUMBER.zip";
+    github-release delete --owner=slashiee --repo=cemu_graphic_packs --name="Graphic Packs: version $TRAVIS_BUILD_NUMBER" --tag="Travis$TRAVIS_BUILD_NUMBER" "graphicPacksCommon_$TRAVIS_BUILD_NUMBER"".zip";
+    fi
+  # Upload the release.
+  # The Common build will have the prerelease tag (the Github API skips prereleases if you use the "latest" tag which improves cases where the Common build isn't completed yet).
+  # The Uncommon build will upload both the Common (from the step above) and Uncommon in a specific order. It also removes the prerelease tag.
   - |
     github-release upload \
       --owner=slashiee \
@@ -60,4 +69,5 @@ after_success:
       --name="Graphic Packs: version $TRAVIS_BUILD_NUMBER" \
       --body="$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n') $(if [ '$buildType' = 'Common' ]; then echo 'This is a prerelease with only the common resolutions.'; fi)" \
       $([ "$buildType" = "Common" ] && echo "--prerelease=true" || echo "--prerelease=false") \
-      "graphicPacks$buildType""_$TRAVIS_BUILD_NUMBER"".zip"
+      "graphicPacks$buildType""_$TRAVIS_BUILD_NUMBER"".zip" \
+      $([ "$buildType" = "Uncommon" ] && echo "graphicPacksCommon_$TRAVIS_BUILD_NUMBER"".zip" || echo "")
