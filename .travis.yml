@@ -62,3 +62,5 @@ after_success:
       --body="$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n') $(if [ '$buildType' = 'Common' ]; then echo 'This is a prerelease with only the common resolutions.'; fi)" \
       $([ "$buildType" = "Common" ] && echo "--prerelease=true" || echo "--prerelease=false") \
       $([ "$buildType" = "Common" ] && echo "graphicPacksCommon_$TRAVIS_BUILD_NUMBER"".zip" || echo "graphicPacks$TRAVIS_BUILD_NUMBER""_Uncommon.zip")
+  # Request a new Github Pages build when all the releases are present so that the links will be updated.
+  - if [ "$buildType" = "Uncommon" ]; then 'curl -X POST --header \"Accept: application/vnd.github.mister-fantastic-preview+json\" -u slashiee:$GITHUB_TOKEN https://api.github.com/repos/slashiee/cemu_graphic_packs/pages/builds'; fi
