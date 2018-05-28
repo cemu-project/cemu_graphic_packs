@@ -1,22 +1,10 @@
-<?php
-$width = $argv[1];
-$height = $argv[2];
-
-$aspect = $width / (float)$height;
-$ratioAdjust = $aspect/(16/9);
-
-if (round($aspect*100.0) == 178)
-	exit(1);
-
-$aspect = number_format((float)$aspect, 3, '.', '');
-?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 6724aef6f3f59403
 // Used for: Second layers from some background
-float scaleVector = <?=$ratioAdjust?>; 
+float scaleAspect = 1.3333333333333;
 
 uniform ivec4 uf_uniformRegisterVS[256];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
@@ -125,7 +113,7 @@ R0i.y = floatBitsToInt(intBitsToFloat(PV1i.z) + intBitsToFloat(uf_uniformRegiste
 PV0i.y = R0i.y;
 R0i.w = uf_uniformRegisterVS[2].x & 0x40000000;
 // 3
-R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleAspect,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
 PV1i.x = R127i.x;
 PV1i.y = R127i.x;
 PV1i.z = R127i.x;
@@ -154,7 +142,7 @@ PV0i.y = R4i.x;
 PV0i.z = R4i.x;
 PV0i.w = R4i.x;
 // 7
-tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y),intBitsToFloat(R127i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[9].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[9].y),intBitsToFloat(uf_uniformRegisterVS[9].z),intBitsToFloat(uf_uniformRegisterVS[9].w))));
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y),intBitsToFloat(R127i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[9].x)*scaleAspect,intBitsToFloat(uf_uniformRegisterVS[9].y),intBitsToFloat(uf_uniformRegisterVS[9].z),intBitsToFloat(uf_uniformRegisterVS[9].w))));
 PV1i.x = tempi.x;
 PV1i.y = tempi.x;
 PV1i.z = tempi.x;

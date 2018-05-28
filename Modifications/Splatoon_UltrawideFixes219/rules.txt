@@ -1,0 +1,4 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = "Splatoon - 21:9 Ultrawide fixes"
+version = 2

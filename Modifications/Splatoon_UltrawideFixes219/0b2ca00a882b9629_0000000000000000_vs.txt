@@ -1,24 +1,10 @@
-<?php
-$width = $argv[1];
-$height = $argv[2];
-
-$aspect = $width / (float)$height;
-$ratioAdjust = $aspect/(16/9);
-
-if (round($aspect*100.0) == 178)
-	exit(1);
-
-$aspect = number_format((float)$aspect, 3, '.', '');
-?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 0b2ca00a882b9629
 // backgrounds UW scaling shader
-float scaleVector = <?=$ratioAdjust?>; 
-
-
+float scaleAspect = 1.3333333333333;
 
 uniform ivec4 uf_uniformRegisterVS[256];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
@@ -127,7 +113,7 @@ R0i.y = floatBitsToInt(intBitsToFloat(PV1i.z) + intBitsToFloat(uf_uniformRegiste
 PV0i.y = R0i.y;
 R0i.w = uf_uniformRegisterVS[2].x & 0x40000000;
 // 3
-R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[4].x)*scaleAspect,intBitsToFloat(uf_uniformRegisterVS[4].y),intBitsToFloat(uf_uniformRegisterVS[4].z),intBitsToFloat(uf_uniformRegisterVS[4].w))));
 PV1i.x = R127i.x;
 PV1i.y = R127i.x;
 PV1i.z = R127i.x;
@@ -927,7 +913,7 @@ activeMaskStackC[2] = false;
 if( activeMaskStackC[2] == true ) {
 // 0
 backupReg0i = R0i.y;
-R6i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(backupReg0i),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[24].x)*scaleVector,intBitsToFloat(uf_uniformRegisterVS[24].y),intBitsToFloat(uf_uniformRegisterVS[24].z),intBitsToFloat(uf_uniformRegisterVS[24].w))));
+R6i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(backupReg0i),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_uniformRegisterVS[24].x)*scaleAspect,intBitsToFloat(uf_uniformRegisterVS[24].y),intBitsToFloat(uf_uniformRegisterVS[24].z),intBitsToFloat(uf_uniformRegisterVS[24].w))));
 PV0i.x = R6i.x;
 PV0i.y = R6i.x;
 PV0i.z = R6i.x;
