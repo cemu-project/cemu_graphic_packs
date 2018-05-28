@@ -1,0 +1,703 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_packing : enable
+// shader 771cf3a9a165ebf7
+// Used for: (character selection) wavy background UW fix
+const float scaleAspect = 1.3333333333333;
+
+uniform ivec4 uf_remappedVS[23];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+layout(location = 0) in uvec4 attrDataSem0;
+out gl_PerVertex
+{
+	vec4 gl_Position;
+	float gl_PointSize;
+};
+layout(location = 0) out vec4 passParameterSem0;
+layout(location = 1) out vec4 passParameterSem1;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+ivec4 R3i = ivec4(0);
+ivec4 R4i = ivec4(0);
+ivec4 R5i = ivec4(0);
+ivec4 R6i = ivec4(0);
+ivec4 R122i = ivec4(0);
+ivec4 R123i = ivec4(0);
+ivec4 R124i = ivec4(0);
+ivec4 R125i = ivec4(0);
+ivec4 R126i = ivec4(0);
+ivec4 R127i = ivec4(0);
+uvec4 attrDecoder;
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+ivec4 PV0i = ivec4(0), PV1i = ivec4(0);
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+bool activeMaskStack[4];
+bool activeMaskStackC[5];
+activeMaskStack[0] = false;
+activeMaskStack[1] = false;
+activeMaskStack[2] = false;
+activeMaskStackC[0] = false;
+activeMaskStackC[1] = false;
+activeMaskStackC[2] = false;
+activeMaskStackC[3] = false;
+activeMaskStack[0] = true;
+activeMaskStackC[0] = true;
+activeMaskStackC[1] = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0i = ivec4(gl_VertexID, 0, 0, gl_InstanceID);
+attrDecoder.xy = attrDataSem0.xy;
+attrDecoder.xy = (attrDecoder.xy>>24)|((attrDecoder.xy>>8)&0xFF00)|((attrDecoder.xy<<8)&0xFF0000)|((attrDecoder.xy<<24));
+attrDecoder.z = 0;
+attrDecoder.w = 0;
+R1i = ivec4(int(attrDecoder.x), int(attrDecoder.y), floatBitsToInt(0.0), floatBitsToInt(1.0));
+if( activeMaskStackC[1] == true ) {
+activeMaskStack[1] = activeMaskStack[0];
+activeMaskStackC[2] = activeMaskStackC[1];
+// 0
+PV0i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), intBitsToFloat(uf_remappedVS[0].x)));
+R0i.yzw = ivec3(floatBitsToInt(-(intBitsToFloat(R1i.y))),0,0x3f800000);
+PV0i.y = R0i.y;
+R127i.w = floatBitsToInt(1.0);
+PS0i = R127i.w;
+// 1
+R0i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(uf_remappedVS[0].z));
+PV1i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.y), intBitsToFloat(uf_remappedVS[0].y)));
+// 2
+R0i.y = floatBitsToInt(intBitsToFloat(PV1i.z) + intBitsToFloat(uf_remappedVS[0].w));
+PV0i.y = R0i.y;
+R1i.w = uf_remappedVS[1].x & 0x40000000;
+// 3
+backupReg0i = R0i.z;
+backupReg1i = R0i.w;
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(PV0i.y),intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i)),vec4(intBitsToFloat(uf_remappedVS[2].x)*scaleAspect,intBitsToFloat(uf_remappedVS[2].y),intBitsToFloat(uf_remappedVS[2].z),intBitsToFloat(uf_remappedVS[2].w))));
+PV1i.x = R127i.x;
+PV1i.y = R127i.x;
+PV1i.z = R127i.x;
+PV1i.w = R127i.x;
+// 4
+backupReg0i = R0i.x;
+backupReg1i = R0i.z;
+backupReg2i = R0i.w;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(R0i.y),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[3].x),intBitsToFloat(uf_remappedVS[3].y),intBitsToFloat(uf_remappedVS[3].z),intBitsToFloat(uf_remappedVS[3].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+R127i.y = tempi.x;
+// 5
+backupReg0i = R0i.x;
+backupReg1i = R0i.y;
+backupReg2i = R0i.w;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(R0i.z),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[4].x),intBitsToFloat(uf_remappedVS[4].y),intBitsToFloat(uf_remappedVS[4].z),intBitsToFloat(uf_remappedVS[4].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R127i.z = tempi.x;
+// 6
+R5i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y),intBitsToFloat(PV1i.x),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[5].x),intBitsToFloat(uf_remappedVS[5].y),intBitsToFloat(uf_remappedVS[5].z),intBitsToFloat(uf_remappedVS[5].w))));
+PV0i.x = R5i.x;
+PV0i.y = R5i.x;
+PV0i.z = R5i.x;
+PV0i.w = R5i.x;
+// 7
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y),intBitsToFloat(R127i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[6].x),intBitsToFloat(uf_remappedVS[6].y),intBitsToFloat(uf_remappedVS[6].z),intBitsToFloat(uf_remappedVS[6].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R5i.y = tempi.x;
+// 8
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y),intBitsToFloat(R127i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[7].x),intBitsToFloat(uf_remappedVS[7].y),intBitsToFloat(uf_remappedVS[7].z),intBitsToFloat(uf_remappedVS[7].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+R5i.z = tempi.x;
+// 9
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y),intBitsToFloat(R127i.z),intBitsToFloat(R127i.w)),vec4(intBitsToFloat(uf_remappedVS[8].x),intBitsToFloat(uf_remappedVS[8].y),intBitsToFloat(uf_remappedVS[8].z),intBitsToFloat(uf_remappedVS[8].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R5i.w = tempi.x;
+// 10
+R2i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x), intBitsToFloat(uf_remappedVS[9].x)));
+R2i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y), intBitsToFloat(uf_remappedVS[9].y)));
+R3i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x), intBitsToFloat(uf_remappedVS[9].y)));
+PS0i = R3i.x;
+// 11
+R3i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y), intBitsToFloat(uf_remappedVS[9].x)));
+// 12
+predResult = (0 != R1i.w);
+activeMaskStack[1] = predResult;
+activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+}
+else {
+activeMaskStack[1] = false;
+activeMaskStackC[2] = false;
+}
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+R1i.z = uf_remappedVS[1].x & 0x00000002;
+// 1
+predResult = (0 != R1i.z);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+backupReg0i = R1i.y;
+R1i.yzw = ivec3(backupReg0i,0,0x3f800000);
+PV0i.y = R1i.y;
+PV0i.z = R1i.z;
+PV0i.w = R1i.w;
+// 1
+R4i.xyz = ivec3(R1i.x,PV0i.y,PV0i.z);
+R4i.w = PV0i.w;
+}
+activeMaskStack[2] = activeMaskStack[2] == false;
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+PS0i = int(intBitsToFloat(R1i.y));
+// 1
+PV1i.z = PS0i << int(1);
+PS1i = int(intBitsToFloat(R1i.x));
+// 2
+R125i.x = PV1i.z + PS1i;
+PV0i.x = R125i.x;
+// 3
+R127i.x = (PV0i.x == 0x00000002)?int(0xFFFFFFFF):int(0x0);
+R125i.y = (PV0i.x == int(1))?int(0xFFFFFFFF):int(0x0);
+R127i.z = (PV0i.x == 0x00000002)?int(0xFFFFFFFF):int(0x0);
+PV1i.z = R127i.z;
+R126i.w = (PV0i.x == int(1))?int(0xFFFFFFFF):int(0x0);
+// 4
+R126i.x = ((PV1i.z == 0)?(uf_remappedVS[10].y):(uf_remappedVS[11].y));
+R127i.y = ((PV1i.z == 0)?(uf_remappedVS[10].x):(uf_remappedVS[11].x));
+// 5
+backupReg0i = R127i.z;
+backupReg0i = R127i.z;
+R127i.z = ((backupReg0i == 0)?(uf_remappedVS[10].w):(uf_remappedVS[11].w));
+R127i.w = ((backupReg0i == 0)?(uf_remappedVS[10].z):(uf_remappedVS[11].z));
+// 6
+R126i.z = ((R127i.x == 0)?(uf_remappedVS[12].y):(uf_remappedVS[13].y));
+R125i.w = ((R127i.x == 0)?(uf_remappedVS[12].x):(uf_remappedVS[13].x));
+// 7
+backupReg0i = R127i.x;
+backupReg0i = R127i.x;
+R127i.x = ((backupReg0i == 0)?(uf_remappedVS[12].w):(uf_remappedVS[13].w));
+R126i.y = ((backupReg0i == 0)?(uf_remappedVS[12].z):(uf_remappedVS[13].z));
+// 8
+backupReg0i = R126i.x;
+backupReg1i = R127i.y;
+backupReg2i = R127i.z;
+backupReg3i = R127i.w;
+R126i.x = ((R126i.w == 0)?(backupReg0i):(uf_remappedVS[14].y));
+R127i.y = ((R126i.w == 0)?(backupReg1i):(uf_remappedVS[14].x));
+R127i.z = ((R126i.w == 0)?(backupReg2i):(uf_remappedVS[14].w));
+R127i.w = ((R126i.w == 0)?(backupReg3i):(uf_remappedVS[14].z));
+// 9
+backupReg0i = R127i.x;
+backupReg1i = R126i.y;
+backupReg2i = R126i.z;
+backupReg3i = R125i.w;
+R127i.x = ((R125i.y == 0)?(backupReg0i):(uf_remappedVS[15].w));
+R126i.y = ((R125i.y == 0)?(backupReg1i):(uf_remappedVS[15].z));
+R126i.z = ((R125i.y == 0)?(backupReg2i):(uf_remappedVS[15].y));
+R125i.w = ((R125i.y == 0)?(backupReg3i):(uf_remappedVS[15].x));
+// 10
+R1i.x = ((R125i.x == 0)?(uf_remappedVS[16].x):(R127i.y));
+R1i.y = ((R125i.x == 0)?(uf_remappedVS[16].y):(R126i.x));
+R1i.z = ((R125i.x == 0)?(uf_remappedVS[16].z):(R127i.w));
+R1i.w = ((R125i.x == 0)?(uf_remappedVS[16].w):(R127i.z));
+// 11
+R4i.x = ((R125i.x == 0)?(uf_remappedVS[17].x):(R125i.w));
+R4i.y = ((R125i.x == 0)?(uf_remappedVS[17].y):(R126i.z));
+R4i.z = ((R125i.x == 0)?(uf_remappedVS[17].z):(R126i.y));
+R4i.w = ((R125i.x == 0)?(uf_remappedVS[17].w):(R127i.x));
+}
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+activeMaskStack[1] = activeMaskStack[1] == false;
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+R4i.y = uf_remappedVS[1].x & 0x00000002;
+// 1
+predResult = (0 != R4i.y);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+backupReg0i = R1i.y;
+R1i.yzw = ivec3(backupReg0i,0,0x3f800000);
+PV0i.y = R1i.y;
+PV0i.z = R1i.z;
+PV0i.w = R1i.w;
+// 1
+R4i.xyz = ivec3(R1i.x,PV0i.y,PV0i.z);
+R4i.w = PV0i.w;
+}
+activeMaskStack[2] = activeMaskStack[2] == false;
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+PS0i = int(intBitsToFloat(R1i.y));
+// 1
+PV1i.z = PS0i << int(1);
+PS1i = int(intBitsToFloat(R1i.x));
+// 2
+R125i.x = PV1i.z + PS1i;
+PV0i.x = R125i.x;
+// 3
+R127i.x = (PV0i.x == 0x00000002)?int(0xFFFFFFFF):int(0x0);
+R125i.y = (PV0i.x == int(1))?int(0xFFFFFFFF):int(0x0);
+R127i.z = (PV0i.x == 0x00000002)?int(0xFFFFFFFF):int(0x0);
+PV1i.z = R127i.z;
+R126i.w = (PV0i.x == int(1))?int(0xFFFFFFFF):int(0x0);
+// 4
+R126i.x = ((PV1i.z == 0)?(uf_remappedVS[10].y):(uf_remappedVS[11].y));
+R127i.y = ((PV1i.z == 0)?(uf_remappedVS[10].x):(uf_remappedVS[11].x));
+// 5
+backupReg0i = R127i.z;
+backupReg0i = R127i.z;
+R127i.z = ((backupReg0i == 0)?(uf_remappedVS[10].w):(uf_remappedVS[11].w));
+R127i.w = ((backupReg0i == 0)?(uf_remappedVS[10].z):(uf_remappedVS[11].z));
+// 6
+R126i.z = ((R127i.x == 0)?(uf_remappedVS[12].y):(uf_remappedVS[13].y));
+R125i.w = ((R127i.x == 0)?(uf_remappedVS[12].x):(uf_remappedVS[13].x));
+// 7
+backupReg0i = R127i.x;
+backupReg0i = R127i.x;
+R127i.x = ((backupReg0i == 0)?(uf_remappedVS[12].w):(uf_remappedVS[13].w));
+R126i.y = ((backupReg0i == 0)?(uf_remappedVS[12].z):(uf_remappedVS[13].z));
+// 8
+backupReg0i = R126i.x;
+backupReg1i = R127i.y;
+backupReg2i = R127i.z;
+backupReg3i = R127i.w;
+R126i.x = ((R126i.w == 0)?(backupReg0i):(uf_remappedVS[14].y));
+R127i.y = ((R126i.w == 0)?(backupReg1i):(uf_remappedVS[14].x));
+R127i.z = ((R126i.w == 0)?(backupReg2i):(uf_remappedVS[14].w));
+R127i.w = ((R126i.w == 0)?(backupReg3i):(uf_remappedVS[14].z));
+// 9
+backupReg0i = R127i.x;
+backupReg1i = R126i.y;
+backupReg2i = R126i.z;
+backupReg3i = R125i.w;
+R127i.x = ((R125i.y == 0)?(backupReg0i):(uf_remappedVS[15].w));
+R126i.y = ((R125i.y == 0)?(backupReg1i):(uf_remappedVS[15].z));
+R126i.z = ((R125i.y == 0)?(backupReg2i):(uf_remappedVS[15].y));
+R125i.w = ((R125i.y == 0)?(backupReg3i):(uf_remappedVS[15].x));
+// 10
+R1i.x = ((R125i.x == 0)?(uf_remappedVS[16].x):(R127i.y));
+R1i.y = ((R125i.x == 0)?(uf_remappedVS[16].y):(R126i.x));
+R1i.z = ((R125i.x == 0)?(uf_remappedVS[16].z):(R127i.w));
+R1i.w = ((R125i.x == 0)?(uf_remappedVS[16].w):(R127i.z));
+// 11
+R4i.x = ((R125i.x == 0)?(uf_remappedVS[17].x):(R125i.w));
+R4i.y = ((R125i.x == 0)?(uf_remappedVS[17].y):(R126i.z));
+R4i.z = ((R125i.x == 0)?(uf_remappedVS[17].z):(R126i.y));
+R4i.w = ((R125i.x == 0)?(uf_remappedVS[17].w):(R127i.x));
+}
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
+if( activeMaskStackC[1] == true ) {
+activeMaskStack[1] = activeMaskStack[0];
+activeMaskStackC[2] = activeMaskStackC[1];
+// 0
+predResult = (0 != uf_remappedVS[18].x);
+activeMaskStack[1] = predResult;
+activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+}
+else {
+activeMaskStack[1] = false;
+activeMaskStackC[2] = false;
+}
+if( activeMaskStackC[2] == true ) {
+// 0
+backupReg0i = R0i.y;
+backupReg1i = R0i.z;
+backupReg2i = R0i.w;
+R1i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[16].x),intBitsToFloat(uf_remappedVS[16].y),intBitsToFloat(uf_remappedVS[16].z),intBitsToFloat(uf_remappedVS[16].w))));
+PV0i.x = R1i.x;
+PV0i.y = R1i.x;
+PV0i.z = R1i.x;
+PV0i.w = R1i.x;
+// 1
+backupReg0i = R0i.x;
+backupReg1i = R0i.z;
+backupReg2i = R0i.w;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(R0i.y),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[14].x),intBitsToFloat(uf_remappedVS[14].y),intBitsToFloat(uf_remappedVS[14].z),intBitsToFloat(uf_remappedVS[14].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R1i.y = tempi.x;
+// 2
+backupReg0i = R0i.x;
+backupReg1i = R0i.y;
+backupReg2i = R0i.w;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(R0i.z),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[11].x),intBitsToFloat(uf_remappedVS[11].y),intBitsToFloat(uf_remappedVS[11].z),intBitsToFloat(uf_remappedVS[11].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+R1i.z = tempi.x;
+// 3
+backupReg0i = R0i.x;
+backupReg1i = R0i.y;
+backupReg2i = R0i.z;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i),intBitsToFloat(R0i.w)),vec4(intBitsToFloat(uf_remappedVS[10].x),intBitsToFloat(uf_remappedVS[10].y),intBitsToFloat(uf_remappedVS[10].z),intBitsToFloat(uf_remappedVS[10].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R1i.w = tempi.x;
+}
+activeMaskStack[1] = activeMaskStack[1] == false;
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+R6i.x = uf_remappedVS[1].x & int(1);
+// 1
+predResult = (0 != R6i.x);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+activeMaskStack[3] = activeMaskStack[2];
+activeMaskStackC[4] = activeMaskStackC[3];
+// 0
+R2i.w = uf_remappedVS[1].x & 0x00000002;
+// 1
+predResult = (0 != R2i.w);
+activeMaskStack[3] = predResult;
+activeMaskStackC[4] = predResult == true && activeMaskStackC[3] == true;
+}
+else {
+activeMaskStack[3] = false;
+activeMaskStackC[4] = false;
+}
+if( activeMaskStackC[4] == true ) {
+// 0
+PV0i.x = uf_remappedVS[1].x & 0x00010000;
+R127i.y = uf_remappedVS[1].x & 0x00000010;
+PV0i.y = R127i.y;
+R125i.z = uf_remappedVS[1].x & 0x00000004;
+R127i.w = uf_remappedVS[1].x & 0x00000020;
+// 1
+R123i.x = ((PV0i.y == 0)?(R1i.w):(R1i.w));
+PV1i.x = R123i.x;
+R123i.y = ((PV0i.y == 0)?(R1i.z):(R1i.z));
+PV1i.y = R123i.y;
+R126i.z = ((PV0i.x == 0)?(R2i.y):(R3i.y));
+PV1i.z = R126i.z;
+R123i.w = ((PV0i.x == 0)?(R2i.x):(R3i.x));
+PV1i.w = R123i.w;
+R127i.z = ((PV0i.y == 0)?(R1i.y):(R1i.y));
+PS1i = R127i.z;
+// 2
+R6i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), intBitsToFloat(PV1i.w)));
+PV0i.x = R6i.x;
+R126i.y = floatBitsToInt(-(intBitsToFloat(PV1i.w)) + 1.0);
+PV0i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PS1i), intBitsToFloat(PV1i.z)));
+R123i.w = ((R127i.w == 0)?(PV1i.y):(PV1i.y));
+PV0i.w = R123i.w;
+R122i.x = ((R127i.w == 0)?(PV1i.x):(PV1i.x));
+PS0i = R122i.x;
+// 3
+backupReg0i = R127i.y;
+R123i.x = ((R127i.w == 0)?(R127i.z):(PV0i.z));
+PV1i.x = R123i.x;
+R127i.y = floatBitsToInt(-(intBitsToFloat(R126i.z)) + 1.0);
+R127i.z = ((R125i.z == 0)?(PV0i.w):(PV0i.w));
+R123i.w = ((backupReg0i == 0)?(R1i.x):(PV0i.x));
+PV1i.w = R123i.w;
+R124i.z = ((R125i.z == 0)?(PS0i):(PS0i));
+PS1i = R124i.z;
+// 4
+R127i.x = ((R125i.z == 0)?(PV1i.x):(PV1i.x));
+PV0i.x = R127i.x;
+R125i.y = ((R127i.w == 0)?(PV1i.w):(PV1i.w));
+PV0i.y = R125i.y;
+R126i.z = uf_remappedVS[1].x & 0x00000008;
+// 5
+R126i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(R127i.y));
+PV1i.z = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(R126i.y));
+// 6
+R123i.y = ((R125i.z == 0)?(R125i.y):(PV1i.z));
+PV0i.y = R123i.y;
+// 7
+R1i.x = ((R126i.z == 0)?(PV0i.y):(PV0i.y));
+R1i.y = ((R126i.z == 0)?(R127i.x):(R126i.x));
+R1i.z = ((R126i.z == 0)?(R127i.z):(R127i.z));
+// 8
+R1i.w = ((R126i.z == 0)?(R124i.z):(R124i.z));
+}
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+R6i.x = floatBitsToInt(-(intBitsToFloat(R1i.x)) + 1.0);
+PV0i.x = R6i.x;
+R126i.y = uf_remappedVS[1].x & 0x00010000;
+R127i.z = uf_remappedVS[1].x & 0x00040000;
+PV0i.w = uf_remappedVS[1].x & 0x00020000;
+// 1
+R123i.x = ((PV0i.w == 0)?(R1i.z):(R1i.z));
+PV1i.x = R123i.x;
+R127i.y = ((PV0i.w == 0)?(R1i.y):(R1i.y));
+PV1i.y = R127i.y;
+R123i.z = ((PV0i.w == 0)?(R1i.x):(PV0i.x));
+PV1i.z = R123i.z;
+R123i.w = ((PV0i.w == 0)?(R1i.w):(R1i.w));
+PV1i.w = R123i.w;
+// 2
+R127i.x = ((R127i.z == 0)?(PV1i.z):(PV1i.z));
+PV0i.y = floatBitsToInt(-(intBitsToFloat(PV1i.y)) + 1.0);
+R126i.z = ((R127i.z == 0)?(PV1i.x):(PV1i.x));
+R127i.w = ((R127i.z == 0)?(PV1i.w):(PV1i.w));
+// 3
+R123i.w = ((R127i.z == 0)?(R127i.y):(PV0i.y));
+PV1i.w = R123i.w;
+// 4
+R1i.x = ((R126i.y == 0)?(R127i.x):(PV1i.w));
+R1i.y = ((R126i.y == 0)?(PV1i.w):(R127i.x));
+R1i.z = ((R126i.y == 0)?(R126i.z):(R126i.z));
+R1i.w = ((R126i.y == 0)?(R127i.w):(R127i.w));
+}
+activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
+if( activeMaskStackC[1] == true ) {
+activeMaskStack[1] = activeMaskStack[0];
+activeMaskStackC[2] = activeMaskStackC[1];
+// 0
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_remappedVS[19].x),intBitsToFloat(uf_remappedVS[19].y),intBitsToFloat(uf_remappedVS[19].z),intBitsToFloat(uf_remappedVS[19].w))));
+PV0i.x = R127i.x;
+PV0i.y = R127i.x;
+PV0i.z = R127i.x;
+PV0i.w = R127i.x;
+// 1
+backupReg0i = R1i.x;
+R1i.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(R1i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_remappedVS[20].x),intBitsToFloat(uf_remappedVS[20].y),intBitsToFloat(uf_remappedVS[20].z),intBitsToFloat(uf_remappedVS[20].w))));
+PV1i.x = R1i.x;
+PV1i.y = R1i.x;
+PV1i.z = R1i.x;
+PV1i.w = R1i.x;
+R1i.y = PV0i.x;
+PS1i = R1i.y;
+// 2
+R1i.y = floatBitsToInt(-(intBitsToFloat(PS1i)) + 1.0);
+R1i.w = R127i.x;
+// 3
+predResult = (0 != uf_remappedVS[18].y);
+activeMaskStack[1] = predResult;
+activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+}
+else {
+activeMaskStack[1] = false;
+activeMaskStackC[2] = false;
+}
+if( activeMaskStackC[2] == true ) {
+// 0
+backupReg0i = R0i.y;
+backupReg1i = R0i.z;
+backupReg2i = R0i.w;
+R4i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[17].x),intBitsToFloat(uf_remappedVS[17].y),intBitsToFloat(uf_remappedVS[17].z),intBitsToFloat(uf_remappedVS[17].w))));
+PV0i.x = R4i.x;
+PV0i.y = R4i.x;
+PV0i.z = R4i.x;
+PV0i.w = R4i.x;
+// 1
+backupReg0i = R0i.x;
+backupReg1i = R0i.z;
+backupReg2i = R0i.w;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(R0i.y),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[15].x),intBitsToFloat(uf_remappedVS[15].y),intBitsToFloat(uf_remappedVS[15].z),intBitsToFloat(uf_remappedVS[15].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R4i.y = tempi.x;
+// 2
+backupReg0i = R0i.x;
+backupReg1i = R0i.y;
+backupReg2i = R0i.w;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(R0i.z),intBitsToFloat(backupReg2i)),vec4(intBitsToFloat(uf_remappedVS[13].x),intBitsToFloat(uf_remappedVS[13].y),intBitsToFloat(uf_remappedVS[13].z),intBitsToFloat(uf_remappedVS[13].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+R4i.z = tempi.x;
+// 3
+backupReg0i = R0i.x;
+backupReg1i = R0i.y;
+backupReg2i = R0i.z;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i),intBitsToFloat(R0i.w)),vec4(intBitsToFloat(uf_remappedVS[12].x),intBitsToFloat(uf_remappedVS[12].y),intBitsToFloat(uf_remappedVS[12].z),intBitsToFloat(uf_remappedVS[12].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R4i.w = tempi.x;
+}
+activeMaskStack[1] = activeMaskStack[1] == false;
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+R0i.y = uf_remappedVS[1].x & int(1);
+// 1
+predResult = (0 != R0i.y);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+activeMaskStack[3] = activeMaskStack[2];
+activeMaskStackC[4] = activeMaskStackC[3];
+// 0
+R0i.x = uf_remappedVS[1].x & 0x00000002;
+// 1
+backupReg0i = R0i.x;
+predResult = (0 != backupReg0i);
+activeMaskStack[3] = predResult;
+activeMaskStackC[4] = predResult == true && activeMaskStackC[3] == true;
+}
+else {
+activeMaskStack[3] = false;
+activeMaskStackC[4] = false;
+}
+if( activeMaskStackC[4] == true ) {
+// 0
+R127i.x = uf_remappedVS[1].x & 0x00000020;
+R127i.y = uf_remappedVS[1].x & 0x00000010;
+PV0i.y = R127i.y;
+R125i.z = uf_remappedVS[1].x & 0x00000004;
+PV0i.w = uf_remappedVS[1].x & 0x00010000;
+// 1
+R123i.x = ((PV0i.w == 0)?(R2i.y):(R3i.y));
+PV1i.x = R123i.x;
+R123i.z = ((PV0i.w == 0)?(R2i.x):(R3i.x));
+PV1i.z = R123i.z;
+R125i.w = uf_remappedVS[1].x & 0x00000008;
+R127i.z = ((PV0i.y == 0)?(R4i.y):(R4i.y));
+PS1i = R127i.z;
+// 2
+R0i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R4i.x), intBitsToFloat(PV1i.z)));
+PV0i.x = R0i.x;
+PV0i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PS1i), intBitsToFloat(PV1i.x)));
+R126i.z = floatBitsToInt(-(intBitsToFloat(PV1i.z)) + 1.0);
+R127i.w = floatBitsToInt(-(intBitsToFloat(PV1i.x)) + 1.0);
+// 3
+R123i.z = ((R127i.x == 0)?(R127i.z):(PV0i.y));
+PV1i.z = R123i.z;
+R123i.w = ((R127i.y == 0)?(R4i.x):(PV0i.x));
+PV1i.w = R123i.w;
+// 4
+backupReg0i = R127i.x;
+R127i.x = ((R125i.z == 0)?(PV1i.z):(PV1i.z));
+PV0i.x = R127i.x;
+R126i.w = ((backupReg0i == 0)?(PV1i.w):(PV1i.w));
+PV0i.w = R126i.w;
+// 5
+R126i.x = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(R127i.w));
+PV1i.z = floatBitsToInt(intBitsToFloat(PV0i.w) + intBitsToFloat(R126i.z));
+// 6
+R123i.y = ((R125i.z == 0)?(R126i.w):(PV1i.z));
+PV0i.y = R123i.y;
+// 7
+R4i.x = ((R125i.w == 0)?(PV0i.y):(PV0i.y));
+R4i.y = ((R125i.w == 0)?(R127i.x):(R126i.x));
+}
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = floatBitsToInt(-(intBitsToFloat(R4i.x)) + 1.0);
+PV0i.x = R0i.x;
+PV0i.y = uf_remappedVS[1].x & 0x00020000;
+R127i.z = uf_remappedVS[1].x & 0x00040000;
+R126i.w = uf_remappedVS[1].x & 0x00010000;
+// 1
+R123i.x = ((PV0i.y == 0)?(R4i.x):(PV0i.x));
+PV1i.x = R123i.x;
+R127i.w = ((PV0i.y == 0)?(R4i.y):(R4i.y));
+PV1i.w = R127i.w;
+// 2
+R127i.x = ((R127i.z == 0)?(PV1i.x):(PV1i.x));
+PV0i.y = floatBitsToInt(-(intBitsToFloat(PV1i.w)) + 1.0);
+// 3
+R123i.w = ((R127i.z == 0)?(R127i.w):(PV0i.y));
+PV1i.w = R123i.w;
+// 4
+R4i.x = ((R126i.w == 0)?(R127i.x):(PV1i.w));
+R4i.y = ((R126i.w == 0)?(PV1i.w):(R127i.x));
+}
+activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
+if( activeMaskStackC[1] == true ) {
+// 0
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w)),vec4(intBitsToFloat(uf_remappedVS[21].x),intBitsToFloat(uf_remappedVS[21].y),intBitsToFloat(uf_remappedVS[21].z),intBitsToFloat(uf_remappedVS[21].w))));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+// 1
+PV1i.x = PV0i.x;
+R0i.w = PV0i.x;
+PS1i = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R4i.w), intBitsToFloat(uf_remappedVS[22].w)));
+// 2
+R0i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(PS1i)),vec4(intBitsToFloat(uf_remappedVS[22].x),intBitsToFloat(uf_remappedVS[22].y),intBitsToFloat(uf_remappedVS[22].z),1.0)));
+PV0i.x = R0i.x;
+PV0i.y = R0i.x;
+PV0i.z = R0i.x;
+PV0i.w = R0i.x;
+R0i.y = floatBitsToInt(-(intBitsToFloat(PV1i.x)) + 1.0);
+PS0i = R0i.y;
+}
+// export
+gl_Position = vec4(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z), intBitsToFloat(R5i.w));
+// export
+passParameterSem0 = vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.x), intBitsToFloat(R1i.w));
+// export
+passParameterSem1 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.x), intBitsToFloat(R0i.w));
+}
