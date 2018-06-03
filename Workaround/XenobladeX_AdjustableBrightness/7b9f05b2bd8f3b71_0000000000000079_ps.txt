@@ -4,8 +4,8 @@
 // shader 7b9f05b2bd8f3b71
 //skell cockpit brigthtness fix + minor colour tweak to balance broken bloom
 const float exposure = 0.52; // 1.0 is neutral, first lessen to avoid truncation prob around .25 for radeon. 
-const float postExposure = 1.09; // 1.0 is neutral, then slightly raise exposure back up. 
-const float gamma = 0.92; // 1.0 is neutral  
+const float postExposure = 1.05; // 1.0 is neutral, then slightly raise exposure back up. 
+const float gamma = 0.93; // 1.0 is neutral  
 const float vibrance = 0.3175;  // 0.0 is neutral  
 const float crushContrast = 0.000; // 0.0 is neutral. loss of shadow detail 
 

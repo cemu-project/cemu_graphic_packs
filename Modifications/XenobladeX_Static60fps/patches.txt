@@ -3,7 +3,7 @@ moduleMatches = 0x7672271D
 #Default as of 0.51 - Limit logic/2d animation to 30 fps Less timing issues, more jitter  
 0x100D0604 = .float 0.5 	# .float 1.0 # GUI animations *                  
 0x1005989C = .float 0.5 	# .float 1.0 #Title screen cutscene -
-0x10014528 = .float 0.05	# controller acceleration -
+#0x10014528 = .float 0.05	# controller acceleration -
 0x10171980 = .float 2.0 	# arbitrary 2.0 float 
 
 _halfRate =  0x10171980 
@@ -36,7 +36,7 @@ moduleMatches = 0x218F6E07, 0xF882D5CF
 #Default as of 0.51 - Limit logic/2d animation to 30 fps Less timing issues  
 0x100D03E8 = .float 0.5 	# .float 1.0 # GUI animations *                  
 0x100598E4 = .float 0.5 	# .float 1.0 #Title screen cutscene -
-0x10014528 = .float 0.05	# controller acceleration -
+#0x10014528 = .float 0.05	# controller acceleration -
 0x10171980 = .float 2.0 	# arbitrary 2.0 float 
 
 _halfRate =  0x10171980 
@@ -70,7 +70,7 @@ moduleMatches = 0x30B6E091
 #Default as of 0.51 - Limit logic/2d animation to 30 fps Less timing issues  
 0x100D03D0 = .float 0.5 	# .float 1.0 # GUI animations                   
 0x100598E4 = .float 0.5 	# .float 1.0 #Title screen cutscene
-0x10014528 = .float 0.05	# controller acceleration
+#0x10014528 = .float 0.05	# controller acceleration
 0x10171980 = .float 2.0 	# arbitrary 2.0 float 
 _halfRate =  0x10171980 
 _fullRate = 0x100D03D0

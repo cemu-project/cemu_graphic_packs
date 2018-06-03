@@ -6,7 +6,7 @@
 // changes here in turn "breaks" bloom as they over or under expose depending on day/night 
 
 //old contrasty, or just copy paste clarity
-const float gamma = 0.92; // 1.0 is neutral  
+const float gamma = 0.93; // 1.0 is neutral  
 const float exposure = 0.52; // 1.0 is neutral, first lessen to avoid truncation prob around .25 for radeon. 
 const float vibrance = 0.318;  // 0.0 is neutral  
 const float lift = 0.002; // 0.0 is neutral. loss of shadow detail 
