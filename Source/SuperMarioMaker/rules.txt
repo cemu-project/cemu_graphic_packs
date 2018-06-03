@@ -180,26 +180,12 @@ height = 192
 overwriteWidth = <?=round($scaleFactorX*384)?> 
 overwriteHeight = <?=round($scaleFactorY*192)?> 
 
-[TextureRedefine]
-width = 320
-height = 240
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*240)?> 
-
 #[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
 #width = 256
 #height = 256
 #formatsExcluded = 
 #overwriteWidth = <?=round($scaleFactorX*256)?> 
 #overwriteHeight = <?=round($scaleFactorY*256)?> 
-
-[TextureRedefine]
-width = 252
-height = 81
-#formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorX*252)?> 
-overwriteHeight = <?=round($scaleFactorY*81)?> 
 
 [TextureRedefine]
 width = 160
