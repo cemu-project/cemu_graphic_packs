@@ -1,0 +1,27 @@
+[XCX219GUIV102J]
+moduleMatches = 0x7672271D
+0x10185C7C   = .float 0.75345999
+_34th = 0x1018607C
+		
+0x02D3BC74 =    lis       r7, _34th@h         # Aspect                
+0x02D3BC80 =    lfs       f29, _34th@l(r7)    # Aspect   
+
+
+[XCX219GUIV100E_V101E]
+moduleMatches = 0x218F6E07, 0xF882D5CF
+0x1018607C   = .float 0.75345999
+_34th = 0x1018607C
+		
+0x02D407AC =    lis       r7, _34th@h         # Aspect                
+0x02D407B8 =    lfs       f29, _34th@l(r7)    # Aspect   
+
+
+[XCX219GUIV102U]
+moduleMatches = 0x30B6E091
+0x1018607C   = .float 0.75345999
+_34th = 0x1018607C		
+
+#0x02D3EB74 =    lis       r12, _34th@h        # Transparency                
+#0x02D3EB7C =    lfs       f0, _34th@l(r12)    # Transparency               
+0x02D4074C =    lis       r7, _34th@h         # Aspect                
+0x02D40758 =    lfs       f29, _34th@l(r7)    # Aspect     
