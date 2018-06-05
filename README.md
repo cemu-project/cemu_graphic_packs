@@ -1,11 +1,6 @@
-### Don't download this repository like this! It'll result in missing packs!
-### The correct download links can only be found on the [GitHub Site](https://slashiee.github.io/cemu_graphic_packs/).
-### If you want to know if the latest edits are available, please refer to this image:
 ![Build Status](https://travis-ci.org/slashiee/cemu_graphic_packs.svg?branch=master)
-
+[![Github Releases Downloads](https://img.shields.io/github/downloads/slashiee/cemu_graphic_packs/total.svg)](https://github.com/slashiee/cemu_graphic_packs/releases/latest)
 ----------
-
-
 Information
 ------
 Cemu Graphic Packs is a repository where you can find graphic packs that upscale and improve most Wii U games that work on Cemu.
