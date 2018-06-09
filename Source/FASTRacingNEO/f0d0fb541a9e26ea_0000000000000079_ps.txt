@@ -1,0 +1,57 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = always_decimal_format($fullWidth / 1280.0);
+$scaleFactorY = always_decimal_format($fullHeight / 720.0);
+?>
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader f0d0fb541a9e26ea
+const float resScale = <?=$scaleFactorX?>; 
+uniform ivec4 uf_remappedPS[1];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x3750b000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw) * resScale;
+// 0
+R1f.w = 1.0;
+PS0f = 1.0 / intBitsToFloat(uf_remappedPS[0].x);
+// 1
+backupReg0f = R0f.y;
+PV1f.y = R0f.x * PS0f;
+PV1f.w = backupReg0f * PS0f;
+// 2
+PV0f.x = floor(PV1f.y);
+PV0f.z = floor(PV1f.w);
+// 3
+R0f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].x), PV0f.x);
+R0f.y = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].x), PV0f.z);
+R1f.xyz = (texelFetch(textureUnitPS0, ivec2(R0f.x, R0f.y), 0).xyz);
+// export
+passPixelColor0 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+}
