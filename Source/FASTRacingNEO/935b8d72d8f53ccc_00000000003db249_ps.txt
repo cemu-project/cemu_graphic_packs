@@ -147,12 +147,12 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 float cubeMapArrayIndex0 = 0.0;
 float cubeMapArrayIndex1 = 0.0;
-R0i = floatBitsToInt(vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw));
+R0i = floatBitsToInt(vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw) * resScale);
 if( activeMaskStackC[1] == true ) {
-R0i.w = floatBitsToInt(texelFetch(textureUnitPS5, ivec2(intBitsToFloat(R0i.x) * resScale, intBitsToFloat(R0i.y) * resScale), 0).x);
-R1i.xy = floatBitsToInt(texelFetch(textureUnitPS3, ivec2(intBitsToFloat(R0i.x) * resScale, intBitsToFloat(R0i.y) * resScale), 0).xy);
-R6i.xyzw = floatBitsToInt(texelFetch(textureUnitPS2, ivec2(intBitsToFloat(R0i.x) * resScale, intBitsToFloat(R0i.y) * resScale), 0).xyzw);
-R4i.xyzw = floatBitsToInt(texelFetch(textureUnitPS4, ivec2(intBitsToFloat(R0i.x) * resScale, intBitsToFloat(R0i.y) * resScale), 0).xyzw);
+R0i.w = floatBitsToInt(texelFetch(textureUnitPS5, ivec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y)), 0).x);
+R1i.xy = floatBitsToInt(texelFetch(textureUnitPS3, ivec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y)), 0).xy);
+R6i.xyzw = floatBitsToInt(texelFetch(textureUnitPS2, ivec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y)), 0).xyzw);
+R4i.xyzw = floatBitsToInt(texelFetch(textureUnitPS4, ivec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y)), 0).xyzw);
 }
 if( activeMaskStackC[1] == true ) {
 // 0

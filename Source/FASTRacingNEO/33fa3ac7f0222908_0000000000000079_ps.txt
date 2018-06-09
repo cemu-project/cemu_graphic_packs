@@ -1,0 +1,180 @@
+<?php
+include 'Source/functions.php';
+$fullWidth = $argv[1];
+$fullHeight = $argv[2];
+$scaleFactorX = always_decimal_format($fullWidth / 1280.0);
+$scaleFactorY = always_decimal_format($fullHeight / 720.0);
+?>
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 33fa3ac7f0222908
+const float resScale = <?=$scaleFactorX?>; 
+uniform ivec4 uf_remappedPS[9];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf5c2b800 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 1) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw) * resScale;
+R1f = passParameterSem0;
+R3f.xz = (texelFetch(textureUnitPS0, ivec2(R0f.x, R0f.y), 0).xz);
+// 0
+PV0f.x = mul_nonIEEE(R1f.x, R1f.x);
+PV0f.y = -(intBitsToFloat(uf_remappedPS[0].w)) + intBitsToFloat(uf_remappedPS[1].x);
+R127f.z = mul_nonIEEE(R3f.x, R3f.x);
+PV0f.w = mul_nonIEEE(R3f.z, R3f.z);
+R4f.w = 1.0;
+PS0f = R4f.w;
+// 1
+backupReg0f = R0f.x;
+backupReg1f = R0f.y;
+R0f.x = (mul_nonIEEE(-(R1f.x),intBitsToFloat(uf_remappedPS[2].w)) + backupReg0f);
+R0f.y = (intBitsToFloat(uf_remappedPS[2].w) * 0.25 + backupReg1f);
+R2f.z = (mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].z),PV0f.w) + -(R3f.z));
+R123f.w = (mul_nonIEEE(R1f.y,R1f.y) + PV0f.x);
+PV1f.w = R123f.w;
+R1f.w = 1.0 / PV0f.y;
+PS1f = R1f.w;
+// 2
+R1f.z = (mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].x),R127f.z) + -(R3f.x));
+R0f.z = sqrt(PV1f.w);
+PS0f = R0f.z;
+R0f.w = (texelFetch(textureUnitPS0, ivec2(R0f.x, R0f.y), 0).y);
+// 0
+PV0f.y = -(intBitsToFloat(uf_remappedPS[0].w)) + R0f.z;
+R126f.z = R0f.w;
+PV0f.z = R126f.z;
+// 1
+R127f.x = intBitsToFloat(uf_remappedPS[3].x) + -(intBitsToFloat(uf_remappedPS[4].x));
+PV1f.y = mul_nonIEEE(PV0f.z, PV0f.z);
+PV1f.z = PV0f.y * R1f.w;
+PV1f.z = clamp(PV1f.z, 0.0, 1.0);
+R126f.w = intBitsToFloat(uf_remappedPS[3].y) + -(intBitsToFloat(uf_remappedPS[4].y));
+// 2
+R123f.x = (intBitsToFloat(0xc0000000) * PV1f.z + intBitsToFloat(0x40400000));
+PV0f.x = R123f.x;
+PV0f.y = mul_nonIEEE(PV1f.z, PV1f.z);
+R127f.z = (mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].y),PV1f.y) + -(R126f.z));
+// 3
+R126f.x = intBitsToFloat(uf_remappedPS[3].z) + -(intBitsToFloat(uf_remappedPS[4].z));
+PV1f.w = mul_nonIEEE(PV0f.y, PV0f.x);
+// 4
+R127f.w = mul_nonIEEE(PV1f.w, intBitsToFloat(uf_remappedPS[5].x));
+PV0f.w = R127f.w;
+// 5
+R125f.x = (mul_nonIEEE(R1f.z,PV0f.w) + R3f.x);
+R127f.y = (mul_nonIEEE(R127f.z,PV0f.w) + R126f.z);
+// 6
+R127f.z = (mul_nonIEEE(R2f.z,R127f.w) + R3f.z);
+PV0f.z = R127f.z;
+// 7
+tempf.x = dot(vec4(R125f.x,R127f.y,PV0f.z,-0.0),vec4(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f1645a2),intBitsToFloat(0x3de978d5),0.0));
+PV1f.x = tempf.x;
+PV1f.y = tempf.x;
+PV1f.z = tempf.x;
+PV1f.w = tempf.x;
+// 8
+R127f.w = min(PV1f.x, 1.0);
+PV0f.w = R127f.w;
+// 9
+R123f.y = (mul_nonIEEE(R126f.x,PV0f.w) + intBitsToFloat(uf_remappedPS[4].z));
+PV1f.y = R123f.y;
+R123f.z = (mul_nonIEEE(R126f.w,PV0f.w) + intBitsToFloat(uf_remappedPS[4].y));
+PV1f.z = R123f.z;
+R123f.w = (mul_nonIEEE(R127f.x,PV0f.w) + intBitsToFloat(uf_remappedPS[4].x));
+PV1f.w = R123f.w;
+// 10
+PV0f.x = -(R125f.x) + PV1f.w;
+PV0f.z = -(R127f.z) + PV1f.y;
+PV0f.w = -(R127f.y) + PV1f.z;
+// 11
+backupReg0f = R125f.x;
+R125f.x = (mul_nonIEEE(PV0f.w,intBitsToFloat(uf_remappedPS[6].y)) + R127f.y);
+PV1f.x = R125f.x;
+R127f.y = (mul_nonIEEE(PV0f.x,intBitsToFloat(uf_remappedPS[6].x)) + backupReg0f);
+PV1f.y = R127f.y;
+R126f.w = (mul_nonIEEE(PV0f.z,intBitsToFloat(uf_remappedPS[6].z)) + R127f.z);
+PV1f.w = R126f.w;
+// 12
+PV0f.x = R127f.w + -(PV1f.w);
+PV0f.y = R127f.w + -(PV1f.x);
+PV0f.z = R127f.w + -(PV1f.y);
+// 13
+R123f.y = (mul_nonIEEE(PV0f.x,-(intBitsToFloat(uf_remappedPS[7].x))) + R126f.w);
+PV1f.y = R123f.y;
+R123f.z = (mul_nonIEEE(PV0f.y,-(intBitsToFloat(uf_remappedPS[7].x))) + R125f.x);
+PV1f.z = R123f.z;
+R123f.w = (mul_nonIEEE(PV0f.z,-(intBitsToFloat(uf_remappedPS[7].x))) + R127f.y);
+PV1f.w = R123f.w;
+// 14
+R125f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[8].x), PV1f.w);
+PV0f.x = R125f.x;
+R127f.z = mul_nonIEEE(intBitsToFloat(uf_remappedPS[8].z), PV1f.y);
+PV0f.z = R127f.z;
+R127f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[8].y), PV1f.z);
+PV0f.w = R127f.w;
+// 15
+PV1f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[8].w), PV0f.w);
+PV1f.y = mul_nonIEEE(intBitsToFloat(uf_remappedPS[8].w), PV0f.x);
+R126f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[8].w), PV0f.z);
+PV1f.w = R126f.w;
+// 16
+PV0f.x = intBitsToFloat(uf_remappedPS[0].y) + PV1f.w;
+PV0f.y = intBitsToFloat(uf_remappedPS[0].y) + PV1f.x;
+PV0f.z = intBitsToFloat(uf_remappedPS[0].y) + PV1f.y;
+PV0f.w = intBitsToFloat(uf_remappedPS[0].x) + PV1f.y;
+R125f.w = intBitsToFloat(uf_remappedPS[0].x) + PV1f.x;
+PS0f = R125f.w;
+// 17
+PV1f.x = intBitsToFloat(uf_remappedPS[0].x) + R126f.w;
+R126f.y = (mul_nonIEEE(R127f.z,PV0f.x) + intBitsToFloat(uf_remappedPS[0].z));
+R126f.z = (mul_nonIEEE(R127f.w,PV0f.y) + intBitsToFloat(uf_remappedPS[0].z));
+R123f.w = (mul_nonIEEE(R125f.x,PV0f.z) + intBitsToFloat(uf_remappedPS[0].z));
+PV1f.w = R123f.w;
+R127f.y = mul_nonIEEE(R125f.x, PV0f.w);
+PS1f = R127f.y;
+// 18
+R125f.x = mul_nonIEEE(R127f.w, R125f.w);
+R127f.w = mul_nonIEEE(R127f.z, PV1f.x);
+PS0f = 1.0 / PV1f.w;
+// 19
+R4f.x = R127f.y * PS0f;
+PS1f = 1.0 / R126f.z;
+// 20
+R4f.y = R125f.x * PS1f;
+PS0f = 1.0 / R126f.y;
+// 21
+R4f.z = R127f.w * PS0f;
+// export
+passPixelColor0 = vec4(R4f.x, R4f.y, R4f.z, R4f.w);
+}
