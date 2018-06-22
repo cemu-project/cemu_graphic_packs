@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010175B00,0005000010177800,0005000010191F00
-name = "Sonic Boom: Rise of Lyric - 60fps" 
+name = "Sonic Boom: Rise of Lyric - 60FPS" 
 version = 2
 
 #Windows 10 64-bit
