@@ -1,0 +1,13 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = "Sonic Boom: Rise of Lyric - 60fps" 
+version = 2
+
+#Windows 10 64-bit
+#GeForce GTX 1060 6GB
+#i5-7600k
+#16GB RAM
+
+#I can get to 60fps on my PC using:
+#Dual-core recompiler
+#GPU buffer cache accuracy at low/2

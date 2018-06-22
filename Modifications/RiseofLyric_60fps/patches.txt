@@ -1,0 +1,134 @@
+[WiiULauncher16]
+moduleMatches = 0x113CC316
+
+0x02E471AC = nop
+0x02E47218 = nop
+
+#.text:02E47148 # __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))
+#.text:02E47148 LimitFramerate__29__N_13_DriverD3D_cpp_e8d6bc14Fv:
+#.text:02E47148                                         # CODE XREF: CD3D9Renderer::RT_EndFrame((void))+7E4p
+#.text:02E47148
+#.text:02E47148 .set var_18, -0x18
+#.text:02E47148 .set var_14, -0x14
+#.text:02E47148 .set arg_0,  0
+#.text:02E47148
+#.text:02E47148                 mflr      r0
+#.text:02E4714C                 mr        r11, r1
+#.text:02E47150                 stwu      r1, -0x20(r1)
+#.text:02E47154                 bl        sub_4169934
+#.text:02E47158                 lis       r29, dword_106393FC@ha
+#.text:02E4715C                 lwzu      r12, dword_106393FC@l(r29)
+#.text:02E47160                 cmpwi     r12, 0
+#.text:02E47164                 beq       loc_2E472D8
+#.text:02E47168                 lwz       r3, 0x1C(r12)
+#.text:02E4716C                 cmpwi     r3, 0
+#.text:02E47170                 beq       loc_2E472D8
+#.text:02E47174                 lis       r11, dword_11372C40@h
+#.text:02E47178                 lwzu      r12, dword_11372C40@l(r11)
+#.text:02E4717C                 cmpwi     r12, 0
+#.text:02E47180                 lis       r31, dword_11372C08@h
+#.text:02E47184                 bne       loc_2E471AC
+#.text:02E47188                 li        r12, 1
+#.text:02E4718C                 stw       r12, 0(r11)
+#.text:02E47190                 lwz       r12, 0(r3)
+#.text:02E47194                 lwz       r12, 0xB4(r12)
+#.text:02E47198                 lis       r4, aSys_maxfps_0@ha # "sys_MaxFPS"
+#.text:02E4719C                 mtctr     r12
+#.text:02E471A0                 addi      r4, r4, aSys_maxfps_0@l # "sys_MaxFPS"
+#.text:02E471A4                 bctrl
+#.text:02E471A8                 stw       r3, dword_11372C08@l(r31)
+#.text:02E471AC
+#.text:02E471AC loc_2E471AC:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+3Cj
+#.text:02E471AC                 lwz       r3, dword_11372C08@l(r31)
+#.text:02E471B0                 cmpwi     r3, 0
+#.text:02E471B4                 beq       loc_2E472D8
+#.text:02E471B8                 lwz       r12, 0(r3)
+#.text:02E471BC                 lwz       r12, 0x1C(r12)
+#.text:02E471C0                 mtctr     r12
+#.text:02E471C4                 bctrl
+#.text:02E471C8                 mr.       r30, r3
+#.text:02E471CC                 beq       loc_2E472D8
+#.text:02E471D0                 lis       r11, dword_11372C44@h
+#.text:02E471D4                 lwzu      r12, dword_11372C44@l(r11)
+#.text:02E471D8                 lis       r31, unk_11372C00@h
+#.text:02E471DC                 cmpwi     r12, 0
+#.text:02E471E0                 addi      r31, r31, unk_11372C00@l
+#.text:02E471E4                 bne       loc_2E47218
+#.text:02E471E8                 li        r12, 1
+#.text:02E471EC                 stw       r12, 0(r11)
+#.text:02E471F0                 lwz       r12, 0(r29)
+#.text:02E471F4                 lwz       r3, 0x18(r12)
+#.text:02E471F8                 lwz       r12, 0x28(r3)
+#.text:02E471FC                 lwz       r12, 0x34(r12)
+#.text:02E47200                 mtctr     r12
+#.text:02E47204                 mr        r4, r31
+#.text:02E47208                 bctrl
+#.text:02E4720C                 lis       r3, unk_106652FC@h
+#.text:02E47210                 addi      r3, r3, unk_106652FC@l
+#.text:02E47214                 bl        __record_needed_destruction
+#.text:02E47218
+#.text:02E47218 loc_2E47218:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+9Cj
+#.text:02E47218                 mr        r3, r30
+#.text:02E4721C                 bl        __ufcvt
+#.text:02E47220                 lis       r12, flt_1020B310@ha
+#.text:02E47224                 lfs       f0, flt_1020B310@l(r12)
+#.text:02E47228                 lis       r12, aDz_34@ha # "Dz"
+#.text:02E4722C                 fadds     f13, f1, f0
+#.text:02E47230                 lfs       f0, aDz_34@l(r12) # "Dz"
+#.text:02E47234                 fdivs     f1, f0, f13
+#.text:02E47238                 bl        _f_ftoll
+#.text:02E4723C                 mr        r5, r3
+#.text:02E47240                 mr        r6, r4
+#.text:02E47244                 li        r3, 0
+#.text:02E47248                 li        r4, 0x64
+#.text:02E4724C                 bl        __gh_mul64
+#.text:02E47250                 lwz       r12, (dword_11372C04 - unk_11372C00)(r31)
+#.text:02E47254                 lwz       r11, 0(r31)
+#.text:02E47258                 addc      r30, r4, r12
+#.text:02E4725C                 adde      r28, r3, r11
+#.text:02E47260                 b         loc_2E47274
+#.text:02E47264 # ---------------------------------------------------------------------------
+#.text:02E47264
+#.text:02E47264 loc_2E47264:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+158j
+#.text:02E47264                                         # __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+160j
+#.text:02E47264                 li        r12, 0
+#.text:02E47268
+#.text:02E47268 loc_2E47268:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+128j
+#.text:02E47268                 cmpwi     r12, 0x3E8
+#.text:02E4726C                 addi      r12, r12, 1
+#.text:02E47270                 blt       loc_2E47268
+#.text:02E47274
+#.text:02E47274 loc_2E47274:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+118j
+#.text:02E47274                 lwz       r12, 0(r29)
+#.text:02E47278                 lwz       r3, 0x18(r12)
+#.text:02E4727C                 lwz       r12, 0x28(r3)
+#.text:02E47280                 lwz       r12, 0x34(r12)
+#.text:02E47284                 mtctr     r12
+#.text:02E47288                 addi      r4, r1, 0x20+var_18
+#.text:02E4728C                 bctrl
+#.text:02E47290                 lwz       r9, 0x20+var_18(r1)
+#.text:02E47294                 cmpw      r28, r9
+#.text:02E47298                 lwz       r12, 0x20+var_14(r1)
+#.text:02E4729C                 blt       loc_2E472AC
+#.text:02E472A0                 bgt       loc_2E47264
+#.text:02E472A4                 cmplw     r30, r12
+#.text:02E472A8                 bgt       loc_2E47264
+#.text:02E472AC
+#.text:02E472AC loc_2E472AC:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+154j
+#.text:02E472AC                 lwz       r12, 0(r29)
+#.text:02E472B0                 lwz       r3, 0x18(r12)
+#.text:02E472B4                 lwz       r12, 0x28(r3)
+#.text:02E472B8                 lwz       r12, 0x34(r12)
+#.text:02E472BC                 mtctr     r12
+#.text:02E472C0                 addi      r4, r1, 0x20+var_18
+#.text:02E472C4                 bctrl
+#.text:02E472C8                 lwz       r9, 0x20+var_18(r1)
+#.text:02E472CC                 lwz       r10, 0x20+var_14(r1)
+#.text:02E472D0                 stw       r9, 0(r31)
+#.text:02E472D4                 stw       r10, (dword_11372C04 - unk_11372C00)(r31)
+#.text:02E472D8
+#.text:02E472D8 loc_2E472D8:                            # CODE XREF: __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+1Cj
+#.text:02E472D8                                         # __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))+28j ...
+#.text:02E472D8                 addi      r11, r1, 0x20+arg_0
+#.text:02E472DC                 b         loc_416998C
+#.text:02E472DC # End of function __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))
