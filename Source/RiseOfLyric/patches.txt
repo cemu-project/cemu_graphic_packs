@@ -1,0 +1,20 @@
+<?php
+$width = $argv[1];
+$height = $argv[2];
+
+$aspect = $width / (float)$height;
+
+if (round($aspect*100.0) == 178)
+	exit(1);
+
+$aspect = number_format((float)$aspect, 3, '.', '');
+?>
+[WiiULauncher16]
+moduleMatches = 0x113CC316
+
+codeCaveSize = 0x04
+0x00000000 = .float <?=$aspect?> 
+_aspectAddr = 0x00000000
+
+0x02C78358 = lis r23, _aspectAddr@ha
+0x02C78360 = lis f0, _aspectAddr@l(r23)
