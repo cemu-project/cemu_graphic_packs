@@ -105,7 +105,7 @@ tileModesExcluded = 0x001
 overwriteWidth = <?=round($scaleFactorX*640)?> 
 overwriteHeight = <?=round($scaleFactorY*360)?> 
 
-[TextureRedefine]
+[TextureRedefine] #Bloom
 width = 320
 height = 180
 #formatsExcluded = 
