@@ -1,0 +1,20 @@
+<?php
+$width = $argv[1];
+$height = $argv[2];
+
+$aspect = $width / (float)$height;
+
+if (round($aspect*100.0) == 178)
+	exit(1);
+
+$aspect = number_format((float)$aspect, 3, '.', '');
+?>
+
+[TMS_219_EUv16]
+moduleMatches = 0x2249A57A
+
+0x10006C18 = .float <?=$aspect?> 
+0x10014400 = .float <?=$aspect?> 
+0x10067140 = .float <?=$aspect?> 
+
+_
