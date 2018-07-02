@@ -249,12 +249,12 @@ float DPX_Strength = 0.20;
 	#define Filmicpass 1 
 	const float Filmic_Contrast = 1.0;
 	const float Filmic_Bleach = 0.0;
-	const float Saturation = 0.0;
+	const float Saturation = -0.15;
 	const float Filmic_Strength = 0.85;
 	const float Fade = 0.4;
 	const float Linearization = 0.5;
 	const float BaseCurve = 1.5;
-	const float BaseGamma = 1.00;
+	const float BaseGamma = 0.7;
 	const float EffectGamma = 0.68;
 	#define dpxpass 0
 	vec3 RGB_Curve = vec3(8.0, 8.0, 8.0);
