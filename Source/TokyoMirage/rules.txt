@@ -74,8 +74,8 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 width = 854
 height = 480
 #formatsExcluded = 
-overwriteWidth = <?=round($scaleFactorY*854)?> 
-overwriteHeight = <?=round($scaleFactorY*480)?> 
+overwriteWidth = <?=round($scaleFactorX*1280)?> 
+overwriteHeight = <?=round($scaleFactorY*720)?> 
 
 [TextureRedefine]
 width = 854
