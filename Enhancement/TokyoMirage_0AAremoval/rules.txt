@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = "Tokyo Mirage Sessions FE - AA removal" # Does not improve performance, for downsampling / injecting AA only
+version = 2
+
+[TextureRedefine] #0x01a, nvidia taa
+formats  = 0x01a
+overwriteRelativeLodBias = -16 # 
