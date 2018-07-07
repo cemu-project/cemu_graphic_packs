@@ -73,9 +73,9 @@ R2f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)
 // 0
 PV0f.x = mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y) / resYScale, intBitsToFloat(uf_remappedVS[0].w));
 PV0f.y = mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x) / resXScale, intBitsToFloat(uf_remappedVS[0].w));
-R123f.z = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y),intBitsToFloat(uf_remappedVS[0].z)) + R2f.y);
+R123f.z = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y)/ resYScale,intBitsToFloat(uf_remappedVS[0].z)) + R2f.y);
 PV0f.z = R123f.z;
-R123f.w = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x),intBitsToFloat(uf_remappedVS[0].z)) + R2f.x);
+R123f.w = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x)/ resXScale,intBitsToFloat(uf_remappedVS[0].z)) + R2f.x);
 PV0f.w = R123f.w;
 // 1
 R6f.x = PV0f.w + PV0f.y;
