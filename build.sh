@@ -235,6 +235,10 @@ std_respack "Wonderful101" "${res16by9[@]/$just720p}"
 std_respack "WoollyWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res48by9[@]}"
 std_respack "XenobladeX" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res48by9[@]}"
 
-mod_onearg "BreathOfTheWild_StaticFPS" 30 45 60
+if [ "$buildType" = "Common" ]; then
+        mod_onearg "BreathOfTheWild_StaticFPS" 30 45 60
+    else
+        mod_onearg "BreathOfTheWild_StaticFPS" 15 20 30 40 45 50 60 75 120
+fi
 
 echo -e "${NC}"
