@@ -7,7 +7,7 @@ $scaleFactorY = $fullHeight / 720.0;
 $title = get_title($fullWidth, $fullHeight);
 ?>
 [Definition]
-titleIds = 000500001012f000
+titleIds = 000500001012f000,00050000101d6000,00050000101e4100
 name = "FAST Racing NEO - <?=$title?>"
 version = 2
 
