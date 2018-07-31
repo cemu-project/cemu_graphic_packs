@@ -41,3 +41,10 @@ $preset = 2
 #   0.0312 - visible limit (slower)
 
 # Credit: Kiri, NAVras
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x1
+overwriteFormat = 0x5
+tileModesExcluded = 0x1
