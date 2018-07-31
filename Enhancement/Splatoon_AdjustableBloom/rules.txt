@@ -1,4 +1,22 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = "Splatoon - Adjustable Bloom"
-version = 2
+name = Adjustable Bloom
+path = "Splatoon/Adjustable Bloom"
+#description = 
+version = 3
+
+[Preset]
+name = Disabled
+$bloom = 0
+
+[Preset]
+name = Quarter Amount
+$bloom = 0.25
+
+[Preset]
+name = Half Amount
+$bloom = 0.5
+
+[Preset]
+name = Full Amount
+$bloom = 1
