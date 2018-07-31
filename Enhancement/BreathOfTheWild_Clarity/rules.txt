@@ -34,7 +34,7 @@ name = Sharpen Only Option
 $preset = 6
 
 [Preset]
-name = The Complaning Gamer Option
+name = The Complaining Gamer Option
 $preset = 7
 
 [Preset]
