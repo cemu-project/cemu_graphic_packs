@@ -42,10 +42,10 @@ height = 720
 overwriteWidth = <?=round($scaleFactorX*1147)?> 
 overwriteHeight = <?=round($scaleFactorY*720)?> 
 
-[TextureRedefine]
+[TextureRedefine] # shadows 0x011
 width = 1024
 height = 2048
-#formatsExcluded = 
+formatsExcluded =  0x433,0x431,0x235,0x035,0x034,0x033,0x031,0x01a
 overwriteWidth = <?=round($scaleFactorX*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*2048)?> 
 
