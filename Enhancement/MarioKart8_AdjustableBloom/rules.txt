@@ -1,4 +1,22 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
-name = "Mario Kart 8 - Adjustable Bloom"
-version = 2
+name = Adjustable Bloom
+path = "Mario Kart 8/Adjustable Bloom"
+#description = 
+version = 3
+
+[Preset]
+name = Disabled
+$bloom = 0
+
+[Preset]
+name = Quarter Amount
+$bloom = 0.25
+
+[Preset]
+name = Half Amount
+$bloom = 0.5
+
+[Preset]
+name = Full Amount
+$bloom = 1

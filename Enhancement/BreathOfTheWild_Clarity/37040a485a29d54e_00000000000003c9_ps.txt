@@ -2,15 +2,15 @@
 #extension GL_ARB_texture_gather : enable
 // shader 37040a485a29d54e
 //##########################################################
-#define Preset 3
-														// User Defined  0
+#define Preset $preset
+														// User Defined 0
 														// Bruz Option 1
 														// BSOD Option 2             
-														// Clarity Option 3  (Jamie Default)   
+														// Clarity Option 3 (Jamie Default)   
 														// Contrasty Option 4  
 														// Serfrost Option 5 
 														// Sharpen Only Option 6	    
-														// The Complaning Gamer Option 7             
+														// The Complaining Gamer Option 7             
 														// Filmic Preset Option 8 
 														// CellHunter Option 9
 //##########################################################													   

@@ -1,4 +1,46 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - Clarity"
-version = 2
+name = Clarity
+path = "The Legend of Zelda: Breath of the Wild/Clarity"
+#description = 
+version = 3
+
+[Preset]
+name = User Defined
+$preset = 0
+
+[Preset]
+name = Bruz Option
+$preset = 1
+
+[Preset]
+name = BSOD Option
+$preset = 2
+
+[Preset]
+name = Clarity Option
+$preset = 3
+
+[Preset]
+name = Contrasty Option
+$preset = 4
+
+[Preset]
+name = Serfrost Option
+$preset = 5
+
+[Preset]
+name = Sharpen Only Option
+$preset = 6
+
+[Preset]
+name = The Complaining Gamer Option
+$preset = 7
+
+[Preset]
+name = Filmic Preset Option
+$preset = 8
+
+[Preset]
+name = CellHunter Option
+$preset = 9
