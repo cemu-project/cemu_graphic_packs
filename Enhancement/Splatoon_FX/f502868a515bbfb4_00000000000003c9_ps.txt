@@ -1,6 +1,6 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader 4a377a50eda82af8
+// shader f502868a515bbfb4
 //##########################################################
 #define Preset 3
 														// User Defined 0
@@ -729,7 +729,7 @@ float DPX_Strength = 0.20;
 //###########################################################
 uniform ivec4 uf_remappedPS[1];
 layout(binding = 0) uniform sampler2D textureUnitPS0; // Bloom 
-layout(binding = 2) uniform sampler2D textureUnitPS2;// HDR LumaShapening.
+layout(binding = 1) uniform sampler2D textureUnitPS1;// HDR LumaShapening.
 layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
@@ -934,11 +934,10 @@ vec3 ColorMatrixPass(vec3 inputColor)
 
 vec3 BotWVibrance(vec3 color) {
 	float avg = (color.r + color.g + color.b) / 3.0;
-	//float maxc = max(color.r, max(color.g, color.b));
+	float maxc = max(color.r, max(color.g, color.b));
 	float w = 1.0 - pow(1.0 - 2.0 * avg, 2.0);
 	float weight = 1.0 + w * satFactor;
-	//vec3 satcolor = mix(vec3(maxc), color, weight);
-	vec3 satcolor = mix(vec3(color), color, weight);
+	vec3 satcolor = mix(vec3(maxc), color, weight);
 	return satcolor;
 }
 
@@ -1229,13 +1228,13 @@ void main()
 
 	//HDR and LumaShapening
 #if (HDRpassing == 1)
-	passPixelColor0.xyz = HDRPass(textureUnitPS2, passParameterSem1.xy).xyz;
+	passPixelColor0.xyz = HDRPass(textureUnitPS1, passParameterSem1.xy).xyz;
 #endif	
 #if (HDRpassing == 0)
-	passPixelColor0.xyz = texture(textureUnitPS2, passParameterSem1.xy).xyz;
+	passPixelColor0.xyz = texture(textureUnitPS1, passParameterSem1.xy).xyz;
 #endif
 #if (lumapassing == 1)	
-	float smask = lumasharping(textureUnitPS2, passParameterSem1.xy);
+	float smask = lumasharping(textureUnitPS1, passParameterSem1.xy);
 	passPixelColor0.xyz += vec3(smask);
 #endif
 
