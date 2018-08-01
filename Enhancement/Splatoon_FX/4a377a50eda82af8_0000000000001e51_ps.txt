@@ -3,14 +3,14 @@
 // shader 4a377a50eda82af8
 //##########################################################
 #define Preset 3
-														// User Defined  0
+														// User Defined 0
 														// Bruz Option 1
 														// BSOD Option 2             
-														// Clarity Option 3  (Jamie Default)   
+														// Clarity Option 3
 														// Contrasty Option 4  
 														// Serfrost Option 5 
 														// Sharpen Only Option 6	    
-														// The Complaning Gamer Option 7             
+														// The Complaining Gamer Option 7             
 														// Filmic Preset Option 8 
 														// CellHunter Option 9
 //##########################################################													   
@@ -249,12 +249,12 @@ float DPX_Strength = 0.20;
 	#define Filmicpass 1 
 	const float Filmic_Contrast = 1.0;
 	const float Filmic_Bleach = 0.0;
-	const float Saturation = 0.0;
+	const float Saturation = -0.15;
 	const float Filmic_Strength = 0.85;
 	const float Fade = 0.4;
 	const float Linearization = 0.5;
 	const float BaseCurve = 1.5;
-	const float BaseGamma = 1.00;
+	const float BaseGamma = 0.7;
 	const float EffectGamma = 0.68;
 	#define dpxpass 0
 	vec3 RGB_Curve = vec3(8.0, 8.0, 8.0);
@@ -934,10 +934,11 @@ vec3 ColorMatrixPass(vec3 inputColor)
 
 vec3 BotWVibrance(vec3 color) {
 	float avg = (color.r + color.g + color.b) / 3.0;
-	float maxc = max(color.r, max(color.g, color.b));
+	//float maxc = max(color.r, max(color.g, color.b));
 	float w = 1.0 - pow(1.0 - 2.0 * avg, 2.0);
 	float weight = 1.0 + w * satFactor;
-	vec3 satcolor = mix(vec3(maxc), color, weight);
+	//vec3 satcolor = mix(vec3(maxc), color, weight);
+	vec3 satcolor = mix(vec3(color), color, weight);
 	return satcolor;
 }
 
