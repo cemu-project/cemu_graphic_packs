@@ -11,6 +11,10 @@ titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
 name = "Tokyo Mirage Sessions FE - <?=$title?>" 
 version = 2
 
+[TextureRedefine] #lod override, shimmer and  sharper textures
+formats  =  0x011,0x235,0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
+overwriteRelativeLodBias = -4 # 
+
 [TextureRedefine]
 width = 1280
 height = 720
