@@ -49,14 +49,14 @@ overwriteHeight = <?=round($scaleFactorY*720)?>
 [TextureRedefine] # shadows 0x011
 width = 1024
 height = 2048
-formatsExcluded =  0x433,0x431,0x235,0x035,0x034,0x033,0x031,0x01a
+formats = 0x011,0x811
 overwriteWidth = <?=round($scaleFactorX*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*2048)?> 
 
 [TextureRedefine] # Scale dyn shadows 0x011
 width = 1024
 height = 1024
-formatsExcluded =  0x433,0x431,0x235,0x035,0x034,0x033,0x031,0x01a
+formats = 0x011,0x811
 overwriteWidth = <?=round($scaleFactorX*1024)?> 
 overwriteHeight = <?=round($scaleFactorY*1024)?> 
 
