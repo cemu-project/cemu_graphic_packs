@@ -1,0 +1,24 @@
+<?php
+$width = $argv[1];
+$height = $argv[2];
+
+$aspect = $width / (float)$height;
+
+if (round($aspect*100.0) == 178)
+	exit(1);
+
+$aspect = number_format((float)$aspect, 3, '.', '');
+?>
+[TPHDv81]
+moduleMatches = 0x1A03E108
+
+#rodata constants
+0x1005AAD8 = .float <?=$aspect?> 
+_aspectAddr = 0x1006AAD8
+
+
+#code changes
+0x028D75B8 = lis r11, _aspectAddr@h
+0x028D75C0 = lfs f0, _aspectAddr@l(r11) ; Main 3d Aspect
+0x029BB184 = lis r12, _aspectAddr@h
+0x029BB188 = lfs f2, _aspectAddr@l(r12) ; may just be the intro zelda graphic
