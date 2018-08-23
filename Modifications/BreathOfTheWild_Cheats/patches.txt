@@ -14,6 +14,7 @@ moduleMatches = 0x6267BFD0
 0x02D741C8 = nop; Inf Urbosa's Fury
 0x029E949C = mr r29, r11; Inf Amiibo
 0x020957DC = fmr f12, f0; Inf Motorcycle Energy
+0x02A32A30 = li r3, 1; Spawn motorcycle anywhere, credits to Zeikken (converting to patches) and leoetlino (finding the value).
 0x024ACBF4 = fsub f31, f31, f31; Inf Weapons, Bows and Shields (except burn damage and throwing weapon)
 
 
