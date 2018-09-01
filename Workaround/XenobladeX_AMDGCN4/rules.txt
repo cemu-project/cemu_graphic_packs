@@ -7,5 +7,5 @@ version = 2
 [TextureRedefine]
 width = 320
 height = 180
-overwriteWidth = 0
-overwriteHeight = 0
+overwriteWidth = 1
+overwriteHeight = 1

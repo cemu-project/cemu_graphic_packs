@@ -9,5 +9,5 @@ width = 640
 height = 360
 formats = 0x00a
 #overwriteFormat = 0x81c # Might cause an error, but seems to work. Might not work on AMD.
-overwriteWidth = 0
-overwriteHeight = 0
+overwriteWidth = 1
+overwriteHeight = 1
