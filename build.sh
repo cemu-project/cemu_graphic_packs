@@ -233,6 +233,7 @@ std_respack "Wipeout3" "${res16by9[@]/$just720p}"
 std_respack "WipeoutCreate" "${res16by9[@]/$just720p}"
 std_respack "Wonderful101" "${res16by9[@]/$just720p}"
 std_respack "WoollyWorld" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res48by9[@]}"
+std_respack "WorldOfKeflings" "${res16by9[@]/$just720p}"
 std_respack "XenobladeX" "${res16by9[@]/$just720p}" "${res21by9[@]}" "${res48by9[@]}"
 
 if [ "$buildType" = "Common" ]; then
