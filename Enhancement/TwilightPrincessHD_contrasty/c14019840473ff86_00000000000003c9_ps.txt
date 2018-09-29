@@ -4,10 +4,10 @@
 // shader c14019840473ff86 //aa
 const float redScale = 0.95; 
 const float greenScale = 1.06; 
-const float blueScale = 1.28;
+const float blueScale = 1.26;
 const float hazeFactor = 0.1;
 
-const float gamma = 1.025; // 1.0 is neutral  Botw is already colour graded at this stage
+const float gamma = 1.015; // 1.0 is neutral  Botw is already colour graded at this stage
 const float exposure = 0.99; // 1.0 is neutral
 const float vibrance = 0.75;  // 0.0 is neutral  
 const float crushContrast = 0.0; // 0.0 is neutral. Use small increments, loss of shadow detail 

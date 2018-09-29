@@ -6,3 +6,16 @@ version = 2
 #v0.0 Lets see of this works
 #v0.1 "Baked" overexposure
 #v0.2 haze world exposure
+
+
+#[TextureRedefine] #general
+#formats = 0x19,0x1a
+#overwriteFormat = 0x1f
+
+#[TextureRedefine] #horizon
+#formats = 0x001
+#overwriteFormat = 0x005
+
+#[TextureRedefine] #clouds
+#formats = 0x007
+#overwriteFormat = 0x00f
