@@ -1,0 +1,12 @@
+[TPHDv81] 
+moduleMatches = 0x1A03E108
+#Move some look tweaks to patches instead of shaders
+
+#rodata constants
+###exp and haze settings
+0x100C3EB8 = .float 0.003 ## Near world (over)exposure 
+0x100C36C4 = .float 0.0035 ## Bloom npc/object (over) " 
+0x100C3780 = .float 0.003 ## Distant world (over)exposure 
+0x100C3774 = .float 22.0 ### haze 21 = default  21++~ gradually less 
+
+#0x100871C8  = .float 0.01 #100871C8:.float 0.00050000002   ###cloud float

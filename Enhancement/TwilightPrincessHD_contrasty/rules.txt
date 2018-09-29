@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "The Legend of Zelda: Twilight Princess HD - Contrasty patch" 
+version = 2
+
+#v0.0 Lets see of this works
+#v0.1 "Baked" overexposure
+#v0.2 haze world exposure
