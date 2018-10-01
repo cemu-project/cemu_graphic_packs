@@ -1,0 +1,39 @@
+[XCX_DROPONLYMATERIALS]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x20
+
+; ----------------------------------------------------------------------------
+; WHO  : __CPR129__calcItem__Q2_8ItemDrop16CItemDropManagerFRQ3_J13JJ22J9SDropInfoUcRCQ3_J13JJ22J11SCreateInfo
+; WHAT : No equipment loot
+
+_21AF30C = 0x021AF30C
+0x021AEAA8 = b _21AF30C
+
+; ----------------------------------------------------------------------------
+; WHO  : ItemDrop::CItemDropManager::calcRank((unsigned short, int))
+; WHAT : Override the chest quality you get when the game initially decided you get no chest at all
+;      : It's a bit tough to explain, but the function calcRank does this:
+;      : 1) Calculate luck for gold chest, if success exit with gold quality (1), else process next step
+;      : 2) Calculate luck for silver chest, if success exit with silver quality (2), else process next step
+;      : 3) Calculate luck for bronze chest, if success exit with bronze quality (3), else process next step
+;      : 4) No chest at all, exit with no chest (0)
+;      : --> The mod below only changes this last step. So even if you put 1 value (gold chest), you'll still get a silver chest if the game succeeded the step 2.
+
+0x21AAF18 = li r3, 3 ; 0 = nothing (default), 1 = gold, 2 = silver, 3 = bronze
+
+; ----------------------------------------------------------------------------
+; WHO  : __CPR90__calcItemBronze__Q2_8ItemDrop16CItemDropManagerFRQ3_J19JJ28J9SDropInfoUc
+; WHAT : Affect the drop ratio of materials
+
+_minDropRate = 0x00000000
+0x00000000 = cmpwi r31, 100 ; this value is the default drop ratio under which we want to set a new drop ratio (logically equal or greater)
+0x00000008 = blt .+0x8
+0x0000000C = b .+0x8
+0x00000010 = li r31, 100 ; here you set the new drop ratio
+0x00000014 = cmpw r3, r31
+0x00000018 = blr
+
+0x021AF5DC = bla _minDropRate ; modify drop ratio for gold chests
+0x021AF5F8 = bla _minDropRate ; modify drop ratio for silver chests
+0x021AF614 = bla _minDropRate ; modify drop ratio for bronze chests

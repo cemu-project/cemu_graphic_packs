@@ -1,0 +1,9 @@
+[XCX_BATTLEPOINTSX]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+; ----------------------------------------------------------------------------
+; WHO  : addClassExpChara__Q2_6Battle14CBattleManagerFUiT1
+; WHAT : Multiply the battle points given in... battles
+
+;0x020C4A74 = li r0, 20 ; alternative: always gives +20 battle points
+0x020C4A74 = mulli r0, r0, 30
