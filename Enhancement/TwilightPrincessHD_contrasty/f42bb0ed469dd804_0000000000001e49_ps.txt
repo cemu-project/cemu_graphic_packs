@@ -3,15 +3,20 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader f42bb0ed469dd804 //sun
 
-const float redScale = 0.95; 
-const float greenScale = 1.06; 
-const float blueScale = 1.26;
+const float redScale = 0.92; 
+const float greenScale = 1.02; //5 
+const float blueScale = 1.24;
 const float hazeFactor = 0.1;
 
-const float gamma = 1.015; // 1.0 is neutral  Botw is already colour graded at this stage
-const float exposure = 0.99; // 1.0 is neutral
-const float vibrance = 0.75;  // 0.0 is neutral  
-const float crushContrast = 0.0; // 0.0 is neutral. Use small increments, loss of shadow detail 
+const float gamma = 0.98; // 1.0 is neutral  Botw is already colour graded at this stage
+const float exposure = 1.075; // 1.0 is neutral
+const float vibrance = 0.37;  // 0.0 is neutral  
+const float crushContrast = 0.00; // 0.0 is neutral. Use small increments, loss of shadow detail 
+
+float Sigmoid (float x) {
+
+    return 1.0 / (1.0 + (exp(-(x - 0.5) * 5.5))); 
+}
 
 vec3 contrasty(vec3 colour){
 	vec3 fColour = (colour.xyz);
@@ -176,7 +181,7 @@ R0f.y = clamp(R0f.y, 0.0, 1.0);
 R0f.z = mul_nonIEEE(R1f.z, PV0f.y);
 R0f.z = clamp(R0f.z, 0.0, 1.0);
 // export
-R0f.xyz = contrasty(R0f.xyz);
 
+R0f.xyz = mix(contrasty(R0f.xyz), vec3(Sigmoid(R0f.x), Sigmoid(R0f.y),Sigmoid(R0f.z)), 0.25);
 passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 }
