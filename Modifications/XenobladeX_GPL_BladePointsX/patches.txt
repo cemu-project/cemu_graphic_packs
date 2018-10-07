@@ -1,0 +1,9 @@
+[XCX_BLADEX]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+; ----------------------------------------------------------------------------
+; WHO  : fw::SocialUnion::getUnionBasePoint((int))
+; WHAT : Multiply the BLADE points rewarded (default is by 10)
+
+0x0288E610 = nop
+0x0288E614 = li r3, 10
