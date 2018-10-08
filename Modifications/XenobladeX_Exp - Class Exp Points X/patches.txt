@@ -1,0 +1,9 @@
+[XCX_CLASSEXPX]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+; ----------------------------------------------------------------------------
+; WHO  : addClassExpChara__Q2_6Battle14CBattleManagerFUiT1
+; WHAT : Multiply the class experience given during combat
+
+0x020C4A28 = mulli r31, r3, 2
+

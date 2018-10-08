@@ -1,0 +1,54 @@
+[XCX_PROBEINCOME]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x100
+
+; ----------------------------------------------------------------------------
+; WHAT : changeTime__Q2_4fnet9CFnetTaskFUiT1
+; WHY  : Affect the frequency of the FrontierNav income for the Miranium
+;        Frequency unit is 1 minute (so by default income is every 30 minutes)
+
+_miranium = 0x00000000
+0x00000000 = li        r8, 30 ; default is 30 for miranium
+0x00000004 = addi      r10, r3, 1
+0x00000008 = divwu     r0, r10, r8
+0x0000000C = mullw     r0, r0, r8
+0x00000010 = subf      r3, r0, r10
+0x00000014 = cmpwi     r3, 0
+0x00000018 = blr
+
+0x027D5250 = bla _miranium
+
+; ----------------------------------------------------------------------------
+; WHAT : changeTime__Q2_4fnet9CFnetTaskFUiT1
+; WHY  : Affect the quantity of the NavFrontier income for the Miranium
+
+0x027D5278 = mulli	r4, r31, 100
+
+; ----------------------------------------------------------------------------
+; WHAT : changeTime__Q2_4fnet9CFnetTaskFUiT1
+; WHY  : Affect the frequency of the NavFrontier income for the resources
+;        Frequency unit is 1 minute (so by default income is every 5 minutes)
+
+0x027D534C = li r12, 1 ; default is 5 for resources
+
+; ----------------------------------------------------------------------------
+; WHAT : changeTime__Q2_4fnet9CFnetTaskFUiT1
+; WHY  : Affect the frequency of the NavFrontier income for the money
+;        Frequency unit is 1 minute (so by default income is every 15 minutes)
+
+0x027D554C = li r12, 5 ; default is 15 for money (5 for speedrun)
+
+0x027D5590 = mulli	r3, r31, 100 ; quantity
+
+; ----------------------------------------------------------------------------
+; WHAT : changeTime__Q2_4fnet9CFnetTaskFUiT1
+; WHY  : 
+
+_multCount = 0x00000020
+0x00000020 = lbz       r0, 6(r31)
+0x00000024 = mulli     r0, r0, 5 ; Change this number to multiply the number of each resource mined
+0x00000028 = stb       r0, 6(r31)
+0x0000002C = blr
+
+0x027D5428 = bla _multCount
