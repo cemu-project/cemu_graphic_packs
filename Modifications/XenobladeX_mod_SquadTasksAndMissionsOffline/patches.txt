@@ -1,0 +1,161 @@
+[XCX_SQUADMISSIONS]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x20
+
+_getLocalTimeSec = 0x02892000
+
+# cfs::CfSocialManager::update((float))
+0x022879D0 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
+
+# cfs::CfSocialQuestManager::update((void))
+_loopUpdate9 = 0x023AC194
+_loopUpdate8 = 0x023AC060
+_loopUpdate7 = 0x023ABFAC
+_loopUpdate6 = 0x023ABF80
+_loopUpdate5 = 0x023ABF28
+_loopUpdate4 = 0x023ABF0C
+_loopUpdate3 = 0x023ABD90
+_loopUpdate2 = 0x023ABC88
+_loopUpdate1 = 0x023ABBF4
+_loopUpdate0 = 0x023AB86C
+
+0x023AB884 = nop ; 0x6B8(r12) == 0
+0x023AB8B4 = nop ; isHost
+0x023ABA68 = li r5, 60 ; force 0x24 - UNLOCK
+0x023ABC10 = nop ; isHost
+0x023A0484 = nop ; isHost
+0x023ABC94 = nop ; getServerTimeSecRegion - UNLOCK
+0x023ABCAC = nop ; compare with 0x28 - UNLOCK
+0x023ABCB8 = nop ; compare with 0x2C - UNLOCK
+_gotoJoin = 0x023ABD00 - UNLOCK
+0x023ABCBC = b _gotoJoin - UNLOCK
+
+##################### BLADE Home Terminal (for Squad Quest Selection)
+
+# cfs::CfSocialManager::refreshOrderQuestInfo (called when select an entry in the BLADE menu)
+0x022C805C = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
+0x022C8060 = nop ; test réseau
+
+# collectQuestInfoSQ__Q2_3cfs15CfSocialManagerFRQ2_2ml45resvector__tm__28_PQ2_3cfs17CfSocialQuestInfo
+0x022C58BC = nop ; rlwinm.   r10, r11, 0,29,29
+
+#################### Change Squad Mission using main menu
+
+_shareAddr = 0x1039C17C
+
+_iniPtr = 0x00000000
+0x00000000 = li r5, 0
+0x00000004 = lis       r30, _shareAddr@ha
+0x00000008 = stw       r5, _shareAddr@l(r30)
+0x0000000C = mr 	   r30, r3
+0x00000010 = blr
+
+0x023B74A0 = bla _iniPtr
+
+_gotoTimeout = 0x023ABDF4
+_gotoNext = 0x023ABE54
+
+0x023ABDC8 = lis       r3, _shareAddr@ha
+0x023ABDCC = lwz      r7, _shareAddr@l(r3)
+0x023ABDD0 = cmpwi r7, 1
+0x023ABDD4 = beq _gotoTimeout
+0x023ABDD8 = b _gotoNext
+
+######################## More Tickets
+;0x022CAC5C = nop ; no limit
+;0x022CA874 = mulli r28, r4, 10 ; tickets multiplier
+
+######################## Nemesis
+
+# collectQuestInfoWE__Q2_3cfs15CfSocialManagerFRQ2_2ml45resvector__tm__28_PQ2_3cfs17CfSocialQuestInfo
+0x022C6284 = li r30, 2
+_loopWE = 0x022C6348
+0x022C634C = b _loopWE
+0x022C62A4 = nop
+0x022C62B0 = nop
+0x022C62BC = nop
+0x022C6304 = nop
+0x022C6314 = nop
+
+# cfs::CfSocialManager::getQuestDetailWE((cfs::CfSocialQuestInfoWE &))
+_loopgetQuestDetailWE = 0x022895B4
+0x022895B8 = beq _loopgetQuestDetailWE
+
+
+# cfs::CfSocialManager::update((float))
+0x02288014 = nop
+
+# cfs::CfSocialManager::onUpdatedWorldEnemy((void))
+_loopUpdateWE = 0x0228705C
+0x02287060 = b _loopUpdateWE
+
+# __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
+0x0282B0F0 = nop
+0x0282B0FC = li r0, 1
+
+#####################################################################################################
+[XCX_SQUADMISSIONS_EU]
+moduleMatches = 0xF882D5CF ; 1.0.1E
+
+# getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
+0x0295EA10 = nop
+0x0295EA14 = li r0, 42
+
+# menu::MenuSquadMission::process((void))
+0x02BFC7C0 = li r11, 1
+
+##################### BLADE Home Terminal (for Squad Quest Selection)
+
+0x02AC5C10 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+
+#################### Change Squad Mission using main menu
+
+_shareAddr = 0x1039C17C
+
+codeCaveSize = 0x10
+
+_savePtr = 0x00000000
+0x00000000 = li 	   r3, 1
+0x00000004 = lis       r30, _shareAddr@ha
+0x00000008 = stw       r3, _shareAddr@l(r30)
+0x0000000C = blr
+
+0x02B85134 = bla _savePtr
+0x02B8514C = bla _savePtr
+
+0x02B85084 = li r11, 1
+0x02B850A8 = li r11, 1
+
+#####################################################################################################
+[XCX_SQUADMISSIONS_US]
+moduleMatches = 0x30B6E091 ; 1.0.2U
+
+# getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
+0x0295EA00 = nop
+0x0295EA04 = li r0, 42
+
+# menu::MenuSquadMission::process((void))
+0x02BFC7B0 = li r11, 1
+
+##################### BLADE Home Terminal (for Squad Quest Selection)
+
+0x02AC5C00 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+
+#################### Change Squad Mission using main menu
+
+_shareAddr = 0x1039C17C
+
+codeCaveSize = 0x10
+
+_savePtr = 0x00000000
+0x00000000 = li 	   r3, 1
+0x00000004 = lis       r30, _shareAddr@ha
+0x00000008 = stw       r3, _shareAddr@l(r30)
+0x0000000C = blr
+
+0x02B85124 = bla _savePtr
+0x02B8513C = bla _savePtr
+
+0x02B85074 = li r11, 1
+0x02B85098 = li r11, 1

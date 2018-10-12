@@ -1,0 +1,14 @@
+[XCX_MOVESPEED]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x18
+
+0x00000014 = .float 0.7 ; dash speed (smallest means fastest, default is 1.0)
+_speed = 0x00000014
+
+_setSpeed = 0x00000000
+0x00000000 = lis       r3, _speed@h
+0x00000004 = lfs       f13, _speed@l(r3)
+0x00000008 = fdivs     f1, f1, f13
+0x0000000C = lwz       r3, 0(r31)
+0x00000010 = blr

@@ -1,5 +1,0 @@
-[Definition]
-titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Xenoblade Chronicles X - BGM - No Skell Flight Music"
-version=2	
-	

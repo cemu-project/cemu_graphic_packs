@@ -1,0 +1,20 @@
+[XCX_CAMERA]
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x8
+
+0x00000000 = .float 5.0 ; zoom (default is 0.0)
+_zoom = 0x00000000
+
+0x00000004 = .float 50.0 ; fov (default is 40.0)
+_fov = 0x00000004
+
+# CamData::CCamDataManager::getParamsZoomDefault((CamData::eTargetTypes, unsigned char))
+0x0222A19C = lis       r12, _zoom@h
+0x0222A1B0 = lfs       f1, _zoom@l(r12)
+0x0222A1CC = nop
+
+# CamData::CCamDataManager::getFov((CamData::eTargetTypes))
+0x02229CE0 = lis       r11, _fov@h
+0x02229CF8 = lfs       f1, _fov@l(r11)
+0x02229D14 = nop

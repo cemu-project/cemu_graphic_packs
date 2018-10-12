@@ -1,0 +1,65 @@
+[XCX_COLLECTIBLESRANGE] 
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x100
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfPopManagerItem::updateTouchItem((void))
+; WHAT : Initialize collectibles distance
+
+0x00000060 = .float 40.0 ; _rangeInnerConst
+0x00000064 = .float 8.0  ; _heightInnerConst
+0x00000068 = .float 64.0 ; _rangeDollConst
+0x0000006C = .float 64.0 ; _heightDollConst
+0x00000070 = .float 64.0 ; _rangeFlightConst
+0x00000074 = .float 52.0 ; _heightFlightConst
+
+_rangeInnerConst = 0x00000060
+_heightInnerConst = 0x00000064
+_rangeDollConst = 0x00000068
+_heightDollConst = 0x0000006C
+_rangeFlightConst = 0x00000070
+_heightFlightConst = 0x00000074
+
+_itemRangeInner = 0x00000000
+0x00000000 = lis r5, _rangeInnerConst@ha
+0x00000004 = lfs f10, _rangeInnerConst@l(r5)
+0x00000008 = fadd f10, f9, f10
+0x0000000C = blr
+
+_itemHeightInner = 0x00000010
+0x00000010 = lis r5, _heightInnerConst@ha
+0x00000014 = lfs f12, _heightInnerConst@l(r5)
+0x00000018 = fadd f12, f10, f12
+0x0000001C = blr
+
+_itemRangeDoll = 0x00000020
+0x00000020 = lis r5, _rangeDollConst@ha
+0x00000024 = lfs f9, _rangeDollConst@l(r5)
+0x00000028 = fadd f9, f6, f9
+0x0000002C = blr
+
+_itemHeightDoll = 0x00000030
+0x00000030 = lis r5, _heightDollConst@ha
+0x00000034 = lfs f10, _heightDollConst@l(r5)
+0x00000038 = fadd f10, f7, f10
+0x0000003C = blr
+
+_itemRangeFlight = 0x00000040
+0x00000040 = lis r5, _rangeFlightConst@ha
+0x00000044 = lfs f10, _rangeFlightConst@l(r5)
+0x00000048 = fadd f10, f12, f10
+0x0000004C = blr
+
+_itemHeightFlight = 0x00000050
+0x00000050 = lis r5, _heightFlightConst@ha
+0x00000054 = lfs f0, _heightFlightConst@l(r5)
+0x00000058 = fadd f0, f13, f0
+0x0000005C = blr
+
+0x02389B80 = bla _itemRangeInner
+0x02389BB8 = bla _itemHeightInner
+0x02389C3C = bla _itemRangeDoll
+0x02389C74 = bla _itemHeightDoll
+0x02389CEC = bla _itemRangeFlight
+0x02389D30 = bla _itemHeightFlight
