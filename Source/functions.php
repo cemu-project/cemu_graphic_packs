@@ -29,6 +29,9 @@ function get_title($width, $height) {
 		} else if ($ratio[0] == 7 && $ratio[1] == 3) {
 			// 2100x900 and 4200x1800 are actual 21:9 (21*100 and 9*100) but for some reason it calculates to 7:3?
 			$title = $title . " (21:9)";
+		} else if ($ratio[0] == 853 && $ratio[1] == 360) {
+			// 21:9 720p calculates to 853:360
+			$title = $title . " (21:9)";
 		} else if ($ratio[0] == 8 && $ratio[1] == 5) {
 			// common sense
 			$title = $title . " (16:10)";
