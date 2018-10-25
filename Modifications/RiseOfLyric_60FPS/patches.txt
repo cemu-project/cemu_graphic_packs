@@ -132,3 +132,9 @@ moduleMatches = 0x113CC316
 #.text:02E472D8                 addi      r11, r1, 0x20+arg_0
 #.text:02E472DC                 b         loc_416998C
 #.text:02E472DC # End of function __N_13_DriverD3D_cpp_e8d6bc14::LimitFramerate((void))
+
+[WiiULauncher0]
+moduleMatches = 0x90DAC5CE
+
+0x02E47174 = nop
+0x02E471E0 = nop
