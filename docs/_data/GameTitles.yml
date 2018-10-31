@@ -22,13 +22,13 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition"
   version3: false
-- title: "Bayonetta 2"
-  nativeRes: 720
-  compatLink: "http://compat.cemu.info/wiki/Bayonetta_2"
-  version3: true
 - title: "Bayonetta"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Bayonetta"
+  version3: true
+- title: "Bayonetta 2"
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Bayonetta_2"
   version3: true
 - title: "Ben 10 Omniverse"
   nativeRes: 720
