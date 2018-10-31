@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Resolution
-path = "Hyrule warriors/Graphics/Resolution"
+path = "Hyrule Warriors/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 vsyncFrequency = 30
