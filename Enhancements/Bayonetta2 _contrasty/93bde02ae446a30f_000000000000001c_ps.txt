@@ -1,0 +1,50 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 93bde02ae446a30f//lens dirt
+
+const float lensDirt = $lensDirt;
+
+uniform ivec4 uf_remappedPS[1];
+uniform float uf_alphaTestRef;
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x37eec000 res 256x256x1 dim 1 tm: 4 format 0033 compSel: 0 1 2 3 mipView: 0x0 (num 0x9) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 0 0 0 border: 0
+layout(location = 0) in vec4 passParameterSem133;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem133;
+R0f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw)*lensDirt;
+// 0
+backupReg0f = R0f.x;
+backupReg1f = R0f.y;
+backupReg2f = R0f.z;
+backupReg3f = R0f.w;
+R0f.x = mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedPS[0].x));
+R0f.y = mul_nonIEEE(backupReg1f, intBitsToFloat(uf_remappedPS[0].y));
+R0f.z = mul_nonIEEE(backupReg2f, intBitsToFloat(uf_remappedPS[0].z));
+R0f.w = mul_nonIEEE(backupReg3f, intBitsToFloat(uf_remappedPS[0].w));
+// export
+if( ((vec4(R0f.x, R0f.y, R0f.z, R0f.w)).a > uf_alphaTestRef) == false) discard;
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+}
