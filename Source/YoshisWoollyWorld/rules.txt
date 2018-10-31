@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
 name = Resolution
-path = "Yoshis Woolly World/Graphics/Resolution"
+path = "Yoshi's Woolly World/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
