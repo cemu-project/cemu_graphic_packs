@@ -2,8 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
-// shader 497a209b49886520
-//align water depth
+// shader 497a209b49886520 //depth?
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(binding = 32) uniform sampler2D textureUnitVS0;// Tex0 addr 0xf545c000 res 1x1x1 dim 1 tm: 2 format 081e compSel: 0 1 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler18 ClampX/Y/Z: 2 2 2 border: 0
@@ -60,15 +59,16 @@ backupReg0f = R2f.x;
 backupReg1f = R2f.y;
 R2f.x = backupReg0f;
 R2f.y = backupReg1f;
-R0f.z = intBitsToFloat(0x3f000000);
-R0f.w = (mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedVS[0].x)) +intBitsToFloat(uf_remappedVS[0].z)*3);
-R0f.y = (mul_nonIEEE(backupReg1f, intBitsToFloat(uf_remappedVS[0].y)) +intBitsToFloat(uf_remappedVS[0].w)*3);
+R0f.z = intBitsToFloat(0x3f000000)*0.25;
+R0f.w = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[0].x)) + intBitsToFloat(uf_remappedVS[0].z));
+R0f.y = (mul_nonIEEE(backupReg1f,intBitsToFloat(uf_remappedVS[0].y)) + intBitsToFloat(uf_remappedVS[0].w));
 PS0f = R0f.y;
-R3f.xy = (textureLod(textureUnitVS0, R0f.zz,0.0).xy);
+R3f.xy = (textureLod(textureUnitVS0, R0f.zz,0.0).xy)*0.533335;
 // export
-gl_Position = vec4(R1f.x*(1.0 / 1.004), R1f.y*(1.0 / 1.006), R1f.z, R1f.w);
+gl_Position = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
 // export
 passParameterSem1 = vec4(R2f.x, R2f.y, R2f.z, R2f.z);
+// export
 // export
 passParameterSem2 = vec4(R0f.w, R0f.y, R0f.z, R0f.z);
 // 0

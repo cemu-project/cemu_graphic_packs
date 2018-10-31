@@ -1,12 +1,10 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// shader 5eb82314ffb8484e // bg scale, probably overkill to scale
-// Last step vertical blend
-
-const float resScale =  ($height/$gameHeight); // = 1.5;
-
+#extension GL_ARB_separate_shader_objects : enable
+// shader 5eb82314ffb8484e
+//cross fade blur prel
 uniform ivec4 uf_remappedPS[7];
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 640x360x1 dim 1 tm: 4 format 0820 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 320x180x1 dim 1 tm: 4 format 0820 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 layout(location = 1) out vec4 passPixelColor1;
@@ -58,29 +56,29 @@ int cubeMapFaceId;
 R0f = passParameterSem0;
 R14f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
 // 0
-R1f.x = R0f.x + (intBitsToFloat(uf_remappedPS[0].x) / resScale);
-R1f.y = R0f.y + (intBitsToFloat(uf_remappedPS[0].y) / resScale);
-R0f.z = R0f.x + (intBitsToFloat(uf_remappedPS[0].z) / resScale);
-R0f.w = R0f.y + (intBitsToFloat(uf_remappedPS[0].w) / resScale);
+R1f.x = R0f.x + intBitsToFloat(uf_remappedPS[0].x);
+R1f.y = R0f.y + intBitsToFloat(uf_remappedPS[0].y);
+R0f.z = R0f.x + intBitsToFloat(uf_remappedPS[0].z);
+R0f.w = R0f.y + intBitsToFloat(uf_remappedPS[0].w);
 R17f.w = R14f.w;
 PS0f = R17f.w;
 // 1
-R2f.x = R0f.x + (intBitsToFloat(uf_remappedPS[1].x) / resScale);
-R2f.y = R0f.y + (intBitsToFloat(uf_remappedPS[1].y) / resScale);
-R1f.z = R0f.x + (intBitsToFloat(uf_remappedPS[1].z) / resScale);
-R1f.w = R0f.y + (intBitsToFloat(uf_remappedPS[1].w) / resScale);
+R2f.x = R0f.x + intBitsToFloat(uf_remappedPS[1].x);
+R2f.y = R0f.y + intBitsToFloat(uf_remappedPS[1].y);
+R1f.z = R0f.x + intBitsToFloat(uf_remappedPS[1].z);
+R1f.w = R0f.y + intBitsToFloat(uf_remappedPS[1].w);
 R16f.w = R14f.w;
 PS1f = R16f.w;
 // 2
-R3f.x = R0f.x + (intBitsToFloat(uf_remappedPS[2].x) / resScale);
-R3f.y = R0f.y + (intBitsToFloat(uf_remappedPS[2].y) / resScale);
-R2f.z = R0f.x + (intBitsToFloat(uf_remappedPS[2].z) / resScale);
-R2f.w = R0f.y + (intBitsToFloat(uf_remappedPS[2].w) / resScale);
+R3f.x = R0f.x + intBitsToFloat(uf_remappedPS[2].x);
+R3f.y = R0f.y + intBitsToFloat(uf_remappedPS[2].y);
+R2f.z = R0f.x + intBitsToFloat(uf_remappedPS[2].z);
+R2f.w = R0f.y + intBitsToFloat(uf_remappedPS[2].w);
 // 3
-R4f.x = R0f.x + (intBitsToFloat(uf_remappedPS[3].x) / resScale);
-R4f.y = R0f.y + (intBitsToFloat(uf_remappedPS[3].y) / resScale);
-R3f.z = R0f.x + (intBitsToFloat(uf_remappedPS[3].z) / resScale);
-R3f.w = R0f.y + (intBitsToFloat(uf_remappedPS[3].w) / resScale);
+R4f.x = R0f.x + intBitsToFloat(uf_remappedPS[3].x);
+R4f.y = R0f.y + intBitsToFloat(uf_remappedPS[3].y);
+R3f.z = R0f.x + intBitsToFloat(uf_remappedPS[3].z);
+R3f.w = R0f.y + intBitsToFloat(uf_remappedPS[3].w);
 R5f.xyzw = (texture(textureUnitPS0, R1f.xy).xyzw);
 R6f.xyzw = (texture(textureUnitPS0, R0f.zw).xyzw);
 R7f.xyzw = (texture(textureUnitPS0, R2f.xy).xyzw);
@@ -90,10 +88,10 @@ R10f.xyzw = (texture(textureUnitPS0, R2f.zw).xyzw);
 R11f.xyzw = (texture(textureUnitPS0, R4f.xy).xyzw);
 R12f.xyzw = (texture(textureUnitPS0, R3f.zw).xyzw);
 // 0
-R4f.x = R0f.x + (intBitsToFloat(uf_remappedPS[4].x) / resScale);
-R4f.y = R0f.y + (intBitsToFloat(uf_remappedPS[4].y) / resScale);
-R3f.z = R0f.x + (intBitsToFloat(uf_remappedPS[4].z) / resScale);
-R3f.w = R0f.y + (intBitsToFloat(uf_remappedPS[4].w) / resScale);
+R4f.x = R0f.x + intBitsToFloat(uf_remappedPS[4].x);
+R4f.y = R0f.y + intBitsToFloat(uf_remappedPS[4].y);
+R3f.z = R0f.x + intBitsToFloat(uf_remappedPS[4].z);
+R3f.w = R0f.y + intBitsToFloat(uf_remappedPS[4].w);
 R127f.x = R5f.w + -(0.5);
 R127f.x *= 2.0;
 R127f.x = clamp(R127f.x, 0.0, 1.0);
@@ -103,10 +101,10 @@ backupReg0f = R0f.x;
 backupReg1f = R0f.y;
 backupReg0f = R0f.x;
 backupReg1f = R0f.y;
-R0f.x = backupReg0f + (intBitsToFloat(uf_remappedPS[5].z) / resScale);
-R0f.y = backupReg1f + (intBitsToFloat(uf_remappedPS[5].w) / resScale);
-R2f.z = backupReg0f + (intBitsToFloat(uf_remappedPS[5].x) / resScale);
-R2f.w = backupReg1f + (intBitsToFloat(uf_remappedPS[5].y) / resScale);
+R0f.x = backupReg0f + intBitsToFloat(uf_remappedPS[5].z);
+R0f.y = backupReg1f + intBitsToFloat(uf_remappedPS[5].w);
+R2f.z = backupReg0f + intBitsToFloat(uf_remappedPS[5].x);
+R2f.w = backupReg1f + intBitsToFloat(uf_remappedPS[5].y);
 PS1f = R5f.x + -(0.0);
 // 2
 R126f.x = R127f.x + 1.0;

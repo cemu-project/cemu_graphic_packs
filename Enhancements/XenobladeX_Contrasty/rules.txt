@@ -1,0 +1,95 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Contrasty
+path = "Xenoblade Chronicles X/Contrasty" 
+description = Colour and contrast - Replaces AA removal
+version = 3
+
+
+[Preset]
+name = default
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueSadows = 1.0
+$redMid = 1.0
+$greenMid = 1.0
+$blueMid = 1.0
+$redHilight = 1.0
+$greenHilight =1.0
+$blueHilight = 1.0
+
+$contrastCurve = 0.0
+$hazeFactor = 1.0
+$bloom = 1.0
+$gamma = 1.0
+$exposure = 1.0
+$vibrance = 0.0
+$crushContrast = 0.0
+$bleach = 1.0
+$sharp_mix = 0.0
+
+[Preset]
+name = High Contrasty
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueSadows = 1.0
+$redMid = 0.99
+$greenMid = 0.99
+$blueMid = 0.99
+$redHilight = 1.0
+$greenHilight =1.0
+$blueHilight = 1.0
+
+$contrastCurve = 0.4
+$hazeFactor = 0.25
+$bloom = 0.85
+$gamma = 1.12
+$exposure = 1.01
+$vibrance = 0.15
+$crushContrast = 0.00
+$bleach = 0.85
+$sharp_mix = 0.1
+
+[Preset]
+name = Colourfull
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueSadows = 1.0
+$redMid = 0.99
+$greenMid = 0.98
+$blueMid = 0.99
+$redHilight = 1.0
+$greenHilight =0.99
+$blueHilight = 1.0
+
+$contrastCurve = 0.333
+$hazeFactor = 0.25
+$bloom = 0.85
+$gamma = 1.1
+$exposure = 1.01
+$vibrance = 0.35
+$crushContrast = 0.00
+$bleach = 0.85
+$sharp_mix = 0.1
+
+[Preset]
+name = Neutral Contrasty
+$redShadows = 1.01
+$greenShadows = 1.01
+$blueSadows = 1.01
+$redMid = 1.0
+$greenMid = 1.0
+$blueMid = 1.0
+$redHilight = 0.99
+$greenHilight =0.99
+$blueHilight = 0.99
+
+$contrastCurve = 0.25
+$hazeFactor = 1.0
+$bloom = 0.85
+$gamma = 1.05
+$exposure = 1.0
+$vibrance = 0.0
+$crushContrast = 0.00
+$bleach = 0.85
+$sharp_mix = 0.1
