@@ -167,12 +167,53 @@ formatsExcluded = 0x008,0x41A,0x034,0x035 0x008
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
+[TextureRedefine] #heat haze
+width = 1152
+height = 720
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 1152
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] #heat haze
+width = 1128
+height = 720
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 1128
+overwriteHeight = ($height/$gameHeight) * 720
+
 [TextureRedefine] #shadow
 width = 1024
 height = 1024
 formats = 0x005
 overwriteWidth = ($width/$gameWidth) * 1024
 overwriteHeight = ($height/$gameHeight) * 1024
+
+[TextureRedefine] #Zoom 
+width = 1024
+height = 608
+#formats = 0x80e,0x810
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 608
+
+[TextureRedefine] #Heat haze 
+width = 1024
+height = 512
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 512
+
+[TextureRedefine] #Zoom 
+width = 1000
+height = 600
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 1000
+overwriteHeight = ($height/$gameHeight) * 600
+
+[TextureRedefine] #sparkly mine
+width = 896
+height = 480
+overwriteWidth = ($width/$gameWidth) * 896
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 864
@@ -185,7 +226,7 @@ width = 854
 height = 480
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
-
+##672x405
 [TextureRedefine] #Depth 8
 width = 640
 height = 368
@@ -200,19 +241,40 @@ height = 360
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
 
-#[TextureRedefine] #Looks like it's texture formats only, verify 0x80e
-#width = 512
-#height = 512
-#formatsExcluded = 0x431,0x235,0x80e,0x034
-#overwriteWidth = ($width/$gameWidth) * 512
-#overwriteHeight = ($height/$gameHeight) * 512
+[TextureRedefine] #heat haze zoomed
+width = 576
+height = 368
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 576
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine] #816 fire transition, 80e?
+width = 512
+height = 512
+formats = 0x816 # #0x431,0x235,0x034
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 512
+
+[TextureRedefine] 
+width = 512
+height = 304
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 304
 
 [TextureRedefine] 
 width = 512
 height = 256
-formats = 0x816
+formats = 0x816,0x806
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine] 
+width = 500
+height = 300
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 500
+overwriteHeight = ($height/$gameHeight) * 300
 
 [TextureRedefine] #
 width = 480
@@ -242,12 +304,34 @@ height = 180
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 180
 
+[TextureRedefine] #heat haze
+width = 288
+height = 192
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 288
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine] #Transition fire
+width = 282
+height = 180
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 282
+overwriteHeight = ($height/$gameHeight) * 180
+
+
 [TextureRedefine]
 width = 256
 height = 256
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine]
+width = 256
+height = 160
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 160
 
 [TextureRedefine]
 width = 256
@@ -259,9 +343,16 @@ overwriteHeight = ($height/$gameHeight) * 144
 [TextureRedefine]
 width = 256
 height = 128
-formats = 0x816
+formats = 0x816,0x806
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]
+width = 250
+height = 150
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 250
+overwriteHeight = ($height/$gameHeight) * 150
 
 [TextureRedefine]
 width = 240
@@ -269,6 +360,20 @@ height = 135
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 240
 overwriteHeight = ($height/$gameHeight) * 135
+
+[TextureRedefine] # mine sparkles
+width = 224
+height = 128
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 224
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine] # mine sparkles
+width = 213
+height = 120
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 213
+overwriteHeight = ($height/$gameHeight) * 120
 
 [TextureRedefine]
 width = 160
@@ -291,6 +396,13 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 128
 
+[TextureRedefine] #Transition fire
+width = 141
+height = 90
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 141
+overwriteHeight = ($height/$gameHeight) * 90
+
 [TextureRedefine]
 width = 128
 height = 80
@@ -304,6 +416,20 @@ height = 64
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine] #haze
+width = 128
+height = 16
+formats = 0x823
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]
+width = 125
+height = 75
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 125
+overwriteHeight = ($height/$gameHeight) * 75
 
 [TextureRedefine]
 width = 120
@@ -324,6 +450,13 @@ width = 80
 height = 45
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 80
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # Transition fire
+width = 70
+height = 45
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 70
 overwriteHeight = ($height/$gameHeight) * 45
 
 [TextureRedefine]
@@ -348,15 +481,85 @@ overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 32
 
 [TextureRedefine]
+width = 62
+height = 37
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 60
+overwriteHeight = ($height/$gameHeight) * 37
+
+[TextureRedefine]
 width = 60
 height = 33
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 60
 overwriteHeight = ($height/$gameHeight) * 33
 
-[TextureRedefine]
+[TextureRedefine] #transition fire
 width = 40
 height = 22
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 40
 overwriteHeight = ($height/$gameHeight) * 22
+
+[TextureRedefine]
+width = 35
+height = 22
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 35
+overwriteHeight = ($height/$gameHeight) * 22
+
+[TextureRedefine]
+width = 32
+height = 32
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 32
+height = 16
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]
+width = 31
+height = 18
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 31
+overwriteHeight = ($height/$gameHeight) * 18
+
+[TextureRedefine]
+width = 24
+height = 16
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 24
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]
+width = 20
+height = 11
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 20
+overwriteHeight = ($height/$gameHeight) * 11
+
+[TextureRedefine] #Transition fire
+width = 17
+height = 11
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 17
+overwriteHeight = ($height/$gameHeight) * 11
+
+[TextureRedefine]
+width = 16
+height = 16
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 16
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]
+width = 15
+height = 9
+formats = 0x816,0x823
+overwriteWidth = ($width/$gameWidth) * 15
+overwriteHeight = ($height/$gameHeight) * 9
