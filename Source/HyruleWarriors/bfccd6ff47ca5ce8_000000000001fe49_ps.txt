@@ -1,0 +1,325 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader bfccd6ff47ca5ce8
+//DOF base 
+
+const float dither = $dither ;
+const float scaleShader = $scaleShader;
+const float scaleBlur = $scaleBlur;
+
+const int sampleScale = 2;
+const float lightBloom = 0.95; 
+highp float lineRand(vec2 co)
+{
+	highp float a = 12.9898;
+	highp float b = 78.233;
+	highp float c = 43758.5453;
+	highp float dt = dot(co.xy, vec2(a, b));
+	highp float sn = mod(dt, 3.14);
+	return fract(sin(sn) * c);
+}
+
+
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e13800 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf5198000 res 1024x2048x1 dim 1 tm: 4 format 0005 compSel: 0 0 0 0 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
+layout(binding = 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0x10ea5000 res 1280x720x1 dim 1 tm: 4 format 0011 compSel: 0 0 0 0 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) in vec4 passParameterSem128;
+layout(location = 1) in vec4 passParameterSem129;
+layout(location = 0) out vec4 passPixelColor0;
+layout(location = 1) out vec4 passPixelColor1;
+uniform vec2 uf_fragCoordScale;
+
+// FabriceNeyret2 CC, single shader gaussian by intermediate MIPmap level. www.shadertoy.com/view/ltScRG
+const int samples = 8 * sampleScale, //8 or 4 balances xy position
+LOD = 2,         // gaussian done on MIPmap at scale LOD
+sLOD = 1 << LOD; // tile size = 2^LOD
+const float sigma = float(samples) * .25;
+
+float gaussian(vec2 i) {
+	return exp(-.5* dot(i /= sigma, i)) / (6.28 * sigma*sigma);
+}
+
+vec4 blur(sampler2D sp, vec2 U, vec2 scale) {
+	vec4 O = vec4(0);
+	int s = samples / sLOD;
+
+	for (int i = 0; i < s*s; i++) {
+		vec2 d = vec2(i%s, i / s)*float(sLOD) - float(samples) / 2.;
+		O += gaussian(d) * textureLod(sp, U + scale * d, float(LOD));
+	}
+
+	return O / O.a;
+}
+
+
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){return mix(0.0, a*b, (a != 0.0) && (b != 0.0));}
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+ivec4 R3i = ivec4(0);
+ivec4 R4i = ivec4(0);
+ivec4 R5i = ivec4(0);
+ivec4 R6i = ivec4(0);
+ivec4 R7i = ivec4(0);
+ivec4 R8i = ivec4(0);
+ivec4 R122i = ivec4(0);
+ivec4 R123i = ivec4(0);
+ivec4 R124i = ivec4(0);
+ivec4 R125i = ivec4(0);
+ivec4 R126i = ivec4(0);
+ivec4 R127i = ivec4(0);
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+ivec4 PV0i = ivec4(0), PV1i = ivec4(0);
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0i = floatBitsToInt(passParameterSem128);
+R1i = floatBitsToInt(passParameterSem129);
+
+
+vec2 coord = passParameterSem128.xy*textureSize(textureUnitPS0, 0); //
+vec2 ps = vec2(1.0) / textureSize(textureUnitPS0, 0);
+vec2 uv = coord * ps;
+
+R5i.xyz = floatBitsToInt(blur(textureUnitPS0, passParameterSem128.xy, ps*scaleBlur)).xyz; //1.0 4k //.66 2k //0.075 1k //.51 4kx2
+//R5i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R0i.xy)).xyz);
+R2i.x = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R0i.xy)).x);
+R6i.xyz = R5i.xyz;
+R0i.x = R2i.x; 
+R7i.xyz = R6i.xyz;
+R3i.x = R0i.x;
+R8i.xyz = R7i.xyz;
+R1i.x = R3i.x;
+
+/*
+R6i.xyz = floatBitsToInt(blur(textureUnitPS0, passParameterSem128.zw, ps*scaleBlur)).xyz;
+R6i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R0i.zw)).xyz);
+R0i.x = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R0i.zw)).x);
+R7i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).xyz);
+R3i.x = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R1i.xy)).x);
+R8i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.zw)).xyz);
+R1i.x = floatBitsToInt(texture(textureUnitPS2, intBitsToFloat(R1i.zw)).x);
+*/
+// 0
+R4i.x = 0x3727c5ac;
+R2i.y = 0x3f000000;
+R0i.z = 0x3f000000;
+R1i.w = 0x3727c5ac;
+R3i.y = 0x3f000000;
+PS0i = R3i.y;
+// 1
+R1i.y = 0x3f000000;
+R2i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R2i.xy)).w);
+R0i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.xz)).w);
+R3i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R3i.xy)).w);
+R1i.x = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R1i.xy)).w);
+// 0
+R127i.x = R0i.x;
+PV0i.x = R127i.x;
+PV0i.y = floatBitsToInt(intBitsToFloat(R2i.x) + -(0.5));
+PV0i.z = floatBitsToInt(intBitsToFloat(R0i.x) + -(0.5));
+R126i.w = R2i.x;
+PV0i.w = R126i.w;
+R124i.w = R3i.x;
+PS0i = R124i.w;
+// 1
+PV1i.x = floatBitsToInt(max(intBitsToFloat(PV0i.z), -(intBitsToFloat(PV0i.z))));
+PV1i.x = floatBitsToInt(intBitsToFloat(PV1i.x) * 2.0);
+R126i.y = ((0.5 > intBitsToFloat(PV0i.w))?int(0xFFFFFFFF):int(0x0));
+PV1i.z = floatBitsToInt(max(intBitsToFloat(PV0i.y), -(intBitsToFloat(PV0i.y))));
+PV1i.z = floatBitsToInt(intBitsToFloat(PV1i.z) * 2.0);
+R127i.w = ((0.5 > intBitsToFloat(PV0i.x))?int(0xFFFFFFFF):int(0x0));
+R124i.x = R1i.x;
+PS1i = R124i.x;
+// 2
+PV0i.x = floatBitsToInt(-(intBitsToFloat(PV1i.x)) + 1.0);
+PV0i.x = clampFI32(PV0i.x);
+PV0i.y = floatBitsToInt(-(intBitsToFloat(PV1i.z)) + 1.0);
+PV0i.y = clampFI32(PV0i.y);
+PV0i.z = floatBitsToInt(intBitsToFloat(R1i.x) + -(0.5));
+PV0i.w = floatBitsToInt(intBitsToFloat(R3i.x) + -(0.5));
+// 3
+PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(0x3727c5ac));
+R127i.y = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(0x3727c5ac));
+PV1i.z = floatBitsToInt(max(intBitsToFloat(PV0i.w), -(intBitsToFloat(PV0i.w))));
+PV1i.z = floatBitsToInt(intBitsToFloat(PV1i.z) * 2.0);
+PV1i.w = floatBitsToInt(max(intBitsToFloat(PV0i.z), -(intBitsToFloat(PV0i.z))));
+PV1i.w = floatBitsToInt(intBitsToFloat(PV1i.w) * 2.0);
+// 4
+PV0i.x = floatBitsToInt(-(intBitsToFloat(PV1i.w)) + 1.0);
+PV0i.x = clampFI32(PV0i.x);
+PV0i.y = floatBitsToInt(-(intBitsToFloat(PV1i.z)) + 1.0);
+PV0i.y = clampFI32(PV0i.y);
+PS0i = floatBitsToInt(1.0 / intBitsToFloat(PV1i.x));
+// 5
+backupReg0i = R127i.y;
+PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) + intBitsToFloat(0x3727c5ac));
+R127i.y = floatBitsToInt(intBitsToFloat(PV0i.x) + intBitsToFloat(0x3727c5ac));
+PV1i.z = floatBitsToInt(intBitsToFloat(PS0i) + -(1.0));
+PS1i = floatBitsToInt(1.0 / intBitsToFloat(backupReg0i));
+// 6
+PV0i.y = floatBitsToInt(intBitsToFloat(PV1i.z) + 1.0);
+PV0i.z = floatBitsToInt(intBitsToFloat(PS1i) + -(1.0));
+PS0i = floatBitsToInt(1.0 / intBitsToFloat(PV1i.x));
+// 7
+PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) + -(intBitsToFloat(0x3f7dff82)));
+PV1i.x = clampFI32(PV1i.x);
+PV1i.y = floatBitsToInt(intBitsToFloat(PV0i.z) + 1.0);
+PV1i.z = floatBitsToInt(intBitsToFloat(PS0i) + -(1.0));
+PS1i = floatBitsToInt(1.0 / intBitsToFloat(R127i.y));
+// 8
+backupReg0i = R126i.y;
+backupReg0i = R126i.y;
+PV0i.x = floatBitsToInt(intBitsToFloat(PV1i.y) + -(intBitsToFloat(0x3f7dff82)));
+PV0i.x = clampFI32(PV0i.x);
+R126i.y = ((backupReg0i == 0)?(R1i.w):(PV1i.x));
+PV0i.y = R126i.y;
+R127i.z = floatBitsToInt(intBitsToFloat(PV1i.z) + 1.0);
+R125i.w = ((backupReg0i == 0)?(PV1i.x):(R1i.w));
+R126i.z = floatBitsToInt(intBitsToFloat(PS1i) + -(1.0));
+PS0i = R126i.z;
+// 9
+R126i.x = ((R127i.w == 0)?(PV0i.x):(R4i.x));
+R127i.y = ((R127i.w == 0)?(R4i.x):(PV0i.x));
+PV1i.y = R127i.y;
+R123i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.y),intBitsToFloat(PV0i.y)) + 0.0));
+PV1i.z = R123i.z;
+R123i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.x),intBitsToFloat(PV0i.y)) + 0.0));
+PV1i.w = R123i.w;
+R122i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.z),intBitsToFloat(PV0i.y)) + 0.0));
+PS1i = R122i.x;
+// 10
+backupReg0i = R126i.y;
+R123i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R126i.w),intBitsToFloat(R126i.y)) + 0.0));
+PV0i.x = R123i.x;
+R126i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R6i.z),intBitsToFloat(PV1i.y)) + intBitsToFloat(PS1i)));
+R125i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R6i.y),intBitsToFloat(PV1i.y)) + intBitsToFloat(PV1i.z)));
+R127i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R6i.x),intBitsToFloat(PV1i.y)) + intBitsToFloat(PV1i.w)));
+PS0i = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(PV1i.y));
+// 11
+R125i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R127i.x),intBitsToFloat(R127i.y)) + intBitsToFloat(PV0i.x)));
+R123i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.x),intBitsToFloat(R125i.w)) + 0.0));
+PV1i.y = R123i.y;
+R124i.z = floatBitsToInt(intBitsToFloat(PS0i) + 0.0);
+R123i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.y),intBitsToFloat(R125i.w)) + 0.0));
+PV1i.w = R123i.w;
+R122i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.z),intBitsToFloat(R125i.w)) + 0.0));
+PS1i = R122i.x;
+// 12
+backupReg0i = R6i.z;
+backupReg1i = R125i.w;
+R123i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R126i.w),intBitsToFloat(R125i.w)) + 0.0));
+PV0i.x = R123i.x;
+R125i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R6i.x),intBitsToFloat(R126i.x)) + intBitsToFloat(PV1i.y)));
+R6i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(backupReg0i),intBitsToFloat(R126i.x)) + intBitsToFloat(PS1i)));
+R125i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R6i.y),intBitsToFloat(R126i.x)) + intBitsToFloat(PV1i.w)));
+PS0i = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(R126i.x));
+// 13
+backupReg0i = R127i.x;
+backupReg1i = R126i.z;
+R127i.x = floatBitsToInt(intBitsToFloat(R127i.z) + -(intBitsToFloat(0x3f7dff82)));
+R127i.x = clampFI32(R127i.x);
+R124i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(backupReg0i),intBitsToFloat(R126i.x)) + intBitsToFloat(PV0i.x)));
+R126i.z = floatBitsToInt(intBitsToFloat(PS0i) + 0.0);
+PV1i.w = floatBitsToInt(intBitsToFloat(backupReg1i) + 1.0);
+R126i.w = 0x3727c5ac;
+PS1i = R126i.w;
+// 14
+PV0i.x = floatBitsToInt(intBitsToFloat(PV1i.w) + -(intBitsToFloat(0x3f7dff82)));
+PV0i.x = clampFI32(PV0i.x);
+PV0i.y = ((0.5 > intBitsToFloat(R124i.w))?int(0xFFFFFFFF):int(0x0));
+PV0i.z = 0x3727c5ac;
+PV0i.w = ((0.5 > intBitsToFloat(R124i.x))?int(0xFFFFFFFF):int(0x0));
+// 15
+backupReg0i = R126i.w;
+R123i.x = ((PV0i.y == 0)?(R126i.w):(R127i.x));
+PV1i.x = R123i.x;
+R127i.y = ((PV0i.w == 0)?(PV0i.z):(PV0i.x));
+PV1i.y = R127i.y;
+R127i.z = ((PV0i.w == 0)?(PV0i.x):(PV0i.z));
+R126i.w = ((PV0i.y == 0)?(R127i.x):(backupReg0i));
+// 16
+R123i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R124i.w),intBitsToFloat(PV1i.x)) + intBitsToFloat(R125i.x)));
+PV0i.x = R123i.x;
+R123i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R7i.z),intBitsToFloat(PV1i.x)) + intBitsToFloat(R126i.y)));
+PV0i.y = R123i.y;
+R123i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R7i.y),intBitsToFloat(PV1i.x)) + intBitsToFloat(R125i.z)));
+PV0i.z = R123i.z;
+R123i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R7i.x),intBitsToFloat(PV1i.x)) + intBitsToFloat(R127i.w)));
+PV0i.w = R123i.w;
+PS0i = floatBitsToInt(intBitsToFloat(PV1i.x) + intBitsToFloat(PV1i.y));
+// 17
+backupReg0i = R127i.y;
+backupReg0i = R127i.y;
+backupReg0i = R127i.y;
+R125i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R8i.z),intBitsToFloat(R127i.y)) + intBitsToFloat(PV0i.y)));
+R127i.y = floatBitsToInt(intBitsToFloat(R124i.z) + intBitsToFloat(PS0i));
+R124i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R8i.y),intBitsToFloat(backupReg0i)) + intBitsToFloat(PV0i.z)));
+R127i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R8i.x),intBitsToFloat(backupReg0i)) + intBitsToFloat(PV0i.w)));
+R127i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R124i.x),intBitsToFloat(backupReg0i)) + intBitsToFloat(PV0i.x)));
+PS1i = R127i.x;
+// 18
+R123i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R7i.z),intBitsToFloat(R126i.w)) + intBitsToFloat(R6i.z)));
+PV0i.x = R123i.x;
+R123i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R7i.y),intBitsToFloat(R126i.w)) + intBitsToFloat(R125i.w)));
+PV0i.y = R123i.y;
+R123i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R7i.x),intBitsToFloat(R126i.w)) + intBitsToFloat(R125i.y)));
+PV0i.z = R123i.z;
+R122i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R124i.w),intBitsToFloat(R126i.w)) + intBitsToFloat(R124i.y)));
+PS0i = R122i.x;
+// 19
+backupReg0i = R127i.z;
+backupReg1i = R124i.x;
+backupReg0i = R127i.z;
+backupReg2i = R126i.w;
+backupReg0i = R127i.z;
+R124i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R8i.z),intBitsToFloat(R127i.z)) + intBitsToFloat(PV0i.x)));
+R125i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R8i.y),intBitsToFloat(R127i.z)) + intBitsToFloat(PV0i.y)));
+R127i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R8i.x),intBitsToFloat(backupReg0i)) + intBitsToFloat(PV0i.z)));
+R126i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(backupReg1i),intBitsToFloat(backupReg0i)) + intBitsToFloat(PS0i)));
+PS1i = floatBitsToInt(intBitsToFloat(backupReg2i) + intBitsToFloat(backupReg0i));
+// 20
+PV0i.z = floatBitsToInt(intBitsToFloat(R126i.z) + intBitsToFloat(PS1i));
+PS0i = floatBitsToInt(1.0 / intBitsToFloat(R127i.y));
+// 21
+R6i.x = floatBitsToInt(intBitsToFloat(R127i.w) * intBitsToFloat(PS0i));
+R6i.y = floatBitsToInt(intBitsToFloat(R124i.z) * intBitsToFloat(PS0i));
+R6i.z = floatBitsToInt(intBitsToFloat(R125i.x) * intBitsToFloat(PS0i));
+PV1i.w = floatBitsToInt(intBitsToFloat(R127i.x) * intBitsToFloat(PS0i));
+PS1i = floatBitsToInt(1.0 / intBitsToFloat(PV0i.z));
+// 22
+R8i.x = floatBitsToInt(intBitsToFloat(R127i.z) * intBitsToFloat(PS1i));
+R8i.y = floatBitsToInt(intBitsToFloat(R125i.y) * intBitsToFloat(PS1i));
+R8i.z = floatBitsToInt(intBitsToFloat(R124i.x) * intBitsToFloat(PS1i));
+PV0i.w = floatBitsToInt(intBitsToFloat(R126i.w) * intBitsToFloat(PS1i));
+R6i.w = floatBitsToInt(min(intBitsToFloat(PV1i.w), 0.5));
+PS0i = R6i.w;
+// 23
+R8i.w = floatBitsToInt(max(intBitsToFloat(PV0i.w), 0.5));
+PV1i.w = R8i.w;
+// 24
+R1i.xyz = ivec3(R8i.x,R8i.y,R8i.z);
+R1i.w = PV1i.w;
+// 25
+R0i.xyz = ivec3(R6i.x,R6i.y,R6i.z);
+R0i.w = R6i.w;
+// export
+passPixelColor0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+passPixelColor1 = vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w));
+}
