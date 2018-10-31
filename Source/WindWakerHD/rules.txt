@@ -15,20 +15,6 @@ $gameHeight = 1080
 // Performance
 
 [Preset]
-name = 256x144
-$width = 256
-$height = 144
-$gameWidth = 1920
-$gameHeight = 1080
-
-[Preset]
-name = 427x240
-$width = 427
-$height = 240
-$gameWidth = 1920
-$gameHeight = 1080
-
-[Preset]
 name = 640x360
 $width = 640
 $height = 360

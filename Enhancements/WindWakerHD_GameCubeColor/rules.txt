@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010143400,0005000010143600,0005000010143500
-name = "GC colour grading"
-path = "The Legend of Zelda: The Wind Waker HD/Graphics/Colour Tweaks" 
-description = More blue instead of teal, slight contrast increase
-version = 3
