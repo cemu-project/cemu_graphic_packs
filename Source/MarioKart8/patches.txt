@@ -1,25 +1,13 @@
-<?php
-$width = $argv[1];
-$height = $argv[2];
-
-$aspect = $width / (float)$height;
-$ratioAdjust = $aspect/(16/9);
-
-if (round($aspect*100.0) == 178)
-	exit(1);
-
-$aspect = number_format((float)$aspect, 3, '.', '');
-?>
 [MK8AspectVer1]
 moduleMatches = 0x2A2DC82C
-0x10097D94 = .float <?=$aspect?> 
-0x100F3430 = .float <?=$aspect?> 
+0x10097D94 = .float $width/$height
+0x100F3430 = .float $width/$height
 
 #aspect scaling
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float <?=$ratioAdjust?> 
+0x00000000 = .float (($gameHeight/$height)*$width)/$gameWidth
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -32,14 +20,14 @@ _scaleAddr = 0x00000000
 
 [MK8AspectVer2]
 moduleMatches = 0x62A5F023
-0x1009E9DC = .float <?=$aspect?> 
-0x100FC030 = .float <?=$aspect?> 
+0x1009E9DC = .float $width/$height
+0x100FC030 = .float $width/$height
 
 #aspect scaling
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float <?=$ratioAdjust?> 
+0x00000000 = .float (($gameHeight/$height)*$width)/$gameWidth
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -52,14 +40,14 @@ _scaleAddr = 0x00000000
 
 [MK8AspectVer3]
 moduleMatches = 0xBA6B1E20
-0x100AC25C = .float <?=$aspect?> 
-0x1010A730 = .float <?=$aspect?> 
+0x100AC25C = .float $width/$height
+0x1010A730 = .float $width/$height
 
 #aspect scaling
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float <?=$ratioAdjust?> 
+0x00000000 = .float (($gameHeight/$height)*$width)/$gameWidth
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -72,14 +60,14 @@ _scaleAddr = 0x00000000
 
 [MK8AspectVer4]
 moduleMatches = 0x1D398493
-0x100C359C = .float <?=$aspect?> 
-0x10121D30 = .float <?=$aspect?> 
+0x100C359C = .float $width/$height
+0x10121D30 = .float $width/$height
 
 #aspect scaling
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float <?=$ratioAdjust?> 
+0x00000000 = .float (($gameHeight/$height)*$width)/$gameWidth
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha
@@ -92,14 +80,14 @@ _scaleAddr = 0x00000000
 
 [MK8AspectVer4_1]
 moduleMatches = 0xD09700CE
-0x100C359C = .float <?=$aspect?> 
-0x10121E30 = .float <?=$aspect?> 
+0x100C359C = .float $width/$height
+0x10121E30 = .float $width/$height
 
 #aspect scaling
 codeCaveSize = 0x18
 
 _scaleAspect = 0x00000004
-0x00000000 = .float <?=$ratioAdjust?> 
+0x00000000 = .float (($gameHeight/$height)*$width)/$gameWidth
 _scaleAddr = 0x00000000
 0x00000004 = fdivs f9, f13, f12
 0x00000008 = lis r7, _scaleAddr@ha

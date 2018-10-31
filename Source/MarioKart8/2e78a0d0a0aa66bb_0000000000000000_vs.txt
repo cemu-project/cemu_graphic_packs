@@ -1,18 +1,10 @@
-<?php 
-include 'Source/functions.php'; 
-$fullWidth = $argv[1]; 
-$fullHeight = $argv[2]; 
-$scaleFactorX = always_decimal_format($fullWidth / 1280.0); 
-$scaleFactorY = always_decimal_format($fullHeight / 720.0); 
-?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 2e78a0d0a0aa66bb
-// horizontal bloom blur texture coordinates
-const float resXScale = <?=$scaleFactorX?>; 
-const float resYScale = <?=$scaleFactorY?>; 
+// Used for: Horizontal (Menu) Bloom Blur
+const float resScale = ($width/$gameWidth);
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
@@ -34,7 +26,7 @@ else if( v == 0xFFFFFFFF )
 	return floatBitsToInt(0.0);
 return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
-float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+float mul_nonIEEE(float a, float b){return mix(0.0, a*b, (a != 0.0) && (b != 0.0));}
 void main()
 {
 vec4 R0f = vec4(0.0);
@@ -73,11 +65,11 @@ R1f.y = backupReg1f;
 R1f.y *= 2.0;
 R1f.z = 0.0;
 R1f.w = 1.0;
-R127f.y = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x3fb13a93) / resYScale;
+R127f.y = intBitsToFloat(uf_remappedVS[0].x) * (intBitsToFloat(0x3fb13a93)/resScale);
 PS0f = R127f.y;
 // 1
-PV1f.x = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x404ec4f0) / resXScale;
-R126f.y = intBitsToFloat(uf_remappedVS[0].x) * intBitsToFloat(0x40a275f7) / resYScale;
+PV1f.x = intBitsToFloat(uf_remappedVS[0].x) * (intBitsToFloat(0x404ec4f0)/resScale);
+R126f.y = intBitsToFloat(uf_remappedVS[0].x) * (intBitsToFloat(0x40a275f7)/resScale);
 R3f.z = R2f.x + PS0f;
 R3f.w = R2f.x;
 R3f.x = R2f.y;

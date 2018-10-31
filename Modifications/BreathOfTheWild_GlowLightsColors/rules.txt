@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Glow Lights Colors"
+path = "The Legend of Zelda: Breath of the Wild/Modifications/Glow Lights Colors"
+description = "Changes the color of objects that glow in game, view the readme for more info."
+version = 3

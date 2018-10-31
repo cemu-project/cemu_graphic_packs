@@ -1,4 +1,0 @@
-[Definition]
-titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
-name = "Tokyo Mirage Sessions FE - 21:9 GUI" 
-version = 2

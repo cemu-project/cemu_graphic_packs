@@ -1,0 +1,40 @@
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = Negative texture LOD bias
+path = "Tokyo Mirage Sessions FE/Graphics/Negative Texture LOD" 
+description = Texture LOD override, possible shimmer but sharper textures
+version = 3
+
+[Preset]
+name = LOD -4
+$LOD = 4
+
+[Preset]
+name = LOD -1
+$LOD = 1
+
+[Preset]
+name = LOD -2
+$LOD = 2
+
+[Preset]
+name = LOD -3
+$LOD = 3
+
+[Preset]
+name = LOD -4
+$LOD = 4
+
+[Preset]
+name = LOD -8
+$LOD = 8
+
+[Preset]
+name = LOD -16
+$LOD = 16
+
+
+[TextureRedefine]
+formats = 0x01a,0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteRelativeLodBias = - $LOD
+

@@ -1,0 +1,136 @@
+[Definition]
+titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
+name = Resolution
+path = "Yoshi's Woolly World/Graphics/Resolution"
+description = Changes the resolution of the game.
+version = 3
+
+[Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+// Performance
+
+[Preset]
+name = 256x144
+$width = 256
+$height = 144
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 427x240
+$width = 427
+$height = 240
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 854x480
+$width = 854
+$height = 480
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 960x540
+$width = 960
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+
+// Quality
+
+[Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1920x1080
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1440
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2732x1536
+$width = 2732
+$height = 1536
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3200x1800
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2160
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+// Enthusiast
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 10240x5760
+$width = 10240
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 720
+formatsExcluded = 0x033
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 720
+
+[TextureRedefine] # Depth of Field Pass
+width = 640
+height = 368
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 368
+
+[TextureRedefine] # Depth of Field Pass
+width = 640
+height = 360
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 360

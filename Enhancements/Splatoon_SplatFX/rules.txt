@@ -1,0 +1,46 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = SplatFX
+path = "Splatoon/Enhancements/SplatFX"
+description = Select the visual look of the game that you'll like with these hand-made presets that adjusts saturation, vibrance, colors and more. You can select a preset. Selecting "User Defined" requires having made your own preset, check the "Splatoon_SplatFX/4a377a50eda82af8_0000000000001e51_ps.txt" and the "Splatoon_SplatFX/f502868a515bbfb4_00000000000003c9_ps.txt" file in your graphicPack folder to create one.
+version = 3
+
+[Preset]
+name = User Defined
+$preset:int = 0
+
+[Preset]
+name = Bruz Option (BotW)
+$preset:int = 1
+
+[Preset]
+name = BSoD Option (BotW)
+$preset:int = 2
+
+[Preset]
+name = Jamie Option (BotW)
+$preset:int = 3
+
+[Preset]
+name = Contrasty Option (BotW)
+$preset:int = 4
+
+[Preset]
+name = Serfrost Option (BotW)
+$preset:int = 5
+
+[Preset]
+name = Sharpen Only Option (BotW)
+$preset:int = 6
+
+[Preset]
+name = The Complaining Gamer Option (BotW)
+$preset:int = 7
+
+[Preset]
+name = Filmic Preset Option (BotW)
+$preset:int = 8
+
+[Preset]
+name = CellHunter Option (BotW)
+$preset:int = 9

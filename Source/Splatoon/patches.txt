@@ -1,23 +1,12 @@
-<?php
-$width = $argv[1];
-$height = $argv[2];
-
-$aspect = $width / (float)$height;
-
-if (round($aspect*100.0) == 178)
-	exit(1);
-
-$aspect = number_format((float)$aspect, 3, '.', '');
-?>
 [SplatoonV272uw]
 moduleMatches = 0xF7A78809
 
 #rodata constants
 
-0x1004364C = .float <?=$aspect?> 
-0x10124BE0 = .float <?=$aspect?> 
-0x10158FE0 = .float <?=$aspect?> 
-0x10160454 = .float <?=$aspect?> 
+0x1004364C = .float $width/$height
+0x10124BE0 = .float $width/$height
+0x10158FE0 = .float $width/$height
+0x10160454 = .float $width/$height
 
 _aspectAddr = 0x1004364C
 
@@ -38,10 +27,10 @@ _aspectAddr = 0x1004364C
 moduleMatches = 0x08ED6677
 
 #rodata constants
-0x1003C670 = .float <?=$aspect?> 
-0x101092B0 = .float <?=$aspect?> 
-0x10144564 = .float <?=$aspect?> 
-0x1014A514 = .float <?=$aspect?> 
+0x1003C670 = .float $width/$height
+0x101092B0 = .float $width/$height
+0x10144564 = .float $width/$height
+0x1014A514 = .float $width/$height
 
 _aspectAddr = 0x1003C670
 

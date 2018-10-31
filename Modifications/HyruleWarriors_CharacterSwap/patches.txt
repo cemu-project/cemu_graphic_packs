@@ -1,0 +1,5 @@
+[HWPlayAsCuccov208]
+moduleMatches = 0xE159AE91
+
+0x020EBF10 = li r11, $character;
+0x020EBF10 = li r11, $character;

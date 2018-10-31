@@ -1,0 +1,33 @@
+[Definition]
+titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
+name = Shadow Resolution
+path = "Yoshi's Woolly World/Graphics/Shadow Resolution"
+description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this increases performance but makes shadows blockier. Medium is the original resolution.
+version = 3
+
+[Preset]
+name = Medium (1.00x, Default)
+$shadowRes = 1
+
+[Preset]
+name = Low (0.50x)
+$shadowRes = 0.5
+
+[Preset]
+name = High (2.00x)
+$shadowRes = 2
+
+[Preset]
+name = Ultra (4.00x)
+$shadowRes = 4
+
+[Preset]
+name = Extreme (8.00x)
+$shadowRes = 8
+
+[TextureRedefine] # Shadows
+width = 1024
+height = 1024
+formats = 0x5
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024

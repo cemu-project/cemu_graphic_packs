@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = Display Fixes
+path = "Sonic Lost World/Workaround/Display Fixes"
+description = This fixes/removes multiple issues shown in-game
+version = 3

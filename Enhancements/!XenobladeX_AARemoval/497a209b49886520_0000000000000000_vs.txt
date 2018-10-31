@@ -1,0 +1,82 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_packing : enable
+// shader 497a209b49886520 //depth?
+uniform ivec4 uf_remappedVS[1];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+layout(binding = 32) uniform sampler2D textureUnitVS0;// Tex0 addr 0xf545c000 res 1x1x1 dim 1 tm: 2 format 081e compSel: 0 1 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler18 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) in uvec4 attrDataSem0;
+layout(location = 1) in uvec4 attrDataSem1;
+out gl_PerVertex
+{
+	vec4 gl_Position;
+	float gl_PointSize;
+};
+layout(location = 1) out vec4 passParameterSem1;
+layout(location = 2) out vec4 passParameterSem2;
+layout(location = 0) out vec4 passParameterSem0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+uvec4 attrDecoder;
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = floatBitsToInt(ivec4(gl_VertexID, 0, 0, gl_InstanceID));
+attrDecoder.xyz = attrDataSem0.xyz;
+attrDecoder.xyz = (attrDecoder.xyz>>24)|((attrDecoder.xyz>>8)&0xFF00)|((attrDecoder.xyz<<8)&0xFF0000)|((attrDecoder.xyz<<24));
+attrDecoder.w = 0;
+R1f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(int(attrDecoder.z)), intBitsToFloat(floatBitsToInt(1.0)));
+attrDecoder.xy = attrDataSem1.xy;
+attrDecoder.xy = (attrDecoder.xy>>24)|((attrDecoder.xy>>8)&0xFF00)|((attrDecoder.xy<<8)&0xFF0000)|((attrDecoder.xy<<24));
+attrDecoder.z = 0;
+attrDecoder.w = 0;
+R2f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(floatBitsToInt(0.0)), intBitsToFloat(floatBitsToInt(1.0)));
+// 0
+backupReg0f = R2f.x;
+backupReg1f = R2f.y;
+backupReg0f = R2f.x;
+backupReg1f = R2f.y;
+R2f.x = backupReg0f;
+R2f.y = backupReg1f;
+R0f.z = intBitsToFloat(0x3f000000);
+R0f.w = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[0].x)) + intBitsToFloat(uf_remappedVS[0].z));
+R0f.y = (mul_nonIEEE(backupReg1f,intBitsToFloat(uf_remappedVS[0].y)) + intBitsToFloat(uf_remappedVS[0].w));
+PS0f = R0f.y;
+R3f.xy = (textureLod(textureUnitVS0, R0f.zz,0.0).xy)*0.33335;
+// export
+gl_Position = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+// export
+passParameterSem1 = vec4(R2f.x, R2f.y, R2f.z, R2f.z);
+// export
+// export
+passParameterSem2 = vec4(R0f.w, R0f.y, R0f.z, R0f.z);
+// 0
+backupReg0f = R3f.x;
+backupReg1f = R3f.y;
+R3f.x = backupReg0f;
+R3f.y = backupReg1f;
+// export
+passParameterSem0 = vec4(R3f.x, R3f.y, R3f.z, R3f.z);
+// 0
+}

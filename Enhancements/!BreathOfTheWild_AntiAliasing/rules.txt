@@ -1,0 +1,44 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Anti-Aliasing
+path = "The Legend of Zelda: Breath of the Wild/Graphics/Anti-Aliasing"
+description = Enables and Disables Anti-Aliasing processing. FXAA is better alternative and customizable. Check the "!GameTitleHere_Anti-Aliasing/rules.txt" file in your graphicPack folder for info about the individual settings.
+version = 3
+
+[Preset]
+name = Disabled
+$preset:int = 0
+
+[Preset]
+name = Enabled
+$preset:int = 1
+
+[Preset]
+name = FXAA
+$preset:int = 2
+
+# Subpix:
+# Choose the amount of sub-pixel aliasing removal.
+# This can affect sharpness.
+#   1.00 - upper limit (softer)
+#   0.75 - default amount of filtering
+#   0.50 - lower limit (sharper, less sub-pixel aliasing removal)
+#   0.25 - almost off
+#   0.00 - completely off
+
+# EdgeThreshold:
+# The minimum amount of local contrast required to apply algorithm.
+#   0.333 - too little (faster)
+#   0.250 - low quality
+#   0.166 - default
+#   0.125 - high quality 
+#   0.063 - overkill (slower)
+
+# EdgeThresholdMin:
+# Trims the algorithm from processing darks.
+#   0.0833 - upper limit (default, the start of visible unfiltered edges)
+#   0.0625 - high quality (faster)
+#   0.0312 - visible limit (slower)
+
+# Credit: Kiri, NAVras
+# Credit: SkalFate for proper V3 Import.

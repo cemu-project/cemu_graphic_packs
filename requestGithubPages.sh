@@ -1,2 +1,0 @@
-#!/bin/bash
-if [ "$buildType" = "Uncommon" ]; then curl -X POST --header "Accept: application/vnd.github.mister-fantastic-preview+json" -u slashiee:$GITHUB_TOKEN https://api.github.com/repos/slashiee/cemu_graphic_packs/pages/builds; fi

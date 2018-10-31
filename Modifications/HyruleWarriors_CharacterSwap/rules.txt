@@ -1,0 +1,45 @@
+[Definition]
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = "Hyrule Warriors - Character Swap"
+version = 3
+
+[Preset]
+name = Cucco
+$character:int = 50
+
+[Preset]
+name = Ganon
+$character:int = 51
+
+
+# Link = 0
+# Zelda = 1
+# Sheik = 2
+# Impa = 3
+# Ganondorf = 4
+# Darunia = 5
+# Ruto = 6
+# Agitha = 7
+# Midna = 8
+# Fi = 9
+# Ghirahim = 10
+# Zant = 11
+# Lana = 13
+# Cia = 44
+# Volga = 45
+# Wizzro = 46
+# Twilight Midna = 47
+# Young Link = 48
+# Tingle = 49
+# Linkle = 50
+# Skull Kid = 51
+# Toon Link = 52
+# Tetra = 53
+# King Daphnes 54
+# Medli = 55
+# Marin = 56
+# Toon Zelda = 57
+# Ravio = 58
+# Yuga = 59
+
+https://github.com/Dekirai/HyruleWarriors-Trainer/blob/23a42b4ad580dfb847d6ef4ebcaa4c7a30df3eea/Hyrule%20Warriors/Form1.cs#L382

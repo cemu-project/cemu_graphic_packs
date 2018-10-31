@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010116300,000500001012DC00,0005000010135300
+name = Shadow Removal
+path = "The Wonderful 101/Workaround/Shadow Removal"
+description = This removes all broken shadows.
+version = 3

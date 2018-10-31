@@ -1,18 +1,7 @@
-<?php
-$width = $argv[1];
-$height = $argv[2];
-
-$aspect = $width / (float)$height;
-
-if (round($aspect*100.0) == 178)
-	exit(1);
-
-$aspect = number_format((float)$aspect, 3, '.', '');
-?>
 [sonic2013]
 moduleMatches = 0x7FE07429, 0xC5691A40
-0x100057B0 = .float <?=$aspect?> 
+0x100057B0 = .float $width/$height
 
 [sonic2013_trial]
 moduleMatches = 0xCA1DA800
-0x10004B68 = .float <?=$aspect?> 
+0x10004B68 = .float $width/$height

@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
-name = "Tokyo Mirage Sessions FE - Scale toon shader" 
-version = 2
-
-# defaults to 0.75, search replace "const float toonScale = 0.75;" in shaders for preference

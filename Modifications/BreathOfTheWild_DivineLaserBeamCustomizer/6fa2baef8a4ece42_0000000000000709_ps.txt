@@ -5,10 +5,10 @@
 // Credit for hsv functions below
 // http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl
 
-#define RAINBOW_EFFECT 0 // [0 or 1] set it to 1 to enable rainbow beams effect. in that case, HUE_ROTATION is ignored
-#define DISABLE_BEAMS 1 // [0 or 1] set it to 1 to hide the lasers completely
-#define HUE_ROTATION 0 //[0, 360] where 0 and 360 is unchanged Hue and 180 is completely opposite Hue. Check http://dba.med.sc.edu/price/irf/Adobe_tg/models/images/hsl_top.JPG
-#define SATURATION_FACTOR 1.1 //[0.0, 1.0] 1.0 means unchanged Saturation, 0.0 means completely desaturated. Values above 1.0 are accepted, but they may cause clipping
+#define RAINBOW_EFFECT $rainbow // [0 or 1] set it to 1 to enable rainbow beams effect. in that case, HUE_ROTATION is ignored
+#define DISABLE_BEAMS $disableBeams // [0 or 1] set it to 1 to hide the lasers completely
+#define HUE_ROTATION $hue //[0, 360] where 0 and 360 is unchanged Hue and 180 is completely opposite Hue. Check http://i.imgur.com/5UpyIGh.png
+#define SATURATION_FACTOR 1.0 //[0.0, 1.0] 1.0 means unchanged Saturation, 0.0 means completely desaturated. Values above 1.0 are accepted, but they may cause clipping
 #define VALUE_FACTOR 1.0 //same as above; applies to Value
 #define ALPHA_FACTOR 1.0 //same as above; applies to Transparency
 

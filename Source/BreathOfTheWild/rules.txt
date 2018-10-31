@@ -1,262 +1,593 @@
-<?php
-include 'Source/functions.php';
-$fullWidth = $argv[1];
-$fullHeight = $argv[2];
-$scaleFactorX = $fullWidth / 1280.0;
-$scaleFactorY = $fullHeight / 720.0;
-
-$title = get_title($fullWidth, $fullHeight);
-?>
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - <?=$title?>"
-version = 2
+name = Resolution
+path = "The Legend of Zelda: Breath of the Wild/Graphics/Resolution"
+description = Changes the games resolution. You cannot change resolutions on the fly.
+version = 3
 
-[TextureRedefine] #TV
+[Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+// For [4:3] resolutions that are multiples of 320x180
+// Performance
+
+[Preset]
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 960x540
+$width = 960
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+
+// Quality
+
+[Preset]
+name = 1920x1080
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1440
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3200x1800
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2160
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+// Enthusiast
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 10240x5760
+$width = 10240
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+
+
+// For [21:9] resolutions that are multiples of 420x180
+// Performance
+
+[Preset]
+name = (21:9) 1260x540
+$width = 1260
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 1680x720
+$width = 1680
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 2100x900
+$width = 2100
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+// Quality 
+
+[Preset]
+name = (21:9) 2520x1080
+$width = 2520
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 3360x1440
+$width = 3360
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 5040x2160
+$width = 5040
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 6720x2880
+$width = 6720
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+// Enthusiats
+
+[Preset]
+name = (21:9) 10080x4320
+$width = 10080
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 13440x5760
+$width = 13440
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+
+
+# All 720p textures:
+# - 0x001=World Lighting Red8
+# - 0x005=Link and Objects Depth
+# - 0x007=World Lighting Red-Green Texture
+# - 0x019=Menu Interface/GUI
+# - 0x01a=Normals
+# - 0x41a=Geometry rendering
+# - 0x806=World Fog
+# - 0x80e=Depth stencil buffer
+# - 0x816=Weapon and Objects Bloom
+# - 0x820=Fog/Wind
+
+# Depth/Geometry/Shading Rendering
+[TextureRedefine]
 width = 1280
 height = 720
-formats = 0x19,0x1a
-overwriteFormat = 0x1f
-tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
+formats = 0x001,0x005,0x007,0x019,0x01a,0x41a,0x80e,0x806,0x816,0x820
+formatsExcluded = 0x008 # Game Load Opening Background Image
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width/$gameWidth)* 1280
+overwriteHeight = ($height/$gameHeight)* 720
 
-[TextureRedefine] #TV
-width = 1280
-height = 720
-formatsExcluded = 0x008,0x19,0x1a,0x431 # exclude the intro background texture, champions' photo
-tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
-
-[TextureRedefine] #TV2
-width = 1280
-height = 721
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*721)?> 
-
-[TextureRedefine] #TV3
-width = 1280
-height = 608
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*608)?> 
-
-[TextureRedefine] #TV4 #Scale to TV, not performance target 
-width = 1152
-height = 648
-overwriteWidth = <?=$fullWidth?> 
-overwriteHeight = <?=$fullHeight?> 
-
-[TextureRedefine] #half-res1
-width = 640
-height = 360
-formatsExcluded = 0x431
-tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
-
-[TextureRedefine] #half-res2
-width = 640
-height = 290
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*290)?> 
-
-[TextureRedefine] #half-res3
-width = 640
-height = 288
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*288)?> 
-
-[TextureRedefine] #half-res4
-width = 640
-height = 361
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*361)?> 
-
-[TextureRedefine] #q-res1, main bloom, AO
-width = 320
-height = 180
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
-
-#[TextureRedefine] #q-res2
-#width = 320
-#height = 145
-#overwriteWidth = <?=round($scaleFactorX*320)?> 
-#overwriteHeight = <?=round($scaleFactorY*145)?> 
-
-#[TextureRedefine] #q-res3
-#width = 320
-#height = 144
-#overwriteWidth = <?=round($scaleFactorX*320)?> 
-#overwriteHeight = <?=round($scaleFactorY*144)?> 
-
-[TextureRedefine] #o-res1
-width = 160
-height = 90
-overwriteWidth = <?=round($scaleFactorX*160)?> 
-overwriteHeight = <?=round($scaleFactorY*90)?> 
-
-[TextureRedefine] # O
-width = 80
-height = 45
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*45)?> 
-
-[TextureRedefine] # M
-width = 80
-height = 44
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*44)?> 
-
-[TextureRedefine] # G
-width = 40
-height = 22
-overwriteWidth = <?=round($scaleFactorX*40)?> 
-overwriteHeight = <?=round($scaleFactorY*22)?> 
-
-[TextureRedefine] #fog
-width = 720
-height = 360
-overwriteWidth = <?=round($scaleFactorX*720)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
-
-[TextureRedefine] #dyeing inventory
-width = 1280
-height = 400
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*400)?> 
- 
-[TextureRedefine] #blur behind stable and shop menu
-width = 960
-height = 540
-tileModesExcluded = 0x001 #for 1080p video
-overwriteWidth = <?=round($scaleFactorX*960)?> 
-overwriteHeight = <?=round($scaleFactorY*540)?> 
- 
-[TextureRedefine] #dialog box
-width = 612
-height = 128
-overwriteWidth = <?=round($scaleFactorX*612)?> 
-overwriteHeight = <?=round($scaleFactorY*128)?> 
- 
-[TextureRedefine] #campfire ui box
-width = 564
-height = 128
-overwriteWidth = <?=round($scaleFactorX*564)?> 
-overwriteHeight = <?=round($scaleFactorY*128)?> 
- 
-[TextureRedefine] #selection boxes
-width = 247
-height = 52
-overwriteWidth = <?=round($scaleFactorX*247)?> 
-overwriteHeight = <?=round($scaleFactorY*52)?> 
- 
-[TextureRedefine] #new item box
-width = 566
-height = 216
-overwriteWidth = <?=round($scaleFactorX*566)?> 
-overwriteHeight = <?=round($scaleFactorY*216)?> 
- 
-[TextureRedefine] #some blur related shit
-width = 480
-height = 270
-formatsExcluded = 0x431
-overwriteWidth = <?=round($scaleFactorX*480)?> 
-overwriteHeight = <?=round($scaleFactorY*270)?> 
- 
-[TextureRedefine] #divine beast 3d minimap
-width = 512
-height = 288
-overwriteWidth = <?=round($scaleFactorX*512)?> 
-overwriteHeight = <?=round($scaleFactorY*288)?> 
- 
-[TextureRedefine] #minimap
-width = 192
-height = 192
+# Gamepad - background
+[TextureRedefine] 
+width = 864
+height = 480
 formats = 0x019
-overwriteWidth = <?=round($scaleFactorX*192)?> 
-overwriteHeight = <?=round($scaleFactorY*192)?> 
- 
-[TextureRedefine] #map
-width = 1500
-height = 720
-overwriteWidth = <?=round($scaleFactorX*1500)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
+formatsExcluded = 0x034 # Exclude 0x034 which is used for large album thumbnails
+overwriteWidth = ($width/$gameWidth)* 864
+overwriteHeight = ($height/$gameHeight)* 480
 
-[TextureRedefine] #hero mode path
-width = 1920
-height = 912
-overwriteWidth = <?=round($scaleFactorX*1920)?> 
-overwriteHeight = <?=round($scaleFactorY*912)?> 
-
-[TextureRedefine] #open inventory and use weapon boxes
-width = 495
-height = 355
-overwriteWidth = <?=round($scaleFactorX*495)?> 
-overwriteHeight = <?=round($scaleFactorY*355)?> 
-
-[TextureRedefine] #choose weapon box
-width = 555
-height = 355
-overwriteWidth = <?=round($scaleFactorX*555)?> 
-overwriteHeight = <?=round($scaleFactorY*355)?> 
-
-[TextureRedefine] #choose bow box
-width = 675
-height = 355
-overwriteWidth = <?=round($scaleFactorX*675)?> 
-overwriteHeight = <?=round($scaleFactorY*355)?> 
-
-[TextureRedefine] #action blur
-width = 416
-height = 233
-overwriteWidth = <?=round($scaleFactorX*416)?> 
-overwriteHeight = <?=round($scaleFactorY*233)?> 
-
-[TextureRedefine] #inventory background blur
-width = 320
-height = 180
-formats = 0x19
-overwriteFormat = 0x823
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
-
-[TextureRedefine] #title menu background bloom
-width = 320
-height = 180
-formats = 0x1a
-overwriteFormat = 0x823
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
-
-[TextureRedefine] #horse customization screen
-width = 480
-height = 720
-overwriteWidth = <?=round($scaleFactorX*480)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
-
-[TextureRedefine] #lines on map
-width = 13
-height = 305
-#overwriteFormat = 0x234
-
-[TextureRedefine] #shadows
-width = 360
-height = 360
-formats = 0x005
-overwriteWidth = <?=round($scaleFactorY*360)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
-
-[TextureRedefine] #shadows
-width = 720
-height = 720
-formats = 0x005
-overwriteWidth = <?=round($scaleFactorY*720)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
-
-[TextureRedefine] #gamepad. optional
+# Gamepad - game render size
+[TextureRedefine]
 width = 854
 height = 480
-#overwriteWidth = <?=$fullWidth?> 
-#overwriteHeight = <?=$fullHeight?> 
+formats = 0x019
+formatsExcluded = 0x034 # Exclude 0x034 which is used for large album thumbnails
+overwriteWidth = ($width/$gameWidth)* 854
+overwriteHeight = ($height/$gameHeight)* 480
+
+
+# All 1/2, 1/4 textures:
+# - 0x001=World Lighting - Red
+# - 0x005=Depth for Link and Objects
+# - 0x019=GUI
+# - 0x01a=Blurs and Normals 
+# - 0x80e=World and Objects Depth 32bit
+# - 0x806=World Fog
+# - 0x816=World & Weapon Bloom
+# - 0x820=Fog/Wind?
+
+# Required 1/2 resolutions
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x001,0x005,0x019,0x01a,0x80e,0x806,0x816,0x820
+formatsExcluded = 0x431 # Exclude 0x431 which is used for adventure log images
+overwriteWidth = ($width/$gameWidth)* 640
+overwriteHeight = ($height/$gameHeight)* 368
+
+# Required 1/2 resolutions
+[TextureRedefine] 
+width = 640
+height = 360
+formats = 0x001,0x005,0x019,0x01a,0x80e,0x806,0x816,0x820
+formatsExcluded = 0x431
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width/$gameWidth)* 640
+overwriteHeight = ($height/$gameHeight)* 360
+
+# Required 1/3 resolutions
+[TextureRedefine]
+width = 384
+height = 192
+formats = 0x001 # World lighting - Red
+overwriteWidth = ($width/$gameWidth)* 384
+overwriteHeight = ($height/$gameHeight)* 192
+
+# Required 1/4 resolutions
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x001,0x005,0x019,0x01a,0x80e,0x816,0x806
+overwriteWidth = ($width/$gameWidth)* 320
+overwriteHeight = ($height/$gameHeight)* 192
+
+# Required 1/4 resolutions
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x001,0x005,0x019,0x01a,0x80e,0x816,0x806
+overwriteWidth = ($width/$gameWidth)* 320
+overwriteHeight = ($height/$gameHeight)* 180
+
+# Required 1/6 resolution
+[TextureRedefine]
+width = 192
+height = 96
+formats = 0x007,0x806 # Used for Fog
+overwriteWidth = ($width/$gameWidth) * 192
+overwriteHeight = ($height/$gameHeight) * 96
+
+# Required 1/8 resolution
+[TextureRedefine]
+width = 160
+height = 96
+formats = 0x007,0x806,0x80e,0x816 # Used for Fog/Depth/Bloom
+overwriteWidth = ($width/$gameWidth)* 160
+overwriteHeight = ($height/$gameHeight)* 96
+
+# Required 1/8 resolution
+[TextureRedefine]
+width = 160
+height = 90
+formats = 0x007,0x806,0x80e,0x816
+overwriteWidth = ($width/$gameWidth)* 160
+overwriteHeight = ($height/$gameHeight)* 90
+
+# Required 1/13 resolution
+[TextureRedefine]
+width = 96
+height = 48
+formats = 0x816,0x80e # Used for bloom/depth
+overwriteWidth = ($width/$gameWidth)* 96
+overwriteHeight = ($height/$gameHeight)* 48
+
+# Required 1/16 resolution
+[TextureRedefine]
+width = 80
+height = 45
+formats = 0x816,0x806 # Used for bloom/fog
+overwriteWidth = ($width/$gameWidth)* 80
+overwriteHeight = ($height/$gameHeight)* 45
+
+# 0x01a - Blurs
+
+# Start Menu Screen "Complete" blur
+[TextureRedefine]
+width = 160
+height = 64
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 64
+
+# Start Menu Screen "Complete" blur
+[TextureRedefine]
+width = 160
+height = 50
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 50
+
+# Select Screen - Time and Temp Blur
+[TextureRedefine]
+width = 128
+height = 64
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 64
+
+# Select Screen - Time and Temp Blur
+[TextureRedefine]
+width = 128
+height = 50
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 50
+
+# Select Screen - Time and Temp Blur
+[TextureRedefine]
+width = 64
+height = 32
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
+# Select Screen - Time and Temp Blur
+[TextureRedefine]
+width = 64
+height = 25
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 25
+
+# Select Screen - Shrine Locator Blur
+[TextureRedefine]
+width = 288
+height = 64
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 288
+overwriteHeight = ($height/$gameHeight) * 64
+
+# Select Screen - Shrine Locator Blur
+[TextureRedefine]
+width = 266
+height = 50
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 266
+overwriteHeight = ($height/$gameHeight) * 50
+
+# Select Screen - Shrine Locator Blur
+[TextureRedefine]
+width = 160
+height = 32
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 32
+
+# Select Screen - Shrine Locator Blur
+[TextureRedefine]
+width = 133
+height = 25
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 133
+overwriteHeight = ($height/$gameHeight) * 25
+
+# Main menu BOTW logo blur
+[TextureRedefine]
+width = 120
+height = 80
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth)* 120
+overwriteHeight = ($height/$gameHeight)* 80
+
+# Main menu BOTW logo blur
+[TextureRedefine]
+width = 120
+height = 75
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth)* 120
+overwriteHeight = ($height/$gameHeight)* 75
+
+# 0x806 - Fogs and Dust
+# Required
+[TextureRedefine]
+width = 128
+height = 48
+formats = 0x806
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 48
+
+
+# 0x816 - Blooms & Effects
+
+# Heat wave effect
+[TextureRedefine]
+width = 1024
+height = 512
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 1024
+overwriteHeight = ($height/$gameHeight)* 512
+
+# Sheikah slate scope
+[TextureRedefine] 
+width = 512
+height = 256
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 512
+overwriteHeight = ($height/$gameHeight)* 256
+
+# World bloom
+
+[TextureRedefine] 
+width = 256
+height = 128
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 256
+overwriteHeight = ($height/$gameHeight)* 128
+
+[TextureRedefine]
+width = 128
+height = 64
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 128
+overwriteHeight = ($height/$gameHeight)* 64
+
+[TextureRedefine]
+width = 64
+height = 32
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 64
+overwriteHeight = ($height/$gameHeight)* 32
+
+[TextureRedefine]
+width = 32
+height = 16
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 32
+overwriteHeight = ($height/$gameHeight)* 16
+
+[TextureRedefine]
+width = 40
+height = 22
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 40
+overwriteHeight = ($height/$gameHeight)* 22
+
+[TextureRedefine]
+width = 24
+height = 16
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 24
+overwriteHeight = ($height/$gameHeight)* 16
+
+[TextureRedefine]
+width = 20
+height = 11
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth)* 20
+overwriteHeight = ($height/$gameHeight)* 11
+
+# Great Fairy / Stable / Stores Viewports
+
+# Required, Great Fairy Full Resolution Viewports
+[TextureRedefine] 
+width = 960
+height = 540
+formats = 0x816,0x005,0x007,0x019,0x01a,0x41a,0x80e,0x806
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width/$gameWidth) * 960
+overwriteHeight = ($height/$gameHeight) * 540
+
+# Required, Great Fairy Full Resolution Viewports
+[TextureRedefine] 
+width = 960
+height = 544
+formats = 0x816,0x005,0x007,0x019,0x01a,0x41a,0x80e,0x806
+overwriteWidth = ($width/$gameWidth) * 960
+overwriteHeight = ($height/$gameHeight) * 544
+
+# Required Great Fairy Red Viewport and Depth port of the same size
+[TextureRedefine]
+width = 512
+height = 272
+depth = 1
+formats = 0x001,0x005 # Red Viewport / Depth
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 272
+
+# Required, Great Fairy Half Resolution Viewports
+[TextureRedefine] 
+width = 480
+height = 272
+formats = 0x816,0x01a,0x820,0x001,0x80e,0x820
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 272
+
+# Required, Great Fairy Half Resolution Viewports
+[TextureRedefine] 
+width = 480
+height = 270
+formats = 0x816,0x01a,0x820,0x001,0x80e,0x820
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 270
+
+# Required - Great Fairy background heatwave effect
+[TextureRedefine]
+width = 512
+height = 512
+depth = 1
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 512
+
+# Depth 
+[TextureRedefine] # Top-view to bottom Depth
+width = 2048
+height = 2048
+formats = 0x005
+overwriteWidth = ($width/$gameWidth) * 2048
+overwriteHeight = ($height/$gameHeight) * 2048
+
+# Disabled since they break stuff
+
+# Minimap
+#[TextureRedefine]
+#width = 560
+#height = 560
+#formats = 0x431
+#overwriteWidth = 560
+#overwriteHeight = 560
+
+# Album images
+#[TextureRedefine] 
+#width = 854
+#height = 480
+#formats = 0x034
+#overwriteWidth = ($width/$gameWidth) * 854
+#overwriteHeight = ($height/$gameHeight) * 480
+
+# Start Menu Controller Mapping Screen Controller Image - Top
+#[TextureRedefine]
+#width = 480
+#height = 250
+#formats = 0x007
+#overwriteWidth = ($width/$gameWidth) * 480
+#overwriteHeight = ($height/$gameHeight) * 250
+
+# Start Menu Controller Mapping Screen Controller Image - Bottom
+#[TextureRedefine]
+#width = 480
+#height = 125
+#formats = 0x007
+#overwriteWidth = ($width/$gameWidth) * 480
+#overwriteHeight = ($height/$gameHeight) * 125
+
+# Save images
+#[TextureRedefine]
+#width = 256
+#height = 144
+#formats = 0x01a,0x41a
+#overwriteWidth = ($width/$gameWidth) * 256
+#overwriteHeight = ($height/$gameHeight) * 144
+
+# Scope interface; already scaled
+#[TextureRedefine] 
+#width = 1280
+#height = 608
+#formats = 0x019
+#overwriteWidth = ($width/$gameWidth) * 1280
+#overwriteHeight = ($height/$gameHeight) * 608

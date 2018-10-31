@@ -1,0 +1,78 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_shading_language_packing : enable
+// shader 7613a0515b67d8b4
+const float shadowRes = $shadowRes;
+uniform ivec4 uf_remappedVS[1];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+layout(location = 0) in uvec4 attrDataSem0;
+layout(location = 1) in uvec4 attrDataSem2;
+out gl_PerVertex
+{
+	vec4 gl_Position;
+	float gl_PointSize;
+};
+layout(location = 0) out vec4 passParameterSem130;
+layout(location = 1) out vec4 passParameterSem131;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+uvec4 attrDecoder;
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = floatBitsToInt(ivec4(gl_VertexID, 0, 0, gl_InstanceID));
+attrDecoder = attrDataSem0;
+attrDecoder = (attrDecoder>>24)|((attrDecoder>>8)&0xFF00)|((attrDecoder<<8)&0xFF0000)|((attrDecoder<<24));
+R1f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(int(attrDecoder.z)), intBitsToFloat(int(attrDecoder.w)));
+attrDecoder.xy = attrDataSem2.xy;
+attrDecoder.xy = ((attrDecoder.xy>>8)&0xFF)|((attrDecoder.xy<<8)&0xFF00);
+attrDecoder.z = 0;
+attrDecoder.w = 0;
+attrDecoder.xy = floatBitsToUint(unpackHalf2x16(attrDecoder.x|(attrDecoder.y<<16)));
+attrDecoder.zw = uvec2(0);
+R2f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(floatBitsToInt(0.0)), intBitsToFloat(floatBitsToInt(1.0)));
+// 0
+PV0f.x = intBitsToFloat(uf_remappedVS[0].y)/shadowRes;
+PV0f.x /= 2.0;
+PV0f.y = -(intBitsToFloat(uf_remappedVS[0].y))/shadowRes;
+PV0f.y /= 2.0;
+R127f.w = intBitsToFloat(uf_remappedVS[0].y)/shadowRes;
+R127f.w /= 2.0;
+PV0f.w = R127f.w;
+// 1
+R0f.xyz = vec3(R2f.x,R2f.y,R2f.x) + vec3(PV0f.y,PV0f.y,PV0f.x);
+R3f.w = R2f.x + PV0f.y;
+R3f.y = R2f.y + PV0f.w;
+PS1f = R3f.y;
+// 2
+R3f.z = R2f.x + R127f.w;
+// export
+gl_Position = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+// export
+passParameterSem130 = vec4(R0f.x, R0f.y, R0f.z, R0f.y);
+// export
+passParameterSem131 = vec4(R3f.w, R3f.y, R3f.z, R3f.y);
+// 0
+}

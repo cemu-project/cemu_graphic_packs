@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = Bloom Adjustment
+path = "Mario Kart 8/Enhancements/Bloom Adjustment"
+description = Allows you to adjust how strong the bloom is. Full amount is the default intensity of bloom.
+version = 3
+
+[Preset]
+name = (Default)Full Amount
+$bloom = 1
+
+[Preset]
+name = Disabled
+$bloom = 0
+
+[Preset]
+name = Quarter Amount
+$bloom = 0.25
+
+[Preset]
+name = Half Amount
+$bloom = 0.5

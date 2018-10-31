@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = AA removal TMS
+path = "Tokyo Mirage Sessions FE/Graphics/AA removal" 
+description = Removes AA, no performance gain. Used for clean look or injecting external AA
+version = 3

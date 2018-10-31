@@ -1,17 +1,10 @@
-<?php
-include 'Source/functions.php';
-$fullWidth = $argv[1];
-$fullHeight = $argv[2];
-$scaleFactorX = always_decimal_format($fullWidth / 1280.0);
-$scaleFactorY = always_decimal_format($fullHeight / 720.0);
-?>
 
 
 #version 420
 #extension GL_ARB_texture_gather : enable
 // shader b3fb199c73caa796 // bloom pyramid sample 1st
-const float resScale = <?=$scaleFactorX?>;
-//const float resScale = 3.0;
+const float resScale =  ($height/$gameHeight); 
+//const float resScale =  ($height/$gameHeight); 
 uniform ivec4 uf_remappedPS[4];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf551a000 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0

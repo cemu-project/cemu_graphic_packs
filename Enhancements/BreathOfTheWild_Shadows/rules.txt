@@ -1,0 +1,63 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Shadow Resolution
+path = "The Legend of Zelda: Breath of the Wild/Graphics/Shadow Resolution"
+description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution.
+version = 3
+
+[Preset]
+name = Medium (1.00x, Default)
+$shadowRes = 1
+
+[Preset]
+name = Low (0.50x)
+$shadowRes = 0.5
+
+[Preset]
+name = High (2.00x)
+$shadowRes = 2
+
+[Preset]
+name = Ultra (4.00x)
+$shadowRes = 4
+
+[Preset]
+name = Extreme (8.00x)
+$shadowRes = 8
+
+# Uniform shadow maps
+
+[TextureRedefine]
+width = 768
+height = 720
+formats = 0x005
+overwriteWidth = $shadowRes * 768
+overwriteHeight = $shadowRes * 720
+
+[TextureRedefine]
+width = 720
+height = 720
+formats = 0x005
+overwriteWidth = $shadowRes * 720
+overwriteHeight = $shadowRes * 720
+
+[TextureRedefine]
+width = 384
+height = 368
+formats = 0x005
+overwriteWidth = $shadowRes * 384
+overwriteHeight = $shadowRes * 368
+
+[TextureRedefine]
+width = 384
+height = 360
+formats = 0x005
+overwriteWidth = $shadowRes * 384
+overwriteHeight = $shadowRes * 360
+
+[TextureRedefine]
+width = 360
+height = 360
+formats = 0x005
+overwriteWidth = $shadowRes * 360
+overwriteHeight = $shadowRes * 360

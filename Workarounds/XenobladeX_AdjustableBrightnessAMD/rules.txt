@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Brightness workaround AMD
+path = "Xenoblade Chronicles X/Workaround/AMD Brightness Workaround"
+description = Slightly less overbright/dark. Edit shader for preference.
+version = 3

@@ -1,0 +1,97 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Static FPS
+path = "The Legend of Zelda: Breath of the Wild/Modifications/Static FPS"
+description = "Simplified FPS++ to prevent graphics judder and fixed arrow physics at non-30FPS; don't mix FPS++ with static; it requires updated Cemuhook and game; it requires that you can maintain the target FPS; more at readme.txt"
+version = 3
+
+[Preset]
+name = Static 30FPS (most stable; ideal for 240/120/60Hz displays)
+$targetFPS:int = 30
+
+[Preset]
+name = Static 60FPS (ideal for 240/120/60Hz displays)
+$targetFPS:int = 60
+
+[Preset]
+name = Static 45FPS
+$targetFPS:int = 45
+
+[Preset]
+name = Static 144FPS (ideal for 144Hz displays)
+$targetFPS:int = 144
+
+[Preset]
+name = Static 120FPS (ideal for 240/120/60Hz displays)
+$targetFPS:int = 120
+
+[Preset]
+name = Static 100FPS (ideal for 200/100Hz displays)
+$targetFPS:int = 100
+
+[Preset]
+name = Static 85FPS (ideal for 85Hz displays)
+$targetFPS:int = 85
+
+[Preset]
+name = Static 75FPS (ideal for 75Hz displays)
+$targetFPS:int = 75
+
+[Preset]
+name = Static 72FPS (ideal for 144Hz displays)
+$targetFPS:int = 72
+
+[Preset]
+name = Static 50FPS (ideal for 200/100Hz displays)
+$targetFPS:int = 50
+
+[Preset]
+name = Static 48FPS (ideal for 144Hz displays)
+$targetFPS:int = 48
+
+[Preset]
+name = Static 40FPS (ideal for 240/120/60Hz displays)
+$targetFPS:int = 40
+
+[Preset]
+name = Static 36FPS (ideal for 144Hz displays)
+$targetFPS:int = 36
+
+[Preset]
+name = Static 25FPS (ideal for 75Hz displays)
+$targetFPS:int = 25
+
+[Preset]
+name = Static 24FPS (ideal for 144Hz displays)
+$targetFPS:int = 24
+
+[Preset]
+name = Static 20FPS (ideal for 240/120/60Hz displays)
+$targetFPS:int = 20
+
+[Preset]
+name = Static 18FPS (ideal for 144Hz displays)
+$targetFPS:int = 18
+
+[Preset]
+name = Static 17FPS (ideal for 85Hz displays)
+$targetFPS:int = 17
+
+[Preset]
+name = Static 16FPS (ideal for 144Hz displays)
+$targetFPS:int = 16
+
+[Preset]
+name = Static 15FPS (ideal for 240/120/60Hz displays)
+$targetFPS:int = 15
+
+[Preset]
+name = Static 12FPS (ideal for 144Hz displays)
+$targetFPS:int = 12
+
+[Preset]
+name = Static 10FPS (ideal for 240/120/60Hz displays)
+$targetFPS:int = 10
+
+[Control]
+vsyncFrequency = $targetFPS

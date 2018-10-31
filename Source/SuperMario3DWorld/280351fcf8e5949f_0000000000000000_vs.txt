@@ -1,18 +1,11 @@
-<?php 
-include 'Source/functions.php'; 
-$fullWidth = $argv[1]; 
-$fullHeight = $argv[2]; 
-$scaleFactorX = always_decimal_format($fullWidth / 1280.0); 
-$scaleFactorY = always_decimal_format($fullHeight / 720.0); 
-?>
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 280351fcf8e5949f
 // Used for: Another vertical blur
-const float resXScale = <?=$scaleFactorX?>; 
-const float resYScale = <?=$scaleFactorY?>; 
+const float resXScale =  ($width/$gameWidth);
+const float resYScale = ($height/$gameHeight); 
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;

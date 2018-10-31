@@ -1,4 +1,6 @@
 [Definition]
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
-name = "Hyrule Warriors - 60FPS Fixes (requires stable 60FPS!)"
-version = 2
+name = 60FPS Fix
+path = "Hyrule Warriors/Modifications/60FPS Fix"
+description = "Important: This patches the gameplay to be in 60fps. Getting under 60fps will slow down the game's speed."
+version = 3

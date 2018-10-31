@@ -1,4 +1,0 @@
-[Definition]
-titleIds = 0005000010116300,000500001012DC00,0005000010135300
-name = "The Wonderful 101 - Shadow Removal"
-version = 2

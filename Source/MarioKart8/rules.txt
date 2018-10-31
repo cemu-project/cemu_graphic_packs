@@ -1,326 +1,403 @@
-<?php
-include 'Source/functions.php';
-$fullWidth = $argv[1];
-$fullHeight = $argv[2];
-$scaleFactorX = $fullWidth / 1280.0;
-$scaleFactorY = $fullHeight / 720.0;
-
-$title = get_title($fullWidth, $fullHeight);
-?>
 [Definition]
-titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
-name = "Mario Kart 8 - <?=$title?>"
-version = 2
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = Resolution
+path = "Mario Kart 8/Graphics/Resolution"
+description = Changes the resolution of the game. Known issues: 3-4P upscaling works but misses shadows.
+version = 3
+
+[Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+// For [4:3] resolutions that are multiples of 320x180
+// Performance
+
+[Preset]
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 960x540
+$width = 960
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+
+// Quality
+
+[Preset]
+name = 1920x1080
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1440
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3200x1800
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2160
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+// Enthusiast
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 10240x5760
+$width = 10240
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
 
 
-#[TextureRedefine] # 
-#width = 2048
-#height = 2048
-#overwriteWidth = <?=round($scaleFactorX*2048)?> 
-#overwriteHeight = <?=round($scaleFactorY*2048)?> 
+// For [21:9] resolutions that are multiples of 420x180
+// Performance
 
-#[TextureRedefine] #selection screen shadows
-#width = 1536
-#height = 1536
+[Preset]
+name = (21:9) 1260x540
+$width = 1260
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
 
+[Preset]
+name = (21:9) 1680x720
+$width = 1680
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
 
+[Preset]
+name = (21:9) 2100x900
+$width = 2100
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+// Quality 
+
+[Preset]
+name = (21:9) 2520x1080
+$width = 2520
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 3360x1440
+$width = 3360
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 5040x2160
+$width = 5040
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 6720x2880
+$width = 6720
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+// Enthusiats
+
+[Preset]
+name = (21:9) 10080x4320
+$width = 10080
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (21:9) 13440x5760
+$width = 13440
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+
+// 48:9
+
+[Preset]
+name = (48:9) 1920x360
+$width = 1920
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 3840x720
+$width = 3840
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 4800x900
+$width = 4800
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 11520x2160
+$width = 11520
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 15360x2880
+$width = 15360
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 23040x4320
+$width = 23040
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 30720x5760
+$width = 30720
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+
+# Full Res
 [TextureRedefine]
 width = 1280
 height = 720
 formatsExcluded =  0x41A,0x431 # exclude the intro background texture, race end background
 tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*1280)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
 
-[TextureRedefine] #MShadows
-width = 1024
-height = 1024
-formats = 0x005 #shadows 2 lod slices
-overwriteWidth = <?=round($scaleFactorY)*1024?> 
-overwriteHeight = <?=round($scaleFactorY)*1024?> 
+# Gamepad
+[TextureRedefine]
+width = 864
+height = 480
+formats = 0x816,0x019
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
 
-#[TextureRedefine] ##gloss, reflections, don't scale
-#width = 768
-#width = 768
+# Gamepad
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x816,0x019
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
 
-[TextureRedefine] # Multiplayer-Mode Resolution (2p)
+
+# 2P Full Res
+[TextureRedefine]
 width = 640
 height = 720
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*720)?> 
+formats = 0x019,0x816,0x806,0x80e
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 720
 
+# 3-4P Full Res
 [TextureRedefine]
 width = 640
-height = 360
+height = 368
 tileModesExcluded = 0x001
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
+formats = 0x019,0x816,0x806,0x80e
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
 
 [TextureRedefine]
 width = 640
-height = 320
-overwriteWidth = <?=round($scaleFactorX*640)?> 
-overwriteHeight = <?=round($scaleFactorY*320)?> 
-
-#[TextureRedefine] #selection fmv don't scale 
-#width = 512
-#height = 608
-#formatsExcluded = 0x001 #selection fmt
-
-#[TextureRedefine] #shadows multiplayer?
-#width = 512
-#height = 512
-#formats = 0x005 # verify later
-#overwriteWidth = <?=round($scaleFactorX*512)?> 
-#overwriteHeight = <?=round($scaleFactorY*512)?> 
-
-[TextureRedefine]
-width = 427
-height = 240
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*427)?> 
-overwriteHeight = <?=round($scaleFactorY*240)?> 
-
-[TextureRedefine] #4P?
-width = 320
 height = 360
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*360)?> 
+formats = 0x816
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
 
-[TextureRedefine] # Bloom first mip, motion blur effect
+[TextureRedefine]
+width = 512
+height = 256
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 256
+
+
+# Blur in menu's
+[TextureRedefine]
 width = 320
 height = 180
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*320)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
-
-[TextureRedefine] #
-width = 256
-height = 256
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235 #
-overwriteWidth = <?=round($scaleFactorX*256)?> 
-overwriteHeight = <?=round($scaleFactorY*256)?> 
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
 
 [TextureRedefine]
-width = 199
-height = 116
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*199)?> 
-overwriteHeight = <?=round($scaleFactorY*116)?> 
+width = 320
+height = 192
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
 
+# Blurred backgrounds in menu
 [TextureRedefine]
-width = 160
+width = 320
 height = 180
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*160)?> 
-overwriteHeight = <?=round($scaleFactorY*180)?> 
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
 
-[TextureRedefine]  #bloom 2nd  mip
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+
+# Particles/highlights
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 256
+height = 128
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]
 width = 160
 height = 90
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*160)?> 
-overwriteHeight = <?=round($scaleFactorY*90)?> 
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
 
 [TextureRedefine]
 width = 160
-height = 80
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*160)?> 
-overwriteHeight = <?=round($scaleFactorY*80)?> 
-
-[TextureRedefine] #
-width = 148
-height = 148
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*148)?> 
-overwriteHeight = <?=round($scaleFactorY*148)?> 
-
-[TextureRedefine]
-width = 133
-height = 77
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*133)?> 
-overwriteHeight = <?=round($scaleFactorY*77)?> 
+height = 96
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 96
 
 [TextureRedefine]
 width = 128
-height = 256
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a,0x234,0x235
-overwriteWidth = <?=round($scaleFactorX*128)?> 
-overwriteHeight = <?=round($scaleFactorY*256)?> 
-
-
-#[TextureRedefine] #May unintentionally scale textures, check formatsExcluded
-#width = 128
-#height = 128
-#formatsExcluded = 
-#overwriteWidth = <?=round($scaleFactorX*128)?> 
-#overwriteHeight = <?=round($scaleFactorY*128)?> 
+height = 64
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine]
-width = 80
-height = 90
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*90)?> 
-
-[TextureRedefine] # bloom 3rd mip
-width = 80
-height = 45
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*45)?> 
-
-[TextureRedefine]
-width = 80
-height = 40
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*80)?> 
-overwriteHeight = <?=round($scaleFactorY*40)?> 
+width = 40
+height = 22
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 40
+overwriteHeight = ($height/$gameHeight) * 22
 
 [TextureRedefine]
 width = 64
-height = 128
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*64)?> 
-overwriteHeight = <?=round($scaleFactorY*128)?> 
-
-#[TextureRedefine] # glossmap breaks 64 cube?
-#width = 64
-#height = 64
-
-
-#[TextureRedefine] #check later
-#width = 52
-#height = 52
-#formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-#overwriteWidth = 156
-#overwriteHeight = 156
-
-[TextureRedefine]
-width = 49
-height = 29
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*49)?> 
-overwriteHeight = <?=round($scaleFactorY*29)?> 
-
-[TextureRedefine]
-width = 40
-height = 45
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*40)?> 
-overwriteHeight = <?=round($scaleFactorY*45)?> 
-
-[TextureRedefine] #bloom
-width = 40
-height = 22
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*40)?> 
-overwriteHeight = <?=round($scaleFactorY*22)?> 
-
-[TextureRedefine]
-width = 40
-height = 20
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*40)?> 
-overwriteHeight = <?=round($scaleFactorY*20)?> 
-
-[TextureRedefine]
-width = 33
-height = 19
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*33)?> 
-overwriteHeight = <?=round($scaleFactorY*19)?> 
-
-[TextureRedefine]
-width = 32
-height = 64
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*32)?> 
-overwriteHeight = <?=round($scaleFactorY*64)?> 
-
-#[TextureRedefine] #
-#width = 32
-#height = 32
-#formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x816,0x01a #0x816 exclude cube 
-#overwriteWidth = 96
-#overwriteHeight = 96
-
-[TextureRedefine]
-width = 20
-height = 22
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*20)?> 
-overwriteHeight = <?=round($scaleFactorY*22)?> 
-
-
-[TextureRedefine]
-width = 20
-height = 10
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-verwriteWidth = <?=round($scaleFactorX*20)?> 
-overwriteHeight = <?=round($scaleFactorY*11)?> 
-
-[TextureRedefine]
-width = 16
 height = 32
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*16)?> 
-overwriteHeight = <?=round($scaleFactorY*32)?> 
-
-
-#[TextureRedefine] #M
-#width = 16
-#height = 16
-#formatsExcluded = 
-#overwriteWidth = <?=round($scaleFactorX*16)?> 
-#overwriteHeight = <?=round($scaleFactorY*16)?> 
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
 
 [TextureRedefine]
-width = 8
-height = 16
-formatsExcluded = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435,0x01a
-overwriteWidth = <?=round($scaleFactorX*8)?> 
-overwriteHeight = <?=round($scaleFactorY*16)?> 
+width = 80
+height = 45
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 80
+overwriteHeight = ($height/$gameHeight) * 45
 
-###MKTV###
-# MKTV screen
 [TextureRedefine]
-width = 960
-height = 540
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*960)?> 
-overwriteHeight = <?=round($scaleFactorY*540)?> 
+width = 96
+height = 48
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 96
+overwriteHeight = ($height/$gameHeight) * 48
 
-# MKTV internal render targets
-[TextureRedefine]
-width = 960
-height = 536
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*960)?> 
-overwriteHeight = <?=round($scaleFactorY*536)?> 
 
-# MKTV half res alpha
-[TextureRedefine]
-width = 480
-height = 268
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*960)?> 
-overwriteHeight = <?=round($scaleFactorY*268)?> 
+# Underwater effect
+[TextureRedefine] # 1P
+width = 640
+height = 368
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
 
-# MKTV quarter res alpha
-[TextureRedefine]
-width = 240
-height = 134
-formatsExcluded = 0x41A # exclude obvious textures
-overwriteWidth = <?=round($scaleFactorX*240)?> 
-overwriteHeight = <?=round($scaleFactorY*134)?> 
+[TextureRedefine] # 1P
+width = 640
+height = 360
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
 
-[TextureRedefine] #shadows
-width = 1024
-height = 1024
-formats = 0x005
-overwriteWidth = <?=round($scaleFactorY*1024)?> 
-overwriteHeight = <?=round($scaleFactorY*1024)?> 
+[TextureRedefine] # 2P
+width = 320
+height = 368
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine] # 2P
+width = 320
+height = 360
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 360

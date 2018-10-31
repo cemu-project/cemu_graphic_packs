@@ -1,0 +1,12 @@
+[Definition]
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00
+name = No Boxing Ring Screen
+path = "Super Smash Bros. for Wii U/Workarounds/No Boxing Ring Screen"
+description = Disables the boxing ring screen.
+version = 3
+
+[TextureRedefine]
+width = 220
+height = 124
+overwriteWidth = 1
+overwriteHeight = 1

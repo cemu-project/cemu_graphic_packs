@@ -1,4 +1,6 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - FPS++"
-version = 2
+name = Dynamic (FPS++)
+path = "The Legend of Zelda: Breath of the Wild/Modifications/Dynamic (FPS++)"
+description = "Important: Don't enable Static FPS while having FPS++ also enabled! This pack won't work without Cemuhook, make sure to install that! This pack only works when you've properly updated your game (we always recommend the latest updates). Keep in mind that going above 30fps will bring game bugs. Use Static FPS if you've got a stable framerate and want to get rid of some FPS++ related bugs like arrow distance and some other animation issues."
+version = 3

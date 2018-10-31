@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "The Legend of Zelda: Breath of the Wild - AMD Shadows" # made by ethrillo
-version = 2
-
-#Updated by Cypher to support BotW 1.40
