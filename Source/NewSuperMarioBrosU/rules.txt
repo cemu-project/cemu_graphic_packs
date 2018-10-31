@@ -1,0 +1,228 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+name = Resolution
+path = "New Super Mario Bros. U/Graphics/Resolution" #and luigi
+description = Changes the resolution of the game.
+version = 3
+
+//compatible resolutions
+[Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+
+[Preset]
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+
+// Quality
+
+[Preset]
+name = 1920x1080 (HD)
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.15
+$scaleShader = 1.0
+$scaleBlur = 0.25
+
+[Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+
+[Preset]
+name = 2560x1440 (Native x2)
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.5
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 3200x1800
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 3840x2160 (4k - Native x3)
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
+// Enthusiast
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 10240x5760
+$width = 10240
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+#[TextureRedefine] # Tile map, dont scale
+#width = 2048
+#height = 512
+
+[TextureRedefine]
+width = 1280
+height = 720
+#formats = 0x80e,0x01a,0x001
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] #map shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = ($height/$gameHeight) * 1024 
+overwriteHeight = ($height/$gameHeight) * 1024 
+
+[TextureRedefine] #Pad
+width = 864
+height = 480
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] #Pad
+width = 854
+height = 480
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] #Horizon blur
+width = 640
+height = 368
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine] #Horizon blur
+width = 640
+height = 360
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine]
+width = 512
+height = 256
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine]
+width = 256
+height = 128
+formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+
+[TextureRedefine]
+width = 320
+height = 180
+#formatsExcluded = 
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 160
+height = 208
+#formats = 0x80e,0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 208
+
+[TextureRedefine] #portraits
+width = 160
+height = 196
+#formats = 0x80e,0x01a
+formatsExcluded = 0x033
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 196
+
+[TextureRedefine]
+width = 160
+height = 90
+#formatsExcluded = 
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+## Gradient don't scale
+#width = 48
+#height = 48
+
+#[TextureRedefine] 
+#width = 1
+#height = 1
+#formatsExcluded = 
+#overwriteWidth = ($width/$gameWidth) * 1
+#overwriteHeight = ($height/$gameHeight) * 1

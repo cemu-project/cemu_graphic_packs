@@ -1,0 +1,109 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 8d638f35cebd14dc
+//banding fix
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x48ab0000 res 8x256x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x9) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 0 border: 0
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
+layout(location = 2) in vec4 passParameterSem2;
+layout(location = 3) in vec4 passParameterSem3;
+layout(location = 0) out vec4 passPixelColor0;
+layout(location = 1) out vec4 passPixelColor1;
+highp float lineRand(vec2 co)
+{
+	highp float a = 12.9898;
+	highp float b = 78.233;
+	highp float c = 43758.5453;
+	highp float dt = dot(co.xy, vec2(a, b));
+	highp float sn = mod(dt, 3.14);
+	return fract(sin(sn) * c);
+}
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+R1f = passParameterSem1;
+R2f = passParameterSem2;
+R3f = passParameterSem3;
+R3f.xy = R3f.xy - (lineRand(gl_FragCoord.xy)*0.0075);
+R3f.xyz = (texture(textureUnitPS0, R3f.xy).xyz);
+// 0
+R123f.x = (mul_nonIEEE(R0f.z,R3f.z) + 0.0);
+PV0f.x = R123f.x;
+R123f.y = (mul_nonIEEE(R0f.y,R3f.y) + 0.0);
+PV0f.y = R123f.y;
+R123f.z = (mul_nonIEEE(R0f.x,R3f.x) + 0.0);
+PV0f.z = R123f.z;
+R3f.w = R0f.w + 0.0;
+R3f.w = clamp(R3f.w, 0.0, 1.0);
+R0f.w = 1.0;
+PS0f = R0f.w;
+// 1
+PV1f.x = R2f.z * R2f.z;
+R127f.y = PV0f.x + 0.0;
+R127f.y = clamp(R127f.y, 0.0, 1.0);
+R127f.z = PV0f.y + 0.0;
+R127f.z = clamp(R127f.z, 0.0, 1.0);
+R127f.w = PV0f.z + 0.0;
+R127f.w = clamp(R127f.w, 0.0, 1.0);
+PV1f.w = R127f.w;
+// 2
+tempf.x = dot(vec4(R2f.x,R2f.y,PV1f.x,-0.0),vec4(R2f.x,R2f.y,1.0,0.0));
+PV0f.x = tempf.x;
+PV0f.y = tempf.x;
+PV0f.z = tempf.x;
+PV0f.w = tempf.x;
+PS0f = R1f.x + -(PV1f.w);
+// 3
+R3f.x = (mul_nonIEEE(PS0f,R1f.w) + R127f.w);
+PV1f.z = R1f.z + -(R127f.y);
+PV1f.w = R1f.y + -(R127f.z);
+tempResultf = 1.0 / sqrt(PV0f.x);
+R127f.x = tempResultf;
+R127f.x /= 2.0;
+PS1f = R127f.x;
+// 4
+R0f.x = (mul_nonIEEE(R2f.x,PS1f) + 0.5);
+R3f.y = (mul_nonIEEE(PV1f.w,R1f.w) + R127f.z);
+R3f.z = (mul_nonIEEE(PV1f.z,R1f.w) + R127f.y);
+R0f.y = (mul_nonIEEE(R2f.y,PS1f) + 0.5);
+PS0f = R0f.y;
+// 5
+R0f.z = (mul_nonIEEE(R2f.z,R127f.x) + 0.5);
+PV1f.z = R0f.z;
+// 6
+R1f.xyz = vec3(R0f.x,R0f.y,PV1f.z);
+R1f.w = R0f.w;
+// 7
+R0f.xyz = vec3(R3f.x,R3f.y,R3f.z);
+R0f.w = R3f.w;
+// export
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+passPixelColor1 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+}
