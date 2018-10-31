@@ -27,11 +27,44 @@ $dither = 0.01
 $scaleShader = 1.0
 $scaleBlur = 0.05
 
+[Preset]
+name = 3840x720 (48:9)
+$width = 3840
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+
 // Quality
 
 [Preset]
 name = 1920x1080 (HD)
 $width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 2560x1080 (21:9 HD)
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 5760x1080 (48:9 HD)
+$width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
@@ -54,6 +87,28 @@ $scaleBlur = 0.5
 [Preset]
 name = 2560x1440 (Native x2)
 $width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 7680x1440 (48:9)
+$width = 7680
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
@@ -87,6 +142,28 @@ $scaleBlur = 0.5
 [Preset]
 name = 3840x2160 (4k - Native x3)
 $width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 5120x2160 (4k 21:9)
+$width = 5120
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 5120x2160 (4k 48:9)
+$width = 11520
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720

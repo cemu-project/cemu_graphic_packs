@@ -1,0 +1,65 @@
+[XCXAspectV100U_V101U]
+moduleMatches = 2878856811, 0x676EB33E
+
+# rodata constants
+0x1003E754 = .float $width/$height 
+_aspectAddr = 0x1003E754
+
+# 3d Aspect
+0x031608E4 = lis r7, _aspectAddr@ha
+0x031608E8 = lfs f13, _aspectAddr@l(r7)
+
+[XCXAspectV102U]
+moduleMatches = 0x30B6E091
+
+#rodata constants
+0x1003E754 = .float $width/$height 
+_aspectAddr = 0x1003E754
+
+# 3d Aspect
+0x03160A64 = lis r7, _aspectAddr@ha
+0x03160A68 = lfs f13, _aspectAddr@l(r7)
+
+[XCXAspectV100E_V101E]
+moduleMatches = 0x218F6E07, 0xF882D5CF
+
+# rodata constants
+0x1003E754 = .float $width/$height 
+_aspectAddr = 0x1003E754
+
+# 3d Aspect
+0x03160AE4 = lis r7, _aspectAddr@ha
+0x03160AE8 = lfs f13, _aspectAddr@l(r7)
+
+[XCXAspectV100J]
+moduleMatches = 0x785CA8A9
+
+#rodata constants
+0x1003E6C4 = .float $width/$height
+_aspectAddr = 0x1003E6C4
+
+# 3d Aspect
+0x0315687C = lis r7, _aspectAddr@ha
+0x03156880 = lfs f13, _aspectAddr@l(r7)
+
+[XCXAspectV101J]
+moduleMatches = 0x8780C48F
+
+#rodata constants
+0x1003E714 = .float $width/$height
+_aspectAddr = 0x1003E714
+
+# 3d Aspect
+0x0315BBA4 = lis r7, _aspectAddr@ha
+0x0315BBA8 = lfs f13, _aspectAddr@l(r7)
+
+[XCXAspectV102J]
+moduleMatches = 0x7672271D
+
+#rodata constants
+0x1003E714 = .float $width/$height
+_aspectAddr = 0x1003E714
+
+# 3d Aspect
+0x0315BE7C = lis r7, _aspectAddr@ha
+0x0315BE80 = lfs f13, _aspectAddr@l(r7)
