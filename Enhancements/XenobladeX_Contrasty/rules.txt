@@ -1,13 +1,13 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Contrasty
-path = "Xenoblade Chronicles X/Enhancements/Contrasty" 
-description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Enabling will ignore your other AA settings.
+path = "Xenoblade Chronicles X/Graphics/Contrasty" 
+description = Colour and contrast - Replaces AA removal
 version = 3
 
 
 [Preset]
-name = Default
+name = default
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -51,7 +51,7 @@ $bleach = 0.85
 $sharp_mix = 0.1
 
 [Preset]
-name = Colourful
+name = Colourfull
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0

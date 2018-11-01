@@ -1,4 +1,34 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Xenoblade Chronicles X - Wider FOV" # change values in patches.txt
-version = 2
+name = FoV
+path = "Xenoblade Chronicles X/Modifications/FoV" 
+description = Changes FoV - Fixes edge framing for 21:9 cinematics and other FoV tweaks.
+version = 3
+
+[Preset]
+name = Default FoV  
+$fov  = 1.0
+
+[Preset]
+name = Match 16:9 horizontal FoV to 21:9 (1.3125)
+$fov  = 1.3125
+
+[Preset]
+name = Balance 48:9 (1.45) 
+$fov = 1.45
+
+[Preset]
+name = Slight FoV increase without breaking framing (0.925)
+$fov = 0.925
+
+[Preset]
+name = Pc style wide FoV (0.825)
+$fov = 0.825
+
+[Preset]
+name = Match 21:9 horizontal FoV to 16:9 (0.7442)
+$fov = 0.7442
+
+[Preset]
+name = Fish eye (0.5)
+$fov = 0.5
