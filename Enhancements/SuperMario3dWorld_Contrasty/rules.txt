@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010145D00,0005000010145C00,0005000010106100
 name = Contrasty
-path = "Super Mario 3D World/Contrasty" 
+path = "Super Mario 3D World/Graphics/Contrasty" 
 description = Colour and contrast - Note doesn't work with resolution in 1.4
 version = 3
 

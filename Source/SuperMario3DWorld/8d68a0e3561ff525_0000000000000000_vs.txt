@@ -3,8 +3,8 @@
 #extension GL_ARB_shading_language_packing : enable
 // shader 8d68a0e3561ff525
 // Used for: Horizontal Gameplay Blur
-const float resXScale = ($width/$gameWidth);
-const float resYScale = ($width/$gameWidth);
+const float resXScale = intBitsToFloat($width)/intBitsToFloat($gameWidth);
+const float resYScale = intBitsToFloat($width)/intBitsToFloat($gameWidth);
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
