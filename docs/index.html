@@ -20,19 +20,33 @@ meta-description: "Largest graphic pack source for Cemu that modify or scale gam
     </p>
 </div>
 
+<div id="remove-all-gfx-packs" class="jumbotron notification" hidden>
+    <h3>Remove all your graphic packs before</h3>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0);" onclick="confirmNotification('remove-all-gfx-packs');" role="button">Okay!</a>
+    </p>
+</div>
+
+
+
 {% comment %} Get the latest release zip {% endcomment %}
 {% capture newReleaseVersion %} {{ site.github.latest_release.assets[0].browser_download_url | slice: 71, 3}} {% endcapture %}
 {% assign newReleaseVersion = newReleaseVersion | plus:1 %}
 
-
 <div id="download-gfx-panel" class="jumbotron">
     <h2>Downloads</h2>
     <p>Choose the right download for the Cemu version that you'll use.</p>
-    <p class="lead">
+    <p style="font-size: 16px; color: red; font-weight: bold;">Remove your previous graphic packs before installing/updating each time you install your graphic packs or you might run into issues!</p>
+    <div class="lead">
         <a class="btn btn-primary btn-lg" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis{{ newReleaseVersion }}/graphicPacks{{ newReleaseVersion }}.zip" role="button">Cemu 1.14.0 (version 3)</a>
-        <a class="btn btn-default btn-lg" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip" role="button">Cemu 1.8.0 through 1.13.2 (version 2)</a>
-        <a class="btn btn-default btn-lg" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip" role="button">Cemu 1.7.0 through 1.7.5 (version 1)</a>
-    </p>
+        <span class="dropdown">
+            <a id="dropdown-version-button" data-target="#" class="btn btn-default btn-lg" role="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions<span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown-version-button">
+                <li><a href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a></li>
+                <li><a href="https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a></li>
+            </ul>
+        </span>
+    </div>
 </div>
 
 
@@ -58,4 +72,20 @@ Possible todo's:
 			<a id="see-less-footer" href="javascript:document.getElementById('game-list').classList.add('version3-only');">Only show Cemu 1.14.0 graphic packs...</a>
 		</div>
 	</ul>
+</div>
+
+
+{% comment %} Show github contributors {% endcomment %}
+<div id="contributor-list">
+    <div class="page-header">
+        <h3>These graphic packs are made by these contributors!</h3>
+    </div>
+    <table>
+        {% tablerow contributor in site.github.contributors cols:9 %}
+        <a class="contributor-tooltip" href="https://github.com/slashiee/cemu_graphic_packs/commits?author={{contributor.login}}">
+            <span class="contributor-tooltip-text">{{contributor.login}}<div style="color: red;">{{contributor.contributions}} Commits</div></span>
+            <img src="{{contributor.avatar_url}}" alt="{{contributor.login}}'s avatar" class="thumbnail">
+        </a>
+        {% endtablerow %}
+    </table>
 </div>

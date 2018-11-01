@@ -43,3 +43,44 @@ body {
 #download-gfx-panel {
     background-color: #dfe7e8;
 }
+
+#contributor-list {
+    left: -1000px;
+}
+
+#contributor-list table tbody tr {
+    border: transparent 0px !important;
+    background-color: transparent !important;
+}
+
+#contributor-list table tbody tr td {
+    padding: 2px !important;
+    border: transparent 0px !important;
+}
+
+.contributor-tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.contributor-tooltip .contributor-tooltip-text {
+    opacity: 0.0;
+    width: 120px;
+    top: 100%;
+    left: 50%;
+    margin-left: -60px;
+    background-color: black;
+    color: beige;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1;
+    border-radius: 4px;
+    transition: opacity 500ms;
+    pointer-events: none;
+}
+
+.contributor-tooltip:hover .contributor-tooltip-text {
+    opacity: 1.0;
+}
