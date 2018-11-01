@@ -1,12 +1,12 @@
 [Definition]
-titleIds = 0005000010110E00,0005000010145000,0005000010144F00
+titleIds = 0005000010145D00,0005000010145C00,0005000010106100
 name = Contrasty
-path = "Super Smash Bros. for Wii U/Graphics/Contrasty"
-description = Colours and contrast
+path = "Super Mario 3D World/Enhancements/Contrasty" 
+description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Doesn't work if you also upscale or downscale the resolution.
 version = 3
 
 [Preset]
-name = default
+name = Default
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -69,10 +69,10 @@ $exposure = 1.05
 $vibrance  = 0.25
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.35
+$sharp_mix = 0.45
 
 [Preset]
-name = Colourfull
+name = Colourful
 $redShadows = 0.999
 $greenShadows = 0.98
 $blueSadows = 0.98
@@ -113,4 +113,4 @@ $exposure = 1.01
 $vibrance  = 0.15
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.15

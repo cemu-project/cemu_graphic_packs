@@ -12,7 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// For [4:3] resolutions that are multiples of 320x180
+// For [16:9], choose resolutions that are multiples of 320x180
 // Performance
 
 [Preset]
@@ -90,7 +90,7 @@ $gameWidth = 1280
 $gameHeight = 720
 
 
-// For [21:9] resolutions that are multiples of 420x180
+// For [21:9], choose resolutions that are multiples of 420x180
 // Performance
 
 [Preset]
@@ -144,7 +144,7 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-// Enthusiats
+// Enthusiast
 
 [Preset]
 name = (21:9) 10080x4320
@@ -156,6 +156,58 @@ $gameHeight = 720
 [Preset]
 name = (21:9) 13440x5760
 $width = 13440
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+
+
+// For [48:9], choose resolutions that are multiples of 960x180
+
+[Preset]
+name = (48:9) 1920x360
+$width = 1920
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 3840x720
+$width = 3840
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 4800x900
+$width = 4800
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 11520x2160
+$width = 11520
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 15360x2880
+$width = 15360
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 23040x4320
+$width = 23040
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = (48:9) 30720x5760
+$width = 30720
 $height = 5760
 $gameWidth = 1280
 $gameHeight = 720

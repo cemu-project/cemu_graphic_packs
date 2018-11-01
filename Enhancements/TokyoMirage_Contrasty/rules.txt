@@ -1,12 +1,12 @@
 [Definition]
 titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
 name = Contrasty
-path = "Tokyo Mirage Sessions FE/Contrasty" 
-description = Colour and Contrasty
+path = "Tokyo Mirage Sessions FE/Enhancements/Contrasty" 
+description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.
 version = 3
 
 [Preset]
-name = default
+name = Default
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -50,7 +50,7 @@ $bleach = 0.85
 $sharp_mix = 0.4
 
 [Preset]
-name = Colourfull
+name = Colourful
 $redShadows = 0.999
 $greenShadows = 0.98
 $blueSadows = 0.98

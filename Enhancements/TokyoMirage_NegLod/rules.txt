@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
 name = Negative texture LOD bias
-path = "Tokyo Mirage Sessions FE/Graphics/Negative Texture LOD" 
+path = "Tokyo Mirage Sessions FE/Enhancements/Negative Texture LOD" 
 description = Texture LOD override, possible shimmer but sharper textures
 version = 3
 

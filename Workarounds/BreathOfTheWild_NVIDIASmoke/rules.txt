@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "NVIDIA Explosion Smoke Workaround"
-path = "The Legend of Zelda: Breath of the Wild/Workaround/NVIDIA Explosion Smoke"
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/NVIDIA Explosion Smoke"
 description = "Partially fixes thin paper look explosion smoke on NVIDIA when using accurateShaderMul = true."
 version = 3
 
