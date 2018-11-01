@@ -20,14 +20,6 @@ meta-description: "Largest graphic pack source for Cemu that modify or scale gam
     </p>
 </div>
 
-<div id="remove-all-gfx-packs" class="jumbotron notification" hidden>
-    <h3>Remove all your graphic packs before</h3>
-    <p class="lead">
-        <a class="btn btn-primary btn-lg" href="javascript:void(0);" onclick="confirmNotification('remove-all-gfx-packs');" role="button">Okay!</a>
-    </p>
-</div>
-
-
 
 {% comment %} Get the latest release zip {% endcomment %}
 {% capture newReleaseVersion %} {{ site.github.latest_release.assets[0].browser_download_url | slice: 71, 3}} {% endcapture %}
@@ -40,7 +32,7 @@ meta-description: "Largest graphic pack source for Cemu that modify or scale gam
     <div class="lead">
         <a class="btn btn-primary btn-lg" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis{{ newReleaseVersion }}/graphicPacks{{ newReleaseVersion }}.zip" role="button">Cemu 1.14.0 (version 3)</a>
         <span class="dropdown">
-            <a id="dropdown-version-button" data-target="#" class="btn btn-default btn-lg" role="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions<span class="caret"></span></a>
+            <a id="dropdown-version-button" data-target="#" class="btn btn-default btn-lg" role="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions <span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="dropdown-version-button">
                 <li><a href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a></li>
                 <li><a href="https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a></li>
