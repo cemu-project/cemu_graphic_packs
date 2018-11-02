@@ -47,7 +47,7 @@ $exposure = 0.99
 $vibrance = 0.15
 $crushContrast = 0.0
 $bleach = 0.85
-$sharp_mix = 0.15
+$sharp_mix = 0.1
 
 [Preset]
 name = Colorful 
@@ -91,7 +91,7 @@ $exposure = 1.07
 $vibrance = 0.15
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.25
+$sharp_mix = 0.1
 
 [Preset]
 name = Cold
@@ -113,7 +113,7 @@ $exposure = 0.99
 $vibrance = 0.45
 $crushContrast = 0.0
 $bleach = 0.85
-$sharp_mix = 0.35
+$sharp_mix = 0.1
 
 [Preset]
 name = Neutral Contrasty
@@ -135,7 +135,7 @@ $exposure = 1.09
 $vibrance = 0.35
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.3
+$sharp_mix = 0.1
 
 [Preset]
 name = Compensate exposure patch
@@ -157,4 +157,4 @@ $exposure = 1.1
 $vibrance = 1.25
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.3
+$sharp_mix = 0.1
