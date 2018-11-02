@@ -47,7 +47,7 @@ $exposure = 1.5
 $vibrance = 0.35
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.35
 
 [Preset]
 name = Colourful
@@ -69,7 +69,7 @@ $exposure = 1.1
 $vibrance = 0.5
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.3
 
 [Preset]
 name = Neutral Contrasty
@@ -91,4 +91,4 @@ $exposure = 1.25
 $vibrance = 0.15
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.25

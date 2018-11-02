@@ -47,7 +47,7 @@ $exposure = 0.975
 $vibrance = 0.05
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.3
 
 [Preset]
 name = High Contrasty
@@ -135,7 +135,7 @@ $exposure = 1.07
 $vibrance = 0.15
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.25
 
 [Preset]
 name = Cold
@@ -157,4 +157,4 @@ $exposure = 0.99
 $vibrance = 0.45
 $crushContrast = 0.0
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.35
