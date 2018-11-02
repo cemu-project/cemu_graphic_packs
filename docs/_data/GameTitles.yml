@@ -153,7 +153,7 @@
 - title: "Mario Tennis: Ultra Smash"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Tennis:_Ultra_Smash"
-  version3: false
+  version3: true
 - title: "Meme Run"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Meme_Run"
