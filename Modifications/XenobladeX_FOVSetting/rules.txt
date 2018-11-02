@@ -22,6 +22,10 @@ name = Slight FoV increase without breaking framing (0.925)
 $fov = 0.925
 
 [Preset]
+name = Match 16:10 horizontal FoV to 16:9 (0.9)
+$fov  = 0.9
+
+[Preset]
 name = Pc style wide FoV (0.825)
 $fov = 0.825
 

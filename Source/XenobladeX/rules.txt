@@ -52,6 +52,17 @@ $scaleShader = 1.0
 $scaleBlur = 0.5
 
 [Preset]
+name = 1920x1200 (10:9 HD)
+$width = 1920
+$height = 1200
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
 name = 2560x1080 (21:9 HD)
 $width = 2560
 $height = 1080
