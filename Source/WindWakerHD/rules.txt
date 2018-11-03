@@ -5,263 +5,307 @@ path = "The Legend of Zelda: The Wind Waker HD/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
+
 [Preset]
-name = 1920x1080 (Default)
+name = 1920x1080 (HD Default)
 $width = 1920
 $height = 1080
-$gameWidth = 1920
-$gameHeight = 1080
-
-// Performance
-
-[Preset]
-name = 640x360
-$width = 640
-$height = 360
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.5
+$scaleShader = 1.0
 
 [Preset]
-name = 854x480
-$width = 854
-$height = 480
-$gameWidth = 1920
-$gameHeight = 1080
-
-[Preset]
-name = 960x540
-$width = 960
-$height = 540
-$gameWidth = 1920
-$gameHeight = 1080
-
-[Preset]
-name = 1280x720
-$width = 1280
-$height = 720
-$gameWidth = 1920
-$gameHeight = 1080
-
-// Quality
+name = 1920x1080 (HD) x2 sub scaling
+$width = 1920
+$height = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.65
+$scaleShader = 1.0
 
 [Preset]
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.65
+$scaleShader = 1.0
+
+[Preset]
+name = 1600x900 x2 sub scaling
+$width = 1600
+$height = 900
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.66
+$scaleShader = 0.75
 
 [Preset]
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.66
+$scaleShader = 0.75
 
 [Preset]
-name = 2732x1536
-$width = 2732
-$height = 1536
-$gameWidth = 1920
-$gameHeight = 1080
+name = 2560x1440 x2 sub scaling
+$width = 2560
+$height = 1440
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.75
+$scaleShader = 0.75
 
 [Preset]
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.75
+$scaleShader = 0.75
 
 [Preset]
-name = 3840x2160
+name = 3200x1800 x2 sub scaling
+$width = 3200
+$height = 1800
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.75
+$scaleShader = 0.5
+
+[Preset]
+name = 3840x2160 (4k - Native x2)
 $width = 3840
 $height = 2160
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.76
+$scaleShader = 0.51
+
+[Preset]
+name = 3840x2160 (4k - Native x2) x2 sub scaling
+$width = 3840
+$height = 2160
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.745
+$scaleShader = 0.51
 
 [Preset]
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.95
+$scaleShader = 0.5
+
+[Preset]
+name = 5120x2880 x2 sub scaling
+$width = 5120
+$height = 2880
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.95
+$scaleShader = 0.35
 
 // Enthusiast
 
 [Preset]
-name = 7680x4320
+name = 7680x4320 (8k - Native x3)
 $width = 7680
 $height = 4320
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 1.5
+$scaleShader = 1.0
 
 [Preset]
 name = 10240x5760
 $width = 10240
 $height = 5760
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 1.5
+$scaleShader = 1.0
 
 [TextureRedefine]
 width = 1920
 height = 1088
-#formats =  0x80e,0x019,0x001
+#formats = 0x80e,0x019,0x001
 overwriteWidth = ($width/$gameWidth) * 1920
-overwriteHeight  = ($height/$gameHeight) * 1088
+overwriteHeight = ($height/$gameHeight) * 1088
 
 [TextureRedefine]
 width = 1920
 height = 1080
 #formatsExcluded = 0x41A
 overwriteWidth = ($width/$gameWidth) * 1920
-overwriteHeight  = ($height/$gameHeight) * 1080
-
-
+overwriteHeight = ($height/$gameHeight) * 1080
 
 [TextureRedefine] #Shadows
 width = 1024
 height = 1024
-formats =  0x005 #,0x034,0x431,0x034
-overwriteWidth = ($height/$gameHeight) * 1024
-overwriteHeight = ($height/$gameHeight) * 1024
+formats = 0x005 #,0x034,0x431,0x034
+overwriteWidth = ($height/$gameHeight) * (1024*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (1024*$internalRes)
 
 [TextureRedefine] #Shadows
 width = 1024
 height = 544
-#formats =  0x005,0x80e,0x019,0x001 #,0x034,0x431,0x034
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 544
-
-
+#formats = 0x005,0x80e,0x019,0x001 #,0x034,0x431,0x034
+overwriteWidth = ($width/$gameWidth) * (1024*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (544*$internalRes)
 
 [TextureRedefine]
 width = 960
 height = 540
-#formats =  0x816,0x806,0x019,0x01a
-overwriteWidth = ($width/$gameWidth) * 960
-overwriteHeight  = ($height/$gameHeight) * 540
-
+#formats = 0x816,0x806,0x019,0x01a
+overwriteWidth = ($width/$gameWidth) * (960*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (540*$internalRes)
 
 [TextureRedefine]
 width = 960
 height = 544
-#formats =  0x816,0x806,0x019,0x01a
-overwriteWidth = ($width/$gameWidth) * 960
-overwriteHeight  = ($height/$gameHeight) * 544
+#formats = 0x816,0x806,0x019,0x01a
+overwriteWidth = ($width/$gameWidth) * (960*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (544*$internalRes)
 
 [TextureRedefine]
 width = 864
 height = 480
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight  = ($height/$gameHeight) * 480
-
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 854
 height = 480
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 854
-overwriteHeight  = ($height/$gameHeight) * 480
-
-
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 512
 height = 512
 formats = 0x806,0x019,0x01a
-overwriteWidth = ($height/$gameHeight) * 512
-overwriteHeight  = ($height/$gameHeight) * 512
+overwriteWidth = ($height/$gameHeight) * (512*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (512*$internalRes)
 
 [TextureRedefine]
 width = 480
 height = 272
-#formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 480
-overwriteHeight  = ($height/$gameHeight) * 272
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (480*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (272*$internalRes)
 
 [TextureRedefine]
 width = 480
 height = 270
-#formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 480
-overwriteHeight  = ($height/$gameHeight) * 270
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (480*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (270*$internalRes)
 
 #[TextureRedefine]
 #width = 360
 #height = 346
 ##formats = 
-#overwriteWidth = ($width/$gameWidth) * 360
-#overwriteHeight  = ($height/$gameHeight) * 346
+#overwriteWidth = ($width/$gameWidth) * (360*$internalRes)
+#overwriteHeight = ($height/$gameHeight) * (346*$internalRes)
 
 [TextureRedefine]
 width = 256
 height = 144
-#formats =  0x816
+#formats = 0x816
 #formatsExcluded = 0x01a
-overwriteWidth = ($width/$gameWidth) * 256
-overwriteHeight  = ($height/$gameHeight) * 144
+overwriteWidth = ($width/$gameWidth) * (256*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (144*$internalRes)
 
 [TextureRedefine]
 width = 256
 height = 256
-formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 256
-overwriteHeight  = ($height/$gameHeight) * 256
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (256*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (256*$internalRes)
 
 [TextureRedefine]
 width = 256
 height = 144
-#formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 256
-overwriteHeight  = ($height/$gameHeight) * 144
-
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (256*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (144*$internalRes)
 
 [TextureRedefine]
 width = 240
 height = 135
-#formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 240
-overwriteHeight  = ($height/$gameHeight) * 135
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (240*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (135*$internalRes)
 
 [TextureRedefine]
 width = 128
 height = 128
-formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight  = ($height/$gameHeight) * 128
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (128*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (128*$internalRes)
 
 [TextureRedefine]
 width = 128
 height = 80
-#formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight  = ($height/$gameHeight) * 80
+#formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (128*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (80*$internalRes)
 
 [TextureRedefine]
 width = 120
 height = 67
 #formats = 
-overwriteWidth = ($width/$gameWidth) * 120
-overwriteHeight  = ($height/$gameHeight) * 67
+overwriteWidth = ($width/$gameWidth) * (120*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (67*$internalRes)
 
 [TextureRedefine]
 width = 64
 height = 64
-formats =  0x816
-overwriteWidth = ($height/$gameHeight) * 64
-overwriteHeight  = ($height/$gameHeight) * 64
+formats = 0x816
+overwriteWidth = ($height/$gameHeight) * (64*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (64*$internalRes)
 
 [TextureRedefine]
 width = 64
 height = 48
 #formats = 
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight  = ($height/$gameHeight) * 48
+overwriteWidth = ($width/$gameWidth) * (64*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (48*$internalRes)
 
 [TextureRedefine]
 width = 60
 height = 33
 #formats = 
-overwriteWidth = ($width/$gameWidth) * 60
-overwriteHeight  = ($height/$gameHeight) * 33
+overwriteWidth = ($width/$gameWidth) * (60*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (33*$internalRes)
+
+#[TextureRedefine]
+#width = 4
+#height = 4
+##formats = 
+#overwriteWidth = ($width/$gameWidth) * (4*$internalRes)
+#overwriteHeight = ($height/$gameHeight) * (4*$internalRes)
