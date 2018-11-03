@@ -3,8 +3,8 @@
 #extension GL_ARB_shading_language_packing : enable
 // shader 315d61ad21f97614
 // Used for: Vertical blur pass end screen background
-const float resXScale = ($width/$gameWidth); 
-const float resYScale = ($height/$gameHeight); 
+const float resXScale = (intBitsToFloat($width)/intBitsToFloat($gameWidth)); 
+const float resYScale = (intBitsToFloat($height)/intBitsToFloat($gameHeight)); 
 
 uniform ivec4 uf_remappedVS[5];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
