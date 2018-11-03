@@ -4,8 +4,9 @@
 #extension GL_ARB_shading_language_packing : enable
 // shader 7a641a67c4009f7f //Blur
 
-const float resXScale = ($width/$gameWidth);
-const float resYScale = ($width/$gameWidth);
+
+const float resXScale =  intBitsToFloat($width)/intBitsToFloat($gameWidth);
+const float resYScale = intBitsToFloat($height)/intBitsToFloat($gameHeight); 
 
 uniform ivec4 uf_remappedVS[8];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;

@@ -2,7 +2,7 @@
 titleIds = 0005000010110900,0005000010110A00,0005000010110B00
 name = Resolution
 path = "Ninja Gaiden 3: Razors Edge/Graphics/Resolution" 
-description = Changes the resolution of the game. Known issues: Videos are broken, game is unstable, button inputs missing (prob incorrect scaling)
+description = Changes the resolution of the game. 
 version = 3
 
 [Preset]
@@ -157,13 +157,14 @@ overwriteHeight = ($height/$gameHeight) * 480
 width = 640
 height = 368
 #formats = 0x007,0x01a
+tileModesExcluded = 0x001 # intro fix
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 368
 
 [TextureRedefine]
 width = 640
 height = 360
-#tileModesExcluded = 0x001 # intro fix
+tileModesExcluded = 0x001 # intro fix
 #formats = 0x007,0x01a
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360

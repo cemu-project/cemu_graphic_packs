@@ -4,7 +4,7 @@
 #extension GL_ARB_shading_language_packing : enable
 // shader 2e78a0d0a0aa66bb
 // Used for: Horizontal (Menu) Bloom Blur
-const float resScale = ($width/$gameWidth);
+const float resScale = intBitsToFloat($width)/intBitsToFloat($gameWidth);  
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;

@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Static FPS
 path = "The Legend of Zelda: Breath of the Wild/Modifications/Static FPS"
-description = "Simplified FPS++ to prevent graphics judder and fixed arrow physics at non-30FPS; don't mix FPS++ with static; it requires updated Cemuhook and game; it requires that you can maintain the target FPS; more at readme.txt"
+description = "Simplified FPS++ to prevent graphics judder and to fix arrow physics at non-30FPS; don't mix FPS++ with static; it requires updated Cemuhook and game; it requires that you can maintain the target FPS; more at readme.txt"
 version = 3
 
 [Preset]
