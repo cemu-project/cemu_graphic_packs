@@ -1,5 +1,22 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Xenoblade Chronicles X - Exp - Friends Points X"
-version=2	
-	
+name = "Friends Points X"
+path = "Xenoblade Chronicles X/Modifications/Experience/Friends Points"
+description = "Set the Friends points gained in battle (flat amount)."
+version = 3
+
+[Preset]
+name = "+100"
+$mod = 100
+
+[Preset]
+name = "+250"
+$mod = 250
+
+[Preset]
+name = "+500"
+$mod = 500
+
+[Preset]
+name = "+1000"
+$mod = 1000

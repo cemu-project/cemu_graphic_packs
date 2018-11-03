@@ -5,16 +5,17 @@ codeCaveSize = 0x20
 
 ; ----------------------------------------------------------------------------
 ; WHO  : cfs::CfCompoPropertyEnemy::getReleasePcDistanceXZ
-; WHAT : Reduce (by default /2) escape distance from enemies (to lose aggro)
+; WHAT : Reduce escape distance from enemies (to lose aggro)
 
-0x00000000 = .float 2.0 ; default is 1.0
+0x00000000 = .float $mod ; default is 1.0
 _distanceConst = 0x00000000
 
 _getRelease = 0x00000004
-0x00000004 = lis r4, _distanceConst@ha
-0x00000008 = lfs f0, _distanceConst@l(r4)
-0x0000000C = fdivs f1, f1, f0
-0x00000010 = frsp f1, f1
+0x00000004 = lis r3, _distanceConst@ha
+0x00000008 = lfs f29, _distanceConst@l(r3)
+0x0000000C = fdivs f1, f1, f29
+0x00000010 = mr r3, r21
 0x00000014 = blr
 
-0x025D8B2C = b _getRelease ; cfs::CfCompoPropertyEnemy::getReleasePcDistanceXZ
+# AI::CAIData::chkHoming
+0x02030BE4 = bla _getRelease ; cfs::CfCompoPropertyEnemy::getReleasePcDistanceXZ

@@ -43,7 +43,6 @@ _info_obtained = 0x00000060
 0x0000007C = stw       r10, 0x40(r29)
 0x00000080 = blr
 
-
 0x02386F04 = bla _info_obtained
 0x02386F34 = bla _info_default
 
