@@ -1,5 +1,6 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Xenoblade Chronicles X - Collectibles - Catch range mod"
-version=2	
-	
+name = "Catch range mod"
+path = "Xenoblade Chronicles X/Modifications/Collectibles/Catch range mod"
+description = "Increase the distance from which collectibles are looted."
+version = 3

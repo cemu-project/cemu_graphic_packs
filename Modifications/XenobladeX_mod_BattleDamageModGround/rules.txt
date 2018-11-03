@@ -1,4 +1,18 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Xenoblade Chronicles X - Battle - Damage mod (ground)"
-version=2
+name = "Ground damage multiplicator"
+path = "Xenoblade Chronicles X/Modifications/Battle/Damage multiplicator (on foot)"
+description = "Increase the damage done by your team on foot (skells not impacted)."
+version = 3
+
+[Preset]
+name = Damage x 2
+$mult = 2
+
+[Preset]
+name = Damage x 10
+$mult = 10
+
+[Preset]
+name = Damage x 100
+$mult = 100
