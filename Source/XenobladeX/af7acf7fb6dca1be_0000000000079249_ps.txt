@@ -4,9 +4,8 @@
 // shader af7acf7fb6dca1be
 //cutscene shadow scaling
 //to do - extra edge smooth pass, 
-
-const float resScaleDetail = ($width/$gameWidth); 
-const float resScale = ($height/$gameHeight); 
+const float resScaleDetail = intBitsToFloat($height)/intBitsToFloat($gameHeight);  
+const float resScale = (intBitsToFloat($height)/intBitsToFloat($gameHeight); 
 //const float resScaleDetail = 2.0;
 //const float resScale = 3.0;
 const float shadowExposure = 0.85; //By truncating shadow, we decrease overall exposure during day only.

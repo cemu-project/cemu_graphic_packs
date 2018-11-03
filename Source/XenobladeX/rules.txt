@@ -17,17 +17,6 @@ $scaleShader = 1.0
 $scaleBlur = 0.05
 
 [Preset]
-name = 640x360
-$width = 640
-$height = 360
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 0.5
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-
-[Preset]
 name = 3840x720 (48:9)
 $width = 3840
 $height = 720
@@ -41,6 +30,17 @@ $scaleBlur = 0.05
 // Quality
 
 [Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.1
+$scaleShader = (720.0/900.0) # factor for any shader that can't handle fractional scaling
+$scaleBlur = 0.5
+
+[Preset]
 name = 1920x1080 (HD)
 $width = 1920
 $height = 1080
@@ -48,18 +48,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = 1.0
-$scaleBlur = 0.5
-
-[Preset]
-name = 1920x1200 (10:9 HD)
-$width = 1920
-$height = 1200
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 1.0
-$dither = 0.15
-$scaleShader = 1.0
+$scaleShader = (720.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -70,7 +59,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = 1.0
+$scaleShader = (720.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -81,18 +70,18 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = 1.0
+$scaleShader = (720.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
-name = 1600x900
-$width = 1600
-$height = 900
+name = 1920x1200 (10:9 HD)
+$width = 1920
+$height = 1200
 $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
-$dither = 0.1
-$scaleShader = 1.0
+$dither = 0.15
+$scaleShader = (720.0/1200.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -145,9 +134,9 @@ $width = 3200
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
+$internalRes = 2.0
 $dither = 0.2
-$scaleShader = 1.0
+$scaleShader = (1440.0/1800.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -240,11 +229,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 1024
 formats = 0x005 
-#overwriteWidth = ($height/$gameHeight) * 1024
-#overwriteHeight = ($height/$gameHeight) * 1024
-overwriteWidth = 3072 #1080 breaks without rounding
-overwriteHeight = 3072
-
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
 
 [TextureRedefine] #ingame menu
 width = 1024
@@ -286,10 +272,9 @@ overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
 width = 512
 height = 512
 formats = 0x005
-#overwriteWidth = ($height/$gameHeight) * 512
-#overwriteHeight = ($height/$gameHeight) * 512
-overwriteWidth = 3072 #1080 breaks without rounding
-overwriteHeight = 3072
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
+
 
 [TextureRedefine]
 width = 512
