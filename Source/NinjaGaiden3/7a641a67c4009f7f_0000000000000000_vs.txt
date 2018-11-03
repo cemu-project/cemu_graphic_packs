@@ -5,7 +5,7 @@
 // shader 7a641a67c4009f7f //Blur
 
 const float resXScale = ($width/$gameWidth);
-const float resYScale = ($width/$gameWidth);
+const float resYScale = ($height/$gameHeight);
 
 uniform ivec4 uf_remappedVS[8];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
