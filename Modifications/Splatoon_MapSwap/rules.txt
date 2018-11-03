@@ -1,4 +1,6 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = "Splatoon - Map Swap"
-version = 2
+name = Map Swap
+path = "Splatoon/Modifications/Map Swap"
+description = Read patches.txt for more information.
+version = 3

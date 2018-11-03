@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "AMD Shadows Workaround" # made by ethrillo
-path = "The Legend of Zelda: Breath of the Wild/Workaround/AMD Shadows"
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/AMD Shadows"
 description = "Fixes shadows when using an AMD graphics card."
 version = 3
 

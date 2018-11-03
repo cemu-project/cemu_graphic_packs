@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = Brightness Workaround Nvidia
-path = "Xenoblade Chronicles X/Workarounds/NVIDIA Brightness Workaround"
+name = Brightness Workaround NVIDIA
+path = "Xenoblade Chronicles X/Workarounds/NVIDIA Brightness"
 description = Slightly less overbright/dark. Edit shader for preference.
 version = 3
