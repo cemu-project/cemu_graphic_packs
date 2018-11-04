@@ -1,0 +1,23 @@
+[Gambit16]
+moduleMatches = 0x08ED6677
+
+0x100D2F58 = .byte $callieLetter
+0x100D3530 = .byte $callieLetter
+0x100D555C = .byte $callieLetter
+
+0x100D2F64 = .byte $marieLetter
+0x100D353C = .byte $marieLetter
+0x100D5568 = .byte $marieLetter
+
+[Gambit272]
+moduleMatches = 0xF7A78809
+
+0x100E38EC = .byte $callieLetter
+0x100E5A48 = .byte $callieLetter
+0x100E5DC0 = .byte $callieLetter
+0x100E85F4 = .byte $callieLetter
+
+0x100E38F8 = .byte $marieLetter
+0x100E5A54 = .byte $marieLetter
+0x100E5DCC = .byte $marieLetter
+0x100E8600 = .byte $marieLetter

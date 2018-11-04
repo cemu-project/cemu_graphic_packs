@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Arrows
 path = "The Legend of Zelda: Breath of the Wild/Modifications/Dynamic (FPS++)/Arrows Workaround"
-description = "This allows you to change the fall speed of the arrows. Choose the one where your FPS lands the most."
+description = "This allows you to change the fall speed of the arrows. Choose the preset where your FPS lands the most."
 version = 3
 
 [Preset]

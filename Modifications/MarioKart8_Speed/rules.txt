@@ -25,9 +25,5 @@ $FPS = 90
 name = 200% Speed
 $FPS = 120
 
-[Preset]
-name = Unlimited Speed
-$FPS = 65535
-
 [Control]
 vsyncFrequency = $FPS

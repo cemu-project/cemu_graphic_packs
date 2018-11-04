@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = Marie over Callie
-path = "Splatoon/Modifications/Marie over Callie"
-description = Replaces Marie over Callie.
-version = 3

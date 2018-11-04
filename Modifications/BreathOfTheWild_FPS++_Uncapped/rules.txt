@@ -6,4 +6,4 @@ description = "This removes the 60FPS lock, allowing the game to run as fast as 
 version = 3
 
 [Control]
-vsyncFrequency = 65535
+vsyncFrequency = 240
