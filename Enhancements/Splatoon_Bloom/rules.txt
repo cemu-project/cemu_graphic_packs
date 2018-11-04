@@ -6,7 +6,7 @@ description = Allows you to adjust how strong the bloom is. Full amount is the d
 version = 3
 
 [Preset]
-name = (Default)Full Amount
+name = Full Amount (Default)
 $bloom = 1
 
 [Preset]
