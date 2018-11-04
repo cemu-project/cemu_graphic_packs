@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Remove 60FPS Lock
-path = "The Legend of Zelda: Breath of the Wild/Modifications/Dynamic (FPS++)/Remove 60FPS Lock"
-description = "This removes the 60FPS lock, allowing the game to run as fast as your computer can handle."
-version = 3
-
-[Control]
-vsyncFrequency = 240
