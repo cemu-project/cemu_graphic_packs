@@ -117,48 +117,40 @@ $gameWidth = 1280
 $gameHeight = 720
 
 
-[TextureRedefine] # Game Resolution
+[TextureRedefine] # Game Output, 3D Rendering Style
 width = 1280
 height = 720
-formats = 0x019,0x80e,0x001
+formats = 0x019,0x80e,0x001,0x419,0x816
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
 
-# Screen Blur Type 1
-[TextureRedefine]
-width = 640
-height = 368
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = ($height/$gameHeight) * 368
+# Sprite Styles
 
 [TextureRedefine]
-width = 160
-height = 96
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 64
-
-
-# Screen Blur Type 2
-[TextureRedefine]
-width = 864
-height = 480
-formats = 0x019
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight = ($height/$gameHeight) * 480
+width = 928
+height = 528
+formats = 0x019,0x80e
+overwriteWidth = ($width/$gameWidth) * 928
+overwriteHeight = ($height/$gameHeight) * 528
 
 [TextureRedefine]
-width = 448
-height = 220
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 448
-overwriteHeight = ($height/$gameHeight) * 220
+width = 912
+height = 516
+formats = 0x019,0x80e,0x001
+overwriteWidth = ($width/$gameWidth) * 912
+overwriteHeight = ($height/$gameHeight) * 516
 
 [TextureRedefine]
-width = 128
-height = 64
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 64
+width = 928
+height = 516
+formats = 0x80e
+overwriteWidth = ($width/$gameWidth) * 928
+overwriteHeight = ($height/$gameHeight) * 516
+
+[TextureRedefine]
+width = 1024
+height = 528
+formats = 0x001
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 528
