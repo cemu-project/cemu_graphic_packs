@@ -399,33 +399,33 @@ formats = 0x816 #0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
 overwriteWidth = ($width/$gameWidth) * (64*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
 
-[TextureRedefine] #
-width = 32
-height = 32
-formats = 0x806 #001a breaks flashlight scene
-overwriteWidth = ($width/$gameWidth) * (32*$internalRes)
-overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
-
-[TextureRedefine] 
-width = 32
-height = 16
-formatsExcluded = 0x431,0x035,0x034,0x033,0x031
-overwriteWidth = ($width/$gameWidth) * (32*$internalRes)
-overwriteHeight = ($height/$gameHeight) * (16*$internalRes)
-
-[TextureRedefine] #
-width = 16
-height = 8
-###formats = 0x008,0x806,0x80e # ,0x431,0x031
-formatsExcluded = 0x431,0x035,0x034,0x033,0x031
-overwriteWidth = ($width/$gameWidth) * (16*$internalRes)
-overwriteHeight = ($height/$gameHeight) * (8*$internalRes)
+#[TextureRedefine] #
+#width = 32
+#height = 32
+#formatsExcluded = 0x806,0x01a #breaks flashlight scene
+#overwriteWidth = ($width/$gameWidth) * (32*$internalRes)
+#overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
+#
+#[TextureRedefine] 
+#width = 32
+#height = 16
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+#overwriteWidth = ($width/$gameWidth) * (32*$internalRes)
+#overwriteHeight = ($height/$gameHeight) * (16*$internalRes)
+#
+#[TextureRedefine] #
+#width = 16
+#height = 8
+####formats = 0x008,0x80e # ,0x431,0x031
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031,0x806
+#overwriteWidth = ($width/$gameWidth) * (16*$internalRes)
+#overwriteHeight = ($height/$gameHeight) * (8*$internalRes)
 
 #[TextureRedefine] # breaks depth when scaling 1080
 #width = 8
 #height = 8
-###formats = 0x806,0x81e,0x80e # ,0x431,0x031
-#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+###formats = ,0x81e,0x80e # ,0x431,0x031
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031,0x806
 #overwriteWidth = ($width/$gameWidth) * (8*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (8*$internalRes)
 #
