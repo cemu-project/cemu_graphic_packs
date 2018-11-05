@@ -239,7 +239,7 @@ overwriteHeight = ($height/$gameHeight) * (180*$internalRes)
 [TextureRedefine]
 width = 160
 height = 90
-#formats = 0x816,0x41a
+formats = 0x816 #0x41a
 overwriteWidth = ($width/$gameWidth) * (160*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (90*$internalRes)
 
