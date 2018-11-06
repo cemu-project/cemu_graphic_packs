@@ -549,7 +549,8 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 1.5;
 	float DPX_Strength = 0.20;
 	
-#elif (Preset == 7) //CellHunter										   
+#elif (Preset == 7) //CellHunter
+										   
 	#define adjust_bloom 1 
 	const float bloomFactor = 0.455;
 	#define HDRpassing 1
