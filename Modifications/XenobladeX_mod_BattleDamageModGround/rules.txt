@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Ground damage multiplicator"
-path = "Xenoblade Chronicles X/Modifications/Battle/Damage multiplicator (on foot)"
-description = "Increase the damage done by your team on foot (skells not impacted)."
+path = "Xenoblade Chronicles X/Modifications/Battle/Ground damage multiplicator"
+description = "Increase the ground damage done by your team (skells not impacted)."
 version = 3
 
 [Preset]

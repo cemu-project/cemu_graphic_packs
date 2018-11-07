@@ -15,4 +15,4 @@ $mod = 0.5
 
 [Preset]
 name = "Speed x3"
-$mod = 0.3
+$mod = 0.33
