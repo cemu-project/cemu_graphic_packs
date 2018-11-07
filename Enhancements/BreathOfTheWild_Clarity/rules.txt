@@ -6,12 +6,16 @@ description = "NOT COMPATIBLE WITH MONOCHROMIA! Select the visual look of the ga
 version = 3
 
 [Preset]
-name = Serfrost Preset (Bright Display)
-$preset:int = 8
+name = Serfrost Preset (Default)
+$preset:int = 10
 
 [Preset]
 name = Serfrost Preset (Dim Display)
 $preset:int = 9
+
+[Preset]
+name = Serfrost Preset (Bright Display)
+$preset:int = 8
 
 [Preset]
 name = Bruz Preset
