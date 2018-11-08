@@ -225,7 +225,7 @@
 - title: "Project Zero: Maiden of Black Water"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Project_Zero:_Maiden_of_Black_Water"
-  version3: false
+  version3: true
 - title: "Puyo Puyo Tetris"
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Puyo_Puyo_Tetris"

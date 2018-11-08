@@ -1,0 +1,40 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Level Of Detail Bias"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/LOD Bias"
+description = "Level of details adjustment"
+version = 3
+
+[Preset]
+name = Normal (Default)
+$lodBias = 0
+
+[Preset]
+name = Lowest
+$lodBias = +16
+
+[Preset]
+name = Very Low
+$lodBias = +8
+
+[Preset]
+name = Low
+$lodBias = +4
+
+[Preset]
+name = High
+$lodBias = -4
+
+[Preset]
+name = Ultra
+$lodBias = -8
+
+[Preset]
+name = Extreme
+$lodBias = -16
+
+
+
+[TextureRedefine]
+formats = 0x31,0x32,0x34,0x35,0x431,0x432,0x433,0x234,0x235
+overwriteRelativeLodBias = $lodBias

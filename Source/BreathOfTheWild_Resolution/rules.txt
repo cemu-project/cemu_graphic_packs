@@ -220,10 +220,10 @@ $gameHeight = 720
 # - 0x019=Menu Interface/GUI
 # - 0x01a=Normals
 # - 0x41a=Geometry rendering
-# - 0x806=World Fog
+# - 0x806=Wind/Fog
 # - 0x80e=Depth stencil buffer
 # - 0x816=Weapon and Objects Bloom
-# - 0x820=Fog/Wind
+# - 0x820=Field Fog
 
 # Depth/Geometry/Shading Rendering
 [TextureRedefine]
@@ -260,9 +260,9 @@ overwriteHeight = ($height/$gameHeight)* 480
 # - 0x019=GUI
 # - 0x01a=Blurs and Normals 
 # - 0x80e=World and Objects Depth 32bit
-# - 0x806=World Fog
+# - 0x806=Wind/Fog
 # - 0x816=World & Weapon Bloom
-# - 0x820=Fog/Wind?
+# - 0x820=Fog
 
 # Required 1/2 resolutions
 [TextureRedefine]
@@ -450,7 +450,7 @@ overwriteHeight = ($height/$gameHeight)* 75
 [TextureRedefine]
 width = 128
 height = 48
-formats = 0x806
+formats = 0x806,0x816,0x005,0x820
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 48
 
@@ -593,6 +593,76 @@ height = 2048
 formats = 0x005
 overwriteWidth = ($width/$gameWidth) * 2048
 overwriteHeight = ($height/$gameHeight) * 2048
+
+# Select-Menu Map
+[TextureRedefine]
+width = 1504
+height = 720
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 1504
+overwriteHeight = ($height/$gameHeight) * 720
+
+# Select-Menu Map
+[TextureRedefine]
+width = 1500
+height = 720
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 1500
+overwriteHeight = ($height/$gameHeight) * 720
+
+# Select-Menu Map Overlay
+[TextureRedefine]
+width = 1280
+height = 608
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 608
+
+# Mini-map GUI
+[TextureRedefine] 
+width = 192
+height = 192
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 192
+overwriteHeight = ($height/$gameHeight) * 192
+
+# Red Viewport
+[TextureRedefine]
+width = 1920
+height = 912
+formats = 0x001
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 912
+
+# Red Viewports Smaller Scales
+[TextureRedefine] 
+width = 64
+height = 45
+formats = 0x806
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] 
+width = 64
+height = 48
+formats = 0x806
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 48
+
+[TextureRedefine] 
+width = 64
+height = 32
+formats = 0x806
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine] 
+width = 32
+height = 23
+formats = 0x806
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 23
+
 
 # Disabled since they break stuff
 

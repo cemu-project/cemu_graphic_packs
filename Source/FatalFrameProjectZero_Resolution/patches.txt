@@ -1,0 +1,61 @@
+[USAFatalFrameV0]
+moduleMatches = 0xE93B31F6
+
+codeCaveSize = 0x4
+
+_pointSpriteSize = 0x00000000
+0x00000000 = .int $width
+
+0x026D0674 = lis r12, _pointSpriteSize@ha
+0x026D067C = lwz r5, _pointSpriteSize@l(r12)
+0x026D0680 = lwz r6, _pointSpriteSize@l(r12)
+
+
+[EuropeFatalFrameV0]
+moduleMatches = 0xB54DBEB0
+
+codeCaveSize = 0x4
+
+_pointSpriteSize = 0x00000000
+0x00000000 = .int $width
+
+0x026CF508 = lis r12, _pointSpriteSize@ha
+0x026CF510 = lwz r5, _pointSpriteSize@l(r12)
+0x026CF514 = lwz r6, _pointSpriteSize@l(r12)
+
+
+[EuropeProjectZeroV0P1]
+moduleMatches = 0x5A9D6D31
+
+codeCaveSize = 0x4
+
+_pointSpriteSize = 0x00000000
+0x00000000 = .int $width
+
+0x026CF508 = lis r12, _pointSpriteSize@ha
+0x026CF510 = lwz r5, _pointSpriteSize@l(r12)
+0x026CF514 = lwz r6, _pointSpriteSize@l(r12)
+
+[EuropeProjectZeroV0P2]
+moduleMatches = 0x360FA109
+
+codeCaveSize = 0x4
+
+_pointSpriteSize = 0x00000000
+0x00000000 = .int $width
+
+0x026CF508 = lis r12, _pointSpriteSize@ha
+0x026CF510 = lwz r5, _pointSpriteSize@l(r12)
+0x026CF514 = lwz r6, _pointSpriteSize@l(r12)
+
+[EuropeProjectZeroV0P3]
+moduleMatches = 0x9D96F19B
+
+codeCaveSize = 0x4
+
+_pointSpriteSize = 0x00000000
+0x00000000 = .int $width
+
+0x026CF508 = lis r12, _pointSpriteSize@ha
+0x026CF510 = lwz r5, _pointSpriteSize@l(r12)
+0x026CF514 = lwz r6, _pointSpriteSize@l(r12)
