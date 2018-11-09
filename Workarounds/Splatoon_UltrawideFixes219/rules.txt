@@ -2,7 +2,7 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = "21:9 Ultrawide HUD Fixes"
 path = "Splatoon/Workarounds/21:9 Ultrawide HUD Fixes"
-description = "Attempts to fix HUD issues with the 21:9 aspect ratio patch."
+description = Attempts to fix HUD issues with the 21:9 aspect ratio patch.
 version = 3
 
 // 21:9

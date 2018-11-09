@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Friends Points X"
 path = "Xenoblade Chronicles X/Modifications/Experience/Friends Points"
-description = "Set the Friends points gained in battle (flat amount)."
+description = Set the Friends points gained in battle (flat amount).
 version = 3
 
 [Preset]

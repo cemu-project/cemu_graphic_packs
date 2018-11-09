@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Monochromia (NOT COMPATIBLE WITH CLARITY)"
 path = "The Legend of Zelda: Breath of the Wild/Modifications/Monochromia (Incompatible with Clarity)"
-description = "NOT COMPATIBLE WITH CLARITY! Inspired by Sin City, this turns the game black and white."
+description = NOT COMPATIBLE WITH CLARITY! Inspired by Sin City, this turns the game black and white.
 version = 3
 
 # Shaders dumped from Cemu 1.11.0b and BotW 1.3.1

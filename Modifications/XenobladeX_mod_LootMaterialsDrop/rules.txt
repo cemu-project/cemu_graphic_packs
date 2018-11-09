@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Materials - Drop Ratio" 
 path = "Xenoblade Chronicles X/Modifications/Loot/Materials - Drop Ratio"
-description = "Affect the materials minimum drop ratio in the loots."
+description = Affect the materials minimum drop ratio in the loots.
 version = 3
 
 [Preset]

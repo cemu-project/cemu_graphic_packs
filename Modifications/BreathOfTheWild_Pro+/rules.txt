@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Pro+ HUD"
 path = "The Legend of Zelda: Breath of the Wild/Modifications/Pro+ HUD"
-description = "Removes the rest of the HUD that isn't removed by Pro."
+description = Removes the rest of the HUD that isn't removed by Pro.
 version = 3
 
 [TextureRedefine] # Disable Hearts

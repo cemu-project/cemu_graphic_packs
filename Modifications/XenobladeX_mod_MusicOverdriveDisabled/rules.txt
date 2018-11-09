@@ -2,5 +2,5 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "No Overdrive music"
 path = "Xenoblade Chronicles X/Modifications/Music/No Overdrive music"
-description = "Disable the music when Overdrive is activated."
+description = Disable the music when Overdrive is activated.
 version = 3

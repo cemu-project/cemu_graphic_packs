@@ -2,5 +2,5 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Armors can have 3 augment slots"
 path = "Xenoblade Chronicles X/Modifications/Equipment/Armors can have 3 augment slots"
-description = "Using L's shop, you can have 3 augment slots on your EQUIPPED armors (ground and skell)."
+description = Using L's shop, you can have 3 augment slots on your EQUIPPED armors (ground and skell).
 version = 3
