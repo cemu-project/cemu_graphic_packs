@@ -1,8 +1,11 @@
-[![Build Status](https://travis-ci.org/slashiee/cemu_graphic_packs.svg?branch=master)]
-[![Github Releases Downloads](https://img.shields.io/github/downloads/slashiee/cemu_graphic_packs/total.svg)](https://github.com/slashiee/cemu_graphic_packs/releases/latest)
-----------
-Information
+[![Travis Build Status Badge](https://img.shields.io/travis/slashiee/cemu_graphic_packs.svg)](https://travis-ci.org/slashiee/cemu_graphic_packs)
+[![Github Releases Badge](https://img.shields.io/github/downloads/slashiee/cemu_graphic_packs/total.svg)](https://github.com/slashiee/cemu_graphic_packs/releases/latest)
+
 ------
-Cemu Graphic Packs is a repository where you can find graphic packs that upscale and improve most Wii U games that work on Cemu.
+### Information
+------
+Cemu Graphic Packs is a repository where you can find graphic packs that upscale and improve most Wii U games that work on [Cemu](http://cemu.info/).
 It's made by the Cemu community so you're also free to [contribute to the project](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-resolution-packs) if you wish.
-More info can be found on the [GitHub website](https://slashiee.github.io/cemu_graphic_packs/).
+
+### Downloads
+The latest downloads are **always** found on our [website](https://slashiee.github.io/cemu_graphic_packs/)!
