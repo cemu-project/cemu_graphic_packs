@@ -1,0 +1,52 @@
+[XCX_UNLOCKAUGMENTS_EU]
+moduleMatches = 0xF882D5CF ; 1.0.1E
+
+codeCaveSize = 0x1C
+
+0x00000000 = .byte $checkIgnore
+0x00000001 = .byte $checkIgnoreEnd
+_ignore = 0x00000000
+_end = 0x00000001
+
+_checkIgnore = 0x00000004
+0x00000004 = lis r4, _ignore@h
+0x00000008 = lbz r3, _ignore@l(r4)
+0x0000000C = blr
+
+_checkIgnoreEnd = 0x00000010
+0x00000010 = lis r3, _end@h
+0x00000014 = lbz r3, _end@l(r3)
+0x00000018 = blr
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuArmsCompanyDeviceList::CheckEnableCreateByDeviceID
+; WHAT : Unlimited augments
+
+0x02A817A0 = li r3, 0 ; all augments are known
+0x02A817C8 = bla _checkIgnore ; ignore requirements
+0x02A81A3C = bla _checkIgnoreEnd ; ignore requirements (end game)
+
+;#####################################################################################
+[XCX_UNLOCKAUGMENTS_US]
+moduleMatches = 0x30B6E091 ; 1.0.2U
+
+codeCaveSize = 0x1C
+
+0x00000000 = .byte $checkIgnore
+0x00000001 = .byte $checkIgnoreEnd
+_ignore = 0x00000000
+_end = 0x00000001
+
+_checkIgnore = 0x00000004
+0x00000004 = lis r4, _ignore@h
+0x00000008 = lbz r3, _ignore@l(r4)
+0x0000000C = blr
+
+_checkIgnoreEnd = 0x00000010
+0x00000010 = lis r3, _end@h
+0x00000014 = lbz r3, _end@l(r3)
+0x00000018 = blr
+
+0x02A81790 = li r3, 0 ; all augments are known
+0x02A817B8 = bla _checkIgnore ; ignore requirements
+0x02A81A2C = bla _checkIgnoreEnd ; ignore requirements (end game)
