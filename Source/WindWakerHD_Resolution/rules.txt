@@ -114,7 +114,7 @@ $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 1
 $dither = 0.76
-$scaleShader = 0.51
+$scaleShader = 1.0
 
 [Preset]
 name = 3840x2160 (4k - Native x2) x2 sub scaling
@@ -124,7 +124,7 @@ $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 2
 $dither = 0.745
-$scaleShader = 0.51
+$scaleShader = 1.0
 
 [Preset]
 name = 5120x2160 (4k 21:9)
@@ -134,7 +134,7 @@ $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 1
 $dither = 0.76
-$scaleShader = 0.51
+$scaleShader = (3840.0/5120.0)
 
 [Preset]
 name = 5120x2880
@@ -144,7 +144,7 @@ $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 1
 $dither = 0.95
-$scaleShader = 0.5
+$scaleShader = 1.0
 
 [Preset]
 name = 5120x2880 x2 sub scaling
@@ -154,7 +154,7 @@ $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 2
 $dither = 0.95
-$scaleShader = 0.35
+$scaleShader = 1.0
 
 // Enthusiast
 
