@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Squad tasks and missions are available offline"
 path = "Xenoblade Chronicles X/Modifications/BLADE/Offline tasks and missions"
-description = "Squad tasks and missions are available offline. Uncapped presets ignore max tickets. Use [Social > Squad Select] menu to change the Squad Tasks."
+description = Squad tasks and missions are available offline. Uncapped presets ignore max tickets. Use [Social > Squad Select] menu to change the Squad Tasks.
 version = 3
 
 [Preset]

@@ -2,7 +2,7 @@
 titleIds = 0005000010175B00,0005000010177800,0005000010191F00
 name = "Uncapped Framerate"
 path = "Sonic Boom: Rise of Lyric/Modifications/Uncapped Framerate"
-description = "This patches out the framerate locker that the game has in place. For maximum performance, use dual-core recompiler and low GPU buffer cache. However, this can cause random flashing to appear."
+description = This patches out the framerate locker that the game has in place. For maximum performance, use dual-core recompiler and low GPU buffer cache. However, this can cause random flashing to appear.
 version = 3
 
 #Windows 10 64-bit

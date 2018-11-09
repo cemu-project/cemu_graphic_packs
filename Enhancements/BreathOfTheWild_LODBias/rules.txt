@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Level Of Detail Bias"
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/LOD Bias"
-description = "Level of details adjustment"
+description = Level of details adjustment
 version = 3
 
 [Preset]

@@ -2,5 +2,5 @@
 titleIds = 0005000010143500,0005000010143600
 name = FPS Slowdown
 path = "The Legend of Zelda: The Wind Waker HD/Workarounds/FPS Slowdown"
-description = "Fixes slowdown that could occur on weaker hardware."
+description = Fixes slowdown that could occur on weaker hardware.
 version = 3
