@@ -1,4 +1,4 @@
-![Build Status](https://travis-ci.org/slashiee/cemu_graphic_packs.svg?branch=master)
+[![Build Status](https://travis-ci.org/slashiee/cemu_graphic_packs.svg?branch=master)]
 [![Github Releases Downloads](https://img.shields.io/github/downloads/slashiee/cemu_graphic_packs/total.svg)](https://github.com/slashiee/cemu_graphic_packs/releases/latest)
 ----------
 Information
