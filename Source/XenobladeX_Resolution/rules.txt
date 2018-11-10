@@ -125,7 +125,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.75
 $dither = 0.15
-$scaleShader = 1.0
+$scaleShader = (720.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -173,7 +173,7 @@ $scaleShader = 1.0
 $scaleBlur = 1.0
 
 [Preset]
-name = 3840x2160 (4k - Native x3, 1080 FX scaling)
+name = 3840x2160 (4k - 1080 FX scaling)
 $width = 3840
 $height = 2160
 $gameWidth = 1280
@@ -202,7 +202,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.375
 $dither = 0.25
-$scaleShader = 1.0
+$scaleShader = (720.0/1080.0)
 $scaleBlur = 1.0
 // Enthusiast
 
@@ -215,7 +215,7 @@ $width = 7680
 $height = 4320
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -226,7 +226,7 @@ $width = 10240
 $height = 5760
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -243,8 +243,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 1024
 formats = 0x005 
-overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader)
-overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 
 [TextureRedefine] #ingame menu
 width = 1024
@@ -278,6 +278,7 @@ overwriteHeight = ($height/$gameHeight) * (368*$internalRes)
 [TextureRedefine]
 width = 640
 height = 360
+formatsExcluded = 0x41A,0x033,0x031 #dialog prompt fixes, XCX Logo NLA 
 tileModesExcluded = 0x001 # fmv sub colour
 overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
@@ -286,8 +287,8 @@ overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
 width = 512
 height = 512
 formats = 0x005
-overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader)
-overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 
 
 [TextureRedefine]
