@@ -76,7 +76,7 @@ $scaleBlur = 0.5
 
 [Preset]
 name = 5760x1080 (48:9 HD)
-$width = 2560
+$width = 5760
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
@@ -174,7 +174,7 @@ $scaleShader = 1.0
 $scaleBlur = 1.0
 
 [Preset]
-name = 5120x2160 (4k 48:9)
+name = 115200x2160 (4k 48:9)
 $width = 11520
 $height = 2160
 $gameWidth = 1280
