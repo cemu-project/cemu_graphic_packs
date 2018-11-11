@@ -2,7 +2,7 @@
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Resolution
 path = "Hyrule Warriors/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = "Changes the resolution of the game. 1080 FX scaling runs DoF, fog etc at lower precision for better performance"
 version = 3
 vsyncFrequency = 30
 
@@ -12,18 +12,29 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 1.0
 $dither = 0.01
 $scaleShader = 1.0
 $scaleBlur = 0.05
 
 [Preset]
-name = 640x360
+name = 640x360 (0.5 x native)
 $width = 640
 $height = 360
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 1.0
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+
+[Preset]
+name = 3840x720 (48:9)
+$width = 3840
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
 $dither = 0.01
 $scaleShader = 1.0
 $scaleBlur = 0.05
@@ -31,25 +42,58 @@ $scaleBlur = 0.05
 // Quality
 
 [Preset]
-name = 1920x1080 (HD)
-$width = 1920
-$height = 1080
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 1
-$dither = 0.15
-$scaleShader = 1.0
-$scaleBlur = 0.5
-
-[Preset]
 name = 1600x900
 $width = 1600
 $height = 900
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 1.0
 $dither = 0.1
-$scaleShader = 1.0
+$scaleShader = (720.0/900.0) # factor for any shader that can't handle fractional scaling
+$scaleBlur = 0.5
+
+[Preset]
+name = 1920x1080 (HD)
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = (720.0/1080.0)
+$scaleBlur = 0.5
+
+[Preset]
+name = 2560x1080 (21:9 HD)
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = (720.0/1080.0)
+$scaleBlur = 0.5
+
+[Preset]
+name = 5760x1080 (48:9 HD)
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = (720.0/1080.0)
+$scaleBlur = 0.5
+
+[Preset]
+name = 1920x1200 (10:9 HD)
+$width = 1920
+$height = 1200
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.15
+$scaleShader = (720.0/1200.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -58,10 +102,43 @@ $width = 2560
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.5
+$internalRes = 1.0
 $dither = 0.1
 $scaleShader = 1.0
-$scaleBlur = 0.75
+$scaleBlur = 0.5
+
+[Preset]
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 7680x1440 (48:9)
+$width = 7680
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.5
+
+[Preset]
+name = 2560x1440 (Native x2) 1080 FX scaling
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.75
+$dither = 0.15
+$scaleShader = (720.0/1080.0)
+$scaleBlur = 0.5
 
 [Preset]
 name = 3200x1800
@@ -69,10 +146,10 @@ $width = 3200
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 2.0
 $dither = 0.2
-$scaleShader = 1.0
-$scaleBlur = 1.0
+$scaleShader = (1440.0/1800.0)
+$scaleBlur = 0.5
 
 [Preset]
 name = 3840x2160 (4k - Native x3)
@@ -80,21 +157,68 @@ $width = 3840
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 1.0
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 1.0
 
 [Preset]
-name = 5120x2880
+name = 5120x2160 (4k 21:9)
+$width = 5120
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 5120x2160 (4k 48:9)
+$width = 11520
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 3840x2160 (4k - 1080 FX scaling)
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.5
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
+
+[Preset]
+name = 5120x2880 (Native 4x)
 $width = 5120
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 1.0
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
+
+[Preset]
+name = 5120x2880 (1080 FX scaling)
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.375
+$dither = 0.25
+$scaleShader = (720.0/1080.0)
+$scaleBlur = 1.0
+// Enthusiast
+
+
 // Enthusiast
 
 [Preset]
@@ -103,7 +227,7 @@ $width = 7680
 $height = 4320
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -114,7 +238,7 @@ $width = 10240
 $height = 5760
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -133,8 +257,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 2048
 #formats = 0x005
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 2048
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (2048*$scaleShader*$internalRes)
 
 [TextureRedefine]
 width = 1024
@@ -147,8 +271,8 @@ overwriteHeight = ($height/$gameHeight) * 1023
 width = 1022
 height = 2046
 #formats = 
-overwriteWidth = ($width/$gameWidth) * 1022
-overwriteHeight = ($height/$gameHeight) * 2046
+overwriteWidth = ($width/$gameWidth) * (1022*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (2046*$scaleShader*$internalRes)
 
 #[TextureRedefine] 
 #width = 1022
@@ -177,8 +301,8 @@ width = 512
 height = 512
 formats = 0x005
 #formatsExcluded = 0x433,0x431,0x035,0x033,0x031,0x005
-overwriteWidth = ($width/$gameWidth) * 512
-overwriteHeight = ($height/$gameHeight) * 512
+overwriteWidth = ($width/$gameWidth) * (512*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (512*$scaleShader*$internalRes)
 
 [TextureRedefine]
 width = 352

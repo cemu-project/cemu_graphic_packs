@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Resolution
 path = "Xenoblade Chronicles X/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = "Changes the resolution of the game. 1080 FX scaling runs DoF, fog etc at lower precision for better performance"
 version = 3
 
 [Preset]
@@ -118,14 +118,14 @@ $scaleShader = 1.0
 $scaleBlur = 0.5
 
 [Preset]
-name = 2560x1440 (Native x2) x2 sub scaling
+name = 2560x1440 (Native x2) 1080 FX scaling
 $width = 2560
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 2.0
+$internalRes = 0.75
 $dither = 0.15
-$scaleShader = 1.0
+$scaleShader = (720.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -173,18 +173,18 @@ $scaleShader = 1.0
 $scaleBlur = 1.0
 
 [Preset]
-name = 3840x2160 (4k - Native x3) x2 sub scaling
+name = 3840x2160 (4k - 1080 FX scaling)
 $width = 3840
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 2.0
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
 
 [Preset]
-name = 5120x2880
+name = 5120x2880 (Native 4x)
 $width = 5120
 $height = 2880
 $gameWidth = 1280
@@ -193,6 +193,20 @@ $internalRes = 1.0
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
+
+[Preset]
+name = 5120x2880 (1080 FX scaling)
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.375
+$dither = 0.25
+$scaleShader = (720.0/1080.0)
+$scaleBlur = 1.0
+// Enthusiast
+
+
 // Enthusiast
 
 [Preset]
@@ -201,7 +215,7 @@ $width = 7680
 $height = 4320
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -212,7 +226,7 @@ $width = 10240
 $height = 5760
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
+$internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -229,8 +243,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 1024
 formats = 0x005 
-overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader)
-overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 
 [TextureRedefine] #ingame menu
 width = 1024
@@ -264,6 +278,7 @@ overwriteHeight = ($height/$gameHeight) * (368*$internalRes)
 [TextureRedefine]
 width = 640
 height = 360
+formatsExcluded = 0x41A,0x033,0x031 #dialog prompt fixes, XCX Logo NLA 
 tileModesExcluded = 0x001 # fmv sub colour
 overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
@@ -272,8 +287,8 @@ overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
 width = 512
 height = 512
 formats = 0x005
-overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader)
-overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
+overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 
 
 [TextureRedefine]
@@ -285,14 +300,14 @@ overwriteHeight = ($height/$gameHeight) * (288*$internalRes)
 [TextureRedefine] # fog 1.5 match stencil
 width = 448
 height = 240
-overwriteWidth = ($width/$gameWidth) * (448*$internalRes*1.5)
-overwriteHeight = ($height/$gameHeight) * (240*$internalRes*1.5)
+overwriteWidth = ($width/$gameWidth) * (448*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (240*$internalRes)
 
 [TextureRedefine] # fog
 width = 426
 height = 240
-overwriteWidth = ($width/$gameWidth) * (426*$internalRes*1.5)
-overwriteHeight = ($height/$gameHeight) * (240*$internalRes*1.5)
+overwriteWidth = ($width/$gameWidth) * (426*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (240*$internalRes)
 
 [TextureRedefine] # #Bloom, DOF
 width = 320

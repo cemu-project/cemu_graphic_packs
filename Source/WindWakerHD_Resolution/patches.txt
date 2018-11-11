@@ -1,0 +1,17 @@
+[WWHDAspectEUR]
+moduleMatches = 0xB7E748DE
+0x1004AAF0 = .float $width/$height 
+0x101417E0 = .float $width/$height
+0x101658A8 = .float $width/$height
+
+[WWHDAspectJAP]
+moduleMatches = 0x74BD3F6A
+0x1004AAF0 = .float $width/$height
+0x101417F8 = .float $width/$height
+0x101658C0 = .float $width/$height
+
+[WWHDAspectUSA]
+moduleMatches = 0x475BD29F
+0x1004AAF0 = .float $width/$height
+0x101417D0 = .float $width/$height
+0x10165898 = .float $width/$height
