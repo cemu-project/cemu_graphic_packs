@@ -89,8 +89,6 @@ $height = 5760
 $gameWidth = 1920
 $gameHeight = 1080
 
-
-
 [TextureRedefine] # Game Resolution
 width = 1920
 height = 1088
@@ -223,13 +221,6 @@ width = 256
 height = 144
 overwriteWidth = ($width / $gameWidth) * 256
 overwriteHeight = ($height / $gameHeight) * 144
-
-[TextureRedefine]
-width = 256
-height = 128
-formats = 0x8
-overwriteWidth = ($width / $gameWidth) * 256
-overwriteHeight = ($height / $gameHeight) * 128
 
 [TextureRedefine]
 width = 249
