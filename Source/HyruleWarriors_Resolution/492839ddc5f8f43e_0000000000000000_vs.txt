@@ -3,7 +3,8 @@
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 492839ddc5f8f43e //3rd level dof
-const float resScale =  ($height/$gameHeight)*$internalRes;
+const float resXScale =  intBitsToFloat($width)/intBitsToFloat($gameWidth);
+const float resYScale = intBitsToFloat($height)/intBitsToFloat($gameHeight); 
 uniform ivec4 uf_uniformRegisterVS[256];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;
@@ -222,18 +223,18 @@ tempResultf = clamp(tempResultf, -256.0, 255.0);
 ARi.x = int(tempResultf);
 PV1i.x = floatBitsToInt(tempResultf);
 // 2
-PV0i.x = floatBitsToInt(intBitsToFloat(Ri[2].y) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].y)/resScale);
-PV0i.y = floatBitsToInt(intBitsToFloat(Ri[2].x) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].x)/resScale);
-PV0i.z = floatBitsToInt(intBitsToFloat(Ri[2].y) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].w)/resScale);
-PV0i.w = floatBitsToInt(intBitsToFloat(Ri[2].x) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].z)/resScale);
+PV0i.x = floatBitsToInt(intBitsToFloat(Ri[2].y) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].y)/resXScale);
+PV0i.y = floatBitsToInt(intBitsToFloat(Ri[2].x) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].x)/resXScale);
+PV0i.z = floatBitsToInt(intBitsToFloat(Ri[2].y) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].w)/resXScale);
+PV0i.w = floatBitsToInt(intBitsToFloat(Ri[2].x) + intBitsToFloat(uf_uniformRegisterVS[ARi.x+2].z)/resXScale);
 // 3
 PV1i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_uniformRegisterVS[1].y)));
 PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.y), intBitsToFloat(uf_uniformRegisterVS[1].x)));
 PV1i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_uniformRegisterVS[1].x)));
 PV1i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.x), intBitsToFloat(uf_uniformRegisterVS[1].y)));
 // 4
-Ri[0].xyz = floatBitsToInt(vec3(intBitsToFloat(PV1i.y),intBitsToFloat(PV1i.w),intBitsToFloat(PV1i.z)) + vec3(intBitsToFloat(uf_uniformRegisterVS[1].z)/resScale,intBitsToFloat(uf_uniformRegisterVS[1].w)/resScale,intBitsToFloat(uf_uniformRegisterVS[1].z)/resScale));
-Ri[0].w = floatBitsToInt(intBitsToFloat(PV1i.x) + intBitsToFloat(uf_uniformRegisterVS[1].w)/resScale);
+Ri[0].xyz = floatBitsToInt(vec3(intBitsToFloat(PV1i.y),intBitsToFloat(PV1i.w),intBitsToFloat(PV1i.z)) + vec3(intBitsToFloat(uf_uniformRegisterVS[1].z)/resXScale,intBitsToFloat(uf_uniformRegisterVS[1].w)/resXScale,intBitsToFloat(uf_uniformRegisterVS[1].z)/resXScale));
+Ri[0].w = floatBitsToInt(intBitsToFloat(PV1i.x) + intBitsToFloat(uf_uniformRegisterVS[1].w)/resXScale);
 // 5
 tempResulti = Ri[1].x;
 tempResulti = clamp(tempResulti, -256, 255);
