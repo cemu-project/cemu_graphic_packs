@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Resolution
 path = "Xenoblade Chronicles X/Graphics/Resolution"
-description = "Changes the resolution of the game. 1080 FX scaling runs DoF, fog etc at lower precision for better performance"
+description = Changes the resolution of the game. 1080 FX scaling runs DoF, fog etc at lower precision for better performance
 version = 3
 
 [Preset]
