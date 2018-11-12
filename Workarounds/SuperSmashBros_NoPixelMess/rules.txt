@@ -6,3 +6,11 @@ description = Removes the "Pixel Mess" that appears on the results screen. Curre
 version = 3
 
 # A screenshot of the issue can be seen here: https://cdn.discordapp.com/attachments/286429969104764928/335077383847673857/unknown.png
+
+[Preset]
+name = Set Effect To Transparent
+$tVar:float = 0
+
+[Preset]
+name = Set Effect To Original
+$tVar:float = 1.0
