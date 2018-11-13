@@ -6,7 +6,7 @@
 // shader ec4a85d51e778437
 //box blur fix
 
-const float resScale = ($width/$gameWidth); 
+const float resScale = intBitsToFloat($width)/intBitsToFloat($gameWidth);
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
