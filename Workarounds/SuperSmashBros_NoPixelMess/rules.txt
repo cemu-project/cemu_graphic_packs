@@ -7,10 +7,9 @@ version = 3
 
 # A screenshot of the issue can be seen here: https://cdn.discordapp.com/attachments/286429969104764928/335077383847673857/unknown.png
 
-[Preset]
-name = Set Effect To Transparent
-$tVar:float = 0
-
-[Preset]
-name = Set Effect To Original
-$tVar:float = 1.0
+[TextureRedefine] # Pixel Mess Texture
+width = 640
+height = 360
+formats = 0x00a
+overwriteWidth = 1
+overwriteHeight = 1
