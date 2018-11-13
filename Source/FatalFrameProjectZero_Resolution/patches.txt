@@ -28,6 +28,7 @@ _pointSpriteSize = 0x00000000
 
 [JapanZeroV0]
 moduleMatches = 0xA86AA5B2; Vanilla Patch
+moduleMatches = 0x52992DCD; ? Patch
 
 codeCaveSize = 0x4
 
