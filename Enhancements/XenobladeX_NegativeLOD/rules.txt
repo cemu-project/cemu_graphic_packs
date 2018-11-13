@@ -1,0 +1,50 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Negative texture LOD bias
+path = "Xenoblade Chronicles X/Enhancements/Negative Texture LOD" 
+description = Texture LOD override, possible shimmer but sharper textures.
+version = 3
+
+[Preset]
+name = LOD Default
+$0x031 = 0
+$0x033 = 0
+$0x034 = 0
+$0x035 = 0
+
+[Preset]
+name = LOD -0.5 (Sharper)
+$0x031 = -0.5
+$0x033 = -0.5
+$0x034 = -0.5
+$0x035 = -0.5
+
+[Preset]
+name = LOD -1 (Max for gameplay)
+$0x031 = -1
+$0x033 = -1
+$0x034 = -1
+$0x035 = -1
+
+[Preset]
+name = LOD -4 (Overkill - For screenshots)
+$0x031 = -4
+$0x033 = -4
+$0x034 = -4
+$0x035 = -4
+
+[TextureRedefine]
+formats = 0x031 #0x431,0x432,0x433,0x434,0x435 not used. 
+overwriteRelativeLodBias = $0x031 
+
+[TextureRedefine]#Per format, possible to have separate scaling if needed
+formats = 0x033 
+overwriteRelativeLodBias = $0x033 
+
+[TextureRedefine]
+formats = 0x034
+overwriteRelativeLodBias = $0x034 
+
+[TextureRedefine]
+formats = 0x035
+overwriteRelativeLodBias = $0x035

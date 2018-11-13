@@ -48,7 +48,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = (720.0/1080.0)
+$scaleShader = (1440.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -59,7 +59,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = (720.0/1080.0)
+$scaleShader = (1440.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -70,7 +70,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = (720.0/1080.0)
+$scaleShader = (1440.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -81,7 +81,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $dither = 0.15
-$scaleShader = (720.0/1200.0)
+$scaleShader = (1440.0/1200.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -125,7 +125,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.75
 $dither = 0.15
-$scaleShader = (720.0/1080.0)
+$scaleShader = (1440.0/1080.0)
 $scaleBlur = 0.5
 
 [Preset]
@@ -180,7 +180,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.5
 $dither = 0.25
-$scaleShader = 1.0
+$scaleShader = (1440.0/1080.0) #round 1.5 shadow to 2.0
 $scaleBlur = 1.0
 
 [Preset]
@@ -202,7 +202,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.375
 $dither = 0.25
-$scaleShader = (720.0/1080.0)
+$scaleShader = (1440.0/1080.0)
 $scaleBlur = 1.0
 // Enthusiast
 
@@ -230,6 +230,14 @@ $internalRes = 0.5
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 1.0
+
+#[TextureRedefine]
+#formats = 0x1a
+#overwriteFormat = 0x1f
+
+#[TextureRedefine]
+#formats = 0x816
+#overwriteFormat = 0x823
 
 [TextureRedefine]
 width = 1280
