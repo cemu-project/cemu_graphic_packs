@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001012f000,00050000101d6000,00050000101e4100
+titleIds = 000500001012F000,00050000101D6000,00050000101E4100,00050000101FED00
 name = Resolution
 path = "Fast Racing Neo/Graphics/Resolution"
 description = Changes the resolution of the game.
