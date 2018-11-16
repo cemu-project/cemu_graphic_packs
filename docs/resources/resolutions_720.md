@@ -1,10 +1,4 @@
-[Definition]
-titleIds = 0005000010135700,000500001012B100,0005000010128F00
-name = Resolution
-path = "Sonic Lost World/Graphics/Resolution"
-description = Changes the resolution of the game.
-version = 3
-
+```
 [Preset]
 name = 1280x720 (Default)
 $width = 1280
@@ -71,6 +65,8 @@ $width = 5120
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
+
+//// THE FOLLOWING REQUIRE A GAME PATCH (patches.txt) FOR CUSTOM ASPECT RATIOS ////
 
 // Common Ultrawide Resolutions
 
@@ -145,59 +141,4 @@ $width = 5120
 $height = 3200
 $gameWidth = 1280
 $gameHeight = 720
-
-[TextureRedefine] # Game Resolution
-width = 1280
-height = 720
-tileModesExcluded = 0x001
-overwriteWidth = ($width / $gameWidth) * 1280
-overwriteHeight = ($height / $gameHeight) * 720
-
-[TextureRedefine] # Depth of Field Pass
-width = 640
-height = 368
-overwriteWidth = ($width / $gameWidth) * 640
-overwriteHeight = ($height / $gameHeight) * 368
-
-[TextureRedefine] # Depth of Field Pass
-width = 640
-height = 360
-tileModesExcluded = 0x001
-overwriteWidth = ($width / $gameWidth) * 640
-overwriteHeight = ($height / $gameHeight) * 360
-
-[TextureRedefine] # Depth of Field Pass
-width = 320
-height = 192
-overwriteWidth = ($width / $gameWidth) * 320
-overwriteHeight = ($height / $gameHeight) * 192
-
-[TextureRedefine] # Depth of Field Pass
-width = 320
-height = 180
-overwriteWidth = ($width / $gameWidth) * 320
-overwriteHeight = ($height / $gameHeight) * 180
-
-[TextureRedefine]
-width = 213
-height = 120
-overwriteWidth = ($width / $gameWidth) * 213
-overwriteHeight = ($height / $gameHeight) * 120
-
-[TextureRedefine] # Bloom Pass
-width = 160
-height = 96
-overwriteWidth = ($width / $gameWidth) * 160
-overwriteHeight = ($height / $gameHeight) * 96
-
-[TextureRedefine] # Bloom Pass
-width = 160
-height = 90
-overwriteWidth = ($width / $gameWidth) * 160
-overwriteHeight = ($height / $gameHeight) * 90
-
-[TextureRedefine] # Gamepad Resolution
-width = 864
-height = 480
-overwriteWidth = ($width / $gameWidth) * 864
-overwriteHeight = ($height / $gameHeight) * 480
+```
