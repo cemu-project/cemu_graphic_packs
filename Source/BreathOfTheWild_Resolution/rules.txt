@@ -212,6 +212,14 @@ $height = 5760
 $gameWidth = 1280
 $gameHeight = 720
 
+// Odd Requests
+
+[Preset]
+name = (43:18) 3440x1440
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
 
 # All 720p textures:
 # - 0x001=World Lighting Red8
