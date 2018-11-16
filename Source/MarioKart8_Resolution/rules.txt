@@ -2,7 +2,7 @@
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Resolution
 path = "Mario Kart 8/Graphics/Resolution"
-description = Changes the resolution of the game. Known issues: 3-4P upscaling works but misses shadows.
+description = Changes the resolution of the game. Known issues: 3-4P upscaling works but is missing shadows.
 version = 3
 
 [Preset]
@@ -146,6 +146,42 @@ $height = 3200
 $gameWidth = 1280
 $gameHeight = 720
 
+// Common HD Resolutions (2 Monitors)
+
+[Preset]
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 6400x1800 (32:9)
+$width = 6400
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x2160 (32:9)
+$width = 7680
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 10240x2880 (32:9)
+$width = 10240
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
 
 # Full Res
 [TextureRedefine]
@@ -171,7 +207,6 @@ height = 480
 formats = 0x816,0x019
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
-
 
 # 2P Full Res
 [TextureRedefine]
@@ -205,8 +240,7 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 256
 
-
-# Blur in menu's
+# Blur in menus
 [TextureRedefine]
 width = 320
 height = 180
@@ -235,7 +269,6 @@ height = 192
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 192
-
 
 # Particles/highlights
 [TextureRedefine]
@@ -308,7 +341,6 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 96
 overwriteHeight = ($height/$gameHeight) * 48
 
-
 # Underwater effect
 [TextureRedefine] # 1P
 width = 640
@@ -327,13 +359,13 @@ overwriteHeight = ($height/$gameHeight) * 360
 [TextureRedefine] # 2P
 width = 320
 height = 368
-formats = 0x01a
+formats = 0x19,0x1a,0x806,0x80e,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 368
 
 [TextureRedefine] # 2P
 width = 320
 height = 360
-formats = 0x01a
+formats = 0x19,0x1a,0x806,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 360
