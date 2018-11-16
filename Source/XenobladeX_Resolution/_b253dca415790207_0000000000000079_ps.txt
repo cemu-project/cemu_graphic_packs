@@ -3,7 +3,7 @@
 #extension GL_ARB_texture_gather : enable
 // shader b253dca415790207 
 // motion blur alpha
-const float resScale = intBitsToFloat($height)/intBitsToFloat($gameHeight); 
+const float resScale = float($height)/float($gameHeight); 
  
 //const float resScale = 2.0;
 //const float resScale = 3;

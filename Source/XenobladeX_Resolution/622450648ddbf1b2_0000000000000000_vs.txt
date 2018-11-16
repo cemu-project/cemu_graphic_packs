@@ -447,8 +447,8 @@ PV1i.w = tempi.x;
 // 16
 R2i.z = floatBitsToInt(-(intBitsToFloat(PV1i.x)));
 // export
-float origRatio = (intBitsToFloat(1280)/intBitsToFloat(720));
-float newRatio = (intBitsToFloat($width)/intBitsToFloat($height)) ;
+float origRatio = (float(1280)/float(720));
+float newRatio = (float($width)/float($height)) ;
 
 gl_Position = vec4(intBitsToFloat(R3i.x)*(origRatio / newRatio), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z), intBitsToFloat(R3i.w));
 // export

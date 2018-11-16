@@ -244,8 +244,8 @@ R3i.w = floatBitsToInt(max(intBitsToFloat(PV0i.x), -(intBitsToFloat(PV0i.x))));
 R2i.x = floatBitsToInt(intBitsToFloat(uf_remappedVS[9].z) * intBitsToFloat(R126i.z));
 PS1i = R2i.x;
 // export
-float origRatio = (intBitsToFloat(1280)/intBitsToFloat(720));
-float newRatio = (intBitsToFloat($width)/intBitsToFloat($height)) ;
+float origRatio = (float(1280)/float(720));
+float newRatio = (float($width)/float($height)) ;
 // *(origRatio / newRatio)
 gl_Position = vec4(intBitsToFloat(R1i.x) *(origRatio / newRatio), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w));
 // export

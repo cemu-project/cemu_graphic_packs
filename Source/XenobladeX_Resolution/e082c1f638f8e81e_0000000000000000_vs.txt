@@ -6,8 +6,8 @@
 //mask is probably scaled and fixed transparency
 // transport flame,   fog and quest marking, waterfall, computer login
 
-float origRatio = (intBitsToFloat(1280)/intBitsToFloat(720));
-float newRatio = (intBitsToFloat($width)/intBitsToFloat($height)) ;
+float origRatio = (float(1280)/float(720));
+float newRatio = (float($width)/float($height)) ;
 uniform ivec4 uf_remappedVS[27];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;

@@ -97,8 +97,8 @@ R3f.z = R127f.x * intBitsToFloat(0x41200000);
 PS0f = R3f.z;
 // 5
 R3f.w = R126f.x * intBitsToFloat(0x41200000);
-float origRatio = (intBitsToFloat(1280)/intBitsToFloat(720));
-float newRatio = (intBitsToFloat($width)/intBitsToFloat($height)) ;
+float origRatio = (float(1280)/float(720));
+float newRatio = (float($width)/float($height)) ;
 // *(origRatio / newRatio)
 // export
 gl_Position = vec4(R0f.x*(origRatio / newRatio), R0f.y, R0f.z, R0f.w);
