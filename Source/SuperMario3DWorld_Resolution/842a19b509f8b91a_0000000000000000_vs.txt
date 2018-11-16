@@ -4,7 +4,7 @@
 // shader 842a19b509f8b91a
 // Used for: General Blur vertical
 const float resXScale = float($width)/float($gameWidth);
-const float resYScale = float($width)/float($gameWidth);
+const float resYScale = float($height)/float($gameHeight); 
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
