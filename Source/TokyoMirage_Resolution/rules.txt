@@ -5,13 +5,6 @@ path = "Tokyo Mirage Sessions FE/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
-[Preset]
-name = 1280x720 (Default)
-$width = 1280
-$height = 720
-$gameWidth = 1280
-$gameHeight = 720
-
 // Performance
 
 [Preset]
@@ -72,6 +65,80 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
+// Common Ultrawide Resolutions
+
+[Preset]
+name = 2560x1080 ("21:9")
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3440x1440 ("21:9")
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x1600 ("21:9")
+$width = 3840
+$height = 1600
+$gameWidth = 1280
+$gameHeight = 720
+
+// Common 16:10 Resolutions
+
+[Preset]
+name = 1440x900 (16:10)
+$width = 1440
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1680x1050 (16:10)
+$width = 1680
+$height = 1050
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1920x1200 (16:10)
+$width = 1920
+$height = 1200
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1600 (16:10)
+$width = 2560
+$height = 1600
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2880x1800 (16:10)
+$width = 2880
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2400 (16:10)
+$width = 3840
+$height = 2400
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x3200 (16:10)
+$width = 5120
+$height = 3200
+$gameWidth = 1280
+$gameHeight = 720
+
 [TextureRedefine]
 width = 1280
 height = 720
@@ -100,6 +167,22 @@ overwriteHeight  = ($height/$gameHeight) * 340
 #formats = 0x011,0x811
 #overwriteWidth = ($height/$gameHeight) * 1024
 #overwriteHeight = ($height/$gameHeight) * 1024
+
+
+#[TextureRedefine] #
+#width = 512
+#height = 512
+#formats = 0x01a #GUI bar + alpha nope
+#overwriteWidth = 1024
+#overwriteHeight = 1024
+
+
+#[TextureRedefine] #
+#width = 128
+#height = 1024
+#formats = 0x034 #text + alpha
+#overwriteWidth = 256
+#overwriteHeight = 2048
 
 [TextureRedefine]
 width = 1014
