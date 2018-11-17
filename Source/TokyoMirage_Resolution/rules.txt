@@ -8,6 +8,15 @@ version = 3
 // Performance
 
 [Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+// Performance
+
+[Preset]
 name = 320x180
 $width = 320
 $height = 180
