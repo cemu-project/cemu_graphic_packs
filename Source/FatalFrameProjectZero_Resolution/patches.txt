@@ -16,6 +16,7 @@ moduleMatches = 0xB54DBEB0; Vanilla Patch
 moduleMatches = 0x5A9D6D31; Uncensored Patch 1
 moduleMatches = 0x360FA109; Uncensored Patch 2
 moduleMatches = 0x9D96F19B; Uncensored Patch 3
+moduleMatches = 0x81551809; Uncensored Patch 4
 
 codeCaveSize = 0x4
 
