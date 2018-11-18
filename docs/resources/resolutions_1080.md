@@ -84,13 +84,6 @@ $height = 1440
 $gameWidth = 1920
 $gameHeight = 1080
 
-[Preset]
-name = 3840x1600 ("21:9")
-$width = 3840
-$height = 1600
-$gameWidth = 1920
-$gameHeight = 1080
-
 // Common 16:10 Resolutions
 
 [Preset]
