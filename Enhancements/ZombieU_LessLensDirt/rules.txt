@@ -1,0 +1,25 @@
+[Definition]
+titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,0005000E1010DD00,0005000E10112300
+path = "ZombieU/Enhancements/Lens dirt setting"
+description = Changes the intensity of lens dirt effect
+version = 3
+
+[Preset]
+name = Lens dirt Default
+$dirt = 1.0
+
+[Preset]
+name = Lens dirt 0.85
+$dirt = 0.85
+
+[Preset]
+name = Lens dirt 0.75
+$dirt = 0.75
+
+[Preset]
+name = Lens dirt 0.5
+$dirt = 0.5
+
+[Preset]
+name = No Lens dirt
+$dirt = 0.01
