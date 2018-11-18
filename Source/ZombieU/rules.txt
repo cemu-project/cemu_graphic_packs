@@ -42,7 +42,6 @@ $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
 
-
 // Common HD Resolutions
 
 [Preset]
@@ -195,6 +194,12 @@ $scaleShader = (1440.0/1080.0)
 [TextureRedefine]
 width = 1280
 height = 720
+formats = 0x019,0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 1280
+height = 720
 #formats =  0x80e,0x034,0x031,0x019,0x001,0x01a
 formatsExcluded = 0x034,0x031 # lens dirt
 tileModesExcluded = 0x001 # For Video Playback
@@ -208,7 +213,6 @@ formatsExcluded =  0x033,0x031
 formats = 0x005 # Ye ol shadow map
 overwriteWidth = ($width/$gameWidth) * (1024*$scaleShader*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
-
 
 # Gamepad - background
 [TextureRedefine] 
@@ -224,6 +228,18 @@ height = 480
 #formats =  0x019,0x01a
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight  = ($height/$gameHeight) * 480
+
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x01a,0x019
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x01a,0x019
+overwriteFormat = 0x01f
 
 [TextureRedefine]
 width = 640
@@ -247,6 +263,19 @@ height = 512
 formats = 0x005 # ye ol dynamic shadow map
 overwriteWidth = ($width/$gameWidth)  * (512*$scaleShader*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (512*$scaleShader*$internalRes)
+
+
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x01a,0x019
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x01a,0x019
+overwriteFormat = 0x01f
 
 [TextureRedefine]
 width = 320
