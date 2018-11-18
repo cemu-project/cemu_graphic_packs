@@ -2,7 +2,7 @@
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Resolution
 path = "Mario Kart 8/Graphics/Resolution"
-description = Changes the resolution of the game. Known issues: 3-4P upscaling works but is missing shadows.
+description = Changes the resolution of the game.
 version = 3
 
 [Preset]
@@ -213,7 +213,6 @@ overwriteHeight = ($height/$gameHeight) * 720
 [TextureRedefine]
 width = 640
 height = 368
-tileModesExcluded = 0x001
 formats = 0x019,0x816,0x806,0x80e
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 368
@@ -221,7 +220,7 @@ overwriteHeight = ($height/$gameHeight) * 368
 [TextureRedefine]
 width = 640
 height = 360
-formats = 0x816
+formats = 0x19,0x806,0x816,0x80e
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
@@ -252,14 +251,14 @@ overwriteHeight = ($height/$gameHeight) * 192
 [TextureRedefine]
 width = 320
 height = 180
-formats = 0x816
+formats = 0x1a,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 180
 
 [TextureRedefine]
 width = 320
 height = 192
-formats = 0x816
+formats = 0x1a,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 192
 
