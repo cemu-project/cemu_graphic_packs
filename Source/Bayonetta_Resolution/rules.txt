@@ -59,7 +59,7 @@ $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 4K
 $width = 3840
 $height = 2160
 $gameWidth = 1280
@@ -163,6 +163,6 @@ overwriteHeight  = ($height/$gameHeight) * 16
 [TextureRedefine] #
 width = 8
 height = 8
-formatsExcluded = 
+formats = 0x001a
 overwriteWidth = ($width/$gameWidth) * 8
 overwriteHeight = ($height/$gameHeight) * 8
