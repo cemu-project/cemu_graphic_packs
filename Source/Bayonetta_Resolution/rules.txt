@@ -59,7 +59,7 @@ $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3840x2160 4K
+name = 3840x2160
 $width = 3840
 $height = 2160
 $gameWidth = 1280
