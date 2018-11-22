@@ -1,0 +1,3 @@
+[ZombiUEUv0]
+moduleMatches = 0xA4959FE1
+0x1008FA68  = .float $fov #   1.0 is default, 0.75 wider FOV 

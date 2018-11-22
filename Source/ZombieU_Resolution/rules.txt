@@ -12,7 +12,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
-
+$textureFormat = 0x01a
 // Performance
 
 [Preset]
@@ -23,6 +23,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 640x360
@@ -32,6 +33,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 960x540
@@ -41,6 +43,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
+$textureFormat = 0x01a
 
 // Common HD Resolutions
 
@@ -52,6 +55,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = (1440.0/1080.0)
+$textureFormat = 0x01a
 
 [Preset]
 name = 2560x1440
@@ -61,6 +65,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.75
 $scaleShader = (1440.0/1080.0)
+$textureFormat = 0x01a
 
 [Preset]
 name = 3200x1800
@@ -70,6 +75,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 2.0
 $scaleShader = (1440.0/1800.0)
+$textureFormat = 0x01a
 
 [Preset]
 name = 3840x2160
@@ -79,6 +85,17 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.5
 $scaleShader = (1440.0/1080.0) #round 1.5 shadow to 2.0
+$textureFormat = 0x01a
+
+[Preset]
+name = 3840x2160 Experimental (Format, Res, Shaders)
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.5
+$scaleShader = (2160.0/1080.0) #round 1.5 shadow to 3.0
+$textureFormat = 0x019
 
 [Preset]
 name = 5120x2880
@@ -88,19 +105,21 @@ $gameWidth = 1280
 $gameHeight = 720
 $internalRes = 0.375
 $scaleShader = (1440.0/1080.0)
+$textureFormat = 0x01a
 
 #Common Ultrawide Resolutions
 #Disabled, no patch
 #
 #[Preset]
-#name = 2560x1080 ("21:9")
+#name = 2560x1080 (21:9 HD)
 #$width = 2560
 #$height = 1080
 #$gameWidth = 1280
 #$gameHeight = 720
 #$internalRes = 1.0
-#$scaleShader = 1.0
+#$scaleShader = (1440.0/1080.0)
 #
+##
 #[Preset]
 #name = 3440x1440 ("21:9")
 #$width = 3440
@@ -194,8 +213,9 @@ $scaleShader = (1440.0/1080.0)
 [TextureRedefine]
 width = 1280
 height = 720
-formats = 0x019,0x01a
+formats = $textureFormat # 
 overwriteFormat = 0x01f
+
 
 [TextureRedefine]
 width = 1280
@@ -229,17 +249,17 @@ height = 480
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight  = ($height/$gameHeight) * 480
 
-[TextureRedefine]
-width = 640
-height = 368
-formats = 0x01a,0x019
-overwriteFormat = 0x01f
-
-[TextureRedefine]
-width = 640
-height = 360
-formats = 0x01a,0x019
-overwriteFormat = 0x01f
+#[TextureRedefine]
+#width = 640
+#height = 368
+#formats = 0x019
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#width = 640
+#height = 360
+#formats = 0x019
+#overwriteFormat = 0x01f
 
 [TextureRedefine]
 width = 640
