@@ -2,7 +2,7 @@
 titleIds = 0005000010145D00,0005000010145C00,0005000010106100
 name = Resolution
 path = "Super Mario 3D World/Graphics/Resolution"
-description = Changes the resolution of the game. "zoom-transitions" are also not upscaled yet.
+description = Changes the resolution of the game.
 version = 3
 
 [Preset]
@@ -12,7 +12,6 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// For [4:3] resolutions that are multiples of 320x180
 // Performance
 
 [Preset]
@@ -36,7 +35,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Quality
+// Common HD Resolutions
 
 [Preset]
 name = 1920x1080
@@ -73,90 +72,70 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-// Enthusiast
+// Common Ultrawide Resolutions
 
 [Preset]
-name = 7680x4320
-$width = 7680
-$height = 4320
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 10240x5760
-$width = 10240
-$height = 5760
-$gameWidth = 1280
-$gameHeight = 720
-
-
-// For [21:9] resolutions that are multiples of 420x180
-// Performance
-
-[Preset]
-name = (21:9) 1260x540
-$width = 1260
-$height = 540
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = (21:9) 1680x720
-$width = 1680
-$height = 720
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = (21:9) 2100x900
-$width = 2100
-$height = 900
-$gameWidth = 1280
-$gameHeight = 720
-
-// Quality 
-
-[Preset]
-name = (21:9) 2520x1080
-$width = 2520
+name = 2560x1080 ("21:9")
+$width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = (21:9) 3360x1440
-$width = 3360
+name = 3440x1440 ("21:9")
+$width = 3440
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
 
+// Common 16:10 Resolutions
+
 [Preset]
-name = (21:9) 5040x2160
-$width = 5040
-$height = 2160
+name = 1440x900 (16:10)
+$width = 1440
+$height = 900
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = (21:9) 6720x2880
-$width = 6720
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-
-// Enthusiats
-
-[Preset]
-name = (21:9) 10080x4320
-$width = 10080
-$height = 4320
+name = 1680x1050 (16:10)
+$width = 1680
+$height = 1050
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = (21:9) 13440x5760
-$width = 13440
-$height = 5760
+name = 1920x1200 (16:10)
+$width = 1920
+$height = 1200
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1600 (16:10)
+$width = 2560
+$height = 1600
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2880x1800 (16:10)
+$width = 2880
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2400 (16:10)
+$width = 3840
+$height = 2400
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x3200 (16:10)
+$width = 5120
+$height = 3200
 $gameWidth = 1280
 $gameHeight = 720
 

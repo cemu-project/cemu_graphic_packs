@@ -35,21 +35,14 @@ $height = 540
 $gameWidth = 1920
 $gameHeight = 1080
 
-// Quality
-
 [Preset]
-name = 1600x900
-$width = 1600
-$height = 900
+name = 1280x720
+$width = 1280
+$height = 720
 $gameWidth = 1920
 $gameHeight = 1080
 
-[Preset]
-name = 1920x1080
-$width = 1920
-$height = 1080
-$gameWidth = 1920
-$gameHeight = 1080
+// Common HD Resolutions
 
 [Preset]
 name = 2560x1440
@@ -65,7 +58,6 @@ $height = 1800
 $gameWidth = 1920
 $gameHeight = 1080
 
-# 4K Maintains Aspect Ratio
 [Preset]
 name = 3840x2160
 $width = 3840
@@ -73,34 +65,10 @@ $height = 2160
 $gameWidth = 1920
 $gameHeight = 1080
 
-# New Resoltion Maintains Aspect Ratio
-[Preset]
-name = 4480x2520
-$width = 4480
-$height = 2520
-$gameWidth = 1920
-$gameHeight = 1080
-
 [Preset]
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1080
-
-// Enthusiast
-
-[Preset]
-name = 7680x4320
-$width = 7680
-$height = 4320
-$gameWidth = 1920
-$gameHeight = 1080
-
-[Preset]
-name = 10240x5760
-$width = 10240
-$height = 5760
 $gameWidth = 1920
 $gameHeight = 1080
 

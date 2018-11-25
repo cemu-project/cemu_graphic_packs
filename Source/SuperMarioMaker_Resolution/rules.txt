@@ -15,16 +15,9 @@ $gameHeight = 720
 // Performance
 
 [Preset]
-name = 256x144
-$width = 256
-$height = 144
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 427x240
-$width = 427
-$height = 240
+name = 320x180
+$width = 320
+$height = 180
 $gameWidth = 1280
 $gameHeight = 720
 
@@ -36,27 +29,13 @@ $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 854x480
-$width = 854
-$height = 480
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
 name = 960x540
 $width = 960
 $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Quality
-
-[Preset]
-name = 1600x900
-$width = 1600
-$height = 900
-$gameWidth = 1280
-$gameHeight = 720
+// Common HD Resolutions
 
 [Preset]
 name = 1920x1080
@@ -69,13 +48,6 @@ $gameHeight = 720
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 2732x1536
-$width = 2732
-$height = 1536
 $gameWidth = 1280
 $gameHeight = 720
 
@@ -100,30 +72,12 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-// Enthusiast
-
-[Preset]
-name = 7680x4320
-$width = 7680
-$height = 4320
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 10240x5760
-$width = 10240
-$height = 5760
-$gameWidth = 1280
-$gameHeight = 720
-
-
 [TextureRedefine] # Game Output, 3D Rendering Style
 width = 1280
 height = 720
 formats = 0x019,0x80e,0x001,0x419,0x816
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
-
 
 # Sprite Styles
 
