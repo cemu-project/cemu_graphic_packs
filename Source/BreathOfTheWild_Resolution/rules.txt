@@ -72,8 +72,6 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-//// THE FOLLOWING REQUIRE A GAME PATCH (patches.txt) FOR CUSTOM ASPECT RATIOS ////
-
 // Common Ultrawide Resolutions
 
 [Preset]
