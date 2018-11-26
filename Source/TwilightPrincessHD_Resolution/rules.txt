@@ -160,7 +160,7 @@ $gameWidth = 1920
 $gameHeight = 1080
 $dither = 0.2
 $scaleShader = 1.0
-$scaleBlur = 0.5
+$scaleBlur = 0.75
 $internalRes = 1
 
 [Preset]
@@ -186,12 +186,12 @@ $scaleBlur = 0.5
 $internalRes = 1
 
 [Preset]
-name = 3840x2160 (4k - Native x2) x2 sub scaling
+name = 3840x2160 (4k - Native x2) 0.75 sub scaling
 $width = 3840
 $height = 2160
 $gameWidth= 1920
 $gameHeight= 1080
-$internalRes = 2
+$internalRes = 0.75
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.5
@@ -220,6 +220,43 @@ $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 0.5
 $internalRes = 1
+
+#Fog banding
+[TextureRedefine]
+width = 1920
+height = 1088
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 960
+height = 544
+formats = 0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 960
+height = 540
+formats =  0x01a
+overwriteFormat = 0x01f
+
+#[TextureRedefine] # bloom n cutscene
+#width = 480
+#height = 272
+#formats = 0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine] # bloom n cutscene
+#width = 480
+#height = 270
+#formats = 0x01a
+#overwriteFormat = 0x01f
 
 [TextureRedefine]
 width = 1920
