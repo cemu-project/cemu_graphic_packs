@@ -87,51 +87,51 @@ $gameHeight = 720
 // Common 16:10 Resolutions
 
 [Preset]
-name = 1440x900 (16:10)
+name = 1440x936 (16:10)
 $width = 1440
-$height = 900
+$height = 900 // 720x1.25
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 1680x1050 (16:10)
+name = 1680x1080 (16:10)
 $width = 1680
-$height = 1050
+$height = 1044 // 720x1.45
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 1920x1200 (16:10)
+name = 1920x1224 (16:10)
 $width = 1920
-$height = 1200
+$height = 1188 // 720x1.65
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 2560x1600 (16:10)
+name = 2560x1656 (16:10)
 $width = 2560
-$height = 1600
+$height = 1584 // 720x2.2
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
 name = 2880x1800 (16:10)
 $width = 2880
-$height = 1800
+$height = 1800 // 720x2.5
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3840x2400 (16:10)
+name = 3840x2412 (16:10)
 $width = 3840
-$height = 2400
+$height = 2412 // 720x3.35
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 5120x3200 (16:10)
+name = 5120x3168 (16:10)
 $width = 5120
-$height = 3200
+$height = 3204 // 720x4.45
 $gameWidth = 1280
 $gameHeight = 720
 ```
