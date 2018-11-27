@@ -594,6 +594,14 @@ formats = 0x806
 overwriteWidth = ($width/$gameWidth) * 32
 overwriteHeight = ($height/$gameHeight) * 23
 
+# 3D Map Ganons Castle & Beasts
+[TextureRedefine] 
+width = 512
+height = 288
+formats = 0x01a,0x80e
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 288
+
 # Disabled since they break stuff
 
 # Minimap
