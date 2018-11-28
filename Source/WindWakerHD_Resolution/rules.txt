@@ -15,35 +15,47 @@ $internalRes = 1
 $dither = 0.5
 $scaleShader = 1.0
 
+// Performance
+
 [Preset]
-name = 1920x1080 (HD) x2 sub scaling
-$width = 1920
-$height = 1080
-$gameWidth= 1920
-$gameHeight= 1080
-$internalRes = 2
-$dither = 0.65
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1920
+$gameHeight = 1080
+$internalRes = 1
+$dither = 0.5
 $scaleShader = 1.0
 
 [Preset]
-name = 2560x1080 (21:9 HD)
-$width = 2560
-$height = 1080
-$gameWidth= 1920
-$gameHeight= 1080
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1920
+$gameHeight = 1080
 $internalRes = 1
 $dither = 0.5
-$scaleShader = (1920.0/2560.0)
+$scaleShader = 1.0
 
 [Preset]
-name = 5760x1080 (48:9 HD)
-$width = 5760
-$height = 1080
-$gameWidth= 1920
-$gameHeight= 1080
+name = 960x540
+$width = 960
+$height = 540
+$gameWidth = 1920
+$gameHeight = 1080
 $internalRes = 1
 $dither = 0.5
-$scaleShader = (1920.0/5760.0)
+$scaleShader = 1.0
+
+[Preset]
+name = 1280x720
+$width = 1280
+$height = 720
+$gameWidth = 1920
+$gameHeight = 1080
+$internalRes = 1
+$dither = 0.5
+$scaleShader = 1.0
 
 [Preset]
 name = 1600x900
@@ -55,8 +67,20 @@ $internalRes = 1
 $dither = 0.65
 $scaleShader = 1.0
 
+// Common HD Resolutions
+
 [Preset]
-name = 2560x1440
+name = 1920x1080 (HD) x2 sub scaling
+$width = 1920
+$height = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 2
+$dither = 0.65
+$scaleShader = 1.0
+
+[Preset]
+name = 2560x1440 (2k)
 $width = 2560
 $height = 1440
 $gameWidth= 1920
@@ -66,7 +90,7 @@ $dither = 0.66
 $scaleShader = 1.0 #(1920.0/2560.0)
 
 [Preset]
-name = 2560x1440 x2 sub scaling
+name = 2560x1440 (2k) x2 sub scaling
 $width = 2560
 $height = 1440
 $gameWidth= 1920
@@ -76,27 +100,7 @@ $dither = 0.75
 $scaleShader = (1920.0/2560.0)
 
 [Preset]
-name = 3440x1440 (21:9)
-$width = 3440
-$height = 1440
-$gameWidth= 1920
-$gameHeight= 1080
-$internalRes = 1
-$dither = 0.66
-$scaleShader = (2560.0/3440.0)
-
-#[Preset] ## Too broken, disabled
-#name = 7680x1440 (48:9)
-#$width = 7680
-#$height = 1440
-#$gameWidth= 1920
-#$gameHeight= 1080
-#$internalRes = 1
-#$dither = 0.66
-#$scaleShader = (2560.0/7680.0)
-
-[Preset]
-name = 3200x1800
+name = 3200x1800 (3k)
 $width = 3200
 $height = 1800
 $gameWidth= 1920
@@ -126,17 +130,7 @@ $dither = 0.745
 $scaleShader = 1.0
 
 [Preset]
-name = 5120x2160 (4k 21:9)
-$width = 5120
-$height = 2160
-$gameWidth= 1920
-$gameHeight= 1080
-$internalRes = 1
-$dither = 0.76
-$scaleShader = (3840.0/5120.0)
-
-[Preset]
-name = 5120x2880
+name = 5120x2880 (5k)
 $width = 5120
 $height = 2880
 $gameWidth= 1920
@@ -146,7 +140,7 @@ $dither = 0.95
 $scaleShader = 1.0
 
 [Preset]
-name = 5120x2880 x2 sub scaling
+name = 5120x2880 (5k)x2 sub scaling
 $width = 5120
 $height = 2880
 $gameWidth= 1920
@@ -155,27 +149,59 @@ $internalRes = 2
 $dither = 0.95
 $scaleShader = 1.0
 
-// Enthusiast
+// Common Ultrawide Resolutions
 
 [Preset]
-name = 7680x4320 (8k - Native x3)
-$width = 7680
-$height = 4320
+name = 2560x1080 (21:9 HD)
+$width = 2560
+$height = 1080
 $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 1
-$dither = 1.5
-$scaleShader = 1.0
+$dither = 0.5
+$scaleShader = (1920.0/2560.0)
 
 [Preset]
-name = 10240x5760
-$width = 10240
-$height = 5760
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
 $gameWidth= 1920
 $gameHeight= 1080
 $internalRes = 1
-$dither = 1.5
-$scaleShader = 1.0
+$dither = 0.66
+$scaleShader = (2560.0/3440.0)
+
+[Preset]
+name = 5160x2160 (4k 21:9)
+$width = 5160
+$height = 2160
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.76
+$scaleShader = (3840.0/5160.0)
+
+// 48:9 Aspect Ratio
+
+#[Preset] ## Too broken, disabled
+#name = 7680x1440 (48:9)
+#$width = 7680
+#$height = 1440
+#$gameWidth= 1920
+#$gameHeight= 1080
+#$internalRes = 1
+#$dither = 0.66
+#$scaleShader = (2560.0/7680.0)
+
+[Preset]
+name = 5760x1080 (48:9 HD)
+$width = 5760
+$height = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$internalRes = 1
+$dither = 0.5
+$scaleShader = (1920.0/5760.0)
 
 
 [TextureRedefine]
