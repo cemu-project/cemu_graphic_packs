@@ -5,7 +5,7 @@
 ------
 ### Information
 ------
-Cemu Graphic Packs is a repository where you can find graphic packs that upscale and improve most Wii U games that work on [Cemu](http://cemu.info/).
+Cemu Graphic Packs is a repository where you can find graphic packs that upscale and improve most Wii U games that work on [Cemu](http://cemu.info/). Graphic packs that modify game files are excluded.
 It's made by the Cemu community so you're also free to [contribute to the project](https://github.com/slashiee/cemu_graphic_packs/wiki/How-to-create-resolution-packs) if you wish.
 
 ### Downloads
