@@ -1,0 +1,27 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Resources income quantity mod"
+path = "Xenoblade Chronicles X/Mods/FrontierNav/Resources income quantity mod"
+description = Affect the quantity of the FrontierNav income for the resources.
+version = 3
+
+[Preset]
+name = "x2"
+$mod = 2
+
+[Preset]
+name = "x5"
+$mod = 5
+
+[Preset]
+name = "x10"
+$mod = 10
+
+[Preset]
+name = "x50"
+$mod = 50
+
+[Preset]
+name = "x100"
+$mod = 100
+

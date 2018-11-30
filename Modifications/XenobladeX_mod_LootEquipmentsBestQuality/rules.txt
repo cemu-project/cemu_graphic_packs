@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Equipment - Best Quality" 
-path = "Xenoblade Chronicles X/Modifications/Loot/Equipment - Always the Best Quality (X6X)"
-description = Equipment looted is always of the best quality (Prime for ground gear and Intergalactic for Skells) and has always 3 augments and 3 extra free slots (no preset needed).
-version = 3

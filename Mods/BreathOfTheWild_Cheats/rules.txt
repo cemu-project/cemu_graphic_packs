@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Cheats
+path = "The Legend of Zelda: Breath of the Wild/Mods/Cheats"
+description = By default, every cheat is enabled. To specify the cheat you want and look at the specifics, please read the readme.txt in the "BreathOftheWild_Cheats" folder.
+version = 3

@@ -1,0 +1,22 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Equipment - Force Type" 
+path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Type"
+description = Force the type of equipment looted.
+version = 3
+
+[Preset]
+name = "Ground weapons"
+$mod = 2
+
+[Preset]
+name = "Ground armors"
+$mod = 4
+
+[Preset]
+name = "Skell weapons"
+$mod = 6
+
+[Preset]
+name = "Skell armors"
+$mod = 8

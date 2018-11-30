@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = No offline tag
+path = "Xenoblade Chronicles X/Mods/offline tag" 
+description = Removes offline blinking tag - Does not change actual offline state
+version = 3

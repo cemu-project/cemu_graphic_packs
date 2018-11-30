@@ -17,8 +17,8 @@ install: npm install -g github-release-cli@0.4.1
 
 script:
   - cd Enhancements && zip -r -q -9 "../graphicPacks$TRAVIS_BUILD_NUMBER"".zip" ./* && cd ..
-  - cd Source && zip -r -q -9 "../graphicPacks$TRAVIS_BUILD_NUMBER"".zip" ./* && cd ..
-  - cd Modifications && zip -r -q -9 "../graphicPacks$TRAVIS_BUILD_NUMBER"".zip" ./* && cd ..
+  - cd Graphics && zip -r -q -9 "../graphicPacks$TRAVIS_BUILD_NUMBER"".zip" ./* && cd ..
+  - cd Mods && zip -r -q -9 "../graphicPacks$TRAVIS_BUILD_NUMBER"".zip" ./* && cd ..
   - cd Workarounds && zip -r -q -9 "../graphicPacks$TRAVIS_BUILD_NUMBER"".zip" ./* && cd ..
   - |
     github-release upload \

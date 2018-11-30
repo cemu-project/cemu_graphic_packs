@@ -1,0 +1,45 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Dynamic (FPS++)
+path = "The Legend of Zelda: Breath of the Wild/Mods/Dynamic (FPS++)"
+description = Important: Don't enable Static FPS while having FPS++ also enabled! This pack won't work without Cemuhook, make sure to install that! This pack only works when you've properly updated your game (we always recommend the latest updates). Keep in mind that going above 30fps will bring game bugs. Use Static FPS if you've got a stable framerate and want to get rid of some FPS++ related bugs like arrow distance and some other animation issues.
+version = 3
+
+[Preset]
+name = 30FPS (most stable)
+$targetFPS:int = 30
+
+[Preset]
+name = 60FPS (ideal for 60Hz displays)
+$targetFPS:int = 60
+
+[Preset]
+name = 75FPS (ideal for 75Hz displays)
+$targetFPS:int = 75
+
+[Preset]
+name = 100FPS (ideal for 100Hz displays)
+$targetFPS:int = 100
+
+[Preset]
+name = 120FPS (ideal for 120Hz displays)
+$targetFPS:int = 120
+
+[Preset]
+name = 144FPS (ideal for 144Hz displays)
+$targetFPS:int = 144
+
+[Preset]
+name = 165FPS (ideal for 165Hz displays)
+$targetFPS:int = 165
+
+[Preset]
+name = 180FPS (ideal for 180Hz displays)
+$targetFPS:int = 180
+
+[Preset]
+name = 240FPS (ideal for 240Hz displays)
+$targetFPS:int = 240
+
+[Control]
+vsyncFrequency = $targetFPS
