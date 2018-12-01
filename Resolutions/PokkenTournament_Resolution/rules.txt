@@ -201,11 +201,11 @@ width = 8
 height = 4
 formats = 0x816
 overwriteWidth = ($width / $gameWidth) * 8
-overwriteHeight = ($height / $gameHeight) * 8
+overwriteHeight = ($height / $gameHeight) * 4
 
 [TextureRedefine] # Blur Mip
 width = 4
 height = 2
 formats = 0x816
-overwriteWidth = ($width / $gameWidth) * 8
-overwriteHeight = ($height / $gameHeight) * 8
+overwriteWidth = ($width / $gameWidth) * 4
+overwriteHeight = ($height / $gameHeight) * 2
