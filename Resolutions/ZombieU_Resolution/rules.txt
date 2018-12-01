@@ -48,6 +48,16 @@ $textureFormat = 0x01a
 // Common HD Resolutions
 
 [Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$scaleShader = (1440.0/1080.0)
+$textureFormat = 0x01a
+
+[Preset]
 name = 1920x1080
 $width = 1920
 $height = 1080
