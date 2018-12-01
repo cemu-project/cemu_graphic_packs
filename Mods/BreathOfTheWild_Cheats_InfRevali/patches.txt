@@ -1,0 +1,9 @@
+[BotwV208]
+moduleMatches = 0x6267BFD0
+
+0x02CE0328 = nop; Inf Revali's Gale
+
+[BotwV176V192]
+moduleMatches = 0xFD091F9F,0xD472D8A5
+
+0x02CDFE0C = nop; Inf Revali's Gale
