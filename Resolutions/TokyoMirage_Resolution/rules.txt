@@ -5,8 +5,6 @@ path = "Tokyo Mirage Sessions FE/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
-// Performance
-
 [Preset]
 name = 1280x720 (Default)
 $width = 1280
@@ -38,6 +36,13 @@ $gameWidth = 1280
 $gameHeight = 720
 
 // Common HD Resolutions
+
+[Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
 
 [Preset]
 name = 1920x1080
