@@ -25,8 +25,8 @@ layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 ivec2 resDim = textureSize2D(textureUnitPS0,0);
-const float resXScale = float(resDim.x)/1280;
-const float resYScale = float(resDim.y)/720;
+const int resXScale = int( float(resDim.x)/1280 + 0.5 ); //We need to round up
+const int resYScale = int( float(resDim.y)/720 + 0.5 ); //We need to round up
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
