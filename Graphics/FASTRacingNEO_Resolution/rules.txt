@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001012F000,00050000101D6000,00050000101E4100,00050000101FED00
+titleIds = 000500001012f000,00050000101d6000,00050000101e4100,00050000101FED00
 name = Resolution
 path = "Fast Racing Neo/Graphics/Resolution"
 description = Changes the resolution of the game.
@@ -11,6 +11,9 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 // Performance
 
@@ -20,6 +23,9 @@ $width = 320
 $height = 180
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 640x360
@@ -27,6 +33,9 @@ $width = 640
 $height = 360
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 960x540
@@ -34,6 +43,9 @@ $width = 960
 $height = 540
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 // Common HD Resolutions
 
@@ -43,6 +55,9 @@ $width = 1920
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 2560x1440
@@ -50,6 +65,9 @@ $width = 2560
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 3200x1800
@@ -57,6 +75,9 @@ $width = 3200
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
 
 [Preset]
 name = 3840x2160
@@ -64,6 +85,19 @@ $width = 3840
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
+
+#[Preset]
+#name = 3840x2160 (experimental res, format)
+#$width = 3840  #5760
+#$height = 2160
+#$gameWidth = 1280
+#$gameHeight = 720
+#$internalRes = 2.0
+#$scaleShader = 1.0
+#$textureFormat = 0x01f
 
 [Preset]
 name = 5120x2880
@@ -71,12 +105,33 @@ $width = 5120
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
+
+#[TextureRedefine]
+#width = 1280
+#height = 720
+#formats = 0x01a
+#overwriteFormat = $textureFormat 
 
 [TextureRedefine] # Game Resolution
 width = 1280
 height = 720
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 592
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 592
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 580
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 580
 
 [TextureRedefine] # Light Shafts Pass
 width = 1024
@@ -85,12 +140,32 @@ formats = 0x1
 overwriteWidth = ($width / $gameWidth) * 1024
 overwriteHeight = ($height / $gameHeight) * 512
 
-[TextureRedefine] # Light Shafts Pass Mip
-width = 512
-height = 256
-formats = 0x1
-overwriteWidth = ($width / $gameWidth) * 512
-overwriteHeight = ($height / $gameHeight) * 256
+[TextureRedefine] # Gamepad Resolution
+width = 854
+height = 480
+overwriteWidth = ($width / $gameWidth) * 854
+overwriteHeight = ($height / $gameHeight) * 480
+
+[TextureRedefine] # 0.5.x main
+width = 640
+height = 720
+#formats = 0x816,0x001,0x01a
+overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # 0.5.x main 8 rounding
+width = 640
+height = 592
+#formats = 0x816,0x001,0x01a
+overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
+overwriteHeight = ($height/$gameHeight) * 592
+
+[TextureRedefine] # 0.5.x main
+width = 640
+height = 580
+#formats = 0x816,0x001,0x01a
+overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
+overwriteHeight = ($height/$gameHeight) * 580
 
 [TextureRedefine] # Bloom Pass
 width = 640
@@ -104,18 +179,63 @@ height = 360
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 360
 
+[TextureRedefine] # Bloom Pass
+width = 640
+height = 304
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 304
+
+[TextureRedefine] # Bloom Pass
+width = 640
+height = 290
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 290
+
+[TextureRedefine] # Light Shafts Pass Mip
+width = 512
+height = 512
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * (512*$internalRes)
+overwriteHeight = ($height / $gameHeight) * 512
+
+[TextureRedefine] # Light Shafts Pass Mip
+width = 512
+height = 256
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * 512
+overwriteHeight = ($height / $gameHeight) * 256
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 368
+overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
+overwriteHeight = ($height / $gameHeight) * 368
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 360
+overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
+overwriteHeight = ($height / $gameHeight) * 360
+
 [TextureRedefine] # Bloom Pass Mip
 width = 320
 height = 192
-overwriteWidth = ($width / $gameWidth) * 320
+overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
 overwriteHeight = ($height / $gameHeight) * 192
 
 [TextureRedefine] # Bloom Pass Mip
 width = 320
 height = 180
 formatsExcluded = 0x41a
-overwriteWidth = ($width / $gameWidth) * 320
+overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
 overwriteHeight = ($height / $gameHeight) * 180
+
+[TextureRedefine] # Light Shafts Pass Mip
+width = 256
+height = 256
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * (256*$internalRes)
+overwriteHeight = ($height / $gameHeight) * 256
 
 [TextureRedefine] # Bloom Pass Mip
 width = 160
@@ -153,36 +273,6 @@ width = 40
 height = 22
 overwriteWidth = ($width / $gameWidth) * 40
 overwriteHeight = ($height / $gameHeight) * 22
-
-[TextureRedefine] # Gamepad Resolution
-width = 854
-height = 480
-overwriteWidth = ($width / $gameWidth) * 854
-overwriteHeight = ($height / $gameHeight) * 480
-
-[TextureRedefine] # Game Resolution
-width = 1280
-height = 592
-overwriteWidth = ($width / $gameWidth) * 1280
-overwriteHeight = ($height / $gameHeight) * 592
-
-[TextureRedefine] # Game Resolution
-width = 1280
-height = 580
-overwriteWidth = ($width / $gameWidth) * 1280
-overwriteHeight = ($height / $gameHeight) * 580
-
-[TextureRedefine] # Bloom Pass
-width = 640
-height = 304
-overwriteWidth = ($width / $gameWidth) * 640
-overwriteHeight = ($height / $gameHeight) * 304
-
-[TextureRedefine] # Bloom Pass
-width = 640
-height = 290
-overwriteWidth = ($width / $gameWidth) * 640
-overwriteHeight = ($height / $gameHeight) * 290
 
 [TextureRedefine] # Bloom Pass Mip
 width = 320
