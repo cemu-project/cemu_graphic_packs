@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader b2fecd8319ee0096
 // Used for: DoF In-game
-const float resXScale = ($width/$gameWidth); 
+const float resXScale = ($width*($gameWidth/$renderWidth)/$gameWidth); 
 const float resYScale = ($height/$gameHeight); 
 
 uniform ivec4 uf_remappedPS[4];
