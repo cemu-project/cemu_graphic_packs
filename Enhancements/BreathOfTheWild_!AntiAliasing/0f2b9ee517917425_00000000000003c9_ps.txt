@@ -675,7 +675,7 @@ passPixelColor0 = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFl
 
 #endif
 
-#if (preset == 2) / FXAA
+#if (preset == 2) // FXAA
 /*-----------------------------settings-------------------------------------*/
 
 #define Subpix               $subPix  //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
