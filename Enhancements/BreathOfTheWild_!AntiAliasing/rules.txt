@@ -2,20 +2,48 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Anti-Aliasing
 path = "The Legend of Zelda: Breath of the Wild/Graphics/Anti-Aliasing"
-description = Enables and Disables Anti-Aliasing processing. FXAA is better alternative and customizable. Check the "!GameTitleHere_Anti-Aliasing/rules.txt" file in your graphicPack folder for info about the individual settings.
+description = Enables and Disables Native Botw Anti-Aliasing. Also includes an alternative FXAA implementation. Check the "Anti-Aliasing/rules.txt" file in your Botw AA graphicPack folder for info about the individual settings.
 version = 3
 
 [Preset]
-name = Disabled
+name = Disable Native AA
 $preset:int = 0
+#
+$aaSharper = 0.5 # Ignore
+$aaBlurrier = 0.0 # Ignore
+#
+$subPix = 0.75 # Ignore 
+$edgeThreshold = 0.0166 # Ignore
+$edgeThresholdMin = 0.0833 # Ignore
+$fxaaAdjust = 1.0 # Ignore
 
 [Preset]
-name = Enabled
+name = Enable Native AA
 $preset:int = 1
+#
+$aaSharper = 0.5
+$aaBlurrier = 0.0
+#
+$subPix = 0.75 # Ignore
+$edgeThreshold = 0.0166 # Ignore
+$edgeThresholdMin = 0.0833 # Ignore
+$fxaaAdjust = 1.0 # Ignore
 
 [Preset]
 name = FXAA
 $preset:int = 2
+#
+$aaSharper = 0.5 # Ignore
+$aaBlurrier = 0.0 # Ignore
+#
+$subPix = 1.0
+$edgeThreshold = 0.0125
+$edgeThresholdMin = 0.0625
+$fxaaAdjust = 2.0
+
+# aaSharper / aaBlurrier - Only applies to enabled preset
+# Adjusts native AA implmentation
+#	Values - [0.0 - 1.0] - keep one of the varaibles at 0 while adjusting the other one
 
 # Subpix:
 # Choose the amount of sub-pixel aliasing removal.
@@ -40,5 +68,9 @@ $preset:int = 2
 #   0.0625 - high quality (faster)
 #   0.0312 - visible limit (slower)
 
+# FxaaAdjust
+# Makes FXAA more clearer or blurrier
+# [0.0 - 1.0] values are used to divide by Var x 0.2
+# [1.0 - 4.0] are used to multiply by Var x 2.0
 # Credit: Kiri, NAVras
 # Credit: SkalFate for proper V3 Import.
