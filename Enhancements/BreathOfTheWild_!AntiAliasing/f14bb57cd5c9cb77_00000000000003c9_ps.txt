@@ -6,9 +6,9 @@
 // shader f14bb57cd5c9cb77 - dumped 1.15
 // Used for: Removing/Restoring the native BotW World Anti-Aliasing Implementation
 
-#define preset $preset
-#define aaSharper $worldSharper
-#define aaBlurrier $worldBlurrier
+#define preset 2
+#define aaSharper 0.0
+#define aaBlurrier 0.0
 
 #if (preset == 0) // Native AA Disabled
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf49b1800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -176,9 +176,9 @@ passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
 #if (preset == 2) // FXAA
 /*-----------------------------settings-------------------------------------*/
 
-#define Subpix               $subPix  			//[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
-#define EdgeThreshold        $edgeThreshold  	//[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
-#define EdgeThresholdMin     $edgeThresholdMin  //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
+#define Subpix               1.0  			//[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
+#define EdgeThreshold        0.0125  	//[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
+#define EdgeThresholdMin     0.0625  //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
 
 /*--------------------------------------------------------------------------*/
 
@@ -239,8 +239,8 @@ FxaaFloat4 FxaaPixelShader(
     FxaaFloat2 posM;
     posM.x = pos.x;
     posM.y = pos.y;
-	FxaaFloat4 rgbyM = vec4(FxaaTexTop(tex, posM).xyz, FxaaTexTop(lum, posM).x / resRatio); // Important Line
-	#define lumaM rgbyM.w  // Important line
+	FxaaFloat4 rgbyM = vec4(FxaaTexTop(tex, posM).xyz, FxaaTexTop(lum, posM).x);
+	#define lumaM rgbyM.w  // affects stuff
     FxaaFloat4 luma4A = textureGather(lum, posM);
     FxaaFloat4 luma4B = textureGatherOffset(lum, posM, FxaaInt2(-1, -1));
     #define lumaE luma4A.z
@@ -263,14 +263,14 @@ FxaaFloat4 FxaaPixelShader(
     FxaaBool earlyExit = range < rangeMaxClamped;
     if(earlyExit)
         return rgbyM;
-    FxaaFloat lumaNE = FxaaTexOff(lum, posM, FxaaInt2(1, -1), fxaaQualityRcpFrame.xy).x / resRatio; // Important divide x 
-    FxaaFloat lumaSW = FxaaTexOff(lum, posM, FxaaInt2(-1, 1), fxaaQualityRcpFrame.xy).x / resRatio; // Important divide x
+    FxaaFloat lumaNE = FxaaTexOff(lum, posM, FxaaInt2(2, -2), fxaaQualityRcpFrame.xy).x * resRatio; // Important multiply x and changes -1,1 to 2s for some smoother vertical lines
+    FxaaFloat lumaSW = FxaaTexOff(lum, posM, FxaaInt2(-2, 2), fxaaQualityRcpFrame.xy).x * resRatio; // Important multiply x and changes -1,1 to 2s for some smoother horizontal lines
     FxaaFloat lumaNS = lumaN + lumaS;
     FxaaFloat lumaWE = lumaW + lumaE;
     FxaaFloat subpixRcpRange = 1.0/range;
     FxaaFloat subpixNSWE = lumaNS + lumaWE;
-    FxaaFloat edgeHorz1 = (lumaM) + lumaNS; // Important line due to lumaM
-    FxaaFloat edgeVert1 = (lumaM) + lumaWE; // Important line due to lumaM
+    FxaaFloat edgeHorz1 = (-2.0 * lumaM) + lumaNS;
+    FxaaFloat edgeVert1 = (-2.0 * lumaM) + lumaWE;
     FxaaFloat lumaNESE = lumaNE + lumaSE;
     FxaaFloat lumaNWNE = lumaNW + lumaNE;
     FxaaFloat edgeHorz2 = (-2.0 * lumaE) + lumaNESE;
