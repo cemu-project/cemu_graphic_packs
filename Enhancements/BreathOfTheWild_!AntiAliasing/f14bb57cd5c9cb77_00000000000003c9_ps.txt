@@ -7,10 +7,10 @@
 // Used for: Removing/Restoring the native BotW World Anti-Aliasing Implementation
 
 #define preset $preset
-#define aaSharper $aaSharper
-#define aaBlurrier $aaBlurrier
+#define aaSharper $worldSharper
+#define aaBlurrier $worldBlurrier
 
-#if (preset == 0)
+#if (preset == 0) // Native AA Disabled
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf49b1800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
@@ -20,7 +20,7 @@ passPixelColor0 = texture(textureUnitPS0, passParameterSem2.xy);
 }
 #endif
 
-#if (preset == 1)
+#if (preset == 1) // Native AA Enabled
 uniform ivec4 uf_remappedPS[4];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf462d000 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x37f40000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
@@ -84,7 +84,7 @@ R127f.w = min(R1f.z, R1f.x);
 R127f.x = min(R1f.w, R1f.y);
 PS0f = R127f.x;
 // 1
-R123f.x = (mul_nonIEEE(R2f.y,intBitsToFloat(uf_remappedPS[0].y)) + PV0f.z);
+R123f.x = (mul_nonIEEE(R2f.y,intBitsToFloat(uf_remappedPS[0].y) * resX ) + PV0f.z); // Important line - multiply y - bundled with main point of interests looks better
 PV1f.x = R123f.x;
 PV1f.y = max(R1f.z, R1f.x);
 R127f.z = PV0f.y + -(PV0f.x);
@@ -115,8 +115,8 @@ PV1f.y = mul_nonIEEE(R126f.w, PS0f);
 PV0f.z = max(PV1f.x, -(intBitsToFloat(uf_remappedPS[2].y)));
 PV0f.w = max(PV1f.y, -(intBitsToFloat(uf_remappedPS[2].y)));
 // 7 --- Point of Interest
-R3f.x = min(PV0f.w, intBitsToFloat(uf_remappedPS[2].y)); // Important - Divide looks sharper and better and multiply looks blurier fuzzy
-R1f.y = min(PV0f.z, intBitsToFloat(uf_remappedPS[2].y)); // Important - Divide looks sharper and better and multiply looks blurier fuzzy
+R3f.x = min(PV0f.w, intBitsToFloat(uf_remappedPS[2].y)); // Important - Another way to do it - Divide looks sharper and better and multiply looks blurier fuzzy
+R1f.y = min(PV0f.z, intBitsToFloat(uf_remappedPS[2].y)); // Important - Another Way to do it - Divide looks sharper and better and multiply looks blurier fuzzy
 // 8
 predResult = (R1f.x > R0f.z);
 activeMaskStack[1] = predResult;
@@ -130,13 +130,13 @@ if( activeMaskStackC[2] == true ) {
 // 0
 backupReg0f = R3f.x;
 backupReg0f = R3f.x;
-R3f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedPS[3].x)/resX) + R0f.x); // Original Implementation divided x
-R3f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedPS[3].y)/resY) + R0f.y); // Original Implementation divided y
-R1f.x = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].x)/resX)) + R0f.x); // Original Implementation divided x
+R3f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedPS[3].x) /resX ) + R0f.x); // Original Implementation divided x
+R3f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedPS[3].y) /resY ) + R0f.y); // Original Implementation divided y
+R1f.x = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].x) /resX )) + R0f.x); // Original Implementation divided x
 PS0f = R1f.x;
 // 1
 backupReg0f = R1f.y;
-R1f.y = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].y)/resY)) + R0f.y); // Original Implementation divided y
+R1f.y = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].y) /resY )) + R0f.y); // Original Implementation divided y
 }
 if( activeMaskStackC[2] == true ) {
 R0f.xyzw = (texture(textureUnitPS0, R3f.xy).xyzw);
@@ -173,13 +173,12 @@ passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
 }
 #endif
 
-#if (preset == 2)
+#if (preset == 2) // FXAA
 /*-----------------------------settings-------------------------------------*/
 
-#define Subpix               $subPix  //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
-#define EdgeThreshold        $edgeThreshold  //[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
+#define Subpix               $subPix  			//[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
+#define EdgeThreshold        $edgeThreshold  	//[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
 #define EdgeThresholdMin     $edgeThresholdMin  //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
-#define FxaaAdjust		 	 $fxaaAdjust	//[0.0 to 4.0] Adjusts how smooth or sharp you want AA to be.
 
 /*--------------------------------------------------------------------------*/
 
@@ -190,6 +189,7 @@ layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
 vec2 resolution = textureSize2D(textureUnitPS0,0); // Retrieve Texture Dimensions in float data type so we dont need to convert
+const float resRatio = resolution.x/1280; // Needed in multiplying
 
 #define FXAA_QUALITY__PS 12
 #define FXAA_QUALITY__P0 1.0
@@ -239,8 +239,8 @@ FxaaFloat4 FxaaPixelShader(
     FxaaFloat2 posM;
     posM.x = pos.x;
     posM.y = pos.y;
-	FxaaFloat4 rgbyM = vec4(FxaaTexTop(tex, posM).xyz, FxaaTexTop(lum, posM).x);
-	#define lumaM rgbyM.w
+	FxaaFloat4 rgbyM = vec4(FxaaTexTop(tex, posM).xyz, FxaaTexTop(lum, posM).x / resRatio); // Important Line
+	#define lumaM rgbyM.w  // Important line
     FxaaFloat4 luma4A = textureGather(lum, posM);
     FxaaFloat4 luma4B = textureGatherOffset(lum, posM, FxaaInt2(-1, -1));
     #define lumaE luma4A.z
@@ -263,14 +263,14 @@ FxaaFloat4 FxaaPixelShader(
     FxaaBool earlyExit = range < rangeMaxClamped;
     if(earlyExit)
         return rgbyM;
-    FxaaFloat lumaNE = FxaaTexOff(lum, posM, FxaaInt2(1, -1), fxaaQualityRcpFrame.xy).x;
-    FxaaFloat lumaSW = FxaaTexOff(lum, posM, FxaaInt2(-1, 1), fxaaQualityRcpFrame.xy).x;
+    FxaaFloat lumaNE = FxaaTexOff(lum, posM, FxaaInt2(1, -1), fxaaQualityRcpFrame.xy).x / resRatio; // Important divide x 
+    FxaaFloat lumaSW = FxaaTexOff(lum, posM, FxaaInt2(-1, 1), fxaaQualityRcpFrame.xy).x / resRatio; // Important divide x
     FxaaFloat lumaNS = lumaN + lumaS;
     FxaaFloat lumaWE = lumaW + lumaE;
     FxaaFloat subpixRcpRange = 1.0/range;
     FxaaFloat subpixNSWE = lumaNS + lumaWE;
-    FxaaFloat edgeHorz1 = (-2.0 * lumaM) + lumaNS;
-    FxaaFloat edgeVert1 = (-2.0 * lumaM) + lumaWE;
+    FxaaFloat edgeHorz1 = (lumaM) + lumaNS; // Important line due to lumaM
+    FxaaFloat edgeVert1 = (lumaM) + lumaWE; // Important line due to lumaM
     FxaaFloat lumaNESE = lumaNE + lumaSE;
     FxaaFloat lumaNWNE = lumaNW + lumaNE;
     FxaaFloat edgeHorz2 = (-2.0 * lumaE) + lumaNESE;
@@ -516,7 +516,7 @@ FxaaFloat4 FxaaPixelShader(
 }
 
 
-vec2 RcpFrame = vec2(1.0 / resolution.x, 1.0 / resolution.y) * uf_fragCoordScale * FxaaAdjust; // This is where the dimensions are used, Fxaaadjust can make it sharp to blurry
+vec2 RcpFrame = vec2(1.0 / resolution.x, 1.0 / resolution.y) * uf_fragCoordScale;
 void main()
 {
 passPixelColor0 = FxaaPixelShader(passParameterSem2.xy, textureUnitPS0, textureUnitPS1, RcpFrame, Subpix, EdgeThreshold, EdgeThresholdMin);
