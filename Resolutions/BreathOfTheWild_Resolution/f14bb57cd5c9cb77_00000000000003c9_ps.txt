@@ -67,7 +67,7 @@ R127f.w = min(R1f.z, R1f.x);
 R127f.x = min(R1f.w, R1f.y);
 PS0f = R127f.x;
 // 1
-R123f.x = (mul_nonIEEE(R2f.y,intBitsToFloat(uf_remappedPS[0].y)) + PV0f.z);
+R123f.x = (mul_nonIEEE(R2f.y,intBitsToFloat(uf_remappedPS[0].y) * resX ) + PV0f.z); //Important line
 PV1f.x = R123f.x;
 PV1f.y = max(R1f.z, R1f.x);
 R127f.z = PV0f.y + -(PV0f.x);
@@ -113,13 +113,13 @@ if( activeMaskStackC[2] == true ) {
 // 0
 backupReg0f = R3f.x;
 backupReg0f = R3f.x;
-R3f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedPS[3].x)/resX) + R0f.x); // Original Implementation
-R3f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedPS[3].y)/resY) + R0f.y); // Original Implementation
-R1f.x = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].x)/resX)) + R0f.x); // Original Implementation
+R3f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedPS[3].x) / resX) + R0f.x); // Original Implementation
+R3f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedPS[3].y) / resY) + R0f.y); // Original Implementation
+R1f.x = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].x) / resX)) + R0f.x); // Original Implementation
 PS0f = R1f.x;
 // 1
 backupReg0f = R1f.y;
-R1f.y = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].y)/resY)) + R0f.y); // Original Implementation
+R1f.y = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].y) / resY)) + R0f.y); // Original Implementation
 }
 if( activeMaskStackC[2] == true ) {
 R0f.xyzw = (texture(textureUnitPS0, R3f.xy).xyzw);

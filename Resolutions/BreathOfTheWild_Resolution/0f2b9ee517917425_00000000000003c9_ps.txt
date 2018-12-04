@@ -155,9 +155,9 @@ R5i.w = ((PV1i.x == 0)?(0):(0x3f800000));
 PV0i.w = R5i.w;
 // 9 --- Point fo Interest
 R5i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_remappedPS[1].x))); // Default implmentation division took place here
-PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].x))); // Default implmentation division took place here
+PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].x) / resX)); // Default implmentation division took place here
 PV1i.z = floatBitsToInt(max(intBitsToFloat(PV0i.x), -(intBitsToFloat(PV0i.x))));
-R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].y))); // Default implmentation division took place here
+R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].y) / resY)); // Default implmentation division took place here
 PS1i = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), intBitsToFloat(PV0i.z)));
 // 10 --- Point of Interest
 R127i.x = floatBitsToInt(intBitsToFloat(PV1i.z) * intBitsToFloat(R127i.y)); // Divide looks good same as below line ----------------------------------------------------------------------
