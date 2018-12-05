@@ -45,7 +45,6 @@ $edgeThreshold = 0.0125
 $edgeThresholdMin = 0.0625
 
 
-
 # Adjust native AA implmentation - Only applies to Enabled preset
 # --- keep one of the varaibles at 0 while adjusting the other one
 # Sharper 	: Values - [0.0 - 1.0] - Recommended to Raise in increments of 0.1
