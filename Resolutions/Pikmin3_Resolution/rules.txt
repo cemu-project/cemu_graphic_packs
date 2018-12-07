@@ -90,14 +90,14 @@ overwriteHeight = ($height / $gameHeight) * 720
 [TextureRedefine] # Blur Map
 width = 640
 height = 368
-formats = 0x1,0x5,0x19,0x1a,0x816
+formats = 0x1,0x5,0x19,0x1a,0x80e,0x816,0x820
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 368
 
 [TextureRedefine] # Blur Map
 width = 640
 height = 360
-formats = 0x1,0x19,0x816,0x820
+formats = 0x1,0x5,0x19,0x1a,0x80e,0x816,0x820
 tileModesExcluded = 0x001
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 360
@@ -118,8 +118,15 @@ overwriteHeight = ($height / $gameHeight) * 128
 
 [TextureRedefine] # Bloom Map
 width = 320
+height = 192
+formats = 0x1a,0x816
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 192
+
+[TextureRedefine] # Bloom Map
+width = 320
 height = 180
-formats = 0x816,0x820
+formats = 0x1a,0x816,0x820
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 180
 
