@@ -1,4 +1,4 @@
 [BotwV208]
 moduleMatches = 0x6267BFD0
 
-0x024ACBF4 = fsub f31, f31, f31; Inf Weapons, Bows and Shields (except burn damage and throwing weapon)
+0x02A32A30 = li r3, 1; Spawn motorcycle anywhere, credits to Zeikken (converting to patches) and leoetlino (finding the value).
