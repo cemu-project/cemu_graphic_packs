@@ -26,8 +26,8 @@ name = Extreme (8.00x)
 $shadowRes = 8
 
 [TextureRedefine] # Shadows
-width = 2048
-height = 1024
+width = 1024
+height = 2048
 formats = 0x005
-overwriteWidth = $shadowRes * 2048
-overwriteHeight = $shadowRes * 1024
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 2048
