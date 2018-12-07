@@ -217,7 +217,7 @@
 - title: "Pikmin 3"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pikmin_3"
-  version3: false
+  version3: true
 - title: "Pokkén Tournament"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pokk%C3%A9n_Tournament"
