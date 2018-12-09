@@ -6,10 +6,13 @@ _float1 = 0x10000670
 _float30 = 0x101E7964
 _convSub = 0x10000BB0
 
-#TestCave
-codeCaveSize = 0x9C
+_arrowsDiv = 0x1001CCAC
+_arrowsDer = 0x1001CB18
 
-_fpsCalc =  0x00000010
+#TestCave
+codeCaveSize = 0xCC
+
+_fpsCalc =  0x00000018
 0x00000000 = .float 3 ; Don't edit me!
 _lowlimit = 0x00000000
 0x00000004 = .float 62156250
@@ -17,45 +20,71 @@ _busSpeed = 0x00000004
 _currentFPS = 0x00000008
 _speedDiv = 0x0000000C
 
-0x00000010 = stw r0, 0x78(r30)
-0x00000014 = xoris r12, r12, 0x8000
-0x00000018 = stw r12, 0x12C(r30)
-0x0000001C = lis r12, 0x4330
-0x00000020 = stw r12, 0x128(r30)
-0x00000024 = lfd f10, 0x128(r30)
-0x00000028 = lis r12, _convSub@ha
-0x0000002C = lfd f12, _convSub@l(r12)
-0x00000030 = fsub f10, f10, f12
-0x00000034 = frsp f10, f10
-0x00000038 = lis r12, _float1@ha
-0x0000003C = lfs f12, _float1@l(r12)
-0x00000040 = fdivs f10, f12, f10
-0x00000044 = lis r12, _busSpeed@ha
-0x00000048 = lfs f12, _busSpeed@l(r12)
-0x0000004C = fmuls f10, f12, f10
-0x00000050 = lis r12, _currentFPS@ha
-0x00000054 = stfs f10, _currentFPS@l(r12)
+#Precalculate values for later division for the arrow fix
+0x00000010 = .float (0.5/30)
+_arrowMultiplier = 0x00000010
 
-0x00000058 = lis r12, _float30@ha
-0x0000005C = lfs f12, _float30@l(r12)
-0x00000060 = fdivs f7, f12, f10
-0x00000064 = lis r12, _lowlimit@ha
-0x00000068 = lfs f12, _lowlimit@l(r12)
-0x0000006C = lis r12, _speedDiv@ha
-0x00000070 = fcmpu cr0, f7, f12
-0x00000074 = bge .+0x0C
+0x00000014 = .float (30*30)
+_arrowDivisor = 0x00000014
 
-0x00000078 = stfs f7, _speedDiv@l(r12)
-0x0000007C = blr
-0x00000080 = stfs f12, _speedDiv@l(r12)
-0x00000084 = blr
 
-_fenceNeg1 = 0x00000084
-0x00000088 = add r6, r12, r0 	#orig instruction we are replacing
-0x0000008C = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
-0x00000090 = blt .+0x08 	#skip subtract if less than
-0x00000094 = subi r6, r6, 1 	#do the subtract
-0x00000098 = blr 		#return
+0x00000018 = stw r0, 0x78(r30)
+0x0000001C = xoris r12, r12, 0x8000
+0x00000020 = stw r12, 0x12C(r30)
+0x00000024 = lis r12, 0x4330
+0x00000028 = stw r12, 0x128(r30)
+0x0000002C = lfd f10, 0x128(r30)
+0x00000030 = lis r12, _convSub@ha
+0x00000034 = lfd f12, _convSub@l(r12)
+0x00000038 = fsub f10, f10, f12
+0x0000003C = frsp f10, f10
+0x00000040 = lis r12, _float1@ha
+0x00000044 = lfs f12, _float1@l(r12)
+0x00000048 = fdivs f10, f12, f10
+0x0000004C = lis r12, _busSpeed@ha
+0x00000050 = lfs f12, _busSpeed@l(r12)
+0x00000054 = fmuls f10, f12, f10
+0x00000058 = lis r12, _currentFPS@ha
+0x0000005C = stfs f10, _currentFPS@l(r12)
+
+
+#Arrow fix
+#Calculates 30*(30/currentFPS)
+0x00000060 = lis r12, _arrowDivisor@ha
+0x00000064 = lfs f12, _arrowDivisor@l(r12)
+0x00000068 = fdivs f12, f12, f10
+0x0000006C = lis r12, _arrowsDiv@ha
+0x00000070 = stfs f12, _arrowsDiv@l(r12)
+
+#Calculates 0.5/(30/$targetFPS)
+0x00000074 = lis r12, _arrowMultiplier@ha
+0x00000078 = lfs f12, _arrowMultiplier@l(r12)
+0x0000007C = fmuls f12, f12, f10
+0x00000080 = lis r12, _arrowsDer@ha
+0x00000084 = stfs f12, _arrowsDer@l(r12)
+
+
+0x00000088 = lis r12, _float30@ha
+0x0000008C = lfs f12, _float30@l(r12)
+0x00000090 = fdivs f7, f12, f10
+0x00000094 = lis r12, _lowlimit@ha
+0x00000098 = lfs f12, _lowlimit@l(r12)
+0x0000009C = lis r12, _speedDiv@ha
+0x000000A0 = fcmpu cr0, f7, f12
+0x000000A4 = bge .+0x0C
+
+0x000000A8 = stfs f7, _speedDiv@l(r12)
+0x000000AC = blr
+0x000000B0 = stfs f12, _speedDiv@l(r12)
+0x000000B4 = blr
+
+_fenceNeg1 = 0x000000B8
+0x000000B8 = add r6, r12, r0 	#orig instruction we are replacing
+0x000000BC = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
+0x000000C0 = blt .+0x08 	#skip subtract if less than
+0x000000C4 = subi r6, r6, 1 	#do the subtract
+0x000000C8 = blr 		#return
+
 
 #codeChanges
 0x031FA97C = bla _fpsCalc
