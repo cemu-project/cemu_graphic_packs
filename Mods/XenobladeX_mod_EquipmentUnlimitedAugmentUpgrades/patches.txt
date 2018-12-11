@@ -9,12 +9,12 @@ _selectItem = 0x00000000
 _strengthen = 0x00000001
 
 _checkSelectItem = 0x00000004
-0x00000004 = lis r4, _selectItem@h
+0x00000004 = lis r4, _selectItem@ha
 0x00000008 = lbz r3, _selectItem@l(r4)
 0x0000000C = blr
 
 _checkStrengthen = 0x00000010
-0x00000010 = lis r3, _strengthen@h
+0x00000010 = lis r3, _strengthen@ha
 0x00000014 = lbz r3, _strengthen@l(r3)
 0x00000018 = blr
 
@@ -44,12 +44,12 @@ _selectItem = 0x00000000
 _strengthen = 0x00000001
 
 _checkSelectItem = 0x00000004
-0x00000004 = lis r4, _selectItem@h
+0x00000004 = lis r4, _selectItem@ha
 0x00000008 = lbz r3, _selectItem@l(r4)
 0x0000000C = blr
 
 _checkStrengthen = 0x00000010
-0x00000010 = lis r3, _strengthen@h
+0x00000010 = lis r3, _strengthen@ha
 0x00000014 = lbz r3, _strengthen@l(r3)
 0x00000018 = blr
 

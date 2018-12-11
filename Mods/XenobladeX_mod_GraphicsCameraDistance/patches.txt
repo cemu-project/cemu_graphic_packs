@@ -7,6 +7,6 @@ codeCaveSize = 0x4
 _zoom = 0x00000000
 
 # CamData::CCamDataManager::getParamsZoomDefault((CamData::eTargetTypes, unsigned char))
-0x0222A19C = lis       r12, _zoom@h
+0x0222A19C = lis       r12, _zoom@ha
 0x0222A1B0 = lfs       f1, _zoom@l(r12)
 0x0222A1CC = nop
