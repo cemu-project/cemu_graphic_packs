@@ -15,8 +15,8 @@ $worldSharper = 0.0 # Ignore
 $worldBlurrier = 0.0 # Ignore
 #
 $subPix = 0.75 # Ignore 
-$edgeThreshold = 0.0166 # Ignore
-$edgeThresholdMin = 0.0833 # Ignore
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
 
 [Preset]
 name = Enable Native AA
@@ -28,11 +28,11 @@ $worldSharper = 0.0
 $worldBlurrier = 0.0
 #
 $subPix = 0.75 # Ignore
-$edgeThreshold = 0.0166 # Ignore
-$edgeThresholdMin = 0.0833 # Ignore
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
 
 [Preset]
-name = FXAA
+name = Nvidias FXAA
 $preset:int = 2
 #
 $inventorySharper = 0.0 # Ignore
@@ -41,8 +41,8 @@ $worldSharper = 0.0 # Ignore
 $worldBlurrier = 0.0 # Ignore
 #
 $subPix = 1.0
-$edgeThreshold = 0.0125
-$edgeThresholdMin = 0.0625
+$edgeThreshold = 0.125
+$edgeThresholdMin = 0.0156
 
 
 # Adjust native AA implmentation - Only applies to Enabled preset
@@ -52,7 +52,7 @@ $edgeThresholdMin = 0.0625
 
 # Subpix:
 # Choose the amount of sub-pixel aliasing removal.
-# This can affect sharpness.
+# This affects how sharp or smooth you want the image to be.
 #   1.00 - upper limit (softer)
 #   0.75 - default amount of filtering
 #   0.50 - lower limit (sharper, less sub-pixel aliasing removal)
