@@ -87,6 +87,18 @@ tileModesExcluded = 0x001
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
+[TextureRedefine] # Gamepad Resolution
+width = 864
+height = 480
+overwriteWidth = ($width / $gameWidth) * 864
+overwriteHeight = ($height / $gameHeight) * 480
+
+[TextureRedefine] # Gamepad Resolution
+width = 854
+height = 480
+overwriteWidth = ($width / $gameWidth) * 854
+overwriteHeight = ($height / $gameHeight) * 480
+
 [TextureRedefine] # Bloom Resolution
 width = 320
 height = 192
@@ -98,12 +110,6 @@ width = 320
 height = 180
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 180
-
-[TextureRedefine] # Gamepad Resolution
-width = 864
-height = 480
-overwriteWidth = ($width / $gameWidth) * 864
-overwriteHeight = ($height / $gameHeight) * 480
 
 [TextureRedefine] # ???
 width = 64
