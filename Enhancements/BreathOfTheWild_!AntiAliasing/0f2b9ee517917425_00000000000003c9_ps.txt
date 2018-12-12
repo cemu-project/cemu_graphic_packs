@@ -6,8 +6,8 @@
 // Used for: Removing/Restoring the native BotW Anti-Aliasing implementation to link in inventory screen
 
 #define preset $preset
-#define aaSharper $inventorySharper
-#define aaBlurrier $inventoryBlurrier
+#define iSharper $inventorySharper
+#define iBlurrier $inventoryBlurrier
 
 #if (preset == 0) // Native AA Disabled
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf49b1800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
@@ -28,9 +28,9 @@ layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-vec2 resDim = textureSize2D(textureUnitPS0,0); // Retrieve texture dimensions vector holds data-type-float
-const float resX =  ( (resDim.x/1280) + aaSharper ) - aaBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
-const float resY =  ( (resDim.y/720) + aaSharper ) - aaBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
+ivec2 resDim = textureSize2D(textureUnitPS0,0); // Retrieve texture dimensions vector holds data-type-float
+float iresX = ( (float(resDim.x)/1280) + iSharper ) - iBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
+float iresY = ( (float(resDim.y)/720) + iSharper ) - iBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
 
 int clampFI32(int v)
 {
@@ -85,9 +85,9 @@ if( activeMaskStackC[1] == true ) {
 activeMaskStack[1] = activeMaskStack[0];
 activeMaskStackC[2] = activeMaskStackC[1];
 // 0 --- Point of Interest 1
-PV0i.x = floatBitsToInt(min(intBitsToFloat(R1i.x), intBitsToFloat(R1i.z)) / resX ); // Divide looks better for minimum - Must place the varaibles in that location of the round brackets to use floats correctly
-PV0i.y = floatBitsToInt(max(intBitsToFloat(R2i.x), intBitsToFloat(R2i.z)) * resY ); // Multiply looks beeter for max - Must place the varaibles in that location of the round brackets to use floats correctly
-PV0i.z = floatBitsToInt(max(intBitsToFloat(R1i.x), intBitsToFloat(R1i.z)) * resX ); // Multiply looks better for max  - Must place the varaibles in that location of the round brackets to use floats correctly
+PV0i.x = floatBitsToInt(min(intBitsToFloat(R1i.x), intBitsToFloat(R1i.z)) / iresX ); // Divide looks better for minimum - Must place the varaibles in that location of the round brackets to use floats correctly
+PV0i.y = floatBitsToInt(max(intBitsToFloat(R2i.x), intBitsToFloat(R2i.z)) * iresY ); // Multiply looks beeter for max - Must place the varaibles in that location of the round brackets to use floats correctly
+PV0i.z = floatBitsToInt(max(intBitsToFloat(R1i.x), intBitsToFloat(R1i.z)) * iresX ); // Multiply looks better for max  - Must place the varaibles in that location of the round brackets to use floats correctly
 PV0i.w = floatBitsToInt(min(intBitsToFloat(R2i.x), intBitsToFloat(R2i.z)));
 // 1 ---Point of Interest 2
 PV1i.x = floatBitsToInt(max(intBitsToFloat(PV0i.z), intBitsToFloat(PV0i.y)));
@@ -174,9 +174,9 @@ R5i.w = ((PV1i.x == 0)?(0):(0x3f800000));
 PV0i.w = R5i.w;
 // 9 --- Point fo Interest
 R5i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_remappedPS[1].x))); // Default implementation division took place here - useless though
-PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].x) / resX)); // Default implementation division took place here
+PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].x) / iresX)); // Default implementation division took place here
 PV1i.z = floatBitsToInt(max(intBitsToFloat(PV0i.x), -(intBitsToFloat(PV0i.x))));
-R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].y) / resY)); // Default implementation division took place here
+R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].y) / iresY)); // Default implementation division took place here
 PS1i = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), intBitsToFloat(PV0i.z)));
 // 10 --- Point of Interest
 R127i.x = floatBitsToInt(intBitsToFloat(PV1i.z) * intBitsToFloat(R127i.y)); // Divide looks good same as below line ----------------------------------------------------------------------
@@ -690,7 +690,7 @@ layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-vec2 resolution = textureSize2D(textureUnitPS0,0);
+ivec2 resolution = textureSize2D(textureUnitPS0,0);
 
 #define FXAA_QUALITY__PS 12
 #define FXAA_QUALITY__P0 1.0
@@ -1017,7 +1017,7 @@ FxaaFloat4 FxaaPixelShader(
 }
 
 
-vec2 RcpFrame = vec2(1.0 / resolution.x, 1.0 / resolution.y) * uf_fragCoordScale;
+vec2 RcpFrame = vec2(1.0 / float(resolution.x), 1.0 / float(resolution.y));
 void main()
 {
 passPixelColor0 = FxaaPixelShader(passParameterSem2.xy, textureUnitPS0, textureUnitPS1, RcpFrame, Subpix, EdgeThreshold, EdgeThresholdMin);
