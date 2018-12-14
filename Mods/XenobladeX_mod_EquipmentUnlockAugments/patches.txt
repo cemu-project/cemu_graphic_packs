@@ -9,12 +9,12 @@ _ignore = 0x00000000
 _end = 0x00000001
 
 _checkIgnore = 0x00000004
-0x00000004 = lis r4, _ignore@h
+0x00000004 = lis r4, _ignore@ha
 0x00000008 = lbz r3, _ignore@l(r4)
 0x0000000C = blr
 
 _checkIgnoreEnd = 0x00000010
-0x00000010 = lis r3, _end@h
+0x00000010 = lis r3, _end@ha
 0x00000014 = lbz r3, _end@l(r3)
 0x00000018 = blr
 
@@ -38,12 +38,12 @@ _ignore = 0x00000000
 _end = 0x00000001
 
 _checkIgnore = 0x00000004
-0x00000004 = lis r4, _ignore@h
+0x00000004 = lis r4, _ignore@ha
 0x00000008 = lbz r3, _ignore@l(r4)
 0x0000000C = blr
 
 _checkIgnoreEnd = 0x00000010
-0x00000010 = lis r3, _end@h
+0x00000010 = lis r3, _end@ha
 0x00000014 = lbz r3, _end@l(r3)
 0x00000018 = blr
 

@@ -11,7 +11,7 @@ _weather = 0x00000000
 0x0229F0FC = bla _forceWeather
 
 _forceWeather = 0x00000004
-0x00000004 = lis r28, _weather@h
+0x00000004 = lis r28, _weather@ha
 0x00000008 = lbz r28, _weather@l(r28)
 0x0000000C = blr
 

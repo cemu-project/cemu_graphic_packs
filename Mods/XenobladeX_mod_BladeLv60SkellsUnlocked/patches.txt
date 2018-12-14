@@ -22,7 +22,7 @@ _checkMir = 0x00000004
 0x02A7A784 = bla _checkMir
 
 _checkRes = 0x00000010
-0x00000010 = lis r3, _resource@h
+0x00000010 = lis r3, _resource@ha
 0x00000014 = lbz r3, _resource@l(r3)
 0x00000018 = blr
 0x02A7A954 = bla _checkRes
@@ -56,7 +56,7 @@ _checkMir = 0x00000004
 0x02A7A774 = bla _checkMir
 
 _checkRes = 0x00000010
-0x00000010 = lis r3, _resource@h
+0x00000010 = lis r3, _resource@ha
 0x00000014 = lbz r3, _resource@l(r3)
 0x00000018 = blr
 0x02A7A944 = bla _checkRes
