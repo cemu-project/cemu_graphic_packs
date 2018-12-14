@@ -5,7 +5,7 @@
 // shader 70b82af4d17024d2
 //AA fix
 
-const float resScale = float($width)/float($gameWidth);
+float resScale = float($width)/float($gameWidth);
 
 uniform ivec4 uf_remappedVS[1];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
