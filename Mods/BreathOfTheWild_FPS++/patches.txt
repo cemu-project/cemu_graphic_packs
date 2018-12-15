@@ -194,7 +194,7 @@ _arrowDivisor = 0x00000014
 0x000000B0 = stfs f12, _speedDiv@l(r12)
 0x000000B4 = blr
 
-_fenceNeg1 = 0x00000084
+_fenceNeg1 = 0x000000B8
 0x000000B8 = add r6, r12, r0 	#orig instruction we are replacing
 0x000000BC = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
 0x000000C0 = blt .+0x08 	#skip subtract if less than
