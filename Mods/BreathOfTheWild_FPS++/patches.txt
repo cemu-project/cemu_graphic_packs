@@ -1,92 +1,120 @@
 [BotwFPSV208]
 moduleMatches = 0x6267BFD0
 
-#rodata constants
+# rodata constants
 _float1 = 0x10000670
 _float30 = 0x101E7964
 _convSub = 0x10000BB0
-
 _arrowsDiv = 0x1001CCAC
 _arrowsDer = 0x1001CB18
 
-#TestCave
-codeCaveSize = 0xCC
+# TestCave
+codeCaveSize = 600 ; Theoretically, allow for 74 or so FPS to be averaged.
 
 _fpsCalc =  0x00000018
-0x00000000 = .float 3 ; Don't edit me!
-_lowlimit = 0x00000000
+0x00000000 = .float 2
+_lowLimit = 0x00000000
 0x00000004 = .float 62156250
 _busSpeed = 0x00000004
-_currentFPS = 0x00000008
+_averageFPS = 0x00000008
 _speedDiv = 0x0000000C
 
-#Precalculate values for later division for the arrow fix
-0x00000010 = .float (0.5/30)
-_arrowMultiplier = 0x00000010
 
-0x00000014 = .float (30*30)
-_arrowDivisor = 0x00000014
+0x00000010 = .float (30*30)
+_arrowDivisor = 0x00000010
+
+0x00000014 = .float (0.5/30)
+_arrowMultiplier = 0x00000014
+
+0x00000120 = .int (4*$amount_of_FPS_averaged+4)
+_averageMaxByteLength = 0x00000120
+
+0x00000124 = .float ($amount_of_FPS_averaged)
+_averageFPSBufferDivider = 0x00000124
+
+0x00000128 = .float (0)
+_averageFPSBufferTotal = 0x00000128
+
+0x0000012C = .int (0)
+_averageFPSIndex = 0x0000012C
+
+_averageFPSBuffer = 0x00000130
+
+														# - Calculate FPS -
+0x00000018 = stw r0, 0x78(r30)							# Original instruction that was overwriten by the instruction that jumps to this code cave. This specific place was chosen because r12 is storing the ticks between the previous and current frame, which this code needs to calculate the game's FPS.
+0x0000001C = xoris r12, r12, 0x8000						# Flips the sign bit of the game ticks (which is stored as an int in r12), because the code wants to store this as the lower half of a double, and the lower half can't be prepended by a sign bit.
+0x00000020 = stw r12, 0x12C(r30)						# Stores the sign-bit-flipped ticks to a temporary part of the game's memory, making up the lower 4 bytes of the 8 bytes total from the double that's being created.
+0x00000024 = lis r12, 0x4330							# Loads a value of 0x4330 to r12 (Why this number?)
+0x00000028 = stw r12, 0x128(r30)						# Stores the loaded value from r12 to the upper 4 bytes of the 8 bytes total. Now it makes a full floating point double.
+0x0000002C = lfd f10, 0x128(r30)						# Loads that floating point double into f10, so that the code can perform floating point operations.
+0x00000030 = lis r12, _convSub@ha						# Loads upper half of an address to r12 (Side note, PowerPC code always needs to load into or store from registers using two instructions if it needs to interact with an absolute address due to how PowerPC is designed).
+0x00000034 = lfd f12, _convSub@l(r12)					# Uses the upper half of the address from r12 to load the value that's stored at convSub to f12.
+0x00000038 = fsub f10, f10, f12							# Subtracts the convSub (f12) from the game ticks double and store the result in f10.
+0x0000003C = frsp f10, f10								# Rounds f10 to a floating point single.
+0x00000040 = lis r12, _float1@ha						# Loads upper half of an address to r12.
+0x00000044 = lfs f12, _float1@l(r12)					# Uses the upper half of the address from r12 to load a 1 to f12.
+0x00000048 = fdivs f10, f12, f10						# Divides a 1 with the converted game ticks that were stored in f10.
+0x0000004C = lis r12, _busSpeed@ha						# Loads upper half of an address to r12.
+0x00000050 = lfs f12, _busSpeed@l(r12)					# Uses the upper half of the address from r12 to load the value that is the Wii U's bus speed to f12.
+0x00000054 = fmuls f10, f12, f10						# Multiplies the game ticks (f10) by the bus speed (f12).
+														# - Arrow Fix -
+0x00000058 = lis r12, _arrowDivisor@ha					# Loads the upper half of an address to r12.
+0x0000005C = lfs f12, _arrowDivisor@l(r12)				# Uses the upper half of the address from r12 to load the arrow divisor (30*30) to f12.
+0x00000060 = fdivs f12, f12, f10						# Divides the arrow divisor (f12) with the game's current FPS (f10) to f12.
+0x00000064 = lis r12, _arrowsDiv@ha						# Loads the upper half of an address to r12.
+0x00000068 = stfs f12, _arrowsDiv@l(r12)				# Uses the upper half of the address from r12 to store a "dynamic" constant to correct the arrow drop.
+0x0000006C = lis r12, _arrowMultiplier@ha				# Loads the upper half of an address to r12.
+0x00000070 = lfs f12, _arrowMultiplier@l(r12)			# Uses the upper half of the address from r12 to load the arrow multiplier (0.5/30) to f12
+0x00000074 = fmuls f12, f12, f10						# Multiplies the arrow multiplier (f12) with the game current FPS (f10) to f12
+0x00000078 = lis r12, _arrowsDer@ha						# Loads the upper half of an address to r12.
+0x0000007C = stfs f12, _arrowsDer@l(r12)				# Uses the upper half of the address from r12 to store another dynamic constant to correct the arrow drop.
+														# - FPS Averaging -
+0x00000080 = lis r3, _averageFPSBuffer@ha				# Load the pointer to the buffer to r3
+0x00000084 = addi r3, r3, _averageFPSBuffer@l			#
+0x00000088 = lis r11, _averageFPSIndex@ha				# Load the index which has the offset to the oldest FPS in the buffer to r12
+0x0000008C = lwz r12, _averageFPSIndex@l(r11)			#
+0x00000090 = lfsx f12, r3, r12							# Load the oldest FPS using the pointer (r3) plus the offset (r12) to f12
+0x00000094 = stfsx f10, r3, r12							# Store the newest FPS to the buffer using the pointer (r3) plus the offset (r12) to f12
+0x00000098 = lis r3, _averageMaxByteLength@ha			# Load the max byte length to r11
+0x0000009C = lwz r3, _averageMaxByteLength@l(r3)		#
+0x000000A0 = addi r12, r12, 0x04						# Add 4 to the index (r12) which sets the address offset to the next address
+0x000000A4 = cmp 0, 0, r12, r3							# Compare the index (r12) to the max byte length (r3)
+0x000000A8 = bne .+0x08									# If the compared numbers are not equal, skip over the instruction that resets the offset to 0 if the max has been reached
+0x000000AC = li r12, 0									#
+0x000000B0 = stw r12, _averageFPSIndex@l(r11)			#
+0x000000B4 = lis r12, _averageFPSBufferTotal@ha			# Load the total of the buffer to r12
+0x000000B8 = lfs f7, _averageFPSBufferTotal@l(r12)		#
+0x000000BC = fsubs f7, f7, f12							# Subtract the oldest FPS (f12) from the total of the buffer (f7), but add the newest FPS (f10)
+0x000000C0 = fadds f7, f7, f10							#
+0x000000C4 = stfs f7, _averageFPSBufferTotal@l(r11)		# Store the updated total of the buffer back
+0x000000C8 = lis r12, _averageFPSBufferDivider@ha		# Load the divider (= the amount of frames stored in the buffer)
+0x000000CC = lfs f12, _averageFPSBufferDivider@l(r12)	#
+0x000000D0 = fdivs f10, f7, f12							# Divide the updated buffer total with the divider to store the averaged fps to f10
+0x000000D4 = lis r12, _averageFPS@ha					# Store averaged FPS
+0x000000D8 = stfs f10, _averageFPS@l(r12)				#
+														# - Low FPS Limiter -
+0x000000DC = lis r12, _float30@ha						# Loads the upper half of an address to r12.
+0x000000E0 = lfs f12, _float30@l(r12)					# Uses the upper half of the address from r12 to load a 30 into the register.
+0x000000E4 = fdivs f7, f12, f10							# Divides 30 by the game's averaged FPS.
+0x000000E8 = lis r12, _lowLimit@ha						# Loads the upper half of an address to r12.
+0x000000EC = lfs f12, _lowLimit@l(r12)					# Uses the upper half of the address from r12 to load the limit that the game speed can be set as. This might prevent bugs that only happen at a low FPS. By default, the lowest speed it'll try setting the game as is 15 FPS.
+0x000000F0 = lis r12, _speedDiv@ha						# Loads the upper half of an address to r12.
+0x000000F4 = fcmpu cr0, f7, f12							# Compares the game's speed (f7) with the limit.
+0x000000F8 = bge .+0x0C									# Skips the next two instructions if in the previous comparison f7 was greater or equal to f12.
+0x000000FC = stfs f7, _speedDiv@l(r12)					# Uses the upper half from the address from r12 to store the game's speed.
+0x00000100 = blr										# Return to place that called this code cave.
+0x00000104 = stfs f12, _speedDiv@l(r12)					# Uses the upper half from the address from r12 to store the low limit.
+0x00000108 = blr										# Return to place that called this code cave.
+
+_fenceNeg1 = 0x0000010C									# - Best Fence Skip -
+0x0000010C = add r6, r12, r0							# Original instruction that was overwriten by the instruction that jumps to this code cave.
+0x00000110 = cmpwi r6, 500								# Checks if r6 less than 500 (full sync on those first frames to prevent milk water).
+0x00000114 = blt .+0x08									# Branches to return subtract instruction if r6 is less than 500.
+0x00000118 = subi r6, r6, 1								# Subtract 1 from r6.
+0x0000011C = blr										# Return to place that called this code cave.
 
 
-0x00000018 = stw r0, 0x78(r30)
-0x0000001C = xoris r12, r12, 0x8000
-0x00000020 = stw r12, 0x12C(r30)
-0x00000024 = lis r12, 0x4330
-0x00000028 = stw r12, 0x128(r30)
-0x0000002C = lfd f10, 0x128(r30)
-0x00000030 = lis r12, _convSub@ha
-0x00000034 = lfd f12, _convSub@l(r12)
-0x00000038 = fsub f10, f10, f12
-0x0000003C = frsp f10, f10
-0x00000040 = lis r12, _float1@ha
-0x00000044 = lfs f12, _float1@l(r12)
-0x00000048 = fdivs f10, f12, f10
-0x0000004C = lis r12, _busSpeed@ha
-0x00000050 = lfs f12, _busSpeed@l(r12)
-0x00000054 = fmuls f10, f12, f10
-0x00000058 = lis r12, _currentFPS@ha
-0x0000005C = stfs f10, _currentFPS@l(r12)
-
-
-#Arrow fix
-#Calculates 30*(30/currentFPS)
-0x00000060 = lis r12, _arrowDivisor@ha
-0x00000064 = lfs f12, _arrowDivisor@l(r12)
-0x00000068 = fdivs f12, f12, f10
-0x0000006C = lis r12, _arrowsDiv@ha
-0x00000070 = stfs f12, _arrowsDiv@l(r12)
-
-#Calculates 0.5/(30/$targetFPS)
-0x00000074 = lis r12, _arrowMultiplier@ha
-0x00000078 = lfs f12, _arrowMultiplier@l(r12)
-0x0000007C = fmuls f12, f12, f10
-0x00000080 = lis r12, _arrowsDer@ha
-0x00000084 = stfs f12, _arrowsDer@l(r12)
-
-
-0x00000088 = lis r12, _float30@ha
-0x0000008C = lfs f12, _float30@l(r12)
-0x00000090 = fdivs f7, f12, f10
-0x00000094 = lis r12, _lowlimit@ha
-0x00000098 = lfs f12, _lowlimit@l(r12)
-0x0000009C = lis r12, _speedDiv@ha
-0x000000A0 = fcmpu cr0, f7, f12
-0x000000A4 = bge .+0x0C
-
-0x000000A8 = stfs f7, _speedDiv@l(r12)
-0x000000AC = blr
-0x000000B0 = stfs f12, _speedDiv@l(r12)
-0x000000B4 = blr
-
-_fenceNeg1 = 0x000000B8
-0x000000B8 = add r6, r12, r0 	#orig instruction we are replacing
-0x000000BC = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
-0x000000C0 = blt .+0x08 	#skip subtract if less than
-0x000000C4 = subi r6, r6, 1 	#do the subtract
-0x000000C8 = blr 		#return
-
-
-#codeChanges
+# codeChanges
 0x031FA97C = bla _fpsCalc
 0x03793328 = nop
 0x03793334 = nop
@@ -96,23 +124,19 @@ _fenceNeg1 = 0x000000B8
 0x03415C1C = lis r12, _speedDiv@ha
 0x03415C24 = lfs f0, _speedDiv@l(r12)
 0x03415C2C = nop
-0x02D90D2C = lis r10, _currentFPS@ha
-0x02D90D30 = lfs f11, _currentFPS@l(r10)
-0x02D90D88 = lis r10, _currentFPS@ha
-0x02D90D8C = lfs f11, _currentFPS@l(r10)
+0x02D90D2C = lis r10, _averageFPS@ha
+0x02D90D30 = lfs f11, _averageFPS@l(r10)
+0x02D90D88 = lis r10, _averageFPS@ha
+0x02D90D8C = lfs f11, _averageFPS@l(r10)
 
 
-#break all forms of frame limiting
-0x031FAAFC = bla _fenceNeg1 ;Best fence (make sure GPU is never more than 1 frame ahead)
-;0x031FAAE8 = li r0, 1 ;Better fence (make sure GPU is never more than 1 second? ahead)
-;0x031FAB00 = nop ; skip fence (no waiting on GPU)
-0x031FACD0 = nop ; disable vsync
-0x031FACF4 = nop ; disable vsync loop
+# Break all forms of frame limiting
+0x031FAAFC = bla _fenceNeg1								# Best fence (make sure GPU is never more than 1 frame ahead), enabled by default
+;0x031FAAE8 = li r0, 1									# Better fence (make sure GPU is never more than 1 second? ahead), disabled by default
+;0x031FAB00 = nop										# Skip fence (no waiting on GPU), disabled by default
+0x031FACD0 = nop										# Disable vsync, enabled by default
+0x031FACF4 = nop										# Disable vsync loop, enabled by default
 
-#Cheats
-;0x02D90CC0 = fmr f29, f1 ;inf stamina
-;0x02D452A4 = nop ;inf hearts
-;0x02EB6758 = nop ;inf arrows
 
 [BotwFPSv176V192]
 moduleMatches = 0xFD091F9F,0xD472D8A5
