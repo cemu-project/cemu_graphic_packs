@@ -5,7 +5,7 @@
 
 uniform vec2 uf_fragCoordScale;
 
-const float hazeFactor = 0.1;
+const float hazeFactor = $hazeFactor;
 
 const float gamma = $gamma; // 1.0 is neutral  Botw is already colour graded at this stage
 const float exposure = $exposure; // 1.0 is neutral

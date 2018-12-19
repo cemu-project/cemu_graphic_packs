@@ -14,7 +14,7 @@ $redMid = 1.0
 $greenMid = 1.0
 $blueMid = 1.0
 $redHilight = 1.0
-$greenHilight =1.0
+$greenHilight = 1.0
 $blueHilight = 1.0
 
 $contrastCurve = 0.0
@@ -36,7 +36,7 @@ $redMid = 1.0
 $greenMid = 0.99
 $blueMid = 1.0
 $redHilight = 0.97
-$greenHilight =0.97
+$greenHilight = 0.97
 $blueHilight = 0.97
 
 $contrastCurve = 0.4
@@ -58,7 +58,7 @@ $redMid = 0.99
 $greenMid = 0.99
 $blueMid = 0.99
 $redHilight = 1.0
-$greenHilight =1.0
+$greenHilight = 1.0
 $blueHilight = 1.0
 
 $contrastCurve = 0.4
@@ -80,7 +80,7 @@ $redMid = 0.99
 $greenMid = 0.98
 $blueMid = 0.99
 $redHilight = 1.0
-$greenHilight =0.99
+$greenHilight = 0.99
 $blueHilight = 1.0
 
 $contrastCurve = 0.333
@@ -102,7 +102,7 @@ $redMid = 1.0
 $greenMid = 1.0
 $blueMid = 1.0
 $redHilight = 0.99
-$greenHilight =0.99
+$greenHilight = 0.99
 $blueHilight = 0.99
 
 $contrastCurve = 0.25
@@ -124,7 +124,7 @@ $redMid = 0.98
 $greenMid = 0.98
 $blueMid = 1.0
 $redHilight = 1.0
-$greenHilight =1.0
+$greenHilight = 1.0
 $blueHilight = 1.0
 
 $contrastCurve = 0.7
@@ -158,3 +158,25 @@ $vibrance = 0.45
 $crushContrast = 0.0
 $bleach = 0.85
 $sharp_mix = 0.1
+
+[Preset]
+name = GameCube Color Grading
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueSadows = 1.0
+$redMid = 1.0
+$greenMid = 1.0
+$blueMid = 1.0
+$redHilight = 1.0
+$greenHilight = 1.0
+$blueHilight = 1.0
+
+$contrastCurve = 0.0
+$hazeFactor = 1.0
+$bloom = 1.0
+$gamma = 0.85
+$exposure = 1.02
+$vibrance = 0.0175
+$crushContrast = 0.0
+$bleach = 1.0
+$sharp_mix = 0.0
