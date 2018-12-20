@@ -136,9 +136,9 @@ _fenceNeg1 = 0x0000010C									# - Best Fence Skip -
 0x031FACF4 = nop										# Disable vsync loop, enabled by default
 
 [BotwFPSv176V192]
-moduleMatches = 0xFD091F9F,0xD472D8A5
+moduleMatches = 0xFD091F9F, 0xD472D8A5
 
-#rodata constants
+# rodata constants
 _float1 = 0x10000670
 _float30 = 0x101E78F4
 _convSub = 0x10000BB0
@@ -260,10 +260,10 @@ _fenceNeg1 = 0x0000010C									# - Best Fence Skip -
 0x03414EF8 = lis r12, _speedDiv@ha
 0x03414F00 = lfs f0, _speedDiv@l(r12)
 0x03414F08 = nop
-0x02D90790 = lis r10, _currentFPS@ha
-0x02D90794 = lfs f11, _currentFPS@l(r10)
-0x02D907EC = lis r10, _currentFPS@ha
-0x02D907F0 = lfs f11, _currentFPS@l(r10)
+0x02D90790 = lis r10, _averageFPS@ha
+0x02D90794 = lfs f11, _averageFPS@l(r10)
+0x02D907EC = lis r10, _averageFPS@ha
+0x02D907F0 = lfs f11, _averageFPS@l(r10)
 
 # Break all forms of frame limiting
 0x031FA000 = bla _fenceNeg1								# Best fence (make sure GPU is never more than 1 frame ahead), enabled by default
