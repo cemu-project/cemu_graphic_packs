@@ -34,7 +34,7 @@ _averageFPSBufferDivider = 0x00000124
 0x00000128 = .float (0)
 _averageFPSBufferTotal = 0x00000128
 
-0x0000012C = .int (0)
+0x0000012C = .int (4)
 _averageFPSIndex = 0x0000012C
 
 _averageFPSBuffer = 0x00000130
@@ -79,7 +79,7 @@ _averageFPSBuffer = 0x00000130
 0x000000A0 = addi r12, r12, 0x04						# Add 4 to the index (r12) which sets the address offset to the next address
 0x000000A4 = cmp 0, 0, r12, r3							# Compare the index (r12) to the max byte length (r3)
 0x000000A8 = bne .+0x08									# If the compared numbers are not equal, skip over the instruction that resets the offset to 0 if the max has been reached
-0x000000AC = li r12, 0									#
+0x000000AC = li r12, 4									#
 0x000000B0 = stw r12, _averageFPSIndex@l(r11)			#
 0x000000B4 = lis r12, _averageFPSBufferTotal@ha			# Load the total of the buffer to r12
 0x000000B8 = lfs f7, _averageFPSBufferTotal@l(r12)		#
@@ -171,7 +171,7 @@ _averageFPSBufferDivider = 0x00000124
 0x00000128 = .float (0)
 _averageFPSBufferTotal = 0x00000128
 
-0x0000012C = .int (0)
+0x0000012C = .int (4)
 _averageFPSIndex = 0x0000012C
 
 _averageFPSBuffer = 0x00000130
@@ -216,7 +216,7 @@ _averageFPSBuffer = 0x00000130
 0x000000A0 = addi r12, r12, 0x04						# Add 4 to the index (r12) which sets the address offset to the next address
 0x000000A4 = cmp 0, 0, r12, r3							# Compare the index (r12) to the max byte length (r3)
 0x000000A8 = bne .+0x08									# If the compared numbers are not equal, skip over the instruction that resets the offset to 0 if the max has been reached
-0x000000AC = li r12, 0									#
+0x000000AC = li r12, 4									#
 0x000000B0 = stw r12, _averageFPSIndex@l(r11)			#
 0x000000B4 = lis r12, _averageFPSBufferTotal@ha			# Load the total of the buffer to r12
 0x000000B8 = lfs f7, _averageFPSBufferTotal@l(r12)		#
