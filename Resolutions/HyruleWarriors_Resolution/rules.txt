@@ -253,33 +253,12 @@ tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
-[TextureRedefine]
-width = 1024
-height = 2048
-#formats = 0x005
-overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
-overwriteHeight = ($height/$gameHeight) * (2048*$scaleShader*$internalRes)
-
-[TextureRedefine]
-width = 1024
-height = 1023
-#formats = 
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 1023
-
-[TextureRedefine]
-width = 1022
-height = 2046
-#formats = 
-overwriteWidth = ($width/$gameWidth) * (1022*$scaleShader*$internalRes)
-overwriteHeight = ($height/$gameHeight) * (2046*$scaleShader*$internalRes)
-
-#[TextureRedefine] 
-#width = 1022
-#height = 1022
-#formatsExcluded = 
-#overwriteWidth = ($width/$gameWidth) * 1022
-#overwriteHeight = ($height/$gameHeight) * 1022
+#[TextureRedefine] # sort shadows later, breaks dof
+#width = 1024
+#height = 2048
+##formats = 0x005
+#overwriteWidth = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
+#overwriteHeight = ($height/$gameHeight) * (2048*$scaleShader*$internalRes)
 
 [TextureRedefine]
 width = 864
