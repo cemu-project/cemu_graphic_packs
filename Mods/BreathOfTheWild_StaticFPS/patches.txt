@@ -2,18 +2,20 @@
 moduleMatches = 0x6267BFD0
 
 #Cave
-codeCaveSize = 0x1C
+codeCaveSize = 0x30
 
 _divisor = 0x0 # the divisor is set at the next line
 0x0 = .float (30 / $targetFPS) # e.g. 30FPS / 18FPS = 1.66667
 _targetfps = 0x18 # the target fps is set at the next line
 0x18 = .float $targetFPS
 
-#Arrows by Epigramx
+#Arrow projectiles fix by Epigramx:
+
 0x1001CCAC = .float (30 * (30 / $targetFPS)) # = 30 * divisor 
 0x1001CB18 = .float (0.5 / (30 / $targetFPS)) # = 0.5 / divisor
 
-#"Best fence" by Rajkosto
+#"Best fence" by Rajkosto:
+
 _fenceNeg1 = 0x00000004
 0x00000004 = add r6, r12, r0 	#orig instruction we are replacing
 0x00000008 = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
@@ -21,8 +23,15 @@ _fenceNeg1 = 0x00000004
 0x00000010 = subi r6, r6, 1 	#do the subtract
 0x00000014 = blr 		#return
 
-#Extreme simplification of FPS++ by Xalphenos
-#codeChanges
+#Simplification of FPS++ by Xalphenos:
+
+_arrowTimeDrain = 0x1C
+0x1C = lfs f1, 0xFC(r11)
+0x20 = lis r12, _divisor@ha
+0x24 = lfs f0, _divisor@l(r12)
+0x28 = fmuls f1, f1, f0
+0x2C = blr
+
 0x031FA97C = nop
 0x03793328 = nop
 0x03793334 = nop
@@ -36,6 +45,7 @@ _fenceNeg1 = 0x00000004
 0x02D90D30 = lfs f11, _targetfps@l(r10)
 0x02D90D88 = lis r10, _targetfps@ha
 0x02D90D8C = lfs f11, _targetfps@l(r10)
+0x02D5F760 = bla _arrowTimeDrain
 
 #Break all forms of frame limiting
 0x031FAAFC = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
@@ -61,18 +71,20 @@ _fenceNeg1 = 0x00000004
 moduleMatches = 0xFD091F9F,0xD472D8A5
 
 #Cave
-codeCaveSize = 0x1C
+codeCaveSize = 0x30
 
 _divisor = 0x0 # the divisor is set at the next line
 0x0 = .float (30 / $targetFPS) # e.g. 30FPS / 18FPS = 1.66667
 _targetfps = 0x18 # the target fps is set at the next line
 0x18 = .float $targetFPS
 
-#Arrows by Epigramx
+#Arrow projectiles fix by Epigramx:
+
 0x1001CCAC = .float (30 * (30 / $targetFPS)) # = 30 * divisor 
 0x1001CB18 = .float (0.5 / (30 / $targetFPS)) # = 0.5 / divisor
 
-#"Best fence" by Rajkosto
+#"Best fence" by Rajkosto:
+
 _fenceNeg1 = 0x00000004
 0x00000004 = add r6, r12, r0 	#orig instruction we are replacing
 0x00000008 = cmpwi r6, 500 	#check if less than 500 (full sync on those first frames to prevent milk water)
@@ -80,7 +92,15 @@ _fenceNeg1 = 0x00000004
 0x00000010 = subi r6, r6, 1 	#do the subtract
 0x00000014 = blr 		#return
 
-#Extreme simplification of FPS++ by Xalphenos
+#Simplification of FPS++ by Xalphenos:
+
+_arrowTimeDrain = 0x1C
+0x1C = lfs f1, 0xFC(r11)
+0x20 = lis r12, _divisor@ha
+0x24 = lfs f0, _divisor@l(r12)
+0x28 = fmuls f1, f1, f0
+0x2C = blr
+
 #codeChanges
 0x031F9E80 = nop
 0x03792620 = nop
@@ -95,6 +115,7 @@ _fenceNeg1 = 0x00000004
 0x02D90794 = lfs f11, _targetfps@l(r10)
 0x02D907EC = lis r10, _targetfps@ha
 0x02D907F0 = lfs f11, _targetfps@l(r10)
+0x02D5F200 = bla _arrowTimeDrain
 
 #Break all forms of frame limiting
 0x031FA000 = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
@@ -115,4 +136,3 @@ _fenceNeg1 = 0x00000004
 #0x02D90724 = fmr f29, f1 #inf stamina
 #0x02D44D44 = nop #inf hearts
 #0x02EB61BC = nop #inf arrows
-
