@@ -8,48 +8,39 @@ version = 3
 [Preset]
 name = 60FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 60
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 30FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 30
-$amount_of_FPS_averaged = 32
 
 
 [Preset]
 name = 40FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 40
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 20FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 20
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 48FPS (ideal for 144Hz displays)
 $targetFPS:int = 48
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 72FPS (ideal for 144Hz displays)
 $targetFPS:int = 72
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 75FPS (ideal for 75Hz displays)
 $targetFPS:int = 75
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 120FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 120
-$amount_of_FPS_averaged = 32
 
 [Preset]
 name = 144FPS (ideal for 144Hz displays)
 $targetFPS:int = 144
-$amount_of_FPS_averaged = 32
 
 [Control]
 vsyncFrequency = $targetFPS
