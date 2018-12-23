@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Static FPS
-path = "The Legend of Zelda: Breath of the Wild/Mods/Static FPS"
+name = Static FPS Mod
+path = "The Legend of Zelda: Breath of the Wild/Mods/Static FPS Mod"
 description = "Simplified FPS++ to keep behavior closer to the default game. Don't mix dynamic and static mods. It requires that you can maintain the target FPS."
 version = 3
 
