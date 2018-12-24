@@ -14,10 +14,10 @@ $0x035 = 0
 
 [Preset]
 name = LOD -0.5 (Sharper)
-$0x031 = -0.5
-$0x033 = -0.5
-$0x034 = -0.5
-$0x035 = -0.5
+$0x031 = -.5
+$0x033 = -.5
+$0x034 = -.5
+$0x035 = -.5
 
 [Preset]
 name = LOD -1 (Max for gameplay)
