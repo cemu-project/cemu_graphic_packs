@@ -4,7 +4,6 @@ name = Resolution
 path = "Hyrule Warriors/Graphics/Resolution"
 description = Changes the resolution of the game. 1080 FX scaling runs DoF, fog etc at lower precision for better performance
 version = 3
-vsyncFrequency = 30
 
 [Preset]
 name = 1280x720 (Default)
@@ -39,7 +38,7 @@ $dither = 0.01
 $scaleShader = 1.0
 $scaleBlur = 0.05
 
-// Quality
+# Quality
 
 [Preset]
 name = 1600x900
@@ -216,10 +215,8 @@ $scaleBlur = 1.0
 #$dither = 0.25
 #$scaleShader = (720.0/1080.0)
 #$scaleBlur = 1.0
-// Enthusiast
 
-
-// Enthusiast
+# Enthusiast
 
 #[Preset]#6
 #name = 7680x4320
@@ -268,12 +265,24 @@ overwriteWidth = ($width/$gameWidth) * 864
 overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
+width = 672
+height = 368
+overwriteWidth = ($width/$gameWidth) * (672)
+overwriteHeight = ($height/$gameHeight) * (368)
+
+[TextureRedefine]
 width = 640
 height = 368
 #formats = 0x816,0x80e,0x035,0x033,0x007
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * (640)
 overwriteHeight = ($height/$gameHeight) * (368)
+
+[TextureRedefine]
+width = 648
+height = 360
+overwriteWidth = ($width/$gameWidth) * (648)
+overwriteHeight = ($height/$gameHeight) * (360)
 
 [TextureRedefine]
 width = 640
