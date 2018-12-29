@@ -46,7 +46,7 @@ name = Static 72FPS (ideal for 144Hz displays)
 $targetFPS:int = 72
 
 [Preset]
-name = Static 55FPS (ideal for 165hz displays
+name = Static 55FPS (ideal for 165hz displays)
 $targetFPS:int = 55
 
 [Preset]
