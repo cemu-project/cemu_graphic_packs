@@ -46,6 +46,10 @@ _arrowTimeDrain = 0x1C
 0x02D90D88 = lis r10, _targetfps@ha
 0x02D90D8C = lfs f11, _targetfps@l(r10)
 0x02D5F760 = bla _arrowTimeDrain
+0x037DC35C = lis r12, _divisor@ha		#Audio fix
+0x037DC360 = lfs f13, _divisor@l(r12)
+0x037DBDF8 = lis r11, _divisor@ha
+0x037DBDFC = lfs f31, _divisor@l(r11)
 
 #Break all forms of frame limiting
 0x031FAAFC = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
