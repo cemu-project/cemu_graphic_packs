@@ -164,19 +164,19 @@ overwriteWidth = ($width/$gameWidth) * (1024*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
 
 
-#[TextureRedefine] #pad rounded
-#width = 864
-#height = 480
-##formats = 0x034
-#overwriteWidth = ($width/$gameWidth) * 864
-#overwriteHeight = ($height/$gameHeight) * 480
-#
-#[TextureRedefine] #pad 
-#width = 854
-#height = 480
-##formats = 0x034
-#overwriteWidth = ($width/$gameWidth) * 854
-#overwriteHeight = ($height/$gameHeight) * 480
+[TextureRedefine] #Curtains / Shadows
+width = 864
+height = 480
+#formats = 0x034
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] #Curtains / Shadows
+width = 854
+height = 480
+#formats = 0x034
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
 
 
 [TextureRedefine] # 360 rounding
