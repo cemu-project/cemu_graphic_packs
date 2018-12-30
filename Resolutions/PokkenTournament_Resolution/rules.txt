@@ -31,13 +31,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 320x180 (Native Render)
-#$width = 320
-#$height = 180
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 320x180 (Native Render)
+$width = 320
+$height = 180
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 640x360
@@ -47,13 +47,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 640x360 (Native Render)
-#$width = 640
-#$height = 360
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 640x360 (Native Render)
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 960x540
@@ -63,13 +63,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 960x540 (Native Render)
-#$width = 960
-#$height = 540
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 960x540 (Native Render)
+$width = 960
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 # Common HD Resolutions
 
@@ -81,13 +81,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 1600x900 (Native Render)
-#$width = 1600
-#$height = 900
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 1600x900 (Native Render)
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 1920x1080
@@ -97,13 +97,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 1920x1080 (Native Render)
-#$width = 1920
-#$height = 1080
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 1920x1080 (Native Render)
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 2560x1440
@@ -113,13 +113,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 2560x1440 (Native Render)
-#$width = 2560
-#$height = 1440
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 2560x1440 (Native Render)
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 3200x1800
@@ -129,13 +129,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 3200x1800 (Native Render)
-#$width = 3200
-#$height = 1800
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 3200x1800 (Native Render)
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 3840x2160
@@ -145,13 +145,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 3840x2160 (Native Render)
-#$width = 3840
-#$height = 2160
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 3840x2160 (Native Render)
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [Preset]
 name = 5120x2880
@@ -161,13 +161,13 @@ $gameWidth = 1280
 $gameHeight = 720
 $renderWidth = 1280
 
-#[Preset]
-#name = 5120x2880 (Native Render)
-#$width = 5120
-#$height = 2880
-#$gameWidth = 1280
-#$gameHeight = 720
-#$renderWidth = 960
+[Preset]
+name = 5120x2880 (Native Render)
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$renderWidth = 960
 
 [TextureRedefine] # Game Resolution
 width = 1280
