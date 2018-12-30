@@ -6,12 +6,14 @@ description = Changes the resolution of the game.
 version = 3
 
 [Preset]
-name = 1280x720 Default
+name = 1280x720 (Default)
 $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
+$scaleShader = 1.0
+// Performance
 
 [Preset]
 name = 640x360
@@ -20,14 +22,7 @@ $height = 360
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
-
-[Preset]
-name = 854x480
-$width = 854
-$height = 480
-$gameWidth = 1280
-$gameHeight = 720
-$dither = 0.1
+$scaleShader = 1.0
 
 [Preset]
 name = 960x540
@@ -36,6 +31,9 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
+$scaleShader = (720.0/540.0) 
+
+// Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -44,6 +42,7 @@ $height = 900
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
+$scaleShader = (720.0/900.0) 
 
 [Preset]
 name = 1920x1080
@@ -52,6 +51,7 @@ $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
+$scaleShader = (1440.0/1080.0) # Dont scale shadows to 1.5
 
 [Preset]
 name = 2560x1440
@@ -60,14 +60,7 @@ $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.5
-
-[Preset]
-name = 2732x1536
-$width = 2732
-$height = 1536
-$gameWidth = 1280
-$gameHeight = 720
-$dither = 0.5
+$scaleShader = 1.0
 
 [Preset]
 name = 3200x1800
@@ -76,6 +69,7 @@ $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.75
+$scaleShader = (1440.0/1800.0) 
 
 [Preset]
 name = 3840x2160
@@ -84,6 +78,7 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.85
+$scaleShader = 1.0
 
 [Preset]
 name = 5120x2880
@@ -92,22 +87,64 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 1.0
+$scaleShader = 1.0
+
+// Common Ultrawide Resolutions
 
 [Preset]
-name = 7680x4320
-$width = 7680
-$height = 4320
+name = 2560x1080 ("21:9")
+$width = 2560
+$height = 1080
 $gameWidth = 1280
 $gameHeight = 720
-$dither = 1.25
+$dither = 0.1
+$scaleShader = (1440.0/1080.0) # Dont scale shadows to 1.5
 
 [Preset]
-name = 10240x5760
-$width = 10240
-$height = 5760
+name = 3440x1440 ("21:9")
+$width = 3440
+$height = 1440
 $gameWidth = 1280
 $gameHeight = 720
-$dither = 1.25
+$dither = 0.5
+$scaleShader = 1.0
+
+[Preset]
+name = 4300x1800 ("21:9")
+$width = 4300
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+$dither = 0.75
+$scaleShader = (1440.0/1800.0) 
+
+#[Preset] # debug high res
+#name = 7680x4320
+#$width = 7680
+#$height = 4320
+#$gameWidth = 1280
+#$gameHeight = 720
+#$dither = 1.25
+#$scaleShader = 1.0 
+
+#Colour depth / De-band Ok Nvidia, possible broken on Intel/Ams
+#[TextureRedefine]
+#width = 1280
+#height = 720
+#formats =  0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#width = 640
+#height = 368
+#formats =  0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#width = 640
+#height = 360
+#formats =  0x01a
+#overwriteFormat = 0x01f
 
 [TextureRedefine]
 width = 1280
@@ -118,22 +155,31 @@ tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
-[TextureRedefine] #
+[TextureRedefine] # Shadows
 width = 1024
 height = 1024
 #formatsExcluded = 0x431,0x005,0x433,0x431,0x235,0x035,0x034,0x033,0x031,0x005,0x01a
 formats = 0x005
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 1024
+overwriteWidth = ($width/$gameWidth) * (1024*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader)
 
-[TextureRedefine]
-width = 854
-height = 480
-#formats = 0x034
-overwriteWidth = ($width/$gameWidth) * 854
-overwriteHeight = ($height/$gameHeight) * 480
 
-[TextureRedefine]
+#[TextureRedefine] #pad rounded
+#width = 864
+#height = 480
+##formats = 0x034
+#overwriteWidth = ($width/$gameWidth) * 864
+#overwriteHeight = ($height/$gameHeight) * 480
+#
+#[TextureRedefine] #pad 
+#width = 854
+#height = 480
+##formats = 0x034
+#overwriteWidth = ($width/$gameWidth) * 854
+#overwriteHeight = ($height/$gameHeight) * 480
+
+
+[TextureRedefine] # 360 rounding
 width = 640
 height = 368
 #formats = 0x816,0x820,0x816,0x80e,0x019,0x001,0x01a
@@ -149,12 +195,51 @@ tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
 
+
+[TextureRedefine] #180 rounding
+width = 320
+height = 192
+#formats = 0x816,0x019,0x01a,0x001
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
 [TextureRedefine]
 width = 320
 height = 180
 #formats = 0x816,0x019,0x01a,0x001
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 180
+
+
+#[TextureRedefine] #skybox?
+#width = 256
+#height = 256
+#depth = 1
+#formats = 0x008
+#overwriteWidth = ($width/$gameWidth) * 256
+#overwriteHeight = ($height/$gameHeight) * 256
+#
+#[TextureRedefine] # haze?
+#width = 160
+#height = 208
+##formats = 0x806,0x007,0x01a
+#overwriteWidth = ($width/$gameWidth) * 160
+#overwriteHeight = ($height/$gameHeight) * 208
+#
+#[TextureRedefine] # haze?
+#width = 150
+#height = 200
+##formats = 0x806,0x007,0x01a
+#overwriteWidth = ($width/$gameWidth) * 150
+#overwriteHeight = ($height/$gameHeight) * 200
+
+
+[TextureRedefine] #90 rounding
+width = 160
+height = 96
+#formats = 0x806,0x007,0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 96
 
 [TextureRedefine]
 width = 160
@@ -163,6 +248,14 @@ height = 90
 overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 90
 
+
+[TextureRedefine] #45 rounding 
+width = 96
+height = 48
+#formats = 0x806,0x01a
+overwriteWidth = ($width/$gameWidth) * 96
+overwriteHeight = ($height/$gameHeight) * 48
+
 [TextureRedefine]
 width = 80
 height = 45
@@ -170,9 +263,19 @@ height = 45
 overwriteWidth = ($width/$gameWidth) * 80
 overwriteHeight = ($height/$gameHeight) * 45
 
+
+[TextureRedefine] # 22 rounding
+width = 64
+height = 32
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
 [TextureRedefine]
 width = 40
 height = 22
-#formats = 0x01a
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 40
 overwriteHeight = ($height/$gameHeight) * 22
+
+
