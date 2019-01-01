@@ -518,6 +518,7 @@ overwriteHeight = ($height/$gameHeight)* 11
 width = 960
 height = 540
 formats = 0x5,0x7,0x19,0x1a,0x41a,0x806,0x80e,0x816
+tileModesExcluded = 0x1 # For Switch Videos
 overwriteWidth = ($width/$gameWidth) * 960
 overwriteHeight = ($height/$gameHeight) * 540
 
