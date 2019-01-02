@@ -1,4 +1,4 @@
-```
+```ini
 [Preset]
 name = 1280x720 (Default)
 $width = 1280
@@ -6,7 +6,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
+# Performance
 
 [Preset]
 name = 320x180
@@ -29,7 +29,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1920x1080
@@ -66,25 +66,25 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-//// THE FOLLOWING REQUIRE A GAME PATCH (patches.txt) FOR CUSTOM ASPECT RATIOS ////
+## THE FOLLOWING REQUIRE A GAME PATCH (patches.txt) FOR CUSTOM ASPECT RATIOS
 
-// Common Ultrawide Resolutions
+# Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common 16:10 Resolutions
+# Common 16:10 Resolutions
 
 [Preset]
 name = 1440x900 (16:10)
