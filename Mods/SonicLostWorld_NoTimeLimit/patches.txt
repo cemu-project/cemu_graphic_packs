@@ -1,3 +1,0 @@
-[sonic2013]
-moduleMatches = 0x7FE07429, 0xC5691A40
-0x022927E0 = nop
