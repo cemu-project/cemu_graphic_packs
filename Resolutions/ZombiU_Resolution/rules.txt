@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,0005000E1010DD00,0005000E10112300
-path = "ZombieU/Graphics/Resolution"
+name = Resolution
+path = "ZombiU/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
@@ -13,7 +14,8 @@ $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
 $textureFormat = 0x01a
-// Performance
+
+# Performance
 
 [Preset]
 name = 320x180
@@ -45,7 +47,7 @@ $internalRes = 1.0
 $scaleShader = 1.0
 $textureFormat = 0x01a
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -117,102 +119,6 @@ $internalRes = 0.375
 $scaleShader = (1440.0/1080.0)
 $textureFormat = 0x01a
 
-#Common Ultrawide Resolutions
-#Disabled, no patch
-#
-#[Preset]
-#name = 2560x1080 (21:9 HD)
-#$width = 2560
-#$height = 1080
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = (1440.0/1080.0)
-#
-##
-#[Preset]
-#name = 3440x1440 ("21:9")
-#$width = 3440
-#$height = 1440
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 3840x1600 ("21:9")
-#$width = 3840
-#$height = 1600
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#// Common 16:10 Resolutions
-#
-#[Preset]
-#name = 1440x900 (16:10)
-#$width = 1440
-#$height = 900
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 1680x1050 (16:10)
-#$width = 1680
-#$height = 1050
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 1920x1200 (16:10)
-#$width = 1920
-#$height = 1200
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 2560x1600 (16:10)
-#$width = 2560
-#$height = 1600
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 2880x1800 (16:10)
-#$width = 2880
-#$height = 1800
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 3840x2400 (16:10)
-#$width = 3840
-#$height = 2400
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-#
-#[Preset]
-#name = 5120x3200 (16:10)
-#$width = 5120
-#$height = 3200
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 1.0
-#$scaleShader = 1.0
-
 #[TextureRedefine] #
 #width = 4095
 #height = 4095
@@ -225,7 +131,6 @@ width = 1280
 height = 720
 formats = $textureFormat # 
 overwriteFormat = 0x01f
-
 
 [TextureRedefine]
 width = 1280
