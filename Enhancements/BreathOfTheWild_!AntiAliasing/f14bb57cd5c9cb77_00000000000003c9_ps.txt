@@ -28,8 +28,8 @@ layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
 ivec2 resDim = textureSize2D(textureUnitPS0,0); // Retrieve texture dimensions vector holds data-type-float
-float wresX = ( (float(resDim.x)/1280) + wSharper ) - wBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
-float wresY = ( (float(resDim.y)/720) + wSharper ) - wBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
+float wresX = ( (float(resDim.x)/1280.0) + wSharper ) - wBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
+float wresY = ( (float(resDim.y)/720.0) + wSharper ) - wBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
 
 int clampFI32(int v)
 {
