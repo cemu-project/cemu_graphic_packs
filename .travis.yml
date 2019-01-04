@@ -25,6 +25,6 @@ script:
       --owner=slashiee \
       --repo=cemu_graphic_packs \
       --tag="Travis$TRAVIS_BUILD_NUMBER" \
-      --name="1.14.0 Graphic Packs: V$TRAVIS_BUILD_NUMBER" \
+      --name="Cemu Graphic Packs: V$TRAVIS_BUILD_NUMBER" \
       --body="$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n')" \
       "graphicPacks$TRAVIS_BUILD_NUMBER"".zip"
