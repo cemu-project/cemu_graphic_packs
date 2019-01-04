@@ -1,0 +1,81 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Anti-Aliasing Pack
+path = "Xenoblade Chronicles X/Enhancements/Anti-Aliasing"
+description = Enables or Disables Native Anti-Aliasing. Also includes an alternative FXAA implementation. Check the "Anti-Aliasing/rules.txt" file in your Botw AA graphicPack folder for info about the individual settings.
+version = 3
+
+[Preset]
+name = Disable Native AA
+$Preset:int = 0
+#
+$LessAA = 0.0 # Ignore
+$MoreAA = 0.0 # Ignore
+#
+$subPix = 0.75 # Ignore 
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
+
+[Preset]
+name = Enable Native AA
+$Preset:int = 1
+#
+$LessAA = 0.0
+$MoreAA = 0.0
+#
+$subPix = 0.75 # Ignore
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
+
+[Preset]
+name = Enable Native AA (MoreAA)
+$Preset:int = 1
+#
+$LessAA = 0.0
+$MoreAA = 1.0
+#
+$subPix = 0.75 # Ignore
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
+
+[Preset]
+name = Nvidias FXAA
+$Preset:int = 2
+#
+$LessAA = 0.0 # Ignore
+$MoreAA = 0.0 # Ignore
+#
+$subPix = 1.0
+$edgeThreshold = 0.125
+$edgeThresholdMin = 0.0156
+
+
+# Adjust native AA implmentation - Only applies to Enabled preset
+# --- keep one of the varaibles at 0 while adjusting the other one
+# LessAA 	: Values - [0.0 - 1.0] - Recommended to Raise in increments of 0.1
+# MoreAA 	: Values - [1.0 - 0.0] - Recommended to Lower in decrements of 0.1
+
+# Subpix:
+# Choose the amount of sub-pixel aliasing removal.
+# This affects how sharp or smooth you want the image to be.
+#   1.00 - upper limit (softer)
+#   0.75 - default amount of filtering
+#   0.50 - lower limit (sharper, less sub-pixel aliasing removal)
+#   0.25 - almost off
+#   0.00 - completely off
+
+# EdgeThreshold:
+# The minimum amount of local contrast required to apply algorithm.
+#   0.333 - too little (faster)
+#   0.250 - low quality
+#   0.166 - default
+#   0.125 - high quality 
+#   0.063 - overkill (slower)
+
+# EdgeThresholdMin:
+# Trims the algorithm from processing darks.
+#   0.0833 - upper limit (default, the start of visible unfiltered edges)
+#   0.0625 - high quality (faster)
+#   0.0312 - visible limit (slower)
+
+# Credits: SkalFate
