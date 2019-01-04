@@ -20,17 +20,12 @@ meta-description: "Largest graphic pack source for Cemu that modify or scale gam
     </p>
 </div>
 
-
-{% comment %} Get the latest release zip {% endcomment %}
-{% capture newReleaseVersion %} {{ site.github.latest_release.assets[0].browser_download_url | slice: 71, 3}} {% endcapture %}
-{% assign newReleaseVersion = newReleaseVersion | plus:1 %}
-
 <div id="download-gfx-panel" class="jumbotron">
     <h2>Downloads</h2>
     <p>Choose the right download for the Cemu version that you'll use.</p>
     <p style="font-size: 16px; color: red; font-weight: bold;">Remove your previous graphic packs before installing/updating each time you install your graphic packs or you might run into issues!</p>
     <div class="lead">
-        <a class="btn btn-primary btn-lg" target="_self" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis{{ newReleaseVersion }}/graphicPacks{{ newReleaseVersion }}.zip" role="button">Cemu 1.14.0 (version 3)</a>
+        <a id="latest_version_download" class="btn btn-primary btn-lg" target="_self" href="{{ site.github.latest_release.assets[0].browser_download_url }}" role="button">Cemu 1.14.0 and newer (version 3)</a>
         <span class="dropdown">
             <a id="dropdown-version-button" data-target="#" class="btn btn-default btn-lg" role="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions <span class="caret"></span></a>
             <ul class="dropdown-menu" aria-labelledby="dropdown-version-button">
@@ -40,6 +35,16 @@ meta-description: "Largest graphic pack source for Cemu that modify or scale gam
         </span>
     </div>
 </div>
+<script>
+    fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/releases/latest").then(fetchRes => fetchRes.json()).then(fetchJson => {
+        console.debug("Fetched releases from github to update the latest release buttons url...");
+        document.getElementById("latest_version_download").href=fetchJson.assets[0].browser_download_url;
+        return;
+    }).catch(fetchErr => {
+        console.error("Seems like something isn't working...", fetchErr);
+    });
+</script>
+
 
 
 {% comment %}
