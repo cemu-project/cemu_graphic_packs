@@ -27,29 +27,51 @@ $crushContrast = 0.0
 $bleach = 1.0
 $sharp_mix = 0.0
 
-[Preset]
-name = Neutral default exposure
-$redShadows = 0.97
-$greenShadows = 0.97
-$blueSadows = 1.02
-$redMid = 0.95
-$greenMid = 0.96
-$blueMid = 1.02
-$redHilight = 0.98
-$greenHilight = 0.99
-$blueHilight = 1.01
+[Preset] # Preserve original washed out look, but balances bloom white point towards neutral
+name = Neutral Hi-lights
+$redShadows = 1.0
+$greenShadows = 1.0 #1.01
+$blueSadows = 1.01 #1.02
+$redMid = 0.98
+$greenMid = 0.99
+$blueMid = 1.01
+$redHilight = 1.0
+$greenHilight = 1.01 #.86
+$blueHilight = 1.15
 
-$contrastCurve = 0.2
+$contrastCurve = 0.0
 $hazeFactor = 0.1
 $bloom = 1.0
 $gamma = 1.0
-$exposure = 0.99
-$vibrance = 0.15
+$exposure = 1.0
+$vibrance = 0.25
 $crushContrast = 0.0
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.0
 
-[Preset]
+[Preset] #Warm and washed out light-sources and bloom, original look "enhanced".
+name = Warm glow
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueSadows = 1.0
+$redMid = 0.98
+$greenMid = 0.98
+$blueMid = 1.0
+$redHilight = 1.0
+$greenHilight =1.0
+$blueHilight = 1.0
+
+$contrastCurve = 0.5
+$hazeFactor = 0.71
+$bloom = 0.85
+$gamma = 1.1
+$exposure = 1.07
+$vibrance = 0.15
+$crushContrast = 0.00
+$bleach = 0.85
+$sharp_mix = 0.05
+
+[Preset] # Colourful midway between original and cold
 name = Colorful 
 $redShadows = 0.96
 $greenShadows = 0.97
@@ -66,79 +88,35 @@ $hazeFactor = 0.1
 $bloom = 1.0
 $gamma = 1.075
 $exposure = 1.01
-$vibrance = 0.5
+$vibrance = 0.55
 $crushContrast = 0.0
 $bleach = 0.85
 $sharp_mix = 0.05
 
-[Preset]
-name = Warm
-$redShadows = 1.0
+[Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discolouration of multi layer fx
+name = Cold contrast 
+$redShadows = 0.99
 $greenShadows = 1.0
-$blueSadows = 1.0
-$redMid = 0.98
-$greenMid = 0.98
+$blueSadows = 1.01
+$redMid = 0.85
+$greenMid = 0.86
 $blueMid = 1.0
-$redHilight = 1.0
-$greenHilight =1.0
-$blueHilight = 1.0
+$redHilight = 0.95
+$greenHilight = 0.96
+$blueHilight = 1.05
 
-$contrastCurve = 0.7
-$hazeFactor = 0.71
-$bloom = 0.85
-$gamma = 1.1
-$exposure = 1.07
-$vibrance = 0.15
-$crushContrast = 0.00
-$bleach = 0.85
-$sharp_mix = 0.1
-
-[Preset]
-name = Cold
-$redShadows = 0.95
-$greenShadows = 0.96
-$blueSadows = 1.03
-$redMid = 0.95
-$greenMid = 0.96
-$blueMid = 1.03
-$redHilight = 0.98
-$greenHilight = 0.99
-$blueHilight = 1.03
-
-$contrastCurve = 0.2
+$contrastCurve = 0.25
 $hazeFactor = 0.1
-$bloom = 1.0
-$gamma = 1.05
-$exposure = 0.99
-$vibrance = 0.45
+$bloom = 0.975
+$gamma = 1.0
+$exposure = 1.075
+$vibrance = 0.3
 $crushContrast = 0.0
-$bleach = 0.85
-$sharp_mix = 0.1
+$bleach = 0.875
+$sharp_mix = 0.05
 
-[Preset]
-name = Neutral Contrasty
-$redShadows = 0.97
-$greenShadows = 0.97
-$blueSadows = 0.99
-$redMid = 0.92
-$greenMid = 0.94
-$blueMid = 1.03
-$redHilight = 0.99
-$greenHilight =1.0
-$blueHilight = 1.0
-
-$contrastCurve = 0.5
-$hazeFactor = 0.71
-$bloom = 0.85
-$gamma = 1.19
-$exposure = 1.09
-$vibrance = 0.35
-$crushContrast = 0.00
-$bleach = 0.85
-$sharp_mix = 0.1
-
-[Preset]
-name = Compensate exposure patch
+[Preset] # jff 
+name =  Skyward Swordish
 $redShadows = 0.99
 $greenShadows = 0.99
 $blueSadows = 1.02
@@ -149,12 +127,12 @@ $redHilight = 0.99
 $greenHilight =1.0
 $blueHilight = 1.01
 
-$contrastCurve = 0.25
+$contrastCurve = 0.45
 $hazeFactor = 0.71
 $bloom = 0.85
-$gamma = 1.35
+$gamma = 1.25
 $exposure = 1.1
 $vibrance = 1.25
 $crushContrast = 0.00
 $bleach = 0.85
-$sharp_mix = 0.1
+$sharp_mix = 0.05
