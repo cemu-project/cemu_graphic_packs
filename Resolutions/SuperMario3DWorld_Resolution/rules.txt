@@ -12,7 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
+# Performance
 
 [Preset]
 name = 320x180
@@ -35,7 +35,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -79,23 +79,23 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common Ultrawide Resolutions
+# Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common 16:10 Resolutions
+# Common 16:10 Resolutions
 
 [Preset]
 name = 1440x900 (16:10)
@@ -149,7 +149,7 @@ $gameHeight = 720
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x008,0x41A,0x034,0x035 0x008
+formatsExcluded = 0x008,0x41A,0x034,0x035
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
@@ -166,13 +166,6 @@ height = 720
 #formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 1128
 overwriteHeight = ($height/$gameHeight) * 720
-
-[TextureRedefine] #shadow
-width = 1024
-height = 1024
-formats = 0x005
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 1024
 
 [TextureRedefine] #Zoom 
 width = 1024
@@ -212,7 +205,7 @@ width = 854
 height = 480
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
-##672x405
+
 [TextureRedefine] #Depth 8
 width = 640
 height = 368
@@ -303,7 +296,6 @@ height = 180
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 282
 overwriteHeight = ($height/$gameHeight) * 180
-
 
 [TextureRedefine]
 width = 256
@@ -549,3 +541,983 @@ height = 9
 formats = 0x816,0x823
 overwriteWidth = ($width/$gameWidth) * 15
 overwriteHeight = ($height/$gameHeight) * 9
+
+[TextureRedefine] # circus
+width = 1272
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1272
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1264
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1264
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1256
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1256
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1248
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1248
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1240
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1240
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1232
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1232
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1224
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1224
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1216
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1216
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1208
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1208
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1200
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1200
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1192
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1192
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1184
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1184
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1176
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1176
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1168
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1168
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1160
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1160
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1152
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1152
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1144
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1144
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1136
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1136
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1128
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1128
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1120
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1120
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1112
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1112
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1104
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1104
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1096
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1096
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1088
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1088
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1080
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1080
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1072
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1072
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1064
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1064
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1056
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1056
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1048
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1048
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1040
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1040
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1032
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1032
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1024
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1016
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1016
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1008
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1008
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 1000
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1000
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # circus
+width = 640
+height = 320
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 320
+
+[TextureRedefine] # circus
+width = 636
+height = 360
+overwriteWidth = ($width/$gameWidth) * 636
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 632
+height = 360
+overwriteWidth = ($width/$gameWidth) * 632
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 628
+height = 360
+overwriteWidth = ($width/$gameWidth) * 628
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 624
+height = 360
+overwriteWidth = ($width/$gameWidth) * 624
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 620
+height = 360
+overwriteWidth = ($width/$gameWidth) * 620
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 616
+height = 360
+overwriteWidth = ($width/$gameWidth) * 616
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 612
+height = 360
+overwriteWidth = ($width/$gameWidth) * 612
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 608
+height = 360
+overwriteWidth = ($width/$gameWidth) * 608
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 604
+height = 360
+overwriteWidth = ($width/$gameWidth) * 604
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 600
+height = 360
+overwriteWidth = ($width/$gameWidth) * 600
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 596
+height = 360
+overwriteWidth = ($width/$gameWidth) * 596
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 592
+height = 360
+overwriteWidth = ($width/$gameWidth) * 592
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 588
+height = 360
+overwriteWidth = ($width/$gameWidth) * 588
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 584
+height = 360
+overwriteWidth = ($width/$gameWidth) * 584
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 580
+height = 360
+overwriteWidth = ($width/$gameWidth) * 580
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 576
+height = 360
+overwriteWidth = ($width/$gameWidth) * 576
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 572
+height = 360
+overwriteWidth = ($width/$gameWidth) * 572
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 568
+height = 360
+overwriteWidth = ($width/$gameWidth) * 568
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 564
+height = 360
+overwriteWidth = ($width/$gameWidth) * 564
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 560
+height = 360
+overwriteWidth = ($width/$gameWidth) * 560
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 556
+height = 360
+overwriteWidth = ($width/$gameWidth) * 556
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 552
+height = 360
+overwriteWidth = ($width/$gameWidth) * 552
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 548
+height = 360
+overwriteWidth = ($width/$gameWidth) * 548
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 544
+height = 360
+overwriteWidth = ($width/$gameWidth) * 544
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 540
+height = 360
+overwriteWidth = ($width/$gameWidth) * 540
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 536
+height = 360
+overwriteWidth = ($width/$gameWidth) * 536
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 532
+height = 360
+overwriteWidth = ($width/$gameWidth) * 532
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 528
+height = 360
+overwriteWidth = ($width/$gameWidth) * 528
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 524
+height = 360
+overwriteWidth = ($width/$gameWidth) * 524
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 520
+height = 360
+overwriteWidth = ($width/$gameWidth) * 520
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 516
+height = 360
+overwriteWidth = ($width/$gameWidth) * 516
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 512
+height = 360
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 508
+height = 360
+overwriteWidth = ($width/$gameWidth) * 508
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 504
+height = 360
+overwriteWidth = ($width/$gameWidth) * 504
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 500
+height = 360
+overwriteWidth = ($width/$gameWidth) * 500
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # circus
+width = 318
+height = 180
+overwriteWidth = ($width/$gameWidth) * 318
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 316
+height = 180
+overwriteWidth = ($width/$gameWidth) * 316
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 314
+height = 180
+overwriteWidth = ($width/$gameWidth) * 314
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 312
+height = 180
+overwriteWidth = ($width/$gameWidth) * 312
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 310
+height = 180
+overwriteWidth = ($width/$gameWidth) * 310
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 308
+height = 180
+overwriteWidth = ($width/$gameWidth) * 308
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 306
+height = 180
+overwriteWidth = ($width/$gameWidth) * 306
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 304
+height = 180
+overwriteWidth = ($width/$gameWidth) * 304
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 302
+height = 180
+overwriteWidth = ($width/$gameWidth) * 302
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 300
+height = 180
+overwriteWidth = ($width/$gameWidth) * 300
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 298
+height = 180
+overwriteWidth = ($width/$gameWidth) * 298
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 296
+height = 180
+overwriteWidth = ($width/$gameWidth) * 296
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 294
+height = 180
+overwriteWidth = ($width/$gameWidth) * 294
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 292
+height = 180
+overwriteWidth = ($width/$gameWidth) * 292
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 290
+height = 180
+overwriteWidth = ($width/$gameWidth) * 290
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 288
+height = 180
+overwriteWidth = ($width/$gameWidth) * 288
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 286
+height = 180
+formatsExcluded = 0x433
+overwriteWidth = ($width/$gameWidth) * 286
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 284
+height = 180
+overwriteWidth = ($width/$gameWidth) * 284
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 282
+height = 180
+overwriteWidth = ($width/$gameWidth) * 282
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 280
+height = 180
+overwriteWidth = ($width/$gameWidth) * 280
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 278
+height = 180
+overwriteWidth = ($width/$gameWidth) * 278
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 276
+height = 180
+overwriteWidth = ($width/$gameWidth) * 276
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 274
+height = 180
+overwriteWidth = ($width/$gameWidth) * 274
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 272
+height = 180
+overwriteWidth = ($width/$gameWidth) * 272
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 270
+height = 180
+overwriteWidth = ($width/$gameWidth) * 270
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 268
+height = 180
+overwriteWidth = ($width/$gameWidth) * 268
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 266
+height = 180
+formatsExcluded = 0x433
+overwriteWidth = ($width/$gameWidth) * 266
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 264
+height = 180
+overwriteWidth = ($width/$gameWidth) * 264
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 262
+height = 180
+overwriteWidth = ($width/$gameWidth) * 262
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 260
+height = 180
+overwriteWidth = ($width/$gameWidth) * 260
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 258
+height = 180
+overwriteWidth = ($width/$gameWidth) * 258
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 256
+height = 180
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 254
+height = 180
+overwriteWidth = ($width/$gameWidth) * 254
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 252
+height = 180
+overwriteWidth = ($width/$gameWidth) * 252
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 250
+height = 180
+overwriteWidth = ($width/$gameWidth) * 250
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] # circus
+width = 160
+height = 90
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 159
+height = 90
+overwriteWidth = ($width/$gameWidth) * 159
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 158
+height = 90
+overwriteWidth = ($width/$gameWidth) * 158
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 157
+height = 90
+overwriteWidth = ($width/$gameWidth) * 157
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 156
+height = 90
+overwriteWidth = ($width/$gameWidth) * 156
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 155
+height = 90
+overwriteWidth = ($width/$gameWidth) * 155
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 154
+height = 90
+overwriteWidth = ($width/$gameWidth) * 154
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 153
+height = 90
+overwriteWidth = ($width/$gameWidth) * 153
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 152
+height = 90
+overwriteWidth = ($width/$gameWidth) * 152
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 151
+height = 90
+overwriteWidth = ($width/$gameWidth) * 151
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 150
+height = 90
+overwriteWidth = ($width/$gameWidth) * 150
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 149
+height = 90
+overwriteWidth = ($width/$gameWidth) * 149
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 148
+height = 90
+overwriteWidth = ($width/$gameWidth) * 148
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 147
+height = 90
+overwriteWidth = ($width/$gameWidth) * 147
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 146
+height = 90
+overwriteWidth = ($width/$gameWidth) * 146
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 145
+height = 90
+overwriteWidth = ($width/$gameWidth) * 145
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 144
+height = 90
+overwriteWidth = ($width/$gameWidth) * 144
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 143
+height = 90
+overwriteWidth = ($width/$gameWidth) * 143
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 142
+height = 90
+overwriteWidth = ($width/$gameWidth) * 142
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 141
+height = 90
+overwriteWidth = ($width/$gameWidth) * 141
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 140
+height = 90
+overwriteWidth = ($width/$gameWidth) * 140
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 139
+height = 90
+overwriteWidth = ($width/$gameWidth) * 139
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 138
+height = 90
+overwriteWidth = ($width/$gameWidth) * 138
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 137
+height = 90
+overwriteWidth = ($width/$gameWidth) * 137
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 136
+height = 90
+overwriteWidth = ($width/$gameWidth) * 136
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 135
+height = 90
+overwriteWidth = ($width/$gameWidth) * 135
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 134
+height = 90
+overwriteWidth = ($width/$gameWidth) * 134
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 133
+height = 90
+overwriteWidth = ($width/$gameWidth) * 133
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 132
+height = 90
+overwriteWidth = ($width/$gameWidth) * 132
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 131
+height = 90
+overwriteWidth = ($width/$gameWidth) * 131
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 130
+height = 90
+overwriteWidth = ($width/$gameWidth) * 130
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 129
+height = 90
+overwriteWidth = ($width/$gameWidth) * 129
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 128
+height = 90
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 127
+height = 90
+overwriteWidth = ($width/$gameWidth) * 127
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 126
+height = 90
+overwriteWidth = ($width/$gameWidth) * 126
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 125
+height = 90
+overwriteWidth = ($width/$gameWidth) * 125
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # circus
+width = 120
+height = 67
+overwriteWidth = ($width/$gameWidth) * 120
+overwriteHeight = ($height/$gameHeight) * 67
+
+[TextureRedefine] # circus
+width = 80
+height = 45
+overwriteWidth = ($width/$gameWidth) * 80
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 79
+height = 45
+overwriteWidth = ($width/$gameWidth) * 79
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 78
+height = 45
+overwriteWidth = ($width/$gameWidth) * 78
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 77
+height = 45
+overwriteWidth = ($width/$gameWidth) * 77
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 76
+height = 45
+overwriteWidth = ($width/$gameWidth) * 76
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 75
+height = 45
+overwriteWidth = ($width/$gameWidth) * 75
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 74
+height = 45
+overwriteWidth = ($width/$gameWidth) * 74
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 73
+height = 45
+overwriteWidth = ($width/$gameWidth) * 73
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 72
+height = 45
+overwriteWidth = ($width/$gameWidth) * 72
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 71
+height = 45
+overwriteWidth = ($width/$gameWidth) * 71
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 70
+height = 45
+overwriteWidth = ($width/$gameWidth) * 70
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 69
+height = 45
+overwriteWidth = ($width/$gameWidth) * 69
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 68
+height = 45
+overwriteWidth = ($width/$gameWidth) * 68
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 67
+height = 45
+overwriteWidth = ($width/$gameWidth) * 67
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 66
+height = 45
+overwriteWidth = ($width/$gameWidth) * 66
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 65
+height = 45
+overwriteWidth = ($width/$gameWidth) * 65
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 64
+height = 45
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 63
+height = 45
+overwriteWidth = ($width/$gameWidth) * 63
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 62
+height = 45
+overwriteWidth = ($width/$gameWidth) * 62
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine] # circus
+width = 60
+height = 33
+overwriteWidth = ($width/$gameWidth) * 60
+overwriteHeight = ($height/$gameHeight) * 33

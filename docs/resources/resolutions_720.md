@@ -32,6 +32,13 @@ $gameHeight = 720
 # Common HD Resolutions
 
 [Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
 name = 1920x1080
 $width = 1920
 $height = 1080
