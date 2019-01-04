@@ -29,8 +29,8 @@ layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
 ivec2 resDim = textureSize2D(textureUnitPS0,0); // Retrieve texture dimensions vector holds data-type-float
-float iresX = ( (float(resDim.x)/1280) + iSharper ) - iBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
-float iresY = ( (float(resDim.y)/720) + iSharper ) - iBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
+float iresX = ( (float(resDim.x)/1280.0) + iSharper ) - iBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
+float iresY = ( (float(resDim.y)/720.0) + iSharper ) - iBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
 
 int clampFI32(int v)
 {
@@ -96,7 +96,7 @@ PV1i.y = floatBitsToInt(min(intBitsToFloat(PV0i.x), intBitsToFloat(PV0i.w)));
 PV0i.z = floatBitsToInt(min(intBitsToFloat(R2i.w), intBitsToFloat(PV1i.y)));
 PV0i.w = floatBitsToInt(max(intBitsToFloat(R2i.w), intBitsToFloat(PV1i.x)));
 // 3 
-PV1i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_remappedPS[0].x)));
+PV1i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_remappedPS[0].x) / iresX ));
 R1i.w = floatBitsToInt(intBitsToFloat(PV0i.w) + -(intBitsToFloat(PV0i.z)));
 // 4 
 R2i.y = floatBitsToInt(max(intBitsToFloat(PV1i.x), intBitsToFloat(uf_remappedPS[0].y)));
@@ -173,16 +173,16 @@ PV0i.z = R4i.z;
 R5i.w = ((PV1i.x == 0)?(0):(0x3f800000));
 PV0i.w = R5i.w;
 // 9 --- Point fo Interest
-R5i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_remappedPS[1].x))); // Default implementation division took place here - useless though
-PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].x) / iresX)); // Default implementation division took place here
+R5i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w), intBitsToFloat(uf_remappedPS[1].x) / iresX )); // Default implementation division took place here
+PV1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].x) / iresX )); // Default implementation division took place here
 PV1i.z = floatBitsToInt(max(intBitsToFloat(PV0i.x), -(intBitsToFloat(PV0i.x))));
-R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].y) / iresY)); // Default implementation division took place here
+R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(uf_remappedPS[1].y) / iresY )); // Default implementation division took place here
 PS1i = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), intBitsToFloat(PV0i.z)));
 // 10 --- Point of Interest
 R127i.x = floatBitsToInt(intBitsToFloat(PV1i.z) * intBitsToFloat(R127i.y)); // Divide looks good same as below line ----------------------------------------------------------------------
 R127i.x = clampFI32(R127i.x); // Divide looks good same as above line----------------------------------------------------------------------------------------------------
 PV0i.x = R127i.x; 
-R127i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.w),intBitsToFloat(uf_remappedPS[1].y)) + intBitsToFloat(PV1i.y))); // Default implementation division took place here
+R127i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.w),intBitsToFloat(uf_remappedPS[1].y) / iresY ) + intBitsToFloat(PV1i.y))); // Default implementation division took place here
 R127i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R1i.z),intBitsToFloat(R5i.w)) + intBitsToFloat(PS1i)));
 PV0i.z = R127i.z;
 PV0i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R2i.z), intBitsToFloat(R4i.z)));
