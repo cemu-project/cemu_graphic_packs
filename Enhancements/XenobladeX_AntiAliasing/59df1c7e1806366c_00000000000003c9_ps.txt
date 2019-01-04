@@ -2,34 +2,19 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_EXT_gpu_shader4 : enable
 
-// shader f14bb57cd5c9cb77 - dumped 1.15
-// Used for: Removing/Restoring the native BotW World Anti-Aliasing Implementation
+// shader 59df1c7e1806366c - Anti-aliasing Shader - Dumped 1.14
 
-#define preset $preset
-#define wSharper $worldSharper
-#define wBlurrier $worldBlurrier
+#define preset $Preset
+#define moreaa $MoreAA
+#define lessaa $LessAA
 
 #if (preset == 0) // Native AA Disabled
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf49b1800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
-layout(location = 0) in vec4 passParameterSem2;
-layout(location = 0) out vec4 passPixelColor0;
-void main()
-{
-passPixelColor0 = texture(textureUnitPS0, passParameterSem2.xy);
-}
-#endif
 
-#if (preset == 1) // Native AA Enabled
-uniform ivec4 uf_remappedPS[4];
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf462d000 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x37f40000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
-layout(location = 0) in vec4 passParameterSem2;
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
-uniform vec2 uf_fragCoordScale;
-
-ivec2 resDim = textureSize2D(textureUnitPS0,0); // Retrieve texture dimensions vector holds data-type-float
-float wresX = ( (float(resDim.x)/1280.0) + wSharper ) - wBlurrier; // 1st comes aaSharper needs to be added to the direct result of resolution ratio to make it more sharper
-float wresY = ( (float(resDim.y)/720.0) + wSharper ) - wBlurrier; // 2nd comes aablurier needs to be subtracted from final result to make it more blurrier
 
 int clampFI32(int v)
 {
@@ -39,20 +24,49 @@ else if( v == 0xFFFFFFFF )
 	return floatBitsToInt(0.0);
 return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
-float mul_nonIEEE(float a, float b){return mix(0.0, a*b, (a != 0.0) && (b != 0.0));}
+float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
 void main()
 {
-vec4 R0f = vec4(0.0);
-vec4 R1f = vec4(0.0); // Important variable
-vec4 R2f = vec4(0.0);
-vec4 R3f = vec4(0.0); // Important variable
-vec4 R123f = vec4(0.0);
-vec4 R126f = vec4(0.0);
-vec4 R127f = vec4(0.0);
-float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
-vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
-float PS0f = 0.0, PS1f = 0.0;
-vec4 tempf = vec4(0.0);
+passPixelColor0 = texture(textureUnitPS1, passParameterSem1.xy); // textureunitps1 as that is the one with all the colors vs unitps0 which is red viewport
+}
+#endif
+
+#if (preset == 1) // Native AA Enabled
+
+uniform ivec4 uf_remappedPS[2];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+
+ivec2 resDim = textureSize2D(textureUnitPS0,0); // Retrieve texture dimensions
+float resRatio = ( (float(resDim.x)/1280.0) + moreaa ) - lessaa; // retrieve resolution ratio, and calculate the total
+
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+ivec4 R3i = ivec4(0);
+ivec4 R4i = ivec4(0);
+ivec4 R123i = ivec4(0);
+ivec4 R126i = ivec4(0);
+ivec4 R127i = ivec4(0);
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+ivec4 PV0i = ivec4(0), PV1i = ivec4(0);
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
 float tempResultf;
 int tempResulti;
 ivec4 ARi = ivec4(0);
@@ -67,57 +81,41 @@ activeMaskStackC[0] = true;
 activeMaskStackC[1] = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
-R0f = passParameterSem2;
+R0i = floatBitsToInt(passParameterSem0 / resRatio);
+R1i = floatBitsToInt(passParameterSem1);
 if( activeMaskStackC[1] == true ) {
-R1f.xyzw = (textureGather(textureUnitPS1, R0f.xy).wzxy);
-R2f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
+R2i.xyzw = floatBitsToInt(textureGather(textureUnitPS0, intBitsToFloat(R0i.zw)).xyzw);
+R0i.x = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).x);
 }
 if( activeMaskStackC[1] == true ) {
 activeMaskStack[1] = activeMaskStack[0];
 activeMaskStackC[2] = activeMaskStackC[1];
 // 0
-PV0f.x = R1f.w + -(R1f.x);
-PV0f.y = R1f.z + -(R1f.y);
-PV0f.z = mul_nonIEEE(R2f.x, intBitsToFloat(uf_remappedPS[0].x));
-R127f.w = min(R1f.z, R1f.x);
-R127f.x = min(R1f.w, R1f.y);
-PS0f = R127f.x;
+backupReg0i = R2i.x;
+R2i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(0x3b2aaaab));
+PV0i.x = R2i.x;
+R127i.y = floatBitsToInt(max(intBitsToFloat(R2i.y), intBitsToFloat(R2i.w)));
+R127i.z = floatBitsToInt(min(intBitsToFloat(R2i.y), intBitsToFloat(R2i.w)));
 // 1
-R123f.x = (mul_nonIEEE(R2f.y,intBitsToFloat(uf_remappedPS[0].y) * wresX ) + PV0f.z); // Important line - multiply y - bundled with main point of interests looks better
-PV1f.x = R123f.x;
-PV1f.y = max(R1f.z, R1f.x);
-R127f.z = PV0f.y + -(PV0f.x);
-PV1f.z = R127f.z;
-R126f.w = PV0f.y + PV0f.x;
-PV1f.w = R126f.w;
-PS1f = max(R1f.w, R1f.y);
+PV1i.y = floatBitsToInt(min(intBitsToFloat(R2i.z), intBitsToFloat(PV0i.x)));
+PV1i.w = floatBitsToInt(max(intBitsToFloat(R2i.z), intBitsToFloat(PV0i.x)));
 // 2
-PV0f.x = max(PV1f.z, -(PV1f.z));
-PV0f.y = max(PV1f.w, -(PV1f.w));
-R123f.z = (mul_nonIEEE(R2f.z,intBitsToFloat(uf_remappedPS[0].z)) + PV1f.x);
-PV0f.z = R123f.z;
-PV0f.w = min(R127f.w, R127f.x);
-PS0f = max(PV1f.y, PS1f);
+R4i.y = floatBitsToInt(max(intBitsToFloat(R127i.y), intBitsToFloat(PV1i.w)));
+PV0i.y = R4i.y;
+R4i.z = floatBitsToInt(min(intBitsToFloat(R127i.z), intBitsToFloat(PV1i.y)));
+PV0i.z = R4i.z;
 // 3
-PV1f.x = mul_nonIEEE(PS0f, intBitsToFloat(uf_remappedPS[1].x));
-PV1f.y = max(PV0f.z, PS0f);
-PV1f.z = min(PV0f.z, PV0f.w);
-PV1f.w = min(PV0f.y, PV0f.x);
-// 4 ---Point of Interest
-R1f.x = -(PV1f.z) + PV1f.y;
-R0f.z = max(PV1f.x, intBitsToFloat(uf_remappedPS[1].y)); // Important - Divide looks blurrier/fuzzy and multiply looks sharper good
-PS0f = 1.0 / PV1f.w; 									// Important line affects aliasing strongly, increasing it is blurier and decreasing sharpens
+backupReg0i = R0i.x;
+backupReg0i = R0i.x;
+PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) * intBitsToFloat(uf_remappedPS[0].x));
+PV1i.y = floatBitsToInt(max(intBitsToFloat(backupReg0i), intBitsToFloat(PV0i.y)));
+PV1i.z = floatBitsToInt(min(intBitsToFloat(backupReg0i), intBitsToFloat(PV0i.z)));
+// 4
+R0i.x = floatBitsToInt(-(intBitsToFloat(PV1i.z)) + intBitsToFloat(PV1i.y));
+R0i.w = floatBitsToInt(max(intBitsToFloat(PV1i.x), intBitsToFloat(uf_remappedPS[0].y)));
 // 5
-PV1f.x = mul_nonIEEE(R127f.z, PS0f);
-PV1f.y = mul_nonIEEE(R126f.w, PS0f);
-// 6
-PV0f.z = max(PV1f.x, -(intBitsToFloat(uf_remappedPS[2].y)));
-PV0f.w = max(PV1f.y, -(intBitsToFloat(uf_remappedPS[2].y)));
-// 7 --- Point of Interest
-R3f.x = min(PV0f.w, intBitsToFloat(uf_remappedPS[2].y)); // Important - Another way to do it - Divide looks sharper and better and multiply looks blurier fuzzy
-R1f.y = min(PV0f.z, intBitsToFloat(uf_remappedPS[2].y)); // Important - Another Way to do it - Divide looks sharper and better and multiply looks blurier fuzzy
-// 8
-predResult = (R1f.x > R0f.z);
+backupReg0i = R0i.x;
+predResult = (intBitsToFloat(R0i.w) > intBitsToFloat(backupReg0i));
 activeMaskStack[1] = predResult;
 activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
 }
@@ -127,52 +125,131 @@ activeMaskStackC[2] = false;
 }
 if( activeMaskStackC[2] == true ) {
 // 0
-backupReg0f = R3f.x;
-backupReg0f = R3f.x;
-R3f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedPS[3].x) / wresX ) + R0f.x); // Original Implementation divided x
-R3f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedPS[3].y) / wresY ) + R0f.y); // Original Implementation divided y
-R1f.x = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].x) / wresX )) + R0f.x); // Original Implementation divided x
-PS0f = R1f.x;
-// 1
-backupReg0f = R1f.y;
-R1f.y = (mul_nonIEEE(backupReg0f,-(intBitsToFloat(uf_remappedPS[3].y) / wresY )) + R0f.y); // Original Implementation divided y
-}
-if( activeMaskStackC[2] == true ) {
-R0f.xyzw = (texture(textureUnitPS0, R3f.xy).xyzw);
-R1f.xyzw = (texture(textureUnitPS0, R1f.xy).xyzw);
-}
-if( activeMaskStackC[2] == true ) {
-// 0
-R127f.x = R0f.w + R1f.w;
-R127f.x /= 2.0;
-PV0f.x = R127f.x;
-R127f.y = R0f.z + R1f.z;
-R127f.y /= 2.0;
-PV0f.y = R127f.y;
-R127f.z = R0f.y + R1f.y;
-R127f.z /= 2.0;
-PV0f.z = R127f.z;
-R127f.w = R0f.x + R1f.x;
-R127f.w /= 2.0;
-PV0f.w = R127f.w;
-// 1
-PV1f.x = R2f.w + -(PV0f.x);
-PV1f.y = R2f.z + -(PV0f.y);
-PV1f.z = R2f.y + -(PV0f.z);
-PV1f.w = R2f.x + -(PV0f.w);
-// 2
-R2f.x = (PV1f.w * intBitsToFloat(0x3eb33333) + R127f.w);
-R2f.y = (PV1f.z * intBitsToFloat(0x3eb33333) + R127f.z);
-R2f.z = (PV1f.y * intBitsToFloat(0x3eb33333) + R127f.y);
-R2f.w = (PV1f.x * intBitsToFloat(0x3eb33333) + R127f.x);
+if(  (0 == 0)) discard;
 }
 activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
-// export
-passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
+if( activeMaskStackC[1] == true ) {
+// 0
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R2i.y),intBitsToFloat(R2i.z),intBitsToFloat(R2i.w)),vec4(-(1.0),1.0,1.0,-(1.0))));
+PV0i.x = R127i.x;
+PV0i.y = R127i.x;
+PV0i.z = R127i.x;
+PV0i.w = R127i.x;
+R127i.z = 0;
+PS0i = R127i.z;
+// 1
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R2i.y),intBitsToFloat(R2i.z),intBitsToFloat(R2i.w)),vec4(-(1.0),1.0,-(1.0),1.0)));
+PV1i.x = tempi.x; // Important
+PV1i.y = tempi.x; // Important
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R127i.y = tempi.x;
+R4i.w = 0x3f800000;
+PS1i = R4i.w;
+// 2
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R127i.x),intBitsToFloat(PV1i.x),intBitsToFloat(R127i.z),-0.0),vec4(intBitsToFloat(R127i.x),intBitsToFloat(PV1i.x),intBitsToFloat(R127i.z),0.0)));
+PV0i.x = tempi.x;
+PV0i.y = tempi.x;
+PV0i.z = tempi.x;
+PV0i.w = tempi.x;
+// 3
+tempResultf = 1.0 / sqrt(intBitsToFloat(PV0i.x));
+PS1i = floatBitsToInt(tempResultf);
+// 4
+backupReg0i = R127i.x;
+R127i.x = floatBitsToInt(intBitsToFloat(backupReg0i) * intBitsToFloat(PS1i));
+PV0i.x = R127i.x;
+R127i.w = floatBitsToInt(intBitsToFloat(R127i.y) * intBitsToFloat(PS1i));
+PV0i.w = R127i.w;
+// 5
+PV1i.x = floatBitsToInt(max(intBitsToFloat(PV0i.x), -(intBitsToFloat(PV0i.x))));
+PV1i.y = floatBitsToInt(intBitsToFloat(PV0i.w) * intBitsToFloat(uf_remappedPS[1].y));
+PV1i.z = floatBitsToInt(intBitsToFloat(PV0i.x) * intBitsToFloat(uf_remappedPS[1].x));
+PV1i.w = floatBitsToInt(max(intBitsToFloat(PV0i.w), -(intBitsToFloat(PV0i.w))));
+// 6
+R0i.x = floatBitsToInt(intBitsToFloat(R1i.x) + -(intBitsToFloat(PV1i.z)));
+R0i.y = floatBitsToInt(intBitsToFloat(R1i.y) + -(intBitsToFloat(PV1i.y)));
+PV0i.z = floatBitsToInt(min(intBitsToFloat(PV1i.x), intBitsToFloat(PV1i.w)));
+R2i.w = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(PV1i.z));
+R2i.y = floatBitsToInt(intBitsToFloat(R1i.y) + intBitsToFloat(PV1i.y));
+PS0i = R2i.y;
+// 7
+PV1i.y = floatBitsToInt(intBitsToFloat(PV0i.z) * intBitsToFloat(uf_remappedPS[0].z));
+// 8
+PS0i = floatBitsToInt(1.0 / intBitsToFloat(PV1i.y));
+// 9
+PV1i.z = floatBitsToInt(intBitsToFloat(R127i.w) * intBitsToFloat(PS0i));
+PV1i.w = floatBitsToInt(intBitsToFloat(R127i.x) * intBitsToFloat(PS0i));
+// 10
+PV0i.x = floatBitsToInt(max(intBitsToFloat(PV1i.z), intBitsToFloat(0xc0000000)));
+PV0i.y = floatBitsToInt(max(intBitsToFloat(PV1i.w), intBitsToFloat(0xc0000000)));
+// 11
+PV1i.z = floatBitsToInt(min(intBitsToFloat(PV0i.x), 2.0));
+PV1i.w = floatBitsToInt(min(intBitsToFloat(PV0i.y), 2.0));
+// 12
+PV0i.x = floatBitsToInt(intBitsToFloat(PV1i.z) * intBitsToFloat(uf_remappedPS[1].w));
+PV0i.w = floatBitsToInt(intBitsToFloat(PV1i.w) * intBitsToFloat(uf_remappedPS[1].z));
+// 13
+backupReg0i = R1i.x;
+backupReg1i = R1i.y;
+backupReg0i = R1i.x;
+backupReg1i = R1i.y;
+R1i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + -(intBitsToFloat(PV0i.w)));
+R1i.y = floatBitsToInt(intBitsToFloat(backupReg1i) + -(intBitsToFloat(PV0i.x)));
+R0i.z = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(PV0i.w));
+R0i.w = floatBitsToInt(intBitsToFloat(backupReg1i) + intBitsToFloat(PV0i.x));
 }
+if( activeMaskStackC[1] == true ) {
+R1i.xyz = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R1i.xy)).xyz);
+R3i.xyz = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.zw)).xyz);
+R0i.xyz = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.xy)).xyz);
+R2i.xyz = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R2i.wy)).xyz);
+}
+if( activeMaskStackC[1] == true ) {
+// 0
+R127i.x = floatBitsToInt(intBitsToFloat(R1i.z) + intBitsToFloat(R3i.z));
+PV0i.y = floatBitsToInt(intBitsToFloat(R1i.y) + intBitsToFloat(R3i.y));
+PV0i.z = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(R3i.x));
+// 1
+backupReg0i = R0i.x;
+PV1i.x = floatBitsToInt(intBitsToFloat(backupReg0i) + intBitsToFloat(R2i.x));
+R127i.y = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(R2i.z));
+PV1i.z = floatBitsToInt(intBitsToFloat(PV0i.y) * 0.25);
+PV1i.w = floatBitsToInt(intBitsToFloat(R0i.y) + intBitsToFloat(R2i.y));
+PS1i = floatBitsToInt(intBitsToFloat(PV0i.z) * 0.25);
+// 2
+backupReg0i = R127i.x;
+R127i.x = floatBitsToInt((intBitsToFloat(PV1i.x) * 0.25 + intBitsToFloat(PS1i)));
+PV0i.y = floatBitsToInt(intBitsToFloat(backupReg0i) * 0.25);
+R127i.z = PV1i.x;
+R127i.z = floatBitsToInt(intBitsToFloat(R127i.z) / 2.0);
+R127i.w = floatBitsToInt((intBitsToFloat(PV1i.w) * 0.25 + intBitsToFloat(PV1i.z)));
+PV0i.w = R127i.w;
+R126i.y = PV1i.w;
+R126i.y = floatBitsToInt(intBitsToFloat(R126i.y) / 2.0);
+PS0i = R126i.y;
+// 3
+PV1i.x = ((intBitsToFloat(PV0i.w) > intBitsToFloat(R4i.y))?int(0xFFFFFFFF):int(0x0));
+PV1i.y = ((intBitsToFloat(R4i.z) > intBitsToFloat(PV0i.w))?int(0xFFFFFFFF):int(0x0));
+R126i.z = floatBitsToInt((intBitsToFloat(R127i.y) * 0.25 + intBitsToFloat(PV0i.y)));
+R126i.w = R127i.y;
+R126i.w = floatBitsToInt(intBitsToFloat(R126i.w) / 2.0);
+// 4
+R123i.w = ((PV1i.y == 0)?(PV1i.x):(int(-1)));
+PV0i.w = R123i.w;
+// 5
+R4i.x = ((PV0i.w == 0)?(R127i.x):(R127i.z));
+R4i.y = ((PV0i.w == 0)?(R127i.w):(R126i.y));
+R4i.z = ((PV0i.w == 0)?(R126i.z):(R126i.w));
+}
+// export
+passPixelColor0 = vec4(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
+}
+
 #endif
 
-#if (preset == 2) // FXAA
+#if (preset == 2) // Nvidia FXAA Enabled
+
 /*-----------------------------settings-------------------------------------*/
 
 #define Subpix               $subPix  //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
@@ -1053,21 +1130,21 @@ FxaaFloat4 FxaaPixelShader(
 //----------------------------------------------------------------------------------
 //#version 100
 
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf49b1800 res 1280x720x1 dim 1 tm: 4 format 0019 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x37f40000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
-layout(location = 0) in vec4 passParameterSem2;
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-ivec2 resolution = textureSize2D(textureUnitPS0,0); // Retrieve Texture Dimensions in float data type so we dont need to convert
-float wresRatio = float(resolution.x)/1280; // Needed in multiplying
+ivec2 resolution = textureSize2D(textureUnitPS0,0); // Retrieve Texture Dimensions
 
 precision highp float;
 
 vec2 RcpFrame = vec2(1.0 / float(resolution.x), 1.0 / float(resolution.y));
 void main()
 {
-passPixelColor0 = FxaaPixelShader(passParameterSem2.xy, textureUnitPS0, RcpFrame, Subpix, EdgeThreshold, EdgeThresholdMin);
+passPixelColor0 = FxaaPixelShader(passParameterSem1.xy, textureUnitPS1, RcpFrame, Subpix, EdgeThreshold, EdgeThresholdMin);
 }
 
 #endif
