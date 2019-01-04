@@ -610,6 +610,7 @@ overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 288
 
 # Improve Color Banding for GUI Format 0x019
+# 0x019 - R10_G10_B10_A2_UNORM ------> 0x01f - R16_G16_B16_A16_UNORM
 
 [TextureRedefine]
 width = 1280
