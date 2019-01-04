@@ -23,8 +23,16 @@ name = 20FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 20
 
 [Preset]
+name = 33FPS (ideal for 165Hz displays)
+$targetFPS:int = 33
+
+[Preset]
 name = 48FPS (ideal for 144Hz displays)
 $targetFPS:int = 48
+
+[Preset]
+name = 55FPS (ideal for 165Hz displays)
+$targetFPS:int = 55
 
 [Preset]
 name = 72FPS (ideal for 144Hz displays)
@@ -41,6 +49,10 @@ $targetFPS:int = 120
 [Preset]
 name = 144FPS (ideal for 144Hz displays)
 $targetFPS:int = 144
+
+[Preset]
+name = 165FPS (ideal for 165Hz displays)
+$targetFPS:int = 165
 
 [Control]
 vsyncFrequency = $targetFPS
