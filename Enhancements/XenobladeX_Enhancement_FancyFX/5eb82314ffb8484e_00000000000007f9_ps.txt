@@ -1,0 +1,567 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 5eb82314ffb8484e
+//cross fade blur prel
+uniform ivec4 uf_remappedPS[7];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 320x180x1 dim 1 tm: 4 format 0820 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+layout(location = 1) out vec4 passPixelColor1;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R5f = vec4(0.0);
+vec4 R6f = vec4(0.0);
+vec4 R7f = vec4(0.0);
+vec4 R8f = vec4(0.0);
+vec4 R9f = vec4(0.0);
+vec4 R10f = vec4(0.0);
+vec4 R11f = vec4(0.0);
+vec4 R12f = vec4(0.0);
+vec4 R13f = vec4(0.0);
+vec4 R14f = vec4(0.0);
+vec4 R15f = vec4(0.0);
+vec4 R16f = vec4(0.0);
+vec4 R17f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R124f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+R14f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
+// 0
+R1f.x = R0f.x + intBitsToFloat(uf_remappedPS[0].x);
+R1f.y = R0f.y + intBitsToFloat(uf_remappedPS[0].y);
+R0f.z = R0f.x + intBitsToFloat(uf_remappedPS[0].z);
+R0f.w = R0f.y + intBitsToFloat(uf_remappedPS[0].w);
+R17f.w = R14f.w;
+PS0f = R17f.w;
+// 1
+R2f.x = R0f.x + intBitsToFloat(uf_remappedPS[1].x);
+R2f.y = R0f.y + intBitsToFloat(uf_remappedPS[1].y);
+R1f.z = R0f.x + intBitsToFloat(uf_remappedPS[1].z);
+R1f.w = R0f.y + intBitsToFloat(uf_remappedPS[1].w);
+R16f.w = R14f.w;
+PS1f = R16f.w;
+// 2
+R3f.x = R0f.x + intBitsToFloat(uf_remappedPS[2].x);
+R3f.y = R0f.y + intBitsToFloat(uf_remappedPS[2].y);
+R2f.z = R0f.x + intBitsToFloat(uf_remappedPS[2].z);
+R2f.w = R0f.y + intBitsToFloat(uf_remappedPS[2].w);
+// 3
+R4f.x = R0f.x + intBitsToFloat(uf_remappedPS[3].x);
+R4f.y = R0f.y + intBitsToFloat(uf_remappedPS[3].y);
+R3f.z = R0f.x + intBitsToFloat(uf_remappedPS[3].z);
+R3f.w = R0f.y + intBitsToFloat(uf_remappedPS[3].w);
+R5f.xyzw = (texture(textureUnitPS0, R1f.xy).xyzw);
+R6f.xyzw = (texture(textureUnitPS0, R0f.zw).xyzw);
+R7f.xyzw = (texture(textureUnitPS0, R2f.xy).xyzw);
+R9f.xyzw = (texture(textureUnitPS0, R1f.zw).xyzw);
+R8f.xyzw = (texture(textureUnitPS0, R3f.xy).xyzw);
+R10f.xyzw = (texture(textureUnitPS0, R2f.zw).xyzw);
+R11f.xyzw = (texture(textureUnitPS0, R4f.xy).xyzw);
+R12f.xyzw = (texture(textureUnitPS0, R3f.zw).xyzw);
+// 0
+R4f.x = R0f.x + intBitsToFloat(uf_remappedPS[4].x);
+R4f.y = R0f.y + intBitsToFloat(uf_remappedPS[4].y);
+R3f.z = R0f.x + intBitsToFloat(uf_remappedPS[4].z);
+R3f.w = R0f.y + intBitsToFloat(uf_remappedPS[4].w);
+R127f.x = R5f.w + -(0.5);
+R127f.x *= 2.0;
+R127f.x = clamp(R127f.x, 0.0, 1.0);
+PS0f = R127f.x;
+// 1
+backupReg0f = R0f.x;
+backupReg1f = R0f.y;
+backupReg0f = R0f.x;
+backupReg1f = R0f.y;
+R0f.x = backupReg0f + intBitsToFloat(uf_remappedPS[5].z);
+R0f.y = backupReg1f + intBitsToFloat(uf_remappedPS[5].w);
+R2f.z = backupReg0f + intBitsToFloat(uf_remappedPS[5].x);
+R2f.w = backupReg1f + intBitsToFloat(uf_remappedPS[5].y);
+PS1f = R5f.x + -(0.0);
+// 2
+R126f.x = R127f.x + 1.0;
+PV0f.y = R5f.z + -(0.0);
+PV0f.z = R5f.y + -(0.0);
+R127f.w = R6f.w + -(0.5);
+R127f.w *= 2.0;
+R127f.w = clamp(R127f.w, 0.0, 1.0);
+R125f.x = (R127f.x * PS1f + R14f.x);
+PS0f = R125f.x;
+// 3
+PV1f.x = R6f.x + -(0.0);
+PV1f.y = R6f.y + -(0.0);
+R123f.z = (R127f.x * PV0f.y + R14f.z);
+PV1f.z = R123f.z;
+R123f.w = (R127f.x * PV0f.z + R14f.y);
+PV1f.w = R123f.w;
+PS1f = R6f.z + -(0.0);
+// 4
+R3f.x = R7f.w + -(0.5);
+R3f.x *= 2.0;
+R3f.x = clamp(R3f.x, 0.0, 1.0);
+R3f.y = R126f.x + R127f.w;
+R1f.z = (R127f.w * PV1f.y + PV1f.w);
+R1f.w = (R127f.w * PV1f.x + R125f.x);
+R2f.y = (R127f.w * PS1f + PV1f.z);
+PS0f = R2f.y;
+R4f.xyzw = (texture(textureUnitPS0, R4f.xy).xyzw);
+R13f.xyzw = (texture(textureUnitPS0, R3f.zw).xyzw);
+R15f.xyzw = (texture(textureUnitPS0, R0f.xy).xyzw);
+R0f.xyzw = (texture(textureUnitPS0, R2f.zw).xyzw);
+// 0
+R126f.x = R3f.y + R3f.x;
+PV0f.y = R7f.z + -(0.0);
+PV0f.z = R7f.y + -(0.0);
+PV0f.w = R7f.x + -(0.0);
+R127f.z = R9f.w + -(0.5);
+R127f.z *= 2.0;
+R127f.z = clamp(R127f.z, 0.0, 1.0);
+PS0f = R127f.z;
+// 1
+R123f.x = (R3f.x * PV0f.w + R1f.w);
+PV1f.x = R123f.x;
+R127f.y = R5f.w + -(intBitsToFloat(0x3f666666));
+R126f.z = (R3f.x * PV0f.y + R2f.y);
+R127f.w = (R3f.x * PV0f.z + R1f.z);
+PS1f = R9f.x + -(0.0);
+// 2
+PV0f.x = R9f.y + -(0.0);
+R126f.y = R126f.x + R127f.z;
+R124f.z = R8f.w + -(0.5);
+R124f.z *= 2.0;
+R124f.z = clamp(R124f.z, 0.0, 1.0);
+PV0f.w = R9f.z + -(0.0);
+R125f.z = (R127f.z * PS1f + PV1f.x);
+PS0f = R125f.z;
+// 3
+R126f.x = (R127f.z * PV0f.w + R126f.z);
+R125f.y = (R127f.z * PV0f.x + R127f.w);
+R126f.z = R127f.y * intBitsToFloat(0x41200000);
+R126f.z = clamp(R126f.z, 0.0, 1.0);
+R127f.w = -(R14f.x) + R5f.x;
+R127f.z = -(R14f.y) + R5f.y;
+PS1f = R127f.z;
+// 4
+R125f.x = R6f.w + -(intBitsToFloat(0x3f666666));
+R124f.y = -(R14f.z) + R5f.z;
+R5f.z = R7f.w + -(intBitsToFloat(0x3f666666));
+PV0f.w = R8f.x + -(0.0);
+R127f.y = R8f.y + -(0.0);
+PS0f = R127f.y;
+// 5
+backupReg0f = R126f.y;
+backupReg1f = R125f.z;
+PV1f.x = R8f.z + -(0.0);
+R126f.y = R8f.w + -(intBitsToFloat(0x3f666666));
+R125f.z = backupReg0f + R124f.z;
+R125f.w = R10f.w + -(0.5);
+R125f.w *= 2.0;
+R125f.w = clamp(R125f.w, 0.0, 1.0);
+R126f.w = (R124f.z * PV0f.w + backupReg1f);
+PS1f = R126f.w;
+// 6
+backupReg0f = R126f.x;
+backupReg1f = R127f.y;
+backupReg2f = R127f.z;
+R126f.x = (R127f.w * R126f.z + R14f.x);
+R127f.y = (R124f.z * PV1f.x + backupReg0f);
+R127f.z = (R124f.z * backupReg1f + R125f.y);
+R124f.w = (backupReg2f * R126f.z + R14f.y);
+R5f.w = R125f.x * intBitsToFloat(0x41200000);
+R5f.w = clamp(R5f.w, 0.0, 1.0);
+PS0f = R5f.w;
+// 7
+backupReg0f = R124f.y;
+backupReg1f = R126f.z;
+R125f.x = -(R14f.x) + R6f.x;
+R124f.y = -(R14f.y) + R6f.y;
+R126f.z = (backupReg0f * backupReg1f + R14f.z);
+R6f.w = -(R14f.z) + R6f.z;
+R1f.w = -(R14f.x) + R7f.x;
+PS1f = R1f.w;
+// 8
+backupReg0f = R126f.y;
+R127f.x = R5f.z * intBitsToFloat(0x41200000);
+R127f.x = clamp(R127f.x, 0.0, 1.0);
+R126f.y = -(R14f.z) + R7f.z;
+R124f.z = -(R14f.y) + R7f.y;
+R7f.w = R9f.w + -(intBitsToFloat(0x3f666666));
+R2f.w = backupReg0f * intBitsToFloat(0x41200000);
+R2f.w = clamp(R2f.w, 0.0, 1.0);
+PS0f = R2f.w;
+// 9
+R124f.x = -(R14f.z) + R8f.z;
+R125f.y = -(R14f.y) + R8f.y;
+R8f.z = -(R14f.x) + R8f.x;
+R127f.w = R10f.x + -(0.0);
+PS1f = R10f.y + -(0.0);
+// 10
+R8f.x = R10f.w + -(intBitsToFloat(0x3f666666));
+R6f.y = R125f.z + R125f.w;
+PV0f.z = R10f.z + -(0.0);
+R8f.w = R11f.w + -(0.5);
+R8f.w *= 2.0;
+R8f.w = clamp(R8f.w, 0.0, 1.0);
+R5f.x = (R125f.w * PS1f + R127f.z);
+PS0f = R5f.x;
+// 11
+backupReg0f = R126f.x;
+backupReg1f = R124f.z;
+R126f.x = max(R14f.x, backupReg0f);
+R5f.y = (R125f.w * R127f.w + R126f.w);
+R124f.z = max(R14f.z, R126f.z);
+R3f.w = (R125f.w * PV0f.z + R127f.y);
+R126f.w = (backupReg1f * R127f.x + R14f.y);
+PS1f = R126f.w;
+// 12
+backupReg0f = R125f.x;
+backupReg1f = R126f.y;
+R125f.x = max(R14f.y, R124f.w);
+R126f.y = (R6f.w * R5f.w + R14f.z);
+R126f.z = (R124f.y * R5f.w + R14f.y);
+R124f.w = (backupReg0f * R5f.w + R14f.x);
+R125f.z = (backupReg1f * R127f.x + R14f.z);
+PS0f = R125f.z;
+// 13
+backupReg0f = R127f.x;
+backupReg1f = R9f.z;
+R127f.x = (R1f.w * backupReg0f + R14f.x);
+R124f.y = -(R14f.x) + R9f.x;
+R9f.z = R7f.w * intBitsToFloat(0x41200000);
+R9f.z = clamp(R9f.z, 0.0, 1.0);
+R125f.w = -(R14f.y) + R9f.y;
+R1f.w = -(R14f.z) + backupReg1f;
+PS1f = R1f.w;
+// 14
+backupReg0f = R124f.x;
+backupReg1f = R125f.y;
+R124f.x = (backupReg0f * R2f.w + R14f.z);
+R125f.y = R8f.x * intBitsToFloat(0x41200000);
+R125f.y = clamp(R125f.y, 0.0, 1.0);
+R127f.z = (backupReg1f * R2f.w + R14f.y);
+R127f.w = (R8f.z * R2f.w + R14f.x);
+R2f.w = -(R14f.y) + R10f.y;
+PS0f = R2f.w;
+// 15
+backupReg0f = R10f.x;
+backupReg1f = R10f.z;
+R10f.x = -(R14f.x) + backupReg0f;
+R127f.y = R11f.y + -(0.0);
+R10f.zwy = vec3(-(R14f.z),R11f.x,R11f.z) + vec3(backupReg1f,-(0.0),-(0.0));
+PS1f = R10f.y;
+// 16
+backupReg0f = R126f.x;
+backupReg1f = R124f.z;
+backupReg2f = R126f.y;
+R126f.x = max(backupReg0f, R124f.w);
+R126f.y = max(R125f.x, R126f.z);
+R126f.z = R6f.y + R8f.w;
+R7f.w = R12f.w + -(0.5);
+R7f.w *= 2.0;
+R7f.w = clamp(R7f.w, 0.0, 1.0);
+R124f.z = max(backupReg1f, backupReg2f);
+PS0f = R124f.z;
+// 17
+R8f.x = max(R124f.x, R125f.z);
+R9f.y = max(R127f.z, R126f.w);
+R127f.z = max(R127f.w, R127f.x);
+R127f.w = (R124f.y * R9f.z + R14f.x);
+R124f.y = (R125f.w * R9f.z + R14f.y);
+PS1f = R124f.y;
+// 18
+backupReg0f = R127f.y;
+R127f.x = (R1f.w * R9f.z + R14f.z);
+R127f.y = (R10f.x * R125f.y + R14f.x);
+R125f.z = (R2f.w * R125f.y + R14f.y);
+R1f.w = (R10f.z * R125f.y + R14f.z);
+R2f.w = (R8f.w * backupReg0f + R5f.x);
+PS0f = R2f.w;
+// 19
+backupReg0f = R10f.y;
+R10f.x = (R8f.w * R10f.w + R5f.y);
+R10f.y = R12f.x + -(0.0);
+R9f.z = (R8f.w * backupReg0f + R3f.w);
+R8f.w = R12f.y + -(0.0);
+R9f.x = R12f.z + -(0.0);
+PS1f = R9f.x;
+// 20
+R7f.x = R12f.w + -(intBitsToFloat(0x3f666666));
+R8f.y = R11f.w + -(intBitsToFloat(0x3f666666));
+R10f.z = R126f.z + R7f.w;
+R10f.w = max(R126f.y, R124f.y);
+R7f.y = max(R124f.z, R127f.x);
+PS0f = R7f.y;
+// 21
+backupReg0f = R9f.y;
+R6f.x = R13f.w + -(intBitsToFloat(0x3f666666));
+R9f.y = max(R126f.x, R127f.w);
+R8f.z = max(R127f.y, R127f.z);
+R9f.w = R4f.w + -(0.5);
+R9f.w *= 2.0;
+R9f.w = clamp(R9f.w, 0.0, 1.0);
+R5f.z = max(R125f.z, backupReg0f);
+PS1f = R5f.z;
+// 0
+R127f.x = (R7f.w * R9f.x + R9f.z);
+R127f.y = max(R1f.w, R8f.x);
+R125f.z = R8f.y * intBitsToFloat(0x41200000);
+R125f.z = clamp(R125f.z, 0.0, 1.0);
+R127f.w = (R7f.w * R10f.y + R10f.x);
+R124f.y = -(R14f.z) + R11f.z;
+PS0f = R124f.y;
+// 1
+R125f.x = -(R14f.y) + R11f.y;
+R11f.y = R7f.x * intBitsToFloat(0x41200000);
+R11f.y = clamp(R11f.y, 0.0, 1.0);
+R127f.z = (R7f.w * R8f.w + R2f.w);
+R125f.w = -(R14f.x) + R11f.x;
+R125f.y = -(R14f.y) + R12f.y;
+PS1f = R125f.y;
+// 2
+backupReg0f = R12f.x;
+R12f.x = -(R14f.z) + R12f.z;
+R126f.yzw = vec3(R4f.x,-(R14f.x),R4f.y) + vec3(-(0.0),backupReg0f,-(0.0));
+R126f.x = R4f.z + -(0.0);
+PS0f = R126f.x;
+// 3
+backupReg0f = R10f.z;
+R124f.x = R4f.w + -(intBitsToFloat(0x3f666666));
+R8f.y = R6f.x * intBitsToFloat(0x41200000);
+R8f.y = clamp(R8f.y, 0.0, 1.0);
+R10f.z = R13f.w + -(0.5);
+R10f.z *= 2.0;
+R10f.z = clamp(R10f.z, 0.0, 1.0);
+R124f.w = backupReg0f + R9f.w;
+R12f.y = -(R14f.x) + R13f.x;
+PS1f = R12f.y;
+// 4
+backupReg0f = R127f.x;
+R127f.x = -(R14f.y) + R13f.y;
+R10f.y = max(R9f.y, R8f.z);
+R124f.z = R15f.w + -(intBitsToFloat(0x3f666666));
+R12f.w = -(R14f.z) + R13f.z;
+R9f.y = (R9f.w * R126f.x + backupReg0f);
+PS0f = R9f.y;
+// 5
+backupReg0f = R124f.x;
+backupReg1f = R7f.y;
+backupReg2f = R10f.w;
+R124f.x = (R9f.w * R126f.y + R127f.w);
+R7f.y = backupReg0f * intBitsToFloat(0x41200000);
+R7f.y = clamp(R7f.y, 0.0, 1.0);
+R12f.z = max(backupReg1f, R127f.y);
+R10f.w = max(backupReg2f, R5f.z);
+R5f.z = -(R14f.x) + R4f.x;
+PS1f = R5f.z;
+// 6
+backupReg0f = R127f.z;
+R126f.x = (R125f.w * R125f.z + R14f.x);
+R126f.y = (R124f.y * R125f.z + R14f.z);
+R127f.z = (R9f.w * R126f.w + backupReg0f);
+R125f.w = (R125f.x * R125f.z + R14f.y);
+R127f.y = (R12f.x * R11f.y + R14f.z);
+PS0f = R127f.y;
+// 7
+backupReg0f = R125f.y;
+backupReg1f = R126f.z;
+R12f.x = -(R14f.z) + R4f.z;
+R125f.y = R13f.x + -(0.0);
+R126f.z = (backupReg0f * R11f.y + R14f.y);
+R126f.w = (backupReg1f * R11f.y + R14f.x);
+R8f.z = R0f.w + -(0.5);
+R8f.z *= 2.0;
+R8f.z = clamp(R8f.z, 0.0, 1.0);
+PS1f = R8f.z;
+// 8
+backupReg0f = R4f.y;
+R125f.x = R13f.y + -(0.0);
+R4f.y = -(R14f.y) + backupReg0f;
+R125f.z = R124f.w + R10f.z;
+R124f.w = R13f.z + -(0.0);
+R127f.w = R0f.w + -(intBitsToFloat(0x3f666666));
+PS0f = R127f.w;
+// 9
+backupReg0f = R127f.x;
+R127f.x = (R12f.w * R8f.y + R14f.z);
+R124f.y = (backupReg0f * R8f.y + R14f.y);
+R123f.z = (R12f.y * R8f.y + R14f.x);
+PV1f.z = R123f.z;
+R12f.w = R124f.z * intBitsToFloat(0x41200000);
+R12f.w = clamp(R12f.w, 0.0, 1.0);
+R4f.x = -(R14f.x) + R15f.x;
+PS1f = R4f.x;
+// 10
+R13f.x = (R10f.z * R125f.y + R124f.x);
+R125f.y = max(PV1f.z, R126f.w);
+R124f.z = -(R14f.z) + R15f.z;
+R126f.w = -(R14f.y) + R15f.y;
+R124f.x = max(R10f.w, R125f.w);
+PS0f = R124f.x;
+// 11
+backupReg0f = R125f.x;
+backupReg1f = R124f.y;
+R125f.x = (R10f.z * R124f.w + R9f.y);
+R124f.y = (R10f.z * backupReg0f + R127f.z);
+R10f.z = max(backupReg1f, R126f.z);
+R125f.w = max(R127f.x, R127f.y);
+R127f.y = R0f.x + -(0.0);
+PS1f = R127f.y;
+// 12
+backupReg0f = R126f.x;
+backupReg1f = R126f.y;
+backupReg2f = R127f.w;
+R126f.x = (R5f.z * R7f.y + R14f.x);
+R126f.y = max(R10f.y, backupReg0f);
+R126f.z = (R12f.x * R7f.y + R14f.z);
+R127f.w = max(R12f.z, backupReg1f);
+R5f.z = backupReg2f * intBitsToFloat(0x41200000);
+R5f.z = clamp(R5f.z, 0.0, 1.0);
+PS0f = R5f.z;
+// 13
+backupReg0f = R4f.y;
+R12f.x = -(R14f.z) + R0f.z;
+R4f.y = -(R14f.x) + R0f.x;
+R127f.z = (backupReg0f * R7f.y + R14f.y);
+R124f.w = R0f.z + -(0.0);
+R7f.y = R15f.w + -(0.5);
+R7f.y *= 2.0;
+R7f.y = clamp(R7f.y, 0.0, 1.0);
+PS1f = R7f.y;
+// 14
+backupReg0f = R0f.y;
+backupReg1f = R125f.z;
+R127f.x = R0f.y + -(0.0);
+R0f.y = -(R14f.y) + backupReg0f;
+R125f.z = backupReg1f + R8f.z;
+R123f.w = (R4f.x * R12f.w + R14f.x);
+PV0f.w = R123f.w;
+R0f.x = (R126f.w * R12f.w + R14f.y);
+PS0f = R0f.x;
+// 15
+backupReg0f = R126f.x;
+R126f.x = max(R126f.y, backupReg0f);
+R126f.y = max(R124f.x, R127f.z);
+R127f.z = max(PV0f.w, R125f.y);
+R123f.w = (R124f.z * R12f.w + R14f.z);
+PV1f.w = R123f.w;
+R124f.x = R15f.x + -(0.0);
+PS1f = R124f.x;
+// 16
+backupReg0f = R127f.x;
+backupReg1f = R126f.z;
+R127f.x = (R8f.z * R127f.y + R13f.x);
+R127f.y = (R8f.z * backupReg0f + R124f.y);
+R126f.z = max(R127f.w, backupReg1f);
+R127f.w = (R8f.z * R124f.w + R125f.x);
+R124f.y = max(PV1f.w, R125f.w);
+PS0f = R124f.y;
+// 17
+R123f.x = (R4f.y * R5f.z + R14f.x);
+PV1f.x = R123f.x;
+R123f.y = (R0f.y * R5f.z + R14f.y);
+PV1f.y = R123f.y;
+R124f.z = max(R0f.x, R10f.z);
+// 18
+backupReg0f = R126f.y;
+R123f.x = (R12f.x * R5f.z + R14f.z);
+PV0f.x = R123f.x;
+R126f.y = max(R126f.x, PV1f.x);
+PV0f.z = R15f.z + -(0.0);
+PV0f.w = R15f.y + -(0.0);
+R5f.z = max(backupReg0f, PV1f.y);
+PS0f = R5f.z;
+// 19
+backupReg0f = R127f.x;
+backupReg1f = R126f.z;
+backupReg2f = R127f.w;
+R127f.x = (R7f.y * PV0f.w + R127f.y);
+R127f.y = (R7f.y * R124f.x + backupReg0f);
+R126f.z = R125f.z + R7f.y;
+R127f.w = max(backupReg1f, PV0f.x);
+R125f.w = (R7f.y * PV0f.z + backupReg2f);
+PS1f = R125f.w;
+// 20
+PV0f.x = max(R10f.y, R127f.z);
+PV0f.z = max(R12f.z, R124f.y);
+PV0f.w = max(R10f.w, R124f.z);
+R127f.z = 1.0 / R6f.y;
+PS0f = R127f.z;
+// 21
+backupReg0f = R126f.y;
+R124f.x = max(PV0f.w, R5f.z);
+R126f.y = max(PV0f.x, backupReg0f);
+R5f.z = R5f.y * PS0f;
+R14f.w = max(PV0f.z, R127f.w);
+PS1f = 1.0 / R126f.z;
+// 22
+backupReg0f = R3f.w;
+R12f.x = R5f.x * R127f.z;
+PV0f.x = R12f.x;
+R5f.y = R127f.y * PS1f;
+PV0f.y = R5f.y;
+R14f.z = R127f.x * PS1f;
+PV0f.z = R14f.z;
+R3f.w = backupReg0f * R127f.z;
+PV0f.w = R3f.w;
+R15f.z = R125f.w * PS1f;
+PS0f = R15f.z;
+// 23
+backupReg0f = R10f.y;
+backupReg1f = R12f.z;
+R5f.x = R10f.w + -(PV0f.x);
+R10f.y = backupReg0f + -(R5f.z);
+R12f.z = -(PV0f.y) + R126f.y;
+R10f.w = backupReg1f + -(PV0f.w);
+R6f.y = -(PV0f.z) + R124f.x;
+PS1f = R6f.y;
+// 0
+PV0f.x = -(R15f.z) + R14f.w;
+R17f.y = (R5f.x * intBitsToFloat(uf_remappedPS[6].x) + R12f.x);
+R17f.z = (R10f.w * intBitsToFloat(uf_remappedPS[6].x) + R3f.w);
+R17f.x = (R10f.y * intBitsToFloat(uf_remappedPS[6].x) + R5f.z);
+PS0f = R17f.x;
+// 1
+R16f.x = (R12f.z * intBitsToFloat(uf_remappedPS[6].x) + R5f.y);
+PV1f.x = R16f.x;
+R16f.y = (R6f.y * intBitsToFloat(uf_remappedPS[6].x) + R14f.z);
+PV1f.y = R16f.y;
+R16f.z = (PV0f.x * intBitsToFloat(uf_remappedPS[6].x) + R15f.z);
+PV1f.z = R16f.z;
+// 2
+R1f.xyz = vec3(PV1f.x,PV1f.y,PV1f.z);
+R1f.w = R16f.w;
+// 3
+R0f.xyz = vec3(R17f.x,R17f.y,R17f.z);
+R0f.w = R17f.w;
+// export
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+passPixelColor1 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+}

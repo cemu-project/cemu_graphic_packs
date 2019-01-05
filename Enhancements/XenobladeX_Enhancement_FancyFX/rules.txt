@@ -1,0 +1,57 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Fancy gfx # I would have called this RTX on, but Nvidia has trademarked it ;)
+path = "Xenoblade Chronicles X/Enhancements/Fancy fx" 
+description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia.   
+version = 3
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x816
+overwriteFormat = 0x820
+
+[Preset]
+name = 1080 -> 1440 
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.75
+$dither = 0.15
+$scaleShader = (1440.0/1080.0)
+$scaleBlur = 0.5
+
+[Preset]
+name = 1440 -> 2880 
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = (1440.0/2160.0)
+$dither = 0.25
+$scaleShader = 1.0 #round 1.5 shadow to 2.0
+$scaleBlur = 0.75
+
+[Preset]
+name = 2880+ (probably won't look good)
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.5
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
