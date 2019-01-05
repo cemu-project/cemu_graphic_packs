@@ -123,8 +123,6 @@ _arrowTimeDrain = 0x00000114
 0x02D5F760 = bla _arrowTimeDrain
 0x037DC35C = lis r12, _speedDiv@ha		#Audio fix
 0x037DC360 = lfs f13, _speedDiv@l(r12)
-0x037DBDF8 = lis r11, _speedDiv@ha
-0x037DBDFC = lfs f31, _speedDiv@l(r11)
 
 
 #break all forms of frame limiting
@@ -261,6 +259,8 @@ _arrowTimeDrain = 0x00000114
 0x02D907EC = lis r10, _averageFPS@ha
 0x02D907F0 = lfs f11, _averageFPS@l(r10)
 0x02D5F200 = bla _arrowTimeDrain
+0x037DB654 = lis r12, _speedDiv@ha
+0x037DB658 = lfs f13, _speedDiv@l(r12)
 
 # Break all forms of frame limiting
 0x031FA000 = bla _fenceNeg1
