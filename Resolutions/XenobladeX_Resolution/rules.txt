@@ -5,6 +5,7 @@ path = "Xenoblade Chronicles X/Graphics/Resolution"
 description = Changes the resolution of the game. 
 version = 3
 
+
 [Preset]
 name = 1280x720 (Default)
 $width = 1280
@@ -166,6 +167,24 @@ $scaleBlur = 1.0
 #$scaleShader = 1.0
 #$scaleBlur = 1.0
 
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x816
+overwriteFormat = 0x820
+
 #[TextureRedefine] #moved to fancy gfx for better compatibility
 #width = 1280
 #height = 720
@@ -246,7 +265,7 @@ overwriteHeight = ($height/$gameHeight) * (368*$internalRes)
 [TextureRedefine]
 width = 640
 height = 360
-formatsExcluded = 0x41A,0x033,0x031 #dialog prompt fixes, XCX Logo NLA 
+formatsExcluded = 0x033,0x031 #dialog prompt fixes, XCX Logo NLA 
 tileModesExcluded = 0x001 # fmv sub colour
 overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
@@ -346,6 +365,22 @@ formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 128
 
+[TextureRedefine] # skell view 8
+width = 128
+height = 80
+formats = 0x816 #,0x035,0x034,0x033,0x031
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine] # skell view
+width = 128
+height = 72
+formats = 0x816 #,0x035,0x034,0x033,0x031
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 128
+
 #[TextureRedefine] 
 #width = 127
 #height = 127
@@ -380,6 +415,13 @@ height = 32
 formats = 0x816,0x806 #0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
 overwriteWidth = ($width/$gameWidth) * (64*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
+
+[TextureRedefine] #skell view
+width = 40
+height = 24
+#formats = 
+overwriteWidth = ($width/$gameWidth) * (40*$internalRes)
+overwriteHeight  = ($height/$gameHeight) * (24*$internalRes)
 
 [TextureRedefine] 
 width = 32

@@ -5,23 +5,23 @@ path = "Xenoblade Chronicles X/Enhancements/Fancy FX"
 description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia.   
 version = 3
 
-[TextureRedefine]
-width = 1280
-height = 720
-formats = 0x816
-overwriteFormat = 0x820
-
-[TextureRedefine]
-width = 640
-height = 368
-formats = 0x816
-overwriteFormat = 0x820
-
-[TextureRedefine]
-width = 640
-height = 360
-formats = 0x816
-overwriteFormat = 0x820
+#[TextureRedefine]
+#width = 1280
+#height = 720
+#formats = 0x816
+#overwriteFormat = 0x820
+#
+#[TextureRedefine]
+#width = 640
+#height = 368
+#formats = 0x816
+#overwriteFormat = 0x820
+#
+#[TextureRedefine]
+#width = 640
+#height = 360
+#formats = 0x816
+#overwriteFormat = 0x820
 
 [Preset]
 name = 1080 -> 1440 
