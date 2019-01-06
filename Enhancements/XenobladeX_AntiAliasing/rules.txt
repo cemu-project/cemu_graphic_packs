@@ -6,15 +6,15 @@ description = Enables or Disables Native Anti-Aliasing. Also includes an alterna
 version = 3
 
 [Preset]
-name = Disable Native AA
-$Preset:int = 0
+name = Nvidias FXAA
+$Preset:int = 2
 #
 $LessAA = 0.0 # Ignore
 $MoreAA = 0.0 # Ignore
 #
-$subPix = 0.75 # Ignore 
-$edgeThreshold = 0.166 # Ignore
-$edgeThresholdMin = 0.0312 # Ignore
+$subPix = 1.0
+$edgeThreshold = 0.125
+$edgeThresholdMin = 0.0156
 
 [Preset]
 name = Enable Native AA
@@ -39,15 +39,15 @@ $edgeThreshold = 0.166 # Ignore
 $edgeThresholdMin = 0.0312 # Ignore
 
 [Preset]
-name = Nvidias FXAA
-$Preset:int = 2
+name = Disable Native AA
+$Preset:int = 0
 #
 $LessAA = 0.0 # Ignore
 $MoreAA = 0.0 # Ignore
 #
-$subPix = 1.0
-$edgeThreshold = 0.125
-$edgeThresholdMin = 0.0156
+$subPix = 0.75 # Ignore 
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
 
 
 # Adjust native AA implmentation - Only applies to Enabled preset
