@@ -1,5 +1,5 @@
 [USAFatalFrameV0]
-moduleMatches = 0xE93B31F6; Vanilla Patch
+moduleMatches = 0xE93B31F6
 
 codeCaveSize = 0x4
 
@@ -12,11 +12,7 @@ _pointSpriteSize = 0x00000000
 
 
 [EuropeProjectZeroV0]
-moduleMatches = 0xB54DBEB0; Vanilla Patch
-moduleMatches = 0x5A9D6D31; Uncensored Patch 1
-moduleMatches = 0x360FA109; Uncensored Patch 2
-moduleMatches = 0x9D96F19B; Uncensored Patch 3
-moduleMatches = 0x81551809; Uncensored Patch 4
+moduleMatches = 0xB54DBEB0, 0x5A9D6D31, 0x360FA109, 0x9D96F19B, 0x81551809 # Vanilla, Uncensored Patches
 
 codeCaveSize = 0x4
 
@@ -28,8 +24,7 @@ _pointSpriteSize = 0x00000000
 0x026CF514 = lwz r6, _pointSpriteSize@l(r12)
 
 [JapanZeroV0]
-moduleMatches = 0xA86AA5B2; Vanilla Patch
-moduleMatches = 0x52992DCD; ? Patch
+moduleMatches = 0xA86AA5B2, 0x52992DCD # Vanilla, Unknown Patch
 
 codeCaveSize = 0x4
 

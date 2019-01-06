@@ -13,7 +13,6 @@ $targetFPS:int = 60
 name = 30FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 30
 
-
 [Preset]
 name = 40FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 40
