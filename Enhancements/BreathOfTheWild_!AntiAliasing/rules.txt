@@ -6,17 +6,17 @@ description = Enables or Disables Native Botw Anti-Aliasing. Also includes an al
 version = 3
 
 [Preset]
-name = Disable Native AA
-$preset:int = 0
+name = Nvidias FXAA
+$preset:int = 2
 #
 $inventorySharper = 0.0 # Ignore
 $inventoryBlurrier = 0.0 # Ignore
 $worldSharper = 0.0 # Ignore
 $worldBlurrier = 0.0 # Ignore
 #
-$subPix = 0.75 # Ignore 
-$edgeThreshold = 0.166 # Ignore
-$edgeThresholdMin = 0.0312 # Ignore
+$subPix = 1.0
+$edgeThreshold = 0.125
+$edgeThresholdMin = 0.0156
 
 [Preset]
 name = Enable Native AA
@@ -31,18 +31,19 @@ $subPix = 0.75 # Ignore
 $edgeThreshold = 0.166 # Ignore
 $edgeThresholdMin = 0.0312 # Ignore
 
+
 [Preset]
-name = Nvidias FXAA
-$preset:int = 2
+name = Disable Native AA
+$preset:int = 0
 #
 $inventorySharper = 0.0 # Ignore
 $inventoryBlurrier = 0.0 # Ignore
 $worldSharper = 0.0 # Ignore
 $worldBlurrier = 0.0 # Ignore
 #
-$subPix = 1.0
-$edgeThreshold = 0.125
-$edgeThresholdMin = 0.0156
+$subPix = 0.75 # Ignore 
+$edgeThreshold = 0.166 # Ignore
+$edgeThresholdMin = 0.0312 # Ignore
 
 
 # Adjust native AA implmentation - Only applies to Enabled preset
