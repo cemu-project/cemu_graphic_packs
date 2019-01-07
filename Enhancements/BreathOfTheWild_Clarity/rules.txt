@@ -38,6 +38,10 @@ name = The Complaining Gamer Preset
 $preset:int = 5
 
 [Preset]
+name = ViskClarity Preset
+$preset:int = 11
+
+[Preset]
 name = Contrasty Preset
 $preset:int = 4
 
