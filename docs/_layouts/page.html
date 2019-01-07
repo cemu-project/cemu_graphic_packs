@@ -1,62 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<!-- The Cemu Graphic Packs Repository -->
-	<title>{{ page.title }} - {{ site.title }}</title>
-	<link href="/assets/css/universal.css" rel="stylesheet">
-	{%- comment -%} Include page specific .css and .js files {%- endcomment -%}
-	{%- for static_file in site.static_files -%}
-		{%- assign file_directory = static_file.path | split: "/" | pop | join: "/" -%}
-		{%- assign match_html_file = static_file.basename | append: ".html" -%}
-		{%- if match_html_file == page.name and static_file.extname == ".css" and file_directory == "/assets/css" %}
-			<link href="{{ static_file.path }}" rel="stylesheet">
-		{% endif -%}
-		{%- if match_html_file == page.name and static_file.extname == ".js" and file_directory == "/assets/javascript" %}
-			<script src="{{ static_file.path }}" defer></script>
-		{% endif -%}
-	{%- endfor %}
-	<meta name="twitter:card" content="summary">
-	<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}">
-	<meta name="twitter:description" content="{{ page.description }}">
-	<meta name="twitter:image" content="https://slashiee.github.io/cemu_graphic_packs/assets/images/embed-icon.png">
-	<!-- Third-party stuff -->
-	<script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	<script defer src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	<!-- End of third-party stuff -->
-	<body class="bg-dark">
-		<header>
-			<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #127282;">
-				<a class="navbar-brand" href="#">Cemu Graphic Packs</a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarMenu" aria-controls="navbarMenu" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarMenu">
-					<div class="navbar-nav mr-auto">
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown">Help us!</a> 
-							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-								<a class="dropdown-item" href="{{ site.github.issues_url }}/new?title=[Game Title] Issue Title&body=Include a description of the issue. If the issue happens to be at a specific point in your game, providing a save file will make fixing it much easier! Just drag the file on here. Including screenshots of graphical bugs also helps a lot.">Report an issue</a>
-								<a class="dropdown-item" href="{{ site.github.wiki_url }}">Create your own graphic packs</a>
-								<a class="dropdown-item" href="{{ site.github.repository_url }}">See our source</a>
-							</div>
-						</li>
-					</div>
-					{% comment -%}
-					<div class="navbar-nav">
-						<a class="nav-item nav-link btn btn-light text-dark m-2" href="#download">Download Graphic Packs</a>
-					</div>
-					{%- endcomment %}
-				</div>
-			</nav>
-		</header>
-		<main class="text-white col-md-6 offset-md-3 pt-4">
-			<div class="alert alert-danger" role="alert" hidden>Work in progress...</div>{{ content }}</main>
-		<footer class="bg-info text-white" hidden>
-			{% comment %} Don't really feel like we need a header. {% endcomment %}
-			<span>Packs available under the {{ site.github.license.key | upcase -}}</span>
-		</footer>
-	</body>
-</html>
+---
+layout: base
+---
+
+{% include header.html type="page" %}
+
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      {{ content }}
+	    {% if page.comments %}
+        <div class="disqus-comments">
+	        {% include disqus.html %}
+        </div>
+	        {% include fb-comment.html %}
+	    {% endif %}
+    </div>
+  </div>
+</div>

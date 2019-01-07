@@ -1,104 +1,88 @@
 ---
-title: Home
 layout: page
+use-site-title: true
+css:
+  - "/css/index.css"
+js:
+  - "/js/index.js"
+
+meta-title: "Downloads | Cemu Graphic Packs"
+meta-description: "Largest graphic pack source for Cemu that modify or scale games."
 ---
-<h1 class="display-4 text-center"><strong>Cemu Graphic Packs</strong></h1>
-<p class="lead text-center">{{ site.description }}</p>
 
-<div class="jumbotron pt-4 pb-4" style="background-color: #127282;">
-	<h3>Downloads</h3>
-	<div><strong>Automatic installation instructions (recommended)</strong></div>
-	<div>Use Cemu's build-in graphic packs downloader (a new feature added in Cemu 1.15.1) to automatically retrieve the newest graphic packs from our repository.</div>
-	<div><strong>Manual installation instructions</strong></div>
-	<div class="mb-3">Remove <strong>all</strong> of your graphic packs first, then move all of the folders from the .zip file you've made below to the <kbd>graphicPacks</kbd> folder from your Cemu installation.</div>
-	<p class="pt-2 mb-1"><strong>Select the download for your Cemu version</strong></p>
-	<button id="primary_download" class="btn" onclick="downloadGraphicPacks()">Cemu 1.4.0 and newer (version 3)</button>
-	<button id="older_download" class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions</button>
-	<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-		<a class="dropdown-item" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a>
-		<a class="dropdown-item" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a>
-	</div>
+{% comment %} The javascript is designed to be infinitely scaleable. Just copy-pasting the announcement works. {% endcomment %}
+<div id="cemu-version-announcement" class="jumbotron notification" hidden>
+    <h2>Cemu 1.14.0 graphic packs are here!</h2>
+    <p>With the texture cache rework, the graphic packs required a rework for all of our "resolution packs".</p>
+    <p>Just bare with us while we rework the missing 1.14.0 graphic packs. Reporting on issues is very helpful!</p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="javascript:void(0);" onclick="confirmNotification('cemu-version-announcement');" role="button">Okay!</a>
+    </p>
 </div>
 
-<div class="jumbotron pt-4 pb-4" style="background-color: #37474f">
-	<div id="supported-games-search" class="input-group input-group-lg">
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuzzyset.js/0.0.8/fuzzyset.min.js" integrity="sha256-8BxxbSfdrTeC4uo2W6wROONJCyC35uTaV+xalQIERmk=" crossorigin="anonymous" defer></script>	
-		<input type="text" class="form-control" placeholder="Search here to check the games that have graphic packs!" onkeyup="searchSupportedGames(this.value)" required>
-		<div class="spinner-box">
-			<div class="circle-border">
-				<div class="circle-core"></div>
-			</div>
-		</div>
-		<div class="input-group-append">
-			 <span class="input-group-text" id="inputGroup-sizing-lg"><img class="icon" src="/assets/images/material-io_search_icon.svg" alt="Search Icon"/></span>
-		</div>
-	</div>
-	<ul id="supported-games-search-results" class="list-group">
-	</ul>
-	<p class="text-center pt-1"><a href="/games">Or view a list with all supported games...</a></p>
-</div>
-
-<div class="modal fade" id="searchInfoModal" tabindex="-1">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content bg-dark">
-			<div class="modal-header border-secondary">
-				<h5 class="modal-title" id="gameTitle">GameTitle</h5>
-				<button class="close text-light" data-dismiss="modal"><span>&times;</span></button>
-			</div>
-		<div class="modal-body">
-			<div class="container-fluid">
-				<picture>
-					<img id="modal-preview-image" style="width: 156px;" src="/assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
-				</picture>
-				<span class="d-inline-block">
-					<span id="information-box" class="compat-status-loading">
-						<p id="compat-status">
-							Known Compatibility Status: 
-							<span id="compat-status-loading">Loading...</span>
-							<span id="compat-status-unknown">Unknown</span>
-							<span id="compat-status-perfect">Perfect<img src="/assets/images/compat_status/perfect.png"></span>
-							<span id="compat-status-playable">Playable<img src="/assets/images/compat_status/playable.png"></span>
-							<span id="compat-status-runs">Runs<img src="/assets/images/compat_status/runs.png"></span>
-							<span id="compat-status-loads">Loads<img src="/assets/images/compat_status/loads.png"></span>
-							<span id="compat-status-unplayable">Unplayable<img src="/assets/images/compat_status/unplayable.png"></span>
-						</p>
-						<p>The game is upscaled from <span id="nativeResolution"></span>p.</p>
-						<span id="ultrawide">
-							<p id="ultrawide-supported">Ultrawide resolutions are supported</p>
-							<p id="ultrawide-unsupported">No ultrawide resolutions are supported</p>
-						</span>
-						<span id="version-3">
-							<p id="version-3-supported">Has graphic packs for Cemu 1.14.0 and newer (version 3)</p>
-							<p id="version-3-unsupported">Doesn't have graphic packs for Cemu 1.14.0 :( use Cemu 1.13.2 or lower for now</p>
-						</span>
-					</span>
-				</span>
-			</div>
-		</div>
-		<div class="modal-footer border-secondary">
-			<a id="compatWikiButton" class="btn btn-secondary" href="http://compat.cemu.info/wiki/Main_Page">Cemu Compat Wiki</a>
-			<button class="btn btn-primary" data-dismiss="modal">Close</button>
-		</div>
+<div id="download-gfx-panel" class="jumbotron">
+    <h2>Downloads</h2>
+    <p>Choose the right download for the Cemu version that you'll use.</p>
+    <p style="font-size: 16px; color: red; font-weight: bold;">Remove your previous graphic packs before installing/updating each time you install your graphic packs or you might run into issues!</p>
+    <div class="lead">
+        <a id="latest_version_download" class="btn btn-primary btn-lg" target="_self" href="{{ site.github.latest_release.assets[0].browser_download_url }}" role="button">Cemu 1.14.0 and newer (version 3)</a>
+        <span class="dropdown">
+            <a id="dropdown-version-button" data-target="#" class="btn btn-default btn-lg" role="button" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions <span class="caret"></span></a>
+            <ul class="dropdown-menu" aria-labelledby="dropdown-version-button">
+                <li><a href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a></li>
+                <li><a href="https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a></li>
+            </ul>
+        </span>
     </div>
-  </div>
+</div>
+<script>
+    fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/releases/latest").then(fetchRes => fetchRes.json()).then(fetchJson => {
+        console.debug("Fetched releases from github to update the latest release buttons url...");
+        document.getElementById("latest_version_download").href=fetchJson.assets[0].browser_download_url;
+        return;
+    }).catch(fetchErr => {
+        console.error("Seems like something isn't working...", fetchErr);
+    });
+</script>
+
+
+
+{% comment %}
+Possible todo's:
+- https://gitreports.com/ (anonymous github issues so that users can report issues).
+- Add/extract additional information from the graphic pack (like showing additional packs besides resolution packs).
+{% endcomment %}
+<div id="game-list" class="panel panel-info panel-default version3-only">
+	<div class="panel-heading">List of graphic pack supported titles</div>
+	<ul class="list-group">
+		{% for gameTitle in site.data.GameTitles %}
+		<li class="list-group-item d-flex justify-content-between align-items-center" {% if gameTitle.version3 == false %}hidden{% endif %}>
+			<a href="{{gameTitle.compatLink}}">{{ gameTitle.title }}</a>
+			<span class="badge badge-primary">{{ gameTitle.nativeRes }}p</span>
+			{% if gameTitle.version3 == true %}
+			<span class="label label-success version-label">Cemu 1.14.0</span>
+			{% endif %}
+		</li>
+		{% endfor %}
+		<div class="panel-footer">
+			<a id="see-more-footer" href="javascript:document.getElementById('game-list').classList.remove('version3-only');">Also see &lt; Cemu 1.13.2 graphic packs...</a>
+			<a id="see-less-footer" href="javascript:document.getElementById('game-list').classList.add('version3-only');">Only show Cemu 1.14.0 graphic packs...</a>
+		</div>
+	</ul>
 </div>
 
-<div class="jumbotron pt-4 pb-4" style="background-color: #37474f">
-	<h3>Frequently Asked Questions</h3>
-	{% assign ordered = site.FAQ | sort: "order" %}
-	{% for question in ordered %}
-		<details>
-			<summary><strong>{{ question.slug }}?</strong></summary>
-			<div name="{{ question.linkableAnchorName }}" class="pl-4">{{ question.output }}</div>
-		</details>
-	{%- endfor %}
-</div>
 
-<div class="jumbotron pt-4 pb-4" style="background-color: #37474f">
-	<h3>Our contributors</h3>
-	{% for contributor in site.github.contributors %}
-		<a href="https://github.com/slashiee/cemu_graphic_packs/commits?author={{ contributor.login }}">
-			<img class="img-thumbnail contributor-avatar-img mt-1 ml-1 mr-1 mb-2" src="{{ contributor.avatar_url }}" alt="{{ contributor.login }}'s avatar">
-		</a>
-	{% endfor %}
+{% comment %} Show github contributors {% endcomment %}
+<div id="contributor-list">
+    <div class="page-header">
+        <h3>These graphic packs are made by these contributors!</h3>
+    </div>
+    <table>
+        {% tablerow contributor in site.github.contributors cols:9 %}
+        <a class="contributor-tooltip" href="https://github.com/slashiee/cemu_graphic_packs/commits?author={{contributor.login}}">
+            <span class="contributor-tooltip-text">{{contributor.login}}<div style="color: red;">{{contributor.contributions}} Commits</div></span>
+            <img src="{{contributor.avatar_url}}" alt="{{contributor.login}}'s avatar" class="thumbnail">
+        </a>
+        {% endtablerow %}
+    </table>
 </div>
