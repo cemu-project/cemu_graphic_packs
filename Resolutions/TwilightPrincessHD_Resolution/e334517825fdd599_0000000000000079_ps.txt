@@ -37,7 +37,7 @@ vec4 blur(sampler2D sp, vec2 U, vec2 scale) {
 	}
 
 	//return O / O.a;
-	return vec4(O.x, O.y, O.z, 1.0)*18; // balance loss of brightness
+	return vec4(O.x, O.y, O.z, 1.0)*19; // balance loss of brightness
 }
 
 int clampFI32(int v)
