@@ -6,103 +6,132 @@ description = Changes the games resolution. You cannot change resolutions on the
 version = 3
 
 [Preset]
-name = 1280x720 (Default)
+name = 1280x720 (16:9) (Default)
 $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 // Performance
 
 [Preset]
-name = 320x180
+name = 320x180 (16:9)
 $width = 320
 $height = 180
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 640x360
+name = 640x360 (16:9)
 $width = 640
 $height = 360
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 960x540
+name = 960x540 (16:9)
 $width = 960
 $height = 540
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 // Common HD Resolutions
 
 [Preset]
-name = 1600x900
+name = 1600x900 (16:9)
 $width = 1600
 $height = 900
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 1920x1080
+name = 1920x1080 (16:9)
 $width = 1920
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 2560x1440
+name = 2560x1440 (16:9)
 $width = 2560
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 3200x1800
+name = 3200x1800 (16:9)
 $width = 3200
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 (16:9)
 $width = 3840
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 5120x2880
+name = 5120x2880 (16:9)
 $width = 5120
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 // Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = -----------------------------------
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 2560x1080 (21:9)
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
+name = 3440x1440 (21:9)
 $width = 3440
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
-name = 4300x1800 ("21:9")
+name = 4300x1800 (21:9)
 $width = 4300
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 // Common 16:10 Resolutions
+
+[Preset]
+name = -----------------------------------
+$width = 1440
+$height = 936 # 720x1.3
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 1440x936 (16:10)
@@ -110,6 +139,7 @@ $width = 1440
 $height = 936 # 720x1.3
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 1680x1080 (16:10)
@@ -117,6 +147,7 @@ $width = 1680
 $height = 1080 # 720x1.5
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 1920x1224 (16:10)
@@ -124,6 +155,7 @@ $width = 1920
 $height = 1224 # 720x1.7
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 2560x1656 (16:10)
@@ -131,6 +163,7 @@ $width = 2560
 $height = 1656 # 720x2.3
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 2880x1800 (16:10)
@@ -138,6 +171,7 @@ $width = 2880
 $height = 1800 # 720x2.5
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 3840x2448 (16:10)
@@ -145,6 +179,7 @@ $width = 3840
 $height = 2448 # 720x3.4
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 5120x3168 (16:10)
@@ -152,6 +187,65 @@ $width = 5120
 $height = 3168 # 720x4.4
 $gameWidth = 1280
 $gameHeight = 720
+$heightfix = 0
+
+# Other Uncommon Resolutions
+
+[Preset]
+name = -----------------------------------
+$width = 640
+$height = 480
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 1
+
+[Preset]
+name = 640x480 (4:3)
+$width = 640
+$height = 480
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 1
+
+[Preset]
+name = 1280x960 (4:3)
+$width = 1280
+$height = 960
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 1
+
+[Preset]
+name = 1920x1440 (4:3)
+$width = 1920
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
+name = 640x512 (5:4)
+$width = 640
+$height = 512
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 1
+
+[Preset]
+name = 1280x1024 (5:4)
+$width = 1280
+$height = 1024
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 1
+
+[Preset]
+name = 1920x1536 (5:4)
+$width = 1920
+$height = 1536
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 1
 
 # All 720p textures:
 # - 0x001=World Lighting Red8
@@ -209,8 +303,8 @@ width = 640
 height = 368
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x806,0x816,0x820,0x41a
 formatsExcluded = 0x431 # Exclude 0x431 which is used for adventure log images
-overwriteWidth = ($width/$gameWidth)* 640
-overwriteHeight = ($height/$gameHeight)* 368
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = (($height/$gameHeight) * 368) + $heightfix
 
 # Required 1/2 resolutions
 [TextureRedefine] 
@@ -219,32 +313,32 @@ height = 360
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x806,0x816,0x820,0x41a
 formatsExcluded = 0x431
 tileModesExcluded = 0x001 # For Video Playback
-overwriteWidth = ($width/$gameWidth)* 640
-overwriteHeight = ($height/$gameHeight)* 360
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
 
 # Required 1/3 resolutions
 [TextureRedefine]
 width = 384
 height = 192
 formats = 0x001 # World lighting - Red
-overwriteWidth = ($width/$gameWidth)* 384
-overwriteHeight = ($height/$gameHeight)* 192
+overwriteWidth = ($width/$gameWidth) * 384
+overwriteHeight = ($height/$gameHeight) * 192
 
 # Required 1/4 resolutions
 [TextureRedefine]
 width = 320
 height = 192
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x816,0x806,0x820,0x41a
-overwriteWidth = ($width/$gameWidth)* 320
-overwriteHeight = ($height/$gameHeight)* 192
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
 
 # Required 1/4 resolutions
 [TextureRedefine]
 width = 320
 height = 180
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x816,0x806,0x820,0x41a
-overwriteWidth = ($width/$gameWidth)* 320
-overwriteHeight = ($height/$gameHeight)* 180
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
 
 # Required 1/6 resolution
 [TextureRedefine]
@@ -258,33 +352,33 @@ overwriteHeight = ($height/$gameHeight) * 96
 [TextureRedefine]
 width = 160
 height = 96
-formats = 0x001,0x007,0x806,0x80e,0x816 # Used for Fog/Depth/Bloom
-overwriteWidth = ($width/$gameWidth)* 160
-overwriteHeight = ($height/$gameHeight)* 96
+formats = 0x001,0x005,0x007,0x806,0x80e,0x816 # Used for Fog/Depth/Bloom
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 96
 
 # Required 1/8 resolution
 [TextureRedefine]
 width = 160
 height = 90
-formats = 0x001,0x007,0x806,0x80e,0x816
-overwriteWidth = ($width/$gameWidth)* 160
-overwriteHeight = ($height/$gameHeight)* 90
+formats = 0x001,0x005,0x007,0x806,0x80e,0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
 
 # Required 1/13 resolution
 [TextureRedefine]
 width = 96
 height = 48
 formats = 0x816,0x80e # Used for bloom/depth
-overwriteWidth = ($width/$gameWidth)* 96
-overwriteHeight = ($height/$gameHeight)* 48
+overwriteWidth = ($width/$gameWidth) * 96
+overwriteHeight = ($height/$gameHeight) * 48
 
 # Required 1/16 resolution
 [TextureRedefine]
 width = 80
 height = 45
 formats = 0x816,0x806,0x007 # Used for bloom/fog
-overwriteWidth = ($width/$gameWidth)* 80
-overwriteHeight = ($height/$gameHeight)* 45
+overwriteWidth = ($width/$gameWidth) * 80
+overwriteHeight = ($height/$gameHeight) * 45
 
 # 0x01a - Blurs
 
@@ -373,8 +467,8 @@ overwriteHeight = ($height/$gameHeight) * 25
 width = 120
 height = 80
 formats = 0x01a
-overwriteWidth = ($width/$gameWidth)* 120
-overwriteHeight = ($height/$gameHeight)* 80
+overwriteWidth = ($width/$gameWidth) * 120
+overwriteHeight = ($height/$gameHeight) * 80
 
 # Main menu BOTW logo blur
 [TextureRedefine]
@@ -401,8 +495,8 @@ width = 1024
 height = 512
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 1024
-overwriteHeight = ($height/$gameHeight)* 512
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 512
 
 # Sheikah slate scope
 [TextureRedefine] 
@@ -410,8 +504,8 @@ width = 512
 height = 256
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 512
-overwriteHeight = ($height/$gameHeight)* 256
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 256
 
 # World bloom
 
@@ -420,56 +514,56 @@ width = 256
 height = 128
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 256
-overwriteHeight = ($height/$gameHeight)* 128
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 128
 
 [TextureRedefine]
 width = 128
 height = 64
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 128
-overwriteHeight = ($height/$gameHeight)* 64
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine]
 width = 64
 height = 32
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 64
-overwriteHeight = ($height/$gameHeight)* 32
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
 
 [TextureRedefine]
 width = 32
 height = 16
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 32
-overwriteHeight = ($height/$gameHeight)* 16
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 40
 height = 22
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 40
-overwriteHeight = ($height/$gameHeight)* 22
+overwriteWidth = ($width/$gameWidth) * 40
+overwriteHeight = ($height/$gameHeight) * 22
 
 [TextureRedefine]
 width = 24
 height = 16
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 24
-overwriteHeight = ($height/$gameHeight)* 16
+overwriteWidth = ($width/$gameWidth) * 24
+overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 20
 height = 11
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth)* 20
-overwriteHeight = ($height/$gameHeight)* 11
+overwriteWidth = ($width/$gameWidth) * 20
+overwriteHeight = ($height/$gameHeight) * 11
 
 # Great Fairy / Stable / Stores Viewports
 
@@ -617,37 +711,37 @@ width = 1280
 height = 720
 formats = 0x019
 overwriteFormat = 0x01f
-overwriteWidth = ($width/$gameWidth)* 1280
-overwriteHeight = ($height/$gameHeight)* 720
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
 
 [TextureRedefine]
 width = 640
 height = 368
 formats = 0x019
 overwriteFormat = 0x01f
-overwriteWidth = ($width/$gameWidth)* 640
-overwriteHeight = ($height/$gameHeight)* 368
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = (($height/$gameHeight) * 368 ) + $heightfix
 
 [TextureRedefine] 
 width = 640
 height = 360
 formats = 0x019
 overwriteFormat = 0x01f
-overwriteWidth = ($width/$gameWidth)* 640
-overwriteHeight = ($height/$gameHeight)* 360
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
 
 [TextureRedefine]
 width = 320
 height = 192
 formats = 0x019
 overwriteFormat = 0x01f
-overwriteWidth = ($width/$gameWidth)* 320
-overwriteHeight = ($height/$gameHeight)* 192
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
 
 [TextureRedefine]
 width = 320
 height = 180
 formats = 0x019
 overwriteFormat = 0x01f
-overwriteWidth = ($width/$gameWidth)* 320
-overwriteHeight = ($height/$gameHeight)* 180
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
