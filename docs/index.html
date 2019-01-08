@@ -20,7 +20,7 @@ layout: page
 	</div>
 </div>
 
-<div class="jumbotron pt-4 pb-1" style="background-color: #37474f">
+<div class="jumbotron pt-4 pb-4" style="background-color: #37474f">
 	<div id="supported-games-search" class="input-group input-group-lg">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/fuzzyset.js/0.0.8/fuzzyset.min.js" integrity="sha256-8BxxbSfdrTeC4uo2W6wROONJCyC35uTaV+xalQIERmk=" crossorigin="anonymous" defer></script>	
 		<input type="text" class="form-control" placeholder="Search here to check the games that have graphic packs!" onkeyup="searchSupportedGames(this.value)" required>
@@ -30,7 +30,7 @@ layout: page
 			</div>
 		</div>
 		<div class="input-group-append">
-			 <span class="input-group-text" id="inputGroup-sizing-lg"><img class="icon" src="https://slashiee.github.io/cemu_graphic_packs/assets/images/material-io_search_icon.svg" alt="Search Icon"/></span>
+			 <span class="input-group-text" id="inputGroup-sizing-lg"><img class="icon" src="{{ site.baseurl }}/assets/images/material-io_search_icon.svg" alt="Search Icon"/></span>
 		</div>
 	</div>
 	<ul id="supported-games-search-results" class="list-group">
@@ -48,7 +48,7 @@ layout: page
 		<div class="modal-body">
 			<div class="container-fluid">
 				<picture>
-					<img id="modal-preview-image" style="width: 156px;" src="https://slashiee.github.io/cemu_graphic_packs/assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
+					<img id="modal-preview-image" style="width: 156px;" src="{{ site.baseurl }}/assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
 				</picture>
 				<span class="d-inline-block">
 					<span id="information-box" class="compat-status-loading">
@@ -56,11 +56,11 @@ layout: page
 							Known Compatibility Status: 
 							<span id="compat-status-loading">Loading...</span>
 							<span id="compat-status-unknown">Unknown</span>
-							<span id="compat-status-perfect">Perfect<img src="https://slashiee.github.io/cemu_graphic_packs/assets/images/compat_status/perfect.png"></span>
-							<span id="compat-status-playable">Playable<img src="https://slashiee.github.io/cemu_graphic_packs/assets/images/compat_status/playable.png"></span>
-							<span id="compat-status-runs">Runs<img src="https://slashiee.github.io/cemu_graphic_packs/assets/images/compat_status/runs.png"></span>
-							<span id="compat-status-loads">Loads<img src="https://slashiee.github.io/cemu_graphic_packs/assets/images/compat_status/loads.png"></span>
-							<span id="compat-status-unplayable">Unplayable<img src="https://slashiee.github.io/cemu_graphic_packs/assets/images/compat_status/unplayable.png"></span>
+							<span id="compat-status-perfect">Perfect<img src="{{ site.baseurl }}/assets/images/compat_status/perfect.png"></span>
+							<span id="compat-status-playable">Playable<img src="{{ site.baseurl }}/assets/images/compat_status/playable.png"></span>
+							<span id="compat-status-runs">Runs<img src="{{ site.baseurl }}/assets/images/compat_status/runs.png"></span>
+							<span id="compat-status-loads">Loads<img src="{{ site.baseurl }}/assets/images/compat_status/loads.png"></span>
+							<span id="compat-status-unplayable">Unplayable<img src="{{ site.baseurl }}/assets/images/compat_status/unplayable.png"></span>
 						</p>
 						<p>The game is upscaled from <span id="nativeResolution"></span>p.</p>
 						<span id="ultrawide">
@@ -114,7 +114,7 @@ layout: page
 			<td><time class="commit-time" datetime="{{ site.github.releases[releaseIndex].published_at }}"></time></td>
 			<td>{{ site.github.releases[releaseIndex].body | split: "###" | shift | first | split: "```" | pop | first }}</td>
 			{% comment %}<td>{{ site.github.releases[releaseIndex].body | split: "```" | shift | first }}</td>{% endcomment %}
-			<td><a href="{{ site.github.releases[releaseIndex].assets[0].browser_download_url }}"><img class="icon ml-4" src="https://slashiee.github.io/cemu_graphic_packs/assets/images/download.png" alt="Download Icon"/></td>
+			<td><a href="{{ site.github.releases[releaseIndex].assets[0].browser_download_url }}"><img class="icon ml-4" src="{{ site.baseurl }}/assets/images/download.png" alt="Download Icon"/></td>
 		</tr>
 	{% endfor %}
 		<tr>
@@ -127,6 +127,6 @@ layout: page
 <div class="jumbotron pt-4 pb-4" style="background-color: #37474f">
 	<h3>Our contributors</h3>
 	{% for contributor in site.github.contributors %}
-		<a href="https://github.com/slashiee/cemu_graphic_packs/commits?author={{ contributor.login }}"><img class="img-thumbnail contributor-avatar-img mt-1 ml-1 mr-1 mb-2" src="{{ contributor.avatar_url }}?size=70" alt="{{ contributor.login }}'s avatar"></a>
+		<a href="https://github.com/slashiee/cemu_graphic_packs/commits?author={{ contributor.login }}"><img class="img-thumbnail contributor-avatar-img mt-1 ml-1 mr-1 mb-2" src="{{ contributor.avatar_url }}&size=70" alt="{{ contributor.login }}'s avatar"></a>
 	{% endfor %}
 </div>

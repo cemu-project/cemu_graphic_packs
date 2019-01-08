@@ -30,7 +30,7 @@ async function searchSupportedGames(searchString) {
 	
 	if (!supportedGames) {
 		supportedGames = true;
-		await fetch("/supported_titles.json", {cache: "no-store"}).then(fetchRes => fetchRes.json()).then(fetchJson => {
+		await fetch((window.location.origin+window.location.pathname)+"/supported_titles.json", {cache: "no-store"}).then(fetchRes => fetchRes.json()).then(fetchJson => {
 			console.debug("Fetched supported titles from '/supported_titles.json'.");
 			supportedGames = fetchJson;
 			supportedGamesSearchSet = FuzzySet([], false, 2, 3);

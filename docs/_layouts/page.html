@@ -4,22 +4,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- The Cemu Graphic Packs Repository -->
 	<title>{{ page.title }} - {{ site.title }}</title>
-	<link href="https://slashiee.github.io/cemu_graphic_packs/assets/css/universal.css" rel="stylesheet">
+	<link href="{{ site.baseurl }}/assets/css/universal.css" rel="stylesheet">
 	{%- comment -%} Include page specific .css and .js files {%- endcomment -%}
 	{%- for static_file in site.static_files -%}
 		{%- assign file_directory = static_file.path | split: "/" | pop | join: "/" -%}
 		{%- assign match_html_file = static_file.basename | append: ".html" -%}
 		{%- if match_html_file == page.name and static_file.extname == ".css" and file_directory == "/assets/css" %}
-			<link href="https://slashiee.github.io/cemu_graphic_packs{{ static_file.path }}" rel="stylesheet">
+			<link href="{{ site.baseurl }}{{ static_file.path }}" rel="stylesheet">
 		{% endif -%}
 		{%- if match_html_file == page.name and static_file.extname == ".js" and file_directory == "/assets/javascript" %}
-			<script src="https://slashiee.github.io/cemu_graphic_packs{{ static_file.path }}" defer></script>
+			<script src="{{ site.baseurl }}{{ static_file.path }}" defer></script>
 		{% endif -%}
 	{%- endfor %}
 	<meta name="twitter:card" content="summary">
 	<meta name="twitter:title" content="{{ page.title }} - {{ site.title }}">
 	<meta name="twitter:description" content="{{ page.description }}">
-	<meta name="twitter:image" content="https://slashiee.github.io/cemu_graphic_packs/assets/images/embed-icon.png">
+	<meta name="twitter:image" content="{{ site.baseurl }}/assets/images/embed-icon.png">
 	<!-- Third-party stuff -->
 	<script defer src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script defer src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

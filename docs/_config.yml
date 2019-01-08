@@ -1,6 +1,6 @@
 title: Cemu Graphic Packs
 description: Official website of the Community Graphic Packs for Cemu, used to upscale and change your Wii U games.
-url: https://slashiee.github.io/cemu_graphic_packs
+url: https://slashiee.github.io/cemu_graphic_packs/
 repository: slashiee/cemu_graphic_packs
 
 author:
@@ -8,8 +8,6 @@ author:
 
 collections:
   - FAQ
-
-safe: true
 
 exclude:
   - .gitignore
