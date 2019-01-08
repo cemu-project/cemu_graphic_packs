@@ -4,16 +4,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<!-- The Cemu Graphic Packs Repository -->
 	<title>{{ page.title }} - {{ site.title }}</title>
-	<link href="/assets/css/universal.css" rel="stylesheet">
+	<link href="https://slashiee.github.io/cemu_graphic_packs/assets/css/universal.css" rel="stylesheet">
 	{%- comment -%} Include page specific .css and .js files {%- endcomment -%}
 	{%- for static_file in site.static_files -%}
 		{%- assign file_directory = static_file.path | split: "/" | pop | join: "/" -%}
 		{%- assign match_html_file = static_file.basename | append: ".html" -%}
 		{%- if match_html_file == page.name and static_file.extname == ".css" and file_directory == "/assets/css" %}
-			<link href="{{ static_file.path }}" rel="stylesheet">
+			<link href="https://slashiee.github.io/cemu_graphic_packs{{ static_file.path }}" rel="stylesheet">
 		{% endif -%}
 		{%- if match_html_file == page.name and static_file.extname == ".js" and file_directory == "/assets/javascript" %}
-			<script src="{{ static_file.path }}" defer></script>
+			<script src="https://slashiee.github.io/cemu_graphic_packs{{ static_file.path }}" defer></script>
 		{% endif -%}
 	{%- endfor %}
 	<meta name="twitter:card" content="summary">
@@ -52,11 +52,6 @@
 				</div>
 			</nav>
 		</header>
-		<main class="text-white col-md-6 offset-md-3 pt-4">
-			<div class="alert alert-danger" role="alert" hidden>Work in progress...</div>{{ content }}</main>
-		<footer class="bg-info text-white" hidden>
-			{% comment %} Don't really feel like we need a header. {% endcomment %}
-			<span>Packs available under the {{ site.github.license.key | upcase -}}</span>
-		</footer>
+		<main class="text-white col-md-6 offset-md-3 pt-4">{{ content }}</main>
 	</body>
 </html>
