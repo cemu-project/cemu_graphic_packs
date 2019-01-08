@@ -88,7 +88,7 @@ async function searchInfoModalTrigger(clickedElem) {
 	let clickedGame = clickedElem.target.firstChild.textContent;
 	
 	// Reset Compat Information
-	document.getElementById("modal-preview-image").src="/assets/images/no-cover-available.png";
+	document.getElementById("modal-preview-image").src="https://github.com/Crementif/cemu_graphic_packs/blob/gh-pages/assets/images/no-cover-available.png";
 	document.getElementById("information-box").className="compat-status-loading";
 	
 	document.getElementById("gameTitle").innerText=clickedGame;

@@ -48,7 +48,7 @@ layout: page
 		<div class="modal-body">
 			<div class="container-fluid">
 				<picture>
-					<img id="modal-preview-image" style="width: 156px;" src="{{ site.baseurl }}/assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
+					<img id="modal-preview-image" style="width: 156px;" src="https://github.com/Crementif/cemu_graphic_packs/blob/gh-pages/assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
 				</picture>
 				<span class="d-inline-block">
 					<span id="information-box" class="compat-status-loading">
@@ -56,11 +56,11 @@ layout: page
 							Known Compatibility Status: 
 							<span id="compat-status-loading">Loading...</span>
 							<span id="compat-status-unknown">Unknown</span>
-							<span id="compat-status-perfect">Perfect<img src="{{ site.baseurl }}/assets/images/compat_status/perfect.png"></span>
-							<span id="compat-status-playable">Playable<img src="{{ site.baseurl }}/assets/images/compat_status/playable.png"></span>
-							<span id="compat-status-runs">Runs<img src="{{ site.baseurl }}/assets/images/compat_status/runs.png"></span>
-							<span id="compat-status-loads">Loads<img src="{{ site.baseurl }}/assets/images/compat_status/loads.png"></span>
-							<span id="compat-status-unplayable">Unplayable<img src="{{ site.baseurl }}/assets/images/compat_status/unplayable.png"></span>
+							<span id="compat-status-perfect">Perfect<img src="{https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/perfect.png"></span>
+							<span id="compat-status-playable">Playable<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/playable.png"></span>
+							<span id="compat-status-runs">Runs<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/runs.png"></span>
+							<span id="compat-status-loads">Loads<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/loads.png"></span>
+							<span id="compat-status-unplayable">Unplayable<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/unplayable.png"></span>
 						</p>
 						<p>The game is upscaled from <span id="nativeResolution"></span>p.</p>
 						<span id="ultrawide">
@@ -114,7 +114,7 @@ layout: page
 			<td><time class="commit-time" datetime="{{ site.github.releases[releaseIndex].published_at }}"></time></td>
 			<td>{{ site.github.releases[releaseIndex].body | split: "###" | shift | first | split: "```" | pop | first }}</td>
 			{% comment %}<td>{{ site.github.releases[releaseIndex].body | split: "```" | shift | first }}</td>{% endcomment %}
-			<td><a href="{{ site.github.releases[releaseIndex].assets[0].browser_download_url }}"><img class="icon ml-4" src="{{ site.baseurl }}/assets/images/download.png" alt="Download Icon"/></td>
+			<td><a href="{{ site.github.releases[releaseIndex].assets[0].browser_download_url }}"><img class="icon ml-4" src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/download.png" alt="Download Icon"/></td>
 		</tr>
 	{% endfor %}
 		<tr>
