@@ -9,6 +9,9 @@ author:
 collections:
   - FAQ
 
+Include:
+  - /assets/images
+
 exclude:
   - .gitignore
   - Gemfile

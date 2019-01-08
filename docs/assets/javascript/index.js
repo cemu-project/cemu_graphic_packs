@@ -116,7 +116,7 @@ async function searchInfoModalTrigger(clickedElem) {
 			console.debug("Parsed compat info...", compatJson)
 			
 			if (!compatJson.image.includes("*.jpg")) {
-				document.getElementById("modal-preview-image").src="http://compat.cemu.info/wiki/Special:Redirect/file/"+compatJson.image.split("File:")[1].split("|")[0];
+				document.getElementById("modal-preview-image").src="https://images.weserv.nl/?url=compat.cemu.info/wiki/Special:Redirect/file/"+compatJson.image.split("File:")[1].split("|")[0];
 			}
 			document.getElementById("information-box").classList.remove("compat-status-loading");
 			document.getElementById("information-box").classList.add("compat-status-"+compatJson.rating.toLowerCase());
