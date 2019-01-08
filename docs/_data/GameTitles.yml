@@ -170,6 +170,10 @@
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Monster_Hunter_3_Ultimate"
   version3: true
+  title: "Nano Assault Neo"
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Nano_Assault_Neo"
+  version3: true
 - title: "NBA 2K13"
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/NBA_2K13"
