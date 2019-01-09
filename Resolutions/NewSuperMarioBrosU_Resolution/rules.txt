@@ -216,6 +216,27 @@ height = 90
 overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 90
 
+[TextureRedefine]
+width = 128
+height = 64
+formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine]
+width = 64
+height = 32
+formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 32
+height = 16
+formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
+
 ## Gradient don't scale
 #width = 48
 #height = 48
