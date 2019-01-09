@@ -221,42 +221,6 @@ $scaleShader = 1.0
 $scaleBlur = 0.5
 $internalRes = 1
 
-#Fog banding
-[TextureRedefine]
-width = 1920
-height = 1088
-formats =  0x01a
-overwriteFormat = 0x01f
-
-[TextureRedefine]
-width = 1920
-height = 1080
-formats =  0x01a
-overwriteFormat = 0x01f
-
-[TextureRedefine]
-width = 960
-height = 544
-formats = 0x01a
-overwriteFormat = 0x01f
-
-[TextureRedefine]
-width = 960
-height = 540
-formats =  0x01a
-overwriteFormat = 0x01f
-
-#[TextureRedefine] # bloom n cutscene
-#width = 480
-#height = 272
-#formats = 0x01a
-#overwriteFormat = 0x01f
-#
-#[TextureRedefine] # bloom n cutscene
-#width = 480
-#height = 270
-#formats = 0x01a
-#overwriteFormat = 0x01f
 
 [TextureRedefine]
 width = 1920
