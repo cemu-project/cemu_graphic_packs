@@ -24,18 +24,11 @@ version = 3
 formats = 0x008
 overwriteFormat = 0x01f
 
-
 [TextureRedefine]
 width = 1280
 height = 720
 formats = 0x810
 overwriteFormat = 0x81e
-
-[TextureRedefine]
-width = 1280
-height = 720
-formats = 0x001
-overwriteFormat = 0x005
 
 [TextureRedefine]
 width = 640
