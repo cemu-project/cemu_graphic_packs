@@ -1,6 +1,8 @@
 [Definition]
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
-name = "Hyrule Warriors - Character Swap"
+name = Character Swap
+path = "Hyrule Warriors/Mods/Character Swap"
+description = Swaps character
 version = 3
 
 [Preset]
