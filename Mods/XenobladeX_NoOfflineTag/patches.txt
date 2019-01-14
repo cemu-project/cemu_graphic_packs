@@ -1,3 +1,7 @@
+[XCXNOOFFV16J] 
+moduleMatches = 0x785CA8A9
+0x100B06DC = nop # frameIn
+
 [XCXNOFFV102J]
 moduleMatches = 0x7672271D
 0x100B0B28 = nop # frameIn

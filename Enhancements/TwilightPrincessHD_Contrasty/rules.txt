@@ -95,31 +95,31 @@ $sharp_mix = 0.05
 
 [Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discolouration of multi layer fx
 name = Cold contrast 
-$redShadows = 0.99
-$greenShadows = 1.0
-$blueSadows = 1.01
-$redMid = 0.85
-$greenMid = 0.86
+$redShadows = 0.99 #0.99
+$greenShadows = 1.0 # 1.0
+$blueSadows = 1.01 #1.0 #1.01
+$redMid = 0.89 #0.87
+$greenMid = 0.925 #0.9 #0.88
 $blueMid = 1.0
-$redHilight = 0.95
-$greenHilight = 0.96
-$blueHilight = 1.05
+$redHilight = 1.0
+$greenHilight = 1.01 #.86
+$blueHilight = 1.11 #1.14
 
 $contrastCurve = 0.25
 $hazeFactor = 0.1
 $bloom = 0.975
-$gamma = 1.0
-$exposure = 1.075
-$vibrance = 0.3
+$gamma = 1.025
+$exposure = 1.025
+$vibrance = 0.4
 $crushContrast = 0.0
 $bleach = 0.875
 $sharp_mix = 0.05
 
 [Preset] # jff 
 name =  Skyward Swordish
-$redShadows = 0.99
-$greenShadows = 0.99
-$blueSadows = 1.02
+$redShadows = 0.95
+$greenShadows = 0.95
+$blueSadows = 1.0
 $redMid = 0.95
 $greenMid = 0.97
 $blueMid = 1.04
