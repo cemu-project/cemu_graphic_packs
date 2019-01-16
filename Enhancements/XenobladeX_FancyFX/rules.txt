@@ -30,17 +30,17 @@ height = 720
 formats = 0x810
 overwriteFormat = 0x81e
 
-[TextureRedefine]
-width = 640
-height = 368
-formats = 0x816
-overwriteFormat = 0x820
-
-[TextureRedefine]
-width = 640
-height = 360
-formats = 0x816
-overwriteFormat = 0x820
+#[TextureRedefine] #breaks skell view
+#width = 640
+#height = 368
+#formats = 0x816
+#overwriteFormat = 0x820
+#
+#[TextureRedefine]
+#width = 640
+#height = 360
+#formats = 0x816
+#overwriteFormat = 0x820
 
 [TextureRedefine]
 width = 640
@@ -54,17 +54,17 @@ height = 360
 formats = 0x007
 overwriteFormat = 0x00f
 
-[TextureRedefine]
-width = 640
-height = 368
-formats = 0x01a
-overwriteFormat = 0x01f
-
-[TextureRedefine]
-width = 640
-height = 360
-formats = 0x01a
-overwriteFormat = 0x01f
+#[TextureRedefine] # breaks skell view
+#width = 640
+#height = 368
+#formats = 0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#width = 640
+#height = 360
+#formats = 0x01a
+#overwriteFormat = 0x01f
 
 [TextureRedefine] # fog 1.5 match stencil
 width = 448
