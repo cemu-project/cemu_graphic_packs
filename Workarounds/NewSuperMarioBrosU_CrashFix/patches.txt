@@ -1,0 +1,17 @@
+[NSMBU+LUv0US]
+moduleMatches = 0x1049CED8
+
+#remove check for mii data
+0x024D7394 = b .+0xE8
+
+[NSMBUv64US]
+moduleMatches = 0x6CAEA914
+
+#remove check for mii data
+0x024D71C4 = b .+0xE8
+
+[NSLUv0EU]
+moduleMatches = 0xA3705C0B
+
+#remove check for mii data
+0x024D7158 = b .+0xE8
