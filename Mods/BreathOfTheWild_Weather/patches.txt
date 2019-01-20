@@ -1,0 +1,23 @@
+[BotwV208]
+moduleMatches = 0x6267BFD0
+
+codeCaveSize = 0x14
+
+# Constants
+0x00000000 = .byte $weatherByte
+_weatherConst = 0x00000000
+
+# Code that changes the weather to our constant
+_changeWeather = 0x00000004
+0x00000004 = lis r26, _weatherConst@ha
+0x00000008 = lbz r26, _weatherConst@l(r26)
+0x0000000C = stb r26, 0x18(r30)
+0x00000010 = blr
+
+0x3668FEC = bla _changeWeather
+
+# Original Instructions
+# .text:03668FE4                 stfs      f28, 0x14(r30)
+# .text:03668FE8                 stb       r0, 0x19(r30)
+# .text:03668FEC                 stb       r26, 0x18(r30) # Here we jump to our code cave since it originally sets the weather byte in the game.
+# .text:03668FF0                 b         loc_3669434
