@@ -4,21 +4,26 @@
 // shader e334517825fdd599
 //basline dof  blur.. 
 
-const float dither = 0.5 ;
-const float scaleShader = 0.5;
 const float scaleBlur = $scaleBlur; //0.125 4k
-const int sampleScale = 2;
-const float lightBloom = 0.95; 
+const int sampleScaling = $presetPass;
 
-
+#define EnableBlur $enableBlur 
 
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4001000 res 1920x1080x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
+/* Nr of pass hack since we don't know what the res pack set to after moving shader from main pack  :(   
+ * Would have been better to manually tweak per res setting , and then add static scaler on top of that. 
+ * ~1080 -> 2 pass, 1440->3 , 4k -> 5 
+ */
+ 
+const int sampleScale = 2 + int(1.0/uf_fragCoordScale.x) + sampleScaling;
+
+//const int sampleScale = 2 + sampleScaling;
 // FabriceNeyret2 CC, single shader gaussian by intermediate MIPmap level. www.shadertoy.com/view/ltScRG
-const int samples = 8 * sampleScale, //8 or 4 balances xy position
+const int samples = 4 * sampleScale, //8 or 4 balances xy position + brightness hack
 LOD = 2,         // gaussian done on MIPmap at scale LOD
 sLOD = 1 << LOD; // tile size = 2^LOD
 const float sigma = float(samples) * .25;
@@ -37,7 +42,7 @@ vec4 blur(sampler2D sp, vec2 U, vec2 scale) {
 	}
 
 	//return O / O.a;
-	return vec4(O.x, O.y, O.z, 1.0)*19; // balance loss of brightness
+	return vec4(O.x, O.y, O.z, 0.0)*20.0; // balance loss of brightness
 }
 
 int clampFI32(int v)
@@ -65,14 +70,22 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 
+
+#if (EnableBlur == 1)
+vec2 scaler = uf_fragCoordScale.xy;
 vec2 coord = R0f.xy*textureSize(textureUnitPS0, 0); //
 vec2 ps = vec2(1.0) / textureSize(textureUnitPS0, 0);
 vec2 uv = coord * ps;
 
-R9f.xyzw = blur(textureUnitPS0, R0f.xy, ps*scaleBlur).xyzw; 
-
-R0f.xyzw = (textureLod(textureUnitPS0, R0f.xy,0.0).xyzw);
-R0f.xyz = mix(R0f.xyz, R9f.xyz, 0.75);
+R9f.xyz = blur(textureUnitPS0, R0f.xy, ps*0.5*scaleBlur*scaler).xyz;
+R0f.w = (textureLod(textureUnitPS0, R0f.xy,0.0).w);
 // export
 passPixelColor0 = vec4(R9f.x, R9f.y, R9f.z, R0f.w);
+
+#elif (EnableBlur == 0)
+R0f.xyzw = (textureLod(textureUnitPS0, R0f.xy,0.0).xyzw);
+// export
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+#endif
+
 }

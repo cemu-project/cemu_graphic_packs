@@ -14,66 +14,8 @@ $gameHeight = 1080
 $dither = 0.01
 $scaleShader = 1.0
 $scaleBlur = 0.05
-$internalRes = 1
-// Performance
-
-
-[Preset]
-name = 640x360
-$width = 640
-$height = 360
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-$internalRes = 1
-
-[Preset]
-name = 854x480
-$width = 854
-$height = 480
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-$internalRes = 1
-
-[Preset]
-name = 960x540
-$width = 960
-$height = 540
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-$internalRes = 1
-
-[Preset]
-name = 1280x720
-$width = 1280
-$height = 720
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-$internalRes = 1
-
-// Quality
-
-[Preset]
-name = 1600x900
-$width = 1600
-$height = 900
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
 
 [Preset]
 name = 2560x1080 (21:9 HD)
@@ -84,18 +26,20 @@ $gameHeight = 1080
 $dither = 0.1
 $scaleShader = 1.0
 $scaleBlur = 0.25
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (64.0 / 27.0)
 
 [Preset]
 name = 5760x1080 (48:9 HD)
-$width = 2560
+$width = 5760
 $height = 1080
 $gameWidth = 1920
 $gameHeight = 1080
 $dither = 0.1
 $scaleShader = 1.0
 $scaleBlur = 0.25
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (48.0/9.0)
 
 [Preset]
 name = 2560x1440
@@ -106,7 +50,8 @@ $gameHeight = 1080
 $dither = 0.1
 $scaleShader = 1.0
 $scaleBlur = 0.25
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
 
 [Preset]
 name = 3440x1440 (21:9)
@@ -117,7 +62,8 @@ $gameHeight = 1080
 $dither = 0.1
 $scaleShader = 1.0
 $scaleBlur = 0.25
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (64.0 / 27.0)
 
 [Preset]
 name = 7680x1440 (48:9)
@@ -128,7 +74,8 @@ $gameHeight = 1080
 $dither = 0.1
 $scaleShader = 1.0
 $scaleBlur = 0.25
-$internalRes = 1
+$internalRes = 0.70
+$aspectRatio = (48.0/9.0)
 
 [Preset]
 name = 2732x1536
@@ -139,7 +86,8 @@ $gameHeight = 1080
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.25
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
 
 [Preset]
 name = 3200x1800
@@ -150,7 +98,8 @@ $gameHeight = 1080
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.5
-$internalRes = 1
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
 
 [Preset]
 name = 3840x2160 (4k - Native x2) 
@@ -161,7 +110,8 @@ $gameHeight = 1080
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.75
-$internalRes = 1
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
 
 [Preset]
 name = 5120x2160 (4k 21:9)
@@ -172,30 +122,8 @@ $gameHeight = 1080
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.5
-$internalRes = 1
-
-[Preset]
-name = 5120x2160 (4k 48:9)
-$width = 11520
-$height = 2160
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.2
-$scaleShader = 1.0
-$scaleBlur = 0.5
-$internalRes = 1
-
-[Preset]
-name = 3840x2160 (4k - Native x2) 0.75 sub scaling
-$width = 3840
-$height = 2160
-$gameWidth= 1920
-$gameHeight= 1080
 $internalRes = 0.75
-$dither = 0.2
-$scaleShader = 1.0
-$scaleBlur = 0.5
-
+$aspectRatio = (64.0 / 27.0)
 
 [Preset]
 name = 5120x2880
@@ -206,7 +134,8 @@ $gameHeight = 1080
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.5
-$internalRes = 1
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
 
 // Enthusiast
 
@@ -219,22 +148,70 @@ $gameHeight = 1080
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 0.5
-$internalRes = 1
+$internalRes = 0.5
+$aspectRatio = (16.0/9.0)
 
+[Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
+name = ---- Custom res - SSAA Tweaks ----
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 1920x2160 (Vertical x2
+$width = 1920
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 2560x2880 (Vertical x2 - 0.75 sub scaling)
+$width = 2560
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
+
+[Preset] #
+name = 3840x4320 (Vertical x2 - 0.75 sub scaling)
+$width = 3840
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
 
 [TextureRedefine]
 width = 1920
 height = 1088
 #formats = 0x011,0x01a
-overwriteWidth = ($width/$gameWidth) * 1920
+overwriteWidth = ($width/$gameWidth) * 1920 
 overwriteHeight = ($height/$gameHeight) * 1088
 
 [TextureRedefine]
 width = 1920
 height = 1080
 #formats = 
-overwriteWidth = ($width/$gameWidth) * 1920
-overwriteHeight  = ($height/$gameHeight) * 1080
+overwriteWidth = ($width/$gameWidth) * 1920 
+overwriteHeight  = ($height/$gameHeight) * 1080 
 
 [TextureRedefine]
 width = 960
