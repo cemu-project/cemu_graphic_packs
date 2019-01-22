@@ -1,0 +1,26 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Brightness Workaround
+path = "Xenoblade Chronicles X/Workarounds/Brightness"
+description = Edit presets for preference.
+version = 3
+
+[Preset]
+name = AMD
+$crushContrast = 0
+$exposure = 0.32
+$gamma = 0.93
+$glare = 0.95
+$lift = 0.002
+$postExposure = 1.05
+$vibrance = 0.318
+
+[Preset]
+name = NVIDIA
+$crushContrast = 0.000
+$exposure = 0.52
+$gamma = 0.93
+$glare = 0.95
+$lift = 0.002
+$postExposure = 1.05
+$vibrance = 0.318
