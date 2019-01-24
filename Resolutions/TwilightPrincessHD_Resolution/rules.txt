@@ -152,9 +152,9 @@ $internalRes = 0.5
 $aspectRatio = (16.0/9.0)
 
 [Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
-name = ---- Custom res - SSAA Tweaks ----
+name = --- SSAA res Tweaks - Set scaling to Stretch
 $width = 1920
-$height = 1080
+$height = 2160
 $gameWidth = 1920
 $gameHeight = 1080
 $dither = 0.01
@@ -164,7 +164,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 
 [Preset]
-name = 1920x2160 (Vertical x2
+name = 1920x2160 (Vertical x2)
 $width = 1920
 $height = 2160
 $gameWidth = 1920
@@ -199,6 +199,7 @@ $scaleBlur = 0.5
 $internalRes = 0.75
 $aspectRatio = (16.0/9.0)
 
+
 [TextureRedefine]
 width = 1920
 height = 1088
@@ -216,16 +217,30 @@ overwriteHeight  = ($height/$gameHeight) * 1080
 [TextureRedefine]
 width = 960
 height = 544
-#formats = 0x01a,0x011
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * (960*$internalRes) 
-overwriteHeight = ($height/$gameHeight) * (544*$internalRes) 
+overwriteHeight = ($height/$gameHeight) * (544*$internalRes*2.0) #x2 .y improve alpha blend shimmer 
 
 [TextureRedefine]
 width = 960
 height = 540
-#formats =  0x01a
+formats =  0x01a
 overwriteWidth = ($width/$gameWidth) * (960*$internalRes) 
-overwriteHeight  = ($height/$gameHeight) * (540*$internalRes) 
+overwriteHeight  = ($height/$gameHeight) * (540*$internalRes*2.0) 
+
+[TextureRedefine]
+width = 960
+height = 544
+formats = 0x011
+overwriteWidth = ($width/$gameWidth) * (960*$internalRes) 
+overwriteHeight = ($height/$gameHeight) * (544*$internalRes*2.0) 
+
+[TextureRedefine]
+width = 960
+height = 540
+formats = 0x011
+overwriteWidth = ($width/$gameWidth) * (960*$internalRes) 
+overwriteHeight  = ($height/$gameHeight) * (540*$internalRes*2.0) 
 
 #[TextureRedefine]
 #width = 864
