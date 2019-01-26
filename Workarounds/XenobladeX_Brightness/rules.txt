@@ -8,7 +8,7 @@ version = 3
 [Preset]
 name = AMD
 $crushContrast = 0
-$exposure = 0.32
+$exposure = 0.52
 $gamma = 0.93
 $glare = 0.95
 $lift = 0.002
@@ -18,7 +18,7 @@ $vibrance = 0.318
 [Preset]
 name = NVIDIA
 $crushContrast = 0.000
-$exposure = 0.52
+$exposure = 0.32
 $gamma = 0.93
 $glare = 0.95
 $lift = 0.002
