@@ -204,6 +204,7 @@ $aspectRatio = (16.0/9.0)
 width = 1920
 height = 1088
 #formats = 0x011,0x01a
+formatsExcluded = 0x008
 overwriteWidth = ($width/$gameWidth) * 1920 
 overwriteHeight = ($height/$gameHeight) * 1088
 
