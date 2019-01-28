@@ -291,7 +291,7 @@
 "Star Fox Zero":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Star_Fox_Zero"
-  version3: false
+  version3: true
 "Super Mario 3D World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Super_Mario_3D_World"
