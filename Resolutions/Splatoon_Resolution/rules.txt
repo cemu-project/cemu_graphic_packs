@@ -29,6 +29,13 @@ $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
+name = 854x480
+$width = 854
+$height = 480
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
 name = 960x540
 $width = 960
 $height = 540
@@ -82,14 +89,14 @@ $gameHeight = 720
 # Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
 $gameWidth = 1280
