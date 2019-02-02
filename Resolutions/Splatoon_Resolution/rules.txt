@@ -194,6 +194,22 @@ overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x806
+overwriteFormat = 0x80e
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 368
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x806
+overwriteFormat = 0x80e
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 360
+
 # Fog
 
 [TextureRedefine]
@@ -615,3 +631,11 @@ width = 13
 height = 7
 overwriteWidth = ($width / $gameWidth) * 13
 overwriteHeight = ($height / $gameHeight) * 7
+
+# Multiplayer Player Icon
+
+[TextureRedefine]
+width = 256
+height = 256
+formats = 0x1a
+overwriteFormat = 0x1f
