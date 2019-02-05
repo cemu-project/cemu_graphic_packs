@@ -94,3 +94,15 @@ height = 384
 ###formatsExcluded = 
 overwriteWidth = 768
 overwriteHeight = 768
+
+[TextureRedefine]
+width = 960
+height = 544
+formats = 0x007
+overwriteFormat = 0x00f
+
+[TextureRedefine]
+width = 960
+height = 540
+formats = 0x007
+overwriteFormat = 0x00f
