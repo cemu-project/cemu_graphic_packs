@@ -12,7 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
+# Performance
 
 [Preset]
 name = 320x180
@@ -35,7 +35,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -152,4 +152,10 @@ overwriteHeight = ($height / $gameHeight) * 22
 width = 864
 height = 480
 overwriteWidth = ($width / $gameWidth) * 864
+overwriteHeight = ($height / $gameHeight) * 480
+
+[TextureRedefine] # Gamepad Resolution
+width = 854
+height = 480
+overwriteWidth = ($width / $gameWidth) * 854
 overwriteHeight = ($height / $gameHeight) * 480
