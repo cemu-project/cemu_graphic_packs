@@ -2,7 +2,7 @@
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Distant Fog
 path = "The Legend of Zelda: Twilight Princess HD/Mods/Distant Fog"
-description = Sets the depth and exposure of distant fog.
+description = Sets the depth and exposure of distant fog. Might cause other graphical bugs like hidden textures on the master sword handle.
 version = 3
 
 [Preset]
