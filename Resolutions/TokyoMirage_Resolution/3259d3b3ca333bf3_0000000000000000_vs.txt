@@ -55,9 +55,9 @@ attrDecoder.z = 0;
 attrDecoder.w = 0;
 R2f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(floatBitsToInt(0.0)), intBitsToFloat(floatBitsToInt(1.0)));
 // 0
-R127f.x = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y),intBitsToFloat(uf_remappedVS[0].z)) + R2f.y);
+R127f.x = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y)/ resXScale,intBitsToFloat(uf_remappedVS[0].z)) + R2f.y);
 PV0f.x = R127f.x;
-R123f.y = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x),intBitsToFloat(uf_remappedVS[0].z)) + R2f.x);
+R123f.y = (mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].x)/ resXScale,intBitsToFloat(uf_remappedVS[0].z)) + R2f.x);
 PV0f.y = R123f.y;
 R127f.z = mul_nonIEEE(intBitsToFloat(uf_remappedVS[0].y) / resYScale, intBitsToFloat(uf_remappedVS[0].w));
 PV0f.z = R127f.z;
