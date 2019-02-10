@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00,00050000ffffffff
 name = Resolution
 path = "Mario Kart 8/Graphics/Resolution"
 description = Changes the resolution of the game.
