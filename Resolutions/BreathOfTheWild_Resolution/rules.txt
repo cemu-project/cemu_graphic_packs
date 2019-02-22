@@ -372,6 +372,30 @@ formats = 0x001,0x005,0x007,0x806,0x80e,0x816
 overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 90
 
+# Required 1/10 resolution
+[TextureRedefine]
+width = 128
+height = 80
+formats = 0x005,0x007,0x019,0x01a,0x80e,0x816,0x806,0x820,0x41a
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 80
+
+# Required 1/10 resolution
+[TextureRedefine]
+width = 120
+height = 75
+formats = 0x005,0x007,0x019,0x01a,0x80e,0x816,0x806,0x820,0x41a
+overwriteWidth = ($width/$gameWidth) * 120
+overwriteHeight = ($height/$gameHeight) * 75
+
+# Required Fogs and Dust
+[TextureRedefine]
+width = 128
+height = 48
+formats = 0x806,0x816,0x005,0x007,0x820
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 48
+
 # Required 1/13 resolution
 [TextureRedefine]
 width = 96
@@ -388,112 +412,29 @@ formats = 0x816,0x806,0x007 # Used for bloom/fog
 overwriteWidth = ($width/$gameWidth) * 80
 overwriteHeight = ($height/$gameHeight) * 45
 
-# 0x01a - Blurs
-
-# Start Menu Screen "Complete" blur
-[TextureRedefine]
-width = 160
-height = 64
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 160
-overwriteHeight = ($height/$gameHeight) * 64
-
-# Start Menu Screen "Complete" blur
-[TextureRedefine]
-width = 160
-height = 50
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 160
-overwriteHeight = ($height/$gameHeight) * 50
-
-# Select Screen - Time and Temp Blur
-[TextureRedefine]
-width = 128
-height = 64
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 64
-
-# Select Screen - Time and Temp Blur
-[TextureRedefine]
-width = 128
-height = 50
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 50
-
-# Select Screen - Time and Temp Blur
+# Required 1/16 resolution
 [TextureRedefine]
 width = 64
-height = 32
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 32
-
-# Select Screen - Time and Temp Blur
-[TextureRedefine]
-width = 64
-height = 25
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 25
-
-# Select Screen - Shrine Locator Blur
-[TextureRedefine]
-width = 288
 height = 64
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 288
+formats = 0x80e # Used for depth
+overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 64
 
-# Select Screen - Shrine Locator Blur
-[TextureRedefine]
-width = 266
-height = 50
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 266
-overwriteHeight = ($height/$gameHeight) * 50
+# 0x019 - GUI Requirements
 
-# Select Screen - Shrine Locator Blur
-[TextureRedefine]
-width = 160
-height = 32
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 160
-overwriteHeight = ($height/$gameHeight) * 32
-
-# Select Screen - Shrine Locator Blur
-[TextureRedefine]
-width = 133
-height = 25
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 133
-overwriteHeight = ($height/$gameHeight) * 25
-
-# Main menu BOTW logo blur
-[TextureRedefine]
-width = 120
-height = 80
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 120
-overwriteHeight = ($height/$gameHeight) * 80
-
-# Main menu BOTW logo blur
-[TextureRedefine]
-width = 120
-height = 75
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth)* 120
-overwriteHeight = ($height/$gameHeight)* 75
-
-# 0x806 - Fogs and Dust
-# Required
 [TextureRedefine]
 width = 128
-height = 48
-formats = 0x806,0x816,0x005,0x007,0x820
+height = 720
+formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 48
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 110
+height = 720
+formats =  0x019
+overwriteWidth = ($width/$gameWidth) * 110
+overwriteHeight  = ($height/$gameHeight) * 720
 
 # 0x816 - Blooms & Effects
 
@@ -520,24 +461,24 @@ overwriteHeight = ($height/$gameHeight) * 256
 [TextureRedefine] 
 width = 256
 height = 128
-depth = 1
 formats = 0x816
+tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 128
 
 [TextureRedefine]
 width = 128
 height = 64
-depth = 1
 formats = 0x816
+tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine]
 width = 64
 height = 32
-depth = 1
 formats = 0x816
+tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 32
 
@@ -546,7 +487,17 @@ width = 32
 height = 16
 depth = 1
 formats = 0x816
+tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]
+width = 24
+height = 16
+depth = 1
+formats = 0x816
+tilemodes = 4
+overwriteWidth = ($width/$gameWidth) * 24
 overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
@@ -554,22 +505,16 @@ width = 40
 height = 22
 depth = 1
 formats = 0x816
+tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 40
 overwriteHeight = ($height/$gameHeight) * 22
-
-[TextureRedefine]
-width = 24
-height = 16
-depth = 1
-formats = 0x816
-overwriteWidth = ($width/$gameWidth) * 24
-overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 20
 height = 11
 depth = 1
 formats = 0x816
+tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 20
 overwriteHeight = ($height/$gameHeight) * 11
 
@@ -626,14 +571,6 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 512
 
-# Depth 
-[TextureRedefine] # Top-view to bottom Depth
-width = 2048
-height = 2048
-formats = 0x005
-overwriteWidth = ($width/$gameWidth) * 2048
-overwriteHeight = ($height/$gameHeight) * 2048
-
 # Select-Menu Map
 [TextureRedefine]
 width = 1504
@@ -673,35 +610,6 @@ height = 912
 formats = 0x001
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 912
-
-# Red Viewports Smaller Scales
-[TextureRedefine] 
-width = 64
-height = 45
-formats = 0x806
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 45
-
-[TextureRedefine] 
-width = 64
-height = 48
-formats = 0x806
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 48
-
-[TextureRedefine] 
-width = 64
-height = 32
-formats = 0x806
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 32
-
-[TextureRedefine] 
-width = 32
-height = 23
-formats = 0x806
-overwriteWidth = ($width/$gameWidth) * 32
-overwriteHeight = ($height/$gameHeight) * 23
 
 # 3D Map Ganons Castle & Beasts
 [TextureRedefine] 
@@ -753,3 +661,19 @@ formats = 0x019
 overwriteFormat = 0x01f
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 128
+height = 720
+formats = 0x019
+overwriteFormat = 0x01f
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 110
+height = 720
+formats = 0x019
+overwriteFormat = 0x01f
+overwriteWidth = ($width/$gameWidth) * 110
+overwriteHeight = ($height/$gameHeight) * 720
