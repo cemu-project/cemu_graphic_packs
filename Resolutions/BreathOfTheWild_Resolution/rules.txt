@@ -13,7 +13,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Performance
+# Performance
 
 [Preset]
 name = 320x180 (16:9)
@@ -39,7 +39,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900 (16:9)
@@ -89,7 +89,15 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Common Ultrawide Resolutions
+[Preset]
+name = 10240x5760 (16:9)
+$width = 10240
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+# Common Ultrawide Resolutions
 
 [Preset]
 name = -----------------------------------
@@ -123,71 +131,71 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Common 16:10 Resolutions
+# Common 16:10 Resolutions
 
 [Preset]
 name = -----------------------------------
 $width = 1440
-$height = 936 # 720x1.3
+$height = 900
 $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
 [Preset]
-name = 1440x936 (16:10)
+name = 1440x900 (16:10)
 $width = 1440
-$height = 936 # 720x1.3
+$height = 900
 $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
 [Preset]
-name = 1680x1080 (16:10)
+name = 1680x1050 (16:10)
 $width = 1680
-$height = 1080 # 720x1.5
+$height = 1050
 $gameWidth = 1280
 $gameHeight = 720
-$heightfix = 0
+$heightfix = 1
 
 [Preset]
-name = 1920x1224 (16:10)
+name = 1920x1200 (16:10)
 $width = 1920
-$height = 1224 # 720x1.7
+$height = 1200
 $gameWidth = 1280
 $gameHeight = 720
-$heightfix = 0
+$heightfix = 1
 
 [Preset]
-name = 2560x1656 (16:10)
+name = 2560x1600 (16:10)
 $width = 2560
-$height = 1656 # 720x2.3
+$height = 1600
 $gameWidth = 1280
 $gameHeight = 720
-$heightfix = 0
+$heightfix = 1
 
 [Preset]
 name = 2880x1800 (16:10)
 $width = 2880
-$height = 1800 # 720x2.5
+$height = 1800
 $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
 [Preset]
-name = 3840x2448 (16:10)
+name = 3840x2400 (16:10)
 $width = 3840
-$height = 2448 # 720x3.4
+$height = 2400
 $gameWidth = 1280
 $gameHeight = 720
-$heightfix = 0
+$heightfix = 1
 
 [Preset]
-name = 5120x3168 (16:10)
+name = 5120x3200 (16:10)
 $width = 5120
-$height = 3168 # 720x4.4
+$height = 3200
 $gameWidth = 1280
 $gameHeight = 720
-$heightfix = 0
+$heightfix = 1
 
 # Other Uncommon Resolutions
 

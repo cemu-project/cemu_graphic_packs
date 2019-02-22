@@ -6,7 +6,7 @@ description = This pack tweaks the colours and contrast to whatever preset you s
 version = 3
 
 [Preset]
-name = High Contrasty
+name = High Contrasty - shadow lift
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -26,6 +26,28 @@ $vibrance = 0.15
 $crushContrast = 0.00
 $bleach = 0.85
 $sharp_mix = 0.1
+
+[Preset]
+name = High Contrasty
+$redShadows = 0.98
+$greenShadows = 0.98
+$blueSadows = 0.99
+$redMid = 0.99
+$greenMid = 0.98
+$blueMid = 0.99
+$redHilight = 0.975
+$greenHilight = 0.975
+$blueHilight = 0.975
+
+$contrastCurve = 0.25
+$hazeFactor = 0.25
+$bloom = 0.85
+$gamma = 1.04
+$exposure = 1.1
+$vibrance = 0.20
+$crushContrast = 0.00
+$bleach = 0.85
+$sharp_mix = 0.05
 
 [Preset]
 name = Colourful

@@ -2,7 +2,7 @@
 moduleMatches = 0x1A03E108
 
 #rodata constants
-0x1005AAD8 = .float $width/$height  
+0x1005AAD8 = .float $aspectRatio #$width/$height
 _aspectAddr = 0x1006AAD8
 
 

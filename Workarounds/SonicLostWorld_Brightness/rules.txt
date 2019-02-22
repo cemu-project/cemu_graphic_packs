@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = Brightness
+path = "Sonic Lost World/Workaround/Brightness"
+description = This fixes the game from being too dark
+version = 3

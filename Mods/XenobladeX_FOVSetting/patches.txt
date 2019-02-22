@@ -1,3 +1,7 @@
+[XCXNOOFFV16J] 
+moduleMatches = 0x785CA8A9
+0x1019037C =  .float $fov #   1.0 is default, 0.75 wider FOV 
+
 [XCXFOVV102J]
 moduleMatches = 0x7672271D
 0x1019087C =  .float $fov #   1.0 is default, 0.75 wider FOV 

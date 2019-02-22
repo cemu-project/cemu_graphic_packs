@@ -50,8 +50,8 @@ _arrowTimeDrain = 0x1C
 0x037DC360 = lfs f13, _divisor@l(r12)
 
 #Break all forms of frame limiting
-0x031FAAFC = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
-#0x031FAAE8 = li r0, 1 #Better fence (make sure GPU is never more than 1 second? ahead)
+#0x031FAAFC = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
+0x031FAAE8 = li r0, 1 #Better fence (make sure GPU is never more than 1 second? ahead)
 #0x031FAB00 = nop #skip fence (no waiting on GPU)
 0x031FACD0 = nop #disable vsync
 0x031FACF4 = nop #disable vsync loop
@@ -122,8 +122,8 @@ _arrowTimeDrain = 0x1C
 0x037DB658 = lfs f13, _divisor@l(r12)
 
 #Break all forms of frame limiting
-0x031FA000 = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
-#0x031F9FEC = li r0, 1 #Better fence (make sure GPU is never more than 1 second? ahead)
+#0x031FA000 = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
+0x031F9FEC = li r0, 1 #Better fence (make sure GPU is never more than 1 second? ahead)
 #0x031FA004 = nop #skip fence (no waiting on GPU)
 0x031FA1D4 = nop #disable vsync
 0x031FA1F8 = nop #disable vsync loop

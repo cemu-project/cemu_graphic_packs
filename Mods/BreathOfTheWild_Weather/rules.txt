@@ -1,0 +1,43 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Weather
+path = "The Legend of Zelda: Breath of the Wild/Mods/Weather"
+description = Changes the weather
+version = 3
+
+[Preset]
+name = Clear weather
+$weatherByte:int = 0
+
+[Preset]
+name = Raining
+$weatherByte:int = 2
+
+[Preset]
+name = Raining (dark clouds and winds blowing)
+$weatherByte:int = 3
+
+[Preset]
+name = Clear weather (distant thunder)
+$weatherByte:int = 6
+
+[Preset]
+name = Raining (thundering clouds)
+$weatherByte:int = 7
+
+[Preset]
+name = Raining (fog)
+$weatherByte:int = 8
+
+# If anyone finds accurate names for these, feel free to fill them in.
+[Preset]
+name = MISC 1
+$weatherByte:int = 1
+
+[Preset]
+name = MISC 2
+$weatherByte:int = 4
+
+[Preset]
+name = MISC 3
+$weatherByte:int = 5

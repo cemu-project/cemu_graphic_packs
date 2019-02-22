@@ -72,7 +72,7 @@ $bleach = 0.85
 $sharp_mix = 0.05
 
 [Preset] # Colourful midway between original and cold
-name = Colorful 
+name = Warm / Colorful 
 $redShadows = 0.96
 $greenShadows = 0.97
 $blueSadows = 1.01
@@ -93,33 +93,100 @@ $crushContrast = 0.0
 $bleach = 0.85
 $sharp_mix = 0.05
 
-[Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discolouration of multi layer fx
-name = Cold contrast 
-$redShadows = 0.99
-$greenShadows = 1.0
-$blueSadows = 1.01
-$redMid = 0.85
-$greenMid = 0.86
+[Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discoloration of multi layer fx
+name = Cold 
+$redShadows = 0.99 #0.99
+$greenShadows = 1.0 # 1.0
+$blueSadows = 1.0 #1.0 #1.01
+$redMid = 0.88 #0.87
+$greenMid = 0.925 #0.9 #0.88
 $blueMid = 1.0
-$redHilight = 0.95
-$greenHilight = 0.96
-$blueHilight = 1.05
+$redHilight = 1.0
+$greenHilight = 1.01 #.86
+$blueHilight = 1.11 #1.14
 
 $contrastCurve = 0.25
 $hazeFactor = 0.1
 $bloom = 0.975
-$gamma = 1.0
-$exposure = 1.075
-$vibrance = 0.3
+$gamma = 1.025
+$exposure = 1.025
+$vibrance = 0.48
 $crushContrast = 0.0
 $bleach = 0.875
-$sharp_mix = 0.05
+$sharp_mix = 0.00
+
+[Preset] #Warm colour palette, light and shadows interplay,  caves are dark. 
+name = Warm contrast crush
+$redShadows = 1.0 #1.02 #0.99
+$greenShadows = 1.0 #1.05 # 1.0
+$blueSadows = 0.98 #1.0 #1.01
+$redMid = 0.96 #0.87
+$greenMid = 1.04 #0.9 #0.88
+$blueMid = 1.10
+$redHilight = 0.99
+$greenHilight = 0.99 #.86
+$blueHilight = 1.05 #1.14
+
+$contrastCurve = 0.95
+$hazeFactor = 0.1
+$bloom = 0.975
+$gamma = 1.05
+$exposure = 1.0
+$vibrance = 0.29
+$crushContrast = 0.0
+$bleach = 0.875
+$sharp_mix = 0.00
+
+[Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discoloration of multi layer fx
+name = Cold contrast crush
+$redShadows = 0.98 #1.02 #0.99
+$greenShadows = 1.01 #1.05 # 1.0
+$blueSadows = 1.04 #1.0 #1.01
+$redMid = 0.99 #0.87
+$greenMid = 1.06 #0.9 #0.88
+$blueMid = 1.12
+$redHilight = 0.98
+$greenHilight = 0.97 #.86
+$blueHilight = 1.08 #1.14
+
+$contrastCurve = 0.95
+$hazeFactor = 0.1
+$bloom = 0.975
+$gamma = 1.01
+$exposure = 1.01
+$vibrance = 0.29
+$crushContrast = 0.0
+$bleach = 0.875
+$sharp_mix = 0.00
+
+[Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discoloration of multi layer fx
+name = Cold contrast preserve highlights
+$redShadows = 0.98 #1.02 #0.99
+$greenShadows = 1.01 #1.05 # 1.0
+$blueSadows = 1.04 #1.0 #1.01
+$redMid = 0.97 #0.87
+$greenMid = 1.06 #0.9 #0.88
+$blueMid = 1.14
+$redHilight = 0.98
+$greenHilight = 0.97 #.86
+$blueHilight = 1.09 #1.14
+
+$contrastCurve = 0.25
+$hazeFactor = 0.1
+$bloom = 0.975
+$gamma = 0.75
+$exposure = 1.125
+$vibrance = 0.35
+$crushContrast = 0.0
+$bleach = 0.875
+$sharp_mix = 0.00
+
 
 [Preset] # jff 
 name =  Skyward Swordish
-$redShadows = 0.99
-$greenShadows = 0.99
-$blueSadows = 1.02
+$redShadows = 0.95
+$greenShadows = 0.95
+$blueSadows = 1.0
 $redMid = 0.95
 $greenMid = 0.97
 $blueMid = 1.04
@@ -127,7 +194,7 @@ $redHilight = 0.99
 $greenHilight =1.0
 $blueHilight = 1.01
 
-$contrastCurve = 0.45
+$contrastCurve = 0.95
 $hazeFactor = 0.71
 $bloom = 0.85
 $gamma = 1.25

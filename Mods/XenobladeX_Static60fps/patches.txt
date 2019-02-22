@@ -1,35 +1,61 @@
-[XCX60fpsV102J]
+[XCX60fpsV16J] 
+moduleMatches = 0x785CA8A9
+#Default as of 0.51 - Limit logic/2d animation to 30 fps Less timing issues, more jitter  
+#0x100D0604 = .float 0.5 	# .float 1.0 # GUI animations 
+0x100CFAE8 = .float 0.5 	# .float 1.0 # GUI animations *                                    
+0x10059514 = .float 0.5 	# .float 1.0 #Title screen cutscene -
+0x100144F0 = .float 0.1	# controller acceleration 
+0x10171070 = .float 2.0 	# arbitrary 2.0 float 
+0x1017117C = .float 0.5 # .5 float
+_halfRate =  0x10171070 
+_fullRate = 0x1017117C
+                                                          
+0x027370B8 =  lis   r11, _halfRate@ha # Double updateEventParam cutscene
+0x027370C4 =  lfs   f1, _halfRate@l(r11) #  -
+0x027A0180 =  lis   r10, _fullRate@ha # half SyncFrame cinematic cutscene, fixes timing issues with cinematic cutscenes -
+0x027A0184 =  lfs   f1, _fullRate@l(r10) #  but introduces  Shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6C j -
+
+0x025F149C =  lis   r12, _fullRate@h       ###   Move__11CfSceneTaskFv      #Filter CPU, 30 fps logic                                       
+0x025F14A4 =  lfs   f31, _fullRate@l(r12)  ###  Move__11CfSceneTaskFv       #                                            
+0x02768064 =  lis   r8, _fullRate@ha  #  sync in game cut scene 
+0x02768068 =  lfs   f31, _fullRate@l(r8) #       
+0x0273BBD0 =  lis   r7, _fullRate@ha  # sync elevator, vehicles  etc
+0x0273BBD4 =  lfs   f31, _fullRate@l(r7) # Ç
+
+# swapInterval 60
+0x02FCEB9C = li r3, 1  
+
+
+[XCX60fpsV48J] 
 moduleMatches = 0x7672271D
 #Default as of 0.51 - Limit logic/2d animation to 30 fps Less timing issues, more jitter  
-0x100D0604 = .float 0.5 	# .float 1.0 # GUI animations *                  
-0x1005989C = .float 0.5 	# .float 1.0 #Title screen cutscene -
-0x10014528 = .float 0.05	# controller acceleration -
-0x10171980 = .float 2.0 	# arbitrary 2.0 float 
+#0x100D0604 = .float 0.5 	# .float 1.0 # GUI animations *                  
+#0x1005989C = .float 0.5 	# .float 1.0 #Title screen cutscene -
+#0x10014528 = .float 0.1	# controller acceleration -
+#0x10171980 = .float 2.0 	# arbitrary 2.0 float 
 
-_halfRate =  0x10171980 
-_fullRate = 0x100D0604
+0x100D0070 = .float 0.5
+0x1005989C = .float 0.5 
+0x10014528 = .float 0.1
+0x10171570 = .float 2.0 
+
+_halfRate = 0x10171570 
+_fullRate = 0x100D0070
                                                           
-0x0273802C =  lis   r11, _halfRate@ha # Double updateEventParam cutscene
+0x0273802C =  lis   r11, _halfRate@ha # Double updateEventParam cutscene, ver
 0x02738038 =  lfs   f1, _halfRate@l(r11) #  -
 0x027A1120 =  lis   r10, _fullRate@ha # half SyncFrame cinematic cutscene, fixes timing issues with cinematic cutscenes -
 0x027A1124 =  lfs   f1, _fullRate@l(r10) #  but introduces  Shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6C j -
 
-#0x02707478  =  lis       r7, _tmp@ha      # ALT  calcAdxSkip__Q2_2ev13CFrameManagerFv                                                                                     
-#0x0270747C  =  lfs       f1, _tmp@l(r7)   #   calcAdxSkip__Q2_2ev13CFrameManagerFv      
-#0x02707660  =  lis       r9, _tmp@ha       #  calcCpuSkip__Q2_2ev13CFrameManagerFv   # SLOW down                                                                                 
-#0x02707668  =  lfs       f31, _tmp@l(r9)   #  calcCpuSkip__Q2_2ev13CFrameManagerFv   
-
-
-0x025F299C =  lis   r12, _fullRate@h       ###   Move__11CfSceneTaskFv      #Filter CPU, 30 fps logic                                       
-0x025F29A4 =  lfs   f31, _fullRate@l(r12)  ###  Move__11CfSceneTaskFv       #                                            
-0x0276A85C =  lis   r8, _fullRate@ha  #  sync in game cut scene 
-0x0276A860 =  lfs   f31, _fullRate@l(r8) #       
-0x0273E3CC =  lis   r7, _fullRate@ha  # sync elevator, vehicles  etc
-0x0273E3D0 =  lfs   f31, _fullRate@l(r7) # Ç
+0x025F1F78 =  lis   r12, _fullRate@h       ###   Move__11CfSceneTaskFv      #Filter CPU, 30 fps logic                                       
+0x025F1F80 =  lfs   f31, _fullRate@l(r12)  ###  Move__11CfSceneTaskFv       #                                            
+0x02768FD4 =  lis   r8, _fullRate@ha  #  sync in game cut scene 
+0x02768FD8 =  lfs   f31, _fullRate@l(r8) #       
+0x0273CB44 =  lis   r7, _fullRate@ha  # sync elevator, vehicles  etc
+0x0273CB48 =  lfs   f31, _fullRate@l(r7) # Ç
 
 # swapInterval 60
 0x02FD3F5C= li r3, 1  
-
 
 [XCX60fpsV100E_V101E]
 moduleMatches = 0x218F6E07, 0xF882D5CF

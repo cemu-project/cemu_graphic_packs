@@ -1,0 +1,25 @@
+[NSMBU+LUv0US]
+moduleMatches = 0x1049CED8
+
+#remove check for mii data
+0x024D7394 = b .+0xE8
+
+[NSMBUv64US]
+moduleMatches = 0x6CAEA914
+
+#remove check for mii data
+0x024D71C4 = b .+0xE8
+
+[NSMBUv0US]
+moduleMatches = 0xA7A5ECF1
+
+#remove check for mii data
+0x024BDE70 = b .+0xE8
+
+[NSLUv0EU]
+moduleMatches = 0xA3705C0B
+
+#remove check for mii data
+0x024D7158 = b .+0xE8
+
+#Note for future versions take the crash log and get the module checksum from the user.  Subtract 0x7c from the link register in the crash log to be the address we patch.
