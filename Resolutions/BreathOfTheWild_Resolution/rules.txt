@@ -13,7 +13,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Performance
+# Performance
 
 [Preset]
 name = 320x180 (16:9)
@@ -39,7 +39,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900 (16:9)
@@ -89,7 +89,15 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Common Ultrawide Resolutions
+[Preset]
+name = 10240x5760 (16:9)
+$width = 10240
+$height = 5760
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+# Common Ultrawide Resolutions
 
 [Preset]
 name = -----------------------------------
@@ -123,7 +131,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-// Common 16:10 Resolutions
+# Common 16:10 Resolutions
 
 [Preset]
 name = -----------------------------------
