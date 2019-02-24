@@ -312,7 +312,7 @@
 "Taiko no Tatsujin: Atsumete Tomodachi Daisakusen":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Taiko_no_Tatsujin:_Atsumete_Tomodachi_Daisakusen"
-  version3: false
+  version3: true
 "Tekken Tag Tournament 2: Wii U Edition":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Tekken_Tag_Tournament_2"
