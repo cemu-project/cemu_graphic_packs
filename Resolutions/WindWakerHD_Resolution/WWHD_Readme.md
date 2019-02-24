@@ -1,7 +1,16 @@
 ------
 ### TLoZ Wind Waker HD 
 ------
-There are some issues with AO and light sources, to mitigate this some “sub” viewports ned to scale evenly. XCX uses a similar approach to get smooth shadow transitions. 
+### Graphic options 
+3840x4320 vert x2 SSAA  - light res x2
+
+ 3840x4320 vert x2 SSAA   - Runs the game at double vertical res for balance between look and performance for super samling. Aspect is still 16:9 so run fullscreen scaling in stretched and bilinear when activating this option. 
+
+Light res x2 - Doubles resolution of light sources and mitigate light haloing around object edges. 
+
+### Nice to know when creating a custom resolution 
+
+There are some issues with AO and light sources, to mitigate this some “sub” viewports need to scale evenly. XCX uses a similar approach to get smooth shadow transitions. 
 
 Example:
 [Preset]
@@ -18,5 +27,3 @@ Base resolution is 2560x1440 -> Uw patch res 3440
 AO needs to be 2160  = 1440 * $lightSource = 1.5
 We then need to scale back ultrawide to original aspect for all viewports using AO / light sources
 2560 = 3440 *$scaleShader  (2560.0/3440.0)  
-
-All AO shader scaling has also been removed, currently they break more than they fix.. 
