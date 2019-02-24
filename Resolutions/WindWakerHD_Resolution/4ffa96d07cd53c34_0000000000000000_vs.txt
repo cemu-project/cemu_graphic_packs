@@ -5,7 +5,7 @@
 // shader 4ffa96d07cd53c34
 
 const float resXScale = (float($height)/float($gameHeight)); 
-const float resYScale = (float($width)/float($gameWidth)); 
+const float resYScale = (float($height)/float($gameHeight)); 
 
 
 //box low res (bloom?)

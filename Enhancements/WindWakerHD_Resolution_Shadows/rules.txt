@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 0005000010143500 # replace with fulltitleID
+name = Resolution
+path = "The Legend of Zelda: The Wind Waker HD/Graphics/Shadow resolution"
+description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution.
+version = 3
+
+[Preset]
+name = 1024x1024 (1x, Default)
+$shadowRes = 1
+
+[Preset]
+name = 512x512 (0.5x) Downscale
+$shadowRes = 0.5
+
+[Preset]
+name = 2048x2048 (2x) - Good balance
+$shadowRes = 2
+
+[Preset]
+name = 4096x4096 (4x)
+$shadowRes = 4
+
+[TextureRedefine] #Shadows x3 Lods 
+width = 1024
+height = 1024
+formats = 0x005 #,0x034,0x431,0x034
+overwriteWidth =  $shadowRes * 1024
+overwriteHeight =  $shadowRes * 1024

@@ -2,6 +2,11 @@
 #extension GL_ARB_texture_gather : enable
 // shader 8a763b05908ba4e8
 //Third band horizon
+const float skyboxRed = float($skyboxRed);
+const float skyboxGreen = float($skyboxGreen); 
+const float skyboxBlue = float($skyboxBlue);
+const float skyboxMix = float($skyboxMix);
+
 uniform ivec4 uf_remappedPS[3];
 layout(location = 0) in vec4 passParameterSem1;
 layout(location = 1) in vec4 passParameterSem2;
@@ -78,6 +83,7 @@ R0f.w = backupReg3f;
 R1f.xyz = vec3(R2f.x,R2f.y,R2f.y);
 R1f.w = R2f.w;
 // export
-passPixelColor0 = vec4(R0f.x, R0f.y*0.75, R0f.z*1.25, R0f.w)*1.2;
+//passPixelColor0 = vec4(R0f.x, R0f.y*0.75, R0f.z*1.25, R0f.w)*1.2;
+passPixelColor0 = vec4(R0f.x*skyboxRed, R0f.y*skyboxGreen*0.75, R0f.z*skyboxBlue*1.25, R0f.w)*skyboxMix*1.2;
 passPixelColor1 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
 }
