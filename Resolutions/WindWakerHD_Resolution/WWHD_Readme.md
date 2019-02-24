@@ -4,7 +4,7 @@
 ### Graphic options 
 3840x4320 vert x2 SSAA - light res x2
 
-3840x4320 vert x2 SSAA - Runs the game at double vertical res for balance between look and performance for super samling. Aspect is still 16:9 so run fullscreen scaling in stretched and bilinear when activating this option. 
+3840x4320 vert x2 SSAA - Runs the game at double vertical res balancing look and performance when super sampling. Aspect is still 16:9 so run full screen scaling in stretched and bilinear when activating this option. 
 
 Light res x2 - Doubles resolution of light sources and mitigate light haloing around object edges. 
 
