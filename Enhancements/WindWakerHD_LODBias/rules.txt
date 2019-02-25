@@ -16,6 +16,17 @@ $0x432 = 0
 $0x433 = 0
 $0x434 = 0
 
+[Preset] #16x Anisotropic filter makes (ocean) textures to sharp, they should fade to blur.
+name = +2 LOD 34 smooth ocean mipmap transition. 
+$0x031 = 0
+$0x033 = 0
+$0x034 = +2
+$0x035 = 0
+$0x431 = 0
+$0x432 = 0
+$0x433 = 0
+$0x434 = 0
+
 [Preset]
 name = LOD -0.5 (Sharper)
 $0x031 = -.5
