@@ -211,19 +211,12 @@ formatsExcluded = 0x816
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1080
 
-[TextureRedefine] #Pictograph
-width = 1600
-height = 912
-formats =  0x019
-overwriteWidth = ($width/$gameWidth) * 1600
-overwriteHeight  = ($height/$gameHeight) * 912
-
-[TextureRedefine] #Pictograph
+[TextureRedefine] #pictograph texture?
 width = 1600
 height = 900
-formats =  0x019
+#formats = 
 overwriteWidth = ($width/$gameWidth) * 1600
-overwriteHeight  = ($height/$gameHeight) * 900
+overwriteHeight = ($height/$gameHeight) * 900
 
 #[TextureRedefine] #Shadows x3 Lods 
 #width = 1024
@@ -267,24 +260,17 @@ height = 480
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
 
-[TextureRedefine] #pictograph
-width = 800
-height = 464
-formats =  0x41a,0x01a,080e
-overwriteWidth = ($width/$gameWidth) * 800
-overwriteHeight  = ($height/$gameHeight) * 464
-
-[TextureRedefine] #pictograph 
-width = 800
-height = 450
-#formats = 
-overwriteWidth = ($width/$gameWidth) * 800
-overwriteHeight = ($height/$gameHeight) * 450
+#[TextureRedefine] #pictograph texture?
+#width = 800
+#height = 450
+##formats = 
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 450
 
 [TextureRedefine] #
 width = 512
 height = 512
-formats = 0x019,0x01a,0x806
+formats = 0x019,0x01a
 overwriteWidth = ($width/$gameWidth) * (512*$lightSource*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (512*$lightSource)
 
