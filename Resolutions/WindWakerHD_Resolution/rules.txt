@@ -191,55 +191,41 @@ $lightSource = 2.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
-#[TextureRedefine]
-#formats = 0x01a
-#overwriteFormat = 0x01f
+## Colour depth increase - Didn't see any visual improvement. 
 #
 #[TextureRedefine]
 #formats = 0x001
 #overwriteFormat = 0x005
 #
 #[TextureRedefine]
-#formats = 0x816
-#overwriteFormat = 0x820
+#formats = 0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#formats = 0x019
+#overwriteFormat = 0x01f
 #
 #[TextureRedefine]
 #formats = 0x806
 #overwriteFormat = 0x80e
 #
 #[TextureRedefine]
-#formats = 0x019
-#overwriteFormat = 0x01f
+#formats = 0x816
+#overwriteFormat = 0x820
 
 [TextureRedefine]
 width = 1920
 height = 1088
-#formats = 0x80e,0x019,0x001
-formatsExcluded = 0x816
+formats = 0x80e,0x019,0x001
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1088
 
 [TextureRedefine]
 width = 1920
 height = 1080
-#formats = 0x80e,0x019,0x001
-formatsExcluded = 0x816
+formats = 0x80e,0x019,0x001
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1080
-
-[TextureRedefine] #Pictograph
-width = 1600
-height = 912
-#formats =  0x019
-overwriteWidth = ($width/$gameWidth) * 1600
-overwriteHeight  = ($height/$gameHeight) * 912
-
-[TextureRedefine] #Pictograph
-width = 1600
-height = 900
-#formats =  0x019
-overwriteWidth = ($width/$gameWidth) * 1600
-overwriteHeight  = ($height/$gameHeight) * 900
 
 #[TextureRedefine] #Shadows x3 Lods 
 #width = 1024
@@ -258,70 +244,49 @@ overwriteHeight = ($height/$gameHeight) * (544*$lightSource)
 [TextureRedefine]
 width = 960
 height = 544
-#formats = 0x816,0x806,0x019,0x01a,0x001,0x80e
+formats = 0x816,0x806,0x019,0x01a,0x001,0x80e
 overwriteWidth = ($width/$gameWidth) * (960*$lightSource*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (544*$lightSource)
 
 [TextureRedefine]
 width = 960
 height = 540
-#formats = 0x816,0x806,0x019,0x01a,0x001,0x80e
+formats = 0x816,0x806,0x019,0x01a,0x001,0x80e
 overwriteWidth = ($width/$gameWidth) * (960*$lightSource*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (540*$lightSource)
 
 [TextureRedefine]
 width = 864
 height = 480
-#formats = 0x019,0x80e
+formats = 0x019,0x80e
 overwriteWidth = ($width/$gameWidth) * 864
 overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 854
 height = 480
-#formats = 0x019,0x80e
+formats = 0x019,0x80e
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
-
-[TextureRedefine] #pictograph 
-width = 832
-height = 450
-formats =  0x01a,080e #,0x41a
-overwriteWidth = ($width/$gameWidth) * 832
-overwriteHeight = ($height/$gameHeight) * 450
-
-[TextureRedefine] #pictograph
-width = 800
-height = 464
-formats =  0x01a,080e #,0x41a
-overwriteWidth = ($width/$gameWidth) * 800
-overwriteHeight  = ($height/$gameHeight) * 464
-
-[TextureRedefine] #pictograph 
-width = 800
-height = 450
-#formats =  0x01a,080e,0x41a
-overwriteWidth = ($width/$gameWidth) * 800
-overwriteHeight = ($height/$gameHeight) * 450
 
 [TextureRedefine] #
 width = 512
 height = 512
-formats = 0x019,0x01a,0x806
+formats = 0x019,0x01a #,0x806
 overwriteWidth = ($width/$gameWidth) * (512*$lightSource*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (512*$lightSource)
 
 [TextureRedefine]
 width = 480
 height = 270
-#formats = 0x816
+formats = 0x816
 overwriteWidth = ($width/$gameWidth) * (480)
 overwriteHeight = ($height/$gameHeight) * (270)
 
 [TextureRedefine]
 width = 480
 height = 272
-#formats = 0x816
+formats = 0x816
 overwriteWidth = ($width/$gameWidth) * (480)
 overwriteHeight = ($height/$gameHeight) * (272)
 
@@ -335,14 +300,14 @@ overwriteHeight = ($height/$gameHeight) * (256)
 [TextureRedefine]
 width = 256
 height = 144
-#formats = 0x816,0x01a
+formats = 0x816,0x01a
 overwriteWidth = ($width/$gameWidth) * (256)
 overwriteHeight = ($height/$gameHeight) * (144)
 
 [TextureRedefine]
 width = 240
 height = 135
-#formats = 0x816,0x01a
+formats = 0x816,0x01a
 overwriteWidth = ($width/$gameWidth) * (240)
 overwriteHeight = ($height/$gameHeight) * (135)
 
@@ -356,7 +321,7 @@ overwriteHeight = ($height/$gameHeight) * (128)
 [TextureRedefine]
 width = 128
 height = 80
-#formats = 0x816
+formats = 0x816
 overwriteWidth = ($width/$gameWidth) * (128)
 overwriteHeight = ($height/$gameHeight) * (80)
 
@@ -377,7 +342,7 @@ overwriteHeight = ($height/$gameHeight) * (64)
 [TextureRedefine]
 width = 64
 height = 48
-#formats = 0x816
+formats = 0x816
 overwriteWidth = ($width/$gameWidth) * (64)
 overwriteHeight = ($height/$gameHeight) * (48)
 
@@ -387,3 +352,41 @@ height = 33
 #formats = 
 overwriteWidth = ($width/$gameWidth) * (60)
 overwriteHeight = ($height/$gameHeight) * (33)
+ 
+### pictograph. If you try to fix this, verify that saved pictures can be loaded from album. 
+#
+#[TextureRedefine] #Pictograph
+#width = 1600
+#height = 912
+#formats = 0x019
+#overwriteWidth = ($width/$gameWidth) * 1600
+#overwriteHeight = ($height/$gameHeight) * 912
+#
+#[TextureRedefine] #Pictograph
+#width = 1600
+#height = 900
+#formats = 0x019
+#overwriteWidth = ($width/$gameWidth) * 1600
+#overwriteHeight = ($height/$gameHeight) * 900
+#
+#[TextureRedefine] #pictograph 
+#width = 832
+#height = 450
+#formats = 0x01a,080e,0x41a
+#overwriteWidth = ($width/$gameWidth) * 832
+#overwriteHeight = ($height/$gameHeight) * 450
+#
+#[TextureRedefine] #pictograph
+#width = 800
+#height = 464
+#formats = 0x01a,080e,0x41a # 
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 464
+#
+#[TextureRedefine] #pictograph 
+#width = 800
+#height = 450
+#formats = 0x01a,080e,0x41a
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 450
+
