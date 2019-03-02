@@ -4,8 +4,8 @@ moduleMatches = 0x1049CED8
 #remove check for mii data
 0x024D7394 = b .+0xE8
 
-[NSMBUv64US]
-moduleMatches = 0x6CAEA914
+[NSMBUv64USv80EU]
+moduleMatches = 0x6CAEA914, 0xFA29C89F
 
 #remove check for mii data
 0x024D71C4 = b .+0xE8
