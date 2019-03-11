@@ -2,6 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 3df0bb0da1c740d5
+//  atmospheric dust and crespecular rays
 uniform ivec4 uf_remappedPS[1];
 uniform float uf_alphaTestRef;
 layout(binding = 9) uniform sampler2D textureUnitPS9;// Tex9 addr 0xf557c800 res 160x90x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler9 ClampX/Y/Z: 2 2 2 border: 1
