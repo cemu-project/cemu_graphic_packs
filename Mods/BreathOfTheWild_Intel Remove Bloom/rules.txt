@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Remove Intel Excess Bloom"
+path = "The Legend of Zelda: Breath of the Wild/Graphics/Intel/Remove Excess Intel Bloom"
+description = Removes excess bloom common in 23.xx and Intel older drivers. Apply before shadow fixes for no-cel. -Altros
+version = 3
