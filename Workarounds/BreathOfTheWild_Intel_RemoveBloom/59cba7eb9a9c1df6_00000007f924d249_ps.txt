@@ -2,6 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 59cba7eb9a9c1df6
+//  fog on water but also used by AMD_Intel shadow fix
 layout(binding = 33, std140) uniform uniformBlockPS1
 {
 vec4 uf_blockPS1[1024];
