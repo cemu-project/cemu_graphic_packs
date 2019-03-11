@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Fix Flipped Intel Lights"
-path = "The Legend of Zelda: Breath of the Wild/Graphics/Intel/Remove Flipped Intel Lights"
-description = Fixes flipped lights common in 23.xx and older Intel drivers. -Altros
-version = 3
