@@ -70,10 +70,12 @@ PS0i = R2i.y;
 // -0.5 0xbf000000
 // 6 0x40c00000
 // 7 0x40a00000
+// 7.5 0x40f00000
+// 8 0x41000000
 // 9 0x41100000
 R0i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.w) , intBitsToFloat(uf_remappedPS[1].z) ) );
-// seems we need to shift by dec 9 or hex 0x41100000 for unknown reasons. probably related to scale probably breaks on increased resolutions.
-R0i.y = floatBitsToInt(1-mul_nonIEEE(intBitsToFloat(PV0i.z) - intBitsToFloat(0x41100000), intBitsToFloat(uf_remappedPS[1].w)) );
+// seems we need to shift by dec 7.5 or hex 0x41100000 for unknown reasons. probably related to scale probably breaks on increased resolutions.
+R0i.y = floatBitsToInt(1-mul_nonIEEE(intBitsToFloat(PV0i.z) - intBitsToFloat(0x40f00000), intBitsToFloat(uf_remappedPS[1].w)) );
 }
 if( activeMaskStackC[1] == true ) {
 R2i.x = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R0i.xy)).x);
