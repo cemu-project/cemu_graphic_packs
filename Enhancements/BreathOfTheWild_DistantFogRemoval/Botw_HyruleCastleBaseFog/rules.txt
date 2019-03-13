@@ -1,0 +1,100 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Hyrule Castle Base Fog Pack
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Distant Fog Removal/Hyrule Castle Base Fog"
+description = Can Remove the Fog glow at the Base of Hyrule Castle. Can Change its RGB color.
+version = 3
+
+
+[Preset]
+name = Castle Base Fog Disabled
+$basefogopacity = 0
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = Castle Base Fog 30%
+$basefogopacity = 0.3
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = Castle Base Fog 50%
+$basefogopacity = 0.5
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = Castle Base Fog Enabled
+$basefogopacity = 1
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = ----------------------------------------
+$basefogopacity = 1
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = Castle Base Fog Opacity 3X
+$basefogopacity = 3
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = ----------------------------------------
+$basefogopacity = 1
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = Castle Base Fog Red
+$basefogopacity = 1.4
+$basefogred = 2
+$basefoggreen = 0
+$basefogblue = 0
+
+[Preset]
+name = Castle Base Fog Green
+$basefogopacity = 1
+$basefogred = 0
+$basefoggreen = 1
+$basefogblue = 0
+
+[Preset]
+name = Castle Base Fog Blue
+$basefogopacity = 1
+$basefogred = 0
+$basefoggreen = 0
+$basefogblue = 1
+
+[Preset]
+name = ----------------------------------------
+$basefogopacity = 1
+$basefogred = 1
+$basefoggreen = 1
+$basefogblue = 1
+
+[Preset]
+name = Custom Preset
+$basefogopacity = 1
+$basefogred = 4
+$basefoggreen = 1.0
+$basefogblue = 1.5
+
+# Information
+# by SkalFate
+# ----------------------
+# (basefogopacity) = Fog Transparency/Opacity - how thick you want the Hyrule Castle Base Fog to look
+# ------ Values are multiplied, so if you want to lower use [0.01 - 1.0], or if you want to go higher go from [1.0 - X.X]
+
+# (basefogred, basefoggreen, basefogblue ) = RGB - Red, Green, Blue -  Changes the color of the Hyrule Base Fog.
+# ------ Values are multiplied so if you want to lower use [0.01 - 1.0], or if you want to go higher go from [1.0 - X.X]
