@@ -6,44 +6,46 @@ description = Enables or Disables Native Botw Anti-Aliasing. Also includes an al
 version = 3
 
 [Preset]
-name = Nvidias FXAA
+name = Alternative FXAA (Nvidia's implementation)
 $preset:int = 2
-#
-$inventorySharper = 0.0 # Ignore
-$inventoryBlurrier = 0.0 # Ignore
-$worldSharper = 0.0 # Ignore
-$worldBlurrier = 0.0 # Ignore
-#
-$subPix = 1.0
-$edgeThreshold = 0.125
-$edgeThresholdMin = 0.0156
+# Customize these 3 values
+$subPix:int = 1.0
+$edgeThreshold:int = 0.125
+$edgeThresholdMin:int = 0.0156
+
+# Unrelated for Nvidia FXAA
+$inventorySharper:int = 0.0
+$inventoryBlurrier:int = 0.0
+$worldSharper:int = 0.0
+$worldBlurrier:int = 0.0
 
 [Preset]
 name = Enable Native AA
 $preset:int = 1
-#
-$inventorySharper = 0.0
-$inventoryBlurrier = 0.0
-$worldSharper = 0.0
-$worldBlurrier = 0.0
-#
-$subPix = 0.75 # Ignore
-$edgeThreshold = 0.166 # Ignore
-$edgeThresholdMin = 0.0312 # Ignore
+# Customize these 4 values below
+$inventorySharper:int = 0.0
+$inventoryBlurrier:int = 0.0
+$worldSharper:int = 0.0
+$worldBlurrier:int = 0.0
+
+# Not used for Native AA
+$subPix:int = 0.75 # Ignore
+$edgeThreshold:int = 0.166 # Ignore
+$edgeThresholdMin:int = 0.0312 # Ignore
 
 
 [Preset]
 name = Disable Native AA
 $preset:int = 0
-#
-$inventorySharper = 0.0 # Ignore
-$inventoryBlurrier = 0.0 # Ignore
-$worldSharper = 0.0 # Ignore
-$worldBlurrier = 0.0 # Ignore
-#
-$subPix = 0.75 # Ignore 
-$edgeThreshold = 0.166 # Ignore
-$edgeThresholdMin = 0.0312 # Ignore
+# Disables all anti-aliasing, doesn't have any customizations
+
+$inventorySharper:int = 0.0
+$inventoryBlurrier:int = 0.0
+$worldSharper:int = 0.0
+$worldBlurrier:int = 0.0
+$subPix:int = 0.75
+$edgeThreshold:int = 0.166
+$edgeThresholdMin:int = 0.0312
 
 
 # Adjust native AA implmentation - Only applies to Enabled preset
@@ -75,4 +77,4 @@ $edgeThresholdMin = 0.0312 # Ignore
 #   0.0312 - visible limit (slower)
 
 # Credit: Kiri, NAVras
-# Credit: SkalFate for proper V3 Import.
+# Credit: SkalFate for V3 import.
