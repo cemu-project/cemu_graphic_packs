@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Inner Exp Points X"
+name = "Inner Exp Points"
 path = "Xenoblade Chronicles X/Mods/Experience/Inner Exp Points"
-description = Change the amount of Inner Exp points gained in battle.
+description = Change the amount of Inner Exp points gained in battle, missions, quests and exploration. [1.0.1E/1.0.2U]
 version = 3
 
 [Preset]
@@ -20,3 +20,7 @@ $mod = 10
 [Preset]
 name = "x50"
 $mod = 50
+
+[Preset]
+name = "x100"
+$mod = 100

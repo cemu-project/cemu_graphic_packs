@@ -1,9 +1,7 @@
 [XCX_SQUADMISSIONS]
 moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 
-codeCaveSize = 0x44
-
-_getLocalTimeSec = 0x02892000
+codeCaveSize = 0x6C
 
 # cfs::CfSocialManager::update((float))
 0x022879D0 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
@@ -58,6 +56,10 @@ _mult = 0x00000014
 0x00000018 = .byte $uncap
 _uncap = 0x00000018
 
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Multiply the reward tickets given in many occasions
+
 _moreTickets = 0x0000001C
 0x0000001C = lis r28, _mult@ha
 0x00000020 = lhz r28, _mult@l(r28)
@@ -65,6 +67,10 @@ _moreTickets = 0x0000001C
 0x00000028 = blr
 
 0x022CA874 = bla _moreTickets
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Ignore the max number of tickets we can get
 
 _uncapTickets = 0x0000002C
 0x0000002C = lis r5, _uncap@ha
@@ -76,8 +82,34 @@ _uncapTickets = 0x0000002C
 
 0x022CAC5C = bla _uncapTickets
 
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
+; WHAT : 
+
+_dispBefore = 0x00000044
+0x00000044 = lhz       r26, 0x8C(r1)
+0x00000048 = lis 	   r24, _mult@ha
+0x0000004C = lhz 	   r24, _mult@l(r24)
+0x00000050 = mullw     r26, r26, r24
+0x00000054 = blr
+
+0x02B94718 = bla _dispBefore
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestResult::setup((void))
+; WHAT : 
+
+_dispAfter = 0x00000058
+0x00000058 = lhz       r5, 0x5778(r29)
+0x0000005C = lis 	   r3, _mult@ha
+0x00000060 = lhz 	   r3, _mult@l(r3)
+0x00000064 = mullw     r5, r5, r3
+0x00000068 = blr
+
+0x02B9FE2C = bla _dispAfter
+
 #####################################################################################################
-[XCX_SQUADMISSIONS_EU]
+[XCX_SQUADMISSIONS_1E]
 moduleMatches = 0xF882D5CF ; 1.0.1E
 
 # getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
@@ -110,7 +142,7 @@ _savePtr = 0x00000000
 0x02B850A8 = li r11, 1
 
 #####################################################################################################
-[XCX_SQUADMISSIONS_US]
+[XCX_SQUADMISSIONS_2U]
 moduleMatches = 0x30B6E091 ; 1.0.2U
 
 # getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
@@ -141,3 +173,136 @@ _savePtr = 0x00000000
 
 0x02B85074 = li r11, 1
 0x02B85098 = li r11, 1
+
+#####################################################################################################
+[XCX_SQUADMISSIONS_1U]
+moduleMatches = 0xAB97DE6B ; 1.0.1U
+
+codeCaveSize = 0x7C
+
+0x02287960 = nop
+
+0x023AB814 = nop ; 0x6B8(r12) == 0
+0x023AB844 = nop ; isHost
+0x023AB9F8 = li r5, 60 ; force 0x24 - UNLOCK
+0x023ABBA0 = nop ; isHost
+0x023A0414 = nop ; isHost
+0x023ABC24 = nop ; getServerTimeSecRegion - UNLOCK
+0x023ABC3C = nop ; compare with 0x28 - UNLOCK
+0x023ABC48 = nop ; compare with 0x2C - UNLOCK
+_gotoJoin = 0x023ABC90 - UNLOCK
+0x023ABC4C = b _gotoJoin - UNLOCK
+
+0x022C7FEC = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
+0x022C7FF0 = nop ; test réseau
+0x022C584C = nop ; rlwinm.   r10, r11, 0,29,29
+
+#################### Change Squad Mission using main menu
+
+_shareAddr = 0x1039C07C
+
+_iniPtr = 0x00000000
+0x00000000 = li r5, 0
+0x00000004 = lis       r30, _shareAddr@ha
+0x00000008 = stw       r5, _shareAddr@l(r30)
+0x0000000C = mr 	   r30, r3
+0x00000010 = blr
+
+0x023B7430 = bla _iniPtr
+
+_gotoTimeout = 0x023ABD84
+_gotoNext = 0x023ABDE4
+
+0x023ABD58 = lis       r3, _shareAddr@ha
+0x023ABD5C = lwz      r7, _shareAddr@l(r3)
+0x023ABD60 = cmpwi r7, 1
+0x023ABD64 = beq _gotoTimeout
+0x023ABD68 = b _gotoNext
+
+######################## More Tickets
+
+0x00000014 = .short $mult
+_mult = 0x00000014
+0x00000018 = .byte $uncap
+_uncap = 0x00000018
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Multiply the reward tickets given in many occasions
+
+_moreTickets = 0x0000001C
+0x0000001C = lis r28, _mult@ha
+0x00000020 = lhz r28, _mult@l(r28)
+0x00000024 = mullw r28, r4, r28
+0x00000028 = blr
+
+0x022CA804 = bla _moreTickets
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Ignore the max number of tickets we can get
+
+_uncapTickets = 0x0000002C
+0x0000002C = lis r5, _uncap@ha
+0x00000030 = lbz r5, _uncap@l(r5)
+0x00000034 = cmpwi r5, 1
+0x00000038 = beqlr
+0x0000003C = mr r3, r25
+0x00000040 = blr
+
+0x022CABEC = bla _uncapTickets
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
+; WHAT : 
+
+_dispBefore = 0x00000044
+0x00000044 = lhz       r26, 0x8C(r1)
+0x00000048 = lis 	   r24, _mult@ha
+0x0000004C = lhz 	   r24, _mult@l(r24)
+0x00000050 = mullw     r26, r26, r24
+0x00000054 = blr
+
+0x02B9468C = bla _dispBefore
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestResult::setup((void))
+; WHAT : 
+
+_dispAfter = 0x00000058
+0x00000058 = lhz       r5, 0x5778(r29)
+0x0000005C = lis 	   r3, _mult@ha
+0x00000060 = lhz 	   r3, _mult@l(r3)
+0x00000064 = mullw     r5, r5, r3
+0x00000068 = blr
+
+0x02B9FD2C = bla _dispAfter
+
+#####################################################################################################
+# getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
+0x0295E984 = nop
+0x0295E988 = li r0, 42
+
+# menu::MenuSquadMission::process((void))
+0x02BFC6C0 = li r11, 1
+
+##################### BLADE Home Terminal (for Squad Quest Selection)
+
+0x02AC5C10 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+
+#################### Change Squad Mission using main menu
+
+0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+
+_savePtr = 0x0000006C
+0x0000006C = li 	   r3, 1
+0x00000070 = lis       r30, _shareAddr@ha
+0x00000074 = stw       r3, _shareAddr@l(r30)
+0x00000078 = blr
+
+0x02B850A8 = bla _savePtr
+0x02B850C0 = bla _savePtr
+
+0x02B84FF8 = li r11, 1
+0x02B8501C = li r11, 1
+
