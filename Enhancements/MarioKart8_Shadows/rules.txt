@@ -31,3 +31,10 @@ height = 1024
 formats = 0x005
 overwriteWidth = $shadowRes * 1024
 overwriteHeight = $shadowRes * 1024
+
+[TextureRedefine] # 3-4P shadows
+width = 512
+height = 512
+formats = 0x005
+overwriteWidth = $shadowRes * 512
+overwriteHeight = $shadowRes * 512

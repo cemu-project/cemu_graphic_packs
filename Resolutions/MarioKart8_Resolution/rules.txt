@@ -239,6 +239,20 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 256
 
+[TextureRedefine] # MP Selection Menu - Player Alpha Cutout Rendering
+width = 640
+height = 320
+formats = 0x80e,0x01a,0x806,0x816,0x801
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 320
+
+[TextureRedefine] # MP Selection Menu - Depth Map
+width = 768
+height = 768
+formats = 0x80e,0x005
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 320
+
 # Blur in menus
 [TextureRedefine]
 width = 320
