@@ -532,7 +532,7 @@ overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 [TextureRedefine] 
 width = 512
 height = 512
-formats = 0x005,0x41a
+formats = 0x005
 #formatsExcluded = 0x433,0x431,0x035,0x033,0x031,0x005
 overwriteWidth = ($width/$gameWidth) * (512*$scaleShader*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (512*$scaleShader*$internalRes)
