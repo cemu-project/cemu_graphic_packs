@@ -18,15 +18,15 @@ name = Raining (dark clouds and winds blowing)
 $weatherByte:int = 3
 
 [Preset]
-name = Clear weather (distant thunder)
+name = Gray weather (no rain and dark clouds)
 $weatherByte:int = 6
 
 [Preset]
-name = Raining (thundering clouds)
+name = Storm with thunder
 $weatherByte:int = 7
 
 [Preset]
-name = Raining (fog)
+name = Fog and rain
 $weatherByte:int = 8
 
 # If anyone finds accurate names for these, feel free to fill them in.
