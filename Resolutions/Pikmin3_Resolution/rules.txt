@@ -213,3 +213,18 @@ height = 480
 formats = 0x1,0x19,0x806,0x80e,0x816
 overwriteWidth = ($width / $gameWidth) * 854
 overwriteHeight = ($height / $gameHeight) * 480
+
+[TextureRedefine] # Gamepad Water?
+width = 448
+height = 240
+formats = 0x1,0x19,0x806,0x80e,0x816
+tileModesExcluded = 0x1
+overwriteWidth = ($width / $gameWidth) * 448
+overwriteHeight = ($height / $gameHeight) * 240
+
+[TextureRedefine] # Gamepad Water?
+width = 427
+height = 240
+formats = 0x1,0x19,0x806,0x80e,0x816
+overwriteWidth = ($width / $gameWidth) * 427
+overwriteHeight = ($height / $gameHeight) * 240
