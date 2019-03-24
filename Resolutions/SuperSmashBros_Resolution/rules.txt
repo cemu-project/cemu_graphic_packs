@@ -10,7 +10,7 @@ name = 1920x1080 (Default)
 $width = 1920
 $height = 1080
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 // Performance
 
@@ -19,35 +19,35 @@ name = 320x180
 $width = 320
 $height = 180
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 640x360
 $width = 640
 $height = 360
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 960x540
 $width = 960
 $height = 540
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 1280x720
 $width = 1280
 $height = 720
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 1600x900
 $width = 1600
 $height = 900
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 // Common HD Resolutions
 
@@ -56,28 +56,28 @@ name = 2560x1440
 $width = 2560
 $height = 1440
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 3200x1800
 $width = 3200
 $height = 1800
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 3840x2160
 $width = 3840
 $height = 2160
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [Preset]
 name = 5120x2880
 $width = 5120
 $height = 2880
 $gameWidth = 1920
-$gameHeight = 1080
+$gameHeight = 1088
 
 [TextureRedefine] # Game Resolution
 width = 1920
