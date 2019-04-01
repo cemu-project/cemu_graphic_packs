@@ -5,6 +5,9 @@ path = "Mario & Sonic at the Rio 2016 Olympic Games/Graphics/Resolution"
 description = Changes the resolution of the game. Known issues: Lower resolution results in a "deep-fried" look. Depth of field and bloom needs shader edits.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = 1280x720 (Default)
 $width = 1280

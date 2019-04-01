@@ -4,3 +4,6 @@ name = "Automatic Soul Challenges"
 path = "Xenoblade Chronicles X/Mods/Battle/Automatic Soul Challenges"
 description = The Soul Challenges QTE are hidden and automatically successful (no preset needed).
 version = 3
+
+[Control]
+vsyncFrequency = 65535

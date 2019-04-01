@@ -4,3 +4,6 @@ name = "Hyrule Warriors - NVIDIA Enemy Death Fix"
 path = "Hyrule Warriors/Workarounds/NVIDIA Enemy Death Fix"
 description = Fixes graphics glitch and crashes due to enemy death.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

@@ -4,3 +4,6 @@ name = Spawn Motorcycle Anywhere
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cheats/Spawn Motorcycle Anywhere"
 description = v208 only! Credits to Zeikken (converting to patches) and leoetlino (finding the value). BotW Cheats by C313571N and Xalphenos
 version = 3
+
+[Control]
+vsyncFrequency = 65535

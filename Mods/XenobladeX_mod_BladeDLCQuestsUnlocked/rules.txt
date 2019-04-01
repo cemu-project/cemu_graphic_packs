@@ -4,4 +4,7 @@ name = "DLC Quests unlocked"
 path = "Xenoblade Chronicles X/Mods/BLADE/DLC Quests unlocked"
 description = DLC Support quests are unlocked and accessible right after you are a BLADE member.
 version = 3
+
+[Control]
+vsyncFrequency = 65535
 	

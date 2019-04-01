@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Battle/Escape distance reducer"
 description = Reduce escape distance needed to lose aggro from enemies.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Apply -25%
 $mod = 1.333

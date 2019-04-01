@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium income quantity mod"
 description = Affect the quantity of the FrontierNav income for the Miranium.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "Miranium x2"
 $mod = 2

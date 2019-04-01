@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Pro+ HUD"
 description = Removes the rest of the HUD that isn't removed by Pro.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [TextureRedefine] # Disable Hearts
 width = 48
 height = 48

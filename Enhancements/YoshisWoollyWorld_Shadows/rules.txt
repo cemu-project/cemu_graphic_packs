@@ -5,6 +5,9 @@ path = "Yoshi's Woolly World/Graphics/Shadow Resolution"
 description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this increases performance but makes shadows blockier. Medium is the original resolution.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Medium (1.00x, Default)
 $shadowRes = 1

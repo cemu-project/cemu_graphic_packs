@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Twilight Princess HD/Graphics/Performance Resolutio
 description = Changes the resolution of certain effects in the game to increase performance.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = 1280x720
 $width = 1280

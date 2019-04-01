@@ -4,3 +4,6 @@ name = "No Overdrive music"
 path = "Xenoblade Chronicles X/Mods/Music/No Overdrive music"
 description = Disable the music when Overdrive is activated.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

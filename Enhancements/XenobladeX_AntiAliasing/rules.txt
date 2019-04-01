@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Enhancements/Anti-Aliasing"
 description = Enables or Disables Native Anti-Aliasing. Also includes an alternative FXAA implementation. Check the "Anti-Aliasing/rules.txt" file in your Botw AA graphicPack folder for info about the individual settings.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Nvidias FXAA
 $Preset:int = 2

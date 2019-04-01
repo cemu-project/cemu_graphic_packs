@@ -4,3 +4,6 @@ name = No offline tag
 path = "Xenoblade Chronicles X/Mods/offline tag" 
 description = Removes offline blinking tag - Does not change actual offline state
 version = 3
+
+[Control]
+vsyncFrequency = 65535

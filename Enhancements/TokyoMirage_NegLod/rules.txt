@@ -5,6 +5,9 @@ path = "Tokyo Mirage Sessions FE/Enhancements/Negative Texture LOD"
 description = Texture LOD override, possible shimmer but sharper textures
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = LOD Default
 $LOD = 0

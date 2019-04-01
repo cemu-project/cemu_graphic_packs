@@ -5,6 +5,9 @@ path = "Hyrule Warriors/Mods/Character Swap"
 description = Swaps the character you're playing as to the one you've selected with the presets.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Link 
 $character:int = 0

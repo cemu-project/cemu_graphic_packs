@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Weather"
 description = Changes the weather
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Clear weather
 $weatherByte:int = 0

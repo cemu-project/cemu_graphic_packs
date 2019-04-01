@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Loot/Treasure Quality"
 description = Select the preferred treasure quality you want to loot (see readme.txt for explanation).
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "Gold quality"
 $treasure = 1

@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Enhancements/LOD Bias"
 description = Level of details adjustment
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Normal (Default)
 $lodBias = 0

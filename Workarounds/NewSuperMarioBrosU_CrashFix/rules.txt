@@ -4,3 +4,6 @@ name = Crash Fix
 path = "New Super Mario Bros. U/Workarounds/Crash Fix" #and luigi
 description = Allows NSMBU and NSLU to be played without the required system files.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

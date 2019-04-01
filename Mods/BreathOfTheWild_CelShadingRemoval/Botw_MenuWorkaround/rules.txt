@@ -5,5 +5,8 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFa
 description = Start Menu Workaround
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Start Menu Workaround

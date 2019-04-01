@@ -4,3 +4,6 @@ name = Brightness
 path = "Sonic Lost World/Workaround/Brightness"
 description = This fixes the game from being too dark
 version = 3
+
+[Control]
+vsyncFrequency = 65535

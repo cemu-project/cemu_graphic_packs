@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/BLADE/Gain Tickets from DLC or TA missions"
 description = Gain Reward Tickets from DLC or Time Attack missions.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "Gain from DLC missions (money/100)"
 $mission = 5

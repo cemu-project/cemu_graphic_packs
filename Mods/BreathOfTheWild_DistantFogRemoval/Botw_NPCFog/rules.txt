@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/NPC Fog
 description = Can Remove Fog from Distant NPCs. Conflicts with Cel-Shade ShadowFix Packs.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 
 [Preset]
 name = Distant NPC Fog Disabled

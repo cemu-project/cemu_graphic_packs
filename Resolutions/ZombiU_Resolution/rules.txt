@@ -5,6 +5,9 @@ path = "ZombiU/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = 1280x720 (Default)
 $width = 1280

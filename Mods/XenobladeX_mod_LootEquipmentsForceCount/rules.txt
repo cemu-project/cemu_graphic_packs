@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Count"
 description = Force the count of equipment looted in Silver or Gold treasures.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "Always 3 equipments"
 $cnt3 = 0

@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Experience/Class Exp Points"
 description = Change the amount of Class Exp points gained in battle, missions, quests and exploration.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "x2"
 $mod = 2

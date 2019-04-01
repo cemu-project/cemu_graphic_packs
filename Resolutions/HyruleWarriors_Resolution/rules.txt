@@ -5,6 +5,9 @@ path = "Hyrule Warriors/Graphics/Resolution"
 description = Changes the resolution of the game. 
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 #Resolutions						|Aspect ratio
 #2560×1080, 5120×2160, 8192×3456	|64:27 (2.370)
 #3440×1440							|43:18 (2.38)

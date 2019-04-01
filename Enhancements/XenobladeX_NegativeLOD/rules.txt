@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Enhancements/Negative Texture LOD"
 description = Texture LOD override, possible shimmer but sharper textures.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = LOD Default
 $0x031 = 0

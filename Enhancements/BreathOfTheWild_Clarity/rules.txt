@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Enhancements/Clarity"
 description = NOT COMPATIBLE WITH MONOCHROMIA! Select the visual look of the game that you'll like with these hand-made presets that adjusts saturation, vibrance, colors and more. You can select a preset. Selecting "User-Defined" requires making your own preset. check the "BreathOfTheWild_Clarity/37040a485a29d54e_00000000000003c9_ps.txt" file in your graphicPacks folder to create one.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Serfrost Preset (Default)
 $preset:int = 10

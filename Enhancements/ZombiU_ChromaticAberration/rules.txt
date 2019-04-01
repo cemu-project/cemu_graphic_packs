@@ -5,6 +5,9 @@ path = "ZombiU/Enhancements/Chromatic Aberration"
 description = Changes the intensity of horizontal chromatic aberration. (the red/green/blue edges)
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = CA Default
 $redHz = 1.0

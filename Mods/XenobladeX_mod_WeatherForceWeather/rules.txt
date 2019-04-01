@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Weather/Force Weather"
 description = Force selected weather. Just select a preset and unload/reload the pack.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "Primordia - Clear"
 $wtr = 1

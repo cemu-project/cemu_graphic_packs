@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Twilight Princess HD/Mods/Distant Fog"
 description = Sets the depth and exposure of distant fog. Possible issues with disappearing objects
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Default
 $distanceFog = 21.0

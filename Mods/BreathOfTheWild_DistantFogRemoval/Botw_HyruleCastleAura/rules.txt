@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/Hyrule 
 description = Can Remove the Fog on Ganons Aura on Hyrule castle. Change its RGB color.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 
 [Preset]
 name = Ganons Aura Fog Disabled

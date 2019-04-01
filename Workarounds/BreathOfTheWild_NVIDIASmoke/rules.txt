@@ -5,5 +5,8 @@ path = "The Legend of Zelda: Breath of the Wild/Workarounds/NVIDIA Explosion Smo
 description = Partially fixes thin paper look explosion smoke on NVIDIA when using accurateShaderMul = true.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 # A quick found by Rajkosto, Xalphenos, Darkemaste
 # Shaders dumped from Cemu 1.10.0f and BotW 1.3.1

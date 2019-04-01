@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Monochromia (Incompatible w
 description = NOT COMPATIBLE WITH CLARITY! Inspired by Sin City, this turns the game black and white.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 # Shaders dumped from Cemu 1.11.0b and BotW 1.3.1
 # Pack made by Kiri
 # Check the readMe file for info on how to customize

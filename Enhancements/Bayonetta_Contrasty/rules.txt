@@ -5,6 +5,9 @@ path = "Bayonetta/Enhancements/Contrasty"
 description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Default
 $redShadows = 1.0

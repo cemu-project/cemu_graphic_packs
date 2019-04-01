@@ -4,3 +4,6 @@ name = Shadow Removal
 path = "The Wonderful 101/Workarounds/Shadow Removal"
 description = This removes all broken shadows.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

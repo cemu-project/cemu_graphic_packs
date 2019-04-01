@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Graphics/Shadow Resolution"
 description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Medium (1.00x, Default)
 $shadowRes = 1

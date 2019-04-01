@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFa
 description = Fixes the very dark shadows on Links back-side in No Cel-Shade mode.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 
 [Preset]
 name = Shadows 0.45% (Default)

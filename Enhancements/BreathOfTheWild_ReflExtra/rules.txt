@@ -4,3 +4,6 @@ name = "Enhanced Reflections"
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/Enhanced Reflections"
 description = Extends the reflections in shrines and some other surfaces.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

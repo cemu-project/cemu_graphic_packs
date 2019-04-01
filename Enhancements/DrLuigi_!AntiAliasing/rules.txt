@@ -4,3 +4,6 @@ name = Anti-Aliasing
 path = "Dr. Luigi/Graphics/Anti-Aliasing (WIP)"
 description = Re-enables the game's anti-aliasing and scales it up to the current resolution.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

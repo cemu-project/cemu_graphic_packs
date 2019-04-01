@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Experience/BLADE Points"
 description = Change the amount of BLADE points gained in various situations.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "x2"
 $mod = 2

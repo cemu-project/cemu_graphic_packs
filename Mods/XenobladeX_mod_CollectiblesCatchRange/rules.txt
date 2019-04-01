@@ -4,3 +4,6 @@ name = "Catch range mod"
 path = "Xenoblade Chronicles X/Mods/Collectibles/Catch range mod"
 description = Increase the distance from which collectibles are looted (no preset needed).
 version = 3
+
+[Control]
+vsyncFrequency = 65535

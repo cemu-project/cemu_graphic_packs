@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium income frequency mod"
 description = Affect the frequency of the FrontierNav income for the Miranium (Vanilla is every 30 minutes).
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "Every minute"
 $mod = 1

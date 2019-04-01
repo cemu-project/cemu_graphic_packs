@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Workarounds/Brightness"
 description = Edit presets for preference.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = NVIDIA
 $crushContrast = 0.000

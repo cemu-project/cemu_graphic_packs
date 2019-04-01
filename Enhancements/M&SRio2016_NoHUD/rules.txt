@@ -5,6 +5,9 @@ path = "Mario & Sonic at the Rio 2016 Olympic Games/Enhancements/No HUD"
 description = Removes the HUD of the game.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Disabled (Default)
 $enabled:int = 0

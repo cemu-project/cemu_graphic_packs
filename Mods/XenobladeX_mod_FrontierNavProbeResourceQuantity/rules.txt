@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/FrontierNav/Resources income quantity mod"
 description = Affect the quantity of the FrontierNav income for the resources.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "x2"
 $mod = 2

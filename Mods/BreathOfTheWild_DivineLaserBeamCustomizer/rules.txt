@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Divine Laser Beams Customiz
 description = Allows customization of the color of the Divine Beasts's Laser Beams. They can also be completely hidden. Inside the shader you can find other options like saturation and transparency.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Red (Default)
 $hue:int = 0

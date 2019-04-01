@@ -4,3 +4,6 @@ name = 60FPS
 path = "Hyrule Warriors/Mods/60FPS"
 description = Important: This patches the gameplay to be in 60fps. Getting under 60fps will slow down the game's speed.
 version = 3
+
+[Control]
+vsyncFrequency = 65535

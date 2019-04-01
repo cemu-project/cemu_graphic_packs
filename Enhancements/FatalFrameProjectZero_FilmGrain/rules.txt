@@ -5,6 +5,9 @@ path = "Fatal Frame - Project Zero: Maiden of Black Water/Enhancements/Film Grai
 description = Allows you to adjust how strong the film grain effect is.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Default Size
 $width = 1280

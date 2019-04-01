@@ -5,6 +5,9 @@ path = "The Legend of Zelda: The Wind Waker HD/Graphics/Resolution"
 description = Changes the resolution of the game.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = 1920x1080 Default
 $width = 1920

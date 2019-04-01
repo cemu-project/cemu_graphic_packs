@@ -5,6 +5,9 @@ path = "Xenoblade Chronicles X/Mods/Experience/Friends Points"
 description = More Friends points gained when activating a Soul Voice Link during battle.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = "+100"
 $mod = 100

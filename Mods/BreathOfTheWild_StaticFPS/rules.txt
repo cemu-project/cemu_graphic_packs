@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Static FPS Mod"
 description = "Simplified FPS++ to keep behavior closer to the default game. Don't mix dynamic and static mods. It requires that you can maintain the target FPS."
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 [Preset]
 name = Static 60FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 60
@@ -104,6 +107,3 @@ $targetFPS:int = 12
 [Preset]
 name = Static 10FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 10
-
-[Control]
-vsyncFrequency = $targetFPS

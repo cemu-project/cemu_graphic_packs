@@ -4,3 +4,6 @@ name = 60FPS
 path = "Xenoblade Chronicles X/Mods/60FPS"
 description = Patches the gameplay to be in 60fps. Getting under 60fps will cause slow down
 version = 3
+
+[Control]
+vsyncFrequency = 65535

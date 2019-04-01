@@ -5,6 +5,9 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/World F
 description = Can Remove Fog Fields from the whole world. Change its RGB color.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 
 [Preset]
 name = Fog Fields Disabled

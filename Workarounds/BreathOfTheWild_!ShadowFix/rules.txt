@@ -5,5 +5,8 @@ path = "The Legend of Zelda: Breath of the Wild/Workarounds/AMD & Intel Shadows"
 description = Fixes shadows when using an AMD or Intel graphics card.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+
 # Made by ethrillo
 # Updated by Cypher to support BotW 1.4.0+

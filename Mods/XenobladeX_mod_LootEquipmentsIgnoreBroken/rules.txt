@@ -5,3 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Ignore broken"
 description = Never get broken equipment.
 version = 3
 
+[Control]
+vsyncFrequency = 65535
+

@@ -4,3 +4,6 @@ name = "Uncapped Framerate"
 path = "Sonic Boom: Rise of Lyric/Mods/Uncapped Framerate"
 description = This patches out the framerate cap that the game has in place. Performance may increase from changing the recompiler to be dual or triple core.
 version = 3
+
+[Control]
+vsyncFrequency = 65535
