@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/Hyrule 
 description = Can Remove the Fog glow at the Base of Hyrule Castle. Can Change its RGB color.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 
 [Preset]
 name = Castle Base Fog Disabled

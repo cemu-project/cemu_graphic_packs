@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Physics/Jump to the Moon!"
 description = Increase horizontal and vertical velocity of jump (Vanilla values are 1.0 for both).
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Horizontal 3.0 / Vertical 1.10"
 $horz = 3.0

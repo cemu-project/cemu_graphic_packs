@@ -4,6 +4,3 @@ name = Grid Fix
 path = "Super Mario Maker/Workarounds/Grid Fix" 
 description = Fixes the issue where the grid isn't rendered correctly and adds a tint to the image. Normally only there with interpreter.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

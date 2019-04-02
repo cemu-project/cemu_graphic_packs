@@ -6,5 +6,4 @@ description = Limits the FPS to 30 so that menus are not sped up.
 version = 3
 
 [Control]
-vsyncFrequency = 65535
-
+vsyncFrequency = 30

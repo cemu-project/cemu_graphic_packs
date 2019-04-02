@@ -4,6 +4,3 @@ name= Intel Fixes
 path = "The Legend of Zelda: The Wind Waker HD/Workarounds/Intel Fixes"
 description = Fixes graphical bugs while using an Intel iGPU.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

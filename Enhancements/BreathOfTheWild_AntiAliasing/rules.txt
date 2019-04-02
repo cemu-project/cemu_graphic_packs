@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Graphics/Anti-Aliasing"
 description = Enables or Disables Native Botw Anti-Aliasing. Also includes an alternative FXAA implementation. Check the "Anti-Aliasing/rules.txt" file in your Botw AA graphicPack folder for info about the individual settings.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = Alternative FXAA (Nvidia's implementation)
 $preset:int = 2

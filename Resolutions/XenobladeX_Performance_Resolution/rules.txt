@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Graphics/Performance Resolution"
 description = Changes the resolution of the game.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = 320x180
 $width = 320

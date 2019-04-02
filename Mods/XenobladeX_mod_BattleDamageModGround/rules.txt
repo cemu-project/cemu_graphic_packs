@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Battle/Ground damage multiplicator"
 description = Increase the ground damage done by your team (skells not impacted).
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = Damage x 2
 $mult = 2

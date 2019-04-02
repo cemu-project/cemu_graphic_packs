@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Loot/Materials - Drop Ratio"
 description = Affect the materials minimum drop ratio in the loots.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Set minimum drop to 100% (always drop)"
 $mod = 100

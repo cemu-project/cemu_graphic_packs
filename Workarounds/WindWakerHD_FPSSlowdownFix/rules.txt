@@ -4,6 +4,3 @@ name = FPS Slowdown
 path = "The Legend of Zelda: The Wind Waker HD/Workarounds/FPS Slowdown"
 description = Fixes slowdown that could occur on weaker hardware.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

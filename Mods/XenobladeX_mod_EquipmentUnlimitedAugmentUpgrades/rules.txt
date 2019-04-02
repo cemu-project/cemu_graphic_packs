@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Equipment/Unlimited augment upgrades"
 description = You can upgrade infinitely all the augments inside a piece of equipment.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Normal"
 $checkSelectItem = 5

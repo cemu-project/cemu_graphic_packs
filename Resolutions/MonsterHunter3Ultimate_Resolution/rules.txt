@@ -5,9 +5,6 @@ path = "Monster Hunter 3 Ultimate/Graphics/Resolution"
 description = Changes the games resolution.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = 1920x1080 (Default)
 $width = 1920

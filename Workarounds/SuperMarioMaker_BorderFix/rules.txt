@@ -4,6 +4,3 @@ name = Border Fix
 path = "Super Mario Maker/Workarounds/Border Fix" 
 description = Removes the border from the top of the screen.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

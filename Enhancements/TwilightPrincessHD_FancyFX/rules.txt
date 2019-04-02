@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Fancy FX"
 description = Pretty blur, shadow x2, de-band sky, maintained on Nvidia.   
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 
 [Preset] #  Gaussian blur w correct scaling
 name = Light blur - Original look++

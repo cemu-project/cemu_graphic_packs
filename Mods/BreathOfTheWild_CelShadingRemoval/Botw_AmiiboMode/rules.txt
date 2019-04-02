@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFa
 description = Amiibo mode by Altros, add or remove that plastic look. Req Remove Links Cell Shading by SkalFate
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 
 [Preset]
 name = Plastic %100

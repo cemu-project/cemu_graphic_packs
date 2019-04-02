@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Graphics/Camera mod (distance)"
 description = Affect the default distance of the camera (Vanilla zoom is 0).
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Zoom 0"
 $mod = 0.0

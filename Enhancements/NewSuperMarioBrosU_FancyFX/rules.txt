@@ -5,9 +5,6 @@ path = "New Super Mario Bros. U/Enhancements/Fancy FX" #and luigi
 description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia. 
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 
 [Preset]
 name = 2560x1440 (Native x2)

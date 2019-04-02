@@ -4,6 +4,3 @@ name = "Change time from eManual"
 path = "Xenoblade Chronicles X/Mods/HUD/Change time from eManual"
 description = Allow to change time from the eManual entry of the main menu.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

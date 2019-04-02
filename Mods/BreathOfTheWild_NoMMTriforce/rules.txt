@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/No Master Mode Triforce"
 description = Removes the on-screen triforce icon in Master Mode
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [TextureRedefine]
 width = 36
 height = 36

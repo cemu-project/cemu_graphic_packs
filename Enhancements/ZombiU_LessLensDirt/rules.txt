@@ -5,9 +5,6 @@ path = "ZombiU/Enhancements/Lens Dirt Adjustment"
 description = Changes the intensity of the lens dirt effect.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = Lens Dirt Default
 $dirt = 1.0

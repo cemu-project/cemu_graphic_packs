@@ -4,6 +4,3 @@ name = "No Depth of Field"
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/No Depth of Field"
 description = Disables depth of field.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

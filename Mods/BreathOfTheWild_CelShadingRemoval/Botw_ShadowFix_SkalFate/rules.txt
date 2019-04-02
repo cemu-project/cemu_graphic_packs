@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFa
 description = Changes the strength of shadows on Links body. Fixes the very dark link issue in no cel-shade mode.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 
 [Preset]
 name = Mode 1 - Shadows X1 (Best Mode)

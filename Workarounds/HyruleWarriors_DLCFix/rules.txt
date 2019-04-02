@@ -4,6 +4,3 @@ name = "Hyrule Warriors - DLC Crash Fix"
 path = "Hyrule Warriors/Workarounds/DLC Crash Fix"
 description = Fixes game crashing with DLC installed.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

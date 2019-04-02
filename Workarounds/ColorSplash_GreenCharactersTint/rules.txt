@@ -4,6 +4,3 @@ name = "Green Tinted Characters Workaround"
 path = "Paper Mario: Color Splash/Workarounds/Green Tinted Characters"
 description = Fixes the green tint on characters that occur randomly. 
 version = 3
-
-[Control]
-vsyncFrequency = 65535

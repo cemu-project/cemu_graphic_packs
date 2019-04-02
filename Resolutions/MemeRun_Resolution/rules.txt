@@ -5,9 +5,6 @@ path = "Meme Run/Graphics/Resolution"
 description = Changes the games resolution. You cannot change resolutions on the fly.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = 1280x720 (Default)
 $width = 1280

@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/BLADE/Offline tasks and missions"
 description = Squad tasks and missions are available offline. Uncapped presets ignore max tickets. Use [Social > Squad Select] menu to change the Squad Tasks.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Normal"
 $mult = 1

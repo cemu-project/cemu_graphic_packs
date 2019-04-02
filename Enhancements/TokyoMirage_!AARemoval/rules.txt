@@ -4,6 +4,3 @@ name = AA Removal
 path = "Tokyo Mirage Sessions FE/Enhancements/AA Removal" 
 description = Removes AA, no performance gain. Used for clean look or injecting external AA.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

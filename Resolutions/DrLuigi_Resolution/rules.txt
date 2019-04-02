@@ -5,9 +5,6 @@ path = "Dr. Luigi/Graphics/Resolution"
 description = Changes the resolution of the game. Anti-aliasing is disabled by default.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = 1280x720 (Default)
 $width = 1280

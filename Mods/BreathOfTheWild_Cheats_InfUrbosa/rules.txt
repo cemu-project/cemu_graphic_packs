@@ -4,6 +4,3 @@ name = Infinite Urbosa's Fury
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cheats/Infinite Urbosa's Fury"
 description = BotW Cheats by C313571N and Xalphenos
 version = 3
-
-[Control]
-vsyncFrequency = 65535

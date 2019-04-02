@@ -5,9 +5,6 @@ path = "New Super Mario Bros. U/Graphics/Resolution" #and luigi
 description = Changes the resolution of the game.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 //compatible resolutions
 [Preset]
 name = 1280x720 (Default)

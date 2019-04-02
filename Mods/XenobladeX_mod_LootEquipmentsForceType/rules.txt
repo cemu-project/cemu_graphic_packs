@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Type"
 description = Force the type of equipment looted.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset] ###########################################
 name = "Ground weapons - ANY ____________________________________________"
 $type = 2

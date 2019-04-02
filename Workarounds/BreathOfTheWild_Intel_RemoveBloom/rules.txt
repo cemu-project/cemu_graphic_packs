@@ -5,7 +5,4 @@ path = "The Legend of Zelda: Breath of the Wild/Workarounds/Intel iGPU/Remove Ex
 description = This workaround targets users of Intel iGPU drivers 23.xx and older experiencing bloom issue. These drivers may offer better performance but have graphical glitches. This pack aims to fix the graphical issues so the older drivers create visuals similar to the new drivers. These older drivers may be found on Intel's site https://downloadcenter.intel.com/download/27484/Graphics-Intel-Graphics-Driver-for-Windows-15-65-.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 #Altros

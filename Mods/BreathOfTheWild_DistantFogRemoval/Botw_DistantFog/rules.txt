@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/Distant
 description = Can Remove Distant Fog Haze from the world. Change its RGB color. Light up the Distance.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 
 [Preset]
 name = Fog 0% Light x1

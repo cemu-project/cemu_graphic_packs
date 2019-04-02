@@ -4,6 +4,3 @@ name = Infinite Arrows
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cheats/Infinite Arrows"
 description = BotW Cheats by C313571N and Xalphenos
 version = 3
-
-[Control]
-vsyncFrequency = 65535

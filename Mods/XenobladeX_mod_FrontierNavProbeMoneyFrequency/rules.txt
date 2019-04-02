@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/FrontierNav/Money income frequency mod"
 description = Affect the frequency of the FrontierNav income for the Money (Vanilla is 15 minutes).
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Every minute"
 $mod = 1

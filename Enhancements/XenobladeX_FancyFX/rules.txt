@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Enhancements/Fancy FX"
 description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia.   
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 #Disabled, causes gfx errors on 1.15.x  Enable if fixed. 
 #[TextureRedefine] 
 #width = 1280

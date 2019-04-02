@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Physics/Run Forrest, run!"
 description = Increase the speed of sprint.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Speed x1.5"
 $mod = 0.75

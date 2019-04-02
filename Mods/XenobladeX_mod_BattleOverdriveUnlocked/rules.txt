@@ -4,6 +4,3 @@ name = "Overdrive unlocked pre-Chapter 5"
 path = "Xenoblade Chronicles X/Mods/Battle/Overdrive unlocked"
 description = Unleashed the power of Overdrive before Chapter 5.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

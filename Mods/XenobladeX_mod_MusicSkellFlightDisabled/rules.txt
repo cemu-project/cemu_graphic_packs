@@ -4,6 +4,3 @@ name = "No Skell Flight music"
 path = "Xenoblade Chronicles X/Mods/Music/No Skell Flight music"
 description = Disable the music when in flight.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

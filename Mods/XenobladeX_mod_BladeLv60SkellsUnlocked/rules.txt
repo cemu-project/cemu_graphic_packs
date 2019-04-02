@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/BLADE/Lv60 Skells unlocked"
 description = Lv60 Skells and equipment are unlocked and accessible right after you are a BLADE member.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = Normal
 $miranium = 2

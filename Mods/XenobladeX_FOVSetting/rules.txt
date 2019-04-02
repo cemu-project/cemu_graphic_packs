@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Field of View"
 description = Changes the field of view (FOV). Fixes edge framing for 21:9 cinematics and other FOV tweaks.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = Default FOV  
 $fov = 1.0

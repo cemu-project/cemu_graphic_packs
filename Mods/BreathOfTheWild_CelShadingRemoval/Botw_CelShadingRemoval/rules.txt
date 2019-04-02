@@ -5,9 +5,6 @@ path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFa
 description = Changes the type of shading on Link and the world.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = Cel-Shading Disabled
 $mode = 4

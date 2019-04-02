@@ -4,6 +4,3 @@ name = "Armors can have 3 augment slots"
 path = "Xenoblade Chronicles X/Mods/Equipment/Armors can have 3 augment slots"
 description = Using L's shop, you can have 3 augment slots on your EQUIPPED armors (ground and skell).
 version = 3
-
-[Control]
-vsyncFrequency = 65535

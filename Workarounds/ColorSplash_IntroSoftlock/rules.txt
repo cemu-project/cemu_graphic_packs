@@ -4,6 +4,3 @@ name = "Intro Softlock"
 path = "Paper Mario: Color Splash/Workarounds/Intro Softlock"
 description = Removes the introduction video so that it skips straight to the game, removing the softlock.
 version = 3
-
-[Control]
-vsyncFrequency = 65535

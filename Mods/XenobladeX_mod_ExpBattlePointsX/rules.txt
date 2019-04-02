@@ -5,9 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Experience/Battle Points"
 description = Change the amount of Battle points gained when a new level (or class level) is reached, when completing missions or exploring.
 version = 3
 
-[Control]
-vsyncFrequency = 65535
-
 [Preset]
 name = "Quantity x2"
 $mod = 2
