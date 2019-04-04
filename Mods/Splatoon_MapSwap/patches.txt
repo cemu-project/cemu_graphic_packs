@@ -1,3 +1,12 @@
+PLEASE HELP ME I NEED ALL ADRESS FOR ALL MAP
+THIS AUTHOR JUST COMMENT ONLY FIVE ADRESS 
+I NEED ALL DOJO ADRESS FOR MY PROJECT
+
+PLEASE HELP ME AND ADD THE DOJO ADRESS
+
+THANK YOU
+
+
 [Gambit272]
 moduleMatches = 0xF7A78809
 
@@ -21,12 +30,12 @@ moduleMatches = 0xF7A78809
 #_Stf #StaffRoll
 
 #List of maps:
-#Fld_Tutorial00_Ttr #Tutorial
+#Fld_Tutorial00_Ttr #Tutorial #0x100F9CE0
 #Fld_TutorialShow00_Ttr #Tutorial
-#Fld_Plaza00_Plz #Inkopolis Plaza (Crashes)
+#Fld_Plaza00_Plz #Inkopolis Plaza (Crashes) #0x100F1244
 #Fld_MatchRoom_Mch #Match Room
 #Fld_ShootingRange_Shr #Shooting Range
-#Fld_World00_Wld #Octo Valley
+#Fld_World00_Wld #Octo Valley #0x10101F38
 #Fld_EasyHide00_Msn #Mission
 #Fld_EasyClimb00_Msn #Mission
 #Fld_EasyJump00_Msn #Mission
