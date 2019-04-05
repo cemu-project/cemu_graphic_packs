@@ -1,0 +1,261 @@
+[BotwFPSV208]
+moduleMatches = 0x6267BFD0
+
+#rodata constants
+_float.5 = 0x100005E0
+_float1 = 0x10000670
+_float30 = 0x101E7964
+#_float30 = 0x10032238
+_convSub = 0x10000BB0
+_float32 = 0x1021FCEC
+_arrowsDiv = 0x1001CCAC
+_arrowsDer = 0x1001CB18
+_mapSpeed = 0x1022F880
+0x1031E2C0 = .float 2
+
+
+#TestCave
+codeCaveSize = 0x124
+
+_fpsCalc =  0x00000018
+0x00000000 = .float 3 ; Don't edit me!
+_lowlimit = 0x00000000
+0x00000004 = .float 62156250
+_busSpeed = 0x00000004
+_averageFPS = 0x00000008
+_speedDiv = 0x0000000C
+						
+0x00000010 = .float ($amount_of_FPS_averaged)			
+_bufferSize = 0x00000010			
+0x00000014 = .int (4*$amount_of_FPS_averaged+4)						
+_numBytes = 0x00000014					
+
+0x00000018 = stw r0, 0x78(r30)			#orig instruction we are replacing ;ticks between frame are currently in r12.
+0x0000001C = xoris r12, r12, 0x8000		#flip the sign bit of int ticks for floating point conversion
+0x00000020 = stw r12, 0xD4(r30)			#store sign flipped ticks in memory as lower half of double
+0x00000024 = lis r12, 0x4330			#create upper half of ticks double
+0x00000028 = stw r12, 0xD0(r30)			#store it in upper half of memory
+0x0000002C = lfd f10, 0xD0(r30)			#Load full double ticks into f10
+0x00000030 = lis r12, _convSub@ha		#load number to subtract from tick double...
+0x00000034 = lfd f12, _convSub@l(r12)		#...to create tick float into f12
+0x00000038 = fsub f10, f10, f12			#Do the subtraction
+0x0000003C = frsp f10, f10			#round to single precision and tick float is in f10
+0x00000040 = lis r12, _float1@ha		#Load float of 1...
+0x00000044 = lfs f12, _float1@l(r12)		#...into f12
+0x00000048 = fdivs f10, f12, f10		#divide 1 by ticks
+0x0000004C = lis r12, _busSpeed@ha		#load wii u bus speed...
+0x00000050 = lfs f12, _busSpeed@l(r12)		#...into f12
+0x00000054 = fmuls f10, f12, f10		#multiply bus speed to have current fps in f10. (1/ticks)*bus speed
+
+0x00000058 = mr r3, r30				#Make a copy of r30 so we can screw around with it
+0x0000005C = addi r3, r3, 0xE0			#Add offset to available memory space
+0x00000060 = stw r3, 0xD8(r30)			#Save our virgin memory address so we can retrieve it later
+0x00000064 = lwz r12, 0xDC(r30)			#load counter into r12
+0x00000068 = add r3, r3, r12			#add our counter to the offset for our memory location
+0x0000006C = stfsu f10, 0x04(r3)		#store current fps to memory location +4 and update efective address into r3
+0x00000070 = lfs f7, 0xE0(r30)			#Load fpsSum into f7
+0x00000074 = fadds f10, f10, f7			#Add currentFPS to fpsSum
+0x00000078 = addi r12, r12, 0x04		#Incriment counter by 4
+0x0000007C = lis r11, _numBytes@ha
+0x00000080 = lwz r11, _numBytes@l(r11)
+0x00000084 = cmpw r12, r11			#Compare counter with 0x80(32 address from base memory location)
+0x00000088 = bne .+0x0C				#If we write our last current fps then 
+0x0000008C = lis r12, 0						#Zero our counter
+0x00000090 = lwz r3, 0xD8(r30)					#and reload our virgin memory offset
+0x00000094 = stw r12, 0xDC(r30)			#Store counter r12 to memory location
+0x00000098 = lfs f7, 0x04(r3)			#load oldest fps into f7
+0x0000009C = fsubs f10, f10, f7			#Subtract oldest fps from fpsSum
+0x000000A0 = stfs f10, 0xE0(r30)		#store fpsSum back into it's memory address.
+0x000000A4 = lis r12, _bufferSize@ha		#load 32 as a float ...
+0x000000A8 = lfs f7, _bufferSize@l(r12)		#...into f7
+0x000000AC = fdivs f10, f10, f7			#divide fps sum by 32, the number of saved fps values, to get average fps over 32 frames
+0x000000B0 = lis r12, _averageFPS@ha		#Store averaged fps...
+0x000000B4 = stfs f10, _averageFPS@l(r12)	#... into _averageFPS variable.  
+
+0x000000B8 = lis r12, _float30@ha		#Setting up speed diviser. 30/current fps = game speed.  ex 30/60 = .5 game speed
+0x000000BC = lfs f12, _float30@l(r12)		#load float 30 into f12
+0x000000C0 = fdivs f7, f12, f10			#do the division f10 is our current fps(now averaged)
+0x000000C4 = lis r12, _lowlimit@ha		#set up a low limit to not set game speed below.  here: 10/30 = 3
+0x000000C8 = lfs f12, _lowlimit@l(r12)		#Set 3 as the low limit into f12
+0x000000CC = lis r12, _speedDiv@ha		#prepare to store game speed into _speedDiv but wait.
+0x000000D0 = fcmpu cr0, f7, f12			#compare Compare lowlimit with current working game speed
+0x000000D4 = bge .+0x08				#If game speed is not being set below 10 fps...
+0x000000D8 = b .+0x08					#then skip the next line
+0x000000DC = fmr f7, f12				#else overrite working current speed with low limit as new working current speed
+0x000000E0 = stfs f7, _speedDiv@l(r12)		#store working current speed into _speedDiv
+
+0x000000E4 = lis r12, _float30@ha		#An attempt to port arrow fix to fps++
+0x000000E8 = lfs f12, _float30@l(r12)		#load float30 into f12
+0x000000EC = fmuls f10, f7, f12			#arrowsDiv = 30 * speedDiv
+0x000000F0 = lis r12, _arrowsDiv@ha		
+0x000000F4 = stfs f10, _arrowsDiv@l(r12)	#store the results
+0x000000F8 = lis r12, _float.5@ha		#load float of .5 into f12
+0x000000FC = lfs f12, _float.5@l(r12)
+0x00000100 = fdivs f10, f12, f7			#arrowsDer = .5 / speedDiv
+0x00000104 = lis r12, _arrowsDer@ha
+0x00000108 = stfs f10, _arrowsDer@l(r12)	#store the results
+0x0000010C = blr				#return
+
+_arrowTimeDrain = 0x00000110
+0x00000110 = lfs f1, 0xFC(r11)
+0x00000114 = lis r12, _speedDiv@ha
+0x00000118 = lfs f0, _speedDiv@l(r12)
+0x0000011C = fmuls f1, f1, f0
+0x00000120 = blr
+
+#codeChanges
+0x031FA97C = bla _fpsCalc
+0x03793328 = nop
+0x03793334 = nop
+0x03793378 = lis r29, _speedDiv@ha
+0x03793380 = lfs f0, _speedDiv@L(r29)
+0x0379338C = nop
+0x03415C1C = lis r12, _speedDiv@ha
+0x03415C24 = lfs f0, _speedDiv@l(r12)
+0x03415C2C = nop
+0x02D90D2C = lis r10, _averageFPS@ha
+0x02D90D30 = lfs f11, _averageFPS@l(r10)
+0x02D90D88 = lis r10, _averageFPS@ha
+0x02D90D8C = lfs f11, _averageFPS@l(r10)
+0x02D5F760 = bla _arrowTimeDrain
+0x037DC35C = lis r12, _speedDiv@ha		#Audio fix
+0x037DC360 = lfs f13, _speedDiv@l(r12)
+0x02F62B3C = lis r12, _speedDiv@ha		#map scroll fix
+0x02F62B40 = lfs f0, _speedDiv@l(r12)
+
+
+
+
+#break all forms of frame limiting
+0x031FACD0 = nop ; disable vsync
+0x031FACF4 = nop ; disable vsync loop
+
+
+
+[BotwFPSv176V192]
+moduleMatches = 0xFD091F9F, 0xD472D8A5
+
+# rodata constants
+_float.5 = 0x100005E0
+_float1 = 0x10000670
+_float30 = 0x101E78F4
+_float32 = 0x1025D1A8
+_convSub = 0x10000BB0
+_arrowsDiv = 0x1001CCAC
+_arrowsDer = 0x1001CB18
+
+
+#TestCave
+codeCaveSize = 0x124
+
+_fpsCalc =  0x00000018
+0x00000000 = .float 3 ; Don't edit me!
+_lowlimit = 0x00000000
+0x00000004 = .float 62156250
+_busSpeed = 0x00000004
+_averageFPS = 0x00000008
+_speedDiv = 0x0000000C
+						
+0x00000010 = .float ($amount_of_FPS_averaged)			
+_bufferSize = 0x00000010			
+0x00000014 = .int (4*$amount_of_FPS_averaged+4)						
+_numBytes = 0x00000014					
+
+0x00000018 = stw r0, 0x78(r30)			#orig instruction we are replacing ;ticks between frame are currently in r12.
+0x0000001C = xoris r12, r12, 0x8000		#flip the sign bit of int ticks for floating point conversion
+0x00000020 = stw r12, 0xD4(r30)			#store sign flipped ticks in memory as lower half of double
+0x00000024 = lis r12, 0x4330			#create upper half of ticks double
+0x00000028 = stw r12, 0xD0(r30)			#store it in upper half of memory
+0x0000002C = lfd f10, 0xD0(r30)			#Load full double ticks into f10
+0x00000030 = lis r12, _convSub@ha		#load number to subtract from tick double...
+0x00000034 = lfd f12, _convSub@l(r12)		#...to create tick float into f12
+0x00000038 = fsub f10, f10, f12			#Do the subtraction
+0x0000003C = frsp f10, f10			#round to single precision and tick float is in f10
+0x00000040 = lis r12, _float1@ha		#Load float of 1...
+0x00000044 = lfs f12, _float1@l(r12)		#...into f12
+0x00000048 = fdivs f10, f12, f10		#divide 1 by ticks
+0x0000004C = lis r12, _busSpeed@ha		#load wii u bus speed...
+0x00000050 = lfs f12, _busSpeed@l(r12)		#...into f12
+0x00000054 = fmuls f10, f12, f10		#multiply bus speed to have current fps in f10. (1/ticks)*bus speed
+
+0x00000058 = mr r3, r30				#Make a copy of r30 so we can screw around with it
+0x0000005C = addi r3, r3, 0xE0			#Add offset to available memory space
+0x00000060 = stw r3, 0xD8(r30)			#Save our virgin memory address so we can retrieve it later
+0x00000064 = lwz r12, 0xDC(r30)			#load counter into r12
+0x00000068 = add r3, r3, r12			#add our counter to the offset for our memory location
+0x0000006C = stfsu f10, 0x04(r3)		#store current fps to memory location +4 and update efective address into r3
+0x00000070 = lfs f7, 0xE0(r30)			#Load fpsSum into f7
+0x00000074 = fadds f10, f10, f7			#Add currentFPS to fpsSum
+0x00000078 = addi r12, r12, 0x04		#Incriment counter by 4
+0x0000007C = lis r11, _numBytes@ha
+0x00000080 = lwz r11, _numBytes@l(r11)
+0x00000084 = cmpw r12, r11			#Compare counter with 0x80(32 address from base memory location)
+0x00000088 = bne .+0x0C				#If we write our last current fps then 
+0x0000008C = lis r12, 0						#Zero our counter
+0x00000090 = lwz r3, 0xD8(r30)					#and reload our virgin memory offset
+0x00000094 = stw r12, 0xDC(r30)			#Store counter r12 to memory location
+0x00000098 = lfs f7, 0x04(r3)			#load oldest fps into f7
+0x0000009C = fsubs f10, f10, f7			#Subtract oldest fps from fpsSum
+0x000000A0 = stfs f10, 0xE0(r30)		#store fpsSum back into it's memory address.
+0x000000A4 = lis r12, _bufferSize@ha		#load 32 as a float ...
+0x000000A8 = lfs f7, _bufferSize@l(r12)		#...into f7
+0x000000AC = fdivs f10, f10, f7			#divide fps sum by 32, the number of saved fps values, to get average fps over 32 frames
+0x000000B0 = lis r12, _averageFPS@ha		#Store averaged fps...
+0x000000B4 = stfs f10, _averageFPS@l(r12)	#... into _averageFPS variable.  
+
+0x000000B8 = lis r12, _float30@ha		#Setting up speed diviser. 30/current fps = game speed.  ex 30/60 = .5 game speed
+0x000000BC = lfs f12, _float30@l(r12)		#load float 30 into f12
+0x000000C0 = fdivs f7, f12, f10			#do the division f10 is our current fps(now averaged)
+0x000000C4 = lis r12, _lowlimit@ha		#set up a low limit to not set game speed below.  here: 10/30 = 3
+0x000000C8 = lfs f12, _lowlimit@l(r12)		#Set 3 as the low limit into f12
+0x000000CC = lis r12, _speedDiv@ha		#prepare to store game speed into _speedDiv but wait.
+0x000000D0 = fcmpu cr0, f7, f12			#compare Compare lowlimit with current working game speed
+0x000000D4 = bge .+0x08				#If game speed is not being set below 10 fps...
+0x000000D8 = b .+0x08					#then skip the next line
+0x000000DC = fmr f7, f12				#else overrite working current speed with low limit as new working current speed
+0x000000E0 = stfs f7, _speedDiv@l(r12)		#store working current speed into _speedDiv
+
+0x000000E4 = lis r12, _float30@ha		#An attempt to port arrow fix to fps++
+0x000000E8 = lfs f12, _float30@l(r12)		#load float30 into f12
+0x000000EC = fmuls f10, f7, f12			#arrowsDiv = 30 * speedDiv
+0x000000F0 = lis r12, _arrowsDiv@ha		
+0x000000F4 = stfs f10, _arrowsDiv@l(r12)	#store the results
+0x000000F8 = lis r12, _float.5@ha		#load float of .5 into f12
+0x000000FC = lfs f12, _float.5@l(r12)
+0x00000100 = fdivs f10, f12, f7			#arrowsDer = .5 / speedDiv
+0x00000104 = lis r12, _arrowsDer@ha
+0x00000108 = stfs f10, _arrowsDer@l(r12)	#store the results
+0x0000010C = blr				#return
+
+_arrowTimeDrain = 0x00000110
+0x00000110 = lfs f1, 0xFC(r11)
+0x00000114 = lis r12, _speedDiv@ha
+0x00000118 = lfs f0, _speedDiv@l(r12)
+0x0000011C = fmuls f1, f1, f0
+0x00000120 = blr
+
+#codeChanges
+0x031F9E80 = bla _fpsCalc
+0x03792620 = nop
+0x0379262C = nop
+0x03792670 = lis r29, _speedDiv@ha
+0x03792678 = lfs f0, _speedDiv@l(r29)
+0x03792684 = nop
+0x03414EF8 = lis r12, _speedDiv@ha
+0x03414F00 = lfs f0, _speedDiv@l(r12)
+0x03414F08 = nop
+0x02D90790 = lis r10, _averageFPS@ha
+0x02D90794 = lfs f11, _averageFPS@l(r10)
+0x02D907EC = lis r10, _averageFPS@ha
+0x02D907F0 = lfs f11, _averageFPS@l(r10)
+0x02D5F200 = bla _arrowTimeDrain
+0x037DB654 = lis r12, _speedDiv@ha
+0x037DB658 = lfs f13, _speedDiv@l(r12)
+
+# Break all forms of frame limiting
+0x031FA1D4 = nop
+0x031FA1F8 = nop
+
+
+
+

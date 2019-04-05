@@ -1,0 +1,11 @@
+[BotwFPSV208]
+moduleMatches = 0x6267BFD0
+
+#code changes
+0x03B25BB0 = lis r3, 0
+
+[BotwFPSv176V192]
+moduleMatches = 0xFD091F9F, 0xD472D8A5
+
+#code changes
+0x03B24F14 = li r3, 0

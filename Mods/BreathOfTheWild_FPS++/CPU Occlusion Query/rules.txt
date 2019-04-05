@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = CPU Occlusion Query
+path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/CPU Occlusion Query"
+description = Changes occlusion querys from gpu type to cpu type.  Fixes nvidia npc "ai stutter" when full sync at gx2drawdone is disabled.  Does not fix camera rune or random crashes.  Use lwzx workaround for random crash fix if you disable drawdone.
+version = 3

@@ -1,0 +1,11 @@
+[BotwFPSV208]
+moduleMatches = 0x6267BFD0
+
+#code changes
+0x031FAAE8 = li r0, 1 ;Better fence (make sure GPU is never more than 1 second? ahead)
+
+[BotwFPSv176V192]
+moduleMatches = 0xFD091F9F, 0xD472D8A5
+
+#code changes
+0x031F9FEC = li r0, 1
