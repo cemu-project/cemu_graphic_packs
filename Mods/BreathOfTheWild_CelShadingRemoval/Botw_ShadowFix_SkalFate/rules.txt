@@ -55,6 +55,54 @@ $sgreen = 1
 $sblue = 1
 
 [Preset]
+name = Mode 1 - Shadows X2 (Best Mode)
+$smode = 1
+$shadowsbrightness = 2
+$sred = 1
+$sgreen = 1
+$sblue = 1
+
+[Preset]
+name = Mode 2 - Shadows X2 (No Highlights)
+$smode = 2
+$shadowsbrightness = 2
+$sred = 1
+$sgreen = 1
+$sblue = 1
+
+[Preset]
+name = Mode 3 - Shadows X2 (Strong Highlights)
+$smode = 3
+$shadowsbrightness = 2
+$sred = 1
+$sgreen = 1
+$sblue = 1
+
+[Preset]
+name = Mode 4 - Shadows X2 (LightShade)
+$smode = 4
+$shadowsbrightness = 2
+$sred = 1
+$sgreen = 1
+$sblue = 1
+
+[Preset]
+name = Mode 5 - Shadows X2 (DarkShade)
+$smode = 5
+$shadowsbrightness = 2
+$sred = 1
+$sgreen = 1
+$sblue = 1
+
+[Preset]
+name = ----------------------------------------
+$smode = 1
+$shadowsbrightness = 1
+$sred = 1
+$sgreen = 1
+$sblue = 1
+
+[Preset]
 name = Mode 1 - Shadows X4 (Best Mode)
 $smode = 1
 $shadowsbrightness = 4
