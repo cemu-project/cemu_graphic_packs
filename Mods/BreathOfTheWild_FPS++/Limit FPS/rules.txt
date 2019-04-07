@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Vsync Control
-path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Vsync Control"
-description = Select the fps you want to be your limit with FPS++
+name = Set FPS Limit
+path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Set FPS Limit (Required)"
+description = Sets a cap on the FPS. If you want no gameplay bugs, use 30FPS. These bugs range from crashing after cutscenes, certain boss fights will fly away to the horizon and some physics are more intense.
 version = 3
 
 [Preset]

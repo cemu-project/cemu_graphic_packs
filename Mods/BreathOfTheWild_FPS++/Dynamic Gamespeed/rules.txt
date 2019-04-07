@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Dynamic (FPS++)
-path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/2.2Testing"
-description = Important: Don't enable Static FPS while having FPS++ also enabled! This pack won't work without Cemuhook, make sure to install that! This pack only works when you've properly updated your game (we always recommend the latest updates). Keep in mind that going above 30fps will bring game bugs, so you might want to use the "30FPS" preset.
+name = Dynamic Gamespeed
+path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Dynamic Gamespeed (Required)"
+description = DON'T USE STATIC FPS WITH FPS++! Don't forget to set the FPS limit if you want to exceed 30 FPS. Lowering the amount of averaged frames, how more reactive the gamespeed becomes to your FPS.
 version = 3
 
 [Preset]

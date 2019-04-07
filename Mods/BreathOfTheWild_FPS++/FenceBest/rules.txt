@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Best Fence
-path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Best Fence"
-description = Subtract 1 from fence value.  Original default option that is least likely to cause milk water.  No difference from best on high end systems.  Incompatible with other fence options.
-version = 3

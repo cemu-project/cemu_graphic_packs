@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Better Fence
-path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Better Fence"
-description = Ensure fence value is always 1.  Better for lower end hardware.  If you feel like you are getting framerate capped try this.
-version = 3
