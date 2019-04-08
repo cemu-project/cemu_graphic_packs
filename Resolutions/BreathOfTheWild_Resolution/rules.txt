@@ -255,6 +255,38 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 1
 
+[Preset]
+name = 5760x1080 (48:9)
+$width = 5760
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+ 
+[Preset]
+name = 8640x1620 (48:9)
+$width = 8640
+$height = 1620
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+ 
+[Preset]
+name = 14400x2700 (48:9)
+$width = 14400
+$height = 2700
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+ 
+[Preset]
+name = 21600x4050 (48:9)
+$width = 21600
+$height = 4050
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
 # All 720p textures:
 # - 0x001=World Lighting Red8
 # - 0x005=Link and Objects Depth
