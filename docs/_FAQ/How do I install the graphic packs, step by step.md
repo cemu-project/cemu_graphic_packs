@@ -3,7 +3,7 @@ anchor_link: how-to-install-gfx-packs
 order: 1
 ---
 {%- comment -%}Maybe include a gif or something.{%- endcomment -%}
-Here we'll repeat some info from above in a more detailed step-by-step guide of how to install graphic packs. This assumes you use the manual method of installing packs, and not the build-in automatic graphic pack downloader/updater.
+Here we'll repeat some info from above in a more detailed step-by-step guide of how to install graphic packs. This assumes you use the manual method of installing packs, and not the built-in automatic graphic pack downloader/updater.
 
 1. Choose one of the 3 downloads from above. Each download has a range of versions it supports, pick the one that's supported by your downloaded Cemu version.
 2. Right-click on the `graphicPacks307.zip` and click "Extract all..." to extract all of the contents to a new folder.
