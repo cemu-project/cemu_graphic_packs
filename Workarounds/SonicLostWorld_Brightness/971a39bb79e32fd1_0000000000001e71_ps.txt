@@ -4,6 +4,7 @@
 // shader 971a39bb79e32fd1
 // "dark overlay"
 // dumped on cemu 1.11.5
+const float brightness = ($value1/$value2);
 uniform ivec4 uf_remappedPS[8];
 layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4520000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 0
 layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf48a8000 res 1280x720x1 dim 6 tm: 4 format 0011 compSel: 0 0 0 0 mipView: 0x0 (num 0x2) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 0
@@ -114,5 +115,5 @@ PV0f.w = -(PV1f.y) + 1.0;
 // 9
 R3f.w = (mul_nonIEEE(PV0f.w,R1f.z) + R127f.y);
 // export
-passPixelColor0 = vec4(R3f.x, R3f.y, R3f.z, R3f.w)* (16.0/9.0);
+passPixelColor0 = vec4(R3f.x, R3f.y, R3f.z, R3f.w)*brightness;
 }
