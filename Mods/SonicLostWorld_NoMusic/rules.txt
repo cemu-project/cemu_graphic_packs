@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = No Music
+path = "Sonic Lost World/Mods/No Music"
+description = Disables music playback
+version = 3
