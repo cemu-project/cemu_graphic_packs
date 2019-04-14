@@ -127,6 +127,7 @@ $scaleBlur = 1.0
 width = 1280
 height = 720
 #formats = 0x80e,0x01a,0x001
+tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
