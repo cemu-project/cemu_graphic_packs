@@ -1,0 +1,15 @@
+[ST60fpsVer0]
+moduleMatches = 0x3D49646B
+0x022021d8 = addi r12,r12,0
+
+[ST60fpsVer16]
+moduleMatches = 0x801728E4
+0x02244d8c = addi r12,r12,0
+
+[ST60fpsVer32]
+moduleMatches = 0x9D377EF2
+0x02203970 = addi r12,r12,0
+
+[ST60fpsVer48]
+moduleMatches = 0xA8AD92B4
+0x0209ced4 = addi r5,r5,0
