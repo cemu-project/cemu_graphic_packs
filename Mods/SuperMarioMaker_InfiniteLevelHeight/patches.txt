@@ -1,0 +1,8 @@
+[LevelHeightV1.47]
+moduleMatches = 0xF110487F
+0x100D9238 = .float 4320.0      # .long 0x45870000
+0x100D9460 = .float 4320.0      # .long 0x45870000
+0x100D9AB4 = .float 4320.0      # .long 0x45870000
+0x100DA16C = .float 4320.0      # .long 0x45870000
+0x100DFA14 = .float $height
+0x022152CC = .long 0x48000048
