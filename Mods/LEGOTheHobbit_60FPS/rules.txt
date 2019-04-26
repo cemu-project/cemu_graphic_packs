@@ -1,6 +1,6 @@
 [Definition]
-titleIds = 500001016a700
-name = 60fps
-path = "LEGO The Hobbit/Mods/60fps"
-description = 60 FPS Hack by theboy181
+titleIds = 500001016a700,0005000010168d00
+name = 60FPS
+path = "LEGO The Hobbit/Mods/60FPS"
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3

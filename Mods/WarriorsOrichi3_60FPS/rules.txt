@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010110200
-name = 60fps
-path = "Warriors Orichi 3 Hyper/Mods/60fps"
-description = Important: This patches the gameplay to be in 60fps. Getting under 60fps will slow down the game's speed.
-version = 3

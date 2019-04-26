@@ -5,5 +5,3 @@ moduleMatches = 0x81647FC0
 [LJP60fpsVer16]
 moduleMatches = 0x763FD17D
 0x00263a5bc = addi r11,r12,1
-
-

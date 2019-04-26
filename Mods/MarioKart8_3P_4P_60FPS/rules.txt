@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = 60FPS in 3-4 multiplayer
+path = "Mario Kart 8/Mods/60FPS in 3-4 multiplayer"
+description = This changes the way the game renders these 3-4 player modes to be 60FPS instead of 30FPS.
+version = 3

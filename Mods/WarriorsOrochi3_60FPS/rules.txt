@@ -1,6 +1,6 @@
 [Definition]
-titleIds = 5000010132b00,0005000010132400
+titleIds = 0005000010110200,000500001010ea00,0005000010112b00
 name = 60FPS
-path = "LEGO Marvel Super Heroes/Mods/60FPS"
+path = "Warriors Orochi 3 Hyper/Mods/60FPS"
 description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3

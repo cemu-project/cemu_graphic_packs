@@ -9,5 +9,3 @@ moduleMatches = 0x185FB31C
 [LSWfpsVer32]
 moduleMatches = 0xAF503338
 0x0287fb34 = addi r11,r12,1
-
-
