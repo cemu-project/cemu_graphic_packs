@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 5000010132b00
+name = 60fps
+path = "LEGO Marvel Super Heroes/Mods/60fps"
+description = 60 FPS Hack by theboy181
+version = 3

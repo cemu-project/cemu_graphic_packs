@@ -1,0 +1,5 @@
+[Definition]
+titleIds = 000500001010ad00
+path = "Darksiders II/Mods/60fps"
+description = Patches game to play at 60fps, by theboy181
+version = 3

@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 50000101a6200
+name = 60fps
+path = "LEGO Jurassic World/Mods/60fps"
+description = 60 FPS Hack by theboy181
+version = 3

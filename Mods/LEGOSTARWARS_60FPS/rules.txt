@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 50000101dab00
+name = 60fps
+path = "LEGO STAR WARS - The Force Awakens/Mods/60fps"
+description = 60 FPS Hack by theboy181
+version = 3

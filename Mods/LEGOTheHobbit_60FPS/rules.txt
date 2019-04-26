@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 500001016a700
+name = 60fps
+path = "LEGO The Hobbit/Mods/60fps"
+description = 60 FPS Hack by theboy181
+version = 3
