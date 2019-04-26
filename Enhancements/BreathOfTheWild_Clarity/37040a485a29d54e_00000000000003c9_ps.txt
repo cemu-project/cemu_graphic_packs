@@ -1055,12 +1055,12 @@ vec3 ACESFilm(vec3 color) {
 
 vec3 CurvesPass(vec3 inputColor) {
 	vec3 colorInput = inputColor;
-	float Contrast_blend = Contrast * 2.0; //I multiply by two to give it a strength closer to the other curves.
-	vec3 x = colorInput.rgb; //if the curve should be applied to both Luma and Chroma
-	x = x * (x * (1.5 - x) + 0.5); //horner form - fastest version
-	vec3 color = x;  //if the curve should be applied to both Luma and Chroma
-	colorInput.rgb = mix(colorInput.rgb, color, Contrast_blend); //Blend by Contrast
-	return colorInput;
+	float Contrast_blend = Contrast * 1.5;
+	vec3 x = colorInput.rgb;
+	x = x - 0.5;  
+	x = ( x / (0.5 + abs(x)) ) + 0.5;
+	vec3 color = x;
+	colorInput.rgb = mix(colorInput.rgb, color, Contrast_blend);
 }
 
 //TECHNICOLOR2
