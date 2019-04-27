@@ -1,0 +1,851 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Lefty Link"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Reverse Hyrule/Left Handed + Chormatic Vibrance"
+description = Change Input settings to switch Left and Right for the control sticks. Conflicts with Clarity. Have fun - 
+version = 3
+
+[Preset]
+name = 0.1, 1.51
+$clarity = 0.01
+$vibrance = 1.51
+
+[Preset]
+name = 0.1, 1.51
+$clarity = 0.1
+$vibrance = 1.51
+
+[Preset]
+name = 0.2, 1.51
+$clarity = 0.2
+$vibrance = 1.51
+
+[Preset]
+name = 0.3, 1.51
+$clarity = 0.3
+$vibrance = 1.51
+
+[Preset]
+name = 0.4, 1.51
+$clarity = 0.4
+$vibrance = 1.51
+
+[Preset]
+name = 0.5, 1.51
+$clarity = 0.5
+$vibrance = 1.51
+
+[Preset]
+name = 0.6, 1.51
+$clarity = 0.6
+$vibrance = 1.51
+
+[Preset]
+name = 0.7, 1.51
+$clarity = 0.7
+$vibrance = 1.51
+
+[Preset]
+name = 0.8, 1.51
+$clarity = 0.8
+$vibrance = 1.51
+
+[Preset]
+name = 0.9, 1.51
+$clarity = 0.9
+$vibrance = 1.51
+
+[Preset]
+name = 1.1, 1.51
+$clarity = 1.1
+$vibrance = 1.51
+
+[Preset]
+name = 1.5, 1.51
+$clarity = 1.5
+$vibrance = 1.51
+
+[Preset]
+name = 2, 1.51
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, 1.51
+$clarity = 2.5
+$vibrance = 1.51
+
+[Preset]
+name = 3, 1.51
+$clarity = 3
+$vibrance = 1.51
+
+[Preset]
+name = 4, 1.51
+$clarity = 4.0
+$vibrance = 1.51
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = 1.51
+
+[Preset]
+name = 0.1, 2.2
+$clarity = 0.01
+$vibrance = 2.2
+
+[Preset]
+name = 0.1, 2.2
+$clarity = 0.1
+$vibrance = 2.2
+
+[Preset]
+name = 0.2, 2.2
+$clarity = 0.2
+$vibrance = 2.2
+
+[Preset]
+name = 0.3, 2.2
+$clarity = 0.3
+$vibrance = 2.2
+
+[Preset]
+name = 0.4, 2.2
+$clarity = 0.4
+$vibrance = 2.2
+
+[Preset]
+name = 0.5, 2.2
+$clarity = 0.5
+$vibrance = 2.2
+
+[Preset]
+name = 0.6, 2.2
+$clarity = 0.6
+$vibrance = 2.2
+
+[Preset]
+name = 0.7, 2.2
+$clarity = 0.7
+$vibrance = 2.2
+
+[Preset]
+name = 0.8, 2.2
+$clarity = 0.8
+$vibrance = 2.2
+
+[Preset]
+name = 0.9, 2.2
+$clarity = 0.9
+$vibrance = 2.2
+
+[Preset]
+name = 1.1, 2.2
+$clarity = 1.1
+$vibrance = 2.2
+
+[Preset]
+name = 1.5, 2.2
+$clarity = 1.5
+$vibrance = 2.2
+
+[Preset]
+name = 2, 2.2
+$clarity = 2
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, 2.2
+$clarity = 2.5
+$vibrance = 2.2
+
+[Preset]
+name = 3, 2.2
+$clarity = 3.0
+$vibrance = 2.2
+
+[Preset]
+name = 4, 2.2
+$clarity = 4.0
+$vibrance = 2.2
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = 4.0
+
+[Preset]
+name = 0.1, 4.0
+$clarity = 0.01
+$vibrance = 4.0
+
+[Preset]
+name = 0.1, 4.0
+$clarity = 0.1
+$vibrance = 4.0
+
+[Preset]
+name = 0.2, 4.0
+$clarity = 0.2
+$vibrance = 4.0
+
+[Preset]
+name = 0.3, 4.0
+$clarity = 0.3
+$vibrance = 4.0
+
+[Preset]
+name = 0.4, 4.0
+$clarity = 0.4
+$vibrance = 4.0
+
+[Preset]
+name = 0.5, 4.0
+$clarity = 0.5
+$vibrance = 4.0
+
+[Preset]
+name = 0.6, 4.0
+$clarity = 0.6
+$vibrance = 4.0
+
+[Preset]
+name = 0.7, 4.0
+$clarity = 0.7
+$vibrance = 4.0
+
+[Preset]
+name = 0.8, 4.0
+$clarity = 0.8
+$vibrance = 4.0
+
+[Preset]
+name = 0.9, 4.0
+$clarity = 0.9
+$vibrance = 4.0
+
+[Preset]
+name = 1.1, 4.0
+$clarity = 1.1
+$vibrance = 4.0
+
+[Preset]
+name = 1.5, 4.0
+$clarity = 1.5
+$vibrance = 4.0
+
+[Preset]
+name = 2, 4.0
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, 4.0
+$clarity = 2.5
+$vibrance = 4.0
+
+[Preset]
+name = 3, 4.0
+$clarity = 3.0
+$vibrance = 4.0
+
+[Preset]
+name = 4, 4.0
+$clarity = 4.0
+$vibrance = 4.0
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = 7.0
+
+[Preset]
+name = 0.1, 7.0
+$clarity = 0.01
+$vibrance = 7.0
+
+[Preset]
+name = 0.1, 7.0
+$clarity = 0.1
+$vibrance = 7.0
+
+[Preset]
+name = 0.2, 7.0
+$clarity = 0.2
+$vibrance = 7.0
+
+[Preset]
+name = 0.3, 7.0
+$clarity = 0.3
+$vibrance = 7.0
+
+[Preset]
+name = 0.4, 7.0
+$clarity = 0.4
+$vibrance = 7.0
+
+[Preset]
+name = 0.5, 7.0
+$clarity = 0.5
+$vibrance = 7.0
+
+[Preset]
+name = 0.6, 7.0
+$clarity = 0.6
+$vibrance = 7.0
+
+[Preset]
+name = 0.7, 7.0
+$clarity = 0.7
+$vibrance = 7.0
+
+[Preset]
+name = 0.8, 7.0
+$clarity = 0.8
+$vibrance = 7.0
+
+[Preset]
+name = 0.9, 7.0
+$clarity = 0.9
+$vibrance = 7.0
+
+[Preset]
+name = 1.1, 7.0
+$clarity = 1.1
+$vibrance = 7.0
+
+[Preset]
+name = 1.5, 7.0
+$clarity = 1.5
+$vibrance = 7.0
+
+[Preset]
+name = 2, 7.0
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, 7.0
+$clarity = 2.5
+$vibrance = 7.0
+
+[Preset]
+name = 3, 7.0
+$clarity = 3.0
+$vibrance = 7.0
+
+[Preset]
+name = 4, 7.0
+$clarity = 4.0
+$vibrance = 7.0
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = -1.51
+
+[Preset]
+name = 0.1, -1.51
+$clarity = 0.01
+$vibrance = -1.51
+
+[Preset]
+name = 0.1, -1.51
+$clarity = 0.1
+$vibrance = -1.51
+
+[Preset]
+name = 0.2, -1.51
+$clarity = 0.2
+$vibrance = -1.51
+
+[Preset]
+name = 0.3, -1.51
+$clarity = 0.3
+$vibrance = -1.51
+
+[Preset]
+name = 0.4, -1.51
+$clarity = 0.4
+$vibrance = -1.51
+
+[Preset]
+name = 0.5, -1.51
+$clarity = 0.5
+$vibrance = -1.51
+
+[Preset]
+name = 0.6, -1.51
+$clarity = 0.6
+$vibrance = -1.51
+
+[Preset]
+name = 0.7, -1.51
+$clarity = 0.7
+$vibrance = -1.51
+
+[Preset]
+name = 0.8, -1.51
+$clarity = 0.8
+$vibrance = -1.51
+
+[Preset]
+name = 0.9, -1.51
+$clarity = 0.9
+$vibrance = -1.51
+
+[Preset]
+name = 1.1, -1.51
+$clarity = 1.1
+$vibrance = -1.51
+
+[Preset]
+name = 1.5, -1.51
+$clarity = 1.5
+$vibrance = -1.51
+
+[Preset]
+name = 2, -1.51
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, -1.51
+$clarity = 2.5
+$vibrance = -1.51
+
+[Preset]
+name = 3, -1.51
+$clarity = 3.0
+$vibrance = -1.51
+
+[Preset]
+name = 4, -1.51
+$clarity = 4.0
+$vibrance = -1.51
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = -2.2
+
+[Preset]
+name = 0.1, -2.2
+$clarity = 0.01
+$vibrance = -2.2
+
+[Preset]
+name = 0.1, -2.2
+$clarity = 0.1
+$vibrance = -2.2
+
+[Preset]
+name = 0.2, -2.2
+$clarity = 0.2
+$vibrance = -2.2
+
+[Preset]
+name = 0.3, -2.2
+$clarity = 0.3
+$vibrance = -2.2
+
+[Preset]
+name = 0.4, -2.2
+$clarity = 0.4
+$vibrance = -2.2
+
+[Preset]
+name = 0.5, -2.2
+$clarity = 0.5
+$vibrance = -2.2
+
+[Preset]
+name = 0.6, -2.2
+$clarity = 0.6
+$vibrance = -2.2
+
+[Preset]
+name = 0.7, -2.2
+$clarity = 0.7
+$vibrance = -2.2
+
+[Preset]
+name = 0.8, -2.2
+$clarity = 0.8
+$vibrance = -2.2
+
+[Preset]
+name = 0.9, -2.2
+$clarity = 0.9
+$vibrance = -2.2
+
+[Preset]
+name = 1.1, -2.2
+$clarity = 1.1
+$vibrance = -2.2
+
+[Preset]
+name = 1.5, -2.2
+$clarity = 1.5
+$vibrance = -2.2
+
+[Preset]
+name = 2, -2.2
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, -2.2
+$clarity = 2.5
+$vibrance = -2.2
+
+[Preset]
+name = 3, -2.2
+$clarity = 3.0
+$vibrance = -2.2
+
+[Preset]
+name = 4, -2.2
+$clarity = 4.0
+$vibrance = -2.2
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = -4.0
+
+[Preset]
+name = 0.1, -4.0
+$clarity = 0.01
+$vibrance = -4.0
+
+[Preset]
+name = 0.1, -4.0
+$clarity = 0.1
+$vibrance = -4.0
+
+[Preset]
+name = 0.2, -4.0
+$clarity = 0.2
+$vibrance = -4.0
+
+[Preset]
+name = 0.3, -4.0
+$clarity = 0.3
+$vibrance = -4.0
+
+[Preset]
+name = 0.4, -4.0
+$clarity = 0.4
+$vibrance = -4.0
+
+[Preset]
+name = 0.5, -4.0
+$clarity = 0.5
+$vibrance = -4.0
+
+[Preset]
+name = 0.6, -4.0
+$clarity = 0.6
+$vibrance = -4.0
+
+[Preset]
+name = 0.7, -4.0
+$clarity = 0.7
+$vibrance = -4.0
+
+[Preset]
+name = 0.8, -4.0
+$clarity = 0.8
+$vibrance = -4.0
+
+[Preset]
+name = 0.9, -4.0
+$clarity = 0.9
+$vibrance = -4.0
+
+[Preset]
+name = 1.1, -4.0
+$clarity = 1.1
+$vibrance = -4.0
+
+[Preset]
+name = 1.5, -4.0
+$clarity = 1.5
+$vibrance = -4.0
+
+[Preset]
+name = 2, -4.0
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, -4.0
+$clarity = 2.5
+$vibrance = -4.0
+
+[Preset]
+name = 3, -4.0
+$clarity = 3.0
+$vibrance = -4.0
+
+[Preset]
+name = 4, -4.0
+$clarity = 4.0
+$vibrance = -4.0
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = -7.0
+
+[Preset]
+name = 0.1, -7.0
+$clarity = 0.01
+$vibrance = -7.0
+
+[Preset]
+name = 0.1, -7.0
+$clarity = 0.1
+$vibrance = -7.0
+
+[Preset]
+name = 0.2, -7.0
+$clarity = 0.2
+$vibrance = -7.0
+
+[Preset]
+name = 0.3, -7.0
+$clarity = 0.3
+$vibrance = -7.0
+
+[Preset]
+name = 0.4, -7.0
+$clarity = 0.4
+$vibrance = -7.0
+
+[Preset]
+name = 0.5, -7.0
+$clarity = 0.5
+$vibrance = -7.0
+
+[Preset]
+name = 0.6, -7.0
+$clarity = 0.6
+$vibrance = -7.0
+
+[Preset]
+name = 0.7, -7.0
+$clarity = 0.7
+$vibrance = -7.0
+
+[Preset]
+name = 0.8, -7.0
+$clarity = 0.8
+$vibrance = -7.0
+
+[Preset]
+name = 0.9, -7.0
+$clarity = 0.9
+$vibrance = -7.0
+
+[Preset]
+name = 1.1, -7.0
+$clarity = 1.1
+$vibrance = -7.0
+
+[Preset]
+name = 1.5, -7.0
+$clarity = 1.5
+$vibrance = -7.0
+
+[Preset]
+name = 2, -7.0
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, -7.0
+$clarity = 2.5
+$vibrance = -7.0
+
+[Preset]
+name = 3, -7.0
+$clarity = 3.0
+$vibrance = -7.0
+
+[Preset]
+name = 4, -7.0
+$clarity = 4.0
+$vibrance = -7.0
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = -12
+
+[Preset]
+name = 0.1, -12
+$clarity = 0.01
+$vibrance = -12
+
+[Preset]
+name = 0.1, -12
+$clarity = 0.1
+$vibrance = -12
+
+[Preset]
+name = 0.2, -12
+$clarity = 0.2
+$vibrance = -12
+
+[Preset]
+name = 0.3, -12
+$clarity = 0.3
+$vibrance = -12
+
+[Preset]
+name = 0.4, -12
+$clarity = 0.4
+$vibrance = -12
+
+[Preset]
+name = 0.5, -12
+$clarity = 0.5
+$vibrance = -12
+
+[Preset]
+name = 0.6, -12
+$clarity = 0.6
+$vibrance = -12
+
+[Preset]
+name = 0.7, -12
+$clarity = 0.7
+$vibrance = -12
+
+[Preset]
+name = 0.8, -12
+$clarity = 0.8
+$vibrance = -12
+
+[Preset]
+name = 0.9, -12
+$clarity = 0.9
+$vibrance = -12
+
+[Preset]
+name = 1.1, -12
+$clarity = 1.1
+$vibrance = -12
+
+[Preset]
+name = 1.5, -12
+$clarity = 1.5
+$vibrance = -12
+
+[Preset]
+name = 2, -12
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, -12
+$clarity = 2.5
+$vibrance = -12
+
+[Preset]
+name = 3, -12
+$clarity = 3.0
+$vibrance = -12
+
+[Preset]
+name = 4, -12
+$clarity = 4.0
+$vibrance = -12
+
+[Preset]
+name = ---------------
+$clarity = 4
+$vibrance = -15
+
+[Preset]
+name = 0.1, -15
+$clarity = 0.01
+$vibrance = -15
+
+[Preset]
+name = 0.1, -15
+$clarity = 0.1
+$vibrance = -15
+
+[Preset]
+name = 0.2, -15
+$clarity = 0.2
+$vibrance = -15
+
+[Preset]
+name = 0.3, -15
+$clarity = 0.3
+$vibrance = -15
+
+[Preset]
+name = 0.4, -15
+$clarity = 0.4
+$vibrance = -15
+
+[Preset]
+name = 0.5, -15
+$clarity = 0.5
+$vibrance = -15
+
+[Preset]
+name = 0.6, -15
+$clarity = 0.6
+$vibrance = -15
+
+[Preset]
+name = 0.7, -15
+$clarity = 0.7
+$vibrance = -15
+
+[Preset]
+name = 0.8, -15
+$clarity = 0.8
+$vibrance = -15
+
+[Preset]
+name = 0.9, -15
+$clarity = 0.9
+$vibrance = -15
+
+[Preset]
+name = 1.1, -15
+$clarity = 1.1
+$vibrance = -15
+
+[Preset]
+name = 1.5, -15
+$clarity = 1.5
+$vibrance = -15
+
+[Preset]
+name = 2, -15
+$clarity = 2.0
+$vibrance = 1.5
+
+[Preset]
+name = 2.5, -15
+$clarity = 2.5
+$vibrance = -15
+
+[Preset]
+name = 3, -15
+$clarity = 3.0
+$vibrance = -15
+
+[Preset]
+name = 4, -15
+$clarity = 4.0
+$vibrance = -15

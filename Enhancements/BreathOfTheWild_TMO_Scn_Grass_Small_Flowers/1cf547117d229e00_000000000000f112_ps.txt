@@ -1,0 +1,117 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 1cf547117d229e00
+uniform ivec4 uf_remappedPS[1];
+uniform float uf_alphaTestRef;
+layout(binding = 3) uniform sampler2DArray textureUnitPS3;// Tex3 addr 0xac3aa000 res 256x128x1 dim 5 tm: 4 format 0433 compSel: 0 1 2 3 mipView: 0x0 (num 0x9) sliceView: 0x0 (num 0x1) Sampler3 ClampX/Y/Z: 0 0 2 border: 0
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
+layout(location = 2) in vec4 passParameterSem2;
+layout(location = 3) in vec4 passParameterSem3;
+layout(location = 0) out vec4 passPixelColor0;
+layout(location = 1) out vec4 passPixelColor1;
+layout(location = 3) out vec4 passPixelColor3;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R5f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+R1f = passParameterSem1;
+R2f = passParameterSem2;
+R3f = passParameterSem3;
+// 0
+backupReg0f = R2f.w;
+R2f.x = R2f.z;
+R2f.y = R2f.w;
+R2f.z = roundEven(0.0);
+R2f.w = (-(backupReg0f) * 2.0 + 1.0);
+R2f.w = clamp(R2f.w, 0.0, 1.0);
+R3f.w = intBitsToFloat(0x3c808081);
+PS0f = R3f.w;
+R0f.w = (texture(textureUnitPS3, vec3(R2f.x,R2f.y,R2f.z)).w);
+// 0
+PV0f.x = R0f.w + intBitsToFloat(0x3e4ccccd);
+PV0f.y = R2f.w * intBitsToFloat(0x41990000);
+PV0f.z = intBitsToFloat(uf_remappedPS[0].z);
+R1f.w = 0.0;
+R2f.x = R3f.w;
+PS0f = R2f.x;
+// 1
+backupReg0f = R0f.x;
+PV1f.x = floor(PV0f.y);
+PV1f.x *= 4.0;
+R2f.y = PV0f.z;
+R0f.z = (R3f.z * 0.5 + 0.5);
+R2f.w = mul_nonIEEE(backupReg0f, PV0f.x);
+R0f.x = (R3f.x * 0.5 + 0.5);
+PS1f = R0f.x;
+// 2
+R0f.y = (R3f.y * 0.5 + 0.5);
+PV0f.y = R0f.y;
+R0f.w = PV1f.x * intBitsToFloat(0x3b808081);
+PV0f.w = R0f.w;
+// 3
+R5f.xyz = vec3(R0f.x,PV0f.y,R0f.z);
+R5f.w = PV0f.w;
+// 4
+R4f.xyz = vec3(R1f.x,R1f.y,R1f.z);
+R4f.w = R1f.w;
+// 5
+R3f.xyz = vec3(R2f.x,R2f.y,R2f.z);
+R3f.w = R2f.w;
+// export
+if( ((vec4(R3f.x, R3f.y, R3f.z, R3f.w)).a >= uf_alphaTestRef) == false) discard;
+passPixelColor0 = vec4(R3f.x, R3f.y, R3f.z, R3f.w);
+passPixelColor1 = vec4(R4f.x, R4f.y, R4f.z, R4f.w);
+passPixelColor3 = vec4(R5f.x, R5f.y, R5f.z, R5f.w);
+
+
+/* check if we want to change a color */
+if ($Red != 256 || $Green != 256 || $Blue != 256)
+{
+	/* Normalize RGB (255,255,255) => RGB (1,1,1) system */
+	float rred = $Red / 255.0f;
+	float ggreen = $Green / 255.0f;
+	float bblue = $Blue / 255.0f;
+
+	/* Create Greyscale luma with magic numbers approximating the eyes sensitivities */
+	float luma = dot(passPixelColor1.rgb, vec3(0.2126, 0.7152, 0.0722));
+
+	/* Adjust brightness of greyscale */
+	luma = luma*$Bright;
+
+	/* Colorize and Export */
+	passPixelColor1 = vec4(luma*rred, luma*ggreen, luma*bblue, R4f.w*$Bright);
+}
+else
+{
+/* only changing brightness */
+	passPixelColor1 = vec4(R4f.x, R4f.y, R4f.z, R4f.w)*$Bright;
+}
+
+}

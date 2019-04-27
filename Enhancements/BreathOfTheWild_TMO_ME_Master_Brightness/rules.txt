@@ -1,0 +1,110 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Master Brightness"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Master Effects/Master Brightness Control"
+description =   Master brightness control. Might get stuck on or off - 
+version = 3
+
+[Preset]
+name = 0.5
+$Intensity = 0.5
+
+[Preset]
+name = 0.01
+$Intensity = 0.01
+
+[Preset]
+name = 0.02
+$Intensity = 0.02
+
+[Preset]
+name = 0.06
+$Intensity = 0.06
+
+[Preset]
+name = 0.08
+$Intensity = 0.08
+
+[Preset]
+name = 0.1
+$Intensity = 0.1
+ 
+[Preset]
+name = 0.2
+$Intensity = 0.2
+ 
+[Preset]
+name = 0.3
+$Intensity = 0.3
+ 
+[Preset]
+name = 0.4
+$Intensity = 0.4
+ 
+[Preset]
+name = 0.5
+$Intensity = 0.5
+ 
+[Preset]
+name = 0.6
+$Intensity = 0.6
+ 
+[Preset]
+name = 0.7
+$Intensity = 0.7
+ 
+[Preset]
+name = 0.8
+$Intensity = 0.8
+ 
+[Preset]
+name = 0.9
+$Intensity = 0.9
+ 
+[Preset]
+name = 1.0
+$Intensity = 1.0
+ 
+[Preset]
+name = 1.2
+$Intensity = 1.2
+ 
+[Preset]
+name = 1.4
+$Intensity = 1.4
+ 
+[Preset]
+name = 1.6
+$Intensity = 1.6
+ 
+[Preset]
+name = 1.8
+$Intensity = 1.8 
+
+[Preset]
+name = 2
+$Intensity = 2
+ 
+[Preset]
+name = 2.5
+$Intensity = 2.5
+ 
+[Preset]
+name = 3
+$Intensity = 3
+ 
+[Preset]
+name = 4
+$Intensity = 4
+ 
+[Preset]
+name = 5
+$Intensity = 5
+ 
+[Preset]
+name = 6
+$Intensity = 6
+ 
+[Preset]
+name = 7
+$Intensity = 7

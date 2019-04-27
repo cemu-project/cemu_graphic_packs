@@ -1,0 +1,98 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 3df0bb0da1c740d5
+uniform ivec4 uf_remappedPS[1];
+uniform float uf_alphaTestRef;
+layout(binding = 9) uniform sampler2D textureUnitPS9;// Tex9 addr 0xf557c800 res 160x90x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler9 ClampX/Y/Z: 2 2 2 border: 1
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem3;
+layout(location = 2) in vec4 passParameterSem4;
+layout(location = 3) in vec4 passParameterSem7;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+R1f = passParameterSem3;
+R2f = passParameterSem4;
+R3f = passParameterSem7;
+// 0
+R3f.x = mul_nonIEEE(R0f.y, R3f.w);
+R2f.y = mul_nonIEEE(R0f.x, R3f.w);
+R1f.z = mul_nonIEEE(R0f.z, R3f.w);
+PV0f.w = R3f.w * 1.0;
+PS0f = 1.0 / R1f.w;
+// 1
+R0f.x = mul_nonIEEE(R1f.x, PS0f);
+R0f.y = mul_nonIEEE(R1f.y, PS0f);
+R0f.z = mul_nonIEEE(R0f.w, PV0f.w);
+R0f.z = clamp(R0f.z, 0.0, 1.0);
+R1f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].x), intBitsToFloat(uf_remappedPS[0].w));
+R1f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].y), intBitsToFloat(uf_remappedPS[0].w));
+PS1f = R1f.x;
+R0f.w = (texture(textureUnitPS9, R0f.xy).x);
+// 0
+PV0f.x = mul_nonIEEE(R2f.x, R0f.z);
+R0f.y = mul_nonIEEE(R3f.x, R1f.x);
+PV0f.z = R0f.w;
+PV0f.z /= 2.0;
+PV0f.z = clamp(PV0f.z, 0.0, 1.0);
+PV0f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].z), intBitsToFloat(uf_remappedPS[0].w));
+R0f.x = mul_nonIEEE(R2f.y, R1f.w);
+PS0f = R0f.x;
+// 1
+R0f.z = mul_nonIEEE(R1f.z, PV0f.w);
+R0f.w = mul_nonIEEE(PV0f.x, PV0f.z);
+// export
+// check whether fragment output is higher than threshold, if so output as brightness color
+if( ((vec4(R0f.x, R0f.y, R0f.z, R0f.w)).a > uf_alphaTestRef) == false) discard;
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+
+/*check if we want to change a color*/
+if ($Red != 256 || $Green != 256 || $Blue != 256)
+{
+	/* Create Greyscale luma with magic numbers approximating the eyes sensitivities */
+	float luma = dot(passPixelColor0.rgb, vec3(0.2126, 0.7152, 0.0722));
+
+	// /*Adjust brightness of greyscale*/
+	luma = luma*$Bright*1.8;
+	 
+	// /*Normalize RGB (255,255,255) => RGB (1,1,1) system*/
+	float rred = $Red / 255.0f;
+	float ggreen = $Green / 255.0f;
+	float bblue = $Blue / 255.0f;
+
+	/* Colorize and Export */
+	passPixelColor0 = vec4(luma*rred, luma*ggreen, luma*bblue, R0f.w*$Bright);
+}
+else
+{
+/* only changing brightness */
+	passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w*$Bright);
+}
+
+}

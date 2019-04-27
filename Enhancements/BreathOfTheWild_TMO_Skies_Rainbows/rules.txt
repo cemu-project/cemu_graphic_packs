@@ -1,0 +1,377 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = " Rainbows "
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Skies/Rainbows"
+description =   #Rainbows!! - 
+version = 3
+
+[Preset]
+name = Dropdown has Brightness levels first and then Colored editions below  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.25
+
+[Preset]
+name = RBG(0,0,0)*0 
+$Red = 0
+$Green = 0
+$Blue = 0
+$Bright = 0
+
+[Preset]
+name = ------Brightness levels 0.05 - 75.0 ------ 
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+
+[Preset]
+name = Bright 0.03 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.03
+
+[Preset]
+name = Bright 0.05 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+
+[Preset]
+name = Bright 0.06 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.06
+
+[Preset]
+name = Bright 0.07 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.07
+
+[Preset]
+name = Bright 0.08 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.08
+
+[Preset]
+name = Bright 0.09 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.09
+
+[Preset]
+name = Bright 0.1 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.1
+
+[Preset]
+name = Bright 0.12 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.12
+
+[Preset]
+name = Bright 0.14 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.14
+
+[Preset]
+name = Bright 0.16 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.16
+
+[Preset]
+name = Bright 0.18 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.18
+
+[Preset]
+name = Bright 0.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.2
+
+[Preset]
+name = Bright 0.22 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.22
+
+[Preset]
+name = Bright 0.25 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.25
+
+[Preset]
+name = Bright 0.27 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.27
+
+[Preset]
+name = Bright 0.3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.3
+
+[Preset]
+name = Bright 0.35 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.35
+
+[Preset]
+name = Bright 0.4 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.4
+
+[Preset]
+name = Bright 0.5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.5
+
+[Preset]
+name = Bright 0.6 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.6
+
+[Preset]
+name = Bright 0.7 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.7
+
+[Preset]
+name = Bright 0.8 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.8
+
+[Preset]
+name = Bright 0.9 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.9
+
+[Preset]
+name = Bright 1.1 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.1
+
+[Preset]
+name = Bright 1.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.2
+
+[Preset]
+name = Bright 1.3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.3
+
+[Preset]
+name = Bright 1.4 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.4
+
+[Preset]
+name = Bright 1.5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.5
+
+[Preset]
+name = Bright 1.6 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.6
+
+[Preset]
+name = Bright 1.7 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.7
+
+[Preset]
+name = Bright 1.8 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.8
+
+[Preset]
+name = Bright 1.9 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.9
+[Preset]
+
+name = Bright 2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2
+
+[Preset]
+name = Bright 2.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2.2
+
+[Preset]
+name = Bright 2.4 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2.4
+
+[Preset]
+name = Bright 2.6 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2.6
+
+[Preset]
+name = Bright 2.8 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2.8
+
+[Preset]
+name = Bright 3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 4
+
+[Preset]
+name = Bright 5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 5
+
+[Preset]
+name = Bright 8 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 8
+
+[Preset]
+name = Bright 10 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 10
+
+[Preset]
+name = Bright 12 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 12
+
+[Preset]
+name = Bright 15 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 15
+
+[Preset]
+name = Bright 20 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 20
+
+[Preset]
+name = Bright 25 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 25
+
+[Preset]
+name = Bright 35 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 35 
+
+[Preset]
+name = Bright 45 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 45
+
+[Preset]
+name = Bright 55 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 55
+
+[Preset]
+name = Bright 65 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 65
+
+[Preset]
+name = Bright 75 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 75

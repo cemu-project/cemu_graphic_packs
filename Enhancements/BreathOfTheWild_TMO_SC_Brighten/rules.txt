@@ -1,0 +1,665 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Sun Control"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Skies/Sky Color Control/Brighten"
+description =   Sun control - 
+version = 3
+
+
+[Preset]
+name =------------------- Brightness levels 0.05 - 75.0 ------------------- 
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+$Mode = 2
+
+[Preset]
+name =Bright 0.05 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+$Mode = 2
+
+[Preset]
+name =Bright 0.1 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.1
+$Mode = 2
+
+[Preset]
+name =Bright 0.15 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.15
+$Mode = 2
+
+[Preset]
+name =Bright 0.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.2
+$Mode = 2
+
+[Preset]
+name =Bright 0.25 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.25
+$Mode = 2
+
+[Preset]
+name =Bright 0.3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.3
+$Mode = 2
+
+[Preset]
+name =Bright 0.4 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.4
+$Mode = 2
+
+[Preset]
+name =Bright 0.5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.5
+$Mode = 2
+
+[Preset]
+name =Bright 0.6 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.6
+$Mode = 2
+
+[Preset]
+name =Bright 0.7 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.7
+$Mode = 2
+
+[Preset]
+name =Bright 0.8 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.8
+$Mode = 2
+
+[Preset]
+name =Bright 0.9 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.9
+$Mode = 2
+
+[Preset]
+name =Bright 1.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.2
+$Mode = 2
+
+[Preset]
+name =Bright 1.5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.5
+$Mode = 2
+
+[Preset]
+name =Bright 1.7 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.7
+$Mode = 2
+
+[Preset]
+name =Bright 2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2
+$Mode = 2
+
+[Preset]
+name =Bright 3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 4
+$Mode = 2
+
+[Preset]
+name =Bright 5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 5
+$Mode = 2
+
+[Preset]
+name =Bright 8 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 8
+$Mode = 2
+
+[Preset]
+name =Bright 10 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 10
+$Mode = 2
+
+[Preset]
+name =Bright 12 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 12
+$Mode = 2
+
+[Preset]
+name =Bright 15 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 15
+$Mode = 2
+
+[Preset]
+name =Bright 20 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 20
+$Mode = 2
+
+[Preset]
+name =Bright 25 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 25
+$Mode = 2
+
+[Preset]
+name =Bright 35 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 35 
+$Mode = 2
+
+[Preset]
+name =Bright 45 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 45
+$Mode = 2
+
+[Preset]
+name =Bright 55 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 55
+$Mode = 2
+
+[Preset]
+name =Bright 65 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 65
+$Mode = 2
+
+[Preset]
+name =Bright 75 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 75
+$Mode = 2
+
+[Preset]
+name =------------------- End Brightness Levels ------------------- 
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+$Mode = 2
+
+[Preset]
+name =------------------- Colored brightnesses ------------------- 
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.2
+$Mode = 1
+
+[Preset]
+name =------------------- Brightness 0.2 Colors ------------------- 
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.2
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 0.2 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.2
+$Mode = 1
+
+[Preset]
+name =RED  RGB (255, 12.75, 12.75) Bright 0.2 
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 0.2
+$Mode = 1
+
+[Preset]
+name =GREEN  RGB (12.75, 255, 12.75) Bright 0.2  
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 0.2
+$Mode = 1
+
+[Preset]
+name =BLUE  RGB (12.75, 12.75, 255) Bright 0.2  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 0.2
+$Mode = 1
+
+[Preset]
+name =------------------- Brightness 0.6 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.6
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 0.6 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.6
+$Mode = 1
+
+[Preset]
+name = RED RGB  (255, 12.75, 12.75) Bright 0.6 
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 0.6
+$Mode = 1
+
+[Preset]
+name =GREEN RGB  (12.75, 255, 12.75) Bright 0.6 
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 0.6
+$Mode = 1
+
+[Preset]
+name =BLUE RGB  (12.75, 12.75, 255) Bright 0.6 
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 0.6
+$Mode = 1
+
+[Preset]
+name =------------------- Brightness 1.2 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1.2
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 1.2 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1.2
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 1.2   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 1.2
+$Mode = 1
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 1.2
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 1.2
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 1.2  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 1.2
+$Mode = 1
+
+
+[Preset]
+name =------------------- Brightness 1.5 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1.5
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 1.5 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1.5
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 1.5   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 1.5
+$Mode = 1
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 1.5
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 1.5
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 1.5  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 1.5
+$Mode = 1
+
+
+[Preset]
+name =------------------- Brightness 2.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 2.0
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 2 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 2
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 2   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 2
+$Mode = 1
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 2
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 2
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 2  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 2
+$Mode = 1
+
+[Preset]
+name =------------------- Brightness 5.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 5.0
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 5 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 5
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 5   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 5
+$Mode = 1
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 5   
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 5
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 5  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 5
+$Mode = 1
+
+[Preset]
+name =------------------- Brightness 10.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 10
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 10 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 10
+$Mode = 1
+
+[Preset]
+name = RED RGB(255, 12.75, 12.75) Bright 10
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 10
+$Mode = 1
+
+[Preset]
+name =Bright 10 GREEN RGB(12.75, 255, 12.75) Bright 10 
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 10
+$Mode = 1
+
+[Preset]
+name =Bright 10 BLUE RGB(12.75, 12.75, 255) Bright 10 
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 10
+$Mode = 1
+
+[Preset]
+name =------------------- 25.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 25
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 25 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 25
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 25  
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 25
+$Mode = 1
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 25   
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 25
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 25  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 25
+$Mode = 1
+
+[Preset]
+name =------------------- 50.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 50
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 50 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 50
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 50  
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 50
+$Mode = 1
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 50  
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 50
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 50  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 50
+$Mode = 1
+
+[Preset]
+name =------------------- 75.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 75
+$Mode = 1
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 75 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 75
+$Mode = 1
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 75   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 75
+$Mode = 1
+
+[Preset]
+name = GREEN RGB(12.75, 255, 12.75) Bright 75  
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 75
+$Mode = 1
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 75  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 75
+$Mode = 1

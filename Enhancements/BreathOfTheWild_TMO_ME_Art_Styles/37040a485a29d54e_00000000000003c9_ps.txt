@@ -1,0 +1,2508 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 37040a485a29d54e
+
+#define mode $Mode
+#define OCTAVES 6
+#define PI 3.14159265358979323846
+
+//------------------LENS DISTORTION--------------------//
+// by Weaseltron                                       //
+// From ENB by Boris                                   //
+// Converted to GLSL for Cemu by Altros                //
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+uniform ivec4 uf_remappedPS[1];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf5c7b800 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+
+/* camera barrel distortion for chromatic aberration */
+vec2 brownConradyDistortion(vec2 uv, float scalar)
+{
+    uv = (uv - 0.5 ) * 2.0;
+    
+    if( true )
+    {
+        float barrelDistortion1 = -0.02 * scalar; // K1 in text books
+        float barrelDistortion2 = 0.0 * scalar; // K2 in text books
+
+        float r2 = dot(uv,uv);
+        uv *= 1.0 + barrelDistortion1 * r2 + barrelDistortion2 * r2 * r2;
+       
+    }
+    
+   return (uv / 2.0) + 0.5;
+}
+
+//----------------------VIBRANCE-----------------------//
+// by Christian Cann Schuldt Jensen ~ CeeJay.dk        //
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+vec4 VibrancePass( vec4 colorInput )
+{ 
+	/*
+	#ifndef Vibrance_RGB_balance //for backwards compatibility with setting presets for older version.
+	#define Vibrance_RGB_balance float3(1.00, 1.00, 1.00)
+	#endif
+	*/
+
+	// float Vibrance = $vibrance;
+	vec3 Vibrance_RGB_balance = vec3(0.212656, 0.005158, 0.172186);
+
+	vec3 Vibrance_coeff = vec3(Vibrance_RGB_balance) * $vibrance;
+
+	vec4 color = colorInput; //original input color
+	vec3 lumCoeff = vec3(0.212656, 0.715158, 0.072186);  //Values to calculate luma with
+
+	float luma = dot(lumCoeff, color.rgb); //calculate luma (grey)
+
+
+	float max_color = max(colorInput.r, max(colorInput.g,colorInput.b)); //Find the strongest color
+	float min_color = min(colorInput.r, min(colorInput.g,colorInput.b)); //Find the weakest color
+
+	float color_saturation = max_color - min_color; //The difference between the two is the saturation
+
+	vec3 mixfactor = (1.0 + (Vibrance_coeff * (1.0 - (sign(Vibrance_coeff) * color_saturation))));
+	color.rgb = mix(vec3(luma, luma, luma), color.rgb, mixfactor); 
+	//extrapolate between luma and original by 1 + (1-saturation) - current
+
+	return color; //return the result
+	//return color_saturation.xxxx; //Visualize the saturation
+}
+
+
+/**
+ * @author zz85 / https://github.com/zz85 | https://www.lab4games.net/zz85/blog
+ *
+ * Edge Detection Shader using Frei-Chen filter
+ * Based on http://rastergrid.com/blog/2011/01/frei-chen-edge-detector
+ *
+ */
+
+mat3 G[9];
+// hard coded matrix values!!!! as suggested in https://github.com/neilmendoza/ofxPostProcessing/blob/master/src/EdgePass.cpp#L45
+const mat3 g0 = mat3( 0.3535533845424652, 0, -0.3535533845424652, 0.5, 0, -0.5, 0.3535533845424652, 0, -0.3535533845424652 );
+const mat3 g1 = mat3( 0.3535533845424652, 0.5, 0.3535533845424652, 0, 0, 0, -0.3535533845424652, -0.5, -0.3535533845424652 );
+const mat3 g2 = mat3( 0, 0.3535533845424652, -0.5, -0.3535533845424652, 0, 0.3535533845424652, 0.5, -0.3535533845424652, 0 );
+const mat3 g3 = mat3( 0.5, -0.3535533845424652, 0, -0.3535533845424652, 0, 0.3535533845424652, 0, 0.3535533845424652, -0.5 );
+const mat3 g4 = mat3( 0, -0.5, 0, 0.5, 0, 0.5, 0, -0.5, 0 );
+const mat3 g5 = mat3( -0.5, 0, 0.5, 0, 0, 0, 0.5, 0, -0.5 );
+const mat3 g6 = mat3( 0.1666666716337204, -0.3333333432674408, 0.1666666716337204, -0.3333333432674408, 0.6666666865348816, -0.3333333432674408, 0.1666666716337204, -0.3333333432674408, 0.1666666716337204 );
+const mat3 g7 = mat3( -0.3333333432674408, 0.1666666716337204, -0.3333333432674408, 0.1666666716337204, 0.6666666865348816, 0.1666666716337204, -0.3333333432674408, 0.1666666716337204, -0.3333333432674408 );
+const mat3 g8 = mat3( 0.3333333432674408, 0.3333333432674408, 0.3333333432674408, 0.3333333432674408, 0.3333333432674408, 0.3333333432674408, 0.3333333432674408, 0.3333333432674408, 0.3333333432674408 );
+
+
+// helper functions
+
+//
+//	FAST32_hash
+//	A very fast hashing function.  Requires 32bit support.
+//	http://briansharpe.wordpress.com/2011/11/15/a-fast-and-simple-32bit-floating-point-hash-function/
+//
+//	The 2D hash formula takes the form....
+//	hash = mod( coord.x * coord.x * coord.y * coord.y, SOMELARGEFLOAT ) / SOMELARGEFLOAT
+//	We truncate and offset the domain to the most interesting part of the noise.
+//	SOMELARGEFLOAT should be in the range of 400.0->1000.0 and needs to be hand picked.  Only some give good results.
+//	A 3D hash is achieved by offsetting the SOMELARGEFLOAT value by the Z coordinate
+//
+void FAST32_hash_2D( vec2 gridcell, out vec4 hash_0, out vec4 hash_1 )	//	generates 2 random numbers for each of the 4 cell corners
+{
+    //    gridcell is assumed to be an integer coordinate
+    const vec2 OFFSET = vec2( 26.0, 161.0 );
+    const float DOMAIN = 71.0;
+    const vec2 SOMELARGEFLOATS = vec2( 951.135664, 642.949883 );
+    vec4 P = vec4( gridcell.xy, gridcell.xy + 1.0 );
+    P = P - floor(P * ( 1.0 / DOMAIN )) * DOMAIN;
+    P += OFFSET.xyxy;
+    P *= P;
+    P = P.xzxz * P.yyww;
+    hash_0 = fract( P * ( 1.0 / SOMELARGEFLOATS.x ) );
+    hash_1 = fract( P * ( 1.0 / SOMELARGEFLOATS.y ) );
+}
+
+void FAST32_hash_2D( 	vec2 gridcell,
+                        out vec4 hash_0,
+                        out vec4 hash_1,
+                        out vec4 hash_2	)	//	generates 3 random numbers for each of the 4 cell corners
+{
+    //    gridcell is assumed to be an integer coordinate
+    const vec2 OFFSET = vec2( 26.0, 161.0 );
+    const float DOMAIN = 71.0;
+    const vec3 SOMELARGEFLOATS = vec3( 951.135664, 642.949883, 803.202459 );
+    vec4 P = vec4( gridcell.xy, gridcell.xy + 1.0 );
+    P = P - floor(P * ( 1.0 / DOMAIN )) * DOMAIN;
+    P += OFFSET.xyxy;
+    P *= P;
+    P = P.xzxz * P.yyww;
+    hash_0 = fract( P * ( 1.0 / SOMELARGEFLOATS.x ) );
+    hash_1 = fract( P * ( 1.0 / SOMELARGEFLOATS.y ) );
+    hash_2 = fract( P * ( 1.0 / SOMELARGEFLOATS.z ) );
+}
+
+
+//	convert a 0.0->1.0 sample to a -1.0->1.0 sample weighted towards the extremes
+vec4 Cellular_weight_samples( vec4 samples )
+{
+    samples = samples * 2.0 - 1.0;
+    //return (1.0 - samples * samples) * sign(samples);	// square
+    return (samples * samples * samples) - sign(samples);	// cubic (even more variance)
+}
+
+
+float Interpolation_C2( float x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }   //  6x^5-15x^4+10x^3	( Quintic Curve.  As used by Perlin in Improved Noise.  http://mrl.nyu.edu/~perlin/paper445.pdf )
+vec2 Interpolation_C2( vec2 x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }
+vec3 Interpolation_C2( vec3 x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }
+vec4 Interpolation_C2( vec4 x ) { return x * x * x * (x * (x * 6.0 - 15.0) + 10.0); }
+
+
+//
+//	SimplexPerlin2D  ( simplex gradient noise )
+//	Perlin noise over a simplex (triangular) grid
+//	Return value range of -1.0->1.0
+//	http://briansharpe.files.wordpress.com/2012/01/simplexperlinsample.jpg
+//
+//	Implementation originally based off Stefan Gustavson's and Ian McEwan's work at...
+//	http://github.com/ashima/webgl-noise
+//
+float SimplexPerlin2D( vec2 P )
+{
+    //	simplex math constants
+    const float SKEWFACTOR = 0.36602540378443864676372317075294;			// 0.5*(sqrt(3.0)-1.0)
+    const float UNSKEWFACTOR = 0.21132486540518711774542560974902;			// (3.0-sqrt(3.0))/6.0
+    const float SIMPLEX_TRI_HEIGHT = 0.70710678118654752440084436210485;	// sqrt( 0.5 )	height of simplex triangle
+    const vec3 SIMPLEX_POINTS = vec3( 1.0-UNSKEWFACTOR, -UNSKEWFACTOR, 1.0-2.0*UNSKEWFACTOR );		//	vertex info for simplex triangle
+
+    //	establish our grid cell.
+    P *= SIMPLEX_TRI_HEIGHT;		// scale space so we can have an approx feature size of 1.0  ( optional )
+    vec2 Pi = floor( P + dot( P, vec2( SKEWFACTOR ) ) );
+
+    //	calculate the hash.
+    //	( various hashing methods listed in order of speed )
+    vec4 hash_x, hash_y;
+    FAST32_hash_2D( Pi, hash_x, hash_y );
+    //SGPP_hash_2D( Pi, hash_x, hash_y );
+
+    //	establish vectors to the 3 corners of our simplex triangle
+    vec2 v0 = Pi - dot( Pi, vec2( UNSKEWFACTOR ) ) - P;
+    vec4 v1pos_v1hash = (v0.x < v0.y) ? vec4(SIMPLEX_POINTS.xy, hash_x.y, hash_y.y) : vec4(SIMPLEX_POINTS.yx, hash_x.z, hash_y.z);
+    vec4 v12 = vec4( v1pos_v1hash.xy, SIMPLEX_POINTS.zz ) + v0.xyxy;
+
+    //	calculate the dotproduct of our 3 corner vectors with 3 random normalized vectors
+    vec3 grad_x = vec3( hash_x.x, v1pos_v1hash.z, hash_x.w ) - 0.49999;
+    vec3 grad_y = vec3( hash_y.x, v1pos_v1hash.w, hash_y.w ) - 0.49999;
+    vec3 grad_results = inversesqrt( grad_x * grad_x + grad_y * grad_y ) * ( grad_x * vec3( v0.x, v12.xz ) + grad_y * vec3( v0.y, v12.yw ) );
+
+    //	Normalization factor to scale the final result to a strict 1.0->-1.0 range
+    //	x = ( sqrt( 0.5 )/sqrt( 0.75 ) ) * 0.5
+    //	NF = 1.0 / ( x * ( ( 0.5  x*x ) ^ 4 ) * 2.0 )
+    //	http://briansharpe.wordpress.com/2012/01/13/simplex-noise/#comment-36
+    const float FINAL_NORMALIZATION = 99.204334582718712976990005025589;
+
+    //	evaluate the surflet, sum and return
+    vec3 m = vec3( v0.x, v12.xz ) * vec3( v0.x, v12.xz ) + vec3( v0.y, v12.yw ) * vec3( v0.y, v12.yw );
+    m = max(0.5 - m, 0.0);		//	The 0.5 here is SIMPLEX_TRI_HEIGHT^2
+    m = m*m;
+    return dot(m*m, grad_results) * FINAL_NORMALIZATION;
+}
+
+
+
+//
+//	SimplexCellular2D
+//	cellular noise over a simplex (triangular) grid
+//	Return value range of 0.0->~1.0
+//	http://briansharpe.files.wordpress.com/2012/01/simplexcellularsample.jpg
+//
+//	TODO:  scaling of return value to strict 0.0->1.0 range
+//
+float SimplexCellular2D( vec2 P )
+{
+    //	simplex math based off Stefan Gustavson's and Ian McEwan's work at...
+    //	http://github.com/ashima/webgl-noise
+
+    //	simplex math constants
+    const float SKEWFACTOR = 0.36602540378443864676372317075294;			// 0.5*(sqrt(3.0)-1.0)
+    const float UNSKEWFACTOR = 0.21132486540518711774542560974902;			// (3.0-sqrt(3.0))/6.0
+    const float SIMPLEX_TRI_HEIGHT = 0.70710678118654752440084436210485;	// sqrt( 0.5 )	height of simplex triangle.
+    const float INV_SIMPLEX_TRI_HEIGHT = 1.4142135623730950488016887242097;	//	1.0 / sqrt( 0.5 )
+    const vec3 SIMPLEX_POINTS = vec3( 1.0-UNSKEWFACTOR, -UNSKEWFACTOR, 1.0-2.0*UNSKEWFACTOR ) * INV_SIMPLEX_TRI_HEIGHT;		//	vertex info for simplex triangle
+
+    //	establish our grid cell.
+    P *= SIMPLEX_TRI_HEIGHT;		// scale space so we can have an approx feature size of 1.0  ( optional )
+    vec2 Pi = floor( P + dot( P, vec2( SKEWFACTOR ) ) );
+
+    //	calculate the hash.
+    //	( various hashing methods listed in order of speed )
+    vec4 hash_x, hash_y;
+    FAST32_hash_2D( Pi, hash_x, hash_y );
+    //SGPP_hash_2D( Pi, hash_x, hash_y );
+
+    //	push hash values to extremes of jitter window
+    const float JITTER_WINDOW = ( 0.10566243270259355887271280487451 * INV_SIMPLEX_TRI_HEIGHT );		// this will guarentee no artifacts.
+    hash_x = Cellular_weight_samples( hash_x ) * JITTER_WINDOW;
+    hash_y = Cellular_weight_samples( hash_y ) * JITTER_WINDOW;
+
+    //	calculate sq distance to closest point
+    vec2 p0 = ( ( Pi - dot( Pi, vec2( UNSKEWFACTOR ) ) ) - P ) * INV_SIMPLEX_TRI_HEIGHT;
+    hash_x += p0.xxxx;
+    hash_y += p0.yyyy;
+    hash_x.yzw += SIMPLEX_POINTS.xyz;
+    hash_y.yzw += SIMPLEX_POINTS.yxz;
+    vec4 distsq = hash_x*hash_x + hash_y*hash_y;
+    vec2 tmp = min( distsq.xy, distsq.zw );
+    return min( tmp.x, tmp.y );
+}
+
+
+//
+//	Cubist Noise 2D
+//	http://briansharpe.files.wordpress.com/2011/12/cubistsample.jpg
+//
+//	Generates a noise which resembles a cubist-style painting pattern.  Final Range 0.0->1.0
+//	NOTE:  contains discontinuities.  best used only for texturing.
+//	NOTE:  Any serious game implementation should hard-code these parameter values for efficiency.
+//
+float Cubist2D( vec2 P, vec2 range_clamp )	// range_clamp.x = low, range_clamp.y = 1.0/(high-low).  suggest value low=-2.0  high=1.0
+{
+    //	establish our grid cell and unit position
+    vec2 Pi = floor(P);
+    vec4 Pf_Pfmin1 = P.xyxy - vec4( Pi, Pi + 1.0 );
+
+    //	calculate the hash.
+    //	( various hashing methods listed in order of speed )
+    vec4 hash_x, hash_y, hash_value;
+    FAST32_hash_2D( Pi, hash_x, hash_y, hash_value );
+
+    //	calculate the gradient results
+    vec4 grad_x = hash_x - 0.49999;
+    vec4 grad_y = hash_y - 0.49999;
+    vec4 grad_results = inversesqrt( grad_x * grad_x + grad_y * grad_y ) * ( grad_x * Pf_Pfmin1.xzxz + grad_y * Pf_Pfmin1.yyww );
+
+    //	invert the gradient to convert from perlin to cubist
+    grad_results = ( hash_value - 0.5 ) * ( 1.0 / grad_results );
+
+    //	blend the results and return
+    vec2 blend = Interpolation_C2( Pf_Pfmin1.xy );
+    vec4 blend2 = vec4( blend, vec2( 1.0 - blend ) );
+    float final = dot( grad_results, blend2.zxzx * blend2.wwyy );
+
+    //	the 1.0/grad calculation pushes the result to a possible to +-infinity.  Need to clamp to keep things sane
+    return clamp( ( final - range_clamp.x ) * range_clamp.y, 0.0, 1.0 );
+    //return smoothstep( 0.0, 1.0, ( final - range_clamp.x ) * range_clamp.y );		//	experiments.  smoothstep doesn't look as good, but does remove some discontinuities....
+}
+
+
+// brownian motion generator
+
+// Author @patriciogv - 2015
+// http://patriciogonzalezvivo.com
+
+
+float random (in vec2 st, float multiplier) {
+    return fract(sin(dot(st.xy,
+                         vec2(12.9898,78.233)))*
+        43758.5453123);
+}
+
+
+// 2D Noise based on Morgan McGuire @morgan3d
+// https://www.shadertoy.com/view/4dS3Wd
+float noise (in vec2 st, float multiplier) {
+    vec2 i = floor(st);
+    vec2 f = fract(st);
+
+    // Four corners in 2D of a tile
+    float a = random(i, multiplier);
+    float b = random(i + vec2(1.0, 0.0), multiplier);
+    float c = random(i + vec2(0.0, 1.0), multiplier);
+    float d = random(i + vec2(1.0, 1.0), multiplier);
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve.  Same as SmoothStep()
+    vec2 u = f*f*(3.0-2.0*f);
+    // u = smoothstep(0.,1.,f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+
+float checker(vec2 uv, float repeats) {
+  float cx = floor(repeats * uv.x);
+  float cy = floor(repeats * uv.y); 
+  float result = mod(cx + cy, 2.0);
+  return sign(result);
+}
+
+// Based on Morgan McGuire @morgan3d
+// https://www.shadertoy.com/view/4dS3Wd
+
+float fbm (in vec2 st, float multiplier) {
+    // Initial values
+    float value = 0.0;
+    float amplitud = .5;
+    float frequency = 0.;
+    //
+    // Loop of octaves
+    for (int i = 0; i < OCTAVES; i++) {
+        value += amplitud * noise(st, multiplier);
+        st *= 2.;
+        amplitud *= .5;
+    }
+    return value;
+}
+
+// End brownian motion code //
+
+
+
+vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+// some other noise
+
+
+float snoise(vec2 v) {
+    const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
+                        0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
+                        -0.577350269189626,  // -1.0 + 2.0 * C.x
+                        0.024390243902439); // 1.0 / 41.0
+    vec2 i  = floor(v + dot(v, C.yy) );
+    vec2 x0 = v -   i + dot(i, C.xx);
+    vec2 i1;
+    i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+    vec4 x12 = x0.xyxy + C.xxzz;
+    x12.xy -= i1;
+    i = mod289(i); // Avoid truncation effects in permutation
+    vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 )) + i.x + vec3(0.0, i1.x, 1.0 ));
+
+    vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+    m = m*m ;
+    m = m*m ;
+    vec3 x = 2.0 * fract(p * C.www) - 1.0;
+    vec3 h = abs(x) - 0.5;
+    vec3 ox = floor(x + 0.5);
+    vec3 a0 = x - ox;
+    m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+    vec3 g;
+    g.x  = a0.x  * x0.x  + h.x  * x0.y;
+    g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+    return 130.0 * dot(m, g);
+}
+
+float cloud(vec2 st) {
+    float n = 0.0;
+    for (float i = 1.0; i < 8.0; i ++) {
+        float m = pow(2.0, i);
+        n += snoise(st * m) * (1.0 / m);
+    }
+    return n * 0.5 + 0.5;
+}
+
+
+
+// noise end
+
+// Patterns
+
+// Author @patriciogv ( patriciogonzalezvivo.com ) - 2015
+vec2 brickTile(vec2 _st, float _zoom, float offset){
+    _st *= _zoom;
+
+    // Here is where the offset is happening
+    _st.x += step(1.0, mod(_st.y,2.0)) * offset;
+
+    return fract(_st);
+}
+
+
+// Modern metric brick of 215mm x 102.5mm x 65mm
+// http://www.jaharrison.me.uk/Brickwork/Sizes.html
+// st /= vec2(2.15,0.65)/1.5;
+float box(vec2 _st, vec2 _size, float _smoothEdges, float horiz, float vert){
+    _size = vec2(0.5)-_size*0.5;
+    vec2 aa = vec2(_smoothEdges*0.5);
+    vec2 uv = smoothstep(_size,_size+aa,_st);
+    uv *= smoothstep(_size,_size+aa,vec2(1.0)-_st);
+    return (uv.x+vert)*(uv.y+horiz);
+}
+
+// assist functions
+
+// Author @patriciogv ( patriciogonzalezvivo.com ) - 2015
+vec2 rotate2D(vec2 _st, float _angle){
+    _st -= 0.5;
+    _st =  mat2(cos(_angle),-sin(_angle),
+                sin(_angle),cos(_angle)) * _st;
+    _st += 0.5;
+    return _st;
+}
+
+// Author @patriciogv ( patriciogonzalezvivo.com ) - 2015
+vec2 tile(vec2 _st, float _zoom){
+    _st *= _zoom;
+    return fract(_st);
+}
+
+// Blending modes 
+// https://github.com/jamieowen/glsl-blend/blob/master/
+
+    
+float blendSubstract(float base, float blend) {
+	return max(base+blend-1.0,0.0);
+}
+
+vec3 blendSubstract(vec3 base, vec3 blend) {
+	return max(base+blend-vec3(1.0),vec3(0.0));
+}
+
+vec3 blendSubstract(vec3 base, vec3 blend, float opacity) {
+	return (blendSubstract(base, blend) * opacity + blend * (1.0 - opacity));
+}
+
+vec3 blendAverage(vec3 base, vec3 blend) {
+	return (base+blend)/2.0;
+}
+
+vec3 blendAverage(vec3 base, vec3 blend, float opacity) {
+	return (blendAverage(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+float blendAdd(float base, float blend) {
+	return min(base+blend,1.0);
+}
+
+vec3 blendAdd(vec3 base, vec3 blend) {
+	return min(base+blend,vec3(1.0));
+}
+
+vec3 blendAdd(vec3 base, vec3 blend, float opacity) {
+	return (blendAdd(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+vec3 blendExclusion(vec3 base, vec3 blend) {
+	return base+blend-2.0*base*blend;
+}
+
+vec3 blendExclusion(vec3 base, vec3 blend, float opacity) {
+	return (blendExclusion(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+vec3 blendDifference(vec3 base, vec3 blend) {
+	return abs(base-blend);
+}
+
+vec3 blendDifference(vec3 base, vec3 blend, float opacity) {
+	return (blendDifference(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+float blendOverlay(float base, float blend) {
+	return base<0.5?(2.0*base*blend):(1.0-2.0*(1.0-base)*(1.0-blend));
+}
+
+vec3 blendOverlay(vec3 base, vec3 blend) {
+	return vec3(blendOverlay(base.r,blend.r),blendOverlay(base.g,blend.g),blendOverlay(base.b,blend.b));
+}
+
+vec3 blendOverlay(vec3 base, vec3 blend, float opacity) {
+	return (blendOverlay(base, blend) * opacity + base * (1.0 - opacity));
+}
+    
+float blendScreen(float base, float blend) {
+	return 1.0-((1.0-base)*(1.0-blend));
+}
+
+vec3 blendScreen(vec3 base, vec3 blend) {
+	return vec3(blendScreen(base.r,blend.r),blendScreen(base.g,blend.g),blendScreen(base.b,blend.b));
+}
+
+vec3 blendScreen(vec3 base, vec3 blend, float opacity) {
+	return (blendScreen(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+float blendSubtract(float base, float blend) {
+	return max(base+blend-1.0,0.0);
+}
+
+vec3 blendSubtract(vec3 base, vec3 blend) {
+	return max(base+blend-vec3(1.0),vec3(0.0));
+}
+
+vec3 blendSubtract(vec3 base, vec3 blend, float opacity) {
+	return (blendSubtract(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+float blendColorBurn(float base, float blend) {
+	return (blend==0.0)?blend:max((1.0-((1.0-base)/blend)),0.0);
+}
+
+vec3 blendColorBurn(vec3 base, vec3 blend) {
+	return vec3(blendColorBurn(base.r,blend.r),blendColorBurn(base.g,blend.g),blendColorBurn(base.b,blend.b));
+}
+
+vec3 blendColorBurn(vec3 base, vec3 blend, float opacity) {
+	return (blendColorBurn(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+float blendDarken(float base, float blend) {
+	return min(blend,base);
+}
+
+vec3 blendDarken(vec3 base, vec3 blend) {
+	return vec3(blendDarken(base.r,blend.r),blendDarken(base.g,blend.g),blendDarken(base.b,blend.b));
+}
+
+vec3 blendDarken(vec3 base, vec3 blend, float opacity) {
+	return (blendDarken(base, blend) * opacity + base * (1.0 - opacity));
+}
+float blendLinearBurn(float base, float blend) {
+	// Note : Same implementation as BlendSubtractf
+	return max(base+blend-1.0,0.0);
+}
+
+vec3 blendLinearBurn(vec3 base, vec3 blend) {
+	// Note : Same implementation as BlendSubtract
+	return max(base+blend-vec3(1.0),vec3(0.0));
+}
+
+vec3 blendLinearBurn(vec3 base, vec3 blend, float opacity) {
+	return (blendLinearBurn(base, blend) * opacity + base * (1.0 - opacity));
+}
+float blendColorDodge(float base, float blend) {
+	return (blend==1.0)?blend:min(base/(1.0-blend),1.0);
+}
+
+vec3 blendColorDodge(vec3 base, vec3 blend) {
+	return vec3(blendColorDodge(base.r,blend.r),blendColorDodge(base.g,blend.g),blendColorDodge(base.b,blend.b));
+}
+
+vec3 blendColorDodge(vec3 base, vec3 blend, float opacity) {
+	return (blendColorDodge(base, blend) * opacity + base * (1.0 - opacity));
+}
+vec3 blendHardLight(vec3 base, vec3 blend) {
+	return blendOverlay(blend,base);
+}
+
+vec3 blendHardLight(vec3 base, vec3 blend, float opacity) {
+	return (blendHardLight(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+vec3 blendNormal(vec3 base, vec3 blend) {
+	return blend;
+}
+
+vec3 blendNormal(vec3 base, vec3 blend, float opacity) {
+	return (blendNormal(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+vec3 blendMultiply(vec3 base, vec3 blend) {
+	return base*blend;
+}
+
+vec3 blendMultiply(vec3 base, vec3 blend, float opacity) {
+	return (blendMultiply(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+// float blendLinearLight(float base, float blend) {
+	// return blend(blendLinearBurn(base,(2.0*blend)),blendLinearDodge(base,(2.0*(blend-0.5))));
+// }
+
+// vec3 blendLinearLight(vec3 base, vec3 blend) {
+	// return vec3(blendLinearLight(base.r,blend.r),blendLinearLight(base.g,blend.g),blendLinearLight(base.b,blend.b));
+// }
+
+// vec3 blendLinearLight(vec3 base, vec3 blend, float opacity) {
+	// return (blendLinearLight(base, blend) * opacity + base * (1.0 - opacity));
+// }
+
+float blendLighten(float base, float blend) {
+	return max(blend,base);
+}
+
+vec3 blendLighten(vec3 base, vec3 blend) {
+	return vec3(blendLighten(base.r,blend.r),blendLighten(base.g,blend.g),blendLighten(base.b,blend.b));
+}
+
+vec3 blendLighten(vec3 base, vec3 blend, float opacity) {
+	return (blendLighten(base, blend) * opacity + base * (1.0 - opacity));
+}
+
+vec4 Desaturate(vec3 color, float Desaturation)
+{
+	vec3 grayXfer = vec3(0.3, 0.59, 0.11);
+	vec3 gray = vec3(dot(grayXfer, color));
+	return vec4(mix(color, gray, Desaturation), 1.0);
+}
+
+// end blending modes
+
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+
+/* color balance and Levels glsl numbers between 0 and 1*/
+float levelChannel(float inPixel, float inBlack, float inGamma, float inWhite, float outBlack, float outWhite) {
+    return (pow(((inPixel * 255.0) - inBlack) / (inWhite - inBlack), inGamma) * (outWhite - outBlack) + outBlack) / 255.0;
+}
+
+vec3 levels(vec3 inPixel, float inBlack, float inGamma, float inWhite, float outBlack, float outWhite) {
+    vec3 o = vec3(1.0);
+    o.r = levelChannel(inPixel.r, inBlack, inGamma, inWhite, outBlack, outWhite);
+    o.g = levelChannel(inPixel.g, inBlack, inGamma, inWhite, outBlack, outWhite);
+    o.b = levelChannel(inPixel.b, inBlack, inGamma, inWhite, outBlack, outWhite);
+    return o;
+}
+
+// Credit for hsv functions http://lolengine.net/blog/2013/07/27/rgb-to-hsv-in-glsl
+
+vec3 rgb2hsv(vec3 c) {
+	vec4 K = vec4(0.0, -1.0 / 3.0, 2.0 / 3.0, -1.0);
+	vec4 p = mix(vec4(c.bg, K.wz), vec4(c.gb, K.xy), step(c.b, c.g));
+	vec4 q = mix(vec4(p.xyw, c.r), vec4(c.r, p.yzx), step(p.x, c.r));
+
+	float d = q.x - min(q.w, q.y);
+	float e = 1.0e-10;
+	return vec3(abs(q.z + (q.w - q.y) / (6.0 * d + e)), d / (q.x + e), q.x);
+}
+
+
+
+vec3 halftone(vec3 texcolor, vec2 st, float frequency) {
+  float n = 0.1*snoise(st*200.0); // Fractal noise
+  n += 0.05*snoise(st*400.0);
+  n += 0.025*snoise(st*800.0);
+  vec3 white = vec3(n*0.2 + 0.97);
+  vec3 black = vec3(n + 0.1);
+
+  // Perform a rough RGB-to-CMYK conversion
+  vec4 cmyk;
+  cmyk.xyz = 1.0 - texcolor;
+  cmyk.w = min(cmyk.x, min(cmyk.y, cmyk.z)); // Create K
+  cmyk.xyz -= cmyk.w; // Subtract K equivalent from CMY
+
+  // Distance to nearest point in a grid of
+  // (frequency x frequency) points over the unit square
+  vec2 Kst = frequency*mat2(0.707, -0.707, 0.707, 0.707)*st;
+  vec2 Kuv = 2.0*fract(Kst)-1.0;
+  float k = aastep(0.0, sqrt(cmyk.w)-length(Kuv)+n);
+  vec2 Cst = frequency*mat2(0.966, -0.259, 0.259, 0.966)*st;
+  vec2 Cuv = 2.0*fract(Cst)-1.0;
+  float c = aastep(0.0, sqrt(cmyk.x)-length(Cuv)+n);
+  vec2 Mst = frequency*mat2(0.966, 0.259, -0.259, 0.966)*st;
+  vec2 Muv = 2.0*fract(Mst)-1.0;
+  float m = aastep(0.0, sqrt(cmyk.y)-length(Muv)+n);
+  vec2 Yst = frequency*st; // 0 deg
+  vec2 Yuv = 2.0*fract(Yst)-1.0;
+  float y = aastep(0.0, sqrt(cmyk.z)-length(Yuv)+n);
+
+  vec3 rgbscreen = 1.0 - 0.9*vec3(c,m,y) + n;
+  return mix(rgbscreen, black, 0.85*k + 0.3*n);
+}
+
+vec3 halftone(vec3 texcolor, vec2 st) {
+  return halftone(texcolor, st, 30.0);
+}
+
+
+
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 texcoord = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+texcoord = passParameterSem0;
+
+
+ivec2 res =  textureSize(textureUnitPS1, 0).xy;
+
+
+// /* R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz); */
+
+R1f.xyz = (texture(textureUnitPS0, texcoord.xy).xyz);
+
+
+/* Add Chromatic abberation to a texture on import attempt 1 */
+    float maxDistort = $clarity; //4 * (1.0-iMouse.x/iResolution.x);
+
+    float scalar = 1.0 * maxDistort;
+// /*   float4 colourScalar = float4(2.0, 1.5, 1.0, 1.0); */
+    vec4 colourScalar = vec4(700.0, 560.0, 490.0, 1.0);	// Based on the true wavelengths of red, green, blue light.
+    colourScalar /= max(max(colourScalar.x, colourScalar.y), colourScalar.z);
+    colourScalar *= 2.0;
+    
+    colourScalar *= scalar;
+
+    float numTaps = 8.0; // Original value: 8
+// /*R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);    */
+    vec3 fragColor = vec3(0.0);
+    for( float tap = 0.0; tap < numTaps; tap += 1.0 )
+    {
+        fragColor.r += texture(textureUnitPS1, brownConradyDistortion(texcoord.xy, colourScalar.r)).r;
+        fragColor.g += texture(textureUnitPS1, brownConradyDistortion(texcoord.xy, colourScalar.g)).g;
+        fragColor.b += texture(textureUnitPS1, brownConradyDistortion(texcoord.xy, colourScalar.b)).b;
+        colourScalar *= 0.95;
+    }    
+    R0f.xyz = fragColor /= numTaps;
+	
+/* Chromatic abberation attempt 1 for import of textures */	
+
+
+/* attempt a blur layer */
+	vec4 tint = vec4(1,1,1,1);
+	
+	vec4 btexel = texture2D(textureUnitPS1,texcoord.xy);
+	vec4 expensiveBlur = btexel;
+	
+	// desaturate, luminosity forumla
+	// float lum = (0.299 * blur.r) + (0.587 * blur.g) + (0.114 * blur.b);
+	// vec4 basecolor = vec4( lum*tint.r,lum*tint.g,lum*tint.b,blur.a );
+
+	vec4 accum;
+	float amount = 0.0012;
+	float exposure = 1;
+	
+		vec4 color0 = texture2D( textureUnitPS1, texcoord.xy-vec2(-amount,0) );	
+		vec4 color1 = texture2D( textureUnitPS1, texcoord.xy-vec2(amount,0) );	
+		vec4 color2 = texture2D( textureUnitPS1, texcoord.xy-vec2(0,-amount) );	
+		vec4 color3 = texture2D( textureUnitPS1, texcoord.xy-vec2(0,+amount) );	
+	accum = (btexel + color0 + color1 + color2 + color3) / 5;
+	
+	amount = 0.0016;
+		color0 = texture2D( textureUnitPS1, texcoord.xy-vec2(-amount,-amount) );	
+		color1 = texture2D( textureUnitPS1, texcoord.xy-vec2(-amount,amount) );	
+		color2 = texture2D( textureUnitPS1, texcoord.xy-vec2(amount,-amount) );	
+		color3 = texture2D( textureUnitPS1, texcoord.xy-vec2(amount,+amount) );	
+	
+
+	accum = (accum + color0*.15 + color1*.15 + color2*.15 + color3*.15) / 2.2;
+	
+		//make it black and white 
+	// float lum1 = (0.299 * accum.r) + (0.587 * accum.g) + (0.114 * accum.b);
+		//This is bloomed blur 
+	// blur = vec4( lum1*(basecolor.r*exposure),lum1*(basecolor.g*exposure),lum1*(basecolor.b*exposure),blur.a );
+	expensiveBlur = vec4( accum.r, accum.g, accum.b, expensiveBlur.a );
+	
+/* done blur layer attempt */
+
+
+/* 3x3 g blur */
+
+	// vec4 blur = vec4(0.0);
+	
+	// mat3 gaussianCoef = mat3(3.0);
+		// gaussianCoef[1] = vec3(1.0,	2.0, 1.0);
+		// gaussianCoef[2] = vec3(2.0,	4.0, 2.0);
+		// gaussianCoef[3] = vec3(1.0,	2.0, 1.0);
+	
+	// float stepU = 1.0 / res.x | stepV = 1.0 / res.y
+	// for(int i=0;i<3;i++) {
+		// for(int j=0;j<3;j++) {
+			// texCoord = texcoord.xy + vec2((i-1)*stepU,(j-1)*stepV);
+			// result += gaussianCoef[j] * texture2D(textureUnitPS1,texCoord);
+		// }
+	// }
+	// blur /= 16.0;
+	
+/* done 3x3 blur */
+
+
+/* build a edge detect buffer */
+	G[0] = g0,
+	G[1] = g1,
+	G[2] = g2,
+	G[3] = g3,
+	G[4] = g4,
+	G[5] = g5,
+	G[6] = g6,
+	G[7] = g7,
+	G[8] = g8;
+
+	mat3 I;	
+	mat3 IX2;	
+	mat3 ID2;
+	
+	float cnv[9];
+	float cnvX2[9];
+	float cnvD2[9];
+	
+	vec3 testSample;
+	vec3 testSampleX2;
+	vec3 testSampleD2;
+	
+	//ivec2 res =  textureSize(textureUnitPS0, 0).xy;
+
+	// changing the input size of the resolution changes the output border thickness. Smaller texture size = larger border
+	// res = res*2;
+	vec2 texel = vec2(1.0 / res.x, 1.0 / res.y);
+	vec2 texelX2 = vec2(1.0 / res.x*2.5, 1.0 / res.y*2.5);
+	vec2 texelD2 = vec2(1.0 / res.x/2.5, 1.0 / res.y/2.5);
+	
+	vec4 edged = vec4(0.0);
+	vec4 edgedWide2 = vec4(0.0);
+	vec4 edgedThin2 = vec4(0.0);
+	
+	
+	/* fetch the 3x3 neighbourhood and use the RGB vector's length as intensity value */
+	for (float i=0.0; i<3.0; i++) {
+		for (float j=0.0; j<3.0; j++) {
+			testSample = texture2D(textureUnitPS1, texcoord.xy + texel * vec2(i-1.0,j-1.0) ).rgb;
+			I[int(i)][int(j)] = length(testSample);
+			
+			testSampleX2 = texture2D(textureUnitPS1, texcoord.xy + texelX2 * vec2(i-1.0,j-1.0) ).rgb;
+			IX2[int(i)][int(j)] = length(testSampleX2);			
+			
+			testSampleD2 = texture2D(textureUnitPS1, texcoord.xy + texelD2 * vec2(i-1.0,j-1.0) ).rgb;
+			ID2[int(i)][int(j)] = length(testSampleD2);
+		}
+	}
+
+	/* calculate the convolution values for all the masks */
+	for (int i=0; i<9; i++) {
+		float dp3 = dot(G[i][0], I[0]) + dot(G[i][1], I[1]) + dot(G[i][2], I[2]);
+		cnv[i] = dp3 * dp3;
+
+		float dp3X2 = dot(G[i][0], IX2[0]) + dot(G[i][1], IX2[1]) + dot(G[i][2], IX2[2]);
+		cnvX2[i] = dp3X2 * dp3X2;
+
+		float dp3D2 = dot(G[i][0], ID2[0]) + dot(G[i][1], ID2[1]) + dot(G[i][2], ID2[2]);
+		cnvD2[i] = dp3D2 * dp3D2;
+	}
+
+	float M = (cnv[0] + cnv[1]) + (cnv[2] + cnv[3]);
+	float S = (cnv[4] + cnv[5]) + (cnv[6] + cnv[7]) + (cnv[8] + M);
+	
+	float MX2 = (cnvX2[0] + cnvX2[1]) + (cnvX2[2] + cnvX2[3]);
+	float SX2 = (cnvX2[4] + cnvX2[5]) + (cnvX2[6] + cnvX2[7]) + (cnvX2[8] + MX2);
+	
+	float MD2 = (cnvD2[0] + cnvD2[1]) + (cnvD2[2] + cnvD2[3]);
+	float SD2 = (cnvD2[4] + cnvD2[5]) + (cnvD2[6] + cnvD2[7]) + (cnvD2[8] + MD2);
+
+	edged = vec4(vec3(sqrt(M/S)), texture2D( textureUnitPS1, texcoord.xy ).a );	
+	edgedWide2 = vec4(vec3(sqrt(MX2/SX2)), texture2D( textureUnitPS1, texcoord.xy ).a );	
+	edgedThin2 = vec4(vec3(sqrt(MD2/SD2)), texture2D( textureUnitPS1, texcoord.xy ).a );
+/* done edge detect */
+
+	// Prep some space
+    vec3 cubistSample900 = vec3(0.0);
+	vec3 cubistSample400 = vec3(0.0);
+	vec3 cubistSample100 = vec3(0.0); 
+	vec3 cellularSample1 = vec3(0.0);
+	vec3 cellularSample150 = vec3(0.0);
+	vec3 cellularSample200 = vec3(0.0);
+	vec3 perlinSample30 = vec3(0.0);	
+	vec3 perlinSample100 = vec3(0.0);
+	vec3 perlinSample400 = vec3(0.0);
+	vec3 baseNoise100 = vec3(0.0);
+	vec3 baseNoise400 = vec3(0.0);
+	vec3 clouds = vec3(0.0);
+    vec3 herringbone= vec3(0.0);
+    vec3 dots = vec3(0.0);
+	vec3 jeanCloth = vec3(0.0);
+	vec3 finebrick = vec3(0.0);
+	vec3 thatch = vec3(0.0);
+	vec3 canvas = vec3(0.0);
+	vec3 wavy = vec3(0.0);
+	vec3 hfNoise = vec3(0.0);
+	vec2 st = gl_FragCoord.xy/res.xy;
+	vec2 stTemp = st;
+
+/* wood noise */
+
+    st.x *= res.x / res.y;
+    float v0 = smoothstep(-1.0, 1.0, sin(st.x * 14.0 + fbm(st.xx * vec2(100.0, 12.0), 1.0) * 8.0));
+    float v1 = random(st,1.0);
+    float v2 = noise(st * vec2(200.0, 14.0),1.0) - noise(st * vec2(1000.0, 64.0),1.0);
+
+    vec3 wood = vec3(0.860,0.573,0.352);
+    wood = mix(wood, vec3(0.390,0.265,0.192), v0);
+    wood = mix(wood, vec3(0.930,0.493,0.502), v1 * 0.5);
+    wood -= v2 * 0.2;
+	// reset st
+	st = stTemp;
+
+	hfNoise = vec3(v2);
+	
+    float v = cloud(st);
+    clouds = vec3(v);
+
+	// Cubist
+	cubistSample900 += Cubist2D(texcoord.xy*900, vec2((1/-2),(1/(1-2))));	
+    cubistSample400 += Cubist2D(texcoord.xy*400, vec2((1/-2),(1/(1-2))));
+    cubistSample100 += Cubist2D(texcoord.xy*100, vec2((1/-2),(1/(1-2))));
+    // cubistSample += Cubist2D(texcoord.xy*60, vec2((1/-2),(1/(1-2))));	
+	
+	//Cellular
+    cellularSample1 += SimplexCellular2D(texcoord.xy*50);
+    cellularSample150 += SimplexCellular2D(texcoord.xy*150);
+    cellularSample200 += SimplexCellular2D(texcoord.xy*200);
+
+	// Perlin
+    perlinSample30 +=SimplexPerlin2D(texcoord.xy*30);
+    perlinSample100 +=SimplexPerlin2D(texcoord.xy*100);
+    perlinSample400 +=SimplexPerlin2D(texcoord.xy*400);
+	
+	// Noise
+    baseNoise100 += noise(texcoord.xy*3, R0f.x);
+    baseNoise400 += noise(texcoord.xy*400, R0f.x);
+	
+	// Make some box patterns
+    st = brickTile(st,60.0,0.2);	
+    herringbone = vec3(box(st,vec2(0.8), 0.9,0.40,0.60));
+	st = stTemp;
+
+    st = brickTile(st,155.0,0.2);	
+    wavy = vec3(box(st,vec2(0.8), 0.7,0.30,0.20));
+	st = stTemp;
+	
+	st = brickTile(st,150.0,0.5);	
+    dots = vec3(box(st,vec2(0.8), 0.99,0.000,0.000));
+	st = stTemp;
+	
+	st = brickTile(st,205.0,0.5);	
+    finebrick = vec3(box(st,vec2(0.8), 0.55,0.000,0.000));
+	st = stTemp;
+	
+	st = brickTile(st,275.0,0.5);	
+    jeanCloth = vec3(box(st,vec2(0.8), 0.99,0.000,0.000));
+	st = stTemp;
+	
+	st = brickTile(st,275.0,0.5);	
+    thatch = vec3(box(st,vec2(0.8), 0.39,0.40,0.30));
+	st = stTemp;
+	
+	st = brickTile(st,205.0,0.5);	
+    canvas = vec3(box(st,vec2(0.8), 0.39,0.40,0.30));
+	st = stTemp;
+	
+R126f.x = R1f.x + R0f.x;
+PV0f.x = R126f.x;
+R127f.y = R1f.y + R0f.y;
+PV0f.y = R127f.y;
+R126f.z = R1f.z + R0f.z;
+PV0f.z = R126f.z;
+R125f.w = 1.0;
+
+tempf.x = dot(vec4(PV0f.x,PV0f.y,PV0f.z,-0.0),vec4(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f162b6b),intBitsToFloat(0x3dea4a8c),0.0));
+PV1f.x = tempf.x;
+PV1f.y = tempf.x;
+PV1f.z = tempf.x;
+PV1f.w = tempf.x;
+
+R127f.x = -(R127f.y) * intBitsToFloat(0x3fb8aa3b);
+PV0f.y = -(PV1f.x) * intBitsToFloat(0x3fb8aa3b);
+R127f.z = -(R126f.x) * intBitsToFloat(0x3fb8aa3b);
+R127f.w = -(R126f.z) * intBitsToFloat(0x3fb8aa3b);
+R126f.w = 1.0 / PV1f.x;
+PS0f = R126f.w;
+
+PS1f = exp2(PV0f.y);
+
+PV0f.x = -(PS1f) + 1.0;
+PS0f = exp2(R127f.x);
+
+R127f.x = -(PS0f) + 1.0;
+R126f.y = mul_nonIEEE(PV0f.x, PV0f.x);
+PV1f.z = PV0f.x * R126f.w;
+PS1f = exp2(R127f.w);
+
+backupReg0f = R126f.x;
+backupReg1f = R127f.z;
+R126f.x = mul_nonIEEE(backupReg0f, PV1f.z);
+PV0f.y = -(PS1f) + 1.0;
+R127f.z = mul_nonIEEE(R126f.z, PV1f.z);
+PV0f.z = R127f.z;
+R127f.w = mul_nonIEEE(R127f.y, PV1f.z);
+PV0f.w = R127f.w;
+PS0f = exp2(backupReg1f);
+
+PV1f.x = R127f.x + -(PV0f.w);
+PV1f.y = PV0f.y + -(PV0f.z);
+PV1f.w = -(PS0f) + 1.0;
+
+backupReg0f = R127f.z;
+R127f.x = (mul_nonIEEE(PV1f.x,R126f.y) + R127f.w);
+R127f.x = clamp(R127f.x, 0.0, 1.0);
+PV0f.x = R127f.x;
+PV0f.y = PV1f.w + -(R126f.x);
+R127f.z = (mul_nonIEEE(PV1f.y,R126f.y) + backupReg0f);
+R127f.z = clamp(R127f.z, 0.0, 1.0);
+PV0f.z = R127f.z;
+
+backupReg0f = R126f.x;
+R126f.x = (mul_nonIEEE(PV0f.y,R126f.y) + backupReg0f);
+R126f.x = clamp(R126f.x, 0.0, 1.0);
+PV1f.x = R126f.x;
+PV1f.w = max(PV0f.x, PV0f.z);
+
+tempf.x = dot(vec4(PV1f.x,R127f.x,R127f.z,R125f.w),vec4(intBitsToFloat(0x3f2aaaab),intBitsToFloat(0x3f2aaaab),intBitsToFloat(0x3f2aaaab),-(1.0)));
+PV0f.x = tempf.x;
+PV0f.y = tempf.x;
+PV0f.z = tempf.x;
+PV0f.w = tempf.x;
+R126f.z = max(PV1f.x, PV1f.w);
+PS0f = R126f.z;
+
+backupReg0f = R127f.x;
+backupReg1f = R127f.z;
+R127f.x = R126f.x + -(PS0f);
+R123f.y = (mul_nonIEEE(-(PV0f.x),PV0f.x) + 1.0);
+PV1f.y = R123f.y;
+R127f.z = backupReg0f + -(PS0f);
+R125f.w = backupReg1f + -(PS0f);
+
+R123f.x = (mul_nonIEEE(PV1f.y,intBitsToFloat(uf_remappedPS[0].y)) + intBitsToFloat(uf_remappedPS[0].x));
+PV0f.x = R123f.x;
+
+R0f.x = (mul_nonIEEE(R127f.x,PV0f.x) + R126f.z);
+R0f.y = (mul_nonIEEE(R127f.z,PV0f.x) + R126f.z);
+R0f.z = (mul_nonIEEE(R125f.w,PV0f.x) + R126f.z);
+R0f = VibrancePass( vec4(R0f.x, R0f.y, R0f.z, R0f.w) );
+tempf = R0f;
+
+
+if (mode == 1)  // bluestar punch
+{
+// white n grey using hardlight over base
+	// R0f.x = 1-edged.x;
+	// R0f.y = 1-edged.y;
+	// R0f.z = 1-edged.z;
+	
+	// build clean outline
+R123f.xyz = 1-edged.xyz;
+if (R123f.z > .99 )
+{
+	R123f.xyz = vec3(1,1,1);
+}
+// float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+// color dodge with cellular  //makes cartoon paper look
+// if (luma < 0.001)
+// {
+// R0f.xyz = blendHardLight( tempf.xyz, R0f.xyz, .98);
+// }
+	
+	R0f.xyz = blendHardLight( tempf.xyz, R123f.xyz, .98);
+	// clean up some grey noise
+	R0f.xyz = levels(R0f.xyz, 0, 1.1, 1, .55, 1.2);
+// color burn above over base 75%
+	
+	
+	// R0f.xyz = blendSubtract(R0f.xyz, 1-edged.xyz, .25);
+R0f.xyz = blendLinearBurn(tempf.xyz, R0f.xyz, 0.22);
+	
+}
+else if (mode == 2) // subtle lines watercolor
+{
+
+/* black with white outlines blackboard mode */
+R123f.xyz = edged.xyz;
+
+// clean up banding artifacts
+if (R123f.z < .02 )
+{
+	R123f.xyz = vec3(0,0,0);
+}
+/* dark borders over edges */
+R0f.x = mul_nonIEEE(.63-R123f.x, expensiveBlur.x*1.4);
+R0f.y = mul_nonIEEE(.63-R123f.y, expensiveBlur.y*1.4);
+R0f.z = mul_nonIEEE(.63-R123f.x, expensiveBlur.z*1.4);
+R0f.xyz = blendNormal(R0f.xyz, tempf.xyz, 0.4);
+}
+else if (mode == 3) // washed out on paper
+{
+/* light colored grey with black borders */
+// R0f.x = (1-edged.x + R0f.x/5 )/1.2;
+// R0f.y = (1-edged.y + R0f.y/5 )/1.2;
+// R0f.z = (1-edged.z + R0f.z/5 )/1.2;
+
+
+// R0f.x = (1-edged.x + R0f.x/5 + brownianColor.x*.2)/1.2;
+// R0f.y = (1-edged.y + R0f.y/5 + brownianColor.y*.2)/1.2;
+// R0f.z = (1-edged.z + R0f.z/5 + brownianColor.z*.2)/1.2;
+
+R0f.x = (1-edged.x + R0f.x + cubistSample900.x*.08)/2.13;
+R0f.y = (1-edged.y + R0f.y + cubistSample900.y*.08)/2.13;
+R0f.z = (1-edged.z + R0f.z + cubistSample900.z*.08)/2.13;
+R0f.xyz = blendNormal(R0f.xyz, expensiveBlur.xyz, 0.1);
+}
+else if (mode == 4) // white outline
+{
+
+/* darker colors with light borders */
+R0f.xyz = (edgedThin2.xyz + R0f.xyz)/.9;
+
+
+// R0f.xyz = blendDifference(R0f.xyz, 1-edgedWide2.xyz, 1.5);
+// R0f.xyz = blendOverlay(tempf.xyz, R0f.xyz, .8)*.5;
+// R0f.xyz = blendScreen(tempf.xyz, R0f.xyz, .8)*.5;
+
+
+}
+else if (mode == 5) //sepia on paper
+{
+/* white with dark outlines */
+	// make paper noise
+	// R0f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	// R0f.xyz = blendDarken( R0f.xyz, perlinSample30.xyz, 0.08);
+	// R0f.xyz = blendSubtract( R0f.xyz, perlinSample100.xyz, 0.45);
+	// R0f.xyz = blendSubtract( R0f.xyz, cubistSample900.xyz, 0.78);
+	
+	R123f.xyz = blendOverlay (1-baseNoise100, cubistSample100.xyz, 0.25);
+	R123f.xyz = blendDarken( R123f.xyz, perlinSample30.xyz, 0.09);
+	R123f.xyz = blendSubtract( R123f.xyz, perlinSample100.xyz, 0.35);
+	R0f.xyz = blendAdd(thatch, finebrick, 0.35);
+	R0f.xyz = blendDifference( 1-R123f.xyz, R0f.xyz, .8);
+	R0f.xyz = blendAdd( R0f.xyz, cubistSample900.xyz, 0.4);
+	R0f.xyz = blendAdd( R0f.xyz, baseNoise400, 0.4);
+	
+	
+	// done with noisy paper
+
+// Add some yellow to the edged
+	R0f.x = (1.4-edged.x + R0f.x*.09)/1.95;
+	R0f.y = (1.4-edged.y + R0f.y*.09)/1.95;
+	R0f.z = (1-edged.x + R0f.z*.19)/1.95;
+// darken the lines more with the thin edgedThin2
+	R0f.xyz = blendSubtract(R0f.xyz, 1-edgedThin2.xyz, 2);
+}
+else if (mode == 6) // chalkboard
+{
+/* black with white outlines blackboard mode */
+R0f.xyz = edgedThin2.xyz;
+
+// clean up banding artifacts
+if (R0f.z < .032 )
+{
+	R0f.xyz = vec3(0,0,0);
+}
+R0f.xyz = R0f.xyz *2;
+}
+else if (mode == 7) // desaturated on paper
+{
+
+/* Desaturated on grey grain */
+R0f.x = (1-edged.x + R0f.x*.3 + cubistSample900.x*.09)/1.2;
+R0f.y = (1-edged.y + R0f.y*.3 + cubistSample900.y*.09)/1.2;
+R0f.z = (1-edged.z + R0f.z*.3 + cubistSample900.z*.09)/1.2;
+R123f.xyz = thatch;
+R123f.z = R123f.z *.8;
+R0f.xyz = blendNormal(R0f.xyz, R123f.xyz, .03);
+
+// build clean outline
+R123f.xyz = edgedThin2.xyz;
+if (R123f.z < .06 )
+{
+	R123f.xyz = vec3(0,0,0);
+}
+
+R125f.xyz = blendHardLight( tempf.xyz, R123f.xyz);
+R0f.xyz = blendAdd(R0f.xyz, R125f.xyz, 0.7);
+// R0f.xyz = R123f.xyz;
+}
+else if (mode == 8) // Bordalands
+{
+//bordalands
+R0f.xyz = blendOverlay(baseNoise100.xyz, cubistSample900.xyz, .07);
+R0f.xyz = blendOverlay(R0f.xyz, cubistSample100.xyz, .05);
+R0f.xyz = blendHardLight( R0f.xyz, perlinSample100.xyz, 0.006);
+R0f.xyz = blendColorBurn(tempf.xyz, R0f.xyz, .30);
+R0f.x = blendSubtract(1-edgedThin2.x, R0f.x);
+R0f.y = blendSubtract(1-edgedThin2.y, R0f.y);
+R0f.z = blendSubtract(1-edgedThin2.z, R0f.z);
+
+// build clean outline
+R123f.xyz = 1-edgedThin2.xyz;
+if (R123f.z > .90 )
+{
+	R123f.xyz = vec3(1,1,1);
+}
+// R0f.xyz =R123f.xyz;
+
+// combine
+R0f.xyz = blendSubtract(R0f.xyz, R123f.xyz, 1.7);
+
+}
+
+// DESCRIPTIONS
+
+// whiteboard
+// R0f.xyz = 1-edgedThin2.xyz; // thin
+// R0f.xyz = 1-edged.xyz; // normal
+// R0f.xyz = 1-edgedWide2.xyz; // wide
+
+// clean whiteboard outlines
+// if (R123f.z < .90 )
+// {
+	// R123f.xyz = vec3(1,1,1);
+// }
+
+
+// chalkboard
+// R0f.xyz = edgedThin2.xyz; // thin
+// R0f.xyz = edged.xyz; // normal
+// R0f.xyz = edgedWide2.xyz; // wide
+
+// clean chalkboard banding outlines
+// if (R0f.z < .01 )
+// {
+	// R0f.xyz = vec3(0,0,0);
+// }
+
+
+// BLENDS
+
+// blend	Add
+// blend	Average
+// blend	ColorBurn
+// blend	ColorDodge
+// blend	Darken
+// blend	Difference
+// blend	Exclusion
+// blend	HardLight
+// blend	LinearBurn
+// blend	Overlay
+// blend	Screen
+// blend	Substract
+// blend	Subtract
+// blend	Lighten
+// blend	LinearLight
+// blend	Normal
+
+else if (mode == 9) // placeholder
+{
+
+	R0f.x = 1-edged.x;
+	R0f.y = 1-edged.y;
+	R0f.z = 1-edged.z;
+	R1f.xyz = blendHardLight( tempf.xyz, R0f.xyz);
+	
+	R0f.xyz = blendDarken( tempf.xyz, edged.xyz, 0.35);
+	R0f.xyz = blendOverlay(R0f.xyz, R1f.xyz, 0.1);
+	
+}
+else if (mode == 10) // comix
+{
+	// comix mode
+ // if greyscale luma darker than 50% do not cover with dots
+ float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+ // color dodge with cellular  //makes cartoon paper look
+  if (luma > 0.45 && luma <= 0.52)
+ {
+	R0f.xyz = blendColorDodge(R0f.xyz, dots, 0.15);
+ }
+ else if (luma > 0.52 && luma <= 0.61)
+ {
+	R0f.xyz = blendColorDodge(R0f.xyz, cellularSample150.xyz, 0.28);
+ }
+ else if (luma > 0.61 && luma <= 0.75)
+ {
+	R0f.xyz = blendColorDodge(R0f.xyz, cellularSample150.xyz, 0.53);
+ }
+ else if (luma > 0.75)
+ {
+	R0f.xyz = blendColorDodge(R0f.xyz, cellularSample150.xyz, 0.75);
+ }
+ R0f.xyz = blendHardLight( R0f.xyz, cubistSample900.xyz, 0.015);
+
+// build clean outline
+R123f.xyz = 1-edgedThin2.xyz;
+if (R123f.z < .77 )
+{
+	R123f.xyz = vec3(1,1,1);
+}
+// R0f.xyz =R123f.xyz;
+
+// combine
+R0f.xyz = blendSubtract(R0f.xyz, R123f.xyz, .9);
+ // saturate boost dots ... maybe
+}
+else if (mode == 11) //  colored blackboard
+{
+// /* black with light colored outlines */
+
+R123f.xyz = edged.xyz;
+// clean chalkboard banding outlines
+if (R123f.z < .01 )
+{
+	R123f.xyz = vec3(0,0,0);
+}
+
+R0f.x = mul_nonIEEE(R123f.x, R0f.x) + R0f.x*.01;
+R0f.y = mul_nonIEEE(R123f.y, R0f.y) + R0f.y*.01;
+R0f.z = mul_nonIEEE(R123f.x, R0f.z) + R0f.z*.01;
+}
+else if (mode == 12) // mild mannered
+{
+ //grey and white darken over base
+	R0f.x = .75-edged.x;
+	R0f.y = .75-edged.y;
+	R0f.z = .75-edged.z;
+	R0f.x = blendDarken(R0f.x, tempf.x);
+	R0f.y = blendDarken(R0f.y, tempf.y);
+	R0f.z = blendDarken(R0f.z, tempf.z);
+	R0f.xyz = blendSubtract(R0f.xyz, 1-edged.xyz, .35);
+}
+else if (mode == 13) // heavy grain
+{
+ //base noise exclusion base color
+	// R0f.xyz = blendExclusion( baseNoise100, R0f.xyz, 0.95) + R0f.xyz;
+	// R0f.xyz = blendSubtract( cubistSample900.xyz, perlinSample100.xyz, 0.4);
+	// R0f.xyz = blendSubtract( R0f.xyz, cubistSample100.xyz, 0.4);
+	// R0f.xyz = blendOverlay( tempf.xyz, R0f.xyz, 0.1);
+	// R0f.xyz = blendSubtract(R0f.xyz, 1-edgedWide2.xyz, .20);
+	// R0f.xyz = blendSubtract(R0f.xyz, 1-edgedThin2.xyz, .2);	
+	
+	// make paper noise
+	R0f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	R0f.xyz = blendDarken( R0f.xyz, perlinSample30.xyz, 0.08);
+	R0f.xyz = blendSubtract( R0f.xyz, perlinSample100.xyz, 0.45);
+	R0f.xyz = blendSubtract( R0f.xyz, cubistSample900.xyz, 0.78);
+	R127f.xyz = blendSubtract( R0f.xyz, wood, 0.02);
+	// done with noisy paper
+	
+	/* black with white outlines blackboard mode */
+	R125f.xyz = edgedThin2.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z < .03 )
+	{
+		R125f.xyz = vec3(0,0,0);
+	}	
+	
+	/* black with white outlines blackboard mode */
+	R126f.xyz = edgedWide2.xyz;
+
+	// clean up banding artifacts
+	if (R126f.z < .03 )
+	{
+		R126f.xyz = vec3(0,0,0);
+	}	
+	
+	
+	R0f.xyz = blendMultiply( tempf.xyz, R127f.xyz, 0.3);
+	R0f.xyz = blendSubtract( R0f.xyz, R127f.xyz, 0.1);
+	R0f.xyz = blendHardLight(R0f.xyz, clouds, 0.1);
+	R0f.xyz = blendSubtract(R0f.xyz, 1-R126f.xyz, .11);
+	R0f.xyz = blendSubtract(R0f.xyz, 1-R125f.xyz, .11);
+}
+else if (mode == 14) // step into the light
+{
+	/* black with white outlines blackboard mode */
+	R125f.xyz = 1-edgedThin2.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z > .99 )
+	{
+		R125f.xyz = vec3(1,1,1);
+	}	
+	
+	/* black with white outlines blackboard mode */
+	R126f.xyz = 1-edged.xyz;
+
+	// clean up banding artifacts
+	if (R126f.z > .94 )
+	{
+		R126f.xyz = vec3(1,1,1);
+	}	
+//white n grey using hardlight over base
+	// R0f.x = 1-R125f.x;
+	// R0f.y = 1-R125f.y;
+	// R0f.z = 1-R125f.z;
+	R0f.xyz = blendHardLight(  R125f.xyz, tempf.xyz);
+	R127f.xyz = blendHardLight( tempf.xyz, R126f.xyz);
+	R0f.xyz = blendNormal(R127f.xyz, R0f.xyz, 0.03);
+	R0f.xyz = blendDarken(R0f.xyz, expensiveBlur.xyz, 0.14);
+	// R0f.xyz = R125f.xyz;
+}
+else if (mode == 15) // Purple flux
+{
+// RGB mode
+// white n grey using hardlight over base then make red
+	/* black with white outlines blackboard mode */
+	R125f.xyz = edged.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z < .15 )
+	{
+		R125f.xyz = vec3(1,1,1);
+	}	
+	R0f.x = 1-R125f.x;
+	R0f.y = 1-R125f.y;
+	R0f.z = 1-R125f.z;
+	R0f.xyz = blendHardLight( tempf.xyz, R0f.xyz, .98);
+	R0f.xyz = levels(R0f.xyz, 4, 7, 2.2, .9, 1.1); // red mode
+}
+else if (mode == 16) // Grain
+{
+/* Cubist grain paper */
+R0f.xyz = blendSubtract(R0f.xyz, cubistSample100.xyz, .03);
+R0f.xyz = blendSubtract(R0f.xyz, cubistSample900.xyz, .09);
+}
+else if (mode == 17) // Minimal Borders
+{
+
+	/* black with white outlines blackboard mode */
+	R125f.xyz = edged.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z < .04 )
+	{
+		R125f.xyz = vec3(0,0,0);
+	}	
+	/* black with white outlines blackboard mode */
+	R126f.xyz = edgedWide2.xyz;
+
+	// clean up banding artifacts
+	if (R126f.z < .04 )
+	{
+		R126f.xyz = vec3(0,0,0);
+	}	
+R0f.x = (R125f.x + expensiveBlur.x)/2;
+R0f.y = (R125f.y + expensiveBlur.y)/2;
+R0f.z = (R125f.z + expensiveBlur.z)/2;
+
+R0f.xyz = blendSubtract(R0f.xyz, cubistSample100.xyz, .05);
+R0f.xyz = blendScreen(R0f.xyz, cubistSample900.xyz, .09);
+
+R0f.xyz = blendHardLight(R0f.xyz, 1-R126f.xyz, 1.5);
+// R0f.xyz = blendOverlay(R0f.xyz, expensiveBlur.xyz*.2);
+R0f.xyz = blendOverlay(tempf.xyz, R0f.xyz, .8);
+}
+else if (mode == 18) //Even paper Sepia
+{
+/* white with dark outlines */
+// R0f.x = 1-edged.x;
+// R0f.y = 1-edged.y;
+// R0f.z = 1-edged.x;
+
+	/* black with white outlines blackboard mode */
+	R123f.xyz = edgedWide2.xyz;
+
+	// clean up banding artifacts
+	if (R123f.z < .01 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+	/* black with white outlines blackboard mode */
+	R125f.xyz = edged.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z < .04 )
+	{
+		R125f.xyz = vec3(0,0,0);
+	}	
+
+
+// need patterned yellow
+R0f.x = (1.20-R125f.x + cubistSample900.x*.09)/1.25;
+R0f.y = (1.20-R125f.y + cubistSample900.y*.09)/1.25;
+R0f.z = (1-R125f.x + cubistSample900.z*.19)/1.25;
+
+// fuzzy coffee stain outline
+R125f.x = (1.10-R123f.x + cubistSample900.x*.09)/1.25;
+R125f.y = (1.10-R123f.y + cubistSample900.y*.09)/1.25;
+R125f.z = (.8-R123f.x + cubistSample900.z*.19)/1.25;
+
+R0f.xyz = blendNormal(R0f.xyz, R125f.xyz, 0.4);
+
+// edge darken pattern
+R123f.xyz = (baseNoise100.xyz);
+
+// R0f.xyz = R123f.xyz;
+R0f.xyz = blendColorBurn(R0f.xyz, R123f.xyz, 0.13);
+R0f.xyz = blendColorBurn(R0f.xyz, wood, 0.08);
+R0f.xyz = blendColorBurn(R0f.xyz, clouds, 0.11);
+
+
+}
+else if (mode == 19) // Grain shader
+{
+	// make paper noise
+	tempf.xyz = blendOverlay (baseNoise100, cubistSample100.xyz, 0.35);
+	tempf.xyz = blendDarken( tempf.xyz, perlinSample30.xyz, 0.09);
+	tempf.xyz = blendSubtract( tempf.xyz, perlinSample100.xyz, 0.35);
+	tempf.xyz = blendSubtract( tempf.xyz, cubistSample900.xyz, 0.78);
+	tempf.xyz = blendSubtract( tempf.xyz, hfNoise, 0.2);
+	// done with noisy paper
+	
+	
+
+ float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+
+ 	// posterize
+	int numLevels = 18;
+	luma = luma*120;
+	float levelPosturize = floor(pow(luma,1.065)/(numLevels));
+	// float levelPosturize = floor(luma/(numLevels))/100;
+	R0f.xyz = blendMultiply(vec3(levelPosturize,levelPosturize,levelPosturize),tempf.xyz*.5, 0.5)*4.4;
+
+/* black with white outlines blackboard mode */
+R123f.xyz = edgedThin2.xyz;
+
+// clean up banding artifacts
+if (R123f.z < .04 )
+{
+	R123f.xyz = vec3(0,0,0);
+}
+R0f.xyz = blendLighten(R0f.xyz, R123f.xyz, 0.07);
+// R0f.xyz =  R123f.xyz;
+	
+ 
+ R0f.xyz = blendHardLight( R0f.xyz, cubistSample900.xyz, 0.017);
+
+}
+else if (mode == 20) // Old Black and white
+{
+ 	// Grain shader
+	// make paper noise
+	tempf.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	tempf.xyz = blendDarken( tempf.xyz, perlinSample30.xyz, 0.09);
+	tempf.xyz = blendSubtract( tempf.xyz, perlinSample100.xyz, 0.35);
+	tempf.xyz = blendSubtract( tempf.xyz, cubistSample900.xyz, 0.78);
+	// done with noisy paper
+
+	float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+	R0f.xyz = blendAdd(vec3(luma, luma, luma), tempf.xyz, 0.14)*luma*1.2;
+	
+	R123f.xyz = edgedThin2.xyz;
+	// clean up banding artifacts
+	if (R123f.z < .05 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+	R0f.xyz = blendScreen(R0f.xyz, R123f.xyz, .14);
+}
+else if (mode == 21) // Frank Miller Sin city
+{
+ 	// Grain shader
+	// make paper noise
+	R1f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	R1f.xyz = blendDarken( R1f.xyz, perlinSample30.xyz, 0.09);
+	R1f.xyz = blendSubtract( R1f.xyz, perlinSample100.xyz, 0.35);
+	R1f.xyz = blendSubtract( R1f.xyz, cubistSample900.xyz, 0.78);
+	R1f.xyz = blendSubtract( R1f.xyz, clouds, 0.2);
+	// done with noisy paper
+
+	float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+	R0f.xyz = blendAdd(vec3(luma, luma, luma), R1f.xyz, 0.14)*luma*1.2;
+	R123f.xyz = edgedThin2.xyz;
+	// clean up banding artifacts
+	if (R123f.z < .03 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+	R0f.xyz = blendScreen(R0f.xyz, R123f.xyz, .2);
+	
+	/* red logic via RGB */
+	if (tempf.x > 0.8)
+	{
+		R0f.xy = tempf.xy;
+	}
+	
+	/* red logic via RGB didn't work well lets add some HSV too */
+	R1f.xyz = rgb2hsv(tempf.xyz);
+	if ((R1f.x < 0.06  || R1f.x > 0.90) )
+	{
+		R0f.x = tempf.x;
+	}
+}
+else if (mode == 22) // Dlrow Dam
+{
+ 	// Grain shader
+	// make paper noise
+	R125f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	R125f.xyz = blendDarken( R125f.xyz, perlinSample30.xyz, 0.09);
+	R125f.xyz = blendSubtract( R125f.xyz, perlinSample100.xyz, 0.35);
+	R125f.xyz = blendSubtract( R125f.xyz, cubistSample900.xyz, 0.78);
+	// done with noisy paper
+
+	float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+	// R0f.xyz = blendAdd(vec3(luma, luma, luma), R1f.xyz, 0.14)*luma*1.2;
+	if (luma <= 0.08)
+	{
+		R0f.xyz = vec3(0,0,0);
+	}
+	else if (luma > 0.08 && luma <= 0.15)
+	{
+		R0f.xyz = vec3(.08,.08,.08);
+	}
+	else if (luma > 0.15 && luma <= 0.2)
+	{
+		R0f.xyz = vec3(.15,.15,.15);
+	}
+	else if (luma > 0.2 && luma <= 0.25)
+	{
+		R0f.xyz = vec3(.3,.3,.3);
+	}
+	else if (luma > 0.25 && luma <= 0.35)
+	{
+		R0f.xyz = vec3(.45,.45,.45);
+	}
+	else if (luma > 0.35)
+	{
+		R0f.xyz = vec3(1,1,1);
+	}
+	
+	// R0f.xyz = blendDarken(R0f.xyz, 1-edgedThin2.xyz, .5);
+	
+
+	
+	// additional red via more constraints... dont work very well
+	// if (tempf.x > 0.06 && tempf.x < .36 && tempf.y < 0.11 && tempf.z < 0.028 )
+	// {
+		// R0f.x = tempf.x;
+		// R0f.y = tempf.y*.4;
+		// /*R0f.z = tempf.z; */
+	// }
+		// Red logic
+	// if (tempf.x > 0.3 && tempf.z < 0.2 && tempf.y < 0.2)
+	// {
+
+
+		// red logic via HSV helps apples
+		R1f.xyz = rgb2hsv(tempf.xyz);
+		if ((R1f.x < 0.045 ) && R1f.y > 0.95 )
+		{
+			
+			if (tempf.x <= 0.08)
+			{
+				R0f.xyz = vec3(.08,0,0);
+			}
+			else if (tempf.x > 0.08 && tempf.x <= 0.2)
+			{
+				R0f.xyz = vec3(.15,.01,.01);
+			}
+			else if (tempf.x > 0.2 && tempf.x <= 0.4)
+			{
+				R0f.xyz = vec3(.4,.03,.03);
+			}
+			else if (tempf.x > 0.4 && tempf.x <= 0.6)
+			{
+				R0f.xyz = vec3(.5,.06,.06);
+			}
+			else if (tempf.x > 0.6 && tempf.x <= 0.8)
+			{
+				R0f.xyz = vec3(.8,.07,.07);
+			}
+			else if (tempf.x > 0.8)
+			{
+				R0f.xyz = vec3(1,.08,.08);
+			}
+		}
+	// }
+	
+	// if ( R1f.y > 0 && R1f.x < 1 )
+	// {
+		// R0f.xyz = tempf.xyz;
+	// }
+	
+	// pencil on white
+	R126f.x = 1-edgedThin2.x;
+	R126f.y = 1-edgedThin2.y;
+	R126f.z = 1-edgedThin2.z;
+
+	// clean whiteboard outlines
+	if (R126f.z > .97 )
+	{
+		R126f.xyz = vec3(1,1,1);
+	}
+		
+	// chalkboard
+	R123f.x = edgedThin2.x;
+	R123f.y = edgedThin2.y;
+	R123f.z = edgedThin2.z;
+
+	// clean chalkboard banding outlines
+	if (R123f.z < .02 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+
+	R0f.xyz = blendScreen(R0f.xyz, R125f.xyz, .04);
+	R0f.xyz = blendSubtract(R0f.xyz, R126f.xyz, 5);
+	R0f.xyz = blendExclusion(R0f.xyz, R123f.xyz,  .7);
+	// R0f.xyz = blendExclusion(R0f.xyz, R1f.xyz,  1);
+	// R0f.xyz = R1f.xyz;
+	// R0f.xyz = R123f.xyz;
+	
+
+	// hits oranges
+	// R1f.xyz = rgb2hsv(tempf.xyz);
+	// if ((tempf.x > 0.9)&&( R1f.x > 0.07 && R1f.x < .13 ) && (R1f.y > 0.7) && (R1f.z > 0.95))
+	// {
+		// R0f.xyz = tempf.xyz;
+	// }
+	
+	// Red logic
+	// if (tempf.x > 0.9 && R1f.z < .95)
+	// {
+		// R0f.x = tempf.x;
+	// }
+	
+}
+else if (mode == 23) // Posturized on color on paper
+{
+ 	// Grain shader
+	// make paper noise
+	R125f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	R125f.xyz = blendDarken( R125f.xyz, perlinSample30.xyz, 0.09);
+	R125f.xyz = blendSubtract( R125f.xyz, perlinSample100.xyz, 0.35);
+	R125f.xyz = blendSubtract( R125f.xyz, cubistSample900.xyz, 0.78);
+	// done with noisy paper
+
+	float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+
+	int numLevels = 10;
+	luma = luma*200;
+	float levelPosturize = floor(pow(luma,1.065)/(numLevels))/100;
+	// float levelPosturize = floor(luma/(numLevels))/100;
+	R0f.xyz = vec3(levelPosturize,levelPosturize,levelPosturize)*4.4;
+	
+	// pencil on white
+	R1f.x = 1-edgedThin2.x;
+	R1f.y = 1-edgedThin2.y;
+	R1f.z = 1-edgedThin2.z;
+	if (R1f.z < .90 )
+	{
+		R1f.xyz = vec3(1,1,1);
+	}
+
+		
+	// chalkboard
+	R123f.x = edgedThin2.x;
+	R123f.y = edgedThin2.y;
+	R123f.z = edgedThin2.z;
+
+	// clean chalkboard banding outlines
+	if (R123f.z < .09 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+	R0f.xyz = blendSubtract(R0f.xyz, R123f.xyz, .2);
+	// add paper grain
+	// R0f.xyz = blendScreen(R0f.xyz, R125f.xyz, .02);
+	// make dark lines
+	R0f.xyz = blendSubtract(R0f.xyz, R1f.xyz, 2);
+	// Make some light lines
+	R0f.xyz = blendExclusion(R0f.xyz, R123f.xyz, 0.3);
+	
+	R0f.xyz = blendAverage(R0f.xyz, tempf.xyz, 0.55);
+	// R0f.xyz = R123f.xyz;
+
+}
+else if (mode == 24) // Posterized on grey on paper
+{
+
+	// make paper noise
+	R125f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	R125f.xyz = blendDarken( R125f.xyz, perlinSample30.xyz, 0.09);
+	R125f.xyz = blendSubtract( R125f.xyz, perlinSample100.xyz, 0.35);
+	R125f.xyz = blendSubtract( R125f.xyz, cubistSample900.xyz, 0.78);
+	// done with noisy paper
+
+	// get the greyscale
+	float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+	
+	// posturize
+	int numLevels = 10;
+	luma = luma*200;
+	float levelPosturize = floor(pow(luma,1.065)/(numLevels))/100;
+	// float levelPosturize = floor(luma/(numLevels))/100;
+	R0f.xyz = vec3(levelPosturize,levelPosturize,levelPosturize)*4.4;
+	
+	// pencil on white
+	R1f.xyz = 1-edgedThin2.xyz;
+	// clean whiteboard outlines
+	if (R1f.z < .85 )
+	{
+		R1f.xyz = vec3(1,1,1);
+	}
+		
+	// chalkboard
+	R123f.xyz = edgedThin2.xyz;
+	// clean chalkboard banding outlines
+	if (R123f.z < .03 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+	// add paper grain
+	R0f.xyz = blendScreen(R0f.xyz, R125f.xyz, .08);
+	// subtract dark lines
+	R0f.xyz = blendSubtract(R0f.xyz, R1f.xyz, 4.2);
+	// Make some light lines
+	R0f.xyz = blendExclusion(R0f.xyz, R123f.xyz,  .9);
+	
+}
+else if (mode == 25) //  test 2 mad world work with grey and blue issue
+{
+ 	// Grain shader
+	// make paper noise
+	R125f.xyz = blendOverlay( baseNoise100, cubistSample100.xyz, 0.35);
+	R125f.xyz = blendDarken( R125f.xyz, perlinSample30.xyz, 0.09);
+	R125f.xyz = blendSubtract( R125f.xyz, perlinSample100.xyz, 0.35);
+	R125f.xyz = blendSubtract( R125f.xyz, cubistSample900.xyz, 0.78);
+	// done with noisy paper
+
+	// get the greyscale
+	float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+	
+	// posturize
+	int numLevels = 10;
+	luma = luma*200;
+	float levelPosturize = floor(pow(luma,1.065)/(numLevels))/100;
+	// float levelPosturize = floor(luma/(numLevels))/100;
+	R0f.xyz = vec3(levelPosturize,levelPosturize,levelPosturize)*4.4;
+	
+	// additional red via more constraints... dont work very well
+	// if (tempf.x > 0.06 && tempf.x < .36 && tempf.y < 0.11 && tempf.z < 0.028 )
+	// {
+		// R0f.x = tempf.x;
+		// R0f.y = tempf.y*.4;
+		// /*R0f.z = tempf.z; */
+	// }
+	
+	// blue logic via HSV helps apples
+	R1f.xyz = rgb2hsv(tempf.xyz);
+	if ((R1f.x < 0.045 ) && R1f.y > 0.95 )
+	{
+		
+		if (tempf.x <= 0.08)
+		{
+			R0f.xyz = vec3(0,0,.08);
+		}
+		else if (tempf.x > 0.08 && tempf.x <= 0.2)
+		{
+			R0f.xyz = vec3(.01,.01, .15);
+		}
+		else if (tempf.x > 0.2 && tempf.x <= 0.4)
+		{
+			R0f.xyz = vec3(.03,.03, .4);
+		}
+		else if (tempf.x > 0.4 && tempf.x <= 0.6)
+		{
+			R0f.xyz = vec3(.06,.06, .5);
+		}
+		else if (tempf.x > 0.6 && tempf.x <= 0.8)
+		{
+			R0f.xyz = vec3(.07,.07, .8);
+		}
+		else if (tempf.x > 0.8)
+		{
+			R0f.xyz = vec3(.08,.08, 1);
+		}
+	}
+
+	
+	// pencil on white
+	R126f.x = 1-edgedThin2.x;
+	R126f.y = 1-edgedThin2.y;
+	R126f.z = 1-edgedThin2.z;
+
+	// clean whiteboard outlines
+	if (R126f.z < .85 )
+	{
+		R126f.xyz = vec3(1,1,1);
+	}
+		
+	// chalkboard
+	R123f.x = edgedThin2.x;
+	R123f.y = edgedThin2.y;
+	R123f.z = edgedThin2.z;
+
+	// clean chalkboard banding outlines
+	if (R123f.z < .03 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+
+	R0f.xyz = blendScreen(R0f.xyz, R125f.xyz, .04);
+	R0f.xyz = blendSubtract(R0f.xyz, R126f.xyz, 5);
+	R0f.xyz = blendExclusion(R0f.xyz, R123f.xyz,  .7);
+	// R0f.xyz = blendExclusion(R0f.xyz, R1f.xyz,  1);
+	// R0f.xyz = R1f.xyz;
+	// R0f.xyz = R123f.xyz;
+	
+		// Red logic
+	// if (tempf.x > 0.9)
+	// {
+		// R0f.x = tempf.x;
+	// }
+	
+}
+else if (mode == 26) // Posturize manually textured
+{
+	// make paper noise
+	tempf.xyz = blendOverlay (baseNoise100, cubistSample100.xyz, 0.35);
+	tempf.xyz = blendDarken( tempf.xyz, perlinSample30.xyz, 0.09);
+	tempf.xyz = blendSubtract( tempf.xyz, perlinSample100.xyz, 0.35);
+	tempf.xyz = blendSubtract( tempf.xyz, cubistSample900.xyz, 0.78);
+	// done with noisy paper
+ // if greyscale luma darker than 50% do not cover with dots
+ float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+ R0f.xyz = vec3(luma, luma, luma);
+ // color dodge with cellular  //makes cartoon paper look
+ 	if (luma <= 0.025)
+	{
+		R0f.xyz = blendNormal(cubistSample900.xyz, vec3(0.05,0.05,0.05), .8-(luma/0.015));
+	}
+	else if (luma > 0.02 && luma <= 0.06)
+	{
+
+	/* make noise */
+		R123f.xyz = blendOverlay(cubistSample400.xyz, cubistSample900.xyz, .8-(luma/0.03));
+	/* lighten a base grey */
+		R0f.xyz = blendLighten(R0f.xyz, vec3(.15,.15,.15), .8-(luma/0.03));
+	/* add to the scene accumulator */
+		R0f.xyz = blendNormal(R123f.xyz, R0f.xyz, .8-(luma/0.03));
+		
+	}
+	else if (luma > 0.05 && luma <= 0.15)
+	{
+
+	/* make noise */
+		R123f.xyz = blendAdd(cubistSample900.xyz, cubistSample400.xyz, .2);
+	/* lighten a base grey */
+		R0f.xyz = blendLighten( R0f.xyz, vec3(.2,.2,.2), .5-(luma/0.1));
+	/* add to the scene accumulator */
+		R0f.xyz = blendNormal(R123f.xyz, R0f.xyz, .8-(luma/0.1));		
+	}
+	else if (luma > 0.10 && luma <= 0.35)
+	{
+
+	/* make noise */
+		// R123f.x = mul_nonIEEE(perlinSample400.x, cubistSample100.x  )*0.5;
+		// R123f.y = mul_nonIEEE(perlinSample400.y, cubistSample100.y  )*0.5;
+		// R123f.z = mul_nonIEEE(perlinSample400.z, cubistSample100.z  )*0.5;
+
+
+		R123f.x = (perlinSample400.x+ cubistSample100.x )*0.5;
+		R123f.y = (perlinSample400.y+ cubistSample100.y )*0.5;
+		R123f.z = (perlinSample400.z+ cubistSample100.z )*0.5;
+	/* lighten a base grey */
+		R0f.xyz = blendLighten(R123f.xyz, vec3(.34,.34,.34), .8-(luma/0.25));
+	/* add to the scene accumulator */
+		R0f.xyz = blendNormal(R123f.xyz, R0f.xyz, .8-(luma/0.27));
+	}
+	else if (luma > 0.30 && luma <= 0.50)
+	{
+
+		R0f.xyz = blendLighten(R0f.xyz, cubistSample900.xyz, .8-(luma/0.40));
+		R0f.xyz = blendScreen(R0f.xyz, cellularSample150.xyz, .8-(luma/0.40));
+		R0f.xyz = blendAverage( R0f.xyz, vec3(.45,.45,.45), .8-(luma/0.40));
+		
+	}
+	else if (luma > 0.45 && luma <= 0.90)
+	{
+
+		R0f.xyz = blendLighten(R0f.xyz, baseNoise400.xyz, 1/abs(.50-luma));
+		R0f.xyz = blendAverage(vec3(.3,.3,.3), R0f.xyz, 1/abs(.50-luma))*luma;
+		
+	}
+	else if (luma > 0.60 && luma <= 0.98)
+	{
+	
+		R0f.xyz = blendLighten(R0f.xyz, perlinSample400.xyz, 1/abs(.6-luma));
+		R0f.xyz = blendScreen(R0f.xyz, cellularSample150.xyz, 1/abs(.6-luma));
+		R0f.xyz = blendAverage(vec3(.45,.45,.45), R0f.xyz, 1/abs(.6-luma))*luma;
+		
+	}
+	else if (luma > 0.85)
+	{
+
+		R0f.xyz = blendLighten(R0f.xyz, perlinSample100.xyz, 1/abs(.95-luma));
+		R0f.xyz = blendScreen(R0f.xyz, cellularSample150.xyz, 1/abs(.90-luma));
+		R0f.xyz = blendScreen(R0f.xyz, cubistSample900.xyz, 1/abs(.80-luma));
+		R0f.xyz = blendAverage(vec3(1,1,1), R0f.xyz, 1/abs(.95-luma))*luma;
+		
+	}
+ 
+ R0f.xyz = blendHardLight( R0f.xyz, tempf.xyz, 0.015);
+
+}
+
+else if (mode == 27) // Grimey screen
+{
+	// make paper noise
+	R123f.xyz = blendOverlay (1-baseNoise100, cubistSample100.xyz, 0.25);
+	R123f.xyz = blendDarken( R123f.xyz, perlinSample30.xyz, 0.09);
+	R123f.xyz = blendSubtract( R123f.xyz, perlinSample100.xyz, 0.35);
+
+	// done with noisy paper
+
+R0f.xyz = blendAdd(thatch, finebrick, 0.3);
+R0f.xyz = blendDifference( 1-R123f.xyz, R0f.xyz, .3);
+R0f.xyz = blendAdd( R0f.xyz, cubistSample900.xyz*8, 0.78);
+R0f.xyz = blendAdd(R0f.xyz, baseNoise400, 0.3);
+
+R0f.xyz = blendMultiply(tempf.xyz, R0f.xyz, 0.25);
+// R0f = tempf
+}
+
+else if (mode == 28) // New paper
+{
+	// make paper noise
+	R123f.xyz = blendOverlay (1-baseNoise100, cubistSample100.xyz, 0.25);
+	R123f.xyz = blendDarken( R123f.xyz, perlinSample30.xyz, 0.09);
+	R123f.xyz = blendSubtract( R123f.xyz, perlinSample100.xyz, 0.35);
+	R0f.xyz = blendAdd(thatch, finebrick, 0.35);
+	R0f.xyz = blendDifference( 1-R123f.xyz, R0f.xyz, .8);
+	R0f.xyz = blendAdd( R0f.xyz, cubistSample900.xyz*8, 0.5);
+	R123f.xyz = blendAdd( R0f.xyz, baseNoise400, 0.3);
+	// done paper
+	/* black with white outlines blackboard mode */
+	R125f.xyz = edgedThin2.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z < .08 )
+	{
+		R125f.xyz = vec3(0,0,0);
+	}	
+
+
+R0f.xyz = blendMultiply(tempf.xyz, R123f.xyz, 0.18);
+R0f.xyz = blendSubtract(R0f.xyz, 1-R125f.xyz, 0.5);
+// R0f = tempf
+}
+else if (mode == 29) // Posterized sepia
+{
+	// make complex canvas
+	R123f.xyz = blendOverlay (1-baseNoise100, cubistSample100.xyz, 0.25);
+	R123f.xyz = blendDarken( R123f.xyz, perlinSample30.xyz, 0.09);
+	R123f.xyz = blendSubtract( R123f.xyz, perlinSample100.xyz, 0.35);
+	R0f.xyz = blendAdd(thatch, finebrick, 0.35);
+	R0f.xyz = blendDifference( 1-R123f.xyz, R0f.xyz, .8);
+	R0f.xyz = blendAdd( R0f.xyz, cubistSample900.xyz, 0.4);
+	R0f.xyz = blendAdd( R0f.xyz, baseNoise400, 0.4);
+	// done with canvas
+
+	/* black with white outlines blackboard mode */
+	R123f.xyz = edgedThin2.xyz;
+
+	// clean up banding artifacts
+	if (R123f.z < .02 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+
+	/* black with white outlines blackboard mode */
+	R125f.xyz = edged.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z < .02 )
+	{
+		R125f.xyz = vec3(0,0,0);
+	}		
+
+// Add some yellow to the edged
+	R0f.x = (1.4-R125f.x + R0f.x*.09)/1.95;
+	R0f.y = (1.32-R125f.y + R0f.y*.09)/1.95;
+	R0f.z = (1-R125f.x + R0f.z*.19)/1.95;
+// darken the lines more with the thin edgedThin2
+	R0f.xyz = blendSubtract(R0f.xyz, 1-R123f.xyz, 1.20);
+
+	// get the greyscale
+	// float luma = dot(tempf.rgb, vec3(0.2126, 0.7152, 0.0722));
+	float luma = dot(expensiveBlur.rgb*.55, vec3(0.2126, 0.7152, 0.0722));
+
+	
+	// posturize
+	int numLevels = 17;
+	luma = luma*250;
+	float levelPosturize = floor(pow(luma,1.065)/(numLevels))/100;
+	// float levelPosturize = floor(luma/(numLevels))/100;
+	R123f.xyz = vec3(levelPosturize,levelPosturize,levelPosturize)*8;
+	
+	// R0f= R123f;
+	R0f.xyz = blendLinearBurn(R0f.xyz, R123f.xyz, 0.5);
+}
+else if (mode == 30) // Old Newsprint
+{
+	R0f.xyz = blendSubtract(baseNoise100.xyz, wavy, 0.05);
+	R0f.xyz = blendMultiply(R0f.xyz, jeanCloth, 0.3);
+	R0f.xyz = blendColorBurn(R0f.xyz, thatch, 0.11);
+	R0f.xyz = blendLighten(R0f.xyz, cellularSample200, 0.3);
+	R0f.z = R0f.z * .68;
+	R0f.xyz = blendNormal(R0f.xyz, tempf.xyz,0.92);
+	// R0f.xyz = expensiveBlur.xyz;
+	
+}
+else if (mode == 32) // Color Toner problems
+{
+ // greyscale luma
+ float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+ 	// posturize
+	int numLevels = 20;
+	luma = luma*100;
+	float levelPosturize = floor(pow(luma,1.060)/(numLevels));
+
+	// add the thatch background
+	R0f.xyz = blendMultiply(vec3(levelPosturize,levelPosturize,levelPosturize),thatch*.5, 0.1)*4.0;
+
+	/* black with white outlines blackboard mode */
+	R123f.xyz = edged.xyz;
+	/* clean up banding artifacts */
+	if (R123f.z < .03 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+	
+	/* add black outlines over the image to have visibilty during the day */
+	R0f.xyz = blendExclusion(R0f.xyz, R123f.xyz, 0.04);
+
+	R0f.xyz = blendDarken(R0f.xyz, 1-R123f.xyz);
+	R0f.xyz = blendDarken(R0f.xyz, 1-R123f.xyz);
+
+	/* black with white outlines blackboard mode */
+	R123f.xyz = edgedThin2.xyz;
+	/* clean up banding artifacts */
+	if (R123f.z < .09 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+	/* make thin white outlines over the dark outlines for visibility at night */
+	R0f.xyz = blendLighten(R0f.xyz, R123f.xyz,0.45);
+		
+	/* add back in specvific color ie red */
+	// R0f.xyz = blendDarken(R0f.xyz, tempf.xyz, 0.3);
+	
+	// red logic via HSV helps apples
+	R1f.xyz = rgb2hsv(tempf.xyz);
+	if ((R1f.x < 0.045 ) && R1f.y > 0.95 )
+	{
+		
+		if (tempf.x <= 0.08)
+		{
+			R0f.xyz = vec3(.08,0,0);
+		}
+		else if (tempf.x > 0.08 && tempf.x <= 0.2)
+		{
+			R0f.xyz = vec3(.15,.01,.01);
+		}
+		else if (tempf.x > 0.2 && tempf.x <= 0.4)
+		{
+			R0f.xyz = vec3(.4,.03,.03);
+		}
+		else if (tempf.x > 0.4 && tempf.x <= 0.6)
+		{
+			R0f.xyz = vec3(.5,.06,.06);
+		}
+		else if (tempf.x > 0.6 && tempf.x <= 0.8)
+		{
+			R0f.xyz = vec3(.8,.07,.07);
+		}
+		else if (tempf.x > 0.8)
+		{
+			R0f.xyz = vec3(1,.08,.08);
+		}
+	}
+	
+	// /* R0f.xyz =  R123f.xyz; */
+}
+else if (mode == 31) // Toner problems
+{
+ // greyscale luma
+ float luma = dot(R0f.rgb, vec3(0.2126, 0.7152, 0.0722));
+ 	// posturize
+	int numLevels = 20;
+	luma = luma*100;
+	float levelPosturize = floor(pow(luma,1.065)/(numLevels));
+
+	// add the thatch background
+	R0f.xyz = blendMultiply(vec3(levelPosturize,levelPosturize,levelPosturize),thatch*.5, 0.1)*4.0;
+
+	/* black with white outlines blackboard mode */
+	R123f.xyz = edged.xyz;
+	/* clean up banding artifacts */
+	if (R123f.z < .03 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+	
+	/* add black outlines over the image to have visibilty during the day */
+	R0f.xyz = blendExclusion(R0f.xyz, R123f.xyz, 0.04);
+
+	R0f.xyz = blendDarken(R0f.xyz, 1-R123f.xyz);
+	R0f.xyz = blendDarken(R0f.xyz, 1-R123f.xyz);
+
+	/* black with white outlines blackboard mode */
+	R123f.xyz = edgedThin2.xyz;
+	/* clean up banding artifacts */
+	if (R123f.z < .09 )
+	{
+		R123f.xyz = vec3(0,0,0);
+	}
+	/* make thin white outlines over the dark outlines for visibility at night */
+	R0f.xyz = blendLighten(R0f.xyz, R123f.xyz,0.45);
+}
+else if (mode == 33) // Watercolor on canvas
+{
+// Make watercolor  and put it in R125f.rgb
+/* black with white outlines blackboard mode */
+
+/* black with white outlines blackboard mode */
+R123f.xyz = edged.xyz;
+
+// clean up banding artifacts
+if (R123f.z < .02 )
+{
+	R123f.xyz = vec3(0,0,0);
+}
+/* dark borders over edges */
+R125f.x = mul_nonIEEE(.63-R123f.x, expensiveBlur.x*1.4);
+R125f.y = mul_nonIEEE(.63-R123f.y, expensiveBlur.y*1.4);
+R125f.z = mul_nonIEEE(.63-R123f.x, expensiveBlur.z*1.4);
+R125f.xyz = blendNormal(R125f.xyz, tempf.xyz, 0.4);
+// done with watercolor
+// R0f.xyz = R125f.xyz;
+
+// /* Desaturated on grey grain */
+R0f.x = (1-edged.x + R125f.x*1.3 + cubistSample900.x*.7)/1.2;
+R0f.y = (1-edged.y + R125f.y*1.3 + cubistSample900.y*.7)/1.2;
+R0f.z = (1-edged.z + R125f.z*1.3 + cubistSample900.z*.7)/1.2;
+
+
+R0f.xyz = blendMultiply(R125f.xyz, thatch, .03);
+R0f.xyz = blendMultiply(R0f.xyz, canvas, .07);
+R0f.xyz = blendMultiply(R0f.xyz, clouds, .4);
+
+R0f.xyz = blendMultiply(R0f.xyz, expensiveBlur.xyz,  .13);
+// /* black with white outlines blackboard mode */
+// R123f.xyz = edged.xyz;
+}
+else if (mode == 34) // step into the light
+{
+	/* black with white outlines blackboard mode */
+	R125f.xyz = 1-edgedThin2.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z > .99 )
+	{
+		R125f.xyz = vec3(1,1,1);
+	}	
+	
+	/* black with white outlines blackboard mode */
+	R126f.xyz = 1-edged.xyz;
+
+	// clean up banding artifacts
+	if (R126f.z > .94 )
+	{
+		R126f.xyz = vec3(1,1,1);
+	}	
+//white n grey using hardlight over base
+	// R0f.x = 1-R125f.x;
+	// R0f.y = 1-R125f.y;
+	// R0f.z = 1-R125f.z;
+	R0f.xyz = blendHardLight(  R125f.xyz, tempf.xyz);
+	R127f.xyz = blendHardLight( tempf.xyz, R126f.xyz);
+	R0f.xyz = blendNormal(R127f.xyz, R0f.xyz, 0.03);
+	R1f.xyz = rgb2hsv(tempf.xyz);
+	if (R1f.y > 0.45 )
+	{
+	float factor = smoothstep( 0.3, 2.1, R1f.y);
+	// factor = (factor +1)/2;
+	R0f.xyz = blendDarken(R0f.xyz, expensiveBlur.xyz, factor);
+	}
+	// R0f.xyz = R125f.xyz;
+}
+
+else if (mode == 35) // Breath of the Spider Vers
+{
+// if possible make fake normal map or depth map and then posterize to get a line direction for the lines to be drawn
+	// and use to isolate items on screen
+// http://weber.itn.liu.se/~stegu/webglshadertutorial/shadertutorial.html
+// get halftoning with proper texture and ink bleed etc
+
+
+// THEORY
+// super high saturation gets no marking
+// white dithers into darker areas... use different fewer/lower level ~8 of posteriztion to get larger white area
+	// circle dots
+// bightest gets diagonal dots
+// medium bright gets square dots
+// middle brightness get no marking
+// medium dark blends to middle round dots
+// dark gets lines
+// if close to greyscale HSV saturation less than ~10(guess) use halftoning
+
+
+// make a tempf with a increased vibrance maybe +2 for use as the darker lines/dots
+// make a tempf with posterization 
+// Get HSV
+
+
+
+// use a dot pattern with a judicious amount of feather so when it is smoothstepped to be even smaller looking dots like it is fading towards the edge of its posterization zone
+
+// Posterize to like 15 colors for the dot and lines
+// increase contrast so the halftone stuff works bettre
+// if white make sure to ignore
+// if bright enough
+	// make lighter colored dots probably desaturated the same colors as the posterization
+	// smoothstep edges with alpha so there is a small feather
+		// or maybe fade the dots based on base color difference from the dot color... use some blend modes to accomplish
+	// draw 100% opacity over posterized colors
+		// note may look better as multiply since tratitional halftone uses that
+			// but that won't work for lightening things
+
+// if dark enough 
+	// make appearance of dots at the edge of the posterization zone dithering into the next posterization zone
+	// smoothstep edges with alpha so there is a small feather
+		// or maybe fade the dots based on base color difference from the dot color... use some blend modes to accomplish
+	// make slightly more saturated dots and darken them
+	// draw 100% opacity over posterized colors
+		// note may look better as multiply since tratitional halftone uses that
+
+// if even darker enough
+	// make diagonal lines the same color as the pixel and darken them
+	// smoothstep edges with alpha so there is a small feather
+				// or maybe fade the lines based on base color difference from the line color... use some blend modes to accomplish
+	// draw 100% opacity over posterized colors
+		// note may look better as multiply since tratitional halftone uses that
+
+// posterize about 15 color levels but offset so the dots and lines patterns will blend the posterization zones together.
+
+// blend the lines and dots with the posterized colors
+// blend the blend above with the chromatic abberation buffer
+
+
+	/* black with white outlines blackboard mode */
+	R125f.xyz = 1-edgedThin2.xyz;
+
+	// clean up banding artifacts
+	if (R125f.z > .99 )
+	{
+		R125f.xyz = vec3(1,1,1);
+	}	
+	
+	/* black with white outlines blackboard mode */
+	R126f.xyz = 1-edged.xyz;
+
+	// clean up banding artifacts
+	if (R126f.z > .94 )
+	{
+		R126f.xyz = vec3(1,1,1);
+	}	
+//white n grey using hardlight over base
+	// R0f.x = 1-R125f.x;
+	// R0f.y = 1-R125f.y;
+	// R0f.z = 1-R125f.z;
+	R0f.xyz = blendHardLight(  R125f.xyz, tempf.xyz);
+	R127f.xyz = blendHardLight( tempf.xyz, R126f.xyz);
+	R0f.xyz = blendNormal(R127f.xyz, R0f.xyz, 0.03);
+	R1f.xyz = rgb2hsv(tempf.xyz);
+	if (R1f.y > 0.45 )
+	{
+	float factor = smoothstep( 0.3, 2.1, R1f.y);
+	// factor = (factor +1)/2;
+	R0f.xyz = blendDarken(R0f.xyz, expensiveBlur.xyz, factor);
+	}
+	// R0f.xyz = R125f.xyz;
+}
+
+
+// whiteboard
+// R0f.xyz = 1-edgedThin2.xyz; // thin
+// R0f.xyz = 1-edged.xyz; // normal
+// R0f.xyz = 1-edgedWide2.xyz; // wide
+
+// chalkboard
+// R0f.xyz = edgedThin2.xyz; // thin
+// R0f.xyz = edged.xyz; // normal
+// R0f.xyz = edgedWide2.xyz; // wide
+
+
+// NOISES
+
+// R0f.xyz = baseNoise100;
+// R0f.xyz = baseNoise400;
+
+// R0f.xyz = cubistSample900;
+// R0f.xyz = cubistSample400;
+// R0f.xyz = cubistSample100;
+
+// R0f.xyz = perlinSample30;
+// R0f.xyz = perlinSample100;
+// R0f.xyz = perlinSample400;
+
+// R0f.xyz = cellularSample1;
+// R0f.xyz = cellularSample150;
+// R0f.xyz = cellularSample200;
+
+
+// R0f.xyz = hfNoise;
+// R0f.xyz = clouds;
+// R0f.xyz = wood;
+
+// R0f.xyz = dots;
+// R0f.xyz = jeanCloth;
+// R0f.xyz = finebrick;
+// R0f.xyz = thatch;
+// R0f.xyz = wavy;
+// R0f.xyz = herringbone;
+
+// R0f.xyz = expensiveBlur.xyz;
+
+// BLENDS
+
+// blend	Add
+// blend	Average
+// blend	ColorBurn
+// blend	ColorDodge
+// blend	Darken
+// blend	Difference
+// blend	Exclusion
+// blend	HardLight
+// blend	LinearBurn
+// blend	Overlay
+// blend	Screen
+// blend	Substract
+// blend	Subtract
+// blend	Lighten
+// blend	LinearLight
+// blend	Normal
+
+
+
+// passPixelColor0 = VibrancePass( vec4(R0f.x, R0f.y, R0f.z, R0f.w) );
+passPixelColor0 = R0f;
+
+}
+
+
+
+
+

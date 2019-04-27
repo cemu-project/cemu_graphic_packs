@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Intel Flip Readme"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Lights and Fires/Intel/Readme"
+description = These packs are for Intel intgrated. They flip lights - 
+version = 3
+

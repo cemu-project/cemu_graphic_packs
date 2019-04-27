@@ -1,0 +1,248 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 37040a485a29d54e
+
+//------------------LENS DISTORTION--------------------//
+// by Weaseltron                                       //
+// From ENB by Boris                                   //
+// Converted to GLSL for Cemu by Altros                //
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+uniform ivec4 uf_remappedPS[1];
+layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf46ac800 res 320x180x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x5) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 2 2 2 border: 1
+layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf5c7b800 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+uniform vec2 uf_fragCoordScale;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+
+/* camera barrel distortion for chromatic aberration */
+vec2 brownConradyDistortion(vec2 uv, float scalar)
+{
+    uv = (uv - 0.5 ) * 2.0;
+    
+    if( true )
+    {
+        float barrelDistortion1 = -0.02 * scalar; // K1 in text books
+        float barrelDistortion2 = 0.0 * scalar; // K2 in text books
+
+        float r2 = dot(uv,uv);
+        uv *= 1.0 + barrelDistortion1 * r2 + barrelDistortion2 * r2 * r2;
+       
+    }
+    
+   return (uv / 2.0) + 0.5;
+}
+
+
+//-----------------------VIGNETTE----------------------//
+// JawZ: Author and developer of this file             //
+// MTichenor: Author of vignette code                  //
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++//
+	
+vec4 msVignette(vec4 inColor, vec2 inTexCoords)
+{
+ float EVignetteCurve = 0.97;
+ float EVignetteRadius = 0.2;
+ vec3  EVignetteColor = vec3(0.05, 0.05, 0.05);	
+ float EVignetteAmount = 3.0;
+ 
+    vec4 origcolor = inColor;
+
+      vec2 uv      = (inTexCoords.xy - 0.5f) * EVignetteRadius;
+      //float vignette = saturate(dot(uv.xy, uv.xy));
+	  //dx saturate => glsl: clamp(VarToClamp, 0.0, 1.0);
+      float vignette = clamp(dot(uv.xy, uv.xy), 0.0, 1.0);
+	  
+
+      vignette       = pow(vignette, EVignetteCurve);
+      inColor.xyz    = mix(origcolor.xyz, EVignetteColor, vignette * EVignetteAmount);
+
+  return inColor;
+}
+
+
+//----------------------VIBRANCE-----------------------//
+// by Christian Cann Schuldt Jensen ~ CeeJay.dk        //
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++//
+
+vec4 VibrancePass( vec4 colorInput )
+{ 
+	/*
+	#ifndef Vibrance_RGB_balance //for backwards compatibility with setting presets for older version.
+	#define Vibrance_RGB_balance float3(1.00, 1.00, 1.00)
+	#endif
+	*/
+
+	// float Vibrance = $vibrance;
+	vec3 Vibrance_RGB_balance = vec3(0.212656, 0.005158, 0.172186);
+
+	vec3 Vibrance_coeff = vec3(Vibrance_RGB_balance) * $vibrance;
+
+	vec4 color = colorInput; //original input color
+	vec3 lumCoeff = vec3(0.212656, 0.715158, 0.072186);  //Values to calculate luma with
+
+	float luma = dot(lumCoeff, color.rgb); //calculate luma (grey)
+
+
+	float max_color = max(colorInput.r, max(colorInput.g,colorInput.b)); //Find the strongest color
+	float min_color = min(colorInput.r, min(colorInput.g,colorInput.b)); //Find the weakest color
+
+	float color_saturation = max_color - min_color; //The difference between the two is the saturation
+
+	vec3 mixfactor = (1.0 + (Vibrance_coeff * (1.0 - (sign(Vibrance_coeff) * color_saturation))));
+	color.rgb = mix(vec3(luma, luma, luma), color.rgb, mixfactor); 
+	//extrapolate between luma and original by 1 + (1-saturation) - current
+
+	return color; //return the result
+	//return color_saturation.xxxx; //Visualize the saturation
+}
+
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+
+// R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);
+
+R1f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
+
+
+/* Add Chromatic abberation to a texture on import attempt 1 */
+    float maxDistort = $clarity; //4 * (1.0-iMouse.x/iResolution.x);
+
+    float scalar = 1.0 * maxDistort;
+//    float4 colourScalar = float4(2.0, 1.5, 1.0, 1.0);
+    vec4 colourScalar = vec4(700.0, 560.0, 490.0, 1.0);	// Based on the true wavelengths of red, green, blue light.
+    colourScalar /= max(max(colourScalar.x, colourScalar.y), colourScalar.z);
+    colourScalar *= 2.0;
+    
+    colourScalar *= scalar;
+
+    float numTaps = 8.0; // Original value: 8
+// R0f.xyz = (texture(textureUnitPS1, R0f.xy).xyz);    
+    vec3 fragColor = vec3(0.0);
+    for( float tap = 0.0; tap < numTaps; tap += 1.0 )
+    {
+        fragColor.r += texture(textureUnitPS1, brownConradyDistortion(R0f.xy, colourScalar.r)).r;
+        fragColor.g += texture(textureUnitPS1, brownConradyDistortion(R0f.xy, colourScalar.g)).g;
+        fragColor.b += texture(textureUnitPS1, brownConradyDistortion(R0f.xy, colourScalar.b)).b;
+        colourScalar *= 0.95;
+    }    
+    R0f.xyz = fragColor /= numTaps;
+	
+/* Chromatic abberation attempt 1 for import of textures */	
+
+	
+// 0
+R126f.x = R1f.x + R0f.x;
+PV0f.x = R126f.x;
+R127f.y = R1f.y + R0f.y;
+PV0f.y = R127f.y;
+R126f.z = R1f.z + R0f.z;
+PV0f.z = R126f.z;
+R125f.w = 1.0;
+// 1
+tempf.x = dot(vec4(PV0f.x,PV0f.y,PV0f.z,-0.0),vec4(intBitsToFloat(0x3e99096c),intBitsToFloat(0x3f162b6b),intBitsToFloat(0x3dea4a8c),0.0));
+PV1f.x = tempf.x;
+PV1f.y = tempf.x;
+PV1f.z = tempf.x;
+PV1f.w = tempf.x;
+// 2
+R127f.x = -(R127f.y) * intBitsToFloat(0x3fb8aa3b);
+PV0f.y = -(PV1f.x) * intBitsToFloat(0x3fb8aa3b);
+R127f.z = -(R126f.x) * intBitsToFloat(0x3fb8aa3b);
+R127f.w = -(R126f.z) * intBitsToFloat(0x3fb8aa3b);
+R126f.w = 1.0 / PV1f.x;
+PS0f = R126f.w;
+// 3
+PS1f = exp2(PV0f.y);
+// 4
+PV0f.x = -(PS1f) + 1.0;
+PS0f = exp2(R127f.x);
+// 5
+R127f.x = -(PS0f) + 1.0;
+R126f.y = mul_nonIEEE(PV0f.x, PV0f.x);
+PV1f.z = PV0f.x * R126f.w;
+PS1f = exp2(R127f.w);
+// 6
+backupReg0f = R126f.x;
+backupReg1f = R127f.z;
+R126f.x = mul_nonIEEE(backupReg0f, PV1f.z);
+PV0f.y = -(PS1f) + 1.0;
+R127f.z = mul_nonIEEE(R126f.z, PV1f.z);
+PV0f.z = R127f.z;
+R127f.w = mul_nonIEEE(R127f.y, PV1f.z);
+PV0f.w = R127f.w;
+PS0f = exp2(backupReg1f);
+// 7
+PV1f.x = R127f.x + -(PV0f.w);
+PV1f.y = PV0f.y + -(PV0f.z);
+PV1f.w = -(PS0f) + 1.0;
+// 8
+backupReg0f = R127f.z;
+R127f.x = (mul_nonIEEE(PV1f.x,R126f.y) + R127f.w);
+R127f.x = clamp(R127f.x, 0.0, 1.0);
+PV0f.x = R127f.x;
+PV0f.y = PV1f.w + -(R126f.x);
+R127f.z = (mul_nonIEEE(PV1f.y,R126f.y) + backupReg0f);
+R127f.z = clamp(R127f.z, 0.0, 1.0);
+PV0f.z = R127f.z;
+// 9
+backupReg0f = R126f.x;
+R126f.x = (mul_nonIEEE(PV0f.y,R126f.y) + backupReg0f);
+R126f.x = clamp(R126f.x, 0.0, 1.0);
+PV1f.x = R126f.x;
+PV1f.w = max(PV0f.x, PV0f.z);
+// 10
+tempf.x = dot(vec4(PV1f.x,R127f.x,R127f.z,R125f.w),vec4(intBitsToFloat(0x3f2aaaab),intBitsToFloat(0x3f2aaaab),intBitsToFloat(0x3f2aaaab),-(1.0)));
+PV0f.x = tempf.x;
+PV0f.y = tempf.x;
+PV0f.z = tempf.x;
+PV0f.w = tempf.x;
+R126f.z = max(PV1f.x, PV1f.w);
+PS0f = R126f.z;
+// 11
+backupReg0f = R127f.x;
+backupReg1f = R127f.z;
+R127f.x = R126f.x + -(PS0f);
+R123f.y = (mul_nonIEEE(-(PV0f.x),PV0f.x) + 1.0);
+PV1f.y = R123f.y;
+R127f.z = backupReg0f + -(PS0f);
+R125f.w = backupReg1f + -(PS0f);
+// 12
+R123f.x = (mul_nonIEEE(PV1f.y,intBitsToFloat(uf_remappedPS[0].y)) + intBitsToFloat(uf_remappedPS[0].x));
+PV0f.x = R123f.x;
+// 13
+R0f.x = (mul_nonIEEE(R127f.x,PV0f.x) + R126f.z);
+R0f.y = (mul_nonIEEE(R127f.z,PV0f.x) + R126f.z);
+R0f.z = (mul_nonIEEE(R125f.w,PV0f.x) + R126f.z);
+
+// export
+// passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+passPixelColor0 = VibrancePass( vec4(R0f.x, R0f.y, R0f.z, R0f.w) );
+}

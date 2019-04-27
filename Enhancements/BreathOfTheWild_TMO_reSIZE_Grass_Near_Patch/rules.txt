@@ -1,0 +1,221 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = " Grass Near Patches"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/reSIZE/Scenery/Grass/Near Patches"
+description =   Patches of grass near and underfoot of link - 
+version = 3
+[Preset]
+name = Setting 1.0 default
+$Bright = 1.0
+
+[Preset]
+name = Setting 0.02
+$Bright = 0.02
+
+[Preset]
+name = Setting 0.04
+$Bright = 0.04
+
+[Preset]
+name = Setting 0.06
+$Bright = 0.06
+
+[Preset]
+name = Setting 0.08
+$Bright = 0.08
+
+[Preset]
+name = Setting 0.1
+$Bright = 0.1
+
+[Preset]
+name = Setting 0.12
+$Bright = 0.12
+
+[Preset]
+name = Setting 0.15
+$Bright = 0.15
+
+[Preset]
+name = Setting 0.17
+$Bright = 0.17
+
+[Preset]
+name = Setting 0.20
+$Bright = 0.20
+
+[Preset]
+name = Setting 0.25
+$Bright = 0.25
+
+[Preset]
+name = Setting 0.27
+$Bright = 0.27
+
+[Preset]
+name = Setting 0.30
+$Bright = 0.30
+
+[Preset]
+name = Setting 0.35
+$Bright = 0.35
+
+[Preset]
+name = Setting 0.45
+$Bright = 0.45
+
+[Preset]
+name = Setting 0.50
+$Bright = 0.50
+
+[Preset]
+name = Setting 0.55
+$Bright = 0.55
+
+[Preset]
+name = Setting 0.60
+$Bright = 0.60
+
+[Preset]
+name = Setting 0.65
+$Bright = 0.65
+
+[Preset]
+name = Setting 0.70
+$Bright = 0.70
+
+[Preset]
+name = Setting 0.75
+$Bright = 0.75
+
+[Preset]
+name = Setting 0.80
+$Bright = 0.80
+
+[Preset]
+name = Setting 0.85
+$Bright = 0.85
+
+[Preset]
+name = Setting 0.90
+$Bright = 0.90
+
+[Preset]
+name = Setting 0.95
+$Bright = 0.95
+
+[Preset]
+name = Setting 1.1
+$Bright = 1.1
+
+[Preset]
+name = Setting 1.2
+$Bright = 1.2
+
+[Preset]
+name = Setting 1.3
+$Bright = 1.3
+
+[Preset]
+name = Setting 1.4
+$Bright = 1.4
+
+[Preset]
+name = Setting 1.5
+$Bright = 1.5
+
+[Preset]
+name = Setting 1.8
+$Bright = 1.8
+
+[Preset]
+name = Setting 2
+$Bright = 2
+
+[Preset]
+name = Setting 2.3
+$Bright = 2.3
+
+[Preset]
+name = Setting 2.6
+$Bright = 2.6
+
+[Preset]
+name = Setting 2.9
+$Bright = 2.9
+
+[Preset]
+name = Setting 3.5
+$Bright = 3.5
+
+[Preset]
+name = Setting 4
+$Bright = 4
+
+[Preset]
+name = Setting 5
+$Bright = 5
+
+[Preset]
+name = Setting 6.5
+$Bright = 6.5
+
+[Preset]
+name = Setting 8
+$Bright = 8
+
+[Preset]
+name = Setting 10
+$Bright = 10
+
+[Preset]
+name = Setting 13
+$Bright = 13
+
+[Preset]
+name = Setting 15
+$Bright = 15
+
+[Preset]
+name = Setting 18
+$Bright = 18
+
+[Preset]
+name = Setting 20
+$Bright = 20
+
+[Preset]
+name = Setting 8
+$Bright = 8
+
+[Preset]
+name = Setting 25
+$Bright = 25
+
+[Preset]
+name = Setting 30
+$Bright = 30
+
+[Preset]
+name = Setting 35
+$Bright = 35
+
+[Preset]
+name = Setting 40
+$Bright = 40
+
+[Preset]
+name = Setting 45
+$Bright = 45
+
+[Preset]
+name = Setting 50
+$Bright = 50
+
+[Preset]
+name = Setting 55
+$Bright = 55
+
+[Preset]
+name = Setting 60
+$Bright = 60

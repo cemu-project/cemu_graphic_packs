@@ -1,0 +1,302 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Art Styler"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Master Effects/Art Styler"
+description = BOTW but with a twist in Art direction. *not compatible w/clarity - 
+version = 3
+
+[Preset]
+name = Bluestar Punch
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 1
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = --- Presets with Full Color 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = Subtle lines slightly *watercolor 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 2
+
+[Preset]
+name = Bright Borders
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 17
+
+[Preset]
+name = Placeholder
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 9
+
+[Preset]
+name = Mild Mannered
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 12
+
+[Preset]
+name = Posterized color on paper
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 23
+
+[Preset]
+name = Washed out Paper
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 3
+
+[Preset]
+name = White outline
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 4
+
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = --- Presets with Grain 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = Light Grain
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 16
+
+[Preset]
+name = Heavy Grain
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 13
+
+[Preset]
+name = Grimey screen
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 27
+
+[Preset]
+name = New paper
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 28
+
+[Preset]
+name = Fake Dithering
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 30
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = --- Presets in Sepia 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = Posterized Sepia
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 29
+
+[Preset]
+name = Sketch on Sepia
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 5
+
+[Preset]
+name = Basic Grain Sepia
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 18
+
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = --- Presets in Black & White
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = Black and White ISO 6400
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 20
+
+[Preset]
+name = Posterized grey on paper
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 24
+
+[Preset]
+name = Chalkboard
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 6
+
+[Preset]
+name = Black and White no outline
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 19
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = --- Stylistic Presets    
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = ------------------------------- 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 100
+
+[Preset]
+name = Bored-A-lands
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 8
+
+[Preset]
+name = Nuclear Comix 10
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 10
+
+[Preset]
+name = Colored blackboard
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 11
+
+[Preset]
+name = Step Into the Light
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 14
+
+[Preset]
+name = SmoothStep practice
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 34
+
+[Preset]
+name = Cin Sity Phrank Myller
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 21
+
+[Preset]
+name = dlroW daM 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 22
+
+[Preset]
+name = mad test blue fix   Special Request 
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 25
+
+[Preset]
+name = Broken Toner Drum Red
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 32
+
+[Preset]
+name = Broken Toner Drum
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 31
+
+[Preset]
+name = Watercolor on Canvas
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 33
+
+[Preset]
+name = Desaturated on Paper
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 7
+
+[Preset]
+name = Inversion
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 15
+
+[Preset]
+name = manual posterization   ugly
+$clarity = 0.16
+$vibrance = 4.5
+$Mode = 26

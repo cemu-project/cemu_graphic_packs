@@ -1,0 +1,13 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = " Intel Star correction"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Skies/Intel Integrated Brings Back the Stars"
+description =   Return the Starlite. Intel integrated - 
+version = 3
+
+[Preset]
+name = Dropdown has Brightness levels first and then Colored editions below  
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.25

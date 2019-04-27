@@ -1,0 +1,166 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Rim Lighting Control"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Shadows/Character Rim Lighting Control"
+description =   Rim Lighting control May only work at certain angles, or make characters glow - 
+version = 3
+
+[Preset]
+name = Size 2 Intensity 1 
+$Size = 2
+$Intensity = 1
+
+[Preset]
+name = Size 4 Intensity 1 
+$Size = 4
+$Intensity = 1
+
+[Preset]
+name = Size 6 Intensity 1 
+$Size = 6
+$Intensity = 1
+
+[Preset]
+name = Size 8 Intensity 1 
+$Size = 8
+$Intensity = 1
+
+[Preset]
+name = Size 10 Intensity 1 
+$Size = 10
+$Intensity = 1
+
+[Preset]
+name = Size 2 Intensity 2 
+$Size = 2
+$Intensity = 2
+
+[Preset]
+name = Size 4 Intensity 2 
+$Size = 4
+$Intensity = 2
+
+[Preset]
+name = Size 6 Intensity 2 
+$Size = 6
+$Intensity = 2
+
+[Preset]
+name = Size 8 Intensity 2 
+$Size = 8
+$Intensity = 2
+
+[Preset]
+name = Size 10 Intensity 2 
+$Size = 10
+$Intensity = 2
+
+[Preset]
+name = Size 11 Intensity 3 
+$Size = 11
+$Intensity = 3
+
+[Preset]
+name = Size 3 Intensity 3 
+$Size = 3
+$Intensity = 3
+
+[Preset]
+name = Size 5 Intensity 3 
+$Size = 5
+$Intensity = 3
+
+[Preset]
+name = Size 7 Intensity 3 
+$Size = 7
+$Intensity = 3
+
+[Preset]
+name = Size 9 Intensity 3 
+$Size = 9
+$Intensity = 3
+
+[Preset]
+name = Size 11 Intensity 3 
+$Size = 11
+$Intensity = 3
+
+[Preset]
+name = Size 5 Intensity 5 
+$Size = 5
+$Intensity = 5
+
+[Preset]
+name = Size 7 Intensity 5 
+$Size = 7
+$Intensity = 5
+
+[Preset]
+name = Size 9 Intensity 5 
+$Size = 9
+$Intensity = 5
+
+[Preset]
+name = Size 13 Intensity 5
+$Size = 13
+$Intensity = 5
+
+[Preset]
+name = Size 18 Intensity 5
+$Size = 18
+$Intensity = 5
+
+[Preset]
+name = Size 25 Intensity 5 
+$Size = 25
+$Intensity = 5
+
+[Preset]
+name = Size 55 Intensity 5 
+$Size = 55
+$Intensity = 5
+
+[Preset]
+name = Size 75 Intensity 5 
+$Size = 75
+$Intensity = 5
+
+[Preset]
+name = Size 5 Intensity 25 
+$Size = 5
+$Intensity = 25
+
+[Preset]
+name = Size 25 Intensity 25 
+$Size = 25
+$Intensity = 25
+
+[Preset]
+name = Size 55 Intensity 25 
+$Size = 55
+$Intensity = 25
+
+[Preset]
+name = Size 75 Intensity 25 
+$Size = 75
+$Intensity = 25
+
+[Preset]
+name = Size 5 Intensity 500 
+$Size = 5
+$Intensity = 500
+
+[Preset]
+name = Size 25 Intensity 500
+$Size = 25
+$Intensity = 500
+
+[Preset]
+name = Size 55 Intensity 500 
+$Size = 55
+$Intensity = 500
+
+[Preset]
+name = Size 75 Intensity 500 
+$Size = 75
+$Intensity = 500

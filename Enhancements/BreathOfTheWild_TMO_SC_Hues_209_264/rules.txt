@@ -1,0 +1,4477 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Sun Mega Control"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Skies/Sky Color Control/Shift Hues 209 to 264"
+description =   Sun control Hues- 
+version = 3
+
+[Preset]
+name = HSV ( 209, 16.0, 15 )
+$Red = 209
+$Green = 15.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 15 )
+$Red = 209
+$Green = 25.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 15 )
+$Red = 209
+$Green = 35.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 15 )
+$Red = 209
+$Green = 40.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 15 )
+$Red = 209
+$Green = 47.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 15 )
+$Red = 209
+$Green = 57.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 15 )
+$Red = 209
+$Green = 65.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 15 )
+$Red = 209
+$Green = 80.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 15 )
+$Red = 209
+$Green = 90.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 15 )
+$Red = 209
+$Green = 100.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 20 )
+$Red = 209
+$Green = 20.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 20 )
+$Red = 209
+$Green = 25.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 20 )
+$Red = 209
+$Green = 35.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 20 )
+$Red = 209
+$Green = 40.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 20 )
+$Red = 209
+$Green = 47.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 20 )
+$Red = 209
+$Green = 57.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 20 )
+$Red = 209
+$Green = 65.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 20 )
+$Red = 209
+$Green = 80.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 20 )
+$Red = 209
+$Green = 90.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 20 )
+$Red = 209
+$Green = 100.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 28 )
+$Red = 209
+$Green = 28.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 28 )
+$Red = 209
+$Green = 25.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 28 )
+$Red = 209
+$Green = 35.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 28 )
+$Red = 209
+$Green = 40.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 28 )
+$Red = 209
+$Green = 47.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 28 )
+$Red = 209
+$Green = 57.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 28 )
+$Red = 209
+$Green = 65.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 28 )
+$Red = 209
+$Green = 80.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 28 )
+$Red = 209
+$Green = 90.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 28 )
+$Red = 209
+$Green = 100.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 38 )
+$Red = 209
+$Green = 38.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 38 )
+$Red = 209
+$Green = 25.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 38 )
+$Red = 209
+$Green = 35.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 38 )
+$Red = 209
+$Green = 40.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 38 )
+$Red = 209
+$Green = 47.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 38 )
+$Red = 209
+$Green = 57.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 38 )
+$Red = 209
+$Green = 65.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 38 )
+$Red = 209
+$Green = 80.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 38 )
+$Red = 209
+$Green = 90.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 38 )
+$Red = 209
+$Green = 100.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 50 )
+$Red = 209
+$Green = 50.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 50 )
+$Red = 209
+$Green = 25.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 50 )
+$Red = 209
+$Green = 35.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 50 )
+$Red = 209
+$Green = 40.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 50 )
+$Red = 209
+$Green = 47.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 50 )
+$Red = 209
+$Green = 57.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 50 )
+$Red = 209
+$Green = 65.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 50 )
+$Red = 209
+$Green = 80.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 50 )
+$Red = 209
+$Green = 90.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 50 )
+$Red = 209
+$Green = 100.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 60 )
+$Red = 209
+$Green = 60.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 60 )
+$Red = 209
+$Green = 25.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 60 )
+$Red = 209
+$Green = 35.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 60 )
+$Red = 209
+$Green = 40.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 60 )
+$Red = 209
+$Green = 47.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 60 )
+$Red = 209
+$Green = 57.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 60 )
+$Red = 209
+$Green = 65.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 60 )
+$Red = 209
+$Green = 80.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 60 )
+$Red = 209
+$Green = 90.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 60 )
+$Red = 209
+$Green = 100.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 72 )
+$Red = 209
+$Green = 72.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 72 )
+$Red = 209
+$Green = 25.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 72 )
+$Red = 209
+$Green = 35.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 72 )
+$Red = 209
+$Green = 40.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 72 )
+$Red = 209
+$Green = 47.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 72 )
+$Red = 209
+$Green = 57.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 72 )
+$Red = 209
+$Green = 65.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 72 )
+$Red = 209
+$Green = 80.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 72 )
+$Red = 209
+$Green = 90.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 72 )
+$Red = 209
+$Green = 100.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 86 )
+$Red = 209
+$Green = 86.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 86 )
+$Red = 209
+$Green = 25.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 86 )
+$Red = 209
+$Green = 35.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 86 )
+$Red = 209
+$Green = 40.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 86 )
+$Red = 209
+$Green = 47.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 86 )
+$Red = 209
+$Green = 57.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 86 )
+$Red = 209
+$Green = 65.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 86 )
+$Red = 209
+$Green = 80.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 86 )
+$Red = 209
+$Green = 90.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 86 )
+$Red = 209
+$Green = 100.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 209, 16.0, 100 )
+$Red = 209
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 25.0, 100 )
+$Red = 209
+$Green = 25.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 35.0, 100 )
+$Red = 209
+$Green = 35.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 40.0, 100 )
+$Red = 209
+$Green = 40.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 47.0, 100 )
+$Red = 209
+$Green = 47.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 57.0, 100 )
+$Red = 209
+$Green = 57.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 65.0, 100 )
+$Red = 209
+$Green = 65.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 80.0, 100 )
+$Red = 209
+$Green = 80.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 90.0, 100 )
+$Red = 209
+$Green = 90.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 209, 100.0, 100 )
+$Red = 209
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+
+
+
+
+
+
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 15 )
+$Red = 218
+$Green = 15.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 15 )
+$Red = 218
+$Green = 25.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 15 )
+$Red = 218
+$Green = 35.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 15 )
+$Red = 218
+$Green = 40.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 15 )
+$Red = 218
+$Green = 47.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 15 )
+$Red = 218
+$Green = 57.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 15 )
+$Red = 218
+$Green = 65.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 15 )
+$Red = 218
+$Green = 80.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 15 )
+$Red = 218
+$Green = 90.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 15 )
+$Red = 218
+$Green = 100.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 20 )
+$Red = 218
+$Green = 20.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 20 )
+$Red = 218
+$Green = 25.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 20 )
+$Red = 218
+$Green = 35.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 20 )
+$Red = 218
+$Green = 40.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 20 )
+$Red = 218
+$Green = 47.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 20 )
+$Red = 218
+$Green = 57.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 20 )
+$Red = 218
+$Green = 65.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 20 )
+$Red = 218
+$Green = 80.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 20 )
+$Red = 218
+$Green = 90.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 20 )
+$Red = 218
+$Green = 100.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 28 )
+$Red = 218
+$Green = 28.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 28 )
+$Red = 218
+$Green = 25.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 28 )
+$Red = 218
+$Green = 35.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 28 )
+$Red = 218
+$Green = 40.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 28 )
+$Red = 218
+$Green = 47.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 28 )
+$Red = 218
+$Green = 57.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 28 )
+$Red = 218
+$Green = 65.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 28 )
+$Red = 218
+$Green = 80.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 28 )
+$Red = 218
+$Green = 90.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 28 )
+$Red = 218
+$Green = 100.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 38 )
+$Red = 218
+$Green = 38.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 38 )
+$Red = 218
+$Green = 25.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 38 )
+$Red = 218
+$Green = 35.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 38 )
+$Red = 218
+$Green = 40.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 38 )
+$Red = 218
+$Green = 47.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 38 )
+$Red = 218
+$Green = 57.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 38 )
+$Red = 218
+$Green = 65.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 38 )
+$Red = 218
+$Green = 80.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 38 )
+$Red = 218
+$Green = 90.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 38 )
+$Red = 218
+$Green = 100.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 50 )
+$Red = 218
+$Green = 50.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 50 )
+$Red = 218
+$Green = 25.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 50 )
+$Red = 218
+$Green = 35.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 50 )
+$Red = 218
+$Green = 40.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 50 )
+$Red = 218
+$Green = 47.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 50 )
+$Red = 218
+$Green = 57.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 50 )
+$Red = 218
+$Green = 65.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 50 )
+$Red = 218
+$Green = 80.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 50 )
+$Red = 218
+$Green = 90.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 50 )
+$Red = 218
+$Green = 100.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 60 )
+$Red = 218
+$Green = 60.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 60 )
+$Red = 218
+$Green = 25.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 60 )
+$Red = 218
+$Green = 35.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 60 )
+$Red = 218
+$Green = 40.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 60 )
+$Red = 218
+$Green = 47.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 60 )
+$Red = 218
+$Green = 57.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 60 )
+$Red = 218
+$Green = 65.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 60 )
+$Red = 218
+$Green = 80.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 60 )
+$Red = 218
+$Green = 90.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 60 )
+$Red = 218
+$Green = 100.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 72 )
+$Red = 218
+$Green = 72.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 72 )
+$Red = 218
+$Green = 25.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 72 )
+$Red = 218
+$Green = 35.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 72 )
+$Red = 218
+$Green = 40.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 72 )
+$Red = 218
+$Green = 47.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 72 )
+$Red = 218
+$Green = 57.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 72 )
+$Red = 218
+$Green = 65.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 72 )
+$Red = 218
+$Green = 80.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 72 )
+$Red = 218
+$Green = 90.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 72 )
+$Red = 218
+$Green = 100.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 86 )
+$Red = 218
+$Green = 86.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 86 )
+$Red = 218
+$Green = 25.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 86 )
+$Red = 218
+$Green = 35.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 86 )
+$Red = 218
+$Green = 40.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 86 )
+$Red = 218
+$Green = 47.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 86 )
+$Red = 218
+$Green = 57.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 86 )
+$Red = 218
+$Green = 65.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 86 )
+$Red = 218
+$Green = 80.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 86 )
+$Red = 218
+$Green = 90.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 86 )
+$Red = 218
+$Green = 100.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 218, 16.0, 100 )
+$Red = 218
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 25.0, 100 )
+$Red = 218
+$Green = 25.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 35.0, 100 )
+$Red = 218
+$Green = 35.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 40.0, 100 )
+$Red = 218
+$Green = 40.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 47.0, 100 )
+$Red = 218
+$Green = 47.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 57.0, 100 )
+$Red = 218
+$Green = 57.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 65.0, 100 )
+$Red = 218
+$Green = 65.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 80.0, 100 )
+$Red = 218
+$Green = 80.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 90.0, 100 )
+$Red = 218
+$Green = 90.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 218, 100.0, 100 )
+$Red = 218
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+
+
+
+
+
+
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 15 )
+$Red = 224
+$Green = 15.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 15 )
+$Red = 224
+$Green = 25.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 15 )
+$Red = 224
+$Green = 35.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 15 )
+$Red = 224
+$Green = 40.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 15 )
+$Red = 224
+$Green = 47.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 15 )
+$Red = 224
+$Green = 57.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 15 )
+$Red = 224
+$Green = 65.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 15 )
+$Red = 224
+$Green = 80.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 15 )
+$Red = 224
+$Green = 90.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 15 )
+$Red = 224
+$Green = 100.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 20 )
+$Red = 224
+$Green = 20.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 20 )
+$Red = 224
+$Green = 25.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 20 )
+$Red = 224
+$Green = 35.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 20 )
+$Red = 224
+$Green = 40.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 20 )
+$Red = 224
+$Green = 47.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 20 )
+$Red = 224
+$Green = 57.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 20 )
+$Red = 224
+$Green = 65.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 20 )
+$Red = 224
+$Green = 80.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 20 )
+$Red = 224
+$Green = 90.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 20 )
+$Red = 224
+$Green = 100.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 28 )
+$Red = 224
+$Green = 28.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 28 )
+$Red = 224
+$Green = 25.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 28 )
+$Red = 224
+$Green = 35.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 28 )
+$Red = 224
+$Green = 40.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 28 )
+$Red = 224
+$Green = 47.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 28 )
+$Red = 224
+$Green = 57.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 28 )
+$Red = 224
+$Green = 65.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 28 )
+$Red = 224
+$Green = 80.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 28 )
+$Red = 224
+$Green = 90.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 28 )
+$Red = 224
+$Green = 100.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 38 )
+$Red = 224
+$Green = 38.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 38 )
+$Red = 224
+$Green = 25.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 38 )
+$Red = 224
+$Green = 35.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 38 )
+$Red = 224
+$Green = 40.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 38 )
+$Red = 224
+$Green = 47.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 38 )
+$Red = 224
+$Green = 57.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 38 )
+$Red = 224
+$Green = 65.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 38 )
+$Red = 224
+$Green = 80.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 38 )
+$Red = 224
+$Green = 90.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 38 )
+$Red = 224
+$Green = 100.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 50 )
+$Red = 224
+$Green = 50.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 50 )
+$Red = 224
+$Green = 25.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 50 )
+$Red = 224
+$Green = 35.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 50 )
+$Red = 224
+$Green = 40.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 50 )
+$Red = 224
+$Green = 47.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 50 )
+$Red = 224
+$Green = 57.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 50 )
+$Red = 224
+$Green = 65.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 50 )
+$Red = 224
+$Green = 80.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 50 )
+$Red = 224
+$Green = 90.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 50 )
+$Red = 224
+$Green = 100.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 60 )
+$Red = 224
+$Green = 60.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 60 )
+$Red = 224
+$Green = 25.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 60 )
+$Red = 224
+$Green = 35.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 60 )
+$Red = 224
+$Green = 40.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 60 )
+$Red = 224
+$Green = 47.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 60 )
+$Red = 224
+$Green = 57.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 60 )
+$Red = 224
+$Green = 65.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 60 )
+$Red = 224
+$Green = 80.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 60 )
+$Red = 224
+$Green = 90.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 60 )
+$Red = 224
+$Green = 100.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 72 )
+$Red = 224
+$Green = 72.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 72 )
+$Red = 224
+$Green = 25.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 72 )
+$Red = 224
+$Green = 35.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 72 )
+$Red = 224
+$Green = 40.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 72 )
+$Red = 224
+$Green = 47.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 72 )
+$Red = 224
+$Green = 57.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 72 )
+$Red = 224
+$Green = 65.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 72 )
+$Red = 224
+$Green = 80.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 72 )
+$Red = 224
+$Green = 90.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 72 )
+$Red = 224
+$Green = 100.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 86 )
+$Red = 224
+$Green = 86.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 86 )
+$Red = 224
+$Green = 25.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 86 )
+$Red = 224
+$Green = 35.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 86 )
+$Red = 224
+$Green = 40.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 86 )
+$Red = 224
+$Green = 47.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 86 )
+$Red = 224
+$Green = 57.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 86 )
+$Red = 224
+$Green = 65.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 86 )
+$Red = 224
+$Green = 80.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 86 )
+$Red = 224
+$Green = 90.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 86 )
+$Red = 224
+$Green = 100.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 224, 16.0, 100 )
+$Red = 224
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 25.0, 100 )
+$Red = 224
+$Green = 25.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 35.0, 100 )
+$Red = 224
+$Green = 35.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 40.0, 100 )
+$Red = 224
+$Green = 40.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 47.0, 100 )
+$Red = 224
+$Green = 47.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 57.0, 100 )
+$Red = 224
+$Green = 57.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 65.0, 100 )
+$Red = 224
+$Green = 65.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 80.0, 100 )
+$Red = 224
+$Green = 80.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 90.0, 100 )
+$Red = 224
+$Green = 90.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 224, 100.0, 100 )
+$Red = 224
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+
+
+
+
+
+
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 15 )
+$Red = 240
+$Green = 15.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 15 )
+$Red = 240
+$Green = 25.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 15 )
+$Red = 240
+$Green = 35.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 15 )
+$Red = 240
+$Green = 40.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 15 )
+$Red = 240
+$Green = 47.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 15 )
+$Red = 240
+$Green = 57.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 15 )
+$Red = 240
+$Green = 65.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 15 )
+$Red = 240
+$Green = 80.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 15 )
+$Red = 240
+$Green = 90.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 15 )
+$Red = 240
+$Green = 100.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 20 )
+$Red = 240
+$Green = 20.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 20 )
+$Red = 240
+$Green = 25.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 20 )
+$Red = 240
+$Green = 35.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 20 )
+$Red = 240
+$Green = 40.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 20 )
+$Red = 240
+$Green = 47.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 20 )
+$Red = 240
+$Green = 57.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 20 )
+$Red = 240
+$Green = 65.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 20 )
+$Red = 240
+$Green = 80.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 20 )
+$Red = 240
+$Green = 90.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 20 )
+$Red = 240
+$Green = 100.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 28 )
+$Red = 240
+$Green = 28.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 28 )
+$Red = 240
+$Green = 25.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 28 )
+$Red = 240
+$Green = 35.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 28 )
+$Red = 240
+$Green = 40.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 28 )
+$Red = 240
+$Green = 47.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 28 )
+$Red = 240
+$Green = 57.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 28 )
+$Red = 240
+$Green = 65.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 28 )
+$Red = 240
+$Green = 80.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 28 )
+$Red = 240
+$Green = 90.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 28 )
+$Red = 240
+$Green = 100.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 38 )
+$Red = 240
+$Green = 38.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 38 )
+$Red = 240
+$Green = 25.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 38 )
+$Red = 240
+$Green = 35.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 38 )
+$Red = 240
+$Green = 40.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 38 )
+$Red = 240
+$Green = 47.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 38 )
+$Red = 240
+$Green = 57.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 38 )
+$Red = 240
+$Green = 65.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 38 )
+$Red = 240
+$Green = 80.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 38 )
+$Red = 240
+$Green = 90.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 38 )
+$Red = 240
+$Green = 100.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 50 )
+$Red = 240
+$Green = 50.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 50 )
+$Red = 240
+$Green = 25.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 50 )
+$Red = 240
+$Green = 35.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 50 )
+$Red = 240
+$Green = 40.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 50 )
+$Red = 240
+$Green = 47.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 50 )
+$Red = 240
+$Green = 57.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 50 )
+$Red = 240
+$Green = 65.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 50 )
+$Red = 240
+$Green = 80.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 50 )
+$Red = 240
+$Green = 90.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 50 )
+$Red = 240
+$Green = 100.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 60 )
+$Red = 240
+$Green = 60.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 60 )
+$Red = 240
+$Green = 25.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 60 )
+$Red = 240
+$Green = 35.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 60 )
+$Red = 240
+$Green = 40.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 60 )
+$Red = 240
+$Green = 47.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 60 )
+$Red = 240
+$Green = 57.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 60 )
+$Red = 240
+$Green = 65.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 60 )
+$Red = 240
+$Green = 80.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 60 )
+$Red = 240
+$Green = 90.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 60 )
+$Red = 240
+$Green = 100.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 72 )
+$Red = 240
+$Green = 72.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 72 )
+$Red = 240
+$Green = 25.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 72 )
+$Red = 240
+$Green = 35.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 72 )
+$Red = 240
+$Green = 40.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 72 )
+$Red = 240
+$Green = 47.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 72 )
+$Red = 240
+$Green = 57.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 72 )
+$Red = 240
+$Green = 65.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 72 )
+$Red = 240
+$Green = 80.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 72 )
+$Red = 240
+$Green = 90.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 72 )
+$Red = 240
+$Green = 100.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 86 )
+$Red = 240
+$Green = 86.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 86 )
+$Red = 240
+$Green = 25.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 86 )
+$Red = 240
+$Green = 35.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 86 )
+$Red = 240
+$Green = 40.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 86 )
+$Red = 240
+$Green = 47.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 86 )
+$Red = 240
+$Green = 57.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 86 )
+$Red = 240
+$Green = 65.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 86 )
+$Red = 240
+$Green = 80.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 86 )
+$Red = 240
+$Green = 90.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 86 )
+$Red = 240
+$Green = 100.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 240, 16.0, 100 )
+$Red = 240
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 25.0, 100 )
+$Red = 240
+$Green = 25.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 35.0, 100 )
+$Red = 240
+$Green = 35.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 40.0, 100 )
+$Red = 240
+$Green = 40.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 47.0, 100 )
+$Red = 240
+$Green = 47.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 57.0, 100 )
+$Red = 240
+$Green = 57.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 65.0, 100 )
+$Red = 240
+$Green = 65.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 80.0, 100 )
+$Red = 240
+$Green = 80.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 90.0, 100 )
+$Red = 240
+$Green = 90.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 240, 100.0, 100 )
+$Red = 240
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+
+
+
+
+
+
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 15 )
+$Red = 256
+$Green = 15.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 15 )
+$Red = 256
+$Green = 25.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 15 )
+$Red = 256
+$Green = 35.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 15 )
+$Red = 256
+$Green = 40.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 15 )
+$Red = 256
+$Green = 47.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 15 )
+$Red = 256
+$Green = 57.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 15 )
+$Red = 256
+$Green = 65.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 15 )
+$Red = 256
+$Green = 80.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 15 )
+$Red = 256
+$Green = 90.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 15 )
+$Red = 256
+$Green = 100.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 20 )
+$Red = 256
+$Green = 20.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 20 )
+$Red = 256
+$Green = 25.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 20 )
+$Red = 256
+$Green = 35.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 20 )
+$Red = 256
+$Green = 40.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 20 )
+$Red = 256
+$Green = 47.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 20 )
+$Red = 256
+$Green = 57.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 20 )
+$Red = 256
+$Green = 65.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 20 )
+$Red = 256
+$Green = 80.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 20 )
+$Red = 256
+$Green = 90.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 20 )
+$Red = 256
+$Green = 100.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 28 )
+$Red = 256
+$Green = 28.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 28 )
+$Red = 256
+$Green = 25.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 28 )
+$Red = 256
+$Green = 35.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 28 )
+$Red = 256
+$Green = 40.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 28 )
+$Red = 256
+$Green = 47.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 28 )
+$Red = 256
+$Green = 57.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 28 )
+$Red = 256
+$Green = 65.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 28 )
+$Red = 256
+$Green = 80.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 28 )
+$Red = 256
+$Green = 90.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 28 )
+$Red = 256
+$Green = 100.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 38 )
+$Red = 256
+$Green = 38.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 38 )
+$Red = 256
+$Green = 25.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 38 )
+$Red = 256
+$Green = 35.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 38 )
+$Red = 256
+$Green = 40.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 38 )
+$Red = 256
+$Green = 47.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 38 )
+$Red = 256
+$Green = 57.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 38 )
+$Red = 256
+$Green = 65.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 38 )
+$Red = 256
+$Green = 80.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 38 )
+$Red = 256
+$Green = 90.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 38 )
+$Red = 256
+$Green = 100.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 50 )
+$Red = 256
+$Green = 50.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 50 )
+$Red = 256
+$Green = 25.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 50 )
+$Red = 256
+$Green = 35.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 50 )
+$Red = 256
+$Green = 40.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 50 )
+$Red = 256
+$Green = 47.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 50 )
+$Red = 256
+$Green = 57.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 50 )
+$Red = 256
+$Green = 65.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 50 )
+$Red = 256
+$Green = 80.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 50 )
+$Red = 256
+$Green = 90.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 50 )
+$Red = 256
+$Green = 100.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 60 )
+$Red = 256
+$Green = 60.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 60 )
+$Red = 256
+$Green = 25.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 60 )
+$Red = 256
+$Green = 35.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 60 )
+$Red = 256
+$Green = 40.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 60 )
+$Red = 256
+$Green = 47.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 60 )
+$Red = 256
+$Green = 57.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 60 )
+$Red = 256
+$Green = 65.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 60 )
+$Red = 256
+$Green = 80.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 60 )
+$Red = 256
+$Green = 90.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 60 )
+$Red = 256
+$Green = 100.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 72 )
+$Red = 256
+$Green = 72.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 72 )
+$Red = 256
+$Green = 25.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 72 )
+$Red = 256
+$Green = 35.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 72 )
+$Red = 256
+$Green = 40.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 72 )
+$Red = 256
+$Green = 47.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 72 )
+$Red = 256
+$Green = 57.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 72 )
+$Red = 256
+$Green = 65.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 72 )
+$Red = 256
+$Green = 80.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 72 )
+$Red = 256
+$Green = 90.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 72 )
+$Red = 256
+$Green = 100.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 86 )
+$Red = 256
+$Green = 86.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 86 )
+$Red = 256
+$Green = 25.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 86 )
+$Red = 256
+$Green = 35.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 86 )
+$Red = 256
+$Green = 40.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 86 )
+$Red = 256
+$Green = 47.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 86 )
+$Red = 256
+$Green = 57.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 86 )
+$Red = 256
+$Green = 65.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 86 )
+$Red = 256
+$Green = 80.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 86 )
+$Red = 256
+$Green = 90.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 86 )
+$Red = 256
+$Green = 100.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 256, 16.0, 100 )
+$Red = 256
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 25.0, 100 )
+$Red = 256
+$Green = 25.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 35.0, 100 )
+$Red = 256
+$Green = 35.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 40.0, 100 )
+$Red = 256
+$Green = 40.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 47.0, 100 )
+$Red = 256
+$Green = 47.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 57.0, 100 )
+$Red = 256
+$Green = 57.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 65.0, 100 )
+$Red = 256
+$Green = 65.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 80.0, 100 )
+$Red = 256
+$Green = 80.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 90.0, 100 )
+$Red = 256
+$Green = 90.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 256, 100.0, 100 )
+$Red = 256
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+
+
+
+
+
+
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 15 )
+$Red = 264
+$Green = 15.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 15 )
+$Red = 264
+$Green = 25.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 15 )
+$Red = 264
+$Green = 35.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 15 )
+$Red = 264
+$Green = 40.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 15 )
+$Red = 264
+$Green = 47.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 15 )
+$Red = 264
+$Green = 57.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 15 )
+$Red = 264
+$Green = 65.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 15 )
+$Red = 264
+$Green = 80.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 15 )
+$Red = 264
+$Green = 90.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 15 )
+$Red = 264
+$Green = 100.0
+$Blue = 15
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 20 )
+$Red = 264
+$Green = 20.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 20 )
+$Red = 264
+$Green = 25.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 20 )
+$Red = 264
+$Green = 35.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 20 )
+$Red = 264
+$Green = 40.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 20 )
+$Red = 264
+$Green = 47.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 20 )
+$Red = 264
+$Green = 57.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 20 )
+$Red = 264
+$Green = 65.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 20 )
+$Red = 264
+$Green = 80.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 20 )
+$Red = 264
+$Green = 90.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 20 )
+$Red = 264
+$Green = 100.0
+$Blue = 20
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 28 )
+$Red = 264
+$Green = 28.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 28 )
+$Red = 264
+$Green = 25.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 28 )
+$Red = 264
+$Green = 35.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 28 )
+$Red = 264
+$Green = 40.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 28 )
+$Red = 264
+$Green = 47.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 28 )
+$Red = 264
+$Green = 57.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 28 )
+$Red = 264
+$Green = 65.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 28 )
+$Red = 264
+$Green = 80.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 28 )
+$Red = 264
+$Green = 90.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 28 )
+$Red = 264
+$Green = 100.0
+$Blue = 28
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 38 )
+$Red = 264
+$Green = 38.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 38 )
+$Red = 264
+$Green = 25.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 38 )
+$Red = 264
+$Green = 35.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 38 )
+$Red = 264
+$Green = 40.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 38 )
+$Red = 264
+$Green = 47.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 38 )
+$Red = 264
+$Green = 57.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 38 )
+$Red = 264
+$Green = 65.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 38 )
+$Red = 264
+$Green = 80.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 38 )
+$Red = 264
+$Green = 90.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 38 )
+$Red = 264
+$Green = 100.0
+$Blue = 38
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 50 )
+$Red = 264
+$Green = 50.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 50 )
+$Red = 264
+$Green = 25.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 50 )
+$Red = 264
+$Green = 35.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 50 )
+$Red = 264
+$Green = 40.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 50 )
+$Red = 264
+$Green = 47.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 50 )
+$Red = 264
+$Green = 57.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 50 )
+$Red = 264
+$Green = 65.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 50 )
+$Red = 264
+$Green = 80.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 50 )
+$Red = 264
+$Green = 90.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 50 )
+$Red = 264
+$Green = 100.0
+$Blue = 50
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 60 )
+$Red = 264
+$Green = 60.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 60 )
+$Red = 264
+$Green = 25.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 60 )
+$Red = 264
+$Green = 35.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 60 )
+$Red = 264
+$Green = 40.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 60 )
+$Red = 264
+$Green = 47.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 60 )
+$Red = 264
+$Green = 57.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 60 )
+$Red = 264
+$Green = 65.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 60 )
+$Red = 264
+$Green = 80.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 60 )
+$Red = 264
+$Green = 90.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 60 )
+$Red = 264
+$Green = 100.0
+$Blue = 60
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 72 )
+$Red = 264
+$Green = 72.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 72 )
+$Red = 264
+$Green = 25.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 72 )
+$Red = 264
+$Green = 35.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 72 )
+$Red = 264
+$Green = 40.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 72 )
+$Red = 264
+$Green = 47.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 72 )
+$Red = 264
+$Green = 57.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 72 )
+$Red = 264
+$Green = 65.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 72 )
+$Red = 264
+$Green = 80.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 72 )
+$Red = 264
+$Green = 90.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 72 )
+$Red = 264
+$Green = 100.0
+$Blue = 72
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 86 )
+$Red = 264
+$Green = 86.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 86 )
+$Red = 264
+$Green = 25.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 86 )
+$Red = 264
+$Green = 35.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 86 )
+$Red = 264
+$Green = 40.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 86 )
+$Red = 264
+$Green = 47.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 86 )
+$Red = 264
+$Green = 57.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 86 )
+$Red = 264
+$Green = 65.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 86 )
+$Red = 264
+$Green = 80.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 86 )
+$Red = 264
+$Green = 90.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 86 )
+$Red = 264
+$Green = 100.0
+$Blue = 86
+$Bright = 1
+$Mode = 4
+
+# THIS IS A DIVIDER COMMENT TO SEE BETWEEN EACH SET OF VALUES
+
+[Preset]
+name = HSV ( 264, 16.0, 100 )
+$Red = 264
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 25.0, 100 )
+$Red = 264
+$Green = 25.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 35.0, 100 )
+$Red = 264
+$Green = 35.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 40.0, 100 )
+$Red = 264
+$Green = 40.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 47.0, 100 )
+$Red = 264
+$Green = 47.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 57.0, 100 )
+$Red = 264
+$Green = 57.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 65.0, 100 )
+$Red = 264
+$Green = 65.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 80.0, 100 )
+$Red = 264
+$Green = 80.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 90.0, 100 )
+$Red = 264
+$Green = 90.0
+$Blue = 100
+$Bright = 1
+$Mode = 4
+
+[Preset]
+name = HSV ( 264, 100.0, 100 )
+$Red = 264
+$Green = 100.0
+$Blue = 100
+$Bright = 1
+$Mode = 4

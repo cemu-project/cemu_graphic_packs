@@ -1,0 +1,54 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "TMO Codename Github v2.0 public"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/--ReadMe--"
+description = Welcome to TMO. Many shaders are intertwined some effects are unpredictable ~ Altros/Anyusr~
+version = 3
+
+[Preset]
+name = Credits
+$clarity = 0.23
+
+[Preset]
+name = Creator Altros / Twitch anyusr
+$clarity = 9001.0
+
+[Preset]
+name = ---------Testers---------
+$clarity = 0.23
+
+[Preset]
+name = Skalfate - Egged me on to do cool stuff
+$clarity = 88.0
+
+[Preset]
+name = BSoD Gaming - Testing and YouTube videos
+$clarity = 8504.0
+
+[Preset]
+name = Morph - Intel testing
+$clarity = 123.4
+
+[Preset]
+name = GameDev1909 - Linux testing
+$clarity = 1909.0
+
+[Preset]
+name = -=Project Hyrule Discord=-
+$clarity = 0.23
+
+[Preset]
+name = BlueStar - Primary nvidia testing, Presets
+$clarity = 300000000.0
+
+[Preset]
+name = SilentVerge - Listened to my code talk
+$clarity = 69.0
+
+[Preset]
+name = NoGrad - Idea Man
+$clarity = 999.0
+
+[Preset]
+name = Biadetes - Feedback
+$clarity = 17.0

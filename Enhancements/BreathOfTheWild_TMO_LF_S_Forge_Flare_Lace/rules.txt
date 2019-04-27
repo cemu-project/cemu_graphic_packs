@@ -1,0 +1,2309 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = "Shekiah forge flare"
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Too Mini Options the Pack/Lights and Fires/Fires/Blue/-G-Blue Fire Flare Lacey part"
+description =   The lacy part of the flare on blue fire - 
+version = 3
+
+[Preset]
+name = Dropdown has Brightness levels first and then Colored editions below  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.05
+
+[Preset]
+name = RBG(0,0,0)*0 
+$Red = 0
+$Green = 0
+$Blue = 0
+$Bright = 0
+
+[Preset]
+name = ------Brightness levels 0.05 - 75.0 ------ 
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.05
+
+[Preset]
+name = Bright 0.03 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.03
+
+[Preset]
+name = Bright 0.05 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.05
+
+[Preset]
+name = Bright 0.06 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.06
+
+[Preset]
+name = Bright 0.07 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.07
+
+[Preset]
+name = Bright 0.08 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.08
+
+[Preset]
+name = Bright 0.09 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.09
+
+[Preset]
+name = Bright 0.1 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.1
+
+[Preset]
+name = Bright 0.12 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.12
+
+[Preset]
+name = Bright 0.14 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.14
+
+[Preset]
+name = Bright 0.16 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.16
+
+[Preset]
+name = Bright 0.18 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.18
+
+[Preset]
+name = Bright 0.2 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.2
+
+[Preset]
+name = Bright 0.22 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.22
+
+[Preset]
+name = Bright 0.25 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.25
+
+[Preset]
+name = Bright 0.27 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.27
+
+[Preset]
+name = Bright 0.3 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.3
+
+[Preset]
+name = Bright 0.35 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.35
+
+[Preset]
+name = Bright 0.4 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.4
+
+[Preset]
+name = Bright 0.5 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.5
+
+[Preset]
+name = Bright 0.6 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.6
+
+[Preset]
+name = Bright 0.7 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.7
+
+[Preset]
+name = Bright 0.8 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.8
+
+[Preset]
+name = Bright 0.9 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 0.9
+
+[Preset]
+name = Bright 1.1 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.1
+
+[Preset]
+name = Bright 1.2 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.2
+
+[Preset]
+name = Bright 1.3 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.3
+
+[Preset]
+name = Bright 1.4 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.4
+
+[Preset]
+name = Bright 1.5 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.5
+
+[Preset]
+name = Bright 1.6 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.6
+
+[Preset]
+name = Bright 1.7 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.7
+
+[Preset]
+name = Bright 1.8 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.8
+
+[Preset]
+name = Bright 1.9 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 1.9
+[Preset]
+
+name = Bright 2 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 2
+
+[Preset]
+name = Bright 2.2 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 2.2
+
+[Preset]
+name = Bright 2.4 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 2.4
+
+[Preset]
+name = Bright 2.6 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 2.6
+
+[Preset]
+name = Bright 2.8 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 2.8
+
+[Preset]
+name = Bright 3 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 4
+
+[Preset]
+name = Bright 5 RGB  (1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 5
+
+[Preset]
+name = Bright 8 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 8
+
+[Preset]
+name = Bright 10 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 10
+
+[Preset]
+name = Bright 12 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 12
+
+[Preset]
+name = Bright 15 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 15
+
+[Preset]
+name = Bright 20 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 20
+
+[Preset]
+name = Bright 25 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 25
+
+[Preset]
+name = Bright 35 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 35 
+
+[Preset]
+name = Bright 45 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 45
+
+[Preset]
+name = Bright 55 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 55
+
+[Preset]
+name = Bright 65 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 65
+
+[Preset]
+name = Bright 75 RGB(1.0, 1.0, 1.0)  
+$Red = 1.0
+$Green = 1.0
+$Blue = 1.0
+$Bright = 75
+
+
+[Preset]
+name =Project Crayons Box, Presets, Colors, Brightness
+$Red = 255
+$Green = 155
+$Blue = 155
+$Bright = 1.0
+
+[Preset]
+name =------------------- Welcome To Hair Salon -------------------
+$Red = 306
+$Green = 153
+$Blue = 357
+$Bright = 255
+
+[Preset]
+name = Black Hair
+$Red = 009
+$Green = 008
+$Blue = 006
+$Bright = 1.0
+
+[Preset]
+name = Off Black Hair
+$Red = 44
+$Green = 34
+$Blue = 043
+$Bright = 1.0
+
+[Preset]
+name = Dark Gray Hair
+$Red = 113
+$Green = 099
+$Blue = 090
+$Bright = 1.0
+
+[Preset]
+name = Medium Gray Hair	
+$Red = 183
+$Green = 166
+$Blue = 158
+$Bright = 1.0
+
+[Preset]
+name = Light Gray Hair	
+$Red = 214
+$Green = 196
+$Blue = 194
+$Bright = 1.0
+
+[Preset]
+name = Platinum Blonde Hair	
+$Red = 202
+$Green = 191
+$Blue = 177
+$Bright = 1.0
+
+[Preset]
+name = Bleached Blonde Hair	
+$Red = 220
+$Green = 208
+$Blue = 186
+$Bright = 1.0
+
+[Preset]
+name = White Blonde Hair
+$Red = 255
+$Green = 245
+$Blue = 225
+$Bright = 1.0
+
+[Preset]
+name = Light Blonde Hair	
+$Red = 230
+$Green = 206
+$Blue = 168
+$Bright = 1.0
+
+[Preset]
+name = Golden Blonde Hair	
+$Red = 229
+$Green = 200
+$Blue = 168
+$Bright = 1.0
+
+[Preset]
+name = Ash Blonde Hair	
+$Red = 222
+$Green = 188
+$Blue = 153
+$Bright = 1.0
+
+[Preset]
+name = Honey Blonde Hair	
+$Red = 184
+$Green = 151
+$Blue = 120
+$Bright = 1.0
+
+[Preset]
+name = Strawberry Blonde Hair	
+$Red = 165
+$Green = 107
+$Blue = 70
+$Bright = 1.0
+
+[Preset]
+name = Light Red Hair	
+$Red = 181
+$Green = 82
+$Blue = 57
+$Bright = 1.0
+
+[Preset]
+name = Dark Red Hair	
+$Red = 141
+$Green = 74
+$Blue = 67
+$Bright = 1.0
+
+[Preset]
+name = Light Auburn Hair	
+$Red = 145
+$Green = 85
+$Blue = 61
+$Bright = 1.0
+
+[Preset]
+name = Dark Auburn Hair	
+$Red = 83
+$Green = 61
+$Blue = 50
+$Bright = 1.0
+
+[Preset]
+name = Dark Brown Hair	
+$Red = 59
+$Green = 48
+$Blue = 36
+$Bright = 1.0
+
+[Preset]
+name = Golden Brown Hair	
+$Red = 85
+$Green = 72
+$Blue = 56
+$Bright = 1.0
+
+[Preset]
+name = Medium Brown Hair	
+$Red = 78
+$Green = 67
+$Blue = 63
+$Bright = 1.0
+
+[Preset]
+name = Chestnut Brown Hair	
+$Red = 80
+$Green = 68
+$Blue = 68
+$Bright = 1.0
+
+[Preset]
+name = Brown Hair	
+$Red = 106
+$Green = 78
+$Blue = 66
+$Bright = 1.0
+
+[Preset]
+name = Light Brown Hair	
+$Red = 167
+$Green = 133
+$Blue = 106
+$Bright = 1.0
+
+[Preset]
+name = Ash Brown Hair	
+$Red = 151
+$Green = 121
+$Blue = 97
+$Bright = 1.0
+
+[Preset]
+name =------------------- Leaving Hair Salon -------------------
+$Red = 306
+$Green = 153
+$Blue = 357
+$Bright = 255
+
+[Preset]
+name =------------------- Metal Works ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1
+
+[Preset]
+name = Brass 
+$Red = 167
+$Green = 135
+$Blue = 20
+$Bright = 1
+
+[Preset]
+name = Iron
+$Red = 142.8
+$Green = 145.35
+$Blue = 147.9
+$Bright = 1.0
+
+[Preset]
+name = Silver
+$Red = 236.39
+$Green = 244.8
+$Blue = 233.33
+$Bright = 1.0
+
+[Preset]
+name = Aluminum
+$Red = 232.82
+$Green = 234.86
+$Blue = 235.88
+$Bright = 1.0
+
+[Preset]
+name = Gold
+$Red = 255
+$Green = 195.33
+$Blue = 85.68
+$Bright = 1.0
+
+[Preset]
+name = Copper
+$Red = 243.53
+$Green = 162.44
+$Blue = 137.19
+$Bright = 1.0
+
+[Preset]
+name = Chromium
+$Red = 140.25
+$Green = 141.78
+$Blue = 141.27
+$Bright = 1.0
+
+[Preset]
+name = Nickel
+$Red = 168.3
+$Green = 155.30
+$Blue = 134.13
+$Bright = 1.0
+
+[Preset]
+name = Titanium
+$Red = 138.21
+$Green = 126.74
+$Blue = 114.50
+$Bright = 1.0
+
+[Preset]
+name = Cobalt
+$Red = 168.81
+$Green = 167.03
+$Blue = 161.67
+$Bright = 1.0
+
+[Preset]
+name = Platinum
+$Red = 171.36
+$Green = 162.44
+$Blue = 149.18
+$Bright = 1.0
+
+[Preset]
+name =------------------- Sun Control ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1.0
+
+[Preset]
+name = SunControl  
+$Red = 22.95
+$Green = 56.1
+$Blue = 165.75
+$Bright = 0.82
+
+[Preset]
+name = SunControl Hollywood
+$Red = 12.75
+$Green = 40.8
+$Blue = 178.5
+$Bright = 0.33
+
+[Preset]
+name = SunControl Intel 
+$Red = 39.53
+$Green = 94.35
+$Blue = 255
+$Bright = 0.86
+
+[Preset]
+name = Clouds RGB(306, 153, 357)
+$Red = 306
+$Green = 153
+$Blue = 357
+$Bright = 1.0
+
+[Preset]
+name = Skies Rich blue RGB(76.5, 153, 255) 
+$Red = 76.5
+$Green = 153
+$Blue = 255
+$Bright = 255
+
+[Preset]
+name = Skies Medium blue RGB(102, 178.5, 255) 
+$Red = 102
+$Green = 178.5
+$Blue = 255
+$Bright = 1.0
+
+[Preset]
+name = Skies Light blue RGB(127.5, 204, 255)
+$Red = 127.5
+$Green = 204
+$Blue = 255
+$Bright = 1.0
+
+[Preset]
+name = Skies Pale blue RGB(153, 229.5, 255)
+$Red = 153
+$Green = 229.5
+$Blue = 255
+$Bright = 1.0
+
+[Preset] 
+name =------------------- Crayon Box -------------------
+$Red = 14
+$Green = 14
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =------------------- Greys -------------------
+$Red = 14
+$Green = 14
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = white  rgb(255,255,255)
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = Artic white  rgb(255,255,295)
+$Red = 255
+$Green = 255
+$Blue = 295
+$Bright = 1
+
+[Preset] 
+name = Off white  rgb(240,240,240)
+$Red = 240
+$Green = 240
+$Blue = 240
+$Bright = 1
+
+[Preset] 
+name = Eggshell rgb(240,240,240)
+$Red = 240
+$Green = 240
+$Blue = 237
+$Bright = 1
+
+[Preset] 
+name =g ainsboro  rgb(220,220,220)
+$Red = 220
+$Green = 220
+$Blue = 220
+$Bright = 1
+
+[Preset] 
+name = lightgray  rgb(211,211,211)
+$Red = 211
+$Green = 211
+$Blue = 211
+$Bright = 1
+
+[Preset] 
+name = silver  rgb(192,192,192)
+$Red = 192
+$Green = 192
+$Blue = 192
+$Bright = 1
+
+[Preset] 
+name = darkgray  rgb(169,169,169)
+$Red = 169
+$Green = 169
+$Blue = 169
+$Bright = 1
+
+[Preset] 
+name = gray  rgb(128,128,128)
+$Red = 128
+$Green = 128
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = dimgray  rgb(105,105,105)
+$Red = 105
+$Green = 105
+$Blue = 105
+$Bright = 1
+
+[Preset] 
+name = lightslategray  rgb(119,136,153)
+$Red = 119
+$Green = 136
+$Blue = 153
+$Bright = 1
+
+[Preset] 
+name = slategray  rgb(112,128,144)
+$Red = 112
+$Green = 128
+$Blue = 144
+$Bright = 1
+
+[Preset] 
+name = darkslategray  rgb(47,79,79)
+$Red = 47
+$Green = 79
+$Blue = 79
+$Bright = 1
+
+[Preset] 
+name = black  rgb(0,0,0)
+$Red = 0
+$Green = 0
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name =------------------- Blues -------------------
+$Red = 240
+$Green = 248
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =aliceblue  rgb(240,248,255)
+$Red = 240
+$Green = 248
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =lavender  rgb(230,230,250)
+$Red = 230
+$Green = 230
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =powderblue  rgb(176,224,230)
+$Red = 176
+$Green = 224
+$Blue = 230
+$Bright = 1
+
+[Preset] 
+name =lightblue  rgb(173,216,230)
+$Red = 173
+$Green = 216
+$Blue = 230
+$Bright = 1
+
+[Preset] 
+name =lightskyblue  rgb(135,206,250)
+$Red = 135
+$Green = 206
+$Blue = 250
+$Bright = 1
+
+[Preset] 
+name =skyblue  rgb(135,206,235)
+$Red = 135
+$Green = 206
+$Blue = 235
+$Bright = 1
+
+[Preset] 
+name =deepskyblue  rgb(0,191,255)
+$Red = 0
+$Green = 191
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =lightsteelblue  rgb(176,196,222)
+$Red = 176
+$Green = 196
+$Blue = 222
+$Bright = 1
+
+[Preset] 
+name =dodgerblue  rgb(30,144,255)
+$Red = 30
+$Green = 144
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =cornflowerblue  rgb(100,149,237)
+$Red = 100
+$Green = 149
+$Blue = 237
+$Bright = 1
+
+[Preset] 
+name =steelblue  rgb(70,130,180)
+$Red = 70
+$Green = 130
+$Blue = 180
+$Bright = 1
+
+[Preset] 
+name =cadetblue  rgb(95,158,160)
+$Red = 95
+$Green = 158
+$Blue = 160
+$Bright = 1
+
+[Preset] 
+name =mediumslateblue  rgb(123,104,238)
+$Red = 123
+$Green = 104
+$Blue = 238
+$Bright = 1
+
+[Preset] 
+name =slateblue  rgb(106,90,205)
+$Red = 106
+$Green = 90
+$Blue = 205
+$Bright = 1
+
+[Preset] 
+name =darkslateblue  rgb(72,61,139)
+$Red = 72
+$Green = 61
+$Blue = 139
+$Bright = 1
+
+[Preset] 
+name =royalblue  rgb(65,105,225)
+$Red = 65
+$Green = 105
+$Blue = 225
+$Bright = 1
+
+[Preset] 
+name =blue  rgb(0,0,255)
+$Red = 0
+$Green = 0
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =mediumblue  rgb(0,0,205)
+$Red = 0
+$Green = 0
+$Blue = 205
+$Bright = 1
+
+[Preset] 
+name =darkblue  rgb(0,0,139)
+$Red = 0
+$Green = 0
+$Blue = 139
+$Bright = 1
+
+[Preset] 
+name =navy  rgb(0,0,128)
+$Red = 0
+$Green = 0
+$Blue = 128
+$Bright = 1
+
+[Preset] 
+name =midnightblue  rgb(25,25,112)
+$Red = 25
+$Green = 25
+$Blue = 112
+$Bright = 1
+
+[Preset] 
+name =blueviolet  rgb(138,43,226)
+$Red = 138
+$Green = 43
+$Blue = 226
+$Bright = 1
+
+[Preset] 
+name =indigo  rgb(75,0,130)
+$Red = 75
+$Green = 0
+$Blue = 130
+$Bright = 1
+
+[Preset] 
+name =------------------- Purples -------------------
+$Red = 15
+$Green = 15
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = thistle  rgb(216,191,216)
+$Red = 216
+$Green = 191
+$Blue = 216
+$Bright = 1
+
+[Preset] 
+name = plum  rgb(221,160,221)
+$Red = 221
+$Green = 160
+$Blue = 221
+$Bright = 1
+
+[Preset] 
+name = violet  rgb(238,130,238)
+$Red = 238
+$Green = 130
+$Blue = 238
+$Bright = 1
+
+[Preset] 
+name = orchid  rgb(218,112,214)
+$Red = 218
+$Green = 112
+$Blue = 214
+$Bright = 1
+
+[Preset] 
+name = fuchsia  rgb(255,0,255)
+$Red = 255
+$Green = 0
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = mediumorchid  rgb(186,85,211)
+$Red = 186
+$Green = 85
+$Blue = 211
+$Bright = 1
+
+[Preset] 
+name = mediumpurple  rgb(147,112,219)
+$Red = 147
+$Green = 112
+$Blue = 219
+$Bright = 1
+
+[Preset] 
+name = darkviolet  rgb(148,0,211)
+$Red = 148
+$Green = 0
+$Blue = 211
+$Bright = 1
+
+[Preset] 
+name = darkorchid  rgb(153,50,204)
+$Red = 153
+$Green = 50
+$Blue = 204
+$Bright = 1
+
+[Preset] 
+name = darkmagenta  rgb(139,0,139)
+$Red = 139
+$Green = 0
+$Blue = 139
+$Bright = 1
+
+[Preset] 
+name = purple  rgb(128,0,128)
+$Red = 128
+$Green = 0
+$Blue = 128
+$Bright = 1
+
+[Preset] 
+name =------------------- Pinks -------------------
+$Red = 245
+$Green = 182
+$Blue = 215
+$Bright = 1
+
+[Preset] 
+name = pink  rgb(255,192,203)
+$Red = 255
+$Green = 192
+$Blue = 203
+$Bright = 1
+
+[Preset] 
+name = lightpink  rgb(255,182,193)
+$Red = 255
+$Green = 182
+$Blue = 193
+$Bright = 1
+
+[Preset] 
+name = hotpink  rgb(255,105,180)
+$Red = 255
+$Green = 105
+$Blue = 180
+$Bright = 1
+
+[Preset] 
+name = deeppink  rgb(255,20,147)
+$Red = 255
+$Green = 20
+$Blue = 147
+$Bright = 1
+
+[Preset] 
+name = palevioletred  rgb(219,112,147)
+$Red = 219
+$Green = 112
+$Blue = 147
+$Bright = 1
+
+[Preset] 
+name = mediumvioletred  rgb(199,21,133)
+$Red = 199
+$Green = 21
+$Blue = 133
+$Bright = 1
+
+[Preset] 
+name =------------------- Reds -------------------
+$Red = 15
+$Green = 15
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =lightsalmon  rgb(255,160,122)
+$Red = 255
+$Green = 160
+$Blue = 122
+$Bright = 1
+
+[Preset] 
+name =salmon  rgb(250,128,114)
+$Red = 250
+$Green = 128
+$Blue = 114
+$Bright = 1
+
+[Preset] 
+name =darksalmon  rgb(233,150,122)
+$Red = 233
+$Green = 150
+$Blue = 122
+$Bright = 1
+
+[Preset] 
+name =lightcoral  rgb(240,128,128)
+$Red = 240
+$Green = 128
+$Blue = 128
+$Bright = 1
+
+[Preset] 
+name =indianred  rgb(205,92,92)
+$Red = 205
+$Green = 92
+$Blue = 92
+$Bright = 1
+
+[Preset] 
+name =crimson  rgb(220,20,60)
+$Red = 220
+$Green = 20
+$Blue = 60
+$Bright = 1
+
+[Preset] 
+name =firebrick  rgb(178,34,34)
+$Red = 178
+$Green = 34
+$Blue = 34
+$Bright = 1
+
+[Preset] 
+name =red  rgb(255,0,0)
+$Red = 255
+$Green = 0
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name =lightyellow  rgb(255,255,224)
+$Red = 255
+$Green = 255
+$Blue = 224
+$Bright = 1
+
+[Preset] 
+name =lemonchiffon  rgb(255,250,205)
+$Red = 255
+$Green = 250
+$Blue = 205
+$Bright = 1
+
+[Preset] 
+name =lightgoldenrodyellow  rgb(250,250,210)
+$Red = 250
+$Green = 250
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =papayawhip  rgb(255,239,213)
+$Red = 255
+$Green = 239
+$Blue = 213
+$Bright = 1
+
+[Preset] 
+name =moccasin  rgb(255,228,181)
+$Red = 255
+$Green = 228
+$Blue = 181
+$Bright = 1
+
+[Preset] 
+name =peachpuff  rgb(255,218,185)
+$Red = 255
+$Green = 218
+$Blue = 185
+$Bright = 1
+
+[Preset] 
+name =darkkhaki  rgb(189,183,107)
+$Red = 189
+$Green = 183
+$Blue = 107
+$Bright = 1
+
+[Preset] 
+name =maroon  rgb(128,0,0)
+$Red = 128
+$Green = 0
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name =darkred  rgb(139,0,0)
+$Red = 139
+$Green = 0
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name =brown  rgb(165,42,42)
+$Red = 165
+$Green = 42
+$Blue = 42
+$Bright = 1
+
+[Preset] 
+name =------------------- Oranges -------------------
+$Red = 165
+$Green = 142
+$Blue = 76
+$Bright = 1
+ 
+name = coral  rgb(255,127,80)
+$Red = 255
+$Green = 127
+$Blue = 80
+$Bright = 1
+
+[Preset] 
+name = tomato  rgb(255,99,71)
+$Red = 255
+$Green = 99
+$Blue = 71
+$Bright = 1
+
+[Preset] 
+name = orangered  rgb(255,69,0)
+$Red = 255
+$Green = 69
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = gold  rgb(255,215,0)
+$Red = 215
+$Green = 215
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = orange  rgb(255,165,0)
+$Red = 255
+$Green = 165
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = darkorange  rgb(255,140,0)
+$Red = 255
+$Green = 140
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name =------------------- Golds -------------------
+$Red = 15
+$Green = 15
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = palegoldenrod  rgb(238,232,170)
+$Red = 238
+$Green = 232
+$Blue = 170
+$Bright = 1
+
+[Preset] 
+name = khaki  rgb(240,230,140)
+$Red = 240
+$Green = 230
+$Blue = 140
+$Bright = 1
+
+[Preset] 
+name = goldenrod  rgb(218,165,32)
+$Red = 218
+$Green = 165
+$Blue = 32
+$Bright = 1
+
+[Preset] 
+name = gold  rgb(255,215,0)
+$Red = 255
+$Green = 215
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = peru  rgb(205,133,63)
+$Red = 205
+$Green = 133
+$Blue = 63
+$Bright = 1
+ 
+[Preset] 
+name = Golden yellow  rgb(255,223,0)
+$Red = 255
+$Green = 223
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = Metallic gold  rgb(212,175,55)
+$Red = 212
+$Green = 175
+$Blue = 55
+$Bright = 1
+
+[Preset] 
+name = Old gold  rgb(207,181,59)
+$Red = 207
+$Green = 181
+$Blue = 59
+$Bright = 1
+
+[Preset] 
+name = Vegas gold  rgb(197,179,88)
+$Red = 197
+$Green = 179
+$Blue = 88
+$Bright = 1
+
+[Preset] 
+name = Pale gold  rgb(230,190,138)
+$Red = 230
+$Green = 190
+$Blue = 138
+$Bright = 1
+
+[Preset] 
+name =Golden brown  rgb(153,101,21)
+$Red = 153
+$Green = 101
+$Blue = 21
+$Bright = 1
+
+[Preset] 
+name =------------------- Yellows -------------------
+$Red = 252
+$Green = 248
+$Blue = 207
+$Bright = 1
+
+[Preset] 
+name = Light yellow1  rgb(255,255,204)
+$Red = 255
+$Green = 255
+$Blue = 204
+$Bright = 1
+
+[Preset] 
+name = Light yellow2  rgb(255,255,153)
+$Red = 255
+$Green = 255
+$Blue = 153
+$Bright = 1
+
+[Preset] 
+name = Light yellow3  rgb(255,255,102)
+$Red = 255
+$Green = 255
+$Blue = 102
+$Bright = 1
+
+[Preset] 
+name = Light yellow4  rgb(255,255,51)
+$Red = 255
+$Green = 255
+$Blue = 51
+$Bright = 1
+
+[Preset] 
+name = Yellow  rgb(255,255,0)
+$Red = 255
+$Green = 255
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = Dark yellow1  rgb(204,204,0)
+$Red = 204
+$Green = 204
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = Dark yellow2  rgb(153,153,0)
+$Red = 153
+$Green = 153
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = Dark yellow3  rgb(102,102,0)
+$Red = 102
+$Green = 102
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = Dark yellow4  rgb(51,51,0)
+$Red = 51
+$Green = 51
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name =------------------- Cyans -------------------
+$Red = 15
+$Green = 15
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = lightcyan  rgb(224,255,255)
+$Red = 224
+$Green = 255
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = aqua  rgb(0,255,255)
+$Red = 0
+$Green = 255
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = aquamarine  rgb(127,255,212)
+$Red = 127
+$Green = 255
+$Blue = 212
+$Bright = 1
+
+[Preset] 
+name = mediumaquamarine  rgb(102,205,170)
+$Red = 102
+$Green = 205
+$Blue = 170
+$Bright = 1
+
+[Preset] 
+name = paleturquoise  rgb(175,238,238)
+$Red = 175
+$Green = 238
+$Blue = 238
+$Bright = 1
+
+[Preset] 
+name = turquoise  rgb(64,224,208)
+$Red = 64
+$Green = 224
+$Blue = 208
+$Bright = 1
+
+[Preset] 
+name = mediumturquoise  rgb(72,209,204)
+$Red = 72
+$Green = 209
+$Blue = 204
+$Bright = 1
+
+[Preset] 
+name = darkturquoise  rgb(0,206,209)
+$Red = 0
+$Green = 206
+$Blue = 209
+$Bright = 1
+
+[Preset] 
+name = cadetblue  rgb(95,158,160)
+$Red = 95
+$Green = 158
+$Blue = 160
+$Bright = 1
+
+[Preset] 
+name = darkcyan  rgb(0,139,139)
+$Red = 0
+$Green = 139
+$Blue = 139
+$Bright = 1
+
+[Preset] 
+name = teal  rgb(0,128,128)
+$Red = 0
+$Green = 128
+$Blue = 128
+$Bright = 1
+
+[Preset] 
+name =------------------- Browns -------------------
+$Red = 15
+$Green = 15
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name = cornsilk  rgb(255,248,220)
+$Red = 255
+$Green = 248
+$Blue = 220
+$Bright = 1
+
+[Preset] 
+name = blanchedalmond  rgb(255,235,205)
+$Red = 255
+$Green = 235
+$Blue = 205
+$Bright = 1
+
+[Preset] 
+name = bisque  rgb(255,228,196)
+$Red = 255
+$Green = 228
+$Blue = 196
+$Bright = 1
+
+[Preset] 
+name = navajowhite  rgb(255,222,173)
+$Red = 255
+$Green = 222
+$Blue = 173
+$Bright = 1
+
+[Preset] 
+name = wheat  rgb(245,222,179)
+$Red = 245
+$Green = 222
+$Blue = 179
+$Bright = 1
+
+[Preset] 
+name = burlywood  rgb(222,184,135)
+$Red = 222
+$Green = 184
+$Blue = 135
+$Bright = 1
+
+[Preset] 
+name = tan  rgb(210,180,140)
+$Red = 210
+$Green = 180
+$Blue = 140
+$Bright = 1
+
+[Preset] 
+name = rosybrown  rgb(188,143,143)
+$Red = 188
+$Green = 143
+$Blue = 143
+$Bright = 1
+
+[Preset] 
+name = sandybrown  rgb(244,164,96)
+$Red = 244
+$Green = 164
+$Blue = 96
+$Bright = 1
+
+[Preset] 
+name = peru  rgb(205,133,63)
+$Red = 205
+$Green = 133
+$Blue = 63
+$Bright = 1
+
+[Preset] 
+name = chocolate  rgb(210,105,30)
+$Red = 210
+$Green = 105
+$Blue = 30
+$Bright = 1
+
+[Preset] 
+name = saddlebrown  rgb(139,69,19)
+$Red = 139
+$Green = 69
+$Blue = 19
+$Bright = 1
+
+[Preset] 
+name = sienna  rgb(160,82,45)
+$Red = 160
+$Green = 82
+$Blue = 45
+$Bright = 1
+
+[Preset] 
+name = brown  rgb(165,42,42)
+$Red = 165
+$Green = 42
+$Blue = 42
+$Bright = 1
+
+[Preset] 
+name =------------------- Greens -------------------
+$Red = 15
+$Green = 15
+$Blue = 255
+$Bright = 1
+
+[Preset] 
+name =lawngreen  rgb(124,252,0)
+$Red = 124
+$Green = 252
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = chartreuse  rgb(127,255,0)
+$Red = 127
+$Green = 255
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = limegreen  rgb(50,205,50)
+$Red = 50
+$Green = 205
+$Blue = 50
+$Bright = 1
+
+[Preset] 
+name = lime  rgb(0.255.0)
+$Red = 0
+$Green = 255
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = forestgreen  rgb(34,139,34)
+$Red = 34
+$Green = 139
+$Blue = 34
+$Bright = 1
+
+[Preset] 
+name = green  rgb(0,128,0)
+$Red = 0
+$Green = 128
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = darkgreen  rgb(0,100,0)
+$Red = 0
+$Green = 100
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = greenyellow  rgb(173,255,47)
+$Red = 173
+$Green = 255
+$Blue = 47
+$Bright = 1
+
+[Preset] 
+name = yellowgreen  rgb(154,205,50)
+$Red = 154
+$Green = 205
+$Blue = 50
+$Bright = 1
+
+[Preset] 
+name = springgreen  rgb(0,255,127)
+$Red = 0
+$Green = 255
+$Blue = 127
+$Bright = 1
+
+[Preset] 
+name = mediumspringgreen  rgb(0,250,154)
+$Red = 0
+$Green = 250
+$Blue = 154
+$Bright = 1
+
+[Preset] 
+name = lightgreen  rgb(144,238,144)
+$Red = 144
+$Green = 238
+$Blue = 144
+$Bright = 1
+
+[Preset] 
+name = palegreen  rgb(152,251,152)
+$Red = 152
+$Green = 251
+$Blue = 152
+$Bright = 1
+
+[Preset] 
+name = darkseagreen  rgb(143,188,143)
+$Red = 143
+$Green = 188
+$Blue = 143
+$Bright = 1
+
+[Preset] 
+name = mediumseagreen  rgb(60,179,113)
+$Red = 60
+$Green = 179
+$Blue = 113
+$Bright = 1
+
+[Preset] 
+name = lightseagreen  rgb(32,178,170)
+$Red = 32
+$Green = 178
+$Blue = 170
+$Bright = 1
+
+[Preset] 
+name = seagreen  rgb(46,139,87)
+$Red = 46
+$Green = 139
+$Blue = 87
+$Bright = 1
+
+[Preset] 
+name = olive  rgb(128,128,0)
+$Red = 128
+$Green = 128
+$Blue = 0
+$Bright = 1
+
+[Preset] 
+name = darkolivegreen  rgb(85,107,47)
+$Red = 85
+$Green = 107
+$Blue = 47
+$Bright = 1
+
+[Preset] 
+name = olivedrab  rgb(107,142,35)
+$Red = 107
+$Green = 142
+$Blue = 35
+$Bright = 1
+
+[Preset]
+name =------------------- End Project Crayon Box ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.05
+
+[Preset]
+name =------------------- Brightness levels 0.05 - 75.0 ------------------- 
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+
+[Preset]
+name =Bright 0.05 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.05
+
+[Preset]
+name =Bright 0.1 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.1
+
+[Preset]
+name =Bright 0.15 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.15
+
+[Preset]
+name =Bright 0.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.2
+
+[Preset]
+name =Bright 0.25 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.25
+
+[Preset]
+name =Bright 0.3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.3
+
+[Preset]
+name =Bright 0.4 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.4
+
+[Preset]
+name =Bright 0.5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.5
+
+[Preset]
+name =Bright 0.6 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.6
+
+[Preset]
+name =Bright 0.7 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.7
+
+[Preset]
+name =Bright 0.8 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.8
+
+[Preset]
+name =Bright 0.9 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 0.9
+
+[Preset]
+name =Bright 1.2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.2
+
+[Preset]
+name =Bright 1.5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.5
+
+[Preset]
+name =Bright 1.7 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 1.7
+
+[Preset]
+name =Bright 2 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 2
+
+[Preset]
+name =Bright 3 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 4
+
+[Preset]
+name =Bright 5 RGB  (256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 5
+
+[Preset]
+name =Bright 8 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 8
+
+[Preset]
+name =Bright 10 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 10
+
+[Preset]
+name =Bright 12 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 12
+
+[Preset]
+name =Bright 15 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 15
+
+[Preset]
+name =Bright 20 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 20
+
+[Preset]
+name =Bright 25 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 25
+
+[Preset]
+name =Bright 35 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 35 
+
+[Preset]
+name =Bright 45 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 45
+
+[Preset]
+name =Bright 55 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 55
+
+[Preset]
+name =Bright 65 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 65
+
+[Preset]
+name =Bright 75 RGB(256, 256, 256)  
+$Red = 256
+$Green = 256
+$Blue = 256
+$Bright = 75
+
+[Preset]
+name =------------------- End Brightness Levels ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.05
+
+[Preset]
+name =------------------- Colored brightnesses ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.2
+
+[Preset]
+name =------------------- Brightness 0.2 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.2
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 0.2 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.2
+
+[Preset]
+name =RED  RGB (255, 12.75, 12.75) Bright 0.2 
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 0.2
+
+[Preset]
+name =GREEN  RGB (12.75, 255, 12.75) Bright 0.2  
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 0.2
+
+[Preset]
+name =BLUE  RGB (12.75, 12.75, 255) Bright 0.2  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 0.2
+
+[Preset]
+name =------------------- Brightness 0.6 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.6
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 0.6 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 0.6
+
+[Preset]
+name = RED RGB  (255, 12.75, 12.75) Bright 0.6 
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 0.6
+
+[Preset]
+name =GREEN RGB  (12.75, 255, 12.75) Bright 0.6 
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 0.6
+
+[Preset]
+name =BLUE RGB  (12.75, 12.75, 255) Bright 0.6 
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 0.6
+
+[Preset]
+name =------------------- Brightness 2.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 2.0
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 2 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 2
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 2   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 2
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 2
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 2
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 2  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 2
+
+[Preset]
+name =------------------- Brightness 5.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 5.0
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 5 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 5
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 5   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 5
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 5   
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 5
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 5  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 5
+
+[Preset]
+name =------------------- Brightness 10.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 10
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 10 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 10
+
+[Preset]
+name = RED RGB(255, 12.75, 12.75) Bright 10
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 10
+
+[Preset]
+name =Bright 10 GREEN RGB(12.75, 255, 12.75) Bright 10 
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 10
+
+[Preset]
+name =Bright 10 BLUE RGB(12.75, 12.75, 255) Bright 10 
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 10
+
+[Preset]
+name =------------------- 25.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 25
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 25 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 25
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 25  
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 25
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 25   
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 25
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 25  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 25
+
+[Preset]
+name =------------------- 50.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 50
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 50 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 50
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 50  
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 50
+
+[Preset]
+name =GREEN RGB(12.75, 255, 12.75) Bright 50  
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 50
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 50  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 50
+
+[Preset]
+name =------------------- 75.0 Colors ------------------- 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 75
+
+[Preset]
+name =White  RGB (255, 255, 255) Bright 75 
+$Red = 255
+$Green = 255
+$Blue = 255
+$Bright = 75
+
+[Preset]
+name =RED RGB(255, 12.75, 12.75) Bright 75   
+$Red = 255
+$Green = 12.75
+$Blue = 12.75
+$Bright = 75
+
+[Preset]
+name = GREEN RGB(12.75, 255, 12.75) Bright 75  
+$Red = 12.75
+$Green = 255
+$Blue = 12.75
+$Bright = 75
+
+[Preset]
+name =BLUE RGB(12.75, 12.75, 255) Bright 75  
+$Red = 12.75
+$Green = 12.75
+$Blue = 255
+$Bright = 75
