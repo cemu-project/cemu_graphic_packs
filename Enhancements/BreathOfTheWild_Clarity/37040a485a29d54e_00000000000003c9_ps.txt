@@ -1061,6 +1061,7 @@ vec3 CurvesPass(vec3 inputColor) {
 	x = ( x / (0.5 + abs(x)) ) + 0.5;
 	vec3 color = x;
 	colorInput.rgb = mix(colorInput.rgb, color, Contrast_blend);
+	return colorInput;
 }
 
 //TECHNICOLOR2
