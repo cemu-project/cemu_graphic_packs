@@ -76,6 +76,10 @@
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/DuckTales_Remastered"
   version3: false
+"Dr. Luigi":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Dr._Luigi"
+  version3: true
 "Electronic Super Joy: Groove City":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Electronic_Super_Joy:_Groove_City"
@@ -213,7 +217,7 @@
 "Paper Mario: Color Splash":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Paper_Mario:_Color_Splash"
-  version3: false
+  version3: true
 "Paper Monsters Recut":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Paper_Monsters_Recut"
