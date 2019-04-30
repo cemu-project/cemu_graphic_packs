@@ -165,7 +165,7 @@
 "Minecraft: Story Mode":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Minecraft:_Story_Mode"
-  version3: false
+  version3: true
 "Minecraft: Wii U Edition":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Minecraft:_Wii_U_Edition"
@@ -369,4 +369,8 @@
 "Yoshi’s Woolly World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Yoshi's_Woolly_World"
+  version3: true
+"ZombiU":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/ZombiU"
   version3: true
