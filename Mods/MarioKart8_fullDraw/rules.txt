@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = Resolution
+path = "Mario Kart 8/Mods/4p 60fps"
+description = Draws the whole screen every frame in 4p mode. 
+version = 3

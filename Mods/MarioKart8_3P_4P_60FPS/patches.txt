@@ -1,3 +1,0 @@
-[MK8_60FPS]
-moduleMatches = 0xD09700CE
-0x024aeffc = cmpwi r0,1
