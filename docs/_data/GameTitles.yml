@@ -47,6 +47,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Brunswick_Pro_Bowling"
   version: 2
+"Call of Duty: Ghosts":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Call_of_Duty:_Ghosts"
+  version: 3
 "Captain Toad: Treasure Tracker":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Captain_Toad:_Treasure_Tracker"
@@ -270,7 +274,7 @@
 "Shovel Knight":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows"
-  version: 2
+  version: 3
 "The Smurfs 2":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/The_Smurfs_2"
@@ -382,8 +386,4 @@
 "ZombiU":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/ZombiU"
-  version: 3
-"Call of Duty: Ghosts":
-  nativeRes: 720
-  compatLink: "http://compat.cemu.info/wiki/Call_of_Duty:_Ghosts"
   version: 3
