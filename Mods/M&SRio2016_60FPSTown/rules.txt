@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+name = 60FPS Town
+path = "Mario & Sonic at the Rio 2016 Olympic Games/Mods/60FPS Town"
+description = Patches the town's 30FPS lock to operate at 60FPS instead
+version = 3
