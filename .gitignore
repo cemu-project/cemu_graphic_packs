@@ -1,2 +1,7 @@
+# Repository #
+##############
+.git
 
+# Project #
+###########
 docs/Gemfile\.lock
