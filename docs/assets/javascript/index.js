@@ -44,8 +44,15 @@ async function searchSupportedGames(searchString) {
 	}
 	if (supportedGames === true) return; // Fix race errors with input
 	
+	let resultsHintSearch = [];
 	if (Object.keys(altNames).includes(searchString.toLowerCase())) searchString = altNames[searchString.toLowerCase()];
-	resultsHintSearch = supportedGamesSearchSet.get(searchString);
+	if (searchString != "*") resultsHintSearch = supportedGamesSearchSet.get(searchString);
+	else {
+		for (supportedGame in supportedGames) {
+			resultsHintSearch.push([0, supportedGame]);
+		}
+		
+	}
 	
 	if (resultsHintSearch != undefined && resultsHintSearch != null) { 
 		for (let i=0; i<resultsHintSearch.length; i++) {
@@ -54,7 +61,10 @@ async function searchSupportedGames(searchString) {
 			let searchResultEntry = document.createElement("li");
 			let gameTitleText = document.createTextNode(currResult);
 			let versionBadge = document.createElement("span");
-			let versionBadgeText = document.createTextNode(supportedGames[currResult].version3 ? "Latest Cemu version" : "Only supported on version 2");
+			let versionBadgeText;
+			if (supportedGames[currResult].version == 3) versionBadgeText = document.createTextNode("Latest Cemu version");
+			else if (supportedGames[currResult].version == 2) versionBadgeText = document.createTextNode("Only supported on version 2");
+			else versionBadgeText = document.createTextNode("No resolution pack yet :(");
 			let resolutionBadge = document.createElement("span");
 			let resolutionBadgeText = document.createTextNode(supportedGames[currResult].nativeRes+"p");
 			
@@ -63,7 +73,7 @@ async function searchSupportedGames(searchString) {
 			resolutionBadge.className = "badge badge-pill badge-primary float-right";
 			
 			searchResultEntry.onclick=searchInfoModalTrigger
-			if (supportedGames[currResult].version3) {
+			if (supportedGames[currResult].version === 3) {
 				searchResultEntry.classList.add("list-group-item-primary");
 			}
 			else {
@@ -126,6 +136,19 @@ async function searchInfoModalTrigger(clickedElem) {
 	$("#searchInfoModal").modal();
 }
 
+function viewAllGames() {
+	searchSupportedGames("*");
+	document.getElementById("viewAllGames").onclick=hideAllGames;
+	document.getElementById("viewAllGames").innerText="Hide the game list...";
+}
+
+function hideAllGames() {
+	searchSupportedGames("");
+	document.getElementById("viewAllGames").onclick=viewAllGames;
+	document.getElementById("viewAllGames").innerText="Or view a list with all supported games...";
+}
+
 // searchSupportedGames(document.querySelector("#supported-games-search input.form-control").value); // If a user loads the page, execute the search inmediately. Initially meant so that if you'd return to the page and still had a search term, it would look correct.
 document.querySelector("#supported-games-search input.form-control").value = ""; // Don't fetch stuff automatically when the user doesn't want to search. Considered better since it's an optional feature.
 timeago().render(document.querySelectorAll('.commit-time'));
+document.getElementById("viewAllGames").onclick=viewAllGames;
