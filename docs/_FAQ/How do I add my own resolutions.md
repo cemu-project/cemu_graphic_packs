@@ -2,7 +2,7 @@
 anchor_link: customize-packs
 order: 99
 ---
-This might be slightly technical, so carefully follow these steps. This'll assume you use Cemu 1.14.0 packs and newer since only those contain presets.
+This might be slightly technical, so carefully follow these steps. This'll assume you use Cemu 1.14.0 packs and newer since only those contain presets. You can't add ultrawide resolutions unless the resolution pack already supports ultrawide resolutions.
 
 1. Open the resolution pack folder (either `graphicPacks` or `graphicPacks/downloadedGraphicPacks`) which follows the following name convention `ShortTitle_Resolution`, for example `MarioKart8_Resolution`.
 2. Open the `rules.txt` file in notepad or something similar and find the following text (this is for 720p games, but 1080p will only have some changes in values):
