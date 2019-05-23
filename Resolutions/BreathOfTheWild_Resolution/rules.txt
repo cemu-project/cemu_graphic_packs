@@ -124,6 +124,14 @@ $gameHeight = 720
 $heightfix = 0
 
 [Preset]
+name = 3840x1600 (21:10)
+$width = 3840
+$height = 1600
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
 name = 4300x1800 (21:9)
 $width = 4300
 $height = 1800
