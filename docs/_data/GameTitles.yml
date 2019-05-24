@@ -150,6 +150,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/LEGO_City_Undercover"
   version: 2
+"LEGO Star Wars: The Force Awakens":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/LEGO_Star_Wars:_The_Force_Awakens"
+  version: 3
 "Mario Party 10":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Party_10"

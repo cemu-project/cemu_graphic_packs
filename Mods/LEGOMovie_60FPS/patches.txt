@@ -1,0 +1,7 @@
+[TLM60fpsVer0]
+moduleMatches = 0x6A97DE1B
+0x0247dc8c = addi r11,r12,1
+
+[TLM60fpsVer16]
+moduleMatches = 0xF1C6C979
+0x02485bc8 = addi r11,r12,1

@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101BEF00,00050000101BE900
+name = 60FPS
+path = "LEGO Marvel's Avengers/Mods/60FPS" #by theboy181
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
+version = 3

@@ -1,0 +1,15 @@
+[LB360fpsVer0]
+moduleMatches = 0x0D5A630F
+0x0251b2e8 = addi r11,r12,1
+
+[LB360fpsVer16]
+moduleMatches = 0x0CC28EC4
+0x0251ca68 = addi r11,r12,1
+
+[LB360fpsVer32]
+moduleMatches = 0x5A7D0B88
+0x02521588 = addi r11,r12,1
+
+[LB360fpsVer48]
+moduleMatches = 0xFFE67C8E
+0x02521958 = addi r11,r12,1

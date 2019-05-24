@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001014DE00,000500001014E000
+name = 60FPS
+path = "The LEGO Movie Videogame/Mods/60FPS" #by theboy181
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
+version = 3
