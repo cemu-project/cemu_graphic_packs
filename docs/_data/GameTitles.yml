@@ -81,10 +81,10 @@
   compatLink: "http://compat.cemu.info/wiki/Donkey_Kong_Country:_Tropical_Freeze"
   version: 3
   hasUltrawide: true
-"DuckTales Remastered":
+"DuckTales: Remastered":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/DuckTales_Remastered"
-  version: 2
+  version: 3
 "Dr. Luigi":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Dr._Luigi"
