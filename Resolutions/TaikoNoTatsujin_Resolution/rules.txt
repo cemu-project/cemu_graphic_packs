@@ -1,8 +1,8 @@
 [Definition]
-titleIds = 0005000010132200,0005000010192000,00050000101D3000,0005000c10132200,0005000c10192000,0005000c101d3000,0005000e101d3000 # 
+titleIds = 0005000010132200,0005000010192000,00050000101D3000,0005000c10132200,0005000c10192000,0005000c101d3000,0005000e101d3000
 name = Resolution
-path = "Taiko no Tatsujin all versions/Graphics/Resolution"
-description = Changes the resolution of the game.
+path = "Taiko no Tatsujin/Graphics/Resolution"
+description = Changes the resolution of the game. Works on all versions.
 version = 3
 
 [Preset]
@@ -83,14 +83,14 @@ height = 480
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
 
-[TextureRedefine] #
+[TextureRedefine]
 width = 608
 height = 608
 formats = 0x011,0x01a
 overwriteWidth = ($width/$gameWidth) * 608
 overwriteHeight = ($height/$gameHeight) * 608
 
-[TextureRedefine] #
+[TextureRedefine]
 width = 600
 height = 600
 formats = 0x011,0x01a
