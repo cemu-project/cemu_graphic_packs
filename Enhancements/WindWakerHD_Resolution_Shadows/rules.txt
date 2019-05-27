@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010143500 # replace with fulltitleID
+titleIds = 0005000010143400,0005000010143600,0005000010143500
 name = Resolution
 path = "The Legend of Zelda: The Wind Waker HD/Graphics/Shadow resolution"
 description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution.
