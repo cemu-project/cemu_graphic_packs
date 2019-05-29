@@ -35,3 +35,6 @@ _frameDivisor = 0x1009391C
 0x10142EC8 = .long 1
 0x10142ECC = .long 60
 0x10142ED0 = .float 60.0
+
+# Set swap interval to 1 (needed since cemu 1.15.7)
+0x02831FB4 = li r4, 1
