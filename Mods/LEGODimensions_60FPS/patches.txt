@@ -2,6 +2,6 @@
 moduleMatches = 0x5402BCFD
 0x0271f454 = addi r11, r12, 1
 
-[LD60FPSV320]
-moduleMatches = 0x8A9D0373
+[LD60FPSUSv320EUv352]
+moduleMatches = 0x8A9D0373, , 0x8EEE187
 0x028ee098 = addi r11, r12, 1
