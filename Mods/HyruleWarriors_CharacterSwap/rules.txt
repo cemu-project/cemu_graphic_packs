@@ -1,123 +1,124 @@
 [Definition]
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Character Swap
-path = "Hyrule Warriors/Mods/Character Swap"
-description = Swaps the character you're playing as to the one you've selected with the presets.
+path = "Hyrule Warriors/Mods/Character Swap (in adventure mode)"
+description = Allows you to use a character that isn't selectable from the character selection screen normally in adventure mode.
 version = 3
 
 [Preset]
-name = Link 
+name = Link
 $character:int = 0
 
 [Preset]
-name = Zelda 
+name = Zelda
 $character:int = 1
 
 [Preset]
-name = Sheik 
+name = Sheik
 $character:int = 2
 
 [Preset]
-name = Impa 
+name = Impa
 $character:int = 3
 
 [Preset]
-name = Ganondorf 
+name = Ganondorf
 $character:int = 4
 
 [Preset]
-name = Darunia 
+name = Darunia
 $character:int = 5
 
 [Preset]
-name = Ruto 
+name = Ruto
 $character:int = 6
 
 [Preset]
-name = Agitha 
+name = Agitha
 $character:int = 7
 
 [Preset]
-name = Midna 
+name = Midna
 $character:int = 8
 
 [Preset]
-name = Fi 
+name = Fi
 $character:int = 9
 
 [Preset]
-name = Ghirahim 
+name = Ghirahim
 $character:int = 10
 
 [Preset]
-name = Zant 
+name = Zant
 $character:int = 11
 
 [Preset]
-name = Lana 
+name = Lana
 $character:int = 13
 
 [Preset]
-name = Cia 
+name = Cia
 $character:int = 44
 
 [Preset]
-name = Volga 
+name = Volga
 $character:int = 45
 
 [Preset]
-name = Wizzro 
+name = Wizzro
 $character:int = 46
 
 [Preset]
-name = Twilight Midna 
+name = Twilight Midna
 $character:int = 47
 
 [Preset]
-name = Young Link 
+name = Young Link
 $character:int = 48
 
 [Preset]
-name = Tingle 
+name = Tingle
 $character:int = 49
 
 [Preset]
-name = Linkle 
+name = Linkle
 $character:int = 50
 
 [Preset]
-name = Skull Kid 
+name = Skull Kid
 $character:int = 51
 
 [Preset]
-name = Toon Link 
+name = Toon Link
 $character:int = 52
 
 [Preset]
-name = Tetra 
+name = Tetra
 $character:int = 53
 
 [Preset]
-name = King Daphnes 54
+name = King Daphnes
+$character:int = 54
 
 [Preset]
-name = Medli 
+name = Medli
 $character:int = 55
 
 [Preset]
-name = Marin 
+name = Marin
 $character:int = 56
 
 [Preset]
-name = Toon Zelda 
+name = Toon Zelda
 $character:int = 57
 
 [Preset]
-name = Ravio 
+name = Ravio
 $character:int = 58
 
 [Preset]
-name = Yuga 
+name = Yuga
 $character:int = 59
 
 # https://github.com/Dekirai/HyruleWarriors-Trainer/blob/23a42b4ad580dfb847d6ef4ebcaa4c7a30df3eea/Hyrule%20Warriors/Form1.cs#L382

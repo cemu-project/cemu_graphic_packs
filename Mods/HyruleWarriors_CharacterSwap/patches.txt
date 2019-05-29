@@ -1,5 +1,14 @@
-[HWPlayAsCuccov208]
+[HWCharacterSwapV208]
 moduleMatches = 0xE159AE91
 
-0x020EBF10 = li r11, $character;
-0x020EBF10 = li r11, $character;
+codeCaveSize = 0x010
+
+_characterValue = 0x00000000
+0x00000000 = .int $character
+
+_loadCharacterValue = 0x00000004
+0x00000004 = lis r11, _characterValue@ha
+0x00000008 = lwz r11, _characterValue@l(r11)
+0x0000000C = blr
+
+0x020EBF10 = bla _loadCharacterValue
