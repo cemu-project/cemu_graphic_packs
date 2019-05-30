@@ -244,20 +244,12 @@ overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 90
 
 
-# Additonal Textures GUI
+# Additonal GUI Textures
 
-# DonkeyKongs Face in GUI
+# Donkey Kong's Face
 [TextureRedefine]
 width = 96
 height = 108
 formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 96
 overwriteHeight = ($height/$gameHeight) * 108
-
-# Menu Button Backgrounds GUI
-[TextureRedefine]
-width = 64
-height = 64
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 64
