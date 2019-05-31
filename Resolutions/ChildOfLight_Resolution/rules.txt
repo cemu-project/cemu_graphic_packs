@@ -105,6 +105,7 @@ overwriteHeight = ($height/$gameHeight) * 512
 width = 640
 height = 360
 formats = 0x001
+tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
 
