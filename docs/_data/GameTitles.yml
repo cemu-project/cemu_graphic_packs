@@ -60,6 +60,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Chariot"
   version: 2
+"Child of Light":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Child_of_Light"
+  version: 3
 "Chimpuzzle Pro":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Chimpuzzle_Pro"

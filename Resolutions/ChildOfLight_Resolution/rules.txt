@@ -1,0 +1,124 @@
+[Definition]
+titleIds = 000500001015B200,000500001016EA00,000500001016D800
+name = Resolution
+path = "Child of Light/Graphics/Resolution"
+description = Changes the resolution of the game.
+version = 3
+
+[Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+// Performance
+
+[Preset]
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 960x540
+$width = 960
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+
+// Common HD Resolutions
+
+[Preset]
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1920x1080
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1440
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3200x1800
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2160
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+[TextureRedefine] # TV Resolution
+width = 1280
+height = 720
+formats = 0x011,0x01a,0x001
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Character
+width = 1024
+height = 1024
+formats = 0x011,0x01a
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 1024
+
+[TextureRedefine]
+width = 512
+height = 512
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 512
+
+[TextureRedefine] # Half-res
+width = 640
+height = 360
+formats = 0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+# Screen gradient
+
+[TextureRedefine]
+width = 426
+height = 240
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 426
+overwriteHeight = ($height/$gameHeight) * 240
+
+[TextureRedefine]
+width = 448
+height = 240
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 448
+overwriteHeight = ($height/$gameHeight) * 240
