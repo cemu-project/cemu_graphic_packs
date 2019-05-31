@@ -121,6 +121,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Guacamelee:_Super_Turbo_Championship_Edition"
   version: 2
+"The Legend of Zelda: Hyrule Historia":
+  nativeRes: 1080
+  compatLink: "http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Hyrule_Historia"
+  version: 3
 "Hyrule Warriors":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Hyrule_Warriors"
