@@ -6,9 +6,39 @@ description = Changes the resolution of the game.
 version = 3
 
 [Preset]
-name = 1920x1080 Default
+name = 1920x1080 (Default)
 $width = 1920
 $height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 960x540
+$width = 960
+$height = 540
 $gameWidth = 1920
 $gameHeight = 1080
 $lightSource = 1.0
@@ -29,6 +59,16 @@ $aspectRatio = (16.0/9.0)
 name = 1600x900
 $width = 1600
 $height = 900
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 2560x1440
+$width = 2560
+$height = 1440
 $gameWidth = 1920
 $gameHeight = 1080
 $lightSource = 1.0
@@ -82,7 +122,7 @@ $aspectRatio = (16.0/9.0)
 #1920×800, 3840×1600, 7680×3200		|12:5 (2.4)
 
 [Preset]
-name = ---- Ultra wide 21:9 ----
+name = ---- Ultrawide 21:9 ----
 $width = 2560
 $height = 1080
 $gameWidth= 1920
@@ -92,7 +132,7 @@ $scaleShader = (1920.0/2560.0)
 $aspectRatio = (64.0/27.0) #LG
 
 [Preset]
-name = 2560x1080 (21:9 HD)
+name = 2560x1080 (21:9)
 $width = 2560
 $height = 1080
 $gameWidth= 1920
@@ -122,7 +162,7 @@ $scaleShader = (2844.445/3840.0)
 $aspectRatio = (12.0/5.0)
 
 [Preset]
-name = 5160x2160 (4k 21:9)
+name = 5160x2160 (5K 2K 21:9)
 $width = 5160
 $height = 2160
 $gameWidth= 1920
@@ -132,7 +172,7 @@ $scaleShader = (3840.0/5160.0)
 $aspectRatio = (64.0/27.0) #LG
 
 [Preset]
-name = ---- Custom resolutions ---- 
+name = ---- Custom Resolutions ---- 
 $width = 1920
 $height = 1080
 $gameWidth = 1920
@@ -389,4 +429,3 @@ overwriteHeight = ($height/$gameHeight) * (33)
 #formats = 0x01a,080e,0x41a
 #overwriteWidth = ($width/$gameWidth) * 800
 #overwriteHeight = ($height/$gameHeight) * 450
-
