@@ -192,7 +192,7 @@ $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
 [Preset]
-name = 2560x1440 AO fix
+name = 2560x1440 AO fix - light res x2
 $width = 2560
 $height = 1440
 $gameWidth = 1920
@@ -205,6 +205,16 @@ $aspectRatio = (16.0/9.0)
 name = 3840x2160 AO fix - light res x2
 $width = 3840
 $height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 2.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+name = 5120x2880 AO fix - light res x2
+$width = 5120
+$height = 2880
 $gameWidth = 1920
 $gameHeight = 1080
 $lightSource = 2.0
