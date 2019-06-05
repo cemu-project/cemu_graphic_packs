@@ -287,6 +287,14 @@
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows"
   version: 3
+"Skylanders: Imaginators":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Skylanders_Imaginators"
+  version: 3
+"Skylanders: Trap Team":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Skylanders:_Trap_Team"
+  version: 3
 "The Smurfs 2":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/The_Smurfs_2"
