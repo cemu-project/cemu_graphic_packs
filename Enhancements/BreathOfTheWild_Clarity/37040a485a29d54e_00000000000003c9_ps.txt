@@ -579,16 +579,16 @@ float DPX_Strength = 0.20;
 #elif (Preset == 7) //CellHunter
 										   
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.115;
+	const float bloomFactor = 0.215;
 	#define HDRpassing 1
-	const float HDRPower = 1.150;
-	const float radius1 = 1.200;
+	const float HDRPower = 1.200;
+	const float radius1 = 1.050;
 	const float radius2 = 1.000;
 	#define lumapassing 0 
-	const float sharp_strength = 0.35;
-	const float sharp_clamp = 0.85;
+	const float sharp_strength = 0.45;
+	const float sharp_clamp = 0.65;
 	const float offset_bias = 1.00;
-	#define Tone_map 8
+	#define Tone_map 0
 	const float Exposure = 1.00;
 	const float Bleach = 0.0;
 	const float Gamma = 1.00;
@@ -602,23 +602,23 @@ float DPX_Strength = 0.20;
 	const int BlackPoint = 16;
 	const int WhitePoint = 215;
 	#define lggpass 1
-	vec3 RGB_Lift = vec3(1.000, 0.985, 1.000);
-	vec3 RGB_Gamma = vec3(1.000, 1.000, 1.000);
-	vec3 RGB_Gain = vec3(1.000, 1.000, 1.000);
+	vec3 RGB_Lift = vec3(1.000, 1.000, 1.000);
+	vec3 RGB_Gamma = vec3(1.000, 0.965, 1.010);
+	vec3 RGB_Gain = vec3(1.000, 0.975, 1.010);
 	#define vibpass 1
-	const float Vibrance = 0.735;
-	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0);
+	const float Vibrance = 0.335;
+	vec3 VibranceRGBBalance = vec3(0.7, 0.9, 0.7);
 	#define Tech 0					
 	const float Power = 1.0;
 	vec3 RGBNegativeAmount = vec3(0.88, 0.88, 0.88);
 	float Strength = 0.05;
 	#define Techine 1 
-	const float Technicolor2_Red_Strength = -0.15;
-	const float Technicolor2_Green_Strength = 0.25;
-	const float Technicolor2_Blue_Strength = 0.55;
-	const float Technicolor2_Brightness = 1.65;
+	const float Technicolor2_Red_Strength = 0.10;
+	const float Technicolor2_Green_Strength = 0.15;
+	const float Technicolor2_Blue_Strength = 0.15;
+	const float Technicolor2_Brightness = 0.10;
 	const float Technicolor2_Strength = 1.00;
-	const float Technicolor2_Saturation = 1.00;
+	const float Technicolor2_Saturation = 0.80;
 	#define cmatrix 0
 	vec3 ColorMatrix_Red = vec3(0.817, 0.183, 0.000);
 	vec3 ColorMatrix_Green = vec3(0.333, 0.667, 0.000);
@@ -631,7 +631,7 @@ float DPX_Strength = 0.20;
 	const float Filmic_Bleach = 0.0;
 	const float Saturation = -0.15;
 	const float Filmic_Strength = 0.60;
-	const float Fade = 0.45;
+	const float Fade = 0.05;
 	const float Linearization = 0.7;
 	const float BaseCurve = 0.7;
 	const float BaseGamma = 1.00;
