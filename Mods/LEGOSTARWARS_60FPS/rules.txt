@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 50000101dab00,00050000101daa00
 name = 60FPS
-path = "LEGO STAR WARS: The Force Awakens/Mods/60FPS"
+path = "LEGO Star Wars: The Force Awakens/Mods/60FPS"
 description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3
