@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "AMD & Intel Shadows Workaround"
-path = "The Legend of Zelda: Breath of the Wild/Workarounds/AMD & Intel Shadows"
+name = "AMD and Intel Shadows Workaround"
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workarounds/AMD and Intel: Shadows"
 description = Fixes shadows when using an AMD or Intel graphics card.
 version = 3
 
