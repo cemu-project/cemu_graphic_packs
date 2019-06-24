@@ -1,0 +1,4 @@
+[BotwV208]
+moduleMatches = 0x6267BFD0
+
+0x038A48BC = li r0, 0;
