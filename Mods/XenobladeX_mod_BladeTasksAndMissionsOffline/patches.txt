@@ -49,65 +49,6 @@ _gotoNext = 0x023ABE54
 0x023ABDD4 = beq _gotoTimeout
 0x023ABDD8 = b _gotoNext
 
-######################## More Tickets
-
-0x00000014 = .short $mult
-_mult = 0x00000014
-0x00000018 = .byte $uncap
-_uncap = 0x00000018
-
-; ----------------------------------------------------------------------------
-; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
-; WHAT : Multiply the reward tickets given in many occasions
-
-_moreTickets = 0x0000001C
-0x0000001C = lis r28, _mult@ha
-0x00000020 = lhz r28, _mult@l(r28)
-0x00000024 = mullw r28, r4, r28
-0x00000028 = blr
-
-0x022CA874 = bla _moreTickets
-
-; ----------------------------------------------------------------------------
-; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
-; WHAT : Ignore the max number of tickets we can get
-
-_uncapTickets = 0x0000002C
-0x0000002C = lis r5, _uncap@ha
-0x00000030 = lbz r5, _uncap@l(r5)
-0x00000034 = cmpwi r5, 1
-0x00000038 = beqlr
-0x0000003C = mr r3, r25
-0x00000040 = blr
-
-0x022CAC5C = bla _uncapTickets
-
-; ----------------------------------------------------------------------------
-; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
-; WHAT : 
-
-_dispBefore = 0x00000044
-0x00000044 = lhz       r26, 0x8C(r1)
-0x00000048 = lis 	   r24, _mult@ha
-0x0000004C = lhz 	   r24, _mult@l(r24)
-0x00000050 = mullw     r26, r26, r24
-0x00000054 = blr
-
-0x02B94718 = bla _dispBefore
-
-; ----------------------------------------------------------------------------
-; WHO  : menu::MenuMultiQuestResult::setup((void))
-; WHAT : 
-
-_dispAfter = 0x00000058
-0x00000058 = lhz       r5, 0x5778(r29)
-0x0000005C = lis 	   r3, _mult@ha
-0x00000060 = lhz 	   r3, _mult@l(r3)
-0x00000064 = mullw     r5, r5, r3
-0x00000068 = blr
-
-0x02B9FE2C = bla _dispAfter
-
 #####################################################################################################
 [XCX_SQUADMISSIONS_1E]
 moduleMatches = 0xF882D5CF ; 1.0.1E
@@ -218,65 +159,6 @@ _gotoNext = 0x023ABDE4
 0x023ABD60 = cmpwi r7, 1
 0x023ABD64 = beq _gotoTimeout
 0x023ABD68 = b _gotoNext
-
-######################## More Tickets
-
-0x00000014 = .short $mult
-_mult = 0x00000014
-0x00000018 = .byte $uncap
-_uncap = 0x00000018
-
-; ----------------------------------------------------------------------------
-; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
-; WHAT : Multiply the reward tickets given in many occasions
-
-_moreTickets = 0x0000001C
-0x0000001C = lis r28, _mult@ha
-0x00000020 = lhz r28, _mult@l(r28)
-0x00000024 = mullw r28, r4, r28
-0x00000028 = blr
-
-0x022CA804 = bla _moreTickets
-
-; ----------------------------------------------------------------------------
-; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
-; WHAT : Ignore the max number of tickets we can get
-
-_uncapTickets = 0x0000002C
-0x0000002C = lis r5, _uncap@ha
-0x00000030 = lbz r5, _uncap@l(r5)
-0x00000034 = cmpwi r5, 1
-0x00000038 = beqlr
-0x0000003C = mr r3, r25
-0x00000040 = blr
-
-0x022CABEC = bla _uncapTickets
-
-; ----------------------------------------------------------------------------
-; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
-; WHAT : 
-
-_dispBefore = 0x00000044
-0x00000044 = lhz       r26, 0x8C(r1)
-0x00000048 = lis 	   r24, _mult@ha
-0x0000004C = lhz 	   r24, _mult@l(r24)
-0x00000050 = mullw     r26, r26, r24
-0x00000054 = blr
-
-0x02B9468C = bla _dispBefore
-
-; ----------------------------------------------------------------------------
-; WHO  : menu::MenuMultiQuestResult::setup((void))
-; WHAT : 
-
-_dispAfter = 0x00000058
-0x00000058 = lhz       r5, 0x5778(r29)
-0x0000005C = lis 	   r3, _mult@ha
-0x00000060 = lhz 	   r3, _mult@l(r3)
-0x00000064 = mullw     r5, r5, r3
-0x00000068 = blr
-
-0x02B9FD2C = bla _dispAfter
 
 #####################################################################################################
 # getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
