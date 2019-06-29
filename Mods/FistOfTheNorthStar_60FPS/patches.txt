@@ -1,0 +1,7 @@
+[ken260Ver0]
+moduleMatches = 0x68342797
+
+#0x020edabc = NOP #always 30fps
+
+0x021352e0 = li r0,1 #comic 60fps
+0x02134f3d = li r9,1 #cutscenes 60fps

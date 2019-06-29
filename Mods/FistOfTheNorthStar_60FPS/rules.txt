@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 000500001012B800,000500001012B900,0005000010116600
+name = 60FPS
+path = "Fist of the North Star: Ken's Rage 2/Mods/60FPS"
+description = Changes the resolution of the game.
+version = 3
+
+# Made by theboy181

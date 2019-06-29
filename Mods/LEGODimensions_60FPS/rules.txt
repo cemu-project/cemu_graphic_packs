@@ -1,6 +1,8 @@
 [Definition]
-titleIds = 5000010194200, 5000010195d00
-name = 60fps
-path = "Lego Dimensions/Mods/60fps"
-description = 60 FPS Unlock
+titleIds = 0005000010194200,0005000010195d00
+name = 60FPS
+path = "Lego Dimensions/Mods/60FPS"
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3
+
+# Made by theboy181
