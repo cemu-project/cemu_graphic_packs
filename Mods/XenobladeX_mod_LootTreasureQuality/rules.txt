@@ -8,17 +8,17 @@ version = 3
 [Preset]
 name = "Gold quality"
 $treasure = 1
-$forced = 0
+$forced = -1
 
 [Preset]
 name = "Silver quality"
 $treasure = 2
-$forced = 0
+$forced = -1
 
 [Preset]
 name = "Bronze quality"
 $treasure = 3
-$forced = 0
+$forced = -1
 
 [Preset]
 name = "Gold quality (FORCED)"
@@ -36,6 +36,6 @@ $treasure = 3
 $forced = 3
 
 [Preset]
-name = "No treasure at all"
+name = "No treasure (FORCED)"
 $treasure = 0
 $forced = 0

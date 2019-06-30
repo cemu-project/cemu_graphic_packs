@@ -1,7 +1,7 @@
 [XCX_CLASSEXPX]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.1U
 
-codeCaveSize = 0x50
+codeCaveSize = 0x30
 
 0x00000000 = .byte $mod
 _mod = 0x00000000
@@ -19,15 +19,37 @@ _expBattle = 0x00000004
 0x020C4A28 = bla _expBattle
 
 ; ----------------------------------------------------------------------------
+; WHO  : addReward__Q2_3cfs11CfSquadUtilSFUiT1
+; WHAT : Multiply the experience points given by Squad missions
+
+_expSquadValue = 0x00000014
+0x00000014 = lis r4, _mod@ha
+0x00000018 = lbz r4, _mod@l(r4)
+0x0000001C = mullw r3, r3, r4
+0x00000020 = stw r3, 0x18(r1)
+0x00000024 = blr
+
+0x023CC750 = bla _expSquadValue
+0x023CC814 = bla _expSquadValue
+
+[XCX_CLASSEXPX_1E] ############################################################################
+moduleMatches = 0xF882D5CF ; 1.0.1E
+
+codeCaveSize = 0x30
+
+0x00000028 = .byte $mod
+_mod = 0x00000028
+
+; ----------------------------------------------------------------------------
 ; WHO  : menu::MenuMultiQuestInfoSub::displayInfoDL((menu::MenuObject *))
 ; WHAT : 
 
-_dispBefore = 0x00000014
-0x00000014 = lis 	   r5, _mod@ha
-0x00000018 = lbz 	   r5, _mod@l(r5)
-0x0000001C = mullw     r3, r3, r5
-0x00000020 = stw	   r3, 0x34(r1)
-0x00000024 = blr
+_dispBefore = 0x00000000
+0x00000000 = lis 	   r5, _mod@ha
+0x00000004 = lbz 	   r5, _mod@l(r5)
+0x00000008 = mullw     r3, r3, r5
+0x0000000C = stw	   r3, 0x34(r1)
+0x00000010 = blr
 
 0x02B91324 = bla _dispBefore
 
@@ -35,25 +57,45 @@ _dispBefore = 0x00000014
 ; WHO  : menu::MenuMultiQuestResult::setup((void))
 ; WHAT : 
 
-_dispAfter = 0x00000028
-0x00000028 = lis 	   r5, _mod@ha
-0x0000002C = lbz 	   r5, _mod@l(r5)
-0x00000030 = mullw     r3, r3, r5
-0x00000034 = stw 	   r3, 0x80(r1)
-0x00000038 = blr
+_dispAfter = 0x00000014
+0x00000014 = lis 	   r5, _mod@ha
+0x00000018 = lbz 	   r5, _mod@l(r5)
+0x0000001C = mullw     r3, r3, r5
+0x00000020 = stw 	   r3, 0x80(r1)
+0x00000024 = blr
 
 0x02B9FF44 = bla _dispAfter
 
+[XCX_CLASSEXPX_2U] ############################################################################
+moduleMatches = 0x30B6E091 ; 1.0.1E, 1.0.2U
+
+codeCaveSize = 0x30
+
+0x00000028 = .byte $mod
+_mod = 0x00000028
+
 ; ----------------------------------------------------------------------------
-; WHO  : addReward__Q2_3cfs11CfSquadUtilSFUiT1
-; WHAT : Multiply the experience points given by Squad missions
+; WHO  : menu::MenuMultiQuestInfoSub::displayInfoDL((menu::MenuObject *))
+; WHAT : 
 
-_expSquadValue = 0x0000003C
-0x0000003C = lis r4, _mod@ha
-0x00000040 = lbz r4, _mod@l(r4)
-0x00000044 = mullw r3, r3, r4
-0x00000048 = stw r3, 0x18(r1)
-0x0000004C = blr
+_dispBefore = 0x00000000
+0x00000000 = lis 	   r5, _mod@ha
+0x00000004 = lbz 	   r5, _mod@l(r5)
+0x00000008 = mullw     r3, r3, r5
+0x0000000C = stw	   r3, 0x34(r1)
+0x00000010 = blr
 
-0x023CC750 = bla _expSquadValue
-0x023CC814 = bla _expSquadValue
+0x02B91314 = bla _dispBefore
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestResult::setup((void))
+; WHAT : 
+
+_dispAfter = 0x00000014
+0x00000014 = lis 	   r5, _mod@ha
+0x00000018 = lbz 	   r5, _mod@l(r5)
+0x0000001C = mullw     r3, r3, r5
+0x00000020 = stw 	   r3, 0x80(r1)
+0x00000024 = blr
+
+0x02B9FF34 = bla _dispAfter

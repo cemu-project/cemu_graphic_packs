@@ -1,12 +1,12 @@
 [XCX_SQUADMISSIONS]
 moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 
-codeCaveSize = 0x6C
+codeCaveSize = 0x50
 
-# cfs::CfSocialManager::update((float))
+; cfs::CfSocialManager::update((float))
 0x022879D0 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
 
-# cfs::CfSocialQuestManager::update((void))
+; cfs::CfSocialQuestManager::update((void))
 0x023AB884 = nop ; 0x6B8(r12) == 0
 0x023AB8B4 = nop ; isHost
 0x023ABA68 = li r5, 60 ; force 0x24 - UNLOCK
@@ -20,11 +20,11 @@ _gotoJoin = 0x023ABD00 - UNLOCK
 
 ##################### BLADE Home Terminal (for Squad Quest Selection)
 
-# cfs::CfSocialManager::refreshOrderQuestInfo (called when select an entry in the BLADE menu)
+; cfs::CfSocialManager::refreshOrderQuestInfo (called when select an entry in the BLADE menu)
 0x022C805C = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
 0x022C8060 = nop ; test réseau
 
-# collectQuestInfoSQ__Q2_3cfs15CfSocialManagerFRQ2_2ml45resvector__tm__28_PQ2_3cfs17CfSocialQuestInfo
+; collectQuestInfoSQ__Q2_3cfs15CfSocialManagerFRQ2_2ml45resvector__tm__28_PQ2_3cfs17CfSocialQuestInfo
 0x022C58BC = nop ; rlwinm.   r10, r11, 0,29,29
 
 #################### Change Squad Mission using main menu
@@ -38,26 +38,69 @@ _iniPtr = 0x00000000
 0x0000000C = mr 	   r30, r3
 0x00000010 = blr
 
+; cfs::CfSquadMissionManager::joinMission((cfs::CfSquadTargetCount const &))
 0x023B74A0 = bla _iniPtr
 
+; cfs::CfSocialQuestManager::update((void))
 _gotoTimeout = 0x023ABDF4
 _gotoNext = 0x023ABE54
-
 0x023ABDC8 = lis       r3, _shareAddr@ha
 0x023ABDCC = lwz      r7, _shareAddr@l(r3)
 0x023ABDD0 = cmpwi r7, 1
 0x023ABDD4 = beq _gotoTimeout
 0x023ABDD8 = b _gotoNext
 
+######################## More Tickets
+
+0x00000014 = .short $mult
+_mult = 0x00000014
+0x00000018 = .byte $uncap
+_uncap = 0x00000018
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Multiply the reward tickets given in many occasions
+
+_moreTickets = 0x0000001C
+0x0000001C = mr r30, r3
+0x00000020 = cmpwi r5, 0 ; r5 is used to determinate if tickets gained from missions?
+0x00000024 = beqlr
+0x00000028 = lis r28, _mult@ha
+0x0000002C = lhz r28, _mult@l(r28)
+0x00000030 = mullw r4, r4, r28
+0x00000034 = blr
+
+0x022CA86C = bla _moreTickets
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Ignore the max number of tickets we can get
+
+_uncapTickets = 0x00000038
+0x00000038 = lis r5, _uncap@ha
+0x0000003C = lbz r5, _uncap@l(r5)
+0x00000040 = cmpwi r5, 1
+0x00000044 = beqlr
+0x00000048 = mr r3, r25
+0x0000004C = blr
+
+0x022CAC5C = bla _uncapTickets
+
+#################### Force Squad Mission number
+;0x023AB794 = li r11, 0 ; force squad mission
+;0x023AB7C0 = li r3, 11 ; squad mission number
+
 #####################################################################################################
 [XCX_SQUADMISSIONS_1E]
 moduleMatches = 0xF882D5CF ; 1.0.1E
 
-# getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
+codeCaveSize = 0x3C
+
+; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
 0x0295EA10 = nop
 0x0295EA14 = li r0, 42
 
-# menu::MenuSquadMission::process((void))
+; menu::MenuSquadMission::process((void))
 0x02BFC7C0 = li r11, 1
 
 ##################### BLADE Home Terminal (for Squad Quest Selection)
@@ -67,8 +110,6 @@ moduleMatches = 0xF882D5CF ; 1.0.1E
 #################### Change Squad Mission using main menu
 
 _shareAddr = 0x1039C17C
-
-codeCaveSize = 0x10
 
 _savePtr = 0x00000000
 0x00000000 = li 	   r3, 1
@@ -82,15 +123,48 @@ _savePtr = 0x00000000
 0x02B85084 = li r11, 1
 0x02B850A8 = li r11, 1
 
+#################### More Tickets (display)
+
+0x00000038 = .short $mult
+_mult = 0x00000038
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
+; WHAT : 
+
+_dispBefore = 0x00000010
+0x00000010 = lhz       r26, 0x8C(r1)
+0x00000014 = lis 	   r24, _mult@ha
+0x00000018 = lhz 	   r24, _mult@l(r24)
+0x0000001C = mullw     r26, r26, r24
+0x00000020 = blr
+
+0x02B94718 = bla _dispBefore
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestResult::setup((void))
+; WHAT : 
+
+_dispAfter = 0x00000024
+0x00000024 = lhz       r5, 0x5778(r29)
+0x00000028 = lis 	   r3, _mult@ha
+0x0000002C = lhz 	   r3, _mult@l(r3)
+0x00000030 = mullw     r5, r5, r3
+0x00000034 = blr
+
+0x02B9FE2C = bla _dispAfter
+
 #####################################################################################################
 [XCX_SQUADMISSIONS_2U]
 moduleMatches = 0x30B6E091 ; 1.0.2U
 
-# getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
+codeCaveSize = 0x3C
+
+; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
 0x0295EA00 = nop
 0x0295EA04 = li r0, 42
 
-# menu::MenuSquadMission::process((void))
+; menu::MenuSquadMission::process((void))
 0x02BFC7B0 = li r11, 1
 
 ##################### BLADE Home Terminal (for Squad Quest Selection)
@@ -100,8 +174,6 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 #################### Change Squad Mission using main menu
 
 _shareAddr = 0x1039C17C
-
-codeCaveSize = 0x10
 
 _savePtr = 0x00000000
 0x00000000 = li 	   r3, 1
@@ -114,6 +186,37 @@ _savePtr = 0x00000000
 
 0x02B85074 = li r11, 1
 0x02B85098 = li r11, 1
+
+#################### More Tickets (display)
+
+0x00000038 = .short $mult
+_mult = 0x00000038
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
+; WHAT : 
+
+_dispBefore = 0x00000010
+0x00000010 = lhz       r26, 0x8C(r1)
+0x00000014 = lis 	   r24, _mult@ha
+0x00000018 = lhz 	   r24, _mult@l(r24)
+0x0000001C = mullw     r26, r26, r24
+0x00000020 = blr
+
+0x02B94708 = bla _dispBefore
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestResult::setup((void))
+; WHAT : 
+
+_dispAfter = 0x00000024
+0x00000024 = lhz       r5, 0x5778(r29)
+0x00000028 = lis 	   r3, _mult@ha
+0x0000002C = lhz 	   r3, _mult@l(r3)
+0x00000030 = mullw     r5, r5, r3
+0x00000034 = blr
+
+0x02B9FE1C = bla _dispAfter
 
 #####################################################################################################
 [XCX_SQUADMISSIONS_1U]
@@ -160,12 +263,71 @@ _gotoNext = 0x023ABDE4
 0x023ABD64 = beq _gotoTimeout
 0x023ABD68 = b _gotoNext
 
+######################## More Tickets
+
+0x00000014 = .short $mult
+_mult = 0x00000014
+0x00000018 = .byte $uncap
+_uncap = 0x00000018
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Multiply the reward tickets given in many occasions
+
+_moreTickets = 0x0000001C
+0x0000001C = lis r28, _mult@ha
+0x00000020 = lhz r28, _mult@l(r28)
+0x00000024 = mullw r28, r4, r28
+0x00000028 = blr
+
+0x022CA804 = bla _moreTickets
+
+; ----------------------------------------------------------------------------
+; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
+; WHAT : Ignore the max number of tickets we can get
+
+_uncapTickets = 0x0000002C
+0x0000002C = lis r5, _uncap@ha
+0x00000030 = lbz r5, _uncap@l(r5)
+0x00000034 = cmpwi r5, 1
+0x00000038 = beqlr
+0x0000003C = mr r3, r25
+0x00000040 = blr
+
+0x022CABEC = bla _uncapTickets
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
+; WHAT : 
+
+_dispBefore = 0x00000044
+0x00000044 = lhz       r26, 0x8C(r1)
+0x00000048 = lis 	   r24, _mult@ha
+0x0000004C = lhz 	   r24, _mult@l(r24)
+0x00000050 = mullw     r26, r26, r24
+0x00000054 = blr
+
+0x02B9468C = bla _dispBefore
+
+; ----------------------------------------------------------------------------
+; WHO  : menu::MenuMultiQuestResult::setup((void))
+; WHAT : 
+
+_dispAfter = 0x00000058
+0x00000058 = lhz       r5, 0x5778(r29)
+0x0000005C = lis 	   r3, _mult@ha
+0x00000060 = lhz 	   r3, _mult@l(r3)
+0x00000064 = mullw     r5, r5, r3
+0x00000068 = blr
+
+0x02B9FD2C = bla _dispAfter
+
 #####################################################################################################
-# getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
+; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
 0x0295E984 = nop
 0x0295E988 = li r0, 42
 
-# menu::MenuSquadMission::process((void))
+; menu::MenuSquadMission::process((void))
 0x02BFC6C0 = li r11, 1
 
 ##################### BLADE Home Terminal (for Squad Quest Selection)

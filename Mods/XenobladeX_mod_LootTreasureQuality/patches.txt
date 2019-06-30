@@ -1,7 +1,7 @@
 [XCX_LOOT_FORCECHEST]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.1U
 
-codeCaveSize = 0x30
+codeCaveSize = 0x3C
 
 0x00000000 = .byte $forced
 0x00000004 = .byte $treasure
@@ -15,10 +15,12 @@ _treasure = 0x00000004
 _goForced = 0x00000008
 0x00000008 = lis r28, _forced@ha
 0x0000000C = lbz r28, _forced@l(r28)
-0x00000010 = cmpwi r28, 0
-0x00000014 = bnelr
-0x00000018 = mr. r28, r3
+0x00000010 = cmpwi r28, -1
+0x00000014 = beq .+0xC
+0x00000018 = mr. r28, r28
 0x0000001C = blr
+0x00000020 = mr. r28, r3
+0x00000024 = blr
 
 0x021AAFA4 = bla _goForced
 
@@ -32,9 +34,9 @@ _goForced = 0x00000008
 ;      : 4) No chest at all, exit with no chest (0)
 ;      : --> The mod below only changes this last step. So even if you put value 1 (gold chest), you'll still get a silver chest if the game succeeded the step 2.
 
-_goTreasure = 0x00000020
-0x00000020 = lis r3, _treasure@ha
-0x00000024 = lbz r3, _treasure@l(r3)
-0x00000028 = blr
+_goTreasure = 0x00000030
+0x00000030 = lis r3, _treasure@ha
+0x00000034 = lbz r3, _treasure@l(r3)
+0x00000038 = blr
 
 0x21AAF18 = bla _goTreasure ; li r3, 1 ; 0 = nothing (default), 1 = gold, 2 = silver, 3 = bronze
