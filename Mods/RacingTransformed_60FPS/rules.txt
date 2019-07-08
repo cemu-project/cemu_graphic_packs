@@ -1,6 +1,8 @@
 [Definition]
-titleIds = 000500001010b300
+titleIds = 000500001010B300,0005000010111F00
 name = 60FPS
-path = "Sonic & All-Stars Racing Transformed/Mods/60FPS" #by theboy181
-description = Makes the game run at a native 60fps instead
+path = "Sonic & All-Stars Racing Transformed/Mods/60FPS"
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3
+
+# Made by theboy181

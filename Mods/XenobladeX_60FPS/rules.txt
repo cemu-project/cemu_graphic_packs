@@ -2,5 +2,5 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = 60FPS
 path = "Xenoblade Chronicles X/Mods/60FPS"
-description = Patches the gameplay to be in 60fps. Getting under 60fps will cause slow down
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3

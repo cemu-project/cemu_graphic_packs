@@ -1,4 +1,4 @@
-[TMS_60FPS_EUv16] # Unpatched EU version only
+[TMS_60FPS] # Tested on unpatched EU version
 moduleMatches = 0x2249A57A
 
 0x1002A6E4  =  .float 0.016666667

@@ -2,5 +2,5 @@
 titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
 name = 60FPS
 path = "Tokyo Mirage Sessions FE/Mods/Static 60FPS"
-description = EU v16 Patches the gameplay to be in 60fps. Getting under 60fps will cause slow down
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
 version = 3

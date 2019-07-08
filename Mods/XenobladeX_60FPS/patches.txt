@@ -25,7 +25,6 @@ _fullRate = 0x1017117C
 # swapInterval 60
 0x02FCEB9C = li r3, 1  
 
-
 [XCX60fpsV48J] 
 moduleMatches = 0x7672271D
 #Default as of 0.51 - Limit logic/2d animation to 30 fps Less timing issues, more jitter  

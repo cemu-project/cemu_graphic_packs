@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 00050000101cdf00,00050000101a6200,00050000101a5c00
+titleIds = 00050000101CDF00,00050000101A6200,00050000101A5C00
 name = 60FPS
 path = "Lego Jurassic World/Mods/60FPS"
 description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
