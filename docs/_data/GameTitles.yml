@@ -76,6 +76,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Citizens_of_Earth"
   version: 2
+"Darksiders Warmastered Edition":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/Darksiders_Warmastered_Edition"
+  version: 3
 "Devil’s Third":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Devil%27s_Third"
