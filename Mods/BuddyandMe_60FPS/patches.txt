@@ -1,0 +1,4 @@
+[SoulA60fpsVer1]
+moduleMatches = 0x494E3F98
+
+0x021d5c44 = nop
