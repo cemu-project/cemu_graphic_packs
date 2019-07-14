@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Day Length
 path = "The Legend of Zelda: Breath of the Wild/Mods/Day Length"
-description = Changes the amount of real time an in game day takes.  Any game slowdown will make the actual time longer.
+description = Changes the amount of real time an in game day takes. Any game slowdown will make the actual time longer. Blood moons won't appear or be less common.
 version = 3
 
 [Preset]
