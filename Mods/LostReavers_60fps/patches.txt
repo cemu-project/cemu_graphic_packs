@@ -1,0 +1,14 @@
+[LR60FpsVer0,v16]
+moduleMatches = 0x67DBF490,0x165809E9
+
+# Code selects .float 60 from 0X1000333C
+
+_60fps = 0x00000000
+
+CodeCaveSize = 0x0c
+
+0X00000000 = lis r3,0x1000
+0X00000004 = lfs f1,0x333c(r3)    # NOP - Remove read to FPS .float = uncapped FPS
+0X00000008 = blr
+
+0X02571FC4 = bla _60fps
