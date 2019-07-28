@@ -295,6 +295,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
+
 # All 720p textures:
 # - 0x001=World Lighting Red8
 # - 0x005=Link and Objects Depth
@@ -783,3 +784,43 @@ overwriteHeight = ($height/$gameHeight) * 185
 # tilemodes = 4
 # overwriteWidth = ($width/$gameWidth) * 64
 # overwriteHeight = ($height/$gameHeight) * 64
+
+# Resize letters box: Subtitle
+
+[TextureRedefine]
+width = 512
+height = 96
+depth = 1
+formats = 0x1a
+tilemodes = 4
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 96
+
+[TextureRedefine]
+width = 500
+height = 94
+depth = 1
+formats = 0x1a
+tilemodes = 4
+overwriteWidth = ($width/$gameWidth) * 500
+overwriteHeight = ($height/$gameHeight) * 94
+
+# Resize letters box: pop up message
+
+[TextureRedefine]
+width = 480
+height = 32
+depth = 1
+formats = 0x1a
+tilemodes = 4
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 464
+height = 28
+depth = 1
+formats = 0x1a
+tilemodes = 4
+overwriteWidth = ($width/$gameWidth) * 464
+overwriteHeight = ($height/$gameHeight) * 28
