@@ -8,4 +8,4 @@
 # Game control color & brightness with a uniform, so they can vary between objects (and through time) drawn with the same shader. It's hard to do this in Gfx pack.
 # In theory You can add if condition to check for game's uniform value so you can change the color of a specific object without affecting others.
 
-# Try converting custom color from gamma encoded to linear (color/255^2.2) if it look slightly off in game.
+# Try converting custom color from gamma encoded to linear (color/255)^2.2 if it look slightly off in game.
