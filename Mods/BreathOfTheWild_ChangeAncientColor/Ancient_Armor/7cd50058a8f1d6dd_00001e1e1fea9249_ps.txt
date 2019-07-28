@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
-const float Light = $L;
+const float Factor = $L_f;
 
 // Armor When teleporting
 
@@ -173,7 +173,7 @@ R127i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R8i.z), intBitsToFloat(PS0i)
 R127i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R8i.y), intBitsToFloat(backupReg0i)));
 PS1i = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0i.z), intBitsToFloat(PV0i.z)));
 // 10
-R5i.x = floatBitsToInt(mul_nonIEEE(Light, intBitsToFloat(PV1i.x)));
+R5i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].x) * Factor, intBitsToFloat(PV1i.x)));
 R4i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.w), intBitsToFloat(PS1i)));
 R3i.z = floatBitsToInt(intBitsToFloat(PV1i.y) * intBitsToFloat(0x3f969696));
 R3i.z = clampFI32(R3i.z);
@@ -182,8 +182,8 @@ R6i.y = 0x3f800000;
 PS0i = R6i.y;
 // 11
 R7i.y = 0;
-R5i.z = floatBitsToInt(mul_nonIEEE(Light, intBitsToFloat(R127i.z)));
-R5i.y = floatBitsToInt(mul_nonIEEE(Light, intBitsToFloat(R127i.w)));
+R5i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].x) * Factor, intBitsToFloat(R127i.z)));
+R5i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedPS[2].x) * Factor, intBitsToFloat(R127i.w)));
 PS1i = R5i.y;
 // 12
 tempResultf = 1.0 / sqrt(intBitsToFloat(R126i.y));

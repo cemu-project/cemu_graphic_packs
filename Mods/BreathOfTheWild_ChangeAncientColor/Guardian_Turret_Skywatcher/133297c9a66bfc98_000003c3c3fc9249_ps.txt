@@ -3,6 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
+const float Factor = $L_f;
 
 // Guardian Turret + Skywatcher
 
@@ -186,9 +187,9 @@ R125i.x = floatBitsToInt(intBitsToFloat(R8i.x) + intBitsToFloat(PV1i.y));
 PS0i = R125i.x;
 // 13
 backupReg0i = R126i.x;
-R126i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.y), intBitsToFloat(uf_remappedPS[1].x)));
-R124i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(backupReg0i), intBitsToFloat(uf_remappedPS[1].x)));
-R125i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.z), intBitsToFloat(uf_remappedPS[1].x)));
+R126i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.y), intBitsToFloat(uf_remappedPS[1].x) * Factor));
+R124i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(backupReg0i), intBitsToFloat(uf_remappedPS[1].x) * Factor));
+R125i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.z), intBitsToFloat(uf_remappedPS[1].x) * Factor));
 R123i.w = floatBitsToInt((mul_nonIEEE(-(intBitsToFloat(R5i.z)),intBitsToFloat(uf_remappedPS[1].z)) + -(intBitsToFloat(uf_remappedPS[1].y))));
 R123i.w = clampFI32(R123i.w);
 PV1i.w = R123i.w;

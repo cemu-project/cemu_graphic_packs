@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
-const float Light = $L;
+const float Factor = $L_f;
 
 // Ancient Armor
 
@@ -148,10 +148,10 @@ R127f.y /= 2.0;
 PS0f = R127f.y;
 // 9
 R126f.x = R125f.y + 2.0;
-R6f.y = mul_nonIEEE(Light, PV0f.y);
-R6f.z = mul_nonIEEE(Light, PV0f.x);
+R6f.y = mul_nonIEEE(intBitsToFloat(uf_remappedPS[1].x) * Factor, PV0f.y);
+R6f.z = mul_nonIEEE(intBitsToFloat(uf_remappedPS[1].x) * Factor, PV0f.x);
 PV1f.w = intBitsToFloat(uf_remappedPS[2].z);
-R6f.x = mul_nonIEEE(Light, PV0f.w);
+R6f.x = mul_nonIEEE(intBitsToFloat(uf_remappedPS[1].x) * Factor, PV0f.w);
 PS1f = R6f.x;
 // 10
 R3f.x = R127f.z;

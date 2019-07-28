@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Ancient weapons
-path = "The Legend of Zelda: Breath of the Wild/Mods/Change Ancient Color/Ancient weapons"
+path = "The Legend of Zelda: Breath of the Wild/Mods/Change Ancient Glow Color/Ancient weapons"
 description = Change Ancient weapons 's color and brightness. Originally it varies. Ancient Orange's Brightness is changed to Bow's.
 version = 3
 
@@ -52,4 +52,4 @@ name = Custom (Edit in rules.txt)
 $R = 0.000
 $G = 0.000
 $B = 0.000
-$L = 40.0  # Brightness, Armor only because others vary
+$L = 40.0  # Brightness, can't scale because original unnormalized color use L=1

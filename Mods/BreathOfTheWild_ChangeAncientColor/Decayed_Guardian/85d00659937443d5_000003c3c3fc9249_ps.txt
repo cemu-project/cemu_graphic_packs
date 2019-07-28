@@ -3,6 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
+const float Factor = $L_f;
 
 // Decayed Guardian
 
@@ -116,7 +117,7 @@ R123f.y = clamp(R123f.y, 0.0, 1.0);
 PV0f.y = R123f.y;
 R127f.z = (mul_nonIEEE(R4f.x,R126f.y) + PV1f.z)/2.0;
 R127f.w = (mul_nonIEEE(R4f.y,R126f.y) + PS1f)/2.0;
-R124f.y = mul_nonIEEE(R127f.x, intBitsToFloat(uf_remappedPS[1].x));
+R124f.y = mul_nonIEEE(R127f.x, intBitsToFloat(uf_remappedPS[1].x) * Factor);
 PS0f = R124f.y;
 // 5
 backupReg0f = R127f.y;
@@ -129,10 +130,10 @@ R127f.x /= 2.0;
 PS1f = R127f.x;
 // 6
 backupReg0f = R126f.z;
-R124f.x = mul_nonIEEE(R125f.y, intBitsToFloat(uf_remappedPS[1].x));
+R124f.x = mul_nonIEEE(R125f.y, intBitsToFloat(uf_remappedPS[1].x) * Factor);
 R125f.y = mul_nonIEEE(Color.b, R125f.x);
 R126f.z = intBitsToFloat(0x427f0000) * R1f.w;
-R124f.w = mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedPS[1].x));
+R124f.w = mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedPS[1].x) * Factor);
 R126f.y = intBitsToFloat(0x427f0000) * R8f.z;
 PS0f = R126f.y;
 // 7

@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
-const float Light = $L;
+const float Factor = $L_f;
 
 // Armor When Link is transparent
 // textureUnitPS12 uf_blockPS8[23].xyz uf_blockPS8[31].x
@@ -305,9 +305,9 @@ R16i.z = floatBitsToInt(uf_blockPS6[45].w + intBitsToFloat(PV1i.z));
 R6i.w = floatBitsToInt((-(uf_blockPS6[53].z) * intBitsToFloat(0x3d4ccccd) + intBitsToFloat(R3i.z)));
 R6i.w = clampFI32(R6i.w);
 // 7
-R10i.x = floatBitsToInt(mul_nonIEEE(Light, intBitsToFloat(R126i.y)));
-R10i.y = floatBitsToInt(mul_nonIEEE(Light, intBitsToFloat(R126i.x)));
-R10i.z = floatBitsToInt(mul_nonIEEE(Light, intBitsToFloat(R127i.w)));
+R10i.x = floatBitsToInt(mul_nonIEEE(uf_blockPS8[31].x * Factor, intBitsToFloat(R126i.y)));
+R10i.y = floatBitsToInt(mul_nonIEEE(uf_blockPS8[31].x * Factor, intBitsToFloat(R126i.x)));
+R10i.z = floatBitsToInt(mul_nonIEEE(uf_blockPS8[31].x * Factor, intBitsToFloat(R127i.w)));
 R3i.y = floatBitsToInt(fract(uf_blockPS8[36].w));
 PS1i = R3i.y;
 }

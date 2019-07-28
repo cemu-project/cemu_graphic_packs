@@ -3,6 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
+const float Factor = $L_f;
 
 // Guardian weapons when Link is transparent
 // uf_blockPS8[23].xyz uf_blockPS8[31].x
@@ -300,11 +301,11 @@ R125i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R5i.x), uf_blockPS6[45].x));
 R125i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R5i.y),uf_blockPS6[43].y) + intBitsToFloat(R127i.z)));
 R126i.w = floatBitsToInt(mul_nonIEEE(Color.z, intBitsToFloat(R10i.z)));
 // 3
-R124i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R3i.w), uf_blockPS8[31].x));
+R124i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R3i.w), uf_blockPS8[31].x * Factor));
 PV1i.x = R124i.x;
-R125i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), uf_blockPS8[31].x));
+R125i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.x), uf_blockPS8[31].x * Factor));
 PV1i.y = R125i.y;
-R125i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.z), uf_blockPS8[31].x));
+R125i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R1i.z), uf_blockPS8[31].x * Factor));
 PV1i.z = R125i.z;
 R127i.w = floatBitsToInt((mul_nonIEEE(-(intBitsToFloat(R5i.z)),uf_blockPS8[31].z) + -(uf_blockPS8[31].y)));
 R127i.w = clampFI32(R127i.w);

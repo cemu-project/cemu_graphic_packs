@@ -3,6 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 
 const vec3 Color = vec3($R,$G,$B);
+const float Factor = $L_f;
 
 // Guardian Stalker + Scout + Guardian weapons
 
@@ -142,11 +143,11 @@ PS1f = R124f.z;
 R123f.x = (mul_nonIEEE(-(R5f.z),intBitsToFloat(uf_remappedPS[1].z)) + -(intBitsToFloat(uf_remappedPS[1].y)));
 R123f.x = clamp(R123f.x, 0.0, 1.0);
 PV0f.x = R123f.x;
-R125f.y = mul_nonIEEE(R125f.z, intBitsToFloat(uf_remappedPS[1].x));
+R125f.y = mul_nonIEEE(R125f.z, intBitsToFloat(uf_remappedPS[1].x) * Factor);
 PV0f.y = R125f.y;
-R127f.z = mul_nonIEEE(R127f.w, intBitsToFloat(uf_remappedPS[1].x));
+R127f.z = mul_nonIEEE(R127f.w, intBitsToFloat(uf_remappedPS[1].x) * Factor);
 PV0f.z = R127f.z;
-R127f.w = mul_nonIEEE(R126f.y, intBitsToFloat(uf_remappedPS[1].x));
+R127f.w = mul_nonIEEE(R126f.y, intBitsToFloat(uf_remappedPS[1].x) * Factor);
 PV0f.w = R127f.w;
 R126f.y = floor(PV1f.z);
 R126f.y *= 4.0;
