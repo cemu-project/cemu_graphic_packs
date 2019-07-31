@@ -30,13 +30,9 @@ $b = 0.0
 $c = 0.75
 
 [Preset]
-name = Didée downscale
-$b = 0-0.5  # workaround, delete later
-$c = 0.25
-
-[Preset]
 name = Custom (edit in rule.txt)
 $b = 0.0
-$c = -5.0
+$c = 0.0
 
-#[b + 2c = 1] for numerically accurate filter
+# b,c >= 0 the filter can't reproduce curves with negative b,c because of bilinear optimization
+# optionally [b + 2c = 1] for numerically accurate filter
