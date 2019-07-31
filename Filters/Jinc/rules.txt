@@ -1,0 +1,47 @@
+[Definition]
+name = Jinc windowed-jinc with anti-ringing
+titleIds = 
+path = "Filters/Jinc"
+description = This is an approximation of Jinc. If B=1.0, it's a lanczos filter.
+version = 3
+
+[OutputShader] # need texels
+upscaleMagFilter = NearestNeighbor
+downscaleMagFilter = NearestNeighbor
+
+[Preset]
+name = Jinc
+$Window_Sinc  = 0.5
+$SINC         = 0.825
+$Anti_Ringing = 0.5
+
+[Preset]
+name = Lanczos
+$Window_Sinc  = 0.5
+$SINC         = 1.0
+$Anti_Ringing = 0.8
+
+[Preset]
+name = preset3 in nnedi3
+$Window_Sinc  = 0.44
+$SINC         = 0.82
+$Anti_Ringing = 0.5
+
+[Preset]
+name = preset4 in nedi
+$Window_Sinc  = 0.42
+$SINC         = 0.92
+$Anti_Ringing = 0.8
+
+[Preset]
+name = custom (edit in rules.txt)
+$Window_Sinc  = 0.5
+$SINC         = 0.825
+$Anti_Ringing = 0.8
+
+# $Window_Sinc == A; $SINC == B.
+# Increase A to get more blur. Decrease it to get a sharper picture. 
+# B = 0.825 to get rid of dithering. Increase B to get a fine sharpness, though dithering returns.
+
+# $Anti_Ringing reduces overshoot.
+# Setting it to 1 prevents overshoot, which might cause pixels sticking together.

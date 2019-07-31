@@ -1,0 +1,42 @@
+[Definition]
+name = Optimized Bicubic spline resampler
+titleIds = 
+path = "Filters/Bicubic"
+description = The b and c can adjust the properties of the cubic; sometimes referred to as "blurring" and "ringing" respectively.
+version = 3
+
+[OutputShader]
+upscaleMagFilter = Linear
+downscaleMagFilter = Linear
+
+[Preset]
+name = Catmull-Rom
+$b = 0.0
+$c = 0.5
+
+[Preset]
+name = Mitchell-Netravali
+$b = 1/3
+$c = 1/3
+
+[Preset]
+name = B-spline
+$b = 1.0
+$c = 0.0
+
+[Preset]
+name = Photoshop
+$b = 0.0
+$c = 0.75
+
+[Preset]
+name = Didée downscale
+$b = 0-0.5  # workaround, delete later
+$c = 0.25
+
+[Preset]
+name = Custom (edit in rule.txt)
+$b = 0.0
+$c = -5.0
+
+#[b + 2c = 1] for numerically accurate filter
