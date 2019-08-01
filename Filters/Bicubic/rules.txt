@@ -35,5 +35,5 @@ $b = 0.0
 $c = 0.0
 
 # Generally b,c >= 0. the shader can't produce negative weight at 0-1 because of bilinear optimization
-# But some combination of b,c might have non-negative weight
+# But some combinations of negative b,c might have non-negative weight
 # Optionally [b + 2c = 1] for numerically accurate filter
