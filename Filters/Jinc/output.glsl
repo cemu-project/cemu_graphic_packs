@@ -45,10 +45,12 @@ layout(location = 0) out vec4 colorOut0;
 #define wb    ($SINC*pi)
 
 // Calculates the distance between two points
-float d(vec2 pt1, vec2 pt2)
+float resampler(vec2 pt1, vec2 pt2)
 {
-  vec2 v = pt2 - pt1;
-  return sqrt(dot(v,v));
+	vec2 v = pt2 - pt1;
+	float d = sqrt(dot(v,v));
+
+	return (d==0.0) ?  wa*wb  :  sin(d*wa)*sin(d*wb)/(d*d);
 }
 
 vec3 min4(vec3 a, vec3 b, vec3 c, vec3 d)
@@ -61,15 +63,6 @@ vec3 max4(vec3 a, vec3 b, vec3 c, vec3 d)
     return max(a, max(b, max(c, d)));
 }
 
-vec4 resampler(vec4 x)
-{
-	vec4 res;
-
-	res = (x==vec4(0.0, 0.0, 0.0, 0.0)) ?  vec4(wa*wb)  :  sin(x*wa)*sin(x*wb)/(x*x);
-
-	return res;
-}
-     
 vec4 JINC2_sharp(vec2 texture_size, vec2 texCoord)
 {
 	vec3 color;
@@ -82,10 +75,10 @@ vec4 JINC2_sharp(vec2 texture_size, vec2 texCoord)
 
 	vec2 tc = (floor(pc-vec2(0.5,0.5))+vec2(0.5,0.5));
      
-	weights[0] = resampler(vec4(d(pc, tc    -dx    -dy), d(pc, tc           -dy), d(pc, tc    +dx    -dy), d(pc, tc+2.0*dx    -dy)));
-	weights[1] = resampler(vec4(d(pc, tc    -dx       ), d(pc, tc              ), d(pc, tc    +dx       ), d(pc, tc+2.0*dx       )));
-	weights[2] = resampler(vec4(d(pc, tc    -dx    +dy), d(pc, tc           +dy), d(pc, tc    +dx    +dy), d(pc, tc+2.0*dx    +dy)));
-	weights[3] = resampler(vec4(d(pc, tc    -dx+2.0*dy), d(pc, tc       +2.0*dy), d(pc, tc    +dx+2.0*dy), d(pc, tc+2.0*dx+2.0*dy)));
+	weights[0] = vec4(resampler(pc, tc    -dx    -dy), resampler(pc, tc           -dy), resampler(pc, tc    +dx    -dy), resampler(pc, tc+2.0*dx    -dy));
+	weights[1] = vec4(resampler(pc, tc    -dx       ), resampler(pc, tc              ), resampler(pc, tc    +dx       ), resampler(pc, tc+2.0*dx       ));
+	weights[2] = vec4(resampler(pc, tc    -dx    +dy), resampler(pc, tc           +dy), resampler(pc, tc    +dx    +dy), resampler(pc, tc+2.0*dx    +dy));
+	weights[3] = vec4(resampler(pc, tc    -dx+2.0*dy), resampler(pc, tc       +2.0*dy), resampler(pc, tc    +dx+2.0*dy), resampler(pc, tc+2.0*dx+2.0*dy));
 
 	dx = dx/texture_size;
 	dy = dy/texture_size;
