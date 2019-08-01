@@ -83,7 +83,7 @@ vec4 JINC2_sharp(vec2 texture_size, vec2 texCoord)
 	vec2 tc = (floor(pc-vec2(0.5,0.5))+vec2(0.5,0.5));
      
 	weights[0] = resampler(vec4(d(pc, tc    -dx    -dy), d(pc, tc           -dy), d(pc, tc    +dx    -dy), d(pc, tc+2.0*dx    -dy)));
-	weights[1] = resampler(vec4(d(pc, tc    -dx	      ), d(pc, tc              ), d(pc, tc    +dx	    ), d(pc, tc+2.0*dx	     )));
+	weights[1] = resampler(vec4(d(pc, tc    -dx       ), d(pc, tc              ), d(pc, tc    +dx       ), d(pc, tc+2.0*dx       )));
 	weights[2] = resampler(vec4(d(pc, tc    -dx    +dy), d(pc, tc           +dy), d(pc, tc    +dx    +dy), d(pc, tc+2.0*dx    +dy)));
 	weights[3] = resampler(vec4(d(pc, tc    -dx+2.0*dy), d(pc, tc       +2.0*dy), d(pc, tc    +dx+2.0*dy), d(pc, tc+2.0*dx+2.0*dy)));
 
