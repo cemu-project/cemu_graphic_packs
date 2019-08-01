@@ -71,7 +71,7 @@ vec4 DrawBicubic(vec2 f_in)
 //	ivec2 coord_bottom_right = ivec2(min(uv3 * textureSrcResolution, textureSrcResolution - 0.5));
 	// mirror
 	ivec2 coord_top_left = ivec2(abs(uv0 * textureSrcResolution));
-	ivec2 coord_bottom_right = ivec2(textureSrcResolution - abs(uv3 * textureSrcResolution - textureSrcResolution) - 1.0);
+	ivec2 coord_bottom_right = ivec2(textureSrcResolution - abs(uv3 * textureSrcResolution - textureSrcResolution));
 
 	vec4 top = texelFetch(textureSrc, ivec2(coord_top_left), 0) * rowtaps.x;
 	top += texture(textureSrc, vec2(u_middle, uv0.y)) * u_weight_sum;
