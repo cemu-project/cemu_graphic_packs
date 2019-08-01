@@ -26,7 +26,7 @@ vec4 bcFilter(vec2 texcoord, vec2 texscale)
 	vec4 xcubic = cubic(f.x);
 	vec4 ycubic = cubic(f.y);
 
-	vec4 c = vec4(texcoord.x - 1.0, texcoord.x + 1.0, texcoord.y - 1.0, texcoord.y + 1.0);
+	vec4 c = vec4(tc.x - 1.0, tc.x + 1.0, tc.y - 1.0, tc.y + 1.0);
 	vec4 s = vec4(xcubic.x + xcubic.y, xcubic.z + xcubic.w, ycubic.x + ycubic.y, ycubic.z + ycubic.w);
 	vec4 offset = c + vec4(xcubic.y, xcubic.w, ycubic.y, ycubic.w) / s;
 
