@@ -44,11 +44,11 @@ layout(location = 0) out vec4 colorOut0;
 #define wa    ($Window_Sinc*pi)
 #define wb    ($SINC*pi)
 
-// Calculates the distance between two points
+
 float resampler(vec2 pt1, vec2 pt2)
 {
 	vec2 v = pt2 - pt1;
-	float d = sqrt(dot(v,v));
+	float d = sqrt(dot(v,v)); // Calculates the distance between two points
 
 	return (d==0.0) ?  wa*wb  :  sin(d*wa)*sin(d*wb)/(d*d);
 }
