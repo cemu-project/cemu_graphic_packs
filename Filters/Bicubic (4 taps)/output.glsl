@@ -20,15 +20,13 @@ vec4 cubic(float x)
 
 vec4 bcFilter(vec2 texcoord, vec2 texscale)
 {
-	float fx = fract(texcoord.x);
-	float fy = fract(texcoord.y);
-	texcoord.x -= fx;
-	texcoord.y -= fy;
+	vec2 tc = floor( texcoord - 0.5 ) + 0.5;
+	vec2 f = texcoord - tc;
 
-	vec4 xcubic = cubic(fx);
-	vec4 ycubic = cubic(fy);
+	vec4 xcubic = cubic(f.x);
+	vec4 ycubic = cubic(f.y);
 
-	vec4 c = vec4(texcoord.x - 0.5, texcoord.x + 1.5, texcoord.y - 0.5, texcoord.y + 1.5);
+	vec4 c = vec4(texcoord.x - 1.0, texcoord.x + 1.0, texcoord.y - 1.0, texcoord.y + 1.0);
 	vec4 s = vec4(xcubic.x + xcubic.y, xcubic.z + xcubic.w, ycubic.x + ycubic.y, ycubic.z + ycubic.w);
 	vec4 offset = c + vec4(xcubic.y, xcubic.w, ycubic.y, ycubic.w) / s;
 
