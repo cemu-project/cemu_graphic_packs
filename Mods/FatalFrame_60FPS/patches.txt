@@ -5,7 +5,7 @@ moduleMatches = 0xE93B31F6
 
 CodeCaveSize = 0x14                     # = Last used instruction + 0x04 (4xINSTRUCTIONS in HEX)
 
-# Set 60fps 
+# Set 60fps
 
 _60fps = 0x00000000
 

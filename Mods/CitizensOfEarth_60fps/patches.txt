@@ -5,16 +5,13 @@ moduleMatches = 0xB87B357B
 _FrameRate = 0x100A151C
 
 # Code Cave
-
 CodeCaveSize = 0x0c                    # = Last used instruction + 0x04 (4xINSTRUCTIONS in HEX)
 
-# Set 60fps
-
+# Load 60 into f0 register
 _60fps = 0x00000000
 
 0x00000000 = lis   r12,_FrameRate@h
 0x00000004 = lfs   f0,_FrameRate@l(r12)
 0x00000008 = blr
-
 
 0x021de6c8 = bla _60fps

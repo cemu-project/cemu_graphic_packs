@@ -1,0 +1,35 @@
+[Bat60FpsVerv1]
+moduleMatches = 0xB5EB56F6
+
+# Location for .float 60.00
+_float = 0x10000a08
+
+CodeCaveSize = 0x0c
+
+_60fps = 0x00000000
+0X00000000 = lis r3,_float@h
+0X00000004 = lfs f1,_float@l(r3)
+0X00000008 = blr
+
+0x024d3164 = bla _60fps
+#0x024d3164 = lfs f1,04e0(r3) #0x42F584E0
+0x02C82558 = nop #Vsync
+0x02C82504 = nop #SwapInterval
+
+
+[Bat60FpsVerv16]
+moduleMatches = 0x10A2A41A
+
+# Location for .float 60.00
+_float = 0x10000a08
+
+CodeCaveSize = 0x0c
+
+_60fps = 0x00000000
+0X00000000 = lis r3,_float@h
+0X00000004 = lfs f1,_float@l(r3)
+0X00000008 = blr
+
+0x24D4E68 = bla _60fps
+#0x024D4E68 = lfs f1,0x4E0(r3)
+0x02C837FC = nop #Vsync
