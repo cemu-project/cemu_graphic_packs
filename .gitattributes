@@ -1,0 +1,3 @@
+rules.txt linguist-language=INI
+*_*_vs.txt linguist-language=GLSL
+*_*_ps.txt linguist-language=GLSL
