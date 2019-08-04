@@ -785,14 +785,15 @@ overwriteHeight = ($height/$gameHeight) * 185
 # overwriteWidth = ($width/$gameWidth) * 64
 # overwriteHeight = ($height/$gameHeight) * 64
 
-[TextureRedefine] # 128x64; Mini-game count down number fade
-width = 40
-height = 50
-depth = 1
-formats = 0x1
-tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 40
-overwriteHeight = ($height/$gameHeight) * 50
+# Uncomment if HUD setting is Pro
+# [TextureRedefine] # 128x64; Mini-game count down number fade
+# width = 40
+# height = 50
+# depth = 1
+# formats = 0x1
+# tilemodes = 4
+# overwriteWidth = ($width/$gameWidth) * 40
+# overwriteHeight = ($height/$gameHeight) * 50
 
 # Resize letters box: Subtitle
 
