@@ -1,0 +1,1 @@
+For loadline versions, try looking up addresses from patches.txt in PPC debugger. Correct opcodes should be near these addresses. Changing it should be easy.
