@@ -636,6 +636,14 @@ formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 608
 
+# Dyeing background: inventory fading border
+[TextureRedefine]
+width = 1280
+height = 400
+formats = 0x19
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 400
+
 # Mini-map GUI
 [TextureRedefine] 
 width = 192
