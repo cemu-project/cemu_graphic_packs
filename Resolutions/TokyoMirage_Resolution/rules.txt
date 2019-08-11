@@ -11,6 +11,9 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 // Performance
 
@@ -20,6 +23,9 @@ $width = 320
 $height = 180
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 640x360
@@ -27,6 +33,9 @@ $width = 640
 $height = 360
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 960x540
@@ -34,6 +43,9 @@ $width = 960
 $height = 540
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 // Common HD Resolutions
 
@@ -43,6 +55,9 @@ $width = 1600
 $height = 900
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 1920x1080
@@ -50,6 +65,9 @@ $width = 1920
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 2560x1440
@@ -57,6 +75,9 @@ $width = 2560
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 3200x1800
@@ -64,6 +85,9 @@ $width = 3200
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 3840x2160
@@ -71,6 +95,9 @@ $width = 3840
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 [Preset]
 name = 5120x2880
@@ -78,6 +105,9 @@ $width = 5120
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1280.0 / 720.0)
 
 // Common Ultrawide Resolutions
 
@@ -87,20 +117,29 @@ $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = (1280.0/720.0) / (2560.0 / 1080.0) 
+$UIAspectY = 1.0
+$GameAspect = (2560.0 / 1080.0)
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 ("21:9") #2.388
 $width = 3440
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = (1280.0/720.0) / (3440.0 / 1440.0)
+$UIAspectY = 1.0 
+$GameAspect = (3440.0 / 1440.0)
 
 [Preset]
-name = 3840x1600 ("21:9")
+name = 3840x1600 ("21:9") #2.4
 $width = 3840
 $height = 1600
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = (1280.0/720.0)/ (3840.0 / 1600.0)
+$UIAspectY = 1.0
+$GameAspect = (3840.0 / 1600.0)
 
 // Common 16:10 Resolutions
 
@@ -110,6 +149,9 @@ $width = 1440
 $height = 900
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = (1440.0 / 900.0) / (1280.0/720.0) 
+$GameAspect = (1440.0 / 900.0)
 
 [Preset]
 name = 1680x1050 (16:10)
@@ -117,6 +159,9 @@ $width = 1680
 $height = 1050
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0 
+$UIAspectY = (1680.0 / 1050.0) / (1280.0/720.0)
+$GameAspect = (1680.0 / 1050.0)
 
 [Preset]
 name = 1920x1200 (16:10)
@@ -124,6 +169,9 @@ $width = 1920
 $height = 1200
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0 
+$UIAspectY =  (1920.0 / 1200.0) / (1280.0/720.0)
+$GameAspect = (1920.0 / 1200.0)
 
 [Preset]
 name = 2560x1600 (16:10)
@@ -131,6 +179,9 @@ $width = 2560
 $height = 1600
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0 
+$UIAspectY = (2560.0 / 1600.0) / (1280.0/720.0)
+$GameAspect = (2560.0 / 1600.0)
 
 [Preset]
 name = 2880x1800 (16:10)
@@ -138,6 +189,9 @@ $width = 2880
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0 
+$UIAspectY = (2880.0 / 1800.0) / (1280.0/720.0)
+$GameAspect = (2880.0 / 1800.0)
 
 [Preset]
 name = 3840x2400 (16:10)
@@ -145,6 +199,9 @@ $width = 3840
 $height = 2400
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0 
+$UIAspectY = (3840.0 / 2400.0) / (1280.0/720.0)
+$GameAspect = (3840.0 / 2400.0)
 
 [Preset]
 name = 5120x3200 (16:10)
@@ -152,28 +209,243 @@ $width = 5120
 $height = 3200
 $gameWidth = 1280
 $gameHeight = 720
+$UIAspectX = 1.0 
+$UIAspectY = (5120.0 / 3200.0) / (1280.0/720.0)
+$GameAspect = (5120.0 / 3200.0)
+
+[Preset]
+name = -- Double vertical res for SSAA, disable keep aspect ratio --
+$width = 2560
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (2560.0 / 1440.0)
+
+[Preset]
+name = 1920x2160
+$width = 1920
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (1920.0 / 1080.0)
+
+[Preset]
+name = 2560x2160 ("21:9")
+$width = 2560
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$UIAspectX = (1280.0/720.0) / (2560.0 / 1080.0) 
+$UIAspectY = 1.0
+$GameAspect = (2560.0 / 1080.0)
+
+[Preset]
+name = 2560x2880
+$width = 2560
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (2560.0 / 1440.0)
+
+[Preset]
+name = 3840x3200 ("21:9") #2.4
+$width = 3840
+$height = 3200
+$gameWidth = 1280
+$gameHeight = 720
+$UIAspectX = (1280.0/720.0)/ (2840.0 / 1600)
+$UIAspectY = 1.0
+$GameAspect = (3840.0 / 1600.0)
+
+[Preset]
+name = 3840x4320
+$width = 3840
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$GameAspect = (3840.0 / 2160.0)
+
+[TextureRedefine] 
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x820
 
 [TextureRedefine]
 width = 1280
 height = 720
-#formats =  0x816,0x80e,0x01a,0x001
+formats = 0x01a
+overwriteFormat = 0x01f
+$UIAspectX = 1.0
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x810
+overwriteFormat = 0x81e
+
+[TextureRedefine] 
+width = 640
+height = 368
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine] # 
+width = 640
+height = 368
+formats = 0x01a
+overwriteFormat = 0x820
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 160
+height = 128
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 160
+height = 120
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x01a,0x816,0x80e,0x001
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
-overwriteHeight  = ($height/$gameHeight) * 720
+overwriteHeight = ($height/$gameHeight) * 720
 
 [TextureRedefine]
 width = 1280
 height = 340
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 1280
-overwriteHeight  = ($height/$gameHeight) * 340
+overwriteHeight = ($height/$gameHeight) * 340
+
+[TextureRedefine]
+width = 1014
+height = 720
+#formats = 
+overwriteWidth = ($width/$gameWidth) * 1014
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 896
+height = 480
+formats = 0x001
+overwriteWidth = ($width/$gameWidth) * 896
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] # Pad
+width = 864
+height = 480
+#formats = 
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] # Pad
+width = 854
+height = 480
+#formats = 
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] # Pad
+width = 674
+height = 574
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 674
+overwriteHeight = ($height/$gameHeight) * 574
+
+[TextureRedefine] # Pad
+width = 657
+height = 574
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 657
+overwriteHeight = ($height/$gameHeight) * 574
+
+[TextureRedefine]
+width = 640
+height = 720
+#formats = 
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 640
+height = 368
+#formats = 0x816,0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+width = 640
+height = 360
+#formats = 0x816,0x001
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 160
+height = 128
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]
+width = 160
+height = 120
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 120
 
 #[TextureRedefine] # Shadows cemu scaling broken?
 #width = 1024
 #height = 2048
 #formats = 0x011,0x811
 #overwriteWidth = ($height/$gameHeight) * 1024
-#overwriteHeight  = ($height/$gameHeight) * 2048
+#overwriteHeight = ($height/$gameHeight) * 2048
 
 #[TextureRedefine] #Shadows, cemu scaling broken?
 #width = 1024
@@ -182,110 +454,16 @@ overwriteHeight  = ($height/$gameHeight) * 340
 #overwriteWidth = ($height/$gameHeight) * 1024
 #overwriteHeight = ($height/$gameHeight) * 1024
 
-
-#[TextureRedefine] #
+#[TextureRedefine] # Don't scale
 #width = 512
 #height = 512
 #formats = 0x01a #GUI bar + alpha nope
 #overwriteWidth = 1024
 #overwriteHeight = 1024
 
-
-#[TextureRedefine] #
+#[TextureRedefine] # Don't scale
 #width = 128
 #height = 1024
 #formats = 0x034 #text + alpha
 #overwriteWidth = 256
 #overwriteHeight = 2048
-
-[TextureRedefine]
-width = 1014
-height = 720
-#formats = 
-overwriteWidth = ($width/$gameWidth) * 1014
-overwriteHeight  = ($height/$gameHeight) * 720
-
-[TextureRedefine]
-width = 896
-height = 480
-formats =  0x001
-overwriteWidth = ($width/$gameWidth) * 896
-overwriteHeight  = ($height/$gameHeight) * 480
-
-[TextureRedefine] # Pad
-width = 864
-height = 480
-#formats = 
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight  = ($height/$gameHeight) * 480
-
-[TextureRedefine] # Pad
-width = 854
-height = 480
-#formats = 
-overwriteWidth = ($width/$gameWidth) * 854
-overwriteHeight  = ($height/$gameHeight) * 480
-
-[TextureRedefine] # Pad
-width = 674
-height = 574
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 674
-overwriteHeight  = ($height/$gameHeight) * 574
-
-[TextureRedefine] # Pad
-width = 657
-height = 574
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 657
-overwriteHeight  = ($height/$gameHeight) * 574
-
-[TextureRedefine]
-width = 640
-height = 720
-#formats = 
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight  = ($height/$gameHeight) * 720
-
-[TextureRedefine]
-width = 640
-height = 368
-#formats =  0x816,0x001
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight  = ($height/$gameHeight) * 368
-
-[TextureRedefine]
-width = 640
-height = 360
-#formats =  0x816,0x001
-tileModesExcluded = 0x001
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight  = ($height/$gameHeight) * 360
-
-[TextureRedefine]
-width = 320
-height = 192
-formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 320
-overwriteHeight  = ($height/$gameHeight) * 192
-
-[TextureRedefine]
-width = 320
-height = 180
-formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 320
-overwriteHeight  = ($height/$gameHeight) * 180
-
-[TextureRedefine]
-width = 160
-height = 128
-formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 160
-overwriteHeight  = ($height/$gameHeight) * 128
-
-[TextureRedefine]
-width = 160
-height = 120
-formats =  0x816
-overwriteWidth = ($width/$gameWidth) * 160
-overwriteHeight  = ($height/$gameHeight) * 120
