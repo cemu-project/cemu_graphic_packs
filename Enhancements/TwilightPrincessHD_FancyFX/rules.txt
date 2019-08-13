@@ -33,6 +33,15 @@ $internalRes = 1
 $presetPass:int = 1
 $enableBlur:int = 1
 
+[Preset] # Scaling offset, looks blurrier on high res as additional passes mostly hide the error
+name = LB + defocus, further pass
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 1.125
+$internalRes = 1
+$presetPass:int = 2
+$enableBlur:int = 1
+
 [Preset] # 
 name = Disable extra blur, keep other tweaks active
 $dither = 0.2
