@@ -18,6 +18,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0 
 
 [Preset]
 name = 2560x1440
@@ -32,6 +33,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 2732x1536
@@ -46,6 +48,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 3200x1800
@@ -60,6 +63,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 3840x2160 (4k - Native x2) 
@@ -74,6 +78,7 @@ $internalRes = 0.75
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 5120x2880
@@ -88,6 +93,7 @@ $internalRes = 0.75
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 // Enthusiast
 
@@ -104,6 +110,7 @@ $internalRes = 0.5
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = -- 21:9 -- resolutions 
@@ -118,6 +125,7 @@ $internalRes = 1.0
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 2560.0 / 1080.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 2560x1080 (21:9 HD)
@@ -132,6 +140,7 @@ $internalRes = 1.0
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 2560.0 / 1080.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 3440x1440 (21:9)
@@ -146,6 +155,7 @@ $internalRes = 1.0
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 3440.0 / 1440.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 5120x2160 (21:9)
@@ -160,6 +170,7 @@ $internalRes = 0.75
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 5120.0 / 2160.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = -- 16:10 -- resolutions 
@@ -174,6 +185,7 @@ $internalRes = 1.0
 $aspectRatio = (1440.0/900.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 1440x900 (16:10)
@@ -188,6 +200,7 @@ $internalRes = 1.0
 $aspectRatio = (1440.0/900.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 1680x1050 (16:10)
@@ -202,6 +215,7 @@ $internalRes = 1.0
 $aspectRatio = (1680.0/1050.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 1680.0 / 1050.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 1920x1200 (16:10)
@@ -216,6 +230,7 @@ $internalRes = 1.0
 $aspectRatio = (1920.0/1200.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 1920.0 / 1200.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 2560x1600 (16:10)
@@ -230,6 +245,7 @@ $internalRes = 1.0
 $aspectRatio = (2560.0/1600.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 2560.0 / 1600.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 2880x1800 (16:10)
@@ -244,6 +260,7 @@ $internalRes = 1.0
 $aspectRatio = (2880.0/1800.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 2880.0 / 1800.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 3840x2400 (16:10)
@@ -258,6 +275,7 @@ $internalRes = 1.0
 $aspectRatio = (3840.0/2400.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 3840.0 / 2400.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = 5120x3200 (16:10)
@@ -272,6 +290,7 @@ $internalRes = 1.0
 $aspectRatio = (5120.0/3200.0)
 $UIAspectX = 1.0
 $UIAspectY = ( 5120.0 / 3200.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
 
 [Preset]
 name = -- 48:9 -- resolutions 
@@ -286,6 +305,7 @@ $internalRes = 1.0
 $aspectRatio = (48.0/9.0)
 $UIAspectX = ( 1920.0 / 1080.0 ) / ( 5760.0 / 1080.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 5760x1080 (48:9)
@@ -300,6 +320,7 @@ $internalRes = 1.0
 $aspectRatio = (48.0/9.0)
 $UIAspectX = ( 1920.0 / 1080.0 ) / ( 5760.0 / 1080.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 7680x1440 (48:9)
@@ -314,10 +335,10 @@ $internalRes = 0.70
 $aspectRatio = (48.0/9.0)
 $UIAspectX = ( 1920.0 / 1080.0 ) / ( 7680.0 / 1440.0 )
 $UIAspectY = 1.0
-
+$UItransp = 1.0
 
 [Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
-name = --- SSAA vert res x2 - Set scaling to Stretch
+name = -- SSAA vert res x2 - Set scaling to Stretch
 $width = 1920
 $height = 2160
 $gameWidth = 1920
@@ -329,7 +350,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
-
+$UItransp = 1.0
 
 [Preset]
 name = 1920x2160 (Vertical x2)
@@ -344,7 +365,7 @@ $internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
-
+$UItransp = 1.0
 
 [Preset]
 name = 2560x2880 (Vertical x2 - 0.75 sub scaling)
@@ -359,7 +380,7 @@ $internalRes = 0.75
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
-
+$UItransp = 1.0
 
 [Preset] #
 name = 3840x4320 (Vertical x2 - 0.5 sub scaling)
@@ -374,7 +395,7 @@ $internalRes = 0.5
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
-
+$UItransp = 1.0
 
 [Preset]
 name = 2560x2160 (21:9 Vertical x2)
@@ -389,6 +410,7 @@ $internalRes = 1.0
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 2560.0 / 1080.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 3440x2880 (21:9 Vertical x2 - 0.75 sub scaling)
@@ -403,6 +425,7 @@ $internalRes = 0.75 # 2880 * 0.75 = 1080 x 2
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 3440.0 / 1440.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
 [Preset]
 name = 5760x1080 (48:9 Vertical x2 - 0.5 sub scaling)
@@ -417,7 +440,474 @@ $internalRes = 0.5
 $aspectRatio = (48.0/9.0)
 $UIAspectX = ( 1920.0 / 1080.0 ) / ( 5760.0 / 1080.0 )
 $UIAspectY = 1.0
+$UItransp = 1.0
 
+[Preset]
+name = 
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = -- UI 25% transparency, reduces risk of burn in -- 
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 1920x1080 (Native) - UI 25% transp 
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 2560x1440 - UI 25% transp
+$width = 2560
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 2732x1536 - UI 25% transp
+$width = 2732
+$height = 1536
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 3200x1800 - UI 25% transp
+$width = 3200
+$height = 1800
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 3840x2160 (4k - Native x2) - UI 25% transp 
+$width = 3840
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.75
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 5120x2880 - UI 25% transp
+$width = 5120
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+// Enthusiast
+
+[Preset]
+name = 7680x4320 (8k - Native x3) - UI 25% transp
+$width = 7680
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 0.5
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = -- 21:9 -- resolutions - UI 25% transp
+$width = 2560
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 2560.0 / 1080.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 2560x1080 (21:9 HD) - UI 25% transp
+$width = 2560
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 2560.0 / 1080.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 3440x1440 (21:9) - UI 25% transp
+$width = 3440
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 3440.0 / 1440.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 5120x2160 (21:9) - UI 25% transp
+$width = 5120
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 0.75
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 5120.0 / 2160.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = -- 16:10 -- resolutions - UI 25% transp
+$width = 1440
+$height = 900
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (1440.0/900.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 1440x900 (16:10) - UI 25% transp
+$width = 1440
+$height = 900
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (1440.0/900.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 1680x1050 (16:10) - UI 25% transp
+$width = 1680
+$height = 1050
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (1680.0/1050.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 1680.0 / 1050.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 1920x1200 (16:10) - UI 25% transp
+$width = 1920
+$height = 1200
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (1920.0/1200.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 1920.0 / 1200.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 2560x1600 (16:10) - UI 25% transp
+$width = 2560
+$height = 1600
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (2560.0/1600.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 2560.0 / 1600.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 2880x1800 (16:10) - UI 25% transp
+$width = 2880
+$height = 1800
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (2880.0/1800.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 2880.0 / 1800.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 3840x2400 (16:10) - UI 25% transp
+$width = 3840
+$height = 2400
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (3840.0/2400.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 3840.0 / 2400.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 5120x3200 (16:10) - UI 25% transp
+$width = 5120
+$height = 3200
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (5120.0/3200.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 5120.0 / 3200.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = -- 48:9 -- resolutions - UI 25% transp
+$width = 5760
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (48.0/9.0)
+$UIAspectX = ( 1920.0 / 1080.0 ) / ( 5760.0 / 1080.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 5760x1080 (48:9) - UI 25% transp
+$width = 5760
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (48.0/9.0)
+$UIAspectX = ( 1920.0 / 1080.0 ) / ( 5760.0 / 1080.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 7680x1440 (48:9) - UI 25% transp
+$width = 7680
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 0.70
+$aspectRatio = (48.0/9.0)
+$UIAspectX = ( 1920.0 / 1080.0 ) / ( 7680.0 / 1440.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
+name = --- SSAA vert res x2 - Set scaling to Stretch
+$width = 1920
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 1920x2160 (Vertical x2) - UI 25% transp
+$width = 1920
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 2560x2880 (Vertical x2 - 0.75 sub scaling) - UI 25% transp
+$width = 2560
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 0.75
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset] #
+name = 3840x4320 (Vertical x2 - 0.5 sub scaling) - UI 25% transp
+$width = 3840
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
+$internalRes = 0.5
+$aspectRatio = (16.0/9.0)
+$UIAspectX = 1.0
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 2560x2160 (21:9 Vertical x2) - UI 25% transp
+$width = 2560
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 1.0
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 2560.0 / 1080.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 3440x2880 (21:9 Vertical x2 - 0.75 sub scaling) - UI 25% transp
+$width = 3440
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 0.75 # 2880 * 0.75 = 1080 x 2
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 3440.0 / 1440.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 5760x1080 (48:9 Vertical x2 - 0.5 sub scaling) - UI 25% transp
+$width = 5760
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.1
+$scaleShader = 1.0
+$scaleBlur = 0.25
+$internalRes = 0.5
+$aspectRatio = (48.0/9.0)
+$UIAspectX = ( 1920.0 / 1080.0 ) / ( 5760.0 / 1080.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
 
 [TextureRedefine]
 width = 1920
@@ -593,3 +1083,51 @@ height = 272
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 282
 overwriteHeight = ($height/$gameHeight) * 272
+
+[TextureRedefine] # Gui
+width = 832
+height = 720
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 832
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Gui
+width = 813
+height = 718
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 813
+overwriteHeight = ($height/$gameHeight) * 718
+
+[TextureRedefine] # map
+width = 384
+height = 320
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 384
+overwriteHeight = ($height/$gameHeight) * 320
+
+[TextureRedefine] # map
+width = 362
+height = 319
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 362
+overwriteHeight = ($height/$gameHeight) * 319
+
+[TextureRedefine] # map endgame
+width = 832
+height = 720
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 832
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # map endgame
+width = 802
+height = 512
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 802
+overwriteHeight = ($height/$gameHeight) * 512
+
+
+
+
+
+

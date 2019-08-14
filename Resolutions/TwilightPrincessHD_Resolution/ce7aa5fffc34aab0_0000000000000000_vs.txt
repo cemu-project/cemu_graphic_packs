@@ -6,6 +6,7 @@
 //action buttons
 const float UIx = $UIAspectX;
 const float UIy = $UIAspectY;
+const float UItransp = $UItransp;
 uniform ivec4 uf_remappedVS[7];
 layout(location = 0) in uvec4 attrDataSem0;
 layout(location = 1) in uvec4 attrDataSem1;
@@ -117,7 +118,7 @@ R3f.w = tempf.x;
 // export
 gl_Position = vec4(R3f.x*UIx, R3f.y*UIy, R3f.z, R3f.w);
 // export
-passParameterSem0 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+passParameterSem0 = vec4(R1f.x, R1f.y, R1f.z, R1f.w*UItransp);
 // export
 passParameterSem1 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
 }
