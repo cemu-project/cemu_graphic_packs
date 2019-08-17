@@ -1,8 +1,7 @@
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500
-name = Resolution
+name = Level of detail
 path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Negative Texture LOD"
-description = Changes the resolution of the game.
 version = 3
 
 [Preset]
@@ -35,6 +34,14 @@ $0x033 = -4
 $0x034 = -4
 $0x035 = -4
 $0x01a = -4
+
+[Preset]
+name = LOD +2 (Simulate WiiU LOD on higher resolution)
+$0x031 = +2
+$0x033 = +2
+$0x034 = +2
+$0x035 = +2
+$0x01a = 0
 
 [TextureRedefine]
 formats = 0x031 #0x431,0x432,0x433,0x434,0x435 not used. 

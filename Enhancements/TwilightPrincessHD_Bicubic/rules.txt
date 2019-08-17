@@ -1,0 +1,39 @@
+[Definition]
+name = Optimized Bicubic spline resampler
+titleIds = titleIds = 000500001019C800,000500001019E600,000500001019E500
+path = "The Legend of Zelda: Twilight Princess HD/Sharpen Filters/Bicubic"
+description = The b and c can adjust the properties of the cubic; sometimes referred to as "blurring" and "ringing" respectively.
+version = 3
+
+[OutputShader]
+upscaleMagFilter = Linear
+downscaleMagFilter = Linear
+
+[Preset]
+name = Catmull-Rom
+$b = 0.0
+$c = 0.5
+
+[Preset]
+name = Mitchell-Netravali
+$b = 1/3
+$c = 1/3
+
+[Preset]
+name = B-spline
+$b = 1.0
+$c = 0.0
+
+[Preset]
+name = Photoshop
+$b = 0.0
+$c = 0.75
+
+[Preset]
+name = Oversharp, w ringing artifact
+$b = 0.1
+$c = 0.9
+
+# Generally b,c >= 0. the shader can't produce negative weight at 0-1 because of bilinear optimization
+# But some combinations of negative b,c might have non-negative weight
+# Optionally [b + 2c = 1] for numerically accurate filter
