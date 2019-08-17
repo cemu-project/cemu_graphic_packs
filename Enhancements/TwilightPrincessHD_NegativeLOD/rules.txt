@@ -2,6 +2,7 @@
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Level of detail
 path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Negative Texture LOD"
+description = Sharper textures at risk of shimmering when set too high
 version = 3
 
 [Preset]
