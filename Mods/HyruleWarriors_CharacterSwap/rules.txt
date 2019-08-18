@@ -7,118 +7,126 @@ version = 3
 
 [Preset]
 name = Link
-$character:int = 0
+$character:int = 0x0
 
 [Preset]
 name = Zelda
-$character:int = 1
+$character:int = 0x1
 
 [Preset]
 name = Sheik
-$character:int = 2
+$character:int = 0x2
 
 [Preset]
 name = Impa
-$character:int = 3
+$character:int = 0x3
 
 [Preset]
 name = Ganondorf
-$character:int = 4
+$character:int = 0x4
 
 [Preset]
 name = Darunia
-$character:int = 5
+$character:int = 0x5
 
 [Preset]
 name = Ruto
-$character:int = 6
+$character:int = 0x6
 
 [Preset]
 name = Agitha
-$character:int = 7
+$character:int = 0x7
 
 [Preset]
 name = Midna
-$character:int = 8
+$character:int = 0x8
 
 [Preset]
 name = Fi
-$character:int = 9
+$character:int = 0x9
 
 [Preset]
 name = Ghirahim
-$character:int = 10
+$character:int = 0xA
 
 [Preset]
 name = Zant
-$character:int = 11
+$character:int = 0xB
 
 [Preset]
 name = Lana
-$character:int = 13
+$character:int = 0xD
 
 [Preset]
 name = Cia
-$character:int = 44
+$character:int = 0x2C
 
 [Preset]
 name = Volga
-$character:int = 45
+$character:int = 0x2D
 
 [Preset]
 name = Wizzro
-$character:int = 46
+$character:int = 0x2E
 
 [Preset]
 name = Twilight Midna
-$character:int = 47
+$character:int = 0x2F
 
 [Preset]
 name = Young Link
-$character:int = 48
+$character:int = 0x30
 
 [Preset]
 name = Tingle
-$character:int = 49
+$character:int = 0x31
 
 [Preset]
 name = Linkle
-$character:int = 50
+$character:int = 0x34
 
 [Preset]
 name = Skull Kid
-$character:int = 51
+$character:int = 0x35
 
 [Preset]
 name = Toon Link
-$character:int = 52
+$character:int = 0x36
 
 [Preset]
 name = Tetra
-$character:int = 53
+$character:int = 0x37
 
 [Preset]
 name = King Daphnes
-$character:int = 54
+$character:int = 0x38
 
 [Preset]
 name = Medli
-$character:int = 55
+$character:int = 0x39
 
 [Preset]
 name = Marin
-$character:int = 56
+$character:int = 0x3A
 
 [Preset]
 name = Toon Zelda
-$character:int = 57
+$character:int = 0x3B
 
 [Preset]
 name = Ravio
-$character:int = 58
+$character:int = 0x3C
 
 [Preset]
 name = Yuga
-$character:int = 59
+$character:int = 0x3D
+
+[Preset]
+name = Ganon
+$character = 50
+
+[Preset]
+name = Giant Cucco
+$character = 51
 
 # https://github.com/Dekirai/HyruleWarriors-Trainer/blob/23a42b4ad580dfb847d6ef4ebcaa4c7a30df3eea/Hyrule%20Warriors/Form1.cs#L382
