@@ -1,22 +1,34 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
-// shader 01ba1a725af9facf
-// Used for: Creating randomly sized stars (only on > Cemu 1.12.1) like the original game has.
-// Shader made by Kiri
-const float resScale = $width/720;
+#ifdef VULKAN
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#else
+#define SET_POSITION(_v) gl_Position = _v
+#endif
 
-layout(binding = 1, std140) uniform uniformBlockVS1
+const float resScale = $height/720.0;
+
+// Night star (size)
+
+// shader 01ba1a725afa0b96
+layout(binding = 1, std140) 
+uniform uniformBlockVS1
 {
 vec4 uf_blockVS1[1024];
 };
 
-layout(binding = 2, std140) uniform uniformBlockVS2
+
+layout(binding = 2, std140) 
+uniform uniformBlockVS2
 {
 vec4 uf_blockVS2[1024];
 };
 
-uniform vec2 uf_windowSpaceToClipSpaceTransform;
+
 layout(location = 0) in uvec4 attrDataSem0;
 out gl_PerVertex
 {
@@ -65,12 +77,8 @@ R0i.w = 0x3f800000;
 R0i.y = PV0i.z + int(1);
 R3i.xyzw = floatBitsToInt(uf_blockVS1[R0i.z].xyzw);
 R2i.xyzw = floatBitsToInt(uf_blockVS1[R0i.y].xyzw);
-
-
 // export
-gl_PointSize = 0.5+(float(R2i.y%5)/4.0)*resScale; // Randomize size of the stars. Relies on GL_VERTEX_POINT_SIZE, which is only enabled above Cemu 1.12.1.
-
-
+gl_PointSize = intBitsToFloat(R1i.x) * resScale;
 // 0
 backupReg0i = R0i.w;
 backupReg1i = R2i.w;
@@ -108,7 +116,7 @@ PV1i.z = tempi.x;
 PV1i.w = tempi.x;
 R1i.w = tempi.x;
 // export
-gl_Position = vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w));
+SET_POSITION(vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w)));
 // export
 passParameterSem1 = vec4(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z), intBitsToFloat(R2i.w));
 // export
