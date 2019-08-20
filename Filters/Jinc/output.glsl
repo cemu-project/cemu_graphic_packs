@@ -30,7 +30,7 @@
 
 in vec2 passUV;
 layout(binding=0) uniform sampler2D textureSrc;
-uniform vec2 textureSrcResolution;
+// uniform vec2 textureSrcResolution;
 layout(location = 0) out vec4 colorOut0;
 
 /*
@@ -124,5 +124,6 @@ vec4 JINC2_sharp(vec2 texture_size, vec2 texCoord)
 
 void main()
 {
+	vec2 textureSrcResolution = vec2( textureSize(textureSrc,0) );
 	colorOut0 = JINC2_sharp(textureSrcResolution, passUV);
 }

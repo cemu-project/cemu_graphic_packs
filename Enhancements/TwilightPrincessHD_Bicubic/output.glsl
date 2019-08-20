@@ -4,7 +4,7 @@
 
 in vec2 passUV;
 layout(binding=0) uniform sampler2D textureSrc;
-uniform vec2 textureSrcResolution;
+// uniform vec2 textureSrcResolution;
 layout(location = 0) out vec4 colorOut0;
 
 float weight(float x)
@@ -45,6 +45,7 @@ vec4 weight4(float x)
 
 vec4 DrawBicubic(vec2 f_in)
 {
+	vec2 textureSrcResolution = vec2( textureSize(textureSrc,0) );
 	vec2 stepxy = 1.0/textureSrcResolution;
 	vec2 pos = f_in.st + stepxy * 0.5;
 	vec2 f = fract(pos * textureSrcResolution);
