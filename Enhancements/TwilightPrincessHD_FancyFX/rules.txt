@@ -70,9 +70,6 @@ $enableBlur:int = 0
 #$presetPass:int = 1
 #$enableBlur:int = 1
 
-
-###expermiment
-
 [TextureRedefine] #
 width = 1280
 height = 720
@@ -98,24 +95,6 @@ formats =  0x01a
 overwriteFormat = 0x01f
 
 
-#[TextureRedefine] # load selection
-#width = 1024
-#height = 223
-#formats =  0x01a
-#overwriteFormat = 0x01f
-#
-#[TextureRedefine] 
-#width = 788
-#height = 336
-#formats =  0x01a
-#overwriteFormat = 0x01f
-#
-#[TextureRedefine]#BG cont #
-#width = 607
-#height = 418
-#formats =  0x01a
-#overwriteFormat = 0x01f
-
 [TextureRedefine] #
 width = 512
 height = 512
@@ -134,20 +113,11 @@ height = 480
 formats =  0x01a
 overwriteFormat = 0x01f
 
-
-#[TextureRedefine] # contr
-#width = 393
-#height = 231
-#formats =  0x01a
-#overwriteFormat = 0x01f
-
-
 [TextureRedefine] #
 width = 384
 height = 384
 formats =  0x01a
 overwriteFormat = 0x01f
-
 
 [TextureRedefine] #
 width = 320
