@@ -14,12 +14,8 @@ layout(location = 0) in vec4 passParameterSem0;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
 
-/* Nr of pass hack since we don't know what the res pack set to after moving shader from main pack  :(   
- * Would have been better to manually tweak per res setting , and then add static scaler on top of that. 
- * ~1080 -> 2 pass, 1440->3 , 4k -> 5 
- */
- 
-const int sampleScale = 2 + int(1.0/uf_fragCoordScale.x) + sampleScaling;
+
+const int sampleScale = 2 + sampleScaling;
 
 //const int sampleScale = 2 + sampleScaling;
 // FabriceNeyret2 CC, single shader gaussian by intermediate MIPmap level. www.shadertoy.com/view/ltScRG

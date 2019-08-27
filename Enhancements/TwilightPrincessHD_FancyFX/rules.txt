@@ -7,7 +7,7 @@ version = 3
 
 
 [Preset] #  Gaussian blur w correct scaling
-name = Light blur - Original look++
+name = Light blur - 1080p 8 pass
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -16,7 +16,7 @@ $presetPass:int = 0
 $enableBlur:int = 1
 
 [Preset] # Scaling offset, looks blurrier on high res as additional passes mostly hide the error
-name = LB + defocus, better for high res, same performance
+name = ~1440p 8 pass
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 1.25
@@ -25,7 +25,7 @@ $presetPass:int = 0
 $enableBlur:int = 1
 
 [Preset] #  gaussian blur w correct scaling and an additional 4 passes
-name = +1 extra blur pass, slower, pretty in high res
+name = 2160p 12 pass
 $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 1.0
@@ -34,13 +34,23 @@ $presetPass:int = 1
 $enableBlur:int = 1
 
 [Preset] # Scaling offset, looks blurrier on high res as additional passes mostly hide the error
-name = LB + defocus, further pass
+name = ~2160p+ 12 pass
 $dither = 0.2
 $scaleShader = 1.0
-$scaleBlur = 1.125
+$scaleBlur = 1.25
+$internalRes = 1
+$presetPass:int = 1
+$enableBlur:int = 1
+
+[Preset] # Scaling offset, looks blurrier on high res as additional passes mostly hide the error
+name = ~4320p  16 pass
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 3.0
 $internalRes = 1
 $presetPass:int = 2
 $enableBlur:int = 1
+
 
 [Preset] # 
 name = Disable extra blur, keep other tweaks active
@@ -59,6 +69,118 @@ $enableBlur:int = 0
 #$internalRes = 1
 #$presetPass:int = 1
 #$enableBlur:int = 1
+
+
+###expermiment
+
+[TextureRedefine] #
+width = 1280
+height = 720
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 1024
+height = 1024
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 1024
+height = 512
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 1024
+height = 449
+formats =  0x01a
+overwriteFormat = 0x01f
+
+
+#[TextureRedefine] # load selection
+#width = 1024
+#height = 223
+#formats =  0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine] 
+#width = 788
+#height = 336
+#formats =  0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]#BG cont #
+#width = 607
+#height = 418
+#formats =  0x01a
+#overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 512
+height = 512
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 448
+height = 384
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 427
+height = 480
+formats =  0x01a
+overwriteFormat = 0x01f
+
+
+#[TextureRedefine] # contr
+#width = 393
+#height = 231
+#formats =  0x01a
+#overwriteFormat = 0x01f
+
+
+[TextureRedefine] #
+width = 384
+height = 384
+formats =  0x01a
+overwriteFormat = 0x01f
+
+
+[TextureRedefine] #
+width = 320
+height = 288
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 320
+height = 180
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 290
+height = 280
+formats =  0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine] #
+width = 263
+height = 191
+formats =  0x01a
+overwriteFormat = 0x01f
+
+#[TextureRedefine] # eyes
+#width = 256
+#height = 256
+#formats =  0x01a
+#overwriteFormat = 0x01f
+
+### exp end 
+
 
 #Fog banding
 [TextureRedefine]
@@ -115,3 +237,20 @@ width = 960
 height = 540
 formats = 0x007
 overwriteFormat = 0x00f
+
+[TextureRedefine] #cloud mips fails?
+width = 1025
+height = 256
+formats = 0x007
+overwriteFormat = 0x00f
+
+[TextureRedefine]
+width = 1025
+height = 512
+formats = 0x007
+overwriteFormat = 0x00f
+
+#[TextureRedefine]
+#formats = 0x001
+#overwriteFormat = 0x005
+
