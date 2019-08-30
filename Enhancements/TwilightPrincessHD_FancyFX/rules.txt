@@ -51,7 +51,6 @@ $internalRes = 1
 $presetPass:int = 2
 $enableBlur:int = 1
 
-
 [Preset] # 
 name = Disable extra blur, keep other tweaks active
 $dither = 0.2
@@ -76,11 +75,11 @@ height = 720
 formats =  0x01a
 overwriteFormat = 0x01f
 
-[TextureRedefine] #
-width = 1024
-height = 1024
-formats =  0x01a
-overwriteFormat = 0x01f
+#[TextureRedefine] # spider web break
+#width = 1024
+#height = 1024
+#formats =  0x01a
+#overwriteFormat = 0x01f
 
 [TextureRedefine] #
 width = 1024
@@ -94,12 +93,11 @@ height = 449
 formats =  0x01a
 overwriteFormat = 0x01f
 
-
-[TextureRedefine] #
-width = 512
-height = 512
-formats =  0x01a
-overwriteFormat = 0x01f
+#[TextureRedefine] #
+#width = 512
+#height = 512
+#formats =  0x01a
+#overwriteFormat = 0x01f
 
 [TextureRedefine] #
 width = 448
@@ -137,11 +135,11 @@ height = 280
 formats =  0x01a
 overwriteFormat = 0x01f
 
-[TextureRedefine] #
-width = 263
-height = 191
-formats =  0x01a
-overwriteFormat = 0x01f
+#[TextureRedefine] #pro contr
+#width = 263
+#height = 191
+#formats =  0x01a
+#overwriteFormat = 0x01f
 
 #[TextureRedefine] # eyes
 #width = 256
@@ -208,19 +206,78 @@ height = 540
 formats = 0x007
 overwriteFormat = 0x00f
 
-[TextureRedefine] #cloud mips fails?
+[TextureRedefine] #cloud
 width = 1025
 height = 256
 formats = 0x007
 overwriteFormat = 0x00f
 
-[TextureRedefine]
+[TextureRedefine] #cloud
 width = 1025
 height = 512
 formats = 0x007
 overwriteFormat = 0x00f
 
+[TextureRedefine] #uk
+width = 256
+height = 256
+formats = 0x007
+overwriteFormat = 0x00f
+
+[TextureRedefine] #uk
+width = 128
+height = 128
+formats = 0x007
+overwriteFormat = 0x00f
+
+[TextureRedefine] #fog?
+width = 64
+height = 64
+formats = 0x007
+overwriteFormat = 0x00f
+
+[TextureRedefine] #fog?
+width = 32
+height = 32
+formats = 0x007
+overwriteFormat = 0x00f
+
+[TextureRedefine] #Gradient
+width = 8
+height = 64
+formats = 0x007
+overwriteFormat = 0x00f
+
+#[TextureRedefine] #haze breaks
+#width = 32
+#height = 32
+#formats = 0x002
+#overwriteFormat = 0x007
+
 #[TextureRedefine]
 #formats = 0x001
 #overwriteFormat = 0x005
 
+#[TextureRedefine] #godrays, fog, breaks
+#width = 256
+#height = 256
+#formats = 0x001
+#overwriteFormat = 0x005
+
+#[TextureRedefine] #toxic mist breaks
+#width = 128
+#height = 128
+#formats = 0x001
+#overwriteFormat = 0x005
+#
+#[TextureRedefine] #toxic mist, air fog breaks
+#width = 64
+#height = 64
+#formats = 0x001
+#overwriteFormat = 0x005
+#
+#[TextureRedefine] #breaks
+#width = 32
+#height = 32
+#formats = 0x001
+#overwriteFormat = 0x005
