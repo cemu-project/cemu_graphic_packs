@@ -15,7 +15,7 @@ const float crushContrast = $crushContrast; // 0.0 is neutral. Use small increme
 const float contrastCurve = $contrastCurve;
 
 
-vec3 RGB_Lift = vec3($redShadows, $greenShadows , $blueSadows);		// [0.000 to 2.000] Adjust shadows for Red, Green and Blue.
+vec3 RGB_Lift = vec3($redShadows, $greenShadows , $blueShadows);		// [0.000 to 2.000] Adjust shadows for Red, Green and Blue.
 vec3 RGB_Gamma = vec3($redMid ,$greenMid, $blueMid);				// [0.000 to 2.000] Adjust midtones for Red, Green and Blue
 vec3 RGB_Gain = vec3($redHilight, $greenHilight, $blueHilight);		// [0.000 to 2.000] Adjust highlights for Red, Green and Blue
 //lumasharpen
