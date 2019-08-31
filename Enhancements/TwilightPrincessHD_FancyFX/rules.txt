@@ -218,29 +218,29 @@ height = 512
 formats = 0x007
 overwriteFormat = 0x00f
 
-[TextureRedefine] #uk
-width = 256
-height = 256
-formats = 0x007
-overwriteFormat = 0x00f
-
-[TextureRedefine] #uk
-width = 128
-height = 128
-formats = 0x007
-overwriteFormat = 0x00f
-
-[TextureRedefine] #fog?
-width = 64
-height = 64
-formats = 0x007
-overwriteFormat = 0x00f
-
-[TextureRedefine] #fog?
-width = 32
-height = 32
-formats = 0x007
-overwriteFormat = 0x00f
+#[TextureRedefine] #breaks drooling plant
+#width = 256
+#height = 256
+#formats = 0x007
+#overwriteFormat = 0x00f
+#
+#[TextureRedefine] #dust
+#width = 128
+#height = 128
+#formats = 0x007
+#overwriteFormat = 0x00f
+#
+#[TextureRedefine] #dust
+#width = 64
+#height = 64
+#formats = 0x007
+#overwriteFormat = 0x00f
+#
+#[TextureRedefine] #dust?
+#width = 32
+#height = 32
+#formats = 0x007
+#overwriteFormat = 0x00f
 
 [TextureRedefine] #Gradient
 width = 8

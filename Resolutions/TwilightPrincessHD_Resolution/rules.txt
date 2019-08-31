@@ -428,6 +428,22 @@ $UIAspectY = 1.0
 $UItransp = 1.0
 
 [Preset]
+name = 10240x4320 (21:9 0.5 subscale)
+$width = 10240
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 0.5
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 5120.0 / 2160.0 )
+$UIAspectY = 1.0
+$UItransp = 1.0
+
+
+[Preset]
 name = 5760x1080 (48:9 Vertical x2 - 0.5 sub scaling)
 $width = 5760
 $height = 2160
@@ -634,6 +650,21 @@ $dither = 0.2
 $scaleShader = 1.0
 $scaleBlur = 0.5
 $internalRes = 0.75
+$aspectRatio = (64.0 / 27.0)
+$UIAspectX = (1920.0 / 1080.0) / ( 5120.0 / 2160.0 )
+$UIAspectY = 1.0
+$UItransp = 0.75
+
+[Preset]
+name = 10240x4320 (21:9) - UI 25% transp
+$width = 10240
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.2
+$scaleShader = 1.0
+$scaleBlur = 0.5
+$internalRes = 0.5
 $aspectRatio = (64.0 / 27.0)
 $UIAspectX = (1920.0 / 1080.0) / ( 5120.0 / 2160.0 )
 $UIAspectY = 1.0
