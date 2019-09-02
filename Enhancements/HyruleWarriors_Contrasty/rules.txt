@@ -28,6 +28,28 @@ $bleach = 1.0
 $sharp_mix = 0.0
 
 [Preset]
+name = Clear as Day
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueShadows = 1.0
+$redMid = 0.95
+$greenMid = 1.05
+$blueMid = 1.05
+$redHilight = 1.0
+$greenHilight = 1.0
+$blueHilight = 1.0
+
+$contrastCurve = 0.6
+$hazeFactor = 1.0
+$bloom = 0.9
+$gamma = 1.3
+$exposure = 1.7
+$vibrance = 0.45
+$crushContrast = 0.0
+$bleach = 0.85
+$sharp_mix = 0.3
+
+[Preset]
 name = High Contrasty
 $redShadows = 1.02
 $greenShadows = 1.01
