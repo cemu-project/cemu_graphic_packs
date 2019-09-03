@@ -230,8 +230,6 @@ height = 540
 formats = 0x007
 overwriteFormat = 0x00f
 
-
-#
 #[TextureRedefine] #cloud
 #width = 1024
 #height = 512
@@ -322,11 +320,11 @@ overwriteFormat = 0x005
 #overwriteFormat = 0x005
 
 # 8 -> 1f
-[TextureRedefine]
-width = 960
-height = 540
-formats = 0x008
-overwriteFormat = 0x01f
+#[TextureRedefine] #menu bg breaks do not use fmt 8
+#width = 960
+#height = 540
+#formats = 0x008
+#overwriteFormat = 0x01f
 
 
 #Res/formats not BC
