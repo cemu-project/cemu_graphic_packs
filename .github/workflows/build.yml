@@ -1,0 +1,43 @@
+name: Build Process
+
+# Don't try to build other branches then master or when a pull request changes something outside of the graphic packs source folders.
+on:
+  push:
+    branches:
+    - master
+  pull_request:
+    paths:
+    - Enhancements
+    - Resolutions
+    - Mods
+    - Workarounds
+
+jobs:
+  build:
+    # Configuration
+    runs-on: ubuntu-latest
+    name: Build Graphic Packs
+    
+    # Build script
+    steps:
+    # Clone latest copy of repository
+    - uses: actions/checkout@v1
+      with:
+        fetch-depth: 1
+    - name: Zip all packs
+      run: |
+        cd $GITHUB_WORKSPACE ;
+        cd Enhancements && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
+        cd Resolutions && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
+        cd Mods && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
+        cd Workarounds && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..
+    - name: Create new release
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      if: github.event_name == 'push'
+      run: |
+        cd $GITHUB_WORKSPACE ;
+        RELEASE_NUMBER="$(($(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest" | jq -r ".name" | cut -c 22-)+1))" ;
+        jq -n --arg releaseTag "Github$RELEASE_NUMBER" --arg releaseTitle "Cemu Graphic Packs: V$RELEASE_NUMBER" --arg releaseBody "$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n')" '{"tag_name":$releaseTag,"target_commitish": "master","name": $releaseTitle,"body": $releaseBody,"draft": false,"prerelease": false}' > releaseBody.json ;
+        RELEASE_ID=$(curl -X POST -H 'Content-Type:application/json' -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" -d "@releaseBody.json" | jq -r ".id") ;
+        curl -X POST -H 'Content-Type:application/json' -H "Authorization: Bearer $GITHUB_TOKEN" "https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$RELEASE_ID/assets?name=graphicPacks$RELEASE_NUMBER.zip" --upload-file "graphicPacks.zip"
