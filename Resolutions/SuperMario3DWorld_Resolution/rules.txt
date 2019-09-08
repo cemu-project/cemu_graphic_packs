@@ -2738,7 +2738,7 @@ height = 33
 overwriteWidth = ($width/$gameWidth) * 60
 overwriteHeight = ($height/$gameHeight) * 33
 
-## Dynamic scaling res
+## Coopa castle
 
 [TextureRedefine]
 width = 637
@@ -3909,5 +3909,56 @@ height = 24
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 42
 overwriteHeight = ($height/$gameHeight) * 24
+
+##1-5 Switch circus additional res
+
+[TextureRedefine]
+width = 608
+height = 368
+#formats =  0x816
+overwriteWidth = ($width/$gameWidth) * 608
+overwriteHeight  = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+width = 544
+height = 368
+#formats =  0x816
+overwriteWidth = ($width/$gameWidth) * 544
+overwriteHeight  = ($height/$gameHeight) * 368
+
+[TextureRedefine] 
+width = 512
+height = 368
+#formats =  0x816
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight  = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+width = 256
+height = 192
+#formats =  0x816
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight  = ($height/$gameHeight) * 192
+
+[TextureRedefine] #low res reflection depth
+width = 256
+height = 240
+#formats =  0x816,0x80e
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight  = ($height/$gameHeight) * 240
+
+[TextureRedefine] #low res reflection shader 810,19,a01
+width = 240
+height = 240
+#formats =  0x816,0x80e
+overwriteWidth = ($width/$gameWidth) * 240
+overwriteHeight  = ($height/$gameHeight) * 240
+
+[TextureRedefine]
+width = 128
+height = 96
+#formats =  0x816
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight  = ($height/$gameHeight) * 96
 
 
