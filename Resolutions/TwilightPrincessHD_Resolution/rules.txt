@@ -106,7 +106,7 @@ $gameHeight = 1080
 $dither = 0.25
 $scaleShader = 1.0
 $scaleBlur = 0.5
-$internalRes = 0.5
+$internalRes = 1.0
 $aspectRatio = (16.0/9.0)
 $UIAspectX = 1.0
 $UIAspectY = 1.0
@@ -955,6 +955,14 @@ overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1080 
 
 [TextureRedefine]
+width = 1280
+height = 720
+#formats = 
+overwriteWidth = ($width/$gameWidth) * 1280 
+overwriteHeight = ($height/$gameHeight) * 720 
+
+
+[TextureRedefine]
 width = 960
 height = 544
 formats = 0x01a
@@ -1051,6 +1059,13 @@ height = 343
 formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 598
 overwriteHeight = ($height/$gameHeight) * 343
+
+[TextureRedefine] # bloom n cutscene
+width = 480
+height = 272
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * (480*$internalRes)
+overwriteHeight = ($height/$gameHeight) * (270*$internalRes)
 
 [TextureRedefine] # bloom n cutscene
 width = 480
