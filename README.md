@@ -1,4 +1,4 @@
-[![Travis Build Status Badge](https://img.shields.io/travis/slashiee/cemu_graphic_packs.svg)](https://travis-ci.org/slashiee/cemu_graphic_packs)
+[![Github Actions Build Status Badge](https://github.com/slashiee/cemu_graphic_packs/workflows/Build%20Process/badge.svg)](https://github.com/slashiee/cemu_graphic_packs/actions)
 [![Github Releases Badge](https://img.shields.io/github/downloads/slashiee/cemu_graphic_packs/total.svg)](https://github.com/slashiee/cemu_graphic_packs/releases/latest)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/slashiee/cemu_graphic_packs/issues)
 
