@@ -48,6 +48,8 @@ _arrowTimeDrain = 0x1C
 0x02D5F760 = bla _arrowTimeDrain
 0x037DC35C = lis r12, _divisor@ha		#Audio fix
 0x037DC360 = lfs f13, _divisor@l(r12)
+0x02F62B3C = lis r12, _divisor@ha		#map scroll fix
+0x02F62B40 = lfs f0, _divisor@l(r12)
 
 #Break all forms of frame limiting
 #0x031FAAFC = bla _fenceNeg1 #Best fence (make sure GPU is never more than 1 frame ahead)
