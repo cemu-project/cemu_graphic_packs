@@ -4,8 +4,8 @@
 // shader 141f484aff9b9f5a
 // Used for: Anti-Aliasing Color Mix
 
-const float resXScale = $width/1280;
-const float resYScale = $height/720;
+const float resXScale = float($width)/float($gameWidth);
+const float resYScale = float($height)/float($gameHeight);
 uniform ivec4 uf_remappedVS[3];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;
