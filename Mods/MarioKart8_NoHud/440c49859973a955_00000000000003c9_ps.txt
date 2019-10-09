@@ -1,0 +1,117 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#ifdef VULKAN
+#else
+#endif
+// shader 440c49859973a955
+// Used for: Removing the position number from the HUD, colored text
+
+uniform ivec4 uf_remappedPS[5];
+uniform vec2 uf_fragCoordScale;
+layout(binding = 0) uniform sampler2D textureUnitPS0;
+layout(binding = 1) uniform sampler2D textureUnitPS1;
+layout(location = 0) in vec4 passParameterSem1;
+layout(location = 1) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+ivec4 PV0i = ivec4(0), PV1i = ivec4(0);
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+bool activeMaskStack[2];
+bool activeMaskStackC[3];
+activeMaskStack[0] = false;
+activeMaskStackC[0] = false;
+activeMaskStackC[1] = false;
+activeMaskStack[0] = true;
+activeMaskStackC[0] = true;
+activeMaskStackC[1] = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0i = floatBitsToInt(passParameterSem1);
+R1i = floatBitsToInt(passParameterSem0);
+if( activeMaskStackC[1] == true ) {
+R0i.xyzw = floatBitsToInt(texture(textureUnitPS1, intBitsToFloat(R0i.xy)).xyzw);
+}
+if( activeMaskStackC[1] == true ) {
+activeMaskStack[1] = activeMaskStack[0];
+activeMaskStackC[2] = activeMaskStackC[1];
+// 0
+R1i.z = uf_remappedPS[0].x & 0x0000001f;
+R1i.w = 0x3f800000;
+// 1
+predResult = (R1i.z >= 0x0000000e);
+activeMaskStack[1] = predResult;
+activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+}
+else {
+activeMaskStack[1] = false;
+activeMaskStackC[2] = false;
+}
+if( activeMaskStackC[2] == true ) {
+// 0
+backupReg0i = R0i.y;
+backupReg1i = R0i.z;
+R2i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_remappedPS[1].x),intBitsToFloat(uf_remappedPS[1].y),intBitsToFloat(uf_remappedPS[1].z),intBitsToFloat(uf_remappedPS[1].w))));
+PV0i.x = R2i.x;
+PV0i.y = R2i.x;
+PV0i.z = R2i.x;
+PV0i.w = R2i.x;
+// 1
+backupReg0i = R0i.x;
+backupReg1i = R0i.y;
+backupReg2i = R0i.z;
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(backupReg0i),intBitsToFloat(backupReg1i),intBitsToFloat(backupReg2i),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(uf_remappedPS[2].x),intBitsToFloat(uf_remappedPS[2].y),intBitsToFloat(uf_remappedPS[2].z),intBitsToFloat(uf_remappedPS[2].w))));
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
+PV1i.z = tempi.x;
+PV1i.w = tempi.x;
+R0i.y = tempi.x;
+R0i.x = floatBitsToInt(intBitsToFloat(R1i.x) + intBitsToFloat(PV0i.x));
+PS1i = R0i.x;
+// 2
+R0i.y = floatBitsToInt(intBitsToFloat(R1i.y) + intBitsToFloat(PV1i.x));
+}
+if( activeMaskStackC[2] == true ) {
+R1i.xyzw = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R0i.xy)).xyzw);
+}
+if( activeMaskStackC[2] == true ) {
+// 0
+backupReg0i = R1i.w;
+R1i.w = floatBitsToInt(min(intBitsToFloat(R0i.w), intBitsToFloat(backupReg0i)));
+}
+activeMaskStack[1] = activeMaskStack[1] == false;
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+if( activeMaskStackC[2] == true ) {
+R1i.xyzw = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).xyzw);
+}
+activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
+if( activeMaskStackC[1] == true ) {
+// 0
+R0i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R1i.x),intBitsToFloat(uf_remappedPS[3].x)) + intBitsToFloat(uf_remappedPS[4].x)));
+R0i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R1i.y),intBitsToFloat(uf_remappedPS[3].y)) + intBitsToFloat(uf_remappedPS[4].y)));
+// 1
+R0i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R1i.z),intBitsToFloat(uf_remappedPS[3].z)) + intBitsToFloat(uf_remappedPS[4].z)));
+R0i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R1i.w),intBitsToFloat(uf_remappedPS[3].w)) + intBitsToFloat(uf_remappedPS[4].w)));
+}
+// export
+passPixelColor0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), 0.0);
+}
