@@ -6,16 +6,16 @@ description = "Simplified FPS++ to keep behavior closer to the default game. Don
 version = 3
 
 [Preset]
+name = Static 45FPS
+$targetFPS:int = 45
+
+[Preset]
 name = Static 60FPS (ideal for 240/120/60Hz displays)
 $targetFPS:int = 60
 
 [Preset]
 name = Static 30FPS (most stable; ideal for 240/120/60Hz displays)
 $targetFPS:int = 30
-
-[Preset]
-name = Static 45FPS
-$targetFPS:int = 45
 
 [Preset]
 name= Static 165FPS (ideal for 165hz displays)
