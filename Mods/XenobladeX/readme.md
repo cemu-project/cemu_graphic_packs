@@ -51,15 +51,15 @@
 - **Equipment - Force type**: Force the type of equipment you loot. This mod is designed to make end-game equipment farming easier. **Doesn't work for Skells weapons!**
 - **Equipment - Ignore broken**: Get rid of those broken equipments!
 - **Materials - Drop ratio mod**: Set a minimum drop ratio for materials.
-- **Treasure Quality**: Select the treasure quality you want to loot (bronze, silver, gold or no chest at all if you just want to kill a lot of monsters quickly without loot).
-    > Difference between regular and "FORCED" presets:
-    > It's a bit tricky to explain, but here's how the game selects the chest quality:
-    > 1 - Calculate luck for gold chest, if success exit with gold quality, else process next step
-    > 2 - Calculate luck for silver chest, if success exit with silver quality, else process next step
-    > 3 - Calculate luck for bronze chest, if success exit with bronze quality, else process next step
-    > 4 - Bad luck, exit with no chest
-    > Regular presets of this mod only change the last step. So even if you select the "Gold quality" preset, you'll still get a silver chest if the game succeeded the step 2.
-    > FORCED presets bypass the entire process, so that you'll be guaranteed to get gold chests, but the downtime is that **it can break some quests** which require you to loot key items that appear only in bronze or silver treasures!
+- **Treasure Quality**: Select the treasure quality you want to loot (bronze, silver, gold or no chest at all if you just want to kill a lot of monsters quickly without loot).    
+    > Difference between regular and "FORCED" presets:    
+    > It's a bit tricky to explain, but here's how the game selects the chest quality:    
+    > 1 - Calculate luck for gold chest, if success exit with gold quality, else process next step    
+    > 2 - Calculate luck for silver chest, if success exit with silver quality, else process next step    
+    > 3 - Calculate luck for bronze chest, if success exit with bronze quality, else process next step    
+    > 4 - Bad luck, exit with no chest    
+    > Regular presets of this mod only change the last step. So even if you select the "Gold quality" preset, you'll still get a silver chest if the game succeeded the step 2.    
+    > FORCED presets bypass the entire process, so that you'll be guaranteed to get gold chests, but the downtime is that **it can break some quests** which require you to loot key items that appear only in bronze or silver treasures!    
     > **My advice**: only use "FORCED" presets for end-game farming.
 
 ### Music mods
