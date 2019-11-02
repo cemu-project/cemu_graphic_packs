@@ -53,6 +53,8 @@ _setSubGW = 0x0000003C
 0x00000054 = clrlwi    r30, r3, 24
 0x00000058 = blr
 
+0x021AD6D8 = bla _setSubGW
+
 _setSubGA = 0x0000005C
 0x0000005C = clrlwi    r4, r3, 24
 0x00000060 = lis r3, _sub@ha
