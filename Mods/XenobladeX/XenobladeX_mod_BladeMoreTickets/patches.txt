@@ -1,7 +1,7 @@
 [XCX_BLADE_MORETICKETS]
 moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 
-codeCaveSize = 0x60
+codeCaveSize = 0x64
 
 0x00000000 = .short $mult
 _mult = 0x00000000
@@ -13,24 +13,27 @@ _uncap = 0x00000004
 ; WHAT : Multiply the reward tickets given in many occasions
 
 _moreTickets = 0x00000008
-0x00000008 = lis r28, _mult@ha
-0x0000000C = lhz r28, _mult@l(r28)
-0x00000010 = mullw r28, r4, r28
-0x00000014 = blr
+0x00000008 = mr r30, r3
+0x0000000C = lis r28, _mult@ha
+0x00000010 = lhz r28, _mult@l(r28)
+0x00000014 = cmpwi r4, 0
+0x00000018 = bltlr
+0x0000001C = mullw r4, r4, r28
+0x00000020 = blr
 
-0x022CA874 = bla _moreTickets
+0x022CA86C = bla _moreTickets
 
 ; ----------------------------------------------------------------------------
 ; WHO  : cfs::CfSocialManager::addTradeTicket((int, unsigned int))
 ; WHAT : Ignore the max number of tickets we can get
 
-_uncapTickets = 0x00000018
-0x00000018 = lis r5, _uncap@ha
-0x0000001C = lbz r5, _uncap@l(r5)
-0x00000020 = cmpwi r5, 1
-0x00000024 = beqlr
-0x00000028 = mr r3, r25
-0x0000002C = blr
+_uncapTickets = 0x00000024
+0x00000024 = lis r5, _uncap@ha
+0x00000028 = lbz r5, _uncap@l(r5)
+0x0000002C = cmpwi r5, 1
+0x00000030 = beqlr
+0x00000034 = mr r3, r25
+0x00000038 = blr
 
 0x022CAC5C = bla _uncapTickets
 
@@ -38,12 +41,12 @@ _uncapTickets = 0x00000018
 ; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
 ; WHAT : 
 
-_dispBefore = 0x00000030
-0x00000030 = lhz       r26, 0x8C(r1)
-0x00000034 = lis 	   r24, _mult@ha
-0x00000038 = lhz 	   r24, _mult@l(r24)
-0x0000003C = mullw     r26, r26, r24
-0x00000040 = blr
+_dispBefore = 0x0000003C
+0x0000003C = lhz       r26, 0x8C(r1)
+0x00000040 = lis 	   r24, _mult@ha
+0x00000044 = lhz 	   r24, _mult@l(r24)
+0x00000048 = mullw     r26, r26, r24
+0x0000004C = blr
 
 0x02B94718 = bla _dispBefore
 
@@ -51,41 +54,11 @@ _dispBefore = 0x00000030
 ; WHO  : menu::MenuMultiQuestResult::setup((void))
 ; WHAT : 
 
-_dispAfter = 0x00000044
-0x00000044 = lhz       r5, 0x5778(r29)
-0x00000048 = lis 	   r3, _mult@ha
-0x0000004C = lhz 	   r3, _mult@l(r3)
-0x00000050 = mullw     r5, r5, r3
-0x00000054 = blr
+_dispAfter = 0x00000050
+0x00000050 = lhz       r5, 0x5778(r29)
+0x00000054 = lis 	   r3, _mult@ha
+0x00000058 = lhz 	   r3, _mult@l(r3)
+0x0000005C = mullw     r5, r5, r3
+0x00000060 = blr
 
 0x02B9FE2C = bla _dispAfter
-
-#####################################################################################################
-[XCX_BLADE_MORETICKETS_1U]
-moduleMatches = 0xAB97DE6B ; 1.0.1U
-
-codeCaveSize = 0x30
-
-0x00000000 = .short $mult
-_mult = 0x00000000
-0x00000004 = .byte $uncap
-_uncap = 0x00000004
-
-_moreTickets = 0x00000008
-0x00000008 = lis r28, _mult@ha
-0x0000000C = lhz r28, _mult@l(r28)
-0x00000010 = mullw r28, r4, r28
-0x00000014 = blr
-
-0x022CA804 = bla _moreTickets
-
-_uncapTickets = 0x00000018
-0x00000018 = lis r5, _uncap@ha
-0x0000001C = lbz r5, _uncap@l(r5)
-0x00000020 = cmpwi r5, 1
-0x00000024 = beqlr
-0x00000028 = mr r3, r25
-0x0000002C = blr
-
-0x022CABEC = bla _uncapTickets
-

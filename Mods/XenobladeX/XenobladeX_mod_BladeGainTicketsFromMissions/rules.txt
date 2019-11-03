@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Gain Reward Tickets from DLC/TA offline missions"
-path = "Xenoblade Chronicles X/Mods/BLADE/Gain Tickets from DLC or TA missions"
-description = Gain Reward Tickets from DLC or Time Attack missions.
+name = "Gain Reward Tickets from DLC or Time Attack missions"
+path = "Xenoblade Chronicles X/Mods/BLADE/Gain Reward Tickets from DLC or Time Attack missions"
+description = Adds Exchange Tickets in reward of completing Blade missions.
 version = 3
 
 [Preset]
