@@ -10,27 +10,39 @@ name = Normal (Default)
 $lodBias = 0
 
 [Preset]
-name = Lowest
+name = Lowest (+16)
 $lodBias = +16
 
 [Preset]
-name = Very Low
+name = Very Low (+8)
 $lodBias = +8
 
 [Preset]
-name = Low
+name = Low (+4)
 $lodBias = +4
 
 [Preset]
-name = High
+name = Normal+ (-1)
+$lodBias = -1
+
+[Preset]
+name = Normal++ (-2)
+$lodBias = -2
+
+[Preset]
+name = Normal+++ (-3)
+$lodBias = -3
+
+[Preset]
+name = High (-4)
 $lodBias = -4
 
 [Preset]
-name = Ultra
+name = Ultra (-8)
 $lodBias = -8
 
 [Preset]
-name = Extreme
+name = Extreme (-16)
 $lodBias = -16
 
 
