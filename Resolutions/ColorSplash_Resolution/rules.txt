@@ -83,6 +83,7 @@ $gameHeight = 720
 width = 1280
 height = 720
 formats = 0x011,0x816,0x41a,0x81e,0x810,0x21a,0x806,0x201,0x001,0x207,0x01a
+tileModesExcluded = 1
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
@@ -99,6 +100,7 @@ formats = 0x816
 width = 640
 height = 360
 formats = 0x816
+tileModesExcluded = 1
 #overwriteWidth = ($width/$gameWidth) * 640
 #overwriteHeight = ($height/$gameHeight) * 360
 
