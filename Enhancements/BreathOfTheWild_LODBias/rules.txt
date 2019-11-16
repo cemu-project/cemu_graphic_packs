@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Level Of Detail Bias"
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/LOD Bias"
 description = Setting your Level Of Detail bias changes the detail level of the textures that are used. Using a preset with a negative value will use higher resolution textures whereas choosing a preset with a positive value decreases the resolution of the textures that are used.
-version = 3
+version = 4
 
 [Preset]
 name = Normal texture detail (Default)

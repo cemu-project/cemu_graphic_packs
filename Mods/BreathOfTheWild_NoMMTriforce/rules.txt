@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = No Master Mode Triforce
 path = "The Legend of Zelda: Breath of the Wild/Mods/No Master Mode Triforce"
 description = Removes the on-screen triforce icon in Master Mode
-version = 3
+version = 4
 
 [TextureRedefine]
 width = 36

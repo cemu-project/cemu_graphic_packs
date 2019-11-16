@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Set FPS Limit
 path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Set FPS Limit (Required)"
 description = Sets a cap on the FPS. If you want no gameplay bugs, use 30FPS. These bugs range from crashing after cutscenes, certain boss fights will fly away to the horizon and some physics are more intense.
-version = 3
+version = 4
 
 [Preset]
 name = 60FPS (ideal for 240/120/60Hz displays)
