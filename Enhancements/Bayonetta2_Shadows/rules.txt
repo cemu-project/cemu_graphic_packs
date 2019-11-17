@@ -3,7 +3,7 @@ titleIds = 0005000010172600,0005000010172700,000500001011B900
 name = Shadow Resolution
 path = "Bayonetta 2/Graphics/Shadow Resolution"
 description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution.
-version = 3
+version = 4
 
 [Preset]
 name = Medium (1.00x, Default)

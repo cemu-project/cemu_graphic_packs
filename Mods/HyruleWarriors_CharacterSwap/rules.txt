@@ -3,7 +3,7 @@ titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Character Swap
 path = "Hyrule Warriors/Mods/Character Swap (in adventure mode)"
 description = Allows you to use a character that isn't selectable from the character selection screen normally in adventure mode.
-version = 3
+version = 4
 
 [Preset]
 name = Link

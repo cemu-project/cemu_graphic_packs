@@ -3,6 +3,6 @@ titleIds = 000500001010AD00,0005000010110F00
 name = 60FPS
 path = "Darksiders II/Mods/60FPS"
 description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
-version = 3
+version = 4
 
 # Made by theboy181

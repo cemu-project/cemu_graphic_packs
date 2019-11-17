@@ -3,7 +3,7 @@ titleIds = 5000010173E00,5000010174000,5000010174100,5000010176100,5000010176000
 name = "Resolution"
 path = Virtual Console/GBA/Graphics/Resolution 
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

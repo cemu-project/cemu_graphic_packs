@@ -3,7 +3,7 @@ titleIds = 00050000101D0300,00050000101D0600,000500001014D200,00050000101D3F00
 name = "LOD Bias"
 path = "Fatal Frame - Project Zero: Maiden of Black Water/Enhancements/LOD Bias"
 description = Level of details adjustment
-version = 3
+version = 4
 
 [Preset]
 name = Normal (Default)

@@ -3,7 +3,7 @@ titleIds = 000500001017b300
 name = Resolution
 path = "A World of Keflings/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

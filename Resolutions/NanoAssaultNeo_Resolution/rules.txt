@@ -3,7 +3,7 @@ titleIds = 0005000010110100,0005000010110600,0005000E10110100,0005000E10110600
 name = Resoluton
 path = "Nano Assault Neo/Graphics/Resolution"
 description =  Changes the games resolution. You cannot change resolutions on the fly.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (16:9) (Default)

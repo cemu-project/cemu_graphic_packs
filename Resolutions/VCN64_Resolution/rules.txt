@@ -3,7 +3,7 @@ titleIds = 50000101FEA00,50000101FE900,5000010199200,5000010199100,5000010199300
 name = "Resolution"
 path = Virtual Console/N64/Graphics/Resolution 
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

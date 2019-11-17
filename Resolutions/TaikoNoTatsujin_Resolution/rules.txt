@@ -3,7 +3,7 @@ titleIds = 0005000010132200,0005000010192000,00050000101D3000,0005000c10132200,0
 name = Resolution
 path = "Taiko no Tatsujin/Graphics/Resolution"
 description = Changes the resolution of the game. Works on all versions.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 Default

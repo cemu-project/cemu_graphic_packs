@@ -3,7 +3,7 @@ titleIds = 000500001015B200,000500001016EA00,000500001016D800
 name = Resolution
 path = "Child of Light/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

@@ -3,7 +3,7 @@ titleIds = 5000010194200, 0005000010195d00
 name = "Resolution"
 path = "Lego Dimensions/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

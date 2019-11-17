@@ -3,4 +3,4 @@ titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Octohax
 path = "Splatoon/Mods/Octohax"
 description = Replaces the female inkling with the octoling.
-version = 3
+version = 4

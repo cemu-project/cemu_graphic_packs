@@ -3,7 +3,7 @@ titleIds = 00050000101FA600,00050000101F9700
 name = Uncapped Framerate
 path = "Darksiders Warmastered Edition/Mods/Uncapped Framerate"
 description = This patches out the framerate cap that the game has in place. Performance may increase from changing the recompiler to be dual or triple core.
-version = 3
+version = 4
 
 # Made by theboy181
 

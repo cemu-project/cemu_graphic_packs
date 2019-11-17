@@ -3,7 +3,7 @@ titleIds = 00050000101E0100,000500001020A200,000500001020A300
 name = Resolution
 path = "Minecraft: Story Mode/Graphics/Resolution"
 description = Changes the game's resolution.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

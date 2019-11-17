@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Equipment - Force Count" 
 path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Count"
 description = Force the count of equipment looted in Silver or Gold treasures.
-version = 3
+version = 4
 
 [Preset]
 name = "Always 3 equipments"

@@ -3,4 +3,4 @@ titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0
 name = Crash Fix
 path = "New Super Mario Bros. U/Workarounds/Crash Fix" #and luigi
 description = Allows NSMBU and NSLU to be played without the required system files.
-version = 3
+version = 4

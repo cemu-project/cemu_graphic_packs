@@ -3,7 +3,7 @@ titleIds = 00050000101A3500,00050000101A3600,0005000010199000
 name = Resolution
 path = "Mario Tennis: Ultra Smash/Graphics/Resolution"
 description = Changes the games resolution. You cannot change resolutions on the fly.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

@@ -3,7 +3,7 @@ titleIds = 00050000101FA600,00050000101F9700
 name = Resolution
 path = "Darksiders Warmastered Edition/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 # Made by theboy181
 

@@ -3,4 +3,4 @@ titleIds = 0005000010135700,000500001012B100,0005000010128F00
 name = 60FPS Two-Player Race
 path = "Sonic Lost World/Mods/60FPS 2P Race"
 description = Patches out the 30FPS lock from the two-player race mode
-version = 3
+version = 4

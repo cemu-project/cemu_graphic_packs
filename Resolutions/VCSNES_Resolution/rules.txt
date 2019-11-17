@@ -3,7 +3,7 @@ titleIds = 500001012A800,500001012E900,500001012EC00,500001012EE00,500001012ED00
 name = "Resolution"
 path = Virtual Console/SNES/Graphics/Resolution 
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

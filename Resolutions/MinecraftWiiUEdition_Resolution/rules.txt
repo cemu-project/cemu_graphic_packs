@@ -3,7 +3,7 @@ titleIds = 00050000101D9D00,00050000101D7500,00050000101DBE00
 name = Resolution
 path = "Minecraft: Wii U Edition/Graphics/Resolution"
 description = Changes the game's resolution.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

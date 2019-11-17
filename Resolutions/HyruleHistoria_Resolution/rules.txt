@@ -3,7 +3,7 @@ titleIds = 000500001014CA00
 name = Resolution
 path = "Hyrule Historia/Graphics/Resolution"
 description = Changes the games resolution.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

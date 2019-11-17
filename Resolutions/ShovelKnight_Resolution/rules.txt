@@ -3,7 +3,7 @@ titleIds = 000500001016E100,0005000010178F00,00050000101D9300
 name = Resolution
 path = "Shovel Knight/Graphics/Resolution"
 description = Changes the game's resolution.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

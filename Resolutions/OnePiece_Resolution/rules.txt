@@ -3,7 +3,7 @@ titleIds = 0005000010148000,0005000010175C00,0005000010175D00
 name = Resolution
 path = "ONE PIECE Unlimited World Red/Graphics/Resolution"
 description = Changes the games resolution. You cannot change resolutions on the fly.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

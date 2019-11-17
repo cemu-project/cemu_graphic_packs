@@ -3,7 +3,7 @@ titleIds = 00050000101DF400,00050002101DF401,00050000101DF500
 name = Shadow Resolution
 path = "Pokken Tournament/Graphics/Shadow Resolution"
 description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution.
-version = 3
+version = 4
 
 [Preset]
 name = Medium (1.00x, Default)

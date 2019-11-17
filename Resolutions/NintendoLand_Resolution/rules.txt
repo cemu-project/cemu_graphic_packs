@@ -3,7 +3,7 @@ titleIds = 0005000010101F00,0005000010102000,0005000010102100
 name = Resolution
 path = "Nintendo Land/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

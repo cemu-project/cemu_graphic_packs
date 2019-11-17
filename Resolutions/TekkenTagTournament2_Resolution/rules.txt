@@ -3,7 +3,7 @@ titleIds = 000500001010F800,0005000010110000
 name = Resolution
 path = "Tekken Tag Tournament 2/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

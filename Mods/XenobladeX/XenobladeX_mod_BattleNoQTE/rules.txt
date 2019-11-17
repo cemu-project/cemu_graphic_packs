@@ -3,4 +3,4 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Automatic Soul Challenges"
 path = "Xenoblade Chronicles X/Mods/Battle/Automatic Soul Challenges"
 description = The Soul Challenges QTE are hidden and automatically successful (no preset needed).
-version = 3
+version = 4

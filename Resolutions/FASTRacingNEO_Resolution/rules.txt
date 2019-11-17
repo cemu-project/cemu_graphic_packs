@@ -3,7 +3,7 @@ titleIds = 000500001012f000,00050000101d6000,00050000101e4100,00050000101FED00
 name = Resolution
 path = "Fast Racing Neo/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)
