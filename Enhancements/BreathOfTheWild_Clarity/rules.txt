@@ -50,5 +50,13 @@ name = Filmic Preset
 $preset:int = 6
 
 [Preset]
+name = Survival of the Wild Preset (Warmer)
+$preset:int = 12
+
+[Preset]
+name = Survival of the Wild Preset (Colder)
+$preset:int = 13
+
+[Preset]
 name = User-Defined Preset
 $preset:int = 0
