@@ -1,7 +1,6 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
-#extension GL_ARB_shading_language_packing : enable
 // shader 2a8afa64e98f2977
 layout(binding = 1, std140) uniform uniformBlockVS1
 {
@@ -36,7 +35,7 @@ else if( v == 0xFFFFFFFF )
 	return floatBitsToInt(0.0);
 return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
 }
-//float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
 void main()
 {
 ivec4 R0i = ivec4(0);

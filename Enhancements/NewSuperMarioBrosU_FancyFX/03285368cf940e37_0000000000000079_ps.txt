@@ -5,8 +5,8 @@
 
 //float dither = $dither ;
 //float scaleShader = $scaleShader;
-float scaleBlur = ($scaleBlur); //0.25 4k
-int sampleScale = 2;
+float scaleBlur = $scaleBlur; //0.25 4k
+const int sampleScale = 2;
 //float lightBloom = 0.95; 
 
 

@@ -1,7 +1,6 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
-#extension GL_ARB_shading_language_packing : enable
 // shader dda6656146476243
 //Video aspect
 const float UI = $UIAspectX;

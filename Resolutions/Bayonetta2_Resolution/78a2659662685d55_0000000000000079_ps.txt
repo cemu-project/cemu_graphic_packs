@@ -7,7 +7,7 @@ layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4c24000 res
 layout(location = 0) in vec4 passParameterSem133;
 layout(location = 0) out vec4 passPixelColor0;
 uniform vec2 uf_fragCoordScale;
-const float scaleFactor = uf_fragCoordScale.x;
+float scaleFactor = uf_fragCoordScale.x;
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
