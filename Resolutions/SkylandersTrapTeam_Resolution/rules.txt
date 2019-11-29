@@ -3,7 +3,7 @@ titleIds = 000500001017C600,0005000010181F00
 name = Resolution
 path = "Skylanders Trap Team/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

@@ -3,7 +3,7 @@ titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Contrasty
 path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Contrasty"
 description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.
-version = 3
+version = 4
 
 [Preset]
 name = default

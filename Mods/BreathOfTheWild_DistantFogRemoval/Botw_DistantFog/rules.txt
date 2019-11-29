@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Distant Area Fog Pack
 path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/Distant Fog - Main"
 description = Can Remove Distant Fog Haze from the world. Change its RGB color. Light up the Distance.
-version = 3
+version = 4
 
 
 [Preset]

@@ -3,7 +3,7 @@ name = Optimized Bicubic B-spline resampler
 titleIds = 
 path = "Filters/Bicubic (4 taps)"
 description = Cemu's Bicubic. Because it's B-spline so it was optimized down to 4 taps.
-version = 3
+version = 4
 
 [OutputShader]
 upscaleMagFilter = Linear

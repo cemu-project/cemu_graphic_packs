@@ -3,7 +3,7 @@ titleIds = 000500001012B800,000500001012B900,0005000010116600
 name = Resolution
 path = "Fist of the North Star: Ken's Rage 2/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

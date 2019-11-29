@@ -3,7 +3,7 @@ titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
 name = Adjust CutScene Blur Pack
 path = "Tokyo Mirage Sessions FE/Graphics/Adjust Blur"
 description = Changes the in-game cut-scenes blur.
-version = 3
+version = 4
 
 [Preset]
 name = 100% Blur (Original)

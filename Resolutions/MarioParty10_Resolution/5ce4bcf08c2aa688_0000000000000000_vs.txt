@@ -2,16 +2,41 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader 5ce4bcf08c2aa688
 // Used for: Bloom
 const float resXScale = ($width/$gameWidth); 
 const float resYScale = ($height/$gameHeight); 
 
 
+#ifdef VULKAN
+layout(set = 0, binding = 0) uniform ufBlock
+{
 uniform ivec4 uf_remappedVS[6];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
-layout(location = 0) in uvec4 attrDataSem0;
-layout(location = 1) in uvec4 attrDataSem1;
+};
+#else
+uniform ivec4 uf_remappedVS[6];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+#endif
+ATTR_LAYOUT(0, 0) in uvec4 attrDataSem0;
+ATTR_LAYOUT(0, 1) in uvec4 attrDataSem1;
 out gl_PerVertex
 {
 	vec4 gl_Position;
@@ -243,7 +268,7 @@ PV1i.x = tempResulti;
 R4i.x = ((ARi.x==0)?R9i.x:(ARi.x==24)?R33i.x:(ARi.x==25)?R34i.x:(ARi.x==26)?R35i.x:(ARi.x==27)?R36i.x:(ARi.x==118)?R127i.x:0);
 R4i.y = ((ARi.x==0)?R9i.y:(ARi.x==24)?R33i.y:(ARi.x==25)?R34i.y:(ARi.x==26)?R35i.y:(ARi.x==27)?R36i.y:(ARi.x==118)?R127i.y:0);
 // export
-gl_Position = vec4(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z), intBitsToFloat(R5i.w));
+SET_POSITION(vec4(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z), intBitsToFloat(R5i.w)));
 // 0
 R5i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R0i.z)/resXScale,intBitsToFloat(uf_remappedVS[4].x)) + intBitsToFloat(R4i.x)));
 R5i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R0i.w)/resYScale,intBitsToFloat(uf_remappedVS[4].y)) + intBitsToFloat(R4i.y)));

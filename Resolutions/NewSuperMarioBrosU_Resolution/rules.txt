@@ -3,7 +3,7 @@ titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0
 name = Resolution
 path = "New Super Mario Bros. U/Graphics/Resolution" #and luigi
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 //compatible resolutions
 [Preset]

@@ -3,7 +3,7 @@ name = Optimized Bicubic spline resampler
 titleIds = 
 path = "Filters/Bicubic"
 description = The b and c can adjust the properties of the cubic; sometimes referred to as "blurring" and "ringing" respectively.
-version = 3
+version = 4
 
 [OutputShader]
 upscaleMagFilter = Linear

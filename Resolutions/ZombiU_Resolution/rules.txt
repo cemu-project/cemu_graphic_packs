@@ -3,7 +3,7 @@ titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,0
 name = Resolution
 path = "ZombiU/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

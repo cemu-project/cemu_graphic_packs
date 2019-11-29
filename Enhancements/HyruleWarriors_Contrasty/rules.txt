@@ -3,7 +3,7 @@ titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Contrasty
 path = "Hyrule Warriors/Enhancements/Contrasty"
 description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.
-version = 3
+version = 4
 
 [Preset]
 name = Default

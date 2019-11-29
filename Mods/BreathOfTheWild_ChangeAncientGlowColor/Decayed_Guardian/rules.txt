@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Decayed Guardian
 path = "The Legend of Zelda: Breath of the Wild/Mods/Change Ancient Glow Color/Decayed Guardian"
 description = Change Decayed Guardian (including Stalkers with weathered appearance)'s color. Originally it's Malice Red.
-version = 3
+version = 4
 
 [Preset]
 name = Malice Red

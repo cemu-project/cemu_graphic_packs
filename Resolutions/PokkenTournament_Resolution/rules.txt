@@ -3,7 +3,7 @@ titleIds = 00050000101DF400,00050002101DF401,00050000101DF500
 name = Resolution
 path = "Pokken Tournament/Graphics/Resolution"
 description = Changes the resolution of the game. Native Render means that instead of the game rendering at 960x720, it is at a native 1280x720. Known issues: Bloom needs shader edits.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

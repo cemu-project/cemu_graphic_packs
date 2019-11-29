@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Fancy GFX # I would have called this RTX on, but Nvidia has trademarked it ;)
 path = "Xenoblade Chronicles X/Enhancements/Fancy FX" 
 description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia.   
-version = 3
+version = 4
 
 #Disabled, causes gfx errors on 1.15.x  Enable if fixed. 
 #[TextureRedefine] 

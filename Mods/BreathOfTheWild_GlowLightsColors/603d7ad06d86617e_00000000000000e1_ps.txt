@@ -1,5 +1,22 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader 603d7ad06d86617e
 // Teleportation - part 2
 // Glow Lights Color Mod
@@ -11,15 +28,23 @@
 #define ALPHA_FACTOR 1.0 //same as above; applies to Transparency
 
 const float hueRotation = HUE_ROTATION / 360.0;
+#ifdef VULKAN
+layout(set = 1, binding = 2) uniform ufBlock
+{
 uniform float uf_alphaTestRef;
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x216a1000 res 64x64x1 dim 1 tm: 4 format 0001 compSel: 0 0 0 0 mipView: 0x0 (num 0x7) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 0 0 0 border: 0
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x211a9000 res 32x64x1 dim 1 tm: 4 format 0034 compSel: 0 0 0 0 mipView: 0x0 (num 0x7) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 0 0 0 border: 0
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform float uf_alphaTestRef;
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x216a1000 res 64x64x1 dim 1 tm: 4 format 0001 compSel: 0 0 0 0 mipView: 0x0 (num 0x7
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x211a9000 res 32x64x1 dim 1 tm: 4 format 0034 compSel: 0 0 0 0 mipView: 0x0 (num 0x7
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;
 layout(location = 2) in vec4 passParameterSem4;
 layout(location = 3) in vec4 passParameterSem7;
 layout(location = 0) out vec4 passPixelColor0;
-uniform vec2 uf_fragCoordScale;
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )

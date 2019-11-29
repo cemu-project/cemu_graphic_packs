@@ -3,4 +3,4 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Workaround for AMD crashes"
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workarounds/AMD Crash"
 description = Workaround for a shader related crash on AMD drivers. Required for Cemu 1.15.8 and above.
-version = 3
+version = 4

@@ -3,7 +3,7 @@ titleIds = 0005000010110900,0005000010110A00,0005000010110B00
 name = Resolution
 path = "Ninja Gaiden 3: Razors Edge/Graphics/Resolution" 
 description = Changes the resolution of the game. 
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

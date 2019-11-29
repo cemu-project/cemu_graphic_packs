@@ -3,7 +3,7 @@ titleIds = 0005000010110E00,0005000010145000,0005000010144F00
 name = Resolution
 path = "Super Smash Bros. for Wii U/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

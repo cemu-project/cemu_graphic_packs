@@ -1,27 +1,52 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader 49ce4bf04a654e80
 // ReflExtra - Enhanced Reflections
 // Reflections can be seen at greater distances
 // shader dumped from BotW v1.3.1, using Cemu 1.9.1
+#ifdef VULKAN
+layout(set = 1, binding = 10) uniform ufBlock
+{
 uniform ivec4 uf_remappedPS[10];
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf45c6000 res 1280x720x1 dim 1 tm: 4 format 041a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0xf513a800 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 3) uniform sampler2D textureUnitPS3;// Tex3 addr 0xf494a800 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler3 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 5) uniform sampler2D textureUnitPS5;// Tex5 addr 0xf4e91800 res 1280x720x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler5 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 7) uniform sampler2D textureUnitPS7;// Tex7 addr 0xf5054000 res 640x360x1 dim 1 tm: 4 format 080e compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler7 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 8) uniform sampler2D textureUnitPS8;// Tex8 addr 0xf5846000 res 640x360x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler8 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 9) uniform samplerCubeArray textureUnitPS9;// Tex9 addr 0x3db66800 res 64x64x1 dim 3 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x4) sliceView: 0x0 (num 0x6) Sampler9 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 11) uniform sampler2DArray textureUnitPS11;// Tex11 addr 0xf5593000 res 640x360x2 dim 5 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x2) Sampler11 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 12) uniform sampler2D textureUnitPS12;// Tex12 addr 0xf575f800 res 640x360x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler12 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 14) uniform sampler2D textureUnitPS14;// Tex14 addr 0xf5977800 res 640x360x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler14 ClampX/Y/Z: 2 2 2 border: 1
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[10];
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(1, 1, 0) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf45c6000 res 1280x720x1 dim 1 tm: 4 format 041a compSel: 0 1 2 3 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(2, 1, 1) uniform sampler2D textureUnitPS2;// Tex2 addr 0xf513a800 res 320x180x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(3, 1, 2) uniform sampler2D textureUnitPS3;// Tex3 addr 0xf494a800 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(5, 1, 3) uniform sampler2D textureUnitPS5;// Tex5 addr 0xf4e91800 res 1280x720x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(7, 1, 4) uniform sampler2D textureUnitPS7;// Tex7 addr 0xf5054000 res 640x360x1 dim 1 tm: 4 format 080e compSel: 0 4 4 5 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(8, 1, 5) uniform sampler2D textureUnitPS8;// Tex8 addr 0xf5846000 res 640x360x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(9, 1, 6) uniform samplerCubeArray textureUnitPS9;// Tex9 addr 0x3db66800 res 64x64x1 dim 3 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x4
+TEXTURE_LAYOUT(11, 1, 7) uniform sampler2DArray textureUnitPS11;// Tex11 addr 0xf5593000 res 640x360x2 dim 5 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(12, 1, 8) uniform sampler2D textureUnitPS12;// Tex12 addr 0xf575f800 res 640x360x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(14, 1, 9) uniform sampler2D textureUnitPS14;// Tex14 addr 0xf5977800 res 640x360x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;
 layout(location = 2) in vec4 passParameterSem3;
 layout(location = 3) in vec4 passParameterSem4;
 layout(location = 4) in vec4 passParameterSem6;
 layout(location = 0) out vec4 passPixelColor0;
-uniform vec2 uf_fragCoordScale;
 void redcCUBE(vec4 src0, vec4 src1, out vec3 stm, out int faceId)
 {
 // stm -> x .. s, y .. t, z .. MajorAxis*2.0

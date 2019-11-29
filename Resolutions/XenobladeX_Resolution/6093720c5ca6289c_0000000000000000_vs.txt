@@ -2,16 +2,41 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader 6093720c5ca6289c
 //lensflare
+#ifdef VULKAN
+layout(set = 0, binding = 1) uniform ufBlock
+{
 uniform ivec4 uf_remappedVS[8];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
-layout(binding = 32) uniform sampler2D textureUnitVS0;// Tex0 addr 0xf5f0a000 res 640x360x1 dim 1 tm: 4 format 080e compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler18 ClampX/Y/Z: 2 2 2 border: 0
-layout(location = 0) in uvec4 attrDataSem0;
-layout(location = 1) in uvec4 attrDataSem1;
-layout(location = 2) in uvec4 attrDataSem2;
-layout(location = 3) in uvec4 attrDataSem3;
-layout(location = 4) in uvec4 attrDataSem4;
+};
+#else
+uniform ivec4 uf_remappedVS[8];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+#endif
+TEXTURE_LAYOUT(32, 0, 0) uniform sampler2D textureUnitVS0;// Tex0 addr 0xf5f0a000 res 640x360x1 dim 1 tm: 4 format 080e compSel: 0 4 4 5 mipView: 0x0 (num 0x1
+ATTR_LAYOUT(0, 0) in uvec4 attrDataSem0;
+ATTR_LAYOUT(0, 1) in uvec4 attrDataSem1;
+ATTR_LAYOUT(0, 2) in uvec4 attrDataSem2;
+ATTR_LAYOUT(0, 3) in uvec4 attrDataSem3;
+ATTR_LAYOUT(0, 4) in uvec4 attrDataSem4;
 out gl_PerVertex
 {
 	vec4 gl_Position;
@@ -508,7 +533,7 @@ R0i.w = ((PV1i.z == 0)?(R9i.y):(0x3f800000));
 float origRatio = (float(1280)/float(720));
 float newRatio = (float($width)/float($height)) ;
 // *(origRatio / newRatio)
-gl_Position = vec4(intBitsToFloat(R0i.x)*(origRatio / newRatio), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+SET_POSITION(vec4(intBitsToFloat(R0i.x)*(origRatio / newRatio), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w)));
 // export
 passParameterSem0 = vec4(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
 // export

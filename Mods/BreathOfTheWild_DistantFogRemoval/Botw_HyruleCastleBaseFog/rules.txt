@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Hyrule Castle Base Fog Pack
 path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/Hyrule Castle Base Fog"
 description = Can Remove the Fog glow at the Base of Hyrule Castle. Can Change its RGB color.
-version = 3
+version = 4
 
 
 [Preset]

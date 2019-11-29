@@ -2,4 +2,4 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/LWZX Crash"
 description = You should enable this pack in any circumstance. This workaround fixes crashes that would occur at specific points in the game.
-version = 3
+version = 4

@@ -3,4 +3,4 @@ titleIds = 50000101FEA00,50000101FE900,5000010199200,5000010199100,5000010199300
 name = Undarken
 path = Virtual Console/N64/Enhancements/Undarken 
 description = Undarkens the emulator output.
-version = 3
+version = 4

@@ -3,7 +3,7 @@ titleIds = 000500001012BC00,000500001012BD00,000500001012BE00,000500021012BD01,0
 name = Resolution
 path = "Pikmin 3/Graphics/Resolution"
 description = "Changes the resolution of the game."
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

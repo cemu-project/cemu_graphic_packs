@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Resolution
 path = "The Legend of Zelda: Breath of the Wild/Graphics/Resolution"
 description = Changes the games resolution. You cannot change resolutions on the fly.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (16:9) (Default)

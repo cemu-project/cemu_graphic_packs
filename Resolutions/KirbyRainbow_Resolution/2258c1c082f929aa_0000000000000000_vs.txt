@@ -2,14 +2,39 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader 2258c1c082f929aa
 // Used for: Stage Background Blur, Clay Texture Blur
 const float resXScale = ($width/$gameWidth);
 const float resYScale = ($height/$gameHeight);
 
+#ifdef VULKAN
+layout(set = 0, binding = 0) uniform ufBlock
+{
 uniform ivec4 uf_uniformRegisterVS[256];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
-layout(location = 0) in uvec4 attrDataSem0;
+};
+#else
+uniform ivec4 uf_uniformRegisterVS[256];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+#endif
+ATTR_LAYOUT(0, 0) in uvec4 attrDataSem0;
 out gl_PerVertex
 {
 	vec4 gl_Position;
@@ -74,7 +99,7 @@ R2i.y = floatBitsToInt(intBitsToFloat(uf_uniformRegisterVS[5].y)/resYScale + int
 R3i.x = floatBitsToInt(intBitsToFloat(uf_uniformRegisterVS[6].x)/resXScale + intBitsToFloat(uf_uniformRegisterVS[ARi.x+7].x));
 R3i.y = floatBitsToInt(intBitsToFloat(uf_uniformRegisterVS[6].y)/resYScale + intBitsToFloat(uf_uniformRegisterVS[ARi.x+7].y));
 // export
-gl_Position = vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w));
+SET_POSITION(vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w)));
 // export
 passParameterSem0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.z));
 // export

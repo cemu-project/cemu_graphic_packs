@@ -3,6 +3,6 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Remove excess bloom on Intel GPU's with certain drivers"
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workarounds/Intel: Remove Excess Bloom"
 description = This workaround targets users of Intel iGPU drivers 23.xx and older experiencing bloom issue. These drivers may offer better performance but have graphical glitches. This pack aims to fix the graphical issues so the older drivers create visuals similar to the new drivers. These older drivers may be found on Intel's site https://downloadcenter.intel.com/download/27484/Graphics-Intel-Graphics-Driver-for-Windows-15-65-.
-version = 3
+version = 4
 
 #Altros

@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500301001400a,000500301001410a,000500301001420a
 name = "Remove gray overlay"
-version = 3
+version = 4
 path = "Nintendo eShop/Workarounds/Remove gray overlay"
 description = Hides the gray overlay covering the lower half of the screen

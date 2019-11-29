@@ -3,7 +3,7 @@ titleIds = 0005000010180600,0005000010180700,0005000010180500
 name = Resolution
 path = "Captain Toad: Treasure Tracker/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

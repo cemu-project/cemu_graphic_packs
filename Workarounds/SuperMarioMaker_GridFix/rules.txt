@@ -3,4 +3,4 @@ titleIds = 000500001018DB00,000500001018DC00,000500001018DD00
 name = Grid Fix
 path = "Super Mario Maker/Workarounds/Grid Fix" 
 description = Fixes the issue where the grid isn't rendered correctly and adds a tint to the image. Normally only there with interpreter.
-version = 3
+version = 4

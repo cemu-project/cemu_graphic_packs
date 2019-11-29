@@ -3,7 +3,7 @@ titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
 name = Resolution
 path = "Yoshi's Woolly World/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

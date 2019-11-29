@@ -2,14 +2,39 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #extension GL_ARB_shading_language_packing : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader a2b3125cf46e9f74
 // Used for: Fixing the grid by inserting some values that are 0 on recompiler mode.
 
+#ifdef VULKAN
+layout(set = 0, binding = 0) uniform ufBlock
+{
 uniform ivec4 uf_remappedVS[17];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
-layout(location = 0) in uvec4 attrDataSem0;
-layout(location = 1) in uvec4 attrDataSem1;
-layout(location = 2) in uvec4 attrDataSem8;
+};
+#else
+uniform ivec4 uf_remappedVS[17];
+uniform vec2 uf_windowSpaceToClipSpaceTransform;
+#endif
+ATTR_LAYOUT(0, 0) in uvec4 attrDataSem0;
+ATTR_LAYOUT(0, 1) in uvec4 attrDataSem1;
+ATTR_LAYOUT(0, 2) in uvec4 attrDataSem8;
 out gl_PerVertex
 {
 	vec4 gl_Position;
@@ -227,7 +252,7 @@ R4f.x = R126f.x * PS1f;
 R4f.y = R127f.y * PS1f;
 R4f.z = R126f.z * PS1f;
 // export
-gl_Position = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
+SET_POSITION(vec4(R1f.x, R1f.y, R1f.z, R1f.w));
 // export
 // skipped export to semanticId 255
 // export

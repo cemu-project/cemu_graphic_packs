@@ -1,5 +1,22 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader a54bdb88a57b9be9
 // Bomb - explosion particles 1
 // Glow Lights Color Mod
@@ -11,12 +28,22 @@
 #define ALPHA_FACTOR 1.0 //same as above; applies to Transparency
 
 const float hueRotation = HUE_ROTATION / 360.0;
+#ifdef VULKAN
+layout(set = 1, binding = 4) uniform ufBlock
+{
 uniform ivec4 uf_remappedPS[3];
 uniform float uf_alphaTestRef;
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x20fc2000 res 128x128x1 dim 1 tm: 4 format 0035 compSel: 0 1 1 1 mipView: 0x0 (num 0x8) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 0 0 0 border: 0
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x20fd4000 res 128x128x1 dim 1 tm: 4 format 0035 compSel: 0 0 0 1 mipView: 0x0 (num 0x8) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 0 2 0 border: 0
-layout(binding = 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0x20fc9000 res 128x128x1 dim 1 tm: 4 format 0034 compSel: 0 0 0 0 mipView: 0x0 (num 0x8) sliceView: 0x0 (num 0x1) Sampler2 ClampX/Y/Z: 0 0 0 border: 0
-layout(binding = 4) uniform sampler2D textureUnitPS4;// Tex4 addr 0xf4e91800 res 1280x720x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler4 ClampX/Y/Z: 2 2 0 border: 0
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[3];
+uniform float uf_alphaTestRef;
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x20fc2000 res 128x128x1 dim 1 tm: 4 format 0035 compSel: 0 1 1 1 mipView: 0x0 (num 0x8
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x20fd4000 res 128x128x1 dim 1 tm: 4 format 0035 compSel: 0 0 0 1 mipView: 0x0 (num 0x8
+TEXTURE_LAYOUT(2, 1, 2) uniform sampler2D textureUnitPS2;// Tex2 addr 0x20fc9000 res 128x128x1 dim 1 tm: 4 format 0034 compSel: 0 0 0 0 mipView: 0x0 (num 0x8
+TEXTURE_LAYOUT(4, 1, 3) uniform sampler2D textureUnitPS4;// Tex4 addr 0xf4e91800 res 1280x720x1 dim 1 tm: 4 format 0806 compSel: 0 4 4 5 mipView: 0x0 (num 0x1
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;
 layout(location = 2) in vec4 passParameterSem3;
@@ -25,7 +52,6 @@ layout(location = 4) in vec4 passParameterSem7;
 layout(location = 5) in vec4 passParameterSem8;
 layout(location = 6) in vec4 passParameterSem9;
 layout(location = 0) out vec4 passPixelColor0;
-uniform vec2 uf_fragCoordScale;
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )

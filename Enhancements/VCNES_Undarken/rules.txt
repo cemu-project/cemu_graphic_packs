@@ -3,4 +3,4 @@ titleIds = 500001012A100,500001012DF00,500001012DE00,500001012E000,500001012E100
 name = Undarken
 path = Virtual Console/NES/Enhancements/Undarken 
 description = Undarkens the emulator output.
-version = 3
+version = 4

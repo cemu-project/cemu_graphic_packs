@@ -3,7 +3,7 @@ titleIds = 0005000010150300,0005000010152A00,0005000010152B00
 name = Resolution
 path = "Dr. Luigi/Graphics/Resolution"
 description = Changes the resolution of the game. Anti-aliasing is disabled by default.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

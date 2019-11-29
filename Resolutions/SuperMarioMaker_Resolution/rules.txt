@@ -3,7 +3,7 @@ titleIds = 000500001018DB00,000500001018DC00,000500001018DD00
 name = Resolution
 path = "Super Mario Maker/Graphics/Resolution" 
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)

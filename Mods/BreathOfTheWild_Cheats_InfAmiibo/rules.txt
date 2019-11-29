@@ -3,4 +3,4 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Infinite Amiibo
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cheats/Infinite Amiibo"
 description = BotW Cheats by C313571N and Xalphenos
-version = 3
+version = 4

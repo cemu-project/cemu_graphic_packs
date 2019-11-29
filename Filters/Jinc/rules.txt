@@ -3,7 +3,7 @@ name = Jinc windowed-jinc with anti-ringing
 titleIds = 
 path = "Filters/Jinc"
 description = This is an approximation of Jinc. If B=1.0, it's a lanczos filter.
-version = 3
+version = 4
 
 [OutputShader] # need texels
 upscaleMagFilter = NearestNeighbor

@@ -3,7 +3,7 @@ titleIds = 0005000010129000,0005000010129200
 name = Resolution
 path = "DuckTales: Remastered/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1920x1080 (Default)

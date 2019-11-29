@@ -3,7 +3,7 @@ titleIds = 0005000010172600,0005000010172700,000500001011B900
 name = Contrasty
 path = "Bayonetta 2/Enhancements/Contrasty"
 description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.
-version = 3
+version = 4
 
 [Preset]
 name = Default

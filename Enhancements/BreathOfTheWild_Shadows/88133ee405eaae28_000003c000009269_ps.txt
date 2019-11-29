@@ -1,37 +1,61 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu so expect weird code and possible errors.
+
 // shader 88133ee405eaae28
 // Shadow 2x2 box blur fix
 // shader dumped from BotW v1.4.0, using Cemu 1.11.1
 const float resXScale = $shadowRes;
 const float resYScale = $shadowRes;
 
-layout(binding = 33, std140) uniform uniformBlockPS1
+UNIFORM_BUFFER_LAYOUT(33, 1, 7) uniform uniformBlockPS1
 {
 vec4 uf_blockPS1[1024];
 };
 
-layout(binding = 38, std140) uniform uniformBlockPS6
+UNIFORM_BUFFER_LAYOUT(38, 1, 8) uniform uniformBlockPS6
 {
 vec4 uf_blockPS6[1024];
 };
 
-layout(binding = 42, std140) uniform uniformBlockPS10
+UNIFORM_BUFFER_LAYOUT(42, 1, 9) uniform uniformBlockPS10
 {
 vec4 uf_blockPS10[1024];
 };
 
-layout(binding = 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x310be800 res 4x4x1 dim 1 tm: 2 format 0007 compSel: 0 0 0 1 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler0 ClampX/Y/Z: 0 0 2 border: 0
-layout(binding = 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x310be800 res 32x32x1 dim 1 tm: 2 format 0034 compSel: 0 0 0 5 mipView: 0x0 (num 0x6) sliceView: 0x0 (num 0x1) Sampler1 ClampX/Y/Z: 0 0 2 border: 0
-layout(binding = 3) uniform sampler2D textureUnitPS3;// Tex3 addr 0xf494a800 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler3 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 6) uniform sampler2D textureUnitPS6;// Tex6 addr 0xf5371000 res 640x360x1 dim 1 tm: 4 format 080e compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x1) Sampler6 ClampX/Y/Z: 2 2 2 border: 1
-layout(binding = 8) uniform sampler2DArrayShadow textureUnitPS8;// Tex8 addr 0xf557c800 res 720x720x3 dim 5 tm: 4 format 0005 compSel: 0 4 4 5 mipView: 0x0 (num 0x1) sliceView: 0x0 (num 0x3) Sampler8 ClampX/Y/Z: 6 6 2 border: 2
-layout(binding = 15) uniform sampler2D textureUnitPS15;// Tex15 addr 0x310c0000 res 2000x1600x1 dim 1 tm: 4 format 0031 compSel: 0 1 2 3 mipView: 0x0 (num 0x2) sliceView: 0x0 (num 0x1) Sampler15 ClampX/Y/Z: 1 1 1 border: 1
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0x310be800 res 4x4x1 dim 1 tm: 2 format 0007 compSel: 0 0 0 1 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0x310be800 res 32x32x1 dim 1 tm: 2 format 0034 compSel: 0 0 0 5 mipView: 0x0 (num 0x6
+TEXTURE_LAYOUT(3, 1, 2) uniform sampler2D textureUnitPS3;// Tex3 addr 0xf494a800 res 1280x720x1 dim 1 tm: 4 format 001a compSel: 0 1 2 3 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(6, 1, 3) uniform sampler2D textureUnitPS6;// Tex6 addr 0xf5371000 res 640x360x1 dim 1 tm: 4 format 080e compSel: 0 4 4 5 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(8, 1, 4) uniform sampler2DArrayShadow textureUnitPS8;// Tex8 addr 0xf557c800 res 720x720x3 dim 5 tm: 4 format 0005 compSel: 0 4 4 5 mipView: 0x0 (num 0x1
+TEXTURE_LAYOUT(15, 1, 5) uniform sampler2D textureUnitPS15;// Tex15 addr 0x310c0000 res 2000x1600x1 dim 1 tm: 4 format 0031 compSel: 0 1 2 3 mipView: 0x0 (num 0x2
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem5;
 layout(location = 2) in vec4 passParameterSem6;
 layout(location = 5) out vec4 passPixelColor5;
+#ifdef VULKAN
+layout(set = 1, binding = 6) uniform ufBlock
+{
+uniform vec4 uf_fragCoordScale;
+};
+#else
 uniform vec2 uf_fragCoordScale;
+#endif
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )

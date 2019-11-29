@@ -3,4 +3,4 @@ titleIds = 5000010173E00,5000010174000,5000010174100,5000010176100,5000010176000
 name = Undarken
 path = Virtual Console/GBA/Enhancements/Undarken 
 description = Undarkens the emulator output.
-version = 3
+version = 4

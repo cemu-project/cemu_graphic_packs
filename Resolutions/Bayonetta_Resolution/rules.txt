@@ -3,7 +3,7 @@ titleIds = 000500001014DB00,0005000010157E00,0005000010157F00
 name = Resolution
 path = "Bayonetta/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)
