@@ -3,7 +3,7 @@ titleIds = 00050000101F4D00,00050000101FB100
 name = Resolution
 path = "Skylanders Imaginators/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 4
+version = 3
 
 [Preset]
 name = 1280x720 (Default)

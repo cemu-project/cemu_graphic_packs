@@ -3,7 +3,7 @@ titleIds = 00050000101B0400,00050000101B0500
 name = Resolution
 path = "Star Fox Zero/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 4
+version = 3
 
 [Preset]
 name = 1280x720 (Default)
