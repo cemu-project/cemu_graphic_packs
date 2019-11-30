@@ -13,6 +13,12 @@
 #define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
 #endif
 // shader 7658289ba65cb755
+#define preset $preset
+#if (preset == 0)
+const float brightness = (16.0/9.0);
+#elif (preset == 1)
+const float brightness = 2.2;
+#endif
 #ifdef VULKAN
 layout(set = 1, binding = 2) uniform ufBlock
 {
@@ -73,5 +79,5 @@ R2f.x = mul_nonIEEE(R1f.x, PV0f.x);
 R2f.y = mul_nonIEEE(R1f.y, PV0f.x);
 R2f.z = mul_nonIEEE(R1f.z, PV0f.x);
 // export
-passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w) * (16.0/9.0);
+passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w) * brightness;
 }
