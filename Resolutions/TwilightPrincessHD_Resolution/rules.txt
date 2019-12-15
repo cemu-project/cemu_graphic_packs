@@ -459,21 +459,6 @@ $UIAspectY = 1.0
 $UItransp = 1.0
 
 [Preset]
-name = 
-$width = 1920
-$height = 1080
-$gameWidth = 1920
-$gameHeight = 1080
-$dither = 0.01
-$scaleShader = 1.0
-$scaleBlur = 0.05
-$internalRes = 1.0
-$aspectRatio = (16.0/9.0)
-$UIAspectX = 1.0
-$UIAspectY = 1.0
-$UItransp = 0.75
-
-[Preset]
 name = -- UI 25% transparency, reduces risk of burn in -- 
 $width = 1920
 $height = 1080
