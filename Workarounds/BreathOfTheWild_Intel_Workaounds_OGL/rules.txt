@@ -1,6 +1,5 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Workarounds for Intel GPUs"
-path = "The Legend of Zelda: Breath of the Wild/Workarounds OpenGL/Intel GPU for OpenGL"
-description = Contains these workaounds for BOTW and Intel GPUs, Intel Shadows, Intel Reduced bloom, Intel Flipped lights, Kakariko Torch Shadows, Streched Clouds, LWZXNullCheck.
-version = 3
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/Intel GPU for OpenGL"
+description = Contains these workaounds for BOTW and Intel GPUs, Intel Shadows, Intel Reduced bloom, Intel Flipped lights, Kakariko Torch Shadows, Streched Clouds.
