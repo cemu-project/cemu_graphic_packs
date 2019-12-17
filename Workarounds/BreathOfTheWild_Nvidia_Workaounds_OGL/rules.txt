@@ -2,5 +2,5 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Workarounds for NVIDIA GPUs"
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/Nvidia GPU for OpenGL"
-description = Contains these workaounds for BOTW and Nvidia GPUs,Nvidia Smoke, Kakariko Torch Shadows, Streched Clouds, LWZXNullCheck.
+description = Contains these workaounds for BOTW and Nvidia GPUs,Nvidia Smoke, Kakariko Torch Shadows, Streched Clouds.
 version = 3
