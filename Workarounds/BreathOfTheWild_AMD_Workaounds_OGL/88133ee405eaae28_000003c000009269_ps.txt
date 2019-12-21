@@ -1,6 +1,5 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
-// Shader From AMD/Intel Shadow Fix
 // shader ffe0e8c84f6e8da9
 layout(binding = 33, std140) uniform uniformBlockPS1
 {
