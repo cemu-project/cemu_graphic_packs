@@ -1,9 +1,9 @@
 [Definition]
-titleIds = 0005000010128800 # replace with fulltitleID
+titleIds = 0005000010128800,0005000010128400,000500001012b700,0005000e10128400,0005000e10128800,0005000e1012b700 # replace with fulltitleID
 name = Resolution
-path = "NFSMW/Graphics/ResolutionTest"
+path = "Need for Speed Most Wanted U/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 Default
@@ -117,16 +117,16 @@ height = 720
 #formats = 
 tileModesExcluded = 0x001 # For Video Playback
 overwriteWidth = ($width/$gameWidth) * 1280
-overwriteHeight  = ($height/$gameHeight) * 720
+overwriteHeight = ($height/$gameHeight) * 720
 
 [TextureRedefine]
 width = 1280
 height = 704
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 1280
-overwriteHeight  = ($height/$gameHeight) * 704
+overwriteHeight = ($height/$gameHeight) * 704
 
-[TextureRedefine] #May unintentionally scale textures
+[TextureRedefine] 
 width = 1024
 height = 1024
 formats = 0x005
@@ -138,14 +138,14 @@ width = 864
 height = 480
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight  = ($height/$gameHeight) * 480
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 854
 height = 480
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 854
-overwriteHeight  = ($height/$gameHeight) * 480
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 640
@@ -166,26 +166,34 @@ width = 640
 height = 352
 formats = 0x011,0x810,0x01a 
 overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight  = ($height/$gameHeight) * 352
+overwriteHeight = ($height/$gameHeight) * 352
 
 [TextureRedefine]
 width = 512
 height = 128
 formatsExcluded = 0x033,0x433,0x031,0x431
 overwriteWidth = ($width/$gameWidth) * 512
-overwriteHeight  = ($height/$gameHeight) * 128
+overwriteHeight = ($height/$gameHeight) * 128
 
 [TextureRedefine]
 width = 320
 height = 176
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 320
-overwriteHeight  = ($height/$gameHeight) * 176
+overwriteHeight = ($height/$gameHeight) * 176
 
-[TextureRedefine] #ukd
+[TextureRedefine] # map 0x01a
 width = 256
 height = 256
-formats = 0x005,0x011,0x01a 
+formats = 0x005,0x011 
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine] #cube
+width = 256
+height = 256
+formats = 0x019
+depth = 6
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 256
 
@@ -194,33 +202,41 @@ width = 256
 height = 64
 formatsExcluded = 0x033,0x433,0x031,0x431
 overwriteWidth = ($width/$gameWidth) * 256
-overwriteHeight  = ($height/$gameHeight) * 64
+overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine]
 width = 233
 height = 160
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 233
-overwriteHeight  = ($height/$gameHeight) * 160
+overwriteHeight = ($height/$gameHeight) * 160
 
 [TextureRedefine]
 width = 233
 height = 156
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 233
-overwriteHeight  = ($height/$gameHeight) * 156
+overwriteHeight = ($height/$gameHeight) * 156
 
 [TextureRedefine]
 width = 156
 height = 106
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 156
-overwriteHeight  = ($height/$gameHeight) * 106
+overwriteHeight = ($height/$gameHeight) * 106
 
-[TextureRedefine] #May unintentionally scale textures
+[TextureRedefine] 
 width = 128
 height = 128
 formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine] #cube
+width = 128
+height = 128
+formats = 0x019
+depth = 6 
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 128
 
@@ -229,27 +245,34 @@ width = 128
 height = 32
 formatsExcluded = 0x033,0x031
 overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight  = ($height/$gameHeight) * 32
+overwriteHeight = ($height/$gameHeight) * 32
 
 [TextureRedefine]
 width = 96
 height = 48
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 96
-overwriteHeight  = ($height/$gameHeight) * 48
-
+overwriteHeight = ($height/$gameHeight) * 48
 
 [TextureRedefine]
 width = 80
 height = 44
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 80
-overwriteHeight  = ($height/$gameHeight) * 44
+overwriteHeight = ($height/$gameHeight) * 44
 
-[TextureRedefine] #May unintentionally scale textures
+[TextureRedefine] 
 width = 64
 height = 64
 formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine] #cube
+width = 64
+height = 64
+depth = 6 
+formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 64
 
@@ -258,12 +281,20 @@ width = 64
 height = 16
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight  = ($height/$gameHeight) * 16
+overwriteHeight = ($height/$gameHeight) * 16
 
-[TextureRedefine] #May unintentionally scale textures
+[TextureRedefine] 
 width = 32
 height = 32
 formats = 0x01a 
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine] 
+width = 32
+height = 32
+formats = 0x019
+depth = 6 
 overwriteWidth = ($width/$gameWidth) * 32
 overwriteHeight = ($height/$gameHeight) * 32
 
@@ -272,47 +303,47 @@ width = 32
 height = 8
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 32
-overwriteHeight  = ($height/$gameHeight) * 8
+overwriteHeight = ($height/$gameHeight) * 8
 
 [TextureRedefine]
 width = 32
 height = 16
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 32
-overwriteHeight  = ($height/$gameHeight) * 16
+overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 24
 height = 16
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 24
-overwriteHeight  = ($height/$gameHeight) * 16
+overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 20
 height = 11
 #formats = 
 overwriteWidth = ($width/$gameWidth) * 20
-overwriteHeight  = ($height/$gameHeight) * 11
+overwriteHeight = ($height/$gameHeight) * 11
 
 [TextureRedefine]
 width = 16
 height = 8
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 16
-overwriteHeight  = ($height/$gameHeight) * 8
+overwriteHeight = ($height/$gameHeight) * 8
 
 [TextureRedefine]
 width = 16
 height = 4
 formatsExcluded = 0x033
 overwriteWidth = ($width/$gameWidth) * 16
-overwriteHeight  = ($height/$gameHeight) * 4
+overwriteHeight = ($height/$gameHeight) * 4
 
-[TextureRedefine]
-width = 4
-height = 4
-formats = 0x01a
-tilemodes = 1
-overwriteWidth = ($width/$gameWidth) * 4
-overwriteHeight  = ($height/$gameHeight) * 4
+#[TextureRedefine]#load icon
+#width = 4
+#height = 4
+#formats = 0x01a
+#tilemodes = 1
+#overwriteWidth = ($width/$gameWidth) * 4
+#overwriteHeight = ($height/$gameHeight) * 4
