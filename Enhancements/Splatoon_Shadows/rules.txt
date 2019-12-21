@@ -32,6 +32,20 @@ formats = 0x5
 overwriteWidth = $shadowRes * 2048
 overwriteHeight = $shadowRes * 2048
 
+[TextureRedefine] # Squid Sisters Shadows
+width = 1664
+height = 1648
+formats = 0x5
+overwriteWidth = $shadowRes * 1664
+overwriteHeight = $shadowRes * 1648
+
+[TextureRedefine] # Squid Sisters Shadows
+width = 1640
+height = 1640
+formats = 0x5
+overwriteWidth = $shadowRes * 1640
+overwriteHeight = $shadowRes * 1640
+
 [TextureRedefine] # Performance Shadows
 width = 1024
 height = 1024
