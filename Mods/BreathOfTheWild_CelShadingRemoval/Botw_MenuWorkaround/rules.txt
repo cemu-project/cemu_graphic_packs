@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Cel-Shade Removal Start Menu Workaround Pack
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFate & Altros)/Cel-Shading - Start Menu Workaround"
 description = Start Menu Workaround
-version = 3
+version = 4
 
 [Preset]
 name = Start Menu Workaround

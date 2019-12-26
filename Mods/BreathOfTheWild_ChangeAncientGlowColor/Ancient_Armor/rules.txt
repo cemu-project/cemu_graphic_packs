@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Ancient Armor
 path = "The Legend of Zelda: Breath of the Wild/Mods/Change Ancient Glow Color/Ancient Armor"
 description = Change Ancient Amor's color and brightness. Originally it's Ancient Orange.
-version = 3
+version = 4
 
 [Preset]
 name = Malice Red

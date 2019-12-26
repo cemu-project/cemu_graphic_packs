@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Amiibo Mode"
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFate & Altros)/Amiibo Mode"
 description = Amiibo mode by Altros, add or remove that plastic look. Req Remove Links Cell Shading by SkalFate
-version = 3
+version = 4
 
 
 [Preset]

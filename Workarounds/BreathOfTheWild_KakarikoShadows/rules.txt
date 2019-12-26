@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Square Kakariko Torch Shadows Fix"
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/Kakariko Torch Shadows"
 description = Workaround for the square shadows seen around torches in Kakariko Village.
-version = 3
+version = 4
 
 # Workaround for the square shadows seen around torches in Kakariko Village
 # found by Kiri

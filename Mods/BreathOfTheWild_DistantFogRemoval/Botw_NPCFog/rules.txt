@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Distant NPCs Fog Removal Pack
 path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/NPC Fog Removal"
 description = Can Remove Fog from Distant NPCs. Conflicts with Cel-Shade ShadowFix Packs.
-version = 3
+version = 4
 
 
 [Preset]

@@ -3,4 +3,4 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Fixes Reshade depth buffer compatibility
 path = "The Legend of Zelda: Breath of the Wild/Mods/Reshade compatibility"
 description = DON'T ENABLE THIS IF YOU'RE NOT USING RESHADE. Makes some reshade effects like e.g. MXAO and ray tracing not have issues. Will make distant mountains and geometry have flickering textures.
-version = 3
+version = 4

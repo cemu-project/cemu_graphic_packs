@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Castle Ganons Aura Pack
 path = "The Legend of Zelda: Breath of the Wild/Mods/Distant Fog Removal/Hyrule Castle Ganons Aura"
 description = Can Remove the Fog on Ganons Aura on Hyrule castle. Change its RGB color.
-version = 3
+version = 4
 
 
 [Preset]

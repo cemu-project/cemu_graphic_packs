@@ -3,4 +3,4 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Cloud fix"
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/Clouds"
 description = Workaround for some clouds not rendering correctly
-version = 3
+version = 4

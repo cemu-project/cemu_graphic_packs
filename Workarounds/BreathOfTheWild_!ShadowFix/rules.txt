@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "AMD and Intel Shadows Workaround"
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workarounds/AMD and Intel: Shadows"
 description = Fixes shadows when using an AMD or Intel graphics card.
-version = 3
+version = 4
 
 # Made by ethrillo
 # Updated by Cypher to support BotW 1.4.0+
