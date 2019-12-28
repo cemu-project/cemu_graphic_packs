@@ -3,4 +3,4 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "No Ambient Occlusion"
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/No Ambient Occlusion"
 description = Disables ambient occlusion. Useful for stuff like the ReShade RTGI shader. Known issues: Shadowed areas can sometimes look incorrect.
-version = 3
+version = 4

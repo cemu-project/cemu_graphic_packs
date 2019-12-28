@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Links Shadow Brightness for No Cel-Shading Pack
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFate & Altros)/Shadow Brightness Fix - SkalFate"
 description = Changes the strength of shadows on Links body. Fixes the very dark link issue in no cel-shade mode.
-version = 3
+version = 4
 
 
 [Preset]

@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = No Cel-Shading Links Shadow Brightness Fix v0.8
 path = "The Legend of Zelda: Breath of the Wild/Mods/Cel-Shading Removal (SkalFate & Altros)/Shadow Brightness Fix v08 - Altros"
 description = Fixes the very dark shadows on Links back-side in No Cel-Shade mode.
-version = 3
+version = 4
 
 
 [Preset]
