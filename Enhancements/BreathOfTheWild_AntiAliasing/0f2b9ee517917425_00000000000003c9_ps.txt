@@ -15,17 +15,12 @@
 #define SET_POSITION(_v) gl_Position = _v
 #define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
 #endif
-/* This shaders was auto-converted from OpenGL to Cemu.
-Conversion output:
-This shader doesn't have the same line indexes for the uf_* variables. Hence why it might've been edited.
-Due to one or more things mentioned above, this shader might be broken.
-*/
+// This shaders was auto-converted from OpenGL to Cemu.
 
 #ifdef VULKAN
 layout(set = 1, binding = 2) uniform ufBlock
 {
 uniform vec4 uf_fragCoordScale;
-uniform vec2 uf_fragCoordScale;
 uniform ivec4 uf_remappedPS[2];
 };
 #else
@@ -51,7 +46,7 @@ passPixelColor0 = texture(textureUnitPS0, passParameterSem2.xy);
 #endif
 
 #if (preset == 1) // Native AA Enabled
-uniform ivec4 uf_remappedPS[2];
+
 TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
 TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
 layout(location = 0) in vec4 passParameterSem2;
@@ -718,7 +713,7 @@ TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
 TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
 layout(location = 0) in vec4 passParameterSem2;
 layout(location = 0) out vec4 passPixelColor0;
-uniform vec2 uf_fragCoordScale;
+
 
 #define FXAA_QUALITY_PS 12
 #define FXAA_QUALITY_P0 1.0

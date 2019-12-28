@@ -15,9 +15,7 @@
 #define SET_POSITION(_v) gl_Position = _v
 #define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
 #endif
-/* This shaders was auto-converted from OpenGL to Cemu.
-Conversion output:
-*/
+// This shaders was auto-converted from OpenGL to Cemu.
 
 // shader beb15cab79e5ca5d
 // Shrine - ending Sheikah logo + Hateno fire flare
