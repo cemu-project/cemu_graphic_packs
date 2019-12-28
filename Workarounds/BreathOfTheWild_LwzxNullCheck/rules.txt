@@ -1,6 +1,7 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-path = "The Legend of Zelda: Breath of the Wild/Workarounds/LWZX Crash"
-description = You should enable this pack in any circumstance. This workaround fixes crashes that would occur at specific points in the game.
-version = 4
+name = LWZX Crash Workaround (OpenGL)
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/LWZX Crash (OpenGL)"
+description = Should always be enabled, since it has no drawbacks. Technically only fixes crashes when Full sync at GX2DrawDone() isn't enabled.
 rendererFilter = opengl
+version = 4

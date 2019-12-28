@@ -1,8 +1,9 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "Square Kakariko Torch Shadows Fix"
-path = "The Legend of Zelda: Breath of the Wild/Workarounds/Kakariko Torch Shadows"
-description = Workaround for the square shadows seen around torches in Kakariko Village.
+name = Kakariko Torch Shadows workaround (OpenGL)
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/Kakariko Torch Shadows (OpenGL)"
+description = Workaround for the square shadows seen around torches in Kakariko Village when using OpenGL.
+rendererFilter = opengl
 version = 4
 
 # Workaround for the square shadows seen around torches in Kakariko Village
