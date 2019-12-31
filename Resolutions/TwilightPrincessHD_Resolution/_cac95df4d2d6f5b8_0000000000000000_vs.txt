@@ -5,7 +5,7 @@
 // shader cac95df4d2d6f5b8
 const float UIx = $UIAspectX;
 const float UIy = $UIAspectY;
-//Remove cutscene box
+//uncomment to remove pillarbox
 uniform ivec4 uf_remappedVS[8];
 layout(location = 0) in uvec4 attrDataSem0;
 out gl_PerVertex
@@ -93,7 +93,7 @@ PV0f.z = tempf.x;
 PV0f.w = tempf.x;
 R1f.w = tempf.x;
 // 7
-R0f.xyz = vec3(intBitsToFloat(uf_remappedVS[7].x),intBitsToFloat(uf_remappedVS[7].y),intBitsToFloat(uf_remappedVS[7].z));
+//R0f.xyz = vec3(intBitsToFloat(uf_remappedVS[7].x),intBitsToFloat(uf_remappedVS[7].y),intBitsToFloat(uf_remappedVS[7].z));
 R0f.w = intBitsToFloat(uf_remappedVS[7].w);
 // export
 //gl_Position = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
