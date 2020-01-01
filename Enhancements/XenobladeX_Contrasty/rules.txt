@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Contrasty
 path = "Xenoblade Chronicles X/Enhancements/Contrasty" 
 description = This pack tweaks the colours and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Enabling will ignore your other AA settings.
-version = 3
+version = 4
 
 [Preset]
 name = High Contrasty - shadow lift
