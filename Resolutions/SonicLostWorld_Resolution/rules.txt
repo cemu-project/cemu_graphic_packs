@@ -3,7 +3,7 @@ titleIds = 0005000010135700,000500001012B100,0005000010128F00
 name = Resolution
 path = "Sonic Lost World/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)
