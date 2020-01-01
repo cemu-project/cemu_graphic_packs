@@ -3,4 +3,4 @@ titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Removes all the HUD elements
 path = "Mario Kart 8/Mods/No HUD"
 description = Disables any HUD while racing. Breaks many of the menu's so don't use this if you just want to play the game.
-version = 3
+version = 4

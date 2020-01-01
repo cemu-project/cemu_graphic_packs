@@ -3,7 +3,7 @@ titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Bloom Adjustment
 path = "Mario Kart 8/Enhancements/Bloom Adjustment"
 description = Allows you to adjust how strong the bloom is. Full amount is the default intensity of bloom.
-version = 3
+version = 4
 
 [Preset]
 name = Full Amount (Default)
