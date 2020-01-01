@@ -1,11 +1,11 @@
 #version 420
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
-#extension GL_ARB_shading_language_packing : enable
 // shader ae5bf21625f134f3
 // Used for: Squid Sisters TV
-float origRatio = (float(1280)/float(720));
-float newRatio = (float($width)/float($height));
+const float origRatio = float($gameWidth)/float($gameHeight);
+const float newRatio = float($width)/float($height);
+
 uniform ivec4 uf_remappedVS[7];
 uniform vec2 uf_windowSpaceToClipSpaceTransform;
 layout(location = 0) in uvec4 attrDataSem0;
