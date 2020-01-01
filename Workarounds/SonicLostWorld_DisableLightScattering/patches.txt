@@ -1,0 +1,3 @@
+[sonic2013]
+moduleMatches = 0xC5691A40
+0x022716A0 = xor r6, r6, r6

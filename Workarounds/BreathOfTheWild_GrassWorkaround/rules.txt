@@ -2,6 +2,6 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Grass Swaying workaround for Vulkan backend
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/Grass Swaying (Vulkan)"
-description = Workaround pack for a Vulkan limitation. Fixes some grass swaying incorrectly in the distance.
+description = Workaround pack for a Vulkan limitation. Fixes some grass swaying incorrectly in the distance. Made by Exzap.
 rendererFilter = vulkan
 version = 4

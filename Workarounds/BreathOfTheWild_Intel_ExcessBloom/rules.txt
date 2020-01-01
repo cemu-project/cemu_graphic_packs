@@ -2,9 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Excess Bloom workaround for Intel GPUs with certain drivers (OpenGL and Intel)
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workarounds for OpenGL/Intel: Excess Bloom"
-description = This workaround targets users of Intel iGPU drivers 23.xx and older experiencing bloom issue when using OpenGL. These drivers may offer better performance but have graphical glitches. This pack aims to fix the graphical issues so the older drivers create visuals similar to the new drivers. These older drivers may be found on Intel's site https://downloadcenter.intel.com/download/27484/Graphics-Intel-Graphics-Driver-for-Windows-15-65-.
+description = This workaround targets users of Intel iGPU drivers 23.xx and older experiencing bloom issue when using OpenGL. These drivers may offer better performance but have graphical glitches. This pack aims to fix the graphical issues so the older drivers create visuals similar to the new drivers. These older drivers may be found on Intel's site https://downloadcenter.intel.com/download/27484/Graphics-Intel-Graphics-Driver-for-Windows-15-65-. Made by Altros.
 vendorFilter = intel
 rendererFilter = opengl
 version = 4
-
-#Altros

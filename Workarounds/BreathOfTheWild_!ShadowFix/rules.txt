@@ -2,9 +2,6 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Shadows workaround for Intel and AMD GPUs (OpenGL and Intel/AMD)
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workarounds for OpenGL/AMD and Intel: Shadows"
-description = Reduces the severity of the bugged shadows on Intel and OpenGL GPUs when using OpenGL.
+description = Reduces the severity of the bugged shadows on Intel and OpenGL GPUs when using OpenGL. Made by ethrillo, updated by Cypher.
 rendererFilter = opengl
 version = 4
-
-# Made by ethrillo
-# Updated by Cypher to support BotW 1.4.0+
