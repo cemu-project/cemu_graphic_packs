@@ -518,7 +518,7 @@ function convertFolder(folderPathArray) {
 	if (fs.existsSync(path.join(process.cwd(), "/graphicPacks/", ...folderPathArray))) fs.rmdirSync(path.join(process.cwd(), "/graphicPacks/", ...folderPathArray), {recursive: true});
 	fs.mkdirSync(path.join(process.cwd(), "/graphicPacks/", ...folderPathArray), {recursive: true});
 	
-	for (entry in dirEntries) {
+	for (let entry in dirEntries) {
 		if (dirEntries[entry].isDirectory()) {
 			// Check for folder entries and see if there's a rules.txt file.
 			let packFiles = fs.readdirSync(path.join(process.cwd(), ...folderPathArray, dirEntries[entry].name), {withFileTypes: true});

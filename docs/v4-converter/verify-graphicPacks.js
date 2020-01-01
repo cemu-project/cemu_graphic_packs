@@ -244,7 +244,7 @@ function verifyPack(analyseFiles, folderArray) {
 function verifyGraphicPacks(folderArray) {
 	let dirEntries = fs.readdirSync(path.join(process.cwd(), ...folderArray), {withFileTypes: true});
 	
-	for (entry in dirEntries) {
+	for (let entry in dirEntries) {
 		if (dirEntries[entry].isDirectory()) {
 			console.group("Verify "+path.join(process.cwd(), ...folderArray, dirEntries[entry].name));
 
