@@ -20,8 +20,8 @@
 
 // shader 3952c3a52c87ad30
 // video shader
-float origRatio = (float(1280)/float(720));
-float newRatio = (float($width)/float($height));
+const float origRatio = float($gameWidth)/float($gameHeight);
+const float newRatio = float($width)/float($height);
 
 ATTR_LAYOUT(0, 0) in uvec4 attrDataSem0;
 ATTR_LAYOUT(0, 1) in uvec4 attrDataSem8;

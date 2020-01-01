@@ -19,8 +19,8 @@
 // This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
 // shader 79183302695ea935
-const float resXScale = ($width/$gameWidth); 
-const float resYScale = ($height/$gameHeight); 
+const float resXScale = float($width)/float($gameWidth);
+const float resYScale = float($height)/float($gameHeight);
 #ifdef VULKAN
 layout(set = 1, binding = 1) uniform ufBlock
 {

@@ -20,8 +20,8 @@
 
 // shader 419dbf0c732a51e2
 // text shader 3
-float origRatio = (float(1280)/float(720));
-float newRatio = (float($width)/float($height));
+const float origRatio = float($gameWidth)/float($gameHeight);
+const float newRatio = float($width)/float($height);
 #ifdef VULKAN
 layout(set = 0, binding = 0) uniform ufBlock
 {
