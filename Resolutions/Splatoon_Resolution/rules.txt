@@ -3,7 +3,7 @@ titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Resolution
 path = "Splatoon/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)
