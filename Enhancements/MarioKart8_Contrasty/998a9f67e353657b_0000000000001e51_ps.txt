@@ -22,12 +22,12 @@
 #ifdef VULKAN
 layout(set = 1, binding = 3) uniform ufBlock
 {
-uniform vec4 uf_fragCoordScale;
 uniform ivec4 uf_remappedPS[1];
+uniform vec4 uf_fragCoordScale;
 };
 #else
-uniform vec2 uf_fragCoordScale;
 uniform ivec4 uf_remappedPS[1];
+uniform vec2 uf_fragCoordScale;
 #endif
 
 const float hazeFactor = 0.1;
