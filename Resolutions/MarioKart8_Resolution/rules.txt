@@ -239,10 +239,10 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 256
 
-[TextureRedefine] # MP Selection Menu - Player Alpha Cutout Rendering
+[TextureRedefine] # MP Selection Menu - Player Selection Rendering
 width = 640
 height = 320
-formats = 0x80e,0x01a,0x806,0x816,0x801
+formats = 0x80e,0x01a,0x806,0x816,0x801,0x019,0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 320
 
