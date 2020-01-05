@@ -56,7 +56,6 @@ function extractShaderInfo(shaderText) {
 		else if (ufBlockFlag) {
 			let uniformMatch = currLine.match(uniformUfRegex);
 			if (uniformMatch != null) {
-				if (uniformMatch[2].includes())
 				shaderInfo.ufBlock.ufVariables.push({type:uniformMatch[1], name: uniformMatch[2]});
 			}
 			//else if (!currLine.startsWith("{") && currLine.trim() == "") console.log(currLine);
@@ -124,7 +123,7 @@ function verifyShader(rulesPresets, dumpShader, shaderText, vulkanSet, shaderPat
 		if (shaderLines[line].trim().startsWith("#ifdef VULKAN")) parsingVulkanHeader = true;
 		else if (parsingVulkanHeader && (shaderLines[line].trim().startsWith("#define") || shaderLines[line].trim().startsWith("#else"))) shaderLines[line] = "\r";
 		else if (parsingVulkanHeader && shaderLines[line].trim().startsWith("#endif")) break;
-		else if (parsingVulkanHeader) console.error("what's this", shaderLines[line]);
+		//else if (parsingVulkanHeader) console.error("what's this", shaderLines[line]);
 	}
 
 	// Replace presets
@@ -147,7 +146,7 @@ function verifyShader(rulesPresets, dumpShader, shaderText, vulkanSet, shaderPat
 			headerlessPresetLines.push(currLine);
 		}
 
-		// Remove all the unrelated preset code.
+		// Remove all the unrelated preset code
 		let preprocessedPresetLines = undefined;
 		try {
 			let preprocessOutput = child_process.spawnSync("glslangValidator.exe", ["--stdin", "-E", "-DVULKAN", "-S "+((vulkanSet == 0) ? "vert" : "frag")], {encoding: "utf8", shell: true, input: headerlessPresetLines.join("\n")});
@@ -211,14 +210,15 @@ function verifyShader(rulesPresets, dumpShader, shaderText, vulkanSet, shaderPat
 		}
 		if (ufVariableMismatches.length != 0) console.error("The uf_* variables didn't match!", ufVariableMismatches);
 
-
 		if (attributesMatched && bufferLayoutsMatched && textureLayoutsMatched && ufBlockLocationMatched && (ufVariableMismatches.length == 0)) {
 			//console.info("The shader matched!");
-			verifiedShaders.push(shaderPath);
+			if (!invalidShaders.includes(shaderPath) && !verifiedShaders.includes(shaderPath)) verifiedShaders.push(shaderPath);
 		}
 		else {
 			console.error("The shader didn't match... please fix the errors above.");
 			if (!invalidShaders.includes(shaderPath)) invalidShaders.push(shaderPath);
+			let verifiedRemoveIndex = verifiedShaders.indexOf(shaderPath);
+			if (verifiedRemoveIndex != -1) verifiedShaders.slice(verifiedRemoveIndex, 1);
 		}
 	}
 }
@@ -291,6 +291,7 @@ verifyGraphicPacks(["graphicPacks", "Workarounds"]);
 verifyGraphicPacks(["graphicPacks", "Mods"]);
 
 console.info("Finished verifying the graphic packs!");
+console.info("");
 console.info("Verified shaders:");
 console.info(verifiedShaders.join("\r\n"));
 console.info("Invalid shaders:");

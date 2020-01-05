@@ -15,17 +15,17 @@
 #define SET_POSITION(_v) gl_Position = _v
 #define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
 #endif
-// This shaders was auto-converted from OpenGL to Cemu.
+// This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
 #ifdef VULKAN
 layout(set = 1, binding = 2) uniform ufBlock
 {
-uniform vec4 uf_fragCoordScale;
 uniform ivec4 uf_remappedPS[2];
+uniform vec4 uf_fragCoordScale;
 };
 #else
-uniform vec2 uf_fragCoordScale;
 uniform ivec4 uf_remappedPS[2];
+uniform vec2 uf_fragCoordScale;
 #endif
 // shader 0f2b9ee517917425 - dumped 1.15
 // Used for: Removing/Restoring the native BotW Anti-Aliasing implementation to link in inventory screen

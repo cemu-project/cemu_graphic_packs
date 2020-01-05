@@ -271,7 +271,7 @@ function convertShader(shaderText, rulesPresets, folderArray, vulkanSet) {
 					ufVariableShaderOrder.push(currLine.match(uniformUfRegex)[3]);
 					if (indexUfVariable != -1) ufVariableCrossOffList.splice(0, indexUfVariable);
 					else {
-						shaderOutput.push(`This shader (with the current ${currPreset.name}) doesn't follow the uf_* variable order from Cemu itself, so it might've been messed with. \r\nOrder found:${ufVariableShaderOrder}.`);
+						shaderOutput.push(`This shader (with "${currPreset.name}" preset) doesn't follow the uf_* variable order from Cemu, which means that some uf_* variables could've been left-out or added.\r`);
 					}
 				}
 				currPreset.textureBindingCounter = textureBindingCounter;
@@ -280,9 +280,11 @@ function convertShader(shaderText, rulesPresets, folderArray, vulkanSet) {
 
 		// Sort the order of uf_variables
 		let beforeOrder = [...allUfLines];
+
 		function getSortRank(unit) {
+			let currUfVariableName  = unit.match(uniformUfRegex)[3];
 			for (var i = 0; i < ufVariablesOrder.length; i++) {
-				if (unit.startsWith(ufVariablesOrder[i])) {
+				if (currUfVariableName.startsWith(ufVariablesOrder[i])) {
 					return i;
 				}
 			}
@@ -293,7 +295,11 @@ function convertShader(shaderText, rulesPresets, folderArray, vulkanSet) {
 			return getSortRank(a) - getSortRank(b);
 		});
 
-		if (beforeOrder.toString() != allUfLines.toString()) console.log(allUfLines);
+		if (beforeOrder.toString() != allUfLines.toString()) {
+			shaderOutput.push(`Since the uf_* variables that were encountered were incorrect, the conversion script has corrected them.\r`);
+			shaderOutput.push(`Order found:\r\n${beforeOrder.join("\n")}`);
+			shaderOutput.push(`Expected/fixed order:\r\n${allUfLines.join("\n")}`);
+		}
 
 		// Log some extra stuff
 		if (!consecutiveUfVariables) {

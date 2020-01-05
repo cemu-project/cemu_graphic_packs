@@ -15,7 +15,7 @@
 #define SET_POSITION(_v) gl_Position = _v
 #define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
 #endif
-// This shaders was auto-converted from OpenGL to Cemu.
+// This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
 // shader d1cf6920c3d5b194
 // Used for: Restoring the native BotW Anti-Aliasing implementation for distant trees
