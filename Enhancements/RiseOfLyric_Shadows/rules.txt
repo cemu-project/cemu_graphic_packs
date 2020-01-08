@@ -6,26 +6,26 @@ description = Note: Increasing shadow resolution is known to increase VRAM usage
 version = 4
 
 [Preset]
-name = Medium (1.00x, Default)
+name = Medium (100%, Default)
 $shadowRes = 1
 
 [Preset]
-name = Low (0.50x)
+name = Low (50%)
 $shadowRes = 0.5
 
 [Preset]
-name = High (2.00x)
+name = High (200%)
 $shadowRes = 2
 
 [Preset]
-name = Ultra (4.00x)
-$shadowRes = 4
+name = Ultra (300%)
+$shadowRes = 3
 
 [Preset]
-name = Extreme (8.00x)
-$shadowRes = 8
+name = Extreme (400%, Unstable)
+$shadowRes = 4
 
-[TextureRedefine] # Shadows; it needs shader edits which I will look into later
+[TextureRedefine] # Shadows
 width = 256
 height = 256
 formats = 0x80e,0x11

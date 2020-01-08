@@ -227,13 +227,6 @@ formats = 0x80e,0x019,0x001
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1080
 
-#[TextureRedefine] #Shadows x3 Lods 
-#width = 1024
-#height = 1024
-#formats = 0x005 #,0x034,0x431,0x034
-#overwriteWidth = ($width/$gameWidth) * 1024
-#overwriteHeight = ($height/$gameHeight) * 1024
-
 [TextureRedefine]
 width = 1024
 height = 544
