@@ -54,7 +54,7 @@
 "Captain Toad: Treasure Tracker":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Captain_Toad:_Treasure_Tracker"
-  version: 3
+  version: 4
   hasUltrawide: true
 "Chariot":
   nativeRes: 720
@@ -181,7 +181,7 @@
 "Mario Kart 8":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Kart_8"
-  version: 3
+  version: 4
   hasUltrawide: true
 "Mario Tennis: Ultra Smash":
   nativeRes: 720
@@ -190,7 +190,7 @@
 "Meme Run":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Meme_Run"
-  version: 3
+  version: 4
 "Minecraft: Story Mode":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Minecraft:_Story_Mode"
@@ -310,12 +310,12 @@
 "Sonic Lost World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Sonic_Lost_World"
-  version: 3
+  version: 4
   hasUltrawide: true
 "Splatoon":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Splatoon"
-  version: 3
+  version: 4
   hasUltrawide: true
 "SpongeBob SquarePants: Plankton’s Robotic Revenge":
   nativeRes: 720
@@ -324,7 +324,7 @@
 "Star Fox Guard":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Star_Fox_Guard"
-  version: 3
+  version: 4
 "Star Fox Zero":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Star_Fox_Zero"
@@ -332,7 +332,7 @@
 "Super Mario 3D World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Super_Mario_3D_World"
-  version: 3
+  version: 4
   hasUltrawide: true
 "Super Mario Maker":
   nativeRes: 720
@@ -361,7 +361,7 @@
 "The Legend of Zelda: Breath of the Wild":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Breath_of_the_Wild"
-  version: 3
+  version: 4
   hasUltrawide: true
 "The Legend of Zelda: The Wind Waker HD":
   nativeRes: 1080
@@ -407,6 +407,7 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Yoshi's_Woolly_World"
   version: 3
+  hasUltrawide: true
 "ZombiU":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/ZombiU"

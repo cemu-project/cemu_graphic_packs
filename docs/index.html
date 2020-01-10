@@ -12,8 +12,7 @@ layout: page
 	<div><strong>Manual installation instructions</strong></div>
 	<div class="mb-3">Remove all of your graphic packs first, then move all of the folders from a downloaded .zip below to the <kbd>graphicPacks</kbd> folder from your Cemu folder.</div>
 	<p class="pt-2 mb-1"><strong>Select the download for your Cemu version</strong></p>
-	<a id="primary_download" class="btn some-shadow" href="{{ site.github.latest_release.assets[0].browser_download_url }}">Cemu 1.14.0 and newer (version 3)</a>
-	<button id="older_download" class="btn dropdown-toggle some-shadow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions</button>
+	<a id="primary_download" class="btn some-shadow" href="{{ site.github.latest_release.assets[0].browser_download_url }}">Cemu 1.14.0 and newer (versions 3 and 4)</a>	<button id="older_download" class="btn dropdown-toggle some-shadow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions</button>
 	<div class="dropdown-menu some-shadow" aria-labelledby="dropdownMenuButton">
 		<a class="dropdown-item" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a>
 		<a class="dropdown-item" href="https://github.com/slashiee/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a>
@@ -30,7 +29,7 @@ layout: page
 			</div>
 		</div>
 		<div class="input-group-append">
-			 <span class="input-group-text" id="inputGroup-sizing-lg"><img class="icon" src="{{ site.baseurl }}/assets/images/material-io_search_icon.svg" alt="Search Icon"/></span>
+			 <span class="input-group-text" id="inputGroup-sizing-lg"><img class="icon" src="assets/images/material-io_search_icon.svg" alt="Search Icon"/></span>
 		</div>
 	</div>
 	<ul id="supported-games-search-results" class="list-group">
@@ -48,7 +47,7 @@ layout: page
 		<div class="modal-body">
 			<div class="container-fluid">
 				<picture>
-					<img id="modal-preview-image" style="width: 156px;" src="https://github.com/Crementif/cemu_graphic_packs/blob/gh-pages/assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
+					<img id="modal-preview-image" style="width: 156px;" src="assets/images/no-cover-available.png" class="rounded float-left img-thumbnail" alt="Cover of the game">
 				</picture>
 				<span class="d-inline-block">
 					<span id="information-box" class="compat-status-loading">
@@ -56,20 +55,21 @@ layout: page
 							Known Compatibility Status: 
 							<span id="compat-status-loading">Loading...</span>
 							<span id="compat-status-unknown">Unknown</span>
-							<span id="compat-status-perfect">Perfect<img src="{https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/perfect.png"></span>
-							<span id="compat-status-playable">Playable<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/playable.png"></span>
-							<span id="compat-status-runs">Runs<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/runs.png"></span>
-							<span id="compat-status-loads">Loads<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/loads.png"></span>
-							<span id="compat-status-unplayable">Unplayable<img src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/compat_status/unplayable.png"></span>
+							<span id="compat-status-perfect">Perfect<img src="assets/images/compat_status/perfect.png"></span>
+							<span id="compat-status-playable">Playable<img src="assets/images/compat_status/playable.png"></span>
+							<span id="compat-status-runs">Runs<img src="assets/images/compat_status/runs.png"></span>
+							<span id="compat-status-loads">Loads<img src="assets/images/compat_status/loads.png"></span>
+							<span id="compat-status-unplayable">Unplayable<img src="assets/images/compat_status/unplayable.png"></span>
 						</p>
 						<p>The game is upscaled from <span id="nativeResolution"></span>p.</p>
 						<span id="ultrawide">
 							<p id="ultrawide-supported">Ultrawide resolutions are supported</p>
 							<p id="ultrawide-unsupported">No ultrawide resolutions are supported</p>
 						</span>
-						<span id="version-3">
-							<p id="version-3-supported">Has graphic packs for Cemu 1.14.0 and newer (version 3)</p>
-							<p id="version-3-unsupported">Doesn't have graphic packs for Cemu 1.14.0 :( use Cemu 1.13.2 or lower for now</p>
+						<span id="version-info">
+							<p id="version-4-supported">Graphic packs fully support OpenGL and Vulkan (version 4)</p>
+							<p id="version-3-supported">Graphic packs fully support OpenGL, though some graphic pack functionality might work on Vulkan (version 3)</p>
+							<p id="version-2-supported">No graphic packs for Cemu 1.14.0 and higher, but there are graphic packs for Cemu 1.13.2 available (version 2)</p>
 						</span>
 					</span>
 				</span>
@@ -114,7 +114,7 @@ layout: page
 			<td><time class="commit-time" datetime="{{ site.github.releases[releaseIndex].published_at }}"></time></td>
 			<td>{{ site.github.releases[releaseIndex].body | split: "###" | shift | first | split: "```" | pop | first }}</td>
 			{% comment %}<td>{{ site.github.releases[releaseIndex].body | split: "```" | shift | first }}</td>{% endcomment %}
-			<td><a href="{{ site.github.releases[releaseIndex].assets[0].browser_download_url }}"><img class="icon ml-4" src="https://raw.githubusercontent.com/Crementif/cemu_graphic_packs/gh-pages/assets/images/download.png" alt="Download Icon"/></td>
+			<td><a href="{{ site.github.releases[releaseIndex].assets[0].browser_download_url }}"><img class="icon ml-4" src="assets/images/download.png" alt="Download Icon"/></td>
 		</tr>
 	{% endfor %}
 		<tr>

@@ -17,11 +17,19 @@ var supportedGamesSearchSetHalfTitles = {};
 const altNames = {
 	"botw": "The Legend of Zelda: Breath of the Wild",
 	"hw": "Hyrule Warriors",
+	"mc": "Minecraft",
+	"slw": "Sonic Lost World",
 	"smm": "Super Mario Maker",
 	"mk8": "Mario Kart 8",
 	"tphd": "The Legend of Zelda: Twilight Princess HD",
 	"wwhd": "The Legend of Zelda: The Wind Waker HD",
-	"breath of the dicknut": "The Legend of Zelda: Breath of the Wild"
+	// easter eggs
+	"breath of the dicknut": "The Legend of Zelda: Breath of the Wild",
+	"f-zero": "FAST Racing NEO",
+	"m&m": "Sonic",
+	"michele": "Sonic",
+	"slashiee": "Sonic",
+	"best game": "Meme Run"
 };
 
 async function searchSupportedGames(searchString) {
@@ -46,6 +54,11 @@ async function searchSupportedGames(searchString) {
 	
 	let resultsHintSearch = [];
 	if (Object.keys(altNames).includes(searchString.toLowerCase())) searchString = altNames[searchString.toLowerCase()];
+	if (searchString.toLowerCase() == "digital foundry") {
+		document.title = "Home - Cemu Hacks";
+		document.getElementsByClassName("display-4")[0].innerText="Cemu Hacks";
+		document.getElementsByClassName("lead")[0].innerText = "Get your online Cemu hax here!!";
+	}
 	if (searchString != "*") resultsHintSearch = supportedGamesSearchSet.get(searchString);
 	else {
 		for (supportedGame in supportedGames) {
@@ -62,8 +75,9 @@ async function searchSupportedGames(searchString) {
 			let gameTitleText = document.createTextNode(currResult);
 			let versionBadge = document.createElement("span");
 			let versionBadgeText;
-			if (supportedGames[currResult].version == 3) versionBadgeText = document.createTextNode("Latest Cemu version");
-			else if (supportedGames[currResult].version == 2) versionBadgeText = document.createTextNode("Only supported on version 2");
+			if (supportedGames[currResult].version == 4) versionBadgeText = document.createTextNode("Supports OpenGL and Vulkan");
+			else if (supportedGames[currResult].version == 3) versionBadgeText = document.createTextNode("Only supported on OpenGL");
+			else if (supportedGames[currResult].version == 2) versionBadgeText = document.createTextNode("Only supported on 1.8.0 through 1.13.2");
 			else versionBadgeText = document.createTextNode("No resolution pack yet :(");
 			let resolutionBadge = document.createElement("span");
 			let resolutionBadgeText = document.createTextNode(supportedGames[currResult].nativeRes+"p");
@@ -73,12 +87,15 @@ async function searchSupportedGames(searchString) {
 			resolutionBadge.className = "badge badge-pill badge-primary float-right";
 			
 			searchResultEntry.onclick=searchInfoModalTrigger
-			if (supportedGames[currResult].version === 3) {
-				searchResultEntry.classList.add("list-group-item-primary");
-			}
-			else {
-				searchResultEntry.classList.add("list-group-item-secondary");
-			}
+            if (supportedGames[currResult].version === 4) {
+                searchResultEntry.classList.add("list-group-item-danger");
+            }
+            else if (supportedGames[currResult].version === 3) {
+                searchResultEntry.classList.add("list-group-item-primary");
+            }
+            else {
+                searchResultEntry.classList.add("list-group-item-secondary");
+            }
 			
 			searchResultEntry.appendChild(gameTitleText);
 			versionBadge.appendChild(versionBadgeText);
@@ -98,17 +115,19 @@ async function searchInfoModalTrigger(clickedElem) {
 	let clickedGame = clickedElem.target.firstChild.textContent;
 	
 	// Reset Compat Information
-	document.getElementById("modal-preview-image").src="https://github.com/Crementif/cemu_graphic_packs/blob/gh-pages/assets/images/no-cover-available.png";
+	document.getElementById("modal-preview-image").src="assets/images/no-cover-available.png";
 	document.getElementById("information-box").className="compat-status-loading";
 	
 	document.getElementById("gameTitle").innerText=clickedGame;
 	document.getElementById("compatWikiButton").href=supportedGames[clickedGame].compatLink;
 	document.getElementById("nativeResolution").textContent=supportedGames[clickedGame].nativeRes;
-	document.getElementById("information-box").classList.add(supportedGames[clickedGame].version3 ? "version-3-supported" : "version-3-unsupported");
+	if (supportedGames[clickedGame].version == 4) document.getElementById("information-box").classList.add("version-4-supported");
+	else if (supportedGames[clickedGame].version == 3) document.getElementById("information-box").classList.add("version-3-supported");
+	else if (supportedGames[clickedGame].version == 2) document.getElementById("information-box").classList.add("version-2-supported");
 	document.getElementById("information-box").classList.add(supportedGames[clickedGame].hasUltrawide ? "ultrawide-supported" : "ultrawide-unsupported");
 	
 	if (supportedGames[clickedGame].hasOwnProperty("compatLink")) {
-		await fetch(`https://cors-anywhere.herokuapp.com/http://compat.cemu.info/w/api?action=parse&page=${supportedGames[clickedGame].compatLink.split("http://compat.cemu.info/wiki/")[1]}&redirects=true&prop=parsetree&format=json`).then(fetchRes => fetchRes.json()).then(fetchJson => {
+		await fetch(`https://cors-anywhere.herokuapp.com/http://wiki.cemu.info/api.php?action=parse&page=${supportedGames[clickedGame].compatLink.split("http://compat.cemu.info/wiki/")[1]}&redirects=true&prop=parsetree&format=json`).then(fetchRes => fetchRes.json()).then(fetchJson => {
 			console.debug(`Fetched ${clickedGame}'s(=${supportedGames[clickedGame].compatLink.split("http://compat.cemu.info/wiki/")[1]}) compat wiki`, fetchJson);
 			let compatTemplates = new DOMParser().parseFromString(fetchJson.parse.parsetree["*"], "application/xml").documentElement.getElementsByTagName("template");
 			let compatJson = [];

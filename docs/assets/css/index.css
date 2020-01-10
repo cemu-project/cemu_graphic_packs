@@ -47,9 +47,10 @@
 #information-box.ultrawide-supported #ultrawide #ultrawide-supported { display: block !important; }
 #information-box.ultrawide-unsupported #ultrawide #ultrawide-unsupported {	display: block !important; }
 
-#information-box #version-3 p { display: none; }
-#information-box.version-3-supported #version-3 #version-3-supported { display: block !important; }
-#information-box.version-3-unsupported #version-3 #version-3-unsupported {	display: block !important; }
+#information-box #version-info p { display: none; }
+#information-box.version-4-supported #version-info #version-4-supported { display: block !important; }
+#information-box.version-3-supported #version-info #version-3-supported { display: block !important; }
+#information-box.version-2-supported #version-info #version-2-supported { display: block !important; }
 
 #information-box #compat-status span { display: none; }
 #information-box.compat-status-loading #compat-status-loading { display: inline !important; }
