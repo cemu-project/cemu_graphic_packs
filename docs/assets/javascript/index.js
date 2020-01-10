@@ -55,9 +55,9 @@ async function searchSupportedGames(searchString) {
 	let resultsHintSearch = [];
 	if (Object.keys(altNames).includes(searchString.toLowerCase())) searchString = altNames[searchString.toLowerCase()];
 	if (searchString.toLowerCase() == "digital foundry") {
-		document.title = "Home - Cemu Hacks";
-		document.getElementsByClassName("display-4")[0].innerText="Cemu Hacks";
-		document.getElementsByClassName("lead")[0].innerText = "Get your online Cemu hax here!!";
+		document.title = "Home - CEMU Hacks";
+		document.getElementsByClassName("display-4")[0].innerText="CEMU Hacks";
+		document.getElementsByClassName("lead")[0].innerText = "Get your online CEMU hax here!!";
 	}
 	if (searchString != "*") resultsHintSearch = supportedGamesSearchSet.get(searchString);
 	else {
@@ -75,8 +75,8 @@ async function searchSupportedGames(searchString) {
 			let gameTitleText = document.createTextNode(currResult);
 			let versionBadge = document.createElement("span");
 			let versionBadgeText;
-			if (supportedGames[currResult].version == 4) versionBadgeText = document.createTextNode("Supports OpenGL and Vulkan");
-			else if (supportedGames[currResult].version == 3) versionBadgeText = document.createTextNode("Only supported on OpenGL");
+			if (supportedGames[currResult].version == 4) versionBadgeText = document.createTextNode("Fully supports OpenGL and Vulkan");
+			else if (supportedGames[currResult].version == 3) versionBadgeText = document.createTextNode("Fully supports OpenGL");
 			else if (supportedGames[currResult].version == 2) versionBadgeText = document.createTextNode("Only supported on 1.8.0 through 1.13.2");
 			else versionBadgeText = document.createTextNode("No resolution pack yet :(");
 			let resolutionBadge = document.createElement("span");

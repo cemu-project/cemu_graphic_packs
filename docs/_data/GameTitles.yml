@@ -1,7 +1,7 @@
 #"Title":
 #  nativeRes: 720/1080
 #  compatLink: "[REQUIRED COMPAT WIKI URL]"
-#  version: 2/3/false
+#  version: 2/3/4/false
 #  hasUltrawide: true/false
 "Adventure Time: Explore the Dungeon Because I DON’T KNOW":
   nativeRes: 1080
@@ -104,7 +104,7 @@
 "FAST Racing NEO":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Fast_Racing_Neo"
-  version: 3
+  version: 4
 "Family Tennis SP":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Family_Tennis_SP"
