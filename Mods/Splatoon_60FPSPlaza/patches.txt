@@ -1,0 +1,4 @@
+[Gambit272]
+moduleMatches = 0xF7A78809
+
+0x242B09C = nop # prevent switch-to-30-FPS-mode function from being called
