@@ -22,7 +22,7 @@
 "A World of Keflings":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/A_World_of_Keflings"
-  version: 3
+  version: 4
 "Batman: Arkham City Armored Edition":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Batman:_Arkham_City_Armored_Edition"
@@ -50,7 +50,7 @@
 "Call of Duty: Ghosts":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Call_of_Duty:_Ghosts"
-  version: 3
+  version: 4
 "Captain Toad: Treasure Tracker":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Captain_Toad:_Treasure_Tracker"
@@ -63,7 +63,7 @@
 "Child of Light":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Child_of_Light"
-  version: 3
+  version: 4
 "Chimpuzzle Pro":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Chimpuzzle_Pro"
@@ -79,7 +79,7 @@
 "Darksiders Warmastered Edition":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Darksiders_Warmastered_Edition"
-  version: 3
+  version: 4
 "Devil’s Third":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Devil%27s_Third"
@@ -87,7 +87,7 @@
 "Donkey Kong Country: Tropical Freeze":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Donkey_Kong_Country:_Tropical_Freeze"
-  version: 3
+  version: 4
   hasUltrawide: true
 "DuckTales: Remastered":
   nativeRes: 1080
@@ -132,7 +132,7 @@
 "The Legend of Zelda: Hyrule Historia":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Hyrule_Historia"
-  version: 3
+  version: 4
 "Hyrule Warriors":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Hyrule_Warriors"
@@ -162,6 +162,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/LEGO_City_Undercover"
   version: 2
+"LEGO Dimensions":
+  nativeRes: 720
+  compatLink: "http://compat.cemu.info/wiki/LEGO_Dimensions"
+  version: 3
 "LEGO Star Wars: The Force Awakens":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/LEGO_Star_Wars:_The_Force_Awakens"
@@ -173,7 +177,7 @@
 "Mario & Sonic at the Rio 2016 Olympic Games":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Rio_2016_Olympic_Games"
-  version: 3
+  version: 4
 "Mario & Sonic at the Sochi 2014 Olympic Winter Games":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Sochi_2014_Olympic_Winter_Games"
@@ -186,7 +190,7 @@
 "Mario Tennis: Ultra Smash":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Tennis:_Ultra_Smash"
-  version: 3
+  version: 4
 "Meme Run":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Meme_Run"
@@ -194,23 +198,27 @@
 "Minecraft: Story Mode":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Minecraft:_Story_Mode"
-  version: 3
+  version: 4
 "Minecraft: Wii U Edition":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Minecraft:_Wii_U_Edition"
-  version: 3
+  version: 4
 "Monster Hunter 3 Ultimate":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Monster_Hunter_3_Ultimate"
-  version: 3
+  version: 4
 "Nano Assault Neo":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Nano_Assault_Neo"
-  version: 3
+  version: 4
 "NBA 2K13":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/NBA_2K13"
   version: 2
+"Need for Speed: Most Wanted U":
+  nativeRes: 720
+  compatLink: "http://wiki.cemu.info/wiki/Need_for_Speed:_Most_Wanted_U"
+  version: 4
 "New Super Luigi U":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/New_Super_Luigi_U"
@@ -226,11 +234,11 @@
 "Nintendo Land":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Nintendo_Land"
-  version: 3
+  version: 4
 "One Piece: Unlimited World Red":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/One_Piece:_Unlimited_World_Red"
-  version: 3
+  version: 4
 "PAC-MAN & the Ghostly Adventures":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pac-Man_and_the_Ghostly_Adventures_1"
@@ -242,7 +250,7 @@
 "Paper Mario: Color Splash":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Paper_Mario:_Color_Splash"
-  version: 3
+  version: 4
 "Paper Monsters Recut":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Paper_Monsters_Recut"
@@ -259,10 +267,10 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pokk%C3%A9n_Tournament"
   version: 3
-"Project Zero: Maiden of Black Water":
+"Fatal Frame/Project Zero: Maiden of Black Water":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Project_Zero:_Maiden_of_Black_Water"
-  version: 3
+  version: 4
 "Puyo Puyo Tetris":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Puyo_Puyo_Tetris"
@@ -290,7 +298,7 @@
 "Shovel Knight":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Shovel_Knight:_Plauge_of_Shadows"
-  version: 3
+  version: 4
 "Skylanders: Imaginators":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Skylanders_Imaginators"
@@ -306,7 +314,7 @@
 "Sonic Boom: Rise of Lyric":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Sonic_Boom:_Rise_of_Lyric"
-  version: 3
+  version: 4
 "Sonic Lost World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Sonic_Lost_World"
@@ -349,11 +357,11 @@
 "Taiko no Tatsujin: Atsumete Tomodachi Daisakusen":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Taiko_no_Tatsujin:_Atsumete_Tomodachi_Daisakusen"
-  version: 3
+  version: 4
 "Tekken Tag Tournament 2: Wii U Edition":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Tekken_Tag_Tournament_2"
-  version: 3
+  version: 4
 "Tengami":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Tengami"
@@ -376,7 +384,7 @@
 "The Wonderful 101":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/The_Wonderful_101"
-  version: 3
+  version: 4
 "Tokyo Mirage Sessions ♯FE":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Tokyo_Mirage_Sessions_#FE"
@@ -394,14 +402,14 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Wipeout_3"
   version: 2
-"Wipeout Create & Crash":
+"Wipeout: Create & Crash":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Wipeout:_Create_&_Crash"
   version: 2
 "Xenoblade Chronicles X":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Xenoblade_Chronicles_X"
-  version: 3
+  version: 4
   hasUltrawide: true
 "Yoshi’s Woolly World":
   nativeRes: 720
