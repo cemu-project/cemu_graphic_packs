@@ -2,7 +2,7 @@
 titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,0005000E1010DD00,0005000E10112300
 name = Resolution
 path = "ZombiU/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Made by getdls.
 version = 3
 
 [Preset]
@@ -122,14 +122,14 @@ $textureFormat = 0x01a
 #[TextureRedefine] #
 #width = 4095
 #height = 4095
-#formatsExcluded = 
+#formatsExcluded =
 #overwriteWidth = ($width/$gameWidth) * 4095
 #overwriteHeight = ($height/$gameHeight) * 4095
 
 [TextureRedefine]
 width = 1280
 height = 720
-formats = $textureFormat # 
+formats = $textureFormat #
 overwriteFormat = 0x01f
 
 [TextureRedefine]
@@ -150,7 +150,7 @@ overwriteWidth = ($width/$gameWidth) * (1024*$scaleShader*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 
 # Gamepad - background
-[TextureRedefine] 
+[TextureRedefine]
 width = 864
 height = 480
 #formats = 0x019,0x01a
@@ -179,7 +179,7 @@ overwriteHeight  = ($height/$gameHeight) * 480
 [TextureRedefine]
 width = 640
 height = 368
-#formatsExcluded = 0x431 
+#formatsExcluded = 0x431
 overwriteWidth = ($width/$gameWidth)* (640*$internalRes)
 overwriteHeight = ($height/$gameHeight)* (368*$internalRes)
 

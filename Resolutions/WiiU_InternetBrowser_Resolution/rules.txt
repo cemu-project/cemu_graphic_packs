@@ -2,7 +2,7 @@
 titleIds = 000500301001200A,000500301001210A,000500301001220A
 name = Resolution
 path = "Wii U/Internet Browser/Graphics/Resolution"
-description = Changes the resolution of the application.
+description = Changes the resolution of the application. Made by Slashiee.
 version = 4
 
 [Preset]

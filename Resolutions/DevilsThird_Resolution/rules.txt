@@ -2,7 +2,7 @@
 titleIds = 0005000010177600,0005000010177700,0005000010197d00
 name = Resolution
 path = "Devil's Third/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Made by Crementif.
 version = 3
 
 [Preset]
@@ -12,14 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
+# Performance
 
 [Preset]
 name = 640x360
@@ -35,7 +28,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -69,13 +62,6 @@ $gameHeight = 720
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 

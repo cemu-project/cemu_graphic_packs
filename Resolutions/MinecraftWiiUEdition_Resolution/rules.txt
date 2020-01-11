@@ -2,7 +2,7 @@
 titleIds = 00050000101D9D00,00050000101D7500,00050000101DBE00
 name = Resolution
 path = "Minecraft: Wii U Edition/Graphics/Resolution"
-description = Changes the game's resolution.
+description = Changes the game's resolution. Made by Atom.
 version = 4
 
 [Preset]
@@ -13,13 +13,6 @@ $gameWidth = 1280
 $gameHeight = 720
 
 # Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 640x360
@@ -69,13 +62,6 @@ $gameHeight = 720
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 

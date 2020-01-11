@@ -1,8 +1,8 @@
 [Definition]
 name = Optimized Bicubic B-spline resampler
-titleIds = 
+titleIds =
 path = "Filters/Bicubic (4 taps)"
-description = Cemu's Bicubic. Because it's B-spline so it was optimized down to 4 taps.
+description = Cemu's Bicubic. Because it's B-spline so it was optimized down to 4 taps. Created by NAVras.
 version = 3
 
 [OutputShader]

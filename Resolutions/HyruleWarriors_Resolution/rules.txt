@@ -2,7 +2,7 @@
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Resolution
 path = "Hyrule Warriors/Graphics/Resolution"
-description = Changes the resolution of the game. 
+description = Changes the resolution of the game. Made by getdls.
 version = 3
 
 #Resolutions						|Aspect ratio
@@ -444,7 +444,7 @@ $scaleBlur = 1.0
 $2pScaling = 2.0
 $aspectRatio = (16.0/9.0)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 1280
 #height = 720
 #formats = 0x816
@@ -477,7 +477,7 @@ width = 864
 height = 480
 #formats = 0x41a
 overwriteWidth = ($width/$gameWidth) * 1296 # #864
-overwriteHeight = ($height/$gameHeight) * 720 #480 
+overwriteHeight = ($height/$gameHeight) * 720 #480
 
 [TextureRedefine] #2p 3d res
 width = 672
@@ -518,18 +518,18 @@ overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 #[TextureRedefine] ##
 #width = 583
 #height = 320
-##formats = 
+##formats =
 #overwriteWidth = ($width/$gameWidth) * 583
 #overwriteHeight  = ($height/$gameHeight) * 320
 #
 #[TextureRedefine] ##
 #width = 512
 #height = 511
-##formats = 
+##formats =
 #overwriteWidth = ($width/$gameWidth) * 512
 #overwriteHeight  = ($height/$gameHeight) * 511
 
-[TextureRedefine] 
+[TextureRedefine]
 width = 512
 height = 512
 formats = 0x005
@@ -565,10 +565,10 @@ height = 180
 overwriteWidth = ($width/$gameWidth) * (320*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (180*$internalRes)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 224
 #height = 224
-#formatsExcluded = 
+#formatsExcluded =
 #overwriteWidth = ($width/$gameWidth) * (224*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (224*$internalRes)
 
@@ -589,7 +589,7 @@ overwriteHeight = ($height/$gameHeight) * (92*$internalRes)
 [TextureRedefine]
 width = 160
 height = 180
-#formats = 
+#formats =
 overwriteWidth = ($width/$gameWidth) * (160*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (180*$internalRes)
 
@@ -607,28 +607,28 @@ height = 90
 overwriteWidth = ($width/$gameWidth) * (160*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (90*$internalRes)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 64
 #height = 64
 #formatsExcluded = 0x01a,0x820,0x816,0x433,0x035,0x034,0x033,0x032,0x031
 #overwriteWidth = ($width/$gameWidth) * (64*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (64*$internalRes)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 16
 #height = 16
 #formatsExcluded = 0x01a,0x034,0x41a,0x033,0x031,0x01a
 #overwriteWidth = ($width/$gameWidth) * (16*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (16*$internalRes)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 4
 #height = 4
 #formatsExcluded = 0x81e,0x80e
 #overwriteWidth = ($width/$gameWidth) * (4*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (4*$internalRes)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 1
 #height = 1
 #formatsExcluded = 0x81e,0x80e,0x008,0x01a

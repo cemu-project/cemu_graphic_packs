@@ -2,7 +2,7 @@
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Resolution
 path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Fancy FX"
-description = Pretty blur, shadow x2, de-band sky, maintained on Nvidia.  
+description = Pretty blur, shadow x2, de-band sky, maintained on Nvidia. Made by getdls.
 version = 3
 
 
@@ -51,7 +51,7 @@ $internalRes = 1
 $presetPass:int = 2
 $enableBlur:int = 1
 
-[Preset] # 
+[Preset] #
 name = Disable extra blur, keep other tweaks active
 $dither = 0.2
 $scaleShader = 1.0
@@ -72,13 +72,13 @@ $enableBlur:int = 0
 [TextureRedefine] #Double shadow res
 width = 384
 height = 384
-###formatsExcluded = 
+###formatsExcluded =
 overwriteWidth = 768
 overwriteHeight = 768
 
 ## 1a -> 1f
 
-#De-banding 
+#De-banding
 [TextureRedefine]
 width = 1920
 height = 1088
@@ -145,7 +145,7 @@ height = 272
 formats = 0x01a
 overwriteFormat = 0x01f
 
-[TextureRedefine] # x8 
+[TextureRedefine] # x8
 width = 480
 height = 270
 formats = 0x01a
@@ -217,7 +217,7 @@ overwriteFormat = 0x01f
 #formats = 0x01a
 #overwriteFormat = 0x01f
 
-## 7->f 
+## 7->f
 [TextureRedefine] #viewport
 width = 960
 height = 544
@@ -307,7 +307,7 @@ height = 720
 formats = 0x001
 overwriteFormat = 0x005
 
-#[TextureRedefine] # 
+#[TextureRedefine] #
 #width = 1024
 #height = 1024
 #formats = 0x001

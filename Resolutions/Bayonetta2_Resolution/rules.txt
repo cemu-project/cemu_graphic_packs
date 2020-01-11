@@ -2,7 +2,7 @@
 titleIds = 0005000010172600,0005000010172700,000500001011B900
 name = Resolution
 path = "Bayonetta 2/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Made by Slashiee and getdls.
 version = 3
 
 [Preset]
@@ -12,14 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
+# Performance
 
 [Preset]
 name = 640x360
@@ -35,7 +28,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -72,13 +65,6 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-
 [Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
 name = --- SSAA res Tweaks - Set scaling to Stretch
 $width = 1920
@@ -87,22 +73,21 @@ $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 1920x2160 (Vertical x2)
+name = 1920x1080 (Vertical 200%, 2160)
 $width = 1920
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 2560x2880 (Vertical x2)
+name = 2560x1440 (Vertical 200%, 1440)
 $width = 2560
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
-
-[Preset] #
-name = 3840x4320 (Vertical x2)
+[Preset]
+name = 3840x2160 (Vertical 200%, 4320)
 $width = 3840
 $height = 4320
 $gameWidth = 1280
@@ -120,11 +105,11 @@ width = 640
 height = 368
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 368
- 
+
 [TextureRedefine] # Blur Map
 width = 640
 height = 360
-tileModesExcluded = 0x001  
+tileModesExcluded = 0x001
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 360
 

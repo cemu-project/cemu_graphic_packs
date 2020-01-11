@@ -2,7 +2,7 @@
 titleIds = 5000010194200, 0005000010195d00
 name = "Resolution"
 path = "Lego Dimensions/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Made by bloodmc and Xalphenos.
 version = 4
 
 [Preset]
@@ -13,13 +13,6 @@ $gameWidth = 1280
 $gameHeight = 720
 
 # Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 640x360
@@ -72,33 +65,19 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-
-# Common Ultrawide Resolution
+# Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x2160 ("21:9")
-$width = 5120
-$height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 

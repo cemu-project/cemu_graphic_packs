@@ -22,4 +22,4 @@ moduleMatches = 0xA3705C0B
 #remove check for mii data
 0x024D7158 = b .+0xE8
 
-#Note for future versions take the crash log and get the module checksum from the user.  Subtract 0x7c from the link register in the crash log to be the address we patch.
+#Note for future versions take the crash log and get the module checksum from the user. Subtract 0x7c from the link register in the crash log to be the address we patch.

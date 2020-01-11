@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
-name = Adjust CutScene Blur Pack
-path = "Tokyo Mirage Sessions FE/Graphics/Adjust Blur"
-description = Changes the in-game cut-scenes blur.
+name = Adjust Cutscene Blur
+path = "Tokyo Mirage Sessions FE/Graphics/Adjust Cutscene Blur"
+description = Changes the in-game cut-scenes blur.  Made by getdls.
 version = 3
 
 [Preset]

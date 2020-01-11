@@ -2,10 +2,8 @@
 titleIds = 00050000101FA600,00050000101F9700
 name = Resolution
 path = "Darksiders Warmastered Edition/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Made by theboy181.
 version = 4
-
-# Made by theboy181
 
 [Preset]
 name = 1280x720 (Default)
@@ -15,13 +13,6 @@ $gameWidth = 1280
 $gameHeight = 720
 
 # Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 640x360
@@ -71,13 +62,6 @@ $gameHeight = 720
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 

@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Resolution
 path = "Xenoblade Chronicles X/Graphics/Resolution"
-description = Changes the resolution of the game. 
+description = Changes the resolution of the game. Made by getdls.
 version = 4
 
 
@@ -186,13 +186,13 @@ $scaleBlur = 1.0
 #formats = 0x816
 #overwriteFormat = 0x820
 
-#[TextureRedefine] # Bloom, DOF 
+#[TextureRedefine] # Bloom, DOF
 #width = 320
 #height = 192
 #formats = 0x816
 #overwriteFormat = 0x820
 
-#[TextureRedefine] # Bloom, DOF 
+#[TextureRedefine] # Bloom, DOF
 #width = 320
 #height = 180
 #formats = 0x816
@@ -209,7 +209,7 @@ overwriteHeight = ($height/$gameHeight) * 720
 [TextureRedefine] # shadows
 width = 1024
 height = 1024
-formats = 0x005 
+formats = 0x005
 overwriteWidth = ($height/$gameHeight)* (1024*$scaleShader*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 
@@ -217,13 +217,13 @@ overwriteHeight = ($height/$gameHeight) * (1024*$scaleShader*$internalRes)
 width = 1024
 height = 720
 tileModesExcluded = 0x001
-overwriteWidth = ($width/$gameWidth) * 1024 
-overwriteHeight = ($height/$gameHeight) * 720 
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 720
 
 [TextureRedefine]
 width = 864
 height = 480
-#formats = 
+#formats =
 formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * 864
 overwriteHeight = ($height/$gameHeight) * 480
@@ -231,7 +231,7 @@ overwriteHeight = ($height/$gameHeight) * 480
 [TextureRedefine]
 width = 854
 height = 480
-#formats = 
+#formats =
 formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
@@ -245,7 +245,7 @@ overwriteHeight = ($height/$gameHeight) * (368*$internalRes)
 [TextureRedefine]
 width = 640
 height = 360
-formatsExcluded = 0x033,0x031 #dialog prompt fixes, XCX Logo NLA 
+formatsExcluded = 0x033,0x031 #dialog prompt fixes, XCX Logo NLA
 tileModesExcluded = 0x001 # fmv sub colour
 overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (360*$internalRes)
@@ -281,14 +281,14 @@ height = 192
 overwriteWidth = ($width/$gameWidth) * (320*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (192*$internalRes)
 
-[TextureRedefine] # Bloom, DOF 
+[TextureRedefine] # Bloom, DOF
 width = 384
 height = 192
 #formats = 0x001
 overwriteWidth = ($width/$gameWidth) * (384*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (192*$internalRes)
 
-[TextureRedefine] # Bloom, DOF 
+[TextureRedefine] # Bloom, DOF
 width = 320
 height = 180
 overwriteWidth = ($width/$gameWidth) * (320*$internalRes)
@@ -322,7 +322,7 @@ height = 96
 overwriteWidth = ($width/$gameWidth) * (192*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (96*$internalRes)
 
-[TextureRedefine] # Bloom 2nd 
+[TextureRedefine] # Bloom 2nd
 width = 160
 height = 96
 formatsExcluded = 0x431,0x035,0x034,0x033,0x031
@@ -337,7 +337,7 @@ formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * (160*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (90*$internalRes)
 
-[TextureRedefine] # 
+[TextureRedefine] #
 width = 128
 height = 128
 formats = 0x806 #,0x035,0x034,0x033,0x031
@@ -361,7 +361,7 @@ formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 128
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 127
 #height = 127
 #formats = 0x80e # 0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
@@ -380,10 +380,10 @@ height = 46
 overwriteWidth = ($width/$gameWidth) * (80*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (46*$internalRes)
 
-[TextureRedefine] 
+[TextureRedefine]
 width = 64
 height = 64
-dept = 1 
+dept = 1
 formats = 0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
 #formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * (64*$internalRes)
@@ -399,14 +399,14 @@ overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
 [TextureRedefine] #skell view
 width = 40
 height = 24
-#formats = 
+#formats =
 overwriteWidth = ($width/$gameWidth) * (40*$internalRes)
 overwriteHeight  = ($height/$gameHeight) * (24*$internalRes)
 
-[TextureRedefine] 
+[TextureRedefine]
 width = 32
 height = 32
-dept = 1 
+dept = 1
 formats = 0x806 #,0x035,0x034,0x033,0x032,0x031
 #formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 overwriteWidth = ($width/$gameWidth) * (32*$internalRes)
@@ -419,11 +419,11 @@ overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
 ##formatsExcluded = 0x431,0x035,0x034,0x033,0x031
 #overwriteWidth = ($width/$gameWidth) * (32*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (16*$internalRes)
-# 
+#
 #[TextureRedefine] #don't scale 0x01a
 #width = 16
 #height = 16
-#dept = 1 
+#dept = 1
 #formats = 0x816 #0x008 ,0x431,0x031
 ###formatsExcluded = 0x431,0x035,0x034,0x033,0x031,0x806
 #overwriteWidth = ($width/$gameWidth) * (16*$internalRes)
@@ -445,7 +445,7 @@ overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
 #overwriteWidth = ($width/$gameWidth) * (8*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (8*$internalRes)
 
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 4
 #height = 4
 ####formats = 0x81e,0x80e
@@ -453,7 +453,7 @@ overwriteHeight = ($height/$gameHeight) * (32*$internalRes)
 #overwriteWidth = ($width/$gameWidth) * (4*$internalRes)
 #overwriteHeight = ($height/$gameHeight) * (4*$internalRes)
 #
-#[TextureRedefine] 
+#[TextureRedefine]
 #width = 1
 #height = 1
 ####formats = 0x008,0x81e,0x01a

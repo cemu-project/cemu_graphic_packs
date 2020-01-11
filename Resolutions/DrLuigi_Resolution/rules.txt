@@ -2,7 +2,7 @@
 titleIds = 0005000010150300,0005000010152A00,0005000010152B00
 name = Resolution
 path = "Dr. Luigi/Graphics/Resolution"
-description = Changes the resolution of the game. Anti-aliasing is disabled by default.
+description = Changes the resolution of the game. Anti-aliasing is disabled by default. Made by Slashiee.
 version = 3
 
 [Preset]
@@ -13,13 +13,6 @@ $gameWidth = 1280
 $gameHeight = 720
 
 # Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 640x360
@@ -69,13 +62,6 @@ $gameHeight = 720
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 

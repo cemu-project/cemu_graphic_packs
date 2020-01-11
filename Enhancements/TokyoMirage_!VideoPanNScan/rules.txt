@@ -1,14 +1,14 @@
 [Definition]
 titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
-name = Video pan n scan 
-path = "Tokyo Mirage Sessions FE/Graphics/Video pan n scan" 
-description = 21:9 Video, cuts of sides instead of pillarboxing 
+name = Video pan n scan
+path = "Tokyo Mirage Sessions FE/Graphics/Video pan n scan"
+description = 21:9 Video, cuts of sides instead of pillar-boxing. Made by getdls.
 version = 3
 
 [Preset]
 name = 21:9 Pan n scan (Cut top, bottom)
 $UIAspectX = 1.0
-$UIAspectY = (2560.0 / 1080.0) / (1280.0/720.0) 
+$UIAspectY = (2560.0 / 1080.0) / (1280.0/720.0)
 
 [Preset]
 name = 16:10 Pan n scan (Cut sides)

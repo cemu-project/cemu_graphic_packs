@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 000500001012f000,00050000101d6000,00050000101e4100,00050000101FED00
 name = Resolution
-path = "Fast Racing Neo/Graphics/Resolution"
-description = Changes the resolution of the game.
+path = "FAST Racing NEO/Graphics/Resolution"
+description = Changes the resolution of the game. Made by Slashiee and getdls.
 version = 4
 
 [Preset]
@@ -15,17 +15,7 @@ $internalRes = 1.0
 $scaleShader = 1.0
 $textureFormat = 0x01a
 
-// Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
+# Performance
 
 [Preset]
 name = 640x360
@@ -47,7 +37,7 @@ $internalRes = 1.0
 $scaleShader = 1.0
 $textureFormat = 0x01a
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -98,32 +88,6 @@ $gameHeight = 720
 $internalRes = 1.0
 $scaleShader = 1.0
 $textureFormat = 0x01a
-
-#[Preset]
-#name = 3840x2160 (experimental res, format)
-#$width = 3840  #5760
-#$height = 2160
-#$gameWidth = 1280
-#$gameHeight = 720
-#$internalRes = 2.0
-#$scaleShader = 1.0
-#$textureFormat = 0x01f
-
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
-
-#[TextureRedefine]
-#width = 1280
-#height = 720
-#formats = 0x01a
-#overwriteFormat = $textureFormat 
 
 [TextureRedefine] # Game Resolution
 width = 1280

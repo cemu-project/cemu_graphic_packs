@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010137F00,0005000010138300,0005000010144800
 name = Resolution
-path = "Donkey Kong Country: Tropical Freeze/Graphics/Resolution" 
-description = Changes the resolution of the game.
+path = "Donkey Kong Country: Tropical Freeze/Graphics/Resolution"
+description = Changes the resolution of the game. Made by getdls and Skalfate.
 version = 4
 
 [Preset]
@@ -12,14 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
+# Performance
 
 [Preset]
 name = 640x360
@@ -35,7 +28,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -72,77 +65,19 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-
-// Common Ultrawide Resolutions
+# Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-
-// Common 16:10 Resolutions
-
-[Preset]
-name = 1440x900 (16:10)
-$width = 1440
-$height = 900
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 1680x1050 (16:10)
-$width = 1680
-$height = 1050
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 1920x1200 (16:10)
-$width = 1920
-$height = 1200
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 2560x1600 (16:10)
-$width = 2560
-$height = 1600
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 2880x1800 (16:10)
-$width = 2880
-$height = 1800
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 3840x2400 (16:10)
-$width = 3840
-$height = 2400
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x3200 (16:10)
-$width = 5120
-$height = 3200
 $gameWidth = 1280
 $gameHeight = 720
 
@@ -152,7 +87,7 @@ $gameHeight = 720
 # - 0x01a=Color-RGBA8
 # - 0x80e=Depth32
 
-# Main Game Renderer 
+# Main Game Renderer
 [TextureRedefine]
 width = 1280
 height = 720

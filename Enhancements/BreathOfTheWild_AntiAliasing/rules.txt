@@ -2,22 +2,22 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Anti-Aliasing
 path = "The Legend of Zelda: Breath of the Wild/Graphics/Anti-Aliasing"
-description = Enables or Disables Native Botw Anti-Aliasing. Also includes an alternative FXAA implementation. Check the "Anti-Aliasing/rules.txt" file in your Botw AA graphicPack folder for info about the individual settings.
+description = Enables or Disables Native Botw Anti-Aliasing. Also includes an alternative FXAA implementation. Check the rules.txt of this pack for info about the individual settings. Made by Skalfate.
 version = 4
 
 [Preset]
-name = Alternative FXAA (Nvidia's implementation)
+name = Alternative FXAA (NVIDIA's implementation)
 $preset:int = 2
 # Customize these 3 values
 $subPix:int = 1.0
 $edgeThreshold:int = 0.125
 $edgeThresholdMin:int = 0.0156
 
-# Unrelated for Nvidia FXAA
-$inventorySharper:int = 0.0
-$inventoryBlurrier:int = 0.0
-$worldSharper:int = 0.0
-$worldBlurrier:int = 0.0
+# Not used for NVIDIA's FXAA, do not touch.
+$inventorySharper:int = 0.0 # Ignore
+$inventoryBlurrier:int = 0.0 # Ignore
+$worldSharper:int = 0.0 # Ignore
+$worldBlurrier:int = 0.0 # Ignore
 
 [Preset]
 name = Enable Native AA
@@ -28,7 +28,7 @@ $inventoryBlurrier:int = 0.0
 $worldSharper:int = 0.0
 $worldBlurrier:int = 0.0
 
-# Not used for Native AA
+# Not used for Native AA, do not touch.
 $subPix:int = 0.75 # Ignore
 $edgeThreshold:int = 0.166 # Ignore
 $edgeThresholdMin:int = 0.0312 # Ignore
@@ -39,13 +39,13 @@ name = Disable Native AA
 $preset:int = 0
 # Disables all anti-aliasing, doesn't have any customizations
 
-$inventorySharper:int = 0.0
-$inventoryBlurrier:int = 0.0
-$worldSharper:int = 0.0
-$worldBlurrier:int = 0.0
-$subPix:int = 0.75
-$edgeThreshold:int = 0.166
-$edgeThresholdMin:int = 0.0312
+$inventorySharper:int = 0.0 # Ignore
+$inventoryBlurrier:int = 0.0 # Ignore
+$worldSharper:int = 0.0 # Ignore
+$worldBlurrier:int = 0.0 # Ignore
+$subPix:int = 0.75 # Ignore
+$edgeThreshold:int = 0.166 # Ignore
+$edgeThresholdMin:int = 0.0312 # Ignore
 
 
 # Adjust native AA implmentation - Only applies to Enabled preset
@@ -67,7 +67,7 @@ $edgeThresholdMin:int = 0.0312
 #   0.333 - too little (faster)
 #   0.250 - low quality
 #   0.166 - default
-#   0.125 - high quality 
+#   0.125 - high quality
 #   0.063 - overkill (slower)
 
 # EdgeThresholdMin:

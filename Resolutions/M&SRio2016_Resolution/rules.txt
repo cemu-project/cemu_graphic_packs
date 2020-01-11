@@ -2,7 +2,7 @@
 titleIds = 0005000010190300,00050000101E5300,00050000101E5400
 name = Resolution
 path = "Mario & Sonic at the Rio 2016 Olympic Games/Graphics/Resolution"
-description = Changes the resolution of the game. Known issues: Lower resolution results in a "deep-fried" look. Depth of field and bloom needs shader edits.
+description = Changes the resolution of the game. Known issues: Lower resolution results in a "deep-fried" look. Depth of field and bloom needs shader edits. Made by Slashiee.
 version = 4
 
 [Preset]

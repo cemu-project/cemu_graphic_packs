@@ -2,7 +2,7 @@
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Reduce Online Desync (forced 59fps)
 path = "Mario Kart 8/Workarounds/Reduce Online Desync"
-description = Limits the FPS to 59 to reduce the chances of online desyncs.
+description = Limits the FPS to 59 to reduce the chances of online desyncs. Made by Slashiee.
 version = 4
 
 [Control]

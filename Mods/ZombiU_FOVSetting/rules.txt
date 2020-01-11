@@ -1,12 +1,12 @@
 [Definition]
 titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,0005000E1010DD00,0005000E10112300
 name = Field of View
-path = "ZombiU/Mods/Field of View" 
+path = "ZombiU/Mods/Field of View"
 description = Changes the field of view (FOV). Fixes edge framing for 21:9 cinematics and other FOV tweaks.
 version = 4
 
 [Preset]
-name = Default FOV  
+name = Default FOV
 $fov = 1.0
 
 [Preset]
@@ -14,7 +14,7 @@ name = Match 16:9 horizontal FOV to 21:9 (1.3125)
 $fov = 1.3125
 
 [Preset]
-name = Balance 48:9 (1.45) 
+name = Balance 48:9 (1.45)
 $fov = 1.45
 
 [Preset]
@@ -26,7 +26,7 @@ name = Match 16:10 horizontal FOV to 16:9 (0.9)
 $fov  = 0.9
 
 [Preset]
-name = Pc style wide FOV (0.825)
+name = PC style wide FOV (0.825)
 $fov = 0.825
 
 [Preset]

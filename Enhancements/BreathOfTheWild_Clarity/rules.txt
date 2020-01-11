@@ -2,39 +2,39 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Clarity"
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/Clarity"
-description = Select the visual look of the game that you'll like with these hand-made presets that adjusts saturation, vibrance, colors and more. You can select a preset. Selecting "User-Defined" requires making your own preset. check the "BreathOfTheWild_Clarity/37040a485a29d54e_00000000000003c9_ps.txt" file in your graphicPacks folder to create one.
+description = Select the visual look of the game that you'll like with these hand-made presets that adjusts saturation, vibrance, colors and more. You can select a preset. Selecting "User-Defined" requires making your own preset. check the "BreathOfTheWild_Clarity/37040a485a29d54e_00000000000003c9_ps.txt" file in your graphicPacks folder to create one. Made by Jamie and preset creators (names are listed).
 version = 4
 
 [Preset]
-name = Serfrost Preset (Default)
+name = Serfrost's Preset (Default)
 $preset:int = 10
 
 [Preset]
-name = Serfrost Preset (Dim Display)
+name = Serfrost's Preset (Dim Display)
 $preset:int = 9
 
 [Preset]
-name = Serfrost Preset (Bright Display)
+name = Serfrost's Preset (Bright Display)
 $preset:int = 8
 
 [Preset]
-name = Bruz Preset
+name = Bruz's Preset
 $preset:int = 1
 
 [Preset]
-name = CellHunter Preset
+name = CellHunter's Preset
 $preset:int = 7
 
 [Preset]
-name = Jamie Preset
+name = Jamie's Preset
 $preset:int = 3
 
 [Preset]
-name = BSoD Gaming Preset
+name = BSoD Gaming's Preset
 $preset:int = 2
 
 [Preset]
-name = The Complaining Gamer Preset
+name = The Complaining Gamer's Preset
 $preset:int = 5
 
 [Preset]
@@ -50,11 +50,11 @@ name = Filmic Preset
 $preset:int = 6
 
 [Preset]
-name = Survival of the Wild Preset (Warmer)
+name = Silentverge's Survival of the Wild Preset (Warmer)
 $preset:int = 12
 
 [Preset]
-name = Survival of the Wild Preset (Colder)
+name = Silentverge's Survival of the Wild Preset (Colder)
 $preset:int = 13
 
 [Preset]

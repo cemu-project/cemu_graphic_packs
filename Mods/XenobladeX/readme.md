@@ -74,5 +74,5 @@
 - **Force weather**: Force selected weather. Just select a preset and unload/reload the pack.
 
 ### Requirements
-The most important requirement is of course cemuhook. All my mods have been tested and are known to work with cemuhook **0.5.7.3**.
+The most important requirement is of course Cemuhook. All my mods have been tested and are known to work with Cemuhook **0.5.7.3**.
 All mods are compatibles with Xenoblade versions **1.0.1E** and **1.0.2U** (some of them with 1.0.1U), and are not supposed to impact savegames but be sure to make save backup just in case!

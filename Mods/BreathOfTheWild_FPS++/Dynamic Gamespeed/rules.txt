@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Dynamic Gamespeed
 path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/Dynamic Gamespeed (Required)"
-description = DON'T USE STATIC FPS WITH FPS++! Don't forget to set the FPS limit if you want to exceed 30 FPS. Lowering the amount of averaged frames, how more reactive the gamespeed becomes to your FPS.
+description = DON'T USE STATIC FPS WITH FPS++! Don't forget to set the FPS limit if you want to exceed 30 FPS. Lowering the amount of averaged frames, how more reactive the gamespeed becomes to your FPS. Made by Xalphenos, Crementif, and epigramx.
 version = 4
 
 [Preset]

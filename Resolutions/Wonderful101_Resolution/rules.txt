@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010116300,000500001012DC00,0005000010135300
 name = Resolution
-path = "The Wonderful 101/Graphics/Resolution" 
-description = Changes the resolution of the game.
+path = "The Wonderful 101/Graphics/Resolution"
+description = Changes the resolution of the game. Made by Slashiee.
 version = 4
 
 [Preset]

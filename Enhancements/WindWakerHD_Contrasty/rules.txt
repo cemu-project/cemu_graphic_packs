@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
 name = Contrasty
-path = "The Legend of Zelda: The Wind Waker HD/Enhancements/Contrasty v1.1" 
-description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Enabling will ignore your other AA settings.
+path = "The Legend of Zelda: The Wind Waker HD/Enhancements/Contrasty v1.1"
+description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Enabling will ignore your other AA settings. Made by getdls.
 version = 3
 
 [Preset]
@@ -28,11 +28,11 @@ $bleach = 1.0
 $sharp_mix = 0.0
 
 $skyboxRed = 1.0
-$skyboxGreen = 1.05 
+$skyboxGreen = 1.05
 $skyboxBlue = 0.9
 $skyboxMix = 1.05
 $AO = 1.0
-$beach = 1.0 
+$beach = 1.0
 
 [Preset]
 name = Less sky bloom
@@ -57,11 +57,11 @@ $bleach = 1.0
 $sharp_mix = 0.0
 
 $skyboxRed = 1.0
-$skyboxGreen = 1.05 
+$skyboxGreen = 1.05
 $skyboxBlue = 0.9
 $skyboxMix = 0.775
 $AO = 1.0
-$beach = 1.0 
+$beach = 1.0
 
 [Preset]
 name = High Contrasty
@@ -86,11 +86,11 @@ $bleach = 0.85
 $sharp_mix = 0.1
 
 $skyboxRed = 1.0
-$skyboxGreen = 1.0 
+$skyboxGreen = 1.0
 $skyboxBlue = 1.0
 $skyboxMix = 1.15
 $AO = 1.0
-$beach = 1.0 
+$beach = 1.0
 
 [Preset]
 name = Colourful
@@ -115,11 +115,11 @@ $bleach = 0.85
 $sharp_mix = 0.0
 
 $skyboxRed = 1.0
-$skyboxGreen = 1.0 
+$skyboxGreen = 1.0
 $skyboxBlue = 1.0
 $skyboxMix = 0.9
 $AO = 1.0
-$beach = 1.0 
+$beach = 1.0
 
 [Preset]
 name = Gamecube style
@@ -144,11 +144,11 @@ $bleach = 0.85
 $sharp_mix = 0.0
 
 $skyboxRed = 1.1
-$skyboxGreen = 0.95 
+$skyboxGreen = 0.95
 $skyboxBlue = 1.1
 $skyboxMix = 0.75
 $AO = 0.5
-$beach = 0.85 
+$beach = 0.85
 
 [Preset]
 name = Gangnam style
@@ -173,8 +173,8 @@ $bleach = 0.85
 $sharp_mix = 0.9
 
 $skyboxRed = 1.5
-$skyboxGreen = 0.95 
+$skyboxGreen = 0.95
 $skyboxBlue = 1.1
 $skyboxMix = 1.5
 $AO = 1.5
-$beach = 1.1 
+$beach = 1.1

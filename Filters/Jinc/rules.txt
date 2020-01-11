@@ -1,8 +1,8 @@
 [Definition]
 name = Jinc windowed-jinc with anti-ringing
-titleIds = 
+titleIds =
 path = "Filters/Jinc"
-description = This is an approximation of Jinc. If B=1.0, it's a lanczos filter.
+description = This is an approximation of Jinc. If B=1.0, it's a lanczos filter. Created by NAVras.
 version = 3
 
 [OutputShader] # need texels
@@ -40,7 +40,7 @@ $SINC         = 0.825
 $Anti_Ringing = 0.8
 
 # $Window_Sinc == A; $SINC == B.
-# Increase A to get more blur. Decrease it to get a sharper picture. 
+# Increase A to get more blur. Decrease it to get a sharper picture.
 # B = 0.825 to get rid of dithering. Increase B to get a fine sharpness, though dithering returns.
 
 # $Anti_Ringing reduces overshoot.

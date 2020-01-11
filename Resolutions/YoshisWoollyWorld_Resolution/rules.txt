@@ -2,7 +2,7 @@
 titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
 name = Resolution
 path = "Yoshi's Woolly World/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Made by Slashiee and getdls.
 version = 3
 
 [Preset]
@@ -13,7 +13,8 @@ $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
 $scaleShader = 1.0
-// Performance
+
+# Performance
 
 [Preset]
 name = 640x360
@@ -31,9 +32,9 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
-$scaleShader = (720.0/540.0) 
+$scaleShader = (720.0/540.0)
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -42,7 +43,7 @@ $height = 900
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
-$scaleShader = (720.0/900.0) 
+$scaleShader = (720.0/900.0)
 
 [Preset]
 name = 1920x1080
@@ -51,7 +52,7 @@ $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
-$scaleShader = (1440.0/1080.0) # Dont scale shadows to 1.5
+$scaleShader = (1440.0/1080.0) # Don't scale shadows to 150%
 
 [Preset]
 name = 2560x1440
@@ -69,7 +70,7 @@ $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.75
-$scaleShader = (1440.0/1800.0) 
+$scaleShader = (1440.0/1800.0)
 
 [Preset]
 name = 3840x2160
@@ -80,28 +81,19 @@ $gameHeight = 720
 $dither = 0.85
 $scaleShader = 1.0
 
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-$dither = 1.0
-$scaleShader = 1.0
-
-// Common Ultrawide Resolutions
+# Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
 $dither = 0.1
-$scaleShader = (1440.0/1080.0) # Dont scale shadows to 1.5
+$scaleShader = (1440.0/1080.0) # Don't scale shadows to 150%
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
 $gameWidth = 1280
@@ -109,47 +101,10 @@ $gameHeight = 720
 $dither = 0.5
 $scaleShader = 1.0
 
-[Preset]
-name = 4300x1800 ("21:9")
-$width = 4300
-$height = 1800
-$gameWidth = 1280
-$gameHeight = 720
-$dither = 0.75
-$scaleShader = (1440.0/1800.0) 
-
-#[Preset] # debug high res
-#name = 7680x4320
-#$width = 7680
-#$height = 4320
-#$gameWidth = 1280
-#$gameHeight = 720
-#$dither = 1.25
-#$scaleShader = 1.0 
-
-#Colour depth / De-band Ok Nvidia, possible broken on Intel/Ams
-#[TextureRedefine]
-#width = 1280
-#height = 720
-#formats =  0x01a
-#overwriteFormat = 0x01f
-#
-#[TextureRedefine]
-#width = 640
-#height = 368
-#formats =  0x01a
-#overwriteFormat = 0x01f
-#
-#[TextureRedefine]
-#width = 640
-#height = 360
-#formats =  0x01a
-#overwriteFormat = 0x01f
-
 [TextureRedefine]
 width = 1280
 height = 720
-#formats = 0x033,0x007,0x01a 
+#formats = 0x033,0x007,0x01a
 formatsExcluded = 0x033
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
@@ -249,7 +204,7 @@ overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 90
 
 
-[TextureRedefine] #45 rounding 
+[TextureRedefine] #45 rounding
 width = 96
 height = 48
 #formats = 0x806,0x01a
@@ -277,5 +232,3 @@ height = 22
 formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 40
 overwriteHeight = ($height/$gameHeight) * 22
-
-

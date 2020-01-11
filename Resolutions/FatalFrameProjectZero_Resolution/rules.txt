@@ -2,7 +2,7 @@
 titleIds = 00050000101D0600,00050000101D0300,000500001014D200,00050000101D3F00
 name = Resolution
 path = "Fatal Frame - Project Zero: Maiden of Black Water/Graphics/Resolution"
-description = Changes the games resolution. You cannot change resolutions on the fly.
+description = Changes the resolution of the game.
 version = 4
 
 [Preset]
@@ -12,14 +12,7 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 
-// Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1280
-$gameHeight = 720
+# Performance
 
 [Preset]
 name = 640x360
@@ -35,7 +28,7 @@ $height = 540
 $gameWidth = 1280
 $gameHeight = 720
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 1600x900
@@ -72,14 +65,6 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
-[Preset]
-name = 5120x2880
-$width = 5120
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
-
-# -----------------------------------------------------------------------------------------------------------------------------------------------
 # -----------------------------------------------------------------------------------------------------------------------------------------------
 
 # All Formats- 0x001,0x011,0x01a,0x41a,0x816,0x80e,0x81e,0x820,0x806
@@ -94,7 +79,7 @@ $gameHeight = 720
 # 0x820=(RGBA16)
 
 # Depth/Geometry/Shading Rendering
-[TextureRedefine] 
+[TextureRedefine]
 width = 1280
 height = 720
 formats = 0x001,0x011,0x01a,0x41a,0x816
@@ -103,7 +88,7 @@ overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
 # Gamepad - background
-[TextureRedefine] 
+[TextureRedefine]
 width = 864
 height = 480
 formats = 0x41a
@@ -130,7 +115,7 @@ overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 368
 
 # 1/2 - Resolutions
-[TextureRedefine] 
+[TextureRedefine]
 width = 640
 height = 360
 formats = 0x011,0x01a,0x41a,0x816,0x820

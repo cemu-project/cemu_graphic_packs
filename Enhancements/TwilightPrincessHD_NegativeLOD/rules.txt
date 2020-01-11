@@ -2,7 +2,7 @@
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Level of detail
 path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Negative Texture LOD"
-description = Sharper textures at risk of shimmering when set too high
+description = Sharper textures at risk of shimmering when set too high. Made by getdls.
 version = 4
 
 [Preset]
@@ -45,16 +45,16 @@ $0x035 = +2
 $0x01a = 0
 
 [TextureRedefine]
-formats = 0x031 #0x431,0x432,0x433,0x434,0x435 not used. 
-overwriteRelativeLodBias = $0x031 
+formats = 0x031 #0x431,0x432,0x433,0x434,0x435 not used.
+overwriteRelativeLodBias = $0x031
 
 [TextureRedefine]#Per format, possible to have separate scaling if needed
-formats = 0x033 
-overwriteRelativeLodBias = $0x033 
+formats = 0x033
+overwriteRelativeLodBias = $0x033
 
 [TextureRedefine]
 formats = 0x034
-overwriteRelativeLodBias = $0x034 
+overwriteRelativeLodBias = $0x034
 
 [TextureRedefine]
 formats = 0x035
