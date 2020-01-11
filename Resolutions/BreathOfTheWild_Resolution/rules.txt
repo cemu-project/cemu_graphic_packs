@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Resolution
 path = "The Legend of Zelda: Breath of the Wild/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Skalfate, rajkosto and NAVras.
+description = Changes the resolution of the game. Made by Kiri, Skalfate, rajkosto and NAVras.
 version = 4
 
 [Preset]
