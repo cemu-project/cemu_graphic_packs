@@ -131,6 +131,13 @@ height = 176
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 176
 
+[TextureRedefine] # depth loading etc
+width = 256
+height = 256
+formats = 0x011
+overwriteWidth = ($width / $gameWidth) * 256
+overwriteHeight = ($height / $gameHeight) * 256
+
 [TextureRedefine] # Bloom Mip
 width = 96
 height = 48
@@ -155,3 +162,17 @@ width = 48
 height = 32
 overwriteWidth = ($width / $gameWidth) * 48
 overwriteHeight = ($height / $gameHeight) * 32
+
+[TextureRedefine] # particles
+width = 8
+height = 8
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 8
+overwriteHeight = ($height / $gameHeight) * 8
+
+[TextureRedefine] # grading?
+width = 4
+height = 4
+formats = 0x80e
+overwriteWidth = ($width / $gameWidth) * 4
+overwriteHeight = ($height / $gameHeight) * 4
