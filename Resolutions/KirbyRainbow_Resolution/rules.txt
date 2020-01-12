@@ -59,17 +59,30 @@ $gameWidth = 1280
 $gameHeight = 720
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 (4k - Native x2)
 $width = 3840
 $height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x4320 (8k - Native x3)
+$width = 7680
+$height = 4320
 $gameWidth = 1280
 $gameHeight = 720
 
 [TextureRedefine] # TV Resolution
 width = 1280
 height = 720
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine] # TV Resolution
+width = 1280
+height = 720
 tileModesExcluded = 0x001
-formatsExcluded = 0x431,0x41a # boot, background
+formatsExcluded = 0x431,0x034,0x41a # boot, background 
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 

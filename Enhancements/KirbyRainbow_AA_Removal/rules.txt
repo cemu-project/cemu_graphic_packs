@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101ABC00,00050000101B5100
+name = AA removal
+path = "Kirby and the Rainbow Curse & Paintbrush/Enhancements/AA Removal"
+description = Removes AA, no performance gain. Used for clean look or supersampling AA.
+version = 4
