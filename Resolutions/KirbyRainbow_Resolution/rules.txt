@@ -69,6 +69,7 @@ $gameHeight = 720
 width = 1280
 height = 720
 tileModesExcluded = 0x001
+formatsExcluded = 0x431,0x41a # boot, background
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
@@ -248,6 +249,27 @@ overwriteHeight = ($height/$gameHeight) * 48
 
 # Fxaa (?)
 
+[TextureRedefine] #level screen 8 round
+width = 1408
+height = 736
+formats = 0x001,0x41a
+overwriteWidth = ($width/$gameWidth) * 1408
+overwriteHeight = ($height/$gameHeight) * 736
+
+[TextureRedefine] #level screen
+width = 1312
+height = 736
+formats = 0x001,0x41a
+overwriteWidth = ($width/$gameWidth) * 1312
+overwriteHeight = ($height/$gameHeight) * 736
+
+[TextureRedefine] #level screen
+width = 1281
+height = 721
+formats = 0x001,0x41a
+overwriteWidth = ($width/$gameWidth) * 1281
+overwriteHeight = ($height/$gameHeight) * 721
+
 [TextureRedefine]
 width = 1152
 height = 592
@@ -272,13 +294,13 @@ overwriteHeight = ($height/$gameHeight) * 480
 [TextureRedefine]
 width = 896
 height = 496
-formats = 0x001
+formats = 0x001,0x41a
 overwriteWidth = ($width/$gameWidth) * 896
 overwriteHeight = ($height/$gameHeight) * 496
 
-[TextureRedefine]
+[TextureRedefine] #41a scales res level screen
 width = 855
 height = 481
-formats = 0x001
+formats = 0x001,0x41a
 overwriteWidth = ($width/$gameWidth) * 855
 overwriteHeight = ($height/$gameHeight) * 481
