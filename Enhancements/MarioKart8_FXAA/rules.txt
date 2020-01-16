@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = FXAA
+path = "Mario Kart 8/Enhancements/FXAA"
+description = FXAA brute forced
+version = 4
+
+#Cheers Skalfate, I'd prob never would have done this copypasta without your Xeno AA port.
