@@ -8,7 +8,7 @@ version = 4
 [Preset]
 name = LOD -0.5 (Sharper)
 $0x031 = -.5
-$0x033 = -.5
+$0x033 = 0
 $0x034 = -.5
 $0x035 = -.5
 $0x01a = -.5
@@ -17,9 +17,9 @@ $0x235 = -.5
 $0x433 = -.5
 
 [Preset]
-name = LOD -0.75 (Sharper)
+name = LOD -0.75 
 $0x031 = -.75
-$0x033 = -.75
+$0x033 = 0
 $0x034 = -.75
 $0x035 = -.75
 $0x01a = -.75
@@ -28,9 +28,9 @@ $0x235 = -.75
 $0x433 = -.75
 
 [Preset]
-name = LOD -1 (Max for gameplay)
+name = LOD -1 
 $0x031 = -1
-$0x033 = -1
+$0x033 = 0
 $0x034 = -1
 $0x035 = -1
 $0x01a = -1
@@ -39,15 +39,26 @@ $0x235 = -1
 $0x433 = -1
 
 [Preset]
-name = LOD -4 (Overkill - For screenshots)
+name = LOD -4 
 $0x031 = -4
-$0x033 = -4
+$0x033 = 0
 $0x034 = -4
 $0x035 = -4
 $0x01a = -4
 $0x431 = -4
 $0x235 = -4
 $0x433 = -4
+
+[Preset]
+name = LOD -9 (Sharpest)
+$0x031 = -9
+$0x033 = 0
+$0x034 = -9
+$0x035 = -9
+$0x01a = -9
+$0x431 = -9
+$0x235 = -9
+$0x433 = -9
 
 [Preset]
 name = LOD 0 Default
@@ -63,13 +74,14 @@ $0x433 = 0
 [Preset]
 name = LOD +1(Aprox WiiU Look on higher resolution)
 $0x031 = +1
-$0x033 = +1
+$0x033 = 0
 $0x034 = +1
 $0x035 = +1
 $0x01a = 0
 $0x431 = +1
 $0x235 = +1
 $0x433 = +1
+
 [TextureRedefine]
 formats = 0x031 #0x431,0x432,0x433,0x434,0x435 not used.
 overwriteRelativeLodBias = $0x031
