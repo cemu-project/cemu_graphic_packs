@@ -89,3 +89,15 @@ overwriteRelativeLodBias = $0x035
 [TextureRedefine]
 formats = 0x01a
 overwriteRelativeLodBias = $0x01a
+
+[TextureRedefine]
+formats = 0x431
+overwriteRelativeLodBias = $0x431
+
+[TextureRedefine]
+formats = 0x235
+overwriteRelativeLodBias = $0x235
+
+[TextureRedefine]
+formats = 0x433
+overwriteRelativeLodBias = $0x433
