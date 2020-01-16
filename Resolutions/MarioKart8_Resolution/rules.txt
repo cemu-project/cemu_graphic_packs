@@ -79,6 +79,13 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
+#[Preset]
+#name = 3840x2160 (Vertical x2 4320)
+#$width = 3840
+#$height = 4320
+#$gameWidth = 1280
+#$gameHeight = 720
+
 [Preset]
 name = 7680x4320 (8k)
 $width = 7680
@@ -190,11 +197,53 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
+[TextureRedefine] #
+width = 1280
+height = 720
+formats = 0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x806
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 640
+height = 368
+formats = 0x816
+overwriteFormat = 0x820
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x816
+overwriteFormat = 0x820
+
 # Full Res
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded =  0x41A,0x431 # exclude the intro background texture, race end background
+formatsExcluded = 0x41A,0x431 # exclude the intro background texture, race end background
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
@@ -389,3 +438,4 @@ height = 360
 formats = 0x19,0x1a,0x806,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 360
+

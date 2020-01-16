@@ -29,8 +29,8 @@ layout(location = 2) in vec4 passParameterSem2;
 layout(location = 3) in vec4 passParameterSem3;
 layout(location = 0) out vec4 passPixelColor0;
 // end of shader inputs/outputs
-float blurStart = $blurStart;
-float blurWidth = $blurWidth;
+const float blurStart = $blurStart;
+const float blurWidth = $blurWidth;
 
 const int nsamples = $nrOfPasses ; //original had aprox 8 at 640x240
 int clampFI32(int v)
