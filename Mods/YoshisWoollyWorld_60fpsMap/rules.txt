@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
+name = 60 FPS World Map
+path = "Yoshi's Woolly World/Mods/60FPS World Map"
+description = Prevents 30 fps mode in the world map.
+version = 4

@@ -1,0 +1,5 @@
+[pj023USv32]
+moduleMatches = 0x6AEF65E7
+
+#prevent going to 30 fps mode
+0x02B38D7C = b .+0x20
