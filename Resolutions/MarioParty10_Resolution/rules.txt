@@ -3,7 +3,7 @@ titleIds = 0005000010162D00,0005000010162E00,0005000E10161F00
 name = Resolution
 path = "Mario Party 10/Graphics/Resolution"
 description = Changes the resolution of the game. Note: Missing videos in minigame screen is currently a Cemu/Cemuhook issue.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)
