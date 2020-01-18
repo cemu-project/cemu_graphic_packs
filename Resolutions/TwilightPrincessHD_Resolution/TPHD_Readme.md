@@ -43,4 +43,4 @@ formats = 0x001
 overwriteWidth = ($width/$gameWidth) * (1024*$lightSource*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (544*$lightSource)
 ```
-![21:9](https://cdn.discordapp.com/attachments/292733452590120961/667953479318503454/TP21_9.jpg)
+![21:9](https://i.imgur.com/jVQrzpm.jpg)
