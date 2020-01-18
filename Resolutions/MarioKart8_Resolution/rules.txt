@@ -239,6 +239,24 @@ height = 360
 formats = 0x816
 overwriteFormat = 0x820
 
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x019
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x019
+overwriteFormat = 0x01f
+
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x019
+overwriteFormat = 0x01f
+
 # Full Res
 [TextureRedefine]
 width = 1280
@@ -302,6 +320,20 @@ formats = 0x80e,0x01a,0x806,0x816,0x801,0x019,0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 320
 
+[TextureRedefine] # depth applied
+width = 448
+height = 240
+formats = 0x1a,0x816
+overwriteWidth = ($width/$gameWidth) * 448
+overwriteHeight = ($height/$gameHeight) * 240
+
+[TextureRedefine] # depth applied
+width = 427
+height = 240
+formats = 0x1a,0x816
+overwriteWidth = ($width/$gameWidth) * 427
+overwriteHeight = ($height/$gameHeight) * 240
+
 [TextureRedefine] # MP Selection Menu - Depth Map
 width = 768
 height = 768
@@ -354,12 +386,26 @@ formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 180
 
+[TextureRedefine]#Depth
+width = 256
+height = 256
+formats = 0x80e
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 256
+
 [TextureRedefine]
 width = 256
 height = 128
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]#Depth
+width = 160
+height = 160
+formats = 0x80e
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 160
 
 [TextureRedefine]
 width = 160
@@ -374,6 +420,13 @@ height = 96
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 96
+
+[TextureRedefine]#Depth
+width = 148
+height = 148
+formats = 0x80e
+overwriteWidth = ($width/$gameWidth) * 148
+overwriteHeight = ($height/$gameHeight) * 148
 
 [TextureRedefine]
 width = 128
@@ -410,6 +463,28 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 96
 overwriteHeight = ($height/$gameHeight) * 48
 
+[TextureRedefine] #4p bloom
+width = 32
+height = 16
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine] #4p bloom
+width = 24
+height = 16
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 24
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]#4p bloom
+width = 20
+height = 11
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 20
+overwriteHeight = ($height/$gameHeight) * 11
+
+
 # Underwater effect
 [TextureRedefine] # 1P
 width = 640
@@ -439,3 +514,175 @@ formats = 0x19,0x1a,0x806,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 360
 
+[TextureRedefine] #Cup win board
+width = 560
+height = 64
+#formats = 0x019 #,0x01a,0x806,0x816
+overwriteWidth = ($width/$gameWidth) * 560
+overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine] #Cup win board
+width = 160
+height = 16
+#formats = 0x019 #,0x01a,0x806,0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine] #Cup win board
+width = 140
+height = 16
+#formats = 0x019 #,0x01a,0x806,0x816
+overwriteWidth = ($width/$gameWidth) * 140
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]#MKtv depth, normals
+width = 960
+height = 544
+formats = 0x80e,0x019,0x816
+overwriteWidth = ($width/$gameWidth) * 960
+overwriteHeight = ($height/$gameHeight) * 544
+
+[TextureRedefine]#MKtv depth, normals
+width = 960
+height = 540
+formats = 0x80e,0x019,0x816
+overwriteWidth = ($width/$gameWidth) * 960
+overwriteHeight = ($height/$gameHeight) * 540
+
+[TextureRedefine]#MKtv depth, normals
+width = 960
+height = 536
+formats = 0x80e,0x019,0x816
+overwriteWidth = ($width/$gameWidth) * 960
+overwriteHeight = ($height/$gameHeight) * 536
+
+[TextureRedefine]#MKtv
+width = 480
+height = 272
+formats = 0x816,0x01a
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 272
+
+[TextureRedefine]#MKtv
+width = 480
+height = 268
+formats = 0x816,0x01a
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 268
+
+[TextureRedefine]#MKtv
+width = 256
+height = 256
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine]#MKtv
+width = 256
+height = 144
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 144
+
+[TextureRedefine]#MKtv bloom / blur
+width = 240
+height = 134
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 240
+overwriteHeight = ($height/$gameHeight) * 134
+
+[TextureRedefine]#MKtv bloom / blur
+width = 128
+height = 128
+formats = 0x816
+depth = 1
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]#MKtv bloom / blur
+width = 128
+height = 80
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 80
+
+[TextureRedefine]#MKtv bloom / blur
+width = 120
+height = 67
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 120
+overwriteHeight = ($height/$gameHeight) * 67
+
+[TextureRedefine]#MKtv bloom / blur
+width = 64
+height = 64
+formats = 0x816
+depth = 1
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine]#MKtv bloom / blur
+width = 64
+height = 48
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 48
+
+[TextureRedefine]#MKtv bloom / blur
+width = 60
+height = 33
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 60
+overwriteHeight = ($height/$gameHeight) * 33
+
+[TextureRedefine]#MKtv bloom / blur
+width = 60
+height = 33
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 60
+overwriteHeight = ($height/$gameHeight) * 33
+
+[TextureRedefine]#MKtv bloom / blur
+width = 32
+height = 16
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]#MKtv bloom / blur
+width = 30
+height = 16
+formats = 0x019
+overwriteWidth = ($width/$gameWidth) * 30
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]#MKtv bloom / blur
+width = 64
+height = 64
+formats = 0x005
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine]#MKtv bloom / blur
+width = 60
+height = 60
+formats = 0x005
+overwriteWidth = ($width/$gameWidth) * 60
+overwriteHeight = ($height/$gameHeight) * 60
+
+[TextureRedefine]#MKtv bloom / blur
+width = 52
+height = 52
+formats = 0x005
+overwriteWidth = ($width/$gameWidth) * 52
+overwriteHeight = ($height/$gameHeight) * 52
+
+[TextureRedefine]#MKtv bloom / blur
+width = 32
+height = 32
+formats = 0x005
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 32
+
+
+#32x32, 16x16 cube slices - dont scale, should not be sharp
