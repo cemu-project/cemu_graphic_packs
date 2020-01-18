@@ -5,3 +5,7 @@
 # Project #
 ###########
 docs/Gemfile\.lock
+
+# Images #
+##########
+*.jpg

@@ -1,18 +1,18 @@
 ------
-### TLoZ Twilight Princess HD 
+### The Legend of Zelda: Twilight Princess HD
 ------
-### Graphic options 
+### Graphic Options
 
-3840x4320 vert x2 SSAA - Runs the game at double vertical res balancing look and performance when super sampling. Run full screen scaling in stretched and bilinear when activating this option. 
+3840x4320 vert x2 SSAA - Runs the game at double vertical res balancing look and performance when super sampling. Run full screen scaling in stretched and bilinear when activating this option.
 
-0.5 Sub scaling - Runs transparances and blur at half resolution, slight performance improvement (in higher resolutions). 
+0.5 Sub scaling - Runs transparencies and blur at half resolution, slight performance improvement (in higher resolutions).
 
-UI 25% transp - Dims static GUI elements, making them slightly transparent. Reduces chance of burn in when using Oled or plasma display. 
+UI 25% transparency - Dims static GUI elements, making them slightly transparent. Reduces chance of burn in when using Oled or plasma display.
 
 
-### Nice to know when creating a custom resolution 
+### Nice to know when creating a custom resolution
 
-There are some issues with AO and light sources, to mitigate this some “sub” viewports need to scale evenly. XCX uses a similar approach to get smooth shadow transitions. 
+There are some issues with AO and light sources, to mitigate this some “sub” viewports need to scale evenly. XCX uses a similar approach to get smooth shadow transitions.
 
 Example:
 ```
@@ -43,6 +43,4 @@ formats = 0x001
 overwriteWidth = ($width/$gameWidth) * (1024*$lightSource*$scaleShader)
 overwriteHeight = ($height/$gameHeight) * (544*$lightSource)
 ```
-![21:9](TP21_9.jpg)
-
-
+![21:9](https://cdn.discordapp.com/attachments/292733452590120961/667953479318503454/TP21_9.jpg)
