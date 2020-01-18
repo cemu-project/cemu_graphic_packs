@@ -1295,7 +1295,7 @@ vec3 ColorMatrixPass(vec3 inputColor)
 	return clamp(color, 0.0, 1.);
 }
 
-// Contrasty
+//Contrasty
 
 vec3 BotWVibrance(vec3 color) {
 	float avg = (color.r + color.g + color.b) / 3.0;
@@ -1324,21 +1324,25 @@ vec3 Contrasty(vec3 fColour) {
 	return fColour;
 }
 
-// Levels 
+//Levels 
 
 vec3 LevelsPass(vec3 inputColor) {
 	float black_point_float = BlackPoint / 255.0;
 	float white_point_float = WhitePoint == BlackPoint ? (255.0 / 0.00025) : (255.0 / (WhitePoint - BlackPoint)); // Avoid division by zero if the white and black point are the same
 
 	vec3 color = inputColor;
-	color = color * white_point_float - (black_point_float *  white_point_float);
+#ifdef VULKAN
+	color = color * white_point_float;
+#else
+	color = color * white_point_float - (black_point_float * white_point_float);
+#endif
 
 	return color;
 }
 
 //FilmPass
-vec3 FilmPass(vec3 inputColor) {
 
+vec3 FilmPass(vec3 inputColor) {
 	vec3 B = inputColor.rgb;
 	vec3 G = B;
 	vec3 H = vec3(0.01);
@@ -1547,7 +1551,7 @@ float lumasharping(sampler2D tex, vec2 pos) {
 	return sharp_luma;
 }
 
-//Fake High Dynamic Range.
+//Fake High Dynamic Range
 
 vec3 HDRPass(sampler2D tex, vec2 pos) {
 	vec3 color = texture(tex, pos).rgb;
