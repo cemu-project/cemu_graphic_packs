@@ -30,11 +30,11 @@
 "Bayonetta":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Bayonetta"
-  version: 3
+  version: 4
 "Bayonetta 2":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Bayonetta_2"
-  version: 3
+  version: 4
 "Ben 10 Omniverse":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Ben_10:_Omniverse"
@@ -42,11 +42,11 @@
 "BIT.TRIP Presents… Runner2: Future Legend of Rhythm Alien":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/BIT.TRIP_Presents..._Runner2:_Future_Legend_of_Rhythm_Alien"
-  version: 3
+  version: 4
 "Brunswick Pro Bowling":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Brunswick_Pro_Bowling"
-  version: 2
+  version: 4
 "Call of Duty: Ghosts":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Call_of_Duty:_Ghosts"
@@ -83,7 +83,7 @@
 "Devil’s Third":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Devil%27s_Third"
-  version: 3
+  version: 4
 "Donkey Kong Country: Tropical Freeze":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Donkey_Kong_Country:_Tropical_Freeze"
@@ -92,11 +92,11 @@
 "DuckTales: Remastered":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/DuckTales_Remastered"
-  version: 3
+  version: 4
 "Dr. Luigi":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Dr._Luigi"
-  version: 3
+  version: 4
 "Electronic Super Joy: Groove City":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Electronic_Super_Joy:_Groove_City"
@@ -112,7 +112,7 @@
 "Fist of the North Star: Ken’s Rage 2":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Fist_of_the_North_Star:_Ken's_Rage_2"
-  version: 3
+  version: 4
 "Frenchy Bird":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Frenchy_Bird"
@@ -136,7 +136,7 @@
 "Hyrule Warriors":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Hyrule_Warriors"
-  version: 3
+  version: 4
   hasUltrawide: true
 "Infinity Runner":
   nativeRes: 720
@@ -153,7 +153,7 @@
 "Kirby and the Rainbow Curse":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Kirby_and_the_Rainbow_Curse"
-  version: 3
+  version: 4
 "Kung Fu Panda: Showdown of Legendary Legends":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Kung_Fu_Panda:_Showdown_of_Legendary_Legends"
@@ -173,7 +173,7 @@
 "Mario Party 10":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Party_10"
-  version: 3
+  version: 4
 "Mario & Sonic at the Rio 2016 Olympic Games":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Rio_2016_Olympic_Games"
@@ -222,15 +222,15 @@
 "New Super Luigi U":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/New_Super_Luigi_U"
-  version: 3
+  version: 4
 "New Super Mario Bros. U":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/New_Super_Mario_Bros._U"
-  version: 3
+  version: 4
 "Ninja Gaiden 3: Razor’s Edge":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Ninja_Gaiden_3:_Razor's_Edge"
-  version: 3
+  version: 4
 "Nintendo Land":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Nintendo_Land"
@@ -262,11 +262,11 @@
 "Pikmin 3":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pikmin_3"
-  version: 3
+  version: 4
 "Pokkén Tournament":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pokk%C3%A9n_Tournament"
-  version: 3
+  version: 4
 "Fatal Frame/Project Zero: Maiden of Black Water":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Project_Zero:_Maiden_of_Black_Water"
@@ -302,11 +302,11 @@
 "Skylanders: Imaginators":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Skylanders_Imaginators"
-  version: 3
+  version: 4
 "Skylanders: Trap Team":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Skylanders:_Trap_Team"
-  version: 3
+  version: 4
 "The Smurfs 2":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/The_Smurfs_2"
@@ -336,7 +336,7 @@
 "Star Fox Zero":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Star_Fox_Zero"
-  version: 3
+  version: 4
 "Super Mario 3D World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Super_Mario_3D_World"
@@ -345,11 +345,11 @@
 "Super Mario Maker":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Super_Mario_Maker"
-  version: 3
+  version: 4
 "Super Smash Bros. for Wii U":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/Super_Smash_Bros._U"
-  version: 3
+  version: 4
 "TNT Racers Nitro Machines Edition":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/TNT_Racers_Nitro_Machines_Edition"
@@ -374,12 +374,12 @@
 "The Legend of Zelda: The Wind Waker HD":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/The_Legend_of_Zelda:_The_Wind_Waker_HD"
-  version: 3
+  version: 4
   hasUltrawide: true
 "The Legend of Zelda: Twilight Princess HD":
   nativeRes: 1080
   compatLink: "http://compat.cemu.info/wiki/The_Legend_of_Zelda:_Twilight_Princess_HD"
-  version: 3
+  version: 4
   hasUltrawide: true
 "The Wonderful 101":
   nativeRes: 720
@@ -414,9 +414,9 @@
 "Yoshi’s Woolly World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Yoshi's_Woolly_World"
-  version: 3
+  version: 4
   hasUltrawide: true
 "ZombiU":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/ZombiU"
-  version: 3
+  version: 4
