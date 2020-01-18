@@ -6,11 +6,13 @@ on:
     branches:
     - master
   pull_request:
+    branches: 
+    - master
     paths:
-    - Enhancements
-    - Resolutions
-    - Mods
-    - Workarounds
+    - 'Enhancements/**'
+    - 'Resolutions/**'
+    - 'Mods/**'
+    - 'Workarounds/**'
 
 jobs:
   build:
