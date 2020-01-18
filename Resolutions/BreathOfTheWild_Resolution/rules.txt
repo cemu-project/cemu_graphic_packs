@@ -16,6 +16,14 @@ $heightfix = 0
 # Performance
 
 [Preset]
+name = -----------------------------------
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
 name = 320x180 (16:9)
 $width = 320
 $height = 180
@@ -40,6 +48,14 @@ $gameHeight = 720
 $heightfix = 0
 
 # Common HD Resolutions
+
+[Preset]
+name = -----------------------------------
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
 
 [Preset]
 name = 1600x900 (16:9)
@@ -89,12 +105,20 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
+[Preset]
+name = 7680x4320 (16:9)
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
 # Common Ultrawide Resolutions
 
 [Preset]
 name = -----------------------------------
-$width = 2560
-$height = 1080
+$width = 1280
+$height = 720
 $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
@@ -131,12 +155,28 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
+[Preset]
+name = 6880x2880 (21:9)
+$width = 6880
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+$heightfix = 0
+
+[Preset]
+name = 10240x4320 (21:9)
+$width = 10240
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$heightfix = 0
+
 # Common 16:10 Resolutions
 
 [Preset]
 name = -----------------------------------
-$width = 1440
-$height = 900
+$width = 1280
+$height = 720
 $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
@@ -201,11 +241,11 @@ $heightfix = 1
 
 [Preset]
 name = -----------------------------------
-$width = 640
-$height = 480
+$width = 1280
+$height = 720
 $gameWidth = 1280
 $gameHeight = 720
-$heightfix = 1
+$heightfix = 0
 
 [Preset]
 name = 640x480 (4:3)
@@ -287,7 +327,6 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
-
 # All 720p textures:
 # - 0x001=World Lighting Red8
 # - 0x005=Link and Objects Depth
@@ -307,8 +346,8 @@ height = 720
 formats = 0x001,0x005,0x007,0x019,0x01a,0x41a,0x80e,0x806,0x816,0x820
 # formatsExcluded = 0x008 # Game Load Opening Background Image
 tileModesExcluded = 0x001 # For Video Playback
-overwriteWidth = ($width/$gameWidth)* 1280
-overwriteHeight = ($height/$gameHeight)* 720
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
 
 # Gamepad - background
 [TextureRedefine]
@@ -316,8 +355,8 @@ width = 864
 height = 480
 formats = 0x019
 # formatsExcluded = 0x034 # Exclude 0x034 which is used for large album thumbnails
-overwriteWidth = ($width/$gameWidth)* 864
-overwriteHeight = ($height/$gameHeight)* 480
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
 
 # Gamepad - game render size
 [TextureRedefine]
@@ -325,8 +364,8 @@ width = 854
 height = 480
 formats = 0x019
 # formatsExcluded = 0x034 # Exclude 0x034 which is used for large album thumbnails
-overwriteWidth = ($width/$gameWidth)* 854
-overwriteHeight = ($height/$gameHeight)* 480
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
 
 # All 1/2, 1/4 textures:
 # - 0x001=World Lighting - Red
