@@ -127,20 +127,20 @@ $redHilight = 0.99
 $greenHilight = 0.99 #.86
 $blueHilight = 1.05 #1.14
 
-$contrastCurve = 0.95
+$contrastCurve = 0.75
 $hazeFactor = 0.1
 $bloom = 0.975
-$gamma = 1.05
-$exposure = 1.0
-$vibrance = 0.29
+$gamma = 1.03
+$exposure = 1.01
+$vibrance = 0.25
 $crushContrast = 0.0
 $bleach = 0.875
 $sharp_mix = 0.00
 
 [Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discoloration of multi layer fx
 name = Cold contrast crush
-$redShadows = 0.98 #1.02 #0.99
-$greenShadows = 1.01 #1.05 # 1.0
+$redShadows = 1.01 #1.02 #0.99
+$greenShadows = 1.03 #1.05 # 1.0
 $blueSadows = 1.04 #1.0 #1.01
 $redMid = 0.99 #0.87
 $greenMid = 1.06 #0.9 #0.88
@@ -149,7 +149,7 @@ $redHilight = 0.98
 $greenHilight = 0.97 #.86
 $blueHilight = 1.08 #1.14
 
-$contrastCurve = 0.95
+$contrastCurve = 0.75
 $hazeFactor = 0.1
 $bloom = 0.975
 $gamma = 1.01
@@ -161,8 +161,8 @@ $sharp_mix = 0.00
 
 [Preset] #Neutral/cold white point, light and shadows interplay,  caves are dark. Some discoloration of multi layer fx
 name = Cold contrast preserve highlights
-$redShadows = 0.98 #1.02 #0.99
-$greenShadows = 1.01 #1.05 # 1.0
+$redShadows = 1.01 #1.02 #0.99
+$greenShadows = 1.02 #1.05 # 1.0
 $blueSadows = 1.04 #1.0 #1.01
 $redMid = 0.97 #0.87
 $greenMid = 1.06 #0.9 #0.88
