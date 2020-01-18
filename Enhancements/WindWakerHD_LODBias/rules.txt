@@ -3,7 +3,7 @@ titleIds = 0005000010143400,0005000010143600,0005000010143500
 name = Negative texture LOD bias
 path = "The Legend of Zelda: The Wind Waker HD/Enhancements/Negative Texture LOD" 
 description = Texture LOD override, possible shimmer but sharper textures.
-version = 3
+version = 4
 
 [Preset]
 name = LOD Default

@@ -3,7 +3,7 @@ titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,0
 name = Chromatic Aberration
 path = "ZombiU/Enhancements/Chromatic Aberration"
 description = Changes the intensity of horizontal chromatic aberration. (the red/green/blue edges)
-version = 3
+version = 4
 
 [Preset]
 name = CA Default
