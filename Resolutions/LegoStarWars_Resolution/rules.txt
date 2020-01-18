@@ -3,7 +3,7 @@ titleIds = 00050000101DAA00,00050000101DAB00,00050000101EA000
 name = Resolution
 path = "LEGO Star Wars: The Force Awakens/Graphics/Resolution"
 description = Changes the resolution of the game.
-version = 3
+version = 4
 
 [Preset]
 name = 1280x720 (Default)
