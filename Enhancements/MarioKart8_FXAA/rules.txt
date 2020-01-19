@@ -10,7 +10,7 @@ upscaleMagFilter = Linear
 downscaleMagFilter = Linear
 
 [Preset]
-name = Fast default ET 0.5 FX 11 
+name = Fast default ET 0.45 FX 11 
 $Subpix:float = 0.5
 $EdgeThreshold:float = 0.45
 $EdgeThresholdMin:float = 0.05
@@ -24,14 +24,14 @@ $EdgeThresholdMin:float = 0.1
 $FXAA_QUALITY_PRESET:int = 10
 
 [Preset]
-name = More edges but more smearing ET 0.4 FX 11 
+name = More edges but more smearing ET 0.25 FX 11 
 $Subpix:float = 0.75
 $EdgeThreshold:float = 0.25
 $EdgeThresholdMin:float = 0.05
 $FXAA_QUALITY_PRESET:int = 11
 
 [Preset]
-name = Slower bit better quality  ET 0.5 FX 15 
+name = Slower bit better quality  ET 0.4 FX 15 
 $Subpix:float = 0.75
 $EdgeThreshold:float = 0.4
 $EdgeThresholdMin:float = 0.05
