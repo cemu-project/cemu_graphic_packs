@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 
+name = FXAA
+path = "Filters/FXAA"
+description = Local contrast based FXAA
+version = 4
