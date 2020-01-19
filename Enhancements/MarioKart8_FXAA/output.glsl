@@ -10,19 +10,17 @@ layout(binding=0) uniform sampler2D textureSrc;
 layout(location = 0) out vec4 colorOut0;
 #endif
 
-
-
 /*-----------------------------settings-------------------------------------*/
 
-#define Subpix               0.75  //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
-#define EdgeThreshold        0.5  //[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
-#define EdgeThresholdMin     0.02  //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
+#define Subpix               $Subpix   //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
+#define EdgeThreshold        $EdgeThreshold  //[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
+#define EdgeThresholdMin     $EdgeThresholdMin  //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
 
 /*--------------------------------------------------------------------------*/
 
 #define FXAA_PC 1
 #define FXAA_GLSL_130 1
-#define FXAA_QUALITY_PRESET 23
+#define FXAA_QUALITY_PRESET $FXAA_QUALITY_PRESET //15
 //->29 - 39
 #define FXAA_GREEN_AS_LUMA 1
 #define FXAA_DISCARD 0
