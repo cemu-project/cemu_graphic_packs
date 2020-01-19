@@ -1,9 +1,10 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
-name = FXAA
-path = "Mario Kart 8/Enhancements/FXAA"
-description = Local contrast based AA
+name = Add FXAA (OpenGL)
+path = "Mario Kart 8/Enhancements/Add FXAA (OpenGL)"
+description = Adds FXAA to Mario Kart 8 which doesn't have any kind of anti-aliasing normally. Will fix jagged edges but might make the game look softer. Can only be used with OpenGL.
 version = 4
+rendererFilter = opengl
 
 [OutputShader]
 upscaleMagFilter = Linear
