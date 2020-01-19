@@ -93,13 +93,6 @@ $gameHeight = 720
 #$gameWidth = 1280
 #$gameHeight = 720
 
-[Preset]
-name = 7680x4320 (8k)
-$width = 7680
-$height = 4320
-$gameWidth = 1280
-$gameHeight = 720
-
 // Common Ultrawide Resolutions
 
 [Preset]

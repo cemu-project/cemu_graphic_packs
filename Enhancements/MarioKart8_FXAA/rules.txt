@@ -24,7 +24,7 @@ $EdgeThresholdMin:float = 0.1
 $FXAA_QUALITY_PRESET:int = 10
 
 [Preset]
-name = More edges but more smearing ET 0.25 FX 11 
+name = More edges and smearing ET 0.25 FX 11 
 $Subpix:float = 0.75
 $EdgeThreshold:float = 0.25
 $EdgeThresholdMin:float = 0.05
@@ -45,7 +45,7 @@ $EdgeThresholdMin:float = 0.05
 $FXAA_QUALITY_PRESET:int = 25
 
 [Preset]
-name = Test process everthing ET 0.05 FX 39 
+name = Test process everything ET 0.05 FX 39 
 $Subpix:float = 0.5
 $EdgeThreshold:float = 0.05
 $EdgeThresholdMin:float = 0.003
