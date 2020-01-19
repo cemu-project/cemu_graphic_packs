@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101ABC00,00050000101B5100
-name = Workaround flashing squares
-path = "Kirby and the Rainbow Curse & Paintbrush/Workaround/Flashing square fix"
-description = Remove flashing squares when bumping into things
-version = 4

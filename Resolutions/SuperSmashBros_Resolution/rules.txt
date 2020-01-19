@@ -65,6 +65,21 @@ $height = 2160
 $gameWidth = 1920
 $gameHeight = 1080
 
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+
+
 [TextureRedefine] # Game Resolution
 width = 1920
 height = 1088

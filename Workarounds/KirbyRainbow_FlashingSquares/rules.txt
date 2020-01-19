@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101ABC00,00050000101B5100
+name = Flashing Squares Workaround
+path = "Kirby and the Rainbow Curse & Paintbrush/Workaround/Flashing Squares"
+description = Removes the flashing squares when Kirby bumps into objects.
+version = 4

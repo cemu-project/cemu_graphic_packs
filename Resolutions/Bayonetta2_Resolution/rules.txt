@@ -65,6 +65,20 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
 [Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
 name = --- SSAA res Tweaks - Set scaling to Stretch
 $width = 1920

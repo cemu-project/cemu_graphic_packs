@@ -65,6 +65,20 @@ $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
 
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
 # -----------------------------------------------------------------------------------------------------------------------------------------------
 
 # All Formats- 0x001,0x011,0x01a,0x41a,0x816,0x80e,0x81e,0x820,0x806

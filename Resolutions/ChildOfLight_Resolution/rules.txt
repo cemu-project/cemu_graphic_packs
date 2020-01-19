@@ -79,6 +79,13 @@ $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
 
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
 [TextureRedefine] # TV Resolution
 width = 1280
 height = 720

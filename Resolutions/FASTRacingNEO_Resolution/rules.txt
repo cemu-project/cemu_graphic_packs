@@ -89,6 +89,26 @@ $internalRes = 1.0
 $scaleShader = 1.0
 $textureFormat = 0x01a
 
+[Preset]
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
+
+[Preset]
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 1.0
+$scaleShader = 1.0
+$textureFormat = 0x01a
+
 [TextureRedefine] # Game Resolution
 width = 1280
 height = 720
