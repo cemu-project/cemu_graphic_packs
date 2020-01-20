@@ -4,6 +4,7 @@ name = FXAA
 path = "Filters/FXAA"
 description = Local contrast based AA
 version = 4
+rendererFilter = opengl
 
 [OutputShader]
 upscaleMagFilter = Linear
