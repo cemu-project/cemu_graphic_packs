@@ -38,7 +38,7 @@ jobs:
       run: |
         cd $GITHUB_WORKSPACE ;
         RELEASE_NUMBER="$(($(curl -s "https://api.github.com/repos/$GITHUB_REPOSITORY/releases/latest" | jq -r ".name" | cut -c 22-)+1))" ;
-        jq -n --arg releaseTag "Github$RELEASE_NUMBER" --arg releaseTitle "Cemu Graphic Packs: V$RELEASE_NUMBER" --arg releaseBody "$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n')" '{"tag_name":$releaseTag,"target_commitish": "master","name": $releaseTitle,"body": $releaseBody,"draft": false,"prerelease": false}' > releaseBody.json ;
+        jq -n --arg releaseTag "Github$RELEASE_NUMBER" --arg releaseTitle "Cemu Graphic Packs: v$RELEASE_NUMBER" --arg releaseBody "$(git log -1 --format='Commited at %ci by **%cn** in commit %h%n### %s%n```%n%b%n```%n')" '{"tag_name":$releaseTag,"target_commitish": "master","name": $releaseTitle,"body": $releaseBody,"draft": false,"prerelease": false}' > releaseBody.json ;
         RELEASE_ID=$(curl -X POST -H 'Content-Type:application/json' -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" -d "@releaseBody.json" | jq -r ".id") ;
         curl -X POST -H 'Content-Type:application/json' -H "Authorization: Bearer $GITHUB_TOKEN" "https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$RELEASE_ID/assets?name=graphicPacks$RELEASE_NUMBER.zip" --upload-file "graphicPacks.zip"
     - name: Upload artifact
