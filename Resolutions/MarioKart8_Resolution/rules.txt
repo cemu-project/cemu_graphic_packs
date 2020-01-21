@@ -216,6 +216,12 @@ formats = 0x816
 overwriteFormat = 0x820
 
 [TextureRedefine]
+width = 800
+height = 450
+formats = 0x01a
+overwriteFormat = 0x01f
+
+[TextureRedefine]
 width = 640
 height = 368
 formats = 0x01a
@@ -281,6 +287,20 @@ height = 480
 formats = 0x816,0x019
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
+
+#[TextureRedefine]# Not verified 
+#width = 800
+#height = 464
+#formats = 0x01a
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 464
+#
+#[TextureRedefine]
+#width = 800
+#height = 450
+#formats = 0x01a
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 450
 
 # 2P Full Res
 [TextureRedefine]
@@ -484,7 +504,6 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 20
 overwriteHeight = ($height/$gameHeight) * 11
 
-
 # Underwater effect
 [TextureRedefine] # 1P
 width = 640
@@ -513,6 +532,13 @@ height = 360
 formats = 0x19,0x1a,0x806,0x816
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] #Cup win board 8 round
+width = 576
+height = 64
+#formats = 0x019 #,0x01a,0x806,0x816
+overwriteWidth = ($width/$gameWidth) * 560
+overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine] #Cup win board
 width = 560

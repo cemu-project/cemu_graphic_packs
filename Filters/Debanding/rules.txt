@@ -1,0 +1,60 @@
+[Definition]
+titleIds = 
+name = Debanding
+path = "Filters/Debanding"
+description = Smooth quantization errors by dither and local contrast blur
+version = 4
+rendererFilter = opengl
+
+[OutputShader]
+upscaleMagFilter = Linear
+downscaleMagFilter = Linear
+
+[Preset]
+name = Less deband T32 R16 I4 G50
+$Threshold:int = 64
+$Range:int = 8
+$Iterations:int = 4
+$Grain:int = 50
+
+[Preset]
+name = More deband and grain T64 R8 I4 G78
+$Threshold:int = 64
+$Range:int = 8
+$Iterations:int = 4
+$Grain:int = 78
+
+[Preset]
+name = Test deband slow T156 R16 I8 G90
+$Threshold:int = 156
+$Range:int = 16
+$Iterations:int = 8
+$Grain:int = 90
+
+# Original by N Haas GPL 
+# Order dither converted from reshade Crosire et al.
+#
+# Works better when applied to a shader (sky, video..)  
+# instead of as a post filter. Both for performance and fixing quantization errors. 
+
+
+# The threshold of difference below which a pixel is considered to be part of
+# a gradient. Higher = more debanding, but setting it too high diminishes image
+# details.
+# THRESHOLD 64
+# 
+# The range (in source pixels) at which to sample for neighbours. Higher values
+# will find more gradients, but lower values will deband more aggressively.
+# RANGE 8
+# 
+# The number of debanding iterations to perform. Each iteration samples from
+# random positions, so increasing the number of iterations is likely to
+# increase the debanding quality. Conversely, it slows the shader down.
+# (Each iteration will use a multiple of the configured RANGE, and a
+# successively lower THRESHOLD - so setting it much higher has little effect)
+# ITERATIONS 4
+# 
+# (Optional) Add some extra noise to the image. This significantly helps cover
+# up remaining banding and blocking artifacts, at comparatively little visual
+# quality. Higher = more grain. Setting it to 1 disables the effect.
+# GRAIN 48
