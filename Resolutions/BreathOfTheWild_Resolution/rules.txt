@@ -159,16 +159,16 @@ $heightfix = 0
 name = 6880x2880 (21:9)
 $width = 6880
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth = 1280
+$gameHeight = 720
 $heightfix = 0
 
 [Preset]
 name = 10240x4320 (21:9)
 $width = 10240
 $height = 4320
-$gameWidth = 1920
-$gameHeight = 1080
+$gameWidth = 1280
+$gameHeight = 720
 $heightfix = 0
 
 # Common 16:10 Resolutions
