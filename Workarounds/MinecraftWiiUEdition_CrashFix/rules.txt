@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101D9D00,00050000101D7500,00050000101DBE00
+name = crash fix
+path = "Minecraft: Wii U Edition/Workarounds/mii crash"
+description = Prevents launch crash when missing mii ffl dumps.  v688 only.
+version = 4
+
