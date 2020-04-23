@@ -1,0 +1,18 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = 60 FPS cutscenes 
+path = "Bayonetta 2/Mods/60 FPS cutscenes"
+description = 60 FPS cutscenes. 30 FPS is the WiiU default
+version = 4
+
+[Default]
+name = 60 fps
+$enable60:int = 1
+
+[Preset]
+name = 60 fps
+$enable60:int = 1
+
+[Preset]
+name = 30 fps
+$enable60:int = 0
