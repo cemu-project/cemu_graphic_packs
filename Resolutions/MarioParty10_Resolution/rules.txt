@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010162D00,0005000010162E00,0005000E10161F00
+titleIds = 0005000010162D00,0005000010162E00,0005000010161F00
 name = Resolution
 path = "Mario Party 10/Graphics/Resolution"
 description = Changes the resolution of the game. Note: Missing videos in minigame screen is currently a Cemu/Cemuhook issue.
