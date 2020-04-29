@@ -89,6 +89,28 @@ _fullRate = 0x100D03E8
 # swapInterval 60
 0x02FD8A94 = li r3, 1  
 
+0x10012644 = .float 15.0 ; fix for soulvoices (not sure it's safe)
+
+codeCaveSize = 0x30
+
+; menu::MenuButtonChallenge::setup
+0x00000000 = .float 15.0 ; reduces speed of animation
+_setup = 0x00000000
+0x02ACE40C = lis r7, _setup@ha
+0x02ACE414 = lfs f0, _setup@l(r7)
+
+_justFrame1 = 0x00000010
+0x00000010 = lwz r12, 0x47C(r29)
+0x00000014 = mulli r12, r12, 2
+0x00000018 = blr
+0x02ACE6E4 = bla _justFrame1
+
+_justFrame2 = 0x00000020
+0x00000020 = lwz r0, 0x478(r29)
+0x00000024 = mulli r0, r0, 2
+0x00000028 = blr
+0x02ACE700 = bla _justFrame2
+
 [XCX60fpsV102U]
 moduleMatches = 0x30B6E091
 
@@ -141,5 +163,27 @@ _fullRate = 0x100D03D0
 
 # swapInterval 60
 0x02FD8A34 = li r3, 1  
+
+0x10012644 = .float 15.0 ; fix for soulvoices (not sure it's safe)
+
+codeCaveSize = 0x30
+
+0x00000000 = .float 15.0 ; reduces speed of animation
+_setup = 0x00000000
+0x02ACE3FC = lis r7, _setup@ha
+0x02ACE404 = lfs f0, _setup@l(r7)
+
+
+_justFrame1 = 0x00000010
+0x00000010 = lwz r12, 0x47C(r29)
+0x00000014 = mulli r12, r12, 2
+0x00000018 = blr
+0x02ACE6D4 = bla _justFrame1
+
+_justFrame2 = 0x00000020
+0x00000020 = lwz r0, 0x478(r29)
+0x00000024 = mulli r0, r0, 2
+0x00000028 = blr
+0x02ACE6F0 = bla _justFrame2
 
 #SNESticleNGCVERIONPP71Copyright - Sardu you magnificent bastard, we salute you!
