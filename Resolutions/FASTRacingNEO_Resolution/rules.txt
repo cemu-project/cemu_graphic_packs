@@ -11,11 +11,15 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 # Performance
+
+[Preset]
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1280
+$gameHeight = 720
 
 [Preset]
 name = 640x360
@@ -23,9 +27,6 @@ $width = 640
 $height = 360
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 960x540
@@ -33,9 +34,6 @@ $width = 960
 $height = 540
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 # Common HD Resolutions
 
@@ -45,9 +43,6 @@ $width = 1600
 $height = 900
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 1920x1080
@@ -55,9 +50,6 @@ $width = 1920
 $height = 1080
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 2560x1440
@@ -65,9 +57,6 @@ $width = 2560
 $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 3200x1800
@@ -75,9 +64,6 @@ $width = 3200
 $height = 1800
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 3840x2160
@@ -85,9 +71,6 @@ $width = 3840
 $height = 2160
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 5120x2880
@@ -95,9 +78,6 @@ $width = 5120
 $height = 2880
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
 
 [Preset]
 name = 7680x4320
@@ -105,9 +85,90 @@ $width = 7680
 $height = 4320
 $gameWidth = 1280
 $gameHeight = 720
-$internalRes = 1.0
-$scaleShader = 1.0
-$textureFormat = 0x01a
+
+# Common Ultrawide Resolutions
+
+[Preset]
+name = 2560x1080 ("21:9")
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3440x1440 ("21:9")
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+# Common 16:10 Resolutions
+
+[Preset]
+name = 1680x1080 (16:10)
+$width = 1680
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1920x1224 (16:10)
+$width = 1920
+$height = 1224
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1656 (16:10)
+$width = 2560
+$height = 1656
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2880x1800 (16:10)
+$width = 2880
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+
+# Common HD Resolutions (2 Monitors)
+
+[Preset]
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 6400x1800 (32:9)
+$width = 6400
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x2160 (32:9)
+$width = 7680
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 10240x2880 (32:9)
+$width = 10240
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
 
 [TextureRedefine] # Game Resolution
 width = 1280
