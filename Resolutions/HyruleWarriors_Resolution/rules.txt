@@ -503,6 +503,7 @@ overwriteHeight = ($height/$gameHeight) * (368*$2pScaling )
 width = 640
 height = 360
 #formats = 0x816,0x80e,0x035,0x033,0x007
+formatsExcluded = 0x035 # Exclude images on menu screens
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * (640*$2pScaling )
 overwriteHeight = ($height/$gameHeight) * (360*$2pScaling )

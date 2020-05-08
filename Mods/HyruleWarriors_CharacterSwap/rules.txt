@@ -2,131 +2,131 @@
 titleIds = 000500001017D800,000500001017D900,000500001017CD00
 name = Character Swap
 path = "Hyrule Warriors/Mods/Character Swap (in adventure mode)"
-description = Allows you to use a character that isn't selectable from the character selection screen normally in adventure mode.
+description = Allows you to use a character that isn't selectable from the character selection screen normally in adventure mode. Only works on the latest game update.
 version = 4
 
 [Preset]
 name = Link
-$character:int = 0x0
+$character = 0x00
 
 [Preset]
 name = Zelda
-$character:int = 0x1
+$character = 0x01
 
 [Preset]
 name = Sheik
-$character:int = 0x2
+$character = 0x02
 
 [Preset]
 name = Impa
-$character:int = 0x3
+$character = 0x03
 
 [Preset]
 name = Ganondorf
-$character:int = 0x4
+$character = 0x04
 
 [Preset]
 name = Darunia
-$character:int = 0x5
+$character = 0x05
 
 [Preset]
 name = Ruto
-$character:int = 0x6
+$character = 0x06
 
 [Preset]
 name = Agitha
-$character:int = 0x7
+$character = 0x07
 
 [Preset]
 name = Midna
-$character:int = 0x8
+$character = 0x08
 
 [Preset]
 name = Fi
-$character:int = 0x9
+$character = 0x09
 
 [Preset]
 name = Ghirahim
-$character:int = 0xA
+$character = 0x0A
 
 [Preset]
 name = Zant
-$character:int = 0xB
+$character = 0x0B
 
 [Preset]
 name = Lana
-$character:int = 0xD
+$character = 0x0D
 
 [Preset]
 name = Cia
-$character:int = 0x2C
+$character = 0x2C
 
 [Preset]
 name = Volga
-$character:int = 0x2D
+$character = 0x2D
 
 [Preset]
 name = Wizzro
-$character:int = 0x2E
+$character = 0x2E
 
 [Preset]
 name = Twilight Midna
-$character:int = 0x2F
+$character = 0x2F
 
 [Preset]
 name = Young Link
-$character:int = 0x30
+$character = 0x30
 
 [Preset]
 name = Tingle
-$character:int = 0x31
-
-[Preset]
-name = Linkle
-$character:int = 0x34
-
-[Preset]
-name = Skull Kid
-$character:int = 0x35
-
-[Preset]
-name = Toon Link
-$character:int = 0x36
-
-[Preset]
-name = Tetra
-$character:int = 0x37
-
-[Preset]
-name = King Daphnes
-$character:int = 0x38
-
-[Preset]
-name = Medli
-$character:int = 0x39
-
-[Preset]
-name = Marin
-$character:int = 0x3A
-
-[Preset]
-name = Toon Zelda
-$character:int = 0x3B
-
-[Preset]
-name = Ravio
-$character:int = 0x3C
-
-[Preset]
-name = Yuga
-$character:int = 0x3D
+$character = 0x31
 
 [Preset]
 name = Ganon
-$character = 50
+$character = 0x32
 
 [Preset]
 name = Giant Cucco
-$character = 51
+$character = 0x33
+
+[Preset]
+name = Linkle
+$character = 0x34
+
+[Preset]
+name = Skull Kid
+$character = 0x35
+
+[Preset]
+name = Toon Link
+$character = 0x36
+
+[Preset]
+name = Tetra
+$character = 0x37
+
+[Preset]
+name = King Daphnes
+$character = 0x38
+
+[Preset]
+name = Medli
+$character = 0x39
+
+[Preset]
+name = Marin
+$character = 0x3A
+
+[Preset]
+name = Toon Zelda
+$character = 0x3B
+
+[Preset]
+name = Ravio
+$character = 0x3C
+
+[Preset]
+name = Yuga
+$character = 0x3D
 
 # https://github.com/Dekirai/HyruleWarriors-Trainer/blob/23a42b4ad580dfb847d6ef4ebcaa4c7a30df3eea/Hyrule%20Warriors/Form1.cs#L382
