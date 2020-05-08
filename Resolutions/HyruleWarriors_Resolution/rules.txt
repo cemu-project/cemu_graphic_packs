@@ -563,6 +563,7 @@ overwriteHeight = ($height/$gameHeight) * (192*$internalRes)
 width = 320
 height = 180
 #formats = 0x820,0x816,0x035,0x01a
+formatsExcluded = 0x035 # Exclude menu background images
 overwriteWidth = ($width/$gameWidth) * (320*$internalRes)
 overwriteHeight = ($height/$gameHeight) * (180*$internalRes)
 
