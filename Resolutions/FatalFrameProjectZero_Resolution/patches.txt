@@ -24,7 +24,7 @@ _pointSpriteSize = 0x00000000
 0x026CF514 = lwz r6, _pointSpriteSize@l(r12)
 
 [JapanZeroV0]
-moduleMatches = 0xA86AA5B2, 0x52992DCD # Vanilla, Unknown Patch
+moduleMatches = 0xA86AA5B2, 0x52992DCD, 0x60DC1C85 # Vanilla, Unknown Patch
 
 codeCaveSize = 0x4
 
