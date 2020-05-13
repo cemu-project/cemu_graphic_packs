@@ -205,21 +205,21 @@ overwriteHeight = ($height / $gameHeight) * 480
 width = 640
 height = 720
 #formats = 0x816,0x001,0x01a
-overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
+overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 720
 
 [TextureRedefine] # 0.5.x main 8 rounding
 width = 640
 height = 592
 #formats = 0x816,0x001,0x01a
-overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
+overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 592
 
 [TextureRedefine] # 0.5.x main
 width = 640
 height = 580
 #formats = 0x816,0x001,0x01a
-overwriteWidth = ($width/$gameWidth) * (640*$internalRes)
+overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 580
 
 [TextureRedefine] # Bloom Pass
@@ -250,7 +250,7 @@ overwriteHeight = ($height / $gameHeight) * 290
 width = 512
 height = 512
 formats = 0x1
-overwriteWidth = ($width / $gameWidth) * (512*$internalRes)
+overwriteWidth = ($width / $gameWidth) * 512
 overwriteHeight = ($height / $gameHeight) * 512
 
 [TextureRedefine] # Light Shafts Pass Mip
@@ -263,33 +263,33 @@ overwriteHeight = ($height / $gameHeight) * 256
 [TextureRedefine] # Bloom Pass Mip
 width = 320
 height = 368
-overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
+overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 368
 
 [TextureRedefine] # Bloom Pass Mip
 width = 320
 height = 360
-overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
+overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 360
 
 [TextureRedefine] # Bloom Pass Mip
 width = 320
 height = 192
-overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
+overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 192
 
 [TextureRedefine] # Bloom Pass Mip
 width = 320
 height = 180
 formatsExcluded = 0x41a
-overwriteWidth = ($width / $gameWidth) * (320*$internalRes)
+overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 180
 
 [TextureRedefine] # Light Shafts Pass Mip
 width = 256
 height = 256
 formats = 0x1
-overwriteWidth = ($width / $gameWidth) * (256*$internalRes)
+overwriteWidth = ($width / $gameWidth) * 256
 overwriteHeight = ($height / $gameHeight) * 256
 
 [TextureRedefine] # Bloom Pass Mip
