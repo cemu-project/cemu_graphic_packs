@@ -1,0 +1,35 @@
+[Definition]
+titleIds = 00050000101D0300,00050000101D0600,000500001014D200,00050000101D3F00
+name = Cutscene Brightness
+path = "Fatal Frame - Project Zero: Maiden of Black Water/Workarounds/Cutscene Brightness"
+description = Makes the cutscenes brighter which are normally very dark. This can be pretty ugly since the lighting is still missing, but it will help with the visibility.
+version = 4
+
+
+[Preset]
+name = Normal (Default)
+$cutsceneBrightness = 1.0
+
+[Preset]
+name = 3x Cutscene Brightness
+$cutsceneBrightness = 3.0
+
+[Preset]
+name = 5x Cutscene Brightness
+$cutsceneBrightness = 5.0
+
+[Preset]
+name = 8x Cutscene Brightness
+$cutsceneBrightness = 8.0
+
+[Preset]
+name = 10x Cutscene Brightness
+$cutsceneBrightness = 10.0
+
+[Preset]
+name = 15x Cutscene Brightness
+$cutsceneBrightness = 15.0
+
+[Preset]
+name = 20x Cutscene Brightness
+$cutsceneBrightness = 20.0

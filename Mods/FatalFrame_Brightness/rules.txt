@@ -2,7 +2,7 @@
 titleIds = 00050000101D0300,00050000101D0600,000500001014D200,00050000101D3F00
 name = Brightness
 path = "Fatal Frame - Project Zero: Maiden of Black Water/Mods/Brightness"
-description = Changes the brightness of the game.
+description = Changes the brightness of the game. Can be used to make the game look brighter to be more similar to the Wii U.
 version = 4
 
 [Preset]
