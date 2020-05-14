@@ -1,0 +1,14 @@
+[Definition] 
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = Coop Aspect Ratio
+path = "Hyrule Warriors/Graphics/Resolution/Coop Aspect Ratio"
+description = Changes the aspect ratio of the game for co-op play on one monitor.
+version = 4
+
+[Preset]
+name = Horizontal
+$ratio = 1.0
+
+[Preset]
+name = Vertical
+$ratio = 4.0

@@ -1,0 +1,7 @@
+[ProjectZ_219v208]
+moduleMatches = 0xE159AE91
+
+0x1009609C = .float $ratio
+0x10096124 = .float $ratio
+0x10096948 = .float $ratio
+0x10096974 = .float $ratio
