@@ -4,11 +4,3 @@ name = Brightness
 path = "Sonic Lost World/Workarounds/Brightness"
 description = This fixes the game from looking too dark. Made by Slashiee.
 version = 4
-
-[Preset]
-name = Wii U (Default)
-$preset:int = 0
-
-[Preset]
-name = PC
-$preset:int = 1
