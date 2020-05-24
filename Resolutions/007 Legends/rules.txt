@@ -12,7 +12,7 @@ $height = 1080
 $gameWidth = 1920
 $gameHeight = 1080
 
-// Performance
+# Performance
 
 [Preset]
 name = 320x180
@@ -49,7 +49,7 @@ $height = 900
 $gameWidth = 1920
 $gameHeight = 1080
 
-// Common HD Resolutions
+# Common HD Resolutions
 
 [Preset]
 name = 2560x1440
