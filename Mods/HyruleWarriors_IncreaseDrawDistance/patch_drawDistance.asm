@@ -1,4 +1,4 @@
-[DrawDistance_v208]
+[DrawDistance_v208] 
 moduleMatches = 0xE159AE91
 .origin = codecave 
 
@@ -16,7 +16,7 @@ moduleMatches = 0xE159AE91
 0x100DFEDC = .float 2.0
 0x100DFEE0 = .float 2.0
 
-0x100FF060 = .float 0.0 # force high mip / texture lod
+0x100FF060 = .float 0.99 # force high mip / texture lod
 0x100DD8C4 = .float 9900.0 # some smoke / particles 
 
 #fov 
