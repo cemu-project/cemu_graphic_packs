@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010E600,0005000010110700,ffffffff8f511722
+titleIds = 000500001010E600,0005000010110700
 name = Resolution
 path = "007 Legends/Graphics/Resolution"
 description = Changes the resolution of the game. Made by williansti.
