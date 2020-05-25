@@ -19,6 +19,10 @@ moduleMatches = 0xE159AE91
 0x100FF060 = .float 0.99 # force high mip / texture lod
 0x100DD8C4 = .float 9900.0 # some smoke / particles 
 
+# shadow draw distance (more like boundary) 
+0x10000B20  = .float 8000.0 
+0x10000B24  = .float 20000.0 
+
 #fov 
 #0x10006FD0 = .float 0.015 #fov  .float 0.017453292   # DATA XREF: CActFunc::GetViewParameter((PLAYER_ID,S_VIEW_PARAM &,uint))+194o
 # scatter light (fog)
