@@ -1,5 +1,5 @@
-[NSMBU+LUv0US]
-moduleMatches = 0x1049CED8
+[NSMBU+LUv0]
+moduleMatches = 0x1049CED8, 0x777D7B44
 
 #remove check for mii data
 0x024D7394 = b .+0xE8
