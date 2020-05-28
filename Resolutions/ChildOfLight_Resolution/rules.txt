@@ -108,16 +108,10 @@ formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 512
 
-[TextureRedefine] # Half-Res
-width = 640
-height = 368
-tileModesExcluded = 0x001
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = ($height/$gameHeight) * 368
-
 [TextureRedefine]
 width = 640
 height = 360
+formats = 0x001
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
