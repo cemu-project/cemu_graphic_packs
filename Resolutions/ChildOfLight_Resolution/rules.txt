@@ -89,6 +89,7 @@ $gameHeight = 720
 [TextureRedefine] # TV Resolution
 width = 1280
 height = 720
+formats = 0x011,0x01a,0x001
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
