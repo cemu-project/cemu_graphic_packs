@@ -89,7 +89,6 @@ $gameHeight = 720
 [TextureRedefine] # TV Resolution
 width = 1280
 height = 720
-formats = 0x011,0x01a,0x001
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
@@ -111,7 +110,6 @@ overwriteHeight = ($height/$gameHeight) * 512
 [TextureRedefine] # Half-Res
 width = 640
 height = 368
-formats = 0x001
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 368
@@ -119,7 +117,6 @@ overwriteHeight = ($height/$gameHeight) * 368
 [TextureRedefine]
 width = 640
 height = 360
-formats = 0x001
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
@@ -127,11 +124,13 @@ overwriteHeight = ($height/$gameHeight) * 360
 [TextureRedefine] # Screen gradient
 width = 448
 height = 240
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 448
 overwriteHeight = ($height/$gameHeight) * 240
 
 [TextureRedefine]
 width = 426
 height = 240
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 426
 overwriteHeight = ($height/$gameHeight) * 240
