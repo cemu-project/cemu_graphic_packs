@@ -1,8 +1,8 @@
 [Definition]
-titleIds = 000500001015B200,000500001016EA00,000500001016D800
+titleIds = 000500001015B200,000500001016D800,000500001016EA00
 name = Resolution
 path = "Child of Light/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Crementif.
+description = Changes the resolution of the game. Made by Crementif and ICUP321.
 version = 4
 
 [Preset]
@@ -108,7 +108,7 @@ formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 512
 
-[TextureRedefine] # Half-res
+[TextureRedefine]
 width = 640
 height = 360
 formats = 0x001
@@ -116,18 +116,16 @@ tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
 
-# Screen gradient
+[TextureRedefine] # Screen gradient
+width = 448
+height = 240
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 448
+overwriteHeight = ($height/$gameHeight) * 240
 
 [TextureRedefine]
 width = 426
 height = 240
 formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 426
-overwriteHeight = ($height/$gameHeight) * 240
-
-[TextureRedefine]
-width = 448
-height = 240
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 448
 overwriteHeight = ($height/$gameHeight) * 240

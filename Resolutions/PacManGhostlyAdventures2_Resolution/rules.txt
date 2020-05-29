@@ -2,7 +2,7 @@
 titleIds = 000500001017E600,000500001017E500,0005000010182300
 name = Resolution
 path = "PAC-MAN & the Ghostly Adventures 2/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Slashiee & ICUP321.
+description = Changes the resolution of the game. Made by Slashiee and ICUP321.
 version = 4
 
 [Preset]
