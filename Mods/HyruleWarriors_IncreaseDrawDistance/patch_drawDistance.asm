@@ -20,8 +20,19 @@ moduleMatches = 0xE159AE91
 0x100DD8C4 = .float 9900.0 # some smoke / particles 
 
 # shadow draw distance (more like boundary) 
-0x10000B20  = .float 8000.0 
-0x10000B24  = .float 20000.0 
+0x10000B20  = .float 7000.0 
+#0x10000B24  = .float 20000.0 
+0x100DFF78 = .float 40000.0   #Dyamic object shadows ie rocks, chests etc 
+
+#Grass, debris.  Mitigates object pop as groups switces between lods. 
+0x100DFF50 = .float 20000.0 
+0x100DFF54 = .float 40000.0 
+0x100DFF58 = .float 150000.0
+0x100DFF5C = .float 200000.0
+0x100DFF60 = .float 300000.0
+0x100DFF64 = .float 500000.0
+0x100DFF68 = .float 800000.0
+0x100DFF6C = .float 80000.0 
 
 #fov 
 #0x10006FD0 = .float 0.015 #fov  .float 0.017453292   # DATA XREF: CActFunc::GetViewParameter((PLAYER_ID,S_VIEW_PARAM &,uint))+194o
