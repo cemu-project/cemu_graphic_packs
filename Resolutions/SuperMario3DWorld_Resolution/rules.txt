@@ -162,6 +162,13 @@ height = 480
 overwriteWidth = ($width/$gameWidth) * 854
 overwriteHeight = ($height/$gameHeight) * 480
 
+[TextureRedefine] #large mirror
+width = 848
+height = 480
+#formats =  0x816,0x810,0x019,0x01a
+overwriteWidth = ($width/$gameWidth) * 848
+overwriteHeight  = ($height/$gameHeight) * 480
+
 [TextureRedefine] #Depth 8
 width = 640
 height = 368
