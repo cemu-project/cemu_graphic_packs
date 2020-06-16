@@ -356,20 +356,21 @@ height = 33
 overwriteWidth = ($width/$gameWidth) * (60)
 overwriteHeight = ($height/$gameHeight) * (33)
 
-### pictograph. If you try to fix this, verify that saved pictures can be loaded from album.
 [TextureRedefine] #Pictograph
 width = 1600
 height = 912
 formats = 0x019
-overwriteWidth = ($width/$gameWidth) * 1600
+overwriteWidth = ($height/$gameHeight) * 1600
 overwriteHeight = ($height/$gameHeight) * 912
 
 [TextureRedefine] #Pictograph
 width = 1600
 height = 900
 formats = 0x019
-overwriteWidth = ($width/$gameWidth) * 1600
+overwriteWidth = ($height/$gameHeight) * 1600
 overwriteHeight = ($height/$gameHeight) * 900
+
+### pictograph. If you try to fix this, verify that saved pictures can be loaded from album.
 #
 #[TextureRedefine] #pictograph
 #width = 832
