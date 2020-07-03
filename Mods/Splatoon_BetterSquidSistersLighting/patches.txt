@@ -1,0 +1,4 @@
+[Gambit272]
+moduleMatches = 0xF7A78809
+
+0x100F4B18 = nop # Disables "MainNews" lighting

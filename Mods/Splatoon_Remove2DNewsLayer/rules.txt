@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Remove 2D News Layer
+path = "Splatoon/Mods/Remove 2D News Layer"
+description = Removes the box around the news TV. Made by IVy.
+version = 4

@@ -1,0 +1,4 @@
+[Gambit272]
+moduleMatches = 0xF7A78809
+
+0x100980F8 = nop # Disables "2D(PlazaNews)"

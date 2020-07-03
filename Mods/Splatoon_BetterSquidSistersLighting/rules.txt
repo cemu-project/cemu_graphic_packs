@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Better Squid Sisters
+path = "Splatoon/Mods/Better Squid Sisters"
+description = Makes the Squid Sisters have realistic/somewhat better lighting in the news. Made by IVy.
+version = 4
