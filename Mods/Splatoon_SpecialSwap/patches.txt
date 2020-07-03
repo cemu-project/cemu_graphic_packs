@@ -1,7 +1,7 @@
 [Gambit272]
 moduleMatches = 0xF7A78809
 
-# Special Swapper
+# Special Swapper Patch
 
 0x1005BBDC = .string "Wsp_Tornado" # Original: "Wsp_Tornado"
 
