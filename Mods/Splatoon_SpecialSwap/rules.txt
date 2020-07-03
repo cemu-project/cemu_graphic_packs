@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = Special Swapper
-path = "Splatoon/Mods/Special Swapper"
+name = Special Swap
+path = "Splatoon/Mods/Special Swap"
 description = See patches.txt for more info. Made by IVy.
 version = 4
