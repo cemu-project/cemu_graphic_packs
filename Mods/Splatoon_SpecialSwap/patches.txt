@@ -11,18 +11,9 @@ moduleMatches = 0xF7A78809
 
 0x100C237C = .string "Wsp_Shachihoko" # Original: "Wsp_Shachihoko"
 
-# 0x100EBF1B = .string "tWsp_KingSquid" # Original: "tWsp_KingSquid" (experimental, not tested)
-
-# 0x100EA608 = .string "Barrier" # Original: "Barrier" (experimental, not tested)
-
-# 0x100EA610 = .string "SuperShot" # Original: "SuperShot" (experimental, not tested)
-
 # Specials List
 
 # "Wsp_Tornado" is the Inkstrike
 # "Wsp_BigLaser" is the Killer Wail
 # "Wsp_%s_Bomb_Throw" is any Bomb Rush
-# "tWsp_KingSquid" is probably the Kraken?
-# "Barrier" is the Bubbler
-# "SuperShot" is the Inkzooka
 # "Wsp_Shachihoko" is the Rainmaker
