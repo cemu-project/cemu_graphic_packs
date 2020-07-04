@@ -7,13 +7,10 @@ moduleMatches = 0xF7A78809
 
 0x1005C098 = .string "Wsp_BigLaser" # Original "Wsp_BigLaser"
 
-0x1001BA18 = .string "Wsp_%s_Bomb_Throw" # Original: "Wsp_%s_Bomb_Throw"
-
 0x100C237C = .string "Wsp_Shachihoko" # Original: "Wsp_Shachihoko"
 
 # Specials List
 
 # "Wsp_Tornado" is the Inkstrike
 # "Wsp_BigLaser" is the Killer Wail
-# "Wsp_%s_Bomb_Throw" is any Bomb Rush
 # "Wsp_Shachihoko" is the Rainmaker
