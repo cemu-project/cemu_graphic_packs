@@ -2,5 +2,5 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Special Swap
 path = "Splatoon/Mods/Special Swap"
-description = See patches.txt for more info. Made by IVy.
+description = See patches.txt for more info. Note: This patch is meant for the specials to be swapped with the Rainmaker, doing anything differently could cause instability and crashes. Made by IVy.
 version = 4
