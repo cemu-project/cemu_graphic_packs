@@ -1,0 +1,4 @@
+[MK860LODVer4_1]
+moduleMatches = 0xD09700CE
+
+0x10121DF0 = .float 3.00

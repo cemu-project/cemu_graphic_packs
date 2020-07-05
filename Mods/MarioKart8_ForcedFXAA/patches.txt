@@ -1,0 +1,4 @@
+[MK860ASMPVer4_1]
+moduleMatches = 0xD09700CE
+
+0x027DF2F4 = blr
