@@ -3,4 +3,4 @@ titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Force FXAA In-Game
 path = "Mario Kart 8/Mods/Force FXAA In-Game"
 description = Force FXAA in game. Made by theboy181
-version = 3
+version = 4
