@@ -3,6 +3,8 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader be99d80628d31127 - FXAA in-game (with mod)
 const float resScale = float($width)/float($gameWidth);
+
+
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
@@ -118,10 +120,10 @@ R1f.x = max(R3f.x, -(R3f.x));
 PV0f.x = R1f.x;
 R2f.y = backupReg0f + R2f.x;
 PV0f.y = R2f.y;
-R0f.z = intBitsToFloat(uf_remappedPS[2].z) * 0.25;
+R0f.z = intBitsToFloat(uf_remappedPS[2].z)/resScale * 0.25;
 R0f.w = max(R1f.y, -(R1f.y));
 PV0f.w = R0f.w;
-R2f.x = -(intBitsToFloat(uf_remappedPS[3].x));
+R2f.x = -(intBitsToFloat(uf_remappedPS[3].x)/resScale);
 PS0f = R2f.x;
 // 1
 R3f.y = R2f.z + PV0f.y;
@@ -131,13 +133,13 @@ PS1f = R2f.y;
 // 2
 R3f.y = R2f.w + PV1f.y;
 PV0f.y = R3f.y;
-R1f.z = intBitsToFloat(uf_remappedPS[3].x) / resScale;
-R0f.w = intBitsToFloat(uf_remappedPS[3].y) / resScale;
-R5f.y = -(intBitsToFloat(uf_remappedPS[3].y)) / resScale;
+R1f.z = intBitsToFloat(uf_remappedPS[3].x)/resScale;
+R0f.w = intBitsToFloat(uf_remappedPS[3].y)/resScale;
+R5f.y = -(intBitsToFloat(uf_remappedPS[3].y)/resScale);
 PS0f = R5f.y;
 // 3
 backupReg0f = R0f.z;
-R0f.z = (mul_nonIEEE(backupReg0f,PV0f.y) + intBitsToFloat(uf_remappedPS[2].w));
+R0f.z = (mul_nonIEEE(backupReg0f,PV0f.y) + intBitsToFloat(uf_remappedPS[2].w)/resScale);
 PV1f.z = R0f.z;
 // 4
 backupReg0f = R2f.y;
@@ -153,14 +155,14 @@ PV0f.x = R1f.x;
 R1f.y = mul_nonIEEE(backupReg0f, PS1f);
 PV0f.y = R1f.y;
 // 7
-R1f.x = max(PV0f.x, -(intBitsToFloat(uf_remappedPS[2].y)));
+R1f.x = max(PV0f.x, -(intBitsToFloat(uf_remappedPS[2].y)/resScale));
 PV1f.x = R1f.x;
-R1f.y = max(PV0f.y, -(intBitsToFloat(uf_remappedPS[2].y)));
+R1f.y = max(PV0f.y, -(intBitsToFloat(uf_remappedPS[2].y)/resScale));
 PV1f.y = R1f.y;
 // 8
-R1f.x = min(PV1f.x, intBitsToFloat(uf_remappedPS[2].y));
+R1f.x = min(PV1f.x, intBitsToFloat(uf_remappedPS[2].y)/resScale);
 PV0f.x = R1f.x;
-R1f.y = min(PV1f.y, intBitsToFloat(uf_remappedPS[2].y));
+R1f.y = min(PV1f.y, intBitsToFloat(uf_remappedPS[2].y)/resScale);
 PV0f.y = R1f.y;
 // 9
 backupReg0f = R0f.x;
@@ -199,10 +201,10 @@ backupReg0f = R4f.x;
 backupReg1f = R4f.y;
 backupReg2f = R4f.z;
 backupReg3f = R4f.w;
-R4f.x = (PV1f.w * intBitsToFloat(0x3f4ccccd) + backupReg0f);
-R4f.y = (PV1f.z * intBitsToFloat(0x3f4ccccd) + backupReg1f);
-R4f.z = (PV1f.y * intBitsToFloat(0x3f4ccccd) + backupReg2f);
-R4f.w = (PV1f.x * intBitsToFloat(0x3f4ccccd) + backupReg3f);
+R4f.x = (PV1f.w * (intBitsToFloat(0x3f4ccccd)) + backupReg0f);
+R4f.y = (PV1f.z * (intBitsToFloat(0x3f4ccccd)) + backupReg1f);
+R4f.z = (PV1f.y * (intBitsToFloat(0x3f4ccccd)) + backupReg2f);
+R4f.w = (PV1f.x * (intBitsToFloat(0x3f4ccccd)) + backupReg3f);
 }
 activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
 // export
