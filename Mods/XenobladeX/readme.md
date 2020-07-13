@@ -1,11 +1,11 @@
-# Description of the mods for Xenoblade Chronicles X
+# Mods for Xenoblade Chronicles X
 ### Battle mods
 
-- **Automatic Soul Challenges**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles , not the QTE on Skell binding and destroying).
+- **Automatic Soul Challenges**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles, not the QTE on Skell binding and destroying).
 - **Enemy Statistics mod**: Apply a global percent modificator on all enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).
 - **Escape distance reducer**: Reduce escape distance needed to lose aggro from enemies.
 - **Ground Damage multiplicator**: Increase the ground damage dealt by your team (skells not impacted).
-- **Overdrive unlocked**: Overdrive is unlocked from the beginning of the game.
+- **Overdrive unlocked**: Overdrive can be used at the beginning of the game.
 
 ### BLADE mods
 - **DLC quests unlocked**: DLC Support quests are unlocked and accessible as soon as you become a BLADE member.
@@ -17,12 +17,15 @@
     > With "Random" preset, you can change the tasks list with the main menu, Social entry and "Select Squad" entry.
 
 ### Collectibles mods
-- **Catch range mod**: Increase the distance from which you catch a collectible. By default, you'll get them just when you're close enough to see the blue gem (distance increased by 40.0). There are 3 kind of distances in the game, each with a value of "Range" and "Height": "Inner" (which means when you are at foot), "Doll" (when you have a Skell at land) and "Flight" (which I believe is when you flight, generally in a Skell). All values are editable in the file patches.txt. Also note that the rarity of items is untouched.
-- **Ignore 100th**: Prevent from catching a collectible when you already have 99 of them, and doesn't sell it. This is for endgame runs in which you have plenty of money, many collectibles and doesn't want to be spammed with selling messages when you walk around in the world.
+- **Catch range mod**: Increase the distance from which you catch a collectible.
+   > By default, you'll get them just when you're close enough to see the blue gem (distance increased by 40.0). There are 3 kind of distances in the game, each with a value of "Range" and "Height": "Inner" (which means when you are at foot), "Doll" (when you have a Skell at land) and "Flight" (which I believe is when you flight, generally in a Skell). All values are editable in the file patches.txt. Also note that the rarity of items is untouched.
+- **Ignore 100th**: Prevent from catching a collectible when you already have 99 of them, and doesn't sell it.
+  > This is for endgame runs in which you have plenty of money, many collectibles and doesn't want to be spammed with selling messages when you walk around in the world.
 
 ### Equipment mods
 - **Armors can have 3 augment slots**: Using L' shop, you can have a maximum of 3 augment slots on any of your **equipped** ground or skell armor (right now this won't work on unequipped).
-- **Unlimited augment upgrades**: Allow you to infinitely upgrade all the augments inside a piece of equipment (as long as you have the resources of course). The "Cheat" preset ignores all requirements. **Warning**: with low level armors the max level for augments is 17, if you try to upgrade once more you'll get back to level 1! So far I was unable to understand this strange behavior.
+- **Unlimited augment upgrades**: Allow you to infinitely upgrade all the augments inside a piece of equipment (as long as you have the resources of course). The "Cheat" preset ignores all requirements.
+  > **Warning**: with low level armors the max level for augments is 17, if you try to upgrade once more you'll get back to level 1! So far I was unable to understand this strange behavior.
 - **Unlock all augments**: All augments are known in the BLADE shop. As usual, the "Cheat" preset ignores all requirements for crafing (useful for build testing).
 
 ### Experience mods
@@ -52,8 +55,7 @@
 - **Equipment - Ignore broken**: Get rid of those broken equipments!
 - **Materials - Drop ratio mod**: Set a minimum drop ratio for materials.
 - **Treasure Quality**: Select the treasure quality you want to loot (bronze, silver, gold or no chest at all if you just want to kill a lot of monsters quickly without loot).    
-    > Difference between regular and "FORCED" presets:    
-    > It's a bit tricky to explain, but here's how the game selects the chest quality:    
+    > You can choose between regular and "FORCED" presets. Difference between them is a bit tricky to explain, but here's how the game selects the chest quality:    
     > 1 - Calculate luck for gold chest, if success exit with gold quality, else process next step    
     > 2 - Calculate luck for silver chest, if success exit with silver quality, else process next step    
     > 3 - Calculate luck for bronze chest, if success exit with bronze quality, else process next step    
@@ -74,5 +76,5 @@
 - **Force weather**: Force selected weather. Just select a preset and unload/reload the pack.
 
 ### Requirements
-The most important requirement is of course Cemuhook. All my mods have been tested and are known to work with Cemuhook **0.5.7.3**.
+The most important requirement is of course cemuhook. Mods have been tested and are known to work with cemuhook **0.5.7.3**.
 All mods are compatibles with Xenoblade versions **1.0.1E** and **1.0.2U** (some of them with 1.0.1U), and are not supposed to impact savegames but be sure to make save backup just in case!

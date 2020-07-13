@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Jump higher"
 path = "Xenoblade Chronicles X/Mods/Physics/Jump to the Moon!"
-description = Increase horizontal and vertical velocity of jump (Vanilla values are 1.0 for both).
+description = Increase horizontal and vertical velocity of jump (Vanilla values are 1.0 for both).|More info and help at reddit.com/r/cemu_xenoblade.
 version = 4
 
 [Preset]

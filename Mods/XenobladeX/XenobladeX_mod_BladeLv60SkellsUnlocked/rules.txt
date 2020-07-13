@@ -2,15 +2,17 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Lv60 Skells unlocked"
 path = "Xenoblade Chronicles X/Mods/BLADE/Lv60 Skells unlocked"
-description = Lv60 Skells and equipment are unlocked and accessible right after you are a BLADE member.
+description = Lv60 Skells and equipment are unlocked and accessible right after you are a BLADE member.|More info and help at reddit.com/r/cemu_xenoblade.
 version = 4
 
 [Preset]
 name = Normal
 $miranium = 2
 $resource = 3
+$ignoreLevel = 2
 
 [Preset]
-name = CHEAT - Ignore Miranium and resources requirements
+name = CHEAT - Ignore Miranium, resources and level requirements
 $miranium = 0
 $resource = 0
+$ignoreLevel = 0

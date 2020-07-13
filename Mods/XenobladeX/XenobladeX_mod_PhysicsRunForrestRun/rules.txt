@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Sprint faster"
 path = "Xenoblade Chronicles X/Mods/Physics/Run Forrest, run!"
-description = Increase the speed of sprint.
+description = Increase the speed of sprint.|More info and help at reddit.com/r/cemu_xenoblade.
 version = 4
 
 [Preset]

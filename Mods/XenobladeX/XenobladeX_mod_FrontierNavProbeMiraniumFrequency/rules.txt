@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Miranium income frequency mod"
 path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium income frequency mod"
-description = Affect the frequency of the FrontierNav income for the Miranium (Vanilla is every 30 minutes).
+description = Affect the frequency of the FrontierNav income for the Miranium (Vanilla is every 30 minutes).|More info and help at reddit.com/r/cemu_xenoblade.
 version = 4
 
 [Preset]

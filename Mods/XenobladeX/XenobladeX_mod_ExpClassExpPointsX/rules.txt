@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Class Exp Points X"
 path = "Xenoblade Chronicles X/Mods/Experience/Class Exp Points"
-description = Change the amount of Class Exp points gained in battle, missions, quests and exploration.
+description = Change the amount of Class Exp points gained in battle, missions, quests and exploration.|More info and help at reddit.com/r/cemu_xenoblade.
 version = 4
 
 [Preset]
