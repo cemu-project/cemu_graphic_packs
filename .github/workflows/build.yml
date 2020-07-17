@@ -24,13 +24,15 @@ jobs:
       uses: actions/checkout@v1
       with:
         fetch-depth: 1
+    # The end goal is to have it only archive what's in the src folder.
     - name: Zip all packs
       run: |
         cd $GITHUB_WORKSPACE ;
         cd Enhancements && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
         cd Resolutions && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
         cd Mods && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
-        cd Workarounds && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..
+        cd Workarounds && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..;
+        cd src && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..
     - name: Create new release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
