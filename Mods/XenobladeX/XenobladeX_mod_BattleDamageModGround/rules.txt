@@ -5,8 +5,6 @@ path = "Xenoblade Chronicles X/Mods/Battle/Ground damage multiplicator"
 description = Increase the ground damage done by your team (skells not impacted).|More info and help at reddit.com/r/cemu_xenoblade.
 version = 4
 
-[Default]
-
 [Preset]
 name = Damage x 2
 $mult = 2
