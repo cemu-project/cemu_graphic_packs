@@ -2,5 +2,5 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = No Vignette
 path = "Splatoon/Enhancements/No Vignette"
-description = Removes the game's vignette. Made by Slashiee.
-version = 4
+description = Removes the game's vignette.||Made by Slashiee.
+version = 5

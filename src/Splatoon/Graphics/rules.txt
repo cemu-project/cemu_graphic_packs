@@ -1,166 +1,255 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = Resolution
-path = "Splatoon/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Slashiee and Xalphenos.
-version = 4
+name = Graphics
+path = "Splatoon/Graphics"
+description = Allows you to change the game resolution and shadow resolution.||Made by Slashiee and Xalphenos.
+version = 5
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
+$padWidth = 854
+$padHeight = 480
 $gameWidth = 1280
 $gameHeight = 720
+$gamepadWidth = 854
+$gamepadHeight = 480
+$shadowRes = 1
 
-# Performance
+
+# TV Resolution
 
 [Preset]
+category = TV Resolution
 name = 320x180
 $width = 320
 $height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 640x360
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 854x480
 $width = 854
 $height = 480
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 960x540
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
-
-# Common HD Resolutions
 
 [Preset]
+category = TV Resolution
+name = 1280x720
+default = 1
+
+[Preset]
+category = TV Resolution
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
-
-# Common Ultrawide Resolutions
 
 [Preset]
+category = TV Resolution
 name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = TV Resolution
 name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-
-# Common 16:10 Resolutions
 
 [Preset]
-name = 1440x900 (16:10)
-$width = 1440
-$height = 900
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 1680x1050 (16:10)
-$width = 1680
-$height = 1050
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 1920x1200 (16:10)
-$width = 1920
-$height = 1200
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 2560x1600 (16:10)
-$width = 2560
-$height = 1600
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 2880x1800 (16:10)
-$width = 2880
-$height = 1800
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 3840x2400 (16:10)
-$width = 3840
-$height = 2400
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x3200 (16:10)
+category = TV Resolution
+name = 5120x2160 (Ultrawide)
 $width = 5120
-$height = 3200
-$gameWidth = 1280
-$gameHeight = 720
+$height = 2160
 
-# TV
+[Preset]
+category = TV Resolution
+name = 6880x2880 (Ultrawide)
+$width = 6880
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 10240x4320 (Ultrawide)
+$width = 10240
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution
+name = 320x180
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+category = Gamepad Resolution
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution
+name = 854x480
+default = 1
+
+[Preset]
+category = Gamepad Resolution
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution
+name = 1280x720
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+category = Gamepad Resolution
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1080 (Ultrawide)
+$padWidth = 2560
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 3440x1440 (Ultrawide)
+$padWidth = 3440
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2160 (Ultrawide)
+$padWidth = 5120
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 6880x2880 (Ultrawide)
+$padWidth = 6880
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 10240x4320 (Ultrawide)
+$padWidth = 10240
+$padHeight = 4320
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%)
+default = 1
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+
+
+# Texture Redefines
 
 [TextureRedefine]
 width = 1280
@@ -572,72 +661,72 @@ overwriteHeight = ($height / $gameHeight) * 252
 [TextureRedefine]
 width = 864
 height = 480
-overwriteWidth = ($width / $gameWidth) * 864
-overwriteHeight = ($height / $gameHeight) * 480
+overwriteWidth = ($padWidth / $gamepadWidth) * 864
+overwriteHeight = ($padHeight / $gamepadHeight) * 480
 
 [TextureRedefine]
 width = 854
 height = 480
-overwriteWidth = ($width / $gameWidth) * 854
-overwriteHeight = ($height / $gameHeight) * 480
+overwriteWidth = ($padWidth / $gamepadWidth) * 854
+overwriteHeight = ($padHeight / $gamepadHeight) * 480
 
 [TextureRedefine]
 width = 848
 height = 480
-overwriteWidth = ($width / $gameWidth) * 848
-overwriteHeight = ($height / $gameHeight) * 480
+overwriteWidth = ($padWidth / $gamepadWidth) * 848
+overwriteHeight = ($padHeight / $gamepadHeight) * 480
 
 # Gamepad Blur
 
 [TextureRedefine]
 width = 448
 height = 240
-overwriteWidth = ($width / $gameWidth) * 448
-overwriteHeight = ($height / $gameHeight) * 240
+overwriteWidth = ($padWidth / $gamepadWidth) * 448
+overwriteHeight = ($padHeight / $gamepadHeight) * 240
 
 [TextureRedefine]
 width = 424
 height = 240
-overwriteWidth = ($width / $gameWidth) * 424
-overwriteHeight = ($height / $gameHeight) * 240
+overwriteWidth = ($padWidth / $gamepadWidth) * 424
+overwriteHeight = ($padHeight / $gamepadHeight) * 240
 
 # Gamepad Bloom
 
 [TextureRedefine]
 width = 224
 height = 128
-overwriteWidth = ($width / $gameWidth) * 224
-overwriteHeight = ($height / $gameHeight) * 128
+overwriteWidth = ($padWidth / $gamepadWidth) * 224
+overwriteHeight = ($padHeight / $gamepadHeight) * 128
 
 [TextureRedefine]
 width = 212
 height = 120
-overwriteWidth = ($width / $gameWidth) * 212
-overwriteHeight = ($height / $gameHeight) * 120
+overwriteWidth = ($padWidth / $gamepadWidth) * 212
+overwriteHeight = ($padHeight / $gamepadHeight) * 120
 
 [TextureRedefine]
 width = 106
 height = 60
-overwriteWidth = ($width / $gameWidth) * 106
-overwriteHeight = ($height / $gameHeight) * 60
+overwriteWidth = ($padWidth / $gamepadWidth) * 106
+overwriteHeight = ($padHeight / $gamepadHeight) * 60
 
 [TextureRedefine]
 width = 53
 height = 30
-overwriteWidth = ($width / $gameWidth) * 53
-overwriteHeight = ($height / $gameHeight) * 30
+overwriteWidth = ($padWidth / $gamepadWidth) * 53
+overwriteHeight = ($padHeight / $gamepadHeight) * 30
 
 [TextureRedefine]
 width = 26
 height = 15
-overwriteWidth = ($width / $gameWidth) * 26
-overwriteHeight = ($height / $gameHeight) * 15
+overwriteWidth = ($padWidth / $gamepadWidth) * 26
+overwriteHeight = ($padHeight / $gamepadHeight) * 15
 
 [TextureRedefine]
 width = 13
 height = 7
-overwriteWidth = ($width / $gameWidth) * 13
-overwriteHeight = ($height / $gameHeight) * 7
+overwriteWidth = ($padWidth / $gamepadWidth) * 13
+overwriteHeight = ($padHeight / $gamepadHeight) * 7
 
 # Multiplayer Player Icon
 
@@ -646,3 +735,33 @@ width = 256
 height = 256
 formats = 0x1a
 overwriteFormat = 0x1f
+
+# Shadows
+
+[TextureRedefine] # Shadows
+width = 2048
+height = 2048
+formats = 0x5
+overwriteWidth = $shadowRes * 2048
+overwriteHeight = $shadowRes * 2048
+
+[TextureRedefine] # Squid Sisters Shadows
+width = 1664
+height = 1648
+formats = 0x5
+overwriteWidth = $shadowRes * 1664
+overwriteHeight = $shadowRes * 1648
+
+[TextureRedefine] # Squid Sisters Shadows
+width = 1640
+height = 1640
+formats = 0x5
+overwriteWidth = $shadowRes * 1640
+overwriteHeight = $shadowRes * 1640
+
+[TextureRedefine] # Performance Shadows
+width = 1024
+height = 1024
+formats = 0x5
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024

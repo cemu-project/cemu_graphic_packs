@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Swap Squid Sisters
+path = "Splatoon/Mods/Swap Squid Sisters"
+description = Allows you to swap the models of the Squid Sisters with eachother.||Made by Slashiee.
+version = 5
+
+[Default]
+$callieLetter = 65
+$marieLetter = 66
+
+[Preset]
+category = Callie
+name = Normal
+default = 1
+
+[Preset]
+category = Marie
+name = Normal
+default = 1
+
+[Preset]
+category = Callie
+name = Swapped with Marie
+$callieLetter = 66
+
+[Preset]
+category = Marie
+name = Swapped with Callie
+$marieLetter = 65

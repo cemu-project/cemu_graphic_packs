@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Map Swap
+path = "Splatoon/Mods/Map Swap"
+description = Allows you to swap the maps for the tutorial, Octo Valley, and Shooting Range with any other map in the game.||Read patches.txt for more information.||Made by Slashiee.
+version = 5

@@ -1,0 +1,39 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Adjust Bloom Intensity
+path = "Splatoon/Enhancements/Adjust Bloom Intensity"
+description = Allows you to adjust how strong the bloom is.||Made by Slashiee.
+version = 5
+
+[Default]
+$bloom = 1
+
+[Preset]
+Category = Bloom Intensity
+name = 0% (Disabled)
+$bloom = 0
+
+[Preset]
+Category = Bloom Intensity
+name = 25%
+$bloom = 0.25
+
+[Preset]
+Category = Bloom Intensity
+name = 50%
+$bloom = 0.5
+
+[Preset]
+Category = Bloom Intensity
+name = 75%
+$bloom = 0.75
+
+[Preset]
+Category = Bloom Intensity
+name = 100%
+default = 1
+
+[Preset]
+Category = Bloom Intensity
+name = 125%
+$bloom = 1.25

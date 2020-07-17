@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Disable HUD
+path = "Splatoon/Mods/Disable HUD"
+description = This disables the game's HUD.||Made by Xalphenos and Slashiee.
+version = 5

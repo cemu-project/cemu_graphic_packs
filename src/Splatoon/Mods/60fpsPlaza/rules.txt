@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = 60fps Plaza
+path = "Splatoon/Mods/60fps Plaza"
+description = Important: This patches the plaza to run at 60fps. Getting under 60fps will slow down the game's speed.||Made by Exzap.
+version = 5
