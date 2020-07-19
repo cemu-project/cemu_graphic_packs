@@ -361,10 +361,10 @@ overwriteHeight = ($height/$gameHeight) * 291
 
 
 
-[TextureRedefine] #816 fire transition, 80e?
+[TextureRedefine] #816 fire transition, 80e switch palace
 width = 512
 height = 512
-formats = 0x816 # #0x431,0x235,0x034 ,0x80e,0x007
+formats = 0x816,0x80e  # #0x431,0x235,0x034,0x007
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 512
 
@@ -2111,6 +2111,7 @@ overwriteHeight = ($height/$gameHeight) * 360
 [TextureRedefine] # circus
 width = 512
 height = 360
+formatsExcluded = 0x034,0x033,0x031 # rain vulkan									 
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 360
 
