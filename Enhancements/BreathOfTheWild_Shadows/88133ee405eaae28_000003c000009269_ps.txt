@@ -116,7 +116,7 @@ R1i = floatBitsToInt(passParameterSem5);
 R2i = floatBitsToInt(passParameterSem6);
 if( activeMaskStackC[1] == true ) {
 R3i.w = floatBitsToInt(texture(textureUnitPS6, intBitsToFloat(R0i.xy)).x);
-R7i.xzw = floatBitsToInt(textureGather(textureUnitPS6, intBitsToFloat(R0i.xy)).xzw);
+R7i.xzw = floatBitsToInt(textureGather(textureUnitPS6, vec2(0.0001) + intBitsToFloat(R0i.xy)).xzw);
 R4i.xyzw = floatBitsToInt(texture(textureUnitPS3, intBitsToFloat(R2i.zw)).xyzw);
 R2i.xy = floatBitsToInt(textureLod(textureUnitPS0, intBitsToFloat(R2i.xy),0.0).xw);
 }
