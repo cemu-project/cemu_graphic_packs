@@ -1,8 +1,8 @@
 [BotwV208]
 moduleMatches = 0x6267BFD0
 
-0x024A0164 = lfs f0, 0x100c50A0@l(r10) ; faster arrow draw
-0x024A019C = lfs f0, 0x100c50A0@l(r10) ; faster arrow draw
+0x100C4F94 = .float 3.0
+
 
 [BotwV176V192]
 moduleMatches = 0xFD091F9F,0xD472D8A5
