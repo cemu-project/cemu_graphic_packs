@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010D700,0005000010116000
+titleIds = 000500001010D700, 0005000010116000
 name = Resolution
 path = "Skylanders Giants/Graphics/Resolution"
 description = Changes the resolution of the game.
