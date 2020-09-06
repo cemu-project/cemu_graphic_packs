@@ -10,6 +10,7 @@ on:
     - 'Resolutions/**'
     - 'Mods/**'
     - 'Workarounds/**'
+    - 'src/**'
 
 jobs:
   build:
