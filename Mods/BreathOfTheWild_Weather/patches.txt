@@ -6,14 +6,14 @@ codeCaveSize = 0x20
 # Constants
 0x0000000 = .byte $weatherByte ; This address holds the value set by the presets
 _weatherConst = 0x0000000 ; Makes a symbol of the value above
-_weatherAddress = 0x3FF7DB24 ; This symbol points to the weather address
+_weatherAddress = 0x1000DB24 ; This symbol points to the weather address
 
 # Code that changes the weather address value.
 # This code is executed each frame since there's too many addresses that mess with the original one, and changing those caused crashes. Shouldn't affect performance regardless.
 _changeWeather = 0x00000004
 0x0000004 = lis r6, _weatherConst@ha ; Load first half of the address to the "weather value"
 0x0000008 = lbz r6, _weatherConst@l(r6) ; Use the first half of the "weather value" address to load the full value set by the current preset
-0x000000C = lis r5, _weatherAddress@ha ; Load first half of the actual "weather address"
+0x000000C = lis r5, 0x3FF7 ; Load first half of the actual "weather address"
 0x0000010 = stb r6, _weatherAddress@l(r5) ; Store the "weather value" byte into the "weather address", using the first half of that address
 0x0000014 = addi r6, r1, 0x18 ; Do the original instruction that got replaced by the code jump
 0x0000018 = blr ; Return to the code before the code jump
