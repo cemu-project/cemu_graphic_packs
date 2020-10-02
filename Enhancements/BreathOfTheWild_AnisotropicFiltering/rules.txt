@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Anisotropic Filtering
+path = "The Legend of Zelda: Breath of the Wild/Enhancements/Anisotropic Filtering"
+description = Requires Cemu 1.21.3 or above|Enables x16 anisotropic filtering on ground textures.|Has a minimal performance impact.
+version = 6
+
+[TextureRedefine]
+depth = 83 # the terrain atlas is a 1024x1024x83 texture array
+overwriteAnisotropy = 16

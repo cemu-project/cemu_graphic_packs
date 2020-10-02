@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = Dynamic Shadows Workaround
+path = "Bayonetta 2/Workarounds/Dynamic Shadows"
+description = Workaround for the dynamic shadows to prevent them from rendering partially or not at all.||Made by Exzap.
+version = 6
