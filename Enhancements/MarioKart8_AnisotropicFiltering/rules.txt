@@ -1,0 +1,32 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = Anisotropic Filtering
+path = "Mario Kart 8/Enhancements/Anisotropic Filtering"
+description = Requires Cemu 1.21.3 or above|Enables x16 anisotropic filtering for ground/walls, wheels and other bits.|Has a minimal performance impact.
+version = 6
+
+# The descriptions of what each redefine does is just a general guideline, unlikely to apply for each track.
+
+[TextureRedefine] # Floor textures
+width = 512
+height = 512
+formats = 0x0431,0x433
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Wheel textures
+width = 256
+height = 256
+formats = 0x431
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Wall textures
+width = 1024
+height = 2048
+formats = 0x431
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Various Environment Textures Tilesheets
+width = 1024
+height = 1024
+formats = 0x431
+overwriteAnisotropy = 16
