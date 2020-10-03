@@ -1,0 +1,36 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = Anisotropic Filtering
+path = "Bayonetta 2/Enhancements/Anisotropic Filtering"
+description = Requires Cemu 1.21.3 or above|Enables x16 anisotropic filtering on ground, walls and environment textures.|Has a minimal performance impact.
+version = 6
+
+[TextureRedefine] # Large Environment Tiles
+width = 1024
+height = 1024
+formats = 0x031,0x033
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Floor Tiles
+width = 512
+height = 512
+formats = 0x031,0x033
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Floor Tiles
+width = 256
+height = 512
+formats = 0x033
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Environment Tiles
+width = 512
+height = 256
+formats = 0x033
+overwriteAnisotropy = 16
+
+[TextureRedefine] # Environment Tiles
+width = 256
+height = 256
+formats = 0x033
+overwriteAnisotropy = 16

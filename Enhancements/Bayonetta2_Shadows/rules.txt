@@ -31,3 +31,10 @@ height = 2048
 formats = 0x5
 overwriteWidth = $shadowRes * 1024
 overwriteHeight = $shadowRes * 2048
+
+[TextureRedefine] # Dynamic Shadows
+width = 1024
+height = 2048
+formats = 0x011
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 2048
