@@ -1,4 +1,4 @@
-[Bayo2USv0]#No patches released
+[Bayo2USv0]
 moduleMatches = 0xAF5D1A85
 .origin = codecave
 	
