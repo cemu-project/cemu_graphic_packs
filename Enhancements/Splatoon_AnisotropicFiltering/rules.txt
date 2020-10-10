@@ -1,0 +1,37 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Anisotropic Filtering
+path = "Splatoon/Enhancements/Anisotropic Filtering"
+description = Requires Cemu 1.21.3 or above|Allows adjustment of anisotropic filtering on geometry.|Has a minimal performance impact.
+version = 6
+
+[Default]
+$anisotropy = 1
+
+[Preset]
+name = 1x
+category = Filtering Level
+
+[Preset]
+name = 2x
+category = Filtering Level
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Filtering Level
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Filtering Level
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Filtering Level
+$anisotropy = 16
+
+[TextureRedefine]
+formats = 0x31,0x34,0x35,0x235,0x431,0x433
+overwriteAnisotropy = $anisotropy
