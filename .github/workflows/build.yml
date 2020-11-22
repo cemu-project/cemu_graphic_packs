@@ -10,6 +10,7 @@ on:
     - 'Resolutions/**'
     - 'Mods/**'
     - 'Workarounds/**'
+    - 'src/**'
 
 jobs:
   build:
@@ -30,7 +31,8 @@ jobs:
         cd Enhancements && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
         cd Resolutions && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
         cd Mods && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
-        cd Workarounds && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..
+        cd Workarounds && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
+        cd src && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..
     - name: Create new release
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
