@@ -2,18 +2,20 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Squid Sister Swap
 path = "Splatoon/Mods/Squid Sister Swap"
-description = Allows you to swap the Squid Sisters. Made by Slashiee.
-version = 4
+description = Allows you to swap the Squid Sisters.|Made by Slashiee.
+version = 6
+
+[Default]
+$callieLetter = 65
+$marieLetter = 66
 
 [Preset]
 name = Callie over Marie
-$callieLetter = 65
 $marieLetter = 65
 
 [Preset]
 name = Marie over Callie
 $callieLetter = 66
-$marieLetter = 66
 
 [Preset]
 name = Swapped

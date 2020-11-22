@@ -2,11 +2,10 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Bloom Adjustment
 path = "Splatoon/Enhancements/Bloom Adjustment"
-description = Allows you to adjust how strong the bloom is. Full amount is the default intensity of bloom. Made by Slashiee.
-version = 4
+description = Allows you to adjust how strong the bloom is. Full amount is the default intensity of bloom.|Made by Slashiee.
+version = 6
 
-[Preset]
-name = Full Amount (Default)
+[Default]
 $bloom = 1
 
 [Preset]
@@ -20,3 +19,7 @@ $bloom = 0.25
 [Preset]
 name = Half Amount
 $bloom = 0.5
+
+[Preset]
+name = Full Amount
+default = 1

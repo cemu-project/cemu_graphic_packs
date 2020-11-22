@@ -20,7 +20,7 @@
 
 // shader b4196905d6fff2bb
 // Used for: Fixing high-res shadows on models at end-screen of campaign/matches
-const float resScale = $shadowRes;
+const float resScale = $shadowQuality;
 
 #ifdef VULKAN
 layout(set = 1, binding = 3) uniform ufBlock
