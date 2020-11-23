@@ -1,203 +1,445 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
-name = Resolution
-path = "Mario Kart 8/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Crementif.
-version = 4
+name = Graphic Options
+path = "Mario Kart 8/Graphics"
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, anti-aliasing, bloom amount, motion blur quality, level of detail, and anisotropic filtering quality.|Made by Crementif, theboy181 and Slashiee.
+version = 6
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
+$padWidth = 854
+$padHeight = 480
 $gameWidth = 1280
 $gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$shadowQuality = 1
+$anisotropy = 1
+$fxaa:int = 1
+$bloom = 1
+$nrOfPasses:int = 8
+$blurStart = 0.975
+$blurWidth = 0.025
+$levelOfDetail = 1
 
-// Performance
+# TV Resolution
 
 [Preset]
 name = 320x180
+category = TV Resolution
 $width = 320
 $height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 640x360
+category = TV Resolution
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
+
+[Preset]
+name = 854x480
+category = TV Resolution
+$width = 854
+$height = 480
 
 [Preset]
 name = 960x540
+category = TV Resolution
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
 
-// Common HD Resolutions
+[Preset]
+name = 1280x720
+category = TV Resolution
+default = 1
 
 [Preset]
 name = 1600x900
+category = TV Resolution
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 1920x1080
+category = TV Resolution
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 2560x1440
+category = TV Resolution
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 3200x1800
+category = TV Resolution
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 3840x2160
+category = TV Resolution
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 5120x2880
+category = TV Resolution
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 7680x4320
+category = TV Resolution
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
-
-#[Preset]
-#name = 3840x2160 (Vertical x2 4320)
-#$width = 3840
-#$height = 4320
-#$gameWidth = 1280
-#$gameHeight = 720
-
-// Common Ultrawide Resolutions
 
 [Preset]
-name = 2560x1080 ("21:9")
+name = 2560x1080 (21:9)
+category = TV Resolution
 $width = 2560
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
-name = 3440x1440 ("21:9")
+name = 3440x1440 (21:9)
+category = TV Resolution
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-
-// Common 16:10 Resolutions
 
 [Preset]
-name = 1440x936 (16:10)
+name = 1440x900 (16:10)
+category = TV Resolution
 $width = 1440
-$height = 936 # 720x1.3
-$gameWidth = 1280
-$gameHeight = 720
+$height = 900
 
 [Preset]
-name = 1680x1080 (16:10)
+name = 1680x1050 (16:10)
+category = TV Resolution
 $width = 1680
-$height = 1080 # 720x1.5
-$gameWidth = 1280
-$gameHeight = 720
+$height = 1050
 
 [Preset]
-name = 1920x1224 (16:10)
+name = 1920x1200 (16:10)
+category = TV Resolution
 $width = 1920
-$height = 1224 # 720x1.7
-$gameWidth = 1280
-$gameHeight = 720
+$height = 1200
 
 [Preset]
-name = 2560x1656 (16:10)
+name = 2560x1600 (16:10)
+category = TV Resolution
 $width = 2560
-$height = 1656 # 720x2.3
-$gameWidth = 1280
-$gameHeight = 720
+$height = 1600
 
 [Preset]
 name = 2880x1800 (16:10)
+category = TV Resolution
 $width = 2880
-$height = 1800 # 720x2.5
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 3840x2448 (16:10)
-$width = 3840
-$height = 2448 # 720x3.4
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x3168 (16:10)
-$width = 5120
-$height = 3168 # 720x4.4
-$gameWidth = 1280
-$gameHeight = 720
-
-// Common HD Resolutions (2 Monitors)
-
-[Preset]
-name = 3840x1080 (32:9)
-$width = 3840
-$height = 1080
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 5120x1440 (32:9)
-$width = 5120
-$height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-
-[Preset]
-name = 6400x1800 (32:9)
-$width = 6400
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
-name = 7680x2160 (32:9)
-$width = 7680
-$height = 2160
-$gameWidth = 1280
-$gameHeight = 720
+name = 3840x2400 (16:10)
+category = TV Resolution
+$width = 3840
+$height = 2400
 
 [Preset]
-name = 10240x2880 (32:9)
-$width = 10240
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
+name = 5120x3200 (16:10)
+category = TV Resolution
+$width = 5120
+$height = 3200
 
-[TextureRedefine] #
+# Gamepad Resolution
+
+[Preset]
+name = 320x180
+category = Gamepad Resolution
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+name = 640x360
+category = Gamepad Resolution
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+name = 854x480
+category = Gamepad Resolution
+default = 1
+
+[Preset]
+name = 960x540
+category = Gamepad Resolution
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+name = 1280x720
+category = Gamepad Resolution
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+name = 1600x900
+category = Gamepad Resolution
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+name = 1920x1080
+category = Gamepad Resolution
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+name = 2560x1440
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+name = 3200x1800
+category = Gamepad Resolution
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+name = 3840x2160
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+name = 5120x2880
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+name = 7680x4320
+category = Gamepad Resolution
+$padWidth = 7680
+$padHeight = 4320
+
+[Preset]
+name = 2560x1080 (21:9)
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1080
+
+[Preset]
+name = 3440x1440 (21:9)
+category = Gamepad Resolution
+$padWidth = 3440
+$padHeight = 1440
+
+[Preset]
+name = 1440x900 (16:10)
+category = Gamepad Resolution
+$padWidth = 1440
+$padHeight = 900
+
+[Preset]
+name = 1680x1050 (16:10)
+category = Gamepad Resolution
+$padWidth = 1680
+$padHeight = 1050
+
+[Preset]
+name = 1920x1200 (16:10)
+category = Gamepad Resolution
+$padWidth = 1920
+$padHeight = 1200
+
+[Preset]
+name = 2560x1600 (16:10)
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1600
+
+[Preset]
+name = 2880x1800 (16:10)
+category = Gamepad Resolution
+$padWidth = 2880
+$padHeight = 1800
+
+[Preset]
+name = 3840x2400 (16:10)
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 2400
+
+[Preset]
+name = 5120x3200 (16:10)
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 3200
+
+# Shadow Quality
+
+[Preset]
+name = Low
+category = Shadow Quality
+$shadowQuality = 0.5
+
+[Preset]
+name = Medium
+category = Shadow Quality
+default = 1
+
+[Preset]
+name = High
+category = Shadow Quality
+$shadowQuality = 2
+
+[Preset]
+name = Ultra
+category = Shadow Quality
+$shadowQuality = 3
+
+[Preset]
+name = Extreme
+category = Shadow Quality
+$shadowQuality = 4
+
+# Anti-Aliasing
+
+[Preset]
+name = Off
+category = Anti-Aliasing
+$fxaa:int = 0
+
+[Preset]
+name = On
+category = Anti-Aliasing
+default = 1
+
+# Bloom
+
+[Preset]
+name = Off
+category = Bloom Amount
+$bloom = 0
+
+[Preset]
+name = Low
+category = Bloom Amount
+$bloom = 0.5
+
+[Preset]
+name = Normal
+category = Bloom Amount
+default = 1
+
+[Preset]
+name = High
+category = Bloom Amount
+$bloom = 1.25
+
+[Preset]
+name = Ultra
+category = Bloom Amount
+$bloom = 1.5
+
+# Motion Blur
+
+[Preset]
+name = Off
+category = Motion Blur Quality
+$nrOfPasses:int = 0
+
+[Preset]
+name = Low
+category = Motion Blur Quality
+$nrOfPasses:int = 4
+
+[Preset]
+name = Normal
+category = Motion Blur Quality
+default = 1
+
+[Preset]
+name = High
+category = Motion Blur Quality
+$nrOfPasses:int = 16
+$blurStart = 0.93
+$blurWidth = 0.1
+
+[Preset]
+name = Ultra
+category = Motion Blur Quality
+$nrOfPasses:int = 24
+$blurStart = 0.93
+$blurWidth = 0.1
+
+[Preset]
+name = Extreme
+category = Motion Blur Quality
+$nrOfPasses:int = 32
+$blurStart = 0.93
+$blurWidth = 0.1
+
+# Level of Detail
+
+[Preset]
+name = Low
+category = Level of Detail
+$levelOfDetail = 0.5
+
+[Preset]
+name = Normal
+category = Level of Detail
+default = 1
+
+[Preset]
+name = High
+category = Level of Detail
+$levelOfDetail = 2
+
+[Preset]
+name = Ultra
+category = Level of Detail
+$levelOfDetail = 3
+
+# Anisotropic Filtering Quality
+
+[Preset]
+name = 1x
+category = Anisotropic Filtering Quality
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering Quality
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering Quality
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering Quality
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering Quality
+$anisotropy = 16
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+tileModesExcluded = 0x001 # ignore cpu processed textures
+formatsExcluded = 0x001,0x019,0x01a,0x01f,0x122,0x806,0x80e,0x816,0x820 # ignore viewports and cubemaps
+overwriteAnisotropy = $anisotropy
+
+# Color Depth
+
+[TextureRedefine]
 width = 1280
 height = 720
 formats = 0x01a
@@ -263,6 +505,8 @@ height = 180
 formats = 0x019
 overwriteFormat = 0x01f
 
+# Texture Redefines
+
 # Full Res
 [TextureRedefine]
 width = 1280
@@ -277,24 +521,24 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 864
 height = 480
 formats = 0x816,0x019
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight = ($height/$gameHeight) * 480
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
 
 # Gamepad
 [TextureRedefine]
 width = 854
 height = 480
 formats = 0x816,0x019
-overwriteWidth = ($width/$gameWidth) * 854
-overwriteHeight = ($height/$gameHeight) * 480
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
 
-#[TextureRedefine]# Not verified 
+#[TextureRedefine] # Not verified (try verify with tilemode and depth?)
 #width = 800
 #height = 464
 #formats = 0x01a
 #overwriteWidth = ($width/$gameWidth) * 800
 #overwriteHeight = ($height/$gameHeight) * 464
-#
+
 #[TextureRedefine]
 #width = 800
 #height = 450
@@ -406,7 +650,7 @@ formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 320
 overwriteHeight = ($height/$gameHeight) * 180
 
-[TextureRedefine]#Depth
+[TextureRedefine] #Depth
 width = 256
 height = 256
 formats = 0x80e
@@ -420,7 +664,7 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 128
 
-[TextureRedefine]#Depth
+[TextureRedefine] #Depth
 width = 160
 height = 160
 formats = 0x80e
@@ -441,7 +685,7 @@ formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 160
 overwriteHeight = ($height/$gameHeight) * 96
 
-[TextureRedefine]#Depth
+[TextureRedefine] #Depth
 width = 148
 height = 148
 formats = 0x80e
@@ -561,63 +805,63 @@ height = 16
 overwriteWidth = ($width/$gameWidth) * 140
 overwriteHeight = ($height/$gameHeight) * 16
 
-[TextureRedefine]#MKtv depth, normals
+[TextureRedefine] #MKTV depth, normals
 width = 960
 height = 544
 formats = 0x80e,0x019,0x816
 overwriteWidth = ($width/$gameWidth) * 960
 overwriteHeight = ($height/$gameHeight) * 544
 
-[TextureRedefine]#MKtv depth, normals
+[TextureRedefine] #MKTV depth, normals
 width = 960
 height = 540
 formats = 0x80e,0x019,0x816
 overwriteWidth = ($width/$gameWidth) * 960
 overwriteHeight = ($height/$gameHeight) * 540
 
-[TextureRedefine]#MKtv depth, normals
+[TextureRedefine] #MKTV depth, normals
 width = 960
 height = 536
 formats = 0x80e,0x019,0x816
 overwriteWidth = ($width/$gameWidth) * 960
 overwriteHeight = ($height/$gameHeight) * 536
 
-[TextureRedefine]#MKtv
+[TextureRedefine] #MKTV
 width = 480
 height = 272
 formats = 0x816,0x01a
 overwriteWidth = ($width/$gameWidth) * 480
 overwriteHeight = ($height/$gameHeight) * 272
 
-[TextureRedefine]#MKtv
+[TextureRedefine] #MKTV
 width = 480
 height = 268
 formats = 0x816,0x01a
 overwriteWidth = ($width/$gameWidth) * 480
 overwriteHeight = ($height/$gameHeight) * 268
 
-[TextureRedefine]#MKtv
+[TextureRedefine] #MKTV
 width = 256
 height = 256
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 256
 
-[TextureRedefine]#MKtv
+[TextureRedefine] #MKTV
 width = 256
 height = 144
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 144
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 240
 height = 134
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 240
 overwriteHeight = ($height/$gameHeight) * 134
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 128
 height = 128
 formats = 0x816
@@ -625,21 +869,21 @@ depth = 1
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 128
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 128
 height = 80
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 128
 overwriteHeight = ($height/$gameHeight) * 80
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 120
 height = 67
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 120
 overwriteHeight = ($height/$gameHeight) * 67
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 64
 height = 64
 formats = 0x816
@@ -647,68 +891,81 @@ depth = 1
 overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 64
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 64
 height = 48
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 48
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 60
 height = 33
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 60
 overwriteHeight = ($height/$gameHeight) * 33
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 60
 height = 33
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 60
 overwriteHeight = ($height/$gameHeight) * 33
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 32
 height = 16
 formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 32
 overwriteHeight = ($height/$gameHeight) * 16
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 30
 height = 16
 formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 30
 overwriteHeight = ($height/$gameHeight) * 16
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 64
 height = 64
 formats = 0x005
 overwriteWidth = ($width/$gameWidth) * 64
 overwriteHeight = ($height/$gameHeight) * 64
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 60
 height = 60
 formats = 0x005
 overwriteWidth = ($width/$gameWidth) * 60
 overwriteHeight = ($height/$gameHeight) * 60
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 52
 height = 52
 formats = 0x005
 overwriteWidth = ($width/$gameWidth) * 52
 overwriteHeight = ($height/$gameHeight) * 52
 
-[TextureRedefine]#MKtv bloom / blur
+[TextureRedefine] #MKTV bloom / blur
 width = 32
 height = 32
 formats = 0x005
 overwriteWidth = ($width/$gameWidth) * 32
 overwriteHeight = ($height/$gameHeight) * 32
 
+# Shadows
 
-#32x32, 16x16 cube slices - dont scale, should not be sharp
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = $shadowQuality * 1024
+overwriteHeight = $shadowQuality * 1024
+
+[TextureRedefine] # Multiplayer Shadows
+width = 512
+height = 512
+formats = 0x005
+overwriteWidth = $shadowQuality * 512
+overwriteHeight = $shadowQuality * 512

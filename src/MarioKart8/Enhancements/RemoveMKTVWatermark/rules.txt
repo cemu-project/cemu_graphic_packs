@@ -1,0 +1,13 @@
+[Definition]
+titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+name = Remove MKTV Watermark
+path = "Mario Kart 8/Enhancements/Remove MKTV Watermark"
+description = Removes the MKTV watermark in the replays or highlight reel.|Made by Crementif.
+version = 6
+
+[TextureRedefine]
+width = 160
+height = 40
+formats = 0x034
+overwriteWidth = 1
+overwriteHeight = 1

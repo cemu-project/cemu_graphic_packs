@@ -97,3 +97,18 @@ _scaleAddr = 0x00000000
 
 #replace math with branch
 0x024AEBEC = bla _scaleAspect
+
+# FXAA In-Game
+
+[MK8FXAAVer4_1]
+moduleMatches = 0xD09700CE
+
+0x027DF2F4 = blr
+
+# Level of Detail
+
+[MK8LODVer4_1]
+moduleMatches = 0xD09700CE
+
+0x10121DF0 = .float $levelOfDetail
+

@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
-name = Increased Model Level of Detail
-path = "Mario Kart 8/Mods/Increased Model Level of Detail"
-description = Increases the distance that the LOD will switch. Made by theboy181
-version = 4

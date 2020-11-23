@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
-name = 60FPS with 3/4P splitscreen mode
-path = "Mario Kart 8/Mods/60FPS in splitscreen"
-description = Forces the game to run at 60FPS instead of the 30FPS in 3-4P splitscreen. In those splitscreen modes, it normally alternates each side of the screen in one frame. This forces it to draw both sides instead. Made by theboy181 and Xalphenos
-version = 4
