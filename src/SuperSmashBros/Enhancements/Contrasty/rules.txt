@@ -2,11 +2,10 @@
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00
 name = Contrasty
 path = "Super Smash Bros. for Wii U/Enhancements/Contrasty"
-description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Made by getdls.
-version = 4
+description = This pack tweaks the colors and contrast to whatever preset you set it as.|You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.|Made by getdls.
+version = 6
 
-[Preset]
-name = Default
+[Default]
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -14,7 +13,7 @@ $redMid = 1.0
 $greenMid = 1.0
 $blueMid = 1.0
 $redHilight = 1.0
-$greenHilight =1.0
+$greenHilight = 1.0
 $blueHilight = 1.0
 
 $contrastCurve = 0.0
@@ -28,6 +27,10 @@ $bleach = 1.0
 $sharp_mix = 0.0
 
 [Preset]
+name = Default
+default = 1
+
+[Preset]
 name = debug
 $redShadows = 1.0
 $greenShadows = 1.0
@@ -36,7 +39,7 @@ $redMid = 0.5
 $greenMid = 0.5
 $blueMid = 1.0
 $redHilight = 0.5
-$greenHilight =1.0
+$greenHilight = 1.0
 $blueHilight = 1.0
 
 $contrastCurve = 0.0
@@ -58,7 +61,7 @@ $redMid = 0.98
 $greenMid = 0.98
 $blueMid = 0.9
 $redHilight = 1.0
-$greenHilight =1.0
+$greenHilight = 1.0
 $blueHilight = 1.0
 
 $contrastCurve = 0.6
@@ -80,7 +83,7 @@ $redMid = 1.0
 $greenMid = 0.99
 $blueMid = 0.99
 $redHilight = 1.0
-$greenHilight =0.99
+$greenHilight = 0.99
 $blueHilight = 0.99
 
 $contrastCurve = 0.15
@@ -102,7 +105,7 @@ $redMid = 1.0
 $greenMid = 1.0
 $blueMid = 1.0
 $redHilight = 0.99
-$greenHilight =0.99
+$greenHilight = 0.99
 $blueHilight = 0.99
 
 $contrastCurve = 0.30
