@@ -2,7 +2,7 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Graphic Options
 path = "Splatoon/Graphics"
-description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, and anisotropic filtering quality.|Made by Slashiee and Xalphenos.
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, bloom amount and anisotropic filtering quality.|Made by Slashiee and Xalphenos.
 version = 6
 
 [Default]
@@ -16,6 +16,7 @@ $gamePadWidth = 854
 $gamePadHeight = 480
 $shadowQuality = 1
 $anisotropy = 1
+$bloom = 1
 
 # TV Resolution
 
@@ -297,6 +298,33 @@ $shadowQuality = 3
 name = Extreme
 category = Shadow Quality
 $shadowQuality = 4
+
+# Bloom
+
+[Preset]
+name = Off
+category = Bloom Amount
+$bloom = 0
+
+[Preset]
+name = Low
+category = Bloom Amount
+$bloom = 0.5
+
+[Preset]
+name = Normal
+category = Bloom Amount
+default = 1
+
+[Preset]
+name = High
+category = Bloom Amount
+$bloom = 1.25
+
+[Preset]
+name = Ultra
+category = Bloom Amount
+$bloom = 1.5
 
 # Anisotropic Filtering Quality
 

@@ -2,7 +2,7 @@
 titleIds = 0005000010172600,0005000010172700,000500001011B900
 name = Graphic Options
 path = "Bayonetta 2/Graphics"
-description = Allows you to change the game's resolution, shadow quality, and anisotropic filtering quality.|Made by Slashiee and getdls.
+description = Allows you to change the game's resolution, shadow quality and anisotropic filtering quality.|Made by Slashiee and getdls.
 version = 6
 
 [Default]
