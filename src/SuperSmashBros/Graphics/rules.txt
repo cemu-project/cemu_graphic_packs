@@ -2,118 +2,41 @@
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00
 name = Graphic Options
 path = "Super Smash Bros. for Wii U/Graphics"
-description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, and anisotropic filtering quality.|Made by Slashiee.
+description = Allows you to change the game's resolution, shadow quality, and anisotropic filtering quality.|Made by Slashiee.
 version = 6
 
 [Default]
 $width = 1920
 $height = 1080
-$padWidth = 854
-$padHeight = 480
 $gameWidth = 1920
 $gameHeight = 1080
-$gamePadWidth = 854
-$gamePadHeight = 480
 $shadowQuality = 1
 $anisotropy = 1
 
-# TV Resolution
+# Resolution
 
 [Preset]
 name = 960x540
-category = TV Resolution
+category = Resolution
 $width = 960
 $height = 540
 
 [Preset]
 name = 1920x1080
-category = TV Resolution
+category = Resolution
 default = 1
 
 [Preset]
 name = 3840x2160
-category = TV Resolution
+category = Resolution
 $width = 3840
 $height = 2160
 
 [Preset]
 name = 7680x4320
-category = TV Resolution
+category = Resolution
 $width = 7680
 $height = 4320
-
-# Gamepad Resolution
-
-[Preset]
-name = 320x180
-category = Gamepad Resolution
-$padWidth = 320
-$padHeight = 180
-
-[Preset]
-name = 640x360
-category = Gamepad Resolution
-$padWidth = 640
-$padHeight = 360
-
-[Preset]
-name = 854x480
-category = Gamepad Resolution
-default = 1
-
-[Preset]
-name = 960x540
-category = Gamepad Resolution
-$padWidth = 960
-$padHeight = 540
-
-[Preset]
-name = 1280x720
-category = Gamepad Resolution
-$padWidth = 1280
-$padHeight = 720
-
-[Preset]
-name = 1600x900
-category = Gamepad Resolution
-$padWidth = 1600
-$padHeight = 900
-
-[Preset]
-name = 1920x1080
-category = Gamepad Resolution
-$padWidth = 1920
-$padHeight = 1080
-
-[Preset]
-name = 2560x1440
-category = Gamepad Resolution
-$padWidth = 2560
-$padHeight = 1440
-
-[Preset]
-name = 3200x1800
-category = Gamepad Resolution
-$padWidth = 3200
-$padHeight = 1800
-
-[Preset]
-name = 3840x2160
-category = Gamepad Resolution
-$padWidth = 3840
-$padHeight = 2160
-
-[Preset]
-name = 5120x2880
-category = Gamepad Resolution
-$padWidth = 5120
-$padHeight = 2880
-
-[Preset]
-name = 7680x4320
-category = Gamepad Resolution
-$padWidth = 7680
-$padHeight = 4320
 
 # Shadow Quality
 
@@ -178,31 +101,19 @@ overwriteAnisotropy = $anisotropy
 
 # Texture Redefines
 
-[TextureRedefine] # Game Resolution
+[TextureRedefine]
 width = 1920
 height = 1088
 formatsExcluded = 0x219,0x1a
 overwriteWidth = ($width / $gameWidth) * 1920
 overwriteHeight = ($height / $gameHeight) * 1088
 
-[TextureRedefine] # Game Resolution
+[TextureRedefine]
 width = 1920
 height = 1080
 formatsExcluded = 0x219,0x1a
 overwriteWidth = ($width / $gameWidth) * 1920
 overwriteHeight = ($height / $gameHeight) * 1080
-
-[TextureRedefine] # Gamepad Resolution
-width = 864
-height = 480
-overwriteWidth = ($padWidth / $gamePadWidth) * 864
-overwriteHeight = ($padHeight / $gamePadHeight) * 480
-
-[TextureRedefine] # Gamepad Resolution
-width = 854
-height = 480
-overwriteWidth = ($padWidth / $gamePadWidth) * 854
-overwriteHeight = ($padHeight / $gamePadHeight) * 480
 
 [TextureRedefine]
 width = 960
