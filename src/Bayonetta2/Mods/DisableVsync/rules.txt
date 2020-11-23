@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = Disable Vsync 
+path = "Bayonetta 2/Mods/Disable Vsync"
+description = Disables the game's Vsync. This affects cutscene timing.|Made by getdls.
+version = 6

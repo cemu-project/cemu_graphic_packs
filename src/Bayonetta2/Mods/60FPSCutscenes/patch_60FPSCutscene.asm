@@ -3,7 +3,7 @@ moduleMatches = 0xAF5D1A85
 .origin = codecave
 	
 _enable60:
-.int $enable60
+.int 1
 
 _cave60:
 lis r9, _enable60@ha
@@ -17,4 +17,3 @@ xori r0,r10,2
 blr
 
 0x03351098 = bla _cave60
-#0x034461C4 = nop #Kill Vsync

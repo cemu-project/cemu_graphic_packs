@@ -23,6 +23,5 @@ lfs f1, _heightScaleRatio@l(r7)
 fdivs f10, f13, f1
 blr
 
-
 0x032F2E6C = bla _calculateARForRendering
 0x032F2044 = bla _calculateARForCulling

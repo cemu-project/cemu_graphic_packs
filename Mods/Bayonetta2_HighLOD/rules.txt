@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010172600,0005000010172700,000500001011B900
-name = Force max LOD 
-path = "Bayonetta 2/Mods/Force max object LOD"
-description = LOD - Forces high poly detail level in gameplay
-version = 4

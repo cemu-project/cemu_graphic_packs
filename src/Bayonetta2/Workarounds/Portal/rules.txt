@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = Portal Workaround
+path = "Bayonetta 2/Workarounds/Portal"
+description = Hides a weird blue layer by the blue portals that's not visible on the original console.|Made by Crementif.
+version = 6
+
+# For a visual comparison, see this album: https://imgur.com/a/4e3HMS2

@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = 60 FPS Cutscenes
+path = "Bayonetta 2/Mods/60 FPS Cutscenes"
+description = This patches cutscenes to run at 60FPS. Getting under 60FPS will slow down playback of the cutscene.|Made by getdls.
+version = 6

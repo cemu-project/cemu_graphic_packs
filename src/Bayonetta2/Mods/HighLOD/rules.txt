@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900
+name = Force Max LOD
+path = "Bayonetta 2/Mods/Force Maximum LOD"
+description = Forces high level of detail for models during gameplay.|Made by getdls.
+version = 6

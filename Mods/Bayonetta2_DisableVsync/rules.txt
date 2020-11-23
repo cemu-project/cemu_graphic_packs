@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010172600,0005000010172700,000500001011B900
-name = No Vsync 
-path = "Bayonetta 2/Mods/No Vsync"
-description = Disables Vsync, cutscene timing
-version = 4

@@ -1,142 +1,171 @@
 [Definition]
 titleIds = 0005000010172600,0005000010172700,000500001011B900
-name = Resolution
-path = "Bayonetta 2/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Slashiee and getdls.
-version = 4
+name = Graphic Options
+path = "Bayonetta 2/Graphics"
+description = Allows you to change the game's resolution, shadow quality, and anisotropic filtering quality.|Made by Slashiee and getdls.
+version = 6
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$shadowQuality = 1
+$anisotropy = 1
 
-# Performance
+# Resolutions
+
+[Preset]
+name = 320x180
+category = Resolution
+$width = 320
+$height = 180
 
 [Preset]
 name = 640x360
+category = Resolution
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
+
+[Preset]
+name = 854x480
+category = Resolution
+$width = 854
+$height = 480
 
 [Preset]
 name = 960x540
+category = Resolution
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
 
-# Common HD Resolutions
+[Preset]
+name = 1280x720
+category = Resolution
+default = 1
 
 [Preset]
 name = 1600x900
+category = Resolution
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 1920x1080
+category = Resolution
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 2560x1440
+category = Resolution
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 3200x1800
+category = Resolution
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 3840x2160
+category = Resolution
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 5120x2880
+category = Resolution
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 7680x4320
+category = Resolution
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
-name = -- 21:9 -- resolutions 
+name = 2560x1080 (21:9)
+category = Resolution
 $width = 2560
-$height = 720
-$gameWidth = 1280
-$gameHeight = 720
-
-
-[Preset]
-name = 2560x720 (21:9)
-$width = 2560
-$height = 720
-$gameWidth = 1280
-$gameHeight = 720
+$height = 1080
 
 [Preset]
 name = 3440x1440 (21:9)
+category = Resolution
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 5120x2160 (21:9)
+category = Resolution
 $width = 5120
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
-[Preset] # Should work fine on a 1070 and fixes most of horizontal shimmering
-name = --- SSAA res Tweaks - Set scaling to Stretch
-$width = 1920
-$height = 2160
-$gameWidth = 1280
-$gameHeight = 720
+# Shadow Quality
 
 [Preset]
-name = 1920x1080 (Vertical 200%, 2160)
-$width = 1920
-$height = 2160
-$gameWidth = 1280
-$gameHeight = 720
+name = Low
+category = Shadow Quality
+$shadowQuality = 0.5
 
 [Preset]
-name = 2560x1440 (Vertical 200%, 1440)
-$width = 2560
-$height = 2880
-$gameWidth = 1280
-$gameHeight = 720
+name = Medium
+category = Shadow Quality
+default = 1
 
 [Preset]
-name = 3840x2160 (Vertical 200%, 4320)
-$width = 3840
-$height = 4320
-$gameWidth = 1280
-$gameHeight = 720
+name = High
+category = Shadow Quality
+$shadowQuality = 2
 
-#Colour depth 
+[Preset]
+name = Ultra
+category = Shadow Quality
+$shadowQuality = 3
+
+[Preset]
+name = Extreme
+category = Shadow Quality
+$shadowQuality = 4
+
+# Anisotropic Filtering Quality
+
+[Preset]
+name = 1x
+category = Anisotropic Filtering Quality
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering Quality
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering Quality
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering Quality
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering Quality
+$anisotropy = 16
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+tileModesExcluded = 0x001 # ignore cpu processed textures
+formatsExcluded = 0x001,0x019,0x01a,0x01f,0x122,0x806,0x80e,0x816,0x81e,0x820,0x823 # ignore viewports and cubemaps
+overwriteAnisotropy = $anisotropy
+
+# Color Depth 
 
 [TextureRedefine]
 width = 1280
@@ -174,7 +203,9 @@ height = 176
 formats = 0x01a
 overwriteFormat = 0x01f
 
-[TextureRedefine] # Game Resolution
+# Texture Scaling
+
+[TextureRedefine]
 width = 1280
 height = 720
 tileModesExcluded = 0x001
@@ -260,16 +291,25 @@ height = 32
 overwriteWidth = ($width / $gameWidth) * 48
 overwriteHeight = ($height / $gameHeight) * 32
 
-#[TextureRedefine] # particles
-#width = 8
-#height = 8
-#formats = 0x01a
-#overwriteWidth = ($width / $gameWidth) * 8
-#overwriteHeight = ($height / $gameHeight) * 8
-#
-#[TextureRedefine] # grading?
-#width = 4
-#height = 4
-#formats = 0x80e
-#overwriteWidth = ($width / $gameWidth) * 4
-#overwriteHeight = ($height / $gameHeight) * 4
+# Shadows and Dynamic Shadows
+
+[TextureRedefine]
+width = 1024
+height = 2048
+formats = 0x5,0x11
+overwriteWidth = $shadowQuality * 1024
+overwriteHeight = $shadowQuality * 2048
+
+# [TextureRedefine] # particles (check its depth and tilemode)
+# width = 8
+# height = 8
+# formats = 0x01a
+# overwriteWidth = ($width / $gameWidth) * 8
+# overwriteHeight = ($height / $gameHeight) * 8
+
+# [TextureRedefine] # grading? (check its depth and tilemode)
+# width = 4
+# height = 4
+# formats = 0x80e
+# overwriteWidth = ($width / $gameWidth) * 4
+# overwriteHeight = ($height / $gameHeight) * 4
