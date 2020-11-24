@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
-name = 60FPS during 3/4 Player Splitscreen
+name = 60FPS for 3/4 Player Splitscreen
 path = "Mario Kart 8/Mods/60FPS Splitscreen"
-description = Forces the game to run at 60FPS instead of the 30FPS in 3/4 player splitscreen.|In those splitscreen modes, it normally alternates which screen is being updated each frame. This forces it to draw all screen every frame instead.|Made by theboy181 and Xalphenos
+description = Forces the game to run at 60FPS instead of 30FPS in 3/4 player splitscreen.|In those splitscreen modes, it normally alternates which screen is being updated each frame. This mod forces it to draw all the screens every frame instead.|Made by theboy181 and Xalphenos.
 version = 6
