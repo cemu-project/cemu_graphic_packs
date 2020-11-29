@@ -2,5 +2,5 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = No HUD
 path = "Splatoon/Mods/No HUD"
-description = Removes the HUD from the game.|Made by Xalphenos and Slashiee.
+description = Removes the HUD from the game.|Made by Xalphenos and M&M.
 version = 6

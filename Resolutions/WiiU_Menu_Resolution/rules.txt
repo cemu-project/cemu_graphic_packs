@@ -2,7 +2,7 @@
 titleIds = 0005001010040000,0005001010040100,0005001010040200
 name = Resolution
 path = "Wii U/Menu/Graphics/Resolution"
-description = Changes the resolution of the application. Made by Slashiee.
+description = Changes the resolution of the application. Made by M&M.
 version = 4
 
 [Preset]

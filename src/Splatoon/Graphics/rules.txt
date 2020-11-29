@@ -2,7 +2,7 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Graphic Options
 path = "Splatoon/Graphics"
-description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, bloom amount and anisotropic filtering quality.|Made by Slashiee and Xalphenos.
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, bloom amount and anisotropic filtering quality.|Made by M&M and Xalphenos.
 version = 6
 
 [Default]

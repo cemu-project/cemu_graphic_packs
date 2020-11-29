@@ -2,7 +2,7 @@
 titleIds = 000500001011AF00,0005000010136300,00050000101DD600
 name = Resolution
 path = "BIT.TRIP Presents... Runner2: Future Legend of Rhythm Alien/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Slashiee.
+description = Changes the resolution of the game. Made by M&M.
 version = 4
 
 [Preset]

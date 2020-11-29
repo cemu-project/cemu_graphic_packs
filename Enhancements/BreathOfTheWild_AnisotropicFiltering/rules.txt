@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Anisotropic Filtering
 path = "The Legend of Zelda: Breath of the Wild/Enhancements/Anisotropic Filtering"
-description = Requires Cemu 1.21.3 or above|Allows adjustment of anisotropic filtering on geometry.|Has a minimal performance impact.|Made by Slashiee.
+description = Requires Cemu 1.21.3 or above|Allows adjustment of anisotropic filtering on geometry.|Has a minimal performance impact.|Made by M&M.
 version = 6
 
 [Default]

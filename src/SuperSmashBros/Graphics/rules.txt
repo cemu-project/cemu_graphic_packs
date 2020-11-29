@@ -2,7 +2,7 @@
 titleIds = 0005000010110E00,0005000010145000,0005000010144F00
 name = Graphic Options
 path = "Super Smash Bros. for Wii U/Graphics"
-description = Allows you to change the game's resolution, shadow quality and anisotropic filtering quality.|Made by Slashiee.
+description = Allows you to change the game's resolution, shadow quality and anisotropic filtering quality.|Made by M&M.
 version = 6
 
 [Default]
