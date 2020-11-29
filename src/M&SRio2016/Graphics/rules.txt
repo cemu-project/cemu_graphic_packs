@@ -1,92 +1,204 @@
 [Definition]
 titleIds = 0005000010190300,00050000101E5300,00050000101E5400
-name = Resolution
-path = "Mario & Sonic at the Rio 2016 Olympic Games/Graphics/Resolution"
-description = Changes the resolution of the game. Known issues: Lower resolution results in a "deep-fried" look. Depth of field and bloom needs shader edits. Made by Slashiee.
-version = 4
+name = Graphic Options
+path = "Mario & Sonic at the Rio 2016 Olympic Games/Graphics"
+description = Allows you to change the game's TV resolution, gamepad resolution and anisotropic filtering quality.|Made by Slashiee.
+version = 6
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
+$padWidth = 854
+$padHeight = 480
 $gameWidth = 1280
 $gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$anisotropy = 1
 
-// Performance
+# TV Resolution
 
 [Preset]
 name = 320x180
+category = TV Resolution
 $width = 320
 $height = 180
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 640x360
+category = TV Resolution
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
+
+[Preset]
+name = 854x480
+category = TV Resolution
+$width = 854
+$height = 480
 
 [Preset]
 name = 960x540
+category = TV Resolution
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
 
-// Common HD Resolutions
+[Preset]
+name = 1280x720
+category = TV Resolution
+default = 1
 
 [Preset]
 name = 1600x900
+category = TV Resolution
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 1920x1080
+category = TV Resolution
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 2560x1440
+category = TV Resolution
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 3200x1800
+category = TV Resolution
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 3840x2160
+category = TV Resolution
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 5120x2880
+category = TV Resolution
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
 name = 7680x4320
+category = TV Resolution
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
 
-[TextureRedefine] # Game Resolution
+# Gamepad Resolution
+
+[Preset]
+name = 320x180
+category = Gamepad Resolution
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+name = 640x360
+category = Gamepad Resolution
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+name = 854x480
+category = Gamepad Resolution
+default = 1
+
+[Preset]
+name = 960x540
+category = Gamepad Resolution
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+name = 1280x720
+category = Gamepad Resolution
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+name = 1600x900
+category = Gamepad Resolution
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+name = 1920x1080
+category = Gamepad Resolution
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+name = 2560x1440
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+name = 3200x1800
+category = Gamepad Resolution
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+name = 3840x2160
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+name = 5120x2880
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+name = 7680x4320
+category = Gamepad Resolution
+$padWidth = 7680
+$padHeight = 4320
+
+# Anisotropic Filtering Quality
+
+[Preset]
+name = 1x
+category = Anisotropic Filtering Quality
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering Quality
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering Quality
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering Quality
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering Quality
+$anisotropy = 16
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+tileModesExcluded = 0x001 # ignore cpu processed textures
+formatsExcluded = 0x001,0x019,0x01a,0x01f,0x122,0x806,0x80e,0x816,0x820 # ignore viewports and cubemaps
+overwriteAnisotropy = $anisotropy
+
+# Texture Redefines
+
+[TextureRedefine]
 width = 1280
 height = 720
 formatsExcluded = 0x31,0x33
@@ -276,8 +388,16 @@ formats = 0x816,0x80e
 overwriteWidth = ($width / $gameWidth) * 1
 overwriteHeight = ($height / $gameHeight) * 1
 
-[TextureRedefine] # Gamepad Resolution
+# Gamepad Resolution
+
+[TextureRedefine]
 width = 864
 height = 480
-overwriteWidth = ($width / $gameWidth) * 864
-overwriteHeight = ($height / $gameHeight) * 480
+overwriteWidth = ($padWidth / $gamePadWidth) * 864
+overwriteHeight = ($padHeight / $gamePadHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = ($padWidth / $gamePadWidth) * 854
+overwriteHeight = ($padHeight / $gamePadHeight) * 480

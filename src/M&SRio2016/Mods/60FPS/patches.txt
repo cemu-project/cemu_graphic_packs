@@ -1,0 +1,12 @@
+[unison60FPS]
+moduleMatches = 0xD44C22E3
+
+_60fps = 0x00000000
+
+CodeCaveSize = 0x0c
+
+0X00000000 = lis r3,0x1000
+0X00000004 = lfs f0,0x45b0(r3)
+0X00000008 = blr
+
+0x0298aa0c = bla _60fps
