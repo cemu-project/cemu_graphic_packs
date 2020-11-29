@@ -1,6 +1,6 @@
 // Download latest version
 
-fetch("https://api.github.com/repos/slashiee/cemu_graphic_packs/releases/latest").then(fetchRes => fetchRes.json()).then(fetchJson => {
+fetch("https://api.github.com/repos/ActualMandM/cemu_graphic_packs/releases/latest").then(fetchRes => fetchRes.json()).then(fetchJson => {
 	console.debug("Fetched releases from github...");
 	document.getElementById("primary_download").href = fetchJson.assets[0].browser_download_url;
 	return;
@@ -27,8 +27,7 @@ const altNames = {
 	"breath of the dicknut": "The Legend of Zelda: Breath of the Wild",
 	"f-zero": "FAST Racing NEO",
 	"m&m": "Sonic",
-	"michele": "Sonic",
-	"slashiee": "Sonic",
+	"mimi": "Sonic",
 	"best game": "Meme Run"
 };
 
