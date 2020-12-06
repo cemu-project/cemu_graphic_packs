@@ -150,6 +150,36 @@ category = TV Resolution
 $width = 5120
 $height = 3200
 
+[Preset]
+name = 3840x1080 (32:9)
+category = TV Resolution
+$width = 3840
+$height = 1080
+
+[Preset]
+name = 5120x1440 (32:9)
+category = TV Resolution
+$width = 5120
+$height = 1440
+
+[Preset]
+name = 6400x1800 (32:9)
+category = TV Resolution
+$width = 6400
+$height = 1800
+
+[Preset]
+name = 7680x2160 (32:9)
+category = TV Resolution
+$width = 7680
+$height = 2160
+
+[Preset]
+name = 10240x2880 (32:9)
+category = TV Resolution
+$width = 10240
+$height = 2880
+
 # Gamepad Resolution
 
 [Preset]
@@ -276,6 +306,36 @@ name = 5120x3200 (16:10)
 category = Gamepad Resolution
 $padWidth = 5120
 $padHeight = 3200
+
+[Preset]
+name = 3840x1080 (32:9)
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 1080
+
+[Preset]
+name = 5120x1440 (32:9)
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 1440
+
+[Preset]
+name = 6400x1800 (32:9)
+category = Gamepad Resolution
+$padWidth = 6400
+$padHeight = 1800
+
+[Preset]
+name = 7680x2160 (32:9)
+category = Gamepad Resolution
+$padWidth = 7680
+$padHeight = 2160
+
+[Preset]
+name = 10240x2880 (32:9)
+category = Gamepad Resolution
+$padWidth = 10240
+$padHeight = 2880
 
 # Shadow Quality
 
