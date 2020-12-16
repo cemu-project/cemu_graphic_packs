@@ -2,7 +2,7 @@
 titleIds = 0005000010175B00,0005000010177800,0005000010191F00
 name = Uncapped Framerate
 path = "Sonic Boom: Rise of Lyric/Mods/Uncapped Framerate"
-description = This patches out the framerate cap that the game has in place. Performance may increase from changing the recompiler to be dual or triple core. Made by M&M.
+description = This patches out the framerate cap that the game has in place. Performance may increase from changing the recompiler to be dual or triple core. Made by M&&M.
 version = 4
 
 [Preset]

@@ -2,7 +2,7 @@
 titleIds = 000500001012f000,00050000101d6000,00050000101e4100,00050000101FED00
 name = Resolution
 path = "FAST Racing NEO/Graphics/Resolution"
-description = Changes the resolution of the game. Made by M&M and getdls.
+description = Changes the resolution of the game. Made by M&&M and getdls.
 version = 4
 
 [Preset]

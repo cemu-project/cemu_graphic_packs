@@ -2,7 +2,7 @@
 titleIds = 0005000010175B00,0005000010177800,0005000010191F00
 name = Shadow Resolution
 path = "Sonic Boom: Rise of Lyric/Graphics/Shadow Resolution"
-description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution. Made by M&M.
+description = Note: Increasing shadow resolution is known to increase VRAM usage directly. Lowering this might give you a good boost in performance if you're limited on VRAM but makes shadows blockier. Medium is the original resolution. Made by M&&M.
 version = 4
 
 [Preset]

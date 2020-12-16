@@ -2,7 +2,7 @@
 titleIds = 000500001012BC00,000500001012BD00,000500001012BE00,000500021012BD01,000500021012BE01
 name = Resolution
 path = "Pikmin 3/Graphics/Resolution"
-description = Changes the resolution of the game. Made by M&M and Crementif.
+description = Changes the resolution of the game. Made by M&&M and Crementif.
 version = 4
 
 [Preset]

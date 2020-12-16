@@ -2,7 +2,7 @@
 titleIds = 0005000010175B00,0005000010177800,0005000010191F00
 name = Resolution
 path = "Sonic Boom: Rise of Lyric/Graphics/Resolution"
-description = Changes the resolution of the game. Made by M&M.
+description = Changes the resolution of the game. Made by M&&M.
 version = 4
 
 [Preset]

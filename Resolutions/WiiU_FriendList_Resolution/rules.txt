@@ -2,7 +2,7 @@
 titleIds = 000500301001500A,000500301001510A,000500301001520A
 name = Resolution
 path = "Wii U/Friend List/Graphics/Resolution"
-description = Changes the resolution of the application. Made by M&M.
+description = Changes the resolution of the application. Made by M&&M.
 version = 4
 
 [Preset]
