@@ -10,8 +10,8 @@ moduleMatches = 0x6CAEA914, 0xFA29C89F
 #remove check for mii data
 0x024D71C4 = b .+0xE8
 
-[NSMBUv0US]
-moduleMatches = 0xA7A5ECF1
+[NSMBUv0USv0EU]
+moduleMatches = 0xA7A5ECF1, 0xC7B938AD
 
 #remove check for mii data
 0x024BDE70 = b .+0xE8
