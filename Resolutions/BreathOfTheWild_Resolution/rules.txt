@@ -171,6 +171,46 @@ $gameWidth = 1280
 $gameHeight = 720
 $heightfix = 0
 
+[Preset]
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
+name = 7680x2160 (32:9)
+$width = 7680
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
+name = 10240x2880 (32:9)
+$width = 10240
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
+[Preset]
+name = 15360x4320 (32:9)
+$width = 15360
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$heightfix = 0
+
 # Common 16:10 Resolutions
 
 [Preset]
