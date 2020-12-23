@@ -22,6 +22,7 @@ $nrOfPasses:int = 8
 $blurStart = 0.975
 $blurWidth = 0.025
 $levelOfDetail = 1
+$advancedOpt = 0
 
 # TV Resolution
 
@@ -364,105 +365,6 @@ name = Extreme
 category = Shadow Quality
 $shadowQuality = 4
 
-# Anti-Aliasing
-
-[Preset]
-name = Off
-category = Anti-Aliasing
-$fxaa:int = 0
-
-[Preset]
-name = On
-category = Anti-Aliasing
-default = 1
-
-# Bloom
-
-[Preset]
-name = Off
-category = Bloom Amount
-$bloom = 0
-
-[Preset]
-name = Low
-category = Bloom Amount
-$bloom = 0.5
-
-[Preset]
-name = Normal
-category = Bloom Amount
-default = 1
-
-[Preset]
-name = High
-category = Bloom Amount
-$bloom = 1.25
-
-[Preset]
-name = Ultra
-category = Bloom Amount
-$bloom = 1.5
-
-# Motion Blur
-
-[Preset]
-name = Off
-category = Motion Blur Quality
-$nrOfPasses:int = 0
-
-[Preset]
-name = Low
-category = Motion Blur Quality
-$nrOfPasses:int = 4
-
-[Preset]
-name = Normal
-category = Motion Blur Quality
-default = 1
-
-[Preset]
-name = High
-category = Motion Blur Quality
-$nrOfPasses:int = 16
-$blurStart = 0.93
-$blurWidth = 0.1
-
-[Preset]
-name = Ultra
-category = Motion Blur Quality
-$nrOfPasses:int = 24
-$blurStart = 0.93
-$blurWidth = 0.1
-
-[Preset]
-name = Extreme
-category = Motion Blur Quality
-$nrOfPasses:int = 32
-$blurStart = 0.93
-$blurWidth = 0.1
-
-# Level of Detail
-
-[Preset]
-name = Low
-category = Level of Detail
-$levelOfDetail = 0.5
-
-[Preset]
-name = Normal
-category = Level of Detail
-default = 1
-
-[Preset]
-name = High
-category = Level of Detail
-$levelOfDetail = 2
-
-[Preset]
-name = Ultra
-category = Level of Detail
-$levelOfDetail = 3
-
 # Anisotropic Filtering Quality
 
 [Preset]
@@ -489,6 +391,134 @@ $anisotropy = 8
 name = 16x
 category = Anisotropic Filtering Quality
 $anisotropy = 16
+
+# Advanced Options
+
+[Preset]
+name = Disabled
+category = Advanced Options
+default = 1
+
+[Preset]
+name = Enabled
+category = Advanced Options
+$advancedOpt = 1
+
+# Anti-Aliasing
+
+[Preset]
+name = Off
+category = Anti-Aliasing
+condition = $advancedOpt == 1
+$fxaa:int = 0
+
+[Preset]
+name = On
+category = Anti-Aliasing
+condition = $advancedOpt == 1
+default = 1
+
+# Bloom
+
+[Preset]
+name = Off
+category = Bloom Amount
+condition = $advancedOpt == 1
+$bloom = 0
+
+[Preset]
+name = Low
+category = Bloom Amount
+condition = $advancedOpt == 1
+$bloom = 0.5
+
+[Preset]
+name = Normal
+category = Bloom Amount
+condition = $advancedOpt == 1
+default = 1
+
+[Preset]
+name = High
+category = Bloom Amount
+condition = $advancedOpt == 1
+$bloom = 1.25
+
+[Preset]
+name = Ultra
+category = Bloom Amount
+condition = $advancedOpt == 1
+$bloom = 1.5
+
+# Motion Blur
+
+[Preset]
+name = Off
+category = Motion Blur Quality
+condition = $advancedOpt == 1
+$nrOfPasses:int = 0
+
+[Preset]
+name = Low
+category = Motion Blur Quality
+condition = $advancedOpt == 1
+$nrOfPasses:int = 4
+
+[Preset]
+name = Normal
+category = Motion Blur Quality
+condition = $advancedOpt == 1
+default = 1
+
+[Preset]
+name = High
+category = Motion Blur Quality
+condition = $advancedOpt == 1
+$nrOfPasses:int = 16
+$blurStart = 0.93
+$blurWidth = 0.1
+
+[Preset]
+name = Ultra
+category = Motion Blur Quality
+condition = $advancedOpt == 1
+$nrOfPasses:int = 24
+$blurStart = 0.93
+$blurWidth = 0.1
+
+[Preset]
+name = Extreme
+category = Motion Blur Quality
+condition = $advancedOpt == 1
+$nrOfPasses:int = 32
+$blurStart = 0.93
+$blurWidth = 0.1
+
+# Level of Detail
+
+[Preset]
+name = Low
+category = Level of Detail
+condition = $advancedOpt == 1
+$levelOfDetail = 0.5
+
+[Preset]
+name = Normal
+category = Level of Detail
+condition = $advancedOpt == 1
+default = 1
+
+[Preset]
+name = High
+category = Level of Detail
+condition = $advancedOpt == 1
+$levelOfDetail = 2
+
+[Preset]
+name = Ultra
+category = Level of Detail
+condition = $advancedOpt == 1
+$levelOfDetail = 3
 
 # Anisotropic Filtering
 
