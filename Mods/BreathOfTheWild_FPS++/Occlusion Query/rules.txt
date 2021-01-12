@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = CPU Occlusion Query
-path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++/NPC Stutter Fix (CPU Occlusion Query)"
-description = Changes occlusion queries from GPU to CPU type. This is a workaround for the NPC or creatures stuttering at a distance when full sync at GX2DrawDone is disabled. If you disable that option for extra FPS, you will need to enable the LWZX workaround to fix (most) crashes if you disable this.
-version = 4

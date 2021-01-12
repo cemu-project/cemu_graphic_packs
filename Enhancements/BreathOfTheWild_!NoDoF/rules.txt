@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = "No Depth of Field"
-path = "The Legend of Zelda: Breath of the Wild/Enhancements/No Depth of Field"
-description = Disables depth of field, may possibly improve performance. Made by BSoD Gaming.
-version = 4

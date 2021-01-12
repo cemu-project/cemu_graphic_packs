@@ -1,9 +1,0 @@
-[BotwV208]
-moduleMatches = 0x6267BFD0
-
-0x024ACBF4 = fsub f31, f31, f31; Inf Weapons, Bows and Shields (except burn damage and throwing weapon)
-
-[BotwV176V192]
-moduleMatches = 0xFD091F9F,0xD472D8A5
-
-0x024AC850 = fsub f31, f31, f31; Inf Weapons, Bows and Shields (except burn damage and throwing weapon)

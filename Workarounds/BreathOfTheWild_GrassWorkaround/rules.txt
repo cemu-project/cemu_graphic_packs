@@ -1,7 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Grass Swaying workaround for missing Vulkan extension
-path = "The Legend of Zelda: Breath of the Wild/Workarounds/Grass Swaying (Vulkan)"
-description = Workaround pack for graphic drivers that don't support VK_EXT_custom_border_color. Fixes some grass swaying incorrectly in the distance. Made by Exzap.
-rendererFilter = vulkan
-version = 4

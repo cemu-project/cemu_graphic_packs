@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Faster Arrow Draw
-path = "The Legend of Zelda: Breath of the Wild/Mods/Cheats/Faster Arrow Draw"
-description = BotW Cheats by C313571N and Xalphenos
-version = 4
