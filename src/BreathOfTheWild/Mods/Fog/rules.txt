@@ -1,0 +1,519 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Fog and Mist
+path = "The Legend of Zelda: Breath of the Wild/Mods/Fog and Mist"
+description = Allows you to make various fog types in the game less visible or change their colors.||Made by Skalfate.
+version = 6
+
+[Default]
+$setting:int = 0
+
+$enableDistanceFogColor:int = 1
+$distanceFogRed = 1.0
+$distanceFogGreen = 1.0
+$distanceFogBlue = 1.0
+$distanceFogOpacity = 1.0
+
+$enableFogCloudsColor:int = 1
+$fogCloudsRed = 1.0
+$fogCloudsGreen = 1.0
+$fogCloudsBlue = 1.0
+$fogCloudsOpacity = 1.0
+
+$enableCastleFogColor:int = 1
+$castleFogRed = 1.0
+$castleFogGreen = 1.0
+$castleFogBlue = 1.0
+$castleFogOpacity = 1.0
+
+$enableGanonAuraColor:int = 1
+$ganonAuraRed = 1.0
+$ganonAuraGreen = 1.0
+$ganonAuraBlue = 1.0
+$ganonAuraOpacity = 1.0
+
+# Setting Selector
+
+[Preset]
+name = Distance Fog
+category = Fog Settings
+default = 1
+$setting:int = 0
+
+[Preset]
+name = Mist Clouds
+category = Fog Settings
+$setting:int = 1
+
+[Preset]
+name = Hyrule Castle Fog/Aura
+category = Fog Settings
+$setting:int = 2
+
+
+# Distance Fog
+
+[Preset]
+name = 100% Opacity (Default)
+category = Distance Fog Visibility
+condition = $setting == 0
+default = 1
+$distanceFogOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.1
+
+[Preset]
+name = 0% Opacity
+category = Distance Fog Visibility
+condition = $setting == 0
+$distanceFogOpacity = 0.0
+
+[Preset]
+name = Normal (Default)
+category = Distance Fog Color
+condition = $setting == 0
+default = 1
+$enableDistanceFogColor:int = 0
+
+[Preset]
+name = Black Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 1.0
+$distanceFogGreen = 1.0
+$distanceFogBlue = 1.0
+
+[Preset]
+name = Gray Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 0.75
+$distanceFogGreen = 0.75
+$distanceFogBlue = 0.75
+
+[Preset]
+name = Navy Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 0.0
+$distanceFogGreen = 0.0
+$distanceFogBlue = 0.5
+
+[Preset]
+name = Blue Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 0.0
+$distanceFogGreen = 0.0
+$distanceFogBlue = 1.0
+
+[Preset]
+name = Cyan Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 0.0
+$distanceFogGreen = 0.5
+$distanceFogBlue = 0.5
+
+[Preset]
+name = Green Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 0.0
+$distanceFogGreen = 1.0
+$distanceFogBlue = 0.0
+
+[Preset]
+name = Red Fog
+category = Distance Fog Color
+condition = $setting == 0
+$distanceFogRed = 1.0
+$distanceFogGreen = 0.0
+$distanceFogBlue = 0.0
+
+# Fog Clouds
+
+[Preset]
+name = 100% Opacity (Default)
+category = Fog Clouds Visibility
+condition = $setting == 1
+default = 1
+$fogCloudsOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.1
+
+[Preset]
+name = 0% Opacity
+category = Fog Clouds Visibility
+condition = $setting == 1
+$fogCloudsOpacity = 0.0
+
+[Preset]
+name = Normal (Default)
+category = Fog Clouds Color
+condition = $setting == 1
+default = 1
+$enableFogCloudsColor:int = 0
+
+[Preset]
+name = Black Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 1.0
+$fogCloudsGreen = 1.0
+$fogCloudsBlue = 1.0
+
+[Preset]
+name = Gray Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 0.75
+$fogCloudsGreen = 0.75
+$fogCloudsBlue = 0.75
+
+[Preset]
+name = Navy Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 0.0
+$fogCloudsGreen = 0.0
+$fogCloudsBlue = 0.5
+
+[Preset]
+name = Blue Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 0.0
+$fogCloudsGreen = 0.0
+$fogCloudsBlue = 1.0
+
+[Preset]
+name = Cyan Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 0.0
+$fogCloudsGreen = 0.5
+$fogCloudsBlue = 0.5
+
+[Preset]
+name = Green Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 0.0
+$fogCloudsGreen = 1.0
+$fogCloudsBlue = 0.0
+
+[Preset]
+name = Red Fog
+category = Fog Clouds Color
+condition = $setting == 1
+$fogCloudsRed = 1.0
+$fogCloudsGreen = 0.0
+$fogCloudsBlue = 0.0
+
+# Hyrule Castle Fog
+
+[Preset]
+name = 100% Opacity (Default)
+category = Castle Fog Visibility
+condition = $setting == 2
+default = 1
+$castleFogOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.1
+
+[Preset]
+name = 0% Opacity
+category = Castle Fog Visibility
+condition = $setting == 2
+$castleFogOpacity = 0.0
+
+[Preset]
+name = Normal (Default)
+category = Castle Fog Color
+condition = $setting == 2
+default = 1
+$enableCastleFogColor:int = 0
+
+[Preset]
+name = Black Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 1.0
+$castleFogGreen = 1.0
+$castleFogBlue = 1.0
+
+[Preset]
+name = Gray Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 0.75
+$castleFogGreen = 0.75
+$castleFogBlue = 0.75
+
+[Preset]
+name = Navy Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 0.0
+$castleFogGreen = 0.0
+$castleFogBlue = 0.5
+
+[Preset]
+name = Blue Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 0.0
+$castleFogGreen = 0.0
+$castleFogBlue = 1.0
+
+[Preset]
+name = Cyan Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 0.0
+$castleFogGreen = 0.5
+$castleFogBlue = 0.5
+
+[Preset]
+name = Green Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 0.0
+$castleFogGreen = 1.0
+$castleFogBlue = 0.0
+
+[Preset]
+name = Red Fog
+category = Castle Fog Color
+condition = $setting == 2
+$castleFogRed = 1.0
+$castleFogGreen = 0.0
+$castleFogBlue = 0.0
+
+
+# Hyrule Castle Ganon's Aura
+
+[Preset]
+name = 300% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 2.0
+
+[Preset]
+name = 200% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 2.0
+
+[Preset]
+name = 150% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 1.5
+
+[Preset]
+name = 100% Opacity (Default)
+category = Ganon's Aura Visibility
+condition = $setting == 2
+default = 1
+$ganonAuraOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.2
+
+[Preset]
+name = 0% Opacity
+category = Ganon's Aura Visibility
+condition = $setting == 2
+$ganonAuraOpacity = 0.0
+
+[Preset]
+name = Normal (Default)
+category = Ganon's Aura Color
+condition = $setting == 2
+default = 1
+$enableGanonAuraColor:int = 0
+
+[Preset]
+name = Black Aura
+category = Ganon's Aura Color
+condition = $setting == 2
+$ganonAuraRed = 1.0
+$ganonAuraGreen = 1.0
+$ganonAuraBlue = 1.0
+
+[Preset]
+name = Navy Aura
+category = Ganon's Aura Color
+condition = $setting == 2
+$ganonAuraRed = 0.0
+$ganonAuraGreen = 0.0
+$ganonAuraBlue = 0.5
+
+[Preset]
+name = Blue Aura
+category = Ganon's Aura Color
+condition = $setting == 2
+$ganonAuraRed = 0.0
+$ganonAuraGreen = 0.0
+$ganonAuraBlue = 1.0
+
+[Preset]
+name = Cyan Aura
+category = Ganon's Aura Color
+condition = $setting == 2
+$ganonAuraRed = 0.0
+$ganonAuraGreen = 0.5
+$ganonAuraBlue = 0.5
+
+[Preset]
+name = Green Aura
+category = Ganon's Aura Color
+condition = $setting == 2
+$ganonAuraRed = 0.0
+$ganonAuraGreen = 1.0
+$ganonAuraBlue = 0.0
+
+[Preset]
+name = Red Aura
+category = Ganon's Aura Color
+condition = $setting == 2
+$ganonAuraRed = 1.0
+$ganonAuraGreen = 0.0
+$ganonAuraBlue = 0.0

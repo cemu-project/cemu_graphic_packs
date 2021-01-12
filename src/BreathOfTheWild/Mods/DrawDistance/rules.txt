@@ -1,0 +1,151 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Draw Distance
+path = "The Legend of Zelda: Breath of the Wild/Mods/Draw Distance"
+description = Extend the draw distance of objects and entities in the game, which will see a small performance decrease when making it higher. Lowering this will not offer more performance.|You can also make distant textures appear as higher resolution variants.||Made By Crementif.
+version = 6
+
+[Default]
+$actor = 1.0
+$object = 1.0
+$textureLODBias:int = 0
+
+
+# Actor Draw Distance
+
+[Preset]
+name = Very Low (0.5x)
+category = NPC, Enemies And Other Entities
+$actor = 0.5
+
+[Preset]
+name = Low (0.75x)
+category = NPC, Enemies And Other Entities
+$actor = 0.75
+
+[Preset]
+name = Medium (1x)
+category = NPC, Enemies And Other Entities
+default = 1
+$actor = 1.0
+
+[Preset]
+name = High (1.25x)
+category = NPC, Enemies And Other Entities
+$actor = 1.25
+
+[Preset]
+name = Ultra (1.5x)
+category = NPC, Enemies And Other Entities
+$actor = 1.5
+
+[Preset]
+name = Extreme (2x, requires Extended Memory pack!)
+category = NPC, Enemies And Other Entities
+$actor = 2
+
+# Objects Draw Distance
+
+[Preset]
+name = Potato (0.2x)
+category = Trees, Bushes, Landscape And Other Objects (Experimental)
+$object = 0.2
+
+[Preset]
+name = Very Low (0.5x)
+category = Trees, Bushes, Landscape And Other Objects (Experimental)
+$object = 0.5
+
+[Preset]
+name = Low (0.75x)
+category = Trees, Bushes, Landscape And Other Objects (Experimental)
+$object = 0.75
+
+[Preset]
+name = Medium (1x)
+category = Trees, Bushes, Landscape And Other Objects (Experimental)
+default = 1
+$object = 1.0
+
+[Preset]
+name = High (1.25x)
+category = Trees, Bushes, Landscape And Other Objects (Experimental)
+$object = 1.25
+
+[Preset]
+name = Ultra (1.5x, requires Extended Memory pack!)
+category = Trees, Bushes, Landscape And Other Objects (Experimental)
+$object = 1.5
+
+
+# Texture LOD Bias
+
+[Preset]
+name = Lowest (+16, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = +16
+
+[Preset]
+name = Extremely low (+8, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = +8
+
+[Preset]
+name = Very low (+4, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = +4
+
+[Preset]
+name = Much lower (+3, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = +3
+
+[Preset]
+name = Lower (+2)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = +2
+
+[Preset]
+name = Slightly lower (+1)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = +1
+
+[Preset]
+name = Normal (Default)
+category = Texture Distance Detail (LOD)
+default = 1
+
+[Preset]
+name = Slightly higher (-1)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = -1
+
+[Preset]
+name = Higher (-2)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = -2
+
+[Preset]
+name = Much higher(-3)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = -3
+
+[Preset]
+name = Very high (-4, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = -4
+
+[Preset]
+name = Extremely high (-8, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = -8
+
+[Preset]
+name = Highest (-16, Not Recommended)
+category = Texture Distance Detail (LOD)
+$textureLODBias:int = -16
+
+
+[TextureRedefine]
+formats = 0x31,0x32,0x34,0x35,0x431,0x432,0x433,0x234,0x235
+overwriteRelativeLodBias = $textureLODBias

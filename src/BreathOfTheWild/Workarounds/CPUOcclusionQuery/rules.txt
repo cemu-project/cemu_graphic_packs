@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = NPC Stuttering Fix (OpenGL)
+path = "The Legend of Zelda: Breath of the Wild/Workarounds/NPC Stuttering Fix (OpenGL)"
+description = Prevents NPC stuttering at a distance when Full sync at GX2DrawDone() is disabled. Only applicable for OpenGL.||Made by Xalphenos.
+rendererFilter = opengl
+version = 6

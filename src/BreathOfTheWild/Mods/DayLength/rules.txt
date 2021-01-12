@@ -1,0 +1,80 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = Day Length
+path = "The Legend of Zelda: Breath of the Wild/Mods/Day Length"
+description = Changes the amount of real time that an in-game day takes.|Blood moons might not appear when you change the day length.||Made by chrispurnell.
+version = 6
+
+[Default]
+$timeScale = 1
+
+
+[Preset]
+name = 15 seconds
+category = Day Length
+$timeScale = 0.025
+
+[Preset]
+name = 30 seconds
+category = Day Length
+$timeScale = 0.05
+
+[Preset]
+name = 1 minutes
+category = Day Length
+$timeScale = 0.1
+
+[Preset]
+name = 6 minutes
+category = Day Length
+$timeScale = 0.25
+
+[Preset]
+name = 12 minutes
+category = Day Length
+$timeScale = 0.5
+
+[Preset]
+name = 24 minutes (Default)
+category = Day Length
+default = 1
+
+[Preset]
+name = 48 minutes
+category = Day Length
+$timeScale = 2
+
+[Preset]
+name = 72 minutes
+category = Day Length
+$timeScale = 3
+
+[Preset]
+name = 96 minutes
+category = Day Length
+$timeScale = 4
+
+[Preset]
+name = 2 hours
+category = Day Length
+$timeScale = 5
+
+[Preset]
+name = 4 hours
+category = Day Length
+$timeScale = 10
+
+[Preset]
+name = 12 hours
+category = Day Length
+$timeScale = 30
+
+[Preset]
+name = 24 hours
+category = Day Length
+$timeScale = 60
+
+[Preset]
+name = Freeze time
+category = Day Length
+$timeScale = 9999
