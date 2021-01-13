@@ -7,7 +7,7 @@ moduleMatches = 0x6267BFD0
 # Constants
 
 const_0.5:
-.float 30
+.float 0.5
 const_1:
 .float 1
 const_30:
@@ -101,14 +101,13 @@ lwz r11, 0xD8(r30)				; Check whether/what the current buffer settings are
 cmpwi r11, $frameAverageAmount	; Compare the previously $frameAverageAmount with the current $frameAverageAmount
 beq _calcAverageFPS				; Continue to calulating the average FPS if the previous settings are the same as the permanently set settings
 lis r12, fpsLimit@ha			; Load current FPS limit...
-lfs f10, fpsLimit@l(r12)		; ...into f12
+lfs f10, fpsLimit@l(r12)		; ...into f10
 lis r12, bufferStart@ha			; Load offset to the start of the averaging buffer...
 lwz r12, bufferStart@l(r12)		; ...into r12
 lis r3, bufferEnd@ha			; Load offset to the end of the averaging buffer...
 lwz r3, bufferEnd@l(r3)			; ...into r3
-addi r3, r3, 0x04
 add r11, r12, r30				; Make full offset by adding r30 (the empty buffer offset) to r12, which is the buffer offset.
-stfs f10, 0x0(r11)				; Store f12 to the address in r12 + 0x04 using this specific instruction, which also adds the 0x04 to r12
+stfs f10, 0x0(r11)				; Store f10 to the address in r12 + 0x04 using this specific instruction, which also adds the 0x04 to r12
 addi r12, r12, 0x04				; Add 0x04 to the buffer offset to make the next entry offset
 cmpw r12, r3					; Compare the current address offset in r12 with the address offset in r3
 ble .-0x10						; Loop back until the whole buffer is initialized with the value from f12
