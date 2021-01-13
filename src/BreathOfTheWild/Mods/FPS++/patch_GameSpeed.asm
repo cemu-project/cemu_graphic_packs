@@ -106,6 +106,7 @@ lis r12, bufferStart@ha			; Load offset to the start of the averaging buffer...
 lwz r12, bufferStart@l(r12)		; ...into r12
 lis r3, bufferEnd@ha			; Load offset to the end of the averaging buffer...
 lwz r3, bufferEnd@l(r3)			; ...into r3
+addi r3, r3, 0x04
 add r11, r12, r30				; Make full offset by adding r30 (the empty buffer offset) to r12, which is the buffer offset.
 stfs f10, 0x0(r11)				; Store f12 to the address in r12 + 0x04 using this specific instruction, which also adds the 0x04 to r12
 addi r12, r12, 0x04				; Add 0x04 to the buffer offset to make the next entry offset
@@ -133,7 +134,7 @@ lis r11, bufferEnd@ha			; Load offset to the end of the averaging buffer
 lwz r11, bufferEnd@l(r11)		; ...into r11
 addi r12, r12, 0x04				; Add 0x04 to the current entry offset to have the next entry offset
 cmpw r11, r12 					; Compare this new entry offset to the end offset
-bge .+0x0C						; Skip the next 2 lines if the next entry offset is smaller
+bgt .+0x0C						; Skip the next 2 lines if the next entry offset is smaller
 lis r12, bufferStart@ha			; Load start of the buffer offset...
 lwz r12, bufferStart@l(r12)		; ...into r12
 lis r3, bufferCurrEntry@ha		; Load current buffer entry
