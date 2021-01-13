@@ -93,6 +93,11 @@ category = Clarity
 $preset:int = 14
 
 [Preset]
+name = BSoD Gaming's Preset
+category = Clarity
+$preset:int = 15
+
+[Preset]
 name = User-Defined Preset
 category = Clarity
 $preset:int = 0
