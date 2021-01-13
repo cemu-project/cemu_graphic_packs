@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Enhancements
 path = "The Legend of Zelda: Breath of the Wild/Enhancements"
-description = Allows you to change post-processing effects and texture detail to enhance the picture.||Made by Kiri, Jamie, BSoD Gaming, M&&M and Pig.
+description = Allows you to change post-processing effects and texture detail to enhance the picture.||Made by Kiri, Jamie, M&&M, Pig, and clarity preset creators.
 version = 6
 
 [Default]
@@ -53,7 +53,7 @@ category = Clarity
 $preset:int = 3
 
 [Preset]
-name = BSoD Gaming's Preset
+name = t3nka Neutral+
 category = Clarity
 $preset:int = 2
 
