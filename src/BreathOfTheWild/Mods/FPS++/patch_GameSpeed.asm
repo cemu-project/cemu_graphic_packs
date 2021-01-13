@@ -47,18 +47,21 @@ averageFPS1Inv:
 averageSum:
 .float $fpsLimit*$frameAverageAmount
 
+initBuffer:
+.byte 0
+
 bufferStart:
-.ptr 0xDC
+.ptr 0xD8
 
 bufferCurrEntry:
-.ptr 0xDC
+.ptr 0xD8
 
 bufferEnd:
-.ptr 0xDC+(4*$frameAverageAmount)
+.ptr 0xD8+(4*$frameAverageAmount)
 
 ; Useful for trying potential FPS values. Need to set debugMode = 1 to enable the debugging in the interface and code.
 debugAddr:
-.ptr 0x1040CE78
+.ptr 0x00000000
 
 debugMultiplier:
 .float $debugMultiplier
@@ -95,11 +98,14 @@ lis r12, busSpeed@ha			; Load wii u bus speed...
 lfs f12, busSpeed@l(r12)		; ...into f12
 fmuls f10, f12, f10				; Multiply bus speed to have current fps in f10. (1/ticks)*bus speed
 
-; Initialize the circular buffer with default values
+; Initialize the circular buffer with default values whenever a setting gets changed
 _initializeAverageBuffer:
-lwz r11, 0xD8(r30)				; Check whether/what the current buffer settings are
-cmpwi r11, $frameAverageAmount	; Compare the previously $frameAverageAmount with the current $frameAverageAmount
+lis r12, initBuffer@ha			; Load the initBuffer variable to see whether the buffer has to be initialized/reset again
+lbz r11, initBuffer@l(r12)		; ...to check whether/what the current buffer settings are
+cmpwi r11, 1					; Compare the previously $frameAverageAmount with the current $frameAverageAmount
 beq _calcAverageFPS				; Continue to calulating the average FPS if the previous settings are the same as the permanently set settings
+li r11, 1						; Load "1" into r11
+stb r11, initBuffer@l(r12)		; Store that 1 into the initBuffer so that it will only initialize this once
 lis r12, fpsLimit@ha			; Load current FPS limit...
 lfs f10, fpsLimit@l(r12)		; ...into f10
 lis r12, bufferStart@ha			; Load offset to the start of the averaging buffer...
@@ -111,8 +117,6 @@ stfs f10, 0x0(r11)				; Store f10 to the address in r12 + 0x04 using this specif
 addi r12, r12, 0x04				; Add 0x04 to the buffer offset to make the next entry offset
 cmpw r12, r3					; Compare the current address offset in r12 with the address offset in r3
 ble .-0x10						; Loop back until the whole buffer is initialized with the value from f12
-li r11, $frameAverageAmount		; Load current $frameAverageAmount again...
-stw r11, 0xD8(r30)				; ...to store that value again in the permanent (doesn't change after reloading) memory
 
 ; Calculate the rolling average FPS over the last N amount of frames which are stored in the circular buffer
 _calcAverageFPS:
