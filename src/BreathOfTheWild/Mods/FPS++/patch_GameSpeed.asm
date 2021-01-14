@@ -36,13 +36,19 @@ averageFPS30:
 .float $fpsLimit
 
 averageFPS30Inv:
-.float $fpsLimit
+.float 900/$fpsLimit
 
 averageFPS1:
-.float 30/$fpsLimit
+.float $fpsLimit/30
 
 averageFPS1Inv:
-.float $fpsLimit/30
+.float 30/$fpsLimit
+
+averageFPS0.5:
+.float $fpsLimit/60
+
+averageFPS0.5Inv:
+.float 30/(2*$fpsLimit)
 
 averageSum:
 .float $fpsLimit*$frameAverageAmount
@@ -161,21 +167,38 @@ lis r11, averageFPS30@ha		; Store the calculated FPS...
 stfs f10, averageFPS30@l(r11)	; ...to replace constants that normally use 30
 
 ; Set average speed (1.0 range)
-lis r11, const_30@ha			; Load a constant float with 30...
+lis r11, const_30@ha			; Load a constant float with 30.0...
 lfs f12, const_30@l(r11)		; ...into f12
-fdivs f7, f12, f10				; Divide the calculated FPS by 30
+fdivs f7, f10, f12				; Divide the calculated FPS by 30
 lis r11, averageFPS1@ha			; Store this new divided calculated FPS...
 stfs f7, averageFPS1@l(r11)		; ...to replace constants that normally use 1
 
-; Set average speed (inverted 1.0 range)
-fdivs f10, f10, f12				; Multiply 1.0 by 30.0 to invert the FPS
-lis r11, averageFPS1Inv@ha		; Store the inverted 30 float...
-stfs f10, averageFPS1Inv@l(r11)	; ...to replace constants that is lower when FPS is higher
+; Set average speed (0.5 range)
+fadds f12, f12, f12				; Add 30.0 to 30.0 to get 60.0
+fdivs f7, f10, f12				; Divide the calculated FPS by 60
+lis r11, averageFPS0.5@ha		; Store this new divided calculated FPS...
+stfs f7, averageFPS0.5@l(r11)	; ...to replace constants that normally use 0.5
 
 ; Set average speed (inverted 30 range)
-fmuls f10, f7, f12				; Multiply 1.0 by 30.0 to invert the FPS
-lis r11, averageFPS30Inv@ha		; Store the inverted 30 float...
-stfs f10, averageFPS30Inv@l(r11); ...to replace constants that is lower when FPS is higher
+lis r11, const_30@ha			; Load a constant float with 30.0...
+lfs f12, const_30@l(r11)		; ...into f12
+fmuls f12, f12, f12				; Multiply 30.0 by 30.0 to get 900.0
+fdivs f7, f12, f10				; Divide 900.0 by the calculated FPS to invert the FPS
+lis r11, averageFPS30Inv@ha		; Store the inverted 30.0 float...
+stfs f7, averageFPS30Inv@l(r11)	; ...to replace constants that is lower when FPS is higher
+
+; Set average speed (inverted 1.0 range)
+lis r11, const_30@ha			; Load a constant float with 30...
+lfs f12, const_30@l(r11)		; ...into f12
+fdivs f7, f12, f10				; Divides 30.0 by the calculated FPS to invert the FPS
+lis r11, averageFPS1Inv@ha		; Store the inverted 1.0 float...
+stfs f7, averageFPS1Inv@l(r11)	; ...to replace constants that is lower when FPS is higher
+
+; Set average speed (inverted 0.5 range)
+fadds f7, f10, f10				; Add the calculated FPS to itself and store it in f7
+fdivs f7, f12, f7				; Divide 30.0 by 2 * the calculated FPS and store it in f7
+lis r11, averageFPS0.5Inv@ha	; Store the inverted 0.5 float...
+stfs f7, averageFPS0.5Inv@l(r11); ...to replace constants that is lower when FPS is higher
 
 ; Check whether debug mode is on
 li r11, $debugMode				; Load debugMode value in r11 
@@ -193,15 +216,15 @@ blr								; Return back to the address stored in the link register
 ; Multiplies the time draining using the calculated FPS
 _changeArrowTimeDrain:
 lfs f1, 0xFC(r11)				; Execute original instruction that got replaced with this codecave jump
-lis r12, averageFPS1@ha			; Load the average FPS...
-lfs f0, averageFPS1@l(r12)		; ...into f0
+lis r12, averageFPS1Inv@ha		; Load the average FPS...
+lfs f0, averageFPS1Inv@l(r12)	; ...into f0
 fmuls f1, f1, f0				; Multiply the time draining value by the average FPS divider
 blr								; Return to the address that's stored in the link register
 
 ; Multiplies the distance you travel during the flurry rush dash using the calculated FPS
 _changeFlurryRush:
-lis r4, averageFPS1Inv@ha		; Load average FPS into f8..
-lfs f8, averageFPS1Inv@l(r4)	; ...which is a float register that's safe to use since it's initialized later
+lis r4, averageFPS1@ha			; Load average FPS into f8..
+lfs f8, averageFPS1@l(r4)		; ...which is a float register that's safe to use since it's initialized later
 fmuls f13, f13, f8				; Multiply the flurry rush distance (stored in f1) with the FPS multiplier
 fcmpu cr0, f13, f29				; Execute original instruction that got replaced with this codecave jump
 blr								; Return to the address that's stored in the link register
@@ -220,21 +243,25 @@ blr								; Return to the address that's stored in the link register
 0x02D5F760 = bla _changeArrowTimeDrain		; Fix the stamina drain during arrow time
 0x03793328 = nop
 0x03793334 = nop
-0x03793378 = lis r29, averageFPS1@ha		; Load the calculated FPS value
-0x03793380 = lfs f0, averageFPS1@l(r29)		; ...to use that as animation speed
+0x03793378 = lis r29, averageFPS1Inv@ha		; Load the calculated FPS value
+0x03793380 = lfs f0, averageFPS1Inv@l(r29)	; ...to use that as animation speed
 0x0379338C = nop							; Prevent an instruction from overwriting the loaded value
-0x03415C1C = lis r12, averageFPS1@ha		; Load the calculated FPS value
-0x03415C24 = lfs f0, averageFPS1@l(r12)		; ...to store that for the GUI speed value
+0x03415C1C = lis r12, averageFPS1Inv@ha		; Load the calculated FPS value
+0x03415C24 = lfs f0, averageFPS1Inv@l(r12)	; ...to store that for the GUI speed value
 0x03415C2C = nop							; Prevent an instruction from overwriting the loaded value
 0x02D90D2C = lis r10, averageFPS30@ha
 0x02D90D30 = lfs f11, averageFPS30@l(r10)
-0x02D90D88 = lis r10, averageFPS30@ha
-0x02D90D8C = lfs f11, averageFPS30@l(r10)
-0x037DC35C = lis r12, averageFPS1@ha		; Fix audio looping by loading the calculated FPS value...
-0x037DC360 = lfs f13, averageFPS1@l(r12)	; ...instead of the normal static 1.0 float it uses
-0x02F62B3C = lis r12, averageFPS1@ha		; Fix map scrolling by loading the calculated FPS value...
-0x02F62B40 = lfs f0, averageFPS1@l(r12)		; ...instead of the normal static 1.0 float it uses
+0x02D90D88 = lis r10, averageFPS30@ha		; Fix stamina regen by loading the calculated FPS value...
+0x02D90D8C = lfs f11, averageFPS30@l(r10)	; ...instead of the normal static 30.0 float it uses
+0x037DC35C = lis r12, averageFPS1Inv@ha		; Fix audio looping by loading the calculated FPS value...
+0x037DC360 = lfs f13, averageFPS1Inv@l(r12)	; ...instead of the normal static 1.0 float it uses
+0x02F62B3C = lis r12, averageFPS1Inv@ha		; Fix map scrolling by loading the calculated FPS value...
+0x02F62B40 = lfs f0, averageFPS1Inv@l(r12)	; ...instead of the normal static 1.0 float it uses
 0x020E730C = lis r12, averageFPS30Inv@ha	; Fix arrow speed by loading the calculated FPS value...
 0x020E731C = lfs f13, averageFPS30Inv@l(r12); ...instead of the normal static 30.0 float it uses
-0x033609D8 = lis r6, averageFPS1@ha			; Fix shield surfing by loading the calculated FPS value...
-0x033609E0 = lfs f0, averageFPS1@l(r6)		; ...instead of the normal static 1.0 float it uses
+0x020E3EB0 = lis r12, averageFPS0.5@ha		; Modify something to do with arrow bounce and distance by loading the calculated FPS value...
+0x020E3EB8 = lfs f13, averageFPS0.5@l(r12)	; ...instead of the normal static 0.5 float it uses
+0x020E5390 = lis r10, averageFPS0.5@ha		; Modify the distance arrows travel straight by loading the calculated FPS value...
+0x020E5398 = lfs f13, averageFPS0.5@l(r10)	; ...instead of the normal static 0.5 float it uses
+0x033609D8 = lis r6, averageFPS1Inv@ha		; Fix shield surfing by loading the calculated FPS value...
+0x033609E0 = lfs f0, averageFPS1Inv@l(r6)	; ...instead of the normal static 1.0 float it uses

@@ -20,8 +20,8 @@ disableFastScrolling:
 
 ; This calculates dynamic FPS system.
 _calculateAverageFPSInt:
-lis r8, averageFPS1Inv@ha
-lfs f0, averageFPS1Inv@l(r8)
+lis r8, averageFPS1@ha
+lfs f0, averageFPS1@l(r8)
 lis r8, const_roundUpModifier@ha
 lfs f13, const_roundUpModifier@l(r8)
 fadds f0, f0, f13

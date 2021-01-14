@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = FPS++
 path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++"
-description = Allows you to change the FPS and the speed that most things run at.|Some elements aren't patched though which can cause some physics issues. To bypass any issues you can enable the Temporary 30FPS Limit.||Made by Xalphenos, rajkosto, epigramx, Crementif and leoetlino.
+description = Allows you to change the FPS and the speed that most things run at.|Some elements aren't patched though which can cause some physics issues. To bypass any issues you can enable the Temporary 30FPS Limit.||Made by Xalphenos, rajkosto, epigramx, Crementif, leoetlino and Pig.
 version = 6
 
 [Default]
