@@ -239,12 +239,6 @@ $staticFPSMode:int = 0
 # Frame Average
 
 [Preset]
-name = 32 Frames Averaged (short slowdown after FPS drops)
-category = Frame Average
-condition = ($advancedMode-$staticFPSMode == 1)
-$frameAverageAmount = 32
-
-[Preset]
 name = 16 Frames Averaged
 category = Frame Average
 condition = ($advancedMode-$staticFPSMode == 1)
