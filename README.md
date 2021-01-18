@@ -9,7 +9,5 @@ Cemu Graphic Packs is a repository where you can find graphic packs that can ups
 
 It's made by the Cemu community so you're also free to [contribute to the project](https://github.com/ActualMandM/cemu_graphic_packs/wiki/How-to-create-resolution-packs) if you wish.
 
-Graphic packs that modify game files can be found [here](https://github.com/ActualMandM/cemu_graphic_packs/wiki/Game-Mods).
-
 ### Downloads
 You can download the latest graphic packs via Cemu's Graphic Pack window directly or download them manually from [our website](https://ActualMandM.github.io/cemu_graphic_packs/)!
