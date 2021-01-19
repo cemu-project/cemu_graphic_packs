@@ -25,9 +25,9 @@
 #define RAINBOW_EFFECT $rainbow // [0 or 1] set it to 1 to enable rainbow beams effect. in that case, HUE_ROTATION is ignored
 #define DISABLE_BEAMS $disableBeams // [0 or 1] set it to 1 to hide the lasers completely
 #define HUE_ROTATION $hue //[0, 360] where 0 and 360 is unchanged Hue and 180 is completely opposite Hue. Check http://i.imgur.com/5UpyIGh.png
-#define SATURATION_FACTOR 1.0 //[0.0, 1.0] 1.0 means unchanged Saturation, 0.0 means completely desaturated. Values above 1.0 are accepted, but they may cause clipping
+#define SATURATION_FACTOR $saturation //[0.0, 1.0] 1.0 means unchanged Saturation, 0.0 means completely desaturated. Values above 1.0 are accepted, but they may cause clipping
 #define VALUE_FACTOR 1.0 //same as above; applies to Value
-#define ALPHA_FACTOR 1.0 //same as above; applies to Transparency
+#define ALPHA_FACTOR $alpha //same as above; applies to Transparency
 
 const float hueRotation = HUE_ROTATION / 360.0;
 #ifdef VULKAN
