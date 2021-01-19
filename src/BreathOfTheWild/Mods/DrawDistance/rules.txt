@@ -48,33 +48,33 @@ $actor = 2
 
 [Preset]
 name = Potato (0.2x)
-category = Trees, Bushes, Landscape And Other Objects (Experimental)
+category = Trees, Bushes, Landscape And Other Objects
 $object = 0.2
 
 [Preset]
 name = Very Low (0.5x)
-category = Trees, Bushes, Landscape And Other Objects (Experimental)
+category = Trees, Bushes, Landscape And Other Objects
 $object = 0.5
 
 [Preset]
 name = Low (0.75x)
-category = Trees, Bushes, Landscape And Other Objects (Experimental)
+category = Trees, Bushes, Landscape And Other Objects
 $object = 0.75
 
 [Preset]
 name = Medium (1x)
-category = Trees, Bushes, Landscape And Other Objects (Experimental)
+category = Trees, Bushes, Landscape And Other Objects
 default = 1
 $object = 1.0
 
 [Preset]
 name = High (1.25x)
-category = Trees, Bushes, Landscape And Other Objects (Experimental)
+category = Trees, Bushes, Landscape And Other Objects
 $object = 1.25
 
 [Preset]
 name = Ultra (1.5x, requires Extended Memory pack!)
-category = Trees, Bushes, Landscape And Other Objects (Experimental)
+category = Trees, Bushes, Landscape And Other Objects
 $object = 1.5
 
 
