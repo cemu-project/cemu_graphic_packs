@@ -58,9 +58,6 @@ averageFPS0.5:
 averageFPS0.5Inv:
 .float 30/(2*$fpsLimit)
 
-averageFPS1.5:
-.float 45/$fpsLimit
-
 averageSum:
 .float $fpsLimit*$frameAverageAmount
 
@@ -256,11 +253,6 @@ fmuls f13, f13, f8				; Multiply the flurry rush distance (stored in f1) with th
 fcmpu cr0, f13, f29				; Execute original instruction that got replaced with this codecave jump
 blr								; Return to the address that's stored in the link register
 
-_changeVerticalSens:
-lis r14, averageFPS1.5@ha       ; Load average FPS...
-lfs f11, averageFPS1.5@l(r14)   ; ...into f11
-blr
-
 # Patches
 
 0x1031E2C0 = .float 2
@@ -271,9 +263,6 @@ blr
 
 0x100775AC = .float -999.0					; Disable something that makes thunderblight ganon yeet off
 
-0x101B2D34 = .float $fpsLimit				; Fix vertical sensitivity of gyro while using stasis 
-
-0x02B951F0 = bla _changeVerticalSens		; Fix vertical sensitivity of stick while using stasis 
 0x02C6B8F8 = bla _changeFlurryRush			; Fix the flurry rush distance
 0x02D5F760 = bla _changeArrowTimeDrain		; Fix the stamina drain during arrow time
 0x03793328 = nop
