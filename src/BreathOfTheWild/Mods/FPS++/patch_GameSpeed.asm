@@ -10,6 +10,8 @@ const_0.5:
 .float 0.5
 const_1:
 .float 1
+const_1.5:
+.float 1.5
 const_30:
 .float 30
 
@@ -37,6 +39,12 @@ averageFPS30:
 
 averageFPS30Inv:
 .float 900/$fpsLimit
+
+averageFPS1.5:
+.float (1.5*$fpsLimit)/30
+
+averageFPS1.5Inv:
+.float 45/$fpsLimit
 
 averageFPS1:
 .float $fpsLimit/30
@@ -166,9 +174,17 @@ fmr f10, f12					; ...if this line isn't skipped, set the FPS to that low limit
 lis r11, averageFPS30@ha		; Store the calculated FPS...
 stfs f10, averageFPS30@l(r11)	; ...to replace constants that normally use 30
 
-; Set average speed (1.0 range)
+; Set average speed (1.5 range)
+lis r11, const_1.5@ha			; Load a constant float with 1.5
+lfs f7, const_1.5@l(r11)		; ...into f7
 lis r11, const_30@ha			; Load a constant float with 30.0...
 lfs f12, const_30@l(r11)		; ...into f12
+fmuls f7, f10, f7				; Multiply the calculated FPS by 1.5
+fdivs f7, f7, f12				; Divide this new divided calculated FPS by 30
+lis r11, averageFPS1.5@ha		; Store this new divided calculated FPS...
+stfs f7, averageFPS1.5@l(r11)	; ...to replace constants that normally use 1.5
+
+; Set average speed (1.0 range)
 fdivs f7, f10, f12				; Divide the calculated FPS by 30
 lis r11, averageFPS1@ha			; Store this new divided calculated FPS...
 stfs f7, averageFPS1@l(r11)		; ...to replace constants that normally use 1
@@ -185,20 +201,28 @@ lfs f12, const_30@l(r11)		; ...into f12
 fmuls f12, f12, f12				; Multiply 30.0 by 30.0 to get 900.0
 fdivs f7, f12, f10				; Divide 900.0 by the calculated FPS to invert the FPS
 lis r11, averageFPS30Inv@ha		; Store the inverted 30.0 float...
-stfs f7, averageFPS30Inv@l(r11)	; ...to replace constants that is lower when FPS is higher
+stfs f7, averageFPS30Inv@l(r11)	; ...to replace constants that are lower when FPS is higher
+
+; Set average speed (inverted 1.5 range)
+lis r11, const_1.5@ha			; Load a constant float with 1.5...
+lfs f7, const_1.5@l(r11)		; ...into f7
+lis r11, const_30@ha			; Load a constant float with 30.0...
+lfs f12, const_30@l(r11)		; ...into f12
+fmuls f7, f7, f12				; Multiply 30.0 by 1.5 to get 45.0 and store it in f7
+fdivs f7, f7, f10				; Divide 45.0 by the calculated FPS to invert the FPS
+lis r11, averageFPS1.5Inv@ha		; Store the inverted 1.5 float...
+stfs f7, averageFPS1.5Inv@l(r11)	; ...to replace constants that are lower when FPS is higher
 
 ; Set average speed (inverted 1.0 range)
-lis r11, const_30@ha			; Load a constant float with 30...
-lfs f12, const_30@l(r11)		; ...into f12
 fdivs f7, f12, f10				; Divides 30.0 by the calculated FPS to invert the FPS
 lis r11, averageFPS1Inv@ha		; Store the inverted 1.0 float...
-stfs f7, averageFPS1Inv@l(r11)	; ...to replace constants that is lower when FPS is higher
+stfs f7, averageFPS1Inv@l(r11)	; ...to replace constants that are lower when FPS is higher
 
 ; Set average speed (inverted 0.5 range)
 fadds f7, f10, f10				; Add the calculated FPS to itself and store it in f7
 fdivs f7, f12, f7				; Divide 30.0 by 2 * the calculated FPS and store it in f7
 lis r11, averageFPS0.5Inv@ha	; Store the inverted 0.5 float...
-stfs f7, averageFPS0.5Inv@l(r11); ...to replace constants that is lower when FPS is higher
+stfs f7, averageFPS0.5Inv@l(r11); ...to replace constants that are lower when FPS is higher
 
 ; Check whether debug mode is on
 li r11, $debugMode				; Load debugMode value in r11 
@@ -265,3 +289,7 @@ blr								; Return to the address that's stored in the link register
 0x020E5398 = lfs f13, averageFPS0.5@l(r10)	; ...instead of the normal static 0.5 float it uses
 0x033609D8 = lis r6, averageFPS1Inv@ha		; Fix shield surfing by loading the calculated FPS value...
 0x033609E0 = lfs f0, averageFPS1Inv@l(r6)	; ...instead of the normal static 1.0 float it uses
+0x02B951E8 = lis r4, averageFPS1.5Inv@ha 	; Fix vertical sensitivity while using runes by loading the calculated FPS value...
+0x02B951F0 = lfs f11, averageFPS1.5Inv@l(r4); ...instead of the normal static 1.5 float it uses
+0x02B95238 = lis r7, averageFPS30@ha		; Fix vertical gyro sensitivity while using runes by loading the calculated FPS value...
+0x02B95240 = lfs f9, averageFPS30@l(r7)		; ...instead of the normal static 30.o float it uses
