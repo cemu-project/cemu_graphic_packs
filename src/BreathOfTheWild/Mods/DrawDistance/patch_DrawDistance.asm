@@ -6,41 +6,38 @@ moduleMatches = 0x6267BFD0
 actorMultiplier:
 .float $actor
 
-_replaceDrawDistanceActorInvoke:
-lis r12, actorMultiplier@ha
-lfs f13, actorMultiplier@l(r12)
-fmuls f1, f1, f13
-lwz r12, 0x3B0(r29)
+_setActorDrawDistanceMultiplier:
+lis r9, actorMultiplier@ha
+lfs f9, actorMultiplier@l(r9)
+stfs f9, 0x13BC(r28)
 blr
 
-0x037A617C = bla _replaceDrawDistanceActorInvoke
+0x03857F58 = nop ; Force the draw distance used for load balancing normally to be enabled
+0x03857F5C = bla _setActorDrawDistanceMultiplier
 
-_replaceDrawDistanceActorKeepAlive_1:
-lis r4, actorMultiplier@ha
-lfs f6, actorMultiplier@l(r4)
-fmuls f1, f1, f6
-lwz r4, 0x4FC(r31)
-blr
-
-0x0379E6B8 = bla _replaceDrawDistanceActorKeepAlive_1
-
-_replaceDrawDistanceActorKeepAlive_2:
-lis r23, actorMultiplier@ha
-lfs f9, actorMultiplier@l(r23)
-fmuls f1, f1, f9
-lfs f9, 0x280(r31)
-blr
-
-0x0379E63C = bla _replaceDrawDistanceActorKeepAlive_2
 
 objectMultiplier:
 .float $object
 
-_replaceObjectDrawDistance:
-lis r9, objectMultiplier@ha
-lfs f11, objectMultiplier@l(r9)
-fmuls f1, f1, f11
-lwz r0, 0xC(r1)
+objectDivider:
+.float 1.0 - ($object - 1.0)
+
+
+_setObjectDrawDistance:
+lis r12, objectMultiplier@ha
+lfs f0, objectMultiplier@l(r12)
+; Doesn't catch objects that don't have their traverseRadiusXZ set, so those default to 0
 blr
 
-0x03137F04 = bla _replaceObjectDrawDistance
+0x03137ECC = nop
+0x03137ED0 = bla _setObjectDrawDistance
+
+_setObjectDrawDistanceDivider:
+fmuls f13, f1, f1
+lis r8, objectDivider@ha
+lfs f1, objectDivider@l(r8)
+fmuls f13, f13, f1
+blr
+
+0x0313A60C = bla _setObjectDrawDistanceDivider
+0x0313A678 = bla _setObjectDrawDistanceDivider
