@@ -1,0 +1,203 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Force Weather"
+path = "Xenoblade Chronicles X/Mods/Weather/Force Weather"
+description = Force selected weather. Just select a preset and unload/reload the pack.
+version = 5
+
+[Default]
+$wtr = 1
+$region = 1
+
+[Preset] ###########################################
+name = "Primordia"
+category = Region
+
+[Preset]
+name = "Clear"
+category = Weather
+condition = $region == 1
+
+[Preset]
+name = "Rain"
+category = Weather
+condition = $region == 1
+$wtr = 2
+
+[Preset]
+name = "Heavy Rain"
+category = Weather
+condition = $region == 1
+$wtr = 4
+
+[Preset]
+name = "Thunderstorms"
+category = Weather
+condition = $region == 1
+$wtr = 5
+
+[Preset]
+name = "Aurora"
+category = Weather
+condition = $region == 1
+$wtr = 6
+
+[Preset]
+name = "Meteor Showers"
+category = Weather
+condition = $region == 1
+$wtr = 7
+
+[Preset]
+name = "Rainbow"
+category = Weather
+condition = $region == 1
+$wtr = 8
+
+[Preset] ###########################################
+name = "Noctilum"
+category = Region
+$region = 2
+
+[Preset]
+name = "Clear"
+category = Weather
+condition = $region == 2
+
+[Preset]
+name = "Dense Fog"
+category = Weather
+condition = $region == 2
+$wtr = 2
+
+[Preset]
+name = "Rain"
+category = Weather
+condition = $region == 2
+$wtr = 3
+
+[Preset]
+name = "Thunderstorms"
+category = Weather
+condition = $region == 2
+$wtr = 4
+
+[Preset]
+name = "Energy Mist"
+category = Weather
+condition = $region == 2
+$wtr = 5
+
+[Preset] ###########################################
+name = "Oblivia"
+category = Region
+$region = 3
+
+[Preset]
+name = "Clear"
+category = Weather
+condition = $region == 3
+
+[Preset]
+name = "Rain"
+category = Weather
+condition = $region == 3
+$wtr = 2
+
+[Preset]
+name = "Heat Wave"
+category = Weather
+condition = $region == 3
+$wtr = 3
+
+[Preset]
+name = "Sandstorms"
+category = Weather
+condition = $region == 3
+$wtr = 4
+
+[Preset]
+name = "Electromagnetic Storms"
+category = Weather
+condition = $region == 3
+$wtr = 6
+
+[Preset]
+name = "Aurora"
+category = Weather
+condition = $region == 3
+$wtr = 7
+
+[Preset]
+name = "Meteor Showers"
+category = Weather
+condition = $region == 3
+$wtr = 8
+
+[Preset]
+name = "Rainbow"
+category = Weather
+condition = $region == 3
+$wtr = 9
+
+[Preset] ###########################################
+name = "Sylvalum"
+category = Region
+$region = 4
+
+[Preset]
+name = "Cloudy"
+category = Weather
+condition = $region == 4
+
+[Preset]
+name = "Rising Energy Mist"
+category = Weather
+condition = $region == 4
+$wtr = 3
+
+[Preset]
+name = "Spores"
+category = Weather
+condition = $region == 4
+$wtr = 4
+
+[Preset]
+name = "Crimson Aurora"
+category = Weather
+condition = $region == 4
+$wtr = 5
+
+[Preset] ###########################################
+name = "Cauldros"
+category = Region
+$region = 5
+
+[Preset]
+name = "Clear"
+category = Weather
+condition = $region == 5
+
+[Preset]
+name = "Cloudy"
+category = Weather
+condition = $region == 5
+$wtr = 2
+
+[Preset]
+name = "Electromagnetic Storms"
+category = Weather
+condition = $region == 5
+$wtr = 4
+
+[Preset]
+name = "Brimstone Rain"
+category = Weather
+condition = $region == 5
+$wtr = 5
+
+[Preset]
+name = "Rainbow"
+category = Weather
+condition = $region == 5
+$wtr = 6

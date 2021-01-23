@@ -1,0 +1,33 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Battle Points X"
+path = "Xenoblade Chronicles X/Mods/Experience/Battle Points"
+description = Change the amount of Battle points gained when a new level (or class level) is reached, when completing missions or exploring.
+version = 5
+
+[Default]
+$mod = 2
+
+[Preset]
+name = "Quantity x2"
+
+[Preset]
+name = "Quantity x5"
+$mod = 5
+
+[Preset]
+name = "Quantity x10"
+$mod = 10
+
+[Preset]
+name = "Quantity x50"
+$mod = 50
+
+[Preset]
+name = "Quantity x100"
+$mod = 100
+
+[Preset]
+name = "Quantity x1000"
+$mod = 1000
+

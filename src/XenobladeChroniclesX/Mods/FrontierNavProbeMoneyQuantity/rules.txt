@@ -1,0 +1,33 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Money income quantity mod"
+path = "Xenoblade Chronicles X/Mods/FrontierNav/Money income quantity mod"
+description = Affect the quantity of the FrontierNav income for the Money.
+version = 5
+
+[Default]
+$mod = 2
+
+[Preset]
+name = "x2"
+
+[Preset]
+name = "x5"
+$mod = 5
+
+[Preset]
+name = "x10"
+$mod = 10
+
+[Preset]
+name = "x50"
+$mod = 50
+
+[Preset]
+name = "x100"
+$mod = 100
+
+[Preset]
+name = "x1000"
+$mod = 1000
+

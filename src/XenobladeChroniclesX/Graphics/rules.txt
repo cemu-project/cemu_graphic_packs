@@ -1,0 +1,666 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Graphics
+path = "Xenoblade Chronicles X/Graphics"
+description = Changes the resolution of the game.||Made by getdls and Lemon King.
+version = 5
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$internalScale = 1.0
+$shadowScale = 1
+$skellViewScale = 1.0
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = TV Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720 (Default)
+default = 1
+
+[Preset]
+category = TV Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 2560x1440 (2k)
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2160 (4k)
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+[Preset]
+category = TV Resolution
+name = 10240x5760
+$width = 10240
+$height = 5760
+
+[Preset]
+category = TV Resolution
+name = 2560x1080 (21:9)
+$width = 2560
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3840x1600 (21:10)
+$width = 3840
+$height = 1600
+
+[Preset]
+category = TV Resolution
+name = 4300x1800 (21:9)
+$width = 4300
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 6880x2880 (21:9)
+$width = 6880
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 10240x4320 (21:9)
+$width = 10240
+$height = 4320
+
+[Preset]
+category = TV Resolution
+name = 1440x900 (16:10)
+$width = 1440
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1680x1050 (16:10)
+$width = 1680
+$height = 1050
+
+[Preset]
+category = TV Resolution
+name = 1920x1200 (16:10)
+$width = 1920
+$height = 1200
+
+[Preset]
+category = TV Resolution
+name = 2560x1600 (16:10)
+$width = 2560
+$height = 1600
+
+[Preset]
+category = TV Resolution
+name = 2880x1800 (16:10)
+$width = 2880
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2400 (16:10)
+$width = 3840
+$height = 2400
+
+[Preset]
+category = TV Resolution
+name = 5120x3200 (16:10)
+$width = 5120
+$height = 3200
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution
+name = 320x180
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+category = Gamepad Resolution
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution
+name = 854x480 (Default)
+default = 1
+
+[Preset]
+category = Gamepad Resolution
+name = 1280x720
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+category = Gamepad Resolution
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1080 (21:9)
+$padWidth = 2560
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 3440x1440 (21:9)
+$padWidth = 3440
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x1600 (21:10)
+$padWidth = 3840
+$padHeight = 1600
+
+[Preset]
+category = Gamepad Resolution
+name = 4300x1800 (21:9)
+$padWidth = 4300
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 6880x2880 (21:9)
+$padWidth = 6880
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 1440x900 (16:10)
+$padWidth = 1440
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1680x1050 (16:10)
+$padWidth = 1680
+$padHeight = 1050
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1200 (16:10)
+$padWidth = 1920
+$padHeight = 1200
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1600 (16:10)
+$padWidth = 2560
+$padHeight = 1600
+
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2400 (16:10)
+$padWidth = 3840
+$padHeight = 2400
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowScale = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowScale = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowScale = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%, Unstable)
+$shadowScale = 4
+
+
+# Post-Processing Effect Quality
+
+[Preset]
+category = Post-Processing Effect Quality
+name = Very Low (50%)
+$internalScale = 0.5
+
+[Preset]
+category = Post-Processing Effect Quality
+name = Low (75%)
+$internalScale = 0.75
+
+[Preset]
+category = Post-Processing Effect Quality
+name = Medium (100%, Default)
+default = 1
+$internalScale = 1.0
+
+[Preset]
+category = Post-Processing Effect Quality
+name = High (125%)
+$internalScale = 1.25
+
+[Preset]
+category = Post-Processing Effect Quality
+name = Ultra (150%)
+$internalScale = 1.50
+
+[Preset]
+category = Post-Processing Effect Quality
+name = Extreme (200%)
+$internalScale = 2.0
+
+
+# Skell View Resolution
+
+[Preset]
+category = Skell Combat View Resolution
+name = Very Low (50%)
+$skellViewScale = 0.50
+
+[Preset]
+category = Skell Combat View Resolution
+name = Low (75%)
+$skellViewScale = 0.75
+
+[Preset]
+category = Skell Combat View Resolution
+name = Medium (100%, Default)
+default = 1
+$skellViewScale = 1.0
+
+[Preset]
+category = Skell Combat View Resolution
+name = High (125%)
+$skellViewScale = 1.25
+
+[Preset]
+category = Skell Combat View Resolution
+name = Ultra (150%)
+$skellViewScale = 1.50
+
+[Preset]
+category = Skell Combat View Resolution
+name = Extreme (200%)
+$skellViewScale = 2.0
+
+
+# Texture Redefines
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x031,0x431,0x035,0x034,0x033 # Fixes dialog prompts and the XCX Logo NLA
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = $shadowScale * 1024
+overwriteHeight = $shadowScale * 1024
+
+[TextureRedefine] # In-game menu
+width = 1024
+height = 720
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 864
+height = 480
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine]
+width = 640
+height = 368
+overwriteWidth = ($width/$gameWidth) * (640*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (368*$internalScale)
+
+[TextureRedefine]
+width = 640
+height = 360
+formatsExcluded = 0x033,0x031 # Fixes dialog prompts and the XCX Logo NLA
+tileModesExcluded = 0x001 # Exclude tilemode 1 to exclude video cutscenes
+overwriteWidth = ($width/$gameWidth) * (640*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (360*$internalScale)
+
+[TextureRedefine] # Shadows 1024 for smoother transition
+width = 512
+height = 512
+formats = 0x005
+overwriteWidth = $shadowScale * 1024
+overwriteHeight = $shadowScale * 1024
+
+[TextureRedefine]
+width = 512
+height = 288
+overwriteWidth = ($width/$gameWidth) * (512*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (288*$internalScale)
+
+[TextureRedefine] # Fog 1.5 match stencil
+width = 448
+height = 240
+overwriteWidth = ($width/$gameWidth) * (448*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (240*$internalScale)
+
+[TextureRedefine] # Fog
+width = 426
+height = 240
+overwriteWidth = ($width/$gameWidth) * (426*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (240*$internalScale)
+
+[TextureRedefine] # Bloom, DOF
+width = 320
+height = 192
+overwriteWidth = ($width/$gameWidth) * (320*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (192*$internalScale)
+
+[TextureRedefine] # Bloom, DOF
+width = 384
+height = 192
+#formats = 0x001
+overwriteWidth = ($width/$gameWidth) * (384*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (192*$internalScale)
+
+[TextureRedefine] # Bloom, DOF
+width = 320
+height = 180
+overwriteWidth = ($width/$gameWidth) * (320*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (180*$internalScale)
+
+[TextureRedefine]
+width = 256
+height = 144
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (256*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (144*$internalScale)
+
+[TextureRedefine] # PR screen
+width = 256
+height = 256
+formats = 0x810,0x01a,0x816,0x011
+overwriteWidth = ($width/$gameWidth) * (256*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (256*$internalScale)
+
+[TextureRedefine] # Sky, PR screen
+width = 255
+height = 255
+formats = 0x810,0x01a,0x41a,0x816,0x011
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (255*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (255*$internalScale)
+
+[TextureRedefine] # Skell depth
+width = 192
+height = 96
+overwriteWidth = ($width/$gameWidth) * (192*$skellViewScale)
+overwriteHeight = ($height/$gameHeight) * (96*$skellViewScale)
+
+[TextureRedefine] # Bloom 2nd level
+width = 160
+height = 96
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (160*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (96*$internalScale)
+
+[TextureRedefine] # Bloom 2nd level
+width = 160
+height = 90
+#formats = 0x816
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (160*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (90*$internalScale)
+
+[TextureRedefine]
+width = 128
+height = 128
+formats = 0x806 #,0x035,0x034,0x033,0x031
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (128*$skellViewScale)
+overwriteHeight = ($height/$gameHeight) * (128*$skellViewScale)
+
+[TextureRedefine] # Skell view 8
+width = 128
+height = 80
+formats = 0x816 #,0x035,0x034,0x033,0x031
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (128*$skellViewScale)
+overwriteHeight = ($height/$gameHeight) * (128*$skellViewScale)
+
+[TextureRedefine] # Skell view
+width = 128
+height = 72
+formats = 0x816 #,0x035,0x034,0x033,0x031
+formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (128*$skellViewScale)
+overwriteHeight = ($height/$gameHeight) * (128*$skellViewScale)
+
+#[TextureRedefine]
+#width = 127
+#height = 127
+#formats = 0x80e # 0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
+#overwriteWidth = ($width/$gameWidth) * 127
+#overwriteHeight = ($height/$gameHeight) * 127
+
+[TextureRedefine] # Bloom 3rd level
+width = 96
+height = 48
+overwriteWidth = ($width/$gameWidth) * (96*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (48*$internalScale)
+
+[TextureRedefine] # Bloom 3rd level
+width = 80
+height = 46
+overwriteWidth = ($width/$gameWidth) * (80*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (46*$internalScale)
+
+[TextureRedefine]
+width = 64
+height = 64
+dept = 1
+formats = 0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (64*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (64*$internalScale)
+
+[TextureRedefine] # Skell cockpit bloom 3rd level
+width = 64
+height = 32
+formats = 0x816,0x806 #0x820,0x816 #,0x035,0x034,0x033,0x032,0x031
+overwriteWidth = ($width/$gameWidth) * (64*$skellViewScale)
+overwriteHeight = ($height/$gameHeight) * (32*$skellViewScale)
+
+[TextureRedefine] # Skell view
+width = 40
+height = 24
+overwriteWidth = ($width/$gameWidth) * (40*$skellViewScale)
+overwriteHeight = ($height/$gameHeight) * (24*$skellViewScale)
+
+[TextureRedefine]
+width = 32
+height = 32
+dept = 1
+formats = 0x806 #,0x035,0x034,0x033,0x032,0x031
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * (32*$internalScale)
+overwriteHeight = ($height/$gameHeight) * (32*$internalScale)
+
+
+#[TextureRedefine]
+#width = 32
+#height = 16
+#formats = 0x816
+##formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+#overwriteWidth = ($width/$gameWidth) * (32*$internalScale)
+#overwriteHeight = ($height/$gameHeight) * (16*$internalScale)
+#
+#[TextureRedefine] #don't scale 0x01a
+#width = 16
+#height = 16
+#dept = 1
+#formats = 0x816 #0x008 ,0x431,0x031
+###formatsExcluded = 0x431,0x035,0x034,0x033,0x031,0x806
+#overwriteWidth = ($width/$gameWidth) * (16*$internalScale)
+#overwriteHeight = ($height/$gameHeight) * (8*$internalScale)
+#
+#[TextureRedefine] # tilemode 2
+#width = 16
+#height = 8
+#formats = 0x81e,0x80e,0x806 0x008 #,0x431,0x031
+##formatsExcluded = 0x431,0x035,0x034,0x033,0x031,0x806
+#overwriteWidth = ($width/$gameWidth) * (16*$internalScale)
+#overwriteHeight = ($height/$gameHeight) * (8*$internalScale)
+
+#[TextureRedefine] # tilemode 2
+#width = 8
+#height = 8
+#formats = 0x806 #,0x81e,0x80e # ,0x431,0x031
+###formatsExcluded = 0x431,0x035,0x034,0x033,0x031,0x806
+#overwriteWidth = ($width/$gameWidth) * (8*$internalScale)
+#overwriteHeight = ($height/$gameHeight) * (8*$internalScale)
+
+#[TextureRedefine]
+#width = 4
+#height = 4
+####formats = 0x81e,0x80e
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+#overwriteWidth = ($width/$gameWidth) * (4*$internalScale)
+#overwriteHeight = ($height/$gameHeight) * (4*$internalScale)
+#
+#[TextureRedefine]
+#width = 1
+#height = 1
+####formats = 0x008,0x81e,0x01a
+#formatsExcluded = 0x431,0x035,0x034,0x033,0x031
+#overwriteWidth = ($width/$gameWidth) * (1*$internalScale)
+#overwriteHeight = ($height/$gameHeight) * (1*$internalScale)

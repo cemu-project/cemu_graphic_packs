@@ -1,0 +1,24 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Friends Points X"
+path = "Xenoblade Chronicles X/Mods/Experience/Friends Points"
+description = More Friends points gained when activating a Soul Voice Link during battle.
+version = 5
+
+[Default]
+$mod = 100
+
+[Preset]
+name = "+100"
+
+[Preset]
+name = "+250"
+$mod = 250
+
+[Preset]
+name = "+500"
+$mod = 500
+
+[Preset]
+name = "+1000"
+$mod = 1000

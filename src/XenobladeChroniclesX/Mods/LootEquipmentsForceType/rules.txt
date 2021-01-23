@@ -1,0 +1,179 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Equipment - Force Type" 
+path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Type"
+description = Force the type of equipment looted.
+version = 5
+
+[Default]
+$type:int = 2
+$sub:int = 0
+
+[Preset] ###########################################
+name = "Ground Weapons"
+category = Equipment Type
+
+[Preset]
+name = "Random"
+category = Ground Weapon
+condition = $type == 2
+
+[Preset]
+name = "Photon Sabers"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 1
+
+[Preset]
+name = "Assault Rifles"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 2
+
+[Preset]
+name = "Sniper Rifles"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 3
+
+[Preset]
+name = "Dual Guns"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 4
+
+[Preset]
+name = "Gatling Guns"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 5
+
+[Preset]
+name = "Rayguns"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 6
+
+[Preset]
+name = "Psycho Launchers"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 7
+
+[Preset]
+name = "Longswords"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 8
+
+[Preset]
+name = "Javelins"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 9
+
+[Preset]
+name = "Dual Swords"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 10
+
+[Preset]
+name = "Shields"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 11
+
+[Preset]
+name = "Knives"
+category = Ground Weapon
+condition = $type == 2
+$sub:int = 12
+
+[Preset] ###########################################
+name = "Ground Armors"
+category = Equipment Type
+$type:int = 4
+
+[Preset]
+name = "Random"
+category = Ground Armor
+condition = $type == 4
+
+[Preset]
+name = "Head"
+category = Ground Armor
+condition = $type == 4
+$sub:int = 1
+
+[Preset]
+name = "Torso"
+category = Ground Armor
+condition = $type == 4
+$sub:int = 2
+
+[Preset]
+name = "Right arm"
+category = Ground Armor
+condition = $type == 4
+$sub:int = 3
+
+[Preset]
+name = "Left arm"
+category = Ground Armor
+condition = $type == 4
+$sub:int = 4
+
+[Preset]
+name = "Leg"
+category = Ground Armor
+condition = $type == 4
+$sub:int = 5
+
+[Preset] ###########################################
+name = "Skell weapons (random only)"
+category = Equipment Type
+$type:int = 6
+
+[Preset] ###########################################
+name = "Skell armors"
+category = Equipment Type
+$type:int = 8
+
+[Preset]
+name = "Random"
+category = Skell Armor
+condition = $type == 8
+
+[Preset]
+name = "Head"
+category = Skell Armor
+condition = $type == 8
+$sub:int = 1
+
+[Preset]
+name = "Torso"
+category = Skell Armor
+condition = $type == 8
+$sub:int = 2
+
+[Preset]
+name = "Right arm"
+category = Skell Armor
+condition = $type == 8
+$sub:int = 3
+
+[Preset]
+name = "Left arm"
+category = Skell Armor
+condition = $type == 8
+$sub:int = 4
+
+[Preset]
+name = "Leg"
+category = Skell Armor
+condition = $type == 8
+$sub:int = 5
+
+
+

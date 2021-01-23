@@ -1,0 +1,90 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Jump higher"
+path = "Xenoblade Chronicles X/Mods/Physics/Jump to the Moon!"
+description = Increase horizontal and vertical velocity of jump (Vanilla values are 1.0 for both).
+version = 5
+
+[Default]
+$horz = 1.0
+$vert = 1.0
+
+[Preset]
+name = "1.0 (default)"
+category = Horizontal Velocity
+
+[Preset]
+name = "1.5"
+category = Horizontal Velocity
+$horz = 1.5
+
+[Preset]
+name = "1.6"
+category = Horizontal Velocity
+$horz = 1.6
+
+[Preset]
+name = "1.7"
+category = Horizontal Velocity
+$horz = 1.7
+
+[Preset]
+name = "1.8"
+category = Horizontal Velocity
+$horz = 1.8
+
+[Preset]
+name = "1.9"
+category = Horizontal Velocity
+$horz = 1.9
+
+[Preset]
+name = "2.0"
+category = Horizontal Velocity
+$horz = 2.0
+
+[Preset]
+name = "2.5"
+category = Horizontal Velocity
+$horz = 2.5
+
+[Preset]
+name = "3.0"
+category = Horizontal Velocity
+$horz = 3.0
+
+
+[Preset]
+name = "1.0 (default)"
+category = Vertical Velocity
+
+[Preset]
+name = "1.02"
+category = Vertical Velocity
+$vert = 1.02
+
+[Preset]
+name = "1.03"
+category = Vertical Velocity
+$vert = 1.03
+
+[Preset]
+name = "1.04"
+category = Vertical Velocity
+$vert = 1.04
+
+[Preset]
+name = "1.05"
+category = Vertical Velocity
+$vert = 1.05
+
+[Preset]
+name = "1.10"
+category = Vertical Velocity
+$vert = 1.10
+
+[Preset]
+name = "2.0"
+category = Vertical Velocity
+$vert = 2.0
+

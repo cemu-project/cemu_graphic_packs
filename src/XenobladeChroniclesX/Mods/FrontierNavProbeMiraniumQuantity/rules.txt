@@ -1,0 +1,43 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Miranium income quantity mod"
+path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium income quantity mod"
+description = Affect the quantity of the FrontierNav income for the Miranium.
+version = 5
+
+[Default]
+$mod = 2
+$uncap = 0
+
+[Preset]
+name = "Miranium x2"
+category = Miranium quantity
+
+[Preset]
+name = "Miranium x5"
+category = Miranium quantity
+$mod = 5
+
+[Preset]
+name = "Miranium x10"
+category = Miranium quantity
+$mod = 10
+
+[Preset]
+name = "Miranium x50"
+category = Miranium quantity
+$mod = 50
+
+[Preset]
+name = "Miranium x100"
+category = Miranium quantity
+$mod = 100
+
+[Preset]
+name = "Yes"
+category = "Capped by BLADE level"
+
+[Preset]
+name = "No"
+category = "Capped by BLADE level"
+$uncap = 1
