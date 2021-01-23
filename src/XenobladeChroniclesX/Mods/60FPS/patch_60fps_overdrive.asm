@@ -14,3 +14,5 @@ _over:
 	blr
 
 0x021BC904 = bla _over
+
+0x021E2020 = bla _over ; Skell Overdrive

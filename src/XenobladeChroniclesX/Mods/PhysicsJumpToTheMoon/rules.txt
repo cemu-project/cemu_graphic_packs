@@ -10,81 +10,100 @@ $horz = 1.0
 $vert = 1.0
 
 [Preset]
-name = "1.0 (default)"
-category = Horizontal Velocity
+name = "Distance x1.0 (default)"
+category = "Horizontal Velocity (distance reached)"
 
 [Preset]
-name = "1.5"
-category = Horizontal Velocity
+name = "Distance x1.5"
+category = "Horizontal Velocity (distance reached)"
 $horz = 1.5
 
 [Preset]
-name = "1.6"
-category = Horizontal Velocity
+name = "Distance x1.6"
+category = "Horizontal Velocity (distance reached)"
 $horz = 1.6
 
 [Preset]
-name = "1.7"
-category = Horizontal Velocity
+name = "Distance x1.7"
+category = "Horizontal Velocity (distance reached)"
 $horz = 1.7
 
 [Preset]
-name = "1.8"
-category = Horizontal Velocity
+name = "Distance x1.8"
+category = "Horizontal Velocity (distance reached)"
 $horz = 1.8
 
 [Preset]
-name = "1.9"
-category = Horizontal Velocity
+name = "Distance x1.9"
+category = "Horizontal Velocity (distance reached)"
 $horz = 1.9
 
 [Preset]
-name = "2.0"
-category = Horizontal Velocity
+name = "Distance x2.0"
+category = "Horizontal Velocity (distance reached)"
 $horz = 2.0
 
 [Preset]
-name = "2.5"
-category = Horizontal Velocity
+name = "Distance x2.5"
+category = "Horizontal Velocity (distance reached)"
 $horz = 2.5
 
 [Preset]
-name = "3.0"
-category = Horizontal Velocity
+name = "Distance x3.0"
+category = "Horizontal Velocity (distance reached)"
 $horz = 3.0
 
 
 [Preset]
-name = "1.0 (default)"
-category = Vertical Velocity
+name = "Height x1.0 (default)"
+category = "Vertical Velocity (height)"
 
 [Preset]
-name = "1.02"
-category = Vertical Velocity
-$vert = 1.02
-
-[Preset]
-name = "1.03"
-category = Vertical Velocity
-$vert = 1.03
-
-[Preset]
-name = "1.04"
-category = Vertical Velocity
-$vert = 1.04
-
-[Preset]
-name = "1.05"
-category = Vertical Velocity
+name = "Height x1.05"
+category = "Vertical Velocity (height)"
 $vert = 1.05
 
 [Preset]
-name = "1.10"
-category = Vertical Velocity
+name = "Height x1.06"
+category = "Vertical Velocity (height)"
+$vert = 1.06
+
+[Preset]
+name = "Height x1.07"
+category = "Vertical Velocity (height)"
+$vert = 1.07
+
+[Preset]
+name = "Height x1.08"
+category = "Vertical Velocity (height)"
+$vert = 1.08
+
+[Preset]
+name = "Height x1.09"
+category = "Vertical Velocity (height)"
+$vert = 1.09
+
+[Preset]
+name = "Height x1.10"
+category = "Vertical Velocity (height)"
 $vert = 1.10
 
 [Preset]
-name = "2.0"
-category = Vertical Velocity
-$vert = 2.0
+name = "Height x1.20"
+category = "Vertical Velocity (height)"
+$vert = 1.20
 
+[Preset]
+name = "Height x1.30"
+category = "Vertical Velocity (height)"
+$vert = 1.30
+
+[Preset]
+name = "Height x1.40"
+category = "Vertical Velocity (height)"
+$vert = 1.40
+
+[Preset]
+name = "Height x1.50"
+category = "Vertical Velocity (height)"
+$vert = 1.50

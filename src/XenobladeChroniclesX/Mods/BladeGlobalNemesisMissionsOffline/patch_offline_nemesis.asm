@@ -6,9 +6,6 @@ moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 ; cfs::CfSocialManager::update((float))
 0x022879D0 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
 
-; Autoriser accès aux missions d'escouade depuis la console réseau
-0x02AC5C10 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-
 ; cfs::CfSocialManager::refreshOrderQuestInfo (called when select an entry in the network console)
 0x022C805C = nop ; network test : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
 0x022C8060 = nop ; network test
@@ -80,7 +77,11 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 
 .origin = codecave
 
+0x02AC5C00 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+
 0x02B9B0A0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
+
+;0x02BA0CE0 = bla _updateRP ; menu::MenuMultiQuestResult::updateEnemyBoss((menu::MenuObject *))
 
 _single:
 li r3, 0

@@ -23,7 +23,7 @@ Example, table loot for "Ultra Diamond Spatha":
 | Special   | Crush: Gain TP            |   5 |
 |           | Night Vision              |  10 |
 
-In vanilla, 2 augments have 100% (Melee Accuracy Up and Soft Touch), which means you're guaranteed to always get **at least one of them** on the loot. That doesn't let much room for the others augments...
+In vanilla, 2 augments have 100% (Melee Accuracy Up and Soft Touch), which means you're guaranteed to always get **at least one of those two** on the loot. That doesn't let much space for the others augments...
 Now with the mod, the table loot becomes:
 
 | Category  | Augment                   | Rate (%)  |

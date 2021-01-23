@@ -12,6 +12,14 @@ $mult = 2
 name = Damage x 2
 
 [Preset]
+name = Damage x 3
+$mult = 3
+
+[Preset]
+name = Damage x 5
+$mult = 5
+
+[Preset]
 name = Damage x 10
 $mult = 10
 
