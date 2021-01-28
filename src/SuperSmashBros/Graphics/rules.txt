@@ -47,8 +47,8 @@ default = 1
 [Preset]
 name = 2160x1440 (2K)
 category = Resolution
-$width = 3840
-$height = 2160
+$width = 2160
+$height = 1440
 
 [Preset]
 category = Resolution
