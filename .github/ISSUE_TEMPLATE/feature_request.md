@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-Mention a brief description of your request.
+A clear and concise description description of your request.
 
 **Additional context**
-Add any other context or screenshots about the feature request here.
+Add any other context and/or screenshots about the feature request here.

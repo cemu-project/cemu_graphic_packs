@@ -1,13 +1,13 @@
 ---
 name: Bug report
-about: Report an issue to help us improve the packs!
+about: Report a bug to help us improve the packs!
 title: "[GAME NAME] Issue"
 labels: ''
 assignees: ''
 
 ---
 
-**Describe the bug**
+**Describe the issue**
 A clear and concise description of what the issue is.
 
 **To Reproduce**
@@ -23,9 +23,10 @@ A clear and concise description of what you expected to happen.
 If applicable, add screenshots to help explain your problem.
 
 **Desktop (please complete the following information):**
- - OS: [Windows, Linux (via Wine)]
+ - OS: [Windows or Linux (via Wine)]
+ - GPU: [Nvidia, AMD, or Intel]
  - Renderer [Vulkan or OpenGL]
  - Version [e.g. 1.22.5]
 
 **Additional context**
-Add any other context about the problem here. Add a save file if it's needed at a specific point in the game.
+Add any other context about the problem here. **Please provide a save file if it's needed at a specific point in the game.**
