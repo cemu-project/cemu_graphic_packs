@@ -884,7 +884,7 @@ overwriteHeight = ($height/$gameHeight) * 256
 width = 256
 height = 128
 depth = 1
-formats = 0x1
+formats = 0x001
 tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 128
@@ -894,7 +894,7 @@ overwriteHeight = ($height/$gameHeight) * 128
 # width = 128
 # height = 64
 # depth = 1
-# formats = 0x1
+# formats = 0x001
 # tilemodes = 4
 # overwriteWidth = ($width/$gameWidth) * 128
 # overwriteHeight = ($height/$gameHeight) * 64
@@ -903,7 +903,7 @@ overwriteHeight = ($height/$gameHeight) * 128
 width = 293
 height = 185
 depth = 1
-formats = 0x1a
+formats = 0x01a
 tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 293
 overwriteHeight = ($height/$gameHeight) * 185
@@ -942,7 +942,7 @@ overwriteHeight = ($height/$gameHeight) * 96
 width = 500
 height = 94
 depth = 1
-formats = 0x1a
+formats = 0x01a
 tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 500
 overwriteHeight = ($height/$gameHeight) * 94
@@ -953,7 +953,7 @@ overwriteHeight = ($height/$gameHeight) * 94
 width = 480
 height = 32
 depth = 1
-formats = 0x1a
+formats = 0x01a
 tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 480
 overwriteHeight = ($height/$gameHeight) * 32
@@ -962,7 +962,7 @@ overwriteHeight = ($height/$gameHeight) * 32
 width = 464
 height = 28
 depth = 1
-formats = 0x1a
+formats = 0x01a
 tilemodes = 4
 overwriteWidth = ($width/$gameWidth) * 464
 overwriteHeight = ($height/$gameHeight) * 28
@@ -972,34 +972,34 @@ overwriteHeight = ($height/$gameHeight) * 28
 [TextureRedefine]
 width = 768
 height = 720
-formats = 0x5
+formats = 0x005
 overwriteWidth = $shadowRes * 768
 overwriteHeight = $shadowRes * 720
 
 [TextureRedefine]
 width = 720
 height = 720
-formats = 0x5
+formats = 0x005
 overwriteWidth = $shadowRes * 720
 overwriteHeight = $shadowRes * 720
 
 [TextureRedefine]
 width = 384
 height = 368
-formats = 0x5
+formats = 0x005
 overwriteWidth = $shadowRes * 384
 overwriteHeight = $shadowRes * 368
 
 [TextureRedefine]
 width = 384
 height = 360
-formats = 0x5
+formats = 0x005
 overwriteWidth = $shadowRes * 384
 overwriteHeight = $shadowRes * 360
 
 [TextureRedefine]
 width = 360
 height = 360
-formats = 0x5
+formats = 0x005
 overwriteWidth = $shadowRes * 360
 overwriteHeight = $shadowRes * 360
