@@ -173,6 +173,15 @@ $gameHeight = 720
 [TextureRedefine] # Game Resolution
 width = 1280
 height = 720
+formatsExcluded = 0x41a
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 720
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 720
+formats = 0x41a
+inMEM1 = 1
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
