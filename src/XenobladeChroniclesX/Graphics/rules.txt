@@ -2,18 +2,14 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Graphics
 path = "Xenoblade Chronicles X/Graphics"
-description = Changes the resolution of the game.||Made by getdls and Lemon King.
+description = Changes the resolution of the game and the quality of the other elements.||Made by getdls and Lemon King.
 version = 5
 
 [Default]
 $width = 1280
 $height = 720
-$padWidth = 854
-$padHeight = 480
 $gameWidth = 1280
 $gameHeight = 720
-$gamePadWidth = 854
-$gamePadHeight = 480
 $internalScale = 1.0
 $shadowScale = 1
 $skellViewScale = 1.0
@@ -22,289 +18,186 @@ $skellViewScale = 1.0
 # TV Resolution
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 320x180
 $width = 320
 $height = 180
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 640x360
 $width = 640
 $height = 360
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 960x540
 $width = 960
 $height = 540
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 1280x720 (Default)
 default = 1
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 2560x1440 (2k)
 $width = 2560
 $height = 1440
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 3840x2160 (4k)
 $width = 3840
 $height = 2160
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 10240x5760
 $width = 10240
 $height = 5760
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 2560x1080 (21:9)
 $width = 2560
 $height = 1080
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 3440x1440 (21:9)
 $width = 3440
 $height = 1440
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 3840x1600 (21:10)
 $width = 3840
 $height = 1600
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 4300x1800 (21:9)
 $width = 4300
 $height = 1800
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 6880x2880 (21:9)
 $width = 6880
 $height = 2880
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 10240x4320 (21:9)
 $width = 10240
 $height = 4320
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 1440x900 (16:10)
 $width = 1440
 $height = 900
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 1680x1050 (16:10)
 $width = 1680
 $height = 1050
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 1920x1200 (16:10)
 $width = 1920
 $height = 1200
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 2560x1600 (16:10)
 $width = 2560
 $height = 1600
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 2880x1800 (16:10)
 $width = 2880
 $height = 1800
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 3840x2400 (16:10)
 $width = 3840
 $height = 2400
 
 [Preset]
-category = TV Resolution
+category = Resolution
 name = 5120x3200 (16:10)
 $width = 5120
 $height = 3200
 
-
-# Gamepad Resolution
-
-[Preset]
-category = Gamepad Resolution
-name = 320x180
-$padWidth = 320
-$padHeight = 180
+# Skell Cockpit Resolution
 
 [Preset]
-category = Gamepad Resolution
-name = 640x360
-$padWidth = 640
-$padHeight = 360
+category = Skell Cockpit Resolution
+name = Very Low (50%)
+$skellViewScale = 0.50
 
 [Preset]
-category = Gamepad Resolution
-name = 960x540
-$padWidth = 960
-$padHeight = 540
+category = Skell Cockpit Resolution
+name = Low (75%)
+$skellViewScale = 0.75
 
 [Preset]
-category = Gamepad Resolution
-name = 854x480 (Default)
+category = Skell Cockpit Resolution
+name = Medium (100%, Default)
 default = 1
+$skellViewScale = 1.0
 
 [Preset]
-category = Gamepad Resolution
-name = 1280x720
-$padWidth = 1280
-$padHeight = 720
+category = Skell Cockpit Resolution
+name = High (125%)
+$skellViewScale = 1.25
 
 [Preset]
-category = Gamepad Resolution
-name = 1600x900
-$padWidth = 1600
-$padHeight = 900
+category = Skell Cockpit Resolution
+name = Ultra (150%)
+$skellViewScale = 1.50
 
 [Preset]
-category = Gamepad Resolution
-name = 1920x1080
-$padWidth = 1920
-$padHeight = 1080
-
-[Preset]
-category = Gamepad Resolution
-name = 2560x1440
-$padWidth = 2560
-$padHeight = 1440
-
-[Preset]
-category = Gamepad Resolution
-name = 3200x1800
-$padWidth = 3200
-$padHeight = 1800
-
-[Preset]
-category = Gamepad Resolution
-name = 3840x2160
-$padWidth = 3840
-$padHeight = 2160
-
-[Preset]
-category = Gamepad Resolution
-name = 5120x2880
-$padWidth = 5120
-$padHeight = 2880
-
-[Preset]
-category = Gamepad Resolution
-name = 7680x4320
-$padWidth = 7680
-$padHeight = 4320
-
-[Preset]
-category = Gamepad Resolution
-name = 2560x1080 (21:9)
-$padWidth = 2560
-$padHeight = 1080
-
-[Preset]
-category = Gamepad Resolution
-name = 3440x1440 (21:9)
-$padWidth = 3440
-$padHeight = 1440
-
-[Preset]
-category = Gamepad Resolution
-name = 3840x1600 (21:10)
-$padWidth = 3840
-$padHeight = 1600
-
-[Preset]
-category = Gamepad Resolution
-name = 4300x1800 (21:9)
-$padWidth = 4300
-$padHeight = 1800
-
-[Preset]
-category = Gamepad Resolution
-name = 6880x2880 (21:9)
-$padWidth = 6880
-$padHeight = 2880
-
-[Preset]
-category = Gamepad Resolution
-name = 1440x900 (16:10)
-$padWidth = 1440
-$padHeight = 900
-
-[Preset]
-category = Gamepad Resolution
-name = 1680x1050 (16:10)
-$padWidth = 1680
-$padHeight = 1050
-
-[Preset]
-category = Gamepad Resolution
-name = 1920x1200 (16:10)
-$padWidth = 1920
-$padHeight = 1200
-
-[Preset]
-category = Gamepad Resolution
-name = 2560x1600 (16:10)
-$padWidth = 2560
-$padHeight = 1600
-
-
-[Preset]
-category = Gamepad Resolution
-name = 3840x2400 (16:10)
-$padWidth = 3840
-$padHeight = 2400
-
+category = Skell Cockpit Resolution
+name = Extreme (200%)
+$skellViewScale = 2.0
 
 # Shadow Quality
 
@@ -367,41 +260,6 @@ category = Post-Processing Effect Quality
 name = Extreme (200%)
 $internalScale = 2.0
 
-
-# Skell View Resolution
-
-[Preset]
-category = Skell Combat View Resolution
-name = Very Low (50%)
-$skellViewScale = 0.50
-
-[Preset]
-category = Skell Combat View Resolution
-name = Low (75%)
-$skellViewScale = 0.75
-
-[Preset]
-category = Skell Combat View Resolution
-name = Medium (100%, Default)
-default = 1
-$skellViewScale = 1.0
-
-[Preset]
-category = Skell Combat View Resolution
-name = High (125%)
-$skellViewScale = 1.25
-
-[Preset]
-category = Skell Combat View Resolution
-name = Ultra (150%)
-$skellViewScale = 1.50
-
-[Preset]
-category = Skell Combat View Resolution
-name = Extreme (200%)
-$skellViewScale = 2.0
-
-
 # Texture Redefines
 
 [TextureRedefine]
@@ -430,15 +288,15 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 864
 height = 480
 formatsExcluded = 0x431,0x035,0x034,0x033,0x031
-overwriteWidth = ($padWidth/$gamePadWidth) * 864
-overwriteHeight = ($padHeight/$gamePadHeight) * 480
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 854
 height = 480
 formatsExcluded = 0x431,0x035,0x034,0x033,0x031
-overwriteWidth = ($padWidth/$gamePadWidth) * 854
-overwriteHeight = ($padHeight/$gamePadHeight) * 480
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
 
 [TextureRedefine]
 width = 640
