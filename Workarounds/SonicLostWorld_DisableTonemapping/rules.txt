@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = Disable Tonemapping
+path = "Sonic Lost World/Workarounds/Disable Tonemapping"
+description = Disables the game's tonemapping, making it not appear so dark. Some stages will apppear too bright.|Made by M&&M.
+version = 4
