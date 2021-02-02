@@ -2,9 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 2fc311c50a4dc0cc
-const float origRatio = float($gameWidth)/float($gameHeight);
-const float newRatio = float($width)/float($height);
-const float arScale = origRatio/newRatio;
+const float arScale = (((float($gameHeight)/float($height))*float($width))/float($gameWidth));
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)

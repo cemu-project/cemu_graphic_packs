@@ -1,3 +1,3 @@
 [sonic2013]
 moduleMatches = 0xC5691A40
-0x021B7FB8 = blr
+0x021B8068 = blr
