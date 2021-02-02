@@ -129,7 +129,7 @@ PS1f = R0f.w;
 R4f.z = R5f.x;
 R4f.w = R5f.y;
 // export
-SET_POSITION(vec4(R3f.x*arScale, R3f.y, R3f.z, R3f.w));
+SET_POSITION(vec4(R3f.x/arScale, R3f.y, R3f.z, R3f.w));
 // export
 passParameterSem131 = vec4(R1f.w, R1f.x, R1f.y, R1f.z);
 // export

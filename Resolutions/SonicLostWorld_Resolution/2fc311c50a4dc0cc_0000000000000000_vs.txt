@@ -164,7 +164,7 @@ R1f.y = mul_nonIEEE(intBitsToFloat(uf_remappedVS[8].z), backupReg0f);
 R1f.z = mul_nonIEEE(intBitsToFloat(uf_remappedVS[8].w), backupReg1f);
 R1f.w = mul_nonIEEE(intBitsToFloat(uf_remappedVS[8].x), backupReg2f);
 // export
-SET_POSITION(vec4(R5f.x*arScale, R5f.y, R5f.z, R5f.w));
+SET_POSITION(vec4(R5f.x/arScale, R5f.y, R5f.z, R5f.w));
 // export
 passParameterSem131 = vec4(R1f.x, R1f.y, R1f.z, R1f.w);
 // export

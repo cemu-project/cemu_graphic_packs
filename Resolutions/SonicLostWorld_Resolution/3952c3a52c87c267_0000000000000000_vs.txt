@@ -67,7 +67,7 @@ backupReg1f = R2f.y;
 R2f.x = backupReg0f;
 R2f.y = backupReg1f;
 // export
-SET_POSITION(vec4(R1f.x*arScale, R1f.y, R1f.z, R1f.w));
+SET_POSITION(vec4(R1f.x/arScale, R1f.y, R1f.z, R1f.w));
 // export
 passParameterSem136 = vec4(R2f.x, R2f.y, R2f.z, R2f.z);
 // 0
