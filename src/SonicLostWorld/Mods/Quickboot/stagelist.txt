@@ -12,7 +12,7 @@ w2砂漠 (Desert Ruins)
 "xswe01" - w2-3:ilomiloお菓子
 "w2a06" - w2-4:竜巻
 
-w3南国 (Tropical Resort)
+w3南国 (Tropical Coast)
 "w3a01" - w3-1:南国ビーチ
 "w3a03" - w3-2:フルーツ農園
 "xsea01" - w3-3:海底洞窟
