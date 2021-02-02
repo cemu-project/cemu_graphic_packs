@@ -2,5 +2,5 @@
 titleIds = 0005000010135700,000500001012B100,0005000010128F00
 name = Retry in Normal Play
 path = "Sonic Lost World/Mods/Retry in Normal Play"
-description = Allows you to retry outside of time trials.|Made by M&&M and Sajid.
-version = 4
+description = Allows you to retry outside of time trials.||Made by M&&M and Sajid.
+version = 6

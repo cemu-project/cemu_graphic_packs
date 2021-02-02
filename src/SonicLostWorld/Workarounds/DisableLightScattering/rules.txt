@@ -2,5 +2,5 @@
 titleIds = 0005000010135700,000500001012B100,0005000010128F00
 name = Disable Light Scattering
 path = "Sonic Lost World/Workarounds/Disable Light Scattering"
-description = Disables light scattering, which removes the rainbow effect. Made by Skyth.
-version = 4
+description = Disables light scattering, which removes the rainbow effect.||Made by Skyth.
+version = 6
