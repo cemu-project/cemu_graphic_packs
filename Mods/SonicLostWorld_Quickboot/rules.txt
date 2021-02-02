@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = Quickboot
+path = "Sonic Lost World/Mods/Quickboot"
+description = Boot straight to the title screen.|Can be customized by modifying the patch file.|Made by M&&M and Sajid.
+version = 4

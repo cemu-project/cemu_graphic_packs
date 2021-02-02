@@ -157,6 +157,7 @@ $gameHeight = 720
 width = 1280
 height = 720
 tileModesExcluded = 0x001
+formatsExcluded = 0x032
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
@@ -182,6 +183,7 @@ overwriteHeight = ($height / $gameHeight) * 192
 [TextureRedefine] # Depth of Field Pass
 width = 320
 height = 180
+tileModesExcluded = 0x001
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 180
 

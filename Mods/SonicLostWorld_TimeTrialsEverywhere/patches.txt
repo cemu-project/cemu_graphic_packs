@@ -1,0 +1,6 @@
+[sonic2013]
+moduleMatches = 0xC5691A40
+
+_bakuAddr = 0x02A8FAC4
+
+0x02A8FA7C = bl _bakuAddr # Branch past code looking for only_normalplay in actstgmission.lua

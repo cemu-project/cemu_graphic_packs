@@ -1,0 +1,69 @@
+Map Types:
+"Vss" - VSGame
+"Msn" - Mission
+"Plz" - Plaza
+"Wld" - World
+"Shr" - ShootingRange
+"Ttr" - Tutorial
+"Stf" - StaffRoll
+
+List of maps:
+"Fld_Tutorial00_Ttr" - Tutorial
+"Fld_TutorialShow00_Ttr" - Tutorial
+"Fld_MatchRoom_Mch" - Match Room
+"Fld_ShootingRange_Shr" - Shooting Range
+"Fld_World00_Wld" - Octo Valley
+"Fld_EasyHide00_Msn" - Mission
+"Fld_EasyClimb00_Msn" - Mission
+"Fld_EasyJump00_Msn" - Mission
+"Fld_Geyser00_Msn" - Mission
+"Fld_Sponge00_Msn" - Mission
+"Fld_Propeller00_Msn" - Mission
+"Fld_PaintingLift00_Msn" - Mission
+"Fld_RvlMaze00_Msn" - Mission
+"Fld_OctZero00_Msn" - Mission
+"Fld_InkRail00_Msn" - Mission
+"Fld_Invisible00_Msn" - Mission
+"Fld_Dozer00_Msn" - Mission
+"Fld_SlideLift00_Msn" - Mission
+"Fld_RvlSkatePark00_Msn" - Mission
+"Fld_OctRuins00_Msn" - Mission
+"Fld_Propeller01_Msn" - Mission
+"Fld_Charge00_Msn" - Mission
+"Fld_PaintingLift01_Msn" - Mission
+"Fld_TurnLift00_Msn" - Mission
+"Fld_RvlRuins00_Msn" - Mission
+"Fld_OctCrank00_Msn" - Mission
+"Fld_Trance00_Msn" - Mission
+"Fld_Sponge01_Msn" - Mission
+"Fld_Fusya00_Msn" - Mission
+"Fld_Dozer01_Msn" - Mission
+"Fld_RvlSeaPlant00_Msn" - Mission
+"Fld_OctSkatePark00_Msn" - Mission
+"Fld_BossStampKing_Bos_Msn" - The Mighty Octostomp!
+"Fld_BossCylinderKing_Bos_Msn" - The Dreaded Octonozzle!
+"Fld_BossBallKing_Bos_Msn" - The Rampaging Octowhirl!
+"Fld_BossMouthKing_Bos_Msn" - The Ravenous Octomaw!
+"Fld_BossRailKing_Bos_Msn" - Enter the Octobot King! (DJ Octavio)
+"Fld_StaffRoll00_Stf" - Staff Roll
+"Fld_Crank00_Dul" - Urchin Underpass (Dojo)
+"Fld_Warehouse00_Dul" - Walleye Warehouse (Dojo)
+"Fld_SeaPlant00_Dul" - Saltspray Rig (Dojo)
+"Fld_UpDown00_Dul" - Arowana Mall (Dojo)
+"Fld_SkatePark00_Dul" - Blackbelly Skatepark (Dojo)
+"Fld_Crank00_Vss" - Urchin Underpass
+"Fld_Warehouse00_Vss" - Walleye Warehouse
+"Fld_SeaPlant00_Vss" - Saltspray Rig
+"Fld_UpDown00_Vss" - Arowana Mall
+"Fld_SkatePark00_Vss" - Blackbelly Skatepark
+"Fld_Athletic00_Vss" - Camp Triggerfish
+"Fld_Amida00_Vss" - Port Mackerel
+"Fld_Maze00_Vss" - Kelp Dome
+"Fld_Tuzura00_Vss" - Moray Towers
+"Fld_Ruins00_Vss" - Bluefin Depot
+"Fld_Office00_Vss" - Ancho-V Games
+"Fld_Quarry00_Vss" - Piranha Pit
+"Fld_Jyoheki00_Vss" - Flounder Heights
+"Fld_Pivot00_Vss" - Museum d'Alfonsino
+"Fld_Hiagari00_Vss" - Mahi-Mahi Resort
+"Fld_Kaisou00_Vss" - Hammerhead Bridge

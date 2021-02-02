@@ -1,0 +1,24 @@
+[sonic2013_v48]
+moduleMatches = 0xC5691A40
+
+# Game States
+_E3Addr = 0x101B2150
+_kioskAddr = 0x101B2280
+_saveInitAddr = 0x101B2168
+_titleAddr = 0x101B2178
+_multiAddr = 0x101B2188
+_worldMapAddr = 0x101B2120
+_stageAddr = 0x101B2128
+_miniGameAddr = 0x101B2198
+_gameOverAddr = 0x101B21A8
+_staffRollAddr = 0x101B2110
+
+# MANDATORY - DO NOT TOUCH
+0x02A83AAC = lwz r7, (_saveInitAddr - 0x101B213C)(r12) # Boot now goes to SaveInit (previously Product)
+
+# Change the Addr mentioned here to any of the game states above
+0x02A83EF8 = lwz r6, (_titleAddr - 0x101B2174)(r11) # SaveInit now goes to whatever is chosen (previously Title)
+
+# Change the string to go to any stage upon boot (if state is set to Stage)
+# List of stages are in stagelist.txt
+0x101B2378 = .string "w1a01"

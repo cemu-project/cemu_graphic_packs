@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = Time Trials Everywhere
+path = "Sonic Lost World/Mods/Time Trials Everywhere"
+description = Allows you to do time trials in every stage except for DLC.|Made by M&&M.
+version = 4

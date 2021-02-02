@@ -1,0 +1,85 @@
+These are a list of stages that are present, taken from actstgdata.lua:
+
+w1草原 (Windy Hill)
+"w1a01" - w1-1:グラスヒル
+"w1a03" - w1-2:月光
+"xind01" - w1-3:インディ洞窟
+"w1a06" - w1-4:月光２
+
+w2砂漠 (Desert Ruins)
+"w2a01" - w2-1:サンドワーム軍
+"xbee01" - w2-2:ハチの巣ガンメン
+"xswe01" - w2-3:ilomiloお菓子
+"w2a06" - w2-4:竜巻
+
+w3南国 (Tropical Resort)
+"w3a01" - w3-1:南国ビーチ
+"w3a03" - w3-2:フルーツ農園
+"xsea01" - w3-3:海底洞窟
+"w3a06" - w3-4:オニキンメ
+"w6a03" - w3-X:上昇気流
+
+w4雪 (Frozen Factory)
+"w4a01" - w4-1:軍事工場
+"w4a04" - w4-2:ポッポーズ
+"xcas01" - w4-3:カジノ
+"w4a06" - w4-4:ゲレンデ
+
+w5ジャングル (Silent Forest)
+"w5a01" - w5-1:ジャングル軌道施設
+"w5a02" - w5-2:ミミズク
+"xind02" - w5-3:インディ洞窟2
+"xmoa01" - w5-4:モアイ
+
+w6空 (Sky Road)
+"w1a04" - w6-1:大ナール軍
+"w5a03" - w6-2:飛竜
+"w6a05" - w6-3:上昇気流２
+"w2c01" - w6-4:黄色三連バネ
+"xnim02" - w6-X:キン斗雲２
+
+w7溶岩 (Lava Mountain)
+"w7a01" - w7-1:火山
+"xsea02" - w7-2:海底洞窟2
+"w7a02" - w7-3:城塞火山2
+"w7a06" - w7-4:ラスボス戦
+
+w8スペシャル (Hidden World)
+"xcub01" - w8-1:ルービックキューブ
+"xsky01" - w8-2:スカイチェイス
+"xnim01" - w8-3:筋斗雲
+"xbak01" - w8-4:バクバク足場
+
+ミニゲーム (Circus)
+"mini01" - seesaw1
+"mini02" - seesaw2
+"mini03" - seesaw3
+"mini04" - trampoline1
+"mini05" - trampoline2
+"mini06" - trampoline3
+"mini07" - cannon1
+"mini08" - cannon2
+"mini09" - cannon3
+"mini10" - w7 only
+
+対戦 (Battle)
+"batl01" - スピードレース1 1-1 w1a01 グラスヒル
+"batl02" - スピードレース2　1-3 xind01 インディ洞窟
+"batl03" - スピードレース3 2-4 w2a06 竜巻
+"batl04" - スピードレース4 4-1 w4a01 軍事工場
+"batl05" - スピードレース5 5-3 xind02 インディー洞窟2
+"batl06" - エキスパートスピード1 2-1 w2a01 サンドワーム軍
+"batl07" - エキスパートスピード2 3-1 w3a01 南国ビーチ
+"batl08" - エキスパートスピード3 3-3 xsea01 海底洞窟
+"batl09" - エキスパートスピード4 5-1 w5a01 ジャングル軌道施設
+"batl10" - エキスパートスピード5 6-3 w6a05 上昇気流2
+"batl11" - リングレース1 2-4 w2a06 竜巻
+"batl12" - リングレース2 4-B w4a06 ゲレンデ
+"batl13" - リングレース3 5-2 w5a02 ミミズク
+"batl14" - リングレース4 6-3 w6a05 上昇気流2
+"batl15" - リングレース5 4-B w7a02 城塞火山２（ラッシュ）
+
+DLC
+"zdlc01" - NiGHTS
+"zdlc02" - ヨッシーアイランド (Yoshi's Island)
+"zdlc03" - ゼルダの伝説 (The Legend of Zelda)

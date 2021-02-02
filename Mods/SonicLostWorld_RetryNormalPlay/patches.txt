@@ -1,0 +1,4 @@
+[sonic2013]
+moduleMatches = 0xC5691A40
+
+0x02A9D798 = cmpwi r3, 1 # Set IsTimeAttack to 1
