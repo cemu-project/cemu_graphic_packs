@@ -62,7 +62,7 @@ w8スペシャル (Hidden World)
 "mini09" - cannon3
 "mini10" - w7 only
 
-対戦 (Battle)
+対戦 (2P Race)
 "batl01" - スピードレース1 1-1 w1a01 グラスヒル
 "batl02" - スピードレース2　1-3 xind01 インディ洞窟
 "batl03" - スピードレース3 2-4 w2a06 竜巻
