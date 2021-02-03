@@ -1,0 +1,174 @@
+[Definition]
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+name = Quickboot
+path = "Mario & Sonic at the Rio 2016 Olympic Games/Mods/Quickboot"
+description = Choose which state the game boots to.|Some states will cause an infinite loop while others will either softlock or crash the game.||Made by M&&M and Skyth.
+version = 7
+
+[Default]
+$state = 11
+
+[Preset]
+name = DevRoot (0)
+category = Game State
+$state = 0
+
+[Preset]
+name = DevTop (1)
+category = Game State
+$state = 1
+
+[Preset]
+name = ProductTop (2)
+category = Game State
+$state = 2
+
+[Preset]
+name = InitSaveData (3)
+category = Game State
+$state = 3
+
+[Preset]
+name = InitNetwork (4)
+category = Game State
+$state = 4
+
+[Preset]
+name = RomDebugTitle (5)
+category = Game State
+$state = 5
+
+[Preset]
+name = SelectMenu (6)
+category = Game State
+$state = 6
+
+[Preset]
+name = Sports (7)
+category = Game State
+$state = 7
+
+[Preset]
+name = TownMap (8)
+category = Game State
+$state = 8
+
+[Preset]
+name = MyRoom (9)
+category = Game State
+$state = 9
+
+[Preset]
+name = MiiOutfit (10)
+category = Game State
+$state = 10
+
+[Preset]
+name = Advertise (11, Default)
+category = Game State
+default = 1
+
+[Preset]
+name = MusicSetting (12)
+category = Game State
+$state = 12
+
+[Preset]
+name = HeroesBattle (13)
+category = Game State
+$state = 13
+
+[Preset]
+name = HeroesBattleFinale (14)
+category = Game State
+$state = 14
+
+[Preset]
+name = Staffroll (15)
+category = Game State
+$state = 15
+
+[Preset]
+name = GhostMatch (16)
+category = Game State
+$state = 16
+
+[Preset]
+name = Movie (17)
+category = Game State
+$state = 17
+
+[Preset]
+name = DevRoot (18)
+category = Game State
+$state = 18
+
+[Preset]
+name = DevSports (19)
+category = Game State
+$state = 19
+
+[Preset]
+name = DevSportsAfterTeamCharaSelect (20)
+category = Game State
+$state = 20
+
+[Preset]
+name = DevSoundTest (21)
+category = Game State
+$state = 21
+
+[Preset]
+name = DevSoundListenerTest (22)
+category = Game State
+$state = 22
+
+[Preset]
+name = DevPersonalTest (23)
+category = Game State
+$state = 23
+
+[Preset]
+name = DevPreviewStage (24)
+category = Game State
+$state = 24
+
+[Preset]
+name = DevSportsSelect (25)
+category = Game State
+$state = 25
+
+[Preset]
+name = DevDebugCeremonySelect (26)
+category = Game State
+$state = 26
+
+[Preset]
+name = DevDebugCeremony (27)
+category = Game State
+$state = 27
+
+[Preset]
+name = DevPreviewChara (28)
+category = Game State
+$state = 28
+
+[Preset]
+name = DevAutoTest (29)
+category = Game State
+$state = 29
+
+[Preset]
+name = DevSkipSports (30)
+category = Game State
+$state = 30
+
+[Preset]
+name = DevDecotextEditor (31)
+category = Game State
+$state = 31
+
+[Preset]
+name = DevCharaProfile (32)
+category = Game State
+$state = 32
