@@ -128,7 +128,7 @@ $height = 1080
 
 [Preset]
 category = TV Resolution
-name = 5120×1440 (32:9)
+name = 5120x1440 (32:9)
 $width = 5120
 $height = 1440
 
