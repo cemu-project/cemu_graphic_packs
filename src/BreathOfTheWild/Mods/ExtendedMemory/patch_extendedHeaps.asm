@@ -5,11 +5,11 @@ moduleMatches = 0x6267BFD0
 
 0x02C5E660 = lis r9, 0x8B60 ; add 0x50000000 to main gameheap which by default has a fixed size of 0x3B600000. Can't make it larger due to overlay arena being in the way
 
-SaveAreaHeapSize 		= 8 * 1024 * 1024 ; 8MiB (default is 2312KiB)
-TriggerParamHeapSize 		= 8 * 1024 * 1024 ; 8MiB (default is around 2616KiB)
-HavokMainHeapSize 		= 80 * 1024 * 1024 ; 80MiB (default is 30MiB) 
-PhysicsTempLowHeapSize 		= 512 * 1024; 512KiB (default is 128KiB)
-PhysicsSystemHeapSize 		= 512 * 1024; 512KiB (default is 128KiB)
+SaveAreaHeapSize 			= 8 * 1024 * 1024	; 8MiB (default is 2312KiB)
+TriggerParamHeapSize 		= 8 * 1024 * 1024	; 8MiB (default is around 2616KiB)
+HavokMainHeapSize 			= 80 * 1024 * 1024	; 80MiB (default is 30MiB) 
+PhysicsTempLowHeapSize 		= 512 * 1024 		; 512KiB (default is 128KiB)
+PhysicsSystemHeapSize 		= 512 * 1024 		; 512KiB (default is 128KiB)
 
 ; GameDataHeap
 0x032015E0 = lis r3, (SaveAreaHeapSize@ha + TriggerParamHeapSize@ha)
@@ -33,19 +33,18 @@ PhysicsSystemHeapSize 		= 512 * 1024; 512KiB (default is 128KiB)
 0x037fd6d4 = lis r3, PhysicsSystemHeapSize@ha
 
 ; Terrain Scene
-0x02C5A208 = lis       r3, 0x400 #lis       r3, 0x140
+0x02C5A208 = lis r3, 0x400 ; lis r3, 0x140
 
 ; KingSystem -> ForestRenderer
-0x0338cdbc = lis r3,0x80 # lis r3,0x30
+0x0338cdbc = lis r3, 0x80 ; lis r3,0x30
 
 ; KingSystem -> ForestRenderer -> ForestRenderer - WorkHeap
-0x033C9D80 = lis r3, 0x20 # lis r3, 0xC
-
-
+0x033C9D80 = lis r3, 0x20 ; lis r3, 0xC
 
 ; Overlay arena
 0x030AA5F4 = lis r7, 0x4000 ; expand overlay arena root heap size to 0x40000000 (1GiB) from default 0x1C000000 (448MiB). Can't make it larger due to forground bucket memory being in the way (starts at 0xE0000000)
-                            ; Extra size for overlay arena from rules.txt is 0x24000000 (576MiB)
+							; Extra size for overlay arena from rules.txt is 0x24000000 (576MiB)
+
 ; Overlay arena -> FixedHeap
 ; FixedHeap seems to store terrain renderer among other things
 0x034ED614 = lis r3, 0x0C20 + 0x1000 ; add 256MiB
@@ -80,7 +79,7 @@ PhysicsSystemHeapSize 		= 512 * 1024; 512KiB (default is 128KiB)
 0x0340f33C = nop
 
 ; ForResourceS
-0x0340f3f4  = lis r0,0x940 + 0x1000 ; add 256MiB
+0x0340f3f4  = lis r0, 0x940 + 0x1000 ; add 256MiB
 
 ; ForResourceL
 ; 0340F370                 addis     r26, r26, 0x20
@@ -89,7 +88,13 @@ PhysicsSystemHeapSize 		= 512 * 1024; 512KiB (default is 128KiB)
 0x340F370 = lis r26, 0x2200 ; add around 288MiB
 
 ; PlacementMgr heap
-0x037c0f30 = li r28,0x5a + 0x40 ; in MiB
+0x037c0f30 = li r28, 0x5a + 0x40 ; in MiB
+
+; Some pool size related to PlacementMgr ?
+0x02c4136c = li r10, 0x1000 + 0x400
+0x02c413f0 = li r10, 0x1000 + 0x400
+0x02c43e64 = li r10, 0x1000 + 0x400
+0x02c46340 = li r10, 0x1000 + 0x400
 
 
 ; Increase the size of the resource heap for small resources. When using mods like e.g. draw distance this would likely be the reason why it would spawn panic moons.
