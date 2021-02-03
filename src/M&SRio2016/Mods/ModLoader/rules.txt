@@ -2,5 +2,5 @@
 titleIds = 0005000010190300,00050000101E5300,00050000101E5400
 name = Mod Loader
 path = "Mario & Sonic at the Rio 2016 Olympic Games/Mods/Mod Loader"
-description = Allows the game to load data from a directory before the cpk file.|You will need to put the modified data into 'content/mod' in order for the mod to work.|Made by Radfordhound and M&&M.
+description = Allows the game to load data from a directory before the cpk file.|You will need to put the modified data into 'content/mod' in order for the mod to work.||Made by Radfordhound and M&&M.
 version = 6
