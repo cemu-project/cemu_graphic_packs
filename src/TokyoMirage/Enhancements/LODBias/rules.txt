@@ -1,0 +1,102 @@
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = LOD Bias
+path = "Tokyo Mirage Sessions FE/Enhancements/LOD Bias"
+description = Setting your Level Of Detail bias changes the detail level of the textures that are used.|Increasing the distant texture detail will make textures in the distance look sharper. Lowering the texture detail might improve performance however. Might introduce graphical bugs.
+version = 7
+
+[Default]
+$advancedOptions = 0
+$lodBias = 0
+
+
+# Show Experimental Options
+
+[Preset]
+category = Show Experimental Options
+name = Disabled
+
+[Preset]
+category = Show Experimental Options
+name = Enabled (for screenshots/testing)
+$advancedOptions = 1
+
+
+# Texture Detail
+
+[Preset]
+category = Distant Texture Detail
+name = Lowest (Not Recommended, +16)
+condition = $advancedOptions == 1
+$lodBias = +16
+
+[Preset]
+category = Distant Texture Detail
+name = Extremely low (Not Recommended, +8)
+condition = $advancedOptions == 1
+$lodBias = +8
+
+[Preset]
+category = Distant Texture Detail
+name = Very low (Not Recommended, +4)
+condition = $advancedOptions == 1
+$lodBias = +4
+
+[Preset]
+category = Distant Texture Detail
+name = Much lower (+3)
+$lodBias = +3
+
+[Preset]
+category = Distant Texture Detail
+name = Lower (+2)
+$lodBias = +2
+
+[Preset]
+category = Distant Texture Detail
+name = Slightly lower (+1)
+$lodBias = +1
+
+[Preset]
+category = Distant Texture Detail
+name = Normal (+0)
+default = 1
+$lodBias = 0
+
+[Preset]
+category = Distant Texture Detail
+name = Slightly Higher (-1)
+$lodBias = -1
+
+[Preset]
+category = Distant Texture Detail
+name = Higher (-2)
+$lodBias = -2
+
+[Preset]
+category = Distant Texture Detail
+name = Much higher (-3)
+$lodBias = -3
+
+[Preset]
+category = Distant Texture Detail
+name = Very high (Not Recommended, -4)
+condition = $advancedOptions == 1
+$lodBias = -4
+
+[Preset]
+category = Distant Texture Detail
+name = Extremely high (Not Recommended, -8)
+condition = $advancedOptions == 1
+$lodBias = -8
+
+[Preset]
+category = Distant Texture Detail
+name = Highest (Not Recommended, -16)
+condition = $advancedOptions == 1
+$lodBias = -16
+
+
+[TextureRedefine]
+formats = 0x01a,0x031,0x032,0x033,0x034,0x035,0x431,0x432,0x433,0x434,0x435
+overwriteRelativeLodBias = $lodBias

@@ -1,0 +1,64 @@
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = Cutscene Blur Amount
+path = "Tokyo Mirage Sessions FE/Mods/Cutscene Blur"
+description = Allows you to change the amount/strenght of the blur used in cutscenes.||Made by getdls.
+version = 7
+
+[Default]
+$blurAmount = 1.0
+
+
+[Preset]
+category = Blur Amount
+name = 100% (Default)
+
+[Preset]
+category = Blur Amount
+name = 90%
+$blurAmount = 0.9
+
+[Preset]
+category = Blur Amount
+name = 80%
+$blurAmount = 0.8
+
+[Preset]
+category = Blur Amount
+name = 70%
+$blurAmount = 0.7
+
+[Preset]
+category = Blur Amount
+name = 60%
+$blurAmount = 0.6
+
+[Preset]
+category = Blur Amount
+name = 50%
+$blurAmount = 0.5
+
+[Preset]
+category = Blur Amount
+name = 40%
+$blurAmount = 0.4
+
+[Preset]
+category = Blur Amount
+name = 30%
+$blurAmount = 0.3
+
+[Preset]
+category = Blur Amount
+name = 20%
+$blurAmount = 0.2
+
+[Preset]
+category = Blur Amount
+name = 10%
+$blurAmount = 0.1
+
+[Preset]
+category = Blur Amount
+name = 0%
+$blurAmount = 0.0

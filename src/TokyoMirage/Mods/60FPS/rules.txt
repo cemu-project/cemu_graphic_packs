@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
+name = 60FPS
+path = "Tokyo Mirage Sessions FE/Mods/60FPS"
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.||Made by getdls.
+version = 7

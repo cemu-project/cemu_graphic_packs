@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101ED700,00050000101ED800,0005000010131D00
-name = AA Removal
-path = "Tokyo Mirage Sessions FE/Enhancements/AA Removal"
-description = Removes AA, no performance gain. Used for clean look or injecting external AA. Made by getdls.
-version = 4

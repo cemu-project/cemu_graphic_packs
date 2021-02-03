@@ -1,7 +1,0 @@
-
-[TMS_219_EUv16]
-moduleMatches = 0x2249A57A
-
-0x10006C18 = .float $GameAspect
-0x10014400 = .float $GameAspect
-0x10067140 = .float $GameAspect
