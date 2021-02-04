@@ -98,6 +98,11 @@ category = Clarity
 $preset:int = 15
 
 [Preset]
+name = Hexaae's Clear Preset
+category = Clarity
+$preset:int = 16
+
+[Preset]
 name = User-Defined Preset
 category = Clarity
 $preset:int = 0

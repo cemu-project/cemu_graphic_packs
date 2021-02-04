@@ -234,6 +234,13 @@ $width = 4300
 $height = 1800
 
 [Preset]
+name = 5120x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 5120
+$height = 2160
+
+[Preset]
 name = 6880x2880
 category = Resolution
 condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
