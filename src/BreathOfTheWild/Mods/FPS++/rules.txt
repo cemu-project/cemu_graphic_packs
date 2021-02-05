@@ -108,20 +108,20 @@ $fpsLimit = 20
 
 # Simple FPS Lock
 
-[Preset]
-name = Enabled (prevents cutscene crashing, specific shrine physics issues)
-category = Temporary 30FPS Limit
-condition = $advancedMode == 0
-$fpsLockMode:int = 1
-$fpsLimit = 30
+#[Preset]
+#name = Enabled (prevents cutscene crashing, specific shrine physics issues)
+#category = Temporary 30FPS Limit
+#condition = $advancedMode == 0
+#$fpsLockMode:int = 1
+#$fpsLimit = 30
 
 
-[Preset]
-name = Disabled (Default)
-category = Temporary 30FPS Limit
-condition = $advancedMode == 0
-default = 1
-$fpsLockMode:int = 0
+#[Preset]
+#name = Disabled (Default)
+#category = Temporary 30FPS Limit
+#condition = $advancedMode == 0
+#default = 1
+#$fpsLockMode:int = 0
 
 
 # Advanced Settings
@@ -220,6 +220,27 @@ condition = $advancedMode == 1
 $fpsLimit = 20
 
 
+# Cursor Fix Mode
+
+[Preset]
+name = Disabled (Default)
+category = Menu Cursor Fix (Experimental)
+condition = ($advancedMode-$staticFPSMode == 1)
+$cursorFixAbove:int = 999
+
+[Preset]
+name = Enabled At 72FPS And Higher (Recommended)
+category = Menu Cursor Fix (Experimental)
+condition = ($advancedMode-$staticFPSMode == 1)
+$cursorFixAbove:int = 2
+
+[Preset]
+name = Enabled (For Testing, Not Recommended!)
+category = Menu Cursor Fix (Experimental)
+condition = ($advancedMode-$staticFPSMode == 1)
+$cursorFixAbove:int = 1
+
+
 # Static Mode
 
 [Preset]
@@ -290,27 +311,6 @@ name = Fence Skip
 category = Fence Type
 condition = $advancedMode == 1
 $fenceMethod = 3
-
-
-# Cursor Fix Mode
-
-[Preset]
-name = Disabled (Default)
-category = Menu Cursor Fix (Experimental)
-condition = ($advancedMode-$staticFPSMode == 1)
-$cursorFixAbove:int = 999
-
-[Preset]
-name = Enabled At 72FPS And Higher (Recommended)
-category = Menu Cursor Fix (Experimental)
-condition = ($advancedMode-$staticFPSMode == 1)
-$cursorFixAbove:int = 2
-
-[Preset]
-name = Enabled (For Testing, Not Recommended!)
-category = Menu Cursor Fix (Experimental)
-condition = ($advancedMode-$staticFPSMode == 1)
-$cursorFixAbove:int = 1
 
 
 # Debug Menu Options
