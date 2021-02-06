@@ -54,7 +54,7 @@ int cubeMapFaceId;
 R0f = passParameterSem136;
 R1f.xyz = (texture(textureUnitPS3, R0f.xy).xyz);
 R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
-// 0 - Tonemapping
+// 0 (brightness modified here)
 backupReg0f = R0f.x;
 backupReg1f = R0f.y;
 backupReg2f = R0f.z;

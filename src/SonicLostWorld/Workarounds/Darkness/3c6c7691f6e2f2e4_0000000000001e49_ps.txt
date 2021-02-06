@@ -72,7 +72,7 @@ R123f.y = (mul_nonIEEE(PV0f.x,R1f.w) + R2f.y);
 PV1f.y = R123f.y;
 R123f.z = (mul_nonIEEE(PV0f.y,R1f.w) + R2f.x);
 PV1f.z = R123f.z;
-// 2 - Tonemapping
+// 2 (brightness modified here)
 R3f.xyz = vec3(R0f.x,R0f.y,R0f.z) + vec3(PV1f.z,PV1f.y,PV1f.x) * 1.6666666667;
 // export
 passPixelColor0 = vec4(R3f.x, R3f.y, R3f.z, R3f.w);

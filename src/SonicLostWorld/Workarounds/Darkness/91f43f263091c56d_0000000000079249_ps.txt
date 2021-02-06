@@ -132,7 +132,7 @@ PV1f.y = R123f.y;
 PV0f.x = PV1f.y * intBitsToFloat(0x3e22f983);
 // 13
 PS1f = cos((PV0f.x)/0.1591549367);
-// 14 - Tonemapping
+// 14 (brightness modified here)
 R5f.x = ((mul_nonIEEE(PS1f,intBitsToFloat(uf_remappedPS[2].w)) + 1.0) * 1.6666666667);
 PV0f.y = mul_nonIEEE(PS1f, R126f.x);
 PV0f.z = mul_nonIEEE(PS1f, R127f.y);

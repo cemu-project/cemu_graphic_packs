@@ -85,6 +85,6 @@ R123i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R127i.z),intBitsToFloat(PV0
 PV1i.z = R123i.z;
 // 4
 R3i.xyz = floatBitsToInt(vec3(intBitsToFloat(R0i.x),intBitsToFloat(R0i.y),intBitsToFloat(R0i.z)) + vec3(intBitsToFloat(PV1i.z),intBitsToFloat(PV1i.y),intBitsToFloat(PV1i.x)));
-// export
+// export (brightness modified here)
 passPixelColor0 = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z), intBitsToFloat(R3i.w)) * 1.6666666667;
 }
