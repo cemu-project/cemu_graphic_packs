@@ -2,6 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 4fab679c75795f90
+// World Map
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
@@ -53,12 +54,12 @@ int cubeMapFaceId;
 R0f = passParameterSem136;
 R1f.xyz = (texture(textureUnitPS3, R0f.xy).xyz);
 R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz);
-// 0
+// 0 - Tonemapping
 backupReg0f = R0f.x;
 backupReg1f = R0f.y;
 backupReg2f = R0f.z;
-R0f.xyz = vec3(R1f.x,R1f.y,R1f.z) + vec3(backupReg0f,backupReg1f,backupReg2f);
+R0f.xyz = vec3(R1f.x,R1f.y,R1f.z) + vec3(backupReg0f,backupReg1f,backupReg2f) * 2;
 R0f.w = 1.0;
 // export
-//passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 }

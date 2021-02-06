@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010135700,000500001012B100,0005000010128F00
+name = Disable Post Processing Effects
+path = "Sonic Lost World/Workarounds/Darkness"
+description = Brightens up the game to work around broken tonemapping in Cemu.|Some stages will still be darker than they should, but is overall much better than before.||Made by M&&M.
+version = 6

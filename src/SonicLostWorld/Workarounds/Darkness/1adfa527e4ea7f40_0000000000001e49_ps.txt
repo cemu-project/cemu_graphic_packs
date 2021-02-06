@@ -2,6 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 1adfa527e4ea7f40
+// Silent Forest Zone 2
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
@@ -85,5 +86,5 @@ PV1i.z = R123i.z;
 // 4
 R3i.xyz = floatBitsToInt(vec3(intBitsToFloat(R0i.x),intBitsToFloat(R0i.y),intBitsToFloat(R0i.z)) + vec3(intBitsToFloat(PV1i.z),intBitsToFloat(PV1i.y),intBitsToFloat(PV1i.x)));
 // export
-//passPixelColor0 = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z), intBitsToFloat(R3i.w));
+passPixelColor0 = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z), intBitsToFloat(R3i.w)) * 1.6666666667;
 }

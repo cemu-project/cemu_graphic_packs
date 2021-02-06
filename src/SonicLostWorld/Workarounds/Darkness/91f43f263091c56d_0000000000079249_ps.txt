@@ -2,6 +2,7 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 91f43f263091c56d
+// Stages with heat waves
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
@@ -131,8 +132,8 @@ PV1f.y = R123f.y;
 PV0f.x = PV1f.y * intBitsToFloat(0x3e22f983);
 // 13
 PS1f = cos((PV0f.x)/0.1591549367);
-// 14
-R5f.x = (mul_nonIEEE(PS1f,intBitsToFloat(uf_remappedPS[2].w)) + 1.0);
+// 14 - Tonemapping
+R5f.x = ((mul_nonIEEE(PS1f,intBitsToFloat(uf_remappedPS[2].w)) + 1.0) * 1.6666666667);
 PV0f.y = mul_nonIEEE(PS1f, R126f.x);
 PV0f.z = mul_nonIEEE(PS1f, R127f.y);
 // 15
@@ -205,5 +206,5 @@ R7f.x = (mul_nonIEEE(PV1f.w,R5f.x) + R6f.x);
 R7f.y = (mul_nonIEEE(PV1f.z,R5f.x) + R6f.y);
 R7f.z = (mul_nonIEEE(PV1f.y,R5f.x) + R6f.z);
 // export
-//passPixelColor0 = vec4(R7f.x, R7f.y, R7f.z, R7f.w);
+passPixelColor0 = vec4(R7f.x, R7f.y, R7f.z, R7f.w);
 }
