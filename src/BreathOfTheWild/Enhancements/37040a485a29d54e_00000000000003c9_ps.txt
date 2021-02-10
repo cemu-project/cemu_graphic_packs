@@ -1199,12 +1199,12 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 2.5;
 	float DPX_Strength = 0.20;
 
-#elif (Preset == 16) // Hexaae's Clear Preset
+#elif (Preset == 16) //Hexaae's Clear Preset
 
 	#define adjust_bloom 1
-	const float bloomFactor = 0.613;
+	const float bloomFactor = 0.593;
 	#define HDRpassing 1
-	const float HDRPower = 1.53;
+	const float HDRPower = 1.56;
 	const float radius1 = 0.86;  
 	const float radius2 = 0.84;  
 	#define lumapassing 0 													   
@@ -1220,10 +1220,10 @@ float DPX_Strength = 0.20;
 	const float sat = -0.002;
 	const float crushContrast = 0.000;
 	#define post_process 0
-	const float satFactor = 0.020;
+	const float satFactor = -0.006;
 	#define blacknwhitepass 1
 	const int BlackPoint = 0;
-	const int WhitePoint = 255;
+	const int WhitePoint = 277;
 	#define lggpass 0 
 	vec3 RGB_Lift = vec3(1.000, 1.000, 1.000);
 	vec3 RGB_Gamma = vec3(1.000, 1.000, 1.000);

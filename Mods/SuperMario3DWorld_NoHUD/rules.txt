@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 5000010145d00,5000010145c00
+name = Remove All HUD Elements
+path = "Super Mario 3D World/Mods/No HUD (breaks menus)"
+description = Disable most of the UI while playing.|Use it only for screenshots as it breaks some menus.||Made by @etra0.
+version = 6
