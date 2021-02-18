@@ -1,0 +1,320 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+name = TV Resolution, Gamepad Resolution, Shadow Quality and Blur Quality
+path = "New Super Mario Bros. U/Graphics"
+description = Changes the TV/Gamepad resolution of the game. You can also adjust the quality of the shadows and blur.||Made by getdls.
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$shadowRes = 1
+$blurQuality = 0.0
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution
+name = 1280x720 (Default)
+
+[Preset]
+category = TV Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+name = 854x480 (Default)
+category = Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+
+# Blur Quality
+
+[Preset]
+category = Blur Quality
+name = Medium (Default)
+
+[Preset]
+category = Blur Quality
+name = High
+$blurQuality = 0.25
+
+[Preset]
+category = Blur Quality
+name = Ultra
+$blurQuality = 0.50
+
+[Preset]
+category = Blur Quality
+name = Extreme
+$blurQuality = 1.0
+
+
+# Use more accurate texture formats for less banding
+
+[TextureRedefine] 
+width = 1280
+height = 720
+formats = 0x001
+overwriteFormat = 0x005
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x01a
+overwriteFormat = 0x01f
+
+# Texture Redefines
+
+[TextureRedefine] # TV
+width = 1280
+height = 720
+#formats = 0x80e,0x01a,0x001
+tileModesExcluded = 0x1
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Shadows on level selection
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024
+
+[TextureRedefine] # Gamepad
+width = 864
+height = 480
+#formats = 0x01a
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine] # Gamepad
+width = 854
+height = 480
+#formats = 0x01a
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine] # Horizon blur
+width = 640
+height = 368
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine] # Horizon blur
+width = 640
+height = 360
+#formats = 0x01a
+tileModesExcluded = 0x1
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine]
+width = 512
+height = 256
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine]
+width = 256
+height = 128
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 128
+
+[TextureRedefine]
+width = 320
+height = 180
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+
+[TextureRedefine]
+width = 320
+height = 180
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 160
+height = 208
+#formats = 0x80e,0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 208
+
+[TextureRedefine] # Portraits
+width = 160
+height = 196
+#formats = 0x80e,0x01a
+formatsExcluded = 0x033
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 196
+
+[TextureRedefine]
+width = 160
+height = 90
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine]
+width = 128
+height = 64
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 64
+
+[TextureRedefine]
+width = 64
+height = 32
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 32
+height = 16
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16

@@ -19,7 +19,9 @@
 // This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
 // shader 8d638f35cebd14dc
-//banding fix
+// Used for: Banding Fix
+
+
 TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;

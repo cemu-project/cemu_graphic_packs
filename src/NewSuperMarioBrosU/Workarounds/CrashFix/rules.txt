@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+name = Title Screen Crash Fix
+path = "New Super Mario Bros. U/Workarounds/Title Screen Crash Fix" #and luigi
+description = Allows NSMBU and NSLU to be played without the required system files.|Only tested to work on the latest update of the game.||Made by Xalphenos.
+version = 6

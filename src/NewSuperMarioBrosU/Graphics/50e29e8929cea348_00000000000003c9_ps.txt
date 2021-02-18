@@ -19,7 +19,7 @@
 // This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
 // shader 50e29e8929cea348
-// Used for: Scaling Anti-Aliasing solution of game
+// Used for: Scaling Anti-Aliasing
 
 
 #ifdef VULKAN

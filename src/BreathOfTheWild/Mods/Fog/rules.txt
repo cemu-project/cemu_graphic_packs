@@ -8,6 +8,26 @@ version = 6
 [Default]
 $setting:int = 0
 
+$enableGroundFogColor:int = 1
+$groundFogRed = 1.0
+$groundFogGreen = 1.0
+$groundFogBlue = 1.0
+$groundFogOpacity = 1.0
+$groundFogBrightness = 1.0
+
+$enableWaterFogColor:int = 1
+$waterFogRed = 1.0
+$waterFogGreen = 1.0
+$waterFogBlue = 1.0
+$waterFogOpacity = 1.0
+
+$enableGreeneryFogColor:int = 1
+$greeneryFogRed = 1.0
+$greeneryFogGreen = 1.0
+$greeneryFogBlue = 1.0
+$greeneryFogOpacity = 1.0
+$greeneryFogBrightness = 1.0
+
 $enableDistanceFogColor:int = 1
 $distanceFogRed = 1.0
 $distanceFogGreen = 1.0
@@ -35,84 +55,528 @@ $ganonAuraOpacity = 1.0
 # Setting Selector
 
 [Preset]
-name = Distance Fog
+name = Ground Fog
 category = Fog Settings
 default = 1
 $setting:int = 0
 
 [Preset]
-name = Mist Clouds
+name = Water Fog
 category = Fog Settings
 $setting:int = 1
 
 [Preset]
-name = Hyrule Castle Fog/Aura
+name = Greenery Fog (e.g. trees, bushes and vines)
 category = Fog Settings
+default = 1
 $setting:int = 2
 
+[Preset]
+name = Distance Fog
+category = Fog Settings
+$setting:int = 3
+
+[Preset]
+name = Mist Clouds
+category = Fog Settings
+$setting:int = 4
+
+[Preset]
+name = Hyrule Castle Fog/Aura
+category = Fog Settings
+$setting:int = 5
+
+
+# Ground Fog
+
+[Preset]
+name = 100% Opacity (Default)
+category = Ground Fog Visibility
+condition = $setting == 0
+default = 1
+$groundFogOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.1
+
+[Preset]
+name = 0% Opacity
+category = Ground Fog Visibility
+condition = $setting == 0
+$groundFogOpacity = 0.0
+
+[Preset]
+name = 0.5x Brightness
+category = Ground Fog Brightness
+condition = $setting == 0
+$groundFogBrightness = 0.5
+
+[Preset]
+name = 0.75x Brightness
+category = Ground Fog Brightness
+condition = $setting == 0
+$groundFogBrightness = 0.75
+
+[Preset]
+name = 1x Brightness (Default)
+category = Ground Fog Brightness
+default = 1
+condition = $setting == 0
+$groundFogBrightness = 1.0
+
+[Preset]
+name = 1.5x Brightness
+category = Ground Fog Brightness
+condition = $setting == 0
+$groundFogBrightness = 1.5
+
+[Preset]
+name = 2x Brightness
+category = Ground Fog Brightness
+condition = $setting == 0
+$groundFogBrightness = 2.0
+
+[Preset]
+name = 3x Brightness
+category = Ground Fog Brightness
+condition = $setting == 0
+$groundFogBrightness = 3.0
+
+[Preset]
+name = 4x Brightness
+category = Ground Fog Brightness
+condition = $setting == 0
+$groundFogBrightness = 4.0
+
+[Preset]
+name = Normal (Default)
+category = Ground Fog Color
+condition = $setting == 0
+default = 1
+$enableGroundFogColor:int = 0
+
+[Preset]
+name = Black Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 1.0
+$groundFogGreen = 1.0
+$groundFogBlue = 1.0
+
+[Preset]
+name = Gray Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 0.75
+$groundFogGreen = 0.75
+$groundFogBlue = 0.75
+
+[Preset]
+name = Navy Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 0.0
+$groundFogGreen = 0.0
+$groundFogBlue = 0.5
+
+[Preset]
+name = Blue Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 0.0
+$groundFogGreen = 0.0
+$groundFogBlue = 1.0
+
+[Preset]
+name = Cyan Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 0.0
+$groundFogGreen = 0.5
+$groundFogBlue = 0.5
+
+[Preset]
+name = Green Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 0.0
+$groundFogGreen = 1.0
+$groundFogBlue = 0.0
+
+[Preset]
+name = Red Fog
+category = Ground Fog Color
+condition = $setting == 0
+$groundFogRed = 1.0
+$groundFogGreen = 0.0
+$groundFogBlue = 0.0
+
+# Water Fog
+
+[Preset]
+name = 100% Opacity (Default)
+category = Water Fog Visibility
+condition = $setting == 1
+default = 1
+$waterFogOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.1
+
+[Preset]
+name = 0% Opacity
+category = Water Fog Visibility
+condition = $setting == 1
+$waterFogOpacity = 0.0
+
+[Preset]
+name = Normal (Default)
+category = Water Fog Color
+condition = $setting == 1
+default = 1
+$enableWaterFogColor:int = 0
+
+[Preset]
+name = Black Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 1.0
+$waterFogGreen = 1.0
+$waterFogBlue = 1.0
+
+[Preset]
+name = Gray Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 0.75
+$waterFogGreen = 0.75
+$waterFogBlue = 0.75
+
+[Preset]
+name = Navy Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 0.0
+$waterFogGreen = 0.0
+$waterFogBlue = 0.5
+
+[Preset]
+name = Blue Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 0.0
+$waterFogGreen = 0.0
+$waterFogBlue = 1.0
+
+[Preset]
+name = Cyan Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 0.0
+$waterFogGreen = 0.5
+$waterFogBlue = 0.5
+
+[Preset]
+name = Green Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 0.0
+$waterFogGreen = 1.0
+$waterFogBlue = 0.0
+
+[Preset]
+name = Red Fog
+category = Water Fog Color
+condition = $setting == 1
+$waterFogRed = 1.0
+$waterFogGreen = 0.0
+$waterFogBlue = 0.0
+
+# Greenery Fog
+
+[Preset]
+name = 100% Opacity (Default)
+category = Greenery Fog Visibility
+condition = $setting == 2
+default = 1
+$greeneryFogOpacity = 1.0
+
+[Preset]
+name = 80% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.8
+
+[Preset]
+name = 60% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.6
+
+[Preset]
+name = 50% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.5
+
+[Preset]
+name = 40% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.4
+
+[Preset]
+name = 20% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.2
+
+[Preset]
+name = 10% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.1
+
+[Preset]
+name = 0% Opacity
+category = Greenery Fog Visibility
+condition = $setting == 2
+$greeneryFogOpacity = 0.0
+
+[Preset]
+name = 0.5x Brightness
+category = Greenery Fog Brightness
+condition = $setting == 2
+$greeneryFogBrightness = 0.5
+
+[Preset]
+name = 0.75x Brightness
+category = Greenery Fog Brightness
+condition = $setting == 2
+$greeneryFogBrightness = 0.75
+
+[Preset]
+name = 1x Brightness (Default)
+category = Greenery Fog Brightness
+default = 1
+condition = $setting == 2
+$greeneryFogBrightness = 1.0
+
+[Preset]
+name = 1.5x Brightness
+category = Greenery Fog Brightness
+condition = $setting == 2
+$greeneryFogBrightness = 1.5
+
+[Preset]
+name = 2x Brightness
+category = Greenery Fog Brightness
+condition = $setting == 2
+$greeneryFogBrightness = 2.0
+
+[Preset]
+name = 3x Brightness
+category = Greenery Fog Brightness
+condition = $setting == 2
+$greeneryFogBrightness = 3.0
+
+[Preset]
+name = 4x Brightness
+category = Greenery Fog Brightness
+condition = $setting == 2
+$greeneryFogBrightness = 4.0
+
+[Preset]
+name = Normal (Default)
+category = Greenery Fog Color
+condition = $setting == 2
+default = 1
+$enableGreeneryFogColor:int = 0
+
+[Preset]
+name = Black Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 1.0
+$greeneryFogGreen = 1.0
+$greeneryFogBlue = 1.0
+
+[Preset]
+name = Gray Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 0.75
+$greeneryFogGreen = 0.75
+$greeneryFogBlue = 0.75
+
+[Preset]
+name = Navy Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 0.0
+$greeneryFogGreen = 0.0
+$greeneryFogBlue = 0.5
+
+[Preset]
+name = Blue Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 0.0
+$greeneryFogGreen = 0.0
+$greeneryFogBlue = 1.0
+
+[Preset]
+name = Cyan Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 0.0
+$greeneryFogGreen = 0.5
+$greeneryFogBlue = 0.5
+
+[Preset]
+name = Green Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 0.0
+$greeneryFogGreen = 1.0
+$greeneryFogBlue = 0.0
+
+[Preset]
+name = Red Fog
+category = Greenery Fog Color
+condition = $setting == 2
+$greeneryFogRed = 1.0
+$greeneryFogGreen = 0.0
+$greeneryFogBlue = 0.0
 
 # Distance Fog
 
 [Preset]
 name = 100% Opacity (Default)
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 default = 1
 $distanceFogOpacity = 1.0
 
 [Preset]
 name = 80% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.8
 
 [Preset]
 name = 60% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.6
 
 [Preset]
 name = 50% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.5
 
 [Preset]
 name = 40% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.4
 
 [Preset]
 name = 20% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.2
 
 [Preset]
 name = 10% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.1
 
 [Preset]
 name = 0% Opacity
 category = Distance Fog Visibility
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogOpacity = 0.0
 
 [Preset]
 name = Normal (Default)
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 default = 1
 $enableDistanceFogColor:int = 0
 
 [Preset]
 name = Black Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 1.0
 $distanceFogGreen = 1.0
 $distanceFogBlue = 1.0
@@ -120,7 +584,7 @@ $distanceFogBlue = 1.0
 [Preset]
 name = Gray Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 0.75
 $distanceFogGreen = 0.75
 $distanceFogBlue = 0.75
@@ -128,7 +592,7 @@ $distanceFogBlue = 0.75
 [Preset]
 name = Navy Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 0.0
 $distanceFogGreen = 0.0
 $distanceFogBlue = 0.5
@@ -136,7 +600,7 @@ $distanceFogBlue = 0.5
 [Preset]
 name = Blue Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 0.0
 $distanceFogGreen = 0.0
 $distanceFogBlue = 1.0
@@ -144,7 +608,7 @@ $distanceFogBlue = 1.0
 [Preset]
 name = Cyan Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 0.0
 $distanceFogGreen = 0.5
 $distanceFogBlue = 0.5
@@ -152,7 +616,7 @@ $distanceFogBlue = 0.5
 [Preset]
 name = Green Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 0.0
 $distanceFogGreen = 1.0
 $distanceFogBlue = 0.0
@@ -160,7 +624,7 @@ $distanceFogBlue = 0.0
 [Preset]
 name = Red Fog
 category = Distance Fog Color
-condition = $setting == 0
+condition = $setting == 3
 $distanceFogRed = 1.0
 $distanceFogGreen = 0.0
 $distanceFogBlue = 0.0
@@ -170,63 +634,63 @@ $distanceFogBlue = 0.0
 [Preset]
 name = 100% Opacity (Default)
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 default = 1
 $fogCloudsOpacity = 1.0
 
 [Preset]
 name = 80% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.8
 
 [Preset]
 name = 60% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.6
 
 [Preset]
 name = 50% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.5
 
 [Preset]
 name = 40% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.4
 
 [Preset]
 name = 20% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.2
 
 [Preset]
 name = 10% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.1
 
 [Preset]
 name = 0% Opacity
 category = Fog Clouds Visibility
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsOpacity = 0.0
 
 [Preset]
 name = Normal (Default)
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 default = 1
 $enableFogCloudsColor:int = 0
 
 [Preset]
 name = Black Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 1.0
 $fogCloudsGreen = 1.0
 $fogCloudsBlue = 1.0
@@ -234,7 +698,7 @@ $fogCloudsBlue = 1.0
 [Preset]
 name = Gray Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 0.75
 $fogCloudsGreen = 0.75
 $fogCloudsBlue = 0.75
@@ -242,7 +706,7 @@ $fogCloudsBlue = 0.75
 [Preset]
 name = Navy Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 0.0
 $fogCloudsGreen = 0.0
 $fogCloudsBlue = 0.5
@@ -250,7 +714,7 @@ $fogCloudsBlue = 0.5
 [Preset]
 name = Blue Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 0.0
 $fogCloudsGreen = 0.0
 $fogCloudsBlue = 1.0
@@ -258,7 +722,7 @@ $fogCloudsBlue = 1.0
 [Preset]
 name = Cyan Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 0.0
 $fogCloudsGreen = 0.5
 $fogCloudsBlue = 0.5
@@ -266,7 +730,7 @@ $fogCloudsBlue = 0.5
 [Preset]
 name = Green Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 0.0
 $fogCloudsGreen = 1.0
 $fogCloudsBlue = 0.0
@@ -274,7 +738,7 @@ $fogCloudsBlue = 0.0
 [Preset]
 name = Red Fog
 category = Fog Clouds Color
-condition = $setting == 1
+condition = $setting == 4
 $fogCloudsRed = 1.0
 $fogCloudsGreen = 0.0
 $fogCloudsBlue = 0.0
@@ -284,63 +748,63 @@ $fogCloudsBlue = 0.0
 [Preset]
 name = 100% Opacity (Default)
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 default = 1
 $castleFogOpacity = 1.0
 
 [Preset]
 name = 80% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.8
 
 [Preset]
 name = 60% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.6
 
 [Preset]
 name = 50% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.5
 
 [Preset]
 name = 40% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.4
 
 [Preset]
 name = 20% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.2
 
 [Preset]
 name = 10% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.1
 
 [Preset]
 name = 0% Opacity
 category = Castle Fog Visibility
-condition = $setting == 2
+condition = $setting == 5
 $castleFogOpacity = 0.0
 
 [Preset]
 name = Normal (Default)
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 default = 1
 $enableCastleFogColor:int = 0
 
 [Preset]
 name = Black Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 1.0
 $castleFogGreen = 1.0
 $castleFogBlue = 1.0
@@ -348,7 +812,7 @@ $castleFogBlue = 1.0
 [Preset]
 name = Gray Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 0.75
 $castleFogGreen = 0.75
 $castleFogBlue = 0.75
@@ -356,7 +820,7 @@ $castleFogBlue = 0.75
 [Preset]
 name = Navy Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 0.0
 $castleFogGreen = 0.0
 $castleFogBlue = 0.5
@@ -364,7 +828,7 @@ $castleFogBlue = 0.5
 [Preset]
 name = Blue Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 0.0
 $castleFogGreen = 0.0
 $castleFogBlue = 1.0
@@ -372,7 +836,7 @@ $castleFogBlue = 1.0
 [Preset]
 name = Cyan Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 0.0
 $castleFogGreen = 0.5
 $castleFogBlue = 0.5
@@ -380,7 +844,7 @@ $castleFogBlue = 0.5
 [Preset]
 name = Green Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 0.0
 $castleFogGreen = 1.0
 $castleFogBlue = 0.0
@@ -388,7 +852,7 @@ $castleFogBlue = 0.0
 [Preset]
 name = Red Fog
 category = Castle Fog Color
-condition = $setting == 2
+condition = $setting == 5
 $castleFogRed = 1.0
 $castleFogGreen = 0.0
 $castleFogBlue = 0.0
@@ -399,81 +863,81 @@ $castleFogBlue = 0.0
 [Preset]
 name = 300% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 2.0
 
 [Preset]
 name = 200% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 2.0
 
 [Preset]
 name = 150% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 1.5
 
 [Preset]
 name = 100% Opacity (Default)
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 default = 1
 $ganonAuraOpacity = 1.0
 
 [Preset]
 name = 80% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.8
 
 [Preset]
 name = 60% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.6
 
 [Preset]
 name = 50% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.5
 
 [Preset]
 name = 40% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.4
 
 [Preset]
 name = 20% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.2
 
 [Preset]
 name = 10% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.2
 
 [Preset]
 name = 0% Opacity
 category = Ganon's Aura Visibility
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraOpacity = 0.0
 
 [Preset]
 name = Normal (Default)
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 default = 1
 $enableGanonAuraColor:int = 0
 
 [Preset]
 name = Black Aura
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraRed = 1.0
 $ganonAuraGreen = 1.0
 $ganonAuraBlue = 1.0
@@ -481,7 +945,7 @@ $ganonAuraBlue = 1.0
 [Preset]
 name = Navy Aura
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraRed = 0.0
 $ganonAuraGreen = 0.0
 $ganonAuraBlue = 0.5
@@ -489,7 +953,7 @@ $ganonAuraBlue = 0.5
 [Preset]
 name = Blue Aura
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraRed = 0.0
 $ganonAuraGreen = 0.0
 $ganonAuraBlue = 1.0
@@ -497,7 +961,7 @@ $ganonAuraBlue = 1.0
 [Preset]
 name = Cyan Aura
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraRed = 0.0
 $ganonAuraGreen = 0.5
 $ganonAuraBlue = 0.5
@@ -505,7 +969,7 @@ $ganonAuraBlue = 0.5
 [Preset]
 name = Green Aura
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraRed = 0.0
 $ganonAuraGreen = 1.0
 $ganonAuraBlue = 0.0
@@ -513,7 +977,7 @@ $ganonAuraBlue = 0.0
 [Preset]
 name = Red Aura
 category = Ganon's Aura Color
-condition = $setting == 2
+condition = $setting == 6
 $ganonAuraRed = 1.0
 $ganonAuraGreen = 0.0
 $ganonAuraBlue = 0.0
