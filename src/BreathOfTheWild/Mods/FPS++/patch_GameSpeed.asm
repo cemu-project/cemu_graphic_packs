@@ -6,6 +6,8 @@ moduleMatches = 0x6267BFD0
 
 # Constants
 
+const_0.0:
+.float 0.0
 const_0.5:
 .float 0.5
 const_1:
@@ -65,13 +67,13 @@ initBuffer:
 .byte 0
 
 bufferStart:
-.ptr 0xD8
+.ptr 0xDC
 
 bufferCurrEntry:
-.ptr 0xD8
+.ptr 0xDC
 
 bufferEnd:
-.ptr 0xD8+(4*$frameAverageAmount)
+.ptr 0xDC+(4*$frameAverageAmount)
 
 ; Useful for trying potential FPS values. Need to set debugMode = 1 to enable the debugging in the interface and code.
 debugAddr:
@@ -89,18 +91,27 @@ stw	r0,	0x78(r30)				; Execute original instruction that got replaced with a jum
 ; If static FPS is enabled, always set currently "running" FPS to $fpsLimit
 li r3, $staticFPSMode			; Load the $staticFPSMode setting into r3
 cmpwi r3, 1						; Compare with 1, which is when it's enabled
-bne _calculateDynamicFPS		; If the comparison is not equal, run
+bne _checkExternalSpeed			; If the comparison is not equal, run
 lis r3, fpsLimit@ha				; Load current FPS limit...
 lfs f10, fpsLimit@l(r3)			; ...into f10
 b _setGamespeed					; Skip dynamic FPS code when static mode is enabled and go to the game speed setting code
 
+; If the manual speed has been set by an external program to something other then 0, use that as the static speed
+_checkExternalSpeed:
+lis r11, const_0.0@ha			; Load a 0 float...
+lfs f12, const_0.0@l(r11)		; ...into f12
+lfs f10, 0xD0(r30)				; Load the external speed offset
+fcmpu cr0, f10, f12				; Compare the value stored in the external memory offset to 0 (f12)
+beq _calculateDynamicFPS		; Compare the 
+b _setGamespeed
+
 ; Calculate speed of current frame (FPS). It's calculated by using the ticks between the previous frame and now, which is stored in r12, and the amount of ticks that the Wii U executes in a second (the bus speed).
 _calculateDynamicFPS:
 xoris r12, r12, 0x8000			; Flip the sign bit of int ticks for floating point conversion
-stw r12, 0xD4(r30)				; Store sign flipped ticks in memory as lower half of double
+stw r12, 0xD8(r30)				; Store sign flipped ticks in memory as lower half of double
 lis r12, 0x4330					; Create upper half of ticks double
-stw r12, 0xD0(r30)				; Store it in upper half of memory
-lfd f10, 0xD0(r30)				; Load full double ticks into f10
+stw r12, 0xD4(r30)				; Store it in upper half of memory
+lfd f10, 0xD4(r30)				; Load full double ticks into f10
 lis r12, convSub@ha				; Load number to subtract from tick double...
 lfd f12, convSub@l(r12)			; ...to create tick float into f12
 fsub f10, f10, f12				; Do the subtraction

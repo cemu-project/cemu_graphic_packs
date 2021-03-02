@@ -132,7 +132,7 @@ $fpsLimit = 20
 name = No FPS Limit (for benchmarking)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 999
+$fpsLimit = 500
 
 [Preset]
 name = 244FPS (ideal for 244Hz displays)
