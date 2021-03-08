@@ -9,6 +9,7 @@ _titleAddr = 0x101B2178
 _multiAddr = 0x101B2188
 _worldMapAddr = 0x101B2120
 _stageAddr = 0x101B2128
+_battleAddr = 0x101B21A0
 _miniGameAddr = 0x101B2198
 _gameOverAddr = 0x101B21A8
 _staffRollAddr = 0x101B2110
