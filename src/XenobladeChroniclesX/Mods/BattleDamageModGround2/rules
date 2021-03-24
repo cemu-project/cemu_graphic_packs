@@ -1,0 +1,28 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Ground damage divisor
+path = "Xenoblade Chronicles X/Mods/Battle/Ground damage divisor
+description = Decrease the ground damage done by your team. I wanted to increase the challenge of the main story but the Enemy Stat Multiplier Mod made them hit way too hard. Note: displayed damage isn't affected so in practice it feels more like multiplying the enemy's health, but internally it's really the damage which is divided. Note 2: Haven't tested it for skells, but it probably won't work since the Damage Mod Multiplier doesn't. Note 3: I'm no /u/lasyan3 and frankly I had no idea what I was doing lol. Unexpected behaviour might show up. Nothing happened to me so far though.
+version = 5
+
+[Default]
+$divr = 2
+
+[Preset]
+name = Damage / 2
+
+[Preset]
+name = Damage / 3
+$divr = 3
+
+[Preset]
+name = Damage / 5
+$divr = 5
+
+[Preset]
+name = Damage / 10
+$divr = 10
+
+[Preset]
+name = Damage / 100
+$divr = 100
