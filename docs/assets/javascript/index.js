@@ -19,8 +19,6 @@ const altNames = {
 	"hw": "Hyrule Warriors",
 	"mc": "Minecraft",
 	"slw": "Sonic Lost World",
-	"smm": "Super Mario Maker",
-	"mk8": "Mario Kart 8",
 	"tphd": "The Legend of Zelda: Twilight Princess HD",
 	"wwhd": "The Legend of Zelda: The Wind Waker HD",
 	// easter eggs

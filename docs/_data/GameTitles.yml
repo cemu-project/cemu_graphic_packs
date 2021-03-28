@@ -170,24 +170,24 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/LEGO_Star_Wars:_The_Force_Awakens"
   version: 4
-"Mario Party 10":
+"Party 10":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Party_10"
   version: 4
-"Mario & Sonic at the Rio 2016 Olympic Games":
+"Sonic at the Rio 2016 Olympic Games":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Rio_2016_Olympic_Games"
   version: 4
-"Mario & Sonic at the Sochi 2014 Olympic Winter Games":
+"Sonic at the Sochi 2014 Olympic Winter Games":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_&_Sonic_at_the_Sochi_2014_Olympic_Winter_Games"
   version: 2
-"Mario Kart 8":
+"Kart 8":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Kart_8"
   version: 4
   hasUltrawide: true
-"Mario Tennis: Ultra Smash":
+"Tennis: Ultra Smash":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Mario_Tennis:_Ultra_Smash"
   version: 4
@@ -223,7 +223,7 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/New_Super_Luigi_U"
   version: 4
-"New Super Mario Bros. U":
+"New Super Bros. U":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/New_Super_Mario_Bros._U"
   version: 4
@@ -247,7 +247,7 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Pac-Man_and_the_Ghostly_Adventures_2"
   version: 2
-"Paper Mario: Color Splash":
+"Paper: Color Splash":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Paper_Mario:_Color_Splash"
   version: 4
@@ -337,12 +337,12 @@
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Star_Fox_Zero"
   version: 4
-"Super Mario 3D World":
+"Super 3D World":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Super_Mario_3D_World"
   version: 4
   hasUltrawide: true
-"Super Mario Maker":
+"Super Maker":
   nativeRes: 720
   compatLink: "http://compat.cemu.info/wiki/Super_Mario_Maker"
   version: 4

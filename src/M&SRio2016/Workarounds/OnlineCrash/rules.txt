@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010190300,00050000101E5300,00050000101E5400
 name = Online Crash Skip
-path = "Mario & Sonic at the Rio 2016 Olympic Games/Workarounds/Online Crash Skip"
+path = "Sonic at the Rio 2016 Olympic Games/Workarounds/Online Crash Skip"
 description = Skips a crash when launching the game, allow you to boot the game under online mode.||Made by M&&M.
 version = 6

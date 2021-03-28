@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 000500001018DB00,000500001018DC00,000500001018DD00
 name = Infinite Level Height
-path = "Super Mario Maker/Mods/Infinite Level Height"
+path = "Super Maker/Mods/Infinite Level Height"
 description = Make sure to have online disabled while having this graphic pack enabled, you're liable if you get banned! Allows you to make higher levels. Credits to comex for the mod (http://yt.vu/+comex) and GRAnimated for adapting it into a graphic pack.
 version = 4
 
