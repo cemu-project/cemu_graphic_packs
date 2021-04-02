@@ -25,7 +25,7 @@ const altNames = {
 	"breath of the dicknut": "The Legend of Zelda: Breath of the Wild",
 	"f-zero": "FAST Racing NEO",
 	"m&m": "Sonic",
-	"mimi": "Sonic",
+	"michael": "Sonic",
 	"best game": "Meme Run"
 };
 
