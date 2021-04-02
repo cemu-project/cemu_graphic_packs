@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 00050000101A3500,00050000101A3600,0005000010199000
 name = Resolution
-path = "Tennis: Ultra Smash/Graphics/Resolution"
+path = "Mario Tennis: Ultra Smash/Graphics/Resolution"
 description = Changes the resolution of the game. Made by M&&M.
 version = 4
 

@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Debanding
-path = "Kart 8/Enhancements/Debanding"
+path = "Mario Kart 8/Enhancements/Debanding"
 description = Adds a debanding post processing shader to the game.|This pack can only be used with OpenGL.|Made by getdls.
 version = 6
 rendererFilter = opengl

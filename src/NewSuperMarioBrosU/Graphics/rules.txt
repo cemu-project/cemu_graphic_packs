@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
 name = TV Resolution, Gamepad Resolution, Shadow Quality and Blur Quality
-path = "New Super Bros. U/Graphics"
+path = "New Super Mario Bros. U/Graphics"
 description = Changes the TV/Gamepad resolution of the game. You can also adjust the quality of the shadows and blur.||Made by getdls.
 version = 6
 

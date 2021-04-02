@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010162D00,0005000010162E00,0005000010161F00
 name = Resolution
-path = "Party 10/Graphics/Resolution"
+path = "Mario Party 10/Graphics/Resolution"
 description = Changes the resolution of the game. Note: Missing videos in minigame screen is currently a Cemu/Cemuhook issue.
 version = 4
 
@@ -211,7 +211,7 @@ formats = 0x019,0x80e
 overwriteWidth = ($width/$gameWidth) * 536
 overwriteHeight = ($height/$gameHeight) * 126
 
-[TextureRedefine] # Party -> Car Rendering
+[TextureRedefine] # Mario Party -> Car Rendering
 width = 1024
 height = 512
 formats = 0x019,0x80e
