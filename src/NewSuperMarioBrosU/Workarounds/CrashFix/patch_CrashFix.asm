@@ -14,8 +14,8 @@ moduleMatches = 0xA7A5ECF1, 0xC7B938AD
 
 0x024BDE70 = b .+0xE8
 
-[NSLU_CrashFix_V0EU]
-moduleMatches = 0xA3705C0B
+[NSLU_CrashFix_V0EUv0US]
+moduleMatches = 0xA3705C0B, 0xE71A8748
 
 0x024D7158 = b .+0xE8
 
