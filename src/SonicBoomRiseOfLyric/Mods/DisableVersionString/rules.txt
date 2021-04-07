@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Disable Version String
+path = "Sonic Boom: Rise of Lyric/Mods/Disable Version String"
+description = This patches out the version string that lingers around at the top-left of the screen.||Made by HyperBE32.
+version = 6
