@@ -1,0 +1,69 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Uncapped Framerate
+path = "Sonic Boom: Rise of Lyric/Mods/Uncapped Framerate"
+description = This patches out the framerate cap that the game has in place.||Made by M&&M.
+version = 6
+
+[Default]
+$fpsLimit = 60
+
+# Simple FPS Limit
+
+[Preset]
+name = 240FPS Limit
+category = FPS Limit
+$fpsLimit = 240
+
+[Preset]
+name = 165FPS Limit
+category = FPS Limit
+$fpsLimit = 165
+
+[Preset]
+name = 144FPS Limit
+category = FPS Limit
+$fpsLimit = 144
+
+[Preset]
+name = 120FPS Limit
+category = FPS Limit
+$fpsLimit = 120
+
+[Preset]
+name = 90FPS Limit
+category = FPS Limit
+$fpsLimit = 90
+
+[Preset]
+name = 75FPS Limit
+category = FPS Limit
+$fpsLimit = 75
+
+[Preset]
+name = 72FPS Limit
+category = FPS Limit
+$fpsLimit = 72
+
+[Preset]
+name = 60FPS Limit (Default)
+category = FPS Limit
+default = 1
+
+[Preset]
+name = 45FPS Limit
+category = FPS Limit
+$fpsLimit = 45
+
+[Preset]
+name = 30FPS Limit
+category = FPS Limit
+$fpsLimit = 30
+
+[Preset]
+name = 20FPS Limit
+category = FPS Limit
+$fpsLimit = 20
+
+[Control]
+vsyncFrequency = $fpsLimit

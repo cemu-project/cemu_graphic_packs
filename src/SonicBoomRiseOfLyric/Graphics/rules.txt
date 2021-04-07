@@ -1,0 +1,319 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Graphic Options
+path = "Sonic Boom: Rise of Lyric/Graphics"
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality and anisotropic filtering quality.||Made by M&&M.
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$shadowQuality = 1
+$anisotropy = 1
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = TV Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution
+name = 854x480
+$width = 854
+$height = 480
+
+[Preset]
+category = TV Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720
+default = 1
+
+[Preset]
+category = TV Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution
+name = 320x180
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+category = Gamepad Resolution
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution
+name = 854x480
+default = 1
+
+[Preset]
+category = Gamepad Resolution
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution
+name = 1280x720
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+category = Gamepad Resolution
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+# Shadow Quality
+
+[Preset]
+name = Low
+category = Shadow Quality
+$shadowQuality = 0.5
+
+[Preset]
+name = Medium
+category = Shadow Quality
+default = 1
+
+[Preset]
+name = High
+category = Shadow Quality
+$shadowQuality = 2
+
+[Preset]
+name = Ultra
+category = Shadow Quality
+$shadowQuality = 3
+
+[Preset]
+name = Extreme
+category = Shadow Quality
+$shadowQuality = 4
+
+# Anisotropic Filtering Quality
+
+[Preset]
+name = 1x
+category = Anisotropic Filtering Quality
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering Quality
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering Quality
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering Quality
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering Quality
+$anisotropy = 16
+
+
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+tileModesExcluded = 0x1 # ignore cpu processed textures
+formatsExcluded = 0x1,0x19,0x1a,0x1f,0x122,0x806,0x80e,0x816,0x81e,0x820,0x823 # ignore viewports and cubemaps
+overwriteAnisotropy = $anisotropy
+
+
+# Texture Redefines
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 720
+formatsExcluded = 0x31
+tileModesExcluded = 0x001
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 720
+
+[TextureRedefine] # Gamepad Resolution
+width = 864
+height = 480
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine] # Gamepad Resolution
+width = 854
+height = 480
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine] # Bloom Resolution
+width = 320
+height = 192
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 192
+
+[TextureRedefine] # Bloom Resolution
+width = 320
+height = 180
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 180
+
+[TextureRedefine] # unknown
+width = 64
+height = 64
+formats = 0x810
+overwriteWidth = ($width / $gameWidth) * 64
+overwriteHeight = ($height / $gameHeight) * 64
+
+# scaling these causes overbloom
+# might be avoidable via using depth
+
+#[TextureRedefine]
+#width = 32
+#height = 16
+#formats = 0x810
+#overwriteWidth = ($width / $gameWidth) * 32
+#overwriteHeight = ($height / $gameHeight) * 16
+
+#[TextureRedefine]
+#width = 16
+#height = 16
+#formats = 0x810
+#overwriteWidth = ($width / $gameWidth) * 16
+#overwriteHeight = ($height / $gameHeight) * 16
+
+#[TextureRedefine]
+#width = 8
+#height = 8
+#formats = 0x810
+#overwriteWidth = ($width / $gameWidth) * 8
+#overwriteHeight = ($height / $gameHeight) * 8
+
+#[TextureRedefine]
+#width = 4
+#height = 4
+#formats = 0x810
+#overwriteWidth = ($width / $gameWidth) * 4
+#overwriteHeight = ($height / $gameHeight) * 4
+
+#[TextureRedefine]
+#width = 1
+#height = 1
+#formats = 0x810
+#overwriteWidth = ($width / $gameWidth) * 1
+#overwriteHeight = ($height / $gameHeight) * 1
+
+
+# Shadow Scaling
+
+[TextureRedefine]
+width = 256
+height = 256
+formats = 0x80e,0x11
+overwriteWidth = $shadowQuality * 256
+overwriteHeight = $shadowQuality * 256
