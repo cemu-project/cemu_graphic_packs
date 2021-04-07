@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Disable Intro Logos
+path = "Sonic Boom: Rise of Lyric/Mods/Disable Intro Logos"
+description = This patches out the intro logos at the beginning of the game.||Made by HyperBE32.
+version = 6
