@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010175B00,0005000010177800,0005000010191F00
-name = Dev Level Select
-path = "Sonic Boom: Rise of Lyric/Mods/Dev Level Select"
-description = This enables the game's Dev Level Select.||Made by M&&M and HyperBE32.
-version = 6
