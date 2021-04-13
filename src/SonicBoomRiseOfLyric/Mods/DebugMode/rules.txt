@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Debug Menu
+path = "Sonic Boom: Rise of Lyric/Mods/Debug Mode"
+description = This enables the game's debug mode.|THIS WILL MODIFY YOUR SAVE FILE!||Made by M&&M and HyperBE32.
+version = 6
