@@ -2,5 +2,5 @@
 titleIds = 0005000010175B00,0005000010177800,0005000010191F00
 name = Debug Mode
 path = "Sonic Boom: Rise of Lyric/Mods/Debug Mode"
-description = This patch enables the game's debug mode, including a level select.|WARNING: Going to a level via the level select will overwrite your save data! Use this at your own risk.||Made by M&&M and HyperBE32.
+description = This patch enables the game's debug mode, including a level select on the main menu.||WARNING: Dev Level Select will overwrite your save data! Use at your own risk.||Made by M&&M and HyperBE32.
 version = 6

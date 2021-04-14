@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Unlock All Power Glyphs
+path = "Sonic Boom: Rise of Lyric/Cheats/Unlock All Power Glyphs"
+description = This patch unlocks all Power Glyphs.||NOTICE: if the Power Glyphs menu isn't available to you yet, pause and unpause the game to unlock it.||Made by HyperBE32.
+version = 6
