@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Infinite Robot Scrap
+path = "Sonic Boom: Rise of Lyric/Cheats/Infinite Robot Scrap"
+description = This patch constantly awards the player with the maximum amount of robot scrap. These can be spent on upgrades or improving hub areas.||Made by HyperBE32.
+version = 6
