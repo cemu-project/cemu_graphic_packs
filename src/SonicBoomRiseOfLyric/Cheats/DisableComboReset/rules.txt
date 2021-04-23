@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Disable Combo Reset
+path = "Sonic Boom: Rise of Lyric/Cheats/Disable Combo Reset"
+description = This prevents your combos from expiring after a set amount of time or after taking damage.||Made by HyperBE32.
+version = 6
