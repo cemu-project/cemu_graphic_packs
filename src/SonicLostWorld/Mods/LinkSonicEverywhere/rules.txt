@@ -2,5 +2,5 @@
 titleIds = 0005000010135700,000500001012B100,0005000010128F00
 name = Link Sonic Everywhere
 path = "Sonic Lost World/Mods/Link Sonic Everywhere"
-description = Allows you to play as Link Sonic from the Zelda DLC in every stage.|Requires the 'The Legend of Zelda Zone' DLC to be installed.||Made by DeaTh and M&&M.
+description = Allows you to play as Link Sonic from the 'The Legend of Zelda Zone' DLC in every stage.|Requires the 'The Legend of Zelda Zone' DLC to be installed.||Made by DeaTh and M&&M.
 version = 6
