@@ -55,16 +55,18 @@ async function searchSupportedGames(searchString) {
 	let resultsHintSearch = [];
 	if (Object.keys(altNames).includes(searchString.toLowerCase())) searchString = altNames[searchString.toLowerCase()];
 	switch (searchString.toLowerCase()) {
-		case "digital foundry":
+		case "digital foundry": {
 			document.title = "Home - CEMU Hacks";
 			document.getElementsByClassName("navbar-brand")[0].innerText="CEMU Hacks";
 			document.getElementsByClassName("display-4")[0].innerText="CEMU Hacks";
 			document.getElementsByClassName("lead")[0].innerText = "Get your online CEMU hax here!!";
-		case "ign":
+		}
+		case "ign": {
 			// IGN based for calling it community built presets & plugins instead of hacks
 			document.title = "Home - Cemu Plugins";
 			document.getElementsByClassName("navbar-brand")[0].innerText="Cemu Plugins";
 			document.getElementsByClassName("display-4")[0].innerText="Cemu Plugins";
+		}
 	}
 	if (searchString != "*") resultsHintSearch = supportedGamesSearchSet.get(searchString);
 	else {
