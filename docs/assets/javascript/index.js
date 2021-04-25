@@ -24,6 +24,7 @@ const altNames = {
 	"tphd": "The Legend of Zelda: Twilight Princess HD",
 	"wwhd": "The Legend of Zelda: The Wind Waker HD",
 	// easter eggs
+	"zemu": "The Legend of Zelda: Breath of the Wild",
 	"breath of the dicknut": "The Legend of Zelda: Breath of the Wild",
 	"f-zero": "FAST Racing NEO",
 	"m&m": "Sonic",
@@ -53,10 +54,17 @@ async function searchSupportedGames(searchString) {
 	
 	let resultsHintSearch = [];
 	if (Object.keys(altNames).includes(searchString.toLowerCase())) searchString = altNames[searchString.toLowerCase()];
-	if (searchString.toLowerCase() == "digital foundry") {
-		document.title = "Home - CEMU Hacks";
-		document.getElementsByClassName("display-4")[0].innerText="CEMU Hacks";
-		document.getElementsByClassName("lead")[0].innerText = "Get your online CEMU hax here!!";
+	switch (searchString.toLowerCase()) {
+		case "digital foundry":
+			document.title = "Home - CEMU Hacks";
+			document.getElementsByClassName("navbar-brand")[0].innerText="CEMU Hacks";
+			document.getElementsByClassName("display-4")[0].innerText="CEMU Hacks";
+			document.getElementsByClassName("lead")[0].innerText = "Get your online CEMU hax here!!";
+		case "ign":
+			// IGN based for calling it community built presets & plugins instead of hacks
+			document.title = "Home - Cemu Plugins";
+			document.getElementsByClassName("navbar-brand")[0].innerText="Cemu Plugins";
+			document.getElementsByClassName("display-4")[0].innerText="Cemu Plugins";
 	}
 	if (searchString != "*") resultsHintSearch = supportedGamesSearchSet.get(searchString);
 	else {
