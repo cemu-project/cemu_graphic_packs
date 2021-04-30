@@ -60,12 +60,14 @@ async function searchSupportedGames(searchString) {
 			document.getElementsByClassName("navbar-brand")[0].innerText="CEMU Hacks";
 			document.getElementsByClassName("display-4")[0].innerText="CEMU Hacks";
 			document.getElementsByClassName("lead")[0].innerText = "Get your online CEMU hax here!!";
+			break;
 		}
 		case "ign": {
 			// IGN based for calling it community built presets & plugins instead of hacks
 			document.title = "Home - Cemu Plugins";
 			document.getElementsByClassName("navbar-brand")[0].innerText="Cemu Plugins";
 			document.getElementsByClassName("display-4")[0].innerText="Cemu Plugins";
+			break;
 		}
 	}
 	if (searchString != "*") resultsHintSearch = supportedGamesSearchSet.get(searchString);
