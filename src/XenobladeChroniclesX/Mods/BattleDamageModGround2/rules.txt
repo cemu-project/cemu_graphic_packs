@@ -9,20 +9,37 @@ version = 5
 $divr = 2
 
 [Preset]
-name = Damage / 2
+category = Damage Divisor
+name = Normal Damage (Default)
+default = 1
+$divr = 1
 
 [Preset]
+category = Damage Divisor
+name = Damage / 2
+$divr = 2
+
+[Preset]
+category = Damage Divisor
 name = Damage / 3
 $divr = 3
 
 [Preset]
+category = Damage Divisor
 name = Damage / 5
 $divr = 5
 
 [Preset]
+category = Damage Divisor
 name = Damage / 10
 $divr = 10
 
 [Preset]
+category = Damage Divisor
+name = Damage / 10
+$divr = 50
+
+[Preset]
+category = Damage Divisor
 name = Damage / 100
 $divr = 100
