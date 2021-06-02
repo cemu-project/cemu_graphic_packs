@@ -292,7 +292,7 @@ $padHeight = 1080
 
 [Preset]
 category = Gamepad Resolution
-name = 5120×1440 (32:9)
+name = 5120x1440 (32:9)
 $padWidth = 5120
 $padHeight = 1440
 
