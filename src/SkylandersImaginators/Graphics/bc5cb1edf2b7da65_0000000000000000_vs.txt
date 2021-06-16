@@ -18,17 +18,18 @@
 #endif
 // This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
-// shader 52c4522be0df98da
-// Used for: Fixing shadow resolution
-float resScale = float($width)/float($gameWidth);
+// shader bc5cb1edf2b7da65
+// Used for: Vertical shadow edge smoothing
+float resYScale = float($height)/float($gameHeight);
+
 
 #ifdef VULKAN
 layout(set = 0, binding = 0) uniform ufBlock
 {
-uniform ivec4 uf_remappedVS[6];
+uniform ivec4 uf_remappedVS[5];
 };
 #else
-uniform ivec4 uf_remappedVS[6];
+uniform ivec4 uf_remappedVS[5];
 #endif
 ATTR_LAYOUT(0, 0) in uvec4 attrDataSem0;
 ATTR_LAYOUT(0, 1) in uvec4 attrDataSem5;
@@ -37,9 +38,9 @@ out gl_PerVertex
 	vec4 gl_Position;
 	float gl_PointSize;
 };
-layout(location = 1) out vec4 passParameterSem133;
-layout(location = 2) out vec4 passParameterSem134;
-layout(location = 3) out vec4 passParameterSem135;
+layout(location = 0) out vec4 passParameterSem133;
+layout(location = 1) out vec4 passParameterSem134;
+layout(location = 2) out vec4 passParameterSem135;
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
@@ -55,8 +56,10 @@ vec4 R0f = vec4(0.0);
 vec4 R1f = vec4(0.0);
 vec4 R2f = vec4(0.0);
 vec4 R3f = vec4(0.0);
-vec4 R122f = vec4(0.0);
+vec4 R4f = vec4(0.0);
 vec4 R123f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
 vec4 R127f = vec4(0.0);
 uvec4 attrDecoder;
 float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
@@ -80,64 +83,79 @@ attrDecoder.z = 0;
 attrDecoder.w = 0;
 R2f = vec4(intBitsToFloat(int(attrDecoder.x)), intBitsToFloat(int(attrDecoder.y)), intBitsToFloat(floatBitsToInt(0.0)), intBitsToFloat(floatBitsToInt(1.0)));
 // 0
-PV0f.x = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].z));
-PV0f.y = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].y));
-PV0f.z = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].x));
-PV0f.w = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].w));
-R127f.z = R1f.x + -(0.5);
-PS0f = R127f.z;
+PV0f.x = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].x));
+PV0f.y = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].w));
+PV0f.z = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].z));
+PV0f.w = mul_nonIEEE(R1f.w, intBitsToFloat(uf_remappedVS[0].y));
+R126f.x = 0.0;
+PS0f = R126f.x;
 // 1
-R123f.x = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].z)) + PV0f.x);
+R123f.x = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].x)) + PV0f.x);
 PV1f.x = R123f.x;
-R123f.y = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].y)) + PV0f.y);
+R123f.y = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].w)) + PV0f.y);
 PV1f.y = R123f.y;
-R123f.z = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].x)) + PV0f.z);
+R123f.z = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].z)) + PV0f.z);
 PV1f.z = R123f.z;
-R123f.w = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].w)) + PV0f.w);
+R123f.w = (mul_nonIEEE(R1f.z,intBitsToFloat(uf_remappedVS[1].y)) + PV0f.w);
 PV1f.w = R123f.w;
-R127f.y = R1f.y + -(0.5);
-PS1f = R127f.y;
+R0f.x = PS0f + R2f.x;
+PS1f = R0f.x;
 // 2
-R123f.x = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].z)) + PV1f.x);
+R123f.x = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].x)) + PV1f.x);
 PV0f.x = R123f.x;
-R123f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].y)) + PV1f.y);
+R123f.y = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].w)) + PV1f.y);
 PV0f.y = R123f.y;
-R123f.z = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].x)) + PV1f.z);
+R123f.z = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].z)) + PV1f.z);
 PV0f.z = R123f.z;
-R123f.w = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].w)) + PV1f.w);
+R123f.w = (mul_nonIEEE(R1f.y,intBitsToFloat(uf_remappedVS[2].y)) + PV1f.w);
 PV0f.w = R123f.w;
-R127f.x = (R127f.z * 0.25 + intBitsToFloat(0x3e000000)/resScale);
-PS0f = R127f.x;
+R3f.x = R126f.x + R2f.x;
+PS0f = R3f.x;
 // 3
 backupReg0f = R1f.x;
 backupReg0f = R1f.x;
 backupReg0f = R1f.x;
 backupReg0f = R1f.x;
-R1f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].x)) + PV0f.z);
-R1f.y = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].y)) + PV0f.y);
-R1f.z = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].z)) + PV0f.x);
-R1f.w = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].w)) + PV0f.w);
-R122f.x = (R127f.y * 0.25 + intBitsToFloat(0x3e000000)/resScale);
-PS1f = R122f.x;
+R1f.x = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].x)) + PV0f.x);
+R1f.y = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].y)) + PV0f.w);
+R1f.z = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].z)) + PV0f.z);
+R1f.w = (mul_nonIEEE(backupReg0f,intBitsToFloat(uf_remappedVS[3].w)) + PV0f.y);
+R3f.z = R126f.x + R2f.y;
+PS1f = R3f.z;
 // 4
-R0f.x = (mul_nonIEEE(R127f.z,intBitsToFloat(uf_remappedVS[4].x)) + intBitsToFloat(uf_remappedVS[4].z));
-R0f.y = (mul_nonIEEE(R127f.y,intBitsToFloat(uf_remappedVS[4].y)) + intBitsToFloat(uf_remappedVS[4].w));
-R2f.z = R127f.x;
-R2f.w = PS1f;
-R0f.z = intBitsToFloat(0xbf800000)/resScale;
-PS0f = R0f.z;
+R127f.x = intBitsToFloat(uf_remappedVS[4].w)/resYScale * -(1.0);
+R127f.y = intBitsToFloat(uf_remappedVS[4].w)/resYScale * intBitsToFloat(0xc0400000);
+PV0f.z = -(intBitsToFloat(uf_remappedVS[4].w)/resYScale);
+PV0f.z *= 2.0;
+PV0f.w = -(intBitsToFloat(uf_remappedVS[4].w)/resYScale);
+PV0f.w *= 4.0;
+R127f.w = intBitsToFloat(uf_remappedVS[4].w)/resYScale * 1.0;
+PS0f = R127f.w;
 // 5
-R3f.x = intBitsToFloat(uf_remappedVS[5].z);
-R3f.x /= 2.0;
-R3f.y = intBitsToFloat(uf_remappedVS[5].w);
-R3f.y /= 2.0;
+R125f.x = intBitsToFloat(uf_remappedVS[4].w)/resYScale * intBitsToFloat(0x40400000);
+R126f.y = intBitsToFloat(uf_remappedVS[4].w)/resYScale;
+R126f.y *= 4.0;
+PV1f.z = intBitsToFloat(uf_remappedVS[4].w)/resYScale;
+PV1f.z *= 2.0;
+R0f.w = PV0f.z + R2f.y;
+R0f.y = PV0f.w + R2f.y;
+PS1f = R0f.y;
+// 6
+R4f.x = R126f.x + R2f.x;
+R3f.y = R127f.x + R2f.y;
+R0f.z = R127f.y + R2f.y;
+R3f.w = R127f.w + R2f.y;
+R4f.y = PV1f.z + R2f.y;
+PS0f = R4f.y;
+// 7
+R4f.z = R125f.x + R2f.y;
+R4f.w = R126f.y + R2f.y;
 // export
 SET_POSITION(vec4(R1f.x, R1f.y, R1f.z, R1f.w));
 // export
-passParameterSem133 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
+passParameterSem133 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 // export
-passParameterSem134 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+passParameterSem134 = vec4(R3f.x, R3f.y, R3f.z, R3f.w);
 // export
-passParameterSem135 = vec4(R3f.x, R3f.y, R3f.z, R3f.z);
-// 0
+passParameterSem135 = vec4(R4f.x, R4f.y, R4f.z, R4f.w);
 }

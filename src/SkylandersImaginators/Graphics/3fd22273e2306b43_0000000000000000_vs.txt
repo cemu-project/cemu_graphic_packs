@@ -22,6 +22,7 @@
 // Used for: Horizontal shadow edge smoothing 
 float resXScale = float($width)/float($gameWidth);
 
+
 #ifdef VULKAN
 layout(set = 0, binding = 0) uniform ufBlock
 {

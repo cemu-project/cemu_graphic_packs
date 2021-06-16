@@ -1,83 +1,108 @@
 [Definition]
 titleIds = 000500001017C600,0005000010181F00
-name = Resolution
-path = "Skylanders Trap Team/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Crementif.
-version = 4
+name = Game Resolution and Shadow Quality
+path = "Skylanders Trap Team/Graphics"
+description = Changes the resolution of the game and the quality of the shadows.||Made by Crementif.
+version = 5
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$shadowRes = 1
 
-# Performance
+
+# Resolution
 
 [Preset]
+category = Resolution
+name = 1280x720 (Default)
+
+[Preset]
+category = Resolution
 name = 640x360
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 960x540
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
-
-# Common HD Resolutions
 
 [Preset]
+category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+
+
+# Texture Redefines
 
 [TextureRedefine] # Game output and hud resolution
 width = 1280
@@ -145,6 +170,7 @@ overwriteWidth = ($width/$gameWidth) * 102
 overwriteHeight = ($height/$gameHeight) * 57
 
 # Bloom blur
+
 [TextureRedefine] # Squashed bloom
 width = 256
 height = 256
@@ -181,3 +207,12 @@ height = 240
 formats = 0x01a,0x011
 overwriteWidth = ($width/$gameWidth) * 427
 overwriteHeight = ($height/$gameHeight) * 240
+
+# Shadows
+
+[TextureRedefine]
+width = 512
+height = 2048
+formats = 0x5
+overwriteWidth = $shadowRes * 512
+overwriteHeight = $shadowRes * 2048
