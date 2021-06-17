@@ -2,11 +2,11 @@
 titleIds = 0005000010142d00
 name = FPS
 path = "Skylanders: Spyro's Adventure/Mods/FPS"
-description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00.
+description = Changes the game's dynamic FPS target. Might increase the chance of issues with scanning figures.||Made by Mew00.
 version = 6
 
 [Default]
-$targetFPS:int = 30
+$targetFPS:int = 60
 
 
 # FPS Limit
@@ -55,7 +55,7 @@ $targetFPS:int = 72
 [Preset]
 name = 60 FPS
 category = FPS Limit
-$targetFPS:int = 60
+default = 1
 
 [Preset]
 name = 40 FPS
@@ -63,9 +63,9 @@ category = FPS Limit
 $targetFPS:int = 40
 
 [Preset]
-name = 30 FPS (Default)
+name = 30 FPS
 category = FPS Limit
-default = 1
+$targetFPS:int = 30
 
 [Preset]
 name = 20 FPS
