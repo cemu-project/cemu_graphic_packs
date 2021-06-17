@@ -3,7 +3,7 @@ titleIds = 00050000101F4D00,00050000101FB100
 name = TV Resolution, Gamepad Resolution and Shadow Quality
 path = "Skylanders Imaginators/Graphics"
 description = Changes the TV resolution and gamepad resolution of the game. Additionally you can also change the quality of the shadows.||Made by Crementif.
-version = 5
+version = 6
 
 [Default]
 $width = 1280
