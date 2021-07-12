@@ -1,0 +1,298 @@
+[Definition]
+titleIds = 0005000010139200,0005000010140400
+name = TV Resolution, Gamepad Resolution and Shadow Quality
+path = "Skylanders Swap Force/Graphics"
+description = Changes the TV resolution and gamepad resolution of the game. Additionally you can also change the quality of the shadows.||Made by Crementif and TheSkyDude134.
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$shadowRes = 1
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution
+name = 1280x720 (Default)
+
+[Preset]
+category = TV Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+name = 854x480 (Default)
+category = Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+
+
+# Texture Redefines
+
+[TextureRedefine] # Game output and hud resolution
+width = 1280
+height = 720
+formats = 0x01a,0x011
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Gamepad resolution
+width = 864
+height = 480
+formats = 0x01a
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine] # Stage rendering
+width = 1024
+height = 576
+formats = 0x01a,0x011,0x80e
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 576
+
+[TextureRedefine] # Squashed/bloom alt viewport
+width = 512
+height = 576
+formats = 0x01a,0x80e,0x011
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 576
+
+[TextureRedefine] # Half-res viewport depth, blur and bloom
+width = 512
+height = 288
+formats = 0x01a,0x80e,0x011
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 288
+
+# Bloom blur
+[TextureRedefine] # Squashed bloom
+width = 256
+height = 256
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine]
+width = 256
+height = 144
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 144
+
+[TextureRedefine]
+width = 128
+height = 80
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 80
+
+[TextureRedefine]
+width = 128
+height = 72
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 72
+
+[TextureRedefine]
+width = 64
+height = 48
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 48
+
+[TextureRedefine]
+width = 64
+height = 36
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 36
+
+[TextureRedefine]
+width = 32
+height = 32
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 32
+height = 18
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 18
+
+[TextureRedefine]
+width = 16
+height = 16
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 16
+overwriteHeight = ($height/$gameHeight) * 16
+
+[TextureRedefine]
+width = 16
+height = 9
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 16
+overwriteHeight = ($height/$gameHeight) * 9
+
+[TextureRedefine]
+width = 8
+height = 8
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 8
+overwriteHeight = ($height/$gameHeight) * 8
+
+[TextureRedefine]
+width = 8
+height = 4
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 8
+overwriteHeight = ($height/$gameHeight) * 4
+
+# Shadows
+[TextureRedefine]
+width = 512
+height = 2048
+formats = 0x005
+overwriteWidth = $shadowRes * 512
+overwriteHeight = $shadowRes * 2048
