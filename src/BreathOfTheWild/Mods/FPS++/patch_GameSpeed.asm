@@ -27,8 +27,14 @@ convSub:
 
 # Variables
 
+; Cemu doesn't parse the variables correctly until it saves all the settings. This is just a temporary test of a workaround to make it work.
+; To change this workaround back, change the lines from
+; ($advancedMode * $fpsLimitAdvanced) + ((($advancedMode+1) % 2) * $fpsLimitNormal)
+; to
+; $fpsLimit
+
 fpsLimit:
-.float $fpsLimit
+.float (($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal)
 
 lowFPSLimit:
 .float $lowFPSLimit
@@ -37,31 +43,31 @@ bufferSizeDivider:
 .float $frameAverageAmount
 
 averageFPS30:
-.float $fpsLimit
+.float (($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal)
 
 averageFPS30Inv:
-.float 900/$fpsLimit
+.float 900/((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal))
 
 averageFPS1.5:
-.float (1.5*$fpsLimit)/30
+.float (1.5*((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal)))/30
 
 averageFPS1.5Inv:
-.float 45/$fpsLimit
+.float 45/((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal))
 
 averageFPS1:
-.float $fpsLimit/30
+.float ((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal))/30
 
 averageFPS1Inv:
-.float 30/$fpsLimit
+.float 30/((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal))
 
 averageFPS0.5:
-.float $fpsLimit/60
+.float ((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal))/60
 
 averageFPS0.5Inv:
-.float 30/(2*$fpsLimit)
+.float 30/(2*((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal)))
 
 averageSum:
-.float $fpsLimit*$frameAverageAmount
+.float ((($advancedMode == 0) * $fpsLimitAdvanced) + (($advancedMode == 1) * $fpsLimitNormal))*$frameAverageAmount
 
 initBuffer:
 .byte 0

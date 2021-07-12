@@ -10,7 +10,10 @@ $fpsLockMode:int = 0
 $advancedMode:int = 0
 $staticFPSMode:int = 0
 
-$fpsLimit = 60
+$fpsLimitNormal = 60
+$fpsLimitAdvanced = 60
+$fpsLimit = 0
+
 $frameAverageAmount = 8
 $fenceMethod = 1
 $lowFPSLimit = 20
@@ -42,86 +45,68 @@ $advancedMode:int = 1
 name = 240FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 240
+$fpsLimitNormal = 240
 
 [Preset]
 name = 165FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 165
+$fpsLimitNormal = 165
 
 [Preset]
 name = 144FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 144
+$fpsLimitNormal = 144
 
 [Preset]
 name = 120FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 120
+$fpsLimitNormal = 120
 
 [Preset]
 name = 90FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 90
+$fpsLimitNormal = 90
 
 [Preset]
 name = 75FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 75
+$fpsLimitNormal = 75
 
 [Preset]
 name = 72FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 72
+$fpsLimitNormal = 72
 
 [Preset]
 name = 60FPS Limit (Default)
 category = FPS Limit
 condition = $advancedMode == 0
 default = 1
-$fpsLimit = 60
+$fpsLimitNormal = 60
 
 [Preset]
 name = 45FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 45
+$fpsLimitNormal = 45
 
 [Preset]
 name = 30FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 30
+$fpsLimitNormal = 30
 
 [Preset]
 name = 20FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
-$fpsLimit = 20
-
-
-# Simple FPS Lock
-
-#[Preset]
-#name = Enabled (prevents cutscene crashing, specific shrine physics issues)
-#category = Temporary 30FPS Limit
-#condition = $advancedMode == 0
-#$fpsLockMode:int = 1
-#$fpsLimit = 30
-
-
-#[Preset]
-#name = Disabled (Default)
-#category = Temporary 30FPS Limit
-#condition = $advancedMode == 0
-#default = 1
-#$fpsLockMode:int = 0
+$fpsLimitNormal = 20
 
 
 # Advanced Settings
@@ -132,92 +117,92 @@ $fpsLimit = 20
 name = No FPS Limit (for benchmarking)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 500
+$fpsLimitAdvanced = 500
 
 [Preset]
 name = 244FPS (ideal for 244Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 244
+$fpsLimitAdvanced = 244
 
 [Preset]
 name = 240FPS (ideal for 240Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 240
+$fpsLimitAdvanced = 240
 
 [Preset]
 name = 165FPS (ideal for 165Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 165
+$fpsLimitAdvanced = 165
 
 [Preset]
 name = 144FPS (ideal for 144Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 144
+$fpsLimitAdvanced = 144
 
 [Preset]
 name = 120FPS (ideal for 240/120/60Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 120
+$fpsLimitAdvanced = 120
 
 [Preset]
 name = 75FPS (ideal for 75Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 75
+$fpsLimitAdvanced = 75
 
 [Preset]
 name = 72FPS (ideal for 144Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 72
+$fpsLimitAdvanced = 72
 
 [Preset]
 name = 60FPS (ideal for 240/120/60Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
 default = 1
-$fpsLimit = 60
+$fpsLimitAdvanced = 60
 
 [Preset]
 name = 55FPS (ideal for 165Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 55
+$fpsLimitAdvanced = 55
 
 [Preset]
 name = 48FPS (ideal for 144Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 48
+$fpsLimitAdvanced = 48
 
 [Preset]
 name = 40FPS (ideal for 240/120/60Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 40
+$fpsLimitAdvanced = 40
 
 [Preset]
 name = 33FPS (ideal for 165Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 33
+$fpsLimitAdvanced = 33
 
 [Preset]
 name = 30FPS (ideal for 240/120/60Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 30
+$fpsLimitAdvanced = 30
 
 [Preset]
 name = 20FPS (ideal for 240/120/60Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
-$fpsLimit = 20
+$fpsLimitAdvanced = 20
 
 
 # Cursor Fix Mode
@@ -381,4 +366,4 @@ $debugMultiplier = -100
 
 
 [Control]
-vsyncFrequency = $fpsLimit
+vsyncFrequency = ($advancedMode * $fpsLimitAdvanced) + ((($advancedMode+1) % 2) * $fpsLimitNormal)
