@@ -1,0 +1,8 @@
+[Splatoon_30FPS_v272]
+moduleMatches = 0xF7A78809
+
+# toggles FPS variable, similar to 
+# Exzap's 60fps patch in plaza
+0x2ad5e70 = lwz r4, 0x304(r31)
+0x2ad5e74 = ori r4, r4, 1
+0x2ad5e78 = stw r4, 0x304(r31)

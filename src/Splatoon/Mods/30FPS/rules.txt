@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = 30FPS
+path = "Splatoon/Mods/30FPS"
+description = Reduce the speed of the game from 60FPS to 30FPS to play it on lower-end hardware.|Does not work in Dojo.||Made by Niko.
+version = 6
