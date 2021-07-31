@@ -5,7 +5,7 @@ moduleMatches = 0x6267BFD0
 
 merge0x129 = $bit0 + $bit1 + $bit3 + $bit5 + $bit8
 ;Combines bits set by the user in rules.txt to a bitmask. Split between 2 patches because vanilla compiled it to 2 hex values instead of 1 for some
-;reason. There's no overlap in vanilla between the 2 hex values, so I made sure each bit was set by the same address as in vanilla.
+;reason. There's no overlap in vanilla between the 2 hex values, so I made sure each bit was set by the same instruction as in vanilla.
 ;(Variable names are the hex values that were in that location in vanilla)
 
 merge0xd0 = $bit4 + $bit6 + $bit7
