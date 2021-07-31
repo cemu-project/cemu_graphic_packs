@@ -4,7 +4,6 @@ name = "Master Mode Options"
 path = "The Legend of Zelda: Breath of the Wild/Mods/Master Mode Options"
 description = Allows you to pick and choose which of Nintendo's tweaks |are applied to Master Mode (Does nothing in Normal Mode). ||Logic and patching by Torphedo and Fleevoid, with lots of |help from Exzap and leoetlino.
 version = 7
-default = true
 
 [Default]
 $debug:int = 0
