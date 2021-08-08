@@ -1,0 +1,68 @@
+[Definition]
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+name = Aspect Ratio
+path = "Mario & Sonic at the Rio 2016 Olympic Games/Enhancements/Aspect Ratio"
+description = Allows you to change the game's aspect ratio.|Currently separated as non-integer values with the resolution pack causes a bright screen.||Made by M&&M.
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+# Aspect Ratio
+
+[Preset] # 1.7~
+name = 16:9
+category = Aspect Ratio
+$width = 16
+$height = 9
+
+[Preset] # 1.6
+category = Aspect Ratio
+name = 16:10 (1680x1050)
+$width = 1680
+$height = 1050
+
+[Preset] # 1.5~
+category = Aspect Ratio
+name = 16:10 (1680x1080)
+$width = 1680
+$height = 1080
+
+[Preset] # 1.568627450980392
+category = Aspect Ratio
+name = 16:10 (1920x1224)
+$width = 1920
+$height = 1224
+
+[Preset] # 1.568627450980392
+category = Aspect Ratio
+name = 16:10 (2880x1800)
+$width = 2880
+$height = 1800
+
+[Preset] # 1.545893719806763
+category = Aspect Ratio
+name = 16:10 (2560x1656)
+$width = 2560
+$height = 1656
+
+[Preset] # 2.370~
+category = Aspect Ratio
+name = 21:9 (2560x1080)
+$width = 2560
+$height = 1080
+
+[Preset] # 2.38~
+category = Aspect Ratio
+name = 21:9 (3440x1440)
+$width = 3440
+$height = 1440
+
+[Preset]
+category = Aspect Ratio
+name = 32:9
+$width = 32
+$height = 9
