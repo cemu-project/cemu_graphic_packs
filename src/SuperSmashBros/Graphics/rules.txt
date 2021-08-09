@@ -28,57 +28,99 @@ $width = 960
 $height = 540
 
 [Preset]
-name = 1280x720 (HD)
+name = 1280x720
 category = Resolution
 $width = 1280
 $height = 720
 
 [Preset]
-name = 1600x900 (HD+)
+name = 1600x900
 category = Resolution
 $width = 1600
 $height = 900
 
 [Preset]
-name = 1920x1080 (Full HD)
+name = 1920x1080
 category = Resolution
 default = 1
 
 [Preset]
-name = 2560x1440 (2K)
+name = 2560x1440
 category = Resolution
 $width = 2560
 $height = 1440
 
 [Preset]
-category = Resolution
 name = 3200x1800
+category = Resolution
 $width = 3200
 $height = 1800
 
 [Preset]
-name = 3840x2160 (4K)
+name = 3840x2160
 category = Resolution
 $width = 3840
 $height = 2160
 
 [Preset]
-name = 5120x2880 (5K)
+name = 5120x2880
 category = Resolution
 $width = 5120
 $height = 2880
 
 [Preset]
-name = 7680x4320 (8K)
+name = 7680x4320
 category = Resolution
 $width = 7680
 $height = 4320
 
 [Preset]
-name = 10240x5760 (10K)
+name = 10240x5760
 category = Resolution
 $width = 10240
 $height = 5760
+
+[Preset]
+name = 1680x1050 (16:10)
+category = Resolution
+$width = 1680
+$height = 1050
+
+[Preset]
+name = 1920x1200 (16:10)
+category = Resolution
+$width = 1920
+$height = 1200
+
+[Preset]
+name = 2560x1080 (21:9)
+category = Resolution
+$width = 2560
+$height = 1080
+
+[Preset]
+name = 3440x1440 (21:9)
+category = Resolution
+$width = 3440
+$height = 1440
+
+[Preset]
+name = 5120x2160 (21:9)
+category = Resolution
+$width = 5120
+$height = 2160
+
+[Preset]
+name = 3840x1080 (32:9)
+category = Resolution
+$width = 3840
+$height = 1080
+
+[Preset]
+name = 5120x1440 (32:9)
+category = Resolution
+$width = 5120
+$height = 1440
 
 # Shadow Quality
 
