@@ -6,12 +6,25 @@ description = Allows you to change the game's resolution, shadow quality and ani
 version = 6
 
 [Default]
+$advancedMode:int = 0
 $width = 1920
 $height = 1080
 $gameWidth = 1920
 $gameHeight = 1080
 $shadowQuality = 1
 $anisotropy = 1
+
+# Settings Mode
+
+[Preset]
+name = Disabled
+category = Additional Downsampling Resolutions
+default = 1
+
+[Preset]
+name = Enabled
+category = Additional Downsampling Resolutions
+$advancedMode:int = 1
 
 # Resolution
 
@@ -81,18 +94,6 @@ $width = 10240
 $height = 5760
 
 [Preset]
-name = 1680x1050 (16:10)
-category = Resolution
-$width = 1680
-$height = 1050
-
-[Preset]
-name = 1920x1200 (16:10)
-category = Resolution
-$width = 1920
-$height = 1200
-
-[Preset]
 name = 2560x1080 (21:9)
 category = Resolution
 $width = 2560
@@ -103,6 +104,13 @@ name = 3440x1440 (21:9)
 category = Resolution
 $width = 3440
 $height = 1440
+
+[Preset]
+name = 3440x1440 (21:9) [150% downsample from 5160x2160]
+category = Resolution
+condition = $advancedMode == 1
+$width = 5160
+$height = 2160
 
 [Preset]
 name = 5120x2160 (21:9)
@@ -121,6 +129,12 @@ name = 5120x1440 (32:9)
 category = Resolution
 $width = 5120
 $height = 1440
+
+[Preset]
+name = 7680x2160 (32:9)
+category = Resolution
+$width = 7680
+$height = 2160
 
 # Shadow Quality
 
