@@ -22,10 +22,6 @@ $blurQuality = 0.0
 
 [Preset]
 category = TV Resolution
-name = 1280x720 (Default)
-
-[Preset]
-category = TV Resolution
 name = 640x360
 $width = 640
 $height = 360
@@ -35,6 +31,11 @@ category = TV Resolution
 name = 960x540
 $width = 960
 $height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720
+default = 1
 
 [Preset]
 category = TV Resolution
@@ -82,14 +83,15 @@ $height = 4320
 # Gamepad Resolution
 
 [Preset]
-name = 854x480 (Default)
-category = Gamepad Resolution
-
-[Preset]
 category = Gamepad Resolution
 name = 640x360
 $padWidth = 640
 $padHeight = 360
+
+[Preset]
+name = 854x480
+category = Gamepad Resolution
+default = 1
 
 [Preset]
 category = Gamepad Resolution
@@ -172,7 +174,8 @@ $shadowQuality = 4
 
 [Preset]
 category = Blur Quality
-name = Medium (Default)
+name = Medium
+default = 1
 
 [Preset]
 category = Blur Quality
