@@ -2,7 +2,7 @@
 titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Graphic Options
 path = "Mario Kart 8/Graphics"
-description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, anti-aliasing, bloom amount, motion blur quality, level of detail and anisotropic filtering quality.|Made by Crementif, theboy181 and M&&M.
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, anti-aliasing, bloom intensity, motion blur quality, level of detail and anisotropic filtering quality.|Made by Crementif, theboy181 and M&&M.
 version = 6
 
 [Default]
@@ -421,32 +421,32 @@ default = 1
 # Bloom
 
 [Preset]
-name = Off
-category = Bloom Amount
+name = 0%
+category = Bloom Intensity
 condition = $advancedOpt == 1
 $bloom = 0
 
 [Preset]
-name = Low
-category = Bloom Amount
+name = 50%
+category = Bloom Intensity
 condition = $advancedOpt == 1
 $bloom = 0.5
 
 [Preset]
-name = Normal
-category = Bloom Amount
+name = 100%
+category = Bloom Intensity
 condition = $advancedOpt == 1
 default = 1
 
 [Preset]
-name = High
-category = Bloom Amount
+name = 125%
+category = Bloom Intensity
 condition = $advancedOpt == 1
 $bloom = 1.25
 
 [Preset]
-name = Ultra
-category = Bloom Amount
+name = 150%
+category = Bloom Intensity
 condition = $advancedOpt == 1
 $bloom = 1.5
 
