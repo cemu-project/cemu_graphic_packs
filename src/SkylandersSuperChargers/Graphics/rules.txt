@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 00050000101BFC00,0005000E101B8500,50000101b8500
+titleIds = 00050000101BFC00,00050000101B8500
 name = TV Resolution, Gamepad Resolution and Shadow Quality
 path = "Skylanders: Superchargers/Graphics"
 description = Changes the TV resolution and gamepad resolution of the game. Additionally you can also change the quality of the shadows.||Made by Crementif and Winner Nombre.
