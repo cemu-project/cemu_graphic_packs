@@ -1,9 +1,9 @@
 [Definition]
-titleIds = 000500001010D700, 0005000010116000
+titleIds = 000500001010D700,0005000010116000
 name = Resolution
-path = "Skylanders Giants/Graphics"
+path = "Skylanders: Giants/Graphics"
 description = Changes the resolution of the game.
-version = 6
+version = 7
 
 [Default]
 $width = 1280

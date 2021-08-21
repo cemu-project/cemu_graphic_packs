@@ -1,9 +1,9 @@
 [Definition]
-titleIds = 00050000101BFC00,0005000E101B8500
+titleIds = 00050000101BFC00,00050000101B8500
 name = FPS
-path = "Skylanders Superchargers/Graphics/FPS"
-description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00 and Winner Nombre.
-version = 6
+path = "Skylanders: Superchargers/Mods/FPS"
+description = Changes the game's FPS limit.|Running the game with a high FPS limit can result in glitches.||Made by Mew00, Winner Nombre and DigitNetics.
+version = 7
 
 [Default]
 $targetFPS:int = 30
