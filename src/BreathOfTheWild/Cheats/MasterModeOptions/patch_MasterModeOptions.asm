@@ -1,4 +1,4 @@
-[BotwMasterModeTweaksV208]
+[BotwMasterModeOptionsV208]
 moduleMatches = 0x6267BFD0
 
 # Constants
