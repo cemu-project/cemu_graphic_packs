@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Master Mode Options"
 path = "The Legend of Zelda: Breath of the Wild/Cheats/Master Mode Options"
-description = Allows you to pick and choose which of Nintendo's changes are applied to Master Mode (Does nothing in Normal Mode). A reboot is required to apply changes made while the game is running. ||By Torphedo and Fleevoid, with lots of help from Exzap and leoetlino.
+description = Allows you to pick and choose which of Nintendo's changes are applied to Master Mode (Does nothing in Normal Mode). A reboot is required to apply changes made while the game is running. ||By Torphedo and Fleevoid, with lots of help from Exzap and leoetlino. 1.5x damage multiplier hack by NiceneNerd.
 version = 7
 
 [Default]
@@ -15,6 +15,7 @@ $bit5:int = 0x20
 $bit6:int = 0x40
 $bit7:int = 0x80
 $bit8:int = 0x100
+$mmdamage = 0
 
 [Preset]
 name = Disabled (Default)
@@ -70,6 +71,11 @@ $bit6:int = 0x0
 name = Enabled (Default)
 category = 1.5x Damage Multiplier from Bosses and Tests of Strength
 $bit7:int = 0x80
+
+[Preset]
+name = Apply to all enemies
+category = 1.5x Damage Multiplier from Bosses and Tests of Strength
+$mmdamage = 1
 
 [Preset]
 name = Disabled
