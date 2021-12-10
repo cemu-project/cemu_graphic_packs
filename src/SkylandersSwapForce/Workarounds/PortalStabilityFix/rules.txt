@@ -1,0 +1,10 @@
+[Definition]
+titleIds = 0005000010140400,0005000010139200
+name = Portal Stability Fix
+path = "Skylanders Swap Force/Workarounds/Portal Stability Fix"
+description = Increases stability of portal communication in Swap Force to fix issues at the Skylander Swap Force scanning screen.||Made by Exzap.
+version = 6
+default = 1
+
+# This fix can't be ported to other skylanders games since this specific problem doesn't occur for those.
+# Only this game suffers from this coding bug in the game, which does something Cemu can't properly emulate.

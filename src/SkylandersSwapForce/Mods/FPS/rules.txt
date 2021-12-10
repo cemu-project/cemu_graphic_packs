@@ -2,7 +2,7 @@
 titleIds = 0005000010139200,0005000010140400
 name = FPS
 path = "Skylanders Swap Force/Mods/FPS"
-description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00 for Imaginators, added by TheSkyDude134 for SWAP-Force.
+description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00 for Imaginators, added by TheSkyDude134 for Swap Force.
 version = 6
 
 [Default]
