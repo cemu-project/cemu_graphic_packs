@@ -41,3 +41,10 @@ blr
 
 0x0313A60C = bla _setObjectDrawDistanceDivider
 0x0313A678 = bla _setObjectDrawDistanceDivider
+
+
+; Tree billboard draw distance
+
+; either one of these actually do stuff
+0x102E94D8 = .float $tree
+0x102BC438 = .float $tree

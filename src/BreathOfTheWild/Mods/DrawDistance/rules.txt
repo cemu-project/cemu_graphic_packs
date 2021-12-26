@@ -2,12 +2,13 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Draw Distance
 path = "The Legend of Zelda: Breath of the Wild/Mods/Draw Distance"
-description = Extend the draw distance of objects and entities in the game, which will see a small performance decrease when making it higher. Lowering this will not offer more performance.|You can also make distant textures appear as higher resolution variants.||Made By Crementif.
+description = Extend the draw distance of objects and entities in the game, which will see a small performance decrease when making it higher.|Lowering this will not offer more performance.|You can also make distant textures appear as higher resolution variants.||Made By Crementif.
 version = 6
 
 [Default]
 $actor = 1.0
 $object = 1.0
+$tree = 1.0
 $textureLODBias:int = 0
 
 
@@ -46,36 +47,71 @@ $actor = 2
 
 # Objects Draw Distance
 
-[Preset]
-name = Potato (0.2x)
-category = Trees, Bushes, Landscape And Other Objects
-$object = 0.2
-
-[Preset]
-name = Very Low (0.5x)
-category = Trees, Bushes, Landscape And Other Objects
-$object = 0.5
+# People ran into issues with events spawning
+# [Preset]
+# name = Potato (0.2x)
+# category = Terrain, Buildings, Bushes And Other Objects
+# $object = 0.2
+# 
+# [Preset]
+# name = Very Low (0.5x)
+# category = Terrain, Buildings, Bushes And Other Objects
+# $object = 0.5
 
 [Preset]
 name = Low (0.75x)
-category = Trees, Bushes, Landscape And Other Objects
+category = Terrain, Buildings, Bushes And Other Objects
 $object = 0.75
 
 [Preset]
 name = Medium (1x)
-category = Trees, Bushes, Landscape And Other Objects
+category = Terrain, Buildings, Bushes And Other Objects
 default = 1
 $object = 1.0
 
 [Preset]
 name = High (1.25x)
-category = Trees, Bushes, Landscape And Other Objects
+category = Terrain, Buildings, Bushes And Other Objects
 $object = 1.25
 
 [Preset]
 name = Ultra (1.5x, requires Extended Memory pack!)
-category = Trees, Bushes, Landscape And Other Objects
+category = Terrain, Buildings, Bushes And Other Objects
 $object = 1.5
+
+
+# Tree Billboard Draw Distance
+
+[Preset]
+name = Potato
+category = Trees (2D Billboards)
+$tree = 1.5
+
+[Preset]
+name = Low
+category = Trees (2D Billboards)
+$tree = 1.25
+
+[Preset]
+name = Medium (Default)
+category = Trees (2D Billboards)
+default = 1
+$tree = 1.0
+
+[Preset]
+name = High
+category = Trees (2D Billboards)
+$tree = 0.66
+
+[Preset]
+name = Ultra
+category = Trees (2D Billboards)
+$tree = 0.33
+
+[Preset]
+name = Extreme
+category = Trees (2D Billboards)
+$tree = 0.05
 
 
 # Texture LOD Bias

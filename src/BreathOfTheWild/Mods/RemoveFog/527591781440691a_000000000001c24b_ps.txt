@@ -1,9 +1,13 @@
 #version 430
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
-// shader 527591781440691a
-// Used for: Distance Fog
 
+// shader 527591781440691a -- Controls RGb and Opacity of the Fog Clouds in the distance
+
+#define ffcOpacity $fieldfogcloudsopacity
+#define ffcRed $fieldfogcloudsred
+#define ffcGreen $fieldfogcloudsgreen
+#define ffcBlue $fieldfogcloudsblue
 
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
@@ -343,10 +347,5 @@ PV1f.x = mul_nonIEEE(R1f.w, PV0f.y);
 R10f.w = mul_nonIEEE(R3f.x, PV1f.x);
 // export
 if( ((vec4(R10f.x, R10f.y, R10f.z, R10f.w)).a > uf_alphaTestRef) == false) discard;
-
-#if ($enableDistanceFogColor == 0)
-passPixelColor0 = vec4(R10f.x, R10f.y, R10f.z, R10f.w*$distanceFogOpacity);
-#else
-passPixelColor0 = vec4($distanceFogRed, $distanceFogGreen, $distanceFogBlue, R10f.w*$distanceFogOpacity);
-#endif
+passPixelColor0 = vec4(R10f.x * ffcRed, R10f.y * ffcGreen, R10f.z * ffcBlue, R10f.w * ffcOpacity); // RGB for fog fields in the distance
 }

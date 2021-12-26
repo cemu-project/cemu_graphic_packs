@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Graphics
 path = "The Legend of Zelda: Breath of the Wild/Graphics"
 description = Allows you to change the game resolution, shadow resolution and anti-aliasing.||Made by Kiri, Skalfate, rajkosto and NAVras.
-version = 6
+version = 7
 
 [Default]
 $width = 1280
@@ -12,11 +12,17 @@ $gameWidth = 1280
 $gameHeight = 720
 $aspectRatioWidth = 16
 $aspectRatioHeight = 9
+$ultrawideHUD:int = 0
 $fxaa:int = 1
 $shadowRes = 1
 $subPix:int = 1.0
 $edgeThreshold:int = 0.125
 $edgeThresholdMin:int = 0.0156
+
+$shadowNearbyStart = 1.0 # the starting distance should be kept at 1.0
+$shadowNearbyEnd = 1.0
+$shadowFarStart = 1.0
+$shadowFarEnd = 1.0
 
 
 # Aspect Ratio
@@ -36,24 +42,28 @@ name = 21:9
 category = Aspect Ratio
 $aspectRatioWidth = 21
 $aspectRatioHeight = 9
+$ultrawideHUD:int = 1
 
 [Preset]
 name = 32:9
 category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 9
+$ultrawideHUD:int = 1
 
 [Preset]
 name = 32:10
 category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 10
+$ultrawideHUD:int = 1
 
 [Preset]
 name = 48:9
 category = Aspect Ratio
 $aspectRatioWidth = 48
 $aspectRatioHeight = 9
+$ultrawideHUD:int = 1
 
 [Preset]
 name = 4:3
@@ -426,6 +436,47 @@ $shadowRes = 3
 name = Extreme (400%, Unstable)
 category = Shadows
 $shadowRes = 4
+
+
+[Preset]
+category = Shadow Draw Distance
+name = Low (Low Draw Distance, Sharp Shadows)
+$shadowNearbyEnd = 0.6
+$shadowFarStart = 0.6
+$shadowFarEnd = 0.75
+
+[Preset]
+name = Medium (Lower Draw Distance, Sharper Shadows)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 0.8
+$shadowFarStart = 0.8
+$shadowFarEnd = 0.9
+
+[Preset]
+name = High (Default)
+category = Shadow Draw Distance
+default = 1
+
+[Preset]
+name = Very High (Recommended)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 1.25
+$shadowFarStart = 1.25
+$shadowFarEnd = 1.30
+
+[Preset]
+name = Ultra (Higher Draw Distance, Slightly Blurrier Shadows)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 1.3
+$shadowFarStart = 1.3
+$shadowFarEnd = 1.5
+
+[Preset]
+name = Extreme (Higher Draw Distance, Blurry Shadows)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 1.4
+$shadowFarStart = 1.4
+$shadowFarEnd = 1.55
 
 # All 720p textures:
 # - 0x001=World Lighting Red8

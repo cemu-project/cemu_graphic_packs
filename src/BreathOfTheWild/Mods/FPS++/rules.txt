@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = FPS++
 path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++"
-description = Allows you to change the FPS and the speed that most things run at.|Some elements aren't patched though which can cause some physics issues. To bypass any issues you can enable the Temporary 30FPS Limit.||Made by Xalphenos, rajkosto, epigramx, Crementif, leoetlino and Pig.
+description = Allows you to change the FPS and the speed that most things run at.|Some bugs might still occur if you run at high FPS.||Made by Xalphenos, rajkosto, epigramx, Crementif, leoetlino, Pig and Exzap.
 version = 6
 
 [Default]
@@ -17,7 +17,7 @@ $fpsLimit = 0
 $frameAverageAmount = 8
 $fenceMethod = 1
 $lowFPSLimit = 20
-$cursorFixAbove:int = 999
+$cutsceneFPSLimitMode:int = 1
 $roundUpModifier = 0.8
 
 $showDebugModeOptions:int = 0
@@ -205,26 +205,32 @@ condition = $advancedMode == 1
 $fpsLimitAdvanced = 20
 
 
-# Cursor Fix Mode
+# Cutscene FPS Limit Mode
 
 [Preset]
-name = Disabled (Default)
-category = Menu Cursor Fix (Experimental)
-condition = ($advancedMode-$staticFPSMode == 1)
-$cursorFixAbove:int = 999
+name = Automatically Limit In Few Cutscenes (Recommended)
+category = Cutscene FPS Limit
+condition = $advancedMode == 1
+default = 1
+$cutsceneFPSLimitMode:int = 1
 
 [Preset]
-name = Enabled At 72FPS And Higher (Recommended)
-category = Menu Cursor Fix (Experimental)
-condition = ($advancedMode-$staticFPSMode == 1)
-$cursorFixAbove:int = 2
+name = Limit all cutscenes to 60FPS
+category = Cutscene FPS Limit
+condition = $advancedMode == 1
+$cutsceneFPSLimitMode:int = 2
 
 [Preset]
-name = Enabled (For Testing, Not Recommended!)
-category = Menu Cursor Fix (Experimental)
-condition = ($advancedMode-$staticFPSMode == 1)
-$cursorFixAbove:int = 1
+name = Limit all cutscenes to 30FPS
+category = Cutscene FPS Limit
+condition = $advancedMode == 1
+$cutsceneFPSLimitMode:int = 3
 
+[Preset]
+name = Disabled (Causes Crashes Above 30-60FPS)
+category = Cutscene FPS Limit
+condition = $advancedMode == 1
+$cutsceneFPSLimitMode:int = 0
 
 # Static Mode
 
