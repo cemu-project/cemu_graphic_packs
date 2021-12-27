@@ -5,8 +5,30 @@ moduleMatches = 0x6267BFD0
 0x03053bd4 = blr ; disable scroll speed adjustment (would require a bigger rewrite for dynamic FPS support)
 0x030BD694 = ba _ZN4sead14ControllerBase23updateDerivativeParams_Ejj ; redirect to our re-implementation
 
-0x10327D60 = scrollSpeed:
-;	.float 1.0
+scrollSpeed:
+	.float 1.0
+
+0x10327D60 = menuNavigationSpeedPackEnabled:
+0x10327D64 = menuNavigationSpeedPackValue:
+
+_checkCursorSpeed:
+lis r11, menuNavigationSpeedPackEnabled@ha
+lwz r11, menuNavigationSpeedPackEnabled@l(r11)
+cmpwi r11, 0x1337
+beq useCustomSpeed
+useDefaultSpeed:
+lis r11, const_1@ha
+lfs f12, const_1@l(r11)
+lis r11, scrollSpeed@ha
+stfs f12, scrollSpeed@l(r11)
+b _checkExternalSpeed
+useCustomSpeed:
+lis r11, menuNavigationSpeedPackValue@ha
+lfs f12, menuNavigationSpeedPackValue@l(r11)
+lis r11, scrollSpeed@ha
+stfs f12, scrollSpeed@l(r11)
+b _checkExternalSpeed
+
 _ZN4sead14ControllerBase21createStickCrossMask_Ev:
 	stwu r1,-16(r1)
 	stw r31,12(r1)

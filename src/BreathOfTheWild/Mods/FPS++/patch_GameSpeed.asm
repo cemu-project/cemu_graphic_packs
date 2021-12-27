@@ -93,15 +93,7 @@ debugMultiplier:
 _calculateGamespeed:
 stw	r0,	0x78(r30)				; Execute original instruction that got replaced with a jump to this function
 
-; Check and set the cursor speed value if it has been set by the Menu Cursor Speed graphic pack
-_checkCursorSpeed:
-lis r11, const_0.0@ha			; Load a 0 float...
-lfs f12, const_0.0@l(r11)		; ...into f12
-lfs f7, 0xD4(r30)				; Load the external cursor speed offset
-fcmpu cr0, f7, f12				; Compare the value stored in the external memory offset to 0 (f12)
-beq _convertTicksToFrametime    ; Don't change the value if the menu cursor speed isn't manually set
-lis r3, scrollSpeed@ha          ; Load the address of the scrollSpeed from the cutscene patch...
-stfs f7, scrollSpeed@l(r3)      ; ...and then store the external cursor speed from f7 into that address
+b _checkCursorSpeed
 
 ; If the manual speed has been set by an external program to something other then 0, use that as the static speed
 _checkExternalSpeed:
@@ -113,11 +105,11 @@ bne _setGamespeed
 
 ; If static FPS is enabled, always set currently "running" FPS to $fpsLimit
 _checkStaticFPS:
-li r3, $staticFPSMode			; Load the $staticFPSMode setting into r3
-cmpwi r3, 1						; Compare with 1, which is when it's enabled
-bne _calcAverageFPS		        ; If the comparison is not equal, run
-lis r3, fpsLimit@ha				; Load current FPS limit...
-lfs f10, fpsLimit@l(r3)			; ...into f10
+li r11, $staticFPSMode			; Load the $staticFPSMode setting into r3
+cmpwi r11, 1						; Compare with 1, which is when it's enabled
+bne _convertTicksToFrametime   	; If the comparison is not equal, run
+lis r11, fpsLimit@ha				; Load current FPS limit...
+lfs f10, fpsLimit@l(r11)			; ...into f10
 b _setGamespeed					; Skip dynamic FPS code when static mode is enabled and go to the game speed setting code
 
 ; Calculate speed of current frame (FPS). It's calculated by using the ticks between the previous frame and now, which is stored in r12, and the amount of ticks that the Wii U executes in a second (the bus speed).
