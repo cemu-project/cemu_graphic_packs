@@ -216,6 +216,20 @@ $height = 3200
 # 21:9 Resolutions
 
 [Preset]
+name = 1720x720
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 1720
+$height = 720
+
+[Preset]
+name = 2100x900
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 2100
+$height = 900
+
+[Preset]
 name = 2560x1080
 category = Resolution
 condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
