@@ -57,7 +57,13 @@ bool predResult = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
-R0f.xyzw = (texture(textureUnitPS0, (R0f.xy*vec2(reverseAspectRatio, 1.0))+vec2(-aspectRatio, 0.0)).xyzw);
+
+#if $ultrawideHUD == 1
+float uv_x = 0.5 + (R0f.x - 0.5) / aspectRatio;
+R0f.xyzw = (texture(textureUnitPS0, vec2(uv_x, R0f.y)).xyzw);
+#else
+R0f.xyzw = (texture(textureUnitPS0, vec2(R0f.xy)).xyzw);
+#endif
 // 0
 backupReg0f = R0f.x;
 tempResultf = max(0.0, backupReg0f);
@@ -90,8 +96,8 @@ R0f.z = PS1f;
 // export
 
 #if $ultrawideHUD == 1
-bool isOutsideEdges = (passParameterSem0.x > (aspectRatio/2.0f)*1.0f) && (passParameterSem0.x < ((aspectRatio/2.0f)*3.0f));
-passPixelColor0 = vec4(isOutsideEdges ? R0f.x : 0.0, isOutsideEdges ? R0f.y : 0.0, isOutsideEdges ? R0f.z : 0.0, isOutsideEdges ? R0f.w : 0.0);
+bool isBorder = uv_x < 0 || uv_x > 1.0;
+passPixelColor0 = isBorder ? vec4(0.0) : R0f.xyzw;
 #else
 passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 #endif

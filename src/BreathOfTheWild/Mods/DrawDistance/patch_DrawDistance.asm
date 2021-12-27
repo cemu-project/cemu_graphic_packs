@@ -46,5 +46,5 @@ blr
 ; Tree billboard draw distance
 
 ; either one of these actually do stuff
-0x102E94D8 = .float $tree
+;0x102E94D8 = .float $tree ; messes with the grass LODs? Might be expandable.
 0x102BC438 = .float $tree
