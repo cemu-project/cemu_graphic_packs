@@ -246,7 +246,7 @@ beq scaleHorseStaminaPanes
 lis r10, scr_MainHardMode_00@ha
 addi r10, r10, scr_MainHardMode_00@l
 bla _compareString
-beq scaleInOutScreenToLeftSide
+beq scaleMainHardModePanes
 
 lis r10, scr_PauseMenu_00@ha
 addi r10, r10, scr_PauseMenu_00@l
@@ -1007,6 +1007,18 @@ lis r10, str_N_PartsSize_00@ha ; reverse scaling on pane that decides spacing be
 addi r10, r10, str_N_PartsSize_00@l
 bla _compareString
 beq scalePaneReverse
+b exitScale
+
+scaleMainHardModePanes:
+addi r5, r31, 0x80
+lis r10, str_N_InOut_00@ha
+addi r10, r10, str_N_InOut_00@l
+bla _compareString
+beq scalePaneAndKeepPos
+lis r10, str_N_Glow_00@ha
+addi r10, r10, str_N_Glow_00@l
+bla _compareString
+beq scalePaneAndKeepPos
 b exitScale
 
 scaleMapPanes:
