@@ -656,8 +656,8 @@ beq scalePaneNormal
 b exitScale
 scaleMainScreenLocationTextPanes:
 addi r5, r31, 0x80
-lis r10, str_N_In_00@ha
-addi r10, r10, str_N_In_00@l
+lis r10, str_Pa_LocationName_00@ha
+addi r10, r10, str_Pa_LocationName_00@l
 bla _compareString
 beq scalePaneNormal
 b exitScale

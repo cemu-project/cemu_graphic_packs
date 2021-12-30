@@ -83,8 +83,8 @@ beq _setCutscene30FPSLimit
 cmpwi r22, 3340 ; demo334_0 ; Perhaps the crash at the end of vah ruta
 beq _setCutscene30FPSLimit
 
-cmpwi r22, 1020 ; demo102_0 ; Start Game - Bright light waking up link on blackscreen
-beq _setCutscene30FPSLimit
+# cmpwi r22, 1020 ; demo102_0 ; Start Game - Bright light waking up link on blackscreen
+# beq _setCutscene30FPSLimit
 cmpwi r22, 1690 ; demo169_0 ; Start Game - Zelda waking up link dialogue on blackscreen
 beq _setCutscene30FPSLimit
 
