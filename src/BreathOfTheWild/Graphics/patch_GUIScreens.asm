@@ -235,8 +235,6 @@ str_Pa_Information_00:
 .string "Pa_Information_00"
 str_Pa_LocationName_00:
 .string "Pa_LocationName_00"
-str_Pa_QuestName_00:
-.string "Pa_QuestName_00"
 str_Pa_BossGauge_00:
 .string "Pa_BossGauge_00"
 
@@ -266,6 +264,25 @@ str_N_Fire_00:
 .string "N_Fire_00"
 str_N_Ice_00:
 .string "N_Ice_00"
+
+str_Pa_QuestName_00:
+.string "Pa_QuestName_00"
+str_T_QuestName_00:
+.string "T_QuestName_00"
+str_T_QuestName_00_JPja:
+.string "T_QuestName_00_JPja"
+
+str_P_CameraPointerL_00:
+.string "P_CameraPointerL_00"
+str_P_CameraPointerR_00:
+.string "P_CameraPointerR_00"
+str_P_AbstractR_00:
+.string "P_AbstractR_00"
+str_P_AbstractL_00:
+.string "P_AbstractL_00"
+str_N_Dungeon_00:
+.string "N_Dungeon_00"
+
 ; Panes from MainScreen3D (stamina bar, enemy spotting gauge, etc)
 str_Pa_EnemyMark_00:
 .string "Pa_EnemyMark_00"

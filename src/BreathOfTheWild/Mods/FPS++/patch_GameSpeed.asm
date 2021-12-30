@@ -93,7 +93,8 @@ debugMultiplier:
 _calculateGamespeed:
 stw	r0,	0x78(r30)				; Execute original instruction that got replaced with a jump to this function
 
-b _checkCursorSpeed
+; Call externalized cursor speed reading function
+b _readExternalCursorSpeed
 
 ; If the manual speed has been set by an external program to something other then 0, use that as the static speed
 _checkExternalSpeed:
@@ -102,15 +103,6 @@ lfs f12, const_0.0@l(r11)		; ...into f12
 lfs f10, 0xD0(r30)				; Load the external speed offset
 fcmpu cr0, f10, f12				; Compare the value stored in the external memory offset to 0 (f12)
 bne _setGamespeed
-
-; If static FPS is enabled, always set currently "running" FPS to $fpsLimit
-_checkStaticFPS:
-li r11, $staticFPSMode			; Load the $staticFPSMode setting into r3
-cmpwi r11, 1						; Compare with 1, which is when it's enabled
-bne _convertTicksToFrametime   	; If the comparison is not equal, run
-lis r11, fpsLimit@ha				; Load current FPS limit...
-lfs f10, fpsLimit@l(r11)			; ...into f10
-b _setGamespeed					; Skip dynamic FPS code when static mode is enabled and go to the game speed setting code
 
 ; Calculate speed of current frame (FPS). It's calculated by using the ticks between the previous frame and now, which is stored in r12, and the amount of ticks that the Wii U executes in a second (the bus speed).
 _convertTicksToFrametime:
@@ -127,6 +119,15 @@ frsp f10, f10					; Round the ticks to single precision and store the ticks back
 
 ; Call externalized cutscene FPS function which will return to checkExternalSpeed
 b _checkCutsceneFPSLimit
+
+; If static FPS is enabled, always set currently "running" FPS to $fpsLimit
+_checkStaticFPS:
+li r11, $staticFPSMode			; Load the $staticFPSMode setting into r3
+cmpwi r11, 1					; Compare with 1, which is when it's enabled
+bne _calculateDynamicFPS   	    ; If the comparison is not equal, run
+lis r11, fpsLimit@ha			; Load current FPS limit...
+lfs f10, fpsLimit@l(r11)		; ...into f10
+b _setGamespeed					; Skip dynamic FPS code when static mode is enabled and go to the game speed setting code
 
 ; Calculate speed of current frame (FPS). It's calculated by using the ticks between the previous frame and now, which is stored in r12, and the amount of ticks that the Wii U executes in a second (the bus speed).
 _calculateDynamicFPS:

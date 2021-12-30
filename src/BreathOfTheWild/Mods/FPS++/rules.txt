@@ -91,6 +91,12 @@ default = 1
 $fpsLimitNormal = 60
 
 [Preset]
+name = 55FPS Limit
+category = FPS Limit
+condition = $advancedMode == 0
+$fpsLimitNormal = 55
+
+[Preset]
 name = 45FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0

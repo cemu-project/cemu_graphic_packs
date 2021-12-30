@@ -11,7 +11,7 @@ scrollSpeed:
 0x10327D60 = menuNavigationSpeedPackEnabled:
 0x10327D64 = menuNavigationSpeedPackValue:
 
-_checkCursorSpeed:
+_readExternalCursorSpeed:
 lis r11, menuNavigationSpeedPackEnabled@ha
 lwz r11, menuNavigationSpeedPackEnabled@l(r11)
 cmpwi r11, 0x1337

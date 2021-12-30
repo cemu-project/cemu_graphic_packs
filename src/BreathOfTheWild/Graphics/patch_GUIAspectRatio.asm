@@ -649,8 +649,8 @@ beq scalePaneAndKeepPos
 b exitScale
 scaleMainScreenInformationTextPanes:
 addi r5, r31, 0x80
-lis r10, str_N_Contents_00@ha
-addi r10, r10, str_N_Contents_00@l
+lis r10, str_Pa_Information_00@ha
+addi r10, r10, str_Pa_Information_00@l
 bla _compareString
 beq scalePaneNormal
 b exitScale
@@ -663,25 +663,26 @@ beq scalePaneNormal
 b exitScale
 scaleMainScreenQuestTextPanes:
 addi r5, r31, 0x80
-lis r10, str_N_Base_00@ha
-addi r10, r10, str_N_Base_00@l
+lis r10, str_Pa_QuestName_00@ha
+addi r10, r10, str_Pa_QuestName_00@l
 bla _compareString
 beq scalePaneNormal
-lis r10, str_N_In_00@ha
-addi r10, r10, str_N_In_00@l
+lis r10, str_P_Base_01@ha
+addi r10, r10, str_P_Base_01@l
 bla _compareString
-beq scalePaneNormal
-lis r10, str_N_In_01@ha
-addi r10, r10, str_N_In_01@l
+beq scalePaneReverse
+lis r10, str_P_Base_00@ha
+addi r10, r10, str_P_Base_00@l
 bla _compareString
-beq scalePaneNormal
+beq scalePaneReverse
 b exitScale
+
 scaleMainScreenSmallLocationTextPanes:
 addi r5, r31, 0x80
-lis r10, str_N_In_00@ha
-addi r10, r10, str_N_In_00@l
+lis r10, str_Pa_LocationNameS_00@ha
+addi r10, r10, str_Pa_LocationNameS_00@l
 bla _compareString
-beq movePaneToLeftSideAlt
+beq scalePaneToLeftSide
 b exitScale
 scaleMainScreenBossGaugePanes:
 addi r5, r31, 0x80
@@ -703,15 +704,8 @@ lis r10, str_N_InOut_01@ha
 addi r10, r10, str_N_InOut_01@l
 bla _compareString
 beq scalePaneNormal
-lis r10, str_N_InOut_02@ha
-addi r10, r10, str_N_InOut_02@l
-bla _compareString
-beq scalePaneNormal
-b exitScale
-scaleMainScreenRunePointingPanes:
-addi r5, r31, 0x80
-lis r10, str_N_SunLight_00@ha
-addi r10, r10, str_N_SunLight_00@l
+lis r10, str_N_Dungeon_00@ha
+addi r10, r10, str_N_Dungeon_00@l
 bla _compareString
 beq scalePaneNormal
 b exitScale
@@ -726,16 +720,15 @@ addi r10, r10, str_N_IconSeek_00@l
 bla _compareString
 beq scalePaneNormal
 b exitScale
+scaleMainScreenRunePointingPanes:
+addi r5, r31, 0x80
+lis r10, str_N_SunLight_00@ha
+addi r10, r10, str_N_SunLight_00@l
+bla _compareString
+beq scalePaneNormal
+b exitScale
 
 scaleMainDungeonPanes:
-lis r5, copySubPanelString@ha
-addi r5, r5, copySubPanelString@l
-
-# lis r10, str_Pa_LocationNameS_00@ha
-# addi r10, r10, str_Pa_LocationNameS_00@l
-# bla _compareString
-# beq scaleMainDungeonLocationNames
-
 addi r5, r31, 0x80
 lis r10, str_Pa_LocationNameS_00@ha
 addi r10, r10, str_Pa_LocationNameS_00@l
@@ -991,10 +984,6 @@ lis r10, str_N_Cut_00@ha ; scales the item/rune selection bar
 addi r10, r10, str_N_Cut_00@l
 bla _compareString
 beq scalePaneNormal
-# lis r10, str_N_Cut_01@ha ; scales the item/rune selection bar
-# addi r10, r10, str_N_Cut_01@l
-# bla _compareString
-# beq scalePaneAndSize
 
 lis r10, str_N_Capture_00@ha
 addi r10, r10, str_N_Capture_00@l
