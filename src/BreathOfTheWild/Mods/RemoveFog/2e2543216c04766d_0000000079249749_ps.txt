@@ -690,9 +690,9 @@ PV0i.y = floatBitsToInt(intBitsToFloat(R4i.x) + intBitsToFloat(R3i.w)); // blue 
 PV0i.z = floatBitsToInt(intBitsToFloat(R9i.y) + intBitsToFloat(R8i.y)); // green color body water
 PV0i.w = floatBitsToInt(intBitsToFloat(R4i.z) + intBitsToFloat(R4i.y)); // red color body water
 // 23
-R6i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R2i.z),intBitsToFloat(PV0i.w)) + intBitsToFloat(R3i.x) * waterfogred )); // R3i is water fog color red
-R6i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R2i.z),intBitsToFloat(PV0i.z)) + intBitsToFloat(R3i.y) * waterfoggreen )); // R3i is water fog green
-R6i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R2i.z),intBitsToFloat(PV0i.y)) + intBitsToFloat(R3i.z) * waterfogblue )); // R3i is water fog blue
+R6i.x = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R2i.z),intBitsToFloat(PV0i.w)) + intBitsToFloat(R3i.x) * (waterfogred * waterfoglevel) )); // R3i is water fog color red
+R6i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R2i.z),intBitsToFloat(PV0i.z)) + intBitsToFloat(R3i.y) * (waterfoggreen * waterfoglevel) )); // R3i is water fog green
+R6i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R2i.z),intBitsToFloat(PV0i.y)) + intBitsToFloat(R3i.z) * (waterfogblue * waterfoglevel) )); // R3i is water fog blue
 // export
-passPixelColor0 = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w)) * waterfoglevel; // xyz is RGB for water color, and w is edge see through clarity
+passPixelColor0 = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w)) ; // xyz is RGB for final water color, and w is edge see through clarity
 }

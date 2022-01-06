@@ -14,8 +14,10 @@ version = 6
 # Settings 4 = Shows Settings related to Custom Preset edited by the user
 $settings = 0
 # -----------------
-# Distant Fog affects the world Fog, the water fog, the greenery objects like trees and bushes fog
+# Distant Lighting of the world
 $distantlighting = 1
+# -----------------
+# Distant Fog effect seen throughout the world, trees, bushes, water
 $distantfoglevel = 1
 $distantfogred = 1
 $distantfoggreen = 1
@@ -194,7 +196,7 @@ $distantlighting = 0.2
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Default Fog RGB
 $distantfogred = 1
 $distantfoggreen = 1
@@ -202,7 +204,7 @@ $distantfogblue = 1
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Red Fog x1
 $distantfogred = 1
 $distantfoggreen = 0
@@ -210,7 +212,7 @@ $distantfogblue = 0
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Red Fog x2
 $distantfogred = 2
 $distantfoggreen = 0
@@ -218,7 +220,7 @@ $distantfogblue = 0
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Red Fog x3
 $distantfogred = 3
 $distantfoggreen = 0
@@ -226,7 +228,7 @@ $distantfogblue = 0
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Blue Fog x1
 $distantfogred = 0
 $distantfoggreen = 0
@@ -234,7 +236,7 @@ $distantfogblue = 1
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Blue Fog x2
 $distantfogred = 0
 $distantfoggreen = 0
@@ -242,7 +244,7 @@ $distantfogblue = 2
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Blue Fog x3
 $distantfogred = 0
 $distantfoggreen = 0
@@ -250,7 +252,7 @@ $distantfogblue = 3
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Green Fog x1
 $distantfogred = 0
 $distantfoggreen = 1
@@ -258,7 +260,7 @@ $distantfogblue = 0
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Green Fog x2
 $distantfogred = 0
 $distantfoggreen = 2
@@ -266,7 +268,7 @@ $distantfogblue = 0
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Green Fog x3
 $distantfogred = 0
 $distantfoggreen = 3
@@ -274,7 +276,7 @@ $distantfogblue = 0
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Purple Fog x2
 # blue and red makes purple
 $distantfogred = 2
@@ -283,7 +285,7 @@ $distantfogblue = 2
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Purple Fog x3
 $distantfogred = 3
 $distantfoggreen = 0
@@ -291,7 +293,7 @@ $distantfogblue = 3
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Cyan Fog x2
 # blue and green makes cyan
 $distantfogred = 0
@@ -300,7 +302,7 @@ $distantfogblue = 2
 
 [Preset]
 condition = $settings == 0
-category = Distant Fog RGB
+category = Distant Fog Color RGB
 name = Cyan Fog x3
 $distantfogred = 0
 $distantfoggreen = 3
@@ -610,7 +612,7 @@ $npcfogblue = 1
 [Preset]
 condition = $settings == 4
 category = CustomPreset
-name = Custom Preset (edit the rules.txt)
+name = Custom Preset (Edit Values in rules.txt)
 $distantlighting = 1
 #
 $distantfoglevel = 1
