@@ -12,7 +12,8 @@ $gameWidth = 1280
 $gameHeight = 720
 $aspectRatioWidth = 16
 $aspectRatioHeight = 9
-$ultrawideHUD:int = 0
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 $fxaa:int = 1
 $shadowRes = 1
 $subPix:int = 1.0
@@ -30,52 +31,62 @@ $shadowFarEnd = 1.0
 [Preset]
 name = 16:9 (Default)
 category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 [Preset]
 name = 16:10
 category = Aspect Ratio
 $aspectRatioWidth = 16
 $aspectRatioHeight = 10
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 [Preset]
 name = 21:9
 category = Aspect Ratio
 $aspectRatioWidth = 21
 $aspectRatioHeight = 9
-$ultrawideHUD:int = 1
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 32:9
 category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 9
-$ultrawideHUD:int = 1
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 32:10
 category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 10
-$ultrawideHUD:int = 1
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 48:9
 category = Aspect Ratio
 $aspectRatioWidth = 48
 $aspectRatioHeight = 9
-$ultrawideHUD:int = 1
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 4:3
 category = Aspect Ratio
 $aspectRatioWidth = 4
 $aspectRatioHeight = 3
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 [Preset]
 name = 5:4
 category = Aspect Ratio
 $aspectRatioWidth = 5
 $aspectRatioHeight = 4
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 # 16:9 Resolutions
 
@@ -340,6 +351,20 @@ condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) 
 $width = 5760
 $height = 1080
 
+[Preset]
+name = 7680x1440
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 7680
+$height = 1440
+
+[Preset]
+name = 11520x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 11520
+$height = 2160
+
 # 4:3 Resolutions
 
 [Preset]
@@ -407,6 +432,27 @@ condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) =
 $width = 14400
 $height = 2700
 
+# Ultrawide Mode Options
+
+[Preset]
+name = Edge HUD (Default)
+category = Ultrawide HUD Mode
+condition = $showUltrawideOptions == 1
+$ultrawideHUDMode:int = 1
+default = 1
+
+[Preset]
+name = Centered HUD
+category = Ultrawide HUD Mode
+condition = $showUltrawideOptions == 1
+$ultrawideHUDMode:int = 2
+
+[Preset]
+name = No HUD Fixes (stretched HUD)
+condition = $showUltrawideOptions == 1
+category = Ultrawide HUD Mode
+$ultrawideHUDMode:int = 0
+
 # Anti-Aliasing
 
 [Preset]
@@ -451,6 +497,7 @@ name = Extreme (400%, Unstable)
 category = Shadows
 $shadowRes = 4
 
+# Shadow Draw Distance
 
 [Preset]
 category = Shadow Draw Distance
@@ -491,6 +538,9 @@ category = Shadow Draw Distance
 $shadowNearbyEnd = 1.4
 $shadowFarStart = 1.4
 $shadowFarEnd = 1.55
+
+
+# Texture Changes
 
 # All 720p textures:
 # - 0x001=World Lighting Red8

@@ -52,7 +52,7 @@ copySubPanelStringLen:
 _scalePaneGUI:
 mflr r0
 
-li r10, $ultrawideHUD
+li r10, $ultrawideHUDMode
 cmpwi r10, 0
 beq exitScale
 
@@ -488,6 +488,11 @@ addi r10, r10, scr_ChallengeWin_00@l
 bla _compareString
 beq scaleInOutScreenToRightSide
 
+lis r10, scr_EnergyMeterDLC_00@ha
+addi r10, r10, scr_EnergyMeterDLC_00@l
+bla _compareString
+beq scaleEnergyMeterDLCPanes
+
 ; lis r10, scr_Message_00@ha
 ; addi r10, r10, scr_Message_00@l
 ; bla _compareString
@@ -577,27 +582,27 @@ addi r5, r31, 0x80
 lis r10, str_N_State_00@ha
 addi r10, r10, str_N_State_00@l
 bla _compareString
-beq scalePaneToLeftSide
+beq scalePaneToLeftSideIf
 lis r10, str_Pa_SinJu_00@ha
 addi r10, r10, str_Pa_SinJu_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_Pa_SinJu_01@ha
 addi r10, r10, str_Pa_SinJu_01@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_Pa_SinJu_02@ha
 addi r10, r10, str_Pa_SinJu_02@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_Pa_SinJu_03@ha
 addi r10, r10, str_Pa_SinJu_03@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_Pa_SinJu_03@ha
 addi r10, r10, str_Pa_SinJu_03@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 const_SensorsOffset:
@@ -609,7 +614,7 @@ lfs f12, const_SensorsOffset@l(r10)
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 scaleSoundMeterPanes:
 addi r5, r31, 0x80
@@ -618,7 +623,7 @@ lfs f12, const_SensorsOffset@l(r10)
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 scaleTempMeterPanes:
 addi r5, r31, 0x80
@@ -627,7 +632,7 @@ lfs f12, const_SensorsOffset@l(r10)
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 const_TimeOffset:
 .float 342*0.85
@@ -638,14 +643,14 @@ lfs f12, const_TimeOffset@l(r10)
 lis r10, str_N_All_00@ha
 addi r10, r10, str_N_All_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 scaleMainScreenWeatherPanes:
 addi r5, r31, 0x80
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 scaleMainScreenInformationTextPanes:
 addi r5, r31, 0x80
@@ -682,7 +687,7 @@ addi r5, r31, 0x80
 lis r10, str_Pa_LocationNameS_00@ha
 addi r10, r10, str_Pa_LocationNameS_00@l
 bla _compareString
-beq scalePaneToLeftSide
+beq scalePaneToLeftSideIf
 b exitScale
 scaleMainScreenBossGaugePanes:
 addi r5, r31, 0x80
@@ -733,7 +738,7 @@ addi r5, r31, 0x80
 lis r10, str_Pa_LocationNameS_00@ha
 addi r10, r10, str_Pa_LocationNameS_00@l
 bla _compareString
-beq scalePaneToLeftSide
+beq scalePaneToLeftSideIf
 lis r10, str_Pa_Message_00@ha
 addi r10, r10, str_Pa_Message_00@l
 bla _compareString
@@ -749,7 +754,7 @@ addi r5, r31, 0x80
 lis r10, str_N_In_00@ha
 addi r10, r10, str_N_In_00@l
 bla _compareString
-beq scalePaneToLeftSide
+beq scalePaneToLeftSideIf
 b exitScale
 
 scaleSpiritOrbPanes:
@@ -757,11 +762,11 @@ addi r5, r31, 0x80
 lis r10, str_W_Base_00@ha
 addi r10, r10, str_W_Base_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_Time_00@ha
 addi r10, r10, str_T_Time_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 scaleSimpleItemGetPanes:
@@ -783,35 +788,35 @@ addi r5, r31, 0x80
 lis r10, str_W_Base_00@ha
 addi r10, r10, str_W_Base_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_Num_00@ha
 addi r10, r10, str_T_Num_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_Time_00@ha
 addi r10, r10, str_T_Time_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_Rupee_00@ha
 addi r10, r10, str_T_Rupee_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_KeyNum_00@ha
 addi r10, r10, str_T_KeyNum_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_P_Icon_00@ha
 addi r10, r10, str_P_Icon_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_N_Icon_00@ha
 addi r10, r10, str_N_Icon_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_P_KologNuts_00@ha
 addi r10, r10, str_P_KologNuts_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 const_ItemGetPlusMinusOffset:
@@ -823,7 +828,7 @@ lfs f12, const_ItemGetPlusMinusOffset@l(r10)
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 
 scaleItemGetNoPanes:
@@ -831,7 +836,7 @@ addi r5, r31, 0x80
 lis r10, str_N_Capture_00@ha
 addi r10, r10, str_N_Capture_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b continueSimpleItemGetPanes
 
 scaleWolfLinkHeartPanes:
@@ -854,11 +859,11 @@ addi r5, r31, 0x80
 lis r10, str_P_Sh_00@ha
 addi r10, r10, str_P_Sh_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_P_Illust_00@ha
 addi r10, r10, str_P_Illust_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 const_WolfHeartOffset:
@@ -868,13 +873,13 @@ addi r5, r31, 0x80
 lis r10, str_T_Name_00@ha
 addi r10, r10, str_T_Name_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, const_WolfHeartOffset@ha
 lfs f12, const_WolfHeartOffset@l(r10)
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 
 scaleMainScreenMasterSwordPanes:
@@ -979,7 +984,7 @@ addi r5, r31, 0x80
 lis r10, str_N_MainAll_00@ha ; scales the DPAD guide on the right
 addi r10, r10, str_N_MainAll_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_N_Cut_00@ha ; scales the item/rune selection bar
 addi r10, r10, str_N_Cut_00@l
 bla _compareString
@@ -1258,7 +1263,7 @@ lfs f12, const_590@l(r10)
 lis r10, str_Pa_PickUpWin_00@ha
 addi r10, r10, str_Pa_PickUpWin_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 scaleRuneGuidePanes:
@@ -1409,19 +1414,19 @@ addi r5, r31, 0x80
 lis r10, str_W_Base_00@ha
 addi r10, r10, str_W_Base_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_Text_00@ha
 addi r10, r10, str_T_Text_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_T_Text_00_JPja@ha
 addi r10, r10, str_T_Text_00_JPja@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_N_GuideOn_00@ha
 addi r10, r10, str_N_GuideOn_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 scaleCursorPanes:
@@ -1553,7 +1558,7 @@ beq scaleOnlyPos
 lis r10, str_Pa_RotateGuide_00@ha
 addi r10, r10, str_Pa_RotateGuide_00@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_N_State_00@ha
 addi r10, r10, str_N_State_00@l
 bla _compareString
@@ -1715,11 +1720,11 @@ lfs f12, const_SkipButtonOffset@l(r10)
 lis r10, str_N_InOut_00@ha
 addi r10, r10, str_N_InOut_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 lis r10, str_N_Glow_00@ha
 addi r10, r10, str_N_Glow_00@l
 bla _compareString
-beq scalePaneAndKeepCustomPos
+beq scalePaneAndKeepCustomPosIf
 b exitScale
 
 scaleLoadSaveIconPanes:
@@ -2115,11 +2120,11 @@ addi r5, r31, 0x80
 lis r10, str_N_Region_01@ha
 addi r10, r10, str_N_Region_01@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 lis r10, str_N_Region_01_JPja@ha
 addi r10, r10, str_N_Region_01_JPja@l
 bla _compareString
-beq scalePaneAndKeepPos
+beq scalePaneAndKeepPosIf
 b exitScale
 
 scaleMessageTipsPanes:
@@ -2146,6 +2151,19 @@ scaleMessageTipsSubTipsPanes:
 addi r5, r31, 0x80
 lis r10, str_N_InOut_01@ha
 addi r10, r10, str_N_InOut_01@l
+bla _compareString
+beq scalePaneNormal
+b exitScale
+
+const_EnergyMeterOffset:
+.float 392
+
+scaleEnergyMeterDLCPanes:
+addi r5, r31, 0x80
+lis r10, const_EnergyMeterOffset@ha
+lfs f12, const_EnergyMeterOffset@l(r10)
+lis r10, str_N_InOut_00@ha
+addi r10, r10, str_N_InOut_00@l
 bla _compareString
 beq scalePaneNormal
 b exitScale
@@ -2285,6 +2303,12 @@ lfs f0, 0x1C(r31)
 fadds f0, f0, f9
 stfs f0, 0x1C(r31)
 b exitScale
+
+scalePaneToLeftSideIf:
+li r10, $ultrawideHUDMode
+cmpwi r10, 1
+beq scalePaneToLeftSide 
+bne scalePaneNormal
 
 movePaneToLeftSide:
 lis r10, const_PaddingLeftSide@ha
@@ -2445,6 +2469,11 @@ fsubs f0, f11, f0
 stfs f0, 0x1C(r31)
 b exitScale
 
+scalePaneAndKeepPosIf:
+li r10, $ultrawideHUDMode
+cmpwi r10, 1
+beq scalePaneAndKeepPos 
+bne scalePaneAndPos
 
 moveKeepPos:
 lis r10, const_0@ha
@@ -2473,6 +2502,12 @@ stfs f0, 0x1C(r31)
 b exitScale
 
 ; Pass custom pos as f12
+scalePaneAndKeepCustomPosIf:
+li r10, $ultrawideHUDMode
+cmpwi r10, 1
+beq scalePaneAndKeepCustomPos 
+bne scalePaneAndCenterCustomPos
+
 scalePaneAndKeepCustomPos:
 lis r10, const_AspectRatio@ha
 lfs f0, const_AspectRatio@l(r10)
@@ -2506,6 +2541,45 @@ fadds f0, f9, f0
 bge .+0x08
 fsubs f0, f11, f0
 fsubs f0, f0, f12
+stfs f0, 0x1C(r31)
+b exitScale
+
+; todo: currently broken for left-sided elements
+scalePaneAndCenterCustomPos:
+lis r10, const_AspectRatio@ha
+lfs f0, const_AspectRatio@l(r10)
+lfs f9, 0x34(r31)
+fmuls f0, f0, f9
+stfs f0, 0x34(r31)
+
+; [XPositionOfPane] + ((1280/2 - [XPositionOfPane]) * (1-[AspectRatio])))
+lis r10, const_0@ha
+lfs f11, const_0@l(r10)
+lfs f9, 0x1C(r31)
+fcmpu f9, f11
+lis r10, const_640@ha
+lfs f0, const_640@l(r10)
+lfs f9, 0x1C(r31)
+bge .+0x08
+fsubs f9, f11, f9
+fsubs f0, f0, f9
+lis r10, const_1@ha
+lfs f13, const_1@l(r10)
+lis r10, const_AspectRatio@ha
+lfs f9, const_AspectRatio@l(r10)
+fsubs f13, f13, f9
+fmuls f0, f0, f13
+lfs f9, 0x1C(r31)
+bge .+0x08
+fsubs f9, f11, f9
+fadds f0, f9, f0
+bge .+0x08
+fsubs f0, f11, f0
+stfs f0, 0x1C(r31)
+
+lis r10, const_640@ha
+lfs f11, const_640@l(r10)
+fsubs f0, f0, f11
 stfs f0, 0x1C(r31)
 b exitScale
 
@@ -2611,8 +2685,15 @@ lfs f0,  const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
+; if the ultrawide mode is 1 (edge HUD), add padding so that the map gets initialized at the right edge
+li r10, $ultrawideHUDMode
+cmpwi r4, 1
+lis r10, const_0@ha
+lfs f9, const_0@l(r10)
+bne noMapPadding
 lis r10, const_PaddingRightSide@ha
 lfs f9, const_PaddingRightSide@l(r10)
+noMapPadding:
 lfs f0, 0x1C(r31)
 fadds f0, f0, f9
 stfs f0, 0x1C(r31)
@@ -2623,9 +2704,13 @@ stw r5, mapXPositionAddr@l(r10)
 b exitScale
 
 setMapPosition:
-li r4, $ultrawideHUD
+li r4, $ultrawideHUDMode
 cmpwi r4, 0
 beq setNothing
+
+li r4, $ultrawideHUDMode ; if ultramode is centered, keep the map centered
+cmpwi r4, 2
+beq setToMap
 
 cmpwi r31, 0
 beq setToMinimap
@@ -2680,7 +2765,8 @@ mr r6, r12
 mr r8, r10
 mflr r0
 
-li r10, $ultrawideHUD
+; if ultrawide mode is set to 0, return early
+li r10, $ultrawideHUDMode
 cmpwi r10, 0
 beq exitPaneBasedProjection
 

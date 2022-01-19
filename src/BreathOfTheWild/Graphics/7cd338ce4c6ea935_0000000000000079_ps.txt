@@ -58,7 +58,7 @@ vec3 cubeMapSTM;
 int cubeMapFaceId;
 R0f = passParameterSem0;
 
-#if $ultrawideHUD == 1
+#if $ultrawideHUDMode != 0
 float uv_x = 0.5 + (R0f.x - 0.5) / aspectRatio;
 R0f.xyzw = (texture(textureUnitPS0, vec2(uv_x, R0f.y)).xyzw);
 #else
@@ -95,7 +95,7 @@ PS1f = exp2(R127f.x);
 R0f.z = PS1f;
 // export
 
-#if $ultrawideHUD == 1
+#if $ultrawideHUDMode != 0
 bool isBorder = uv_x < 0 || uv_x > 1.0;
 passPixelColor0 = isBorder ? vec4(0.0) : R0f.xyzw;
 #else
