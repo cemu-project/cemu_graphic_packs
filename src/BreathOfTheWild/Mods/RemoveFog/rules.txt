@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Remove (Distant) Fog, Haze and Clouds
 path = "The Legend of Zelda: Breath of the Wild/Mods/Remove Distant Fog"
-description = Allows you to remove or customize each type of fog in the game.|NPC fog will conflict with the remove cel-shading graphic packs.||Made by Skalfate."
+description = Allows you to remove or customize each type of fog in the game.|NPC fog will conflict with the remove cel-shading graphic packs.||Made by Skalfate.
 version = 6
 
 [Default]

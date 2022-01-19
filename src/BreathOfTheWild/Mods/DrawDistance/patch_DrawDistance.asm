@@ -3,6 +3,7 @@ moduleMatches = 0x6267BFD0
 
 .origin = codecave
 
+; Actor draw distance
 actorMultiplier:
 .float $actor
 
@@ -16,12 +17,12 @@ blr
 0x03857F5C = bla _setActorDrawDistanceMultiplier
 
 
+; Object draw distance
 objectMultiplier:
 .float $object
 
 objectDivider:
 .float 1.0 - ($object - 1.0)
-
 
 _setObjectDrawDistance:
 lis r12, objectMultiplier@ha
@@ -44,7 +45,12 @@ blr
 
 
 ; Tree billboard draw distance
+const_treeDrawDistance:
+.float $tree
 
-; either one of these actually do stuff
-;0x102E94D8 = .float $tree ; messes with the grass LODs? Might be expandable.
-0x102BC438 = .float $tree
+0x033CB548 = lis r7, const_treeDrawDistance@ha
+0x033CB550 = lfs f12, const_treeDrawDistance@l(r7)
+
+
+; Grass blades draw distance
+0x1030A774 = .float $grass
