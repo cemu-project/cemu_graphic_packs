@@ -86,7 +86,7 @@ bne checkScreenNames
 lis r11, copySubPanelStringLen@ha
 lwz r11, copySubPanelStringLen@l(r11)
 lis r12, copySubPanelString@ha
-addi r12,  r12, copySubPanelString@l
+addi r12, r12, copySubPanelString@l
 
 copySubPanelLoop:
 lbzx r10, r5, r11
@@ -607,7 +607,7 @@ b exitScale
 
 const_SensorsOffset:
 .float 392.0
-scaleSensorMeterPanes:
+scaleSoundMeterPanes:
 addi r5, r31, 0x80
 lis r10, const_SensorsOffset@ha
 lfs f12, const_SensorsOffset@l(r10)
@@ -616,7 +616,7 @@ addi r10, r10, str_N_InOut_00@l
 bla _compareString
 beq scalePaneAndKeepCustomPosIf
 b exitScale
-scaleSoundMeterPanes:
+scaleSensorMeterPanes:
 addi r5, r31, 0x80
 lis r10, const_SensorsOffset@ha
 lfs f12, const_SensorsOffset@l(r10)
@@ -635,7 +635,7 @@ bla _compareString
 beq scalePaneAndKeepCustomPosIf
 b exitScale
 const_TimeOffset:
-.float 342*0.85
+.float (($ultrawideHUDMode == 1) * (342*0.85)) + (($ultrawideHUDMode == 2)*(342*(1/0.85)))
 scaleMainScreenTimePanes:
 addi r5, r31, 0x80
 lis r10, const_TimeOffset@ha
@@ -2172,7 +2172,7 @@ b exitScale
 ; Generic methods used to scale a specific pane type
 
 scaleRootToCenter:
-addi r5, r31, 0x80  ; address to first character of the pane name that's getting loaded
+addi r5, r31, 0x80 ; address to first character of the pane name that's getting loaded
 lis r10, str_RootPane@ha
 addi r10, r10, str_RootPane@l
 bla _compareString
@@ -2261,13 +2261,13 @@ b exitScale
 
 scalePaneAndSize:
 lis r10, const_AspectRatio@ha
-lfs f9,  const_AspectRatio@l(r10)
+lfs f9, const_AspectRatio@l(r10)
 lfs f0, 0x0(r27)
 fmuls f0, f0, f9
 stfs f0, 0x0(r27)
 
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2275,7 +2275,7 @@ b exitScale
 
 scaleOnlySize:
 lis r10, const_AspectRatio@ha
-lfs f9,  const_AspectRatio@l(r10)
+lfs f9, const_AspectRatio@l(r10)
 lfs f0, 0x0(r27)
 fmuls f0, f0, f9
 stfs f0, 0x0(r27)
@@ -2283,7 +2283,7 @@ b exitScale
 
 scaleOnlySizeReverse:
 lis r10, const_ReverseAspectRatio@ha
-lfs f9,  const_ReverseAspectRatio@l(r10)
+lfs f9, const_ReverseAspectRatio@l(r10)
 lfs f0, 0x0(r27)
 fmuls f0, f0, f9
 stfs f0, 0x0(r27)
@@ -2292,7 +2292,7 @@ b exitScale
 ; Scales pane to left side
 scalePaneToLeftSide:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2329,7 +2329,7 @@ b exitScale
 ; Scales pane to right side
 scalePaneToRightSide:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2359,7 +2359,7 @@ b exitScale
 
 scalePaneToRightSideAlt:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2373,7 +2373,7 @@ b exitScale
 
 scalePaneReverseToLeft:
 lis r10, const_ReverseAspectRatio@ha
-lfs f0,  const_ReverseAspectRatio@l(r10)
+lfs f0, const_ReverseAspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2387,7 +2387,7 @@ b exitScale
 
 scalePaneReverseToRight:
 lis r10, const_ReverseAspectRatio@ha
-lfs f0,  const_ReverseAspectRatio@l(r10)
+lfs f0, const_ReverseAspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2402,7 +2402,7 @@ b exitScale
 ; Divides the width of this element with the change in aspect ratio
 scalePaneNormal:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2410,13 +2410,13 @@ b exitScale
 
 scalePaneAndPos:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
 
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x1C(r31)
 fmuls f0, f0, f9
 stfs f0, 0x1C(r31)
@@ -2424,7 +2424,7 @@ b exitScale
 
 scaleOnlyPos:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x1C(r31)
 fmuls f0, f0, f9
 stfs f0, 0x1C(r31)
@@ -2435,6 +2435,12 @@ const_640:
 
 const_1:
 .float 1.0
+
+scalePaneAndKeepPosIf:
+li r10, $ultrawideHUDMode
+cmpwi r10, 1
+beq scalePaneAndKeepPos 
+bne scalePaneAndPos
 
 scalePaneAndKeepPos:
 lis r10, const_AspectRatio@ha
@@ -2469,44 +2475,12 @@ fsubs f0, f11, f0
 stfs f0, 0x1C(r31)
 b exitScale
 
-scalePaneAndKeepPosIf:
-li r10, $ultrawideHUDMode
-cmpwi r10, 1
-beq scalePaneAndKeepPos 
-bne scalePaneAndPos
-
-moveKeepPos:
-lis r10, const_0@ha
-lfs f11, const_0@l(r10)
-lfs f9, 0x1C(r31)
-fcmpu f9, f11
-lis r10, const_640@ha
-lfs f0, const_640@l(r10)
-lfs f9, 0x1C(r31)
-bge .+0x08
-fsubs f9, f11, f9
-fsubs f0, f0, f9
-lis r10, const_1@ha
-lfs f13, const_1@l(r10)
-lis r10, const_AspectRatio@ha
-lfs f9, const_AspectRatio@l(r10)
-fsubs f13, f13, f9
-fmuls f0, f0, f13
-lfs f9, 0x1C(r31)
-bge .+0x08
-fsubs f9, f11, f9
-fadds f0, f9, f0
-bge .+0x08
-fsubs f0, f11, f0
-stfs f0, 0x1C(r31)
-b exitScale
-
 ; Pass custom pos as f12
 scalePaneAndKeepCustomPosIf:
 li r10, $ultrawideHUDMode
 cmpwi r10, 1
 beq scalePaneAndKeepCustomPos 
-bne scalePaneAndCenterCustomPos
+bne scalePaneAndCustomPos
 
 scalePaneAndKeepCustomPos:
 lis r10, const_AspectRatio@ha
@@ -2515,6 +2489,7 @@ lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
 
+; [XPositionOfPane] + ((1280/2 - [XPositionOfPane]) * (1-[AspectRatio])))
 lis r10, const_0@ha
 lfs f11, const_0@l(r10)
 lfs f9, 0x1C(r31)
@@ -2544,15 +2519,48 @@ fsubs f0, f0, f12
 stfs f0, 0x1C(r31)
 b exitScale
 
-; todo: currently broken for left-sided elements
-scalePaneAndCenterCustomPos:
+# ; [XPositionOfPane] + ((1280/2 - [XPositionOfPane]) * (1-[AspectRatio])))
+# lis r10, const_640@ha
+# lfs f0, const_640@l(r10) ; (1280/2)
+# lfs f9, 0x1C(r31)
+# fadds f9, f9, f12        ; Create XPositionOfPane (add position of current pane + custom position of parent pane)
+# fsubs f0, f0, f9         ; (1280/2) - XPositionOfPane
+
+# lis r10, const_1@ha
+# lfs f13, const_1@l(r10)
+# lis r10, const_AspectRatio@ha
+# lfs f9, const_AspectRatio@l(r10)
+# fsubs f13, f13, f9       ; (1-[AspectRatio])
+
+# fmuls f0, f0, f13        ; ((1280/2) - XPositionOfPane) * (1-[AspectRatio])
+
+# lfs f9, 0x1C(r31)
+# fadds f9, f9, f12        ; [XPositionOfPane]
+
+# fadds f0, f9, f0         ;  [XPositionOfPane] + ((1280/2 - [XPositionOfPane]) * (1-[AspectRatio])))
+# fsubs f0, f0, f12
+
+; Explanation: The current position is 3x as big as it should be (let's take 3x at 48:9), so to correct that you scale it back by 
+; XPositionOfPane*(1-AspectRatio)
+scalePaneAndCustomPos:
 lis r10, const_AspectRatio@ha
-lfs f0, const_AspectRatio@l(r10)
+lfs f0,  const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
 
-; [XPositionOfPane] + ((1280/2 - [XPositionOfPane]) * (1-[AspectRatio])))
+lis r10, const_1@ha
+lfs f9, const_1@l(r10)
+lis r10, const_AspectRatio@ha
+lfs f0, const_AspectRatio@l(r10)
+fsubs f0, f9, f0
+lfs f9, 0x1C(r31)
+fsubs f9, f9, f12
+fmuls f0, f9, f0
+stfs f0, 0x1C(r31)
+b exitScale
+
+moveKeepPos:
 lis r10, const_0@ha
 lfs f11, const_0@l(r10)
 lfs f9, 0x1C(r31)
@@ -2576,26 +2584,28 @@ fadds f0, f9, f0
 bge .+0x08
 fsubs f0, f11, f0
 stfs f0, 0x1C(r31)
-
-lis r10, const_640@ha
-lfs f11, const_640@l(r10)
-fsubs f0, f0, f11
-stfs f0, 0x1C(r31)
 b exitScale
 
-movePaneToCustomSize:
-lis r10, const_AspectRatio@ha
-lfs f0, const_AspectRatio@l(r10)
+; Pass the scale in f0 and position in f12
+scalePaneWithCustomPosAndScale:
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
 
+lfs f9, 0x1C(r31)
+fsubs f0, f9, f12
+stfs f12, 0x1C(r31)
+b exitScale
+
+movePaneToCustomPos:
+lfs f9, 0x1C(r31)
+fsubs f0, f9, f12
 stfs f12, 0x1C(r31)
 b exitScale
 
 scalePaneHalf:
 lis r10, const_AspectRatioHalf@ha
-lfs f0,  const_AspectRatioHalf@l(r10)
+lfs f0, const_AspectRatioHalf@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2603,7 +2613,7 @@ b exitScale
 
 scalePaneReverse:
 lis r10, const_ReverseAspectRatio@ha
-lfs f0,  const_ReverseAspectRatio@l(r10)
+lfs f0, const_ReverseAspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2611,13 +2621,13 @@ b exitScale
 
 scalePaneAndPosReverse:
 lis r10, const_ReverseAspectRatio@ha
-lfs f0,  const_ReverseAspectRatio@l(r10)
+lfs f0, const_ReverseAspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
 
 lis r10, const_ReverseAspectRatio@ha
-lfs f0,  const_ReverseAspectRatio@l(r10)
+lfs f0, const_ReverseAspectRatio@l(r10)
 lfs f9, 0x1C(r31)
 fmuls f0, f0, f9
 stfs f0, 0x1C(r31)
@@ -2625,7 +2635,7 @@ b exitScale
 
 scalePaneReverse2x:
 lis r10, const_ReverseAspectRatio2x@ha
-lfs f0,  const_ReverseAspectRatio2x@l(r10)
+lfs f0, const_ReverseAspectRatio2x@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2633,7 +2643,7 @@ b exitScale
 
 scalePaneOnYScale:
 lis r10, const_ReverseAspectRatio@ha
-lfs f0,  const_ReverseAspectRatio@l(r10)
+lfs f0, const_ReverseAspectRatio@l(r10)
 lfs f9, 0x38(r31)
 fmuls f0, f0, f9
 stfs f0, 0x38(r31)
@@ -2641,7 +2651,7 @@ b exitScale
 
 scalePaneOnYScaleReverse:
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x38(r31)
 fmuls f0, f0, f9
 stfs f0, 0x38(r31)
@@ -2649,7 +2659,7 @@ b exitScale
 
 scaleReversePaneToRightSide:
 lis r10, const_ReverseAspectRatio2x@ha
-lfs f0,  const_ReverseAspectRatio2x@l(r10)
+lfs f0, const_ReverseAspectRatio2x@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2681,7 +2691,7 @@ mapXPositionAddr:
 scaleMapAndStore:
 ; scale pane and move to right on initialization
 lis r10, const_AspectRatio@ha
-lfs f0,  const_AspectRatio@l(r10)
+lfs f0, const_AspectRatio@l(r10)
 lfs f9, 0x34(r31)
 fmuls f0, f0, f9
 stfs f0, 0x34(r31)
@@ -2810,7 +2820,7 @@ _createNewScreenHook:
 lis r11, copyScreenStringLen@ha
 lwz r11, copyScreenStringLen@l(r11)
 lis r12, copyScreenString@ha
-addi r12,  r12, copyScreenString@l
+addi r12, r12, copyScreenString@l
 
 copyNameLoop:
 lbzx r10, r24, r11
@@ -2823,7 +2833,7 @@ bne copyNameLoop
 lis r11, copySubPanelStringLen@ha
 lwz r11, copySubPanelStringLen@l(r11)
 lis r12, copySubPanelString@ha
-addi r12,  r12, copySubPanelString@l
+addi r12, r12, copySubPanelString@l
 
 eraseSubPanelLoop:
 li r10, 0
