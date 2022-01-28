@@ -25,6 +25,8 @@ $shadowNearbyEnd = 1.0
 $shadowFarStart = 1.0
 $shadowFarEnd = 1.0
 
+# Should be set to 1 or 2 (changes verbosity of loggin) when trying to log the layout of panes while they're getting loaded for debugging purposes
+$enableUltrawideDebugLogging:int = 0
 
 # Aspect Ratio
 

@@ -30,6 +30,9 @@ moduleMatches = 0x6267BFD0
 0x035b0a30 = lis r5, grassCulling@ha
 0x035b0a38 = lfs f11, grassCulling@l(r5)
 
+; 2nd Type Of Grass Culling (calculated every frame)
+; Still kinda unsure how this should be calculated but it works
+0x1047BFB8 = .float (($ultrawideHUDMode != 0)*(120*0.5) + (($ultrawideHUDMode == 0)*(120)))
 
 
 [BotW_AspectRatio_V176V192]

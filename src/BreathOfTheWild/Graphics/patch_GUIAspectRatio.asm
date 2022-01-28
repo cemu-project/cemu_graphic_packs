@@ -56,7 +56,11 @@ li r10, $ultrawideHUDMode
 cmpwi r10, 0
 beq exitScale
 
-; Log currently loaded pane to register
+; Log currently loaded pane to register if logging is enabled
+li r10, $enableUltrawideDebugLogging
+cmpwi r10, 2
+blt skipPaneLogging
+
 mr r10, r3
 mr r11, r4
 mr r12, r5
@@ -70,6 +74,8 @@ bl import.coreinit.OSReport
 mr r3, r10
 mr r4, r11
 mr r5, r12
+
+skipPaneLogging:
 
 ; ------------------------------------------------------------------------------------------
 ; Store whether there's a subpanel name
@@ -2816,7 +2822,7 @@ blr
 ; ------------------------------------------------------------------------------------------
 
 _createNewScreenHook:
-; Copy 
+; Copy screen name to buffer
 lis r11, copyScreenStringLen@ha
 lwz r11, copyScreenStringLen@l(r11)
 lis r12, copyScreenString@ha
@@ -2842,6 +2848,10 @@ addi r11, r11, -1
 cmpwi r11, -1
 bne eraseSubPanelLoop
 
+li r10, $enableUltrawideDebugLogging
+cmpwi r10, 1
+blt skipLayoutFileLogging
+
 crxor 4*cr1+eq, 4*cr1+eq, 4*cr1+eq
 lis r3, newLineFormatScreen@ha
 addi r3, r3, newLineFormatScreen@l
@@ -2853,6 +2863,8 @@ mflr r10
 bl import.coreinit.OSReport
 mtlr r10
 mr r3, r11
+
+skipLayoutFileLogging:
 
 lwz r11, 0xC(r30)
 blr
