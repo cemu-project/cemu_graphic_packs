@@ -36,7 +36,7 @@ floatConvL:
 # Variables
 
 fpsLimit:
-.float $fpsLimit
+.float ((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))
 
 lowFPSLimit:
 .float $lowFPSLimit
@@ -45,34 +45,34 @@ bufferSizeDivider:
 .float $frameAverageAmount
 
 averageFPS30:
-.float $fpsLimit
+.float ((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))
 
 averageFPS30Inv:
-.float 900/$fpsLimit
+.float 900/((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))
 
 averageFPS1.5:
-.float (1.5*$fpsLimit)/30
+.float (1.5*((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal)))/30
 
 averageFPS1.5Inv:
-.float 45/$fpsLimit
+.float 45/((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))
 
 averageFPS1:
-.float $fpsLimit/30
+.float ((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))/30
 
 averageFPS1Inv:
-.float 30/$fpsLimit
+.float 30/((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))
 
 averageFPS0.5:
-.float $fpsLimit/60
+.float ((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal))/60
 
 averageFPS0.5Inv:
-.float 30/(2*$fpsLimit)
+.float 30/(2*((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal)))
 
 averageSum:
-.float $fpsLimit*$frameAverageAmount
+.float 30*$frameAverageAmount
 
 buffer:
-.float 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 ; buffer can only store a max length of 32 frames
+.float 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30 ; buffer can only store a max length of 32 frames
 
 bufferIndex:
 .int 0
@@ -103,6 +103,8 @@ lfs f12, const_0.0@l(r11)		; ...into f12
 lfs f10, 0xD0(r30)				; Load the external speed offset
 fcmpu cr0, f10, f12				; Compare the value stored in the external memory offset to 0 (f12)
 bne _setGamespeed
+
+b setSwapInterval
 
 ; Calculate speed of current frame (FPS). It's calculated by using the ticks between the previous frame and now, which is stored in r12, and the amount of ticks that the Wii U executes in a second (the bus speed).
 _convertTicksToFrametime:
@@ -264,8 +266,6 @@ blr								; Return to the address that's stored in the link register
 # Patches
 
 0x1031E2C0 = .float 2
-0x031FACD0 = nop							; Disable vsync
-0x031FACF4 = nop							; Disable vsync loop
 
 0x031FA97C = bla _calculateGamespeed		; Replace an instruction that gets called every frame to calculate the FPS
 
