@@ -117,7 +117,7 @@ name = 30FPS Limit
 category = FPS Limit
 condition = $advancedMode == 0
 $fpsLimitNormal = 30
-$keepVsync:int = 1
+$keepVsync:int = 0
 
 [Preset]
 name = 20FPS Limit
@@ -228,7 +228,7 @@ name = 30FPS (ideal for 240/120/60Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
 $fpsLimitAdvanced = 30
-$keepVsync:int = 1
+$keepVsync:int = 0
 
 [Preset]
 name = 20FPS (ideal for 240/120/60Hz displays)
