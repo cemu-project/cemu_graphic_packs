@@ -17,6 +17,7 @@ $gamePadHeight = 480
 $shadowQuality = 1
 $anisotropy = 1
 $bloom = 1
+$ultrawideHUD:int = 1
 
 # TV Resolution
 
@@ -108,48 +109,56 @@ name = 1280x800 (16:10)
 category = TV Resolution
 $width = 1280
 $height = 800
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 1440x900 (16:10)
 category = TV Resolution
 $width = 1440
 $height = 900
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 1680x1050 (16:10)
 category = TV Resolution
 $width = 1680
 $height = 1050
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 1920x1200 (16:10)
 category = TV Resolution
 $width = 1920
 $height = 1200
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 2560x1600 (16:10)
 category = TV Resolution
 $width = 2560
 $height = 1600
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 2880x1800 (16:10)
 category = TV Resolution
 $width = 2880
 $height = 1800
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 3840x2400 (16:10)
 category = TV Resolution
 $width = 3840
 $height = 2400
+$ultrawideHUD:int = 0
 
 [Preset]
 name = 5120x3200 (16:10)
 category = TV Resolution
 $width = 5120
 $height = 3200
+$ultrawideHUD:int = 0
 
 # Gamepad Resolution
 
