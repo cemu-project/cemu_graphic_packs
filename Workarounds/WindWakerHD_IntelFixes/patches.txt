@@ -7,7 +7,7 @@ _emptyString = 0x10166948
 0x0278EED8 = lis r0, _emptyString@ha
 0x0278EEE4 = addic r0, r0, _emptyString@l
 
-[WWHDUS] ;ported to US by Slash
+[WWHDUS] ;ported to US by M&M
 moduleMatches = 0x475BD29F
 
 _emptyString = 0x1016693C
