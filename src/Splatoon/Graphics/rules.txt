@@ -104,6 +104,12 @@ $width = 3440
 $height = 1440
 
 [Preset]
+name = 1280x800 (16:10)
+category = TV Resolution
+$width = 1280
+$height = 800
+
+[Preset]
 name = 1440x900 (16:10)
 category = TV Resolution
 $width = 1440
@@ -229,6 +235,12 @@ name = 3440x1440 (21:9)
 category = Gamepad Resolution
 $padWidth = 3440
 $padHeight = 1440
+
+[Preset]
+name = 1280x800 (16:10)
+category = Gamepad Resolution
+$padWidth = 1280
+$padHeight = 800
 
 [Preset]
 name = 1440x900 (16:10)

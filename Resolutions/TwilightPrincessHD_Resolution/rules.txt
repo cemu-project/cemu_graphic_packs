@@ -188,6 +188,21 @@ $UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
 $UItransp = 1.0
 
 [Preset]
+name = 1280x800 (16:10)
+$width = 1280
+$height = 800
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (1440.0/900.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
+$UItransp = 1.0
+
+[Preset]
 name = 1440x900 (16:10)
 $width = 1440
 $height = 900
@@ -659,6 +674,21 @@ $UItransp = 0.75
 name = -- 16:10 -- resolutions - UI 25% transp
 $width = 1440
 $height = 900
+$gameWidth = 1920
+$gameHeight = 1080
+$dither = 0.01
+$scaleShader = 1.0
+$scaleBlur = 0.05
+$internalRes = 1.0
+$aspectRatio = (1440.0/900.0)
+$UIAspectX = 1.0
+$UIAspectY = ( 1440.0 / 900.0 ) / (1920.0 / 1080.0)
+$UItransp = 0.75
+
+[Preset]
+name = 1280x800 (16:10) - UI 25% transp
+$width = 1280
+$height = 800
 $gameWidth = 1920
 $gameHeight = 1080
 $dither = 0.01
