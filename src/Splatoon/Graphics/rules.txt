@@ -2,296 +2,800 @@
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
 name = Graphic Options
 path = "Splatoon/Graphics"
-description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, bloom intensity and anisotropic filtering quality.|Made by M&&M and Xalphenos.
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, bloom intensity and anisotropic filtering quality.|Made by M&&M, Xalphenos and Crementif.
 version = 6
 
 [Default]
 $width = 1280
 $height = 720
-$padWidth = 854
-$padHeight = 480
 $gameWidth = 1280
 $gameHeight = 720
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+$ultrawideHUD:int = 1
+$padWidth = 854
+$padHeight = 480
 $gamePadWidth = 854
 $gamePadHeight = 480
 $shadowQuality = 1
 $anisotropy = 1
 $bloom = 1
-$ultrawideHUD:int = 1
+
+
+# Aspect Ratio
+
+[Preset]
+name = 16:9 (Default)
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+
+[Preset]
+name = 16:10
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 10
+$ultrawideHUD:int = 0
+
+[Preset]
+name = 21:9
+category = Aspect Ratio
+$aspectRatioWidth = 21
+$aspectRatioHeight = 9
+
+[Preset]
+name = 32:9
+category = Aspect Ratio
+$aspectRatioWidth = 32
+$aspectRatioHeight = 9
+
+[Preset]
+name = 32:10
+category = Aspect Ratio
+$aspectRatioWidth = 32
+$aspectRatioHeight = 10
+
+[Preset]
+name = 48:9
+category = Aspect Ratio
+$aspectRatioWidth = 48
+$aspectRatioHeight = 9
+
+[Preset]
+name = 4:3
+category = Aspect Ratio
+$aspectRatioWidth = 4
+$aspectRatioHeight = 3
+$ultrawideHUD:int = 0
+
+[Preset]
+name = 5:4
+category = Aspect Ratio
+$aspectRatioWidth = 5
+$aspectRatioHeight = 4
+$ultrawideHUD:int = 0
+
 
 # TV Resolution
+
+# 16:9 Resolutions
 
 [Preset]
 name = 320x180
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 320
 $height = 180
 
 [Preset]
 name = 640x360
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 640
 $height = 360
 
 [Preset]
 name = 854x480
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 854
 $height = 480
 
 [Preset]
 name = 960x540
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 960
 $height = 540
 
 [Preset]
-name = 1280x720
+name = 1280x720 (HD, Default)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 default = 1
 
 [Preset]
-name = 1600x900
+name = 1600x900 (HD+)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 1600
 $height = 900
 
 [Preset]
-name = 1920x1080
+name = 1920x1080 (Full HD)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 1920
 $height = 1080
 
 [Preset]
-name = 2560x1440
+name = 2560x1440 (2K)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 2560
 $height = 1440
 
 [Preset]
 name = 3200x1800
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 3200
 $height = 1800
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 (4K)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 3840
 $height = 2160
 
 [Preset]
-name = 5120x2880
+name = 5120x2880 (5K)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 5120
 $height = 2880
 
 [Preset]
-name = 7680x4320
+name = 7680x4320 (8K)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 7680
 $height = 4320
 
 [Preset]
-name = 2560x1080 (21:9)
+name = 10240x5760 (10K)
 category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 10240
+$height = 5760
+
+# 16:10 Resolutions
+
+[Preset]
+name = 1280x800
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1280
+$height = 800
+
+[Preset]
+name = 1440x900
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1440
+$height = 900
+
+[Preset]
+name = 1680x1050
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1680
+$height = 1050
+
+[Preset]
+name = 1920x1200
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1920
+$height = 1200
+
+[Preset]
+name = 2560x1600
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 2560
+$height = 1600
+
+[Preset]
+name = 2880x1800
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 2880
+$height = 1800
+
+[Preset]
+name = 3840x2400
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 3840
+$height = 2400
+
+[Preset]
+name = 5120x3200
+category = TV Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 5120
+$height = 3200
+
+# 21:9 Resolutions
+
+[Preset]
+name = 1720x720
+category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 1720
+$height = 720
+
+[Preset]
+name = 2100x900
+category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 2100
+$height = 900
+
+[Preset]
+name = 2560x1080
+category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 2560
 $height = 1080
 
 [Preset]
-name = 3440x1440 (21:9)
+name = 3440x1440
 category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 3440
 $height = 1440
 
 [Preset]
-name = 1280x800 (16:10)
+name = 3840x1600
 category = TV Resolution
-$width = 1280
-$height = 800
-$ultrawideHUD:int = 0
-
-[Preset]
-name = 1440x900 (16:10)
-category = TV Resolution
-$width = 1440
-$height = 900
-$ultrawideHUD:int = 0
-
-[Preset]
-name = 1680x1050 (16:10)
-category = TV Resolution
-$width = 1680
-$height = 1050
-$ultrawideHUD:int = 0
-
-[Preset]
-name = 1920x1200 (16:10)
-category = TV Resolution
-$width = 1920
-$height = 1200
-$ultrawideHUD:int = 0
-
-[Preset]
-name = 2560x1600 (16:10)
-category = TV Resolution
-$width = 2560
-$height = 1600
-$ultrawideHUD:int = 0
-
-[Preset]
-name = 2880x1800 (16:10)
-category = TV Resolution
-$width = 2880
-$height = 1800
-$ultrawideHUD:int = 0
-
-[Preset]
-name = 3840x2400 (16:10)
-category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 3840
-$height = 2400
-$ultrawideHUD:int = 0
+$height = 1600
 
 [Preset]
-name = 5120x3200 (16:10)
+name = 4300x1800
 category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 4300
+$height = 1800
+
+[Preset]
+name = 5120x2160
+category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 5120
-$height = 3200
-$ultrawideHUD:int = 0
+$height = 2160
+
+[Preset]
+name = 6880x2880
+category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 6880
+$height = 2880
+
+[Preset]
+name = 10240x4320
+category = TV Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 10240
+$height = 4320
+
+# 32:9 Resolutions
+
+[Preset]
+name = 3840x1080
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 3840
+$height = 1080
+
+[Preset]
+name = 5120x1440
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 5120
+$height = 1440
+
+[Preset]
+name = 7680x2160
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 7680
+$height = 2160
+
+[Preset]
+name = 10240x2880
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 10240
+$height = 2880
+
+# 31:10 Resolutions
+
+[Preset]
+name = 3840x1200
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 3840
+$height = 1200
+
+[Preset]
+name = 5760x1800
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 5760
+$height = 1800
+
+[Preset]
+name = 7680x2400
+category = TV Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 7680
+$height = 2400
+
+# 48:9 Resolutions
+
+[Preset]
+name = 5760x1080
+category = TV Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 5760
+$height = 1080
+
+[Preset]
+name = 7680x1440
+category = TV Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 7680
+$height = 1440
+
+[Preset]
+name = 11520x2160
+category = TV Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 11520
+$height = 2160
+
+# 4:3 Resolutions
+
+[Preset]
+name = 800x600
+category = TV Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 800
+$height = 600
+
+[Preset]
+name = 1024x768
+category = TV Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1024
+$height = 768
+
+[Preset]
+name = 1280x960
+category = TV Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1280
+$height = 960
+
+[Preset]
+name = 1600x1200
+category = TV Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1600
+$height = 1200
+
+[Preset]
+name = 1920x1440
+category = TV Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1920
+$height = 1440
+
+# 5:4 Resolutions
+
+[Preset]
+name = 1280x1024
+category = TV Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 1280
+$height = 1024
+
+[Preset]
+name = 5760x1080 (3 Full HD )
+category = TV Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 5760
+$height = 1080
+
+[Preset]
+name = 8640x1620
+category = TV Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 8640
+$height = 1620
+
+[Preset]
+name = 14400x2700
+category = TV Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 14400
+$height = 2700
+
 
 # Gamepad Resolution
+
+# 16:9 Resolutions
 
 [Preset]
 name = 320x180
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 320
 $padHeight = 180
 
 [Preset]
 name = 640x360
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 640
 $padHeight = 360
 
 [Preset]
-name = 854x480
+name = 854x480 (Default)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 default = 1
 
 [Preset]
 name = 960x540
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 960
 $padHeight = 540
 
 [Preset]
-name = 1280x720
+name = 1280x720 (HD)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 1280
 $padHeight = 720
 
 [Preset]
-name = 1600x900
+name = 1600x900 (HD+)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 1600
 $padHeight = 900
 
 [Preset]
-name = 1920x1080
+name = 1920x1080 (Full HD)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 1920
 $padHeight = 1080
 
 [Preset]
-name = 2560x1440
+name = 2560x1440 (2K)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 2560
 $padHeight = 1440
 
 [Preset]
 name = 3200x1800
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 3200
 $padHeight = 1800
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 (4K)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 3840
 $padHeight = 2160
 
 [Preset]
-name = 5120x2880
+name = 5120x2880 (5K)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 5120
 $padHeight = 2880
 
 [Preset]
-name = 7680x4320
+name = 7680x4320 (8K)
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $padWidth = 7680
 $padHeight = 4320
 
 [Preset]
-name = 2560x1080 (21:9)
+name = 10240x5760 (10K)
 category = Gamepad Resolution
-$padWidth = 2560
-$padHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 10240
+$padHeight = 5760
+
+# 16:10 Resolutions
 
 [Preset]
-name = 3440x1440 (21:9)
+name = 1280x800
 category = Gamepad Resolution
-$padWidth = 3440
-$padHeight = 1440
-
-[Preset]
-name = 1280x800 (16:10)
-category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 1280
 $padHeight = 800
 
 [Preset]
-name = 1440x900 (16:10)
+name = 1440x900
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 1440
 $padHeight = 900
 
 [Preset]
-name = 1680x1050 (16:10)
+name = 1680x1050
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 1680
 $padHeight = 1050
 
 [Preset]
-name = 1920x1200 (16:10)
+name = 1920x1200
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 1920
 $padHeight = 1200
 
 [Preset]
-name = 2560x1600 (16:10)
+name = 2560x1600
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 2560
 $padHeight = 1600
 
 [Preset]
-name = 2880x1800 (16:10)
+name = 2880x1800
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 2880
 $padHeight = 1800
 
 [Preset]
-name = 3840x2400 (16:10)
+name = 3840x2400
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 3840
 $padHeight = 2400
 
 [Preset]
-name = 5120x3200 (16:10)
+name = 5120x3200
 category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $padWidth = 5120
 $padHeight = 3200
+
+# 21:9 Resolutions
+
+[Preset]
+name = 1720x720
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 1720
+$padHeight = 720
+
+[Preset]
+name = 2100x900
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 2100
+$padHeight = 900
+
+[Preset]
+name = 2560x1080
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 2560
+$padHeight = 1080
+
+[Preset]
+name = 3440x1440
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 3440
+$padHeight = 1440
+
+[Preset]
+name = 3840x1600
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 3840
+$padHeight = 1600
+
+[Preset]
+name = 4300x1800
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 4300
+$padHeight = 1800
+
+[Preset]
+name = 5120x2160
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 5120
+$padHeight = 2160
+
+[Preset]
+name = 6880x2880
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 6880
+$padHeight = 2880
+
+[Preset]
+name = 10240x4320
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 10240
+$padHeight = 4320
+
+# 32:9 Resolutions
+
+[Preset]
+name = 3840x1080
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 3840
+$padHeight = 1080
+
+[Preset]
+name = 5120x1440
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 5120
+$padHeight = 1440
+
+[Preset]
+name = 7680x2160
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 7680
+$padHeight = 2160
+
+[Preset]
+name = 10240x2880
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 10240
+$padHeight = 2880
+
+# 31:10 Resolutions
+
+[Preset]
+name = 3840x1200
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$padWidth = 3840
+$padHeight = 1200
+
+[Preset]
+name = 5760x1800
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$padWidth = 5760
+$padHeight = 1800
+
+[Preset]
+name = 7680x2400
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$padWidth = 7680
+$padHeight = 2400
+
+# 48:9 Resolutions
+
+[Preset]
+name = 5760x1080
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 5760
+$padHeight = 1080
+
+[Preset]
+name = 7680x1440
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 7680
+$padHeight = 1440
+
+[Preset]
+name = 11520x2160
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$padWidth = 11520
+$padHeight = 2160
+
+# 4:3 Resolutions
+
+[Preset]
+name = 800x600
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$padWidth = 800
+$padHeight = 600
+
+[Preset]
+name = 1024x768
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$padWidth = 1024
+$padHeight = 768
+
+[Preset]
+name = 1280x960
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$padWidth = 1280
+$padHeight = 960
+
+[Preset]
+name = 1600x1200
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$padWidth = 1600
+$padHeight = 1200
+
+[Preset]
+name = 1920x1440
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$padWidth = 1920
+$padHeight = 1440
+
+# 5:4 Resolutions
+
+[Preset]
+name = 1280x1024
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$padWidth = 1280
+$padHeight = 1024
+
+[Preset]
+name = 5760x1080 (3 Full HD )
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$padWidth = 5760
+$padHeight = 1080
+
+[Preset]
+name = 8640x1620
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$padWidth = 8640
+$padHeight = 1620
+
+[Preset]
+name = 14400x2700
+category = Gamepad Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$padWidth = 14400
+$padHeight = 2700
 
 # Shadow Quality
 
@@ -320,6 +824,7 @@ name = Extreme
 category = Shadow Quality
 $shadowQuality = 4
 
+
 # Bloom Intensity
 
 [Preset]
@@ -347,6 +852,7 @@ name = 150%
 category = Bloom Intensity
 $bloom = 1.5
 
+
 # Anisotropic Filtering Quality
 
 [Preset]
@@ -373,6 +879,8 @@ $anisotropy = 8
 name = 16x
 category = Anisotropic Filtering Quality
 $anisotropy = 16
+
+
 
 # Anisotropic Filtering
 
