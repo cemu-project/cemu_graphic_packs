@@ -797,31 +797,32 @@ condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) =
 $padWidth = 14400
 $padHeight = 2700
 
-# Shadow Quality
+
+# Shadows
 
 [Preset]
-name = Low
-category = Shadow Quality
+name = Low (50%)
+category = Shadows
 $shadowQuality = 0.5
 
 [Preset]
-name = Medium
-category = Shadow Quality
+name = Medium (100%, Default)
+category = Shadows
 default = 1
 
 [Preset]
-name = High
-category = Shadow Quality
+name = High (200%)
+category = Shadows
 $shadowQuality = 2
 
 [Preset]
-name = Ultra
-category = Shadow Quality
+name = Ultra (300%)
+category = Shadows
 $shadowQuality = 3
 
 [Preset]
-name = Extreme
-category = Shadow Quality
+name = Extreme (400%)
+category = Shadows
 $shadowQuality = 4
 
 
@@ -853,31 +854,31 @@ category = Bloom Intensity
 $bloom = 1.5
 
 
-# Anisotropic Filtering Quality
+# Anisotropic Filtering
 
 [Preset]
-name = 1x
-category = Anisotropic Filtering Quality
+name = 1x (Default)
+category = Anisotropic Filtering
 default = 1
 
 [Preset]
 name = 2x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 2
 
 [Preset]
 name = 4x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 4
 
 [Preset]
 name = 8x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 8
 
 [Preset]
 name = 16x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 16
 
 
