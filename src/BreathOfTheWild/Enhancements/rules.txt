@@ -93,19 +93,14 @@ category = Clarity
 $preset:int = 14
 
 [Preset]
-name = BSoD Gaming's Preset
+name = Hexaae's Clear Preset
 category = Clarity
 $preset:int = 15
 
 [Preset]
-name = Hexaae's Clear Preset
-category = Clarity
-$preset:int = 16
-
-[Preset]
 name = MaranBr Preset (Little More Intense)
 category = Clarity
-$preset:int = 17
+$preset:int = 16
 
 [Preset]
 name = User-Defined Preset
