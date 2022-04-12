@@ -56,7 +56,7 @@
 #define adjust_bloom 1 // 0: disable, 1: enable.
 
 //BloomFactor
-const float bloomFactor = 0.020;                       // Default is 0.020 (rough estimate based on Switch)
+const float bloomFactor = 1.00;                        // Default is 1.00
 
 #define HDRpassing 0 // 0: disable, 1: enable.
 
@@ -101,7 +101,7 @@ const float crushContrast = 0.000;                     // 0.0 is neutral. Use sm
 #define post_process 0
 
 //----------------"BotW original" vibrance adjust-------------//
-const float satFactor = 0.25;   // 0.18 is neutral. Experimental, adjust native saturation
+const float satFactor = 0.18;   // 0.18 is default. Experimental, adjust native saturation
 //------------------------------------------------------------//
 
 #define blacknwhitepass 0                                   // 0: disable, 1: enable.
