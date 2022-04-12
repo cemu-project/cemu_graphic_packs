@@ -35,9 +35,8 @@
 	// Survival of the Wild Preset (Warmer) 12
 	// Survival of the Wild Preset (Colder) 13
 	// Godot's Mexican Preset 14
-	// BSOD Gaming Preset 15
-	// Hexaae's Clear Preset 16
-	// MaranBr Preset (Little More Intense) 17
+	// Hexaae's Clear Preset 15
+	// MaranBr Preset (Little More Intense) 16
 	
 //##########################################################													   
 
