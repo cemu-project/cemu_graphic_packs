@@ -19,6 +19,9 @@ const_30:
 const_60:
 .float 60
 
+const_0.00000000001:
+.float 0.0000000001
+
 timerTickSpeed:
 busSpeed:
 .float 62156250
@@ -176,6 +179,9 @@ cmpw r3, r11 					; Compare this new buffer index to the end index
 blt startCalculateBufferLoop	; Loop back until the whole buffer is initialized with the value from
 lis r3, bufferSizeDivider@ha	; When done with the loop, load the buffer size divider
 lfs f7, bufferSizeDivider@l(r3) ; ...into f7
+lis r3, const_0.00000000001@ha	; When done with the loop, load the buffer size divider
+lfs f12, const_0.00000000001@l(r3) ; ...into f7
+fadds f10, f10, f12
 fdivs f10, f10, f7				; Divide the average FPS sum by the buffer size divider to get the average FPS
 
 ; Calculates the gamespeed (which is stored in f10 regardless of average or static code path)
