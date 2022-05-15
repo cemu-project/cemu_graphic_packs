@@ -68,9 +68,6 @@ averageFPS0.5:
 averageFPS0.5Inv:
 .float 30/(2*((($advancedMode == 1) * $fpsLimitAdvanced) + (($advancedMode == 0) * $fpsLimitNormal)))
 
-averageSum:
-.float 30*$frameAverageAmount
-
 buffer:
 .float 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30 ; buffer can only store a max length of 32 frames
 
@@ -142,22 +139,15 @@ fmuls f10, f12, f10				; Multiply bus speed to have current fps in f10. (1/ticks
 
 ; Calculate the rolling average FPS over the last N amount of frames which are stored in the circular buffer
 _calcAverageFPS:
-lis r3, averageSum@ha			; Load the current average sum
-lfs f7, averageSum@l(r3)		; ...into f7
+; Store FPS value from this frame into the buffer first
 lis r11, buffer@ha				; Load the address of buffer...
 addi r11, r11, buffer@l			; ...into r11 for later
 lis r12, bufferIndex@ha			; Load the offset to the current value
 lwz r12, bufferIndex@l(r12)		; Load the current buffer offset
+.int 0x7D4B652E					; Store the FPS value from this current frame in place of the old value
+;stfsx f10, r11, r12			; Cemu only supports the stfsx instruction on later versions, so use assembled instruction bytes for legacy support
 
-.int 0x7d8b642e					; Load the value that's stored at the current index
-;lfsx f12, r11, r12				; Cemu only supports the lfsx instruction on the very latest version, so use assembled instruction bytes for legacy support
-fsubs f7, f7, f12				; Subtract this value from the current average sum
-fadds f7, f7, f10				; Add the FPS from this current frame
-.int 0x7d4b652e					; Store the FPS value from this current frame in place of the old value
-;stfsx f10, r11, r12			; Cemu only supports the stfsx instruction on the very latest version, so use assembled instruction bytes for legacy support
-stfs f7, averageSum@l(r3)		; Store this new average sum again
-
-; Store the offset to the next buffer entry
+; Then store the offset to the next buffer entry
 lis r11, bufferIndexEnd@ha		; Load offset to the end of the averaging buffer
 lwz r11, bufferIndexEnd@l(r11)	; ...into r11
 addi r12, r12, 0x04				; Add 0x04 to the current buffer index to have the next buffer index
@@ -167,9 +157,26 @@ li r12, 0						; Set the current index to 0 if the end of the buffer was reached
 lis r3, bufferIndex@ha			; Load current buffer index
 stw r12, bufferIndex@l(r3)		; ...into r12
 
-lis r3, bufferSizeDivider@ha	; Load the buffer size divider
-lfs f10, bufferSizeDivider@l(r3); ...into f10
-fdivs f10, f7, f10				; Divide the average FPS sum by the buffer size divider to get the average FPS
+; Finally, loop over the whole buffer and create an average sum of FPS values
+_calculateBuffer:
+lis r12, const_0.0@ha			; Load 0 float value into address...
+lfs f10, const_0.0@l(r12)		; ...and load it into f10 since it'll be used for counting the average sum
+lis r12, buffer@ha				; Load the address of buffer...
+addi r12, r12, buffer@l			; ...into r11 for later
+lis r11, bufferIndexEnd@ha		; Load last index of the averaging buffer
+lwz r11, bufferIndexEnd@l(r11)	; ...into r11
+li r3, 0						; Change r3 to 0 since it'll be used as the current index inside the buffer
+
+startCalculateBufferLoop:
+.int 0x7D8C1C2E					; Load FPS value from the buffer address (r12) + loop index (r3) into f12
+; lfsx f12, r12, r3				; Cemu only supports the lfsx instruction on later versions, so use assembled instruction bytes for legacy support
+fadds f10, f10, f12				; Add loaded FPS value from f12 to sum of FPS values in f10
+addi r3, r3, 0x04				; Add 0x04 to the current buffer index to have the next buffer index
+cmpw r3, r11 					; Compare this new buffer index to the end index
+blt startCalculateBufferLoop	; Loop back until the whole buffer is initialized with the value from
+lis r3, bufferSizeDivider@ha	; When done with the loop, load the buffer size divider
+lfs f7, bufferSizeDivider@l(r3) ; ...into f7
+fdivs f10, f10, f7				; Divide the average FPS sum by the buffer size divider to get the average FPS
 
 ; Calculates the gamespeed (which is stored in f10 regardless of average or static code path)
 _setGamespeed:
