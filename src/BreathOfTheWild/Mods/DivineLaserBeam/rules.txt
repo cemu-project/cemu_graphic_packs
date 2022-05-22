@@ -98,30 +98,30 @@ $saturation = 0.25
 [Preset]
 name = 100% (Default)
 condition = $disableBeams == 0
-category = Laser Transparency
+category = Laser Opacity
 default = 1
 $alpha = 1.0
 
 [Preset]
 name = 75%
 condition = $disableBeams == 0
-category = Laser Transparency
+category = Laser Opacity
 $alpha = 0.75
 
 [Preset]
 name = 50%
 condition = $disableBeams == 0
-category = Laser Transparency
+category = Laser Opacity
 $alpha = 0.5
 
 [Preset]
 name = 25%
 condition = $disableBeams == 0
-category = Laser Transparency
+category = Laser Opacity
 $alpha = 0.25
 
 [Preset]
 name = 10%
 condition = $disableBeams == 0
-category = Laser Transparency
+category = Laser Opacity
 $alpha = 0.1
