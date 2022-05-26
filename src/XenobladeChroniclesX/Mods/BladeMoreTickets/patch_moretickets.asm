@@ -1,5 +1,5 @@
 [XCX_BLADE_MORETICKETS]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.1U
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B, 0x7672271D ; 1.0.1E, 1.0.2U, 1.0.1U, 1.0.2J
 
 .origin = codecave
 
@@ -111,3 +111,15 @@ moduleMatches = 0xAB97DE6B ; 1.0.1U
 0x02B978E0 = bla _pieceExchange
 0x02B9C0EC = bla _dispExchangeInit
 0x02C7BEA4 = bla _dispExchangeUpdate
+
+#####################################################################################################
+[XCX_BLADE_MORETICKETS_2J]
+moduleMatches = 0x7672271D ; 1.0.2J
+
+0x022CA09C = bla _moreTickets
+0x022CA48C = bla _uncapTickets
+0x02B90654 = bla _dispBefore
+0x02B9B948 = bla _dispAfter
+0x02B938A8 = bla _pieceExchange
+0x02B97D08 = bla _dispExchangeInit
+0x02C77FB8 = bla _dispExchangeUpdate
