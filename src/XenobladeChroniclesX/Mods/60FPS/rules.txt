@@ -1,6 +1,89 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = 60FPS
-path = "Xenoblade Chronicles X/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.
-version = 5
+name = FPS++ For Xenoblade Chronicles X
+path = "Xenoblade Chronicles X/Mods/FPS++ For XCX"
+description = Allows you to change the FPS and the speed that most things run at.|Some bugs might still occur if you run games at 60FPS.
+version = 6
+
+[Default]
+$fpsLimit = 60
+$cutsceneFPSLimit:int = 1
+$lowFPSLimit = 20
+$frameAverageAmount = 8
+$roundUpModifier = 0.8
+
+[Preset]
+name = 240FPS Limit
+category = FPS Limit
+$fpsLimit = 240
+
+[Preset]
+name = 165FPS Limit
+category = FPS Limit
+$fpsLimit = 165
+
+[Preset]
+name = 144FPS Limit
+category = FPS Limit
+$fpsLimit = 144
+
+[Preset]
+name = 120FPS Limit
+category = FPS Limit
+$fpsLimit = 120
+
+[Preset]
+name = 90FPS Limit
+category = FPS Limit
+$fpsLimit = 90
+
+[Preset]
+name = 75FPS Limit
+category = FPS Limit
+$fpsLimit = 75
+
+[Preset]
+name = 72FPS Limit
+category = FPS Limit
+$fpsLimit = 72
+
+[Preset]
+name = 60FPS Limit (Default)
+category = FPS Limit
+default = 1
+$fpsLimit = 60
+
+[Preset]
+name = 55FPS Limit
+category = FPS Limit
+$fpsLimit = 55
+
+[Preset]
+name = 45FPS Limit
+category = FPS Limit
+$fpsLimit = 45
+
+[Preset]
+name = 30FPS Limit
+category = FPS Limit
+$fpsLimit = 30
+
+[Preset]
+name = 20FPS Limit
+category = FPS Limit
+$fpsLimit = 20
+
+
+# [Preset]
+# name = Enabled (Limit Stuttery Cutscenes To 30FPS)
+# category = Cutscene FPS Limit
+# default = 1
+# $cutsceneFPSLimit:int = 1
+# 
+# [Preset]
+# name = Disabled (Allow Jittery Cutscenes)
+# category = Cutscene FPS Limit
+# $cutsceneFPSLimit:int = 0
+
+[Control]
+vsyncFrequency = $fpsLimit
