@@ -7,14 +7,16 @@ _justFrame1:
 	lwz r12, 0x47C(r29)
 	lis r10, averageFPS1IntInv@ha
 	lbz r10, averageFPS1IntInv@l(r10)
-	mullw r12, r12, r10
+	; mullw r12, r12, r10
+	mr r12, r10
 	blr
 
 _justFrame2:
 	lwz r0, 0x478(r29)
 	lis r8, averageFPS1IntInv@ha
 	lbz r8, averageFPS1IntInv@l(r8)
-	mullw r0, r0, r8
+	; mullw r0, r0, r8
+	mr r0, r8
 	blr
 
 [XCX_FPS++_QTE_1E] ; ########################################################
