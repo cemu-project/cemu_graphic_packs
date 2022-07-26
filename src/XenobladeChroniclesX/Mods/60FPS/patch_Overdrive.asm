@@ -1,5 +1,5 @@
 [XCX_FPS++_Overdrive_General] ; ########################################################
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B, 0x7672271D ; 1.0.1E, 1.0.2U, 1.0.1U, 1.0.2J
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D ; 1.0.1E, 1.0.2U, 1.0.2J
 
 .origin = codecave
 
@@ -11,13 +11,13 @@ _over:
 	blr
 
 
-[XCX_FPS++_Overdrive_NonJ] ; ########################################################
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.1U
+[XCX_FPS++_Overdrive_V101E_102U] ; ########################################################
+moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 
 0x021BC904 = bla _over
 0x021E2020 = bla _over ; Skell Overdrive
 
-[XCX_FPS++_Overdrive_2J] ; ########################################################
+[XCX_FPS++_Overdrive_V102J] ; ########################################################
 moduleMatches = 0x7672271D ; 1.0.2J
 
 0x021BC3D0 = bla _over

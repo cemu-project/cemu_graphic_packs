@@ -1,5 +1,5 @@
 [XCX_FPS++_Cutscene]
-moduleMatches = 0x218F6E07, 0xF882D5CF, 0x30B6E091, 0x7672271D ; 1.0.0E, 1.0.1E, 1.0.2U, 1.0.2J
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D ; 1.0.1E, 1.0.2U, 1.0.2J
 
 .origin = codecave
 
