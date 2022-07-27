@@ -46,9 +46,6 @@ const_30:
 const_60:
 .float 60.0
 
-const_roundUpModifier:
-.float $roundUpModifier
-
 
 # Variables
 
@@ -75,12 +72,6 @@ averageFPS1Inv:
 
 averageFPS0.1:
 .float ($fpsLimit/300.0)
-
-averageFPS1IntInv:
-averageFPS1IntInvHa:
-.uint 0
-averageFPS1IntInvL:
-.uint 1
 
 buffer:
 .float 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30 ; buffer can only store a max length of 32 frames
@@ -232,17 +223,6 @@ lfs f7, averageFPS30@l(r10)
 lis r10, havokHalfSpeed@ha
 stfs f7, havokHalfSpeed@l(r10)
 
-; Calculate the FPS speed
-_calculateAverageFPSInt:
-lis r10, averageFPS1@ha
-lfs f7, averageFPS1@l(r10)
-lis r10, const_roundUpModifier@ha
-lfs f12, const_roundUpModifier@l(r10)
-fadds f7, f7, f12
-fctiwz f7, f7
-lis r10, averageFPS1IntInv@ha
-stfd f7, averageFPS1IntInv@l(r10)
-
 ; Reset the cutscene FPS limit each frame
 _callResetCutsceneLimit:
 b _resetCutsceneLimit
@@ -263,8 +243,11 @@ moduleMatches = 0xF882D5CF
 
 ; Global data patch
 0x10171980 = havokHalfSpeed:
+0x10171980 = .float $fpsLimit
 0x100598E4 = titleScreenSpeed:
+0x100598E4 = .float (30.0/$fpsLimit)
 0x10012644 = soulVoiceSpeed:
+0x10012644 = .float (900/$fpsLimit)
 
 ; Instruction-specific patches
 0x02228274 = lis r5, averageFPS0.1@ha             ; Controller acceleration
@@ -275,10 +258,8 @@ moduleMatches = 0xF882D5CF
 0x0276A860 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
 0x025F299C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
 0x025F29A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-0x02D20328 = lis r12, averageFPS1Inv@ha           ; MenuObject::playEvent
-0x02D2032C = lfs f31, averageFPS1Inv@l(r12)       ; MenuObject::playEvent
-0x02D203F4 = lis r12, averageFPS1Inv@ha           ; MenuObject::playEventFrame
-0x02D203F8 = lfs f31, averageFPS1Inv@l(r12)       ; MenuObject::playEventFrame
+0x02D39D6C = lis r12, averageFPS1Inv@ha           ; AnimeObject::set
+0x02D39D70 = lfs f13, averageFPS1Inv@l(r12)       ; AnimeObject::set
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
 0x02FD8A94 = li r3, 0
@@ -300,8 +281,11 @@ moduleMatches = 0x7672271D
 
 ; Global data patch
 0x10171570 = havokHalfSpeed:
+0x10171570 = .float $fpsLimit
 0x1005989C = titleScreenSpeed:
+0x1005989C = .float (30.0/$fpsLimit)
 0x10012644 = soulVoiceSpeed:
+0x10012644 = .float (900/$fpsLimit)
 
 ; Instruction-specific patches
 0x02227D40 = lis r5, averageFPS0.1@ha             ; Controller acceleration
@@ -312,10 +296,8 @@ moduleMatches = 0x7672271D
 0x02768FD8 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
 0x025F1F78 = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
 0x025F1F80 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-0x02D1B818 = lis r12, averageFPS1Inv@ha           ; MenuObject::playEvent
-0x02D1B81C = lfs f31, averageFPS1Inv@l(r12)       ; MenuObject::playEvent
-0x02D1B8E4 = lis r12, averageFPS1Inv@ha           ; MenuObject::playEventFrame
-0x02D1B8E8 = lfs f31, averageFPS1Inv@l(r12)       ; MenuObject::playEventFrame
+0x02D35234 = lis r12, averageFPS1Inv@ha           ; AnimeObject::set
+0x02D35238 = lfs f13, averageFPS1Inv@l(r12)       ; AnimeObject::set
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
 0x02FD3F5C = li r3, 0
@@ -337,8 +319,11 @@ moduleMatches = 0x30B6E091
 
 ; Global data patch
 0x10171980 = havokHalfSpeed:
+0x10171980 = .float $fpsLimit
 0x100598E4 = titleScreenSpeed:
+0x100598E4 = .float (30.0/$fpsLimit)
 0x10012644 = soulVoiceSpeed:
+0x10012644 = .float (900/$fpsLimit)
 
 ; Instruction-specific patches
 0x02228274 = lis r5, averageFPS0.1@ha             ; Controller acceleration
@@ -349,10 +334,8 @@ moduleMatches = 0x30B6E091
 0x0276A860 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
 0x025F299C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
 0x025F29A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-0x02D202C8 = lis r12, averageFPS1Inv@ha           ; MenuObject::playEvent
-0x02D202CC = lfs f31, averageFPS1Inv@l(r12)       ; MenuObject::playEvent
-0x02D20394 = lis r12, averageFPS1Inv@ha           ; MenuObject::playEventFrame
-0x02D20398 = lfs f31, averageFPS1Inv@l(r12)       ; MenuObject::playEventFrame
+0x02D39CE0 = lis r12, averageFPS1Inv@ha           ; AnimeObject::set
+0x02D39CE4 = lfs f13, averageFPS1Inv@l(r12)       ; AnimeObject::set
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
 0x02FD8A34 = li r3, 0

@@ -10,7 +10,6 @@ $fpsLimit = 60
 $cutsceneFPSLimit:int = 1
 $lowFPSLimit = 20
 $frameAverageAmount = 8
-$roundUpModifier = 0.8
 
 [Preset]
 name = 240FPS Limit
