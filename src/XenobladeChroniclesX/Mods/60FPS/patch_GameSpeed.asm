@@ -73,6 +73,9 @@ averageFPS1Inv:
 averageFPS0.1:
 .float ($fpsLimit/300.0)
 
+const_guiSpeed:
+.float $guiSpeed
+
 buffer:
 .float 30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30 ; buffer can only store a max length of 32 frames
 
@@ -171,6 +174,13 @@ lfs f7, bufferSizeDivider@l(r10)
 fdivs f10, f10, f7
 
 _setGameSpeed:
+; Prevent the FPS from going below the lower FPS limit bounds.
+lis r10, lowFPSLimit@ha
+lfs f7, lowFPSLimit@l(r10)
+fcmpu cr0, f10, f7
+bgt .+0x08
+fmr f10, f7
+
 ; Set game speed (30 range)
 lis r10, averageFPS30@ha
 stfs f10, averageFPS30@l(r10)
@@ -258,8 +268,12 @@ moduleMatches = 0xF882D5CF
 0x0276A860 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
 0x025F299C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
 0x025F29A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-0x02D39D6C = lis r12, averageFPS1Inv@ha           ; AnimeObject::set
-0x02D39D70 = lfs f13, averageFPS1Inv@l(r12)       ; AnimeObject::set
+# 0x02D39D6C = lis r12, const_guiSpeed@ha           ; AnimeObject::set
+# 0x02D39D70 = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
+0x02D20328 = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
+0x02D2032C = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
+0x02D203F4 = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
+0x02D203F8 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
 0x02FD8A94 = li r3, 0
@@ -296,8 +310,12 @@ moduleMatches = 0x7672271D
 0x02768FD8 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
 0x025F1F78 = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
 0x025F1F80 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-0x02D35234 = lis r12, averageFPS1Inv@ha           ; AnimeObject::set
-0x02D35238 = lfs f13, averageFPS1Inv@l(r12)       ; AnimeObject::set
+# 0x02D35234 = lis r12, const_guiSpeed@ha           ; AnimeObject::set
+# 0x02D35238 = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
+0x02D1B818 = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
+0x02D1B81C = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
+0x02D1B8E4 = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
+0x02D1B8E8 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
 0x02FD3F5C = li r3, 0
@@ -334,8 +352,12 @@ moduleMatches = 0x30B6E091
 0x0276A860 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
 0x025F299C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
 0x025F29A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-0x02D39CE0 = lis r12, averageFPS1Inv@ha           ; AnimeObject::set
-0x02D39CE4 = lfs f13, averageFPS1Inv@l(r12)       ; AnimeObject::set
+# 0x02D39CE0 = lis r12, const_guiSpeed@ha           ; AnimeObject::set
+# 0x02D39CE4 = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
+0x02D202C8 = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
+0x02D202CC = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
+0x02D20394 = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
+0x02D20398 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
 0x02FD8A34 = li r3, 0
