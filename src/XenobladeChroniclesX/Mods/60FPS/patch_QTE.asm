@@ -76,7 +76,7 @@ _justFrame2:
 
     blr
 
-[XCX_FPS++_QTE_1E] ; ########################################################
+[XCX_FPS++_QTE_V101E] ; ########################################################
 moduleMatches = 0xF882D5CF ; 1.0.1E
 
 ; menu::MenuButtonChallenge::setup
@@ -87,7 +87,7 @@ moduleMatches = 0xF882D5CF ; 1.0.1E
 0x02ACE6E4 = bla _justFrame1
 0x02ACE700 = bla _justFrame2
 
-[XCX_FPS++_QTE_2U] ; ########################################################
+[XCX_FPS++_QTE_V102U] ; ########################################################
 moduleMatches = 0x30B6E091 ; 1.0.2U
 
 ; menu::MenuButtonChallenge::setup
@@ -98,7 +98,7 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 0x02ACE6D4 = bla _justFrame1
 0x02ACE6F0 = bla _justFrame2
 
-[XCX_FPS++_QTE_2J]
+[XCX_FPS++_QTE_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
 
 ; menu::MenuButtonChallenge::setup
