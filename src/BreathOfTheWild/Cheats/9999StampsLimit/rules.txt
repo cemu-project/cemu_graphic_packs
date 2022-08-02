@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
+name = 9999 Stamps Limit
+path = "The Legend of Zelda: Breath of the Wild/Cheats/9999 Stamps Limit"
+description = Allows to place 9999 stamps instead of 100. Original code patch by Kirbymimi. Adjusted code patch by Waikuteru.
+version = 7
