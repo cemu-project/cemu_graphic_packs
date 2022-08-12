@@ -7,15 +7,29 @@ forceCutsceneLimit:
 .int 0
 
 _useCutsceneLimit:
-li r10, 1
+li r10, 5
 lis r9, forceCutsceneLimit@ha
 stw r10, forceCutsceneLimit@l(r9)
 
 lfs f11, -0x303C(r8)
 blr
 
+_usePrerenderedCutsceneLimit:
+li r4, 5
+lis r3, forceCutsceneLimit@ha
+stw r4, forceCutsceneLimit@l(r3)
+
+lwz r3, 0x0(r30)
+blr
+
 _resetCutsceneLimit:
-li r10, 0
+lis r9, forceCutsceneLimit@ha
+lwz r10, forceCutsceneLimit@l(r9)
+cmpwi r10, 0
+ble _restoreRegisters
+
+li r9, -1
+add r10, r10, r9
 lis r9, forceCutsceneLimit@ha
 stw r10, forceCutsceneLimit@l(r9)
 b _restoreRegisters
@@ -34,8 +48,8 @@ cmpwi r10, 1
 bne _calculateFPS
 lis r10, forceCutsceneLimit@ha
 lwz r10, forceCutsceneLimit@l(r10)
-cmpwi r10, 1
-bne _calculateFPS
+cmpwi r10, 0
+ble _calculateFPS
 
 ; If a cutscene FPS limit is set, lower FPS
 _lowerCutsceneFPS:

@@ -282,6 +282,7 @@ moduleMatches = 0xF882D5CF
 
 0x02FD5AB4 = bla _calculateGamespeed
 0x027685B0 = bla _useCutsceneLimit
+0x03AC2810 = bla _usePrerenderedCutsceneLimit
 
 # These patches are replaced by lowering the framerate to prevent side-effects
 # 0x027398B4 = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
@@ -324,6 +325,7 @@ moduleMatches = 0x7672271D
 
 0x02FD0F7C = bla _calculateGamespeed
 0x02766D28 = bla _useCutsceneLimit
+0x03ABDBA8 = bla _usePrerenderedCutsceneLimit
 
 # These patches are replaced by lowering the framerate to prevent side-effects
 # 0x0273802C = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
@@ -366,6 +368,7 @@ moduleMatches = 0x30B6E091
 
 0x02FD5A54 = bla _calculateGamespeed
 0x027685B0 = bla _useCutsceneLimit
+0x03AC2790 = bla _usePrerenderedCutsceneLimit
 
 # These patches are replaced by lowering the framerate to prevent side-effects
 # 0x027398B4 = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
