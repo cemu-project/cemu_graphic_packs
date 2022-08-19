@@ -4,4 +4,3 @@ name = "Ignore 100th"
 path = "Xenoblade Chronicles X/Mods/Collectibles/Ignore 100th"
 description = Do not collect if you have 99 of the items, and don't sell it (no preset needed).
 version = 5
-	

@@ -18,4 +18,3 @@ $mod = 5.0
 [Preset]
 name = "Zoom 10"
 $mod = 10.0
-

@@ -30,4 +30,3 @@ $mod = 100
 [Preset]
 name = "Quantity x1000"
 $mod = 1000
-

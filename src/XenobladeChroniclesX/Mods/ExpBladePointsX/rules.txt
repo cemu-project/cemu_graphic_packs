@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "BLADE Points X"
 path = "Xenoblade Chronicles X/Mods/Experience/BLADE Points"
-description = Change the amount of BLADE points gained in various situations.
+description = Change the amount of BLADE points gained in various situations.||Broken on JP 1.0.0, works on JP 1.0.2
 version = 5
 
 [Default]

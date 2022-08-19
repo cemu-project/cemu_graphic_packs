@@ -1,6 +1,5 @@
 [XCX_OFFLINEWE]
-moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
-
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 .origin = codecave
 
 ; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
@@ -155,9 +154,8 @@ blr
 ; A droite les items communs
 ; A gauche les items si Nemesis battu
 
-[XCX_OFFLINEWE_1E] ############################################################################################
-moduleMatches = 0xF882D5CF ; 1.0.1E
-
+[XCX_OFFLINEWE_V101E] ; ############################################################################################
+moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 .origin = codecave
 
 ; menu::MenuMultiQuestOrder::move((void))
@@ -262,9 +260,8 @@ blr
 ;02C23528
 ;02C23530
 
-[XCX_OFFLINEWE_2U] ############################################################################################
+[XCX_OFFLINEWE_V102U] ; ############################################################################################
 moduleMatches = 0x30B6E091 ; 1.0.2U
-
 .origin = codecave
 
 ;0x02B9B0A0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -275,9 +272,8 @@ blr
 
 0x02AC612C = ba _single
 
-[XCX_OFFLINEWE_1U] ############################################################################################
-moduleMatches = 0xAB97DE6B ; 1.0.1U
-
+[XCX_OFFLINEWE_V100U] ; ############################################################################################
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 .origin = codecave
 
 ; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
@@ -425,4 +421,3 @@ blr
 ; __CPR129__getMultiQuestReward__Q2_3cfs15CfSocialManagerCFUiRQ2_3mtl68fixed_vector__tm__48_Q3_3cfsJ28J11QuestRewardXCUiL_2_46T1 --> OK
 ; 0x022C9E88
 0x022CA324 = nop ; always all items?
-

@@ -94,4 +94,4 @@
 - **Force weather**: Force selected weather. Just select a preset and unload/reload the pack.
 
 ### Requirements
-Since Cemu 1.18, cemuhook is no longer required. Just make sure your game version is **1.0.1E** or **1.0.2U**.
+Since Cemu 1.18, cemuhook is no longer required. All game versions are supported. 1.0.1E, 1.0.2U, or 1.0.2J recommended.

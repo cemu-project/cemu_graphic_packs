@@ -1,8 +1,27 @@
 [XCX_OFFLINEWE]
-moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
-
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
 
+; Manage RPs & Appraisal
+VarShareRP:
+.int 0
+;_shareAP = reloc(0x1039C174) ; (1.0.1E, 1.0.2U)
+VarShareAP:
+.int 0
+
+_loadRP:
+lis       r12, 0x0022
+ori       r12, r12, 0x5510
+blr
+
+; menu::CTerminalMenu_PieceExchange::offline((void))
+; Allow access to piece exchange from network console
+_single:
+li r3, 0
+blr
+
+[XCX_OFFLINEWE_V101E_V102U] ; ######################################################################################
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; cfs::CfSocialManager::update((float))
 0x022879D0 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
 
@@ -25,21 +44,9 @@ moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 0x022863CC = nop ; or.       r0, r6, r7
 0x02286474 = li r7, 1 ; for getWERewardList
 
-; Manage RPs & Appraisal
-VarShareRP:
-.int 0
-;_shareAP = reloc(0x1039C174)
-VarShareAP:
-.int 0
-
-_loadRP:
-lis       r12, 0x0022
-ori       r12, r12, 0x5510
-blr
 0x0282B2F0 = bla _loadRP ; __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
 
 ; ######################################### TODO : get WERewardList (Telethia Stem Cell)
-
 ; cfs::CfSocialManager::getQuestDetailWE((cfs::CfSocialQuestInfoWE &))
 ; |- __CPR95__getWorldEnemyInfoFromQuest__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ34J14WorldEnemyInfo
 0x0282B454 = li r3, 0 ; getWorldEnemyIndexFromQuestID / Uncomment to show Appraisal Rewards
@@ -49,51 +56,33 @@ blr
 0x0282B170 = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
 0x0282B264 = nop ; skip deserializeWorldEnemy
 0x0282B410 = li r4, 1 ; for getWERewardList
-
 ; cfs::CfSocialManager::getQuestDetailFR((cfs::CfSocialQuestInfoFR &))
 0x0228989C = nop ; Uncomment to show Appraisal Rewards
 
-[XCX_OFFLINEWE_1E] ############################################################################################
-moduleMatches = 0xF882D5CF ; 1.0.1E
-
-.origin = codecave
-
+[XCX_OFFLINEWE_V101E] ; ############################################################################################
+moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 ; menu::MenuMultiQuestOrder::move((void))
 ; skip BLADE medals requirement on launch mission
 0x02B9B0B0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
 
 ; menu::CTerminalMenu_PieceExchange::offline((void))
 ; Allow access to piece exchange from network console
-_single:
-li r3, 0
-blr
 0x02AC613C = ba _single ; menu::CBladeHomuMenu::single((void))
-
 ; __CPR129__getMultiQuestReward__Q2_3cfs15CfSocialManagerCFUiRQ2_3mtl68fixed_vector__tm__48_Q3_3cfsJ28J11QuestRewardXCUiL_2_46T1 --> OK
 0x022CA324 = nop ; always all items?
 
-[XCX_OFFLINEWE_2U] ############################################################################################
+[XCX_OFFLINEWE_V102U] ; ############################################################################################
 moduleMatches = 0x30B6E091 ; 1.0.2U
-
-.origin = codecave
-
 0x02AC5C00 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 
 0x02B9B0A0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
 
 ;0x02BA0CE0 = bla _updateRP ; menu::MenuMultiQuestResult::updateEnemyBoss((menu::MenuObject *))
 
-_single:
-li r3, 0
-blr
-
 0x02AC612C = ba _single
 
-[XCX_OFFLINEWE_1U] ############################################################################################
-moduleMatches = 0xAB97DE6B ; 1.0.1U
-
-.origin = codecave
-
+[XCX_OFFLINEWE_V100U] ; ############################################################################################
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02287960 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
 0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x022C7FEC = nop ; network test : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
@@ -109,10 +98,6 @@ moduleMatches = 0xAB97DE6B ; 1.0.1U
 0x022863CC = nop ; or.       r0, r6, r7
 0x02286474 = li r7, 1 ; for getWERewardList
 
-_loadRP:
-lis       r12, 0x0022
-ori       r12, r12, 0x5510
-blr
 0x0282B274 = bla _loadRP ; __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
 
 0x0282B3D8 = li r3, 0 ; getWorldEnemyIndexFromQuestID / Uncomment to show Appraisal Rewards
@@ -124,9 +109,5 @@ blr
 0x0228982C = nop ; Uncomment to show Appraisal Rewards
 0x02B9AFB0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
 
-_single:
-li r3, 0
-blr
 0x02AC60B0 = ba _single ; menu::CBladeHomuMenu::single((void))
-
 0x022CA2B4 = nop ; always all items?

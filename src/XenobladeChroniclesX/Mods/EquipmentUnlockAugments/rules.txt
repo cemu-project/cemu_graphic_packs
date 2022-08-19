@@ -16,4 +16,3 @@ name = "Normal"
 name = "CHEAT - Ignore Miranium and resources requirements"
 $checkIgnoreMiranium = 0
 $checkIgnoreMaterials = 0
-

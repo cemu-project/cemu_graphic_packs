@@ -26,4 +26,3 @@ $mod = 7
 [Preset]
 name = "Every 10 minutes"
 $mod = 10
-

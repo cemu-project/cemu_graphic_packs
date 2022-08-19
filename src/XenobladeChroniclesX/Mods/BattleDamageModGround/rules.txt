@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Ground damage multiplicator"
 path = "Xenoblade Chronicles X/Mods/Battle/Ground damage multiplicator"
-description = Increase the ground damage done by your team (skells not impacted).
+description = Increase the ground damage done by your team (skells not impacted).||will only work with US 1.0.0U and JP 1.0.0|US 1.0.2U, EU 1.0.1E, EU 1.0.0E, and JP 1.0.2 support will come when the official game servers go offline
 version = 5
 
 [Default]

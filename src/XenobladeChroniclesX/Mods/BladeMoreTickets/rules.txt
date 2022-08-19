@@ -29,6 +29,10 @@ name = "Gain more Tickets (x1000)"
 $mult = 1000
 
 [Preset]
+name = "Respawn Global Nemesis Yggralith Zero (x500000)"
+$mult = 500000
+
+[Preset]
 name = Yes
 category = "Capped to BLADE level"
 
@@ -36,4 +40,3 @@ category = "Capped to BLADE level"
 name = No
 category = "Capped to BLADE level"
 $uncap = 1
-
