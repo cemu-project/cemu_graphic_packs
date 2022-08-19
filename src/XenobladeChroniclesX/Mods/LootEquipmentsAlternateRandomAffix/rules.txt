@@ -4,4 +4,3 @@ name = "Equipment - Alternate random augment selection"
 path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Alternate random augment selection"
 description = Alternate random selection for augments. Everything above 80% is capped at 80%, and everything else is set to 20%.
 version = 5
-

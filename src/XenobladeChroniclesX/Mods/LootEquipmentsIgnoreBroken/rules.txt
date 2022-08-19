@@ -4,4 +4,3 @@ name = "Equipment - Ignore broken"
 path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Ignore broken"
 description = Never get broken equipment.
 version = 5
-
