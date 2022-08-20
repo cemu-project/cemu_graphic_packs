@@ -2,5 +2,5 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Change time from eManual"
 path = "Xenoblade Chronicles X/Mods/HUD/Change time from eManual"
-description = Allow to change time from the eManual entry of the main menu.|Also fixes the game crash that happens when selecting eManual on Cemu
+description = Allow to change time from the eManual entry of the main menu.|Also fixes the soft lock that happens when selecting eManual on Cemu
 version = 5
