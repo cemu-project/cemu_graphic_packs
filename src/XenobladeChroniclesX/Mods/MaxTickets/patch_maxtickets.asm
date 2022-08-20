@@ -1,17 +1,18 @@
 [XCX_MAXTICKETS]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
+.int $cap
 
 ; cfs::CfSocialManager::getTradeTicketMax(const(void))
 _maxtickets:
-cmpwi r3, 10
+cmpwi r3, $cap
 blt levels
 lis r3, 0x0001
 ori r3, r3, 0x869F
 blr
 levels:
 lwz r3, 0x1EC(r9)
-mulli r3, r3, 10
+mulli r3, r3, $cap
 blr
 
 [XCX_MAXTICKETS_V101E_V102U]
