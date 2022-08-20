@@ -2,5 +2,19 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Max Tickets"
 path = "Xenoblade Chronicles X/Mods/Maximus/Max Tickets"
-description = "Maximum reward tickets are multiplied by 10 (up to 99999 at BLADE level 10)."
+description = "Maximum reward tickets are multiplied."
 version = 5
+
+[Default]
+$cap = 10
+
+[Preset]
+name = Capped to BLADE level x10
+
+[Preset]
+name = Capped to BLADE level x100
+$cap = 100
+
+[Preset]
+name = Capped to BLADE level x1000
+$cap = 1000
