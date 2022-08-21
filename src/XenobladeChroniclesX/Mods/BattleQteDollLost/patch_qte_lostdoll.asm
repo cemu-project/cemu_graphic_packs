@@ -1,5 +1,5 @@
 [XCX_QTE_DOLLLOST]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07, 0x7672271D, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07, 0x7672271D, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.0U, 1.0.0J
 .origin = codecave
 
 _setDestructionExcellent:
@@ -40,8 +40,8 @@ _setDestructionGoodExit:
     blr
 
 
-[XCX_QTE_DOLLLOST_V101E_V102U_V101U]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.0E, 1.0.1U
+[XCX_QTE_DOLLLOST_V101E_V102U]
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 0x027F9464 = SetInsure:
 0x023EEFB0 = getPropAccessor:
 ; ----------------------------------------------------------------------------
