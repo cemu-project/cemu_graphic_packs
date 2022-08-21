@@ -105,7 +105,7 @@ lasyan3 created the vast majority of the mods
 
 intra ported the vast majority of the mods to JP
 
-MetrosexualGarbodor made the FPS++ mod
+MetrosexualGarbodor & Crementif made the FPS++ mod
 
 Crementif helped out with a majority of the mods
 
