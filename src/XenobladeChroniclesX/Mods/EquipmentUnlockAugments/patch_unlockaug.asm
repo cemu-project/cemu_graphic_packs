@@ -56,7 +56,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02A7DA4C = bla ChangeMaterialsQuantity
 
 [XCX_UNLOCKAUGMENTS_V100U] ; ################################################################
-moduleMatches = 0x676EB33E, 0xAB97DE6B ; 1.0.0U 1.0.1U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U 1.0.0U
 0x02A81714 = li r3, 0
 0x02A8173C = li r3, $checkIgnoreMiranium
 0x02A819B0 = li r3, $checkIgnoreMaterials
