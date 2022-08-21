@@ -14,7 +14,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02A3721C = li r0, 3
 
 [XCX_MAXSLOTS_V100U]
-moduleMatches = 0x676EB33E, 0xAB97DE6B ; 1.0.0U, 1.0.1U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02A3A98C = li r0, 3
 
 [XCX_MAXSLOTS_V100J]
