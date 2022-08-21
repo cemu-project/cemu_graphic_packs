@@ -110,43 +110,6 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 0x02B85098 = li r11, 1
 
 ;####################################################################################################
-[XCX_SQUADMISSIONS_V100U]
-moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
-0x02287960 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
-0x023AB814 = nop ; 0x6B8(r12) == 0
-0x023AB844 = nop ; isHost
-0x023AB9F8 = li r5, 60 ; force 0x24 - UNLOCK
-0x023ABBA0 = nop ; isHost
-0x023A0414 = nop ; isHost
-0x023ABC3C = nop ; compare with 0x28 - UNLOCK
-0x023ABC48 = nop ; compare with 0x2C - UNLOCK
-0x022C7FEC = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
-0x022C7FF0 = nop ; test réseau
-0x022C584C = nop ; rlwinm.   r10, r11, 0,29,29
-
-0x023B7430 = bla _iniPtr
-
-0x023ABD84 = _gotoTimeout:
-0x023ABDE4 = _gotoNext:
-
-0x023ABD58 = lis       r3, VarSquadMission@ha
-0x023ABD5C = lwz      r7, VarSquadMission@l(r3)
-0x023ABD60 = cmpwi r7, 1
-0x023ABD64 = beq _gotoTimeout
-0x023ABD68 = b _gotoNext
-
-0x023AB754 = bla _forceMission
-
-0x0295E984 = nop
-0x0295E988 = li r0, 42
-0x02BFC6C0 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
-0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-0x02B850A8 = bla _savePtr
-0x02B850C0 = bla _savePtr
-0x02B84FF8 = li r11, 1
-0x02B8501C = li r11, 1
-
-;####################################################################################################
 [XCX_SQUADMISSIONS_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
 0x022873E8 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
@@ -182,6 +145,43 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02B81088 = bla _savePtr
 0x02B80FC0 = li r11, 1
 0x02B80FE4 = li r11, 1
+
+;####################################################################################################
+[XCX_SQUADMISSIONS_V100U]
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
+0x02287960 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
+0x023AB814 = nop ; 0x6B8(r12) == 0
+0x023AB844 = nop ; isHost
+0x023AB9F8 = li r5, 60 ; force 0x24 - UNLOCK
+0x023ABBA0 = nop ; isHost
+0x023A0414 = nop ; isHost
+0x023ABC3C = nop ; compare with 0x28 - UNLOCK
+0x023ABC48 = nop ; compare with 0x2C - UNLOCK
+0x022C7FEC = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
+0x022C7FF0 = nop ; test réseau
+0x022C584C = nop ; rlwinm.   r10, r11, 0,29,29
+
+0x023B7430 = bla _iniPtr
+
+0x023ABD84 = _gotoTimeout:
+0x023ABDE4 = _gotoNext:
+
+0x023ABD58 = lis       r3, VarSquadMission@ha
+0x023ABD5C = lwz      r7, VarSquadMission@l(r3)
+0x023ABD60 = cmpwi r7, 1
+0x023ABD64 = beq _gotoTimeout
+0x023ABD68 = b _gotoNext
+
+0x023AB754 = bla _forceMission
+
+0x0295E984 = nop
+0x0295E988 = li r0, 42
+0x02BFC6C0 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
+0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+0x02B850A8 = bla _savePtr
+0x02B850C0 = bla _savePtr
+0x02B84FF8 = li r11, 1
+0x02B8501C = li r11, 1
 
 ;####################################################################################################
 [XCX_SQUADMISSIONS_V100J]
