@@ -53,6 +53,10 @@
 
 ### HUD mods
 - **Change time anywhere**: Allow to change time of the day from the eManual entry of the main menu.
+- **Freecam**: Look around the world in freecam. 
+    >Hold 'R' to move up, hold 'L' to move down, hold 'X' to keep the camera in place, and hold 'Y' to speed up the camera, hold in the right stick to speed up even more.
+- **No Model Fade**: Makes it so that character and skell models don't fade out when the camera gets too close.
+- **Remove Overdrive Blur**: Removes the blur that happens around the screen when you are in Overdrive.
 
 ### Loot mods
 - **Equipment - Alternate random augments**: change the way augments are selected during loot generation.
@@ -94,4 +98,17 @@
 - **Force weather**: Force selected weather. Just select a preset and unload/reload the pack.
 
 ### Requirements
-Since Cemu 1.18, cemuhook is no longer required. All game versions are supported. 1.0.1E, 1.0.2U, or 1.0.2J recommended.
+Since Cemu 1.18, cemuhook is no longer required. All game versions supported. 1.0.1E, 1.0.2U, or 1.0.2J recommended.
+
+### Credits
+lasyan3 created the vast majority of the mods
+
+intra ported the vast majority of the mods to JP
+
+MetrosexualGarbodor made the FPS++ mod
+
+Crementif helped out with a majority of the mods
+
+lashoun made the damage divisor mod 
+
+blingbloing made Freecam, No Overdrive Blur, and No Model Fade
