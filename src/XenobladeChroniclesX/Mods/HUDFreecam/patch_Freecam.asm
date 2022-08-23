@@ -4,6 +4,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 0x022261BC = nop
 ;"isFreeCamera__Q2_3cfs14CfSceneManagerCFv" in isControl__Q2_3cfs9CfObjUtilSFPQ2_3cfs5CfObj
 0x0244F930 = nop
+;"isFreeCamera__Q2_3cfs14CfSceneManagerCFv" in isControl__Q2_3cfs18CfCompoActionActorCFPQ2_3cfs5CfObj
 0x02467090 = nop
 ;"isFreeCamera__Q2_3cfs14CfSceneManagerCFv" in updateBefore__Q2_3cfs16CfCompoCtrlActorFf
 0x025532E8 = nop
