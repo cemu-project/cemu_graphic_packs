@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101C9400,00050000101C9500
+name = Controller API
+path = "The Legend of Zelda: Breath of the Wild/Mods/Controller API"
+description = When enabled, this mod will expose controller data to other graphics packs every frame. Only enable this if a mod requires it.
+version = 7
