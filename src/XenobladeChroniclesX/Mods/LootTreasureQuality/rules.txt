@@ -25,10 +25,10 @@ $treasure:int = 3
 name = "No treasure"
 
 [Preset]
+name = "No"
+category = Forced
+
+[Preset]
 name = "Yes"
 category = Forced
 $forced:int = 1
-
-[Preset]
-name = "No"
-category = Forced
