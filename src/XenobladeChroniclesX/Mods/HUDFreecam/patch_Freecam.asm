@@ -1,6 +1,8 @@
 [XCX_FREECAM_V101E_V102U]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
+;this mod accesses the developer freecam used by the monolith soft devs
 ;'nop' makes it so that the specified line never executes
+
 ;"isFreeCamera__Q2_3cfs14CfSceneManagerCFv" in exe_normal__Q2_3Cam8CCamCtrlFv
 0x022261BC = nop
 ;"isFreeCamera__Q2_3cfs14CfSceneManagerCFv" in isControl__Q2_3cfs9CfObjUtilSFPQ2_3cfs5CfObj
