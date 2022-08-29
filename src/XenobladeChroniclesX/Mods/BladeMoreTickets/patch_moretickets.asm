@@ -34,7 +34,7 @@ blr
 ; ----------------------------------------------------------------------------
 ; WHO  : menu::MenuMultiQuestResult::setup((void))
 ; WHAT : 
-_dispAfter: ; is broken on JP 1.0.0 & JP 1.0.2
+_dispAfter:
 lhz       r5, 0x5778(r29)
 mulli     r5, r5, $mult
 blr
@@ -97,7 +97,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x022CA09C = bla _moreTickets
 0x022CA48C = bla _uncapTickets
 0x02B90654 = bla _dispBefore
-;0x = bla _dispAfter ; broken, look near 02B9B9EC
+0x02B9B938 = bla _dispAfter
 0x02B938A8 = bla _pieceExchange
 0x02B97D08 = bla _dispExchangeInit
 0x02C77570 = bla _dispExchangeUpdate
@@ -118,8 +118,8 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x022C9F28 = bla _moreTickets
 0x022CA318 = bla _uncapTickets
-0x02B8DDE8 = bla _dispBefore
-;0x = bla _dispAfter ; broken, look near 02B98EF4
-0x02B90F90 = bla _pieceExchange
+0x02B8DDA8 = bla _dispBefore
+0x02B98F68 = bla _dispAfter
+0x02B90F84 = bla _pieceExchange
 0x02B953A4 = bla _dispExchangeInit
 0x02C73A5C = bla _dispExchangeUpdate
