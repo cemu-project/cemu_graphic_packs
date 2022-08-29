@@ -3,14 +3,22 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Max Items"
 path = "Xenoblade Chronicles X/Mods/Maximus/Max Items"
 description = Increases maximum amount of items.
-version = 5
+version = 6
 
 [Default]
+$max = 99
+
+[Preset]
+name = 99 (Default)
+category = Max Items
+default = 1
+
+[Preset]
+name = 999
+category = Max Items
 $max = 999
 
 [Preset]
-name = Max items 999
-
-[Preset]
-name = Max items 9999
+name = 9999
+category = Max Items
 $max = 9999
