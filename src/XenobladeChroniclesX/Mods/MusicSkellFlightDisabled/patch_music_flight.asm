@@ -1,5 +1,5 @@
 [XCX_BGMNOFLIGHT_V101E_V102U]
-moduleMatches = 0xF882D5CF, 0x218F6E07, 0x30B6E091 ; 1.0.1E, 1.0.0E, 1.0.2U
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; ----------------------------------------------------------------------------
 ; WHO  : cfs::CfSoundManager::fbgmUpdate((void))
 ; WHAT : Never call function cfs::CfSoundManager::fbgmChangeNameDoll((bool)) so that Skell Flight music is never played

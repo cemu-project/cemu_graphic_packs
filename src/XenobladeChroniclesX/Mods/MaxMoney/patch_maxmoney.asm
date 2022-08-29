@@ -1,5 +1,5 @@
 [XCX_MAXMONEY_V101E_V102U]
-moduleMatches = 0xF882D5CF, 0x218F6E07, 0x30B6E091 ; 1.0.1E, 1.0.0E, 1.0.2U
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; fw::Util::addMoney((int))
 0x027F6C28 = lis r12, 0x3B9B
 0x027F6C30 = addi r12, r12, -0x3601
@@ -43,7 +43,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x027f49BC = addi r12, r12, -0x3601
 
 [XCX_MAXMONEY_V100U] ; ###########################################################
-moduleMatches = 0x676EB33E, 0xAB97DE6B ; 1.0.0U 1.0.1U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U 1.0.0U
 ; fw::Util::addMoney((int))
 0x027F6BAC = lis r12, 0x3B9B
 0x027F6BB4 = addi r12, r12, -0x3601

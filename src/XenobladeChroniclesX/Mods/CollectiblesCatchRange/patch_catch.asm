@@ -1,5 +1,5 @@
 [XCX_COLLECTIBLESRANGE]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07, 0x7672271D, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
 
 ; ----------------------------------------------------------------------------
@@ -74,7 +74,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02389564 = bla _itemHeightFlight
 
 [XCX_COLLECTIBLESRANGE_V100U]
-moduleMatches = 0x676EB33E, 0xAB97DE6B ; 1.0.0U 1.0.1U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U 1.0.0U
 0x02389B10 = bla _itemRangeInner
 0x02389B48 = bla _itemHeightInner
 0x02389BCC = bla _itemRangeDoll
