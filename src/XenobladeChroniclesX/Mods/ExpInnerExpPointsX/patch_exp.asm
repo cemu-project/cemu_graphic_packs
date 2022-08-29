@@ -112,4 +112,4 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x02B8DD8C = bla _dispBefore
 0x02B98F04 = bla _dispAfter
 ; TEST : unlimited exp (no 9999 limit) up to 65535?
-0x020C140C = nop]
+0x020C140C = nop
