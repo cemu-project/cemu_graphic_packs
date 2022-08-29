@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Enemy Statistics modificator"
 path = "Xenoblade Chronicles X/Mods/Battle/Enemy Statistics modificator"
-description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary menu.||will only work with US 1.0.0U and JP 1.0.0|US 1.0.2U, EU 1.0.1E, EU 1.0.0E, and JP 1.0.2 support will come when the official game servers go offline
+description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary menu.
 version = 5
 
 [Default]
