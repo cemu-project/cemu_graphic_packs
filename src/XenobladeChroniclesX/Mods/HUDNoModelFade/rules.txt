@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "No Model Fade"
-path = "Xenoblade Chronicles X/Mods/HUD/No Model Fade"
+name = "No Fading When Close-up"
+path = "Xenoblade Chronicles X/Mods/HUD/No Fading When Close-up"
 description = Makes it so that character and skell models don't fade out when the camera gets too close.
 version = 6
