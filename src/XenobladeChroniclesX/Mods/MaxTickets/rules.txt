@@ -14,7 +14,7 @@ category = Blade Level Cap
 default = 1
 
 [Preset]
-name = x100
+name = 100x
 category = Blade Level Cap
 $cap = 100
 
