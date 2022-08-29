@@ -99,16 +99,3 @@
 
 ### Requirements
 Since Cemu 1.18, cemuhook is no longer required. All game versions supported. 1.0.1E, 1.0.2U, or 1.0.2J recommended.
-
-### Credits
-lasyan3 created the vast majority of the mods
-
-intra ported the vast majority of the mods to JP
-
-MetrosexualGarbodor & Crementif made the FPS++ mod
-
-Crementif helped out with a majority of the mods
-
-lashoun made the damage divisor mod 
-
-blingbloing made Freecam, No Overdrive Blur, and No Model Fade
