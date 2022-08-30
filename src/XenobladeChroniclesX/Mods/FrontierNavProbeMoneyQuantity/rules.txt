@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Money income quantity mod"
 path = "Xenoblade Chronicles X/Mods/FrontierNav/Money income quantity mod"
 description = Affect the quantity of the FrontierNav income for the Money.
-version = 5
+version = 6
 
 [Default]
 $mod = 2

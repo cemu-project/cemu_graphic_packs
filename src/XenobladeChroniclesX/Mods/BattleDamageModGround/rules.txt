@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Ground damage multiplicator"
 path = "Xenoblade Chronicles X/Mods/Battle/Ground damage multiplicator"
 description = Increase the damage done by your team. Doesn't affect the damage numbers that are shown.||Doesn't support V1.0.2 for the Japanese version, only V1.0.0.|Will crash the game if used online.
-version = 5
+version = 6
 
 [Default]
 $mult = 2

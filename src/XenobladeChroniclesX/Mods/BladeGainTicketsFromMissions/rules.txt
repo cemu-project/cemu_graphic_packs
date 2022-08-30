@@ -3,14 +3,14 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Gain Reward Tickets from DLC or Time Attack missions"
 path = "Xenoblade Chronicles X/Mods/BLADE/Gain Reward Tickets from DLC or Time Attack missions"
 description = Adds Exchange Tickets in reward of completing Blade missions.|This mod will not work if More Reward Tickets is enabled.
-version = 5
+version = 6
 
 [Default]
-$mission = 2
-
-[Preset]
-name = "Gain from TA missions (exp)"
+$mission = 5
 
 [Preset]
 name = "Gain from DLC missions (money/100)"
-$mission = 5
+
+[Preset]
+name = "Gain from TA missions (exp)"
+$mission = 2

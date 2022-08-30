@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Equipment - Force Type" 
 path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Type"
 description = Force the type of equipment looted.
-version = 5
+version = 6
 
 [Default]
 $type:int = 2
