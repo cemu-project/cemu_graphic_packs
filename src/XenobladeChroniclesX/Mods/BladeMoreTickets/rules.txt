@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "More Reward Tickets"
 path = "Xenoblade Chronicles X/Mods/BLADE/More Reward Tickets"
-description = Increase the Tickets gained with Squad tasks and missions.|Uncapped presets ignore max tickets.||Recomended to be combined with Offline Squad tasks and missions IF you are playing offline.
+description = Increase the Tickets gained with Squad tasks and missions.|Uncapped presets ignore max tickets.
 version = 6
 
 [Default]
