@@ -4,3 +4,21 @@ name = "Freecam"
 path = "Xenoblade Chronicles X/Mods/HUD/Freecam"
 description = Look around the world with a freecam.|The world continues when you're in this mode. Area surrounding camera is rendered, so going too far will make your character have no ground and die.||Made by blingbloing, modified by intra.
 version = 6
+
+[Default]
+
+[Preset]
+category = Hold 'R' button to move up
+name = " "
+
+[Preset]
+category = Hold 'L' button to move down
+name = " "
+
+[Preset]
+category = Hold 'X' to keep camera in place
+name = " "
+
+[Preset]
+category = Hold 'Y' to speed up camera
+name = Tip: Press and hold the R stick button to speed up even more
