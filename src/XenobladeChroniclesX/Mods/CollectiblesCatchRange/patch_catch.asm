@@ -74,7 +74,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02389564 = bla _itemHeightFlight
 
 [XCX_COLLECTIBLESRANGE_V100U]
-moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U 1.0.0U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02389B10 = bla _itemRangeInner
 0x02389B48 = bla _itemHeightInner
 0x02389BCC = bla _itemRangeDoll

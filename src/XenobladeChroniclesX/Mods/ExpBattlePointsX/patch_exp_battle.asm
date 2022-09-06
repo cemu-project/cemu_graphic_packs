@@ -85,7 +85,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x022D870C = bla _expTreasure
 0x023CBDD4 = bla _expSquadValue
 0x023CBEB8 = bla _expSquadValue
-0x02B9019C = bla _dispBefore
+0x02B9066C = bla _dispBefore
 0x02B9B998 = bla _dispAfter
 
 [XCX_BATTLEPOINTSX_V100U] ; ############################################################################
@@ -105,5 +105,5 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x022D8598 = bla _expTreasure
 0x023CB904 = bla _expSquadValue
 0x023CB9E8 = bla _expSquadValue
-0x02B8D914 = bla _dispBefore
+0x02B8DDBC = bla _dispBefore
 0x02B98FC4 = bla _dispAfter

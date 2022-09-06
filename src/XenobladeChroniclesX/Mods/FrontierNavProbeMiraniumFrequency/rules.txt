@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Miranium income frequency mod"
-path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium income frequency mod"
+name = "FrontierNav - Miranium frequency mod"
+path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium frequency mod"
 description = Affect the frequency of the FrontierNav income for the Miranium (Vanilla is every 30 minutes).
 version = 6
 

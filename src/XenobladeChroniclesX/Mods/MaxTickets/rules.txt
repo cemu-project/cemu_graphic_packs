@@ -9,16 +9,16 @@ version = 6
 $cap = 10
 
 [Preset]
-name = 10x
+name = x10
 category = Blade Level Cap
 default = 1
 
 [Preset]
-name = 100x
+name = x100
 category = Blade Level Cap
 $cap = 100
 
 [Preset]
-name = 1000x
+name = x1000
 category = Blade Level Cap
 $cap = 1000

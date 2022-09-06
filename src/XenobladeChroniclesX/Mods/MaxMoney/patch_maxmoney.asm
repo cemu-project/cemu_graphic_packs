@@ -43,7 +43,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x027f49BC = addi r12, r12, -0x3601
 
 [XCX_MAXMONEY_V100U] ; ###########################################################
-moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U 1.0.0U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 ; fw::Util::addMoney((int))
 0x027F6BAC = lis r12, 0x3B9B
 0x027F6BB4 = addi r12, r12, -0x3601

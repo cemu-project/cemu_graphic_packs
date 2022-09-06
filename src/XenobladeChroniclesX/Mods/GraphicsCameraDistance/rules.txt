@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Camera mod (distance)"
-path = "Xenoblade Chronicles X/Mods/Graphics/Camera mod (distance)"
-description = Affect the default distance of the camera (Vanilla zoom is 0).
+name = "Camera distance mod"
+path = "Xenoblade Chronicles X/Mods/Graphics/Camera distance mod"
+description = Affect the default distance of the camera (Vanilla zoom is 0).|Does not affect max zoom possible.
 version = 6
 
 [Default]

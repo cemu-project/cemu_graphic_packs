@@ -58,7 +58,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02A6E69C = li r10, 99 ; Ignore upgrades counter
 0x02A6E91C = li r3, $checkStrengthen
 
-0x02A6E424 = bla SaveUpgradeCount
+0x02A6E4A0 = bla SaveUpgradeCount
 0x02A6E6F4 = bla CtrlUpgradeCount
 
 [XCX_UPGRADENOLIMIT_V100U] ; ################################################################
@@ -81,5 +81,5 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x02A6CB2C = li r10, 99 ; Ignore upgrades counter
 0x02A6CDAC = li r3, $checkStrengthen
 
-0x02A6C8B4 = bla SaveUpgradeCount
+0x02A6C930 = bla SaveUpgradeCount
 0x02A6CB84 = bla CtrlUpgradeCount

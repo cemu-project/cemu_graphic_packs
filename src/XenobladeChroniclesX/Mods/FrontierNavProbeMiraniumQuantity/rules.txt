@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Miranium income quantity mod"
-path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium income quantity mod"
+name = "FrontierNav - Miranium quantity mod"
+path = "Xenoblade Chronicles X/Mods/FrontierNav/Miranium quantity mod"
 description = Affect the quantity of the FrontierNav income for the Miranium.
 version = 6
 

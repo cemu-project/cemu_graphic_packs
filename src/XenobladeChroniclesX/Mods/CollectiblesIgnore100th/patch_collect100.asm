@@ -17,7 +17,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x0238972C = beq _exit
 
 [XCX_NOITEMSELL_V100U]
-moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U 1.0.0U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02365A24 = li r31, 0 ; sellItem
 0x0238A14C = _exit:
 0x02389E88 = beq _exit

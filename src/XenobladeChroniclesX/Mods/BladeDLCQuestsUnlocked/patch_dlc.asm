@@ -5,14 +5,14 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; WHAT : Disable endgame check to unlock DLC missions
 0x022C6B50 = nop
 
+[XCX_DLC_V102J]
+moduleMatches = 0x7672271D ; 1.0.2J
+0x022C6560 = nop
+
 [XCX_DLC_V100U]
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x022C6AE0 = nop
 
-[XCX_DLC_V102J]
-moduleMatches = 0x7672271D ; 1.0.2J
-0x02286B10 = nop
-
 [XCX_DLC_V100J]
 moduleMatches = 0x785CA8A9 ; 1.0.0J
-0x02286864 = nop
+0x022C6AE0 = nop

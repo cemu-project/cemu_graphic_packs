@@ -62,7 +62,7 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 [XCX_TICKETS_DLC_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
 0x02B90654 = bla _ticketsDispBefore
-0x02B9B938 = bla _ticketsDispAfter
+0x02B9B938 = bla _ticketsDispAfter ;
 0x023CBE48 = bla _ticketsValueJP
 0x023CBF2C = bla _ticketsValueJP
 
@@ -75,6 +75,6 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 [XCX_TICKETS_DLC_V100J]
 moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x02B8DDA8 = bla _ticketsDispBefore
-0x02B98F68 = bla _ticketsDispAfter
+0x02B98F68 = bla _ticketsDispAfter ;
 0x023CB978 = bla _ticketsValueJP
 0x023CBA5C = bla _ticketsValueJP

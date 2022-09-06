@@ -11,7 +11,6 @@ $max = 99
 [Preset]
 name = 99 (Default)
 category = Max Items
-default = 1
 
 [Preset]
 name = 999

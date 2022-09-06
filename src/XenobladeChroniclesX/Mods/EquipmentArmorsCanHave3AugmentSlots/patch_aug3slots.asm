@@ -11,7 +11,7 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 
 [XCX_MAXSLOTS_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
-0x02A3721C = li r0, 3
+0x02A3721C = li r0, 3 ;
 
 [XCX_MAXSLOTS_V100U]
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
@@ -19,4 +19,4 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 
 [XCX_MAXSLOTS_V100J]
 moduleMatches = 0x785CA8A9 ; 1.0.0J
-0x02A35764 = li r0, 3
+0x02A35764 = li r0, 3 ;
