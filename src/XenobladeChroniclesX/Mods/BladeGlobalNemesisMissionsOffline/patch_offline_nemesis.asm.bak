@@ -1,5 +1,7 @@
+; not porting this backup file to JP
 [XCX_OFFLINEWE]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
+
 .origin = codecave
 
 ; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL
@@ -156,6 +158,7 @@ blr
 
 [XCX_OFFLINEWE_V101E] ; ############################################################################################
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
+
 .origin = codecave
 
 ; menu::MenuMultiQuestOrder::move((void))
@@ -262,6 +265,7 @@ blr
 
 [XCX_OFFLINEWE_V102U] ; ############################################################################################
 moduleMatches = 0x30B6E091 ; 1.0.2U
+
 .origin = codecave
 
 ;0x02B9B0A0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -274,6 +278,7 @@ blr
 
 [XCX_OFFLINEWE_V100U] ; ############################################################################################
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
+
 .origin = codecave
 
 ; getServerTimeSec__Q2_2nt10CNetLibNexCFRUL

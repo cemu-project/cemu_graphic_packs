@@ -49,7 +49,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; ######################################### TODO : get WERewardList (Telethia Stem Cell)
 ; cfs::CfSocialManager::getQuestDetailWE((cfs::CfSocialQuestInfoWE &))
 ; |- __CPR95__getWorldEnemyInfoFromQuest__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ34J14WorldEnemyInfo
-0x0282B454 = li r3, 0 ; getWorldEnemyIndexFromQuestID / Uncomment to show Appraisal Rewards
+0x0282B454 = li r3, 0 ; getWorldEnemyIndexFromQuestID
 ; |- |- __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
 0x0282B0E4 = li r7, 1 ; cmpwi     r7, 0
 0x0282B0FC = li r0, 1 ; cmpwi     r0, 0
@@ -61,6 +61,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 
 [XCX_OFFLINEWE_V101E] ; ############################################################################################
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
+0x02AC5C10 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 ; menu::MenuMultiQuestOrder::move((void))
 ; skip BLADE medals requirement on launch mission
 0x02B9B0B0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -77,37 +78,109 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 
 0x02B9B0A0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
 
-;0x02BA0CE0 = bla _updateRP ; menu::MenuMultiQuestResult::updateEnemyBoss((menu::MenuObject *))
+0x02AC612C = ba _single ; menu::CBladeHomuMenu::single((void))
+0x022CA324 = nop ; always all items? ;;
 
-0x02AC612C = ba _single
+[XCX_OFFLINEWE_V102J] ; ############################################################################################
+moduleMatches = 0x7672271D ; 1.0.2J
+0x022873E8 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
+0x022C7A6C = nop ; network test : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
+0x022C7A70 = nop ; network test
+
+0x022C5C64 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+0x022C5C90 = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
+0x022C5FB8 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+
+0x022C60DC = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+0x022C610C = li r3, 0x4EED
+0x022C6148 = nop ; network test?
+0x022C646C = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+
+0x02285E0C = nop ; or.       r0, r6, r7
+0x02285E34 = nop ; or.       r0, r6, r7
+0x02285EDC = li r7, 1 ; for getWERewardList
+
+0x028284C8 = bla _loadRP ; __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
+
+0x0282862C = li r3, 0 ; getWorldEnemyIndexFromQuestID
+0x028282BC = li r7, 1 ; cmpwi     r7, 0
+0x028282D4 = li r0, 1 ; cmpwi     r0, 0
+0x02828348 = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
+0x0282843C = nop ; skip deserializeWorldEnemy
+0x028285E8 = li r4, 1 ; for getWERewardList
+0x022892B4 = nop ; Uncomment to show Appraisal Rewards
+
+0x02AC22D0 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+0x02B96BCC = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
+
+0x02AC27FC = ba _single ; menu::CBladeHomuMenu::single((void))
+0x022C9D34 = nop ; always all items?
 
 [XCX_OFFLINEWE_V100U] ; ############################################################################################
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02287960 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
-0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x022C7FEC = nop ; network test : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
 0x022C7FF0 = nop ; network test
 0x022C61E4 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 0x022C6210 = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
 0x022C6538 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C668C = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+
+0x022C665C = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 0x022C668C = li r3, 0x4EED
 0x022C66C8 = nop ; network test?
 0x022C69EC = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+
 0x022863A4 = nop ; or.       r0, r6, r7
 0x022863CC = nop ; or.       r0, r6, r7
 0x02286474 = li r7, 1 ; for getWERewardList
 
 0x0282B274 = bla _loadRP ; __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
 
-0x0282B3D8 = li r3, 0 ; getWorldEnemyIndexFromQuestID / Uncomment to show Appraisal Rewards
+0x0282B3D8 = li r3, 0 ; getWorldEnemyIndexFromQuestID
 0x0282B068 = li r7, 1 ; cmpwi     r7, 0
 0x0282B080 = li r0, 1 ; cmpwi     r0, 0
 0x0282B0F4 = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
 0x0282B1E8 = nop ; skip deserializeWorldEnemy
 0x0282B394 = li r4, 1 ; for getWERewardList
 0x0228982C = nop ; Uncomment to show Appraisal Rewards
+
+0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B9AFB0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
 
 0x02AC60B0 = ba _single ; menu::CBladeHomuMenu::single((void))
 0x022CA2B4 = nop ; always all items?
+
+[XCX_OFFLINEWE_V100J] ; ############################################################################################
+moduleMatches = 0x785CA8A9 ; 1.0.0J
+0x0228713C = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
+0x022C78F8 = nop ; network test : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
+0x022C78FC = nop ; network test
+
+0x022C5AF0 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+0x022C5B1C = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
+0x022C5E44 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+
+0x022C5F68 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+0x022C5F98 = li r3, 0x4EED
+0x022C5FD4 = nop ; network test?
+0x022C62F8 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
+
+0x02285B60 = nop ; or.       r0, r6, r7
+0x02285B88 = nop ; or.       r0, r6, r7
+0x02285C30 = li r7, 1 ; for getWERewardList
+
+0x0282749C = bla _loadRP ; __CPR86__getWorldEnemyInfo__Q2_2fw15SocialDataStoreCFUiRQ3_2fwJ25J14WorldEnemyInfo
+
+0x02827600 = li r3, 0 ; getWorldEnemyIndexFromQuestID
+0x02827290 = li r7, 1 ; cmpwi     r7, 0
+0x028272A8 = li r0, 1 ; cmpwi     r0, 0
+0x0282731C = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
+0x02827410 = nop ; skip deserializeWorldEnemy
+0x028275BC = li r4, 1 ; for getWERewardList
+0x02289008 = nop ; Uncomment to show Appraisal Rewards
+
+0x02AC04E8 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+0x02B94268 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
+
+0x02AC0A14 = ba _single ; menu::CBladeHomuMenu::single((void))
+0x022C9BC0 = nop ; always all items?

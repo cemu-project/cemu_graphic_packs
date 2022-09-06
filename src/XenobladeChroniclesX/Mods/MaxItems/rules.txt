@@ -16,8 +16,3 @@ category = Max Items
 name = 999
 category = Max Items
 $max = 999
-
-[Preset]
-name = 9999
-category = Max Items
-$max = 9999
