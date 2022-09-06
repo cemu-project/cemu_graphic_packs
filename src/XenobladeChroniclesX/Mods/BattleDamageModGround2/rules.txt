@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Ground Damage Divisor
 path = "Xenoblade Chronicles X/Mods/Battle/Ground damage divisor"
-description = Make the game more challenging by dividing the given damage you and your team do to enemies. Doesn't affect the damage numbers that are shown.||Might be experimental since it's not fully been tested yet.||Doesn't support V1.0.2 for the Japanese version, only V1.0.0.|Will crash the game if used online.||Made by Lashoun.
+description = Make the game more challenging by dividing the given damage you and your team do to enemies. Doesn't affect the damage numbers that are shown.||Made by Lashoun.
 version = 6
 
 [Default]

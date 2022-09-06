@@ -77,16 +77,36 @@ $missionId = 16
 
 [Preset]
 name = "N17: Monoceros,Brambloo Shoot(c),Progen,Visigel,Jia Mian(t)"
-$missionId = 17
+$missionId = 20
 
 [Preset]
 name = "N18: Sacrifole,Jacul,Dieter(t),Arenatect,Zig"
-$missionId = 18
+$missionId = 21
 
 [Preset]
 name = "N19: Aprica,Sylooth,Tectinsula,Xe-dom,Coronid"
-$missionId = 19
+$missionId = 22
 
 [Preset]
 name = "N20: Aeviter,Vigent,Virago,Tersqual,Myuena Cactus(c)"
-$missionId = 20
+$missionId = 23
+
+[Preset]
+name = "N21: Unused squad mission"
+$missionId = 17
+
+[Preset]
+name = "N22: Unused squad mission"
+$missionId = 18
+
+[Preset]
+name = "N23: Unused squad mission"
+$missionId = 19
+
+[Preset]
+name = "N24: Unused squad mission"
+$missionId = 24
+
+[Preset]
+name = "N25: Unused squad mission"
+$missionId = 25
