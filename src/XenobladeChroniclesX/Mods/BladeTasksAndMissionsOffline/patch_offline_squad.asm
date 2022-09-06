@@ -68,8 +68,8 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 0x023ABDF4 = _gotoTimeout:
 0x023ABE54 = _gotoNext:
 
-0x023ABDC8 = lis       r3, VarSquadMission@ha
-0x023ABDCC = lwz      r7, VarSquadMission@l(r3)
+0x023ABDC8 = lis r3, VarSquadMission@ha
+0x023ABDCC = lwz r7, VarSquadMission@l(r3)
 0x023ABDD0 = cmpwi r7, 1
 0x023ABDD4 = beq _gotoTimeout
 0x023ABDD8 = b _gotoNext
