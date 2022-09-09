@@ -75,7 +75,6 @@ moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 [XCX_OFFLINEWE_V102U] ; ############################################################################################
 moduleMatches = 0x30B6E091 ; 1.0.2U
 0x02AC5C00 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-
 0x02B9B0A0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
 
 0x02AC612C = ba _single ; menu::CBladeHomuMenu::single((void))
