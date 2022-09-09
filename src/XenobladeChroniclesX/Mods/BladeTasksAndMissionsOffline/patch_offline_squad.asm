@@ -23,14 +23,14 @@ beqlr
 mr		r3, r4
 blr
 
-;######### Force Squad Mission number 1.0.0J
-_forceMissionJP:
-lmw	r15, 0x1AC(r1) ;
-li	 	r4, $missionId
-cmpwi	r4, 0
-beqlr
-mr		r3, r4
-blr
+;######### Force Squad Mission number 1.0.0J --not working
+;_forceMissionJP:
+;lmw	r15, 0x1AC(r1) ;
+;li	 	r4, $missionId
+;cmpwi	r4, 0
+;beqlr
+;mr		r3, r4
+;blr
 
 ;######### Change Squad Mission using main menu
 _savePtr:
@@ -193,40 +193,38 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02B8501C = li r11, 1
 
 ;####################################################################################################
-[XCX_SQUADMISSIONS_V100J]
-moduleMatches = 0x785CA8A9 ; 1.0.0J   ;;; broken, not working
-0x0228713C = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
-0x023AAC20 = nop ; 0x6B8(r12) == 0
-0x023AAC50 = nop ; isHost
-0x023AADA4 = li r9, 60 ; force 0x24 - UNLOCK ;
-0x023AAF4C = nop ; isHost
-0x0239F9A4 = nop ; isHost
-0x023AAFE8 = nop ; compare with 0x28 - UNLOCK
-0x023AAFF4 = nop ; compare with 0x2C - UNLOCK
-0x022C78F8 = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
-0x022C78FC = nop ; test réseau
-0x022C5158 = nop ; rlwinm.   r10, r11, 0,29,29
+;[XCX_SQUADMISSIONS_V100J]   ;;;;;; 1.0.0J broken, not working (';' is comment symbol)
+;moduleMatches = 0x785CA8A9 ; 1.0.0J
+;0x0228713C = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
+;0x023AAC20 = nop ; 0x6B8(r12) == 0
+;0x023AAC50 = nop ; isHost
+;0x023AADA4 = li r9, 60 ; force 0x24 - UNLOCK ;
+;0x023AAF4C = nop ; isHost
+;0x0239F9A4 = nop ; isHost
+;0x023AAFE8 = nop ; compare with 0x28 - UNLOCK
+;0x023AAFF4 = nop ; compare with 0x2C - UNLOCK
+;0x022C78F8 = nop ; test réseau : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
+;0x022C78FC = nop ; test réseau
+;0x022C5158 = nop ; rlwinm.   r10, r11, 0,29,29
 
-0x023B6168 = bla _iniPtr
+;0x023B6168 = bla _iniPtr
 
-0x023AB134 = _gotoTimeout: ;
-0x023AB194 = _gotoNext: ;
+;0x023AB134 = _gotoTimeout: ;
+;0x023AB194 = _gotoNext: ;
 
-0x023AB104 = lis r3, VarSquadMission@ha ;
-0x023AB108 = lwz r12, VarSquadMission@l(r3) ;
-0x023AB10C = cmpwi r12, 1 ;
-0x023AB110 = beq _gotoTimeout
-0x023AB114 = b _gotoNext
+;0x023AB104 = lis r12, VarSquadMission@ha ;
+;0x023AB108 = lwz r12, VarSquadMission@l(r12) ;
+;0x023AB10C = cmpwi r12, 1 ;
+;0x023AB110 = beq _gotoTimeout
+;0x023AB114 = b _gotoNext
 
-0x023AAB68 = bla _forceMissionJP ;
+;0x023AAB68 = bla _forceMissionJP ;
 
-0x0295A05C = nop
-0x0295A060 = li r0, 42
-0x02BF5364 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
-0x02AC04E8 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-0x02B7EAC0 = bla _savePtr
-0x02B7EAD8 = bla _savePtr
-0x02B7EA10 = li r11, 1
-0x02B7EA34 = li r11, 1
-
-0x0295B678 = li r3, -1
+;0x0295A05C = nop
+;0x0295A060 = li r0, 42
+;0x02BF5364 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
+;0x02AC04E8 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
+;0x02B7EAC0 = bla _savePtr
+;0x02B7EAD8 = bla _savePtr
+;0x02B7EA10 = li r11, 1
+;0x02B7EA34 = li r11, 1

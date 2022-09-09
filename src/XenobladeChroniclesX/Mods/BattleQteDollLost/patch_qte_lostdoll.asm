@@ -58,7 +58,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x020982D0 = bla _setDestructionGood
 
 [XCX_QTE_DOLLLOST_V100U]
-moduleMatches = 0x676EB33E ; 1.0.0U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x027F93E8 = SetInsure:
 0x023EEF40 = getPropAccessor:
 0x0209879C = bla _setDestructionExcellent
