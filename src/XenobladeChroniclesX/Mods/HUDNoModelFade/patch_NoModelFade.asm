@@ -1,11 +1,11 @@
 [XCX_NoModelFade_V101E_V102U]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
-;"setCameraAlphaMount__Q2_3cfs5CfObjFf" in setCameraAlphaMount__Q2_3cfs5CfObjFf
-0x023EAC38 = nop
-0x023EB5A4 = nop
-;"setCameraAlphaMount__Q2_3cfs5CfObjFf" in updateAlpha__Q2_3cfs17CfCompoAssetActorFv
-0x02483E14 = nop
-0x02484018 = nop
+; func setCameraAlphaMount__Q2_3cfs5CfObjFf
+0x023EAC38 = nop ;setCameraAlphaMount__Q2_3cfs5CfObjFf
+0x023EB5A4 = nop ;setCameraAlphaMount__Q2_3cfs5CfObjFf
+; func updateAlpha__Q2_3cfs17CfCompoAssetActorFv
+0x02483E14 = nop ;setCameraAlphaMount__Q2_3cfs5CfObjFf
+0x02484018 = nop ;setCameraAlphaMount__Q2_3cfs5CfObjFf
 
 [XCX_NoModelFade_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
