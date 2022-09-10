@@ -13,8 +13,8 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 
 [XCX_BLADEX_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
-0x0288b470 = nop
-0x0288b474 = li r3, $mod
+0x0288B470 = nop
+0x0288B474 = li r3, $mod
 
 [XCX_BLADEX_V100U]
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
