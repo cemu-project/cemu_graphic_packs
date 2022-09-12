@@ -13,6 +13,16 @@ name = 99 (Default)
 category = Max Items
 
 [Preset]
+name = 200
+category = Max Items
+$max = 200
+
+[Preset]
+name = 500
+category = Max Items
+$max = 500
+
+[Preset]
 name = 999
 category = Max Items
 $max = 999
