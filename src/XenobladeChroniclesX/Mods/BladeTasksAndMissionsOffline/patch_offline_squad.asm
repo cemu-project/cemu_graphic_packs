@@ -42,7 +42,6 @@ blr
 
 [XCX_SQUADMISSIONS_V101E_V102U]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
-
 ;################## Activate Squad Tasks
 ; cfs::CfSocialManager::update((float))
 0x022879D0 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
