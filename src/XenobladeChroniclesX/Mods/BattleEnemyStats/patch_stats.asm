@@ -1,7 +1,6 @@
 [XCX_ENEMIESTATS_V101E]
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
-0x0295B678 = li r3, -3
-; ----------------------------------------------------------------------------
+; ------------------------------------------------------------------------
 ; WHO  : calcEnParam__3cfsFPQ2_3cfs7SChrPrmUiT2
 ; WHAT : Apply modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion)
 
@@ -9,6 +8,7 @@ moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 ;  70% = 0.0007
 ;  50% = 0.0005
 ;   1% = 0.00001 ; GAME CRASH (enemis are too weak)
+0x0295B678 = li r3, -3
 0x1003206C = .float $mod
 
 [XCX_ENEMIESTATS_V102U]
