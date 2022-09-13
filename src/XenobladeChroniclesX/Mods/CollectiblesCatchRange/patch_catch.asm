@@ -6,17 +6,17 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 ; WHO  : cfs::CfPopManagerItem::updateTouchItem((void))
 ; WHAT : Initialize collectibles distance
 _rangeInnerConst: 
-	.float 40.0
+	.float $rangeinner
 _heightInnerConst: 
-	.float 8.0
+	.float $heightinner
 _rangeDollConst: 
-	.float 64.0
+	.float $rangedoll
 _heightDollConst: 
-	.float 64.0
+	.float $heightdoll
 _rangeFlightConst: 
-	.float 64.0
+	.float $rangeflight
 _heightFlightConst: 
-	.float 52.0
+	.float $heightflight
 
 _itemRangeInner:
 lis r5, _rangeInnerConst@ha

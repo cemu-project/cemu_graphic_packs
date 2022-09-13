@@ -4,3 +4,23 @@ name = "Catch range mod"
 path = "Xenoblade Chronicles X/Mods/Collectibles/Catch range mod"
 description = Increase the distance from which collectibles are grabbed.
 version = 6
+
+[default]
+$rangeinner = 40.0
+$heightinner = 8.0
+$rangedoll = 64.0
+$heightdoll = 64.0
+$rangeflight = 64.0
+$heightflight = 52.0
+
+[preset]
+name = big range
+
+[preset]
+name = bigger range
+$rangeinner = 80.0
+$heightinner = 16.0
+$rangedoll = 128.0
+$heightdoll = 128.0
+$rangeflight = 128.0
+$heightflight = 104.0
