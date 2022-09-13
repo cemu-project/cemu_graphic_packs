@@ -21,7 +21,7 @@ name = Set at 75%
 $mod = 0.00075
 
 [Preset]
-name = Set at 100%
+name = Set at 100% (default)
 default = 1
 
 [Preset]
