@@ -9,8 +9,8 @@ version = 6
 $mod = 0.001
 
 [Preset]
-name = Set at 30%
-$mod = 0.0003
+name = Set at 25%
+$mod = 0.00025
 
 [Preset]
 name = Set at 50%
@@ -31,6 +31,10 @@ $mod = 0.00125
 [Preset]
 name = Set at 150%
 $mod = 0.0015
+
+[Preset]
+name = Set at 200%
+$mod = 0.002
 
 [Preset]
 name = Set at 300%

@@ -4,7 +4,7 @@ moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 ; WHO  : calcEnParam__3cfsFPQ2_3cfs7SChrPrmUiT2
 ; WHAT : Apply modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion)
 
-; 100% = 0.001 - default value
+; 100% = 0.001 - default value ;;
 ;  70% = 0.0007
 ;  50% = 0.0005
 ;   1% = 0.00001 ; GAME CRASH (enemis are too weak)
