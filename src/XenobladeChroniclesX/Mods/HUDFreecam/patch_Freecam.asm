@@ -3,17 +3,17 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ;this mod accesses the developer freecam used by the monolith soft devs
 ;'nop' makes it so that the specified line never executes
 
-; func exe_normal__Q2_3Cam8CCamCtrlFv
+; in func exe_normal__Q2_3Cam8CCamCtrlFv
 0x022261BC = nop ;isFreeCamera__Q2_3cfs14CfSceneManagerCFv
-; func isControl__Q2_3cfs9CfObjUtilSFPQ2_3cfs5CfObj
+; in func isControl__Q2_3cfs9CfObjUtilSFPQ2_3cfs5CfObj
 0x0244F930 = nop ;isFreeCamera__Q2_3cfs14CfSceneManagerCFv
-; func isControl__Q2_3cfs18CfCompoActionActorCFPQ2_3cfs5CfObj
+; in func isControl__Q2_3cfs18CfCompoActionActorCFPQ2_3cfs5CfObj
 0x02467090 = nop ;isFreeCamera__Q2_3cfs14CfSceneManagerCFv
-; func updateBefore__Q2_3cfs16CfCompoCtrlActorFf
+; in func updateBefore__Q2_3cfs16CfCompoCtrlActorFf
 0x025532E8 = nop ;isFreeCamera__Q2_3cfs14CfSceneManagerCFv
-; func update__Q2_3cfs14CfSceneFreeCamFv
+; in func update__Q2_3cfs14CfSceneFreeCamFv
 0x02601CFC = nop ;isFreeCamera__Q2_3cfs14CfSceneManagerCFv
-; func dispFieldCamera__Q2_2ev16CUIManagerAlwaysFb
+; in func dispFieldCamera__Q2_2ev16CUIManagerAlwaysFb
 0x0276A774 = nop ;MenuTask::openHudEventCamera
 
 [XCX_FREECAM_V102J]
@@ -26,7 +26,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02768EEC = nop
 
 [XCX_FREECAM_V100U]
-moduleMatches = 0x676EB33E ; 1.0.0U
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x022261BC = nop
 0x0244F8C0 = nop
 0x02467020 = nop
