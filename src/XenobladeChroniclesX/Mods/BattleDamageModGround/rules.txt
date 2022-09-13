@@ -24,5 +24,9 @@ name = Damage x10
 $mult = 10
 
 [Preset]
+name = Damage x25
+$mult = 25
+
+[Preset]
 name = Damage x100
 $mult = 100

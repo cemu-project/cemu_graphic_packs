@@ -10,14 +10,7 @@ $divr = 2
 
 [Preset]
 category = Damage Divisor
-name = Normal Damage (Default)
-default = 1
-$divr = 1
-
-[Preset]
-category = Damage Divisor
 name = Damage / 2
-$divr = 2
 
 [Preset]
 category = Damage Divisor
