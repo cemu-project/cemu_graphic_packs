@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Lv Exp Points"
 path = "Xenoblade Chronicles X/Mods/Experience/Lv Exp Points"
-description = Change the amount of Lv Exp points gained in battle, missions, quests and exploration.
+description = Change the amount of Level Exp points gained in battle, missions, quests and exploration.
 version = 6
 
 [Default]
