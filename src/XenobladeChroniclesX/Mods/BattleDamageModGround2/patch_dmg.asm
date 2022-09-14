@@ -1,6 +1,6 @@
 [XCX_DAMAGES]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
-;
+
 .origin = codecave
 .int $divr
 _divide_dmg:
