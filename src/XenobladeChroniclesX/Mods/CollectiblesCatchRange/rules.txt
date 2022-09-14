@@ -14,10 +14,10 @@ $rangeflight = 64.0
 $heightflight = 52.0
 
 [Preset]
-name = big range
+name = Big Range
 
 [Preset]
-name = bigger range
+name = Bigger Range
 $rangeinner = 80.0
 $heightinner = 16.0
 $rangedoll = 128.0
