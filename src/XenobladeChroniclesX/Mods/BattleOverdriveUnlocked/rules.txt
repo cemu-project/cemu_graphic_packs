@@ -9,7 +9,7 @@ version = 6
 $mod = 1
 
 [Preset]
-name = Force unlock
+name = Force Unlock
 
 [Preset]
 name = Force Relock
