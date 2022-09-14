@@ -35,9 +35,9 @@ $mod = 100
 
 [Preset]
 name = "Yes"
-category = "Capped by BLADE level"
+category = "Capped by storage probes"
 
 [Preset]
 name = "No"
-category = "Capped by BLADE level"
+category = "Capped by storage probes"
 $uncap = 1

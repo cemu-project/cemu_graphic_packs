@@ -21,6 +21,10 @@ name = "Gain more Tickets (x10)"
 $mult = 10
 
 [Preset]
+name = "Gain more Tickets (x25)"
+$mult = 25
+
+[Preset]
 name = "Gain more Tickets (x100)"
 $mult = 100
 

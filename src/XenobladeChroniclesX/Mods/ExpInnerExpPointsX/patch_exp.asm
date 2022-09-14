@@ -67,7 +67,7 @@ moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 0x023CC6D4 = bla _expSquadValue
 0x02B94700 = bla _dispBefore
 0x02B9FDD4 = bla _dispAfter
-; TEST : unlimited exp (no 9999 limit) up to 65535?
+; unlimited exp (no 9999 limit) loops around 140000
 0x020C1BC4 = nop
 
 [XCX_EXPX_V102U] ; ############################################################################
@@ -78,7 +78,7 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 0x023CC6D4 = bla _expSquadValue
 0x02B946F0 = bla _dispBefore
 0x02B9FDC4 = bla _dispAfter
-; TEST : unlimited exp (no 9999 limit) up to 65535?
+; unlimited exp (no 9999 limit) loops around 140000
 0x020C1BC4 = nop
 
 [XCX_EXPX_V102J] ; ############################################################################
@@ -89,7 +89,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x023CBD38 = bla _expSquadValue
 0x02B9063C = bla _dispBefore
 0x02B9B8D0 = bla _dispAfter
-; TEST : unlimited exp (no 9999 limit) up to 65535?
+; unlimited exp (no 9999 limit) loops around 140000
 0x020C1690 = nop
 
 [XCX_EXPX_V100U] ; ############################################################################
@@ -100,7 +100,7 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x023CC664 = bla _expSquadValue
 0x02B94674 = bla _dispBefore
 0x02B9FCD4 = bla _dispAfter
-; TEST : unlimited exp (no 9999 limit) up to 65535?
+; unlimited exp (no 9999 limit) loops around 140000
 0x020C1BC4 = nop
 
 [XCX_EXPX_V100J] ; ############################################################################
@@ -111,5 +111,5 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x023CB868 = bla _expSquadValue
 0x02B8DD8C = bla _dispBefore ;
 0x02B98F04 = bla _dispAfter
-; TEST : unlimited exp (no 9999 limit) up to 65535?
+; unlimited exp (no 9999 limit) loops around 140000
 0x020C140C = nop
