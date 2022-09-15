@@ -31,5 +31,5 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x0288E598 = li r3, $mod
 
 ;[XCX_BLADEX_V100J]
-;moduleMatches = 0x785CA8A9 ; 1.0.0J
+;moduleMatches = 0x785CA8A9 ; 1.0.0J ;;;
 ;getUnionBasePoint__Q2_2fw11SocialUnionFi does not exist

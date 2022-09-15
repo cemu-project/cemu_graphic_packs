@@ -12,6 +12,10 @@ $mod = 100
 name = "+100"
 
 [Preset]
+name = "+150"
+$mod = 150
+
+[Preset]
 name = "+250"
 $mod = 250
 

@@ -12,6 +12,10 @@ $mod = 2
 name = "Quantity x2"
 
 [Preset]
+name = "Quantity x3"
+$mod = 3
+
+[Preset]
 name = "Quantity x5"
 $mod = 5
 

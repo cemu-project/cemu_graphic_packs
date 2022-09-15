@@ -6,12 +6,22 @@ description = Affect the quantity of the FrontierNav income for the Miranium.
 version = 6
 
 [Default]
-$mod = 2
+$mod = 1
 $uncap = 0
+
+[Preset]
+name = "Miranium x1"
+category = Miranium quantity
 
 [Preset]
 name = "Miranium x2"
 category = Miranium quantity
+$mod = 2
+
+[Preset]
+name = "Miranium x3"
+category = Miranium quantity
+$mod = 3
 
 [Preset]
 name = "Miranium x5"
@@ -35,9 +45,9 @@ $mod = 100
 
 [Preset]
 name = "Yes"
-category = "Capped by storage probes"
+category = "Capped by Storage Probes"
 
 [Preset]
 name = "No"
-category = "Capped by storage probes"
+category = "Capped by Storage Probes"
 $uncap = 1

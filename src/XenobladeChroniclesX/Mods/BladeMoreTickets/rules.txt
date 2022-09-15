@@ -13,6 +13,10 @@ $uncap = 0
 name = "Gain more Tickets (x2)"
 
 [Preset]
+name = "Gain more Tickets (x3)"
+$mult = 3
+
+[Preset]
 name = "Gain more Tickets (x5)"
 $mult = 5
 

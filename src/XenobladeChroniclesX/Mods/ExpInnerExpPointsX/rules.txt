@@ -16,6 +16,10 @@ name = "x2"
 $mod = 2
 
 [Preset]
+name = "x3"
+$mod = 3
+
+[Preset]
 name = "x5"
 $mod = 5
 
