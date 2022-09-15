@@ -22,3 +22,7 @@ $mod = 0.5
 [Preset]
 name = "Speed x3"
 $mod = 0.33
+
+[Preset]
+name = "CHEAT x20"
+$mod = 0.05

@@ -54,6 +54,10 @@ name = "Distance x3.0"
 category = "Horizontal Velocity (distance reached)"
 $horz = 3.0
 
+[Preset]
+name = "CHEAT x100.0"
+category = "Horizontal Velocity (distance reached)"
+$horz = 100.0
 
 [Preset]
 name = "Height x1.0 (default)"
