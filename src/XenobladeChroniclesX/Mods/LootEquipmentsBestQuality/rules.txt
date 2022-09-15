@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Equipment - Force Quality"
 path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Quality"
-description = Equipment looted is always of the specified quality (Prime == Intergalactic for Skell weapons) and has always 0-3 augments and 0-3 extra free slots.||Recommended to leave Number of Slots at 1 because Armor can normally only have 1 slot.
+description = Equipment looted is always of the specified quality (Prime = Intergalactic for Skell weapons) and always has 0-3 augments and 0-3 extra free slots.||Armor can normally only have 1 slot, so setting 2/3 slots will create cheat equipment.
 version = 6
 
 [Default]

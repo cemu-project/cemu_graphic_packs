@@ -53,8 +53,12 @@
 
 ### HUD mods
 - **Change time anywhere**: Allow to change time of the day from the eManual entry of the main menu.
-- **Freecam**: Look around the world in freecam. 
-    >Hold 'R' to move up, hold 'L' to move down, hold 'X' to keep the camera in place, and hold 'Y' to speed up the camera, hold in the right stick to speed up even more.
+- **Freecam**: Look around the world with the monolith soft developer freecam.
+    >Hold 'R' button to move camera up |
+    >Hold 'L' button to move camera down |
+    >Hold 'X' button to keep camera in place |
+    >Hold 'Y' button to speed up camera |
+    >Tip: Press and hold the R stick button to speed up even more
 - **No Model Fade**: Makes it so that character and skell models don't fade out when the camera gets too close.
 - **Remove Overdrive Blur**: Removes the blur that happens around the screen when you are in Overdrive.
 
