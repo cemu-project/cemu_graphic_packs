@@ -1,13 +1,10 @@
-[XCX_TICKETS_DLC_ALL]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.1U
-
+[XCX_TICKETS_DLC]
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
-
 .int $mission
 
 VarTicketsAmount:
 .int 0
-
 ; ----------------------------------------------------------------------------
 ; WHO  : menu::MenuMultiQuestInfoWindow::displayInfo((menu::MenuObject *,bool))
 ;        menu::MenuMultiQuestResult::setup((void))
@@ -44,23 +41,40 @@ lis       r27, VarTicketsAmount@ha
 lwz       r27, VarTicketsAmount@l(r27)
 blr
 
-[XCX_TICKETS_DLC_1E] ############################################################################################
-moduleMatches = 0xF882D5CF ; 1.0.1E
+_ticketsValueJP:
+lis       r4, VarTicketsAmount@ha
+lwz       r4, VarTicketsAmount@l(r4)
+blr
 
+
+[XCX_TICKETS_DLC_V101E]
+moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 0x02B94718 = bla _ticketsDispBefore
 0x02B9FE2C = bla _ticketsDispAfter
 0x023CC654 = bla _ticketsValue
 
-[XCX_TICKETS_DLC_2U] ############################################################################################
+[XCX_TICKETS_DLC_V102U]
 moduleMatches = 0x30B6E091 ; 1.0.2U
-
 0x02B94708 = bla _ticketsDispBefore
 0x02B9FE1C = bla _ticketsDispAfter
 0x023CC654 = bla _ticketsValue
 
-[XCX_TICKETS_DLC_1U] ############################################################################################
-moduleMatches = 0xAB97DE6B ; 1.0.1U
+[XCX_TICKETS_DLC_V102J]
+moduleMatches = 0x7672271D ; 1.0.2J
+0x02B90654 = bla _ticketsDispBefore
+0x02B9B938 = bla _ticketsDispAfter ;
+0x023CBE48 = bla _ticketsValueJP
+0x023CBF2C = bla _ticketsValueJP
 
+[XCX_TICKETS_DLC_V100U]
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02B9468C = bla _ticketsDispBefore
 0x02B9FD2C = bla _ticketsDispAfter
 0x023CC5E4 = bla _ticketsValue
+
+[XCX_TICKETS_DLC_V100J]
+moduleMatches = 0x785CA8A9 ; 1.0.0J
+0x02B8DDA8 = bla _ticketsDispBefore
+0x02B98F68 = bla _ticketsDispAfter ;
+0x023CB978 = bla _ticketsValueJP
+0x023CBA5C = bla _ticketsValueJP

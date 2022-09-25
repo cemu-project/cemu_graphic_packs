@@ -1,6 +1,5 @@
-[XCX_FPS++_QTE_General] ; ########################################################
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D ; 1.0.1E, 1.0.2U, 1.0.2J
-
+[XCX_FPS++_QTE_General]
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
 
 timingFloatConv:
@@ -76,35 +75,48 @@ _justFrame2:
 
     blr
 
-[XCX_FPS++_QTE_V101E] ; ########################################################
-moduleMatches = 0xF882D5CF ; 1.0.1E
 
+[XCX_FPS++_QTE_V101E] ; ########################################################
+moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 ; menu::MenuButtonChallenge::setup
 0x02ACE40C = lis r7, averageFPS30Inv@ha
 0x02ACE414 = lfs f0, averageFPS30Inv@l(r7)
-
 ; menu::MenuButtonChallenge::move
 0x02ACE6E4 = bla _justFrame1
 0x02ACE700 = bla _justFrame2
 
 [XCX_FPS++_QTE_V102U] ; ########################################################
 moduleMatches = 0x30B6E091 ; 1.0.2U
-
 ; menu::MenuButtonChallenge::setup
 0x02ACE3FC = lis r7, averageFPS30Inv@ha
 0x02ACE404 = lfs f0, averageFPS30Inv@l(r7)
-
 ; menu::MenuButtonChallenge::move
 0x02ACE6D4 = bla _justFrame1
 0x02ACE6F0 = bla _justFrame2
 
-[XCX_FPS++_QTE_V102J]
+[XCX_FPS++_QTE_V102J] ; ########################################################
 moduleMatches = 0x7672271D ; 1.0.2J
-
 ; menu::MenuButtonChallenge::setup
 0x02ACAA38 = lis r7, averageFPS30Inv@ha
 0x02ACAA40 = lfs f0, averageFPS30Inv@l(r7)
-
 ; menu::MenuButtonChallenge::move
 0x02ACAD10 = bla _justFrame1
 0x02ACAD2C = bla _justFrame2
+
+[XCX_FPS++_QTE_V100U] ; ########################################################
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
+; menu::MenuButtonChallenge::setup
+0x02ACE380 = lis r7, averageFPS30Inv@ha
+0x02ACE388 = lfs f0, averageFPS30Inv@l(r7)
+; menu::MenuButtonChallenge::move
+0x02ACE658 = bla _justFrame1
+0x02ACE674 = bla _justFrame2
+
+[XCX_FPS++_QTE_V100J] ; ########################################################
+moduleMatches = 0x785CA8A9 ; 1.0.0J
+; menu::MenuButtonChallenge::setup
+0x02AC8C00 = lis r7, averageFPS30Inv@ha
+0x02AC8C08 = lfs f0, averageFPS30Inv@l(r7)
+; menu::MenuButtonChallenge::move
+0x02AC8ED8 = bla _justFrame1
+0x02AC8EF4 = bla _justFrame2

@@ -1,6 +1,5 @@
 [XCX_FPS++_GameSpeed]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D ; 1.0.1E, 1.0.2U, 1.0.2J
-
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
 
 # Constants
@@ -248,8 +247,8 @@ lwz r10, 0x14(r1)
 blr
 
 
-[XCX_FPS++_GameSpeed_V101E]
-moduleMatches = 0xF882D5CF
+[XCX_FPS++_GameSpeed_V101E] ; #####################################################################################################################################################
+moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 
 ; Global data patch
 0x10171980 = havokHalfSpeed:
@@ -291,8 +290,51 @@ moduleMatches = 0xF882D5CF
 # 0x027A33DC = lfs f1, averageFPS1Inv@l(r10)        ; But introduces shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6Cj
 
 
-[XCX_FPS++_GameSpeed_V102J]
-moduleMatches = 0x7672271D
+[XCX_FPS++_GameSpeed_V102U] ; #####################################################################################################################################################
+moduleMatches = 0x30B6E091 ; 1.0.2U
+
+; Global data patch
+0x10171980 = havokHalfSpeed:
+0x10171980 = .float $fpsLimit
+0x100598E4 = titleScreenSpeed:
+0x100598E4 = .float (30.0/$fpsLimit)
+0x10012644 = soulVoiceSpeed:
+0x10012644 = .float (900/$fpsLimit)
+
+; Instruction-specific patches
+0x02228274 = lis r5, averageFPS0.1@ha             ; Controller acceleration
+0x0222827C = lfs f30, averageFPS0.1@l(r5)         ; Controller acceleration
+0x0273E3CC = lis r7, averageFPS1Inv@ha            ; Sync elevator, vehicles etc
+0x0273E3D0 = lfs f31, averageFPS1Inv@l(r7)        ; Sync elevator, vehicles etc
+0x0276A85C = lis r8, averageFPS1Inv@ha            ; Sync in-game cutscenes
+0x0276A860 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
+0x025F299C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
+0x025F29A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
+# 0x02D39CE0 = lis r12, const_guiSpeed@ha           ; AnimeObject::set
+# 0x02D39CE4 = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
+0x02D202C8 = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
+0x02D202CC = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
+0x02D20394 = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
+0x02D20398 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
+
+; Call GX2SetSwapInterval with 0 which removes any vsync
+0x02FD8A34 = li r3, 0
+; Use FPS waiting logic even with swap interval being 0
+0x02FD59B4 = li r3, 1
+
+0x02FD5A54 = bla _calculateGamespeed
+0x027685B0 = bla _useCutsceneLimit
+0x03AC2790 = bla _usePrerenderedCutsceneLimit
+
+# These patches are replaced by lowering the framerate to prevent side-effects
+# 0x027398B4 = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
+# 0x027398C0 = lfs f1, averageFPS1@l(r11)           ; Double updateEventParam cutscenes
+# 0x027A33D8 = lis r10, averageFPS1Inv@ha           ; Half SyncFrame cinematic cutscene, fixes timing issues with cinematic cutscenes
+# 0x027A33DC = lfs f1, averageFPS1Inv@l(r10)        ; But introduces shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6Cj
+
+
+[XCX_FPS++_GameSpeed_V102J] ; #####################################################################################################################################################
+moduleMatches = 0x7672271D ; 1.0.2J
 
 ; Global data patch
 0x10171570 = havokHalfSpeed:
@@ -334,12 +376,12 @@ moduleMatches = 0x7672271D
 # 0x027A1124 = lfs f1, averageFPS1Inv@l(r10)        ; But introduces shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6Cj
 
 
-[XCX_FPS++_GameSpeed_V102U]
-moduleMatches = 0x30B6E091
+[XCX_FPS++_GameSpeed_V100U] ; #####################################################################################################################################################
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 
 ; Global data patch
-0x10171980 = havokHalfSpeed:
-0x10171980 = .float $fpsLimit
+0x10171880 = havokHalfSpeed:
+0x10171880 = .float $fpsLimit
 0x100598E4 = titleScreenSpeed:
 0x100598E4 = .float (30.0/$fpsLimit)
 0x10012644 = soulVoiceSpeed:
@@ -348,30 +390,73 @@ moduleMatches = 0x30B6E091
 ; Instruction-specific patches
 0x02228274 = lis r5, averageFPS0.1@ha             ; Controller acceleration
 0x0222827C = lfs f30, averageFPS0.1@l(r5)         ; Controller acceleration
-0x0273E3CC = lis r7, averageFPS1Inv@ha            ; Sync elevator, vehicles etc
-0x0273E3D0 = lfs f31, averageFPS1Inv@l(r7)        ; Sync elevator, vehicles etc
-0x0276A85C = lis r8, averageFPS1Inv@ha            ; Sync in-game cutscenes
-0x0276A860 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
-0x025F299C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
-0x025F29A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
-# 0x02D39CE0 = lis r12, const_guiSpeed@ha           ; AnimeObject::set
-# 0x02D39CE4 = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
-0x02D202C8 = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
-0x02D202CC = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
-0x02D20394 = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
-0x02D20398 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
+0x0273E36C = lis r7, averageFPS1Inv@ha            ; Sync elevator, vehicles etc
+0x0273E370 = lfs f31, averageFPS1Inv@l(r7)        ; Sync elevator, vehicles etc
+0x0276A7FC = lis r8, averageFPS1Inv@ha            ; Sync in-game cutscenes
+0x0276A800 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
+0x025F292C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
+0x025F2934 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
+# 0x02D39B68 = lis r12, const_guiSpeed@ha           ; AnimeObject::set
+# 0x02D39B6C = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
+0x02D20150 = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
+0x02D20154 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
+0x02D2021C = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
+0x02D20220 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
 
 ; Call GX2SetSwapInterval with 0 which removes any vsync
-0x02FD8A34 = li r3, 0
+0x02FD88BC = li r3, 0
 ; Use FPS waiting logic even with swap interval being 0
-0x02FD59B4 = li r3, 1
+0x02FD583C = li r3, 1
 
-0x02FD5A54 = bla _calculateGamespeed
-0x027685B0 = bla _useCutsceneLimit
-0x03AC2790 = bla _usePrerenderedCutsceneLimit
+0x02FD58DC = bla _calculateGamespeed
+0x02768550 = bla _useCutsceneLimit
+0x03AC2610 = bla _usePrerenderedCutsceneLimit
 
 # These patches are replaced by lowering the framerate to prevent side-effects
-# 0x027398B4 = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
-# 0x027398C0 = lfs f1, averageFPS1@l(r11)           ; Double updateEventParam cutscenes
-# 0x027A33D8 = lis r10, averageFPS1Inv@ha           ; Half SyncFrame cinematic cutscene, fixes timing issues with cinematic cutscenes
-# 0x027A33DC = lfs f1, averageFPS1Inv@l(r10)        ; But introduces shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6Cj
+# 0x02739854 = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
+# 0x02739860 = lfs f1, averageFPS1@l(r11)           ; Double updateEventParam cutscenes
+# 0x027A3378 = lis r10, averageFPS1Inv@ha           ; Half SyncFrame cinematic cutscene, fixes timing issues with cinematic cutscenes
+# 0x027A337C = lfs f1, averageFPS1Inv@l(r10)        ; But introduces shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6Cj
+
+
+[XCX_FPS++_GameSpeed_V100J] ; #####################################################################################################################################################
+moduleMatches = 0x785CA8A9 ; 1.0.0J
+
+; Global data patch
+0x10171070 = havokHalfSpeed:
+0x10171070 = .float $fpsLimit
+0x10059514 = titleScreenSpeed:
+0x10059514 = .float (30.0/$fpsLimit)
+0x1001260C = soulVoiceSpeed:
+0x1001260C = .float (900/$fpsLimit)
+
+; Instruction-specific patches
+0x02227ABC = lis r5, averageFPS0.1@ha             ; Controller acceleration
+0x02227AC4 = lfs f30, averageFPS0.1@l(r5)         ; Controller acceleration
+0x0273BBD0 = lis r7, averageFPS1Inv@ha            ; Sync elevator, vehicles etc
+0x0273BBD4 = lfs f31, averageFPS1Inv@l(r7)        ; Sync elevator, vehicles etc
+0x02768064 = lis r8, averageFPS1Inv@ha            ; Sync in-game cutscenes
+0x02768068 = lfs f31, averageFPS1Inv@l(r8)        ; Sync in-game cutscenes
+0x025F149C = lis r12, averageFPS1Inv@ha           ; Move__11CfSceneTaskFv ; Filter CPU, 30FPS logic
+0x025F14A4 = lfs f31, averageFPS1Inv@l(r12)       ; Move__11CfSceneTaskFv
+# 0x02D30A10 = lis r12, const_guiSpeed@ha           ; AnimeObject::set
+# 0x02D30A14 = lfs f13, const_guiSpeed@l(r12)       ; AnimeObject::set
+0x02D1709C = lis r12, const_guiSpeed@ha           ; MenuObject::playEvent
+0x02D170A0 = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEvent
+0x02D17168 = lis r12, const_guiSpeed@ha           ; MenuObject::playEventFrame
+0x02D1716C = lfs f31, const_guiSpeed@l(r12)       ; MenuObject::playEventFrame
+
+; Call GX2SetSwapInterval with 0 which removes any vsync
+0x02FCEB9C = li r3, 0
+; Use FPS waiting logic even with swap interval being 0
+0x02FCBB1C = li r3, 1
+
+0x02FCBBBC = bla _calculateGamespeed
+0x02765DB8 = bla _useCutsceneLimit
+0x03AB85A8 = bla _usePrerenderedCutsceneLimit
+
+# These patches are replaced by lowering the framerate to prevent side-effects
+# 0x027370B8 = lis r11, averageFPS1@ha              ; Double updateEventParam cutscenes
+# 0x027370C4 = lfs f1, averageFPS1@l(r11)           ; Double updateEventParam cutscenes
+# 0x027A0180 = lis r10, averageFPS1Inv@ha           ; Half SyncFrame cinematic cutscene, fixes timing issues with cinematic cutscenes
+# 0x027A0184 = lfs f1, averageFPS1Inv@l(r10)        ; But introduces shake and stutter issue. CODE XREF: ev::CEvtManager::startPage((float,bool))+6Cj

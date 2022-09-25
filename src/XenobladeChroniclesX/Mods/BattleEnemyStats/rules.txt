@@ -3,23 +3,43 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Enemy Statistics modificator"
 path = "Xenoblade Chronicles X/Mods/Battle/Enemy Statistics modificator"
 description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary menu.
-version = 5
+version = 6
 
 [Default]
+$mod = 0.001
+
+[Preset]
+name = "Set at 25%"
+$mod = 0.00025
+
+[Preset]
+name = "Set at 50%"
 $mod = 0.0005
 
 [Preset]
-name = Set at 50%
-
-[Preset]
-name = Set at 75%
+name = "Set at 75%"
 $mod = 0.00075
 
 [Preset]
-name = Set at 125%
+name = "Set at 100% (default)"
+default = 1
+
+[Preset]
+name = "Set at 125%"
 $mod = 0.00125
 
 [Preset]
-name = Set at 150%
+name = "Set at 150%"
 $mod = 0.0015
 
+[Preset]
+name = "Set at 200%"
+$mod = 0.002
+
+[Preset]
+name = "Hell: Set at 300%"
+$mod = 0.003
+
+[Preset]
+name = "Impossible: Set at 1000%"
+$mod = 0.01

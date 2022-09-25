@@ -1,6 +1,24 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Soul Challenges - Difficulty"
-path = "Xenoblade Chronicles X/Mods/Battle/Soul Challenges - Difficulty"
-description = Speed of QTE does not increase during battles.
-version = 5
+name = "Soul Challenges - QTE Speed"
+path = "Xenoblade Chronicles X/Mods/Battle/Soul Challenges - QTE Speed"
+description = Speed of QTE does not increase or decrease during battles.
+version = 6
+
+[Default]
+$mod = 1
+
+[Preset]
+name = Slow
+
+[Preset]
+name = Mid
+$mod = 2
+
+[Preset]
+name = Fast
+$mod = 3
+
+[Preset]
+name = Faster
+$mod = 4
