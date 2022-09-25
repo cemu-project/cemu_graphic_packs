@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Enemy aggro reducer"
-path = "Xenoblade Chronicles X/Mods/Battle/Enemy aggro reducer"
+name = "Enemy de-aggro range reducer"
+path = "Xenoblade Chronicles X/Mods/Battle/Enemy de-aggro"
 description = Decrease or increase the distance needed to run to lose aggro from enemies.
 version = 6
 
