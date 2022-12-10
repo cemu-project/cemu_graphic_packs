@@ -6,133 +6,495 @@ description = Allows you to change the game's resolution, shadow quality and ani
 version = 6
 
 [Default]
+$advancedMode:int = 0
 $width = 1920
 $height = 1080
 $gameWidth = 1920
 $gameHeight = 1080
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
 $shadowQuality = 1
 $anisotropy = 1
 
-# Resolution
+
+# Settings Mode
+
+[Preset]
+name = Disabled
+category = Additional Downsampling Resolutions
+default = 1
+
+[Preset]
+name = Enabled
+category = Additional Downsampling Resolutions
+$advancedMode:int = 1
+
+
+# Aspect Ratio
+
+[Preset]
+name = 16:9 (Default)
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+
+#[Preset]
+#name = 16:10
+#category = Aspect Ratio
+#$aspectRatioWidth = 16
+#$aspectRatioHeight = 10
+
+[Preset]
+name = 21:9
+category = Aspect Ratio
+$aspectRatioWidth = 21
+$aspectRatioHeight = 9
+
+[Preset]
+name = 32:9
+category = Aspect Ratio
+$aspectRatioWidth = 32
+$aspectRatioHeight = 9
+
+[Preset]
+name = 32:10
+category = Aspect Ratio
+$aspectRatioWidth = 32
+$aspectRatioHeight = 10
+
+[Preset]
+name = 48:9
+category = Aspect Ratio
+$aspectRatioWidth = 48
+$aspectRatioHeight = 9
+
+#[Preset]
+#name = 4:3
+#category = Aspect Ratio
+#$aspectRatioWidth = 4
+#$aspectRatioHeight = 3
+
+#[Preset]
+#name = 5:4
+#category = Aspect Ratio
+#$aspectRatioWidth = 5
+#$aspectRatioHeight = 4
+
+
+# 16:9 Resolutions
+
+[Preset]
+name = 320x180
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 320
+$height = 180
 
 [Preset]
 name = 640x360
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 640
 $height = 360
 
 [Preset]
 name = 960x540
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 960
 $height = 540
 
 [Preset]
-name = 1280x720 (HD)
+name = 1280x720 (HD, Default)
 category = Resolution
-$width = 1280
-$height = 720
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+default = 1
 
 [Preset]
 name = 1600x900 (HD+)
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 1600
 $height = 900
 
 [Preset]
 name = 1920x1080 (Full HD)
 category = Resolution
-default = 1
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 1920
+$height = 1080
 
 [Preset]
 name = 2560x1440 (2K)
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 2560
 $height = 1440
 
 [Preset]
-category = Resolution
 name = 3200x1800
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 3200
 $height = 1800
 
 [Preset]
 name = 3840x2160 (4K)
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 3840
 $height = 2160
 
 [Preset]
 name = 5120x2880 (5K)
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 5120
 $height = 2880
 
 [Preset]
 name = 7680x4320 (8K)
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 7680
 $height = 4320
 
 [Preset]
 name = 10240x5760 (10K)
 category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 10240
 $height = 5760
 
-# Shadow Quality
+# 16:10 Resolutions
+
+[Preset]
+name = 1280x800
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1280
+$height = 800
+
+[Preset]
+name = 1440x900
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1440
+$height = 900
+
+[Preset]
+name = 1680x1050
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1680
+$height = 1050
+
+[Preset]
+name = 1920x1200
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1920
+$height = 1200
+
+[Preset]
+name = 2560x1600
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 2560
+$height = 1600
+
+[Preset]
+name = 2880x1800
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 2880
+$height = 1800
+
+[Preset]
+name = 3840x2400
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 3840
+$height = 2400
+
+[Preset]
+name = 5120x3200
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 5120
+$height = 3200
+
+# 21:9 Resolutions
+
+[Preset]
+name = 1720x720
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 1720
+$height = 720
+
+[Preset]
+name = 2100x900
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 2100
+$height = 900
+
+[Preset]
+name = 2560x1080
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 2560
+$height = 1080
+
+[Preset]
+name = 3440x1440
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 3440
+$height = 1440
+
+[Preset]
+name = 3440x1440 (150% downsample from 5160x2160)
+category = Resolution
+condition = ($advancedMode == 1) + ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 3
+$width = 5160
+$height = 2160
+
+[Preset]
+name = 3840x1600
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 3840
+$height = 1600
+
+[Preset]
+name = 4300x1800
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 4300
+$height = 1800
+
+[Preset]
+name = 5120x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 5120
+$height = 2160
+
+[Preset]
+name = 6880x2880
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 6880
+$height = 2880
+
+[Preset]
+name = 10240x4320
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 10240
+$height = 4320
+
+# 32:9 Resolutions
+
+[Preset]
+name = 3840x1080
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 3840
+$height = 1080
+
+[Preset]
+name = 5120x1440
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 5120
+$height = 1440
+
+[Preset]
+name = 7680x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 7680
+$height = 2160
+
+[Preset]
+name = 10240x2880
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 10240
+$height = 2880
+
+# 31:10 Resolutions
+
+[Preset]
+name = 3840x1200
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 3840
+$height = 1200
+
+[Preset]
+name = 5760x1800
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 5760
+$height = 1800
+
+[Preset]
+name = 7680x2400
+category = Resolution
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 7680
+$height = 2400
+
+# 48:9 Resolutions
+
+[Preset]
+name = 5760x1080
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 5760
+$height = 1080
+
+[Preset]
+name = 7680x1440
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 7680
+$height = 1440
+
+[Preset]
+name = 11520x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 11520
+$height = 2160
+
+# 4:3 Resolutions
+
+[Preset]
+name = 800x600
+category = Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 800
+$height = 600
+
+[Preset]
+name = 1024x768
+category = Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1024
+$height = 768
+
+[Preset]
+name = 1280x960
+category = Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1280
+$height = 960
+
+[Preset]
+name = 1600x1200
+category = Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1600
+$height = 1200
+
+[Preset]
+name = 1920x1440
+category = Resolution
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+$width = 1920
+$height = 1440
+
+# 5:4 Resolutions
+
+[Preset]
+name = 1280x1024
+category = Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 1280
+$height = 1024
+
+[Preset]
+name = 5760x1080 (3 Full HD )
+category = Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 5760
+$height = 1080
+
+[Preset]
+name = 8640x1620
+category = Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 8640
+$height = 1620
+
+[Preset]
+name = 14400x2700
+category = Resolution
+condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
+$width = 14400
+$height = 2700
+
+
+# Shadows
 
 [Preset]
 name = Low (50%)
-category = Shadow Quality
+category = Shadows
 $shadowQuality = 0.5
 
 [Preset]
 name = Medium (100%, Default)
-category = Shadow Quality
+category = Shadows
 default = 1
 
 [Preset]
 name = High (200%)
-category = Shadow Quality
+category = Shadows
 $shadowQuality = 2
 
 [Preset]
 name = Ultra (300%)
-category = Shadow Quality
+category = Shadows
 $shadowQuality = 3
 
 [Preset]
 name = Extreme (400%, Unstable)
-category = Shadow Quality
+category = Shadows
 $shadowQuality = 4
 
-# Anisotropic Filtering Quality
+
+# Anisotropic Filtering
 
 [Preset]
-name = 1x
-category = Anisotropic Filtering Quality
+name = 1x (Default)
+category = Anisotropic Filtering
 default = 1
 
 [Preset]
 name = 2x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 2
 
 [Preset]
 name = 4x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 4
 
 [Preset]
 name = 8x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 8
 
 [Preset]
 name = 16x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering
 $anisotropy = 16
+
 
 
 # Anisotropic Filtering

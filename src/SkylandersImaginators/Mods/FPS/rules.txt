@@ -1,0 +1,76 @@
+[Definition]
+titleIds = 00050000101F4D00,00050000101FB100
+name = FPS
+path = "Skylanders Imaginators/Mods/FPS"
+description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00.
+version = 6
+
+[Default]
+$targetFPS:int = 60
+
+
+# FPS Limit
+
+[Preset]
+name= 244 FPS
+category = FPS Limit
+$targetFPS:int = 244
+
+[Preset]
+name= 165 FPS
+category = FPS Limit
+$targetFPS:int = 165
+
+[Preset]
+name = 144 FPS
+category = FPS Limit
+$targetFPS:int = 144
+
+[Preset]
+name = 120 FPS
+category = FPS Limit
+$targetFPS:int = 120
+
+[Preset]
+name = 100 FPS
+category = FPS Limit
+$targetFPS:int = 100
+
+[Preset]
+name = 85 FPS
+category = FPS Limit
+$targetFPS:int = 85
+
+[Preset]
+name = 75 FPS
+category = FPS Limit
+$targetFPS:int = 75
+
+[Preset]
+name = 72 FPS
+category = FPS Limit
+$targetFPS:int = 72
+
+[Preset]
+name = 60 FPS
+category = FPS Limit
+$targetFPS:int = 60
+
+[Preset]
+name = 40 FPS
+category = FPS Limit
+$targetFPS:int = 40
+
+[Preset]
+name = 30 FPS (Default)
+category = FPS Limit
+default = 1
+
+[Preset]
+name = 20 FPS
+category = FPS Limit
+$targetFPS:int = 20
+
+
+[Control]
+vsyncFrequency = 2*$targetFPS

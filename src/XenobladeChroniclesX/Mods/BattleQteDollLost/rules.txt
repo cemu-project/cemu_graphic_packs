@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Soul Challenges - Skell restored"
-path = "Xenoblade Chronicles X/Mods/Battle/Soul Challenges - Skell restored"
+name = "Soul Challenges - Skell auto restore"
+path = "Xenoblade Chronicles X/Mods/Battle/Soul Challenges - Skell auto restore"
 description = When your Skell is destroyed and the insurance is still valid, the Skell is automatically restored (use fast travel or die to get it back).
-version = 5
+version = 6

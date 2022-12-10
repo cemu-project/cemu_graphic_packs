@@ -1,0 +1,561 @@
+[Definition]
+titleIds = 000500001012f000,00050000101d6000,00050000101e4100,00050000101FED00
+name = Resolution
+path = "FAST Racing NEO/Graphics"
+description = Changes the resolution of the game.||Made by M&&M and getdls.
+version = 5
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$anisotropy = 1
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = TV Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution
+name = 854x480
+$width = 854
+$height = 480
+
+[Preset]
+category = TV Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720
+default = 1
+
+[Preset]
+category = TV Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+[Preset]
+category = TV Resolution
+name = 1280x800 (16:10)
+$width = 1280
+$height = 800
+
+[Preset]
+category = TV Resolution
+name = 1680x1050 (16:10)
+$width = 1680
+$height = 1050
+
+[Preset]
+category = TV Resolution
+name = 1680x1080 (16:10)
+$width = 1680
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 1920x1200 (16:10)
+$width = 1920
+$height = 1200
+
+[Preset]
+category = TV Resolution
+name = 1920x1224 (16:10)
+$width = 1920
+$height = 1224
+
+[Preset]
+category = TV Resolution
+name = 2880x1800 (16:10)
+$width = 2880
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 2560x1656 (16:10)
+$width = 2560
+$height = 1656
+
+[Preset]
+category = TV Resolution
+name = 2560x1080 (21:9)
+$width = 2560
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 5120x2160 (21:9)
+$width = 5120
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+
+[Preset]
+category = TV Resolution
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution
+name = 320x180
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+category = Gamepad Resolution
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution
+name = 854x480
+default = 1
+
+[Preset]
+category = Gamepad Resolution
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution
+name = 1280x720
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+category = Gamepad Resolution
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+[Preset]
+category = Gamepad Resolution
+name = 1280x800 (16:10)
+$padWidth = 1280
+$padHeight = 800
+
+[Preset]
+category = Gamepad Resolution
+name = 1680x1050 (16:10)
+$padWidth = 1680
+$padHeight = 1050
+
+[Preset]
+category = Gamepad Resolution
+name = 1680x1080 (16:10)
+$padWidth = 1680
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1200 (16:10)
+$padWidth = 1920
+$padHeight = 1200
+
+[Preset]
+category = Gamepad Resolution
+name = 1920x1224 (16:10)
+$padWidth = 1920
+$padHeight = 1224
+
+[Preset]
+category = Gamepad Resolution
+name = 2880x1800 (16:10)
+$padWidth = 2880
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1656 (16:10)
+$padWidth = 2560
+$padHeight = 1656
+
+[Preset]
+category = Gamepad Resolution
+name = 2560x1080 (21:9)
+$padWidth = 2560
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 3440x1440 (21:9)
+$padWidth = 3440
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x2160 (21:9)
+$padWidth = 5120
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution
+name = 3840x1080 (32:9)
+$padWidth = 3840
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution
+name = 5120x1440 (32:9)
+$padWidth = 5120
+$padHeight = 1440
+
+# Anisotropic Filtering Quality
+
+[Preset]
+name = 1x
+category = Anisotropic Filtering Quality
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering Quality
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering Quality
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering Quality
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering Quality
+$anisotropy = 16
+ 
+
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+tileModesExcluded = 0x1 # ignore cpu processed textures
+formatsExcluded = 0x1,0x11,0x19,0x1a,0x1f,0x21f,0x122,0x806,0x80e,0x810,0x816,0x81e,0x820,0x823 # ignore viewports and cubemaps
+overwriteAnisotropy = $anisotropy
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 720
+formatsExcluded = 0x41a
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 720
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 720
+formats = 0x41a
+inMEM1 = 1
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 720
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 592
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 592
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 580
+overwriteWidth = ($width / $gameWidth) * 1280
+overwriteHeight = ($height / $gameHeight) * 580
+
+[TextureRedefine] # Light Shafts Pass
+width = 1024
+height = 512
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * 1024
+overwriteHeight = ($height / $gameHeight) * 512
+
+[TextureRedefine] # Gamepad Resolution
+width = 864
+height = 480
+overwriteWidth = ($padWidth / $gamePadWidth) * 864
+overwriteHeight = ($padHeight / $gamePadHeight) * 480
+
+[TextureRedefine] # Gamepad Resolution
+width = 854
+height = 480
+overwriteWidth = ($padWidth / $gamePadWidth) * 854
+overwriteHeight = ($padHeight / $gamePadHeight) * 480
+
+[TextureRedefine] # 0.5.x main
+width = 640
+height = 720
+#formats = 0x816,0x001,0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # 0.5.x main 8 rounding
+width = 640
+height = 592
+#formats = 0x816,0x001,0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 592
+
+[TextureRedefine] # 0.5.x main
+width = 640
+height = 580
+#formats = 0x816,0x001,0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 580
+
+[TextureRedefine] # Bloom Pass
+width = 640
+height = 368
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 368
+
+[TextureRedefine] # Bloom Pass
+width = 640
+height = 360
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 360
+
+[TextureRedefine] # Bloom Pass
+width = 640
+height = 304
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 304
+
+[TextureRedefine] # Bloom Pass
+width = 640
+height = 290
+overwriteWidth = ($width / $gameWidth) * 640
+overwriteHeight = ($height / $gameHeight) * 290
+
+[TextureRedefine] # Light Shafts Pass Mip
+width = 512
+height = 512
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * 512
+overwriteHeight = ($height / $gameHeight) * 512
+
+[TextureRedefine] # Light Shafts Pass Mip
+width = 512
+height = 256
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * 512
+overwriteHeight = ($height / $gameHeight) * 256
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 368
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 368
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 360
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 360
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 192
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 192
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 180
+formatsExcluded = 0x41a
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 180
+
+[TextureRedefine] # Light Shafts Pass Mip
+width = 256
+height = 256
+formats = 0x1
+overwriteWidth = ($width / $gameWidth) * 256
+overwriteHeight = ($height / $gameHeight) * 256
+
+[TextureRedefine] # Bloom Pass Mip
+width = 160
+height = 96
+overwriteWidth = ($width / $gameWidth) * 160
+overwriteHeight = ($height / $gameHeight) * 96
+
+[TextureRedefine] # Bloom Pass Mip
+width = 160
+height = 90
+overwriteWidth = ($width / $gameWidth) * 160
+overwriteHeight = ($height / $gameHeight) * 90
+
+[TextureRedefine] # Bloom Pass Mip
+width = 96
+height = 48
+overwriteWidth = ($width / $gameWidth) * 96
+overwriteHeight = ($height / $gameHeight) * 48
+
+[TextureRedefine] # Bloom Pass Mip
+width = 80
+height = 45
+overwriteWidth = ($width / $gameWidth) * 80
+overwriteHeight = ($height / $gameHeight) * 45
+
+[TextureRedefine] # Bloom Pass Mip
+width = 64
+height = 32
+formats = 0x816
+overwriteWidth = ($width / $gameWidth) * 64
+overwriteHeight = ($height / $gameHeight) * 32
+
+[TextureRedefine] # Bloom Pass Mip
+width = 40
+height = 22
+overwriteWidth = ($width / $gameWidth) * 40
+overwriteHeight = ($height / $gameHeight) * 22
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 160
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 160
+
+[TextureRedefine] # Bloom Pass Mip
+width = 320
+height = 145
+overwriteWidth = ($width / $gameWidth) * 320
+overwriteHeight = ($height / $gameHeight) * 145
+
+[TextureRedefine] # Bloom Pass Mip
+width = 160
+height = 80
+overwriteWidth = ($width / $gameWidth) * 160
+overwriteHeight = ($height / $gameHeight) * 80
+
+[TextureRedefine] # Bloom Pass Mip
+width = 160
+height = 72
+overwriteWidth = ($width / $gameWidth) * 160
+overwriteHeight = ($height / $gameHeight) * 72
+
+[TextureRedefine] # Bloom Pass Mip
+width = 96
+height = 48
+overwriteWidth = ($width / $gameWidth) * 96
+overwriteHeight = ($height / $gameHeight) * 48
+
+[TextureRedefine] # Bloom Pass Mip
+width = 80
+height = 36
+overwriteWidth = ($width / $gameWidth) * 80
+overwriteHeight = ($height / $gameHeight) * 36
+
+[TextureRedefine] # Bloom Pass Mip
+width = 40
+height = 18
+overwriteWidth = ($width / $gameWidth) * 40
+overwriteHeight = ($height / $gameHeight) * 18

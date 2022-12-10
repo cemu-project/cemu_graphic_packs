@@ -1,0 +1,137 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
+
+// shader 74681a5c2af57975
+// Used for: Vertical bloom blur
+float resYScale = float($height)/float($gameHeight);
+
+
+#ifdef VULKAN
+layout(set = 1, binding = 1) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[1];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[1];
+uniform vec2 uf_fragCoordScale;
+#endif
+// uf_fragCoordScale was moved to the ufBlock
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+layout(location = 0) in vec4 passParameterSem133;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){return mix(0.0, a*b, (a != 0.0) && (b != 0.0));}
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem133;
+// 0
+R2f.x = R0f.x + 0.0;
+R2f.y = R0f.y + 0.0;
+R127f.z = 0.0;
+PV0f.z = R127f.z;
+PV0f.w = intBitsToFloat(uf_remappedPS[0].w)/resYScale * intBitsToFloat(0xc0500000);
+PS0f = intBitsToFloat(uf_remappedPS[0].w)/resYScale * intBitsToFloat(0xbfb1eb85);
+// 1
+R1f.x = PV0f.z + R0f.x;
+R1f.y = PV0f.w + R0f.y;
+R0f.z = PV0f.z + R0f.x;
+R0f.w = PS0f + R0f.y;
+PS1f = intBitsToFloat(uf_remappedPS[0].w)/resYScale * intBitsToFloat(0x3fb1eb85);
+// 2
+R3f.x = R127f.z + R0f.x;
+R3f.y = PS1f + R0f.y;
+PV0f.z = intBitsToFloat(uf_remappedPS[0].w)/resYScale * intBitsToFloat(0x40500000);
+R4f.w = R127f.z + R0f.x;
+// 3
+R4f.y = PV0f.z + R0f.y;
+R1f.xyzw = (texture(textureUnitPS0, R1f.xy).xyzw);
+R2f.xyzw = (texture(textureUnitPS0, R2f.xy).xyzw);
+R0f.xyzw = (texture(textureUnitPS0, R0f.zw).xyzw);
+R3f.xyzw = (texture(textureUnitPS0, R3f.xy).xyzw);
+R4f.xyzw = (texture(textureUnitPS0, R4f.wy).xyzw);
+// 0
+PV0f.x = R1f.z * intBitsToFloat(0x3d9958bf);
+PV0f.y = R1f.y * intBitsToFloat(0x3d9958bf);
+PV0f.z = R1f.x * intBitsToFloat(0x3d9958bf);
+PV0f.w = R1f.w * intBitsToFloat(0x3d9958bf);
+// 1
+R123f.x = (R2f.z * intBitsToFloat(0x3e658dc4) + PV0f.x);
+PV1f.x = R123f.x;
+R123f.y = (R2f.y * intBitsToFloat(0x3e658dc4) + PV0f.y);
+PV1f.y = R123f.y;
+R123f.z = (R2f.x * intBitsToFloat(0x3e658dc4) + PV0f.z);
+PV1f.z = R123f.z;
+R123f.w = (R2f.w * intBitsToFloat(0x3e658dc4) + PV0f.w);
+PV1f.w = R123f.w;
+// 2
+R123f.x = (R0f.w * intBitsToFloat(0x3ea04663) + PV1f.w);
+PV0f.x = R123f.x;
+R123f.y = (R0f.z * intBitsToFloat(0x3ea04663) + PV1f.x);
+PV0f.y = R123f.y;
+R123f.z = (R0f.y * intBitsToFloat(0x3ea04663) + PV1f.y);
+PV0f.z = R123f.z;
+R123f.w = (R0f.x * intBitsToFloat(0x3ea04663) + PV1f.z);
+PV0f.w = R123f.w;
+// 3
+R123f.x = (R3f.z * intBitsToFloat(0x3ea04663) + PV0f.y);
+PV1f.x = R123f.x;
+R123f.y = (R3f.y * intBitsToFloat(0x3ea04663) + PV0f.z);
+PV1f.y = R123f.y;
+R123f.z = (R3f.x * intBitsToFloat(0x3ea04663) + PV0f.w);
+PV1f.z = R123f.z;
+R123f.w = (R3f.w * intBitsToFloat(0x3ea04663) + PV0f.x);
+PV1f.w = R123f.w;
+// 4
+backupReg0f = R4f.x;
+backupReg1f = R4f.y;
+backupReg2f = R4f.z;
+backupReg3f = R4f.w;
+R4f.x = (backupReg0f * intBitsToFloat(0x3d9958bf) + PV1f.z);
+R4f.y = (backupReg1f * intBitsToFloat(0x3d9958bf) + PV1f.y);
+R4f.z = (backupReg2f * intBitsToFloat(0x3d9958bf) + PV1f.x);
+R4f.w = (backupReg3f * intBitsToFloat(0x3d9958bf) + PV1f.w);
+// export
+passPixelColor0 = vec4(R4f.x, R4f.y, R4f.z, R4f.w);
+}

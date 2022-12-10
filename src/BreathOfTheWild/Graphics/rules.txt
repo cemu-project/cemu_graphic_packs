@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Graphics
 path = "The Legend of Zelda: Breath of the Wild/Graphics"
 description = Allows you to change the game resolution, shadow resolution and anti-aliasing.||Made by Kiri, Skalfate, rajkosto and NAVras.
-version = 6
+version = 7
 
 [Default]
 $width = 1280
@@ -12,60 +12,83 @@ $gameWidth = 1280
 $gameHeight = 720
 $aspectRatioWidth = 16
 $aspectRatioHeight = 9
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 $fxaa:int = 1
 $shadowRes = 1
 $subPix:int = 1.0
 $edgeThreshold:int = 0.125
 $edgeThresholdMin:int = 0.0156
 
+$shadowNearbyStart = 1.0 # the starting distance should be kept at 1.0
+$shadowNearbyEnd = 1.0
+$shadowFarStart = 1.0
+$shadowFarEnd = 1.0
+
+# Should be set to 1 or 2 (changes verbosity of loggin) when trying to log the layout of panes while they're getting loaded for debugging purposes
+$enableUltrawideDebugLogging:int = 0
 
 # Aspect Ratio
 
 [Preset]
 name = 16:9 (Default)
 category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 [Preset]
 name = 16:10
 category = Aspect Ratio
 $aspectRatioWidth = 16
 $aspectRatioHeight = 10
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 [Preset]
 name = 21:9
 category = Aspect Ratio
 $aspectRatioWidth = 21
 $aspectRatioHeight = 9
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 32:9
 category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 9
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 32:10
 category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 10
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 48:9
 category = Aspect Ratio
 $aspectRatioWidth = 48
 $aspectRatioHeight = 9
+$showUltrawideOptions:int = 1
 
 [Preset]
 name = 4:3
 category = Aspect Ratio
 $aspectRatioWidth = 4
 $aspectRatioHeight = 3
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 [Preset]
 name = 5:4
 category = Aspect Ratio
 $aspectRatioWidth = 5
 $aspectRatioHeight = 4
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
 
 # 16:9 Resolutions
 
@@ -155,6 +178,13 @@ $height = 5760
 # 16:10 Resolutions
 
 [Preset]
+name = 1280x800
+category = Resolution
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+$width = 1280
+$height = 800
+
+[Preset]
 name = 1440x900
 category = Resolution
 condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
@@ -204,6 +234,20 @@ $width = 5120
 $height = 3200
 
 # 21:9 Resolutions
+
+[Preset]
+name = 1720x720
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 1720
+$height = 720
+
+[Preset]
+name = 2100x900
+category = Resolution
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 2100
+$height = 900
 
 [Preset]
 name = 2560x1080
@@ -294,7 +338,7 @@ $width = 3840
 $height = 1200
 
 [Preset]
-name = 5760x1200
+name = 5760x1800
 category = Resolution
 condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 $width = 5760
@@ -315,6 +359,20 @@ category = Resolution
 condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 $width = 5760
 $height = 1080
+
+[Preset]
+name = 7680x1440
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 7680
+$height = 1440
+
+[Preset]
+name = 11520x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+$width = 11520
+$height = 2160
 
 # 4:3 Resolutions
 
@@ -383,6 +441,27 @@ condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) =
 $width = 14400
 $height = 2700
 
+# Ultrawide Mode Options
+
+[Preset]
+name = Edge HUD (Default)
+category = Ultrawide HUD Mode
+condition = $showUltrawideOptions == 1
+$ultrawideHUDMode:int = 1
+default = 1
+
+[Preset]
+name = Centered HUD
+category = Ultrawide HUD Mode
+condition = $showUltrawideOptions == 1
+$ultrawideHUDMode:int = 2
+
+[Preset]
+name = No HUD Fixes (stretched HUD)
+condition = $showUltrawideOptions == 1
+category = Ultrawide HUD Mode
+$ultrawideHUDMode:int = 0
+
 # Anti-Aliasing
 
 [Preset]
@@ -426,6 +505,51 @@ $shadowRes = 3
 name = Extreme (400%, Unstable)
 category = Shadows
 $shadowRes = 4
+
+# Shadow Draw Distance
+
+[Preset]
+category = Shadow Draw Distance
+name = Low (Low Draw Distance, Sharp Shadows)
+$shadowNearbyEnd = 0.6
+$shadowFarStart = 0.6
+$shadowFarEnd = 0.75
+
+[Preset]
+name = Medium (Lower Draw Distance, Sharper Shadows)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 0.8
+$shadowFarStart = 0.8
+$shadowFarEnd = 0.9
+
+[Preset]
+name = High (Default)
+category = Shadow Draw Distance
+default = 1
+
+[Preset]
+name = Very High (Recommended)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 1.25
+$shadowFarStart = 1.25
+$shadowFarEnd = 1.30
+
+[Preset]
+name = Ultra (Higher Draw Distance, Slightly Blurrier Shadows)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 1.3
+$shadowFarStart = 1.3
+$shadowFarEnd = 1.5
+
+[Preset]
+name = Extreme (Higher Draw Distance, Blurry Shadows)
+category = Shadow Draw Distance
+$shadowNearbyEnd = 1.4
+$shadowFarStart = 1.4
+$shadowFarEnd = 1.55
+
+
+# Texture Changes
 
 # All 720p textures:
 # - 0x001=World Lighting Red8

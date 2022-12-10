@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
-name = TV Resolution, Gamepad Resolution, Shadow Quality and Blur Quality
+name = Graphic Options
 path = "New Super Mario Bros. U/Graphics"
-description = Changes the TV/Gamepad resolution of the game. You can also adjust the quality of the shadows and blur.||Made by getdls.
+description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, and blur intensity.||Made by getdls.
 version = 6
 
 [Default]
@@ -14,15 +14,11 @@ $gameWidth = 1280
 $gameHeight = 720
 $gamePadWidth = 854
 $gamePadHeight = 480
-$shadowRes = 1
+$shadowQuality = 1
 $blurQuality = 0.0
 
 
 # TV Resolution
-
-[Preset]
-category = TV Resolution
-name = 1280x720 (Default)
 
 [Preset]
 category = TV Resolution
@@ -35,6 +31,11 @@ category = TV Resolution
 name = 960x540
 $width = 960
 $height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720
+default = 1
 
 [Preset]
 category = TV Resolution
@@ -82,14 +83,15 @@ $height = 4320
 # Gamepad Resolution
 
 [Preset]
-name = 854x480 (Default)
-category = Gamepad Resolution
-
-[Preset]
 category = Gamepad Resolution
 name = 640x360
 $padWidth = 640
 $padHeight = 360
+
+[Preset]
+name = 854x480
+category = Gamepad Resolution
+default = 1
 
 [Preset]
 category = Gamepad Resolution
@@ -143,36 +145,37 @@ $padHeight = 4320
 # Shadow Quality
 
 [Preset]
+name = Low
 category = Shadow Quality
-name = Low (50%)
-$shadowRes = 0.5
+$shadowQuality = 0.5
 
 [Preset]
+name = Medium
 category = Shadow Quality
-name = Medium (100%, Default)
 default = 1
 
 [Preset]
+name = High
 category = Shadow Quality
-name = High (200%)
-$shadowRes = 2
+$shadowQuality = 2
 
 [Preset]
+name = Ultra
 category = Shadow Quality
-name = Ultra (300%)
-$shadowRes = 3
+$shadowQuality = 3
 
 [Preset]
+name = Extreme
 category = Shadow Quality
-name = Extreme (400%, Unstable)
-$shadowRes = 4
+$shadowQuality = 4
 
 
 # Blur Quality
 
 [Preset]
 category = Blur Quality
-name = Medium (Default)
+name = Medium
+default = 1
 
 [Preset]
 category = Blur Quality
@@ -218,8 +221,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = $shadowRes * 1024
-overwriteHeight = $shadowRes * 1024
+overwriteWidth = $shadowQuality * 1024
+overwriteHeight = $shadowQuality * 1024
 
 [TextureRedefine] # Gamepad
 width = 864

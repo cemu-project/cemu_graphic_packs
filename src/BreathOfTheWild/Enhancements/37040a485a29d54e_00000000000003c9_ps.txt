@@ -35,8 +35,8 @@
 	// Survival of the Wild Preset (Warmer) 12
 	// Survival of the Wild Preset (Colder) 13
 	// Godot's Mexican Preset 14
-	// BSOD Gaming Preset 15
-	// Hexaae's Clear Preset 16
+	// Hexaae's Clear Preset 15
+	// MaranBr Preset (Little More Intense) 16
 	
 //##########################################################													   
 
@@ -55,7 +55,7 @@
 #define adjust_bloom 1 // 0: disable, 1: enable.
 
 //BloomFactor
-const float bloomFactor = 0.020;                       // Default is 0.020 (rough estimate based on Switch)
+const float bloomFactor = 1.00;                        // Default is 1.00
 
 #define HDRpassing 0 // 0: disable, 1: enable.
 
@@ -100,7 +100,7 @@ const float crushContrast = 0.000;                     // 0.0 is neutral. Use sm
 #define post_process 0
 
 //----------------"BotW original" vibrance adjust-------------//
-const float satFactor = 0.25;   // 0.18 is neutral. Experimental, adjust native saturation
+const float satFactor = 0.18;   // 0.18 is default. Experimental, adjust native saturation
 //------------------------------------------------------------//
 
 #define blacknwhitepass 0                                   // 0: disable, 1: enable.
@@ -1131,75 +1131,7 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 0.8;
 	float DPX_Strength = 0.10;
 
-#elif (Preset == 15) //BSoD Gaming
-
-	#define adjust_bloom 1 
-	const float bloomFactor = 0.010;
-	#define HDRpassing 1 													 
-	const float HDRPower = 1.085;
-	const float radius1 = 0.793;
-	const float radius2 = 0.87;
-	#define lumapassing 1 													   
-	const float sharp_strength = 0.25;
-	const float sharp_clamp = 0.085;
-	const float offset_bias = 1.0;
-	#define Tone_map 8                                     
-	const float Exposure = 0.6;
-	const float Bleach = 0.3;
-	const float Gamma = 1.00;
-	const float defog = 0.004;
-	vec3 FogColor = vec3(1.0, 1.5, 1.7);
-	const float sat = 0.050;
-	const float crushContrast = 0.000;
-	#define post_process 0
-	const float satFactor = 0.25;
-	#define blacknwhitepass 0                        
-	const int BlackPoint = 8;
-	const int WhitePoint = 235;
-	#define lggpass 1 
-	vec3 RGB_Lift = vec3(0.994, 0.994, 0.994);
-	vec3 RGB_Gamma = vec3(1.0, 0.990, 1.0);
-	vec3 RGB_Gain = vec3(1.0, 0.990, 1.00);
-	#define vibpass 1 
-	const float Vibrance = 0.113;
-	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.0);
-	#define Tech 0 
-	const float Power = 4.0;
-	vec3 RGBNegativeAmount = vec3(0.88, 0.88, 0.88);
-	float Strength = 0.20;
-	#define Techine 0
-	const float Technicolor2_Red_Strength = 0.000;
-	const float Technicolor2_Green_Strength = 0.000;
-	const float Technicolor2_Blue_Strength = 0.000;
-	const float Technicolor2_Brightness = 1.0;
-	const float Technicolor2_Strength = 0.40;
-	const float Technicolor2_Saturation = 0.70;
-	#define cmatrix 0
-	vec3 ColorMatrix_Red = vec3(0.817, 0.183, 0.000);
-	vec3 ColorMatrix_Green = vec3(0.333, 0.667, 0.000);
-	vec3 ColorMatrix_Blue = vec3(0.000, 0.125, 0.875);
-	float CM_Strength = 1.0;
-	#define CurvesPss 0 
-	const float Contrast = 0.65;
-	#define Filmicpass 1 
-	const float Filmic_Contrast = 1.0;
-	const float Filmic_Bleach = 0.0;
-	const float Saturation = -0.15;
-	const float Filmic_Strength = 0.85;
-	const float Fade = 0.4;
-	const float Linearization = 0.5;
-	const float BaseCurve = 1.5;
-	const float BaseGamma = 0.7;
-	const float EffectGamma = 0.68;
-	#define dpxpass 0
-	vec3 RGB_Curve = vec3(8.0, 8.0, 8.0);
-	vec3 RGB_C = vec3(0.36, 0.36, 0.34);
-	float DPX_Contrast = 0.1;
-	float DPX_Saturation = 3.0;
-	float Colorfulness = 2.5;
-	float DPX_Strength = 0.20;
-
-#elif (Preset == 16) //Hexaae's Clear Preset
+#elif (Preset == 15) //Hexaae's Clear Preset
 
 	#define adjust_bloom 1
 	const float bloomFactor = 0.593;
@@ -1266,6 +1198,74 @@ float DPX_Strength = 0.20;
 	float DPX_Saturation = 3.0;
 	float Colorfulness = 2.5;
 	float DPX_Strength = 0.20;
+	
+#elif (Preset == 16) // MaranBr Preset (Little More Intense)
+
+	#define adjust_bloom 1
+	const float bloomFactor = 0.4;
+	#define HDRpassing 1
+	const float HDRPower = 1.15;
+	const float radius1 = 0.793;
+	const float radius2 = 0.87;
+	#define lumapassing 0
+	const float sharp_strength = 0.65;
+	const float sharp_clamp = 0.035;
+	const float offset_bias = 1.0;
+	#define Tone_map 8	
+	const float Exposure = 1.12;
+	const float Bleach = 0.0;
+	const float Gamma = 1.0;
+	const float defog = 0.0;
+	vec3 FogColor = vec3(1.0, 1.0, 1.0);
+	const float sat = 0.0;
+	const float crushContrast = 0.0;
+	#define post_process 0
+	const float satFactor = 0.07;
+	#define blacknwhitepass 0
+	const int BlackPoint = 5;
+	const int WhitePoint = 210;
+	#define lggpass 0
+	vec3 RGB_Lift = vec3(1.027, 1.027, 1.027);
+	vec3 RGB_Gamma = vec3(0.83, 0.83, 0.83);
+	vec3 RGB_Gain = vec3(1.10, 1.10, 1.10);
+	#define vibpass 0
+	const float Vibrance = 0.40;
+	vec3 VibranceRGBBalance = vec3(1.0, 1.0, 1.3);
+	#define Tech 0
+	const float Power = 8.0;
+	vec3 RGBNegativeAmount = vec3(0.88, 0.88, 0.88);
+	float Strength = 0.3;
+	#define Techine 1
+	const float Technicolor2_Red_Strength = 0.0;
+	const float Technicolor2_Green_Strength = 0.0;
+	const float Technicolor2_Blue_Strength = 0.0;
+	const float Technicolor2_Brightness = 0.5;
+	const float Technicolor2_Strength = 1.0;
+	const float Technicolor2_Saturation = 1.0;
+	#define cmatrix 0
+	vec3 ColorMatrix_Red = vec3(0.817, 0.183, 0.000);
+	vec3 ColorMatrix_Green = vec3(0.333, 0.667, 0.000);
+	vec3 ColorMatrix_Blue = vec3(0.000, 0.125, 0.875);
+	float CM_Strength = 1.0;
+	#define CurvesPss 1
+	const float Contrast = 0.32;
+	#define Filmicpass 0
+	const float Filmic_Contrast = 1.03;
+	const float Filmic_Bleach = 0.0;
+	const float Saturation = -0.35;
+	const float Filmic_Strength = 0.60;
+	const float Fade = 0.1;
+	const float Linearization = 1.0;               
+	const float BaseCurve = 1.5;
+	const float BaseGamma = 1.0;
+	const float EffectGamma = 0.68;
+	#define dpxpass 0
+	vec3 RGB_Curve = vec3(8.0, 8.0, 8.0);
+	vec3 RGB_C = vec3(0.36, 0.36, 0.34);
+	float DPX_Contrast = 0.1;
+	float DPX_Saturation = 3.0;
+	float Colorfulness = 2.5;
+	float DPX_Strength = 0.2;
 	
 #endif
 

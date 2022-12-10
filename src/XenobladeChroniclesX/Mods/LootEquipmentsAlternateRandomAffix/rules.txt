@@ -3,5 +3,18 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Equipment - Alternate random augment selection" 
 path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Alternate random augment selection"
 description = Alternate random selection for augments. Everything above 80% is capped at 80%, and everything else is set to 20%.
-version = 5
+version = 6
 
+[Default]
+$var1 = 80
+$var2 = 80
+$var3 = 20
+
+[Preset]
+name = "80%, 20%" #(recommended)
+
+#[Preset]
+#name = "50%, 50%" #(untested)
+#$var1 = 50
+#$var2 = 50
+#$var3 = 50

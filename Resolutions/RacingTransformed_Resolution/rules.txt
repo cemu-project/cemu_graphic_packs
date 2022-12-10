@@ -1,0 +1,68 @@
+[Definition]
+titleIds = 000500001010B300,0005000010111F00,00050000-10111f00
+name = Resolution
+path = "Sonic & All-Stars Racing Transformed/Graphics/Resolution"
+description = Changes the resolution of the game. Made by DragonZord & Niko
+version = 4
+
+[Preset]
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1920x1080
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1440
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2160
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2880
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+#Final target is 1280x720 by default
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x31
+tileModesExcluded = 0x1
+overwriteWidth = ($width/1280) * 1280
+overwriteHeight  = ($height/720) * 720
+
+#Deferred targets are 1024x576 by default. Scaling with most resolutions cause an edge flickering on one or multiple sides of the screen
+[TextureRedefine]
+width = 1024
+height = 576
+formatsExcluded = 0x31
+tileModesExcluded = 0x1
+overwriteWidth = ($width/$gameWidth) * 680
+overwriteHeight  = ($height/$gameHeight) * 382.5
+
+#We want to retain a high image quality so we apply a neat layer on top
+[TextureRedefine]
+width = 1280
+height = 720
+#formats = 0x80e,0x01a,0x001
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720

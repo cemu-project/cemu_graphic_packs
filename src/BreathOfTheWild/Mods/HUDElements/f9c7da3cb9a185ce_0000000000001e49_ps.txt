@@ -106,7 +106,7 @@ R2i.w = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R127i.x),intBitsToFloat(uf_re
 
 // export
 #if ($hideStamina == 1)
-R2i.xyzw = vec4(0.0);
+R2i.xyzw = ivec4(0.0);
 #endif
 passPixelColor0 = vec4(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z), intBitsToFloat(R2i.w));
 }

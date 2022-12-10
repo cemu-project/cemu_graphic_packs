@@ -1,0 +1,106 @@
+[Definition]
+titleIds = 0005000010142D00
+name = Resolution
+path = "Skylanders: Spyro's Adventure/Graphics"
+description = Changes the resolution of the game.
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+
+# Resolution
+
+[Preset]
+category = Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+default = 1
+
+[Preset]
+category = Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 864
+height = 480
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight  = ($height/$gameHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formatsExcluded = 0x031
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight  = ($height/$gameHeight) * 480
+
+[TextureRedefine]
+width = 640
+height = 360
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight  = ($height/$gameHeight) * 360
+
+[TextureRedefine]
+width = 640
+height = 368
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight  = ($height/$gameHeight) * 368

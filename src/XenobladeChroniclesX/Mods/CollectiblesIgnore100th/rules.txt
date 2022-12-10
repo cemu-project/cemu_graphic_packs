@@ -2,6 +2,15 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Ignore 100th"
 path = "Xenoblade Chronicles X/Mods/Collectibles/Ignore 100th"
-description = Do not collect if you have 99 of the items, and don't sell it (no preset needed).
-version = 5
-	
+description = Ignore items past 99|Do not collect if you have 99 of the item, and don't sell it.||Collect items past 99|Collect even if you have 99 of the item, does not give any extra items.
+version = 6
+
+[Default]
+$mod = 0
+
+[Preset]
+name = Ignore items past 99
+
+[Preset]
+name = Collect items past 99
+$mod = 1

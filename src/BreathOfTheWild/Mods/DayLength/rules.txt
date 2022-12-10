@@ -1,80 +1,270 @@
 [Definition]
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
-name = Day Length
-path = "The Legend of Zelda: Breath of the Wild/Mods/Day Length"
-description = Changes the amount of real time that an in-game day takes.|Blood moons might not appear when you change the day length.||Made by chrispurnell.
+name = Day Time
+path = "The Legend of Zelda: Breath of the Wild/Mods/Day Time"
+description = Allows you to set a fixed time or change the length of the day-night cycle.|This could alter blood moon frequency or other time-related mechanics.||Made by chrispurnell.
 version = 6
 
 [Default]
-$timeScale = 1
+$timeCycleMode:int = 0
+$timeMultiplier = 1.0
+$cloudMultiplier = 1.0
+$dayTimeEnum:int = 0
+
+
+[Preset]
+name = Enabled (Default)
+category = Day/Night Cycle
+default = 1
+$timeCycleMode:int = 1
+
+[Preset]
+name = Disabled (Fixed Time Of Day)
+category = Day/Night Cycle
+$timeCycleMode:int = 0
 
 
 [Preset]
 name = 15 seconds
 category = Day Length
-$timeScale = 0.025
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 96
+$cloudMultiplier = 96
 
 [Preset]
 name = 30 seconds
 category = Day Length
-$timeScale = 0.05
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 48
+$cloudMultiplier = 48
 
 [Preset]
 name = 1 minutes
 category = Day Length
-$timeScale = 0.1
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 24
+$cloudMultiplier = 24
 
 [Preset]
 name = 6 minutes
 category = Day Length
-$timeScale = 0.25
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 4
+$cloudMultiplier = 4
 
 [Preset]
 name = 12 minutes
 category = Day Length
-$timeScale = 0.5
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 2
+$cloudMultiplier = 2
 
 [Preset]
 name = 24 minutes (Default)
 category = Day Length
+condition = ($timeCycleMode == 1)
 default = 1
+$timeMultiplier = 1.0
+$cloudMultiplier = 1.0
+
+[Preset]
+name = 36 minutes
+category = Day Length
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 0.75
+$cloudMultiplier = 0.75
 
 [Preset]
 name = 48 minutes
 category = Day Length
-$timeScale = 2
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 0.5
+$cloudMultiplier = 0.5
 
 [Preset]
 name = 72 minutes
 category = Day Length
-$timeScale = 3
+condition = ($timeCycleMode == 1)
+$timeMultiplier = (1/3)
+$cloudMultiplier = (1/3)
 
 [Preset]
 name = 96 minutes
 category = Day Length
-$timeScale = 4
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 0.25
+$cloudMultiplier = 0.25
 
 [Preset]
 name = 2 hours
 category = Day Length
-$timeScale = 5
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 0.2
+$cloudMultiplier = 0.2
 
 [Preset]
 name = 4 hours
 category = Day Length
-$timeScale = 10
+condition = ($timeCycleMode == 1)
+$timeMultiplier = 0.1
+$cloudMultiplier = 0.1
 
 [Preset]
 name = 12 hours
 category = Day Length
-$timeScale = 30
+condition = ($timeCycleMode == 1)
+$timeMultiplier = (1/3)/10
+$cloudMultiplier = (1/3)/10
 
 [Preset]
 name = 24 hours
 category = Day Length
-$timeScale = 60
+condition = ($timeCycleMode == 1)
+$timeMultiplier = (1/6)/10
+$cloudMultiplier = (1/6)/10
+
 
 [Preset]
-name = Freeze time
-category = Day Length
-$timeScale = 9999
+name = 00:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x2A
+
+[Preset]
+name = 01:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0xA
+
+[Preset]
+name = 02:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0xB
+
+[Preset]
+name = 03:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0xC
+
+[Preset]
+name = 04:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0xD
+
+[Preset]
+name = 05:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0xE
+
+[Preset]
+name = 06:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0xF
+
+[Preset]
+name = 07:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x10
+
+[Preset]
+name = 08:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x11
+
+[Preset]
+name = 09:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x12
+
+[Preset]
+name = 10:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x13
+
+[Preset]
+name = 11:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x14
+
+[Preset]
+name = 12:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+default = 1
+$dayTimeEnum = 0x15
+
+[Preset]
+name = 13:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x16
+
+[Preset]
+name = 14:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x17
+
+[Preset]
+name = 15:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x18
+
+[Preset]
+name = 16:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x19
+
+[Preset]
+name = 17:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x1A
+
+[Preset]
+name = 18:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x1B
+
+[Preset]
+name = 19:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x1C
+
+[Preset]
+name = 20:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x1D
+
+[Preset]
+name = 21:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x1E
+
+[Preset]
+name = 22:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x1F
+
+[Preset]
+name = 23:00
+category = Fixed Time Of Day
+condition = ($timeCycleMode == 0)
+$dayTimeEnum = 0x20

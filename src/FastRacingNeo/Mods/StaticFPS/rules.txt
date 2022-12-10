@@ -1,0 +1,77 @@
+[Definition]
+titleIds = 000500001012F000,00050000101D6000,00050000101E4100,00050000101FED00
+name = Static FPS
+path = "FAST Racing NEO/Mods/Static FPS"
+description = Changes the framerate the game runs at. If you are below the chosen framerate you'll notice some slowdown. Only works with the latest game update!
+version = 5
+
+[Default]
+$targetFPS:int = 60
+
+
+# FPS Limit
+
+[Preset]
+name= 244 FPS (experimental)
+category = FPS Limit
+$targetFPS:int = 244
+
+[Preset]
+name= 165 FPS (experimental)
+category = FPS Limit
+$targetFPS:int = 165
+
+[Preset]
+name = 144 FPS (experimental)
+category = FPS Limit
+$targetFPS:int = 144
+
+[Preset]
+name = 120 FPS
+category = FPS Limit
+$targetFPS:int = 120
+
+[Preset]
+name = 100 FPS
+category = FPS Limit
+$targetFPS:int = 100
+
+[Preset]
+name = 85 FPS
+category = FPS Limit
+$targetFPS:int = 85
+
+[Preset]
+name = 75 FPS
+category = FPS Limit
+$targetFPS:int = 75
+
+[Preset]
+name = 72 FPS
+category = FPS Limit
+$targetFPS:int = 72
+
+[Preset]
+name = 60 FPS (Default)
+category = FPS Limit
+default = 1
+
+[Preset]
+name = 40 FPS
+category = FPS Limit
+$targetFPS:int = 40
+
+[Preset]
+name = 30 FPS
+category = FPS Limit
+$targetFPS:int = 30
+
+[Preset]
+name = 20 FPS
+category = FPS Limit
+$targetFPS:int = 20
+
+
+
+[Control]
+vsyncFrequency = $targetFPS

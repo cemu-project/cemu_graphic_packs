@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010128800,0005000010128400,000500001012b700,0005000e10128400,0005000e10128800,0005000e1012b700
+name = Bloom Fix
+path = "Need for Speed Most Wanted U/Workaround/Bloom Fix"
+description = Fixes bloom lighting during night on foliage.||Made by Niko.
+version = 6

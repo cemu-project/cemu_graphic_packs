@@ -1,6 +1,49 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Equipment - Best Quality" 
-path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Always the Best Quality (X6X)"
-description = Equipment looted is always of the best quality (Prime for ground gear and Intergalactic for Skells) and has always 3 augments and 3 extra free slots (no preset needed).
-version = 5
+name = "Equipment - Force Quality"
+path = "Xenoblade Chronicles X/Mods/Loot/Equipment - Force Quality"
+description = Equipment looted is always of the specified quality (Prime = Intergalactic for Skell weapons) and always has 0-3 augments and 0-3 extra free slots.||Armor can normally only have 1 slot, so setting 2/3 slots will create cheat equipment.
+version = 6
+
+[Default]
+$traits = 3
+$slots = 1
+
+[Preset]
+name = "Prime (3 traits)"
+category = "Quality"
+
+[Preset]
+name = "Unique (2 traits)"
+category = "Quality"
+$traits = 2
+
+[Preset]
+name = "Rare (1 trait)"
+category = "Quality"
+$traits = 1
+
+[Preset]
+name = "Common (0 traits)"
+category = "Quality"
+$traits = 0
+
+[Preset]
+name = "0 Slots"
+category = "Number of Slots"
+$slots = 0
+
+[Preset]
+name = "1 Slot"
+category = "Number of Slots"
+default = 1
+
+[Preset]
+name = "2 Slots"
+category = "Number of Slots"
+$slots = 2
+
+[Preset]
+name = "3 Slots"
+category = "Number of Slots"
+$slots = 3

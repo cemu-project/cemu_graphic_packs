@@ -95,6 +95,22 @@ $height = 1440
 $gameWidth = 1280
 $gameHeight = 720
 
+# Common Super Ultrawide Resolutions
+
+[Preset]
+name = 3840x1080 (Super Ultrawide)
+$width = 3440
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x1440 (Super Ultrawide)
+$width = 5120
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
 # Format Textures:
 # - 0x001=Color-Red8
 # - 0x011=Depth24_Stencil8

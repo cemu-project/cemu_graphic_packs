@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010176900,0005000010176A00,0005000010162B00
-name = 60FPS Plaza
-path = "Splatoon/Mods/60FPS Plaza"
-description = Important: This patches the plaza to run at 60FPS. Getting under 60FPS will slow down the game's speed.|Made by Exzap.
+name = 60FPS In Plaza
+path = "Splatoon/Mods/60FPS In Plaza"
+description = Important: This patches the plaza to run at 60FPS like how the rest of the game runs already.|Getting under 60FPS will slow down the game's speed.|Made by Exzap.
 version = 6

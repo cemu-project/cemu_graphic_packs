@@ -1,0 +1,76 @@
+[Definition]
+titleIds = 00050000101BFC00,00050000101B8500
+name = FPS
+path = "Skylanders: Superchargers/Mods/FPS"
+description = Changes the game's FPS limit.|Running the game with a high FPS limit can result in glitches.||Made by Mew00, Winner Nombre and DigitNetics.
+version = 7
+
+[Default]
+$targetFPS:int = 30
+
+
+# FPS Limit
+
+[Preset]
+name= 244 FPS
+category = FPS Limit
+$targetFPS:int = 244
+
+[Preset]
+name= 165 FPS
+category = FPS Limit
+$targetFPS:int = 165
+
+[Preset]
+name = 144 FPS
+category = FPS Limit
+$targetFPS:int = 144
+
+[Preset]
+name = 120 FPS
+category = FPS Limit
+$targetFPS:int = 120
+
+[Preset]
+name = 100 FPS
+category = FPS Limit
+$targetFPS:int = 100
+
+[Preset]
+name = 85 FPS
+category = FPS Limit
+$targetFPS:int = 85
+
+[Preset]
+name = 75 FPS
+category = FPS Limit
+$targetFPS:int = 75
+
+[Preset]
+name = 72 FPS
+category = FPS Limit
+$targetFPS:int = 72
+
+[Preset]
+name = 60 FPS
+category = FPS Limit
+$targetFPS:int = 60
+
+[Preset]
+name = 40 FPS
+category = FPS Limit
+$targetFPS:int = 40
+
+[Preset]
+name = 30 FPS (Default)
+category = FPS Limit
+default = 1
+
+[Preset]
+name = 20 FPS
+category = FPS Limit
+$targetFPS:int = 20
+
+
+[Control]
+vsyncFrequency = 2*$targetFPS

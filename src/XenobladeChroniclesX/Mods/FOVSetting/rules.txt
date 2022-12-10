@@ -3,14 +3,16 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Field of View
 path = "Xenoblade Chronicles X/Mods/Field of View" 
 description = Changes the field of view (FOV). Fixes edge framing for 21:9 cinematics and other FOV tweaks.
-version = 4
+version = 6
 
-[Preset]
-name = Default FOV  
+[Default]
 $fov = 1.0
 
 [Preset]
-name = Match 16:9 horizontal FOV to 21:9 (1.3125)
+name = Default FOV  
+
+[Preset]
+name = "Match 16:9 horizontal FOV to 21:9 (1.3125)"
 $fov = 1.3125
 
 [Preset]
@@ -18,21 +20,21 @@ name = Balance 48:9 (1.45)
 $fov = 1.45
 
 [Preset]
-name = Slight FOV increase without breaking framing (0.925)
+name = "Slight FOV increase without breaking framing (0.925)"
 $fov = 0.925
 
 [Preset]
-name = Match 16:10 horizontal FOV to 16:9 (0.9)
+name = "Match 16:10 horizontal FOV to 16:9 (0.9)"
 $fov  = 0.9
 
 [Preset]
-name = Pc style wide FOV (0.825)
+name = "Pc style wide FOV (0.825)"
 $fov = 0.825
 
 [Preset]
-name = Match 21:9 horizontal FOV to 16:9 (0.7442)
+name = "Match 21:9 horizontal FOV to 16:9 (0.7442)"
 $fov = 0.7442
 
 [Preset]
-name = Fish eye (0.5)
+name = "Fish eye (0.5)"
 $fov = 0.5

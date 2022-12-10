@@ -98,7 +98,7 @@ if( activeMaskStackC[1] == true ) {
 // 0
 R1i.xyz = floatBitsToInt(vec3(intBitsToFloat(R0i.x),intBitsToFloat(R0i.y),intBitsToFloat(R0i.x)) + vec3(0.0,0.0,(intBitsToFloat(0xba99999a)/resXScale)));
 R1i.w = floatBitsToInt(intBitsToFloat(R0i.y) + 0.0);
-R2i.x = floatBitsToInt(intBitsToFloat(R0i.x) + (intBitsToFloat(0x3a99999a)/resXScale);
+R2i.x = floatBitsToInt(intBitsToFloat(R0i.x) + (intBitsToFloat(0x3a99999a)/resXScale));
 PS0i = R2i.x;
 // 1
 R3i.x = floatBitsToInt(intBitsToFloat(R0i.x) + 0.0);

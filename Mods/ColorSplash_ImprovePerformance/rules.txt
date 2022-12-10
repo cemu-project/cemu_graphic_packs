@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001F600900,000500001F600A00,000500001F600B00
+name = Improve Performance
+path = "Paper Mario: Color Splash/Mods/Improve Performance"
+description = Substantially lowers CPU requirements of the game.|Can improve performance on some systems.||Needs to be enabled before (and can't be disabled after) running the game, otherwise it'll crash.
+version = 7

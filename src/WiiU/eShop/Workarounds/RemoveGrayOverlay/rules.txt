@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500301001400a,000500301001410a,000500301001420a
+name = Remove Gray Overlay
+path = "Wii U/Nintendo eShop/Workarounds/Remove Gray Overlay"
+description = Hides the gray overlay covering the lower half of the screen.||Made by Exzap.
+version = 7

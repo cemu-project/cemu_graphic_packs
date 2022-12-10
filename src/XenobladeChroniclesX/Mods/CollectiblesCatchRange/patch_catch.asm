@@ -1,24 +1,22 @@
-[XCX_COLLECTIBLESRANGE_ALL]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0xAB97DE6B ; 1.0.1E, 1.0.2U, 1.0.1U
-
+[XCX_COLLECTIBLESRANGE]
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
 
 ; ----------------------------------------------------------------------------
 ; WHO  : cfs::CfPopManagerItem::updateTouchItem((void))
 ; WHAT : Initialize collectibles distance
-
 _rangeInnerConst: 
-	.float 40.0
+	.float $rangeinner
 _heightInnerConst: 
-	.float 8.0
+	.float $heightinner
 _rangeDollConst: 
-	.float 64.0
+	.float $rangedoll
 _heightDollConst: 
-	.float 64.0
+	.float $heightdoll
 _rangeFlightConst: 
-	.float 64.0
+	.float $rangeflight
 _heightFlightConst: 
-	.float 52.0
+	.float $heightflight
 
 _itemRangeInner:
 lis r5, _rangeInnerConst@ha
@@ -56,9 +54,9 @@ lfs f0, _heightFlightConst@l(r5)
 fadd f0, f13, f0
 blr
 
-[XCX_COLLECTIBLESRANGE] #################################################################################################
-moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 
+[XCX_COLLECTIBLESRANGE_V101E_V102U]
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 0x02389B80 = bla _itemRangeInner
 0x02389BB8 = bla _itemHeightInner
 0x02389C3C = bla _itemRangeDoll
@@ -66,12 +64,29 @@ moduleMatches = 0xF882D5CF, 0x30B6E091 ; 1.0.1E, 1.0.2U
 0x02389CEC = bla _itemRangeFlight
 0x02389D30 = bla _itemHeightFlight
 
-[XCX_COLLECTIBLESRANGE_1U] #################################################################################################
-moduleMatches = 0xAB97DE6B ; 1.0.1U
+[XCX_COLLECTIBLESRANGE_V102J]
+moduleMatches = 0x7672271D ; 1.0.2J
+0x023893B4 = bla _itemRangeInner
+0x023893EC = bla _itemHeightInner
+0x02389470 = bla _itemRangeDoll
+0x023894A8 = bla _itemHeightDoll
+0x02389520 = bla _itemRangeFlight
+0x02389564 = bla _itemHeightFlight
 
+[XCX_COLLECTIBLESRANGE_V100U]
+moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02389B10 = bla _itemRangeInner
 0x02389B48 = bla _itemHeightInner
 0x02389BCC = bla _itemRangeDoll
 0x02389C04 = bla _itemHeightDoll
 0x02389C7C = bla _itemRangeFlight
 0x02389CC0 = bla _itemHeightFlight
+
+[XCX_COLLECTIBLESRANGE_V100J]
+moduleMatches = 0x785CA8A9 ; 1.0.0J
+0x02389240 = bla _itemRangeInner
+0x02389278 = bla _itemHeightInner
+0x023892FC = bla _itemRangeDoll
+0x02389334 = bla _itemHeightDoll
+0x023893AC = bla _itemRangeFlight
+0x023893F0 = bla _itemHeightFlight
