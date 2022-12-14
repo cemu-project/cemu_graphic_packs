@@ -30,4 +30,4 @@ $mod = 4.0
 
 [Preset]
 name = "Enemies will not fight at all (game breaking)"
-$mod = 500.0
+$mod = 1000.0
