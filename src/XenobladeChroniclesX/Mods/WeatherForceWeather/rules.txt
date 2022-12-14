@@ -25,6 +25,12 @@ condition = $region == 1
 $wtr = 2
 
 [Preset]
+name = "Lightning (unused)"
+category = Weather
+condition = $region == 1
+$wtr = 3
+
+[Preset]
 name = "Heavy Rain"
 category = Weather
 condition = $region == 1
@@ -53,6 +59,18 @@ name = "Rainbow"
 category = Weather
 condition = $region == 1
 $wtr = 8
+
+[Preset]
+name = "Rain (unused)"
+category = Weather
+condition = $region == 1
+$wtr = 9
+
+[Preset]
+name = "Cloudy (unused)"
+category = Weather
+condition = $region == 1
+$wtr = 10
 
 [Preset] ###########################################
 name = "Noctilum"
@@ -117,6 +135,12 @@ condition = $region == 3
 $wtr = 4
 
 [Preset]
+name = "Thunderstorms (unused)"
+category = Weather
+condition = $region == 3
+$wtr = 5
+
+[Preset]
 name = "Electromagnetic Storms"
 category = Weather
 condition = $region == 3
@@ -151,6 +175,12 @@ category = Weather
 condition = $region == 4
 
 [Preset]
+name = "Thunderstorms (unused)"
+category = Weather
+condition = $region == 4
+$wtr = 2
+
+[Preset]
 name = "Rising Energy Mist"
 category = Weather
 condition = $region == 4
@@ -167,6 +197,12 @@ name = "Crimson Aurora"
 category = Weather
 condition = $region == 4
 $wtr = 5
+
+[Preset]
+name = "Brimstone Rain (unused)"
+category = Weather
+condition = $region == 4
+$wtr = 6
 
 [Preset] ###########################################
 name = "Cauldros"
@@ -185,6 +221,12 @@ condition = $region == 5
 $wtr = 2
 
 [Preset]
+name = "Thunderstorms (unused)"
+category = Weather
+condition = $region == 5
+$wtr = 3
+
+[Preset]
 name = "Electromagnetic Storms"
 category = Weather
 condition = $region == 5
@@ -201,3 +243,9 @@ name = "Rainbow"
 category = Weather
 condition = $region == 5
 $wtr = 6
+
+[Preset] ###########################################
+name = "Weather Lock (Locks current weather till you skip travel or die) (Works even when crossing area borders)"
+category = Region
+$region = 6
+$wtr = 0
