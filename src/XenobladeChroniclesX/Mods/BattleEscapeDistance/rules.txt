@@ -9,8 +9,8 @@ version = 6
 $mod = 1.0
 
 [Preset]
-name = "Hell: Enemies will never de-aggro"
-$mod = 0.0001
+name = "Enemies will never de-aggro"
+$mod = 0.00001
 
 [Preset]
 name = "Increase Range x2"
