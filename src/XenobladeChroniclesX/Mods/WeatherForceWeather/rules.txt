@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Force Weather"
 path = "Xenoblade Chronicles X/Mods/Weather/Force Weather"
-description = Force selected weather. Just select a preset and unload/reload the pack.
+description = Force selected weather. Just select a preset and unload/reload the pack.|Weather Lock works even when traveling into different regions.
 version = 6
 
 [Default]
@@ -14,60 +14,60 @@ name = "Primordia"
 category = Region
 
 [Preset]
-name = "Clear"
+name = "Clear [1]"
 category = Weather
 condition = $region == 1
 
 [Preset]
-name = "Rain"
+name = "Rain [2]"
 category = Weather
 condition = $region == 1
 $wtr = 2
 
 [Preset]
-name = "Lightning (unused)"
+name = "Lightning [3] (unused)"
 category = Weather
 condition = $region == 1
 $wtr = 3
 
 [Preset]
-name = "Heavy Rain"
+name = "Heavy Rain [4]"
 category = Weather
 condition = $region == 1
 $wtr = 4
 
 [Preset]
-name = "Thunderstorms"
+name = "Thunderstorms [5]"
 category = Weather
 condition = $region == 1
 $wtr = 5
 
 [Preset]
-name = "Aurora"
+name = "Aurora [6]"
 category = Weather
 condition = $region == 1
 $wtr = 6
 
 [Preset]
-name = "Meteor Showers"
+name = "Meteor Showers [7]"
 category = Weather
 condition = $region == 1
 $wtr = 7
 
 [Preset]
-name = "Rainbow"
+name = "Rainbow [8]"
 category = Weather
 condition = $region == 1
 $wtr = 8
 
 [Preset]
-name = "Rain (unused)"
+name = "Rain [9] (unused)"
 category = Weather
 condition = $region == 1
 $wtr = 9
 
 [Preset]
-name = "Cloudy (unused)"
+name = "Cloudy [10] (unused)"
 category = Weather
 condition = $region == 1
 $wtr = 10
@@ -78,30 +78,30 @@ category = Region
 $region = 2
 
 [Preset]
-name = "Clear"
+name = "Clear [1]"
 category = Weather
 condition = $region == 2
 
 [Preset]
-name = "Dense Fog"
+name = "Dense Fog [2]"
 category = Weather
 condition = $region == 2
 $wtr = 2
 
 [Preset]
-name = "Rain"
+name = "Rain [3]"
 category = Weather
 condition = $region == 2
 $wtr = 3
 
 [Preset]
-name = "Thunderstorms"
+name = "Thunderstorms [4]"
 category = Weather
 condition = $region == 2
 $wtr = 4
 
 [Preset]
-name = "Energy Mist"
+name = "Energy Mist [5]"
 category = Weather
 condition = $region == 2
 $wtr = 5
@@ -112,54 +112,54 @@ category = Region
 $region = 3
 
 [Preset]
-name = "Clear"
+name = "Clear [1]"
 category = Weather
 condition = $region == 3
 
 [Preset]
-name = "Rain"
+name = "Rain [2]"
 category = Weather
 condition = $region == 3
 $wtr = 2
 
 [Preset]
-name = "Heat Wave"
+name = "Heat Wave [3]"
 category = Weather
 condition = $region == 3
 $wtr = 3
 
 [Preset]
-name = "Sandstorms"
+name = "Sandstorms [4]"
 category = Weather
 condition = $region == 3
 $wtr = 4
 
 [Preset]
-name = "Thunderstorms (unused)"
+name = "Thunderstorms [5] (unused)"
 category = Weather
 condition = $region == 3
 $wtr = 5
 
 [Preset]
-name = "Electromagnetic Storms"
+name = "Electromagnetic Storms [6]"
 category = Weather
 condition = $region == 3
 $wtr = 6
 
 [Preset]
-name = "Aurora"
+name = "Aurora [7]"
 category = Weather
 condition = $region == 3
 $wtr = 7
 
 [Preset]
-name = "Meteor Showers"
+name = "Meteor Showers [8]"
 category = Weather
 condition = $region == 3
 $wtr = 8
 
 [Preset]
-name = "Rainbow"
+name = "Rainbow [9]"
 category = Weather
 condition = $region == 3
 $wtr = 9
@@ -170,36 +170,36 @@ category = Region
 $region = 4
 
 [Preset]
-name = "Cloudy"
+name = "Cloudy [1]"
 category = Weather
 condition = $region == 4
 
 [Preset]
-name = "Thunderstorms (unused)"
+name = "Thunderstorms [2] (unused)"
 category = Weather
 condition = $region == 4
 $wtr = 2
 
 [Preset]
-name = "Rising Energy Mist"
+name = "Rising Energy Mist [3]"
 category = Weather
 condition = $region == 4
 $wtr = 3
 
 [Preset]
-name = "Spores"
+name = "Spores [4]"
 category = Weather
 condition = $region == 4
 $wtr = 4
 
 [Preset]
-name = "Crimson Aurora"
+name = "Crimson Aurora [5]"
 category = Weather
 condition = $region == 4
 $wtr = 5
 
 [Preset]
-name = "Brimstone Rain (unused)"
+name = "Brimstone Rain [6] (unused)"
 category = Weather
 condition = $region == 4
 $wtr = 6
@@ -210,42 +210,162 @@ category = Region
 $region = 5
 
 [Preset]
-name = "Clear"
+name = "Clear [1]"
 category = Weather
 condition = $region == 5
 
 [Preset]
-name = "Cloudy"
+name = "Cloudy [2]"
 category = Weather
 condition = $region == 5
 $wtr = 2
 
 [Preset]
-name = "Thunderstorms (unused)"
+name = "Thunderstorms [3] (unused)"
 category = Weather
 condition = $region == 5
 $wtr = 3
 
 [Preset]
-name = "Electromagnetic Storms"
+name = "Electromagnetic Storms [4]"
 category = Weather
 condition = $region == 5
 $wtr = 4
 
 [Preset]
-name = "Brimstone Rain"
+name = "Brimstone Rain [5]"
 category = Weather
 condition = $region == 5
 $wtr = 5
 
 [Preset]
-name = "Rainbow"
+name = "Rainbow [6]"
 category = Weather
 condition = $region == 5
 $wtr = 6
 
 [Preset] ###########################################
-name = "Weather Lock (Locks current weather till you skip travel or die) (Works even when crossing area borders)"
+name = "Weather Lock [0] (Locks current weather till you skip travel or die)"
 category = Region
 $region = 6
 $wtr = 0
+
+###### uncommemt to use different weather in the Barracks
+###[Preset] ###########################################
+###name = "Blade Barracks (unused)"
+###category = Region
+###$region = 7
+
+[Preset]
+name = "Clear [1]"
+category = Weather
+condition = $region == 7
+$wtr = 1
+
+[Preset]
+name = "Sunshower [2]"
+category = Weather
+condition = $region == 7
+$wtr = 2
+
+[Preset]
+name = "Cloudy [3]"
+category = Weather
+condition = $region == 7
+$wtr = 3
+
+[Preset]
+name = "Dense Fog [4]"
+category = Weather
+condition = $region == 7
+$wtr = 4
+
+[Preset]
+name = "Rain [5]"
+category = Weather
+condition = $region == 7
+$wtr = 5
+
+[Preset]
+name = "Lightning [6]"
+category = Weather
+condition = $region == 7
+$wtr = 6
+
+[Preset]
+name = "Heavy Rain [7]"
+category = Weather
+condition = $region == 7
+$wtr = 7
+
+[Preset]
+name = "Heat Wave [8]"
+category = Weather
+condition = $region == 7
+$wtr = 8
+
+[Preset]
+name = "Sandstorms [9]"
+category = Weather
+condition = $region == 7
+$wtr = 9
+
+[Preset]
+name = "Thunderstorms [10]"
+category = Weather
+condition = $region == 7
+$wtr = 10
+
+[Preset]
+name = "Electromagnetic Storms [11]"
+category = Weather
+condition = $region == 7
+$wtr = 11
+
+[Preset]
+name = "Rising Energy Mist [12]"
+category = Weather
+condition = $region == 7
+$wtr = 12
+
+[Preset]
+name = "Energy Mist [13]"
+category = Weather
+condition = $region == 7
+$wtr = 13
+
+[Preset]
+name = "Brimstone Rain [14]"
+category = Weather
+condition = $region == 7
+$wtr = 14
+
+[Preset]
+name = "Spores [15]"
+category = Weather
+condition = $region == 7
+$wtr = 15
+
+[Preset]
+name = "Aurora [16]"
+category = Weather
+condition = $region == 7
+$wtr = 16
+
+[Preset]
+name = "Crimson Aurora [17]"
+category = Weather
+condition = $region == 7
+$wtr = 17
+
+[Preset]
+name = "Meteor Showers [18]"
+category = Weather
+condition = $region == 7
+$wtr = 18
+
+[Preset]
+name = "Rainbow [19]"
+category = Weather
+condition = $region == 7
+$wtr = 19
