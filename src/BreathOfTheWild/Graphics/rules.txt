@@ -90,6 +90,13 @@ $aspectRatioHeight = 4
 $showUltrawideOptions:int = 0
 $ultrawideHUDMode:int = 0
 
+[Preset]
+name = 3:2
+category = Aspect Ratio
+$aspectRatioWidth = 3
+$aspectRatioHeight = 2
+$showUltrawideOptions:int = 1
+
 # 16:9 Resolutions
 
 [Preset]
@@ -440,6 +447,43 @@ category = Resolution
 condition = ((($aspectRatioWidth - 5) == 0) + (($aspectRatioHeight - 4) == 0)) == 2
 $width = 14400
 $height = 2700
+
+# 3:2 Resolutions
+
+[Preset]
+name = 1080x720
+category = Resolution
+condition = ((($aspectRatioWidth - 3) == 0) + (($aspectRatioHeight - 2) == 0)) == 2
+$width = 1080
+$height = 720
+
+[Preset]
+name = 1440x960
+category = Resolution
+condition = ((($aspectRatioWidth - 3) == 0) + (($aspectRatioHeight - 2) == 0)) == 2
+$width = 1440
+$height = 960
+
+[Preset]
+name = 1920x1280
+category = Resolution
+condition = ((($aspectRatioWidth - 3) == 0) + (($aspectRatioHeight - 2) == 0)) == 2
+$width = 1920
+$height = 1280
+
+[Preset]
+name = 2256x1504
+category = Resolution
+condition = ((($aspectRatioWidth - 3) == 0) + (($aspectRatioHeight - 2) == 0)) == 2
+$width = 2256
+$height = 1504
+
+[Preset]
+name = 3240x2160
+category = Resolution
+condition = ((($aspectRatioWidth - 3) == 0) + (($aspectRatioHeight - 2) == 0)) == 2
+$width = 3240
+$height = 2160
 
 # Ultrawide Mode Options
 
