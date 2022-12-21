@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Squad tasks and missions are available offline"
 path = "Xenoblade Chronicles X/Mods/BLADE/Offline Squad tasks and missions"
-description = Squad tasks and missions are available offline. Presets allow to select a Squad Mission, or you can use [Social > Squad Select] menu for random selection.||Recommended to be combined with More Reward Tickets (x5).
+description = Squad tasks and missions are available offline. Presets allow to select a Squad Mission, or you can use [Social > Squad Select] menu for random selection.||Recommended to be combined with More Reward Tickets (x5).||"Enable Online Mode" setting must be OFF for the mod to work!!
 version = 6
 
 [Default]
@@ -110,3 +110,7 @@ $missionId = 24
 [Preset]
 name = "N25: Unused squad mission"
 $missionId = 25
+
+[Preset]
+name = "N00: Broken squad mission"
+$missionId = 26

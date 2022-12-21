@@ -1,6 +1,8 @@
 [XCX_OFFLINEWE]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
+.int $ygg
+.int $teli
 
 ; Manage RPs & Appraisal
 VarShareRP:
@@ -31,12 +33,12 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 
 ; collectQuestInfoWE__Q2_3cfs15CfSocialManagerFRQ2_2ml45resvector__tm__28_PQ2_3cfs17CfSocialQuestInfo
 0x022C6254 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C6280 = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
+0x022C6280 = li r3, $teli ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
 0x022C65A8 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
 ; collectQuestInfoFR__Q2_3cfs15CfSocialManagerFRQ2_2ml45resvector__tm__28_PQ2_3cfs17CfSocialQuestInfo
 0x022C66CC = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C66FC = li r3, 0x4EED
+0x022C66FC = li r3, $ygg
 0x022C6738 = nop ; network test?
 0x022C6A5C = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
@@ -87,11 +89,11 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x022C7A70 = nop ; network test
 
 0x022C5C64 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C5C90 = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
+0x022C5C90 = li r3, $teli ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
 0x022C5FB8 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
 0x022C60DC = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C610C = li r3, 0x4EED
+0x022C610C = li r3, $ygg
 0x022C6148 = nop ; network test?
 0x022C646C = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
@@ -120,12 +122,13 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02287960 = nop ; (network test?) allow call to cfs::CfSocialQuestManager::update((void))
 0x022C7FEC = nop ; network test : lwz       r10, 0x1B0(r30) --> rlwinm.   r9, r10, 0,30,30
 0x022C7FF0 = nop ; network test
+
 0x022C61E4 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C6210 = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
+0x022C6210 = li r3, $teli ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
 0x022C6538 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
 0x022C665C = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C668C = li r3, 0x4EED
+0x022C668C = li r3, $ygg
 0x022C66C8 = nop ; network test?
 0x022C69EC = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
@@ -156,11 +159,11 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x022C78FC = nop ; network test
 
 0x022C5AF0 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C5B1C = li r3, 0x4EE9 ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
+0x022C5B1C = li r3, $teli ; Quest ID for WE - fw::SocialDataStore::getWorldEnemyQuest(const(unsigned int))
 0x022C5E44 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
 0x022C5F68 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
-0x022C5F98 = li r3, 0x4EED
+0x022C5F98 = li r3, $ygg
 0x022C5FD4 = nop ; network test?
 0x022C62F8 = li r3, 1 ; fw::SocialDataStore::getWorldEnemyCount(const(void))
 
