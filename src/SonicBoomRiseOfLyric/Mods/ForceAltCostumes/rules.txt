@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+name = Force Alt Costumes
+path = "Sonic Boom: Rise of Lyric/Mods/Force Alt Costumes"
+description = Force the use of alternative costumes (glowing outfits).||Turn this mod off to disable them. In-game settings won't take effect.||Made by kizer.
+version = 6
