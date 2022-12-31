@@ -1,0 +1,38 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Set Blade Metal Count
+path = "Xenoblade Chronicles X/Mods/BLADE/Blade Metals"
+description = Set the number of blade metals you currently have. (will persist after save)
+version = 6
+
+[Default]
+$metals = 1
+
+[Preset]
+category = "Metals:"
+name = "1"
+
+[Preset]
+category = "Metals:"
+name = "10"
+$metals = 10
+
+[Preset]
+category = "Metals:"
+name = "50"
+$metals = 50
+
+[Preset]
+category = "Metals:"
+name = "100"
+$metals = 100
+
+[Preset]
+category = "Metals:"
+name = "500"
+$metals = 500
+
+[Preset]
+category = "Metals:"
+name = "999"
+$metals = 999

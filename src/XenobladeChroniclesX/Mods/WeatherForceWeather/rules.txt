@@ -244,15 +244,129 @@ category = Weather
 condition = $region == 5
 $wtr = 6
 
-[Preset] ###########################################
-name = "Weather Lock [0] (Locks current weather till you skip travel or die)"
-category = Region
-$region = 6
-$wtr = 0
-
-###### uncommemt to use different weather in the Barracks
+###### uncommemt below to use different weather in the Barracks
 ###[Preset] ###########################################
 ###name = "Blade Barracks (unused)"
+###category = Region
+###$region = 6
+
+[Preset]
+name = "Clear [1]"
+category = Weather
+condition = $region == 6
+$wtr = 1
+
+[Preset]
+name = "Sunshower [2]"
+category = Weather
+condition = $region == 6
+$wtr = 2
+
+[Preset]
+name = "Cloudy [3]"
+category = Weather
+condition = $region == 6
+$wtr = 3
+
+[Preset]
+name = "Dense Fog [4]"
+category = Weather
+condition = $region == 6
+$wtr = 4
+
+[Preset]
+name = "Rain [5]"
+category = Weather
+condition = $region == 6
+$wtr = 5
+
+[Preset]
+name = "Lightning [6]"
+category = Weather
+condition = $region == 6
+$wtr = 6
+
+[Preset]
+name = "Heavy Rain [7]"
+category = Weather
+condition = $region == 6
+$wtr = 7
+
+[Preset]
+name = "Heat Wave [8]"
+category = Weather
+condition = $region == 6
+$wtr = 8
+
+[Preset]
+name = "Sandstorms [9]"
+category = Weather
+condition = $region == 6
+$wtr = 9
+
+[Preset]
+name = "Thunderstorms [10]"
+category = Weather
+condition = $region == 6
+$wtr = 10
+
+[Preset]
+name = "Electromagnetic Storms [11]"
+category = Weather
+condition = $region == 6
+$wtr = 11
+
+[Preset]
+name = "Rising Energy Mist [12]"
+category = Weather
+condition = $region == 6
+$wtr = 12
+
+[Preset]
+name = "Energy Mist [13]"
+category = Weather
+condition = $region == 6
+$wtr = 13
+
+[Preset]
+name = "Brimstone Rain [14]"
+category = Weather
+condition = $region == 6
+$wtr = 14
+
+[Preset]
+name = "Spores [15]"
+category = Weather
+condition = $region == 6
+$wtr = 15
+
+[Preset]
+name = "Aurora [16]"
+category = Weather
+condition = $region == 6
+$wtr = 16
+
+[Preset]
+name = "Crimson Aurora [17]"
+category = Weather
+condition = $region == 6
+$wtr = 17
+
+[Preset]
+name = "Meteor Showers [18]"
+category = Weather
+condition = $region == 6
+$wtr = 18
+
+[Preset]
+name = "Rainbow [19]"
+category = Weather
+condition = $region == 6
+$wtr = 19
+
+###### uncommemt below to use different weather in the Lifehold
+###[Preset] ###########################################
+###name = "Lifehold Core"
 ###category = Region
 ###$region = 7
 
@@ -263,109 +377,13 @@ condition = $region == 7
 $wtr = 1
 
 [Preset]
-name = "Sunshower [2]"
+name = "Lightning [2]"
 category = Weather
 condition = $region == 7
 $wtr = 2
 
-[Preset]
-name = "Cloudy [3]"
-category = Weather
-condition = $region == 7
-$wtr = 3
-
-[Preset]
-name = "Dense Fog [4]"
-category = Weather
-condition = $region == 7
-$wtr = 4
-
-[Preset]
-name = "Rain [5]"
-category = Weather
-condition = $region == 7
-$wtr = 5
-
-[Preset]
-name = "Lightning [6]"
-category = Weather
-condition = $region == 7
-$wtr = 6
-
-[Preset]
-name = "Heavy Rain [7]"
-category = Weather
-condition = $region == 7
-$wtr = 7
-
-[Preset]
-name = "Heat Wave [8]"
-category = Weather
-condition = $region == 7
-$wtr = 8
-
-[Preset]
-name = "Sandstorms [9]"
-category = Weather
-condition = $region == 7
-$wtr = 9
-
-[Preset]
-name = "Thunderstorms [10]"
-category = Weather
-condition = $region == 7
-$wtr = 10
-
-[Preset]
-name = "Electromagnetic Storms [11]"
-category = Weather
-condition = $region == 7
-$wtr = 11
-
-[Preset]
-name = "Rising Energy Mist [12]"
-category = Weather
-condition = $region == 7
-$wtr = 12
-
-[Preset]
-name = "Energy Mist [13]"
-category = Weather
-condition = $region == 7
-$wtr = 13
-
-[Preset]
-name = "Brimstone Rain [14]"
-category = Weather
-condition = $region == 7
-$wtr = 14
-
-[Preset]
-name = "Spores [15]"
-category = Weather
-condition = $region == 7
-$wtr = 15
-
-[Preset]
-name = "Aurora [16]"
-category = Weather
-condition = $region == 7
-$wtr = 16
-
-[Preset]
-name = "Crimson Aurora [17]"
-category = Weather
-condition = $region == 7
-$wtr = 17
-
-[Preset]
-name = "Meteor Showers [18]"
-category = Weather
-condition = $region == 7
-$wtr = 18
-
-[Preset]
-name = "Rainbow [19]"
-category = Weather
-condition = $region == 7
-$wtr = 19
+[Preset] ###########################################
+name = "Weather Lock [0] (Locks current weather till you skip travel or die)"
+category = Region
+$region = 0
+$wtr = 0

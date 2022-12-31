@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Offline Global Nemesis missions"
 path = "Xenoblade Chronicles X/Mods/BLADE/Offline Global Nemesis missions"
-description = Global Nemesis (both Telethia Plume and Yggralith Zero) are available in the BLADE console.|You still need medals to start the battle.
+description = Global Nemesis (both Telethia Plume and Yggralith Zero) are available in the BLADE console.|Need at least 1 blade metal to start the battle.
 version = 6
 
 [Default]
@@ -11,9 +11,9 @@ $teli = 0x4EE9
 
 [Preset]
 category = "Telethia Bossfight Version"
-name = "Monday Telethia (rising energy mist - time: 0:00)"
+name = "Monday Telethia (energy mist - 0:00)"
 
 [Preset]
 category = "Telethia Bossfight Version"
-name = "Friday Telethia (thunderstorms - time: 15:00)"
+name = "Friday Telethia (thunderstorms - 15:00)"
 $teli = 0x4EE8
