@@ -34,5 +34,15 @@ $metals = 500
 
 [Preset]
 category = "Metals:"
-name = "999"
-$metals = 999
+name = "1000"
+$metals = 1000
+
+[Preset]
+category = "Metals:"
+name = "9999"
+$metals = 9999
+
+#[Preset]
+#category = "Metals:"
+#name = "32767"
+#$metals = 32767
