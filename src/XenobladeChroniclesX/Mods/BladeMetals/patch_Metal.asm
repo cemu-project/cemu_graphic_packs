@@ -1,16 +1,9 @@
-[XCX_BladeMetal_V101E]
-moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
-0x0288AA80 = addi r8, r3, 0 
-0x02888DF8 = li r3, $metals
-0x02888DE8 = li r3, $metals
-0x02888E04 = nop ; removes 9999 blade metal cap, loops to negatives at 32767
-
-[XCX_BladeMetal_V102U]
-moduleMatches = 0x30B6E091 ; 1.0.2U
+[XCX_BladeMetal_V101E_V102U]
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U 1.0.0E
 0x0288AA80 = addi r8, r3, 0
 0x02888DF8 = li r3, $metals
 0x02888DE8 = li r3, $metals
-0x02888E04 = nop
+0x02888E04 = nop ; removes 9999 blade metal cap, loops to negatives at 32767
 
 [XCX_BladeMetal_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
