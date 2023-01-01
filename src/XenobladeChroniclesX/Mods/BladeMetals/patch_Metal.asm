@@ -1,8 +1,11 @@
 [XCX_BladeMetal_V101E_V102U]
-moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U 1.0.0E
-0x0288AA80 = addi r8, r3, 0
-0x02888DF8 = li r3, $metals
-0x02888DE8 = li r3, $metals
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
+; write bp - addWorldEnemyTicket__Q2_2fw12SocialSystemFi
+0x0288AA80 = addi r8, r3, 0 ; metals dont decrease when doing world enemy
+
+; read bp - getWorldEnemyTicket__Q2_2fw12SocialSystemCFv
+0x02888DF8 = li r3, $metals ; makes the game read given value
+0x02888DE8 = li r3, $metals ; makes the game read given value
 0x02888E04 = nop ; removes 9999 blade metal cap, loops to negatives at 32767
 
 [XCX_BladeMetal_V102J]
