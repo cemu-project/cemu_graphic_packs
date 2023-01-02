@@ -1,0 +1,48 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Set BLADE Medal Count
+path = "Xenoblade Chronicles X/Mods/BLADE/BLADE Medals"
+description = Set the number of BLADE Medals you currently have. (must complete a nemesis mission for the new value to save)
+version = 6
+
+[Default]
+$medals = 1
+
+[Preset]
+category = "Medals:"
+name = "1"
+
+[Preset]
+category = "Medals:"
+name = "10"
+$medals = 10
+
+[Preset]
+category = "Medals:"
+name = "50"
+$medals = 50
+
+[Preset]
+category = "Medals:"
+name = "100"
+$medals = 100
+
+[Preset]
+category = "Medals:"
+name = "500"
+$medals = 500
+
+[Preset]
+category = "Medals:"
+name = "1000"
+$medals = 1000
+
+[Preset]
+category = "Medals:"
+name = "9999"
+$medals = 9999
+
+###[Preset]
+###category = "Medals:"
+###name = "32767"
+###$medals = 32767
