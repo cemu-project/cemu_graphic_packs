@@ -3,7 +3,8 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 .origin = codecave
 .int $ygg   ;0x400D
 .int $teli  ;0x4008 or 0x4009
-.int $cheat ;0 for cheat, -1 for no cheat
+.int $infmedalcheat ;0 for cheat, -1 for no cheat
+.int $nomedalcheat ;<=1 for cheat, >=0x270f for no cheat
 
 ; Manage RPs & Appraisal
 VarShareRP:
@@ -62,7 +63,14 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; cfs::CfSocialManager::getQuestDetailFR((cfs::CfSocialQuestInfoFR &))
 0x0228989C = nop ; Uncomment to show Appraisal Rewards
 
-0x0288AA80 = addi r8, r3, $cheat ; maintains blade metal count
+;BLADE Medal cheat
+0x0288AA80 = addi r8, r3, $infmedalcheat ; maintains blade medal count
+;If blade medals == 0, blade medals become == 1  ;replaces the code for the 9999 blade medal cap
+0x02888DEC = cmplwi r3, $nomedalcheat
+0x02888DF0 = bne 0x02888E08 ;LAB_02888e08
+0x02888DFC = cmplwi r3, $nomedalcheat
+0x02888E00 = bne 0x02888E08 ;LAB_02888e08
+0x02888E04 = li r3, 1
 
 [XCX_OFFLINEWE_V101E] ; ############################################################################################
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
@@ -114,7 +122,12 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x028285E8 = li r4, 1 ; for getWERewardList
 0x022892B4 = nop ; Uncomment to show Appraisal Rewards
 
-0x028879E0 = addi r8, r3, $cheat ; maintains blade metal count
+0x028879E0 = addi r8, r3, $infmedalcheat ; maintains blade medal count
+0x02885D4C = cmplwi r3, $nomedalcheat
+0x02885D50 = bne 0x02885D68 ;LAB_02885D68
+0x02885D5C = cmplwi r3, $nomedalcheat
+0x02885D60 = bne 0x02885D68 ;LAB_02885D68
+0x02885D64 = li r3, 1
 
 0x02AC22D0 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B96BCC = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -151,7 +164,12 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x0282B394 = li r4, 1 ; for getWERewardList
 0x0228982C = nop ; Uncomment to show Appraisal Rewards
 
-0x0288AA04 = addi r8, r3, $cheat ; maintains blade metal count
+0x0288AA04 = addi r8, r3, $infmedalcheat ; maintains blade medal count
+0x02888D70 = cmplwi r3, $nomedalcheat
+0x02888D74 = bne 0x02888D8C ;LAB_02888D8C
+0x02888D80 = cmplwi r3, $nomedalcheat
+0x02888D84 = bne 0x02888D8C ;LAB_02888D8C
+0x02888D88 = li r3, 1
 
 0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B9AFB0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -188,7 +206,12 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x028275BC = li r4, 1 ; for getWERewardList
 0x02289008 = nop ; Uncomment to show Appraisal Rewards
 
-0x02886608 = addi r8, r3, $cheat ; maintains blade metal count
+0x02886608 = addi r8, r3, $infmedalcheat ; maintains blade medal count
+0x02884974 = cmplwi r3, $nomedalcheat
+0x02884978 = bne 0x02884990 ;LAB_02884990
+0x02884984 = cmplwi r3, $nomedalcheat
+0x02884988 = bne 0x02884990 ;LAB_02884990
+0x0288498C = li r3, 1
 
 0x02AC04E8 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B94268 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy

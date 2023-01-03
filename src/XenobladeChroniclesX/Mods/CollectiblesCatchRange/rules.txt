@@ -26,7 +26,7 @@ $rangeflight = 96.0
 $heightflight = 78.0
 
 [Preset]
-name = CHEAT: Infinite Range
+name = CHEAT - Infinite Range
 $rangeinner = 2000.0
 $heightinner = 2000.0
 $rangedoll = 2000.0
