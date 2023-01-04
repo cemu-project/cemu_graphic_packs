@@ -8,8 +8,8 @@ version = 6
 [Default]
 $ygg = 0x4EED
 $teli = 0x4EE9
-$infmedalcheat = -1
-$nomedalcheat = 0x3000
+$nemesiscost = -1
+$minmedals = 0
 
 [Preset]
 category = "Telethia Bossfight Version"
@@ -21,11 +21,11 @@ name = "Friday Telethia (thunderstorms - 15:00)"
 $teli = 0x4EE8
 
 [Preset]
-category = "CHEAT - BLADE Medals not required"
+category = "CHEAT - BLADE Medals not needed"
 name = "Cheat not enabled"
 
 [Preset]
-category = "CHEAT - BLADE Medals not required"
+category = "CHEAT - BLADE Medals not needed"
 name = "Cheat enabled"
-$infmedalcheat = 0
-$nomedalcheat = 0
+$nemesiscost = 0
+$minmedals = 1
