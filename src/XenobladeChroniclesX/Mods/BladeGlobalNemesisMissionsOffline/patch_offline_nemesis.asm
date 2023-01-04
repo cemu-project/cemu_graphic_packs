@@ -170,7 +170,7 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02888D70 = cmplwi r3, $minmedals
 0x02888D74 = bge 0x02888D8C ;LAB_02888d8c
 0x02888D80 = cmplwi r3, $minmedals
-0x02888D84 = bge 0x02888D8C ;LAB_02888c8c
+0x02888D84 = bge 0x02888D8C ;LAB_02888d8c
 0x02888D88 = li r3, $minmedals
 
 0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
