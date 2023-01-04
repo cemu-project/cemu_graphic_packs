@@ -64,7 +64,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 0x0228989C = nop ; Uncomment to show Appraisal Rewards
 
 ;BLADE Medal cheat
-0x0288AA80 = addi r8, r3, $nemesiscost ; sets how much a mission cost
+0x0288AA80 = subi r8, r3, $nemesiscost ; sets how much a mission cost
 ;Sets a minimum blade medal count ;replaces maximum blade medal cap
 0x02888DEC = cmplwi r3, $minmedals
 0x02888DF0 = bge 0x02888E08 ;LAB_02888e08
@@ -123,7 +123,7 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x022892B4 = nop ; Uncomment to show Appraisal Rewards
 
 ;BLADE Medal cheat
-0x028879E0 = addi r8, r3, $nemesiscost
+0x028879E0 = subi r8, r3, $nemesiscost
 0x02885D4C = cmplwi r3, $minmedals
 0x02885D50 = bge 0x02885D68 ;LAB_02885d68
 0x02885D5C = cmplwi r3, $minmedals
@@ -166,11 +166,11 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x0228982C = nop ; Uncomment to show Appraisal Rewards
 
 ;BLADE Medal cheat
-0x0288AA04 = addi r8, r3, $nemesiscost
+0x0288AA04 = subi r8, r3, $nemesiscost
 0x02888D70 = cmplwi r3, $minmedals
 0x02888D74 = bge 0x02888D8C ;LAB_02888d8c
 0x02888D80 = cmplwi r3, $minmedals
-0x02888D84 = bge 0x02888D8C ;LAB_02888d8c
+0x02888D84 = bge 0x02888D8C ;LAB_02888c8c
 0x02888D88 = li r3, $minmedals
 
 0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
@@ -209,7 +209,7 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x02289008 = nop ; Uncomment to show Appraisal Rewards
 
 ;BLADE Medal cheat
-0x02886608 = addi r8, r3, $nemesiscost
+0x02886608 = subi r8, r3, $nemesiscost
 0x02884974 = cmplwi r3, $minmedals
 0x02884978 = bge 0x02884990 ;LAB_02884990
 0x02884984 = cmplwi r3, $minmedals

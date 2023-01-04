@@ -8,7 +8,7 @@ version = 6
 [Default]
 $ygg = 0x4EED
 $teli = 0x4EE9
-$nemesiscost = -1
+$nemesiscost = 1
 $minmedals = 0
 
 [Preset]
