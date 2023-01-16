@@ -10,7 +10,7 @@ $mod = 1.0
 
 [Preset]
 name = "Enemies will never de-aggro"
-$mod = 0.00001
+$mod = 0.0001
 
 [Preset]
 name = "Increase Range x2"

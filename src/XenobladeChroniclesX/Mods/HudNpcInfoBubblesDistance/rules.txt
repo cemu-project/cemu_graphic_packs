@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "NPC info bubbles distance mod"
-path = "Xenoblade Chronicles X/Mods/Graphics/NPC info bubbles distance mod"
+path = "Xenoblade Chronicles X/Mods/HUD/NPC info bubbles distance mod"
 description = Increase view distance for yellow information bubbles from NPC.
 version = 6

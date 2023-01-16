@@ -18,9 +18,18 @@ name = Big Range
 
 [Preset]
 name = Bigger Range
-$rangeinner = 80.0
-$heightinner = 16.0
-$rangedoll = 128.0
-$heightdoll = 128.0
-$rangeflight = 128.0
-$heightflight = 104.0
+$rangeinner = 60.0
+$heightinner = 12.0
+$rangedoll = 96.0
+$heightdoll = 96.0
+$rangeflight = 96.0
+$heightflight = 78.0
+
+[Preset]
+name = CHEAT - Infinite Range
+$rangeinner = 2000.0
+$heightinner = 2000.0
+$rangedoll = 2000.0
+$heightdoll = 2000.0
+$rangeflight = 2000.0
+$heightflight = 2000.0

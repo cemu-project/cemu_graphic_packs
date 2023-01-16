@@ -1,8 +1,10 @@
 [XCX_OFFLINEWE]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
-.int $ygg
-.int $teli
+.int $ygg   ;0x400D | mission ID for ygg
+.int $teli  ;0x4008 or 0x4009 | mission ID's for teli
+.int $nemesiscost ;sets blade medals cost of nemesis mission
+.int $minmedals ;sets minimum blade medal count
 
 ; Manage RPs & Appraisal
 VarShareRP:
@@ -59,7 +61,16 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 0x0282B264 = nop ; skip deserializeWorldEnemy
 0x0282B410 = li r4, 1 ; for getWERewardList
 ; cfs::CfSocialManager::getQuestDetailFR((cfs::CfSocialQuestInfoFR &))
-0x0228989C = nop ; Uncomment to show Appraisal Rewards
+0x0228989C = nop ; show Appraisal Rewards
+
+;BLADE Medal cheat
+0x0288AA80 = subi r8, r3, $nemesiscost ; sets how much a mission cost
+;Sets a minimum blade medal count ;replaces maximum blade medal cap
+0x02888DEC = cmplwi r3, $minmedals
+0x02888DF0 = bge 0x02888E08 ;LAB_02888e08
+0x02888DFC = cmplwi r3, $minmedals
+0x02888E00 = bge 0x02888E08 ;LAB_02888e08
+0x02888E04 = li r3, $minmedals
 
 [XCX_OFFLINEWE_V101E] ; ############################################################################################
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
@@ -109,7 +120,15 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x02828348 = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
 0x0282843C = nop ; skip deserializeWorldEnemy
 0x028285E8 = li r4, 1 ; for getWERewardList
-0x022892B4 = nop ; Uncomment to show Appraisal Rewards
+0x022892B4 = nop ; show Appraisal Rewards
+
+;BLADE Medal cheat
+0x028879E0 = subi r8, r3, $nemesiscost
+0x02885D4C = cmplwi r3, $minmedals
+0x02885D50 = bge 0x02885D68 ;LAB_02885d68
+0x02885D5C = cmplwi r3, $minmedals
+0x02885D60 = bge 0x02885D68 ;LAB_02885d68
+0x02885D64 = li r3, $minmedals
 
 0x02AC22D0 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B96BCC = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -144,7 +163,15 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x0282B0F4 = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
 0x0282B1E8 = nop ; skip deserializeWorldEnemy
 0x0282B394 = li r4, 1 ; for getWERewardList
-0x0228982C = nop ; Uncomment to show Appraisal Rewards
+0x0228982C = nop ; show Appraisal Rewards
+
+;BLADE Medal cheat
+0x0288AA04 = subi r8, r3, $nemesiscost
+0x02888D70 = cmplwi r3, $minmedals
+0x02888D74 = bge 0x02888D8C ;LAB_02888d8c
+0x02888D80 = cmplwi r3, $minmedals
+0x02888D84 = bge 0x02888D8C ;LAB_02888d8c
+0x02888D88 = li r3, $minmedals
 
 0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B9AFB0 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
@@ -179,7 +206,15 @@ moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x0282731C = li r6, 1 ; to store in 8(r26) -> needed for cmpwi r0, 1 after callback
 0x02827410 = nop ; skip deserializeWorldEnemy
 0x028275BC = li r4, 1 ; for getWERewardList
-0x02289008 = nop ; Uncomment to show Appraisal Rewards
+0x02289008 = nop ; show Appraisal Rewards
+
+;BLADE Medal cheat
+0x02886608 = subi r8, r3, $nemesiscost
+0x02884974 = cmplwi r3, $minmedals
+0x02884978 = bge 0x02884990 ;LAB_02884990
+0x02884984 = cmplwi r3, $minmedals
+0x02884988 = bge 0x02884990 ;LAB_02884990
+0x0288498C = li r3, $minmedals
 
 0x02AC04E8 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
 0x02B94268 = li r3, 1 ; Disable call to menu::MenuMultiQuestOrder::canOrderWorldEnemy
