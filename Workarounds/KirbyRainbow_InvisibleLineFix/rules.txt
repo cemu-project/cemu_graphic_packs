@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101ABC00,00050000101B5100,0005000010188B00
+name = Workaround for invisible rainbow lines
+path = "Kirby and the Rainbow Curse & Paintbrush/Workarounds/Fix invisible lines"
+description = Fixes a bug which causes painted rainbow lines to become randomly invisible.
+version = 7
+default = 1
