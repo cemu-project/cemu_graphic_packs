@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010138A00,0005000010140000
+name = 60FPS
+path = "Angry Birds Trilogy/Mods/60FPS"
+description = Changes the FPS mode from the executable (engine) from 2 (30FPS) to anything else (60FPS). This also allows playback of 60FPS cutscenes (if their FPS is 60). For now this hijacks an existing function. |Made by LolHacksRule.
+version = 3
