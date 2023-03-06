@@ -182,6 +182,36 @@ $scaleShader = (3840.0/5160.0)
 $aspectRatio = (64.0/27.0) #LG
 
 [Preset]
+name = ---- Superwide 32:9 ----
+$width = 5120
+$height = 1440
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.5
+$scaleShader = (2560.0/5120.0)
+$aspectRatio = (96.0/27.0)
+
+[Preset]
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.5
+$scaleShader = (2560.0/5120.0)
+$aspectRatio = (96.0/27.0)
+
+[Preset]
+name = 7680x2160 (4k 32:9)
+$width = 7680
+$height = 2160
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.0
+$scaleShader = (3840.0/7680.0)
+$aspectRatio = (96.0/27.0)
+
+[Preset]
 name = ---- Custom resolutions ----
 $width = 1920
 $height = 1080
