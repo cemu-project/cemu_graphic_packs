@@ -11,5 +11,5 @@ mapping1 = 0xA0000000-0xE0000000 # extend overlay region (default range is 0xA00
 # BotW (and other games might) require additional modifications to the code to utilize this extra ram.
 
 
-# If you've got any improvements for this pack (since it's currently work-in-progress), please let us know in the Cemu Graphic Packs github (https://github.com/ActualMandM/cemu_graphic_packs) via an issue.
+# If you've got any improvements for this pack (since it's currently work-in-progress), please let us know in the Cemu Graphic Packs github (https://github.com/cemu-project/cemu_graphic_packs) via an issue.
 # Also, it'd be appreciated if the code for this graphic pack wasn't included inside of mods for the sake of mod compatibility.

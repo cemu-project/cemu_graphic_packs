@@ -1,6 +1,6 @@
 // Download latest version
 
-fetch("https://api.github.com/repos/ActualMandM/cemu_graphic_packs/releases/latest").then(fetchRes => fetchRes.json()).then(fetchJson => {
+fetch("https://api.github.com/repos/cemu-project/cemu_graphic_packs/releases/latest").then(fetchRes => fetchRes.json()).then(fetchJson => {
 	console.debug("Fetched releases from github...");
 	document.getElementById("primary_download").href = fetchJson.assets[0].browser_download_url;
 	return;

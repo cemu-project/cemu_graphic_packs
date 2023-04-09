@@ -14,9 +14,9 @@ layout: page
 	<p class="pt-2 mb-1"><strong>Select the download for your Cemu version</strong></p>
 	<a id="primary_download" class="btn some-shadow" href="{{ site.github.latest_release.assets[0].browser_download_url }}">Cemu 1.21.0 and newer (version 6)</a>	<button id="older_download" class="btn dropdown-toggle some-shadow" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Older versions</button>
 	<div class="dropdown-menu some-shadow" aria-labelledby="dropdownMenuButton">
-		<a class="dropdown-item" href="https://github.com/ActualMandM/cemu_graphic_packs/releases/download/Github708/graphicPacks708.zip">Cemu 1.14.0 through 1.20.2 (version 3 and 4)</a>
-		<a class="dropdown-item" href="https://github.com/ActualMandM/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a>
-		<a class="dropdown-item" href="https://github.com/ActualMandM/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a>
+		<a class="dropdown-item" href="https://github.com/cemu-project/cemu_graphic_packs/releases/download/Github708/graphicPacks708.zip">Cemu 1.14.0 through 1.20.2 (version 3 and 4)</a>
+		<a class="dropdown-item" href="https://github.com/cemu-project/cemu_graphic_packs/releases/download/Travis100/graphicPacks100_Uncommon.zip">Cemu 1.8.0 through 1.13.2 (version 2)</a>
+		<a class="dropdown-item" href="https://github.com/cemu-project/cemu_graphic_packs/releases/download/1/graphicPacks.zip">Cemu 1.7.0 through 1.7.5 (version 1)</a>
 	</div>
 </div>
 
@@ -128,6 +128,6 @@ layout: page
 <div class="jumbotron pt-4 pb-4" style="background-color: #37474f">
 	<h3>Our contributors</h3>
 	{% for contributor in site.github.contributors %}
-		<a href="https://github.com/ActualMandM/cemu_graphic_packs/commits?author={{ contributor.login }}"><img class="img-thumbnail contributor-avatar-img mt-1 ml-1 mr-1 mb-2" src="{{ contributor.avatar_url }}&size=70" alt="{{ contributor.login }}'s avatar"></a>
+		<a href="https://github.com/cemu-project/cemu_graphic_packs/commits?author={{ contributor.login }}"><img class="img-thumbnail contributor-avatar-img mt-1 ml-1 mr-1 mb-2" src="{{ contributor.avatar_url }}&size=70" alt="{{ contributor.login }}'s avatar"></a>
 	{% endfor %}
 </div>

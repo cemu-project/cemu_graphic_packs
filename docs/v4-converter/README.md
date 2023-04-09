@@ -2,7 +2,7 @@
 These scripts can be used to convert graphic packs that contain old shaders that were only meant for OpenGL to shaders that are cross-compatible with both of Cemu's render API's. The script isn't meant for speed or ease-of-use, so read the instructions below if you are planning on doing anything with it.
 
 #### Setup
-First of all, install [Node.js](https://nodejs.org) (use the current version). Then, I would suggest you download a zipped version of the [graphic pack repository code](https://github.com/ActualMandM/cemu_graphic_packs/archive/master.zip). Extract it somewhere logical, because you'll use this as your working directory.
+First of all, install [Node.js](https://nodejs.org) (use the current version). Then, I would suggest you download a zipped version of the [graphic pack repository code](https://github.com/cemu-project/cemu_graphic_packs/archive/master.zip). Extract it somewhere logical, because you'll use this as your working directory.
 After that, you need to [download the latest glslang](https://github.com/KhronosGroup/glslang/releases) and put the `glslangValidator.exe` and `spirv-remap.exe` from that zip's `bin` folder into that working directory you made above. The final step here is to copy the `convert-packs.js` and the `verify-graphicPacks.js` into that same working directory. Here's a screenshot of what it should look like at this point:
 ![working directory](https://i.imgur.com/B2CLjFy.png).
 
@@ -16,7 +16,7 @@ So, basically, you'll first want to open the convert-packs.js script and scroll 
 
 Now that you've set it all up, you can open up a command console in that folder and run the script using `node convert-packs.js`. It'll then start doing it's chaotic thing where it shows a bunch of information. Just make sure that there's no "error while compiling this shader" shenanigans. The rest of the warnings can mostly be ignored. Then, wait for it to finish executing (hopefully without any errors from the script itself). If there was an error in the shaders themselves, it should output them in an `error` folder in your working directory.
 
-If there's an error in any of the shaders, you'll have to debug the shader. Maybe it was the shader itself being wrong or it doing something funky with it's lines that should really be fixed in the shader itself. If you think that the shader doesn't do anything weird, please report it to me via the [Github issue](https://github.com/ActualMandM/cemu_graphic_packs/issues/408) or via Cemu's Discord in the gfx-packs channel.
+If there's an error in any of the shaders, you'll have to debug the shader. Maybe it was the shader itself being wrong or it doing something funky with it's lines that should really be fixed in the shader itself. If you think that the shader doesn't do anything weird, please report it to me via the [Github issue](https://github.com/cemu-project/cemu_graphic_packs/issues/408) or via Cemu's Discord in the gfx-packs channel.
 
 If nothing errored (hurray), you'll now have all of the converted graphic packs in a new folder called `graphicPacks` inside your working directory! See the next two steps with how to continue.
 
@@ -29,11 +29,11 @@ After you've created a decent dump, move your `dump` folder to your working dire
 Hopefully you're now satisfied by the amount of shaders that were verified (there's a change that some shaders are just not being used anymore in recent versions and therefor aren't able to be verified). If there was an invalid shader it'll be outputted to the `manual` folder in your graphic pack repository. Then you can keep them side-by-side to compare them, or use something like [Meld](https://meldmerge.org/) to see the exact difference between them. After you manually edited them you want to replace the invalid shader with your manually corrected shader in the `graphicPacks` folder. After all of that, let's go to the next step.
 
 ##### Add the packs
-_Just as a small notice for people who want to upload these converted packs to the [community graphic pack repository](https://github.com/ActualMandM/cemu_graphic_packs), it's very appreciated if you were to use pull requests before merging them directly into the main branch to prevent breaking people their graphic packs and us needing to revert changes and such. Also, please keep it to one game per pull request._
+_Just as a small notice for people who want to upload these converted packs to the [community graphic pack repository](https://github.com/cemu-project/cemu_graphic_packs), it's very appreciated if you were to use pull requests before merging them directly into the main branch to prevent breaking people their graphic packs and us needing to revert changes and such. Also, please keep it to one game per pull request._
 
 Once you've got a set of fully (verified and) converted shaders, you should be able to use the graphic packs from `graphicPacks` in your own Cemu folder! Would probably not hurt checking them with the game themselves obviously!
 
 If you're gonna contribute to community graphic packs you should just be able to go to your git folder and paste the files from the `graphicPacks` folder in there since it doesn't remove or create files. Just overwrite any existing files. Then, you can start to make a pull request or commit. When making the description of those, please include whether you used the verify-graphicPacks.js script to verify the converted packs, and if yes, which shaders were unverified in the summary and which were invalid (you shouldn't really have any of these ofcourse).
 
 -----
-### Please report any issues with this script via this [Github issue](https://github.com/ActualMandM/cemu_graphic_packs/issues/408) or via Cemu's Discord server in the #gfx-packs channel.
+### Please report any issues with this script via this [Github issue](https://github.com/cemu-project/cemu_graphic_packs/issues/408) or via Cemu's Discord server in the #gfx-packs channel.
