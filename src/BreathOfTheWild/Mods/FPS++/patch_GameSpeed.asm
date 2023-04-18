@@ -11,13 +11,13 @@ const_0.0:
 const_0.5:
 .float 0.5
 const_1:
-.float 1
+.float 1.0
 const_1.5:
 .float 1.5
 const_30:
-.float 30
+.float 30.0
 const_60:
-.float 60
+.float 60.0
 
 timerTickSpeed:
 busSpeed:

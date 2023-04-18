@@ -183,8 +183,8 @@ fmuls f12, f7, f12
 
 ; Subtract the time that it took for the actual frame to render and make sure that it's not negative (which means a frame already took longer to render then the FPS limit)
 fsubs f12, f12, f10
-lis r12, const_0.0@ha
-lfs f7, const_0.0@l(r12)
+lis r11, const_0.0@ha
+lfs f7, const_0.0@l(r11)
 fcmpu cr0, f7, f12
 ble .+0x8
 fmr f12, f7
