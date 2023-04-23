@@ -1,5 +1,0 @@
-[ABTrilogy_60FPS]
-moduleMatches = 0x79b000b0
-
-0x024A0AA0 = li r12, 76; #Hijack SetupVSync
-#0x100A4C28 = lfs r12, 76; #This would modify a variable but idk how to do it
