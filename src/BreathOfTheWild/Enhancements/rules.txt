@@ -104,7 +104,7 @@ category = Clarity
 $preset:int = 16
 
 [Preset]
-name = YeMaoWuXin Preset (Brightly)
+name = YeMaoWuXin's Preset (Brightly)
 category = Clarity
 $preset:int = 17
 
