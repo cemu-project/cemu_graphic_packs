@@ -1268,7 +1268,7 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 2.5;
 	float DPX_Strength = 0.2;
 	
-#elif (Preset == 17) // YeMaoWuXin's Preset (Brightly)
+#elif (Preset == 17) // YeMaoWuXin's Preset (bright colors)
 
 	#define adjust_bloom 1 
 	const float bloomFactor = 0.75;
