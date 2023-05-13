@@ -37,7 +37,7 @@
 	// Godot's Mexican Preset 14
 	// Hexaae's Clear Preset 15
 	// MaranBr Preset (Little More Intense) 16
-	// YeMaoWuXin Preset (Brightly) 17
+	// YeMaoWuXin's Preset (Brightly) 17
 	
 //##########################################################													   
 
