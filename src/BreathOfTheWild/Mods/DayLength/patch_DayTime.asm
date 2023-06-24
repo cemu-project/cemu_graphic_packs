@@ -8,7 +8,7 @@ const_timeMultiplier:
 .float $timeMultiplier
 
 const_cloudMultiplier:
-.float $cloudMultiplier
+.float $cloudMultiplier + (($cloudMultiplier == 0) * $timeMultiplier)
 
 
 ; Normal Time Mode - Time
