@@ -14,10 +14,9 @@ const_cloudMultiplier:
 ; Normal Time Mode - Time
 multiplyTimeStep:
 lfs f7, 0xA4(r30) ; original instruction to load timestep
-lis r9, const_timeMultiplier@ha
-lfs f8, const_timeMultiplier@l(r9)
+lis r4, const_timeMultiplier@ha
+lfs f8, const_timeMultiplier@l(r4)
 fmuls f7, f7, f8
-lwz r9, 0(r6) ; repeat prior instruction for free r9 register
 blr
 
 0x0365FF78 = bla multiplyTimeStep
