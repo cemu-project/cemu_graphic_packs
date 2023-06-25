@@ -113,13 +113,13 @@ $timeMultiplier = (1/60)
 
 
 [Preset]
-name = Normal
+name = Normal (No Speedup/Slowdown)
 category = Cloud Speed
 condition = ($timeCycleMode == 1)
 $cloudMultiplier = 1.0
 
 [Preset]
-name = Scaled with day length
+name = Scaled with day length (Default)
 category = Cloud Speed
 condition = ($timeCycleMode == 1)
 default = 1
@@ -127,15 +127,15 @@ $cloudMultiplier = 0
 
 
 [Preset]
-name = 5 minutes
-category = Clock Interval
+name = Update every 5 minutes (Default)
+category = Clock Increment Frequency
 condition = ($timeCycleMode == 1)
 default = 1
 $clockAdjust:int = 1
 
 [Preset]
-name = 1 minute
-category = Clock Interval
+name = Update every minute
+category = Clock Increment Frequency
 condition = ($timeCycleMode == 1)
 $clockAdjust:int = 0
 
