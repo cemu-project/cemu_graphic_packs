@@ -73,3 +73,14 @@ cmpwi r0, 0
 blr
 
 0x0365FE0C = bla calcForceTime2
+
+
+clockUnits:
+li r0, $clockAdjust
+cmpwi r0, 0
+beq clockSkip
+subf r0, r12, r3 ; original instruction
+clockSkip:
+blr
+
+0x307C130 = bla clockUnits

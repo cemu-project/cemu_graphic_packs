@@ -10,6 +10,7 @@ $timeCycleMode:int = 0
 $timeMultiplier = 1.0
 $cloudMultiplier = 1.0
 $dayTimeEnum:int = 0
+$clockAdjust:int = 1
 
 
 [Preset]
@@ -37,7 +38,7 @@ condition = ($timeCycleMode == 1)
 $timeMultiplier = 48
 
 [Preset]
-name = 1 minutes
+name = 1 minute
 category = Day Length
 condition = ($timeCycleMode == 1)
 $timeMultiplier = 24
@@ -122,6 +123,20 @@ category = Cloud Speed
 condition = ($timeCycleMode == 1)
 default = 1
 $cloudMultiplier = 0
+
+
+[Preset]
+name = 5 minutes
+category = Clock Interval
+condition = ($timeCycleMode == 1)
+default = 1
+$clockAdjust:int = 1
+
+[Preset]
+name = 1 minute
+category = Clock Interval
+condition = ($timeCycleMode == 1)
+$clockAdjust:int = 0
 
 
 [Preset]
