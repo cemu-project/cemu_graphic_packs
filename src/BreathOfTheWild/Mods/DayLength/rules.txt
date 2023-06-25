@@ -11,6 +11,7 @@ $timeMultiplier = 1.0
 $cloudMultiplier = 1.0
 $dayTimeEnum:int = 0
 $clockAdjust:int = 1
+$bloodMoonTime = 2520
 
 
 [Preset]
@@ -137,6 +138,62 @@ name = 1 minute
 category = Clock Interval
 condition = ($timeCycleMode == 1)
 $clockAdjust:int = 0
+
+
+[Preset]
+name = 28 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (28*360)
+
+[Preset]
+name = 14 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (14*360)
+
+[Preset]
+name = 7 days (Default)
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+default = 1
+$bloodMoonTime = (7*360)
+
+[Preset]
+name = 6 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (6*360-1)
+
+[Preset]
+name = 5 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (5*360-1)
+
+[Preset]
+name = 4 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (4*360-1)
+
+[Preset]
+name = 3 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (3*360-1)
+
+[Preset]
+name = 2 days
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (2*360-1)
+
+[Preset]
+name = 1 day
+category = Time between Blood Moons
+condition = ($timeCycleMode == 1)
+$bloodMoonTime = (1*360-1)
 
 
 [Preset]

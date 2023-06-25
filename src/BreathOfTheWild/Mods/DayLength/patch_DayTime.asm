@@ -84,3 +84,6 @@ clockSkip:
 blr
 
 0x307C130 = bla clockUnits
+
+
+0x10301850 = .float $bloodMoonTime
