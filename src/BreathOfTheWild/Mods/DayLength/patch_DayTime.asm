@@ -8,16 +8,15 @@ const_timeMultiplier:
 .float $timeMultiplier
 
 const_cloudMultiplier:
-.float $cloudMultiplier
+.float $cloudMultiplier + (($cloudMultiplier == 0) * $timeMultiplier)
 
 
 ; Normal Time Mode - Time
 multiplyTimeStep:
 lfs f7, 0xA4(r30) ; original instruction to load timestep
-lis r9, const_timeMultiplier@ha
-lfs f8, const_timeMultiplier@l(r9)
+lis r4, const_timeMultiplier@ha
+lfs f8, const_timeMultiplier@l(r4)
 fmuls f7, f7, f8
-lwz r9, 0(r6) ; repeat prior instruction for free r9 register
 blr
 
 0x0365FF78 = bla multiplyTimeStep
@@ -74,3 +73,17 @@ cmpwi r0, 0
 blr
 
 0x0365FE0C = bla calcForceTime2
+
+
+clockUnits:
+li r0, $clockAdjust
+cmpwi r0, 0
+beq clockSkip
+subf r0, r12, r3 ; original instruction
+clockSkip:
+blr
+
+0x307C130 = bla clockUnits
+
+
+0x10301850 = .float $bloodMoonTime
