@@ -4,7 +4,7 @@ moduleMatches = 0xD91A406D,0x0F748D9C,0x9A61FF4C,0x8E3324A9,0xD71D859D,0x6FD41A6
 .origin = codecave
 
 aspectRatio:
-.float $width/$height
+.float ($width/$height)
 
 grassCulling: ; The grass is calculated in a weird way, but this fix seems to work. So for safety, only enable it for ultrawide resolutions.
 .float (($ultrawideHUDMode != 0)*(($gameWidth/$gameHeight) / ($width/$height))) + (($ultrawideHUDMode == 0)*1.0)
