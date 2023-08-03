@@ -1,3 +1,29 @@
+[SplatoonV288uw]
+moduleMatches = 0x659C782E
+
+#rodata constants
+
+0x1004364C = .float $width/$height
+0x10124BE0 = .float (($ultrawideHUD == 0) * ($gameWidth/$gameHeight)) + (($ultrawideHUD == 1) * ($width/$height))
+0x10158FE0 = .float $width/$height
+0x10160454 = .float $width/$height
+
+_aspectAddr = 0x1004364C
+_hudAspectAddr = 0x10124BE0
+
+#patches
+
+0x028B1940 = lis r29, _hudAspectAddr@ha ;hud
+0x028B1944 = lfs f13, _hudAspectAddr@l(r29) ;hud
+
+0x02014864 = lis r4, _aspectAddr@ha ;master ar
+0x0201486C = lfs f9, _aspectAddr@l(r4) ;master ar
+
+0x02014570 = lis r4, _aspectAddr@ha ;transition frames
+0x02014578 = lfs f9, _aspectAddr@l(r4)
+0x0201434C = lis r4, _aspectAddr@ha
+0x02014354 = lfs f9, _aspectAddr@l(r4)
+
 [SplatoonV272uw]
 moduleMatches = 0xF7A78809
 
