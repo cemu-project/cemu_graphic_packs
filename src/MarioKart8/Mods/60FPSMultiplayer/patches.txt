@@ -1,3 +1,0 @@
-[MK8FullDrawVer4_1]
-moduleMatches = 0xD09700CE
-0x24AF000 = b .+0x54
