@@ -1,5 +1,5 @@
-[Gambit272]
-moduleMatches = 0xF7A78809
+[Gambit_MapSwap]
+moduleMatches = 0xF7A78809, 0x659C782E
 
 # List of maps are in maplist.txt
 0x100F9CE0 = .string "Fld_Tutorial00_Ttr" # Tutorial (Original: Fld_Tutorial00_Ttr)

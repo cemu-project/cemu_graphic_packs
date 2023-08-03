@@ -9,8 +9,8 @@ moduleMatches = 0x08ED6677
 0x100D353C = .byte $marieLetter
 0x100D5568 = .byte $marieLetter
 
-[Gambit272]
-moduleMatches = 0xF7A78809
+[GambitLatest]
+moduleMatches = 0xF7A78809, 0x659C782E
 
 0x100E38EC = .byte $callieLetter
 0x100E5A48 = .byte $callieLetter
