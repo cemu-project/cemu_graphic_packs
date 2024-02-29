@@ -1,8 +1,8 @@
 [Definition]
-titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+titleIds = 0005000010106900,000500001010C700,000500001010C800
 name = Graphic Options
-path = "Mario & Sonic at the Rio 2016 Olympic Games/Graphics"
-description = Allows you to change the game's TV resolution, gamepad resolution and anisotropic filtering quality.||Made by M&&M.
+path = "Mario & Sonic at the Sochi 2014 Olympic Winter Games/Graphics"
+description = Allows you to change the game's TV resolution, gamepad resolution and anisotropic filtering quality.||Made by ICUP321.
 version = 6
 
 [Default]
