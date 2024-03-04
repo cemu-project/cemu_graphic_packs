@@ -9,3 +9,4 @@ docs/Gemfile\.lock
 # Images #
 ##########
 *.jpg
+.DS_Store
