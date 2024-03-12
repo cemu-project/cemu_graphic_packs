@@ -1012,12 +1012,6 @@ formats = 0x806
 overwriteFormat = 0x820
 
 [TextureRedefine]
-width = 1280
-height = 720
-formats = 0x816
-overwriteFormat = 0x820
-
-[TextureRedefine]
 width = 800
 height = 450
 formats = 0x01a
