@@ -82,6 +82,14 @@ $armorB = 1.0
 $armorL_f = 2.0
 
 [Preset]
+name = Glowing White
+category = Ancient Armor
+$armorR = 1.0
+$armorG = 1.0
+$armorB = 1.0
+$armorL_f = 2.0
+
+[Preset]
 name = Custom (Edit in rules.txt)
 category = Ancient Armor
 $armorR = 0.000
@@ -136,6 +144,14 @@ name = Energy Blue
 category = Ancient Weapons
 $wpnR = 0.03
 $wpnG = 0.25
+$wpnB = 1.0
+$wpnL = 40.0
+
+[Preset]
+name = Glowing White
+category = Ancient Weapons
+$wpnR = 1.0
+$wpnG = 1.0
 $wpnB = 1.0
 $wpnL = 40.0
 
@@ -205,6 +221,14 @@ $dgrdB = 1.0
 $dgrdL_f = 1.0
 
 [Preset]
+name = Glowing White
+category = Decayed Guardian
+$dgrdR = 1.0
+$dgrdG = 1.0
+$dgrdB = 1.0
+$dgrdL_f = 1.0
+
+[Preset]
 name = Custom (Edit in rules.txt)
 category = Decayed Guardian
 $dgrdR = 0.000
@@ -259,6 +283,14 @@ name = Energy Blue
 category = Guardian, Stalker, Scout and Guardian Weapons
 $gsswR = 0.03
 $gsswG = 0.25
+$gsswB = 1.0
+$gsswL_f = 1.0
+
+[Preset]
+name = Glowing White
+category = Guardian, Stalker, Scout and Guardian Weapons
+$gsswR = 1.0
+$gsswG = 1.0
 $gsswB = 1.0
 $gsswL_f = 1.0
 
@@ -323,6 +355,14 @@ name = Energy Blue
 category = Guardian + Skywatcher
 $grdskyR = 0.03
 $grdskyG = 0.25
+$grdskyB = 1.0
+$grdskyL_f = 1.0
+
+[Preset]
+name = Glowing White
+category = Guardian + Skywatcher
+$grdskyR = 1.0
+$grdskyG = 1.0
 $grdskyB = 1.0
 $grdskyL_f = 1.0
 
