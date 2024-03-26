@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010143500,0005000010143600
+titleIds = 0005000010143400,0005000010143500,0005000010143600
 name = Picto-Box Fix
 path = "The Legend of Zelda: The Wind Waker HD/Workarounds/Picto-Box Fix"
 description = This is more of a cheat than workaround. Forces Lenzo to accept any pictures in the quest 'Lenzo's Research Assistant'. Made by Vladimir-1799.

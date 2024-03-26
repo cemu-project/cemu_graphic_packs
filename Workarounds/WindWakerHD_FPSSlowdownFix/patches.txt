@@ -5,3 +5,7 @@ moduleMatches = 0xB7E748DE
 [WWHDUS] ;Ported to US by M&M
 moduleMatches = 0x475BD29F
 0x025AC25C = nop; SUSPEND OliveOperationMgrThread
+
+[WWHDJP] ;Ported to JP by Crementif
+moduleMatches = 0x74BD3F6A
+0x025AC24C = nop; SUSPEND OliveOperationMgrThread
