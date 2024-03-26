@@ -101,6 +101,24 @@ $gameHeight = 720
 $dither = 0.5
 $scaleShader = 1.0
 
+[Preset]
+name = 5120x1440 (Superwide)
+$width = 5120
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$dither = 0.5
+$scaleShader = 1.0
+
+[Preset]
+name = 7680x2160 (Superwide)
+$width = 7680
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$dither = 0.85
+$scaleShader = 1.0
+
 [TextureRedefine]
 width = 1280
 height = 720
