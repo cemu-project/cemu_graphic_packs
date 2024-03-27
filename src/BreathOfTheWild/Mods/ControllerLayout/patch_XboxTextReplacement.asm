@@ -104,7 +104,6 @@ lwz r7, textReplacementCharacter@l(r7)
 bl import.coreinit.OSReport
 mr r7, r0
 
-
 skipTextLogging:
 ; Check for DoCommand button (button prompts start with T_[X]_00)
 addi r3, r29, 0x80

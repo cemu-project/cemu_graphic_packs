@@ -3,13 +3,11 @@ moduleMatches = 0x6267BFD0
 
 .origin = codecave
 
-
 const_timeMultiplier:
 .float $timeMultiplier
 
 const_cloudMultiplier:
 .float $cloudMultiplier + (($cloudMultiplier == 0) * $timeMultiplier)
-
 
 ; Normal Time Mode - Time
 multiplyTimeStep:
@@ -42,7 +40,6 @@ blr
 
 0x03660154 = bla multiplyOnlyTimeStep
 
-
 ; Change mode to one of the forced ones when forced time is enabled
 calcForceTime:
 li r12, $timeCycleMode
@@ -74,7 +71,6 @@ blr
 
 0x0365FE0C = bla calcForceTime2
 
-
 clockUnits:
 li r0, $clockAdjust
 cmpwi r0, 0
@@ -84,6 +80,5 @@ clockSkip:
 blr
 
 0x307C130 = bla clockUnits
-
 
 0x10301850 = .float $bloodMoonTime

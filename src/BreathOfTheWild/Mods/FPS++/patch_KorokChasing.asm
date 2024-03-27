@@ -33,4 +33,3 @@ lis r3, averageFPS1Inv@ha
 lfs f0, averageFPS1Inv@lo(r3)
 fadds f0, f12, f0
 blr
-

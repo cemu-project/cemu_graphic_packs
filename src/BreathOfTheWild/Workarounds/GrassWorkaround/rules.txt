@@ -5,4 +5,4 @@ path = "The Legend of Zelda: Breath of the Wild/Workarounds/Grass Swaying (Vulka
 description = Fixes some grass swaying incorrectly in the distance when a Vulkan extension is missing.|If you experience this issue while having an Intel/Nvidia GPU you should update your drivers.||Made by Exzap.
 rendererFilter = vulkan
 vendorFilter = amd
-version = 6
+version = 7

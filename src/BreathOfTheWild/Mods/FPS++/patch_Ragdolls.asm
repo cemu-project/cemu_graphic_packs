@@ -28,7 +28,6 @@ blr
 ; 0333dd58  fnmsubs f9,f9,f9,f30
 0x0333dd58 = fmr f9, f30
 
-
 ;_changeImpulsePower:
 ;lis r10, averageFPS1Inv@ha
 ;lfs f13, averageFPS1Inv@l(r10)

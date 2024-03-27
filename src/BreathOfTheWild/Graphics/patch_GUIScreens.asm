@@ -130,7 +130,6 @@ str_Pa_ThrowingPointer_00:
 str_Pa_CameraPointer_00:
 .string "Pa_CameraPointer_00"
 
-
 str_P_Icon_00:
 .string "P_Icon_00"
 str_N_SunLight_00:
@@ -270,7 +269,6 @@ str_P_Abstract_05:
 str_P_SSFrameCore_00:
 .string "P_SSFrameCore_00"
 
-
 str_Pa_SensorBox_00:
 .string "Pa_SensorBox_00"
 str_Pa_SubBtnChange_00:
@@ -279,7 +277,6 @@ str_Pa_StampBox_00:
 .string "Pa_StampBox_00"
 str_Pa_StampNum_00:
 .string "Pa_StampNum_00"
-
 
 str_N_BtnPos:
 .string "N_BtnPos"

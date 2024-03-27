@@ -12,7 +12,6 @@ lastCutsceneId:
 cutsceneFPSLimit:
 .float 0
 
-
 _setCutsceneFPSLimit:
 stw r0, 4(r31) ; Original instruction
 
@@ -145,7 +144,6 @@ lis r3, cutsceneFPSLimit@ha
 stfs f10, cutsceneFPSLimit@l(r3)
 blr
 
-
 _removeCutsceneFPSLimit:
 lwz r11, 0x27C(r30) ; Original instruction
 
@@ -160,7 +158,6 @@ lfs f10, const_0.0@l(r8)
 lis r8, cutsceneFPSLimit@ha
 stfs f10, cutsceneFPSLimit@l(r8)
 blr
-
 
 ; Check if a cutscene is ongoing with a set FPS limit
 _checkCutsceneFPSLimit:
@@ -209,7 +206,6 @@ lfs f10, cutsceneFPSLimit@l(r11)
 
 ; Skip dynamic FPS code when cutscene FPS limit is in place since the game should always run at 30FPS
 b _setGamespeed
-
 
 ; Hook evt::EventFlowBase's ctor (event object creation)
 0x031D2D2C = bla _setCutsceneFPSLimit

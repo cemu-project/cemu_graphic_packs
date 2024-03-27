@@ -27,7 +27,6 @@ const_AltPaddingLeftSide:
 const_AltPaddingRightSide:
 .float (($gameWidth/$gameHeight)/($width/$height)) * (($width/2) - 640)
 
-
 newLineFormatScreen:
 .string "Loading screen %s...%c"
 newLineFormatPanes:
@@ -100,7 +99,6 @@ stbx r10, r12, r11
 addi r11, r11, -1
 cmpwi r11, -1
 bne copySubPanelLoop
-
 
 ; ------------------------------------------------------------------------------------------
 ; Check which screen is getting loaded by using the copied screen name

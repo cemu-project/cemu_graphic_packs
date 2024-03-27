@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Draw Distance
 path = "The Legend of Zelda: Breath of the Wild/Mods/Draw Distance"
 description = Extend the draw distance of objects and entities in the game, which will see a small performance decrease when making it higher.|Lowering this will not offer more performance.|You can also make distant textures appear as higher resolution variants.||Made By Crementif.
-version = 6
+version = 7
 
 [Default]
 $actor = 1.0

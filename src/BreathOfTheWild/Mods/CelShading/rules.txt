@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Custom Cel Shading
 path = "The Legend of Zelda: Breath of the Wild/Mods/Custom Cel Shading"
 description = Changes the type of shading on Link and the world.|Inventory Menu Workaround will make Link invisible in the inventory.||Made by SkalFate, Altros and Pig.
-version = 6
+version = 7
 
 [Default]
 $mode:int = 4

@@ -4,4 +4,4 @@ name = LWZX Crash (OpenGL)
 path = "The Legend of Zelda: Breath of the Wild/Workarounds/LWZX Crash (OpenGL)"
 description = Prevents crashes when the Full sync at GX2DrawDone() is disabled. Only applicable for OpenGL.||Made by rajkosto.
 rendererFilter = opengl
-version = 6
+version = 7

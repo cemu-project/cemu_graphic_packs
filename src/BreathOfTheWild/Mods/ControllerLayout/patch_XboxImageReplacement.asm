@@ -20,7 +20,6 @@ loadLineCharacter:
 .int 10
 .align 4
 
-
 ; compares the string from r4 and r5
 ; r4 is untouched, so use that to do multiple comparisons
 ; other registers used: r0, r11, r3, r31

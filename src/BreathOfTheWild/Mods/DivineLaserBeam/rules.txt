@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Divine Laser Beams
 path = "The Legend of Zelda: Breath of the Wild/Mods/Divine Laser Beams"
 description = Customizes the appearance of the Divine Beasts's Laser Beams. They can also be completely hidden.||Made by Kiri.
-version = 6
+version = 7
 
 [Default]
 $hue:int = 0

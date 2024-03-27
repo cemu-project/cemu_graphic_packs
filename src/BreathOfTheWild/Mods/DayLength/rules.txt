@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Day Time
 path = "The Legend of Zelda: Breath of the Wild/Mods/Day Time"
 description = Allows you to set a fixed time or change the length of the day-night cycle.|This could alter blood moon frequency or other time-related mechanics.||Made by chrispurnell.
-version = 6
+version = 7
 
 [Default]
 $timeCycleMode:int = 0

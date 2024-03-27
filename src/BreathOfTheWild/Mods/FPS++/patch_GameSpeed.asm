@@ -3,7 +3,6 @@ moduleMatches = 0x6267BFD0
 
 .origin = codecave
 
-
 # Constants
 
 const_0.0:
@@ -83,7 +82,6 @@ debugAddr:
 
 debugMultiplier:
 .float $debugMultiplier
-
 
 # Code
 

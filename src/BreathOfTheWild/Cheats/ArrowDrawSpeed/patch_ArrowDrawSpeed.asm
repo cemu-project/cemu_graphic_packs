@@ -7,7 +7,6 @@ moduleMatches = 0x6267BFD0
 0x024A0164 = lfs f0, drawSpeedValue@l(r10)
 0x024A019C = lfs f0, drawSpeedValue@l(r10)
 
-
 [BotW_ArrowDrawSpeed_V176V192]
 moduleMatches = 0xFD091F9F,0xD472D8A5
 

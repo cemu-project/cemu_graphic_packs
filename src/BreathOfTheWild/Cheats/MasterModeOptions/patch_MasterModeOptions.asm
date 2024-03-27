@@ -18,6 +18,5 @@ merge0xd0 = $bit4 + $bit6 + $bit7
 0x031696C4 = ori       r0, r9, merge0xd0
 0x02AF94FC = .int ((($mmdamage == 0) * 0x4182000C) + (($mmdamage == 1) * 0x48000005))
 ;This last patch is a clever hack from Crementif. Essentially, it sends the instruction in hex rather than in regular text form.
-;
 ;When $mmdamage is 0, it sends 0x02AF94FC = beq 0x02AF9508 (the vanilla instruction).
 ;When $mmdamage is 1, it sends 0x02AF94FC = bl 0x02AF9500.

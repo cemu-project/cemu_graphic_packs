@@ -5,4 +5,4 @@ path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workaro
 description = Workaround for a shader related crash on AMD when using OpenGL.|Required for Cemu 1.15.8 and above.
 vendorFilter = amd
 rendererFilter = opengl
-version = 6
+version = 7

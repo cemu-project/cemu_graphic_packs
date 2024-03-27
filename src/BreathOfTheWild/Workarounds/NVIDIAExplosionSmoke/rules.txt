@@ -5,4 +5,4 @@ path = "The Legend of Zelda: Breath of the Wild/Workarounds/GPU specific workaro
 description = Workaround for the smoke and explosion particles on NVIDIA when using OpenGL.||Made by rajkosto, Xalphenos, and Darkemaste.
 vendorFilter = nvidia
 rendererFilter = opengl
-version = 6
+version = 7

@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Enhancements
 path = "The Legend of Zelda: Breath of the Wild/Enhancements"
 description = Allows you to change post-processing effects and texture detail to enhance the picture.||Made by Kiri, Jamie, M&&M, Pig, Skyth, and clarity preset creators.
-version = 6
+version = 7
 
 [Default]
 $preset:int = 10
@@ -201,7 +201,6 @@ $anisotropy = 2
 name = Low (1x)
 category = Anisotropic Filtering
 $anisotropy = 1
-
 
 [TextureRedefine]
 tileModesExcluded = 0x001 # ignore cpu processed textures (ex. videos)

@@ -96,7 +96,6 @@ PhysicsSystemHeapSize 		= 512 * 1024 		; 512KiB (default is 128KiB)
 0x02c43e64 = li r10, 0x1000 + 0x400
 0x02c46340 = li r10, 0x1000 + 0x400
 
-
 ; Increase the size of the resource heap for small resources. When using mods like e.g. draw distance this would likely be the reason why it would spawn panic moons.
 ;;_increaseResourceSmallHeap:
 ;;lwz r10, 0x70(r24)

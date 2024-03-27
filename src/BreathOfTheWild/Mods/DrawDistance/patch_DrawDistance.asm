@@ -16,7 +16,6 @@ blr
 0x03857F58 = nop ; Force the draw distance used for load balancing normally to be enabled
 0x03857F5C = bla _setActorDrawDistanceMultiplier
 
-
 ; Object draw distance
 objectMultiplier:
 .float $object
@@ -43,14 +42,12 @@ blr
 0x0313A60C = bla _setObjectDrawDistanceDivider
 0x0313A678 = bla _setObjectDrawDistanceDivider
 
-
 ; Tree billboard draw distance
 const_treeDrawDistance:
 .float $tree
 
 0x033CB548 = lis r7, const_treeDrawDistance@ha
 0x033CB550 = lfs f12, const_treeDrawDistance@l(r7)
-
 
 ; Grass blades draw distance
 0x1030A774 = .float $grass

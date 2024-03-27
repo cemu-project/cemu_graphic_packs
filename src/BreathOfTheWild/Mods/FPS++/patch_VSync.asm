@@ -22,7 +22,6 @@ beq setSwapIntervalTo2
 ; Disable vsync for everything else
 b setSwapIntervalTo0
 
-
 setSwapIntervalTo0: ; Disable vsync
 mflr r11
 li r3, 0
@@ -44,7 +43,6 @@ bl import.gx2.GX2SetSwapInterval
 mtlr r11
 b _convertTicksToFrametime
 
-
 waitForVsyncAddr:
 .ptr 0x031FACD4
 
@@ -62,7 +60,6 @@ blr
 
 0x031FACCC = bla conditionalVsyncWait
 
-
 conditionalSwapStatus:
 li r6, $keepVsync
 cmpwi r6, 1
@@ -74,7 +71,6 @@ cmplw r12, r0
 blr
 
 0x031FACF0 = bla conditionalSwapStatus
-
 
 # Disable vsync entirely if not running at 30FPS
 # 0x031FACD0 = .uint (($keepVsync == 1) * 0x4914DAB9) + (($keepVsync == 0) * 0x60000000)

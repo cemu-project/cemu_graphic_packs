@@ -46,4 +46,3 @@ fadds f30, f30, f12
 ; * f1 (property from object)
 fmuls f30, f30, f1
 blr
-

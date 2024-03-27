@@ -3,7 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Glowing Guardian Color
 path = "The Legend of Zelda: Breath of the Wild/Mods/Glowing Guardian Color"
 description = Changes the color of glowing lines on Ancient things.||Note: Half of the lines on ancient weapons are controlled by "Guardian, Stalker, Scout and Guardian Weapons", the other lines are controlled by "Guardian + Skywatcher".  This can be used to make guardian weapons multiple colors.||Made by Kiri and Pig.
-version = 6
+version = 7
 
 [Default]
 $armorR = 0.000
