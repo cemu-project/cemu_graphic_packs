@@ -1335,7 +1335,7 @@ overwriteHeight = ($height/$gameHeight) * 360
 width = 576
 height = 64
 #formats = 0x019 #,0x01a,0x806,0x816
-overwriteWidth = ($width/$gameWidth) * 560
+overwriteWidth = ($width/$gameWidth) * 576
 overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine] #Cup win board
