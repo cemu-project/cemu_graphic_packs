@@ -896,7 +896,7 @@ overwriteAnisotropy = $anisotropy
 width = 1280
 height = 720
 formats = 0x19
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
@@ -911,7 +911,7 @@ overwriteHeight = ($height / $gameHeight) * 720
 width = 1280
 height = 720
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
@@ -919,7 +919,7 @@ overwriteHeight = ($height / $gameHeight) * 720
 width = 1280
 height = 720
 formats = 0x806
-overwriteFormat = 0x80e
+#overwriteFormat = 0x80e
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
@@ -927,7 +927,7 @@ overwriteHeight = ($height / $gameHeight) * 720
 width = 1280
 height = 720
 formats = 0x1a
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 1280
 overwriteHeight = ($height / $gameHeight) * 720
 
@@ -935,7 +935,7 @@ overwriteHeight = ($height / $gameHeight) * 720
 width = 640
 height = 368
 formats = 0x806
-overwriteFormat = 0x80e
+#overwriteFormat = 0x80e
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 368
 
@@ -943,7 +943,7 @@ overwriteHeight = ($height / $gameHeight) * 368
 width = 640
 height = 360
 formats = 0x806
-overwriteFormat = 0x80e
+#overwriteFormat = 0x80e
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 360
 
@@ -953,7 +953,7 @@ overwriteHeight = ($height / $gameHeight) * 360
 width = 640
 height = 368
 formats = 0x1a
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 368
 
@@ -961,7 +961,7 @@ overwriteHeight = ($height / $gameHeight) * 368
 width = 640
 height = 360
 formats = 0x1a
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 640
 overwriteHeight = ($height / $gameHeight) * 360
 
@@ -985,7 +985,7 @@ overwriteHeight = ($height / $gameHeight) * 360
 width = 512
 height = 256
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 512
 overwriteHeight = ($height / $gameHeight) * 256
 
@@ -993,7 +993,7 @@ overwriteHeight = ($height / $gameHeight) * 256
 width = 320
 height = 192
 formats = 0x19
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 192
 
@@ -1001,7 +1001,7 @@ overwriteHeight = ($height / $gameHeight) * 192
 width = 320
 height = 180
 formats = 0x19
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 180
 
@@ -1011,7 +1011,7 @@ overwriteHeight = ($height / $gameHeight) * 180
 width = 320
 height = 192
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 192
 
@@ -1019,7 +1019,7 @@ overwriteHeight = ($height / $gameHeight) * 192
 width = 320
 height = 180
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 320
 overwriteHeight = ($height / $gameHeight) * 180
 
@@ -1027,7 +1027,7 @@ overwriteHeight = ($height / $gameHeight) * 180
 width = 256
 height = 128
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 256
 overwriteHeight = ($height / $gameHeight) * 128
 
@@ -1035,7 +1035,7 @@ overwriteHeight = ($height / $gameHeight) * 128
 width = 160
 height = 96
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 160
 overwriteHeight = ($height / $gameHeight) * 96
 
@@ -1043,7 +1043,7 @@ overwriteHeight = ($height / $gameHeight) * 96
 width = 160
 height = 90
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 160
 overwriteHeight = ($height / $gameHeight) * 90
 
@@ -1051,7 +1051,7 @@ overwriteHeight = ($height / $gameHeight) * 90
 width = 128
 height = 64
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 128
 overwriteHeight = ($height / $gameHeight) * 64
 
@@ -1059,7 +1059,7 @@ overwriteHeight = ($height / $gameHeight) * 64
 width = 96
 height = 48
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 96
 overwriteHeight = ($height / $gameHeight) * 48
 
@@ -1067,7 +1067,7 @@ overwriteHeight = ($height / $gameHeight) * 48
 width = 80
 height = 45
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 80
 overwriteHeight = ($height / $gameHeight) * 45
 
@@ -1075,7 +1075,7 @@ overwriteHeight = ($height / $gameHeight) * 45
 width = 64
 height = 32
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 64
 overwriteHeight = ($height / $gameHeight) * 32
 
@@ -1083,7 +1083,7 @@ overwriteHeight = ($height / $gameHeight) * 32
 width = 40
 height = 22
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 40
 overwriteHeight = ($height / $gameHeight) * 22
 
@@ -1091,7 +1091,7 @@ overwriteHeight = ($height / $gameHeight) * 22
 width = 32
 height = 16
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 32
 overwriteHeight = ($height / $gameHeight) * 16
 
@@ -1099,7 +1099,7 @@ overwriteHeight = ($height / $gameHeight) * 16
 width = 24
 height = 16
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 24
 overwriteHeight = ($height / $gameHeight) * 16
 
@@ -1107,7 +1107,7 @@ overwriteHeight = ($height / $gameHeight) * 16
 width = 20
 height = 11
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 20
 overwriteHeight = ($height / $gameHeight) * 11
 
@@ -1124,7 +1124,7 @@ overwriteHeight = ($height / $gameHeight) * 576
 width = 1024
 height = 576
 formats = 0x19
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 1024
 overwriteHeight = ($height / $gameHeight) * 576
 
@@ -1132,7 +1132,7 @@ overwriteHeight = ($height / $gameHeight) * 576
 width = 1024
 height = 576
 formats = 0x806
-overwriteFormat = 0x80e
+#overwriteFormat = 0x80e
 overwriteWidth = ($width / $gameWidth) * 1024
 overwriteHeight = ($height / $gameHeight) * 576
 
@@ -1140,7 +1140,7 @@ overwriteHeight = ($height / $gameHeight) * 576
 width = 1024
 height = 576
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 1024
 overwriteHeight = ($height / $gameHeight) * 576
 
@@ -1148,7 +1148,7 @@ overwriteHeight = ($height / $gameHeight) * 576
 width = 1024
 height = 576
 formats = 0x1a
-overwriteFormat = 0x1f
+#overwriteFormat = 0x1f
 overwriteWidth = ($width / $gameWidth) * 1024
 overwriteHeight = ($height / $gameHeight) * 576
 
@@ -1172,7 +1172,7 @@ overwriteHeight = ($height / $gameHeight) * 288
 width = 512
 height = 288
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 512
 overwriteHeight = ($height / $gameHeight) * 288
 
@@ -1180,7 +1180,7 @@ overwriteHeight = ($height / $gameHeight) * 288
 width = 256
 height = 256
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 256
 overwriteHeight = ($height / $gameHeight) * 256
 
@@ -1190,7 +1190,7 @@ overwriteHeight = ($height / $gameHeight) * 256
 width = 256
 height = 144
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 256
 overwriteHeight = ($height / $gameHeight) * 144
 
@@ -1198,7 +1198,7 @@ overwriteHeight = ($height / $gameHeight) * 144
 width = 128
 height = 128
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 128
 overwriteHeight = ($height / $gameHeight) * 128
 
@@ -1206,7 +1206,7 @@ overwriteHeight = ($height / $gameHeight) * 128
 width = 128
 height = 80
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 128
 overwriteHeight = ($height / $gameHeight) * 80
 
@@ -1214,7 +1214,7 @@ overwriteHeight = ($height / $gameHeight) * 80
 width = 128
 height = 72
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 128
 overwriteHeight = ($height / $gameHeight) * 72
 
@@ -1222,7 +1222,7 @@ overwriteHeight = ($height / $gameHeight) * 72
 width = 64
 height = 64
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 64
 overwriteHeight = ($height / $gameHeight) * 64
 
@@ -1230,7 +1230,7 @@ overwriteHeight = ($height / $gameHeight) * 64
 width = 64
 height = 48
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 64
 overwriteHeight = ($height / $gameHeight) * 48
 
@@ -1238,7 +1238,7 @@ overwriteHeight = ($height / $gameHeight) * 48
 width = 64
 height = 36
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 64
 overwriteHeight = ($height / $gameHeight) * 36
 
@@ -1253,7 +1253,7 @@ overwriteHeight = ($height / $gameHeight) * 36
 width = 32
 height = 18
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 32
 overwriteHeight = ($height / $gameHeight) * 18
 
@@ -1267,7 +1267,7 @@ overwriteHeight = ($height / $gameHeight) * 18
 width = 16
 height = 9
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 16
 overwriteHeight = ($height / $gameHeight) * 9
 
@@ -1277,7 +1277,7 @@ overwriteHeight = ($height / $gameHeight) * 9
 width = 512
 height = 228
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 512
 overwriteHeight = ($height / $gameHeight) * 228
 
@@ -1285,7 +1285,7 @@ overwriteHeight = ($height / $gameHeight) * 228
 width = 448
 height = 256
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 448
 overwriteHeight = ($height / $gameHeight) * 256
 
@@ -1293,7 +1293,7 @@ overwriteHeight = ($height / $gameHeight) * 256
 width = 448
 height = 252
 formats = 0x816
-overwriteFormat = 0x823
+#overwriteFormat = 0x823
 overwriteWidth = ($width / $gameWidth) * 448
 overwriteHeight = ($height / $gameHeight) * 252
 
@@ -1371,11 +1371,11 @@ overwriteHeight = ($padHeight / $gamePadHeight) * 7
 
 # Multiplayer Player Icon
 
-[TextureRedefine]
-width = 256
-height = 256
-formats = 0x1a
-overwriteFormat = 0x1f
+#[TextureRedefine]
+#width = 256
+#height = 256
+#formats = 0x1a
+#overwriteFormat = 0x1f
 
 # Shadows
 
