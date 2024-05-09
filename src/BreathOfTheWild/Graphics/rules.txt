@@ -2,7 +2,7 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Graphics
 path = "The Legend of Zelda: Breath of the Wild/Graphics"
-description = Allows you to change the game resolution, shadow resolution, anti-aliasing and the bloom status.||Made by Kiri, Skalfate, rajkosto, NAVras and Ryce-Fast.
+description = Allows you to change the game resolution, shadow resolution and anti-aliasing.||Made by Kiri, Skalfate, rajkosto and NAVras.
 version = 7
 
 [Default]
