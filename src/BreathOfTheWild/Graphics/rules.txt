@@ -24,7 +24,6 @@ $shadowNearbyStart = 1.0 # the starting distance should be kept at 1.0
 $shadowNearbyEnd = 1.0
 $shadowFarStart = 1.0
 $shadowFarEnd = 1.0
-$BloomStatus = 1
 
 # Should be set to 1 or 2 (changes verbosity of loggin) when trying to log the layout of panes while they're getting loaded for debugging purposes
 $enableUltrawideDebugLogging:int = 0
@@ -593,17 +592,6 @@ $shadowNearbyEnd = 1.4
 $shadowFarStart = 1.4
 $shadowFarEnd = 1.55
 
-# Bloom status
-
-[Preset]
-name = Enabled
-category = Bloom status
-default = 1
-
-[Preset]
-name = Disabled
-category = Bloom status
-$BloomStatus = 2
 
 # Texture Changes
 
@@ -796,8 +784,8 @@ width = 1024
 height = 512
 depth = 1
 formats = 0x816
-overwriteWidth = ($width/$gameWidth) * 1024 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 512 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 512
 
 # Sheikah slate scope
 [TextureRedefine]
@@ -815,24 +803,24 @@ width = 256
 height = 128
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 256 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 128 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 256
+overwriteHeight = ($height/$gameHeight) * 128
 
 [TextureRedefine]
 width = 128
 height = 64
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 128 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 64 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 128
+overwriteHeight = ($height/$gameHeight) * 64
 
 [TextureRedefine]
 width = 64
 height = 32
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 64 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 32 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
 
 [TextureRedefine] # catches cubemap! 32x32, 16x16
 width = 32
@@ -840,8 +828,8 @@ height = 16
 depth = 1
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 32 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 16 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 24
@@ -849,8 +837,8 @@ height = 16
 depth = 1
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 24 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 16 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 24
+overwriteHeight = ($height/$gameHeight) * 16
 
 [TextureRedefine]
 width = 40
@@ -858,8 +846,8 @@ height = 22
 depth = 1
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 40 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 22 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 40
+overwriteHeight = ($height/$gameHeight) * 22
 
 [TextureRedefine]
 width = 20
@@ -867,8 +855,8 @@ height = 11
 depth = 1
 formats = 0x816
 tilemodes = 4
-overwriteWidth = ($width/$gameWidth) * 20 * $BloomStatus
-overwriteHeight = ($height/$gameHeight) * 11 * $BloomStatus
+overwriteWidth = ($width/$gameWidth) * 20
+overwriteHeight = ($height/$gameHeight) * 11
 
 # Great Fairy / Stable / Stores Viewports
 
