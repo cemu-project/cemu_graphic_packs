@@ -211,6 +211,11 @@ category = Bloom Intensity
 $BloomStatus = 0
 
 [Preset]
+name = 50%
+category = Bloom Intensity
+$BloomStatus = 0.5
+
+[Preset]
 name = 100% (Default)
 category = Bloom Intensity
 default = 1
@@ -224,16 +229,6 @@ $BloomStatus = 1.5
 name = 200%
 category = Bloom Intensity
 $BloomStatus = 2.0
-
-[Preset]
-name = 250%
-category = Bloom Intensity
-$BloomStatus = 2.5
-
-[Preset]
-name = 300%
-category = Bloom Intensity
-$BloomStatus = 3.0
 
 [TextureRedefine]
 tileModesExcluded = 0x001 # ignore cpu processed textures (ex. videos)
