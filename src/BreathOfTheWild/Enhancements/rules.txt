@@ -14,6 +14,7 @@ $sampleCount:int = 4
 $advancedLOD = 0
 $lodBias = 0
 $anisotropy = 1
+$BloomStatus = 1
 
 # Clarity Preset
 
@@ -202,6 +203,37 @@ name = Low (1x)
 category = Anisotropic Filtering
 $anisotropy = 1
 
+# Bloom Intensity
+
+[Preset]
+name = 0%
+category = Bloom Intensity
+$BloomStatus = 0
+
+[Preset]
+name = 100% (Default)
+category = Bloom Intensity
+default = 1
+
+[Preset]
+name = 150%
+category = Bloom Intensity
+$BloomStatus = 1.5
+
+[Preset]
+name = 200%
+category = Bloom Intensity
+$BloomStatus = 2.0
+
+[Preset]
+name = 250%
+category = Bloom Intensity
+$BloomStatus = 2.5
+
+[Preset]
+name = 300%
+category = Bloom Intensity
+$BloomStatus = 3.0
 
 [TextureRedefine]
 tileModesExcluded = 0x001 # ignore cpu processed textures (ex. videos)

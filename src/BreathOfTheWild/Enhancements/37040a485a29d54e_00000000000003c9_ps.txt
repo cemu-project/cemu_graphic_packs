@@ -183,7 +183,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 1)	//Bruz
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.30;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 0
 	float HDRPower = 1.3;
   	float radius1 = 0.795;
@@ -251,7 +251,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 2) //t3nka Neutral+
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.30;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	float HDRPower = 1.50;
 	float radius1 = 0.793;
@@ -319,7 +319,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 3) //Jamie
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.020;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	const float HDRPower = 1.00;
 	const float radius1 = 1.00;
@@ -387,7 +387,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 4) //Contrasty
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.020;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 0 													 
 	const float HDRPower = 1.00;
 	const float radius1 = 1.00;
@@ -455,7 +455,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 5) //The Complaining Gamer
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.33;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1 													 
 	const float HDRPower = 1.020;
 	const float radius1 = 0.793;
@@ -523,7 +523,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 6) //Filmic
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.020;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	const float HDRPower = 1.20;
 	const float radius1 = 1.00;
@@ -591,7 +591,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 7) //CellHunter
 										   
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.215;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	const float HDRPower = 1.200;
 	const float radius1 = 1.050;
@@ -659,7 +659,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 8) //Serfrost (Bright Display)
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.40;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1 													 
 	const float HDRPower = 1.20;
 	const float radius1 = 0.793;
@@ -727,7 +727,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 9) //Serfrost (Dim Display)
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.7;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1 													 
 	const float HDRPower = 1.20;
 	const float radius1 = 0.793;
@@ -795,7 +795,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 10) //Serfrost (Other)
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.3;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1 													 
 	const float HDRPower = 1.15;
 	const float radius1 = 0.793;
@@ -863,7 +863,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 11) //ViskClarity
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 4.050;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1													 
 	const float HDRPower = 1.3;
 	const float radius1 = 0.793;
@@ -931,7 +931,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 12) //Survival of the Wild (Warmer)
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.75;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1 													 
 	const float HDRPower = 1.20;
 	const float radius1 = 0.793;
@@ -999,7 +999,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 13) //Survival of the Wild (Colder)
 
 	#define adjust_bloom 1 
-    const float bloomFactor = 0.75;
+    const float bloomFactor = $BloomStatus;
     #define HDRpassing 0
     const float HDRPower = 1.20;
     const float radius1 = 0.793;
@@ -1067,7 +1067,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 14) //Godot's Mexican Preset	
 
 	#define adjust_bloom 1 	
-	const float bloomFactor = 0.684;                       
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	const float HDRPower = 0.80;                           
 	const float radius1 = 0.80;                             
@@ -1135,7 +1135,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 15) //Hexaae's Clear Preset
 
 	#define adjust_bloom 1
-	const float bloomFactor = 0.593;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	const float HDRPower = 1.56;
 	const float radius1 = 0.86;  
@@ -1203,7 +1203,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 16) // MaranBr Preset (Little More Intense)
 
 	#define adjust_bloom 1
-	const float bloomFactor = 0.4;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1
 	const float HDRPower = 1.15;
 	const float radius1 = 0.793;
@@ -1271,7 +1271,7 @@ float DPX_Strength = 0.20;
 #elif (Preset == 17) // YeMaoWuXin's Preset (Bright colors)
 
 	#define adjust_bloom 1 
-	const float bloomFactor = 0.75;
+	const float bloomFactor = $BloomStatus;
 	#define HDRpassing 1 													 
 	const float HDRPower = 1.30;
 	const float radius1 = 0.80;
