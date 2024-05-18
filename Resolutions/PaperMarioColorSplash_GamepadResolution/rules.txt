@@ -1,0 +1,106 @@
+[Definition]
+titleIds = 000500001F600900,000500001F600A00,000500001F600B00
+name = "Resolution"
+path = "Paper Mario: Color Splash/Graphics/Gamepad"
+description = Changes the gamepad resolution of the game.
+version = 4
+
+[Preset]
+name = 4K gamepad
+$padWidth = 3840
+$padHeight = 2160
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+[Preset]
+name = 4K gamepad 2
+$padWidth = 3840
+$padHeight = 2160
+$gamePadWidth = 864
+$gamePadHeight = 480
+
+[Preset]
+name = 1440p gamepad
+$padWidth = 2560
+$padHeight = 1440
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+[Preset]
+name = 1440p gamepad 2
+$padWidth = 2560
+$padHeight = 1440
+$gamePadWidth = 864
+$gamePadHeight = 480
+
+[Preset]
+name = 1080p Gamepad
+$padWidth = 1920
+$padHeight = 1080
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+[Preset]
+name = 1080p Gamepad 2
+$padWidth = 1920
+$padHeight = 1080
+$gamePadWidth = 864
+$gamePadHeight = 480
+
+[Preset]
+name = 980p Gamepad/Handheld
+$padWidth = 1568
+$padHeight = 980
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+[Preset]
+name = 980p Gamepad/Handheld 2
+$padWidth = 1568
+$padHeight = 980
+$gamePadWidth = 864
+$gamePadHeight = 480
+
+[Preset]
+name = 1131p Gamepad/Handheld
+$padWidth = 1810
+$padHeight = 1131
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+[Preset]
+name = 1131p Gamepad/Handheld 2
+$padWidth = 1810
+$padHeight = 1131
+$gamePadWidth = 864
+$gamePadHeight = 480
+
+[Preset]
+name = 1440p Gamepad/Handheld
+$padWidth = 2560
+$padHeight = 1600
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+[Preset]
+name = 1440p Gamepad/Handheld 2
+$padWidth = 2560
+$padHeight = 1600
+$gamePadWidth = 864
+$gamePadHeight = 480
+
+# Gamepad
+
+[TextureRedefine]
+width = 864
+height = 480
+formats = 0x011,0x816,0x41a,0x81e,0x810,0x21a,0x01a
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x011,0x816,0x41a,0x81e,0x810,0x21a,0x01a
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
