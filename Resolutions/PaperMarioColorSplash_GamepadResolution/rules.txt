@@ -5,6 +5,8 @@ path = "Paper Mario: Color Splash/Graphics/Gamepad"
 description = Changes the gamepad resolution of the game.
 version = 4
 
+#Gamepad Resolution
+
 [Preset]
 name = 4K gamepad
 $padWidth = 3840
@@ -72,22 +74,13 @@ $gamePadHeight = 480
 name = 1131p Gamepad/Handheld 2
 $padWidth = 1810
 $padHeight = 1131
-$gamePadWidth = 864
-$gamePadHeight = 480
+
 
 [Preset]
 name = 1440p Gamepad/Handheld
 $padWidth = 2560
 $padHeight = 1600
-$gamePadWidth = 854
-$gamePadHeight = 480
 
-[Preset]
-name = 1440p Gamepad/Handheld 2
-$padWidth = 2560
-$padHeight = 1600
-$gamePadWidth = 864
-$gamePadHeight = 480
 
 # Gamepad
 
