@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143500,0005000010143600
-name= Graphical fixes for Intel Integrated GPUs
+name = Graphical fixes for Intel Integrated GPUs
 path = "The Legend of Zelda: The Wind Waker HD/Workarounds/Intel Integrated GPU Fixes"
 description = Fixes graphical bugs while using an Intel iGPU. Don't use this if you're using a Nvidia or AMD GPU.
-version = 4
+version = 7

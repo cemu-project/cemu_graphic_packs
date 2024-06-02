@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143500,0005000010143600
-name = FPS Slowdown
-path = "The Legend of Zelda: The Wind Waker HD/Workarounds/FPS Slowdown"
+name = FPS Slowdown Fix
+path = "The Legend of Zelda: The Wind Waker HD/Workarounds/FPS Slowdown Fix"
 description = Fixes slowdown that could occur on weaker hardware.
-version = 4
+version = 7

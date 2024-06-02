@@ -1,12 +1,113 @@
 [Definition]
 titleIds = 0005000010143400,0005000010143600,0005000010143500
-name = Contrasty
-path = "The Legend of Zelda: The Wind Waker HD/Enhancements/Contrasty v1.1"
-description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Enabling will ignore your other AA settings. Made by getdls.
-version = 4
+name = Enhancements
+path = "The Legend of Zelda: The Wind Waker HD/Enhancements" 
+description = Allows you to change the sharpness of textures and change the contrast.||Made by getdls and Ryce-Fast.
+version = 7
+
+[Default]
+$0x031 = 0
+$0x033 = 0
+$0x034 = 0
+$0x035 = 0
+$0x431 = 0
+$0x432 = 0
+$0x433 = 0
+$0x434 = 0
+$redShadows = 1.0
+$greenShadows = 1.0
+$blueSadows = 1.0
+$redMid = 1.0
+$greenMid = 1.0
+$blueMid = 1.0
+$redHilight = 1.0
+$greenHilight =1.0
+$blueHilight = 1.0
+$contrastCurve = 0.0
+$hazeFactor = 1.0
+$bloom = 1.0
+$gamma = 1.0
+$exposure = 1.0
+$vibrance = 0.0
+$crushContrast = 0.0
+$bleach = 1.0
+$sharp_mix = 0.0
+$skyboxRed = 1.0
+$skyboxGreen = 1.05
+$skyboxBlue = 0.9
+$skyboxMix = 1.05
+$AO = 1.0
+$beach = 1.0
+
+
+# Texture LOD bias
+
+[Preset]
+name = LOD Default
+category = Texture LOD
+$0x031 = 0
+$0x033 = 0
+$0x034 = 0
+$0x035 = 0
+$0x431 = 0
+$0x432 = 0
+$0x433 = 0
+$0x434 = 0
+
+[Preset] #16x Anisotropic filter makes (ocean) textures to sharp, they should fade to blur.
+name = +2 LOD 34 smooth ocean mipmap transition.
+category = Texture LOD
+$0x031 = 0
+$0x033 = 0
+$0x034 = +2
+$0x035 = 0
+$0x431 = 0
+$0x432 = 0
+$0x433 = 0
+$0x434 = 0
+
+[Preset]
+name = LOD -0.5 (Sharper)
+category = Texture LOD
+$0x031 = -.5
+$0x033 = -.5
+$0x034 = -.5
+$0x035 = -.5
+$0x431 = -.5
+$0x432 = -.5
+$0x433 = -.5
+$0x434 = -.5
+
+[Preset]
+name = LOD -1 (Max for gameplay)
+category = Texture LOD
+$0x031 = -1
+$0x033 = -1
+$0x034 = -1
+$0x035 = -1
+$0x431 = -1
+$0x432 = -1
+$0x433 = -1
+$0x434 = -1
+
+[Preset]
+name = LOD -4 (Overkill - For screenshots)
+category = Texture LOD
+$0x031 = -4
+$0x033 = -4
+$0x034 = -4
+$0x035 = -4
+$0x431 = -4
+$0x432 = -4
+$0x433 = -4
+$0x434 = -4
+
+
+# Contrasty
 
 [Preset]
 name = Default
+category = Contrasty
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -36,6 +137,7 @@ $beach = 1.0
 
 [Preset]
 name = Less sky bloom
+category = Contrasty
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -65,6 +167,7 @@ $beach = 1.0
 
 [Preset]
 name = High Contrasty
+category = Contrasty
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -94,6 +197,7 @@ $beach = 1.0
 
 [Preset]
 name = Colourful
+category = Contrasty
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -123,6 +227,7 @@ $beach = 1.0
 
 [Preset]
 name = Gamecube style
+category = Contrasty
 $redShadows = 1.01
 $greenShadows = 1.01
 $blueSadows = 1.01
@@ -152,6 +257,7 @@ $beach = 0.85
 
 [Preset]
 name = Gangnam style
+category = Contrasty
 $redShadows = 0.9
 $greenShadows = 0.91
 $blueSadows = 0.94
@@ -178,3 +284,36 @@ $skyboxBlue = 1.1
 $skyboxMix = 1.5
 $AO = 1.5
 $beach = 1.1
+
+
+[TextureRedefine]
+formats = 0x031
+overwriteRelativeLodBias = $0x031 
+
+[TextureRedefine] # Per format, possible to have separate scaling if needed
+formats = 0x033 
+overwriteRelativeLodBias = $0x033 
+
+[TextureRedefine]
+formats = 0x034
+overwriteRelativeLodBias = $0x034 
+
+[TextureRedefine]
+formats = 0x035
+overwriteRelativeLodBias = $0x035
+
+[TextureRedefine]
+formats = 0x431
+overwriteRelativeLodBias = $0x431
+
+[TextureRedefine]
+formats = 0x432
+overwriteRelativeLodBias = $0x432
+
+[TextureRedefine]
+formats = 0x433
+overwriteRelativeLodBias = $0x433
+
+[TextureRedefine]
+formats = 0x434
+overwriteRelativeLodBias = $0x434
