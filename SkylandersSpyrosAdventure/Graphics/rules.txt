@@ -1,0 +1,149 @@
+[Definition]
+titleIds = 0005000010142D00
+name = Resolution V2
+path = "Skylanders: Spyro's Adventure/Graphics"
+description = Changes the resolution of the game. Gamepad will only function with base resolution. Using the seperate gamepad view impacts game performance.||Made by Mr.Blinker
+version = 6
+
+[Default]
+$tvWidth = 1280
+$tvHeight = 720
+$gamepadWidth = 854
+$gamepadHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$shadowRes = 1
+
+# TV Resolution
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+$tvWidth = 1280
+$tvHeight = 720
+
+[Preset]
+category = Resolution
+name = 640x360
+$tvWidth = 640
+$tvHeight = 360
+
+[Preset]
+category = Resolution
+name = 960x540
+$tvWidth = 960
+$tvHeight = 540
+
+[Preset]
+category = Resolution
+name = 1600x900
+$tvWidth = 1600
+$tvHeight = 900
+
+[Preset]
+category = Resolution
+name = 1920x1080
+$tvWidth = 1920
+$tvHeight = 1080
+
+[Preset]
+category = Resolution
+name = 2560x1440
+$tvWidth = 2560
+$tvHeight = 1440
+
+[Preset]
+category = Resolution
+name = 3200x1800
+$tvWidth = 3200
+$tvHeight = 1800
+
+[Preset]
+category = Resolution
+name = 3840x2160
+$tvWidth = 3840
+$tvHeight = 2160
+
+[Preset]
+category = Resolution
+name = 5120x2880
+$tvWidth = 5120
+$tvHeight = 2880
+
+[Preset]
+category = Resolution
+name = 7680x4320
+$tvWidth = 7680
+$tvHeight = 4320
+
+# Gamepad Resolution
+
+[Preset]
+name = 854x480 (Default)
+category = Gamepad Resolution
+$gamepadWidth = 854
+$gamepadHeight = 480
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%)
+$shadowRes = 4
+
+# Texture Redefines
+
+[TextureRedefine] # Game output and hud resolution
+width = 1280
+height = 720
+formats = 0x01a,0x011
+overwriteWidth = ($tvWidth/$gameWidth) * 1280
+overwriteHeight = ($tvHeight/$gameHeight) * 720
+
+[TextureRedefine] # Gamepad resolution
+width = 864
+height = 480
+formats = 0x01a
+overwriteWidth = $gamepadWidth
+overwriteHeight = $gamepadHeight
+
+[TextureRedefine] # Stage rendering
+width = 1024
+height = 576
+formats = 0x01a,0x011,0x80e
+overwriteWidth = ($tvWidth/$gameWidth) * 1024
+overwriteHeight = ($tvHeight/$gameHeight) * 576
+
+[TextureRedefine] # Squashed/bloom alt viewport
+width = 512
+height = 576
+formats = 0x01a,0x80e,0x011
+overwriteWidth = ($tvWidth/$gameWidth) * 512
+overwriteHeight = ($tvHeight/$gameHeight) * 576
+
+[TextureRedefine] # Half-res viewport depth, blur and bloom
+width = 512
+height = 288
+formats = 0x01a,0x80e,0x011
+overwriteWidth = ($tvWidth/$gameWidth) * 512
+overwriteHeight = ($tvHeight/$gameHeight) * 288
