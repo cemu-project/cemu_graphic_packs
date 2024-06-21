@@ -1,0 +1,73 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+name = Level of detail
+path = "New Super Mario Bros. U/Enhancements/Texture LOD"
+description = Allows you to change the texture quality.||Made by Ryce-Fast.
+version = 6
+
+[Default]
+$0x031 = 0
+$0x033 = 0
+$0x034 = 0
+$0x035 = 0
+$0x01a = 0
+
+[Preset]
+name = Default LOD
+$0x031 = 0
+$0x033 = 0
+$0x034 = 0
+$0x035 = 0
+$0x01a = 0
+
+[Preset]
+name = Slightly higher LOD
+$0x031 = -.5
+$0x033 = -.5
+$0x034 = -.5
+$0x035 = -.5
+$0x01a = -.5
+
+[Preset]
+name = Higher LOD
+$0x031 = -1
+$0x033 = -1
+$0x034 = -1
+$0x035 = -1
+$0x01a = -1
+
+[Preset]
+name = Very high LOD
+$0x031 = -4
+$0x033 = -4
+$0x034 = -4
+$0x035 = -4
+$0x01a = -4
+
+[Preset]
+name = Very Low LOD (Simulate Wii U LOD on higher resolution)
+$0x031 = +2
+$0x033 = +2
+$0x034 = +2
+$0x035 = +2
+$0x01a = 0
+
+[TextureRedefine]
+formats = 0x031
+overwriteRelativeLodBias = $0x031
+
+[TextureRedefine]
+formats = 0x033
+overwriteRelativeLodBias = $0x033
+
+[TextureRedefine]
+formats = 0x034
+overwriteRelativeLodBias = $0x034
+
+[TextureRedefine]
+formats = 0x035
+overwriteRelativeLodBias = $0x035
+
+[TextureRedefine]
+formats = 0x01a
+overwriteRelativeLodBias = $0x01a
