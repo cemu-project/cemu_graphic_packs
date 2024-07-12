@@ -1337,7 +1337,6 @@ float DPX_Strength = 0.20;
 	float Colorfulness = 1.0;
 	float DPX_Strength = 0.10;
 	
-#endif
 
 #elif (Preset == 18) // YeMaoWuXin's Preset (Vibrant realism)
 
