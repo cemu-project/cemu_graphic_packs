@@ -109,7 +109,7 @@ category = Clarity
 $preset:int = 17
 
 [Preset]
-name = YeMaoWuXin's Preset (Vibrant realism)
+name = YeMaoWuXin's Preset (Vivid and clear)
 category = Clarity
 $preset:int = 18
 
