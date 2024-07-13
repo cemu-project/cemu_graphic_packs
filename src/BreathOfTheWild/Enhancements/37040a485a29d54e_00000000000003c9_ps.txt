@@ -1367,7 +1367,7 @@ float DPX_Strength = 0.20;
 	vec3 RGB_Gamma = vec3(0.97, 0.96, 0.98);
 	vec3 RGB_Gain = vec3(1.050, 1.000, 1.050);
 	#define vibpass 1 
-	const float Vibrance = 3.5;
+	const float Vibrance = 2.5;
 	vec3 VibranceRGBBalance = vec3(0.082656, 0.055158, 0.102186);
 	#define Tech 0
 	const float Power = 5.0;
