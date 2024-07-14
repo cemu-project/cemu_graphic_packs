@@ -109,6 +109,11 @@ category = Clarity
 $preset:int = 17
 
 [Preset]
+name = YeMaoWuXin's Preset (Vivid and clear)
+category = Clarity
+$preset:int = 18
+
+[Preset]
 name = User-Defined Preset
 category = Clarity
 $preset:int = 0
