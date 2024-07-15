@@ -114,6 +114,11 @@ category = Clarity
 $preset:int = 18
 
 [Preset]
+name = Cobalt's Preset (Saturated & Bright)
+category = Clarity
+$preset:int = 19
+
+[Preset]
 name = User-Defined Preset
 category = Clarity
 $preset:int = 0
