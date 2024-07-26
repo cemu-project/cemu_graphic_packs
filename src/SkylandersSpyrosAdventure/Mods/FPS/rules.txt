@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010142d00
-name = FPS
+name = FPS V2
 path = "Skylanders: Spyro's Adventure/Mods/FPS"
-description = Changes the game's dynamic FPS target. Might increase the chance of issues with scanning figures.||Made by Mew00.
+description = Changes the game's dynamic FPS target. Might increase the chance of issues with scanning figures.||Made by Mr.Blinker
 version = 6
 
 [Default]
