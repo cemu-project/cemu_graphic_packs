@@ -4,3 +4,4 @@ name = Title Screen Crash Fix
 path = "New Super Mario Bros. U/Workarounds/Title Screen Crash Fix" #and luigi
 description = Allows NSMBU and NSLU to be played without the required system files.|Only tested to work on the latest update of the game.||Made by Xalphenos.
 version = 6
+default = 1
