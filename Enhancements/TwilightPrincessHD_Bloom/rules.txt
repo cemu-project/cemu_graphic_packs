@@ -1,0 +1,130 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = Bloom (Glow Effects)
+path = The Legend of Zelda: Twilight Princess HD/Graphics/Bloom
+description = Changes the bloom in the game, which is used aggressively in the shadow world, where it has a strong yellow cast.||Can also remove the yellow tint by shifting the bloom color to blue. A too high value can cause a blue cast outside of the shadow world. Up to 50% is safe.
+version = 5
+
+
+[Default]
+$bloomlevel = 1.0
+$bloomred = 1.0 # not useful
+$bloomgreen = 1.0 # not useful
+$bloomblue = 1.0
+$bloombrightness = 1.0 # has weird effects, not useful
+
+
+# Intensity
+
+[Preset]
+category = Bloom Intensity
+name = 100% (Native)
+$bloomlevel = 1.0
+
+[Preset]
+category = Bloom Intensity
+name = 90%
+$bloomlevel = 0.9
+
+[Preset]
+category = Bloom Intensity
+name = 80%
+$bloomlevel = 0.8
+
+[Preset]
+category = Bloom Intensity
+name = 70%
+$bloomlevel = 0.7
+
+[Preset]
+category = Bloom Intensity
+name = 60%
+$bloomlevel = 0.6
+
+[Preset]
+category = Bloom Intensity
+name = 50% (Recommended)
+$bloomlevel = 0.5
+
+[Preset]
+category = Bloom Intensity
+name = 40%
+$bloomlevel = 0.4
+
+[Preset]
+category = Bloom Intensity
+name = 30%
+$bloomlevel = 0.3
+
+[Preset]
+category = Bloom Intensity
+name = 20%
+$bloomlevel = 0.2
+
+[Preset]
+category = Bloom Intensity
+name = 10%
+$bloomlevel = 0.1
+
+[Preset]
+category = Bloom Intensity
+name = 0% (Disables bloom entirely)
+$bloomlevel = 0.0
+
+
+# Blue Shift
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 0% (Native)
+$bloomblue = 1.0
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 10%
+$bloomblue = 1.20
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 20%
+$bloomblue = 1.4
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 30%
+$bloomblue = 1.6
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 40%
+$bloomblue = 1.8
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 50% (Recommended)
+$bloomblue = 2.0
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 60%
+$bloomblue = 2.2
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 70%
+$bloomblue = 2.4
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 80%
+$bloomblue = 2.6
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 90%
+$bloomblue = 2.8
+
+[Preset]
+category = Blue Shift (Removes Yellow Tint)
+name = 100%
+$bloomblue = 3.0
