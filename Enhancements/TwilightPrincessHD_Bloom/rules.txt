@@ -3,7 +3,7 @@ titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Bloom (Glow Effects)
 path = The Legend of Zelda: Twilight Princess HD/Graphics/Bloom
 description = Changes the bloom in the game, which is used aggressively in the shadow world, where it has a strong yellow cast.||Can also remove the yellow tint by shifting the bloom color to blue. A too high value can cause a blue cast outside of the shadow world. Up to 50% is safe.
-version = 5
+version = 7
 
 
 [Default]
@@ -18,48 +18,8 @@ $bloombrightness = 1.0 # has weird effects, not useful
 
 [Preset]
 category = Bloom Intensity
-name = 100% (Native)
-$bloomlevel = 1.0
-
-[Preset]
-category = Bloom Intensity
-name = 90%
-$bloomlevel = 0.9
-
-[Preset]
-category = Bloom Intensity
-name = 80%
-$bloomlevel = 0.8
-
-[Preset]
-category = Bloom Intensity
-name = 70%
-$bloomlevel = 0.7
-
-[Preset]
-category = Bloom Intensity
-name = 60%
-$bloomlevel = 0.6
-
-[Preset]
-category = Bloom Intensity
-name = 50% (Recommended)
-$bloomlevel = 0.5
-
-[Preset]
-category = Bloom Intensity
-name = 40%
-$bloomlevel = 0.4
-
-[Preset]
-category = Bloom Intensity
-name = 30%
-$bloomlevel = 0.3
-
-[Preset]
-category = Bloom Intensity
-name = 20%
-$bloomlevel = 0.2
+name = 0% (Disables bloom entirely)
+$bloomlevel = 0.0
 
 [Preset]
 category = Bloom Intensity
@@ -68,8 +28,59 @@ $bloomlevel = 0.1
 
 [Preset]
 category = Bloom Intensity
-name = 0% (Disables bloom entirely)
-$bloomlevel = 0.0
+name = 20%
+$bloomlevel = 0.2
+
+[Preset]
+category = Bloom Intensity
+name = 30%
+$bloomlevel = 0.3
+
+[Preset]
+category = Bloom Intensity
+name = 40%
+$bloomlevel = 0.4
+
+[Preset]
+category = Bloom Intensity
+name = 50% (Recommended)
+$bloomlevel = 0.5
+
+[Preset]
+category = Bloom Intensity
+name = 60%
+$bloomlevel = 0.6
+
+[Preset]
+category = Bloom Intensity
+name = 70%
+$bloomlevel = 0.7
+
+[Preset]
+category = Bloom Intensity
+name = 80%
+$bloomlevel = 0.8
+
+[Preset]
+category = Bloom Intensity
+name = 90%
+$bloomlevel = 0.9
+
+[Preset]
+category = Bloom Intensity
+name = 100% (Native)
+default = 1
+$bloomlevel = 1.0
+
+[Preset]
+category = Bloom Intensity
+name = 110%
+$bloomlevel = 1.1
+
+[Preset]
+category = Bloom Intensity
+name = 120%
+$bloomlevel = 1.2
 
 
 # Blue Shift
