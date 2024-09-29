@@ -1,141 +1,372 @@
 [Definition]
 titleIds = 000500001019C800,000500001019E600,000500001019E500
-name = Bloom (Glow Effects)
+name = Bloom (Glow) + Shadow World Color Grading
 path = The Legend of Zelda: Twilight Princess HD/Graphics/Bloom
-description = Changes the bloom in the game, which is used aggressively in the shadow world, where it has a strong yellow cast.||Can also remove the yellow tint by shifting the bloom color to blue. A too high value can cause a blue cast outside of the shadow world. Up to 50% is safe.
+description = Bloom is used aggressively in the shadow world, where it has a strong yellow cast.||The bloom color tint is provided by the map and gives some areas their atmosphere. I would not recommend disabling bloom or its tint completely.||The shadow world has a special color grading to make the world appear darker and more colorless, which you can set independently of the bloom.||Use OpenGL for live in-game changes.
 version = 7
 
 
 [Default]
-$bloomlevel = 1.0
-$bloomred = 1.0 # not useful
-$bloomgreen = 1.0 # not useful
-$bloomblue = 1.0
-$bloombrightness = 1.0 # has weird effects, not useful
+$bloom_enabled = 1
+$bloom_strength = 1.0
+#$bloom_blur_strength = 1.0
+$bloom_tint_strength = 1.0
+$shadow_world_dampening = 1.0
+$shadow_world_desaturation = 1.0
 
 
-# Intensity
+# Overall Bloom Strength (6e2f31b2b2fcab1f)
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 0% (Disables bloom entirely)
-$bloomlevel = 0.0
+$bloom_enabled = 0
+$bloom_strength = 0.0
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 10%
-$bloomlevel = 0.1
+$bloom_enabled = 1
+$bloom_strength = 0.1
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 20%
-$bloomlevel = 0.2
+$bloom_enabled = 1
+$bloom_strength = 0.2
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 30%
-$bloomlevel = 0.3
+$bloom_enabled = 1
+$bloom_strength = 0.3
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 40%
-$bloomlevel = 0.4
+$bloom_enabled = 1
+$bloom_strength = 0.4
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 50% (Recommended)
-$bloomlevel = 0.5
+$bloom_enabled = 1
+$bloom_strength = 0.5
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 60%
-$bloomlevel = 0.6
+$bloom_enabled = 1
+$bloom_strength = 0.6
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 70%
-$bloomlevel = 0.7
+$bloom_enabled = 1
+$bloom_strength = 0.7
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 80%
-$bloomlevel = 0.8
+$bloom_enabled = 1
+$bloom_strength = 0.8
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 90%
-$bloomlevel = 0.9
+$bloom_enabled = 1
+$bloom_strength = 0.9
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 100% (Native)
 default = 1
-$bloomlevel = 1.0
+$bloom_enabled = 1
+$bloom_strength = 1.0
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 110%
-$bloomlevel = 1.1
+$bloom_enabled = 1
+$bloom_strength = 1.1
 
 [Preset]
-category = Bloom Intensity
+category = Bloom
 name = 120%
-$bloomlevel = 1.2
-
-
-# Blue Shift
+$bloom_enabled = 1
+$bloom_strength = 1.2
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
-name = 0% (Native)
-$bloomblue = 1.0
+category = Bloom
+name = 150%
+$bloom_enabled = 1
+$bloom_strength = 1.5
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Bloom
+name = 200%
+$bloom_enabled = 1
+$bloom_strength = 2.0
+
+
+## Blur Strength (ToDo)
+## Strength of the periodic blur would be most useful, some people feel nausatiated by it
+## Would recommend to set bloom higher with this reduced
+## Didn't figure out the shader yet. Most likely better solved via ASM
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 0% (Bloom will stay static)
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.0
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 10%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.1
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 20%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.2
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 30%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.3
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 40%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.4
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 50% (Recommended)
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.5
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 60%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.6
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 70%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.7
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 80%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.8
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 90%
+#condition = $bloom_enabled
+#$bloom_blur_strength = 0.9
+#
+#[Preset]
+#category = Periodic Bloom Blur
+#name = 100% (Native)
+#condition = $bloom_enabled
+#default = 1
+#$bloom_blur_strength = 1.0
+
+
+# Area Specific Bloom Tint (49865bd2e62efda1)
+
+[Preset]
+category = Area Specific Bloom Tint
+name = 0% (Same white bloom color everywhere)
+condition = $bloom_enabled
+$bloom_tint_strength = 0.0
+
+[Preset]
+category = Area Specific Bloom Tint
 name = 10%
-$bloomblue = 1.20
+condition = $bloom_enabled
+$bloom_tint_strength = 0.1
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Area Specific Bloom Tint
 name = 20%
-$bloomblue = 1.4
+condition = $bloom_enabled
+$bloom_tint_strength = 0.2
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Area Specific Bloom Tint
 name = 30%
-$bloomblue = 1.6
+condition = $bloom_enabled
+$bloom_tint_strength = 0.3
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Area Specific Bloom Tint
 name = 40%
-$bloomblue = 1.8
+condition = $bloom_enabled
+$bloom_tint_strength = 0.4
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
-name = 50% (Recommended)
-$bloomblue = 2.0
+category = Area Specific Bloom Tint
+name = 50%
+condition = $bloom_enabled
+$bloom_tint_strength = 0.5
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Area Specific Bloom Tint
 name = 60%
-$bloomblue = 2.2
+condition = $bloom_enabled
+$bloom_tint_strength = 0.6
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Area Specific Bloom Tint
 name = 70%
-$bloomblue = 2.4
+condition = $bloom_enabled
+$bloom_tint_strength = 0.7
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
-name = 80%
-$bloomblue = 2.6
+category = Area Specific Bloom Tint
+name = 80% (Recommended)
+condition = $bloom_enabled
+$bloom_tint_strength = 0.8
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
+category = Area Specific Bloom Tint
 name = 90%
-$bloomblue = 2.8
+condition = $bloom_enabled
+$bloom_tint_strength = 0.9
 
 [Preset]
-category = Blue Shift (Removes Yellow Tint)
-name = 100%
-$bloomblue = 3.0
+category = Area Specific Bloom Tint
+name = 100% (Native)
+condition = $bloom_enabled
+default = 1
+$bloom_tint_strength = 1.0
+
+
+# Shadow World Color Dampening (49865bd2e62efda1)
+# the alpha of the bloom color tint in the shadow world is used to darken the image
+# this is separated, because it is not affected by bloom strength at all
+
+[Preset]
+category = Shadow World Color Dampening
+name = 0% (Colors in shadow world as bright as in light world)
+$shadow_world_dampening = 0.0
+
+[Preset]
+category = Shadow World Color Dampening
+name = 10%
+$shadow_world_dampening = 0.1
+
+[Preset]
+category = Shadow World Color Dampening
+name = 20% (Recommended)
+$shadow_world_dampening = 0.2
+
+[Preset]
+category = Shadow World Color Dampening
+name = 30%
+$shadow_world_dampening = 0.3
+
+[Preset]
+category = Shadow World Color Dampening
+name = 40%
+$shadow_world_dampening = 0.4
+
+[Preset]
+category = Shadow World Color Dampening
+name = 50%
+$shadow_world_dampening = 0.5
+
+[Preset]
+category = Shadow World Color Dampening
+name = 60%
+$shadow_world_dampening = 0.6
+
+[Preset]
+category = Shadow World Color Dampening
+name = 70%
+$shadow_world_dampening = 0.7
+
+[Preset]
+category = Shadow World Color Dampening
+name = 80%
+$shadow_world_dampening = 0.8
+
+[Preset]
+category = Shadow World Color Dampening
+name = 90%
+$shadow_world_dampening = 0.9
+
+[Preset]
+category = Shadow World Color Dampening
+name = 100% (Native)
+default = 1
+$shadow_world_dampening = 1.0
+
+
+# Shadow World Desaturation (5f422bf63e25be7f)
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 0% (Colors in shadow world as saturated as in light world)
+$shadow_world_desaturation = 0.0
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 10%
+$shadow_world_desaturation = 0.1
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 20%
+$shadow_world_desaturation = 0.2
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 30%
+$shadow_world_desaturation = 0.3
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 40%
+$shadow_world_desaturation = 0.4
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 50% (Recommended)
+$shadow_world_desaturation = 0.5
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 60%
+$shadow_world_desaturation = 0.6
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 70%
+$shadow_world_desaturation = 0.7
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 80%
+$shadow_world_desaturation = 0.8
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 90%
+$shadow_world_desaturation = 0.9
+
+[Preset]
+category = Shadow World Color Desaturation
+name = 100% (Native)
+default = 1
+$shadow_world_desaturation = 1.0
