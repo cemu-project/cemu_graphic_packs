@@ -2,8 +2,8 @@
 titleIds = 00050000101BFC00,00050000101B8500
 name = FPS
 path = "Skylanders: Superchargers/Mods/FPS"
-description = Changes the game's FPS limit.|Running the game with a high FPS limit can result in glitches.||Made by Mew00, Winner Nombre and DigitNetics.
-version = 7
+description = Changes the game's FPS limit.|Running the game with a high FPS limit can result in glitches.||Made by Mew00, and DigitNetics. Infinite fall fix by SuperSamus and Winner Nombre.
+version = 6
 
 [Default]
 $targetFPS:int = 30
