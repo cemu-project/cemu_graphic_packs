@@ -19,7 +19,7 @@ $shadow_world_desaturation = 1.0
 
 [Preset]
 category = Bloom Strength
-name = 0% (Disables bloom entirely)
+name = 0% (Disables bloom entirely, not recommended)
 $bloom_enabled = 0
 $bloom_strength = 0.0
 
