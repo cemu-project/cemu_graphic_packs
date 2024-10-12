@@ -49,7 +49,7 @@ $bloom_strength = 0.4
 
 [Preset]
 category = Bloom
-name = 50% (Recommended)
+name = 50% (Recommended Balanced Preset)
 $bloom_enabled = 1
 $bloom_strength = 0.5
 
