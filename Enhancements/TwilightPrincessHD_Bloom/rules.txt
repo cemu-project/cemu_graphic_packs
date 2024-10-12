@@ -185,7 +185,7 @@ $bloom_strength = 2.0
 # Area Specific Bloom Tint (49865bd2e62efda1)
 
 [Preset]
-category = Area Specific Bloom Tint
+category = Area-specific Bloom Tint Strength
 name = 0% (Same white bloom color everywhere)
 condition = $bloom_enabled
 $bloom_tint_strength = 0.0
