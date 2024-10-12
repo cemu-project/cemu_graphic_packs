@@ -79,7 +79,7 @@ $bloom_strength = 0.9
 
 [Preset]
 category = Bloom
-name = 100% (Native)
+name = 100% (Default)
 default = 1
 $bloom_enabled = 1
 $bloom_strength = 1.0
