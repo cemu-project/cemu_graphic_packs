@@ -246,7 +246,7 @@ $bloom_tint_strength = 0.9
 
 [Preset]
 category = Area Specific Bloom Tint
-name = 100% (Native)
+name = 100% (Default)
 condition = $bloom_enabled
 default = 1
 $bloom_tint_strength = 1.0
