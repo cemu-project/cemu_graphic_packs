@@ -74,8 +74,8 @@ void main()
 	outColor.y = mask.y * tint.y;
 	outColor.z = mask.z * tint.z;
 	
-	// custom color dampening, only in shadow world below 1.0
-	outColor.w = mixf(1.0, tint.w, $shadow_world_dampening);
+	// custom brightness reduction, only in shadow world below 1.0
+	outColor.w = mixf(1.0, tint.w, $shadow_world_darkening);
 	
 	// export
 	passPixelColor0 = vec4(outColor.x, outColor.y, outColor.z, outColor.w);
