@@ -1,0 +1,82 @@
+#version 420
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
+
+// shader 49865bd2e62efda1
+//dark world bloom
+
+const float bloom = $bloom;
+#ifdef VULKAN
+layout(set = 1, binding = 1) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[1];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[1];
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+// uf_fragCoordScale was moved to the ufBlock
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+R0f.xyz = (textureLod(textureUnitPS0, R0f.xy,0.0).xyz)*bloom;
+// 0
+backupReg0f = R0f.y;
+backupReg1f = R0f.x;
+PV0f.x = mul_nonIEEE(R0f.z, intBitsToFloat(uf_remappedPS[0].z));
+PV0f.y = mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedPS[0].y));
+PV0f.z = mul_nonIEEE(backupReg1f, intBitsToFloat(uf_remappedPS[0].x));
+PV0f.w = intBitsToFloat(uf_remappedPS[0].w);
+// 1
+PV1f.x = max(PV0f.w, 0.0);
+PV1f.y = max(PV0f.x, 0.0);
+PV1f.z = max(PV0f.y, 0.0);
+PV1f.w = max(PV0f.z, 0.0);
+// 2
+R0f.x = min(PV1f.w, 1.0);
+R0f.y = min(PV1f.z, 1.0);
+R0f.z = min(PV1f.y, 1.0);
+R0f.w = min(PV1f.x, 1.0);
+// export
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+}
