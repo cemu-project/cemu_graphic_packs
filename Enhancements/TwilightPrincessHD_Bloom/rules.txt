@@ -2,7 +2,7 @@
 titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Bloom (Glow) and Shadow World Color Grading
 path = The Legend of Zelda: Twilight Princess HD/Graphics/Bloom
-description = This pack allows you to adjust bloom and color grading in the shadow world.||It's not recommended to fully disable bloom, as it removes the intended tone of the game.|Bloom is particularly strong in the shadow world with a strong yellow tint, but is also used in the normal world.||Color grading only affects the shadow world. By default, the game darkens and desaturates the image in the shadow world to further distinguish it.||Not compatible with Contrasty.
+description = This pack allows you to adjust bloom and color grading in the shadow world.||It's not recommended to fully disable bloom, as it removes the intended tone of the game.|Bloom is particularly strong in the shadow world with a strong yellow tint, but is also used in the normal world.||Color grading only affects the shadow world. By default, the game darkens and desaturates the image in the shadow world to further distinguish it.
 version = 7
 
 
