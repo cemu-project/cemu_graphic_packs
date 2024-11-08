@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Force Weather"
 path = "Xenoblade Chronicles X/Mods/Weather/Force Weather"
 description = Force selected weather. Just select a preset and unload/reload the pack.|Weather Lock works even when traveling into different regions.
-version = 6
+version = 7
 
 [Default]
 $wtr = 1
@@ -117,7 +117,7 @@ category = Weather
 condition = $region == 3
 
 [Preset]
-name = "Rain [2]"
+name = "Rain [2] "
 category = Weather
 condition = $region == 3
 $wtr = 2
@@ -244,11 +244,10 @@ category = Weather
 condition = $region == 5
 $wtr = 6
 
-###### uncommemt below to use different weather in the Barracks
-###[Preset] ###########################################
-###name = "Blade Barracks (unused)"
-###category = Region
-###$region = 6
+[Preset] ###########################################
+name = "Blade Barracks (unused)"
+category = Region
+$region = 6
 
 [Preset]
 name = "Clear [1]"

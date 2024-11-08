@@ -10,8 +10,8 @@
 - **Soul Challenges - Skell restored**: When your Skell is destroyed during battle, it is restored automatically (you may need to fast travel).
 
 ### BLADE mods
-- **BLADE Medal count mod** sets the number of BLADE Medals you currently have.
-- **DLC quests unlocked**: DLC Support quests are unlocked and accessible as soon as you become a BLADE member.
+- **BLADE Medal Count Mod**: sets the number of BLADE Medals you currently have.
+- **DLC Quests Unlocked**: DLC Support quests are unlocked and accessible as soon as you become a BLADE member.
 - **Gain Reward Tickets from DLC or Time Attack missions**: Add Exchange Tickets in reward for completing Blade missions.
     > There are 2 presets:
 	> 1. Adds (exp) tickets to Time Attack missions
@@ -22,7 +22,15 @@
 - **Offline Squad tasks and missions**: Squad tasks and missions become available for offline play! When the game starts, a Squad quest is randomly selected (with "Random" preset) and the timer is stopped.
     > Other presets allow to choose a specific tasks list.  (c ) stands for collectible and (t) for Tyrant.
     > When "Random" preset is selected, you can randomly change the active mission by opening the main menu and select "Social entry" > "Select Squad" command.
+- **Field Skill Level Mod**: Can change your Mechanical, Biological, Archeaological field level.
 
+### Character mods
+- **Character Level**: Can change any characters current level.
+- **Character Size**: Can change any characters size, and even has some glitch size values.
+- **Change Character Name**: Can change any characters name and can rename your avatar.
+- **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art.
+
+    
 ### Collectibles mods
 - **Catch range mod**: Increase the distance from which you catch a collectible.
    > By default, you'll get them just when you're close enough to see the blue gem (distance increased by 40.0). There are 3 kind of distances in the game, each with a value of "Range" and "Height": "Inner" (which means when you are at foot), "Doll" (when you have a Skell at land) and "Flight" (which I believe is when you flight, generally in a Skell). All values are editable in the file patches.txt. Also note that the rarity of items is untouched.

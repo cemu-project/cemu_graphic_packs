@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Graphics
 path = "Xenoblade Chronicles X/Graphics"
 description = Changes the resolution of the game and the quality of the other elements.||Made by getdls and Lemon King.
-version = 5
+version = 7
 
 [Default]
 $width = 1280

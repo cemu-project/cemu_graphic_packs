@@ -26,47 +26,21 @@ uniform vec2 uf_fragCoordScale;
 #endif
 // This shaders was auto-converted (and manually adjusted) from OpenGL to Cemu so expect weird code and possible errors.
 
-// shader 59df1c7e1806366c - Anti-aliasing Shader - Dumped 1.14
+// shader 59df1c7e1806366c - Anti-aliasing Shader - Dumped 1.21
 
-#define preset 1
-#define moreaa 0.0
-#define lessaa 0.0
+#define preset $Preset
 
-#if (preset == 0) // Native AA Disabled
+//#if (preset == 0) // AA Disabled
+//return floatBitsToInt(0.0);
+//#endif
 
-TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1
-TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1
+#if (preset == 1) // Native AA
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
 layout(location = 0) in vec4 passParameterSem0;
 layout(location = 1) in vec4 passParameterSem1;
 layout(location = 0) out vec4 passPixelColor0;
-
-int clampFI32(int v)
-{
-if( v == 0x7FFFFFFF )
-	return floatBitsToInt(1.0);
-else if( v == 0xFFFFFFFF )
-	return floatBitsToInt(0.0);
-return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
-}
-float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
-void main()
-{
-passPixelColor0 = texture(textureUnitPS1, passParameterSem1.xy); // textureunitps1 is the one with all the colors vs unitps0 which is red viewport
-}
-#endif
-
-#if (preset == 1) // Native AA Enabled
-TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;// Tex0 addr 0xf4e12000 res 1280x720x1 dim 1 tm: 4 format 0001 compSel: 0 4 4 5 mipView: 0x0 (num 0x1
-TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;// Tex1 addr 0xf470a000 res 1280x720x1 dim 1 tm: 4 format 0816 compSel: 0 1 2 5 mipView: 0x0 (num 0x1
-layout(location = 0) in vec4 passParameterSem0;
-layout(location = 1) in vec4 passParameterSem1;
-layout(location = 0) out vec4 passPixelColor0;
-
-ivec2 resDim = textureSize(textureUnitPS0,0); // Retrieve texture dimensions
-float resRatio = ( (float(resDim.x)/1280.0) + moreaa ) - lessaa; // retrieve resolution ratio, and calculate the total
-float resX = (float(resDim.x)/1280.0);
-float resY = (float(resDim.y)/720.0);
-
+// end of shader inputs/outputs
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
@@ -104,11 +78,11 @@ activeMaskStackC[0] = true;
 activeMaskStackC[1] = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
-R0i = floatBitsToInt(passParameterSem0 / resRatio); // Important line
+R0i = floatBitsToInt(passParameterSem0);
 R1i = floatBitsToInt(passParameterSem1);
 if( activeMaskStackC[1] == true ) {
-R2i.xyzw = floatBitsToInt(textureGather(textureUnitPS0, intBitsToFloat(R0i.zw)).xyzw * resRatio); // Important line
-R0i.x = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).x / resRatio); // Important line
+R2i.xyzw = floatBitsToInt(textureGather(textureUnitPS0, vec2(0.0001) + intBitsToFloat(R0i.zw)).xyzw);
+R0i.x = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).x);
 }
 if( activeMaskStackC[1] == true ) {
 activeMaskStack[1] = activeMaskStack[0];
@@ -130,12 +104,12 @@ PV0i.z = R4i.z;
 // 3
 backupReg0i = R0i.x;
 backupReg0i = R0i.x;
-PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) * intBitsToFloat(uf_remappedPS[0].x) / resX); // Important line
+PV1i.x = floatBitsToInt(intBitsToFloat(PV0i.y) * intBitsToFloat(uf_remappedPS[0].x));
 PV1i.y = floatBitsToInt(max(intBitsToFloat(backupReg0i), intBitsToFloat(PV0i.y)));
 PV1i.z = floatBitsToInt(min(intBitsToFloat(backupReg0i), intBitsToFloat(PV0i.z)));
 // 4
 R0i.x = floatBitsToInt(-(intBitsToFloat(PV1i.z)) + intBitsToFloat(PV1i.y));
-R0i.w = floatBitsToInt(max(intBitsToFloat(PV1i.x), intBitsToFloat(uf_remappedPS[0].y) / resY)); // Important line
+R0i.w = floatBitsToInt(max(intBitsToFloat(PV1i.x), intBitsToFloat(uf_remappedPS[0].y)));
 // 5
 backupReg0i = R0i.x;
 predResult = (intBitsToFloat(R0i.w) > intBitsToFloat(backupReg0i));
@@ -162,8 +136,8 @@ R127i.z = 0;
 PS0i = R127i.z;
 // 1
 tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R2i.y),intBitsToFloat(R2i.z),intBitsToFloat(R2i.w)),vec4(-(1.0),1.0,-(1.0),1.0)));
-PV1i.x = tempi.x; // Important
-PV1i.y = tempi.x; // Important
+PV1i.x = tempi.x;
+PV1i.y = tempi.x;
 PV1i.z = tempi.x;
 PV1i.w = tempi.x;
 R127i.y = tempi.x;
@@ -268,25 +242,27 @@ R4i.z = ((PV0i.w == 0)?(R126i.z):(R126i.w));
 // export
 passPixelColor0 = vec4(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
 }
-
 #endif
+
+
+
 
 #if (preset == 2) // Nvidia FXAA Enabled
 
 /*-----------------------------settings-------------------------------------*/
 
-#define Subpix               0.75  //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
-#define EdgeThreshold        0.166  //[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
-#define EdgeThresholdMin     0.0312  //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
+#define Subpix $subPix                          //[0.000 to 1.000] Choose the amount of sub-pixel aliasing removal.
+#define EdgeThreshold $edgeThreshold            //[0.000 to 1.000] Edge detection threshold. The minimum amount of local contrast required to apply algorithm.
+#define EdgeThresholdMin $edgeThresholdMin      //[0.000 to 1.000] Darkness threshold. Trims the algorithm from processing darks.
 
 /*--------------------------------------------------------------------------*/
 
 #define FXAA_PC 1
 #define FXAA_GLSL_130 1
-#define FXAA_QUALITY_PRESET 14
+#define FXAA_QUALITY_PRESET $FXAAQUALITYPRESET
 
-#define FXAA_GREEN_AS_LUMA 1
-#define FXAA_DISCARD 0
+#define FXAA_GREEN_AS_LUMA $FXAAGREENASLUMA
+#define FXAA_DISCARD $FXAADISCARD
 #define FXAA_GATHER4_ALPHA 0 // Needs #extension GL_ARB_gpu_shader5 : enable
 
 /*--------------------------------------------------------------------------*/
