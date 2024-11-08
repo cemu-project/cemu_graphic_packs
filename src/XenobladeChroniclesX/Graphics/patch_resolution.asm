@@ -33,7 +33,7 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 [XCXAspect_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J
 0x0315BE80 = bla _aspectChangeCave
-0x1003E714 = .float $width/$height
+0x1003E714 = .float ($width/$height)
 
 [XCXAspect_V100U]
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
