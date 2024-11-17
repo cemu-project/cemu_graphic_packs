@@ -285,6 +285,7 @@ category = "Height:"
 name = Normal
 condition = $characterID == 13
 Default = 1
+$height = 0.85 #0x3F59999A
 
 [Preset]
 category = "Height:"
