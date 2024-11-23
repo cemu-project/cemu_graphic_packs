@@ -3,7 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Force Weather"
 path = "Xenoblade Chronicles X/Mods/Weather/Force Weather"
 description = Force selected weather. Just select a preset and unload/reload the pack.|Weather Lock works even when traveling into different regions.
-version = 7
+version = 6
 
 [Default]
 $wtr = 1
