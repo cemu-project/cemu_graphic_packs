@@ -37,12 +37,8 @@ addi r3,r1,0x8
 blr
 
 [XCX_Level_V101E_V102U]
-moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
+moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; Our code applies when the reqMenuCreateParty function is used
-0x023429F0 = bla _levelMemorEU101US102
-
-[XCX_Level_V102U]
-moduleMatches = 0x30B6E091 ; 1.0.2U
 0x023429F0 = bla _levelMemorEU101US102
 
 [XCX_Level_V102J]
