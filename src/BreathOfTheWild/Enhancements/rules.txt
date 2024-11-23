@@ -126,14 +126,14 @@ $preset:int = 0
 # Depth of Field
 
 [Preset]
-name = Enabled
-category = Depth Of Field
-default = 1
-
-[Preset]
 name = Disabled (no performance gain)
 category = Depth Of Field
 $disableDOF:int = 1
+
+[Preset]
+name = Enabled
+category = Depth Of Field
+default = 1
 
 # Enhanced Reflections
 
@@ -187,9 +187,19 @@ $sampleCount:int = 64
 # Anisotropic Filtering
 
 [Preset]
-name = Extreme (16x)
+name = Low (1x)
 category = Anisotropic Filtering
-$anisotropy = 16
+$anisotropy = 1
+
+[Preset]
+name = Medium (2x)
+category = Anisotropic Filtering
+$anisotropy = 2
+
+[Preset]
+name = High (4x)
+category = Anisotropic Filtering
+$anisotropy = 4
 
 [Preset]
 name = Ultra (8x, Default)
@@ -198,19 +208,9 @@ default = 1
 $anisotropy = 8
 
 [Preset]
-name = High (4x)
+name = Extreme (16x)
 category = Anisotropic Filtering
-$anisotropy = 4
-
-[Preset]
-name = Medium (2x)
-category = Anisotropic Filtering
-$anisotropy = 2
-
-[Preset]
-name = Low (1x)
-category = Anisotropic Filtering
-$anisotropy = 1
+$anisotropy = 16
 
 
 [TextureRedefine]

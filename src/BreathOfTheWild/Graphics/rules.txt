@@ -509,9 +509,9 @@ $ultrawideHUDMode:int = 0
 # Anti-Aliasing
 
 [Preset]
-name = Normal FXAA (Default)
+name = None
 category = Anti-Aliasing
-default = 1
+$fxaa:int = 0
 
 [Preset]
 name = NVIDIA FXAA
@@ -519,9 +519,9 @@ category = Anti-Aliasing
 $fxaa:int = 2
 
 [Preset]
-name = None
+name = Normal FXAA (Default)
 category = Anti-Aliasing
-$fxaa:int = 0
+default = 1
 
 # Shadow Graphics Pack
 
