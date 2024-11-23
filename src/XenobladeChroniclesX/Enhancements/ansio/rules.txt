@@ -2,21 +2,25 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Anisotropic Filtering
 path = "Xenoblade Chronicles X/Enhancements/Anisotropic Filtering"
-description = Enables anisotropic filtering for ground, wall, and vegetation textures.|Has a minimal performance impact. Made by Cremitif.
+description = Enables anisotropic filtering for ground, wall and vegetation textures to make them appear clearer when viewed from an angle.|Has a minimal performance impact.
 version = 7
 
 [Default]
 #Defined seprately so that they can be change individually if desired
-$anisomount = 16
-$anisorock = 16
-$anisosand = 16
-$anisotree = 16
-$anisolargeplant = 16
-$anisomidplant = 16
-$anisosmallplant = 16
+$anisomount = 1
+$anisorock = 1
+$anisosand = 1
+$anisotree = 1
+$anisolargeplant = 1
+$anisomidplant = 1
+$anisosmallplant = 1
 
 [Preset]
-category = "Aniso: "
+category = "Anisotrophic Filtering Strength"
+name = x1 (Default)
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
 name = x2
 $anisomount = 2
 $anisorock = 2
@@ -27,7 +31,7 @@ $anisomidplant = 2
 $anisosmallplant = 2
 
 [Preset]
-category = "Aniso: "
+category = "Anisotrophic Filtering Strength"
 name = x4
 $anisomount = 4
 $anisorock = 4
@@ -38,7 +42,7 @@ $anisomidplant = 4
 $anisosmallplant = 4
 
 [Preset]
-category = "Aniso: "
+category = "Anisotrophic Filtering Strength"
 name = x8
 $anisomount = 8
 $anisorock = 8
@@ -49,13 +53,19 @@ $anisomidplant = 8
 $anisosmallplant = 8
 
 [Preset]
-category = "Aniso: "
-name = x16 (recommended)
-default = 1
+category = "Anisotrophic Filtering Strength"
+name = x16 (Recommended)
+$anisomount = 16
+$anisorock = 16
+$anisosand = 16
+$anisotree = 16
+$anisolargeplant = 16
+$anisomidplant = 16
+$anisosmallplant = 16
 
 [Preset]
-category = "Aniso: "
-name = x32
+category = "Anisotrophic Filtering Strength"
+name = x32 (Overkill)
 $anisomount = 32
 $anisorock = 32
 $anisosand = 32
