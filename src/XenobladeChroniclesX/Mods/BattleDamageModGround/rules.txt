@@ -7,7 +7,17 @@ version = 7
 
 [Default]
 $mult = 1
-$multOrDivision = 0
+$multOrDivision = 0    #0 = mult, 1 = divis
+
+[Preset]
+name = Damage / 100
+$mult = 100
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 50
+$mult = 50
+$multOrDivision = 1
 
 [Preset]
 name = Damage / 25
@@ -22,6 +32,11 @@ $multOrDivision = 1
 [Preset]
 name = Damage / 5
 $mult = 5
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 4
+$mult = 4
 $multOrDivision = 1
 
 [Preset]
@@ -47,6 +62,10 @@ name = Damage x3
 $mult = 3
 
 [Preset]
+name = Damage x4
+$mult = 4
+
+[Preset]
 name = Damage x5
 $mult = 5
 
@@ -57,6 +76,10 @@ $mult = 10
 [Preset]
 name = Damage x25
 $mult = 25
+
+[Preset]
+name = Damage x50
+$mult = 50
 
 [Preset]
 name = Damage x100
