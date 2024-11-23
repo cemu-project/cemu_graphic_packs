@@ -1,0 +1,51 @@
+[Definition]
+titleIds = 0005000010145D00,0005000010145C00,0005000010106100
+name = Negative texture LOD bias
+path = "Super Mario 3D World/Enhancements/Texture LOD" 
+description = Texture LOD override, possible shimmer but sharper textures. Made by Ryce-Fast.
+version = 4
+
+[Preset]
+name = Default LOD
+$0x431 = 0
+$0x432 = 0
+$0x433 = 0
+$0x434 = 0
+
+[Preset]
+name = Slightly higher LOD
+$0x431 = -.5
+$0x432 = -.5
+$0x433 = -.5
+$0x434 = -.5
+
+[Preset]
+name = High LOD
+$0x431 = -1
+$0x432 = -1
+$0x433 = -1
+$0x434 = -1
+
+[Preset]
+name = Very High LOD
+$0x431 = -4
+$0x432 = -4
+$0x433 = -4
+$0x434 = -4
+
+
+[TextureRedefine]
+formats = 0x431
+overwriteRelativeLodBias = $0x431
+
+[TextureRedefine]
+formats = 0x432
+overwriteRelativeLodBias = $0x432
+
+[TextureRedefine]
+formats = 0x433
+overwriteRelativeLodBias = $0x433
+
+[TextureRedefine]
+formats = 0x434
+overwriteRelativeLodBias = $0x434

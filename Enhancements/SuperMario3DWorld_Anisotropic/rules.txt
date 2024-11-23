@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 0005000010145D00,0005000010145C00,0005000010106100
+name = Anisotropic Filtering
+path = "Super Mario 3D World/Enhancements/Anisotropic Filtering"
+description = Anisotropic Filtering for smoother mipmaps.
+version = 4
+
+[Preset]
+name = 1x (Default)
+$anisoLevel = 1
+
+[Preset]
+name = 2x
+$anisoLevel = 2
+
+[Preset]
+name = 4x
+$anisoLevel = 4
+
+[Preset]
+name = 8x
+$anisoLevel = 8
+
+[Preset]
+name = 16x
+$anisoLevel = 16
+
+[TextureRedefine]
+formats = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteAnisotropy = $anisoLevel
