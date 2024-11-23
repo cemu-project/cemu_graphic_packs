@@ -2,7 +2,7 @@
 titleIds = 0005000010137F00,0005000010138300,0005000010144800
 name = Banana Coin Multiplier
 path = "Donkey Kong Country: Tropical Freeze/Cheats/Coin Multiplier"
-description = Multiplies the ammount of Banana Coins you collect.
+description = Multiplies the amount of Banana Coins you collect.
 #Credits: Intra
 version = 7
 
