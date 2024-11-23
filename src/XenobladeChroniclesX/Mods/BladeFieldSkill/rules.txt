@@ -79,35 +79,35 @@ $biolevel = 0
 ###$biolevel = 6
 
 [Preset]
-category = Archeaological Field Skill:
+category = Archaeological Field Skill:
 name = lv. 5
 
 [Preset]
-category = Archeaological Field Skill:
+category = Archaeological Field Skill:
 name = lv. 4
 $arclevel = 4
 
 [Preset]
-category = Archeaological Field Skill:
+category = Archaeological Field Skill:
 name = lv. 3
 $arclevel = 3
 
 [Preset]
-category = Archeaological Field Skill:
+category = Archaeological Field Skill:
 name = lv. 2
 $arclevel = 2
 
 [Preset]
-category = Archeaological Field Skill:
+category = Archaeological Field Skill:
 name = lv. 1
 $arclevel = 1
 
 [Preset]
-category = Archeaological Field Skill:
+category = Archaeological Field Skill:
 name = lv. 0
 $arclevel = 0
 
 ###[Preset]
-###category = Archeaological Field Skill:
+###category = Archaeological Field Skill:
 ###name = lv. 6 (Broken)
 ###$arclevel = 6
