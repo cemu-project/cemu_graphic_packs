@@ -32,7 +32,7 @@ name = Nvidia FXAA
 $Preset:int = 2
 $AAEnable = 0x6F6E0000 #on
 
-#the native AA option creates artifacts and the options dont actually cause any noticable change in cemu
+#the native AA option creates artifacts (from the shader) and the .asm options dont actually cause any noticable change in cemu (but do on Wii U)
 #[Preset]
 #name = Native AA
 #$Preset:int = 1
@@ -301,14 +301,14 @@ $AAThresholdMin = 0.0
 [Preset]
 category = "FXAA sub-pixel aliasing removal:"
 condition = $Preset == 2
-name = "1.00 (upper limit, softer)"
+name = "1.00 (upper limit, softer) (recommended)"
 default = 1
 $subPix:float = 1.00
 
 [Preset]
 category = "FXAA sub-pixel aliasing removal:"
 condition = $Preset == 2
-name = "0.75 (default amount of filtering)"
+name = "0.75 (default)"
 $subPix:float = 0.75
 
 [Preset]
@@ -350,7 +350,7 @@ $edgeThreshold:float = 0.166
 [Preset]
 category = "FXAA Edge detection threshold:"
 condition = $Preset == 2
-name = "0.125 (high quality)"
+name = "0.125 (high quality) (recommended)"
 default = 1
 $edgeThreshold:float = 0.125
 
@@ -363,7 +363,7 @@ $edgeThreshold:float = 0.063
 [Preset]
 category = "FXAA Darkness threshold:"
 condition = $Preset == 2
-name = "0.0833 (upper limit, default, the start of visible unfiltered edges)"
+name = "0.0833 (upper limit, the start of visible unfiltered edges) (default)"
 $edgeThresholdMin:float = 0.0833
 
 [Preset]
@@ -381,7 +381,7 @@ $edgeThresholdMin:float = 0.0312
 [Preset]
 category = "FXAA Darkness threshold:"
 condition = $Preset == 2
-name = "0.0156 (overkill)"
+name = "0.0156 (overkill) (recommended)"
 default = 1
 $edgeThresholdMin:float = 0.0156
 
@@ -400,7 +400,7 @@ $FXAAQUALITYPRESET:int = 11
 [Preset]
 category = "FXAA Quality Preset:"
 condition = $Preset == 2
-name = "12 (default medium dither)"
+name = "12 (default medium dither) (default)"
 $FXAAQUALITYPRESET:int = 12
 
 [Preset]
@@ -412,7 +412,7 @@ $FXAAQUALITYPRESET:int = 13
 [Preset]
 category = "FXAA Quality Preset:"
 condition = $Preset == 2
-name = "14 (default medium dither)"
+name = "14 (default medium dither) (recommended)"
 default = 1
 $FXAAQUALITYPRESET:int = 14
 
@@ -491,7 +491,7 @@ $FXAAQUALITYPRESET:int = 39
 [Preset]
 category = "FXAA Green As Luma:"
 condition = $Preset == 2
-name = "On (will turn off AA on anything which lacks some amount of green)"
+name = "On (will turn off AA on anything which lacks some amount of green) (recommended)"
 default = 1
 $FXAAGREENASLUMA:int = 1
 $FXAADISCARD:int = 0
