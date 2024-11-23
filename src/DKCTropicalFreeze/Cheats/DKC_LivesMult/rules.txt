@@ -2,7 +2,7 @@
 titleIds = 0005000010137F00,0005000010138300,0005000010144800
 name = Lives Multiplier
 path = "Donkey Kong Country: Tropical Freeze/Cheats/Lives Multiplier"
-description = Multiplies the ammount of red 1-UP Ballons you collect.
+description = Multiplies the amount of red 1-UP balloons you collect.
 #Credits: Intra
 version = 7
 
