@@ -28,7 +28,7 @@ $FXAADISCARD:int = 0
 
 
 [Preset]
-name = NVIDIA's FXAA
+name = Nvidia FXAA
 $Preset:int = 2
 $AAEnable = 0x6F6E0000 #on
 
