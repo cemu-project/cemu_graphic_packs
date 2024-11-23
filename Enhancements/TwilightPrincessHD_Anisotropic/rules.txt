@@ -24,11 +24,11 @@ name = x8
 $anisoLevel = 8
 
 [Preset]
-name = x16 (Recomended)
+name = x16 (Recommended)
 $anisoLevel = 16
 
 [Preset]
-name = x32 (overkill)
+name = x32 (Overkill)
 $anisoLevel = 32
 
 [TextureRedefine]
