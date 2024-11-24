@@ -271,7 +271,13 @@ $char0304 = 0x7461   #t & a
 $char0506 = 0x726F   #r & o
 
 
+
+
+
+###############################################
 ###### Default character names
+###############################################
+
 [Preset]
 category = "Name:"
 name = "Nagi"
@@ -649,13 +655,23 @@ $char0506 = 0x83BC
 $char0708 = 0xE382
 $char0910 = 0xA200
 
-
-###### Custom character names
-
 [Preset]
 category = "Name:"
 name = "  "
 condition = $characterID != 1
+
+
+
+
+
+
+
+
+#################################################################
+############## Custom character names
+#################################################################
+#If you feel like you have good custon name sugestions, feel free to @_intra_ on the cemu discord
+#They may get added in
 
 ### Nagi
 [Preset]
@@ -668,10 +684,18 @@ $char0506 = 0x7300
 
 [Preset]
 category = "Name:"
-name = "EBD"
+name = "Ether Blossom Dance"
 condition = $characterID == 2
-$char0102 = 0x4542
-$char0304 = 0x4400
+$char0102 = 0x4574
+$char0304 = 0x6865
+$char0506 = 0x7220
+$char0708 = 0x426C
+$char0910 = 0x6F73
+$char1112 = 0x736F
+$char1314 = 0x6D20
+$char1516 = 0x4461
+$char1718 = 0x6E63
+$char1920 = 0x6500
 
 ### L
 [Preset]
@@ -698,10 +722,10 @@ $char1314 = 0x6572
 ### Lao
 [Preset]
 category = "Name:"
-name = "Ole"
+name = "Lmao"
 condition = $characterID == 4
-$char0102 = 0x4F6C
-$char0304 = 0x6500
+$char0102 = 0x4C6D
+$char0304 = 0x616F
 
 [Preset]
 category = "Name:"
@@ -747,7 +771,7 @@ $char0708 = 0x6400
 
 [Preset]
 category = "Name:"
-name = "Ultra Slash!!"
+name = "Ultra Slash!"
 condition = $characterID == 6
 $char0102 = 0x556C
 $char0304 = 0x7472
@@ -755,7 +779,6 @@ $char0506 = 0x6120
 $char0708 = 0x536C
 $char0910 = 0x6173
 $char1112 = 0x6821
-$char1314 = 0x2100
 
 ### Frye
 [Preset]
@@ -819,15 +842,10 @@ $char0304 = 0x7264
 
 [Preset]
 category = "Name:"
-name = "Legendary Yelv"
+name = "Yolo"
 condition = $characterID == 9
-$char0102 = 0x4C65
-$char0304 = 0x6765
-$char0506 = 0x6E64
-$char0708 = 0x6172
-$char0910 = 0x7920
-$char1112 = 0x5965
-$char1314 = 0x6C76
+$char0102 = 0x596F
+$char0304 = 0x6C6F
 
 ### Bozé
 [Preset]
@@ -856,10 +874,15 @@ $char1112 = 0x7900
 ### Phog
 [Preset]
 category = "Name:"
-name = "Goph"
+name = "Ghost Walker!"
 condition = $characterID == 11
-$char0102 = 0x476F
-$char0304 = 0x7068
+$char0102 = 0x4768
+$char0304 = 0x6F73
+$char0506 = 0x7420
+$char0708 = 0x5761
+$char0910 = 0x6C6B
+$char1112 = 0x6572
+$char1314 = 0x2100
 
 [Preset]
 category = "Name:"
@@ -1040,9 +1063,14 @@ $char1718 = 0x6E00
 
 [Preset]
 category = "Name:"
-name = "Runaway"
+name = "PancakeEnjoyer420"
 condition = $characterID == 19
-$char0102 = 0x5275
-$char0304 = 0x6E61
-$char0506 = 0x7761
-$char0708 = 0x7900
+$char0102 = 0x5061
+$char0304 = 0x6E63
+$char0506 = 0x616B
+$char0708 = 0x6545
+$char0910 = 0x6E6A
+$char1112 = 0x6F79
+$char1314 = 0x6572
+$char1516 = 0x3432
+$char1718 = 0x3000
