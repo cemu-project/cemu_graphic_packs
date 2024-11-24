@@ -1,7 +1,6 @@
 [XCX_SQUADMISSIONS]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
-.int $missionId
 
 ;######### Change Squad Mission using main menu
 VarSquadMission:
@@ -9,34 +8,34 @@ VarSquadMission:
 
 _iniPtr:
 li r5, 0
-lis       r30, VarSquadMission@ha
-stw       r5, VarSquadMission@l(r30)
-mr 	   r30, r3
+lis r30, VarSquadMission@ha
+stw r5, VarSquadMission@l(r30)
+mr r30, r3
 blr
 
 ;######### Force Squad Mission number
 _forceMission:
-lmw	r14, 0x1B8(r1)
-li	 	r4, $missionId
-cmpwi	r4, 0
+lmw r14, 0x1B8(r1)
+li r4, $missionId
+cmpwi r4, 0
 beqlr
-mr		r3, r4
+mr r3, r4
 blr
 
 ;######### Force Squad Mission number 1.0.0J --not working
 ;_forceMissionJP:
-;lmw	r15, 0x1AC(r1) ;
-;li	 	r4, $missionId
-;cmpwi	r4, 0
+;lmw r15, 0x1AC(r1) ;
+;li r4, $missionId
+;cmpwi r4, 0
 ;beqlr
-;mr		r3, r4
+;mr r3, r4
 ;blr
 
 ;######### Change Squad Mission using main menu
 _savePtr:
-li 	 	  r3, 1
-lis       r30, VarSquadMission@ha
-stw       r3, VarSquadMission@l(r30)
+li r3, 1
+lis r30, VarSquadMission@ha
+stw r3, VarSquadMission@l(r30)
 blr
 
 
