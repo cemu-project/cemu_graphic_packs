@@ -1,0 +1,59 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Multiplayer network port
+path = "Splatoon/Workarounds/Multiplayer network port"
+description = Forces peer-to-peer multiplayer to use a certain network port number, so that you can port forward it in your router.||This might help with connecting to online services, or with some 118-XXXX errors.
+version = 6
+
+[Default]
+$port = 58000
+
+[Preset]
+name = UDP 58000
+category = Use network port
+$port = 58000
+
+[Preset]
+name = UDP 58001
+category = Use network port
+$port = 58001
+
+[Preset]
+name = UDP 58002
+category = Use network port
+$port = 58002
+
+[Preset]
+name = UDP 58003
+category = Use network port
+$port = 58003
+
+[Preset]
+name = UDP 58004
+category = Use network port
+$port = 58004
+
+[Preset]
+name = UDP 58005
+category = Use network port
+$port = 58005
+
+[Preset]
+name = UDP 58006
+category = Use network port
+$port = 58006
+
+[Preset]
+name = UDP 58007
+category = Use network port
+$port = 58007
+
+[Preset]
+name = UDP 58008
+category = Use network port
+$port = 58008
+
+[Preset]
+name = UDP 58009
+category = Use network port
+$port = 58009
