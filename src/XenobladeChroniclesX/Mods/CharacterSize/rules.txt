@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Character Size and Invisible Chest
 path = "Xenoblade Chronicles X/Mods/Character/Character Size"
-description = "You can change the height of any character and also make the chest of some characters not render.||Recomended to be combined with the 'No Fading When Close-up' mod (in Graphics).||***Activate by pressing START(+), then Party->Active Members->Confirm Changes."
+description = "You can change the height of any character and also make the chest of some characters not render.||Recommended to be combined with the 'No Fading When Close-up' mod (in Graphics).||***Activate by pressing START(+), then Party->Active Members->Confirm Changes."
 version = 7
 
 [Default]
@@ -156,13 +156,13 @@ $height = 2000
 
 [Preset]
 category = "Height:"
-name = Building Sized [Need to fly in skell to see] (100)
+name = Building Sized (100)
 condition = $glitchheight == 1
 $height = 100
 
 [Preset]
 category = "Height:"
-name = Giant [Need to fly in skell to see] (50)
+name = Giant (50)
 condition = $glitchheight == 1
 $height = 50
 
@@ -362,25 +362,25 @@ $height = 0
 
 [Preset]
 category = "Height:"
-name = Corrupt Hair [CRASHES the game after a bit] (-1)
+name = Corrupt Hair [UNSTABLE] (-1)
 condition = $glitchheight == 1
 $height = -1
 
 [Preset]
 category = "Height:"
-name = Character Walks under ground [CRASHES the game after a bit] (-1.2)
+name = Character walks underground [UNSTABLE] (-1.2)
 condition = $glitchheight == 1
 $height = -1.2
 
 [Preset]
 category = "Height:"
-name = Character Walks under ground and is Giant [CRASHES the game after a bit] (-10000)
+name = Giant character walks underground [UNSTABLE] (-10000)
 condition = $glitchheight == 1
 $height = -10000
 
 [Preset]
 category = "Height:"
-name = Character Walks under ground and is Massive [CRASHES the game after a bit] (-80000)
+name = Massive character walks underground [UNSTABLE] (-80000)
 condition = $glitchheight == 1
 $height = -80000
 
@@ -388,7 +388,7 @@ $height = -80000
 category = "Height:"
 name = Character Cant interact with terminals (NaN)
 condition = $glitchheight == 1
-$notexist = 0xFFFF
+$notexist = 0xFFFF #height = 0xFFFFFFFF
 
 ###################################################################
 
