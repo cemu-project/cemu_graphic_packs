@@ -2,7 +2,7 @@
 titleIds = 000500001010F800,0005000010110000
 name = Resolution
 path = "Tekken Tag Tournament 2/Graphics/Resolution"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game. Aspect ratio patch Made by Flextape05
 version = 4
 
 [Preset]
@@ -76,6 +76,62 @@ $gameHeight = 720
 name = 7680x4320
 $width = 7680
 $height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1080(21:9)
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3440x1440(21:9)
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2160(21:9)
+$width = 2560
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 6880x2880(21:9)
+$width = 3440
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x1080(32:9)
+$width = 3840
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x1440(32:9)
+$width = 5120
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5760x1080(48:9)
+$width = 5760
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x1440(48:9)
+$width = 5120
+$height = 1440
 $gameWidth = 1280
 $gameHeight = 720
 
