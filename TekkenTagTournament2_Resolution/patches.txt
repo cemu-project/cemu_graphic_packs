@@ -1,0 +1,5 @@
+[tekken32]
+moduleMatches = 0x465EA719
+0x10433450 = .float $width/$height #Main aspect ratio
+0x101798a4 = .float (0.017453292 * (($width/$height)/($gameWidth/$gameHeight))) #Culling
+0x1072d978 = .float (0.017453292 * (($width/$height)/($gameWidth/$gameHeight))) #Props culling
