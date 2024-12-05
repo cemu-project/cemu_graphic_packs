@@ -1,0 +1,339 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Brightness fix with colour and contrast
+path = "Xenoblade Chronicles X/Workarounds/Brightness"
+description = Fixes overbright day and too dark night. Optionally tweaks colour and contrast.
+#Credits: getdls
+version = 7
+default = 1
+
+[Default]
+$contrastCurve:float = 0.0 # 0.0 no extra contrast to mix in
+$exposure:float = 1.0 # 1.0 Full range without clipping pre mix - brightness fixed
+$postExposure:float = 1.0 # 1.0 Full range without clipping - 1.1 -> slight clipping but nice
+$vibrance:float = 0.0 # 0.0 no extra vibrance
+$mixBalance:float = 1.0 # FXAA, bicubic sharpen or smooth pass -> Reserved for FX / Contrasty rework
+$glare:float = 0.95 # Reflection shader raise/lower to balance clipping -> Reserved for FX / Contrasty rework
+$lift:float = 0.002 # Raise shadows -> Reserved for FX / Contrasty rework
+$isCustom:int = 0
+
+##Pre packed settings
+[Preset]
+name = WiiU default - Brightness fix only
+category = Standard presets
+$contrastCurve:float = 0.0
+$exposure:float = 1.0
+$postExposure:float = 1.0
+$vibrance:float = 0.0
+
+[Preset]
+name = Increased brightness levels 1.15
+category = Standard presets
+$contrastCurve:float = 0
+$exposure:float = 1.15
+$postExposure:float = 1.0
+$vibrance:float = 0.0
+
+[Preset]
+name = Increased contrast no colour change
+category = Standard presets
+$contrastCurve:float = 0.2
+$exposure:float = 1.1
+$postExposure:float = 1.05
+$vibrance:float = 0.0
+
+[Preset]
+name = Saturation and contrast 1.25 - Darker nights
+category = Standard presets
+$contrastCurve:float = 0
+$exposure:float = 1.3
+$postExposure:float = 1.1
+$vibrance:float = 0.3
+
+[Preset]
+name = Saturation and contrast 1.5 - Darker Nights
+category = Standard presets
+$contrastCurve:float = 0.0
+$exposure:float = 1.55
+$postExposure:float = 1.15
+$vibrance:float = 0.45
+
+[Preset]
+name = Custom
+category = Standard presets
+$isCustom:int = 1
+
+
+##exposure
+[Preset]
+name = 70% less exposure
+category = Exposure and brightness fix
+condition = $custom == 1
+$exposure:float = 0.32
+
+[Preset]
+name = 50% less exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 0.52
+
+[Preset]
+name = 20% less exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 0.8
+
+[Preset]
+name = 15% less exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 0.85
+
+[Preset]
+name = 10% less exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 0.9
+
+[Preset]
+name = No extra exposure - Only brightness fix
+category = Exposure and brightness fix
+condition = $isCustom == 1
+default = 1
+$exposure:float = 1.0
+
+[Preset]
+name = 5% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.05
+
+[Preset]
+name = 10% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.1
+
+[Preset]
+name = 15% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.15
+
+[Preset]
+name = 20% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.2
+
+[Preset]
+name = 30% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.3
+
+[Preset]
+name = 40% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.4
+
+[Preset]
+name = 50% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.5
+
+[Preset]
+name = 75% more exposure
+category = Exposure and brightness fix
+condition = $isCustom == 1
+$exposure:float = 1.5
+
+
+##Saturation
+[Preset]
+name = No extra saturation (Default)
+category = Saturation - Darkens image
+condition = $isCustom == 1
+default = 1
+$vibrance:float = 0.0
+
+[Preset]
+name = 5% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.05
+
+[Preset]
+name = 10% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.1
+
+[Preset]
+name = 15% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.15
+
+[Preset]
+name = 20% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.2
+
+[Preset]
+name = 30% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.3
+
+[Preset]
+name = 40% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.4
+
+[Preset]
+name = 50% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.5
+
+[Preset]
+name = 75% more saturation
+category = Saturation - Darkens image
+condition = $isCustom == 1
+$vibrance:float = 0.75
+
+
+##Contrast curve
+[Preset]
+name =  20 % less contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = -0.2
+
+[Preset]
+name = No extra contrast (Default)
+category = Contrast
+condition = $isCustom == 1
+default = 1
+$contrastCurve:float = 0.0
+
+[Preset]
+name = 5% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.05
+
+[Preset]
+name = 10% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.1
+
+[Preset]
+name = 15% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.15
+
+[Preset]
+name = 20% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.2
+
+[Preset]
+name = 30% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.3
+
+[Preset]
+name = 40% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.4
+
+[Preset]
+name = 50% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.5
+
+[Preset]
+name = 75% more contrast
+category = Contrast
+condition = $isCustom == 1
+$contrastCurve:float = 0.75
+
+##postExposure curve
+[Preset]
+name = 20% less post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 0.8
+
+[Preset]
+name = 15% less post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 0.85
+
+[Preset]
+name = 10% less post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 0.9
+
+[Preset]
+name = Default post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+default = 1
+$postExposure:float = 1.0
+
+[Preset]
+name = 5% more post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.05
+
+[Preset]
+name = 10% more post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.1
+
+[Preset]
+name = 15% more post Exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.15
+
+[Preset]
+name = 20% more post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.2
+
+[Preset]
+name = 30% more post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.3
+
+[Preset]
+name = 40% more post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.4
+
+[Preset]
+name = 50% more post exposure
+category = Exposure after colour grading
+condition = $isCustom == 1
+$postExposure:float = 1.5
