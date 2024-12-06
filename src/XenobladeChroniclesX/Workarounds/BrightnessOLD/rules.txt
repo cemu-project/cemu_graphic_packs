@@ -1,0 +1,471 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = OLD Brightness Workaround
+path = "Xenoblade Chronicles X/Workarounds/Brightness OLD"
+description = Old version of the brightness work arround.|The new version is *significantly* more accurate to Wii U but currently does not support gamma, glare, or lift modification.
+#Credits: getdls
+version = 6
+
+[Default]
+$crushContrast = 0.0
+$exposure = 1.0
+$gamma = 1.0
+$glare = 0.95
+$lift = 0.002
+$postExposure = 1.0
+$vibrance = 0.0
+$isCustom = 0
+
+[Preset]
+name = Brighter (was NVIDIA)
+category = Option
+$crushContrast = 0.0
+$exposure = 0.52
+$gamma = 0.93
+$glare = 0.95
+$lift = 0.002
+$postExposure = 1.05
+$vibrance = 0.318
+
+[Preset]
+name = Darker (was AMD)
+category = Option
+$crushContrast = 0.0
+$exposure = 0.32
+$gamma = 0.93
+$glare = 0.95
+$lift = 0.002
+$postExposure = 1.05
+$vibrance = 0.318
+
+[Preset]
+name = Custom
+category = Option
+$isCustom = 1
+
+
+##Contrast curve
+[Preset]
+name =  20 % less contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = -0.2
+
+[Preset]
+name = No extra contrast
+category = Contrast
+condition = $isCustom == 1
+default = 1
+$crushContrast = 0.0
+
+[Preset]
+name = 5% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.05
+
+[Preset]
+name = 10% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.1
+
+[Preset]
+name = 15% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.15
+
+[Preset]
+name = 20% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.2
+
+[Preset]
+name = 30% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.3
+
+[Preset]
+name = 40% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.4
+
+[Preset]
+name = 50% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.5
+
+[Preset]
+name = 75% more contrast
+category = Contrast
+condition = $isCustom == 1
+$crushContrast = 0.75
+
+##exposure
+[Preset]
+name = 70% less exposure (AMD)
+category = Exposure
+condition = $custom == 1
+$exposure = 0.32
+
+[Preset]
+name = 50% less exposure (NVIDIA)
+category = Exposure
+condition = $isCustom == 1
+$exposure = 0.52
+
+[Preset]
+name = 20% less exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 0.8
+
+[Preset]
+name = 15% less exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 0.85
+
+[Preset]
+name = 10% less exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 0.9
+
+[Preset]
+name = No extra exposure
+category = Exposure
+condition = $isCustom == 1
+default = 1
+$exposure = 1.0
+
+[Preset]
+name = 5% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.05
+
+[Preset]
+name = 10% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.1
+
+[Preset]
+name = 15% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.15
+
+[Preset]
+name = 20% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.2
+
+[Preset]
+name = 30% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.3
+
+[Preset]
+name = 40% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.4
+
+[Preset]
+name = 50% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.5
+
+[Preset]
+name = 75% more exposure
+category = Exposure
+condition = $isCustom == 1
+$exposure = 1.5
+
+[Preset]
+name = 0.4
+category = Gamma
+condition = $isCustom == 1
+$gamma = 0.4
+
+[Preset]
+name = 0.6
+category = Gamma
+condition = $isCustom == 1
+$gamma = 0.6
+
+[Preset]
+name = 0.8
+category = Gamma
+condition = $isCustom == 1
+$gamma = 0.8
+
+[Preset]
+name = 0.93 (Recommended)
+category = Gamma
+condition = $isCustom == 1
+$gamma = 0.93
+
+[Preset]
+name = 1.0 (Default)
+category = Gamma
+condition = $isCustom == 1
+default = 1
+$gamma = 1.0
+
+[Preset]
+name = 1.3
+category = Gamma
+condition = $isCustom == 1
+$gamma = 1.3
+
+[Preset]
+name = 1.6
+category = Gamma
+condition = $isCustom == 1
+$gamma = 1.6
+
+[Preset]
+name = 2.0
+category = Gamma
+condition = $isCustom == 1
+$gamma = 2.0
+
+[Preset]
+name = 0.50
+category = Glare
+condition = $isCustom == 1
+$gamma = 0.50
+
+[Preset]
+name = 0.70
+category = Glare
+condition = $isCustom == 1
+$gamma = 0.70
+
+[Preset]
+name = 0.80
+category = Glare
+condition = $isCustom == 1
+$gamma = 0.80
+
+[Preset]
+name = 0.90
+category = Glare
+condition = $isCustom == 1
+$gamma = 0.90
+
+[Preset]
+name = 0.95 (Recommended)
+category = Glare
+condition = $isCustom == 1
+$gamma = 0.95
+
+[Preset]
+name = 1.0 (Default)
+category = Glare
+condition = $isCustom == 1
+default = 1
+$gamma = 1.0
+
+[Preset]
+name = 1.05
+category = Glare
+condition = $isCustom == 1
+$gamma = 1.05
+
+[Preset]
+name = 1.10
+category = Glare
+condition = $isCustom == 1
+$gamma = 1.10
+
+[Preset]
+name = 1.20
+category = Glare
+condition = $isCustom == 1
+$gamma = 1.20
+
+[Preset]
+name = 1.30
+category = Glare
+condition = $isCustom == 1
+$gamma = 1.30
+
+[Preset]
+name = 1.50
+category = Glare
+condition = $isCustom == 1
+$gamma = 1.50
+
+[Preset]
+name = 2.0
+category = Glare
+condition = $isCustom == 1
+$gamma = 2.0
+
+
+[Preset]
+name = 0.000 (Default)
+category = Lift
+condition = $isCustom == 1
+$lift = 0.000
+
+[Preset]
+name = 0.001
+category = Lift
+condition = $isCustom == 1
+$lift = 0.001
+
+[Preset]
+name = 0.002 (Recommended)
+category = Lift
+condition = $isCustom == 1
+default = 1
+$lift = 0.002
+
+[Preset]
+name = 0.003
+category = Lift
+condition = $isCustom == 1
+$lift = 0.003
+
+[Preset]
+name = 0.005
+category = Lift
+condition = $isCustom == 1
+$lift = 0.005
+
+##postExposure curve
+[Preset]
+name = 20% less post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 0.8
+
+[Preset]
+name = 15% less post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 0.85
+
+[Preset]
+name = 10% less post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 0.9
+
+[Preset]
+name = Default post exposure
+category = Post Exposure
+condition = $isCustom == 1
+default = 1
+$postExposure = 1.0
+
+[Preset]
+name = 5% more post Exposure (Recommended)
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.05
+
+[Preset]
+name = 10% more post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.1
+
+[Preset]
+name = 15% more post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.15
+
+[Preset]
+name = 20% more post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.2
+
+[Preset]
+name = 30% more post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.3
+
+[Preset]
+name = 40% more post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.4
+
+[Preset]
+name = 50% more post Exposure
+category = Post Exposure
+condition = $isCustom == 1
+$postExposure = 1.5
+
+##Saturation
+[Preset]
+name = No extra saturation (Default)
+category = Vibrance
+condition = $isCustom == 1
+default = 1
+$vibrance = 0.0
+
+[Preset]
+name = 5% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.05
+
+[Preset]
+name = 10% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.1
+
+[Preset]
+name = 15% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.15
+
+[Preset]
+name = 20% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.2
+
+[Preset]
+name = 30% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance: = 0.3
+
+[Preset]
+name = 40% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.4
+
+[Preset]
+name = 50% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.5
+
+[Preset]
+name = 75% more saturation
+category = Vibrance
+condition = $isCustom == 1
+$vibrance = 0.75

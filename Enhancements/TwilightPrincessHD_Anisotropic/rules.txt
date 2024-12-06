@@ -1,0 +1,36 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = Anisotropic Filtering
+path = "The Legend of Zelda: Twilight Princess HD/Enhancements/Anisotropic Filtering"
+description = Allows you to set the anisotropic filtering level to improve clarity for surfaces that are looked at an angle.
+version = 7
+
+[Default]
+$anisoLevel = 1
+
+[Preset]
+name = x1 (Default)
+
+[Preset]
+name = x2
+$anisoLevel = 2
+
+[Preset]
+name = x4
+$anisoLevel = 4
+
+[Preset]
+name = x8
+$anisoLevel = 8
+
+[Preset]
+name = x16 (Recommended)
+$anisoLevel = 16
+
+[Preset]
+name = x32 (Overkill)
+$anisoLevel = 32
+
+[TextureRedefine]
+formats = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteAnisotropy = $anisoLevel

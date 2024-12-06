@@ -1,0 +1,228 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Character Level
+path = "Xenoblade Chronicles X/Mods/Character/Character Level"
+description = "You can change the level of any character.||***Activate by pressing START(+), then Party->Active Members->Confirm Changes."
+version = 7
+
+[Default]
+$memoffset = 0x122
+$level = 1
+
+$characterID = 1
+
+[Preset]
+category = "Character:"
+name = "Playable Avatar"
+
+[Preset]
+category = "Character:"
+name = "Nagi"
+$characterID = 2
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "L"
+$characterID = 3
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Lao"
+$characterID = 4
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "H.B."
+$characterID = 5
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Gwin"
+$characterID = 6
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Frye"
+$characterID = 7
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Doug"
+$characterID = 8
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Yelv"
+$characterID = 9
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Boze"
+$characterID = 10
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Phog"
+$characterID = 11
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Elma"
+$characterID = 12
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Lin"
+$characterID = 13
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Celica"
+$characterID = 14
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Irina"
+$characterID = 15
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Murderess"
+$characterID = 16
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Alexa"
+$characterID = 17
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Hope"
+$characterID = 18
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Character:"
+name = "Mia"
+$characterID = 19
+$memoffset = (($characterID-1)*0x57C)+0x122
+
+[Preset]
+category = "Level:"
+name = lv. 1
+
+[Preset]
+category = "Level:"
+name = lv. 5
+$level = 5
+
+[Preset]
+category = "Level:"
+name = lv. 10
+$level = 10
+
+[Preset]
+category = "Level:"
+name = lv. 15
+$level = 15
+
+[Preset]
+category = "Level:"
+name = lv. 20
+$level = 20
+
+[Preset]
+category = "Level:"
+name = lv. 25
+$level = 25
+
+[Preset]
+category = "Level:"
+name = lv. 30
+$level = 30
+
+[Preset]
+category = "Level:"
+name = lv. 35
+$level = 35
+
+[Preset]
+category = "Level:"
+name = lv. 40
+$level = 40
+
+[Preset]
+category = "Level:"
+name = lv. 45
+$level = 45
+
+[Preset]
+category = "Level:"
+name = lv. 50
+$level = 50
+
+[Preset]
+category = "Level:"
+name = lv. 55
+$level = 55
+
+[Preset]
+category = "Level:"
+name = lv. 60
+$level = 60
+
+[Preset]
+category = "Level:"
+name = lv. 70
+$level = 70
+
+[Preset]
+category = "Level:"
+name = lv. 80
+$level = 80
+
+[Preset]
+category = "Level:"
+name = lv. 90
+$level = 90
+
+[Preset]
+category = "Level:"
+name = lv. 100
+$level = 100
+
+[Preset]
+category = "Level:"
+name = lv. 150
+$level = 150
+
+[Preset]
+category = "Level:"
+name = lv. 200
+$level = 200
+
+[Preset]
+category = "Level:"
+name = lv. 255
+$level = 255
+
+[Preset]
+category = "Level:"
+name = lv. 0
+$level = 0

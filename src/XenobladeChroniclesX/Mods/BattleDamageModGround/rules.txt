@@ -2,18 +2,68 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Ground damage multiplicator"
 path = "Xenoblade Chronicles X/Mods/Battle/Ground damage multiplicator"
-description = Increase the damage done by your team. Doesn't affect the damage numbers that are shown.
-version = 6
+description = Increase the damage done by your team. Doesn't affect the damage numbers that are shown.|Can also make the game more challenging by dividing damage.
+version = 7
 
 [Default]
+$mult = 1
+$multOrDivision = 0    #0 = mult, 1 = divis
+
+[Preset]
+name = Damage / 100
+$mult = 100
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 50
+$mult = 50
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 25
+$mult = 25
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 10
+$mult = 10
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 5
+$mult = 5
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 4
+$mult = 4
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 3
+$mult = 3
+$multOrDivision = 1
+
+[Preset]
+name = Damage / 2
 $mult = 2
+$multOrDivision = 1
+
+[Preset]
+name = Damage x1
+default = 1
 
 [Preset]
 name = Damage x2
+$mult = 2
 
 [Preset]
 name = Damage x3
 $mult = 3
+
+[Preset]
+name = Damage x4
+$mult = 4
 
 [Preset]
 name = Damage x5
@@ -26,6 +76,10 @@ $mult = 10
 [Preset]
 name = Damage x25
 $mult = 25
+
+[Preset]
+name = Damage x50
+$mult = 50
 
 [Preset]
 name = Damage x100
