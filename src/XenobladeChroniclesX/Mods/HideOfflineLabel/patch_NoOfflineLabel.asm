@@ -18,4 +18,4 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 
 [XCX_NoOffline_V100J]
 moduleMatches = 0x785CA8A9 ; 1.0.0J
-0x100B06DB = nop ; frameIn ;
+0x100B06DB = nop ; frameIn
