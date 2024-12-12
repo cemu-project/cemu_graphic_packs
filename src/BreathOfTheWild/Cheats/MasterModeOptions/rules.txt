@@ -3,6 +3,7 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = "Master Mode Options"
 path = "The Legend of Zelda: Breath of the Wild/Cheats/Master Mode Options"
 description = Allows you to pick and choose which of Nintendo's changes are applied to Master Mode (Does nothing in Normal Mode). A reboot is required to apply changes made while the game is running. ||By Torphedo and Fleevoid, with lots of help from Exzap and leoetlino. 1.5x damage multiplier hack by NiceneNerd.
+#Credits: Torphedo, Fleevoid, Exzap, leoetlino, NiceneNerd
 version = 7
 
 [Default]

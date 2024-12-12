@@ -2,8 +2,9 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Durability
 path = "The Legend of Zelda: Breath of the Wild/Cheats/Durability"
-description = Modifies the weapons, bows and shields durability (except burn damage and throwing weapons).||Made by Nopt.
-version = 6
+description = Modifies the weapons, bows and shields durability (except burn damage and throwing weapons).|Made by Nopt.
+#Credits: Nopt
+version = 7
 
 [Default]
 $multiplier = 1
