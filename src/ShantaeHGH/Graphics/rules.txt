@@ -4,7 +4,7 @@ name = Graphics Settings
 path = "Shantae: Half-Genie Hero/Graphics"
 description = Changes the game's resolution.|Setting Gamepad resolution higher than TV resolution will cause a glitch.
 #Credits: getdls, Intra
-version = 7
+version = 6
 
 [Default]
 $width = 1920
@@ -90,7 +90,6 @@ name = 7680x4320
 $width = 7680
 $height = 4320
 
-
 # Gamepad Resolution
 
 [Preset]
@@ -164,8 +163,6 @@ name = 7680x4320
 $padWidth = 7680
 $padHeight = 4320
 
-
-
 # Texture Redefines
 
 # TV Resolution
@@ -212,5 +209,5 @@ height = 480
 overwriteWidth = ($padWidth / $gamepadWidth) * 854
 overwriteHeight = ($padHeight / $gamepadHeight) * 480
 
-#version 2
+#version 2:
 #https://github.com/cemu-project/cemu_graphic_packs/blob/939a478799c13c5ed03e8decbf952f2a7ad02366/Source/ShantaeHGH/rules.txt
