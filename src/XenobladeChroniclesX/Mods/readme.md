@@ -28,7 +28,7 @@
 - **Character Level**: Can change any characters current level.
 - **Character Size**: Can change any characters size, and even has some glitch size values.
 - **Change Character Name**: Can change any characters name and can rename your avatar.
-- **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art
+- **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art.
     
 ### Collectibles mods
 - **Catch range mod**: Increase the distance from which you catch a collectible.
