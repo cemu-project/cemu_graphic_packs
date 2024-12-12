@@ -1,10 +1,8 @@
 [BotW_MastercycleSpeed_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 0x100136B4 = originalMotorcycleBoostSpeed:
-
 
 _changeMotorcycleBoostSpeed:
 lfs f0, originalMotorcycleBoostSpeed@l(r9)

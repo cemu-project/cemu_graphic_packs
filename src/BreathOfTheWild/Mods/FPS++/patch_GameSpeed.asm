@@ -1,6 +1,5 @@
 [BotW_Gamespeed_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 
@@ -242,7 +241,7 @@ lis r11, averageFPS0.5Inv@ha	; Store the inverted 0.5 float...
 stfs f7, averageFPS0.5Inv@l(r11); ...to replace constants that are lower when FPS is higher
 
 ; Check whether debug mode is on
-li r11, $debugMode				; Load debugMode value in r11 
+li r11, $debugMode				; Load debugMode value in r11
 cmpwi r11, 1					; Compare the value with 1
 bnelr							; If it's not equal, return back to the link register. Otherwise, run the following lines too...
 

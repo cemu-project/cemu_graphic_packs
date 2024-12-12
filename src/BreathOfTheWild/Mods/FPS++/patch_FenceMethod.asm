@@ -1,6 +1,5 @@
 [BotW_FenceMethod_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 0x031FAB00 = fullFenceAddr:
@@ -37,12 +36,12 @@ b doFenceSkip
 
 doFence:
 lis r11, fullFenceAddr@ha
-addi r11, r11, fullFenceAddr@l 
+addi r11, r11, fullFenceAddr@l
 mtctr r11
 bctrl
 doFenceSkip:
 lis r11, skipFenceAddr@ha
-addi r11, r11, skipFenceAddr@l 
+addi r11, r11, skipFenceAddr@l
 mtctr r11
 bctrl
 

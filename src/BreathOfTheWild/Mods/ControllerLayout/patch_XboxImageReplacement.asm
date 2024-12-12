@@ -1,6 +1,5 @@
 [BotW_XboxImageReplacement_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 str_Nt_KeyTexA_00_d:
@@ -19,7 +18,6 @@ loadLineReplacement:
 loadLineCharacter:
 .int 10
 .align 4
-
 
 ; compares the string from r4 and r5
 ; r4 is untouched, so use that to do multiple comparisons
@@ -185,14 +183,14 @@ bne checkForMatch
 li r4, 1
 cmpwi r4, 1
 blr
- 
+
 checkForMatch:
 cmpw r0, r3
 bne noMatch
 addi r31, r31, 1
 addi r4, r4, 1
 b startLoop
- 
+
 noMatch:
 li r4, 0
 cmpwi r4, 1

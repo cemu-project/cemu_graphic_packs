@@ -1,6 +1,5 @@
 [BotW_Cutscene_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 cutsceneMode:
@@ -17,7 +16,7 @@ _setCutsceneFPSLimit:
 stw r0, 4(r31) ; Original instruction
 
 ; Register r9 still holds the ID of this cutscene
-; Register r29 is the parameter structure that this object is created with which also holds the event name 
+; Register r29 is the parameter structure that this object is created with which also holds the event name
 lwz r12, 8(r29)
 
 ; Check if the event name is not 0
