@@ -6,10 +6,6 @@ on:
     branches:
     - master
     paths:
-    - 'Enhancements/**'
-    - 'Resolutions/**'
-    - 'Mods/**'
-    - 'Workarounds/**'
     - 'src/**'
 
 jobs:
@@ -28,10 +24,6 @@ jobs:
     - name: Zip all packs
       run: |
         cd $GITHUB_WORKSPACE ;
-        cd Enhancements && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
-        cd Resolutions && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
-        cd Mods && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
-        cd Workarounds && zip -r -q -9 "../graphicPacks.zip" ./* && cd .. ;
         cd src && zip -r -q -9 "../graphicPacks.zip" ./* && cd ..
     - name: Create new release
       env:
