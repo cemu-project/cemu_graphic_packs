@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101DB000,00050000101DBB00
+name = 60FPS
+path = "Oddworld: New 'n' Tasty/Mods/60FPS"
+description = Patches gameplay to be 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7

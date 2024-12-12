@@ -1,0 +1,489 @@
+[Definition]
+titleIds = 0005000010110900,0005000010110A00,0005000010110B00,0005000010139B00
+name = Graphics Settings
+path = "Ninja Gaiden 3: Razors Edge/Graphics"
+description = Changes the resolution of the game and quality of shaddows.|Made by getdls.
+#Credits: getdls
+version = 7
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+$shadowRes = 1
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution:
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution:
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution:
+name = 1280x720 (Default)
+default = 1
+
+[Preset]
+category = TV Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution:
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+[Preset]
+category = TV Resolution:
+name = 1680x1050 (16:10)
+$width = 1680
+$height = 1050
+
+[Preset]
+category = TV Resolution:
+name = 1920x1200 (16:10)
+$width = 1920
+$height = 1200
+
+[Preset]
+category = TV Resolution:
+name = 2560x1080 (21:9)
+$width = 2560
+$height = 1080
+
+[Preset]
+category = TV Resolution:
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+
+[Preset]
+category = TV Resolution:
+name = 5120x2160 (21:9)
+$width = 5120
+$height = 2160
+
+[Preset]
+category = TV Resolution:
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+
+[Preset]
+category = TV Resolution:
+name = 5120×1440 (32:9)
+$width = 5120
+$height = 1440
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution:
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution:
+name = 854x480 (Default)
+default = 1
+
+[Preset]
+category = Gamepad Resolution:
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution:
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution:
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution:
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution:
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution:
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution:
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution:
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+[Preset]
+category = Gamepad Resolution:
+name = 1680x1050 (16:10)
+$padWidth = 1680
+$padHeight = 1050
+
+[Preset]
+category = Gamepad Resolution:
+name = 1920x1200 (16:10)
+$padWidth = 1920
+$padHeight = 1200
+
+[Preset]
+category = Gamepad Resolution:
+name = 2560x1080 (21:9)
+$padWidth = 2560
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution:
+name = 3440x1440 (21:9)
+$padWidth = 3440
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution:
+name = 5120x2160 (21:9)
+$padWidth = 5120
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution:
+name = 3840x1080 (32:9)
+$padWidth = 3840
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution:
+name = 5120×1440 (32:9)
+$padWidth = 5120
+$padHeight = 1440
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality:
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality:
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadow Quality:
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality:
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality:
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+
+
+# Texture Redefines
+
+[TextureRedefine] # TV Resolution
+width = 1280
+height = 720
+#formats = 0x80e,0x001,0x01a
+#formatsExcluded = 0x01a # Menu BG, cutscene uses as light
+tileModesExcluded = 0x1 # Exclude videos
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 1070
+height = 250
+#formats = 0x001
+#tileModesExcluded = 0x1 # Exclude videos
+overwriteWidth = ($width/$gameWidth) * 1070
+overwriteHeight = ($height/$gameHeight) * 250
+
+[TextureRedefine] # Shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024
+
+[TextureRedefine] # Gamepad
+width = 864
+height = 480
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine] # Gamepad
+width = 854
+height = 480
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine]
+width = 640
+height = 368
+#formats = 0x007,0x01a
+tileModesExcluded = 0x1 # Exclude videos
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+width = 640
+height = 360
+tileModesExcluded = 0x1 # Exclude videos
+#formats = 0x007,0x01a
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine]
+width = 512
+height = 512
+formats = 0x01a #0x035,0x033,0x031,
+overwriteWidth = ($width/$gameWidth) * 512
+overwriteHeight = ($height/$gameHeight) * 512
+
+[TextureRedefine] # Cinematic blur
+width = 448
+height = 240
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 448
+overwriteHeight = ($height/$gameHeight) * 240
+
+[TextureRedefine]
+width = 426
+height = 240
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 426
+overwriteHeight = ($height/$gameHeight) * 240
+
+[TextureRedefine]
+width = 409
+height = 150
+#formats = 0x001
+overwriteWidth = ($width/$gameWidth) * 409
+overwriteHeight = ($height/$gameHeight) * 150
+
+[TextureRedefine]
+width = 360
+height = 15
+overwriteWidth = ($width/$gameWidth) * 360
+overwriteHeight = ($height/$gameHeight) * 15
+
+[TextureRedefine] # Bloom Pyramid DoF
+width = 320
+height = 192
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine]
+width = 320
+height = 180
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 320
+height = 96
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 96
+
+[TextureRedefine]
+width = 320
+height = 90
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 90
+
+#[TextureRedefine]
+#width = 256
+#height = 256
+#formatsExcluded = 0x035,0x033,0x031,0x01a
+#overwriteWidth = ($width/$gameWidth) * 256
+#overwriteHeight = ($height/$gameHeight) * 256
+
+[TextureRedefine] # Cinematic DoF
+width = 176
+height = 720
+#formats =
+overwriteWidth = ($width/$gameWidth) * 176
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Cinematic DoF
+width = 176
+height = 703
+overwriteWidth = ($width/$gameWidth) * 176
+overwriteHeight = ($height/$gameHeight) * 703
+
+[TextureRedefine]
+width = 160
+height = 96
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 96
+
+[TextureRedefine]
+width = 160
+height = 90
+#formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] # Light
+width = 32
+height = 344
+formats = 0x820 #,0x033,0x031
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 344
+
+[TextureRedefine]
+width = 32
+height = 144
+formats = 0x820
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 144
+
+[TextureRedefine] # Light
+width = 32
+height = 80
+formats = 0x820 #0x033,0x031
+overwriteWidth = ($width/$gameWidth) * 32
+overwriteHeight = ($height/$gameHeight) * 80
+
+[TextureRedefine]
+width = 24
+height = 576
+overwriteWidth = ($width/$gameWidth) * 24
+overwriteHeight = ($height/$gameHeight) * 576
+
+[TextureRedefine]
+width = 24
+height = 144
+overwriteWidth = ($width/$gameWidth) * 24
+overwriteHeight = ($height/$gameHeight) * 144
+
+[TextureRedefine]
+width = 15
+height = 9
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 15
+overwriteHeight = ($height/$gameHeight) * 9
+
+[TextureRedefine] # Light
+width = 12
+height = 72
+formats = 0x820
+overwriteWidth = ($width/$gameWidth) * 12
+overwriteHeight = ($height/$gameHeight) * 72
+
+
+# Texture upscales that cause problems
+
+#[TextureRedefine] # Controller cut-out, not used for depth?
+#width = 448
+#height = 224
+#formats = 0x001
+#overwriteWidth = ($width/$gameWidth) * 448
+#overwriteHeight = ($height/$gameHeight) * 224
+
+#[TextureRedefine]
+#width = 256
+#height = 256
+#formatsExcluded = 0x035,0x033,0x031,0x01a
+#overwriteWidth = ($width/$gameWidth) * 256
+#overwriteHeight = ($height/$gameHeight) * 256
+
+#[TextureRedefine] # multi dim
+#width = 32
+#height = 32
+#formats = 0x01a #0x033,0x031
+#overwriteWidth = ($width/$gameWidth) * 32
+#overwriteHeight = ($height/$gameHeight) * 32
+
+#[TextureRedefine] # multi dim
+#width = 24
+#height = 24
+#formats = 0x01a #0x033,0x031
+#overwriteWidth = ($width/$gameWidth) * 24
+#overwriteHeight = ($height/$gameHeight) * 24
+
+#[TextureRedefine] # multi dim
+#width = 16
+#height = 16
+#formats = 0x01a
+#overwriteWidth = ($width/$gameWidth) * 16
+#overwriteHeight = ($height/$gameHeight) * 16

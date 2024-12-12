@@ -1,0 +1,172 @@
+[Definition]
+titleIds = 00050000101D9D00,00050000101D7500,00050000101DBE00
+name = Graphics Settings
+path = "Minecraft: Wii U Edition/Graphics"
+description = Changes the game's resolution.|Made by Atom.
+#Credits: Atom
+version = 7
+
+[Default]
+$width = 1280
+$height = 720
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1280
+$gameHeight = 720
+$gamePadWidth = 854
+$gamePadHeight = 480
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution:
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = TV Resolution:
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution:
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution:
+name = 1280x720 (Default)
+default = 1
+
+[Preset]
+category = TV Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution:
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = TV Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution:
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution:
+name = 854x480 (Default)
+default = 1
+
+[Preset]
+category = Gamepad Resolution:
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution:
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution:
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution:
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution:
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution:
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution:
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution:
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+
+
+# Texture Redefines
+
+[TextureRedefine] # TV Resolution
+width = 1280
+height = 720
+formats = 0x01a,0x011,0x820
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Gamepad Resolution
+width = 864
+height = 480
+formats = 0x01a,0x011
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x01a
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
