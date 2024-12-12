@@ -1,4 +1,4 @@
-#version 420
+#version 460
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_shading_language_packing : enable
 // shader 344d8b1f7d6f2b8e // guardian explosion yellow smoke vs
