@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 0005000010137F00,0005000010138300,0005000010144800
+name = Banana Multiplier
+path = "Donkey Kong Country: Tropical Freeze/Cheats/Banana Multiplier"
+description = Multiplies the amount of bananas you collect.
+#Credits: Intra
+version = 7
+
+[Default]
+$addamountbna = 1
+
+[Preset]
+name = x2
+$addamountbna = 2
+
+[Preset]
+name = x3
+$addamountbna = 3
+
+[Preset]
+name = x4
+$addamountbna = 4
+
+[Preset]
+name = x5
+$addamountbna = 5
+
+[Preset]
+name = x100
+$addamountbna = 100

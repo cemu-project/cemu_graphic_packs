@@ -1,0 +1,445 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Character Size and Invisible Chest
+path = "Xenoblade Chronicles X/Mods/Character/Character Size"
+description = "You can change the height of any character and also make the chest of some characters not render.||Recommended to be combined with the 'No Fading When Close-up' mod (in Graphics).||***Activate by pressing START(+), then Party->Active Members->Confirm Changes."
+version = 7
+
+[Default]
+$memoffset = 0x110
+
+$height = 1.0
+$bustX = 1.0
+$bustY = 1.0
+$bustZ = 1.0
+
+$notexist = 0
+$invis = 0
+
+$glitchheight = 0
+$characterID = 1
+
+[Preset]
+category = "Character:"
+name = "Playable Avatar"
+
+[Preset]
+category = "Character:"
+name = "Nagi"
+$characterID = 2
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "L"
+$characterID = 3
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Lao"
+$characterID = 4
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "H.B."
+$characterID = 5
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Gwin"
+$characterID = 6
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Frye"
+$characterID = 7
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Doug"
+$characterID = 8
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Yelv"
+$characterID = 9
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Boze"
+$characterID = 10
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Phog"
+$characterID = 11
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Elma"
+$characterID = 12
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Lin"
+$characterID = 13
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Celica"
+$characterID = 14
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Irina"
+$characterID = 15
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Murderess"
+$characterID = 16
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Alexa"
+$characterID = 17
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Hope"
+$characterID = 18
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Character:"
+name = "Mia"
+$characterID = 19
+$memoffset = (($characterID-1)*0x57C)+0x110
+
+[Preset]
+category = "Show Glitched Heights?"
+name = No
+
+[Preset]
+category = "Show Glitched Heights?"
+name = Yes
+$glitchheight = 1
+
+###################################################################
+
+[Preset]
+category = "Height:"
+name = Sky Destroying [character needs to be in water] (1000000)
+condition = $glitchheight == 1
+$height = 1000000
+
+[Preset]
+category = "Height:"
+name = Only Shadows [Need to fly in skell to see] (2000)
+condition = $glitchheight == 1
+$height = 2000
+
+[Preset]
+category = "Height:"
+name = Building Sized (100)
+condition = $glitchheight == 1
+$height = 100
+
+[Preset]
+category = "Height:"
+name = Giant (50)
+condition = $glitchheight == 1
+$height = 50
+
+[Preset]
+category = "Height:"
+name = Huge (15)
+$height = 15
+
+[Preset]
+category = "Height:"
+name = Large (3.5)
+$height = 3.5
+
+[Preset]
+category = "Height:"
+name = Big (2.0)
+$height = 2.0
+
+[Preset]
+category = "Height:"
+name = Size 100 in character creator
+condition = $characterID == 1
+$height = 1.06 #0x3F87AE14 #Young Boy A B, Boy A B, Man A B, Old Man, Woman A B
+###$height = 1.0 #0x3F800000 #Young Girl A B, Girl A B
+###$height = 0.95 #0x3F733333 #Young Girl C
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 1
+Default = 1
+
+[Preset]
+category = "Height:"
+name = Size 1 in character creator
+condition = $characterID == 1
+$height = 0.9214 #0x3F6BE0DF #Young Boy A B, Boy A B, Man A B, Old Man, Woman A B
+###$height = 0.8911 #0x3F641F21 #Young Girl A B, Girl A B
+###$height = 0.8906 #0x3F63FE5C #Young Girl C
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 2
+Default = 1
+$height = 0.97 #0x3F7851EC
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 3
+Default = 1
+$height = 1.17 #0x3F95C28F
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 4
+Default = 1
+$height = 0.98 #0x3F7AE148
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 5
+Default = 1
+$height = 0.99 #0x3F7D70A4
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 6
+Default = 1
+$height = 0.97 #0x3F7851EC
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 7
+Default = 1
+$height = 1.03 #0x3F83D70A
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 8
+Default = 1
+$height = 1.06 #0x3F87AE14
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 9
+Default = 1
+$height = 1.01 0x3F8147AE
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 10
+Default = 1
+$height = 1.0 #0x3F800000
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 11
+Default = 1
+$height = 1.02 #0x3F828F5C
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 12
+Default = 1
+$height = 0.95 #0x3F733333
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 13
+Default = 1
+$height = 0.85 #0x3F59999A
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 14
+Default = 1
+$height = 0.87 #0x3F5EB852
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 15
+Default = 1
+$height = 0.93 #0x3F6E147B
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 16
+Default = 1
+$height = 0.95 #0x3F733333
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 17
+Default = 1
+$height = 0.92 #0x3F6B851F
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 18
+Default = 1
+$height = 0.97 #0x3F7851EC
+
+[Preset]
+category = "Height:"
+name = Normal
+condition = $characterID == 19
+Default = 1
+$height = 0.88 #0x3F6147AE
+
+[Preset]
+category = "Height:"
+name = Short (0.7)
+$height = 0.7
+
+[Preset]
+category = "Height:"
+name = Small (0.55)
+$height = 0.55
+
+[Preset]
+category = "Height:"
+name = Tiny (0.35)
+$height = 0.35
+
+[Preset]
+category = "Height:"
+name = Rat (0.15)
+$height = 0.15
+
+[Preset]
+category = "Height:"
+name = Ant (0.05)
+$height = 0.05
+
+[Preset]
+category = "Height:"
+name = Character Disapears (0)
+condition = $glitchheight == 1
+$height = 0
+
+[Preset]
+category = "Height:"
+name = Corrupt Hair [UNSTABLE] (-1)
+condition = $glitchheight == 1
+$height = -1
+
+[Preset]
+category = "Height:"
+name = Character walks underground [UNSTABLE] (-1.2)
+condition = $glitchheight == 1
+$height = -1.2
+
+[Preset]
+category = "Height:"
+name = Giant character walks underground [UNSTABLE] (-10000)
+condition = $glitchheight == 1
+$height = -10000
+
+[Preset]
+category = "Height:"
+name = Massive character walks underground [UNSTABLE] (-80000)
+condition = $glitchheight == 1
+$height = -80000
+
+[Preset]
+category = "Height:"
+name = Character Cant interact with terminals (NaN)
+condition = $glitchheight == 1
+$notexist = 0xFFFF #height = 0xFFFFFFFF
+
+###################################################################
+
+#[Preset]
+#category = "Chest:"
+#name = Size 100 in JP character creator
+#condition = $characterID == 1
+#$bustX = 1.4 #0x3FB33333
+#$bustY = 1.4 #0x3FB33333
+#$bustZ = 1.4 #0x3FB33333
+
+[Preset]
+category = "Chest:"
+name = Normal          #size 43 in JP character creator
+condition = $characterID == 1
+#Default = 1
+$bustX = 1.001 #0x3F8020C4
+$bustY = 1.001 #0x3F8020C4
+$bustZ = 1.001 #0x3F8020C4
+
+#[Preset]
+#category = "Chest:"
+#name = Size 1 in JP character creator
+#condition = $characterID == 1
+#$bustX = 0.707 #0x3F34FDF4
+#$bustY = 0.707 #0x3F34FDF4
+#$bustZ = 0.707 #0x3F34FDF4
+
+[Preset]
+category = "Chest:"
+name = Normal
+condition = (($characterID == 12) + ($characterID >= 16)) == 1
+
+[Preset]
+category = "Chest:"
+name = Normal
+condition = $characterID == 14
+$bustX = 0.85 #0x3F59999A
+$bustY = 0.85 #0x3F59999A
+$bustZ = 0.85 #0x3F59999A
+
+[Preset]
+category = "Chest:"
+name = Normal
+condition = $characterID == 15
+$bustX = 0.93 #0x3F6E147B
+$bustY = 0.93 #0x3F6E147B
+$bustZ = 0.93 #0x3F6E147B
+
+[Preset]
+category = "Chest:"
+name = Invisible
+condition = (($characterID == 1) + ($characterID == 12) + ($characterID >= 14)) == 1
+$invis = 0xFFFF #bustXYZ = 0xFFFFFFFF

@@ -1,0 +1,113 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Field Skill Level
+path = "Xenoblade Chronicles X/Mods/BLADE/Field Skill Level"
+description = "You can change your Mechanical, Archaeological and Biological field skill level."
+version = 7
+
+[Default]
+$meclevel = 5
+$arclevel = 5
+$biolevel = 5
+
+[Preset]
+category = Mechanical Field Skill:
+name = lv. 5
+
+[Preset]
+category = Mechanical Field Skill:
+name = lv. 4
+$meclevel = 4
+
+[Preset]
+category = Mechanical Field Skill:
+name = lv. 3
+$meclevel = 3
+
+[Preset]
+category = Mechanical Field Skill:
+name = lv. 2
+$meclevel = 2
+
+[Preset]
+category = Mechanical Field Skill:
+name = lv. 1
+$meclevel = 1
+
+[Preset]
+category = Mechanical Field Skill:
+name = lv. 0
+$meclevel = 0
+
+###[Preset]
+###category = Mechanical Field Skill:
+###name = lv. 6 (Broken)
+###$meclevel = 6
+
+[Preset]
+category = Biological Field Skill:
+name = lv. 5
+
+[Preset]
+category = Biological Field Skill:
+name = lv. 4
+$biolevel = 4
+
+[Preset]
+category = Biological Field Skill:
+name = lv. 3
+$biolevel = 3
+
+[Preset]
+category = Biological Field Skill:
+name = lv. 2
+$biolevel = 2
+
+[Preset]
+category = Biological Field Skill:
+name = lv. 1
+$biolevel = 1
+
+[Preset]
+category = Biological Field Skill:
+name = lv. 0
+$biolevel = 0
+
+###[Preset]
+###category = Biological Field Skill:
+###name = lv. 6 (Broken)
+###$biolevel = 6
+
+[Preset]
+category = Archaeological Field Skill:
+name = lv. 5
+
+[Preset]
+category = Archaeological Field Skill:
+name = lv. 4
+$arclevel = 4
+
+[Preset]
+category = Archaeological Field Skill:
+name = lv. 3
+$arclevel = 3
+
+[Preset]
+category = Archaeological Field Skill:
+name = lv. 2
+$arclevel = 2
+
+[Preset]
+category = Archaeological Field Skill:
+name = lv. 1
+$arclevel = 1
+
+[Preset]
+category = Archaeological Field Skill:
+name = lv. 0
+$arclevel = 0
+
+###[Preset]
+###category = Archaeological Field Skill:
+###name = lv. 6 (Broken)
+###$arclevel = 6

@@ -4,3 +4,4 @@ name = "Change time from eManual"
 path = "Xenoblade Chronicles X/Mods/HUD/Change time from eManual"
 description = Allow to change time from the eManual entry of the main menu.|Fixes the soft lock that happens when selecting eManual on Cemu.
 version = 6
+default = 1

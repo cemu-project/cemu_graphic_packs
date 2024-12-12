@@ -1,0 +1,30 @@
+[Definition]
+titleIds = 0005000010137F00,0005000010138300,0005000010144800
+name = Lives Multiplier
+path = "Donkey Kong Country: Tropical Freeze/Cheats/Lives Multiplier"
+description = Multiplies the amount of red 1-UP balloons you collect.
+#Credits: Intra
+version = 7
+
+[Default]
+$addamountliv = 1
+
+[Preset]
+name = x2
+$addamountliv = 2
+
+[Preset]
+name = x3
+$addamountliv = 3
+
+[Preset]
+name = x4
+$addamountliv = 4
+
+[Preset]
+name = x5
+$addamountliv = 5
+
+[Preset]
+name = x99
+$addamountliv = 99

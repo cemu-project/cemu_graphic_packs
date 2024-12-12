@@ -1,0 +1,1076 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Change Character Name
+path = "Xenoblade Chronicles X/Mods/Character/Change Name"
+description = Change the names of the playable characters, even if they're locked or not in your party.|The (JP) names do not work properly on NA and EU versions of the game.||***Activate by pressing START(+), then Party->Active Members->Confirm Changes.||To create your own name(s) look at the rules.txt in the downloadedGraphicsPack/XenobladeX/Mods/CharacterName folder.
+version = 7
+
+
+###############################################################
+############### Custom name tutorial at line 166
+###############################################################
+
+
+
+[Default]
+##Offset from start of character information memory address
+$memoffset = 0xA8
+
+##characters of name in ASCII(hex) or ISO-8859-1(hex)
+$char0102 = 0x0000       #1st & 2nd character of name
+$char0304 = 0x0000       #3rd & 4th character of name
+$char0506 = 0x0000       #5th & 6th character of name
+$char0708 = 0x0000       #7th & 8th character of name
+$char0910 = 0x0000       #9th & 10th
+$char1112 = 0x0000       #11th & 12th
+$char1314 = 0x0000       #13th & 14th
+$char1516 = 0x0000       #15th & 16th
+$char1718 = 0x0000       #17th & 18th
+$char1920 = 0x0000       #19th & 20th
+$char2122 = 0x0000       #21st & 22nd
+$char2324 = 0x0000       #23rd & 24th
+$char2526 = 0x0000       #25th & 26th
+$char2728 = 0x0000       #27th & 28th
+$char2930 = 0x0000       #29th & 30th
+$char3132 = 0x0000       #31st & 32nd
+$char3334 = 0x0000       #33rd & 34th
+$char3536 = 0x0000       #35th & 36th
+$char3738 = 0x0000
+$char3940 = 0x0000
+$char4142 = 0x0000
+$char4344 = 0x0000
+$char4546 = 0x0000
+$char4748 = 0x0000
+$char4950 = 0x0000
+$char5152 = 0x0000
+
+##used for rules.txt conditions. not used in patch.
+$characterID = 1
+
+
+############### Select Character
+[Preset]
+category = "Character:"
+name = "Playable Avatar"
+
+[Preset]
+category = "Character:"
+name = "Nagi"
+$characterID = 2
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "L"
+$characterID = 3
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Lao"
+$characterID = 4
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "H.B."
+$characterID = 5
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Gwin"
+$characterID = 6
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Frye"
+$characterID = 7
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Doug"
+$characterID = 8
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Yelv"
+$characterID = 9
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Boze"
+$characterID = 10
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Phog"
+$characterID = 11
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Elma"
+$characterID = 12
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Lin"
+$characterID = 13
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Celica"
+$characterID = 14
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Irina"
+$characterID = 15
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Murderess"
+$characterID = 16
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Alexa"
+$characterID = 17
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Hope"
+$characterID = 18
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+[Preset]
+category = "Character:"
+name = "Mia"
+$characterID = 19
+$memoffset = (($characterID-1)*0x57C)+0xA8
+
+###################################################################################################################################################################################################################################
+###### Remove comment symbol (#) on each line below to input a custom name!!
+#[Preset]
+#category = "Name:"
+#name = "[Your custom name!!]"          #Name can normally only be 1-10 characters, this mod allows you to have more
+#condition = $characterID == 1          #change the '1' to make a custom name for another character
+#$char0102 = 0x0000
+#$char0304 = 0x0000                     #Replace the '0000' with ASCII(hex) or utf8(hex) to put in a name
+#$char0506 = 0x0000                     #Only the JP version of the game supports JP characters
+#$char0708 = 0x0000
+#$char0910 = 0x0000                     #There are various text to hex converters online, here is the one I use for ASCII:
+#$char1112 = 0x0000                     #https://www.rapidtables.com/convert/number/ascii-to-hex.html
+#$char1314 = 0x0000
+#$char1516 = 0x0000                     #Changes to Graphics Packs get deleted whenever you update so make a back up of this changed rules.txt
+#$char1718 = 0x0000                     #You can move this mod's "CharacterName" foulder outside of the "downloadedGraphicsPack" foulder and place it next to it in the "grahicsPacks" foulder and that works really well
+#$char1920 = 0x0000
+#$char2122 = 0x0000                     #you can look at how the example names are formatted below
+#$char2324 = 0x0000
+#$char2526 = 0x0000
+#$char2728 = 0x0000
+#$char2930 = 0x0000
+#$char3132 = 0x0000
+#$char3334 = 0x0000
+#$char3536 = 0x0000
+###################################################################################################################################################################################################################################
+
+
+################ Select Name
+[Preset]
+category = "Name:"
+name = "Cross"
+condition = $characterID == 1
+$char0102 = 0x4372   #C & r
+$char0304 = 0x6F73   #o & s
+$char0506 = 0x7300   #s         #Because theres an ODD amount of characters  ***the ending 00 is nessisary***
+
+[Preset]
+category = "Name:"
+name = "X"
+condition = $characterID == 1
+$char0102 = 0x5800   #X         #Because theres an ODD amount of characters  ***the ending 00 is nessisary***
+
+[Preset]
+category = "Name:"
+condition = $characterID == 1
+name = " " #gives a completely empty name
+
+[Preset]
+category = "Name:"
+name = "Shulk"
+condition = $characterID == 1
+$char0102 = 0x5368   #S & h
+$char0304 = 0x756C   #u & l
+$char0506 = 0x6B00   #k
+
+[Preset]
+category = "Name:"
+name = "Reyn"
+condition = $characterID == 1
+$char0102 = 0x5265   #R & e
+$char0304 = 0x796E   #y & n     #Because theres an EVEN amount of characters  ***the ending 00 is not needed***
+
+[Preset]
+category = "Name:"
+name = "Fiora"
+condition = $characterID == 1
+$char0102 = 0x4669   #F & i
+$char0304 = 0x6F72   #o & r
+$char0506 = 0x6100   #a
+
+[Preset]
+category = "Name:"
+name = "Dunban"
+condition = $characterID == 1
+$char0102 = 0x4475   #D & u
+$char0304 = 0x6E62   #n & b
+$char0506 = 0x616E   #a & n
+
+[Preset]
+category = "Name:"
+name = "Sharla"
+condition = $characterID == 1
+$char0102 = 0x5368   #S & h
+$char0304 = 0x6172   #a & r
+$char0506 = 0x6C61   #l & a
+
+[Preset]
+category = "Name:"
+name = "Melia"
+condition = $characterID == 1
+$char0102 = 0x4D65   #M & e
+$char0304 = 0x6C69   #l & i
+$char0506 = 0x6100   #a
+
+[Preset]
+category = "Name:"
+name = "Dio"
+condition = $characterID == 1
+$char0102 = 0x4469   #D & i
+$char0304 = 0x6F00   #o
+
+[Preset]
+category = "Name:"
+name = "Jotaro"
+condition = $characterID == 1
+$char0102 = 0x4A6F   #J & o
+$char0304 = 0x7461   #t & a
+$char0506 = 0x726F   #r & o
+
+
+
+
+
+###############################################
+###### Default character names
+###############################################
+
+[Preset]
+category = "Name:"
+name = "Nagi"
+condition = $characterID == 2
+$char0102 = 0x4E61
+$char0304 = 0x6769
+
+[Preset]
+category = "Name:"
+name = "Nagi (JP)"
+condition = $characterID == 2
+$char0102 = 0xE383
+$char0304 = 0x8AE3
+#char0506 = 0x82AE
+
+[Preset]
+category = "Name:"
+name = "L"
+condition = $characterID == 3
+$char0102 = 0x4C00
+
+[Preset]
+category = "Name:"
+name = "L (JP)"
+condition = $characterID == 3
+$char0102 = 0xE383
+$char0304 = 0xABE3
+$char0506 = 0x83BC
+
+[Preset]
+category = "Name:"
+name = "Lao"
+condition = $characterID == 4
+$char0102 = 0x4C61
+$char0304 = 0x6F00
+
+[Preset]
+category = "Name:"
+name = "Lao (JP)"
+condition = $characterID == 4
+$char0102 = 0xE383
+$char0304 = 0xA9E3
+$char0506 = 0x82AA
+
+[Preset]
+category = "Name:"
+name = "H.B."
+condition = $characterID == 5
+$char0102 = 0x482E
+$char0304 = 0x422E
+
+[Preset]
+category = "Name:"
+name = "H. B. (DE)" #German
+condition = $characterID == 5
+$char0102 = 0x482E
+$char0304 = 0x2042
+$char0506 = 0x2E00
+
+[Preset]
+category = "Name:"
+name = "HB (JP)"
+condition = $characterID == 5
+$char0102 = 0x4842
+
+[Preset]
+category = "Name:"
+name = "Gwin"
+condition = $characterID == 6
+$char0102 = 0x4777
+$char0304 = 0x696E
+
+[Preset]
+category = "Name:"
+name = "Gwen (FR)" #French
+condition = $characterID == 6
+$char0102 = 0x4777
+$char0304 = 0x656E
+
+[Preset]
+category = "Name:"
+name = "Gwin (JP)"
+condition = $characterID == 6
+$char0102 = 0xE382
+$char0304 = 0xB0E3
+$char0506 = 0x82A4
+$char0708 = 0xE383
+$char0910 = 0xB300
+
+[Preset]
+category = "Name:"
+name = "Frye"
+condition = $characterID == 7
+$char0102 = 0x4672
+$char0304 = 0x7965
+
+[Preset]
+category = "Name:"
+name = "Frye (JP)"
+condition = $characterID == 7
+$char0102 = 0xE383
+$char0304 = 0x95E3
+$char0506 = 0x83A9
+$char0708 = 0xE382
+$char0910 = 0xA400
+
+[Preset]
+category = "Name:"
+name = "Doug"
+condition = $characterID == 8
+$char0102 = 0x446F
+$char0304 = 0x7567
+
+[Preset]
+category = "Name:"
+name = "Doug (JP)"
+condition = $characterID == 8
+$char0102 = 0xE383
+$char0304 = 0x80E3
+$char0506 = 0x82B0
+
+[Preset]
+category = "Name:"
+name = "Yelv"
+condition = $characterID == 9
+$char0102 = 0x5965
+$char0304 = 0x6C76
+
+[Preset]
+category = "Name:"
+name = "Yelv (JP)"
+condition = $characterID == 9
+$char0102 = 0xE382
+$char0304 = 0xA4E3
+$char0506 = 0x82A8
+$char0708 = 0xE383
+$char0910 = 0xABE3
+$char1112 = 0x83B4
+
+[Preset]
+category = "Name:"
+name = "Boze" ;é
+condition = $characterID == 10
+$char0102 = 0x426F
+$char0304 = 0x7AC3
+$char0506 = 0xA900
+
+[Preset]
+category = "Name:"
+name = "Boze (JP)"
+condition = $characterID == 10
+$char0102 = 0xE383
+$char0304 = 0x9CE3
+$char0506 = 0x82BC
+$char0708 = 0xE383
+$char0910 = 0xBBE3
+$char1112 = 0x83AD
+$char1314 = 0xE382
+$char1516 = 0xA6E3
+$char1718 = 0x82BA
+
+[Preset]
+category = "Name:"
+name = "Phog"
+condition = $characterID == 11
+$char0102 = 0x5068
+$char0304 = 0x6F67
+
+[Preset]
+category = "Name:"
+name = "Phog (JP)"
+condition = $characterID == 11
+$char0102 = 0xE383
+$char0304 = 0x95E3
+$char0506 = 0x82A9
+$char0708 = 0xE382
+$char0910 = 0xB0E3
+$char1112 = 0x83BB
+$char1314 = 0xE382
+$char1516 = 0xAFE3
+$char1718 = 0x83AA
+$char1920 = 0xE382
+$char2122 = 0xB9E3
+$char2324 = 0x8388
+$char2526 = 0xE383
+$char2728 = 0x9500
+
+[Preset]
+category = "Name:"
+name = "Elma"
+condition = $characterID == 12
+$char0102 = 0x456C
+$char0304 = 0x6D61
+
+[Preset]
+category = "Name:"
+name = "Elma (JP)"
+condition = $characterID == 12
+$char0102 = 0xE382
+$char0304 = 0xA8E3
+$char0506 = 0x83AB
+$char0708 = 0xE383
+$char0910 = 0x9E00
+
+[Preset]
+category = "Name:"
+name = "Lin"
+condition = $characterID == 13
+$char0102 = 0x4C69
+$char0304 = 0x6E00
+
+[Preset]
+category = "Name:"
+name = "Lin (JP)"
+condition = $characterID == 13
+$char0102 = 0xE383
+$char0304 = 0xAAE3
+$char0506 = 0x83B3
+
+[Preset]
+category = "Name:"
+name = "Celica"
+condition = $characterID == 14
+$char0102 = 0x4365
+$char0304 = 0x6C69
+$char0506 = 0x6361
+
+[Preset]
+category = "Name:"
+name = "Celica (JP)"
+condition = $characterID == 14
+$char0102 = 0xE382
+$char0304 = 0xBBE3
+$char0506 = 0x83AA
+$char0708 = 0xE382
+$char0910 = 0xAB00
+
+[Preset]
+category = "Name:"
+name = "Irina"
+condition = $characterID == 15
+$char0102 = 0x4972
+$char0304 = 0x696E
+$char0506 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "Irina (JP)"
+condition = $characterID == 15
+$char0102 = 0xE382
+$char0304 = 0xA4E3
+$char0506 = 0x83AA
+$char0708 = 0xE383
+$char0910 = 0xBCE3
+$char1112 = 0x838A
+
+[Preset]
+category = "Name:"
+name = "Murderess"
+condition = $characterID == 16
+$char0102 = 0x4D75
+$char0304 = 0x7264
+$char0506 = 0x6572
+$char0708 = 0x6573
+$char0910 = 0x7300
+
+[Preset]
+category = "Name:"
+name = "Sicaria (ES)" #Spanish
+condition = $characterID == 16
+$char0102 = 0x5369
+$char0304 = 0x6361
+$char0506 = 0x7269
+$char0708 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "La Sicaire (FR)" #French
+condition = $characterID == 16
+$char0102 = 0x4C61
+$char0304 = 0x2053
+$char0506 = 0x6963
+$char0708 = 0x6169
+$char0910 = 0x7265
+
+[Preset]
+category = "Name:"
+name = "Mardres (DE)" #German
+condition = $characterID == 16
+$char0102 = 0x4D61
+$char0304 = 0x7264
+$char0506 = 0x7265
+$char0708 = 0x7300
+
+[Preset]
+category = "Name:"
+name = "Assassina (IT)" #Italian
+condition = $characterID == 16
+$char0102 = 0x4173
+$char0304 = 0x7361
+$char0506 = 0x7373
+$char0708 = 0x696E
+$char0910 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "Murderess (JP)"
+condition = $characterID == 16
+$char0102 = 0xE383
+$char0304 = 0x9EE3
+$char0506 = 0x83BC
+$char0708 = 0xE383
+$char0910 = 0x89E3
+$char1112 = 0x83AC
+$char1314 = 0xE382
+$char1516 = 0xB900
+
+[Preset]
+category = "Name:"
+name = "Alexa"
+condition = $characterID == 17
+$char0102 = 0x416C
+$char0304 = 0x6578
+$char0506 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "Alexa (JP)"
+condition = $characterID == 17
+$char0102 = 0xE382
+$char0304 = 0xA2E3
+$char0506 = 0x82AF
+$char0708 = 0xE382
+$char0910 = 0xBBE3
+$char1112 = 0x838A
+
+[Preset]
+category = "Name:"
+name = "Hope"
+condition = $characterID == 18
+$char0102 = 0x486F
+$char0304 = 0x7065
+
+[Preset]
+category = "Name:"
+name = "Hope (JP)"
+condition = $characterID == 18
+$char0102 = 0xE383
+$char0304 = 0x92E3
+$char0506 = 0x83A1
+$char0708 = 0xE383
+$char0910 = 0xAAE3
+$char1112 = 0x83BB
+$char1314 = 0xE382
+$char1516 = 0xA2E3
+$char1718 = 0x83A9
+$char1920 = 0xE383
+$char2122 = 0xB3E3
+$char2324 = 0x82B8
+
+[Preset]
+category = "Name:"
+name = "Mia"
+condition = $characterID == 19
+$char0102 = 0x4D69
+$char0304 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "Mia (JP)"
+condition = $characterID == 19
+$char0102 = 0xE383
+$char0304 = 0x9FE3
+$char0506 = 0x83BC
+$char0708 = 0xE382
+$char0910 = 0xA200
+
+[Preset]
+category = "Name:"
+name = "  "
+condition = $characterID != 1
+
+
+
+
+
+
+
+
+#################################################################
+############## Custom character names
+#################################################################
+#If you feel like you have good custon name sugestions, feel free to @_intra_ on the cemu discord
+#They may get added in
+
+### Nagi
+[Preset]
+category = "Name:"
+name = "Nag's"
+condition = $characterID == 2
+$char0102 = 0x4E61
+$char0304 = 0x6727
+$char0506 = 0x7300
+
+[Preset]
+category = "Name:"
+name = "Ether Blossom Dance"
+condition = $characterID == 2
+$char0102 = 0x4574
+$char0304 = 0x6865
+$char0506 = 0x7220
+$char0708 = 0x426C
+$char0910 = 0x6F73
+$char1112 = 0x736F
+$char1314 = 0x6D20
+$char1516 = 0x4461
+$char1718 = 0x6E63
+$char1920 = 0x6500
+
+### L
+[Preset]
+category = "Name:"
+name = "L'cirufe"
+condition = $characterID == 3
+$char0102 = 0x4C27
+$char0304 = 0x6369
+$char0506 = 0x7275
+$char0708 = 0x6665
+
+[Preset]
+category = "Name:"
+name = "Asscave slayer"
+condition = $characterID == 3
+$char0102 = 0x4173
+$char0304 = 0x7363
+$char0506 = 0x6176
+$char0708 = 0x6520
+$char0910 = 0x736C
+$char1112 = 0x6179
+$char1314 = 0x6572
+
+### Lao
+[Preset]
+category = "Name:"
+name = "Lmao"
+condition = $characterID == 4
+$char0102 = 0x4C6D
+$char0304 = 0x616F
+
+[Preset]
+category = "Name:"
+name = "The cake is a lie"
+condition = $characterID == 4
+$char0102 = 0x5468
+$char0304 = 0x6520
+$char0506 = 0x6361
+$char0708 = 0x6B65
+$char0910 = 0x2069
+$char1112 = 0x7320
+$char1314 = 0x6120
+$char1516 = 0x6C69
+$char1718 = 0x6500
+
+### H.B.
+[Preset]
+category = "Name:"
+name = "Hector"
+condition = $characterID == 5
+$char0102 = 0x4865
+$char0304 = 0x6374
+$char0506 = 0x6F72
+
+[Preset]
+category = "Name:"
+name = "Superior"
+condition = $characterID == 5
+$char0102 = 0x5375
+$char0304 = 0x7065
+$char0506 = 0x7269
+$char0708 = 0x6F72
+
+### Gwin
+[Preset]
+category = "Name:"
+name = "Gparted"
+condition = $characterID == 6
+$char0102 = 0x4770
+$char0304 = 0x6172
+$char0506 = 0x7465
+$char0708 = 0x6400
+
+[Preset]
+category = "Name:"
+name = "Ultra Slash!"
+condition = $characterID == 6
+$char0102 = 0x556C
+$char0304 = 0x7472
+$char0506 = 0x6120
+$char0708 = 0x536C
+$char0910 = 0x6173
+$char1112 = 0x6821
+
+### Frye
+[Preset]
+category = "Name:"
+name = "Git Gud"
+condition = $characterID == 7
+$char0102 = 0x4769
+$char0304 = 0x7420
+$char0506 = 0x4775
+$char0708 = 0x6400
+
+[Preset]
+category = "Name:"
+name = "Can't outdrink my running problems"
+condition = $characterID == 7
+$char0102 = 0x4361
+$char0304 = 0x6E27
+$char0506 = 0x7420
+$char0708 = 0x6F75
+$char0910 = 0x7464
+$char1112 = 0x7269
+$char1314 = 0x6E6B
+$char1516 = 0x206D
+$char1718 = 0x7920
+$char1920 = 0x7275
+$char2122 = 0x6E6E
+$char2324 = 0x696E
+$char2526 = 0x6720
+$char2728 = 0x7072
+$char2930 = 0x6F62
+$char3132 = 0x6C65
+$char3334 = 0x6D73
+
+### Doug
+[Preset]
+category = "Name:"
+name = "Duoguill"
+condition = $characterID == 8
+$char0102 = 0x4475
+$char0304 = 0x6F67
+$char0506 = 0x7569
+$char0708 = 0x6C6C
+
+[Preset]
+category = "Name:"
+name = "Our Bodies"
+condition = $characterID == 8
+$char0102 = 0x4F75
+$char0304 = 0x7220
+$char0506 = 0x426F
+$char0708 = 0x6469
+$char0910 = 0x6573
+
+### Yelv
+[Preset]
+category = "Name:"
+name = "Pard"
+condition = $characterID == 9
+$char0102 = 0x5061
+$char0304 = 0x7264
+
+[Preset]
+category = "Name:"
+name = "Yolo"
+condition = $characterID == 9
+$char0102 = 0x596F
+$char0304 = 0x6C6F
+
+### Bozé
+[Preset]
+category = "Name:"
+name = "Bad character"
+condition = $characterID == 10
+$char0102 = 0x4261
+$char0304 = 0x6420
+$char0506 = 0x6368
+$char0708 = 0x6172
+$char0910 = 0x6163
+$char1112 = 0x7465
+$char1314 = 0x7200
+
+[Preset]
+category = "Name:"
+name = "Do not play"
+condition = $characterID == 10
+$char0102 = 0x446F
+$char0304 = 0x206E
+$char0506 = 0x6F74
+$char0708 = 0x2070
+$char0910 = 0x6C61
+$char1112 = 0x7900
+
+### Phog
+[Preset]
+category = "Name:"
+name = "Ghost Walker!"
+condition = $characterID == 11
+$char0102 = 0x4768
+$char0304 = 0x6F73
+$char0506 = 0x7420
+$char0708 = 0x5761
+$char0910 = 0x6C6B
+$char1112 = 0x6572
+$char1314 = 0x2100
+
+[Preset]
+category = "Name:"
+name = "Skyhigh Boi"
+condition = $characterID == 11
+$char0102 = 0x536B
+$char0304 = 0x7968
+$char0506 = 0x6967
+$char0708 = 0x6820
+$char0910 = 0x426F
+$char1112 = 0x6900
+
+### Elma
+[Preset]
+category = "Name:"
+name = "Elmo"
+condition = $characterID == 12
+$char0102 = 0x456C
+$char0304 = 0x6D6F
+
+[Preset]
+category = "Name:"
+name = "Smellma"
+condition = $characterID == 12
+$char0102 = 0x536D
+$char0304 = 0x656C
+$char0506 = 0x6C6D
+$char0708 = 0x6100
+
+### Lin
+[Preset]
+category = "Name:"
+name = "Kazoo Kid"
+condition = $characterID == 13
+$char0102 = 0x4B61
+$char0304 = 0x7A6F
+$char0506 = 0x6F20
+$char0708 = 0x4B69
+$char0910 = 0x6400
+
+[Preset]
+category = "Name:"
+name = "xX_PotatoCooker_Xx"
+condition = $characterID == 13
+$char0102 = 0x7858
+$char0304 = 0x5F50
+$char0506 = 0x6F74
+$char0708 = 0x6174
+$char0910 = 0x6F43
+$char1112 = 0x6F6F
+$char1314 = 0x6B65
+$char1516 = 0x725F
+$char1718 = 0x5878
+
+### Celica
+[Preset]
+category = "Name:"
+name = "Cresselia"
+condition = $characterID == 14
+$char0102 = 0x4372
+$char0304 = 0x6573
+$char0506 = 0x7365
+$char0708 = 0x6C69
+$char0910 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "John Wick"
+condition = $characterID == 14
+$char0102 = 0x4A6F
+$char0304 = 0x686E
+$char0506 = 0x2057
+$char0708 = 0x6963
+$char0910 = 0x6B00
+
+### Irina
+[Preset]
+category = "Name:"
+name = "Byerina"
+condition = $characterID == 15
+$char0102 = 0x4279
+$char0304 = 0x6572
+$char0506 = 0x696E
+$char0708 = 0x6100
+
+[Preset]
+category = "Name:"
+name = "Hirina"
+condition = $characterID == 15
+$char0102 = 0x4869
+$char0304 = 0x7269
+$char0506 = 0x6E61
+
+### Murderess
+[Preset]
+category = "Name:"
+name = "Sharon"
+condition = $characterID == 16
+$char0102 = 0x5368
+$char0304 = 0x6172
+$char0506 = 0x6F6E
+
+[Preset]
+category = "Name:"
+name = "Richie Rich"
+condition = $characterID == 16
+$char0102 = 0x5269
+$char0304 = 0x6368
+$char0506 = 0x6965
+$char0708 = 0x2052
+$char0910 = 0x6963
+$char1112 = 0x6800
+
+### Alexa
+[Preset]
+category = "Name:"
+name = "Sklooser"
+condition = $characterID == 17
+$char0102 = 0x536B
+$char0304 = 0x6C6F
+$char0506 = 0x7365
+$char0708 = 0x7200
+
+[Preset]
+category = "Name:"
+name = "Machine head"
+condition = $characterID == 17
+$char0102 = 0x4D61
+$char0304 = 0x6368
+$char0506 = 0x696E
+$char0708 = 0x6520
+$char0910 = 0x6865
+$char1112 = 0x6164
+
+### Hope
+[Preset]
+category = "Name:"
+name = "Hopeless"
+condition = $characterID == 18
+$char0102 = 0x486F
+$char0304 = 0x7065
+$char0506 = 0x6C65
+$char0708 = 0x7373
+
+[Preset]
+category = "Name:"
+name = "Hope, the Killer of Lockhart"
+condition = $characterID == 18
+$char0102 = 0x486F
+$char0304 = 0x7065
+$char0506 = 0x2C20
+$char0708 = 0x7468
+$char0910 = 0x6520
+$char1112 = 0x4B69
+$char1314 = 0x6C6C
+$char1516 = 0x6572
+$char1718 = 0x206F
+$char1920 = 0x6620
+$char2122 = 0x4C6F
+$char2324 = 0x636B
+$char2526 = 0x6861
+$char2728 = 0x7274
+
+### Mia
+[Preset]
+category = "Name:"
+name = "Missing in action"
+condition = $characterID == 19
+$char0102 = 0x4D69
+$char0304 = 0x7373
+$char0506 = 0x696E
+$char0708 = 0x6720
+$char0910 = 0x696E
+$char1112 = 0x2061
+$char1314 = 0x6374
+$char1516 = 0x696F
+$char1718 = 0x6E00
+
+[Preset]
+category = "Name:"
+name = "PancakeEnjoyer420"
+condition = $characterID == 19
+$char0102 = 0x5061
+$char0304 = 0x6E63
+$char0506 = 0x616B
+$char0708 = 0x6545
+$char0910 = 0x6E6A
+$char1112 = 0x6F79
+$char1314 = 0x6572
+$char1516 = 0x3432
+$char1718 = 0x3000

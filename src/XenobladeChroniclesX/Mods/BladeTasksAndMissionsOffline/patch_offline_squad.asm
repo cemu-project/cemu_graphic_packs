@@ -1,7 +1,6 @@
 [XCX_SQUADMISSIONS]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
-.int $missionId
 
 ;######### Change Squad Mission using main menu
 VarSquadMission:
@@ -9,34 +8,34 @@ VarSquadMission:
 
 _iniPtr:
 li r5, 0
-lis       r30, VarSquadMission@ha
-stw       r5, VarSquadMission@l(r30)
-mr 	   r30, r3
+lis r30, VarSquadMission@ha
+stw r5, VarSquadMission@l(r30)
+mr r30, r3
 blr
 
 ;######### Force Squad Mission number
 _forceMission:
-lmw	r14, 0x1B8(r1)
-li	 	r4, $missionId
-cmpwi	r4, 0
+lmw r14, 0x1B8(r1)
+li r4, $missionId
+cmpwi r4, 0
 beqlr
-mr		r3, r4
+mr r3, r4
 blr
 
 ;######### Force Squad Mission number 1.0.0J --not working
 ;_forceMissionJP:
-;lmw	r15, 0x1AC(r1) ;
-;li	 	r4, $missionId
-;cmpwi	r4, 0
+;lmw r15, 0x1AC(r1) ;
+;li r4, $missionId
+;cmpwi r4, 0
 ;beqlr
-;mr		r3, r4
+;mr r3, r4
 ;blr
 
 ;######### Change Squad Mission using main menu
 _savePtr:
-li 	 	  r3, 1
-lis       r30, VarSquadMission@ha
-stw       r3, VarSquadMission@l(r30)
+li r3, 1
+lis r30, VarSquadMission@ha
+stw r3, VarSquadMission@l(r30)
 blr
 
 
@@ -91,7 +90,6 @@ moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
 
 ;################## BLADE Home Terminal (for Squad Quest Selection)
 0x02AC5C10 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-0x02E0C5B0 = li r3, -1
 
 ;################## Change Squad Mission using main menu
 0x02B85134 = bla _savePtr
@@ -113,7 +111,6 @@ moduleMatches = 0x30B6E091 ; 1.0.2U
 
 ;################## BLADE Home Terminal (for Squad Quest Selection)
 0x02AC5C00 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-0x02E0C550 = li r3, -1
 
 ;################## Change Squad Mission using main menu
 0x02B85124 = bla _savePtr
@@ -154,7 +151,6 @@ moduleMatches = 0x7672271D ; 1.0.2J
 0x0295B7F0 = li r0, 42
 0x02BF81D0 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
 0x02AC22D0 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-0x02E07A78 = li r3, -1
 0x02B81070 = bla _savePtr
 0x02B81088 = bla _savePtr
 0x02B80FC0 = li r11, 1
@@ -192,7 +188,6 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x0295E988 = li r0, 42
 0x02BFC6C0 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
 0x02AC5B84 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-0x02E0C3D8 = li r3, -1
 0x02B850A8 = bla _savePtr
 0x02B850C0 = bla _savePtr
 0x02B84FF8 = li r11, 1
@@ -230,7 +225,6 @@ moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 ;0x0295A060 = li r0, 42
 ;0x02BF5364 = li r11, 1 ; garder affichée la liste des tasks en bas à droite ; keep displayed the list of tasks at the bottom right
 ;0x02AC04E8 = li r3, 0 ; menu::CTerminalMenu_SquadQuest::offline
-;0x02E03228 = li r3, -1
 ;0x02B7EAC0 = bla _savePtr
 ;0x02B7EAD8 = bla _savePtr
 ;0x02B7EA10 = li r11, 1
