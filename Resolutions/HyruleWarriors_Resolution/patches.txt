@@ -1,9 +1,0 @@
-[HyruleWarriors_219v208] #same checksum as JPNv272
-moduleMatches = 0xE159AE91
-
-#rodata constant changes
-
-0x1009609C = .float ($aspectRatio) 
-0x10096124 = .float ($aspectRatio)  
-0x10096948 = .float ($aspectRatio)
-0x10096974 = .float ($aspectRatio)

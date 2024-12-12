@@ -1,9 +1,0 @@
-[NG3_EU_v0]
-moduleMatches = 0x57D3605F
-
-#rodata constants
-0x1007F304 = .float $width/$height
-0x1007F354 = .float $width/$height
-0x1017F164 = .float $width/$height
-0x102248F0 = .float $width/$height
-0x102CAEEC = .float $width/$height
