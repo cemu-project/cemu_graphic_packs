@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001010B300,0005000010111F00,000500001015B400,0005000210111F01,000500021010B301
+name = 60FPS
+path = "Sonic & All-Stars Racing Transformed/Mods/60FPS"
+description = Patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7

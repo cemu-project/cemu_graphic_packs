@@ -1,5 +1,4 @@
-
-#version 420
+#version 450
 
 in vec2 passUV;
 layout(binding=0) uniform sampler2D textureSrc;

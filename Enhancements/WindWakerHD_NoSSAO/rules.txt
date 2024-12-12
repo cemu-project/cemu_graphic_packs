@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010143400,0005000010143600,0005000010143500
-name = No SSAO
-path = "The Legend of Zelda: The Wind Waker HD/Enhancements/No SSAO" 
-description = Removes the SSAO of the game, which are these little blurred shadows around Link when you're standing under a tree, for example.
-version = 4

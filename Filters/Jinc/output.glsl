@@ -3,7 +3,7 @@
 // https://cemuhook.sshnuke.net/sampleResizers.zip
 /*
    Hyllian's jinc windowed-jinc 2-lobe with anti-ringing Shader
-   
+
    Copyright (C) 2011-2016 Hyllian - sergiogdb@gmail.com
 
    Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -26,7 +26,7 @@
 
 */
 
-#version 420
+#version 450
 
 in vec2 passUV;
 layout(binding=0) uniform sampler2D textureSrc;
@@ -37,7 +37,7 @@ layout(location = 0) out vec4 colorOut0;
    This is an approximation of Jinc(x)*Jinc(x*r1/r2) for x < 2.5,
    where r1 and r2 are the first two zeros of jinc function.
    For a jinc 2-lobe best approximation, use A=0.5 and B=0.825.
-*/  
+*/
 
 // #define halfpi  1.5707963267948966192313216916398 // not used?
 #define pi    3.1415926535897932384626433832795
@@ -74,7 +74,7 @@ vec4 JINC2_sharp(vec2 texture_size, vec2 texCoord)
 	vec2 pc = texCoord*texture_size;
 
 	vec2 tc = (floor(pc-vec2(0.5,0.5))+vec2(0.5,0.5));
-     
+
 	weights[0] = vec4(resampler(pc, tc    -dx    -dy), resampler(pc, tc           -dy), resampler(pc, tc    +dx    -dy), resampler(pc, tc+2.0*dx    -dy));
 	weights[1] = vec4(resampler(pc, tc    -dx       ), resampler(pc, tc              ), resampler(pc, tc    +dx       ), resampler(pc, tc+2.0*dx       ));
 	weights[2] = vec4(resampler(pc, tc    -dx    +dy), resampler(pc, tc           +dy), resampler(pc, tc    +dx    +dy), resampler(pc, tc+2.0*dx    +dy));
@@ -117,7 +117,7 @@ vec4 JINC2_sharp(vec2 texture_size, vec2 texCoord)
 	color = clamp(color, min_sample, max_sample);
 
 	color = mix(aux, color, $Anti_Ringing);
- 
+
 	// final sum and weight normalization
 	return vec4(color, 1.0);
 }

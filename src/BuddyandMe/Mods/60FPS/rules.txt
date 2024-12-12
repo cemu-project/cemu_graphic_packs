@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101ECF00,00050000101F4A00
+name = 60FPS
+path = "Buddy & Me/Mods/60FPS"
+description = Makes the game run at 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7

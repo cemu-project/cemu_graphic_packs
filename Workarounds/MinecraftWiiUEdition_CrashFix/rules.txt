@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101D9D00,00050000101D7500,00050000101DBE00
-name = Crash Fix
-path = "Minecraft: Wii U Edition/Workarounds/Mii Crash Fix"
-description = Prevents crashing while launching the game when missing the mii-related FFL files. Prevents mii's from working properly (used in splitscreen mode). Works only the latest version, v688.
-version = 4

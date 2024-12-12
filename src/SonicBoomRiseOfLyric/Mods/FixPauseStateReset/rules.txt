@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00,0005000210175B01,0005000210177801,0005000210191F01
 name = Fix Pause State Reset
 path = "Sonic Boom: Rise of Lyric/Mods/Fix Pause State Reset"
-description = This patches out an issue where all players' states reset to idle after unpausing the game.|This fixes the infamous Knuckles infinite jump glitch.||Made by HyperBE32.
-version = 6
+description = This patches out an issue where all player's states reset to idle after unpausing the game.|This fixes the infamous Knuckles infinite jump glitch.|Made by HyperBE32.
+#Credits: HyperBE32
+version = 7

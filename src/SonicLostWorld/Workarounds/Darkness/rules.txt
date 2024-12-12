@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010135700,000500001012B100,0005000010128F00
+titleIds = 0005000010135700,000500001012B100,0005000010128F00,0005000210135701,000500021012B101,0005000210128F01
 name = Darkness
 path = "Sonic Lost World/Workarounds/Darkness"
 description = Brightens up the game to work around broken tonemapping in Cemu.|Some stages will still be darker than they should, but is overall much better than before.||Made by M&&M.
-version = 6
+#Credits: M&&M
+version = 7

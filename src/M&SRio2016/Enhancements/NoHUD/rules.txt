@@ -1,9 +1,10 @@
 [Definition]
-titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400,00050002101E5401,0005000210190301
 name = No HUD
 path = "Mario & Sonic at the Rio 2016 Olympic Games/Enhancements/No HUD"
-description = Removes the game's HUD.||Made by M&&M.
-version = 6
+description = Removes the game's HUD.|Made by M&&M.
+#Credits: M&&M
+version = 7
 
 [Default]
 $enabled:int = 0

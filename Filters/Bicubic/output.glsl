@@ -1,6 +1,6 @@
 // https://github.com/obsproject/obs-studio/blob/master/libobs/data/bicubic_scale.effect // added customizable polynomials back
 
-#version 420
+#version 450
 
 in vec2 passUV;
 layout(binding=0) uniform sampler2D textureSrc;

@@ -2,13 +2,19 @@
 name = Jinc windowed-jinc with anti-ringing
 titleIds =
 path = "Filters/Jinc"
-description = This is an approximation of Jinc. If B=1.0, it's a lanczos filter. Created by NAVras.
-version = 4
+description = This is an approximation of Jinc. If B=1.0, it's a lanczos filter.
+#Credits:
+version = 6
 rendererFilter = opengl
 
 [OutputShader] # need texels
 upscaleMagFilter = NearestNeighbor
 downscaleMagFilter = NearestNeighbor
+
+[Default]
+$Window_Sinc  = 0.5
+$SINC         = 1.0
+$Anti_Ringing = 0.8
 
 [Preset]
 name = Jinc
@@ -46,3 +52,5 @@ $Anti_Ringing = 0.8
 
 # $Anti_Ringing reduces overshoot.
 # Setting it to 1 prevents overshoot, which might cause pixels sticking together.
+
+# Shader Created by NAVras.

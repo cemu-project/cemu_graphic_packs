@@ -1,0 +1,8 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143500,0005000010143600,000500010185400
+name = FPS Slowdown
+path = "The Legend of Zelda: The Wind Waker HD/Workarounds/FPS Slowdown"
+description = Fixes slowdown that could occur on weaker hardware.
+#Credits: BenjaminLSR, M&&M, Crementif
+version = 7
+default = 1

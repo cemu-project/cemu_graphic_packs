@@ -1,6 +1,5 @@
 [BotW_KorokChasing_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 ; --------------------------
 ; This set of patches fixes the speed with which hidden Koroks (shown as sparkles on the ground) move along their path

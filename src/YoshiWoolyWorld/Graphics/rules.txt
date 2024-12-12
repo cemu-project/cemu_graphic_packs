@@ -1,0 +1,382 @@
+[Definition]
+titleIds = 0005000010131F00,0005000010184E00,0005000010184D00
+name = Graphics Settings
+path = "Yoshi's Woolly World/Graphics"
+description = Changes the resolution of the game, quality of the shadows and the amount of dithering for the background blur.|Using a higher amount of dithering removes the banding (stripes) that the background blur has.|Made by M&&M and getdls.
+#Credits: M&&M, getdls
+version = 7
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$shadowRes = 1
+
+$ditherRecommended = 1
+$dither = 0.1
+
+
+# Resolution
+
+[Preset]
+category = Resolution:
+name = 640x360
+$width = 640
+$height = 360
+$ditherRecommended = 1
+
+[Preset]
+category = Resolution:
+name = 960x540
+$width = 960
+$height = 540
+$ditherRecommended = 1
+
+[Preset]
+category = Resolution:
+name = 1280x720 (Default)
+default = 1
+$ditherRecommended = 1
+
+[Preset]
+category = Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+$ditherRecommended = 1
+
+[Preset]
+category = Resolution:
+name = 1920x1080
+$width = 1920
+$height = 1080
+$ditherRecommended = 2
+
+[Preset]
+category = Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+$ditherRecommended = 3
+
+[Preset]
+category = Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+$ditherRecommended = 3
+
+[Preset]
+category = Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+$ditherRecommended = 4
+
+[Preset]
+category = Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+$ditherRecommended = 5
+
+[Preset]
+category = Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+$ditherRecommended = 5
+
+[Preset]
+category = Resolution:
+name = 1680x1050 (16:10)
+$width = 1680
+$height = 1050
+$ditherRecommended = 1
+
+[Preset]
+category = Resolution:
+name = 1920x1200 (16:10)
+$width = 1920
+$height = 1200
+$ditherRecommended = 2
+
+[Preset]
+category = Resolution:
+name = 2560x1080 (21:9)
+$width = 2560
+$height = 1080
+$ditherRecommended = 2
+
+[Preset]
+category = Resolution:
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+$ditherRecommended = 3
+
+[Preset]
+category = Resolution:
+name = 5120x2160 (21:9)
+$width = 5120
+$height = 2160
+$ditherRecommended = 4
+
+[Preset]
+category = Resolution:
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+$ditherRecommended = 5
+
+[Preset]
+category = Resolution:
+name = 5120×1440 (32:9)
+$width = 5120
+$height = 1440
+$ditherRecommended = 5
+
+[Preset]
+category = Resolution:
+name = 7680x2160 (32:9)
+$width = 7680
+$height = 2160
+$ditherRecommended = 5
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality:
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality:
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadow Quality:
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality:
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality:
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+
+# Blur Dithering
+
+[Preset]
+category = Blur Dithering:
+name = Low (Recommended)
+condition = $ditherRecommended == 1
+$dither = 0.1
+
+[Preset]
+category = Blur Dithering:
+name = Medium (Recommended)
+condition = $ditherRecommended == 2
+$dither = 0.25
+
+[Preset]
+category = Blur Dithering:
+name = High (Recommended)
+condition = $ditherRecommended == 3
+$dither = 0.75
+
+[Preset]
+category = Blur Dithering:
+name = Ultra (Recommended)
+condition = $ditherRecommended == 4
+$dither = 0.85
+
+[Preset]
+category = Blur Dithering:
+name = Extreme (Recommended)
+condition = $ditherRecommended == 5
+$dither = 0.95
+
+
+[Preset]
+category = Blur Dithering:
+name = Low (for 900p and lower)
+condition = $ditherRecommended != 1
+$dither = 0.1
+
+[Preset]
+category = Blur Dithering:
+name = Medium (for 1080p and higher)
+condition = $ditherRecommended != 2
+$dither = 0.5
+
+[Preset]
+category = Blur Dithering:
+name = High (for 1440p and higher)
+condition = $ditherRecommended != 3
+$dither = 0.75
+
+[Preset]
+category = Blur Dithering:
+name = Ultra (for 2160p and higher)
+condition = $ditherRecommended != 4
+$dither = 0.85
+
+[Preset]
+category = Blur Dithering:
+name = Extreme (for 2880p and higher)
+condition = $ditherRecommended != 5
+$dither = 0.95
+
+
+
+# Texture Redefines
+
+[TextureRedefine] # TV Resolution
+width = 1280
+height = 720
+#formats = 0x033,0x007,0x01a
+formatsExcluded = 0x033
+tileModesExcluded = 0x1
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Shadows
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024
+
+[TextureRedefine] # Curtains, Shadows
+width = 864
+height = 480
+#formats = 0x034
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] # Curtains, Shadows
+width = 854
+height = 480
+#formats = 0x034
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
+
+
+# 1/2 res
+
+[TextureRedefine]
+width = 640
+height = 368
+#formats = 0x816,0x820,0x816,0x80e,0x019,0x001,0x01a
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+width = 640
+height = 360
+#formats = 0x816,0x820,0x816,0x80e,0x019,0x001,0x01a
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+
+# 1/4 res
+
+[TextureRedefine]
+width = 320
+height = 192
+#formats = 0x816,0x019,0x01a,0x001
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine]
+width = 320
+height = 180
+#formats = 0x816,0x019,0x01a,0x001
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+
+# 1/8 res
+
+[TextureRedefine]
+width = 160
+height = 96
+#formats = 0x806,0x007,0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 96
+
+[TextureRedefine]
+width = 160
+height = 90
+#formats = 0x806,0x007,0x01a
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+
+# 1/16 res
+
+[TextureRedefine]
+width = 96
+height = 48
+#formats = 0x806,0x01a
+overwriteWidth = ($width/$gameWidth) * 96
+overwriteHeight = ($height/$gameHeight) * 48
+
+[TextureRedefine]
+width = 80
+height = 45
+#formats = 0x806,0x01a
+overwriteWidth = ($width/$gameWidth) * 80
+overwriteHeight = ($height/$gameHeight) * 45
+
+# 1/32 res
+
+[TextureRedefine]
+width = 64
+height = 32
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 40
+height = 22
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 40
+overwriteHeight = ($height/$gameHeight) * 22
+
+
+# These cause unwanted textures to be upscaled and cause issues.
+
+#[TextureRedefine] #skybox?
+#width = 256
+#height = 256
+#depth = 1
+#formats = 0x008
+#overwriteWidth = ($width/$gameWidth) * 256
+#overwriteHeight = ($height/$gameHeight) * 256
+#
+#[TextureRedefine] # haze?
+#width = 160
+#height = 208
+##formats = 0x806,0x007,0x01a
+#overwriteWidth = ($width/$gameWidth) * 160
+#overwriteHeight = ($height/$gameHeight) * 208
+#
+#[TextureRedefine] # haze?
+#width = 150
+#height = 200
+##formats = 0x806,0x007,0x01a
+#overwriteWidth = ($width/$gameWidth) * 150
+#overwriteHeight = ($height/$gameHeight) * 200

@@ -2,13 +2,18 @@
 name = Optimized Bicubic spline resampler
 titleIds =
 path = "Filters/Bicubic"
-description = The b and c can adjust the properties of the cubic; sometimes referred to as "blurring" and "ringing" respectively. Created by NAVras.
-version = 4
+description = The b and c can adjust the properties of the cubic; sometimes referred to as "blurring" and "ringing" respectively.
+#Credits:
+version = 7
 rendererFilter = opengl
 
 [OutputShader]
 upscaleMagFilter = Linear
 downscaleMagFilter = Linear
+
+[Default]
+$b = 0.0
+$c = 0.0
 
 [Preset]
 name = Catmull-Rom
@@ -38,3 +43,5 @@ $c = 0.0
 # Generally b,c >= 0. the shader can't produce negative weight at 0-1 because of bilinear optimization
 # But some combinations of negative b,c might have non-negative weight
 # Optionally [b + 2c = 1] for numerically accurate filter
+
+# Shader Created by NAVras.

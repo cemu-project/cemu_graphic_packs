@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001016A700,0005000010168D00
+name = 60FPS
+path = "LEGO The Hobbit/Mods/60FPS"
+description = Patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7

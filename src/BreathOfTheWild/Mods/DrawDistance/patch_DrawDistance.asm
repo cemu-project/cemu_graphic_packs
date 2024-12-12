@@ -1,6 +1,5 @@
 [BotW_DrawDistance_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 ; Actor draw distance

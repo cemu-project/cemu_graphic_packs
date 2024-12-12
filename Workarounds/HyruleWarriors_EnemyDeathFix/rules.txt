@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001017D800,000500001017D900,000500001017CD00
-name = "Hyrule Warriors - NVIDIA Enemy Death Fix"
-path = "Hyrule Warriors/Workarounds/NVIDIA Enemy Death Fix"
-description = Fixes graphics glitch and crashes due to enemy death.
-version = 4

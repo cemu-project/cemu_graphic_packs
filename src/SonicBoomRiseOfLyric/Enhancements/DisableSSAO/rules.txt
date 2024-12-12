@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00,0005000210175B01,0005000210177801,0005000210191F01
 name = Disable SSAO
 path = "Sonic Boom: Rise of Lyric/Enhancements/Disable SSAO"
-description = This patches out Screen Space Ambient Occlusion globally.||Made by HyperBE32.
-version = 6
+description = This patches out Screen Space Ambient Occlusion globally.|Made by HyperBE32.
+#Credits: HyperBE32
+version = 7

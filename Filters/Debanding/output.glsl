@@ -1,4 +1,4 @@
-#version 420
+#version 450
 
 #ifdef VULKAN
 layout(location = 0) in vec2 passUV;
@@ -14,9 +14,9 @@ ivec2 resolution = textureSize(textureSrc,0); // Retrieve Texture Dimensions
 precision highp float;
 vec2 RcpFrame = vec2(1.0 / float(resolution.x), 1.0 / float(resolution.y));
 
-/* 
+/*
 https://github.com/haasn/gentoo-conf/blob/xor/home/nand/.mpv/shaders/LICENSE
- 
+
 Copyright (c) 2015 Niklas Haas
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -38,7 +38,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-/* 
+/*
 Ordered dithering reshade
 https://github.com/crosire/reshade/blob/master/LICENSE.md
 
@@ -121,8 +121,8 @@ vec4 getreader(sampler2D tex, vec2 pos, vec2 tex_size)
     }
 
 	// Ordered dithering of output
-	const float dither_bit = 8.0; //WiiU backbuffer RGBA_8, if used in shader, check if depth is RBG_16_A2 
-	
+	const float dither_bit = 8.0; //WiiU backbuffer RGBA_8, if used in shader, check if depth is RBG_16_A2
+
 	float grid_position = fract(dot(passUV, (resolution * vec2(1.0 / 16.0, 10.0 / 36.0)) + 0.25));
 	float dither_shift = 0.25 * (1.0 / (pow(2, dither_bit) - 1.0));
 	vec3 dither_shift_RGB = vec3(dither_shift, -dither_shift, dither_shift); //Shift the individual colors, subpixel dithering

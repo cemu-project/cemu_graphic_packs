@@ -3,7 +3,8 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = FPS++
 path = "The Legend of Zelda: Breath of the Wild/Mods/FPS++"
 description = Allows you to change the FPS and the speed that most things run at.|Some bugs might still occur if you run at high FPS.||Made by Xalphenos, rajkosto, epigramx, Crementif, leoetlino, Pig and Exzap.
-version = 6
+#Credits: Xalphenos, rajkosto, epigramx, Crementif, leoetlino, Pig, Exzap
+version = 7
 
 [Default]
 $fpsLockMode:int = 0
@@ -245,19 +246,19 @@ $keepVsync:int = 0
 # condition = (($advancedMode == 1) + ($fpsLimitAdvanced != 30)) == 2
 # default = 1
 # $keepVsync:int = 0
-# 
+#
 # [Preset]
 # name = Disabled (Not Recommended)
 # category = Override Double-Buffered Vsync
 # condition = (($advancedMode == 1) + ($fpsLimitAdvanced != 30)) == 2
 # $keepVsync:int = 1
-# 
+#
 # [Preset]
 # name = Enabled (Default)
 # category = Override Double-Buffered Vsync
 # condition = (($advancedMode == 1) + ($fpsLimitAdvanced == 30)) == 2
 # $keepVsync:int = 0
-# 
+#
 # [Preset]
 # name = Disabled (Can Improve Frame Pacing At 30FPS)
 # category = Override Double-Buffered Vsync

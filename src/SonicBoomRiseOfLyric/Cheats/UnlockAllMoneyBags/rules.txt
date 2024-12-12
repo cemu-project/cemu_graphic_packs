@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00,0005000210175B01,0005000210177801,0005000210191F01
 name = Unlock All Money Bags
 path = "Sonic Boom: Rise of Lyric/Cheats/Unlock All Money Bags"
-description = This patch unlocks all Money Bags that are locked behind Nintendo 3DS integration and having completed Sonic Boom: Shattered Crystal.||Made by HyperBE32.
-version = 6
+description = This patch unlocks all Money Bags that are locked behind Nintendo 3DS integration and having completed Sonic Boom: Shattered Crystal.|Made by HyperBE32.
+#Credits: HyperBE32
+version = 7

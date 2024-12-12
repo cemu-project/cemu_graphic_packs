@@ -3,7 +3,8 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Prevent Random Spawns
 path = "The Legend of Zelda: Breath of the Wild/Cheats/Prevent Random Spawns"
 description = Allows you to individually toggle which enemies can randomly spawn. You can also use it to disable all animals.
-version = 6
+#Credits:
+version = 7
 
 [Default]
 $preventYigaClan:int = 0

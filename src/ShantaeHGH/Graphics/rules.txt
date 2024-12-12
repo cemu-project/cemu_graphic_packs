@@ -1,0 +1,216 @@
+[Definition]
+titleIds = 00050000101DB200, 0005000010203200
+name = Graphics Settings
+path = "Shantae: Half-Genie Hero/Graphics"
+description = Changes the game's resolution.|Setting Gamepad resolution higher than TV resolution will cause a glitch.
+#Credits: getdls, Intra
+version = 7
+
+[Default]
+$width = 1920
+$height = 1080
+$padWidth = 854
+$padHeight = 480
+$gameWidth = 1920
+$gameHeight = 1080
+$gamepadWidth = 854
+$gamepadHeight = 480
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution:
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = TV Resolution:
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution:
+name = 854x480
+$width = 854
+$height = 480
+
+[Preset]
+category = TV Resolution:
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution:
+name = 1280x720
+$width = 1280
+$height = 720
+
+[Preset]
+category = TV Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution:
+name = 1920x1080 (Default)
+default = 1
+
+[Preset]
+category = TV Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+category = Gamepad Resolution:
+name = 320x180
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+category = Gamepad Resolution:
+name = 640x360
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+category = Gamepad Resolution:
+name = 854x480 (Default)
+default = 1
+
+[Preset]
+category = Gamepad Resolution:
+name = 960x540
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+category = Gamepad Resolution:
+name = 1280x720
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+category = Gamepad Resolution:
+name = 1600x900
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+category = Gamepad Resolution:
+name = 1920x1080
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+category = Gamepad Resolution:
+name = 2560x1440
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+category = Gamepad Resolution:
+name = 3200x1800
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+category = Gamepad Resolution:
+name = 3840x2160
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+category = Gamepad Resolution:
+name = 5120x2880
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+category = Gamepad Resolution:
+name = 7680x4320
+$padWidth = 7680
+$padHeight = 4320
+
+
+
+# Texture Redefines
+
+# TV Resolution
+
+[TextureRedefine]
+width = 1920
+height = 1080
+#formats = 0x1a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1080
+
+[TextureRedefine]
+width = 1920
+height = 1088
+#formats = 0x1a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1088
+
+[TextureRedefine] #q-res
+width = 480
+height = 270
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 270
+
+[TextureRedefine] #q-res
+width = 480
+height = 272
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 272
+
+# Gamepad Resolution
+
+[TextureRedefine]
+width = 864
+height = 480
+#formats = 0x1a
+overwriteWidth = ($padWidth / $gamepadWidth) * 864
+overwriteHeight = ($padHeight / $gamepadHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+#formats = 0x1a
+overwriteWidth = ($padWidth / $gamepadWidth) * 854
+overwriteHeight = ($padHeight / $gamepadHeight) * 480
+
+#version 2:
+#https://github.com/cemu-project/cemu_graphic_packs/blob/939a478799c13c5ed03e8decbf952f2a7ad02366/Source/ShantaeHGH/rules.txt

@@ -1,4 +1,4 @@
-#version 420
+#version 460
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 #ifdef VULKAN
@@ -11,7 +11,7 @@
 #define gl_InstanceID gl_InstanceIndex
 #else
 #define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
-#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140)
 #define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
 #define SET_POSITION(_v) gl_Position = _v
 #define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
@@ -61,7 +61,7 @@ float rz = inputCoord.z;
 if( abs(rx) > abs(ry) && abs(rx) > abs(rz) )
 {
 stm.z = rx*2.0;
-stm.xy = vec2(ry,rz);	
+stm.xy = vec2(ry,rz);
 if( rx >= 0.0 )
 {
 faceId = 0;
@@ -74,7 +74,7 @@ faceId = 1;
 else if( abs(ry) > abs(rx) && abs(ry) > abs(rz) )
 {
 stm.z = ry*2.0;
-stm.xy = vec2(rx,rz);	
+stm.xy = vec2(rx,rz);
 if( ry >= 0.0 )
 {
 faceId = 2;
@@ -87,7 +87,7 @@ faceId = 3;
 else //if( abs(rz) > abs(ry) && abs(rz) > abs(rx) )
 {
 stm.z = rz*2.0;
-stm.xy = vec2(rx,ry);	
+stm.xy = vec2(rx,ry);
 if( rz >= 0.0 )
 {
 faceId = 4;
@@ -336,7 +336,7 @@ R125i.x = floatBitsToInt(max(-(intBitsToFloat(R127i.y)), 0.0));
 R10i.y = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R3i.w),intBitsToFloat(PV1i.w)) + intBitsToFloat(R0i.y)));
 // rlli.z and uf_remapedPS3 both alter shinyness
 R3i.z = floatBitsToInt(intBitsToFloat(R11i.z) + intBitsToFloat(uf_remappedPS[3].z));
-// edit here 
+// edit here
 // kinda tone maping on character ? (R8i.w)*.05
 //  low numbers = darker darks and brighter brights
 R127i.w = floatBitsToInt(intBitsToFloat(R8i.w) * intBitsToFloat(0x437f0000));
@@ -405,7 +405,7 @@ R2i.y = PV0i.z;
 R124i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(uf_remappedPS[3].z), intBitsToFloat(uf_remappedPS[7].w)));
 // edit here for Plastic look
 //(R3i.w)*.01
-// R3i.w how plastic a surface can look. Seems to change how much the bump mapping affects the surface  .01 pure plastic - 65 nearly only the light grey cloud-ish texutre over top characters. 
+// R3i.w how plastic a surface can look. Seems to change how much the bump mapping affects the surface  .01 pure plastic - 65 nearly only the light grey cloud-ish texutre over top characters.
 // Combine pure plastic with low specular further down in the file to make a more matte look
 R127i.w = floatBitsToInt(intBitsToFloat(R3i.w) * clarity + intBitsToFloat(0x3c23d70a));
 R127i.w = clampFI32(R127i.w);
@@ -475,7 +475,7 @@ R127i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R125i.w), intBitsToFloat(R12
 R127i.y = floatBitsToInt(intBitsToFloat(R127i.y) / 2.0);
 // edit here  Specular?
 // charactr specular highlight intBitsToFloat(R127i.z)*3
-// higher number = less highlight less than 1 = more highlight. 
+// higher number = less highlight less than 1 = more highlight.
 // good combo with plastic to remove shiny 45
 R126i.z = floatBitsToInt((mul_nonIEEE(intBitsToFloat(R127i.z),intBitsToFloat(PS1i)) + -(intBitsToFloat(PS1i))));
 PV0i.w = floatBitsToInt(-(intBitsToFloat(PV1i.x)) + 1.0);
@@ -606,14 +606,14 @@ PV1i.w = floatBitsToInt(mul_nonIEEE(-(intBitsToFloat(PV0i.z)), intBitsToFloat(R6
 // r7i.z shadow brightness PV0i.x shadow highlight brightness
 R126i.x = floatBitsToInt(intBitsToFloat(R7i.z) + intBitsToFloat(PV0i.x));
 PS1i = R126i.x;
-// 2 more edge lights in shadow 
+// 2 more edge lights in shadow
 R127i.x = floatBitsToInt(-(intBitsToFloat(R11i.x)) + intBitsToFloat(PV1i.w));
 PV0i.x = R127i.x;
 R126i.y = floatBitsToInt(-(intBitsToFloat(R11i.y)) + intBitsToFloat(PV1i.z));
 PV0i.y = R126i.y;
 // R9i.z  tonemapping? brightnss of sun on bright surfaces vs nearby dark. Ratio of Rlli.xy above vs r9i.z below. Values tested (R11i.x and y)*.5) (R9i.z)*.1
 PV0i.z = floatBitsToInt(-(intBitsToFloat(R9i.z)) + intBitsToFloat(PV1i.x));
-// brightness of sun 
+// brightness of sun
 R8i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R125i.w), intBitsToFloat(PV1i.y)));
 
 // uf_remappedps[9].x carries specular highlight of sun on shiny surfaces

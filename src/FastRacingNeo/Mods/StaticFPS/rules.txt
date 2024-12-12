@@ -3,7 +3,8 @@ titleIds = 000500001012F000,00050000101D6000,00050000101E4100,00050000101FED00
 name = Static FPS
 path = "FAST Racing NEO/Mods/Static FPS"
 description = Changes the framerate the game runs at. If you are below the chosen framerate you'll notice some slowdown. Only works with the latest game update!
-version = 5
+#Credits:
+version = 7
 
 [Default]
 $targetFPS:int = 60

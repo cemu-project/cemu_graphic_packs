@@ -1,13 +1,12 @@
 [BotW_ExtendedMemory_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 0x02C5E660 = lis r9, 0x8B60 ; add 0x50000000 to main gameheap which by default has a fixed size of 0x3B600000. Can't make it larger due to overlay arena being in the way
 
 SaveAreaHeapSize 			= 8 * 1024 * 1024	; 8MiB (default is 2312KiB)
 TriggerParamHeapSize 		= 8 * 1024 * 1024	; 8MiB (default is around 2616KiB)
-HavokMainHeapSize 			= 80 * 1024 * 1024	; 80MiB (default is 30MiB) 
+HavokMainHeapSize 			= 80 * 1024 * 1024	; 80MiB (default is 30MiB)
 PhysicsTempLowHeapSize 		= 512 * 1024 		; 512KiB (default is 128KiB)
 PhysicsSystemHeapSize 		= 512 * 1024 		; 512KiB (default is 128KiB)
 
@@ -15,10 +14,10 @@ PhysicsSystemHeapSize 		= 512 * 1024 		; 512KiB (default is 128KiB)
 0x032015E0 = lis r3, (SaveAreaHeapSize@ha + TriggerParamHeapSize@ha)
 
 ; GameDataHeap -> SaveArea heap
-0x03201A44 = lis r3, SaveAreaHeapSize@ha				
+0x03201A44 = lis r3, SaveAreaHeapSize@ha
 0x03201A5C = addi r3, r3, SaveAreaHeapSize@l
 
-; GameDataHeap -> TriggerParam 
+; GameDataHeap -> TriggerParam
 ; Uses the remaining allocatable size of GameDataHeap
 
 ; Physics Memory System -> HavokMainHeap

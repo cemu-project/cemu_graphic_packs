@@ -3,7 +3,8 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Remove HUD elements
 path = "The Legend of Zelda: Breath of the Wild/Mods/Remove HUD elements"
 description = Hides HUD elements like the master mode icon, hearts, stamina wheel and subtitles.|This mod only aims to remove things that the game's Pro HUD mode doesn't already remove.
-version = 6
+#Credits:
+version = 7
 
 [Default]
 $hideSubtitles:int = 0

@@ -3,7 +3,8 @@ titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Enhancements
 path = "The Legend of Zelda: Breath of the Wild/Enhancements"
 description = Allows you to change post-processing effects and texture detail to enhance the picture.||Made by Kiri, Jamie, M&&M, Pig, Skyth, and clarity preset creators.
-version = 6
+#Credits: Kiri, Jamie, M&&M, Pig, Skyth
+version = 7
 
 [Default]
 $preset:int = 10
@@ -14,6 +15,7 @@ $sampleCount:int = 4
 $advancedLOD = 0
 $lodBias = 0
 $anisotropy = 1
+$BloomStatus = 1
 
 # Clarity Preset
 
@@ -211,6 +213,33 @@ $anisotropy = 8
 name = Extreme (16x)
 category = Anisotropic Filtering
 $anisotropy = 16
+
+# Bloom Intensity
+
+[Preset]
+name = 0%
+category = Bloom Intensity
+$BloomStatus = 0
+
+[Preset]
+name = 50%
+category = Bloom Intensity
+$BloomStatus = 0.5
+
+[Preset]
+name = 100% (Default)
+category = Bloom Intensity
+default = 1
+
+[Preset]
+name = 150%
+category = Bloom Intensity
+$BloomStatus = 1.5
+
+[Preset]
+name = 200%
+category = Bloom Intensity
+$BloomStatus = 2.0
 
 
 [TextureRedefine]

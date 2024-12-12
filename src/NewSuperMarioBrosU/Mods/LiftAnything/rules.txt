@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200,0005000010185200
+name = Lift Anything
+path = "New Super Mario Bros. U/Mods/Lift Anything"
+description = Lift literally anything in the game. Pick up whatever actor is nearest to you when you shake, regardless of whether or not it can normally be picked up.
+#Credits: MKWiicat
+version = 7

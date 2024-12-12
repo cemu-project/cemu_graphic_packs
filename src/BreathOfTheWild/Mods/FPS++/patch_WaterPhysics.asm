@@ -1,11 +1,10 @@
 [BotW_WaterPhysics_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 ; turn quadratic scaling of timesteps into mostly linear scaling by setting one of the two timestep variables closer to 1.0
 ; this is the more correct behavior as the applied velocities also scale linearly with timestep, but not exactly due to external factors like friction (probably)
-; 
+;
 ; fixes objects not decelerating fast enough when falling into water
 ; fixes object drifting speed when pushed by water currents
 

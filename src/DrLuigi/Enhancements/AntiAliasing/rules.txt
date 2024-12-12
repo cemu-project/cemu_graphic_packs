@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010150300,0005000010152A00,0005000010152B00
+name = Anti-Aliasing
+path = "Dr. Luigi/Enhancements/Anti-Aliasing"
+description = Re-enables the game's anti-aliasing.|Made by M&&M.
+#Credits: M&&M
+version = 7

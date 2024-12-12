@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001012CF00,000500001012B400,0005000010113100,000500021012B401,00050002101CF01,0005000210113101
+name = 60FPS
+path = "Resident Evil Revelations/Mods/60FPS"
+description = Patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7

@@ -1,6 +1,5 @@
 [BotW_GUIAspectRatio_V208]
 moduleMatches = 0x6267BFD0
-
 .origin = codecave
 
 const_AspectRatio:
@@ -2313,7 +2312,7 @@ b exitScale
 scalePaneToLeftSideIf:
 li r10, $ultrawideHUDMode
 cmpwi r10, 1
-beq scalePaneToLeftSide 
+beq scalePaneToLeftSide
 bne scalePaneNormal
 
 movePaneToLeftSide:
@@ -2445,7 +2444,7 @@ const_1:
 scalePaneAndKeepPosIf:
 li r10, $ultrawideHUDMode
 cmpwi r10, 1
-beq scalePaneAndKeepPos 
+beq scalePaneAndKeepPos
 bne scalePaneAndPos
 
 scalePaneAndKeepPos:
@@ -2485,7 +2484,7 @@ b exitScale
 scalePaneAndKeepCustomPosIf:
 li r10, $ultrawideHUDMode
 cmpwi r10, 1
-beq scalePaneAndKeepCustomPos 
+beq scalePaneAndKeepCustomPos
 bne scalePaneAndCustomPos
 
 scalePaneAndKeepCustomPos:
@@ -2546,7 +2545,7 @@ b exitScale
 # fadds f0, f9, f0         ;  [XPositionOfPane] + ((1280/2 - [XPositionOfPane]) * (1-[AspectRatio])))
 # fsubs f0, f0, f12
 
-; Explanation: The current position is 3x as big as it should be (let's take 3x at 48:9), so to correct that you scale it back by 
+; Explanation: The current position is 3x as big as it should be (let's take 3x at 48:9), so to correct that you scale it back by
 ; XPositionOfPane*(1-AspectRatio)
 scalePaneAndCustomPos:
 lis r10, const_AspectRatio@ha
@@ -2882,7 +2881,7 @@ mr r11, r5
 startLoop:
 lbz r9, 0(r11)
 lbz r12, 0(r10)
- 
+
 cmpwi r9, 0
 bne checkForMatch
 cmpwi r12, 0
@@ -2890,14 +2889,14 @@ bne checkForMatch
 li r10, 1
 cmpwi r10, 1
 blr
- 
+
 checkForMatch:
 cmpw r9, r12
 bne noMatch
 addi r11, r11, 1
 addi r10, r10, 1
 b startLoop
- 
+
 noMatch:
 li r10, 0
 cmpwi r10, 1

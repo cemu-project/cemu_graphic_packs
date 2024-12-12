@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101D0300,00050000101D0600,000500001014D200,00050000101D3F00
-name = 10nth Drop Crash Fix
-path = "Fatal Frame - Project Zero: Maiden of Black Water/Workarounds/10nth Drop Crash Fix"
-description = Fixes the crash that occurs in the middle of the 10nth chapter. Might have side-effects like crashing while entering a room.
-version = 4

@@ -1,0 +1,192 @@
+[Definition]
+titleIds = 50000101FEA00,50000101FE900,5000010199200,5000010199100,5000010199300,5000010199500,5000010199400,5000010199700,5000010199600,5000010199800,5000010199B00,5000010199A00,5000010199C00,50000101A0E00,50000101A0D00,50000101A1000,50000101A5900,50000101A5800,50000101A5B00,50000101A5A00,50000101AC400,50000101AC600,50000101AC500,50000101B4600,50000101B4500,50000101B4800,50000101B4700,50000101BAF00,50000101BAE00,50000101BB000,50000101BB200,50000101BB100,50000101C5D00,50000101C5C00,50000101C5E00,50000101DA800,50000101DA700,50000101DA900,50000101E6500,50000101E6400,50000101E6700,50000101E6600,50000101EBB00,50000101FE800,50000101FE700
+name = Graphics Settings
+path = "Virtual Console/N64/Graphics"
+description = Changes the resolution of the game.|Made by Zalnor.
+#Credits: Zanlor
+version = 7
+
+[Default]
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 1920x1080 (Default)
+default = 1
+
+N64 Resolutions----------------------------------
+
+[Preset]
+category = Resolution:
+name = ~~~Original N64 Resolutions~~~ (4:3)
+$width = 853
+$height = 480
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 640x480 (Original N64) (480i)
+$width = 853
+$height = 480
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 960x720 (720i)
+$width = 1280
+$height = 720
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 1280x960 2x
+$width = 1707
+$height = 960
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 1536x1152 (1080i)
+$width = 2048
+$height = 1152
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 1920x1440 3x (1440i)
+$width = 2560
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 2048x1536
+$width = 2731
+$height = 1536
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 2560x1920 (1800i)
+$width = 3413
+$height = 1920
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 3200x2400 5x
+$width = 4267
+$height = 2400
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+[Preset]
+category = Resolution:
+name = 3840x2880 6x (4k)
+$width = 5120
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+
+#Game Viewports-------------------------------------------
+
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x01a,0x011
+overwriteWidth = ($width/1280) * 1280
+overwriteHeight = ($height/720) * 720
+
+[TextureRedefine]
+width = 640
+height = 480
+formats = 0x01a,0x011
+overwriteWidth = ($width/640) * 640
+overwriteHeight = ($height/480) * 480
+
+[TextureRedefine]
+width = 960
+height = 720
+formats = 0x01a
+overwriteWidth = ($width/960) * 960
+overwriteHeight = ($height/720) * 720
+
+#TV Viewports---------------------------------------------
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1080
+
+[TextureRedefine]
+width = 1920
+height = 1088
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1088
+
+#Gamepad Viewports-----------------------------------------
+
+[TextureRedefine]
+width = 864
+height = 480
+formats = 0x01a
+overwriteWidth = ($width/$GPgameWidth) * 864
+overwriteHeight = ($height/$GPgameHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x01a
+overwriteWidth = ($width/$GPgameWidth) * 854
+overwriteHeight = ($height/$GPgameHeight) * 480
+
+#VC Menu-------------------------------------------------
+#please add it here if you figure out how to scale the menu seperate, so it can look good at low res

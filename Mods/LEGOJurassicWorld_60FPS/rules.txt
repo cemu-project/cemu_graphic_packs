@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101CDF00,00050000101A6200,00050000101A5C00
-name = 60FPS
-path = "Lego Jurassic World/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

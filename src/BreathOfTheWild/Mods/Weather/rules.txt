@@ -2,8 +2,9 @@
 titleIds = 00050000101C9300,00050000101C9400,00050000101C9500
 name = Weather
 path = "The Legend of Zelda: Breath of the Wild/Mods/Weather"
-description = Allows you to change the weather forecast to an individual level.|Won't change weather in areas that have a certain type forced.||Made by dragbe.
-version = 6
+description = Allows you to change the weather forecast to an individual level.|Won't change weather in areas that have a certain type forced.|Made by dragbe.
+#Credits: dragbe
+version = 7
 
 # Weather names from https://github.com/zeldaret/botw
 

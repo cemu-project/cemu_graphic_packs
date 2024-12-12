@@ -1,3 +1,0 @@
-[LSW60fpsVer0]
-moduleMatches = 0xAD4603B3
-0x023f3d6c = addi r11,r12,1

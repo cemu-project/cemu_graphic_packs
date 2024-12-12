@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = "Shadow Removal"
+path = "Hyrule Warriors/Mods/Shadow Removal"
+description = Removes some shadows in the game.
+#Credits: emoose
+version = 7

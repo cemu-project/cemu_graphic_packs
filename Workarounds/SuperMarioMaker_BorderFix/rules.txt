@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001018DB00,000500001018DC00,000500001018DD00
-name = Border Fix
-path = "Super Mario Maker/Workarounds/Border Fix"
-description = Removes the border from the top of the screen. Made by Crementif.
-version = 4

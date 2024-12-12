@@ -2,10 +2,13 @@
 name = Optimized Bicubic B-spline resampler
 titleIds =
 path = "Filters/Bicubic (4 taps)"
-description = Cemu's Bicubic. Because it's B-spline so it was optimized down to 4 taps. Created by NAVras.
-version = 4
+description = Cemu's Bicubic. Because it's B-spline so it was optimized down to 4 taps.
+#Credits:
+version = 7
 rendererFilter = opengl
 
 [OutputShader]
 upscaleMagFilter = Linear
 downscaleMagFilter = Linear
+
+# Shader Created by NAVras.

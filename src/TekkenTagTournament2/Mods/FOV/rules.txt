@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 000500001010F800,0005000010110000
+name = Field of View
+path = "Tekken Tag Tournament 2/FOV"
+description = Changes the FOV of the game for aspect ratio patches.|Made by Flextape05.
+#Credits: Flextape05
+version = 7
+
+[Default]
+$fov = 0.017453292
+
+[Preset]
+name = Default FOV
+
+[Preset]
+name = Match 16:9 horizontal FOV to 21:9
+$fov = 0.022907446
+
+[Preset]
+name = High FOV for 21:9
+$fov = 0.026
+
+[Preset]
+name = FOV for 32:9
+$fov = 0.028
+
+[Preset]
+name = FOV for 48:9
+$fov  = 0.0285

@@ -1,5 +1,5 @@
-[sonic2013_v48]
-moduleMatches = 0xC5691A40
+[SonicLostWolrd_LinkSonicStage_v48]
+moduleMatches = 0xC5691A40 ; v48(EU/NA/JP)
 
 ; load Linksonic on top of Sonic
 0x02A60414 = nop

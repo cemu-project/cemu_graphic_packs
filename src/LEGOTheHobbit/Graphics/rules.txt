@@ -1,0 +1,96 @@
+[Definition]
+titleIds = 000500001016A700,0005000010168D00
+name = Graphics Settings
+path = "LEGO The Hobbit/Graphics"
+description = Changes the game's resolution. May be broken/glitchy.
+#Credits: Intra
+version = 7
+
+[Default]
+category = Resolution:
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+# Performance
+
+[Preset]
+category = Resolution:
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution:
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution:
+name = 1280x720 (Default)
+default = 1
+
+# Common HD Resolutions
+
+[Preset]
+category = Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution:
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight  = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 960
+height = 960
+overwriteWidth = ($width/$gameWidth) * 960
+overwriteHeight  = ($height/$gameHeight) * 960
+
+[TextureRedefine]
+width = 640
+height = 368
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight  = ($height/$gameHeight) * 368

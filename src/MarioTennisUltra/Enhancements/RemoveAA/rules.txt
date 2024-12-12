@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 00050000101A3500,00050000101A3600,0005000010199000
+name = Remove Anti-Aliasing
+path = "Mario Tennis: Ultra Smash/Enhancements/Remove AA"
+description = Dissable the game's native AA.
+#Credits: getdls
+version = 7
