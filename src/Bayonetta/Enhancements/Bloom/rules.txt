@@ -1,0 +1,15 @@
+[Definition]
+titleIds = 000500001014db00,0005000010157e00,0005000010157f00
+name = Bloom Removal
+path = "Bayonetta/Enhancements/Remove Bloom"
+description = remove the game's bloom
+#Credits: ActualMandM
+version = 7
+
+[TextureRedefine]
+width = 320
+height = 176
+formats = 0x01a
+inMEM1 = true #0xf4e11800
+overwriteWidth = 0
+overwriteHeight = 0
