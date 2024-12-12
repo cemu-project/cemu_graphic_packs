@@ -1,0 +1,119 @@
+[Definition]
+titleIds = 0005000010129000,0005000010129200
+name = Graphics Settings
+path = "DuckTales: Remastered/Graphics"
+description = Changes the resolution of the game.|Made by Crementif.
+#Credits: Cremetif
+version = 7
+
+[Default]
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+
+# Performance
+
+[Preset]
+category = Resolution:
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = Resolution:
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution:
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution:
+name = 1280x720
+$width = 1280
+$height = 720
+
+[Preset]
+category = Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution:
+name = 1920x1080 (Default)
+default = 1
+
+# Common HD Resolutions
+
+[Preset]
+category = Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+[TextureRedefine] # TV Resolution
+width = 1920
+height = 1080
+formats = 0x011,0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1080
+
+[TextureRedefine] # Rendering Resolution
+width = 1920
+height = 1088
+formats = 0x011,0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1088
+
+[TextureRedefine] # Vignette Texture
+width = 1088
+height = 576
+formats = 0x031
+overwriteWidth = ($width/$gameWidth) * 1088
+overwriteHeight = ($height/$gameHeight) * 576
+
+# Blur
+[TextureRedefine]
+width = 480
+height = 272
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 272
+
+[TextureRedefine]
+width = 480
+height = 270
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 480
+overwriteHeight = ($height/$gameHeight) * 270

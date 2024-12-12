@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001012BA00,000500001012B200
+name = 60FPS
+path = "Deus Ex: Human Revolution/Mods/60FPS"
+description = Makes the game run at 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7
