@@ -1,0 +1,159 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Super High Jump!"
+path = "Xenoblade Chronicles X/Mods/Physics/Super High Jump!"
+description = Increase horizontal and vertical velocity of jump.
+version = 6
+
+[Default]
+$horz = 1.0
+$vert = 1.0
+$landtype = 4
+
+[Preset]
+name = "Distance x1.0 (default)"
+category = "Horizontal Velocity (distance reached)"
+
+[Preset]
+name = "Distance x1.5"
+category = "Horizontal Velocity (distance reached)"
+$horz = 1.5
+
+[Preset]
+name = "Distance x1.6"
+category = "Horizontal Velocity (distance reached)"
+$horz = 1.6
+
+[Preset]
+name = "Distance x1.7"
+category = "Horizontal Velocity (distance reached)"
+$horz = 1.7
+
+[Preset]
+name = "Distance x1.8"
+category = "Horizontal Velocity (distance reached)"
+$horz = 1.8
+
+[Preset]
+name = "Distance x1.9"
+category = "Horizontal Velocity (distance reached)"
+$horz = 1.9
+
+[Preset]
+name = "Distance x2.0"
+category = "Horizontal Velocity (distance reached)"
+$horz = 2.0
+
+[Preset]
+name = "Distance x2.5"
+category = "Horizontal Velocity (distance reached)"
+$horz = 2.5
+
+[Preset]
+name = "Distance x3.0"
+category = "Horizontal Velocity (distance reached)"
+$horz = 3.0
+
+[Preset]
+name = "Distance x5.0"
+category = "Horizontal Velocity (distance reached)"
+$horz = 5.0
+
+[Preset]
+name = "CHEAT x100.0"
+category = "Horizontal Velocity (distance reached)"
+$horz = 100.0
+
+[Preset]
+name = "Height x1.0 (default)"
+category = "Vertical Velocity (height)"
+
+[Preset]
+name = "Height x1.05"
+category = "Vertical Velocity (height)"
+$vert = 1.05
+
+[Preset]
+name = "Height x1.06"
+category = "Vertical Velocity (height)"
+$vert = 1.06
+
+[Preset]
+name = "Height x1.07"
+category = "Vertical Velocity (height)"
+$vert = 1.07
+
+[Preset]
+name = "Height x1.08"
+category = "Vertical Velocity (height)"
+$vert = 1.08
+
+[Preset]
+name = "Height x1.09"
+category = "Vertical Velocity (height)"
+$vert = 1.09
+
+[Preset]
+name = "Height x1.10"
+category = "Vertical Velocity (height)"
+$vert = 1.10
+
+[Preset]
+name = "Height x1.20"
+category = "Vertical Velocity (height)"
+$vert = 1.20
+
+[Preset]
+name = "Height x1.30"
+category = "Vertical Velocity (height)"
+$vert = 1.30
+
+[Preset]
+name = "Height x1.40"
+category = "Vertical Velocity (height)"
+$vert = 1.40
+
+[Preset]
+name = "Height x1.50"
+category = "Vertical Velocity (height)"
+$vert = 1.50
+
+[Preset]
+name = "CHEAT x18.0"
+category = "Vertical Velocity (height)"
+$vert = 18.0
+
+[Preset]
+name = "Step forward [6]"
+category = "Landing type"
+$landtype = 6
+
+[Preset]
+name = "Normal land [5]"
+category = "Landing type"
+$landtype = 5
+
+[Preset]
+name = "Short land [4]"
+category = "Landing type"
+default = 1
+
+[Preset]
+name = "Role [3]"
+category = "Landing type"
+$landtype = 3
+
+[Preset]
+name = "Full stop [2]"
+category = "Landing type"
+$landtype = 2
+
+[Preset]
+name = "Half stop [1]"
+category = "Landing type"
+$landtype = 1
+
+[Preset]
+name = "Never Land [0] (softlocks)"
+category = "Landing type"
+$landtype = 0

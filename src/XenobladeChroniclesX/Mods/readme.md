@@ -28,7 +28,7 @@
 - **Character Level**: Can change any characters current level.
 - **Character Size**: Can change any characters size, and even has some glitch size values.
 - **Change Character Name**: Can change any characters name and can rename your avatar.
-- **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art.
+- **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art
     
 ### Collectibles mods
 - **Catch range mod**: Increase the distance from which you catch a collectible.
@@ -101,7 +101,7 @@
 - **No Skell Flight music**: Disables the flight music (at the beginning the music is awesome, but after some time I wanted to listen to the field musics again).
 
 ### Physics mods
-- **Jump to the Moon!**: Increases the horizontal and vertical velocity of the jump (vanilla values are 1.0 for both).
+- **Super High Jump!**: Increases the horizontal and vertical velocity of the jump (vanilla values are 1.0 for both).
 	> Horizontal velocity is the distance you reach when jumping.
 	> Vertical Velocity is the height of the jump (works while idle, walking and sprinting)
 - **Run Forrest, run!**: Increases the speed of sprinting.
