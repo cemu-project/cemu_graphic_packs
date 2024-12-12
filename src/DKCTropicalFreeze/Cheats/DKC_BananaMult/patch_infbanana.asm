@@ -1,5 +1,5 @@
 [DKCTF_MultBanana]
-moduleMatches = 0xA37C99E1, 0x4FF15DD2 ; (EU/NA/JP)v16, (EU/NA/JP)v2
+moduleMatches = 0xA37C99E1, 0x4FF15DD2 ; v16(EU/NA/JP), v2(EU/NA/JP)
 .origin = codecave
 
 _addBananaMultCheat:
@@ -17,9 +17,9 @@ or r4, r29, r29
 blr
 
 [DKCTF_MultBanana_v16]
-moduleMatches = 0xA37C99E1 ; (EU/NA/JP)v16
+moduleMatches = 0xA37C99E1 ; v16(EU/NA/JP)
 0x020A5974 = bla _addBananaMultCheat
 
 [DKCTF_MultBanana_v2]
-moduleMatches = 0x4FF15DD2 ; (EU/NA/JP)v2
+moduleMatches = 0x4FF15DD2 ; v2(EU/NA/JP)
 0x020A5908 = bla _addBananaMultCheat
