@@ -1,0 +1,169 @@
+[Definition]
+titleIds = 0005000010110200,0005000010112B00,000500001010EA00
+name = Graphics Settings
+path = "Warriors Orochi 3 Hyper/Graphics"
+description = Changes the game's resolution.
+#Credits: M&&M
+version = 7
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+# Performance
+
+[Preset]
+category = Resolution:
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = Resolution:
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution:
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution:
+name = 1280x720 (Default)
+default = 1
+
+# Common HD Resolutions
+
+[Preset]
+category = Resolution:
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution:
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = Resolution:
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution:
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution:
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution:
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution:
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+[TextureRedefine] #Game Resolution
+width = 1280
+height = 720
+formatsExcluded = 0x431,0x433
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] #Only saw depth in Nsight
+width = 640
+height = 360
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] #Lighting?
+width = 322
+height = 182
+overwriteWidth = ($width/$gameWidth) * 322
+overwriteHeight = ($height/$gameHeight) * 182
+
+[TextureRedefine] #Dupe of Main game
+width = 320
+height = 180
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine] #Lighting Blur?
+width = 162
+height = 92
+overwriteWidth = ($width/$gameWidth) * 162
+overwriteHeight = ($height/$gameHeight) * 92
+
+[TextureRedefine] #Lighting Blur?
+width = 160
+height = 90
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine] #Gamepad
+width = 864
+height = 480
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] #Gamepad
+width = 854
+height = 480
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
+
+#[TextureRedefine] #Shadows?
+#width = 1024
+#height = 2048
+#formats = 0x005
+#overwriteWidth = ($width/$gameWidth) * 1024
+#overwriteHeight = ($height/$gameHeight) * 2048
+
+#[TextureRedefine] #Dupe of Main Game?
+#width = 64
+#height = 64
+#formats = 0x005
+#overwriteWidth = ($width/$gameWidth) * 64
+#overwriteHeight = ($height/$gameHeight) * 64
+
+#[TextureRedefine] #Dupe of Main Game?
+#width = 16
+#height = 16
+#formats = 0x005
+#overwriteWidth = ($width/$gameWidth) * 16
+#overwriteHeight = ($height/$gameHeight) * 16
+
+#[TextureRedefine] #Dupe of Main Game?
+#width = 4
+#height = 4
+#formats = 0x005
+#overwriteWidth = ($width/$gameWidth) * 4
+#overwriteHeight = ($height/$gameHeight) * 4
+
+#[TextureRedefine] #Dupe of Main Game?
+#width = 1
+#height = 1
+#formats = 0x005
+#overwriteWidth = ($width/$gameWidth) * 1
+#overwriteHeight = ($height/$gameHeight) * 1

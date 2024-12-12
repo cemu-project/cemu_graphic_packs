@@ -1,0 +1,148 @@
+[Definition]
+titleIds = 500001012A100,500001012DF00,500001012DE00,500001012E000,500001012E100,500001012E300,500001012E200,500001012E400,500001012E700,500001012E600,500001012E800,500001012F400,500001012F300,500001012F500,500001012F700,500001012F600,500001012F800,5000010106D00,5000010106C00,5000010106E00,5000010107000,5000010106F00,5000010107100,5000010107500,5000010107200,5000010107600,5000010107800,5000010107700,5000010107900,5000010107C00,5000010107B00,5000010107D00,5000010107F00,5000010107E00,5000010108000,5000010108200,5000010108100,5000010108300,5000010108500,5000010108400,5000010108600,5000010108800,5000010108700,5000010108900,5000010108B00,5000010108A00,5000010108C00,5000010113F00,5000010113E00,5000010114000,5000010114200,5000010114100,5000010114300,5000010114500,5000010114400,5000010114600,5000010114800,5000010114700,5000010114900,5000010114A00,5000010119200,5000010119100,5000010119300,500001011A900,5000010119400,500001011AA00,500001011AE00,5000010119500,5000010119700,5000010119800,500001011AC00,500001011AB00,500001011AD00,5000010129800,5000010129700,5000010129900,5000010129A00,5000010129C00,5000010129B00,5000010129D00,5000010129F00,5000010129E00,500001012A000
+name = Graphics Settings
+path = "Virtual Console/NES/Graphics"
+description = Changes the resolution of the game.|Made by Zalnor.
+#Credits: Zalnor
+version = 7
+
+[Default]
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 1920x1080 (Default)
+default = 1
+
+SNES Resolutions-----------------------------
+
+[Preset]
+name = ~~~Original NES Resolutions~~~
+$width = 427
+$height = 240
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 256x240 (Original NES)
+$width = 427
+$height = 240
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 512x480 2x (480p)
+$width = 853
+$height = 480
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 768x720 3x (720p)
+$width = 1280
+$height = 720
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 1024x960 4x
+$width = 1707
+$height = 960
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 1280x1200 5x (1080p)
+$width = 2133
+$height = 1200
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 1536x1440 6x (1440p)
+$width = 2560
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+
+[Preset]
+name = 1792x1680 7x
+$width = 2987
+$height = 1680
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+
+[Preset]
+name = 2048x1920 8x (1800p)
+$width = 3413
+$height = 1920
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+name = 2304x2106 9x
+$width = 3840
+$height = 2106
+$gameWidth = 1920
+$gameHeight = 1088
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+#TV Viewports-----------------------------------------
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1080
+
+[TextureRedefine]
+width = 1920
+height = 1088
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1088
+
+#Gamepad Viewports-------------------------------------
+
+[TextureRedefine]
+width = 864
+height = 480
+formats = 0x01a
+overwriteWidth = ($width/$GPgameWidth) * 864
+overwriteHeight = ($height/$GPgameHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x01a
+overwriteWidth = ($width/$GPgameWidth) * 854
+overwriteHeight = ($height/$GPgameHeight) * 480
+
+#VC Menu
+#please add it here if you figure out how to scale the menu seperate, so it can look good at low res

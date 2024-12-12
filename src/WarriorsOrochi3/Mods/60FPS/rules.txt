@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010110200,000500001010EA00,0005000010112B00
+name = 60FPS
+path = "Warriors Orochi 3 Hyper/Mods/60FPS"
+description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
+version = 7
