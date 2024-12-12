@@ -1,5 +1,5 @@
-[sonic2013_v48]
-moduleMatches = 0xC5691A40
+[SonicLostWolrd_LinkSonicSetup_v48]
+moduleMatches = 0xC5691A40 ; v48(EU/NA/JP)
 
 0x026D285C = GetPackFile:
 0x026D28E4 = GetModelResource:

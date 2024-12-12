@@ -1,9 +1,10 @@
 [Definition]
-titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200
+titleIds = 0005000010101D00,0005000010101E00,000500001014B700,000500001014B800,0005000010101C00,0005000010142300,0005000010142400,0005000010142200,0005000010185200
 name = Level of detail
 path = "New Super Mario Bros. U/Enhancements/Texture LOD"
-description = Allows you to change the texture quality.||Made by Ryce-Fast.
-version = 6
+description = Allows you to change the texture quality.|Made by Ryce-Fast.
+#Credits: Ryce-Fast
+version = 7
 
 [Default]
 $0x031 = 0

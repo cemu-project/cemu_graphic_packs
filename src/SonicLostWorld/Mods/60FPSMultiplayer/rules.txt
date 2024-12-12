@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010135700,000500001012B100,0005000010128F00
+titleIds = 0005000010135700,000500001012B100,0005000010128F00,0005000210135701,000500021012B101,0005000210128F01
 name = 60FPS Two-Player Race
 path = "Sonic Lost World/Mods/60FPS 2P Race"
-description = Patches out the 30FPS lock from the two-player race mode.||Made by M&&M.
-version = 6
+description = Patches out the 30FPS lock from the two-player race mode.|Made by M&&M.
+#Credits: M&&M
+version = 7

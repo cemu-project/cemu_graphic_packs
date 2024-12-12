@@ -1,6 +1,711 @@
 [Definition]
-titleIds = 0005000010135700,000500001012B100,0005000010128F00
-name = Quickboot
+titleIds = 0005000010135700,000500001012B100,0005000010128F00,0005000210135701,000500021012B101,0005000210128F01
+name = Quickboot / Customboot
 path = "Sonic Lost World/Mods/Quickboot"
-description = Boot straight to the title screen.|Can be customized by modifying the patch file.||Made by M&&M, Sajid, and DeaTh.
-version = 6
+description = Boot straight to the title screen, or to specific stages, or change the mode the game boots in.|Made by M&&M, Sajid, and DeaTh.
+#Credits: M&&M, Sajid, DeaTh, Intra
+version = 7
+
+[Default]
+$bootaddr = 0x10000000
+$levelstring1 = 0x73746739
+$levelstring2 = 0x30310000
+
+$version = 4
+$stageboot = 0
+$circusboot = 0
+$world = 0
+
+[Preset]
+name = v4.0.0
+category = Game Version:
+$version = 4
+
+[Preset]
+name = v1.0.0
+category = Game Version:
+$version = 1
+
+[Preset]
+name = Demo #(Only Title Screen is Working)
+category = Game Version:
+$version = 0
+
+[Preset]
+name = "Staff Roll"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2110
+
+[Preset]
+name = "Staff Roll "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x10199568
+
+#[Preset]
+#name = "Staff Roll  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD1C
+
+[Preset]
+name = "World Map"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2120
+
+[Preset]
+name = "World Map "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x10199578
+
+#[Preset]
+#name = "World Map  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD2C
+
+[Preset]
+name = "Stage (boot to a specific stage)"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2128
+$stageboot = 1
+
+[Preset]
+name = "Stage (boot to a specific stage) "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x10199580
+$stageboot = 1
+
+#[Preset]
+#name = "Stage (boot to a specific stage)  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD34
+#$stageboot = 1
+
+[Preset]
+name = "E3 Mode"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2150
+
+[Preset]
+name = "E3 Mode "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x101995A0
+
+[Preset]
+name = "Title Screen"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2178
+default = 1
+
+[Preset]
+name = "Title Screen "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x101995C8
+default = 1
+
+[Preset]
+name = "Title Screen  "
+category = Boot Mode:
+condition = $version == 0
+$bootaddr = 0x1018FD6C
+default = 1
+
+[Preset]
+name = "Multiplayer"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2188
+
+[Preset]
+name = "Multiplayer "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x101995D8
+
+#[Preset]
+#name = "Multiplayer  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD74
+
+[Preset]
+name = "MiniGame"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2198
+$circusboot = 1
+$world = 9
+
+[Preset]
+name = "MiniGame "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x101995E8
+$circusboot = 1
+$world = 9
+
+#[Preset]
+#name = "MiniGame  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD7C
+#$circusboot = 1
+#$world = 9
+
+[Preset]
+name = "Battle"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B21A0
+$stageboot = 1
+
+[Preset]
+name = "Battle "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x101995F0
+$stageboot = 1
+
+#[Preset]
+#name = "Battle  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD84
+#$stageboot = 1
+
+[Preset]
+name = "Game Over"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B21A8
+
+[Preset]
+name = "Game Over "
+category = Boot Mode:
+condition = $version == 1
+$bootaddr = 0x101995F8
+
+#[Preset]
+#name = "Game Over  "
+#category = Boot Mode:
+#condition = $version == 0
+#$bootaddr = 0x1018FD8C
+
+[Preset]
+name = "Kiosk Mode"
+category = Boot Mode:
+condition = $version == 4
+$bootaddr = 0x101B2280
+
+
+
+[Preset]
+name = w1 (Windy Hill)
+category = World:
+condition = $stageboot == 1
+$world = 1
+
+    [Preset]
+    name = w1-1 #w1a01
+    category = Stage:
+    condition = ($world == 1)*($stageboot == 1) == 1
+    $levelstring1 = 0x77316130
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w1-2 #w1a03
+    category = Stage:
+    condition = ($world == 1)*($stageboot == 1) == 1
+    $levelstring1 = 0x77316130
+    $levelstring2 = 0x33000000
+
+    [Preset]
+    name = w1-3 #xind01
+    category = Stage:
+    condition = ($world == 1)*($stageboot == 1) == 1
+    $levelstring1 = 0x78696E64
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w1-4 #w1a06
+    category = Stage:
+    condition = ($world == 1)*($stageboot == 1) == 1
+    $levelstring1 = 0x77316130
+    $levelstring2 = 0x36000000
+
+[Preset]
+name = w2 (Desert Ruins)
+category = World:
+condition = $stageboot == 1
+$world = 2
+
+    [Preset]
+    name = w2-1 #w2a01
+    category = Stage:
+    condition = ($world == 2)*($stageboot == 1) == 1
+    $levelstring1 = 0x77326130
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w2-2 #xbee01
+    category = Stage:
+    condition = ($world == 2)*($stageboot == 1) == 1
+    $levelstring1 = 0x78626565
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w2-3 #xswe01
+    category = Stage:
+    condition = ($world == 2)*($stageboot == 1) == 1
+    $levelstring1 = 0x78737765
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w2-4 #w2a06
+    category = Stage:
+    condition = ($world == 2)*($stageboot == 1) == 1
+    $levelstring1 = 0x77326130
+    $levelstring2 = 0x36000000
+
+[Preset]
+name = w3 (Tropical Coast)
+category = World:
+condition = $stageboot == 1
+$world = 3
+
+    [Preset]
+    name = w3-1 #w3a01
+    category = Stage:
+    condition = ($world == 3)*($stageboot == 1) == 1
+    $levelstring1 = 0x77336130
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w3-2 #w3a03
+    category = Stage:
+    condition = ($world == 3)*($stageboot == 1) == 1
+    $levelstring1 = 0x77336130
+    $levelstring2 = 0x33000000
+
+    [Preset]
+    name = w3-3 #xsea01
+    category = Stage:
+    condition = ($world == 3)*($stageboot == 1) == 1
+    $levelstring1 = 0x78736561
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w3-4 #w3a06
+    category = Stage:
+    condition = ($world == 3)*($stageboot == 1) == 1
+    $levelstring1 = 0x77336130
+    $levelstring2 = 0x36000000
+
+    [Preset]
+    name = w3-X #w6a03
+    category = Stage:
+    condition = ($world == 3)*($stageboot == 1) == 1
+    $levelstring1 = 0x77366130
+    $levelstring2 = 0x33000000
+
+[Preset]
+name = w4 (Frozen Factory)
+category = World:
+condition = $stageboot == 1
+$world = 4
+
+    [Preset]
+    name = w4-1 #w4a01
+    category = Stage:
+    condition = ($world == 4)*($stageboot == 1) == 1
+    $levelstring1 = 0x77346130
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w4-2 #w4a04
+    category = Stage:
+    condition = ($world == 4)*($stageboot == 1) == 1
+    $levelstring1 = 0x77346130
+    $levelstring2 = 0x34000000
+
+    [Preset]
+    name = w4-3 #xcas01
+    category = Stage:
+    condition = ($world == 4)*($stageboot == 1) == 1
+    $levelstring1 = 0x78636173
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w4-4 #w4a06
+    category = Stage:
+    condition = ($world == 4)*($stageboot == 1) == 1
+    $levelstring1 = 0x77346130
+    $levelstring2 = 0x36000000
+
+[Preset]
+name = w5 (Silent Forest)
+category = World:
+condition = $stageboot == 1
+$world = 5
+
+    [Preset]
+    name = w5-1 #w5a01
+    category = Stage:
+    condition = ($world == 5)*($stageboot == 1) == 1
+    $levelstring1 = 0x77356130
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w5-2 #w5a02
+    category = Stage:
+    condition = ($world == 5)*($stageboot == 1) == 1
+    $levelstring1 = 0x77356130
+    $levelstring2 = 0x32000000
+
+    [Preset]
+    name = w5-3 #xind02
+    category = Stage:
+    condition = ($world == 5)*($stageboot == 1) == 1
+    $levelstring1 = 0x78696E64
+    $levelstring2 = 0x30320000
+
+    [Preset]
+    name = w5-4 #xmoa01
+    category = Stage:
+    condition = ($world == 5)*($stageboot == 1) == 1
+    $levelstring1 = 0x786D6F61
+    $levelstring2 = 0x30310000
+
+[Preset]
+name = w6 (Sky Road)
+category = World:
+condition = $stageboot == 1
+$world = 6
+
+    [Preset]
+    name = w6-1 #w1a04
+    category = Stage:
+    condition = ($world == 6)*($stageboot == 1) == 1
+    $levelstring1 = 0x77316130
+    $levelstring2 = 0x34000000
+
+    [Preset]
+    name = w6-2 #w5a03
+    category = Stage:
+    condition = ($world == 6)*($stageboot == 1) == 1
+    $levelstring1 = 0x77356130
+    $levelstring2 = 0x33000000
+
+    [Preset]
+    name = w6-3 #w6a05
+    category = Stage:
+    condition = ($world == 6)*($stageboot == 1) == 1
+    $levelstring1 = 0x77366130
+    $levelstring2 = 0x35000000
+
+    [Preset]
+    name = w6-4 #w2c01
+    category = Stage:
+    condition = ($world == 6)*($stageboot == 1) == 1
+    $levelstring1 = 0x77326330
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w6-X #xnim02
+    category = Stage:
+    condition = ($world == 6)*($stageboot == 1) == 1
+    $levelstring1 = 0x786E696D
+    $levelstring2 = 0x30320000
+
+[Preset]
+name = w7 (Lava Mountain)
+category = World:
+condition = $stageboot == 1
+$world = 7
+
+    [Preset]
+    name = w7-1 #w7a01
+    category = Stage:
+    condition = ($world == 7)*($stageboot == 1) == 1
+    $levelstring1 = 0x77376130
+    $levelstring2 = 0x31000000
+
+    [Preset]
+    name = w7-2 #xsea02
+    category = Stage:
+    condition = ($world == 7)*($stageboot == 1) == 1
+    $levelstring1 = 0x78736561
+    $levelstring2 = 0x30320000
+
+    [Preset]
+    name = w7-3 #w7a02
+    category = Stage:
+    condition = ($world == 7)*($stageboot == 1) == 1
+    $levelstring1 = 0x77376130
+    $levelstring2 = 0x32000000
+
+    [Preset]
+    name = w7-4 #w7a06
+    category = Stage:
+    condition = ($world == 7)*($stageboot == 1) == 1
+    $levelstring1 = 0x77376130
+    $levelstring2 = 0x36000000
+
+[Preset]
+name = w8 (Hidden World)
+category = World:
+condition = $stageboot == 1
+$world = 8
+
+    [Preset]
+    name = w8-1 #xcub01
+    category = Stage:
+    condition = ($world == 8)*($stageboot == 1) == 1
+    $levelstring1 = 0x78637562
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w8-2 #xsky01
+    category = Stage:
+    condition = ($world == 8)*($stageboot == 1) == 1
+    $levelstring1 = 0x78736B79
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w8-3 #xnim01
+    category = Stage:
+    condition = ($world == 8)*($stageboot == 1) == 1
+    $levelstring1 = 0x786E696D
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = w8-4 #xbak01
+    category = Stage:
+    condition = ($world == 8)*($stageboot == 1) == 1
+    $levelstring1 = 0x7862616B
+    $levelstring2 = 0x30310000
+
+[Preset]
+name = (Circus)
+category = World:
+condition = $stageboot == 1
+$world = 9
+
+    [Preset]
+    name = seesaw1 #mini01
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = seesaw2 #mini02
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30320000
+
+    [Preset]
+    name = seesaw3 #mini03
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30330000
+
+    [Preset]
+    name = trampoline1 #mini04
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30340000
+
+    [Preset]
+    name = trampoline2 #mini05
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30350000
+
+    [Preset]
+    name = trampoline3 #mini06
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30360000
+
+    [Preset]
+    name = cannon1 #mini07
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30370000
+
+    [Preset]
+    name = cannon2 #mini08
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30380000
+
+    [Preset]
+    name = cannon3 #mini09
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x30390000
+
+    [Preset]
+    name = w7 only #mini10
+    category = Stage:
+    condition = ($world == 9)*(($stageboot == 1)+($circusboot == 1)) == 1
+    $levelstring1 = 0x6D696E69
+    $levelstring2 = 0x31300000
+
+[Preset]
+name = (2P Race)
+category = World:
+condition = $stageboot == 1
+$world = 10
+
+    [Preset]
+    name = Speed Race 1-1 #batl01
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = Speed Race 1-3 #batl02
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30320000
+
+    [Preset]
+    name = Speed Race 2-4 #batl03
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30330000
+
+    [Preset]
+    name = Speed Race 4-1 #batl04
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30340000
+
+    [Preset]
+    name = Speed Race 5-3 #batl05
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30350000
+
+    [Preset]
+    name = Expert Speed 2-1 #batl06
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30360000
+
+    [Preset]
+    name = Expert Speed 3-1 #batl07
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30370000
+
+    [Preset]
+    name = Expert Speed 3-3 #batl08
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30380000
+
+    [Preset]
+    name = Expert Speed 5-1 #batl09
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x30390000
+
+    [Preset]
+    name = Expert Speed 6-3 #batl10
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x31300000
+
+    [Preset]
+    name = Ring Race 2-4 #batl11
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x31310000
+
+    [Preset]
+    name = Ring Race 4-B #batl12
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x31320000
+
+    [Preset]
+    name = Ring Race 5-2 #batl13
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x31330000
+
+    [Preset]
+    name = Ring Race 6-3 #batl14
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x31340000
+
+    [Preset]
+    name = Ring Race 4-B  #batl15
+    category = Stage:
+    condition = ($world == 10)*($stageboot == 1) == 1
+    $levelstring1 = 0x6261746C
+    $levelstring2 = 0x31350000
+
+[Preset]
+name = DLC (Must have DLC installed)
+category = World:
+condition = ($stageboot == 1)*($version == 4) == 1
+$world = 11
+
+    [Preset]
+    name = NiGHTS #zdlc01
+    category = Stage:
+    condition = ($world == 11)*($stageboot == 1) == 1
+    $levelstring1 = 0x7A646C63
+    $levelstring2 = 0x30310000
+
+    [Preset]
+    name = Yoshi's Island #zdlc02
+    category = Stage:
+    condition = ($world == 11)*($stageboot == 1) == 1
+    $levelstring1 = 0x7A646C63
+    $levelstring2 = 0x30320000
+
+    [Preset]
+    name = The Legend of Zelda #zdlc03
+    category = Stage:
+    condition = ($world == 11)*($stageboot == 1) == 1
+    $levelstring1 = 0x7A646C63
+    $levelstring2 = 0x30330000

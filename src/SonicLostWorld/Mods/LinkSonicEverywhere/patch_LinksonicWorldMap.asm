@@ -1,6 +1,5 @@
-[sonic2013_v48]
-moduleMatches = 0xC5691A40
-
+[SonicLostWolrd_LinkSonicWorldMap_v48]
+moduleMatches = 0xC5691A40 ; v48(EU/NA/JP)
 .origin = codecave
 
 ; app::WorldAreaMapInfo::Load

@@ -1,9 +1,10 @@
 [Definition]
-titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00,0005000210175B01,0005000210177801,0005000210191F01
 name = Uncapped Framerate
 path = "Sonic Boom: Rise of Lyric/Mods/Uncapped Framerate"
-description = This patches out the framerate cap that the game has in place.|Some gameplay issues may occur past 60FPS.||Made by M&&M.
-version = 6
+description = This patches out the framerate cap that the game has in place.|Some gameplay issues may occur past 60FPS.|Made by M&&M.
+#Credits: M&&M
+version = 7
 
 [Default]
 $fpsLimit = 60

@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010175B00,0005000010177800,0005000010191F00
+titleIds = 0005000010175B00,0005000010177800,0005000010191F00,0005000210175B01,0005000210177801,0005000210191F01
 name = Disable Player Camera Shake
 path = "Sonic Boom: Rise of Lyric/Enhancements/Disable Player Camera Shake"
-description = This patches out camera shake tied to player movement.||Made by HyperBE32.
-version = 6
+description = This patches out camera shake tied to player movement.|Made by HyperBE32.
+#Credits: HyperBE32
+version = 7
