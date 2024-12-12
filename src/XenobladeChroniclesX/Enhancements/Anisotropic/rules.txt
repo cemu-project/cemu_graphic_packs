@@ -1,0 +1,118 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Anisotropic Filtering
+path = "Xenoblade Chronicles X/Enhancements/Anisotropic Filtering"
+description = Enables anisotropic filtering for ground, wall and vegetation textures to make them appear clearer when viewed from an angle.|Has a minimal performance impact.
+version = 7
+
+[Default]
+#Defined seprately so that they can be change individually if desired
+$anisomount = 1
+$anisorock = 1
+$anisosand = 1
+$anisotree = 1
+$anisolargeplant = 1
+$anisomidplant = 1
+$anisosmallplant = 1
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
+name = x1 (Default)
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
+name = x2
+$anisomount = 2
+$anisorock = 2
+$anisosand = 2
+$anisotree = 2
+$anisolargeplant = 2
+$anisomidplant = 2
+$anisosmallplant = 2
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
+name = x4
+$anisomount = 4
+$anisorock = 4
+$anisosand = 4
+$anisotree = 4
+$anisolargeplant = 4
+$anisomidplant = 4
+$anisosmallplant = 4
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
+name = x8
+$anisomount = 8
+$anisorock = 8
+$anisosand = 8
+$anisotree = 8
+$anisolargeplant = 8
+$anisomidplant = 8
+$anisosmallplant = 8
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
+name = x16 (Recommended)
+$anisomount = 16
+$anisorock = 16
+$anisosand = 16
+$anisotree = 16
+$anisolargeplant = 16
+$anisomidplant = 16
+$anisosmallplant = 16
+
+[Preset]
+category = "Anisotrophic Filtering Strength"
+name = x32 (Overkill)
+$anisomount = 32
+$anisorock = 32
+$anisosand = 32
+$anisotree = 32
+$anisolargeplant = 32
+$anisomidplant = 32
+$anisosmallplant = 32
+
+
+[TextureRedefine] # Mountain Textures
+width = 2048
+height = 1024
+formats = 0x031
+overwriteAnisotropy = $anisomount
+
+[TextureRedefine] # Ground/Rock Textures
+width = 1024
+height = 1024
+formats = 0x031
+overwriteAnisotropy = $anisorock
+
+[TextureRedefine] # Ground/Sand Textures
+width = 512
+height = 512
+formats = 0x031
+overwriteAnisotropy = $anisosand
+
+[TextureRedefine] # Tree Textures
+width = 128
+height = 512
+formats = 0x031
+overwriteAnisotropy = $anisotree
+
+[TextureRedefine] # Ground/Sand/Plant Textures
+width = 256
+height = 256
+formats = 0x031
+overwriteAnisotropy = $anisolargeplant
+
+[TextureRedefine] # Grass/Plant Textures
+width = 256
+height = 128
+formats = 0x031
+overwriteAnisotropy = $anisomidplant
+
+[TextureRedefine] # Grass/Plant Textures
+width = 128
+height = 128
+formats = 0x033
+overwriteAnisotropy = $anisosmallplant
