@@ -1,0 +1,7 @@
+[Definition] 
+titleIds = 000500001017D800,000500001017D900,000500001017CD00
+name = 60 FPS
+path = "Hyrule Warriors/Mods/60FPS"
+description = Makes the game run at 60FPS. Getting under 60FPS will slow down the game's speed.
+#Credits: nosklo, Xalphenos, emoose
+version = 7
