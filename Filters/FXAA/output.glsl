@@ -1,4 +1,4 @@
-#version 420
+#version 450
 
 #ifdef VULKAN
 layout(location = 0) in vec2 passUV;
@@ -51,7 +51,7 @@ layout(location = 0) out vec4 colorOut0;
     // Might want to lower the settings for both,
     //    fxaaConsoleEdgeThresholdMin
     //    fxaaQualityEdgeThresholdMin
-    // In order to insure AA does not get turned off on colors 
+    // In order to insure AA does not get turned off on colors
     // which contain a minor amount of green.
     //
     // 1 = On.
@@ -136,14 +136,14 @@ NOTE the other tuning knobs are now in the shader function inputs!
     //
     // Choose the quality preset.
     // This needs to be compiled into the shader as it effects code.
-    // Best option to include multiple presets is to 
+    // Best option to include multiple presets is to
     // in each shader define the preset, then include this file.
-    // 
+    //
     // OPTIONS
     // -----------------------------------------------------------------------
     // 10 to 15 - default medium dither (10=fastest, 15=highest quality)
     // 20 to 29 - less dither, more expensive (20=fastest, 29=highest quality)
-    // 39       - no dither, very expensive 
+    // 39       - no dither, very expensive
     //
     // NOTES
     // -----------------------------------------------------------------------
@@ -152,7 +152,7 @@ NOTE the other tuning knobs are now in the shader function inputs!
     // 23 = closest to FXAA 3.9 visually and performance wise
     //  _ = the lowest digit is directly related to performance
     // _  = the highest digit is directly related to style
-    // 
+    //
     #define FXAA_QUALITY_PRESET 12
 #endif
 
@@ -473,7 +473,7 @@ FxaaFloat4 FxaaPixelShader(
     //   0.333 - too little (faster)
     //   0.250 - low quality
     //   0.166 - default
-    //   0.125 - high quality 
+    //   0.125 - high quality
     //   0.063 - overkill (slower)
     FxaaFloat fxaaQualityEdgeThreshold,
     //
@@ -857,7 +857,7 @@ FxaaFloat4 FxaaPixelShader(
 
 //----------------------------------------------------------------------------------
 // File:        es3-kepler\FXAA\assets\shaders/FXAA_Default.frag
-// SDK Version: v3.00 
+// SDK Version: v3.00
 // Email:       gameworks@nvidia.com
 // Site:        http://developer.nvidia.com/
 //
