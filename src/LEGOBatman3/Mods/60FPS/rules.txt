@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001016AD00,000500001016A400,00050000101B2700,000500021016AD01
+name = 60FPS
+path = "Lego Batman 3: Beyond Gotham/Mods/60FPS"
+description = Makes the game run at 60FPS. Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7
