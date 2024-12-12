@@ -1,6 +1,7 @@
 [Definition]
-titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400,00050002101E5401,0005000210190301
 name = 60FPS
 path = "Mario & Sonic at the Rio 2016 Olympic Games/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS.|Getting under 60FPS will slow down the game's speed.||Made by theboy181.
-version = 6
+description = Patches the gameplay to be in 60FPS.|Getting under 60FPS will slow down the game's speed.|Made by theboy181.
+#Credits: theboy181
+version = 7

@@ -1,8 +1,9 @@
 [Definition]
-titleIds = 0005000010190300,00050000101E5300,00050000101E5400
+titleIds = 0005000010190300,00050000101E5300,00050000101E5400,00050002101E5401,0005000210190301
 name = Quickboot
 path = "Mario & Sonic at the Rio 2016 Olympic Games/Mods/Quickboot"
 description = Choose which state the game boots to.|Some states will cause an infinite loop while others will either softlock or crash the game.||Made by M&&M and Skyth.
+#Credits: M&&M, Skyth
 version = 7
 
 [Default]

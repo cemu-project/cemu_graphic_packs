@@ -1,9 +1,10 @@
 [Definition]
-titleIds = 000500001012f000,00050000101d6000,00050000101e4100,00050000101FED00
-name = Resolution
+titleIds = 000500001012F000,00050000101D6000,00050000101E4100,00050000101FED00
+name = Graphics Settings
 path = "FAST Racing NEO/Graphics"
-description = Changes the resolution of the game.||Made by M&&M and getdls.
-version = 5
+description = Changes the resolution of the game.|Made by M&&M and getdls.
+#Credits: M&&M, getdls
+version = 7
 
 [Default]
 $width = 1280
@@ -20,144 +21,144 @@ $anisotropy = 1
 # TV Resolution
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 320x180
 $width = 320
 $height = 180
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 640x360
 $width = 640
 $height = 360
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 854x480
 $width = 854
 $height = 480
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 960x540
 $width = 960
 $height = 540
 
 [Preset]
-category = TV Resolution
-name = 1280x720
+category = TV Resolution:
+name = 1280x720 (Default)
 default = 1
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1600x900
 $width = 1600
 $height = 900
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1920x1080
 $width = 1920
 $height = 1080
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 2560x1440
 $width = 2560
 $height = 1440
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 3200x1800
 $width = 3200
 $height = 1800
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 3840x2160
 $width = 3840
 $height = 2160
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 5120x2880
 $width = 5120
 $height = 2880
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 7680x4320
 $width = 7680
 $height = 4320
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1280x800 (16:10)
 $width = 1280
 $height = 800
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1680x1050 (16:10)
 $width = 1680
 $height = 1050
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1680x1080 (16:10)
 $width = 1680
 $height = 1080
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1920x1200 (16:10)
 $width = 1920
 $height = 1200
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 1920x1224 (16:10)
 $width = 1920
 $height = 1224
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 2880x1800 (16:10)
 $width = 2880
 $height = 1800
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 2560x1656 (16:10)
 $width = 2560
 $height = 1656
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 2560x1080 (21:9)
 $width = 2560
 $height = 1080
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 3440x1440 (21:9)
 $width = 3440
 $height = 1440
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 5120x2160 (21:9)
 $width = 5120
 $height = 2160
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 3840x1080 (32:9)
 $width = 3840
 $height = 1080
 
 [Preset]
-category = TV Resolution
+category = TV Resolution:
 name = 5120x1440 (32:9)
 $width = 5120
 $height = 1440
@@ -166,144 +167,144 @@ $height = 1440
 # Gamepad Resolution
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 320x180
 $padWidth = 320
 $padHeight = 180
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 640x360
 $padWidth = 640
 $padHeight = 360
 
 [Preset]
-category = Gamepad Resolution
-name = 854x480
+category = Gamepad Resolution:
+name = 854x480 (Default)
 default = 1
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 960x540
 $padWidth = 960
 $padHeight = 540
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1280x720
 $padWidth = 1280
 $padHeight = 720
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1600x900
 $padWidth = 1600
 $padHeight = 900
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1920x1080
 $padWidth = 1920
 $padHeight = 1080
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 2560x1440
 $padWidth = 2560
 $padHeight = 1440
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 3200x1800
 $padWidth = 3200
 $padHeight = 1800
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 3840x2160
 $padWidth = 3840
 $padHeight = 2160
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 5120x2880
 $padWidth = 5120
 $padHeight = 2880
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 7680x4320
 $padWidth = 7680
 $padHeight = 4320
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1280x800 (16:10)
 $padWidth = 1280
 $padHeight = 800
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1680x1050 (16:10)
 $padWidth = 1680
 $padHeight = 1050
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1680x1080 (16:10)
 $padWidth = 1680
 $padHeight = 1080
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1920x1200 (16:10)
 $padWidth = 1920
 $padHeight = 1200
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 1920x1224 (16:10)
 $padWidth = 1920
 $padHeight = 1224
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 2880x1800 (16:10)
 $padWidth = 2880
 $padHeight = 1800
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 2560x1656 (16:10)
 $padWidth = 2560
 $padHeight = 1656
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 2560x1080 (21:9)
 $padWidth = 2560
 $padHeight = 1080
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 3440x1440 (21:9)
 $padWidth = 3440
 $padHeight = 1440
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 5120x2160 (21:9)
 $padWidth = 5120
 $padHeight = 2160
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 3840x1080 (32:9)
 $padWidth = 3840
 $padHeight = 1080
 
 [Preset]
-category = Gamepad Resolution
+category = Gamepad Resolution:
 name = 5120x1440 (32:9)
 $padWidth = 5120
 $padHeight = 1440
@@ -311,30 +312,30 @@ $padHeight = 1440
 # Anisotropic Filtering Quality
 
 [Preset]
+category = Anisotropic Filtering Quality:
 name = 1x
-category = Anisotropic Filtering Quality
 default = 1
 
 [Preset]
+category = Anisotropic Filtering Quality:
 name = 2x
-category = Anisotropic Filtering Quality
 $anisotropy = 2
 
 [Preset]
+category = Anisotropic Filtering Quality:
 name = 4x
-category = Anisotropic Filtering Quality
 $anisotropy = 4
 
 [Preset]
+category = Anisotropic Filtering Quality:
 name = 8x
-category = Anisotropic Filtering Quality
 $anisotropy = 8
 
 [Preset]
+category = Anisotropic Filtering Quality:
 name = 16x
-category = Anisotropic Filtering Quality
 $anisotropy = 16
- 
+
 
 
 # Anisotropic Filtering

@@ -1,9 +1,10 @@
 [Definition]
-titleIds = 0005000010172600,0005000010172700,000500001011B900
+titleIds = 0005000010172600,0005000010172700,000500001011B900,0005000210172701,0005000210172601
 name = Graphic Options
 path = "Bayonetta 2/Graphics"
 description = Allows you to change the game's resolution, shadow quality and anisotropic filtering quality.|Made by M&&M and getdls.
-version = 6
+#Credits: M&&M, getdls
+version = 7
 
 [Default]
 $width = 1280
@@ -17,146 +18,151 @@ $anisotropy = 1
 
 [Preset]
 name = 320x180
-category = Resolution
+category = Resolution:
 $width = 320
 $height = 180
 
 [Preset]
 name = 640x360
-category = Resolution
+category = Resolution:
 $width = 640
 $height = 360
 
 [Preset]
 name = 854x480
-category = Resolution
+category = Resolution:
 $width = 854
 $height = 480
 
 [Preset]
 name = 960x540
-category = Resolution
+category = Resolution:
 $width = 960
 $height = 540
 
 [Preset]
 name = 1280x720
-category = Resolution
+category = Resolution:
 default = 1
 
 [Preset]
 name = 1600x900
-category = Resolution
+category = Resolution:
 $width = 1600
 $height = 900
 
 [Preset]
 name = 1920x1080
-category = Resolution
+category = Resolution:
 $width = 1920
 $height = 1080
 
 [Preset]
 name = 2560x1440
-category = Resolution
+category = Resolution:
 $width = 2560
 $height = 1440
 
 [Preset]
 name = 3200x1800
-category = Resolution
+category = Resolution:
 $width = 3200
 $height = 1800
 
 [Preset]
 name = 3840x2160
-category = Resolution
+category = Resolution:
 $width = 3840
 $height = 2160
 
 [Preset]
 name = 5120x2880
-category = Resolution
+category = Resolution:
 $width = 5120
 $height = 2880
 
 [Preset]
 name = 7680x4320
-category = Resolution
+category = Resolution:
 $width = 7680
 $height = 4320
 
 [Preset]
 name = 2560x1080 (21:9)
-category = Resolution
+category = Resolution:
 $width = 2560
 $height = 1080
 
 [Preset]
 name = 3440x1440 (21:9)
-category = Resolution
+category = Resolution:
 $width = 3440
 $height = 1440
 
 [Preset]
 name = 5120x2160 (21:9)
-category = Resolution
+category = Resolution:
 $width = 5120
 $height = 2160
 
 # Shadow Quality
 
 [Preset]
-name = Low
-category = Shadow Quality
+name = Low (50%)
+category = Shadow Quality:
 $shadowQuality = 0.5
 
 [Preset]
-name = Medium
-category = Shadow Quality
+name = Default (100%)
+category = Shadow Quality:
 default = 1
 
 [Preset]
-name = High
-category = Shadow Quality
+name = High (200%)
+category = Shadow Quality:
 $shadowQuality = 2
 
 [Preset]
-name = Ultra
-category = Shadow Quality
+name = Ultra (300%)
+category = Shadow Quality:
 $shadowQuality = 3
 
 [Preset]
-name = Extreme
-category = Shadow Quality
+name = Extreme (400%)
+category = Shadow Quality:
 $shadowQuality = 4
 
 # Anisotropic Filtering Quality
 
 [Preset]
 name = 1x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering Quality:
 default = 1
 
 [Preset]
 name = 2x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering Quality:
 $anisotropy = 2
 
 [Preset]
 name = 4x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering Quality:
 $anisotropy = 4
 
 [Preset]
 name = 8x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering Quality:
 $anisotropy = 8
 
 [Preset]
 name = 16x
-category = Anisotropic Filtering Quality
+category = Anisotropic Filtering Quality:
 $anisotropy = 16
+
+[Preset]
+name = 32x
+category = Anisotropic Filtering Quality:
+$anisotropy = 32
 
 # Anisotropic Filtering
 
@@ -165,7 +171,7 @@ tileModesExcluded = 0x001 # ignore cpu processed textures
 formatsExcluded = 0x001,0x01a,0x01f,0x122,0x806,0x80e,0x816,0x81e,0x820,0x823 # ignore viewports and cubemaps
 overwriteAnisotropy = $anisotropy
 
-# Color Depth 
+# Color Depth
 
 [TextureRedefine]
 width = 1280
@@ -191,13 +197,13 @@ height = 192
 formats = 0x01a
 overwriteFormat = 0x01f
 
-[TextureRedefine] 
+[TextureRedefine]
 width = 320
 height = 180
 formats = 0x01a
 overwriteFormat = 0x01f
 
-[TextureRedefine] 
+[TextureRedefine]
 width = 320
 height = 176
 formats = 0x01a

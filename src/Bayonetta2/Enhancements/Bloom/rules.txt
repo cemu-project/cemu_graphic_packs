@@ -1,0 +1,84 @@
+[Definition]
+titleIds = 0005000010172600,0005000010172700,000500001011B900,0005000210172701,0005000210172601
+name = Bloom
+path = "Bayonetta 2/Enhancements/Bloom"
+description = Allows you to change the bloom of various graphics in the game.|Not compatable with the Contrasty mod.|Made by Skalfate.
+#Credits: Skalfate
+version = 7
+
+[Default]
+$intensity = 1
+
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 1.0
+$bloomblue = 1.0
+$bloomgreen = 1.0
+
+
+[Preset]
+name = Bloom ON (Default)
+
+[Preset]
+name = Bloom 70%
+$intensity = 0.7
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 1.0
+$bloomblue = 1.0
+$bloomgreen = 1.0
+
+[Preset]
+name = Bloom 50%
+$intensity = 0.5
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 1.0
+$bloomblue = 1.0
+$bloomgreen = 1.0
+
+[Preset]
+name = Bloom 30%
+$intensity = 0.3
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 1.0
+$bloomblue = 1.0
+$bloomgreen = 1.0
+
+[Preset]
+name = Bloom OFF
+$intensity = 0.0
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 1.0
+$bloomblue = 1.0
+$bloomgreen = 1.0
+
+[Preset]
+name = Bloom Red
+$intensity = 1
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 1.0
+$bloomblue = 0.0
+$bloomgreen = 0.0
+
+[Preset]
+name = Bloom Blue
+$intensity = 1
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 0.0
+$bloomblue = 1.0
+$bloomgreen = 0.0
+
+[Preset]
+name = Bloom Green
+$intensity = 1
+# Customize these 3 values for rgb color cuztomization
+$bloomred = 0.0
+$bloomblue = 0.0
+$bloomgreen = 1.0
+
+
+# Intensity - Controls how strong the bloom is
+# Values are multiplied x default value - Range : [0.0 - 10.0]
+
+# bloomred,bloomgreen,bloomblue : Control the RGB Channels of the effect
+# Values are multiplied x default value - Range : [0.0 - 1.0]
+
+# Credit: SkalFate
