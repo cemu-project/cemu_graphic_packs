@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001016AD00,000500001016A400
-name = 60FPS
-path = "Lego Batman 3: Beyond Gotham/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

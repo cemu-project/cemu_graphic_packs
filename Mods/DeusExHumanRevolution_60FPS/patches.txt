@@ -1,4 +1,0 @@
-[DeusEx60Ver0]
-moduleMatches = 0x4C83AF19
-
-0x0234EA10 = li r3,1 #GX2SetSwapInterval

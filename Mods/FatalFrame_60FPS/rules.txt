@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101D0300,00050000101D0600,000500001014D200,00050000101D3F00
-name = 60FPS
-path = "Fatal Frame - Project Zero: Maiden of Black Water/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

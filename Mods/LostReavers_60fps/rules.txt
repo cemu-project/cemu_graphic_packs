@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 00050000101A4800,00050000101B9900,000500001018D900
-name = 60FPS
-path = "Lost Reavers/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4
-
-[Control]
-vsyncFrequency = 120

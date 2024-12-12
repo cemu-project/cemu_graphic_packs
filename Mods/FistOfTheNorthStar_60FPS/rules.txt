@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001012B800,000500001012B900,0005000010116600
-name = 60FPS
-path = "Fist of the North Star: Ken's Rage 2/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

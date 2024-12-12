@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010177200,0005000010180B00
-name = 60FPS
-path = "Citizens of Earth/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

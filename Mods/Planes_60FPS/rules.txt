@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001011C500,0005000010136900,0005000010136A00,0005000010136B00
-name = 60FPS
-path = "Disney Planes/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

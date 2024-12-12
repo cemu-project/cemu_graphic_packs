@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 00050000101ECF00,00050000101F4A00
-name = 60FPS
-path = "Buddy & Me/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4

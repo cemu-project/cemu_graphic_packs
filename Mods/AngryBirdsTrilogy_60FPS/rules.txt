@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010138A00,0005000010140000
-name = 60FPS
-path = "Angry Birds Trilogy/Mods/60FPS"
-description = Makes the game run at 60FPS. |Made by LolHacksRule.
-version = 7

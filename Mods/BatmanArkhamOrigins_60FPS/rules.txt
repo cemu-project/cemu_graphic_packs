@@ -1,9 +1,0 @@
-[Definition]
-titleIds = 0005000010136c00,0005000010137c00,0005000010154600,000500001016d300,000500001016df00
-path = "Batman: Arkham Origins/Mods/60FPS"
-description = Important: This patches the gameplay to be in 60FPS. Getting under 60FPS will slow down the game's speed. Made by theboy181.
-version = 4
-
-[Control]
-#Give boost to performance
-vsyncFrequency = 120
