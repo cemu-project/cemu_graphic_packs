@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 0005000010137F00,0005000010138300,0005000010144800
-name = AA Removal
-path = "Donkey Kong Country: Tropical Freeze/Enhancements/AA Removal" 
-description = Removes AA, no performance gain. Used for clean look or injecting external AA.
-version = 4
