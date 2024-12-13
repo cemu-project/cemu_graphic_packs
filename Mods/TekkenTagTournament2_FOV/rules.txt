@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 000500001010F800,0005000010110000
 name = Field of View
-path = "Tekken Tag Tournament 2/Graphics/FOV"
-description = Changes the FOV of the game for aspect ratio patches. Made by Flextape05
+path = "Tekken Tag Tournament 2/Graphics/Field Of View"
+description = Changes the field of view or FOV of the game for aspect ratio patches. Made by Flextape05
 version = 4
 
 [Preset]
