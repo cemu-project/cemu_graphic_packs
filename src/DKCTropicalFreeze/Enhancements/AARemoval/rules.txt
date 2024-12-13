@@ -2,6 +2,6 @@
 titleIds = 0005000010137F00,0005000010138300,0005000010144800
 name = Remove Anti-Aliasing
 path = "Donkey Kong Country: Tropical Freeze/Enhancements/Remove AA"
-description = Dissable the game's native AA.
+description = Dissable the game's Anti-aliasing. No performance gain.
 #Credits: Skalfate
 version = 6
