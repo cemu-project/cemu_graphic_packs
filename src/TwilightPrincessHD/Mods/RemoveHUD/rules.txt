@@ -4,4 +4,4 @@ name = Remove HUD
 path = "The Legend of Zelda: Twilight Princess HD/Mods/Remove HUD (breaks menus)"
 description = Hides the HUD elements like the hearts, controller buttons and rupees count.|You should only enable this graphic pack when you want to make a screenshot without the HUD.
 #Credits: Crementif
-version = 6
+version = 7
