@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
 name = Contrasty
 path = "Mario Kart 8/Enhancements/Contrasty"
 description = This pack tweaks the colors and contrast to whatever preset you set it as.|You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs.|Made by getdls.

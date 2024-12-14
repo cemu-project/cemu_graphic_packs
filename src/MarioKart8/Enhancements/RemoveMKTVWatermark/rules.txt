@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
 name = Remove MKTV Watermark
 path = "Mario Kart 8/Enhancements/Remove MKTV Watermark"
 description = Removes the MKTV watermark in the replays or highlight reel.|Made by Crementif.
