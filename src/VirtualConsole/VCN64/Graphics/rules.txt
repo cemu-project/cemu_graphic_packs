@@ -16,14 +16,14 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 1920x1080 (Default)
 default = 1
 
 N64 Resolutions----------------------------------
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = ~~~Original N64 Resolutions~~~ (4:3)
 $width = 853
 $height = 480
@@ -34,7 +34,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 640x480 (Original N64) (480i)
 $width = 853
 $height = 480
@@ -45,7 +45,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 960x720 (720i)
 $width = 1280
 $height = 720
@@ -56,7 +56,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 1280x960 2x
 $width = 1707
 $height = 960
@@ -67,7 +67,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 1536x1152 (1080i)
 $width = 2048
 $height = 1152
@@ -78,7 +78,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 1920x1440 3x (1440i)
 $width = 2560
 $height = 1440
@@ -89,7 +89,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 2048x1536
 $width = 2731
 $height = 1536
@@ -100,7 +100,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 2560x1920 (1800i)
 $width = 3413
 $height = 1920
@@ -111,7 +111,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 3200x2400 5x
 $width = 4267
 $height = 2400
@@ -122,7 +122,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 3840x2880 6x (4k)
 $width = 5120
 $height = 2880
@@ -133,7 +133,7 @@ $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-category = Resolution:
+category = Resolution
 name = 5760x4320 9x (8k)
 $width = 7680
 $height = 4320

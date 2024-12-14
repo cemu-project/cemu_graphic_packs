@@ -15,11 +15,14 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1920x1080 (Default)
+default = 1
 
 GBA Resolutions----------------------------
 
 [Preset]
+category = Resolution
 name = ~~~Original GBA Resolutions~~~
 $width = 284
 $height = 160
@@ -29,6 +32,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 240x160 (Original GBA)
 $width = 284
 $height = 160
@@ -38,6 +42,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 480x320 2x
 $width = 569
 $height = 320
@@ -47,6 +52,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 720x480 3x (480p)
 $width = 853
 $height = 480
@@ -56,6 +62,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 960x640 4x
 $width = 1138
 $height = 640
@@ -65,6 +72,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1200x800 5x (720p)
 $width = 1422
 $height = 800
@@ -74,6 +82,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1440x960 6x
 $width = 1707
 $height = 960
@@ -84,6 +93,7 @@ $GPgameHeight = 480
 
 
 [Preset]
+category = Resolution
 name = 1680x1120 7x (1080p)
 $width = 1991
 $height = 1120
@@ -94,6 +104,7 @@ $GPgameHeight = 480
 
 
 [Preset]
+category = Resolution
 name = 1920x1280 8x
 $width = 2276
 $height = 1280
@@ -103,6 +114,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 2160x1440 9x (1440p)
 $width = 2560
 $height = 1440

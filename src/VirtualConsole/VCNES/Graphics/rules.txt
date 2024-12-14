@@ -15,12 +15,14 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1920x1080 (Default)
 default = 1
 
 SNES Resolutions-----------------------------
 
 [Preset]
+category = Resolution
 name = ~~~Original NES Resolutions~~~
 $width = 427
 $height = 240
@@ -30,6 +32,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 256x240 (Original NES)
 $width = 427
 $height = 240
@@ -39,6 +42,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 512x480 2x (480p)
 $width = 853
 $height = 480
@@ -48,6 +52,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 768x720 3x (720p)
 $width = 1280
 $height = 720
@@ -57,6 +62,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1024x960 4x
 $width = 1707
 $height = 960
@@ -66,6 +72,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1280x1200 5x (1080p)
 $width = 2133
 $height = 1200
@@ -75,6 +82,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 1536x1440 6x (1440p)
 $width = 2560
 $height = 1440
@@ -85,6 +93,7 @@ $GPgameHeight = 480
 
 
 [Preset]
+category = Resolution
 name = 1792x1680 7x
 $width = 2987
 $height = 1680
@@ -95,6 +104,7 @@ $GPgameHeight = 480
 
 
 [Preset]
+category = Resolution
 name = 2048x1920 8x (1800p)
 $width = 3413
 $height = 1920
@@ -104,6 +114,7 @@ $GPgameWidth = 864
 $GPgameHeight = 480
 
 [Preset]
+category = Resolution
 name = 2304x2106 9x
 $width = 3840
 $height = 2106
