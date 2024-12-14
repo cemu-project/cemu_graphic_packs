@@ -12,6 +12,7 @@ $height = 1080
 $gameWidth = 1920
 $gameHeight = 1080
 $lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 $shadowRes = 1
@@ -22,9 +23,7 @@ category = Resolution
 name = 320x180
 $width = 320
 $height = 180
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -33,9 +32,7 @@ category = Resolution
 name = 640x360
 $width = 640
 $height = 360
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -44,9 +41,7 @@ category = Resolution
 name = 960x540
 $width = 960
 $height = 540
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -55,9 +50,7 @@ category = Resolution
 name = 1280x720
 $width = 1280
 $height = 720
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -66,9 +59,7 @@ category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -82,9 +73,7 @@ category = Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -93,9 +82,7 @@ category = Resolution
 name = 2732x1536
 $width = 2732
 $height = 1536
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -104,9 +91,7 @@ category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -115,9 +100,7 @@ category = Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -126,9 +109,7 @@ category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -137,9 +118,7 @@ category = Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
@@ -154,9 +133,7 @@ category = Resolution
 name = ---- Ultra wide 21:9 ----
 $width = 2560
 $height = 1080
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 2.0
+$lightSourceRecommened = 2.0
 $scaleShader = (1920.0/2560.0)
 $aspectRatio = (64.0/27.0) #LG
 
@@ -165,9 +142,7 @@ category = Resolution
 name = 2560x1080 (21:9 HD)
 $width = 2560
 $height = 1080
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 2.0
+$lightSourceRecommened = 2.0
 $scaleShader = (1920.0/2560.0)
 $aspectRatio = (64.0/27.0) #LG
 
@@ -176,9 +151,7 @@ category = Resolution
 name = 3440x1440 (21:9)
 $width = 3440
 $height = 1440
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 1.5
+$lightSourceRecommened = 1.5
 $scaleShader = (2560.0/3440.0)
 $aspectRatio = (43.0/18.0)
 
@@ -187,9 +160,7 @@ category = Resolution
 name = 3840x1600 (21:9)
 $width = 3840
 $height = 1600
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 1.35
+$lightSourceRecommened = 1.35
 $scaleShader = (2844.445/3840.0)
 $aspectRatio = (12.0/5.0)
 
@@ -198,9 +169,7 @@ category = Resolution
 name = 5160x2160 (4k 21:9)
 $width = 5160
 $height = 2160
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = (3840.0/5160.0)
 $aspectRatio = (64.0/27.0) #LG
 
@@ -209,9 +178,7 @@ category = Resolution
 name = ---- Superwide 32:9 ----
 $width = 5120
 $height = 1440
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 1.5
+$lightSourceRecommened = 1.5
 $scaleShader = (2560.0/5120.0)
 $aspectRatio = (96.0/27.0)
 
@@ -220,9 +187,7 @@ category = Resolution
 name = 5120x1440 (32:9)
 $width = 5120
 $height = 1440
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 1.5
+$lightSourceRecommened = 1.5
 $scaleShader = (2560.0/5120.0)
 $aspectRatio = (96.0/27.0)
 
@@ -231,78 +196,85 @@ category = Resolution
 name = 7680x2160 (4k 32:9)
 $width = 7680
 $height = 2160
-$gameWidth= 1920
-$gameHeight= 1080
-$lightSource = 1.0
+$lightSourceRecommened = 1.0
 $scaleShader = (3840.0/7680.0)
 $aspectRatio = (96.0/27.0)
 
 [Preset]
 category = Resolution
 name = ---- Custom resolutions ----
-$width = 1920
-$height = 1080
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 2.0
-$scaleShader = 1.0
-$aspectRatio = (16.0/9.0)
 
 [Preset]
 category = Resolution
-name = 1920x1080 AO fix - Light res x2
-$width = 1920
-$height = 1080
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 2.0
-$scaleShader = 1.0
-$aspectRatio = (16.0/9.0)
-
-[Preset]
-category = Resolution
-name = 2560x1440 AO fix
-$width = 2560
-$height = 1440
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 1.5
-$scaleShader = 1.0 #(1088.0/1440.0)
-$aspectRatio = (16.0/9.0)
-
-[Preset]
-category = Resolution
-name = 3840x2160 AO fix - light res x2
-$width = 3840
-$height = 2160
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 2.0
-$scaleShader = 1.0
-$aspectRatio = (16.0/9.0)
-
-[Preset]
-category = Resolution
-name = 1920x2160 vert x2 SSAA - light res x2
+name = 1920x2160 vert x2 SSAA
 $width = 1920
 $height = 2160
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 2.0
+$lightSourceRecommened = 2.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
 [Preset]
 category = Resolution
-name = 3840x4320 vert x2 SSAA - light res x2
+name = 3840x4320 vert x2 SSAA
 $width = 3840
 $height = 4320 # x2
-$gameWidth = 1920
-$gameHeight = 1080
-$lightSource = 2.0
+$lightSourceRecommened = 2.0
 $scaleShader = 1.0
 $aspectRatio = (16.0/9.0)
 
+# Light Resolution
+
+[Preset]
+name = 100% (Default)
+category = Light Resolution
+condition = $lightSourceRecommened != 1.0
+
+[Preset]
+name = 100% (Default) (Recommended)
+category = Light Resolution
+condition = $lightSourceRecommened == 1.0
+default = 1
+
+[Preset]
+name = 135%
+category = Light Resolution
+condition = $lightSourceRecommened != 1.35
+$lightSource = 1.35
+
+[Preset]
+name = 135% (Recommended)
+category = Light Resolution
+condition = $lightSourceRecommened == 1.35
+$lightSource = 1.35
+default = 1
+
+[Preset]
+name = 150%
+category = Light Resolution
+condition = $lightSourceRecommened != 1.50
+$lightSource = 1.50
+
+[Preset]
+name = 150% (Recommended)
+category = Light Resolution
+condition = $lightSourceRecommened == 1.50
+$lightSource = 1.50
+default = 1
+
+[Preset]
+name = 200%
+category = Light Resolution
+condition = $lightSourceRecommened != 2.0
+$lightSource = 2.0
+
+[Preset]
+name = 200% (Recommended)
+category = Light Resolution
+condition = $lightSourceRecommened == 2.0
+$lightSource = 2.0
+default = 1
+
+# Shadows Resolution
 
 [Preset]
 category = Shadow Quality
@@ -328,6 +300,8 @@ $shadowRes = 3
 category = Shadow Quality
 name = Extreme (400%, Unstable)
 $shadowRes = 4
+
+# Anisotropic Filtering
 
 [Preset]
 category = Anisotropic Filtering
