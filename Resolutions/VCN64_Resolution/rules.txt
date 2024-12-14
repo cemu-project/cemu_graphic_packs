@@ -10,114 +10,82 @@ name = 1920x1080 (Default)
 $width = 1920
 $height = 1080
 $gameWidth = 1920
-$gameHeight = 1088
+$gameHeight = 1080
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
-N64 Resolutions----------------------------------
-
 [Preset]
-name = ~~~Original N64 Resolutions~~~ (4:3)
-$width = 853
+name = 640x480 (Original N64) (4:3)
+$width = 640
 $height = 480
 $gameWidth = 1920
-$gameHeight = 1088
+$gameHeight = 1080
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-name = 640x480 (Original N64) (480i)
-$width = 853
-$height = 480
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
-
-[Preset]
-name = 960x720 (720i)
+name = 1280x720 (HD)
 $width = 1280
 $height = 720
 $gameWidth = 1920
-$gameHeight = 1088
+$gameHeight = 1080
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-name = 1280x960 2x
-$width = 1707
-$height = 960
+name = 1920x1080 (Full HD)
+$width = 1920
+$height = 1080
 $gameWidth = 1920
-$gameHeight = 1088
+$gameHeight = 1080
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-name = 1536x1152 (1080i)
-$width = 2048
-$height = 1152
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
-
-[Preset]
-name = 1920x1440 3x (1440i)
+name = 2560x1440 (2K)
 $width = 2560
 $height = 1440
-$gameWidth = 1920
-$gameHeight = 1088
+$gameWidth = 2560
+$gameHeight = 1440
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-name = 2048x1536
-$width = 2731
-$height = 1536
-$gameWidth = 1920
-$gameHeight = 1088
+name = 3840x2160 (4K)
+$width = 3840
+$height = 2160
+$gameWidth = 3840
+$gameHeight = 2160
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
 [Preset]
-name = 2560x1920 (1800i)
-$width = 3413
-$height = 1920
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
-
-[Preset]
-name = 3200x2400 5x
-$width = 4267
-$height = 2400
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
-
-[Preset]
-name = 3840x2880 6x (4k)
+name = 5120x2880 (5K)
 $width = 5120
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1088
+$gameWidth = 5120
+$gameHeight = 2880
 $GPgameWidth = 864
 $GPgameHeight = 480
 $VCPgameWidth = 640
 
-#Game Viewports-------------------------------------------
+[Preset]
+name = 7680x4320 (8K)
+$width = 7680
+$height = 4320
+$gameWidth = 7680
+$gameHeight = 4320
+$GPgameWidth = 864
+$GPgameHeight = 480
+$VCPgameWidth = 640
+
+# Game Viewports
 
 [TextureRedefine]
 width = 1280
@@ -140,7 +108,7 @@ formats = 0x01a
 overwriteWidth = ($width/960) * 960
 overwriteHeight = ($height/720) * 720
 
-#TV Viewports---------------------------------------------
+# TV Viewports
 
 [TextureRedefine]
 width = 1920
@@ -156,7 +124,7 @@ formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1088
 
-#Gamepad Viewports-----------------------------------------
+# Gamepad Viewports
 
 [TextureRedefine]
 width = 864
@@ -172,5 +140,5 @@ formats = 0x01a
 overwriteWidth = ($width/$GPgameWidth) * 854
 overwriteHeight = ($height/$GPgameHeight) * 480
 
-#VC Menu-------------------------------------------------
-#please add it here if you figure out how to scale the menu seperate, so it can look good at low res
+# VC Menu
+# Please add it here if you figure out how to scale the menu seperate, so it can look good at low res
