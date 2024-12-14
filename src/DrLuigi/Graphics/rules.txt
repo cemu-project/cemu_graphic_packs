@@ -11,7 +11,7 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
-$AAEnable = 1
+$AAEnable:int = 1
 
 # Performance
 
@@ -79,12 +79,12 @@ $height = 4320
 [Preset]
 category = Anti-Aliasing
 name = Enable
-$AAEnable = 1
+$AAEnable:int = 1
 
 [Preset]
 category = Anti-Aliasing
 name = Disable
-$AAEnable = 0
+$AAEnable:int = 0
 
 [TextureRedefine]
 width = 1280
