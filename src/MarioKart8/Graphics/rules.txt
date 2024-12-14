@@ -852,12 +852,12 @@ category = Anisotropic Filtering
 $anisotropy = 8
 
 [Preset]
-name = 16x
+name = 16x (Recommended)
 category = Anisotropic Filtering
 $anisotropy = 16
 
 [Preset]
-name = 32x
+name = 32x (Overkill)
 category = Anisotropic Filtering
 $anisotropy = 32
 
