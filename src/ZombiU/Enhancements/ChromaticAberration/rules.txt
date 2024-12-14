@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 000500001010DD00,000500001010EF00,0005000010112300,000500001011A700,000500021010DD01,000500021010EF01,0005000210112301
+name = Chromatic Aberration
+path = "ZombiU/Enhancements/Chromatic Aberration"
+description = Changes the intensity of horizontal chromatic aberration. (the red/green/blue edges)
+#Credits: getdls
+version = 6
+
+[Default]
+$redHz = 1.0
+$blueHz = 1.0
+
+[Preset]
+name = CA Default
+
+[Preset]
+name = CA 0.75
+$redHz = 1.00125
+$blueHz = 1.0025
+
+[Preset]
+name = CA 0.5
+$redHz =  1.0025
+$blueHz = 1.005
+
+[Preset]
+name = CA Mostly Disabled
+$redHz = 1.005
+$blueHz = 1.01
