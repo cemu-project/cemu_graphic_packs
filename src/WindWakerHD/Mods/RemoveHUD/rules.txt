@@ -3,5 +3,5 @@ titleIds = 0005000010143400,0005000010143500,0005000010143600,000500010185400
 name = Remove HUD
 path = "The Legend of Zelda: The Wind Waker HD/Mods/Remove HUD (breaks menus)"
 description = Removes the HUD elements for taking screenshots.|This will break other menus making it very hard to navigate those.
-#Credits:
-version = 7
+#Credits: Crementif
+version = 6
