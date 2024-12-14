@@ -1,0 +1,564 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143500,0005000010143600,000500010185400
+name = Graphics Settings
+path = "The Legend of Zelda: The Wind Waker HD/Graphics"
+description = Changes the resolution of the game and shadow quality.|Made by getdls and Morph.
+#Credits: getdls, Morph, NineKain
+version = 6
+
+[Default]
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+$shadowRes = 1
+$anisoLevel = 1
+
+[Preset]
+category = Resolution
+name = 320x180
+$width = 320
+$height = 180
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 640x360
+$width = 640
+$height = 360
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 960x540
+$width = 960
+$height = 540
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 1280x720
+$width = 1280
+$height = 720
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 1920x1080 (Default)
+default = 1
+
+[Preset]
+category = Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 2732x1536
+$width = 2732
+$height = 1536
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+
+#Resolutions						|Aspect ratio
+#2560×1080, 5120×2160, 8192×3456	|64:27 (2.370)
+#3440×1440							|43:18 (2.38)
+#1920×800, 3840×1600, 7680×3200		|12:5 (2.4)
+
+[Preset]
+category = Resolution
+name = ---- Ultra wide 21:9 ----
+$width = 2560
+$height = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 2.0
+$scaleShader = (1920.0/2560.0)
+$aspectRatio = (64.0/27.0) #LG
+
+[Preset]
+category = Resolution
+name = 2560x1080 (21:9 HD)
+$width = 2560
+$height = 1080
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 2.0
+$scaleShader = (1920.0/2560.0)
+$aspectRatio = (64.0/27.0) #LG
+
+[Preset]
+category = Resolution
+name = 3440x1440 (21:9)
+$width = 3440
+$height = 1440
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.5
+$scaleShader = (2560.0/3440.0)
+$aspectRatio = (43.0/18.0)
+
+[Preset]
+category = Resolution
+name = 3840x1600 (21:9)
+$width = 3840
+$height = 1600
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.35
+$scaleShader = (2844.445/3840.0)
+$aspectRatio = (12.0/5.0)
+
+[Preset]
+category = Resolution
+name = 5160x2160 (4k 21:9)
+$width = 5160
+$height = 2160
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.0
+$scaleShader = (3840.0/5160.0)
+$aspectRatio = (64.0/27.0) #LG
+
+[Preset]
+category = Resolution
+name = ---- Superwide 32:9 ----
+$width = 5120
+$height = 1440
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.5
+$scaleShader = (2560.0/5120.0)
+$aspectRatio = (96.0/27.0)
+
+[Preset]
+category = Resolution
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.5
+$scaleShader = (2560.0/5120.0)
+$aspectRatio = (96.0/27.0)
+
+[Preset]
+category = Resolution
+name = 7680x2160 (4k 32:9)
+$width = 7680
+$height = 2160
+$gameWidth= 1920
+$gameHeight= 1080
+$lightSource = 1.0
+$scaleShader = (3840.0/7680.0)
+$aspectRatio = (96.0/27.0)
+
+[Preset]
+category = Resolution
+name = ---- Custom resolutions ----
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 2.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 1920x1080 AO fix - Light res x2
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 2.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 2560x1440 AO fix
+$width = 2560
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 1.5
+$scaleShader = 1.0 #(1088.0/1440.0)
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 3840x2160 AO fix - light res x2
+$width = 3840
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 2.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 1920x2160 vert x2 SSAA - light res x2
+$width = 1920
+$height = 2160
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 2.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+[Preset]
+category = Resolution
+name = 3840x4320 vert x2 SSAA - light res x2
+$width = 3840
+$height = 4320 # x2
+$gameWidth = 1920
+$gameHeight = 1080
+$lightSource = 2.0
+$scaleShader = 1.0
+$aspectRatio = (16.0/9.0)
+
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+[Preset]
+category = Anisotropic Filtering
+name = 1x (Default)
+Default = 1
+
+[Preset]
+category = Anisotropic Filtering
+name = 2x
+$anisoLevel = 2
+
+[Preset]
+category = Anisotropic Filtering
+name = 4x
+$anisoLevel = 4
+
+[Preset]
+category = Anisotropic Filtering
+name = 8x
+$anisoLevel = 8
+
+[Preset]
+category = Anisotropic Filtering
+name = 16x (Recommended)
+$anisoLevel = 16
+
+[Preset]
+category = Anisotropic Filtering
+name = 32x (Overkill)
+$anisoLevel = 32
+
+
+## Colour depth increase - Didn't see any visual improvement.
+#
+#[TextureRedefine]
+#formats = 0x001
+#overwriteFormat = 0x005
+#
+#[TextureRedefine]
+#formats = 0x01a
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#formats = 0x019
+#overwriteFormat = 0x01f
+#
+#[TextureRedefine]
+#formats = 0x806
+#overwriteFormat = 0x80e
+#
+#[TextureRedefine]
+#formats = 0x816
+#overwriteFormat = 0x820
+
+[TextureRedefine]
+formats = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteAnisotropy = $anisoLevel
+
+[TextureRedefine] # Shadows x3 Lods
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth =  $shadowRes * 1024
+overwriteHeight =  $shadowRes * 1024
+
+[TextureRedefine]
+width = 1920
+height = 1088
+formats = 0x80e,0x019,0x001
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1088
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formats = 0x80e,0x019,0x001
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1080
+
+[TextureRedefine]
+width = 1024
+height = 544
+formats = 0x001
+overwriteWidth = ($width/$gameWidth) * (1024*$lightSource*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (544*$lightSource)
+
+[TextureRedefine]
+width = 960
+height = 544
+formats = 0x816,0x806,0x019,0x01a,0x001,0x80e
+overwriteWidth = ($width/$gameWidth) * (960*$lightSource*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (544*$lightSource)
+
+[TextureRedefine]
+width = 960
+height = 540
+formats = 0x816,0x806,0x019,0x01a,0x001,0x80e
+overwriteWidth = ($width/$gameWidth) * (960*$lightSource*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (540*$lightSource)
+
+[TextureRedefine]
+width = 864
+height = 480
+formats = 0x019,0x80e
+overwriteWidth = ($width/$gameWidth) * 864
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x019,0x80e
+overwriteWidth = ($width/$gameWidth) * 854
+overwriteHeight = ($height/$gameHeight) * 480
+
+[TextureRedefine] #
+width = 512
+height = 512
+formats = 0x019,0x01a #,0x806
+overwriteWidth = ($width/$gameWidth) * (512*$lightSource*$scaleShader)
+overwriteHeight = ($height/$gameHeight) * (512*$lightSource)
+
+[TextureRedefine]
+width = 480
+height = 270
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (480)
+overwriteHeight = ($height/$gameHeight) * (270)
+
+[TextureRedefine]
+width = 480
+height = 272
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (480)
+overwriteHeight = ($height/$gameHeight) * (272)
+
+[TextureRedefine] #
+width = 256
+height = 256
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (256)
+overwriteHeight = ($height/$gameHeight) * (256)
+
+[TextureRedefine]
+width = 256
+height = 144
+formats = 0x816,0x01a
+overwriteWidth = ($width/$gameWidth) * (256)
+overwriteHeight = ($height/$gameHeight) * (144)
+
+[TextureRedefine]
+width = 240
+height = 135
+formats = 0x816,0x01a
+overwriteWidth = ($width/$gameWidth) * (240)
+overwriteHeight = ($height/$gameHeight) * (135)
+
+[TextureRedefine] #
+width = 128
+height = 128
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (128)
+overwriteHeight = ($height/$gameHeight) * (128)
+
+[TextureRedefine]
+width = 128
+height = 80
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (128)
+overwriteHeight = ($height/$gameHeight) * (80)
+
+[TextureRedefine]
+width = 120
+height = 67
+#formats =
+overwriteWidth = ($width/$gameWidth) * (120)
+overwriteHeight = ($height/$gameHeight) * (67)
+
+[TextureRedefine] #
+width = 64
+height = 64
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (64)
+overwriteHeight = ($height/$gameHeight) * (64)
+
+[TextureRedefine]
+width = 64
+height = 48
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * (64)
+overwriteHeight = ($height/$gameHeight) * (48)
+
+[TextureRedefine]
+width = 60
+height = 33
+#formats =
+overwriteWidth = ($width/$gameWidth) * (60)
+overwriteHeight = ($height/$gameHeight) * (33)
+
+[TextureRedefine] #Pictograph
+width = 1600
+height = 912
+formats = 0x019
+overwriteWidth = ($height/$gameHeight) * 1600
+overwriteHeight = ($height/$gameHeight) * 912
+
+[TextureRedefine] #Pictograph
+width = 1600
+height = 900
+formats = 0x019
+overwriteWidth = ($height/$gameHeight) * 1600
+overwriteHeight = ($height/$gameHeight) * 900
+
+### pictograph. If you try to fix this, verify that saved pictures can be loaded from album.
+#
+#[TextureRedefine] #pictograph
+#width = 832
+#height = 450
+#formats = 0x01a,080e,0x41a
+#overwriteWidth = ($width/$gameWidth) * 832
+#overwriteHeight = ($height/$gameHeight) * 450
+#
+#[TextureRedefine] #pictograph
+#width = 800
+#height = 464
+#formats = 0x01a,080e,0x41a #
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 464
+#
+#[TextureRedefine] #pictograph
+#width = 800
+#height = 450
+#formats = 0x01a,080e,0x41a
+#overwriteWidth = ($width/$gameWidth) * 800
+#overwriteHeight = ($height/$gameHeight) * 450

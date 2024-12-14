@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143500,0005000010143600,000500010185400
+name = Remove Anti-Aliasing
+path = "The Legend of Zelda: The Wind Waker HD/Enhancements/Remove AA"
+description = Dissable the game's native AA.
+#Credits: getdls
+version = 6
