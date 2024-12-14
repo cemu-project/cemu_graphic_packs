@@ -1,0 +1,171 @@
+[Definition]
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
+name = Gold Trophy / 3 stars
+path = "Mario Kart 8/Cheats/Grand Prix Trophies"
+description = Cheat in Grand Prix Trohpies!|Must complete or quit a Grand Prix to save changes.
+#Credits: Intra
+version = 7
+
+[Default]
+$addroffset = 0
+$cup = 0
+$cheattype = 1
+$trophy = 0
+$stars = 0
+
+[Preset]
+category = Cheat Type
+name = Change EVERYTHING (200/mirror/150/100/50)
+$cheattype = 3
+
+[Preset]
+category = Cheat Type
+name = Change Entire Engine Class
+$cheattype = 2
+
+[Preset]
+category = Cheat Type
+name = Change Specific Cup (activates by cursor moving onto 50cc)
+$cheattype = 1
+
+[Preset]
+category = Engine Class
+condition = $cheattype != 3
+name = 50cc
+$addroffset = 0
+
+[Preset]
+category = Engine Class
+condition = $cheattype != 3
+name = 100cc
+$addroffset = 0x20
+
+[Preset]
+category = Engine Class
+condition = $cheattype != 3
+name = 150cc
+$addroffset = 0x40
+
+[Preset]
+category = Engine Class
+condition = $cheattype != 3
+name = Mirror
+$addroffset = 0x80
+
+[Preset]
+category = Engine Class
+condition = $cheattype != 3
+name = 200cc
+$addroffset = 0x60
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Mushroom Cup
+$cup = 0
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Flower Cup
+$cup = 1
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Star Cup
+$cup = 2
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Special Cup
+$cup = 3
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Shell Cup
+$cup = 4
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Banana Cup
+$cup = 5
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Leaf Cup
+$cup = 6
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Lightning Cup
+$cup = 7
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Egg Cup
+$cup = 8
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Triforce Cup
+$cup = 9
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Crossing Cup
+$cup = 10
+
+[Preset]
+category = Course
+condition = $cheattype == 1
+name = Bell Cup
+$cup = 11
+
+[Preset]
+category = Trophy
+name = Gold
+$trophy = 3
+
+[Preset]
+category = Trophy
+name = Silver
+$trophy = 2
+
+[Preset]
+category = Trophy
+name = Bronze
+$trophy = 1
+
+[Preset]
+category = Trophy
+name = None
+$trophy = 0
+
+[Preset]
+category = Stars
+name = 3
+$stars = 3
+
+[Preset]
+category = Stars
+name = 2
+$stars = 2
+
+[Preset]
+category = Stars
+name = 1
+$stars = 1
+
+[Preset]
+category = Stars
+name = 0
+$stars = 0
