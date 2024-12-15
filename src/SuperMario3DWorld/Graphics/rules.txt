@@ -13,6 +13,7 @@ $gameWidth = 1280
 $gameHeight = 720
 $shadowRes = 1
 $anisoLevel = 1
+$AAEnable:int = 1
 
 # Performance
 
@@ -146,6 +147,16 @@ $anisoLevel = 16
 category = Anisotropic Filtering
 name = 32x (Overkill)
 $anisoLevel = 32
+
+[Preset]
+category = Anti-Aliasing
+name = Enable
+$AAEnable:int = 1
+
+[Preset]
+category = Anti-Aliasing
+name = Disable
+$AAEnable:int = 0
 
 #ansio
 
