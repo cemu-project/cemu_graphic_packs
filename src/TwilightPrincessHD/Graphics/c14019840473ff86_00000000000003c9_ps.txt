@@ -18,13 +18,6 @@
 #endif
 // This shader was automatically converted to be cross-compatible with Vulkan and OpenGL.
 
-// shader c14019840473ff86
-//scale boxblur fx
-
-TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
-TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
-layout(location = 0) in vec4 passParameterSem0;
-layout(location = 0) out vec4 passPixelColor0;
 #ifdef VULKAN
 layout(set = 1, binding = 2) uniform ufBlock
 {
@@ -33,6 +26,16 @@ uniform vec4 uf_fragCoordScale;
 #else
 uniform vec2 uf_fragCoordScale;
 #endif
+
+#define AAENABLE $AAEnable
+
+#if (AAENABLE == 1)
+// shader c14019840473ff86
+//scale boxblur fx
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
@@ -157,3 +160,4 @@ R0f.w = PV0f.x * 0.25;
 // export
 passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
 }
+#endif
