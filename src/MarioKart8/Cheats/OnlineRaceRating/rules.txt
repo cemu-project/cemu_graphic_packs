@@ -1,0 +1,50 @@
+[Definition]
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
+name = Change Online Race Rating
+path = "Mario Kart 8/Cheats/Online Race Rating"
+description = Change Your Online Race Rating!|150cc lobbies start happening at 5000vr.
+#Credits: Intra
+version = 7
+
+[Default]
+$racevr = 1000
+
+[Preset]
+category = Race Rating:
+name = 1
+$racevr = 1
+
+[Preset]
+category = Race Rating:
+name = 1000
+Default = 1
+
+[Preset]
+category = Race Rating:
+name = 2000
+$racevr = 2000
+
+[Preset]
+category = Race Rating:
+name = 3000
+$racevr = 3000
+
+[Preset]
+category = Race Rating:
+name = 4000
+$racevr = 4000
+
+[Preset]
+category = Race Rating:
+name = 5000
+$racevr = 5000
+
+[Preset]
+category = Race Rating:
+name = 6000
+$racevr = 6000
+
+[Preset]
+category = Race Rating:
+name = 7000
+$racevr = 7000
