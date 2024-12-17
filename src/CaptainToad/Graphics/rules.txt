@@ -11,7 +11,7 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
-$shadowRes = 1
+$shadowRes = 1.0
 $AAEnable:int = 1
 
 # Performance
@@ -105,17 +105,18 @@ default = 1
 [Preset]
 category = Shadows
 name = High (200%)
-$shadowRes = 2
+$shadowRes = 2.0
 
 [Preset]
 category = Shadows
 name = Ultra (300%)
-$shadowRes = 3
+$shadowRes = 3.0
 
 [Preset]
 category = Shadows
 name = Extreme (400%, Unstable)
-$shadowRes = 4
+$shadowRes = 4.0
+
 
 [Preset]
 category = Anti-Aliasing
