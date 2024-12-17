@@ -128,17 +128,6 @@ name = Disable
 $AAEnable:int = 0
 
 
-#Shadows
-
-[TextureRedefine]
-width = 1024
-height = 1024
-formats = 0x005
-overwriteWidth =  $shadowRes * 1024
-overwriteHeight =  $shadowRes * 1024
-
-#Resolution
-
 [TextureRedefine]
 width = 1280
 height = 720
@@ -164,8 +153,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 1024
+overwriteWidth =  $shadowRes * 1024
+overwriteHeight =  $shadowRes * 1024
 
 [TextureRedefine] #Zoom
 width = 1024
