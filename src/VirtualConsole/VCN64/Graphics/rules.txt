@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 50000101FEA00,50000101FE900,5000010199200,5000010199100,5000010199300,5000010199500,5000010199400,5000010199700,5000010199600,5000010199800,5000010199B00,5000010199A00,5000010199C00,50000101A0E00,50000101A0D00,50000101A1000,50000101A5900,50000101A5800,50000101A5B00,50000101A5A00,50000101AC400,50000101AC600,50000101AC500,50000101B4600,50000101B4500,50000101B4800,50000101B4700,50000101BAF00,50000101BAE00,50000101BB000,50000101BB200,50000101BB100,50000101C5D00,50000101C5C00,50000101C5E00,50000101DA800,50000101DA700,50000101DA900,50000101E6500,50000101E6400,50000101E6700,50000101E6600,50000101EBB00,50000101FE800,50000101FE700
+titleIds = 0005000010199100,0005000010199200,0005000010199300,0005000010199400,0005000010199500,0005000010199600,0005000010199700,0005000010199800,0005000010199A00,0005000010199B00,0005000010199C00,00050000101A0D00,00050000101A0E00,00050000101A0F00,00050000101A1000,00050000101A5800,00050000101A5900,00050000101A5A00,00050000101A5B00,00050000101AC300,00050000101AC400,00050000101AC500,00050000101AC600,00050000101B4500,00050000101B4600,00050000101B4700,00050000101B4800,00050000101BAE00,00050000101BAF00,00050000101BB000,00050000101BB100,00050000101BB200,00050000101C5C00,00050000101C5D00,00050000101C5E00,00050000101DA700,00050000101DA800,00050000101DA900,00050000101E6400,00050000101E6500,00050000101E6600,00050000101E6700,00050000101EBB00,00050000101EBC00,00050000101FE700,00050000101FE800,00050000101FE900,00050000101FEA00
 name = Graphics Settings
 path = "Virtual Console/N64/Graphics"
 description = Changes the resolution of the game.|Made by Zalnor.
@@ -27,122 +27,66 @@ category = Resolution
 name = ~~~Original N64 Resolutions~~~ (4:3)
 $width = 853
 $height = 480
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
-name = 640x480 (Original N64) (480i)
+name = 640x480 (Original N64) (480p)
 $width = 853
 $height = 480
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
-name = 960x720 (720i)
+name = 960x720 (720p)
 $width = 1280
 $height = 720
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
 name = 1280x960 2x
 $width = 1707
 $height = 960
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
-name = 1536x1152 (1080i)
+name = 1536x1152 (1080p)
 $width = 2048
 $height = 1152
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
-name = 1920x1440 3x (1440i)
+name = 1920x1440 3x (1440p)
 $width = 2560
 $height = 1440
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
 name = 2048x1536
 $width = 2731
 $height = 1536
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
-name = 2560x1920 (1800i)
+name = 2560x1920 (1800p)
 $width = 3413
 $height = 1920
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
 name = 3200x2400 5x
 $width = 4267
 $height = 2400
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
 name = 3840x2880 6x (4k)
 $width = 5120
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
 
 [Preset]
 category = Resolution
 name = 5760x4320 9x (8k)
 $width = 7680
 $height = 4320
-$gameWidth = 1920
-$gameHeight = 1088
-$GPgameWidth = 864
-$GPgameHeight = 480
-$VCPgameWidth = 640
-
 
 #Game Viewports-------------------------------------------
 
