@@ -1,4 +1,4 @@
-#version 450
+#version 430
 
 #ifdef VULKAN
 layout(location = 0) in vec2 passUV;
