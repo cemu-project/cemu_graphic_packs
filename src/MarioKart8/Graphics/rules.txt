@@ -17,15 +17,14 @@ $padWidth = 854
 $padHeight = 480
 $gamePadWidth = 854
 $gamePadHeight = 480
-$shadowQuality = 1
+$shadowQuality = 1.0
 $anisotropy = 1
 $fxaa:int = 1
-$bloom = 1
+$bloom = 1.0
 $nrOfPasses:int = 8
 $blurStart = 0.975
 $blurWidth = 0.025
 $levelOfDetail = 1
-$advancedOpt = 0
 
 
 # Aspect Ratio
@@ -816,17 +815,17 @@ default = 1
 [Preset]
 name = High (200%)
 category = Shadows
-$shadowQuality = 2
+$shadowQuality = 2.0
 
 [Preset]
 name = Ultra (300%)
 category = Shadows
-$shadowQuality = 3
+$shadowQuality = 3.0
 
 [Preset]
 name = Extreme (400%)
 category = Shadows
-$shadowQuality = 4
+$shadowQuality = 4.0
 
 
 # Anisotropic Filtering
@@ -864,62 +863,43 @@ $anisotropy = 32
 
 # Advanced Options
 
-[Preset]
-name = Disabled
-category = Advanced Options
-default = 1
-
-[Preset]
-name = Enabled
-category = Advanced Options
-$advancedOpt = 1
-
-
 # Anti-Aliasing
+
+[Preset]
+name = On (Only affects character select)
+category = Anti-Aliasing
+default = 1
 
 [Preset]
 name = Off
 category = Anti-Aliasing
-condition = $advancedOpt == 1
 $fxaa:int = 0
-
-[Preset]
-name = On (Default)
-category = Anti-Aliasing
-condition = $advancedOpt == 1
-default = 1
-
 
 # Bloom
 
 [Preset]
 name = 0%
 category = Bloom Intensity
-condition = $advancedOpt == 1
-$bloom = 0
+$bloom = 0.0
 
 [Preset]
 name = 50%
 category = Bloom Intensity
-condition = $advancedOpt == 1
 $bloom = 0.5
 
 [Preset]
 name = 100% (Default)
 category = Bloom Intensity
-condition = $advancedOpt == 1
 default = 1
 
 [Preset]
 name = 125%
 category = Bloom Intensity
-condition = $advancedOpt == 1
 $bloom = 1.25
 
 [Preset]
 name = 150%
 category = Bloom Intensity
-condition = $advancedOpt == 1
 $bloom = 1.5
 
 
@@ -928,25 +908,21 @@ $bloom = 1.5
 [Preset]
 name = Off
 category = Motion Blur Quality
-condition = $advancedOpt == 1
 $nrOfPasses:int = 0
 
 [Preset]
 name = Low
 category = Motion Blur Quality
-condition = $advancedOpt == 1
 $nrOfPasses:int = 4
 
 [Preset]
 name = Normal (Default)
 category = Motion Blur Quality
-condition = $advancedOpt == 1
 default = 1
 
 [Preset]
 name = High
 category = Motion Blur Quality
-condition = $advancedOpt == 1
 $nrOfPasses:int = 16
 $blurStart = 0.93
 $blurWidth = 0.1
@@ -954,7 +930,6 @@ $blurWidth = 0.1
 [Preset]
 name = Ultra
 category = Motion Blur Quality
-condition = $advancedOpt == 1
 $nrOfPasses:int = 24
 $blurStart = 0.93
 $blurWidth = 0.1
@@ -962,7 +937,6 @@ $blurWidth = 0.1
 [Preset]
 name = Extreme
 category = Motion Blur Quality
-condition = $advancedOpt == 1
 $nrOfPasses:int = 32
 $blurStart = 0.93
 $blurWidth = 0.1
@@ -973,25 +947,21 @@ $blurWidth = 0.1
 [Preset]
 name = Low
 category = Level of Detail
-condition = $advancedOpt == 1
 $levelOfDetail = 0.5
 
 [Preset]
 name = Normal (Default)
 category = Level of Detail
-condition = $advancedOpt == 1
 default = 1
 
 [Preset]
 name = High
 category = Level of Detail
-condition = $advancedOpt == 1
 $levelOfDetail = 2
 
 [Preset]
 name = Ultra
 category = Level of Detail
-condition = $advancedOpt == 1
 $levelOfDetail = 3
 
 
