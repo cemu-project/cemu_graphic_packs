@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010145D00,0005000010145C00,0005000010106100
+name = Draw Distance
+path = "Super Mario 3D World/Mods/Draw Distance"
+description = Increases the draw distance of the game.|Does nothing on Plussy levels and glitches on trian levels.
+#Credits: getdls
+version = 6
