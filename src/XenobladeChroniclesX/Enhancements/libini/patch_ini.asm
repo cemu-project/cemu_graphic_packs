@@ -415,11 +415,11 @@ lis r19, 0x202C
 ori r19, r19, 0x2000
 lbzu r3, 1(r21)
 bl CallsprintfINImod
-stw r19, 0(r11)
+stw r19, 0(r30)
 addi r30, r30, 3
 lbz r3, 0(r21)
 bl CallsprintfINImod
-stw r19, 0(r11)
+stw r19, 0(r30)
 addi r30, r30, 3
 lbz r3, 0(r21)
 bl CallsprintfINImod
