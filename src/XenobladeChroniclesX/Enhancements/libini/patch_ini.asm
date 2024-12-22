@@ -428,7 +428,7 @@ mtlr r28
 blr
 
 ; r22 == 0x23f09100
-;Free registers that do not need to be restored:
+; registers that do not need to be restored:
 ; r25 r24 r28 r10
 _EditINIforinimod:
 ;back up registers r0-r31
