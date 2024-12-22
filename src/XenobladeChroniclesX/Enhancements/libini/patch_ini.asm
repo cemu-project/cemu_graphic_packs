@@ -337,6 +337,7 @@ mflr r29
 lfsu f1, 4(r24)
 lis r4, str_floating_precision_INImod@hi
 ori r4, r4, str_floating_precision_INImod@l
+lbzu r3, 1(r21)
 addi r3, r3, 0x30
 bl CheckifPrecisionIsValidINImod
 stb r3, 2(r4)
@@ -396,7 +397,6 @@ b PrintSettingsINImod
 ;calls sprintf to print the float
 PrintFloatINImod:
 mflr r28
-lbzu r3, 1(r21)
 bl CallsprintfINImod
 bl PrintNewLineINImod
 mtlr r28
@@ -413,15 +413,14 @@ PrintAMVPINImod:
 mflr r28
 lis r19, 0x202C
 ori r19, r19, 0x2000
-lbzu r3, 1(r21)
 bl CallsprintfINImod
 stw r19, 0(r30)
 addi r30, r30, 3
-lbz r3, 0(r21)
+addi r21, r21, -1
 bl CallsprintfINImod
 stw r19, 0(r30)
 addi r30, r30, 3
-lbz r3, 0(r21)
+addi r21, r21, -1
 bl CallsprintfINImod
 bl PrintNewLineINImod
 mtlr r28
