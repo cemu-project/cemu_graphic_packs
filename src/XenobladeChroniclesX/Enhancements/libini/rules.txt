@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = lib.ini edit
 path = "Xenoblade Chronicles X/Enhancements/lib.ini"
-description = Edit the game's lib.ini file that contains various graphical settings.|Some of these are usefull, such as sRGBMode, and some have no effect on the game.|Brightness doesn't work with sRGBmode = off.
+description = Edit the game's lib.ini file that contains various graphical settings.|Some of these are usefull, such as sRGBMode, and some have no effect on the game.|Brightness fix doesn't work with sRGBmode = off.
 #Credits: Intra
 version = 7
 
