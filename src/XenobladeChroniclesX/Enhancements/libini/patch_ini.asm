@@ -278,7 +278,7 @@ addi r30, r22, -4
 li r28, 0
 _whileLoopDeleteINI:
     stwu r28, 4(r30)
-    lbz r24, 1(r30)
+    lbz r24, 4(r30)
     cmpwi r24, 0
     bne+ _whileLoopDeleteINI
 blr
