@@ -294,6 +294,13 @@ _whileloopPrintSettingNameINImod:
     bne+ _whileloopPrintSettingNameINImod
 blr
 
+;prints new line character
+PrintNewLineINImod:
+li r26, 0x0D0A
+sth r26, 0(r30)
+addi r30, r30, 1
+blr
+
 ;function wraper that takes in r20 and a function pointer(r27)
 ;loops the function by the ammount in r20
 PrintSettingsINImod:
@@ -302,28 +309,22 @@ _forloopPrintAMVPSettingsINImod:
     bl PrintSettingNameINImod
     mtctr r27
     bctrl
+    bl PrintNewLineINImod
     addic. r20, r20, -1
     bgt+ _forloopPrintAMVPSettingsINImod
 mtlr r31
 blr
 
-;prints new line character
-PrintNewLineINImod:
-li r26, 0x0D0A
-sth r26, 0(r30)
-addi r30, r30, 1
-blr
-
 ;checks if the floating point precision is less than 0 or greater than 9
 ;if so set precision to 1 to prevent the game from crashing
 CheckifPrecisionIsValidINImod:
-cmpwi r3, 0x30+0
+cmpwi r26, 0x30+0
 bge+ _ifPrecisionLessThan0INImod
-    li r3, 0x30+1
+    li r26, 0x30+1
 _ifPrecisionLessThan0INImod:
-cmpwi r3, 0x30+9
+cmpwi r26, 0x30+9
 ble+ _ifPrecisionGreaterThan9INImod
-    li r3, 0x30+1
+    li r26, 0x30+1
 _ifPrecisionGreaterThan9INImod:
 blr
 
@@ -337,10 +338,10 @@ mflr r29
 lfsu f1, 4(r24)
 lis r4, str_floating_precision_INImod@hi
 ori r4, r4, str_floating_precision_INImod@l
-lbzu r3, 1(r21)
-addi r3, r3, 0x30
+lbzu r26, 1(r21)
+addi r26, r26, 0x30
 bl CheckifPrecisionIsValidINImod
-stb r3, 2(r4)
+stb r26, 2(r4)
 or r3, r30, r30
 CREQV 4*cr1+eq, 4*cr1+eq, 4*cr1+eq ;required for some reason
 mtctr r25
@@ -357,15 +358,12 @@ b PrintSettingsINImod
 
 ;takes in r23 and prints either on or off
 PrintOnOffINImod:
-mflr r28
 lwzu r26, 4(r23)
 stw r26, 0(r30)
 _whileloopPrintOnOffINImod:
     lbzu r26, 1(r30)
     cmpwi r26, 0
     bne+ _whileloopPrintOnOffINImod
-bl PrintNewLineINImod
-mtlr r28
 blr
 
 ;passes PrintStringValue into the PrintSettings function wraper
@@ -383,24 +381,14 @@ or r22, r18, r18
 bl PrintSettingNameINImod
 or r18, r22, r22
 or r22, r19, r19
-bl PrintNewLineINImod
 mtlr r28
 blr
 
-;passes PrintFloat into the PrintSettings function wraper
+;passes Callsprintf directly into the PrintSettings function wraper
 PrintFloatSettingsINImod:
-lis r27, PrintFloatINImod@hi
-ori r27, r27, PrintFloatINImod@l
+lis r27, CallsprintfINImod@hi
+ori r27, r27, CallsprintfINImod@l
 b PrintSettingsINImod
-
-;takes in a floating point(r24), and its precision(r21)
-;calls sprintf to print the float
-PrintFloatINImod:
-mflr r28
-bl CallsprintfINImod
-bl PrintNewLineINImod
-mtlr r28
-blr
 
 ;passes PrintAMVP into the PrintSettings function wraper
 PrintAMVPSettingsINImod:
@@ -408,7 +396,8 @@ lis r27, PrintAMVPINImod@hi
 ori r27, r27, PrintAMVPINImod@l
 b PrintSettingsINImod
 
-;prints 3 floats sperated by a comma
+;takes in a floating point(r24), and its precision(r21)
+;calls sprintf() 3 times to print 3 floats sperated by a comma
 PrintAMVPINImod:
 mflr r28
 lis r19, 0x202C
@@ -422,7 +411,6 @@ stw r19, 0(r30)
 addi r30, r30, 3
 addi r21, r21, -1
 bl CallsprintfINImod
-bl PrintNewLineINImod
 mtlr r28
 blr
 
