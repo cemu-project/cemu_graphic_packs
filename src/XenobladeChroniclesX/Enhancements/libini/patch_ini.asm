@@ -305,13 +305,13 @@ blr
 ;loops the function by the ammount in r20
 PrintSettingsINImod:
 mflr r31
-_forloopPrintAMVPSettingsINImod:
+_forloopPrintSettingsINImod:
     bl PrintSettingNameINImod
     mtctr r27
     bctrl
     bl PrintNewLineINImod
     addic. r20, r20, -1
-    bgt+ _forloopPrintAMVPSettingsINImod
+    bgt+ _forloopPrintSettingsINImod
 mtlr r31
 blr
 
