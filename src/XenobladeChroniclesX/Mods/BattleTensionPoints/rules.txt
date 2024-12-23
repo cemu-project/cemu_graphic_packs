@@ -1,0 +1,31 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Boot with max TP
+path = "Xenoblade Chronicles X/Mods/Battle/Start with max TP"
+description = When ever you boot the game you'll have your current max TP (tension points) instead of 0.|Is a nice convienence option.
+#Credits: Intra
+version = 6
+
+[Default]
+$everyloadingscreen = 0
+$memoffset = 0
+
+[Preset]
+name = Max TP on boot
+$everyloadingscreen = 0
+
+[Preset]
+name = Max TP Every time you skip travel or die
+$everyloadingscreen = 1
+
+[Preset]
+name = CHEAT: Infinite TP
+$memoffset = 4
+
+[Preset]
+name = CHALLENGE: No TP
+$memoffset = -4
+
+[Preset]
+name = WEIRD: TP always equals HP
+$memoffset = -0x10
