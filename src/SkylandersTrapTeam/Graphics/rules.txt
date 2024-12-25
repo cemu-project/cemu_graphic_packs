@@ -2,7 +2,7 @@
 titleIds = 000500001017C600,0005000010181F00
 name = Game Resolution and Shadow Quality
 path = "Skylanders Trap Team/Graphics"
-description = Changes the resolution of the game and the quality of the shadows.||Made by Crementif.
+description = Changes the resolution of the game and the quality of the shadows.||Made by Crementif.Aspect ratio patch made by Flextape05
 version = 5
 
 [Default]
@@ -11,7 +11,9 @@ $height = 720
 $gameWidth = 1280
 $gameHeight = 720
 $shadowRes = 1
-
+$hudY = 720
+$hudX = 1280
+$fov = 0.017453292
 
 # Resolution
 
@@ -73,8 +75,113 @@ name = 7680x4320
 $width = 7680
 $height = 4320
 
+[Preset]
+category = Resolution
+name = 2560x1080(21:9)
+$width = 2560
+$height = 1080
+$hudY = 720
+$hudX = 1720
+$fov = 0.0163
 
-# Shadow Quality
+[Preset]
+category = Resolution
+name = 3440x1440(21:9)
+$width = 3440
+$height = 1440
+$hudY = 720
+$hudX = 1720
+$fov = 0.0163
+
+[Preset]
+category = Resolution
+name = 5120x2160(21:9)
+$width = 5120
+$height = 2160
+$hudY = 720
+$hudX = 1720
+$fov = 0.0163
+
+[Preset]
+category = Resolution
+name = 3840x1080(32:9)(broken shadows)
+$width = 3840
+$height = 1080
+$hudY = 720
+$hudX = 2560
+$fov = 0.013
+
+[Preset]
+category = Resolution
+name = 5120x1440(32:9)(broken shadows)
+$width = 5120
+$height = 1440
+$hudY = 720
+$hudX = 2560
+$fov = 0.013
+
+[Preset]
+category = Resolution
+name = 640x480(4:3)
+$width = 640
+$height = 480
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+
+[Preset]
+category = Resolution
+name = 1024x768(4:3)
+$width = 1024
+$height = 768
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+
+[Preset]
+category = Resolution
+name = 1600x1200(4:3)
+$width = 1600
+$height = 1200
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+
+[Preset]
+category = Resolution
+name = 1280x800(16:10)
+$width = 1280
+$height = 800
+$hudY = 800
+$hudX = 1280
+$fov = 0.018353293
+
+[Preset]
+category = Resolution
+name = 1680x1050(16:10)
+$width = 1680
+$height = 1050
+$hudY = 800
+$hudX = 1280
+$fov = 0.018353293
+
+[Preset]
+category = Resolution
+name = 1920x1200(16:10)
+$width = 1920
+$height = 1200
+$hudY = 800
+$hudX = 1280
+$fov = 0.018353293
+
+[Preset]
+category = Resolution
+name = 2560x1600(16:10)
+$width = 2560
+$height = 1600
+$hudY = 800
+$hudX = 1280
+$fov = 0.018353293
 
 [Preset]
 category = Shadow Quality
@@ -99,8 +206,6 @@ $shadowRes = 3
 category = Shadow Quality
 name = Extreme (400%, Unstable)
 $shadowRes = 4
-
-
 
 # Texture Redefines
 
