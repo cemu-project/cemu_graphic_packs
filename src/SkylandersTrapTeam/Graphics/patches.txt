@@ -1,0 +1,14 @@
+[tfbgame_cafe16]
+moduleMatches = 0x2a14bb42
+0x10006864 = .float $width/$height #Main aspect ratio
+0x10006860 = .float $hudY
+0x1000685c = .float $hudX
+0x1005d808 = .float $fov
+
+[tfbgame_cafe0]
+moduleMatches = 0x321d97f0
+0x10006864 = .float $width/$height #Main aspect ratio
+0x10006860 = .float $hudY
+0x1000685c = .float $hudX
+0x1005d808 = .float $fov
+
