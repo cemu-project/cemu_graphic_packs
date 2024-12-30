@@ -1,6 +1,6 @@
 [Definition]
-titleIds = 000500001017c600
+titleIds = 000500001017C600,0005000010181F00
 name = Remove Portal Check
 path = "Skylanders Trap Team/Mods/Remove Portal Check"
-description = Allows any Non-Xbox Portal of Power to be used instead of the Traptanium Portal.||Created by OddLittlePumpkin.|Special Thanks to NefariousTechSupport and Maff.
+description = Allows any non-Xbox Portal of Power to be used instead of the Traptanium Portal.||Created by OddLittlePumpkin.|Special Thanks to NefariousTechSupport and Maff.
 version = 7
