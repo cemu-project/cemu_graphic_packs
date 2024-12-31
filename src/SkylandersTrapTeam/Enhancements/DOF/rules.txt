@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 000500001017C600,0005000010181F00
-name = BackgroundBlur Removel
-path = "Skylanders Trap Team/Enhancements/DOF removel"
+name = BackgroundBlur Removal
+path = "Skylanders Trap Team/Enhancements/DOF removal"
 description = disables the games backbground blur i recommend since it breaks at higher resolutions anyway||Made by Flextape05
 version = 6
