@@ -1,0 +1,608 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = TP and HP functionality
+path = "Xenoblade Chronicles X/Mods/Battle/TP QoL & Changes"
+description = This mod by default only applies 2 Quality of Life changes. It sets your Tension points to their max once at boot, and prevents your Skell GP from draining while your outside it.||On top of the QoL changes, this mod also features very extensive ways to customize the way your HP and TP are handled by the game that veteran players may enjoy.
+#Credits: Intra
+version = 7
+
+[Default]
+$QoL = 1
+$QoLSkell = 1
+$everyloadingscreen = 0
+$everyloadingscreenSkell = 0
+$disableSkellLosingGP = 1
+$customSync = 0
+$customCheat = 0
+$TPCheat = 0
+$TPCheatSkell = 0
+$HPCheat = 0
+$HPCheatSkell = 0
+$noHPcheatnodieifdamagelt = 0
+$TPupdatecheatdieat0TP = 0
+$TPupdatecheatnegative = 0
+$HPupdatecheatnegative = 0
+$noHPcheatnodieifdamageltSkell = 0
+$TPupdatecheatdieat0TPSkell = 0
+$TPupdatecheatnegativeSkell = 0
+$HPupdatecheatnegativeSkell = 0
+$afterbattleheal = 1
+$skiptravelheal = 1
+$skiptravelhealSkell = 1
+$afterbattlerestoretp = 1
+$HPboundtoTP = 0
+$HPboundtoTPNegative = 0
+$TPboundtoHP = 0
+$TPboundtoHPNegative = 0
+$HPboundtoTPSkell = 0
+$HPboundtoTPNegativeSkell = 0
+$TPboundtoHPSkell = 0
+$TPboundtoHPNegativeSkell = 0
+
+
+[Preset]
+category = Quality of Life TP on Boot
+name = "Off"
+$QoL = 0
+$QoLSkell = 0
+
+[Preset]
+category = Quality of Life TP on Boot
+name = "Max TP on boot"
+default = 1
+
+[Preset]
+category = Quality of Life TP on Boot
+name = "Max TP Every time you skip travel or die"
+$everyloadingscreen = 1
+$everyloadingscreenSkell = 1
+
+[Preset]
+category = Quality of Life Skell GP
+name = "Unchanged"
+condition = ($HPboundtoTPSkell==0)+($HPboundtoTPSkell==4) == 1
+$disableSkellLosingGP = 0
+
+[Preset]
+category = Quality of Life Skell GP
+name = "Disable your Skell loosing GP when your not in it"
+default = 1
+
+[Preset]
+category = Cheat
+name = "Off "
+
+[Preset]
+category = Cheat
+name = "CHALLENGE: No TP"
+$TPCheat = 1
+$TPCheatSkell = 1
+
+[Preset]
+category = Cheat
+name = "CHALLENGE: Die in 1 Hit"
+$HPCheat = 1
+$HPCheatSkell = 1
+
+[Preset]
+category = Cheat
+name = "CHEAT: Infinite TP"
+$TPCheat = 2
+$TPCheatSkell = 2
+
+[Preset]
+category = Cheat
+name = "CHEAT: Infinite HP"
+$HPCheat = 2
+$HPCheatSkell = 2
+
+[Preset]
+category = Cheat
+name = "CHEAT: Infinite HP & TP"
+$TPCheat = 2
+$HPCheat = 2
+$TPCheatSkell = 2
+$HPCheatSkell = 2
+
+[Preset]
+category = Cheat
+name = "Custom (Remember to set the custom options to off when unselecting)"
+$customCheat = 1
+
+[Preset]
+category = Ground: Cheat TP
+condition = $customCheat == 1
+name = "Off  "
+
+[Preset]
+category = Ground: Cheat TP
+condition = $customCheat == 1
+name = "CHALLENGE: No TP "
+$TPCheat = 1
+
+#[Preset]
+#category = Ground: Cheat TP
+#condition = $customCheat == 1
+#name = "WEIRD: Only TP Updates From Damage (Unfinished) "
+#$TPCheat = 4
+
+[Preset]
+category = Ground: Cheat TP
+condition = $customCheat == 1
+name = "WEIRD: TP always equals HP "
+$TPCheat = 3
+
+[Preset]
+category = Ground: Cheat TP
+condition = $customCheat == 1
+name = "CHEAT: Infinite TP "
+$TPCheat = 2
+
+[Preset]
+category = Ground: Cheat HP
+condition = $customCheat == 1
+name = "Off   "
+
+[Preset]
+category = Ground: Cheat HP
+condition = $customCheat == 1
+name = "CHALLENGE: Die in 1 Hit "
+$HPCheat = 1
+
+#[Preset]
+#category = Ground: Cheat HP
+#condition = $customCheat == 1
+#name = "WEIRD: Only HP Updates From Using TP (Unfinished) "
+#$HPCheat = 4
+
+[Preset]
+category = Ground: Cheat HP
+condition = $customCheat == 1
+name = "WEIRD: HP always equals TP "
+$HPCheat = 3
+
+[Preset]
+category = Ground: Cheat HP
+condition = $customCheat == 1
+name = "CHEAT: Infinite HP "
+$HPCheat = 2
+
+[Preset]
+category = Skell: Cheat TP
+condition = $customCheat == 1
+name = "Off    "
+
+[Preset]
+category = Skell: Cheat TP
+condition = $customCheat == 1
+name = "CHALLENGE: No TP  "
+$TPCheatSkell = 1
+
+#[Preset]
+#category = Skell: Cheat TP
+#condition = $customCheat == 1
+#name = "WEIRD: Only TP Updates From Damage (Unfinished)  "
+#$TPCheatSkell = 4
+
+[Preset]
+category = Skell: Cheat TP
+condition = $customCheat == 1
+name = "WEIRD: TP always equals HP  "
+$TPCheatSkell = 3
+
+[Preset]
+category = Skell: Cheat TP
+condition = $customCheat == 1
+name = "CHEAT: Infinite TP  "
+$TPCheatSkell = 2
+
+[Preset]
+category = Skell: Cheat HP
+condition = $customCheat == 1
+name = "Off     "
+
+[Preset]
+category = Skell: Cheat HP
+condition = $customCheat == 1
+name = "CHALLENGE: Die in 1 Hit  "
+$HPCheatSkell = 1
+
+#[Preset]
+#category = Skell: Cheat HP
+#condition = $customCheat == 1
+#name = "WEIRD: Only HP Updates From Using TP (Unfinished)  "
+#$HPCheatSkell = 4
+
+[Preset]
+category = Skell: Cheat HP
+condition = $customCheat == 1
+name = "WEIRD: HP always equals TP  "
+$HPCheatSkell = 3
+
+[Preset]
+category = Skell: Cheat HP
+condition = $customCheat == 1
+name = "CHEAT: Infinite HP  "
+$HPCheatSkell = 2
+
+[Preset]
+category = Modify Die in 1 Hit Cheat
+condition = ($customCheat==1)*(($HPCheat==1)+($HPCheatSkell==1)) != 0
+name = "Unchanged "
+
+[Preset]
+category = Modify Die in 1 Hit Cheat
+condition = ($customCheat==1)*(($HPCheat==1)+($HPCheatSkell==1)) != 0
+name = "Die in 1 Hit Unless Only Taking 1 Damage"
+$noHPcheatnodieifdamagelt = 1
+$noHPcheatnodieifdamageltSkell = 1
+
+[Preset]
+category = Modify Die in 1 Hit Cheat
+condition = ($customCheat==1)*(($HPCheat==1)+($HPCheatSkell==1)) != 0
+name = "Die in 1 Hit Unless Taking 100 or less Damage"
+$noHPcheatnodieifdamagelt = 100
+$noHPcheatnodieifdamageltSkell = 100
+
+[Preset]
+category = Modify Die in 1 Hit Cheat
+condition = ($customCheat==1)*(($HPCheat==1)+($HPCheatSkell==1)) != 0
+name = "Die in 1 Hit Unless Taking 1000 or less Damage"
+$noHPcheatnodieifdamagelt = 1000
+$noHPcheatnodieifdamageltSkell = 1000
+
+[Preset]
+category = Modify Only TP Updates From Damage Cheat
+condition = ($customCheat==1)*(($TPCheat==3)+($TPCheatSkell==3)) != 0
+name = "Unchanged  "
+
+[Preset]
+category = Modify Only TP Updates From Damage Cheat
+condition = ($customCheat==1)*(($TPCheat==3)+($TPCheatSkell==3)) != 0
+name = "Negative Correlation"
+$TPupdatecheatnegative = 1
+
+[Preset]
+category = Modify Only TP Updates From Damage Cheat
+condition = ($customCheat==1)*(($TPCheat==3)+($TPCheatSkell==3)) != 0
+name = "Die if your TP hits 0"
+$TPupdatecheatdieat0TP = 1
+
+[Preset]
+category = Modify Only TP Updates From Damage Cheat
+condition = ($customCheat==1)*(($TPCheat==3)+($TPCheatSkell==3)) != 0
+name = "Die if your TP hits 0 AND Negative Correlation"
+$TPupdatecheatdieat0TP = 1
+$TPupdatecheatnegative = 1
+$TPupdatecheatdieat0TPSkell = 1
+$TPupdatecheatnegativeSkell = 1
+
+[Preset]
+category = Modify Only HP Updates From Using TP Cheat
+condition = ($customCheat==1)*(($HPCheat==3)+($HPCheatSkell==3)) != 0
+name = "Unchanged   "
+
+[Preset]
+category = Modify Only HP Updates From Using TP Cheat
+condition = ($customCheat==1)*(($HPCheat==3)+($HPCheatSkell==3)) != 0
+name = "Negative Correlation "
+$HPupdatecheatnegative = 1
+$HPupdatecheatnegativeSkell = 1
+
+[Preset]
+category = Change Gameplay: Auto Healing
+name = "Unchanged    "
+
+[Preset]
+category = Change Gameplay: Auto Healing
+name = "Disable healing after battle"
+$afterbattleheal = 0
+
+[Preset]
+category = Change Gameplay: Auto Healing
+condition = ($TPboundtoHP==2)+($TPboundtoHP==4)+($TPboundtoHPSkell==2)+($TPboundtoHPSkell==4) != 0
+name = "Disable restoring TP after battle"
+$afterbattlerestoretp = 0
+
+[Preset]
+category = Change Gameplay: Auto Healing
+condition = ($TPboundtoHP==2)+($TPboundtoHP==4)+($TPboundtoHPSkell==2)+($TPboundtoHPSkell==4) == 0
+name = "Disable healing after battle AND from skip traveling"
+$afterbattleheal = 0
+$skiptravelheal = 0
+$skiptravelhealSkell = 0
+
+[Preset]
+category = Change Gameplay: Auto Healing
+condition = ($TPboundtoHP==2)+($TPboundtoHP==4)+($TPboundtoHPSkell==2)+($TPboundtoHPSkell==4) != 0
+name = "Disable healing/TP restore after battle AND healing from skip traveling"
+$afterbattleheal = 0
+$afterbattlerestoretp = 0
+$skiptravelheal = 0
+$skiptravelhealSkell = 0
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+name = "Off      "
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+name = "HP & TP are bound Asynchronously"
+$HPboundtoTP = 2
+$TPboundtoHP = 2
+$HPboundtoTPSkell = 2
+$TPboundtoHPSkell = 2
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+condition = (($TPCheat==0)*($HPCheat==0))*(($TPCheatSkell==0)*($HPCheatSkell==0)) != 0
+name = "HP & TP are bound Synchronously (always the same)"
+$HPboundtoTP = 1
+$TPboundtoHP = 1
+$HPboundtoTPSkell = 1
+$TPboundtoHPSkell = 1
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+name = "HP & TP are bound Asynchronously (Negative Correlation)"
+$HPboundtoTP = 2
+$TPboundtoHP = 2
+$HPboundtoTPSkell = 2
+$TPboundtoHPSkell = 2
+$HPboundtoTPNegative = 1
+$TPboundtoHPNegative = 1
+$HPboundtoTPNegativeSkell = 1
+$TPboundtoHPNegativeSkell = 1
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+name = "Only binds if losing HP or TP"
+$HPboundtoTP = 3
+$TPboundtoHP = 3
+$HPboundtoTPSkell = 3
+$TPboundtoHPSkell = 3
+
+#[Preset]
+#category = Change Gameplay: Bind HP and TP
+#name = "Only binds if losing HP or TP (Negative Correlation)"
+#$HPboundtoTP = 3
+#$TPboundtoHP = 3
+#$HPboundtoTPSkell = 3
+#$TPboundtoHPSkell = 3
+#$HPboundtoTPNegative = 1
+#$TPboundtoHPNegative = 1
+#$HPboundtoTPNegativeSkell = 1
+#$TPboundtoHPNegativeSkell = 1
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+name = "Only binds if gaining HP or TP"
+$HPboundtoTP = 4
+$TPboundtoHP = 4
+$HPboundtoTPSkell = 4
+$TPboundtoHPSkell = 4
+
+#[Preset]
+#category = Change Gameplay: Bind HP and TP
+#name = "Only binds if gaining HP or TP (Negative Correlation)"
+#$HPboundtoTP = 4
+#$TPboundtoHP = 4
+#$HPboundtoTPSkell = 4
+#$TPboundtoHPSkell = 4
+#$HPboundtoTPNegative = 1
+#$TPboundtoHPNegative = 1
+#$HPboundtoTPNegativeSkell = 1
+#$TPboundtoHPNegativeSkell = 1
+
+[Preset]
+category = Change Gameplay: Bind HP and TP
+name = "Custom (Remember to set the custom options to off when unselecting) "
+$customSync = 1
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Off       "
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Asynchronously"
+$HPboundtoTP = 2
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Decreasing Only"
+$HPboundtoTP = 3
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Increasing Only"
+$HPboundtoTP = 4
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Asynchronously (Negative Correlation)"
+$HPboundtoTP = 2
+$HPboundtoTPNegative = 1
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Decreasing Only (Negative Correlation)"
+$HPboundtoTP = 3
+$HPboundtoTPNegative = 1
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = $customSync == 1
+name = "Increasing Only (Negative Correlation)"
+$HPboundtoTP = 4
+$HPboundtoTPNegative = 1
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = ($customSync == 1) * (($TPCheat==0)*($HPCheat==0)) == 1
+name = "Bind HP AND TP Synchronously"
+$TPboundtoHP = 1
+$HPboundtoTP = 1
+
+[Preset]
+category = Ground: Bind HP to TP
+condition = ($customSync == 1) * (($TPCheat==0)*($HPCheat==0)) == 1
+name = "Bind HP AND TP Synchronously (Negative Correlation)"
+$TPboundtoHP = 1
+$HPboundtoTP = 1
+$HPboundtoTPNegative = 1
+$TPboundtoHPNegative = 1
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Off        "
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Asynchronously "
+$TPboundtoHP = 2
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Decreasing Only "
+$TPboundtoHP = 3
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Increasing Only "
+$TPboundtoHP = 4
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Asynchronously (Negative Correlation) "
+$TPboundtoHP = 2
+$TPboundtoHPNegative = 1
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Decreasing Only (Negative Correlation) "
+$TPboundtoHP = 3
+$TPboundtoHPNegative = 1
+
+[Preset]
+category = Ground: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTP!=1) == 1
+name = "Increasing Only (Negative Correlation) "
+$TPboundtoHP = 4
+$TPboundtoHPNegative = 1
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Off         "
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Asynchronously  "
+$HPboundtoTPSkell = 2
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Decreasing Only  "
+$HPboundtoTPSkell = 3
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Increasing Only  "
+$HPboundtoTPSkell = 4
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Asynchronously (Negative Correlation)  "
+$HPboundtoTPSkell = 2
+$HPboundtoTPNegativeSkell = 1
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Decreasing Only (Negative Correlation)  "
+$HPboundtoTPSkell = 3
+$HPboundtoTPNegativeSkell = 1
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = $customSync == 1
+name = "Increasing Only (Negative Correlation)  "
+$HPboundtoTPSkell = 4
+$HPboundtoTPNegativeSkell = 1
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = ($customSync == 1) * (($TPCheatSkell==0)*($HPCheatSkell==0)) == 1
+name = "Bind HP AND TP Synchronously "
+$TPboundtoHPSkell = 1
+$HPboundtoTPSkell = 1
+
+[Preset]
+category = Skell: Bind HP to TP
+condition = ($customSync == 1) * (($TPCheatSkell==0)*($HPCheatSkell==0)) == 1
+name = "Bind HP AND TP Synchronously (Negative Correlation) "
+$TPboundtoHPSkell = 1
+$HPboundtoTPSkell = 1
+$HPboundtoTPNegativeSkell = 1
+$TPboundtoHPNegativeSkell = 1
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Off          "
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Asynchronously   "
+$TPboundtoHPSkell = 2
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Decreasing Only   "
+$TPboundtoHPSkell = 3
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Increasing Only   "
+$TPboundtoHPSkell = 4
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Asynchronously (Negative Correlation)   "
+$TPboundtoHPSkell = 2
+$TPboundtoHPNegativeSkell = 1
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Decreasing Only (Negative Correlation)   "
+$TPboundtoHPSkell = 3
+$TPboundtoHPNegativeSkell = 1
+
+[Preset]
+category = Skell: Bind TP to HP
+condition = ($customSync==1)*($HPboundtoTPSkell!=1) == 1
+name = "Increasing Only (Negative Correlation)   "
+$TPboundtoHPSkell = 4
+$TPboundtoHPNegativeSkell = 1
