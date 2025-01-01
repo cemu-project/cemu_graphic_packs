@@ -1,0 +1,113 @@
+[Definition]
+titleIds = 0005000010168100,0005000010168200,0005000010168300,0005000010168400,0005000010168500,0005000010168600,0005000010168700,0005000010168800,0005000010168900,0005000010168A00,0005000010168B00,0005000010194800,0005000010194900,0005000010194A00,0005000010194B00,0005000010194C00,0005000010194E00,0005000010194F00,0005000010195000,0005000010195200,0005000010195300,0005000010195400,0005000010195500
+name = Graphics Settings
+path = "Virtual Console/MSX/Graphics"
+description = Changes the resolution of the game.
+#Credits: Intra
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$GPgameWidth = 864
+$GPgameHeight = 480
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+default = 1
+
+MSX Resolutions-----------------------------
+
+[Preset]
+category = Resolution
+name = ~~~Original MSX Resolutions~~~
+$width = 341
+$height = 192
+
+[Preset]
+category = Resolution
+name = 256x192 (Original MSX)
+$width = 341
+$height = 192
+
+[Preset]
+category = Resolution
+name = 512x384 2x
+$width = 682
+$height = 384
+
+[Preset]
+category = Resolution
+name = 768x576 3x (480p)
+$width = 1024
+$height = 576
+
+[Preset]
+category = Resolution
+name = 1024x768 4x (720p)
+$width = 1365
+$height = 768
+
+[Preset]
+category = Resolution
+name = 1280x960 5x
+$width = 1706
+$height = 960
+
+[Preset]
+category = Resolution
+name = 1536x1152 6x (1080p)
+$width = 2048
+$height = 1152
+
+[Preset]
+category = Resolution
+name = 1792x1344 7x
+$width = 2389
+$height = 1344
+
+[Preset]
+category = Resolution
+name = 2048x1536 8x (1440p)
+$width = 2730
+$height = 1536
+
+[Preset]
+category = Resolution
+name = 2304x1728 9x
+$width = 3072
+$height = 1728
+
+#TV Viewports-----------------------------------------
+
+[TextureRedefine]
+width = 1280
+height = 720
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine]
+width = 1286
+height = 732
+overwriteWidth = ($width/$gameWidth) * 1286
+overwriteHeight = ($height/$gameHeight) * 732
+
+#Gamepad Viewports-------------------------------------
+
+[TextureRedefine]
+width = 864
+height = 480
+overwriteWidth = ($width/$GPgameWidth) * 864
+overwriteHeight = ($height/$GPgameHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+overwriteWidth = ($width/$GPgameWidth) * 854
+overwriteHeight = ($height/$GPgameHeight) * 480
+
+#VC Menu
+#please add it here if you figure out how to scale the menu seperate, so it can look good at low res
