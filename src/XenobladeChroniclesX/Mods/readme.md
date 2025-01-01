@@ -24,6 +24,7 @@
     > Other presets allow to choose a specific tasks list.  (c ) stands for collectible and (t) for Tyrant.
     > When "Random" preset is selected, you can randomly change the active mission by opening the main menu and select "Social entry" > "Select Squad" command.
 - **Field Skill Level Mod**: Can change your Mechanical, Biological, Archeaological field level.
+- **Offline Change Division**: Can force change your BLADE Division, which is normally only possible online.
 
 ### Character mods
 - **Character Level**: Can change any characters current level.
