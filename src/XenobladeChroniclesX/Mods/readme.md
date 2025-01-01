@@ -8,6 +8,7 @@
 - **Soul Challenges - AutoBattles**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles, not the QTE on Skell binding and destroying).
 - **Soul Challenges - Difficulty**: The Soul Challenge's difficulty (the time left for doing the QTE) does not increase over time during a battle.
 - **Soul Challenges - Skell restored**: When your Skell is destroyed during battle, it is restored automatically (you may need to fast travel).
+- **TP & HP functionality**: The mod by default only applies 2 Quality of Life changes. It sets your Tension points to their max once at boot, and prevents your Skell GP from draining while your outside it.
 
 ### BLADE mods
 - **BLADE Medal Count Mod**: sets the number of BLADE Medals you currently have.
