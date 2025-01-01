@@ -2,7 +2,7 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Treasure Quality" 
 path = "Xenoblade Chronicles X/Mods/Loot/Treasure Quality"
-description = Select the preferred treasure quality you want to loot (see readme.txt for explanation).|Forced can make the story and/or sidequests impossible to complete. (Most key items come from silver treasures)
+description = Select preferred treasure quality.|(if forced = no, then only overwrite if enemy drops no loot).||**FORCED = YES, CAN PERMANENTLY SOFTLOCK YOUR SAVE**|Key items come from silver treasures, so if the story enemy fails to drop a silver then you don't get the key item.
 version = 6
 
 [Default]

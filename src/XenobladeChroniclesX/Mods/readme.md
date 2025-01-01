@@ -101,7 +101,7 @@
 - **No Skell Flight music**: Disables the flight music (at the beginning the music is awesome, but after some time I wanted to listen to the field musics again).
 
 ### Physics mods
-- **Jump to the Moon!**: Increases the horizontal and vertical velocity of the jump (vanilla values are 1.0 for both).
+- **Super High Jump!**: Increases the horizontal and vertical velocity of the jump (vanilla values are 1.0 for both).
 	> Horizontal velocity is the distance you reach when jumping.
 	> Vertical Velocity is the height of the jump (works while idle, walking and sprinting)
 - **Run Forrest, run!**: Increases the speed of sprinting.
