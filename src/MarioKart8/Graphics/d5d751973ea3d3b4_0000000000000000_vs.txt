@@ -32,7 +32,7 @@ out gl_PerVertex
 layout(location = 0) out vec4 passParameterSem1;
 layout(location = 1) out vec4 passParameterSem3;
 // end of shader inputs/outputs
-const float resScale = float($height)/float($gameHeight);  
+const float resScale = float($height)/float($gameHeight);
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )

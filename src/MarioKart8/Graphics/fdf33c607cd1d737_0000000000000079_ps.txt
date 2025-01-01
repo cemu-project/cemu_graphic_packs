@@ -69,12 +69,12 @@ R0f = passParameterSem0;
 R1f = passParameterSem1;
 R2f = passParameterSem2;
 R3f = passParameterSem3;
-vec2 coord = -1.0 + R0f.xy; 
+vec2 coord = -1.0 + R0f.xy;
 vec2 ps = vec2(1.0)*uf_fragCoordScale.xy / textureSize(textureUnitPS0, 0);
 vec2 uv = gl_FragCoord.xy *2.0  / textureSize(textureUnitPS0, 0);
 //Simle radial blur  jcant0n, shadertoy.com
 uv -= center;
-float precompute = blurWidth * (1.0 / float(nsamples - 1));   
+float precompute = blurWidth * (1.0 / float(nsamples - 1));
 for(int i = 0; i < nsamples; i++)
 {
     float scale = blurStart + (float(i)* precompute);
