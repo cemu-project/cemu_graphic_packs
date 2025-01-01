@@ -23,6 +23,7 @@ $0x01a = 0
 
 [Preset]
 name = LOD Default
+default = 1
 
 [Preset]
 name = LOD -0.5 (Sharper)
