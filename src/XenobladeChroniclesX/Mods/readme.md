@@ -8,6 +8,7 @@
 - **Soul Challenges - AutoBattles**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles, not the QTE on Skell binding and destroying).
 - **Soul Challenges - Difficulty**: The Soul Challenge's difficulty (the time left for doing the QTE) does not increase over time during a battle.
 - **Soul Challenges - Skell restored**: When your Skell is destroyed during battle, it is restored automatically (you may need to fast travel).
+- **TP & HP functionality**: The mod by default only applies 2 Quality of Life changes. It sets your Tension points to their max once at boot, and prevents your Skell GP from draining while your outside it.
 
 ### BLADE mods
 - **BLADE Medal Count Mod**: sets the number of BLADE Medals you currently have.
@@ -23,6 +24,7 @@
     > Other presets allow to choose a specific tasks list.  (c ) stands for collectible and (t) for Tyrant.
     > When "Random" preset is selected, you can randomly change the active mission by opening the main menu and select "Social entry" > "Select Squad" command.
 - **Field Skill Level Mod**: Can change your Mechanical, Biological, Archeaological field level.
+- **Offline Change Division**: Can force change your BLADE Division, which is normally only possible online.
 
 ### Character mods
 - **Character Level**: Can change any characters current level.
