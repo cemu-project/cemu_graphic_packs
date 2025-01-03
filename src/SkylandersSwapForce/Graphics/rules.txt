@@ -21,7 +21,9 @@ $shadowRes = 1
 
 [Preset]
 category = TV Resolution
-name = 1280x720 (Default)
+name = 1024x576 (Default)
+$width = 1024
+$height = 576
 
 [Preset]
 category = TV Resolution
@@ -34,6 +36,12 @@ category = TV Resolution
 name = 960x540
 $width = 960
 $height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720 
+$width = 1280
+$height = 720
 
 [Preset]
 category = TV Resolution
@@ -76,7 +84,6 @@ category = TV Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
-
 
 # Gamepad Resolution
 
@@ -166,7 +173,6 @@ name = Extreme (400%, Unstable)
 $shadowRes = 4
 
 
-
 # Texture Redefines
 
 [TextureRedefine] # Game output and hud resolution
@@ -186,9 +192,9 @@ overwriteHeight = ($padHeight/$gamePadHeight) * 480
 [TextureRedefine] # Stage rendering
 width = 1024
 height = 576
-formats = 0x01a,0x011,0x80e
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 576
+formats = 0x01a,0x011,0x80e,0x820
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
 
 [TextureRedefine] # Squashed/bloom alt viewport
 width = 512
