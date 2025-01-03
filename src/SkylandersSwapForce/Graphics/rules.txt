@@ -2,7 +2,7 @@
 titleIds = 0005000010139200,0005000010140400
 name = TV Resolution, Gamepad Resolution and Shadow Quality
 path = "Skylanders Swap Force/Graphics"
-description = Changes the TV resolution and gamepad resolution of the game. Additionally you can also change the quality of the shadows.||Made by Crementif and TheSkyDude134.
+description = Changes the TV resolution and gamepad resolution of the game. Additionally you can also change the quality of the shadows.||Made by Crementif and TheSkyDude134.||fixes made by Flextape05
 version = 6
 
 [Default]
