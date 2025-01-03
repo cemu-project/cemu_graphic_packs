@@ -90,7 +90,7 @@ $width = 2560
 $height = 1080
 $hudY = 720
 $hudX = 1720
-$fov = 0.0163
+$fov = 0.0159
 
 [Preset]
 category = Resolution
@@ -99,7 +99,7 @@ $width = 3440
 $height = 1440
 $hudY = 720
 $hudX = 1720
-$fov = 0.0163
+$fov = 0.0159
 
 [Preset]
 category = Resolution
@@ -108,7 +108,7 @@ $width = 5120
 $height = 2160
 $hudY = 720
 $hudX = 1720
-$fov = 0.0163
+$fov = 0.0159
 
 [Preset]
 category = Resolution
