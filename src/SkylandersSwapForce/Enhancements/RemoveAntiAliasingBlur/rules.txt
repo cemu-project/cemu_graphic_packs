@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010139200,0005000010140400
+name = Blur filter removel
+path = "Skylanders Swap Force/Enhancements/Blur filter removal"
+description = Removes the muddy blur AA when playing the game||Made by Flextape05
+version = 6

@@ -1,0 +1,176 @@
+#version 460
+
+layout(set = 1, binding = 2, std140) uniform ufBlock
+{
+    ivec4 uf_remappedPS[4];
+    vec4 uf_fragCoordScale;
+} _113;
+
+layout(set = 1, binding = 0) uniform sampler2D textureUnitPS0;
+layout(set = 1, binding = 1) uniform sampler2D textureUnitPS1;
+
+layout(location = 0) in vec4 passParameterSem128;
+layout(location = 1) in vec4 passParameterSem129;
+layout(location = 0) out vec4 passPixelColor0;
+
+float mul_nonIEEE(float a, float b)
+{
+    return ((a != 0.0) && (b != 0.0)) ? (a * b) : 0.0;
+}
+
+void main()
+{
+    ivec4 R0i = ivec4(0);
+    ivec4 R1i = ivec4(0);
+    ivec4 R2i = ivec4(0);
+    ivec4 R123i = ivec4(0);
+    ivec4 R125i = ivec4(0);
+    ivec4 R126i = ivec4(0);
+    ivec4 R127i = ivec4(0);
+    int PV0ix = 0;
+    int PV0iy = 0;
+    int PV0iz = 0;
+    int PV0iw = 0;
+    int PV1ix = 0;
+    int PV1iy = 0;
+    int PV1iz = 0;
+    int PV1iw = 0;
+    int PS0i = 0;
+    int PS1i = 0;
+    ivec4 tempi = ivec4(0);
+    ivec4 ARi = ivec4(0);
+    bool predResult = true;
+    R0i = floatBitsToInt(passParameterSem128);
+    R1i = floatBitsToInt(passParameterSem129);
+    ivec3 _82 = floatBitsToInt(texture(textureUnitPS0, vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y))).xyz);
+    R2i.x = _82.x;
+    R2i.y = _82.y;
+    R2i.z = _82.z;
+    int _93 = R1i.z;
+    int _97 = R1i.w;
+    ivec3 _102 = floatBitsToInt(texture(textureUnitPS1, vec2(intBitsToFloat(_93), intBitsToFloat(_97))).xyz);
+    R1i.x = _102.x;
+    R1i.y = _102.y;
+    R1i.z = _102.z;
+    PV0ix = _113.uf_remappedPS[0].y;
+    PV0ix = floatBitsToInt(intBitsToFloat(PV0ix) * 4.0);
+    PV0iz = (_113.uf_remappedPS[1].x == 1) ? (-1) : 0;
+    PV0iw = _113.uf_remappedPS[0].x;
+    PV0iw = floatBitsToInt(intBitsToFloat(PV0iw) * 4.0);
+    PV1ix = _113.uf_remappedPS[0].z;
+    PV1ix = floatBitsToInt(intBitsToFloat(PV1ix) * 4.0);
+    int _142;
+    if (PV0iz == 0)
+    {
+        _142 = R2i.z;
+    }
+    else
+    {
+        _142 = R2i.y;
+    }
+    R123i.y = _142;
+    float param = intBitsToFloat(R1i.x);
+    float param_1 = intBitsToFloat(PV0iw);
+    PV1iz = floatBitsToInt(mul_nonIEEE(param, param_1));
+    float param_2 = intBitsToFloat(R1i.y);
+    float param_3 = intBitsToFloat(PV0ix);
+    PV1iw = floatBitsToInt(mul_nonIEEE(param_2, param_3));
+    R127i.x = (intBitsToFloat(_113.uf_remappedPS[2].w) != 0.0) ? (-1) : 0;
+    int _180;
+    if (_113.uf_remappedPS[1].x == 0)
+    {
+        _180 = R2i.x;
+    }
+    else
+    {
+        _180 = R123i.y;
+    }
+    R123i.x = _180;
+    float param_4 = intBitsToFloat(R0i.x);
+    float param_5 = intBitsToFloat(PV1iz);
+    PV0iy = floatBitsToInt(mul_nonIEEE(param_4, param_5));
+    float param_6 = intBitsToFloat(R1i.z);
+    float param_7 = intBitsToFloat(PV1ix);
+    PV0iz = floatBitsToInt(mul_nonIEEE(param_6, param_7));
+    float param_8 = intBitsToFloat(R0i.y);
+    float param_9 = intBitsToFloat(PV1iw);
+    PV0iw = floatBitsToInt(mul_nonIEEE(param_8, param_9));
+    R127i.z = (intBitsToFloat(_113.uf_remappedPS[3].w) > 0.0) ? (-1) : 0;
+    R126i.x = (R127i.x == 0) ? PV0iy : PV0iy;
+    R126i.y = (R127i.x == 0) ? PV0iw : PV0iw;
+    float param_10 = intBitsToFloat(R123i.x);
+    float param_11 = intBitsToFloat(_113.uf_remappedPS[0].w);
+    PV1iz = floatBitsToInt(mul_nonIEEE(param_10, param_11));
+    float param_12 = intBitsToFloat(R0i.z);
+    float param_13 = intBitsToFloat(PV0iz);
+    PV1iw = floatBitsToInt(mul_nonIEEE(param_12, param_13));
+    R125i.x = (R127i.x == 0) ? PV1iw : PV1iw;
+    float param_14 = intBitsToFloat(R0i.w);
+    float param_15 = intBitsToFloat(PV1iz);
+    R127i.y = floatBitsToInt(mul_nonIEEE(param_14, param_15));
+    PV0iz = floatBitsToInt((-intBitsToFloat(R126i.x)) + intBitsToFloat(_113.uf_remappedPS[3].x));
+    PV0iw = floatBitsToInt((-intBitsToFloat(R126i.y)) + intBitsToFloat(_113.uf_remappedPS[3].y));
+    PV1ix = floatBitsToInt((-intBitsToFloat(R125i.x)) + intBitsToFloat(_113.uf_remappedPS[3].z));
+    float param_16 = intBitsToFloat(PV0iw);
+    float param_17 = intBitsToFloat(_113.uf_remappedPS[3].w);
+    R123i.y = floatBitsToInt(mul_nonIEEE(param_16, param_17) + intBitsToFloat(R126i.y));
+    float param_18 = intBitsToFloat(PV0iz);
+    float param_19 = intBitsToFloat(_113.uf_remappedPS[3].w);
+    R123i.z = floatBitsToInt(mul_nonIEEE(param_18, param_19) + intBitsToFloat(R126i.x));
+    PV1iw = floatBitsToInt((-intBitsToFloat(R127i.y)) + 1.0);
+    float param_20 = intBitsToFloat(PV1ix);
+    float param_21 = intBitsToFloat(_113.uf_remappedPS[3].w);
+    R123i.x = floatBitsToInt(mul_nonIEEE(param_20, param_21) + intBitsToFloat(R125i.x));
+    int _353;
+    if (R127i.z == 0)
+    {
+        _353 = R126i.y;
+    }
+    else
+    {
+        _353 = R123i.y;
+    }
+    R0i.y = _353;
+    int _366;
+    if (R127i.x == 0)
+    {
+        _366 = R127i.y;
+    }
+    else
+    {
+        _366 = PV1iw;
+    }
+    R123i.w = _366;
+    int _378;
+    if (R127i.z == 0)
+    {
+        _378 = R126i.x;
+    }
+    else
+    {
+        _378 = R123i.z;
+    }
+    R0i.x = _378;
+    int _391;
+    if (R127i.z == 0)
+    {
+        _391 = R125i.x;
+    }
+    else
+    {
+        _391 = R123i.x;
+    }
+    R0i.z = _391;
+    int _404;
+    if (R127i.z == 0)
+    {
+        _404 = R123i.w;
+    }
+    else
+    {
+        _404 = R123i.w;
+    }
+    R0i.w = _404;
+    passPixelColor0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(0.0));
+}
+

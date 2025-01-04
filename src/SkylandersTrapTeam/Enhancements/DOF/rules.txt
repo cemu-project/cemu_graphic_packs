@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001017C600,0005000010181F00
+name = Background Blur Removal
+path = "Skylanders Trap Team/Enhancements/DOF removal"
+description = disables the games backbground blur||Made by Flextape05
+version = 6
