@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Fix Under Ceiling Camera Bug
+path = "Xenoblade Chronicles X/Mods/Graphics/Fix Camera Bug"
+description = Fixes the really annoying camera bug where if you character ever goes under a ceiling, the game forgets all your settings and reverts to default.
+#Credits: Intra
+version = 6
