@@ -4,7 +4,8 @@
 - **Enemy Statistics mod**: Apply a global percent modificator on all enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).
 - **Enemy De-aggro reducer**: Reduce escape distance needed to lose aggro from enemies.
 - **Ground Damage multiplicator**: Increase the ground damage dealt by your team (skells not impacted).
-- **Overdrive unlocked**: Overdrive is unlocked and can be used before Chapter 3.
+- **Overdrive unlocked**: Overdrive is unlocked and can be used before Chapter 5.
+- **Skell Flight Unlocked**: Flight Module is unlocked and can be used before A Girl's Wings.
 - **Soul Challenges - AutoBattles**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles, not the QTE on Skell binding and destroying).
 - **Soul Challenges - Difficulty**: The Soul Challenge's difficulty (the time left for doing the QTE) does not increase over time during a battle.
 - **Soul Challenges - Skell restored**: When your Skell is destroyed during battle, it is restored automatically (you may need to fast travel).
