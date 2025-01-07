@@ -1,83 +1,17 @@
 #version 460
 
+// Define uniform binding for Vulkan and OpenGL compatibility
 #ifdef VULKAN
-#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
-#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
-#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
-#define GET_FRAGCOORD() vec4(gl_FragCoord.xy * uf_fragCoordScale.xy, gl_FragCoord.zw)
+    layout(set = 1, binding = 0) uniform sampler2D textureUnitPS0;
 #else
-#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
-#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140)
-#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
-#define GET_FRAGCOORD() vec4(gl_FragCoord.xy * uf_fragCoordScale, gl_FragCoord.zw)
+    uniform sampler2D textureUnitPS0;
 #endif
 
-#ifdef VULKAN
-layout(set = 1, binding = 2, std140) uniform ufBlock
-{
-    vec4 uf_fragCoordScale;
-} _150;
-
-layout(set = 1, binding = 0) uniform sampler2D textureUnitPS0;
-layout(set = 1, binding = 1) uniform sampler2D textureUnitPS1;
-#else
-uniform vec2 uf_fragCoordScale;
-uniform sampler2D textureUnitPS0;
-uniform sampler2D textureUnitPS1;
-#endif
-
-layout(location = 0) in vec4 passParameterSem133;
+// Input and output locations
+layout(location = 0) in vec2 passUV;
 layout(location = 0) out vec4 passPixelColor0;
-
-float mul_nonIEEE(float a, float b)
-{
-    return ((a != 0.0) && (b != 0.0)) ? (a * b) : 0.0;
-}
 
 void main()
 {
-    vec4 R0f = vec4(0.0);
-    vec4 R1f = vec4(0.0);
-    float PV0fx = 0.0;
-    float PV0fy = 0.0;
-    float PV0fz = 0.0;
-    float PV0fw = 0.0;
-    float PV1fx = 0.0;
-    float PV1fy = 0.0;
-    float PV1fz = 0.0;
-    float PV1fw = 0.0;
-    float PS0f = 0.0;
-    float PS1f = 0.0;
-    vec4 tempf = vec4(0.0);
-    ivec4 ARi = ivec4(0);
-    bool predResult = true;
-    
-    R0f = passParameterSem133;
-    R1f = texture(textureUnitPS0, vec2(R0f.x, R0f.y));
-    float _72 = R0f.x;
-    float _74 = R0f.y;
-    vec3 _78 = texture(textureUnitPS1, vec2(_72, _74)).xyz;
-    
-    R0f.x = _78.x;
-    R0f.y = _78.y;
-    R0f.z = _78.z;
-    
-    PV0fx = (-R1f.z) + R0f.z;
-    PV0fy = (-R1f.y) + R0f.y;
-    PV0fz = (-R1f.x) + R0f.x;
-    R0f.w = 1.0;
-    
-    float param = PV0fz;
-    float param_1 = R1f.w;
-    R0f.x = mul_nonIEEE(param, param_1) + R1f.x;
-    
-    float param_2 = PV0fy;
-    float param_3 = R1f.w;
-    R0f.y = mul_nonIEEE(param_2, param_3) + R1f.y;
-    
-    float param_4 = PV0fx;
-    float param_5 = R1f.w;
-    R0f.z = mul_nonIEEE(param_4, param_5) + R1f.z;
-    
-    passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, 0.0);
+    passPixelColor0 = texture(textureUnitPS0, passUV);
 }
