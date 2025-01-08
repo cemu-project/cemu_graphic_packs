@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010142D00
-name = Resolution V2
+name = Resolution 
 path = "Skylanders: Spyro's Adventure/Graphics"
 description = Changes the resolution of the game||Made by Flextape05
 version = 6
