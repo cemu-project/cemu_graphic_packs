@@ -2,7 +2,7 @@
 titleIds = 0005000010142D00
 name = Resolution V2
 path = "Skylanders: Spyro's Adventure/Graphics"
-description = Changes the resolution of the game. Gamepad will only function with base resolution. Using the seperate gamepad view impacts game performance.||Made by Mr.Blinker
+description = Changes the resolution of the game||Made by Flextape05
 version = 6
 
 [Default]
