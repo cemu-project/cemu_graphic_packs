@@ -132,6 +132,24 @@ $fov = 38.89578
 
 [Preset]
 category = Resolution
+name = 5760x1080(48:9)
+$width = 5760
+$height = 1080
+$hudY = 720
+$hudX = 3840
+$fov = 44.39578
+
+[Preset]
+category = Resolution
+name = 7680x1440(48:9)
+$width = 7680
+$height = 1440
+$hudY = 720
+$hudX = 3840
+$fov = 44.39578
+
+[Preset]
+category = Resolution
 name = 640x480(4:3)
 $width = 640
 $height = 480
