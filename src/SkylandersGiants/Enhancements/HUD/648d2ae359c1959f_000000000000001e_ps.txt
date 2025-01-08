@@ -1,0 +1,20 @@
+#version 460
+
+layout(set = 1, binding = 1, std140) uniform ufBlock
+{
+    ivec4 uf_remappedPS[3];
+    float uf_alphaTestRef; // Threshold for alpha testing
+    vec4 uf_fragCoordScale;
+} _86;
+
+layout(set = 1, binding = 0) uniform sampler2D textureUnitPS0;
+
+layout(location = 0) in vec4 passParameterSem128;
+layout(location = 1) in vec4 passParameterSem129;
+layout(location = 0) out vec4 passPixelColor0;
+
+void main()
+{
+    // Set the fragment color to fully transparent
+    passPixelColor0 = vec4(0.0, 0.0, 0.0, 0.0);
+}

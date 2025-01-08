@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010D700,0005000010116000
+name = Bloom removal
+path = "Skylanders: Giants/Enhancements/Bloom removal"
+description = Removes the bloom when playing the game||Made by Flextape05
+version = 6

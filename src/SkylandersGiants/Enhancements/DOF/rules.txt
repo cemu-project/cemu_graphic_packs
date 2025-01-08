@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010D700,0005000010116000
+name = BackgroundBlur Removal
+path = "Skylanders: Giants/Enhancements/DOF removal"
+description = disables the games backbground blur||Made by Flextape05
+version = 6

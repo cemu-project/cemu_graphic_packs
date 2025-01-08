@@ -1,0 +1,17 @@
+#version 460
+
+// Define uniform binding for Vulkan and OpenGL compatibility
+#ifdef VULKAN
+    layout(set = 1, binding = 0) uniform sampler2D textureUnitPS0;
+#else
+    uniform sampler2D textureUnitPS0;
+#endif
+
+// Input and output locations
+layout(location = 0) in vec2 passUV;
+layout(location = 0) out vec4 passPixelColor0;
+
+void main()
+{
+    passPixelColor0 = texture(textureUnitPS0, passUV);
+}

@@ -1,0 +1,13 @@
+[tfbgame_gold0EU]
+moduleMatches =  0x62cc63a5
+0x10007e18 = .float $width/$height
+0x10007e10 = .float $hudX
+0x10007e14 = .float $hudY
+0x10007c00 = .float $fov
+
+[tfbgame_gold0US]
+moduleMatches =  0x71e3cf7e
+0x10007e18 = .float $width/$height
+0x10007e10 = .float $hudX
+0x10007e14 = .float $hudY
+0x10007c00 = .float $fov
