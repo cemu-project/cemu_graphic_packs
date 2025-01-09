@@ -1,0 +1,472 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = Character Class
+path = "Xenoblade Chronicles X/Mods/Character/Character Class"
+description = "You can change the Class and Rank of any character.||***Activate by pressing START(+), then Party->Active Members->Confirm Changes."
+#Credits: Intra
+version = 7
+
+[Default]
+$memoffset = 0x1D0
+$class = 1
+$rank = 1
+$exp = 0
+$characterID = 1
+
+[Preset]
+category = "Character"
+name = "Playable Avatar"
+
+[Preset]
+category = "Character"
+name = "Nagi"
+$characterID = 2
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "L"
+$characterID = 3
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Lao"
+$characterID = 4
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "H.B."
+$characterID = 5
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Gwin"
+$characterID = 6
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Frye"
+$characterID = 7
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Doug"
+$characterID = 8
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Yelv"
+$characterID = 9
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Boze"
+$characterID = 10
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Phog"
+$characterID = 11
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Elma"
+$characterID = 12
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Lin"
+$characterID = 13
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Celica"
+$characterID = 14
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Irina"
+$characterID = 15
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Murderess"
+$characterID = 16
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Alexa"
+$characterID = 17
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Hope"
+$characterID = 18
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Character"
+name = "Mia"
+$characterID = 19
+$memoffset = (($characterID-1)*0x57C)+0x1D0
+
+[Preset]
+category = "Class"
+name = Drifter
+$class = 1
+
+[Preset]
+category = "Class"
+name = Striker
+$class = 2
+
+[Preset]
+category = "Class"
+name = Commando
+$class = 7
+
+[Preset]
+category = "Class"
+name = Enforcer
+$class = 12
+
+[Preset]
+category = "Class"
+name = Samurai Gunner
+$class = 3
+
+[Preset]
+category = "Class"
+name = Duelist
+$class = 4
+
+[Preset]
+category = "Class"
+name = Shield Trooper
+$class = 5
+
+[Preset]
+category = "Class"
+name = Bastion Warrior
+$class = 6
+
+[Preset]
+category = "Class"
+name = Winged Viper
+$class = 8
+
+[Preset]
+category = "Class"
+name = Full Metal Jaguar
+$class = 9
+
+[Preset]
+category = "Class"
+name = Partisan Eagle
+$class = 10
+
+[Preset]
+category = "Class"
+name = Astral Crusader
+$class = 11
+
+[Preset]
+category = "Class"
+name = Psycorruptor
+$class = 13
+
+[Preset]
+category = "Class"
+name = Mastermind
+$class = 14
+
+[Preset]
+category = "Class"
+name = Blast Fencer
+$class = 15
+
+[Preset]
+category = "Class"
+name = Galactic Knight
+$class = 16
+
+[Preset]
+category = "Class"
+name = Duelist+  (Nagi)
+condition = characterID != 2
+$class = 17
+
+[Preset]
+category = "Class"
+name = Duelist+ (Nagi)
+condition = characterID == 2
+default = 1
+$class = 17
+
+[Preset]
+category = "Class"
+name = Shield Trooper  (L)
+condition = characterID != 3
+$class = 18
+
+[Preset]
+category = "Class"
+name = Shield Trooper (L)
+condition = characterID == 3
+default = 1
+$class = 18
+
+[Preset]
+category = "Class"
+name = Partisan Eagle  (Lao)
+condition = characterID != 4
+$class = 19
+
+[Preset]
+category = "Class"
+name = Partisan Eagle (Lao)
+condition = characterID == 4
+default = 1
+$class = 19
+
+[Preset]
+category = "Class"
+name = Shield Trooper+  (H.B.)
+condition = characterID != 5
+$class = 20
+
+[Preset]
+category = "Class"
+name = Shield Trooper+ (H.B.)
+condition = characterID == 5
+default = 1
+$class = 20
+
+[Preset]
+category = "Class"
+name = Samurai Gunner  (Gwin)
+condition = characterID != 6
+$class = 21
+
+[Preset]
+category = "Class"
+name = Samurai Gunner (Gwin)
+condition = characterID == 6
+default = 1
+$class = 21
+
+[Preset]
+category = "Class"
+name = Samurai Gunner+  (Frye)
+condition = characterID != 7
+$class = 22
+
+[Preset]
+category = "Class"
+name = Samurai Gunner+ (Frye)
+condition = characterID == 7
+default = 1
+$class = 22
+
+[Preset]
+category = "Class"
+name = Blast Fencer+  (Doug)
+condition = characterID != 8
+$class = 23
+
+[Preset]
+category = "Class"
+name = Blast Fencer+ (Doug)
+condition = characterID == 8
+default = 1
+$class = 23
+
+[Preset]
+category = "Class"
+name = Blast Fencer+  (Yelv)
+condition = characterID != 9
+$class = 24
+
+[Preset]
+category = "Class"
+name = Blast Fencer+ (Yelv)
+condition = characterID == 9
+default = 1
+$class = 24
+
+[Preset]
+category = "Class"
+name = Partisan Eagle  (Boze)
+condition = characterID != 10
+$class = 25
+
+[Preset]
+category = "Class"
+name = Partisan Eagle (Boze)
+condition = characterID == 10
+default = 1
+$class = 25
+
+[Preset]
+category = "Class"
+name = Winged Viper  (Phog)
+condition = characterID != 11
+$class = 26
+
+[Preset]
+category = "Class"
+name = Winged Viper (Phog)
+condition = characterID == 11
+default = 1
+$class = 26
+
+[Preset]
+category = "Class"
+name = Full Metal Jaguar  (Elma)
+condition = characterID != 12
+$class = 27
+
+[Preset]
+category = "Class"
+name = Full Metal Jaguar (Elma)
+condition = characterID == 12
+default = 1
+$class = 27
+
+[Preset]
+category = "Class"
+name = Shield Trooper  (Lin)
+condition = characterID != 13
+$class = 28
+
+[Preset]
+category = "Class"
+name = Shield Trooper (Lin)
+condition = characterID == 13
+default = 1
+$class = 28
+
+[Preset]
+category = "Class"
+name = Psycorruptor+  (Celica)
+condition = characterID != 14
+$class = 29
+
+[Preset]
+category = "Class"
+name = Psycorruptor+ (Celica)
+condition = characterID == 14
+default = 1
+$class = 29
+
+[Preset]
+category = "Class"
+name = Psycorruptor+  (Irina)
+condition = characterID != 15
+$class = 30
+
+[Preset]
+category = "Class"
+name = Psycorruptor+ (Irina)
+condition = characterID == 15
+default = 1
+$class = 30
+
+[Preset]
+category = "Class"
+name = Winged Viper+  (Murderess)
+condition = characterID != 16
+$class = 31
+
+[Preset]
+category = "Class"
+name = Winged Viper+ (Murderess)
+condition = characterID == 16
+default = 1
+$class = 31
+
+[Preset]
+category = "Class"
+name = Partisan Eagle+  (Alexa)
+condition = characterID != 17
+$class = 32
+
+[Preset]
+category = "Class"
+name = Partisan Eagle+ (Alexa)
+condition = characterID == 17
+default = 1
+$class = 32
+
+[Preset]
+category = "Class"
+name = Psycorruptor+  (Hope)
+condition = characterID != 18
+$class = 33
+
+[Preset]
+category = "Class"
+name = Psycorruptor+ (Hope)
+condition = characterID == 18
+default = 1
+$class = 33
+
+[Preset]
+category = "Class"
+name = Psycorruptor  (Mia)
+condition = characterID != 19
+$class = 34
+
+[Preset]
+category = "Class"
+name = Psycorruptor (Mia)
+condition = characterID == 19
+default = 1
+$class = 34
+
+#[Preset]
+#category = "Class"
+#name = Invalid Class (will crash the game)
+#$class = 0 #or anything above 34
+
+[Preset]
+category = "Rank"
+name = 1
+$rank = 1
+
+[Preset]
+category = "Rank"
+name = 5
+$rank = 5
+
+[Preset]
+category = "Rank"
+name = 10
+$rank = 10
+
+[Preset]
+category = "Rank"
+name = 15
+condition = $class > 16
+$rank = 15
+
+[Preset]
+category = "Rank"
+name = 20
+condition = $class > 16
+$rank = 20
