@@ -29,6 +29,7 @@
 
 ### Character mods
 - **Character Level**: Can change any characters current level.
+- **Character Class**: Can change any characters current class & rank.
 - **Character Size**: Can change any characters size, and even has some glitch size values.
 - **Change Character Name**: Can change any characters name and can rename your avatar.
 - **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art.
