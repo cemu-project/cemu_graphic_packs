@@ -30,10 +30,10 @@ _charClassCheat:
 li r9, $class
 stb r9, $memoffset (r11)
 ; Character class rank
-lis r9, $rank
+li r9, $rank
 stb r9, $memoffset+2 (r11)
 ; Character class exp
-lis r9, $exp
+li r9, $exp
 sth r9, $memoffset+4 (r11)
 ;its seems that after a class hits its max rank,
 ;the rank counter continues to go up, the game just never shows you.
@@ -49,16 +49,16 @@ blr
 [XCX_Class_v101E_v102U]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; Our code applies when the reqMenuCreateParty function is used
-0x023429FC = bla _levelMemorEU101US102
+0x023429FC = bla _classMemorEU101US102
 
 [XCX_Class_v102J]
 moduleMatches = 0x7672271D ; 1.0.2J
-0x02342230 = bla _levelMemorJP102
+0x02342230 = bla _classMemorJP102
 
 [XCX_Class_v100U]
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
-0x0234298C = bla _levelMemorUS100
+0x0234298C = bla _classMemorUS100
 
 [XCX_Class_v100J]
 moduleMatches = 0x785CA8A9 ; 1.0.0J
-0x023420BC = bla _levelMemorJP100
+0x023420BC = bla _classMemorJP100
