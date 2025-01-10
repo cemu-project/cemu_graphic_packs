@@ -40,7 +40,7 @@ li r12, 0
 cmpwi r0, 2
 beq _unlockunusedarts
 cmpwi r0, 3
-beq _whileLoopUseSpecificCharactersArts
+beq UseSpecificCharactersArts
 cmpwi r0, 4
 beq _unlockIndividualArts
 
@@ -84,9 +84,10 @@ li r16, $arts
 addi r17, r31, $memoffset-1
 b _unlockIndividualArts
 
-
-_whileLoopUseSpecificCharactersArts:
+UseSpecificCharactersArts:
 addi r31, r31, $memoffset+0x9B
+li r12, 0
+_whileLoopUseSpecificCharactersArts:
 stbu r12, 1(r17)
 cmpw r17, r31
 blt+ _whileLoopUseSpecificCharactersArts
