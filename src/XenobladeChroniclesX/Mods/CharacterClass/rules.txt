@@ -12,6 +12,7 @@ $class = 1
 $rank = 1
 $exp = 0
 $characterID = 1
+$classtype = 0
 
 [Preset]
 category = "Character"
@@ -126,323 +127,228 @@ $characterID = 19
 $memoffset = (($characterID-1)*0x57C)+0x1D0
 
 [Preset]
+category = "Class Type"
+name = Playable Avatar Classes
+$classtype = 0
+
+[Preset]
+category = "Class Type"
+name = Playable Character Classes
+$classtype = 1
+
+[Preset]
 category = "Class"
 name = Drifter
+condition = $classtype == 0
 $class = 1
 
 [Preset]
 category = "Class"
 name = Striker
+condition = $classtype == 0
 $class = 2
 
 [Preset]
 category = "Class"
 name = Commando
+condition = $classtype == 0
 $class = 7
 
 [Preset]
 category = "Class"
 name = Enforcer
+condition = $classtype == 0
 $class = 12
 
 [Preset]
 category = "Class"
 name = Samurai Gunner
+condition = $classtype == 0
 $class = 3
 
 [Preset]
 category = "Class"
 name = Duelist
+condition = $classtype == 0
 $class = 4
 
 [Preset]
 category = "Class"
 name = Shield Trooper
+condition = $classtype == 0
 $class = 5
 
 [Preset]
 category = "Class"
 name = Bastion Warrior
+condition = $classtype == 0
 $class = 6
 
 [Preset]
 category = "Class"
 name = Winged Viper
+condition = $classtype == 0
 $class = 8
 
 [Preset]
 category = "Class"
 name = Full Metal Jaguar
+condition = $classtype == 0
 $class = 9
 
 [Preset]
 category = "Class"
 name = Partisan Eagle
+condition = $classtype == 0
 $class = 10
 
 [Preset]
 category = "Class"
 name = Astral Crusader
+condition = $classtype == 0
 $class = 11
 
 [Preset]
 category = "Class"
 name = Psycorruptor
+condition = $classtype == 0
 $class = 13
 
 [Preset]
 category = "Class"
 name = Mastermind
+condition = $classtype == 0
 $class = 14
 
 [Preset]
 category = "Class"
 name = Blast Fencer
+condition = $classtype == 0
 $class = 15
 
 [Preset]
 category = "Class"
 name = Galactic Knight
+condition = $classtype == 0
 $class = 16
 
 [Preset]
 category = "Class"
 name = Duelist+  (Nagi)
-condition = characterID != 2
-$class = 17
-
-[Preset]
-category = "Class"
-name = Duelist+ (Nagi)
-condition = characterID == 2
-default = 1
+condition = $classtype == 1
 $class = 17
 
 [Preset]
 category = "Class"
 name = Shield Trooper  (L)
-condition = characterID != 3
-$class = 18
-
-[Preset]
-category = "Class"
-name = Shield Trooper (L)
-condition = characterID == 3
-default = 1
+condition = $classtype == 1
 $class = 18
 
 [Preset]
 category = "Class"
 name = Partisan Eagle  (Lao)
-condition = characterID != 4
-$class = 19
-
-[Preset]
-category = "Class"
-name = Partisan Eagle (Lao)
-condition = characterID == 4
-default = 1
+condition = $classtype == 1
 $class = 19
 
 [Preset]
 category = "Class"
 name = Shield Trooper+  (H.B.)
-condition = characterID != 5
-$class = 20
-
-[Preset]
-category = "Class"
-name = Shield Trooper+ (H.B.)
-condition = characterID == 5
-default = 1
+condition = $classtype == 1
 $class = 20
 
 [Preset]
 category = "Class"
 name = Samurai Gunner  (Gwin)
-condition = characterID != 6
-$class = 21
-
-[Preset]
-category = "Class"
-name = Samurai Gunner (Gwin)
-condition = characterID == 6
-default = 1
+condition = $classtype == 1
 $class = 21
 
 [Preset]
 category = "Class"
 name = Samurai Gunner+  (Frye)
-condition = characterID != 7
-$class = 22
-
-[Preset]
-category = "Class"
-name = Samurai Gunner+ (Frye)
-condition = characterID == 7
-default = 1
+condition = $classtype == 1
 $class = 22
 
 [Preset]
 category = "Class"
 name = Blast Fencer+  (Doug)
-condition = characterID != 8
-$class = 23
-
-[Preset]
-category = "Class"
-name = Blast Fencer+ (Doug)
-condition = characterID == 8
-default = 1
+condition = $classtype == 1
 $class = 23
 
 [Preset]
 category = "Class"
 name = Blast Fencer+  (Yelv)
-condition = characterID != 9
-$class = 24
-
-[Preset]
-category = "Class"
-name = Blast Fencer+ (Yelv)
-condition = characterID == 9
-default = 1
+condition = $classtype == 1
 $class = 24
 
 [Preset]
 category = "Class"
 name = Partisan Eagle  (Boze)
-condition = characterID != 10
-$class = 25
-
-[Preset]
-category = "Class"
-name = Partisan Eagle (Boze)
-condition = characterID == 10
-default = 1
+condition = $classtype == 1
 $class = 25
 
 [Preset]
 category = "Class"
 name = Winged Viper  (Phog)
-condition = characterID != 11
-$class = 26
-
-[Preset]
-category = "Class"
-name = Winged Viper (Phog)
-condition = characterID == 11
-default = 1
+condition = $classtype == 1
 $class = 26
 
 [Preset]
 category = "Class"
 name = Full Metal Jaguar  (Elma)
-condition = characterID != 12
-$class = 27
-
-[Preset]
-category = "Class"
-name = Full Metal Jaguar (Elma)
-condition = characterID == 12
-default = 1
+condition = $classtype == 1
 $class = 27
 
 [Preset]
 category = "Class"
 name = Shield Trooper  (Lin)
-condition = characterID != 13
-$class = 28
-
-[Preset]
-category = "Class"
-name = Shield Trooper (Lin)
-condition = characterID == 13
-default = 1
+condition = $classtype == 1
 $class = 28
 
 [Preset]
 category = "Class"
 name = Psycorruptor+  (Celica)
-condition = characterID != 14
-$class = 29
-
-[Preset]
-category = "Class"
-name = Psycorruptor+ (Celica)
-condition = characterID == 14
-default = 1
+condition = $classtype == 1
 $class = 29
 
 [Preset]
 category = "Class"
 name = Psycorruptor+  (Irina)
-condition = characterID != 15
-$class = 30
-
-[Preset]
-category = "Class"
-name = Psycorruptor+ (Irina)
-condition = characterID == 15
-default = 1
+condition = $classtype == 1
 $class = 30
 
 [Preset]
 category = "Class"
 name = Winged Viper+  (Murderess)
-condition = characterID != 16
-$class = 31
-
-[Preset]
-category = "Class"
-name = Winged Viper+ (Murderess)
-condition = characterID == 16
-default = 1
+condition = $classtype == 1
 $class = 31
 
 [Preset]
 category = "Class"
 name = Partisan Eagle+  (Alexa)
-condition = characterID != 17
-$class = 32
-
-[Preset]
-category = "Class"
-name = Partisan Eagle+ (Alexa)
-condition = characterID == 17
-default = 1
+condition = $classtype == 1
 $class = 32
 
 [Preset]
 category = "Class"
 name = Psycorruptor+  (Hope)
-condition = characterID != 18
-$class = 33
-
-[Preset]
-category = "Class"
-name = Psycorruptor+ (Hope)
-condition = characterID == 18
-default = 1
+condition = $classtype == 1
 $class = 33
 
 [Preset]
 category = "Class"
 name = Psycorruptor  (Mia)
-condition = characterID != 19
-$class = 34
-
-[Preset]
-category = "Class"
-name = Psycorruptor (Mia)
-condition = characterID == 19
-default = 1
+condition = $classtype == 1
 $class = 34
 
 #[Preset]
 #category = "Class"
 #name = Invalid Class (will crash the game)
 #$class = 0 #or anything above 34
+
+#[Preset]
+#category = "Rank"
+#name = 0 (does nothing interesting)
+#$rank = 0
 
 [Preset]
 category = "Rank"
@@ -451,22 +357,22 @@ $rank = 1
 
 [Preset]
 category = "Rank"
-name = 5
+name = 5 (Will not unlock anything)
 $rank = 5
 
 [Preset]
 category = "Rank"
-name = 10
+name = 10 (Will not unlock anything)
 $rank = 10
 
 [Preset]
 category = "Rank"
-name = 15
+name = 15 (Will not unlock anything)
 condition = $class > 16
 $rank = 15
 
 [Preset]
 category = "Rank"
-name = 20
+name = 20 (Will not unlock anything)
 condition = $class > 16
 $rank = 20
