@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010D700,0005000010116000
+name = Blur filter removal
+path = "Skylanders: Giants/Enhancements/Blur filter removal"
+description = Removes the muddy blur AA when playing the game||Made by Flextape05
+version = 6

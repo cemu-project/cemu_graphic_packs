@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001017C600,0005000010181F00
+name = No HUD
+path = "Skylanders Trap Team/Enhancements/No HUD"
+description = Removes the HUD from the game (breaks the menus)||Made by Flextape05
+version = 6

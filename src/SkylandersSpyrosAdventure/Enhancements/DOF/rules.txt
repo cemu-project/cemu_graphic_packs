@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010142D00
+name = BackgroundBlur Removal
+path = "Skylanders: Spyro's Adventure/Enhancements/DOF removal"
+description = disables the games backbground blur||Made by Flextape05
+version = 6

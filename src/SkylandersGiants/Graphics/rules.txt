@@ -2,7 +2,8 @@
 titleIds = 000500001010D700,0005000010116000
 name = Resolution
 path = "Skylanders: Giants/Graphics"
-description = Changes the resolution of the game.
+description = Changes the resolution of the game.||Aspect ratio patch Made by Flextape05
+
 version = 7
 
 [Default]
@@ -10,9 +11,19 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
-
+$padWidth = 854
+$padHeight = 480
+$shadowRes = 1
+$hudY = 720
+$hudX = 1280
+$fov = 57.29578
 
 # Resolution
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
 
 [Preset]
 category = Resolution
@@ -28,8 +39,9 @@ $height = 540
 
 [Preset]
 category = Resolution
-name = 1280x720 (Default)
-default = 1
+name = 1024x576
+$width = 1024
+$height = 576
 
 [Preset]
 category = Resolution
@@ -73,6 +85,131 @@ name = 7680x4320
 $width = 7680
 $height = 4320
 
+[Preset]
+category = Resolution
+name = 2560x1080(21:9)
+$width = 2560
+$height = 1080
+$hudY = 720
+$hudX = 1720
+$fov = 48.29578
+
+[Preset]
+category = Resolution
+name = 3440x1440(21:9)
+$width = 3440
+$height = 1440
+$hudY = 720
+$hudX = 1720
+$fov = 48.29578
+
+[Preset]
+category = Resolution
+name = 5120x2160(21:9)
+$width = 5120
+$height = 2160
+$hudY = 720
+$hudX = 1720
+$fov = 48.29578
+
+[Preset]
+category = Resolution
+name = 3840x1080(32:9)
+$width = 3840
+$height = 1080
+$hudY = 720
+$hudX = 2560
+$fov = 36.19578
+
+[Preset]
+category = Resolution
+name = 5120x1440(32:9)
+$width = 5120
+$height = 1440
+$hudY = 720
+$hudX = 2560
+$fov = 36.19578
+
+[Preset]
+category = Resolution
+name = 5760x1080(48:9)
+$width = 5760
+$height = 1080
+$hudY = 720
+$hudX = 3840
+$fov = 42.39578
+
+[Preset]
+category = Resolution
+name = 7680x1440(48:9)
+$width = 7680
+$height = 1440
+$hudY = 720
+$hudX = 3840
+$fov = 42.39578
+
+[Preset]
+category = Resolution
+name = 640x480(4:3)
+$width = 640
+$height = 480
+$hudY = 768
+$hudX = 1024
+$fov = 0.0039215689
+
+[Preset]
+category = Resolution
+name = 1024x768(4:3)
+$width = 1024
+$height = 768
+$hudY = 768
+$hudX = 1024
+$fov = 0.0039215689
+
+[Preset]
+category = Resolution
+name = 1600x1200(4:3)
+$width = 1600
+$height = 1200
+$hudY = 768
+$hudX = 1024
+$fov = 0.0039215689
+
+[Preset]
+category = Resolution
+name = 1280x800(16:10)
+$width = 1280
+$height = 800
+$hudY = 800
+$hudX = 1280
+$fov = 59.39578
+
+[Preset]
+category = Resolution
+name = 1680x1050(16:10)
+$width = 1680
+$height = 1050
+$hudY = 800
+$hudX = 1280
+$fov = 59.39578
+
+[Preset]
+category = Resolution
+name = 1920x1200(16:10)
+$width = 1920
+$height = 1200
+$hudY = 800
+$hudX = 1280
+$fov = 59.39578
+
+[Preset]
+category = Resolution
+name = 2560x1600(16:10)
+$width = 2560
+$height = 1600
+$hudY = 800
+$hudX = 1280
+$fov = 59.39578
 
 [TextureRedefine]
 width = 1280

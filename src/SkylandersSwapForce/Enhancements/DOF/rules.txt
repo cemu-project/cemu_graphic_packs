@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010139200,0005000010140400
+name = Background Blur Removal
+path = "Skylanders Swap Force/Enhancements/DOF removal"
+description = disables the games backbground blur||Made by Flextape05
+version = 6

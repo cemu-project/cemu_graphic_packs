@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001017C600,0005000010181F00
+name = Motion blur removal
+path = "Skylanders Trap Team/Enhancements/Motion blur removal"
+description = Removes the motion blur when playing the game (requires the blur removal)||Made by Flextape05
+version = 6

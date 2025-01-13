@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010D700,0005000010116000
+name = No HUD
+path = "Skylanders: Giants/Enhancements/No HUD"
+description = Removes the HUD from the game (breaks the menus)||Made by Flextape05
+version = 6
