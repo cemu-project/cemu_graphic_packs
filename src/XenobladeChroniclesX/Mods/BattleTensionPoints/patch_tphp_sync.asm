@@ -36,7 +36,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 
 ;storage space to conditionally back up registers r3-r31
 RegistersBackUpTPHP:
-.uint 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
+.uint 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
 ;storeage space to back up link register
 LinkRegisterBackUpTPHP:
 .uint 0
@@ -49,21 +49,19 @@ blr
 ;loads data from the tphp_data file that the mod needs to work
 GetModDataInnerHPTP:
 lis r31, RegistersBackUpTPHP@ha
-stmw r3, RegistersBackUpTPHP@l(r31)
-li r3, 0
+stmw r14, RegistersBackUpTPHP@l(r31)
+li r23, 0
 lis r31, BoolIsInnerOrDoll@ha
-stw r3, BoolIsInnerOrDoll@l(r31)
-li r3, $everyloadingscreen
+stw r23, BoolIsInnerOrDoll@l(r31)
 lis r31, LookupTableforInner@ha
 addi r31, r31, LookupTableforInner@l-4
 b GetModDataHPTP
 GetModDataDollHPTP:
 lis r31, RegistersBackUpTPHP@ha
-stmw r3, RegistersBackUpTPHP@l(r31)
-li r3, 1
+stmw r14, RegistersBackUpTPHP@l(r31)
+li r23, 1
 lis r31, BoolIsInnerOrDoll@ha
-stw r3, BoolIsInnerOrDoll@l(r31)
-li r3, $everyloadingscreenSkell
+stw r23, BoolIsInnerOrDoll@l(r31)
 lis r31, LookupTableforDoll@hi
 addi r31, r31, LookupTableforDoll@l-4
 GetModDataHPTP:
@@ -260,6 +258,7 @@ blr
 ;boot is able to identify the characters because r26 broadcast which character is currently being modified
 backUpCharacterStats:
 li r31, 8
+mfctr r27
 mtctr r31
 mulli r31, r26, 4
 lwzx r29, r29, r31
@@ -271,6 +270,7 @@ _forloopbackUpCharacterStats:
     lwzx r31, r10, r30
     stwu r31, 4(r29)
     bdnz _forloopbackUpCharacterStats
+mtctr r27
 blr
 
 ;function only gets called during hp update and tp update
@@ -323,11 +323,11 @@ blr
 ;if the flag is not set this means that the function was never run before, which the first time it runs is when booting the game
 ;so max our tp and then set the flag so the mod doesn't max tp again
 CheckifToMaxTP_Boot:
+add r31, r27, r26
 cmpwi r3, 0
 bne _applymaxTP
 cmpwi r30, 4
 bgt HPTPMod_blr
-add r31, r27, r26
 lbz r3, 0(r31)
 cmpwi r3, 0
 bne HPTPMod_blr
@@ -393,6 +393,7 @@ lis r31, NumOfTimesLoadingScreenRan@ha
 lwz r30, NumOfTimesLoadingScreenRan@l(r31)
 addi r30, r30, 1
 stw r30, NumOfTimesLoadingScreenRan@l(r31)
+li r3, $everyloadingscreen
 b BootWithTP
 BootWithTPDoll:
 mflr r0
@@ -401,6 +402,7 @@ mflr r0
 bl GetModDataDollHPTP
 lis r31, NumOfTimesLoadingScreenRan@ha
 lwz r30, NumOfTimesLoadingScreenRan@l(r31)
+li r3, $everyloadingscreenSkell
 BootWithTP:
 bl CheckifToMaxTP_Boot
 lis r30, FunctionPointerArrayCheatBoot@hi
@@ -412,7 +414,7 @@ bl CheckBootSynchronous
 bl backUpCharacterStats
 BootWithTPExit:
 ;lis r31, RegistersBackUpTPHP@ha
-;lmw r3, RegistersBackUpTPHP@l(r31)
+;lmw r14, RegistersBackUpTPHP@l(r31)
 ;lis r31, LinkRegisterBackUpTPHP@ha
 ;lwz r0, LinkRegisterBackUpTPHP@l(r31)
 mtlr r0
@@ -492,7 +494,7 @@ lwz r0, LinkRegisterBackUpTPHP@l(r31)
 mtlr r0
 or r0, r21, r21
 lis r31, RegistersBackUpTPHP@ha
-lmw r3, RegistersBackUpTPHP@l(r31)
+lmw r14, RegistersBackUpTPHP@l(r31)
 or r27, r0, r0
 lis r31, BoolIsInnerOrDoll@ha
 lwz r31, BoolIsInnerOrDoll@l(r31)
@@ -576,7 +578,7 @@ addHPtoTPExit:
 lis r31, LinkRegisterBackUpTPHP@ha
 lwz r0, LinkRegisterBackUpTPHP@l(r31)
 lis r31, RegistersBackUpTPHP@ha
-lmw r3, RegistersBackUpTPHP@l(r31)
+lmw r14, RegistersBackUpTPHP@l(r31)
 mtlr r0
 lwz r12, 0x10(r30)
 blr
