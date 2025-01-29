@@ -12,9 +12,9 @@ VarShareAP:
 .int 0
 
 _loadRP:
-RPAmmmount = $RPAmmmount
-lis       r12, RPAmmmount@hi
-ori       r12, r12, RPAmmmount@l
+RPAmmount = $RPAmmount
+lis       r12, RPAmmount@hi
+ori       r12, r12, RPAmmount@l
 blr
 
 ; menu::CTerminalMenu_PieceExchange::offline((void))
