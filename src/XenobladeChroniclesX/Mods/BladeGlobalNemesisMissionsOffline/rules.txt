@@ -9,7 +9,7 @@ version = 6
 [Default]
 $ygg = 0x4EED
 $teli = 0x4EE9
-$RPAmmmount = 2250000
+$RPAmmount = 2250000
 $nemesiscost = 1
 $minmedals = 0
 
@@ -29,7 +29,7 @@ name = 2250000 (default)
 [Preset]
 category = "RP Ammount"
 name = 1
-$RPAmmmount = 1
+$RPAmmount = 1
 
 [Preset]
 category = "CHEAT - BLADE Medals not needed"
