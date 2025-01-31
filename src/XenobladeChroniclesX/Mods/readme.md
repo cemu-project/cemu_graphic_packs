@@ -4,10 +4,12 @@
 - **Enemy Statistics mod**: Apply a global percent modificator on all enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).
 - **Enemy De-aggro reducer**: Reduce escape distance needed to lose aggro from enemies.
 - **Ground Damage multiplicator**: Increase the ground damage dealt by your team (skells not impacted).
-- **Overdrive unlocked**: Overdrive is unlocked and can be used before Chapter 3.
+- **Overdrive unlocked**: Overdrive is unlocked and can be used before Chapter 5.
+- **Skell Flight Unlocked**: Flight Module is unlocked and can be used before A Girl's Wings.
 - **Soul Challenges - AutoBattles**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles, not the QTE on Skell binding and destroying).
 - **Soul Challenges - Difficulty**: The Soul Challenge's difficulty (the time left for doing the QTE) does not increase over time during a battle.
 - **Soul Challenges - Skell restored**: When your Skell is destroyed during battle, it is restored automatically (you may need to fast travel).
+- **TP & HP functionality**: The mod by default only applies 2 Quality of Life changes. It sets your Tension points to their max once at boot, and prevents your Skell GP from draining while your outside it.
 
 ### BLADE mods
 - **BLADE Medal Count Mod**: sets the number of BLADE Medals you currently have.
@@ -23,9 +25,11 @@
     > Other presets allow to choose a specific tasks list.  (c ) stands for collectible and (t) for Tyrant.
     > When "Random" preset is selected, you can randomly change the active mission by opening the main menu and select "Social entry" > "Select Squad" command.
 - **Field Skill Level Mod**: Can change your Mechanical, Biological, Archeaological field level.
+- **Offline Change Division**: Can force change your BLADE Division, which is normally only possible online.
 
 ### Character mods
 - **Character Level**: Can change any characters current level.
+- **Character Class**: Can change any characters current class & rank.
 - **Character Size**: Can change any characters size, and even has some glitch size values.
 - **Change Character Name**: Can change any characters name and can rename your avatar.
 - **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art.
@@ -64,6 +68,7 @@
     >Tip: Press and hold the R stick button to speed up even more
 - **No Model Fade**: Makes it so that character and skell models don't fade out when the camera gets too close.
 - **Remove Overdrive Blur**: Removes the blur that happens around the screen when you are in Overdrive.
+- **Fix Camera Bug**: Fixes the bug where if your character ever goes under a ceiling, the game forgets all your settings.
 
 ### HUD mods
 - **Change time anywhere**: Allow to change time of the day from the eManual entry of the main menu.
