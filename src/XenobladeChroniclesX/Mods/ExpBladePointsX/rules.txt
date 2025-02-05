@@ -1,15 +1,25 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "BLADE Points X"
+name = "BLADE Points Multiplier"
 path = "Xenoblade Chronicles X/Mods/Experience/BLADE Points"
 description = Change the amount of BLADE points gained in various situations.
+#Credits: lasyan3
 version = 6
 
 [Default]
-$mod = 2
+$mod = 1
+
+[Preset]
+name = "x0"
+$mod = 0
+
+[Preset]
+name = "x1"
+default = 1
 
 [Preset]
 name = "x2"
+$mod = 2
 
 [Preset]
 name = "x3"
