@@ -24,10 +24,6 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 
 ;the one described in detail in tphp_data, that the NumOfTimesLoadingScreenRan variable mostly fixes (minor bug)
 
-;sometime when dying, you'll have some hp at your death instead of 0
-;is caused by your TP updating after you die, and being written into the hp value with sync
-;this glitch is purely visual other than that you'll keep your current tp when revived. (minor bug)
-
 ;weird: tp equals hp, will have a visual glitch when hitting max tp. this happens because the tp update section is called before the game updates tp (major bug for the setting) (but setting is really low priority)
 
 ;various other bugs related to weird: tp/hp equals hp/tp (major bug for the setting) (but setting is really low priority)
@@ -39,6 +35,8 @@ RegistersBackUpTPHP:
 .uint 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
 ;storeage space to back up link register
 LinkRegisterBackUpTPHP:
+.uint 0
+CountRegisterBackupTPHP:
 .uint 0
 
 ;function that allows us to conditionally branch link return
@@ -85,6 +83,9 @@ li r19, currentHP
 li r18, currentTP
 b _LoadSyncFunctionPointers
 CheckSyncSettingTP:
+lwz r3, currentHP(r10)
+cmpwi r3, 0
+ble HPTPMod_blr
 li r3, 0
 lbz r31, 0(r24) ; $HPboundtoTP
 addi r23, r23, 2
@@ -258,7 +259,6 @@ blr
 ;boot is able to identify the characters because r26 broadcast which character is currently being modified
 backUpCharacterStats:
 li r31, 8
-mfctr r27
 mtctr r31
 mulli r31, r26, 4
 lwzx r29, r29, r31
@@ -270,7 +270,6 @@ _forloopbackUpCharacterStats:
     lwzx r31, r10, r30
     stwu r31, 4(r29)
     bdnz _forloopbackUpCharacterStats
-mtctr r27
 blr
 
 ;function only gets called during hp update and tp update
@@ -405,6 +404,9 @@ lwz r30, NumOfTimesLoadingScreenRan@l(r31)
 li r3, $everyloadingscreenSkell
 BootWithTP:
 bl CheckifToMaxTP_Boot
+mfctr r31
+lis r30, CountRegisterBackupTPHP@ha
+stw r31, CountRegisterBackupTPHP@l(r30)
 lis r30, FunctionPointerArrayCheatBoot@hi
 ori r30, r30, FunctionPointerArrayCheatBoot@l
 bl CheckTensionCheat
@@ -418,6 +420,9 @@ BootWithTPExit:
 ;lis r31, LinkRegisterBackUpTPHP@ha
 ;lwz r0, LinkRegisterBackUpTPHP@l(r31)
 mtlr r0
+lis r31, CountRegisterBackupTPHP@ha
+lwz r30, CountRegisterBackupTPHP@l(r31)
+mtctr r30
 li r3, 1
 blr
 
