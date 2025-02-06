@@ -6,6 +6,7 @@
 - **Ground Damage multiplicator**: Increase the ground damage dealt by your team (skells not impacted).
 - **Overdrive unlocked**: Overdrive is unlocked and can be used before Chapter 5.
 - **Skell Flight Unlocked**: Flight Module is unlocked and can be used before A Girl's Wings.
+- **Infinite Fuel**: Never run out of fuel for your skell.
 - **Soul Challenges - AutoBattles**: The Soul Challenges QTE are hidden and automatically successful (only affect ground battles, not the QTE on Skell binding and destroying).
 - **Soul Challenges - Difficulty**: The Soul Challenge's difficulty (the time left for doing the QTE) does not increase over time during a battle.
 - **Soul Challenges - Skell restored**: When your Skell is destroyed during battle, it is restored automatically (you may need to fast travel).
@@ -20,6 +21,7 @@
     > 2. Adds (money/100) tickets to DLC missions
 - **Lv60 skells unlocked (+cheat)**: Unlock the post-game skells and equipment as soon as you become a BLADE member (it also considers you have a Skell Flight License). The "Cheat" preset ignores all requirements for crafting, and also the level requirement to use a Skell. Yes, that means you can get an Ares 90 for free, right after Chapter 2!
 - **More Reward Tickets**: Increase the amount of Tickets you get from Squad tasks and missions. Presets with "uncapped" means they ignore the max amount of Tickets you can have.
+- **Infinite Tickets**: Force the game to read that you have a certain ammount of tickets and Miranium.
 - **Offline Global Nemesis missions**: Global Nemesis (both Telethia Plume and Yggralith Zero) are available anytime in the BLADE console. There is an optional cheat to make BLADE Medals not needed.
 - **Offline Squad tasks and missions**: Squad tasks and missions become available for offline play! When the game starts, a Squad quest is randomly selected (with "Random" preset) and the timer is stopped.
     > Other presets allow to choose a specific tasks list.  (c ) stands for collectible and (t) for Tyrant.
@@ -74,6 +76,7 @@
 - **Change time anywhere**: Allow to change time of the day from the eManual entry of the main menu.
 - **NPC info bubbles distance mod**: Increase the distance from which NPC's yellow speech bubbles are seen.
     > I made this mod to get rid of the frustration not being able to get information from NLA people unless I get very close to each one of them.
+- **Remove Battle UI**: Removes most of the mid-battle UI elements. Very unstable but good enough for screenshots.
 
 ### Loot mods
 - **Equipment - Alternate random augments**: change the way augments are selected during loot generation.

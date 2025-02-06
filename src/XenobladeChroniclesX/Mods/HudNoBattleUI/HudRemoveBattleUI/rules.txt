@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Remove Battle UI"
-path = "Xenoblade Chronicles X/Mods/HUD/Remove Battle UI/remove elements"
-description = Removes most of the games mid battle UI elements.|Will crash if attempting to add a member to your Party.
+path = "Xenoblade Chronicles X/Mods/HUD/Remove Battle UI/Remove Enemy and Player HP"
+description = Removes The Enemy HP bar and the player HP bar.|Will crash if attempting to add a member to your Party.
 #Credits: Blingblong
 version = 6

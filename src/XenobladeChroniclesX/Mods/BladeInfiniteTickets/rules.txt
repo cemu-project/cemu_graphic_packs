@@ -1,0 +1,53 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Infinite Tickets"
+path = "Xenoblade Chronicles X/Mods/BLADE/Infinite Tickets"
+description = Force the game to read you having a certain ammount of tickets and miranium.
+#Credits: Intra
+version = 6
+
+[Default]
+$ticketammount = 9999
+$miraniumammount = 999999
+
+[Preset]
+category = tickets
+name = 0
+$ticketammount = 0
+
+[Preset]
+category = tickets
+name = 1000
+$ticketammount = 1000
+
+[Preset]
+category = tickets
+name = 9999
+default = 1
+$ticketammount = 9999
+
+[Preset]
+category = tickets
+name = 99999
+$ticketammount = 99999
+
+[Preset]
+category = miranium
+name = 0
+$ticketammount = 0
+
+[Preset]
+category = miranium
+name = 10000
+$ticketammount = 10000
+
+[Preset]
+category = miranium
+name = 99999
+default = 1
+$ticketammount = 99999
+
+[Preset]
+category = miranium
+name = 999999
+$ticketammount = 999999
