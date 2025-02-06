@@ -2,6 +2,6 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Infinite Fuel"
 path = "Xenoblade Chronicles X/Mods/Battle/Infinite Fuel"
-description = Makes you skell fuel always be at its max.
+description = Makes your skell fuel always be at its max.
 #Credits: Intra
 version = 6
