@@ -2,11 +2,11 @@
 titleIds = 0005000010145D00,0005000010145C00,0005000010106100
 name = Contrasty
 path = "Super Mario 3D World/Enhancements/Contrasty"
-description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Doesn't work if you also upscale or downscale the resolution. Made by getdls.
-version = 4
+description = This pack tweaks the colors and contrast to whatever preset you set it as. You can also make your own preset by editing the Default preset in the Contrasty folder from the game's graphic packs. Doesn't work if you also upscale or downscale the resolution.|Made by getdls.
+#Credits: getdls
+version = 6
 
-[Preset]
-name = Default
+[Default]
 $redShadows = 1.0
 $greenShadows = 1.0
 $blueSadows = 1.0
@@ -26,6 +26,9 @@ $vibrance  = 0.0
 $crushContrast = 0.0
 $bleach = 1.0
 $sharp_mix = 0.0
+
+[Preset]
+name = Default
 
 [Preset]
 name = debug
