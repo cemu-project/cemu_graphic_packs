@@ -4,7 +4,7 @@
 // shader f5274bda2b5e1e9f
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 // Used for: reflection highlights
-const float resScale = float($width)/float($gameWidth);  
+const float resScale = float($width)/float($gameWidth);
 
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)

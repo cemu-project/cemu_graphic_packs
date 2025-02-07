@@ -48,7 +48,7 @@ layout(location = 3) out vec4 passParameterSem4;
 layout(location = 4) out vec4 passParameterSem6;
 layout(location = 5) out vec4 passParameterSem10;
 // end of shader inputs/outputs
-const float resScale = float($width)/float($gameWidth);  
+const float resScale = float($width)/float($gameWidth);
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
