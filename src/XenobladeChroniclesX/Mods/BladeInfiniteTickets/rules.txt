@@ -34,20 +34,20 @@ $ticketammount = 99999
 [Preset]
 category = miranium
 name = 0
-$ticketammount = 0
+$miraniumammount = 0
 
 [Preset]
 category = miranium
 name = 10000
-$ticketammount = 10000
+$miraniumammount = 10000
 
 [Preset]
 category = miranium
 name = 99999
 default = 1
-$ticketammount = 99999
+$miraniumammount = 99999
 
 [Preset]
 category = miranium
 name = 999999
-$ticketammount = 999999
+$miraniumammount = 999999
