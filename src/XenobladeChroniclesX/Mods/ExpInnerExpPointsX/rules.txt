@@ -15,7 +15,7 @@ $mod = 0
 
 [Preset]
 name = "x1"
-default - 1
+default = 1
 
 [Preset]
 name = "x2"
