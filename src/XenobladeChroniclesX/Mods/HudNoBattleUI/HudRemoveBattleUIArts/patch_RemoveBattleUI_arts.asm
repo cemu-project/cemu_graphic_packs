@@ -1,6 +1,6 @@
 [XCX_RemoveBattleUI_Arts_v101E]
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
-;no ui remove arts
+;remove arts pallet
 0x02a8ace4 = nop ;draw__Q2_4menu15MenuArtsPaletteFv
 ;fixes camera bug when skip traveling
 0x02769448 = blr ;move__Q2_2ev12CCamPlayableFf

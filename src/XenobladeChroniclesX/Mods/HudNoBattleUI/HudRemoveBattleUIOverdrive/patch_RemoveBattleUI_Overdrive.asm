@@ -1,12 +1,12 @@
 [XCX_RemoveBattleUI_Overdrive_v101E]
 moduleMatches = 0xF882D5CF, 0x218F6E07 ; 1.0.1E, 1.0.0E
-;MISSING: overdrive start animation, overdrive aura activation animation
+;MISSING: overdrive start animation, red overdrive bonus animation
 ;debating whether to sperate these 3 UI elements into their own packs but keeping them in 1 for now
-;no ui remove overdrive bonus
+;remove overdrive arts pallet UI
 0x021bee34 = nop ;gearStart__8MenuTaskFUiUcT2
-;no ui remove overdrive count
+;remove overdrive count
 0x02c77fc4 = blr ;gearAddCount__8MenuTaskFUiUc
-;no ui remove end of overdrive damage
+;remove end of overdrive damage
 0x02b461c0 = nop ;draw__Q2_4menu14MenuGearDamageFv
 
 [XCX_RemoveBattleUI_Overdrive_v102U]
