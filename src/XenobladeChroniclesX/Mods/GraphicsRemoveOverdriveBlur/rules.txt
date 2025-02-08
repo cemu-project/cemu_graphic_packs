@@ -4,4 +4,4 @@ name = "Remove Overdrive Blur"
 path = "Xenoblade Chronicles X/Mods/Graphics/Remove Overdrive Blur"
 description = Removes the blur that happens around the screen when you are in Overdrive.
 #Credits: blingbloing
-version = 7
+version = 6

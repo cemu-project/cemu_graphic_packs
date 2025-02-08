@@ -4,4 +4,4 @@ name = "No Fading When Close-up"
 path = "Xenoblade Chronicles X/Mods/Graphics/No Fading When Close-up"
 description = Makes it so that character and skell models don't fade out when the camera gets too close.
 #Credits: blingbloing
-version = 7
+version = 6
