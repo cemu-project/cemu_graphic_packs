@@ -1,14 +1,15 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Infinite Tickets"
-path = "Xenoblade Chronicles X/Mods/BLADE/Infinite Tickets"
-description = Force the game to read you having a certain amount of tickets and miranium.
+path = "Xenoblade Chronicles X/Mods/BLADE/Infinite Tickets/Miranium/Money"
+description = Force the game to read you having a certain amount of tickets, miranium, and money.
 #Credits: Intra
 version = 6
 
 [Default]
 $ticketammount = 9999
 $miraniumammount = 999999
+$moneyammount = 99999999
 
 [Preset]
 category = tickets
@@ -51,3 +52,29 @@ $miraniumammount = 99999
 category = miranium
 name = 999999
 $miraniumammount = 999999
+
+[Preset]
+category = money
+name = 0
+$moneyammount = 0
+
+[Preset]
+category = money
+name = 10000
+$moneyammount = 10000
+
+[Preset]
+category = money
+name = 1000000
+$moneyammount = 1000000
+
+[Preset]
+category = money
+name = 99,999,999
+default = 1
+$moneyammount = 99999999
+
+[Preset]
+category = money
+name = 999,999,999
+$moneyammount = 99999999
