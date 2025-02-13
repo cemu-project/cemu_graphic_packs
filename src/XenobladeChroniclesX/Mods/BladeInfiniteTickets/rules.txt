@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Infinite Tickets"
-path = "Xenoblade Chronicles X/Mods/BLADE/Infinite Tickets/Miranium/Money"
+path = "Xenoblade Chronicles X/Mods/BLADE/Infinite Tickets\Miranium\Money"
 description = Force the game to read you having a certain amount of tickets, miranium, and money.
 #Credits: Intra
 version = 6
