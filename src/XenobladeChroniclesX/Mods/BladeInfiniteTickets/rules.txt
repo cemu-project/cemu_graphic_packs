@@ -12,69 +12,69 @@ $miraniumammount = 999999
 $moneyammount = 99999999
 
 [Preset]
-category = tickets
+category = Tickets
 name = 0
 $ticketammount = 0
 
 [Preset]
-category = tickets
+category = Tickets
 name = 1000
 $ticketammount = 1000
 
 [Preset]
-category = tickets
+category = Tickets
 name = 9999
 default = 1
 $ticketammount = 9999
 
 [Preset]
-category = tickets
+category = Tickets
 name = 99999
 $ticketammount = 99999
 
 [Preset]
-category = miranium
+category = Miranium
 name = 0
 $miraniumammount = 0
 
 [Preset]
-category = miranium
+category = Miranium
 name = 10000
 $miraniumammount = 10000
 
 [Preset]
-category = miranium
+category = Miranium
 name = 99999
 default = 1
 $miraniumammount = 99999
 
 [Preset]
-category = miranium
+category = Miranium
 name = 999999
 $miraniumammount = 999999
 
 [Preset]
-category = money
+category = Money
 name = 0
 $moneyammount = 0
 
 [Preset]
-category = money
+category = Money
 name = 10000
 $moneyammount = 10000
 
 [Preset]
-category = money
+category = Money
 name = 1000000
 $moneyammount = 1000000
 
 [Preset]
-category = money
+category = Money
 name = 99,999,999
 default = 1
 $moneyammount = 99999999
 
 [Preset]
-category = money
+category = Money
 name = 999,999,999
 $moneyammount = 99999999
