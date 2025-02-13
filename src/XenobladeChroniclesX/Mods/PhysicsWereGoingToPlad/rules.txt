@@ -1,0 +1,71 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Fly Faster!"
+path = "Xenoblade Chronicles X/Mods/Physics/We're Going to Plad!"
+description = Increase the speed of Skell Flight Module.|If the game tries to launch you to space when you land, just remember to cancle your dash before landing.
+#Credits: Intra
+version = 6
+
+[Default]
+$mod = 1.0
+$modHeight = 1.0
+
+[Preset]
+category = Horizontal Speed
+name = "Speed x1"
+$mod = 1.0
+
+[Preset]
+category = Horizontal Speed
+name = "Speed x1.25"
+$mod = 0.80
+
+[Preset]
+category = Horizontal Speed
+name = "Speed x1.5"
+$mod = 0.66
+
+[Preset]
+category = Horizontal Speed
+name = "Speed x2"
+$mod = 0.5
+
+[Preset]
+category = Horizontal Speed
+name = "Speed x3"
+$mod = 0.33
+
+[Preset]
+category = Horizontal Speed
+name = "CHEAT x20"
+$mod = 0.05
+
+[Preset]
+category = Vertical Speed
+name = "Speed x1 "
+$modHeight = 1.0
+
+[Preset]
+category = Vertical Speed
+name = "Speed x1.25 "
+$modHeight = 0.80
+
+[Preset]
+category = Vertical Speed
+name = "Speed x1.5 "
+$modHeight = 0.66
+
+[Preset]
+category = Vertical Speed
+name = "Speed x2 "
+$modHeight = 0.5
+
+[Preset]
+category = Vertical Speed
+name = "Speed x3 "
+$modHeight = 0.33
+
+[Preset]
+category = Vertical Speed
+name = "CHEAT x20 "
+$modHeight = 0.05
