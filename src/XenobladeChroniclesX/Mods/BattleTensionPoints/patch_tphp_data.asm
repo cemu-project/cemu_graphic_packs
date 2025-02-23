@@ -14,12 +14,12 @@ defence = 0xA8
 meleeAccuracy = 0xAC
 rangedAccuracy = 0xB0
 evasion = 0xB4
-physicalRes = 0xcc
-beamRes = 0xd0
-etherRes = 0xd4
-thermalRes = 0xd8
-electricRes = 0xdc
-gravityRes = 0xe0
+physicalRes = 0xBC
+beamRes = 0xC0
+etherRes = 0xC4
+thermalRes = 0xC8
+electricRes = 0xCC
+gravityRes = 0xD0
 
 ;array of flags that check if applied max tp on boot to a specific character/skell
 BoolBootWithTP:
