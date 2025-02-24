@@ -2,8 +2,8 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Enemy Statistics modificator"
 path = "Xenoblade Chronicles X/Mods/Battle/Enemy Statistics modificator"
-description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary menu.
-#Credits: lanyas3, intra
+description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary Menu.
+#Credits: lanyas3, Intra
 version = 6
 
 [Default]
@@ -20,7 +20,7 @@ $custom = 0
 # 100% = 0.001 - default value
 #  70% = 0.0007
 #  50% = 0.0005
-#   1% = 0.00001 ; GAME CRASH (enemis are too weak)
+#   1% = 0.00001 ; GAME CRASH (enemies are too weak)
 
 [Preset]
 category = All Enemy Stats
@@ -117,7 +117,7 @@ name = "Impossible: Set at 1000%"
 $meleeatk = 0.01
 $rangedatk = 0.01
 $potential = 0.01
-$evasion = 0.003 #setting the evasion too high would just actually make it impossible
+$evasion = 0.003 #setting the evasion too high would actually make it impossible
 $meleeacc = 0.01
 $rangedacc = 0.01
 $hp = 0.01
