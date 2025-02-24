@@ -140,11 +140,11 @@ mflr r28
 lis r19, 0x202C
 ori r19, r19, 0x2000
 bl CallsprintfINImod
-stb r19, 0(r30)
+stw r19, 0(r30)
 addi r30, r30, 3
 addi r21, r21, -1
 bl CallsprintfINImod
-stb r19, 0(r30)
+stw r19, 0(r30)
 addi r30, r30, 3
 addi r21, r21, -1
 bl CallsprintfINImod
