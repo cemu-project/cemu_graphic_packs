@@ -2,7 +2,7 @@
 titleIds = 000500001017C600,0005000010181F00
 name = FPS
 path = "Skylanders Trap Team/Mods/FPS"
-description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00.
+description = Changes the game's FPS limit. The speed of some things is tied to the frame rate.||Made by Mew00. Fix for speed-up above 120 FPS by SuperSamus and Winner Nombre.
 version = 6
 
 [Default]

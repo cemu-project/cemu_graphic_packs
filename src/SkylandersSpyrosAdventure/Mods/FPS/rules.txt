@@ -2,7 +2,7 @@
 titleIds = 0005000010142d00
 name = FPS V2
 path = "Skylanders: Spyro's Adventure/Mods/FPS"
-description = Changes the game's dynamic FPS target. Might increase the chance of issues with scanning figures.||Made by Mr.Blinker
+description = Changes the game's FPS limit. The speed of some things is tied to the frame rate.||Made by Mr.Blinker. Fix for speed-up above 120 FPS by SuperSamus and Winner Nombre.
 version = 6
 
 [Default]
