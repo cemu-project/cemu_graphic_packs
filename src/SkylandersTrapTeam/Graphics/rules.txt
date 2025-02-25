@@ -326,6 +326,6 @@ overwriteHeight = ($height/$gameHeight) * 240
 [TextureRedefine]
 width = 512
 height = 2048
-formats = 0x5
+formats = 0x011
 overwriteWidth = $shadowRes * 512
 overwriteHeight = $shadowRes * 2048
