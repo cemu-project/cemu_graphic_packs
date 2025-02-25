@@ -3,7 +3,7 @@ titleIds = 0005000010199100,0005000010199200,0005000010199300,0005000010199400,0
 name = Graphics Settings
 path = "Virtual Console/N64/Graphics"
 description = Changes the resolution of the game.|Made by Zalnor.
-#Credits: Zanlor
+#Credits: Zalnor
 version = 6
 
 [Default]

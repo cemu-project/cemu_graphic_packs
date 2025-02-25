@@ -3,5 +3,5 @@ titleIds = 0005000010199100,0005000010199200,0005000010199300,0005000010199400,0
 name = Undarken
 path = "Virtual Console/N64/Enhancements/Undarken"
 description = Undarkens the emulator output.|Made by Zalnor.
-#Credits: Zanlor
+#Credits: Zalnor
 version = 6

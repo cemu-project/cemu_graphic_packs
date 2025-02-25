@@ -3,5 +3,5 @@ titleIds = 0005000010156600,0005000010156700,0005000010156800,0005000010156900,0
 name = Undarken
 path = "Virtual Console/GBA/Enhancements/Undarken"
 description = Undarkens the emulator output.|Made by Zalnor.
-#Credits: Zanlor
+#Credits: Zalnor
 version = 6
