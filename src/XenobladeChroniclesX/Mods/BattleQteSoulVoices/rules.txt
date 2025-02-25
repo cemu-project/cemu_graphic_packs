@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Soul Challenges - QTE Auto"
 path = "Xenoblade Chronicles X/Mods/Battle/Soul Challenges - QTE Auto"
 description = QTE during battles are automatically done (force result).|Does not work on skell destroyed soul voice.
+#Credits: lasyan3
 version = 6
 
 [Default]

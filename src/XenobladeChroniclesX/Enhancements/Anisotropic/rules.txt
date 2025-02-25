@@ -3,10 +3,11 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Anisotropic Filtering
 path = "Xenoblade Chronicles X/Enhancements/Anisotropic Filtering"
 description = Enables anisotropic filtering for ground, wall and vegetation textures to make them appear clearer when viewed from an angle.|Has a minimal performance impact.
-version = 7
+#Credits: Crementif
+version = 6
 
 [Default]
-#Defined seprately so that they can be change individually if desired
+#Defined seprately so that they can be changed individually if desired
 $anisomount = 1
 $anisorock = 1
 $anisosand = 1

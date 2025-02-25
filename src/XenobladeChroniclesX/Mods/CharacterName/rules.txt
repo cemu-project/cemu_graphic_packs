@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Change Character Name
 path = "Xenoblade Chronicles X/Mods/Character/Change Name"
 description = Change the names of the playable characters, even if they're locked or not in your party.|The (JP) names do not work properly on NA and EU versions of the game.||***Activate by pressing START(+), then Party->Active Members->Confirm Changes.||To create your own name(s) look at the rules.txt in the downloadedGraphicsPack/XenobladeX/Mods/CharacterName folder.
+#Credits: Intra
 version = 7
 
 
