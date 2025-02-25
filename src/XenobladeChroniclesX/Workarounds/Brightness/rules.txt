@@ -4,7 +4,7 @@ name = Brightness fix with colour and contrast
 path = "Xenoblade Chronicles X/Workarounds/Brightness"
 description = Fixes overbright day and too dark night. Optionally tweaks colour and contrast.
 #Credits: getdls
-version = 7
+version = 6
 default = 1
 
 [Default]
