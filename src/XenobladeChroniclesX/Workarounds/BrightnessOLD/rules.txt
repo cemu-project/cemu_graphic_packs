@@ -110,7 +110,7 @@ $crushContrast = 0.75
 [Preset]
 name = 70% less exposure (AMD)
 category = Exposure
-condition = $custom == 1
+condition = $isCustom == 1
 $exposure = 0.32
 
 [Preset]
