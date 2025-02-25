@@ -1,0 +1,80 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Infinite Tickets and Miranium and Money"
+path = "Xenoblade Chronicles X/Mods/BLADE/Infinite Tickets\Miranium\Money"
+description = Force the game to read you having a certain amount of tickets, miranium, and money.
+#Credits: Intra
+version = 6
+
+[Default]
+$ticketammount = 9999
+$miraniumammount = 999999
+$moneyammount = 99999999
+
+[Preset]
+category = Tickets
+name = 0
+$ticketammount = 0
+
+[Preset]
+category = Tickets
+name = 1,000
+$ticketammount = 1000
+
+[Preset]
+category = Tickets
+name = 9,999
+default = 1
+$ticketammount = 9999
+
+[Preset]
+category = Tickets
+name = 99,999
+$ticketammount = 99999
+
+[Preset]
+category = Miranium
+name = 0
+$miraniumammount = 0
+
+[Preset]
+category = Miranium
+name = 10,000
+$miraniumammount = 10000
+
+[Preset]
+category = Miranium
+name = 99,999
+default = 1
+$miraniumammount = 99999
+
+[Preset]
+category = Miranium
+name = 999,999
+$miraniumammount = 999999
+
+[Preset]
+category = Money
+name = 0
+$moneyammount = 0
+
+[Preset]
+category = Money
+name = 10,000
+$moneyammount = 10000
+
+[Preset]
+category = Money
+name = 1,000,000
+$moneyammount = 1000000
+
+[Preset]
+category = Money
+name = 99,999,999
+default = 1
+$moneyammount = 99999999
+
+[Preset]
+category = Money
+name = 999,999,999
+$moneyammount = 99999999

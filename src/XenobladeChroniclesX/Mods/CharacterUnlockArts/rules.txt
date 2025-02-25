@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Unlock Character Arts
 path = "Xenoblade Chronicles X/Mods/Character/Unlock Arts"
 description = "Allows you to unlock all arts or specific arts. Using the "Force Arts" option allows party members to have arts they normally shouldn't have, and also allows having 2+ of the same art to be equiped.||***Activate "Unlock Arts" by pressing START(+), then Party->Arts->any character.|***Activate "Force Arts" by Party->active members->confirm changes."
+#Credits: Intra
 version = 7
 
 [Default]
@@ -90,134 +91,134 @@ $mclass = 0
 $mmission = 0
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Playable Avatar"
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Nagi"
 $characterID = 2
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "L"
 $characterID = 3
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Lao"
 $characterID = 4
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "H.B."
 $characterID = 5
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Gwin"
 $characterID = 6
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Frye"
 $characterID = 7
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Doug"
 $characterID = 8
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Yelv"
 $characterID = 9
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Boze"
 $characterID = 10
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Phog"
 $characterID = 11
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Elma"
 $characterID = 12
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Lin"
 $characterID = 13
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Celica"
 $characterID = 14
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Irina"
 $characterID = 15
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Murderess"
 $characterID = 16
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Alexa"
 $characterID = 17
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Hope"
 $characterID = 18
 $memoffset = (($characterID-1)*0x57C)+0x422
 
 [Preset]
-category = "Character:"
+category = "Character"
 name = "Mia"
 $characterID = 19
 $memoffset = (($characterID-1)*0x57C)+0x422
 
-#[Preset]
-#category = "Combine with other mods?"
-#name = "No"
-#condition = ($characterID != 1)
-#
+[Preset]
+category = "Combine with other mods?"
+name = "No"
+condition = ($characterID != 1)
+
 #[Preset]
 #category = "Combine with other mods?"
 #name = "Combine with Force Weapons mod"
 #condition = ($characterID != 1)
 #$combweapmod = 1
-#
-#[Preset]
-#category = "Combine with other mods?"
-#name = "Combine with Change Class mod"
-#condition = ($characterID != 1)
-#$combclassmod = 1
-#
+
+[Preset]
+category = "Combine with other mods?"
+name = "Combine with Change Class mod"
+condition = ($characterID != 1)
+$combclassmod = 1
+
 #[Preset]
 #category = "Combine with other mods?"
 #name = "Combine with both Change Class and Force Weapons"

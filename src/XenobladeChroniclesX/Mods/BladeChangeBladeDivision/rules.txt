@@ -1,0 +1,55 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Offline Change Division"
+path = "Xenoblade Chronicles X/Mods/BLADE/Offline Change Division"
+description = Simple mod to force change your BLADE Division.|It is normally only possible to change it online.
+#Credits: Intra
+version = 6
+
+[Default]
+$division = 1
+
+[Preset]
+category = Division
+name = Pathfinders
+$division = 1
+
+[Preset]
+category = Division
+name = Interceptors
+$division = 2
+
+[Preset]
+category = Division
+name = Harriers
+$division = 3
+
+[Preset]
+category = Division
+name = Reclaimers
+$division = 4
+
+[Preset]
+category = Division
+name = Curators
+$division = 5
+
+[Preset]
+category = Division
+name = Prospecters
+$division = 6
+
+[Preset]
+category = Division
+name = Outfitters
+$division = 7
+
+[Preset]
+category = Division
+name = Mediators
+$division = 8
+
+[Preset]
+category = Division
+name = Have No Division (Glitch)
+$division = 0
