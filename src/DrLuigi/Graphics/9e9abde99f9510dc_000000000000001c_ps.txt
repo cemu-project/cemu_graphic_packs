@@ -29,6 +29,10 @@ uniform vec4 uf_fragCoordScale;
 uniform float uf_alphaTestRef;
 uniform vec2 uf_fragCoordScale;
 #endif
+
+#define AAENABLE $AAEnable
+
+
 TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
 layout(location = 0) in vec4 passParameterSem129;
 layout(location = 1) in vec4 passParameterSem128;
@@ -68,22 +72,34 @@ ivec4 ARi = ivec4(0);
 bool predResult = true;
 vec3 cubeMapSTM;
 int cubeMapFaceId;
-R0i = floatBitsToInt(passParameterSem129);
+#if (AAENABLE == 1)
+	R0i = floatBitsToInt(passParameterSem129);
+#endif
 R1i = floatBitsToInt(passParameterSem128);
 R5i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.zw)).xyz);
 R6i.xyz = floatBitsToInt(texture(textureUnitPS0, intBitsToFloat(R1i.xy)).xyz);
 
-ivec2 resolution = textureSize(textureUnitPS0,0);
-float iresX = float(resolution.x)/float(1280);
-float iresY = float(resolution.y)/float(720);
+#if (AAENABLE == 1)
+	ivec2 resolution = textureSize(textureUnitPS0,0);
+	float iresX = float(resolution.x)/float(1280);
+	float iresY = float(resolution.y)/float(720);
+#endif
 
 // 0
 backupReg0i = R0i.y;
 backupReg1i = R0i.x;
 PV0i.x = 0;
-PV0i.y = floatBitsToInt(intBitsToFloat(backupReg0i) / iresY);
+#if (AAENABLE == 1)
+	PV0i.y = floatBitsToInt(intBitsToFloat(backupReg0i) / iresY);
+#else
+	PV0i.y = floatBitsToInt(intBitsToFloat(backupReg0i) * 1.0);
+#endif
 PV0i.z = 0;
-R127i.w = floatBitsToInt(intBitsToFloat(backupReg1i) / iresX);
+#if (AAENABLE == 1)
+	R127i.w = floatBitsToInt(intBitsToFloat(backupReg1i) / iresX);
+#else
+	R127i.w = floatBitsToInt(intBitsToFloat(backupReg1i) * 1.0);
+#endif
 PV0i.w = R127i.w;
 R8i.w = 0x3f800000;
 PS0i = R8i.w;
