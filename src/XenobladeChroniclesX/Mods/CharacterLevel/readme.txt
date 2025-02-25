@@ -1,6 +1,6 @@
 this file is documenting all the data about a character that can be changed.
 fell free to use this document to help make your own character mods
-credits to googlebonker for originally making this document
+document made by googlebonker
 
 The addresses listed are Wii U addresses.
 The exact address in cemu changes from update to update
@@ -65,7 +65,7 @@ this  value to FF800001 or higher will cause your character's breasts to disappe
 A     Breast Width (only works on female bodies) (maximum is 400000000. Setting this 	value to FF800001 or higher will cause your character's breasts to disappear)
 B     Protagonist presence (WARNING! Glitchy!)
 C     Something about a Skell?
-D     Character level (Warning! Glitchy!)
+D     Character level
 E     ????
 F     Character experience on the level
 G     Ranged Weapon

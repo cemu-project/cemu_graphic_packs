@@ -2,11 +2,10 @@
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; write bp - addWorldEnemyTicket__Q2_2fw12SocialSystemFi
 0x0288AA80 = addi r8, r3, 0 ; medals dont decrease when doing world enemy
-
 ; read bp - getWorldEnemyTicket__Q2_2fw12SocialSystemCFv
 0x02888DF8 = li r3, $medals ; makes the game read given value
 0x02888DE8 = li r3, $medals ; makes the game read given value
-0x02888E04 = nop ; removes 9999 blade medal cap, loops to negatives at 32767
+0x02888E04 = nop ; removes 9999 blade medal cap
 
 [XCX_BladeMedal_V102J]
 moduleMatches = 0x7672271D ; 1.0.2J

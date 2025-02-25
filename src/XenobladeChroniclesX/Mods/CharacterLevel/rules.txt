@@ -196,16 +196,6 @@ $level = 100
 
 [Preset]
 category = "Level"
-name = lv. 150
-$level = 150
-
-[Preset]
-category = "Level"
-name = lv. 200
-$level = 200
-
-[Preset]
-category = "Level"
 name = lv. 255
 $level = 255
 
