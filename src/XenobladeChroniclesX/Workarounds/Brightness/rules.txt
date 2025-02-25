@@ -68,7 +68,7 @@ $isCustom = 1
 [Preset]
 name = 70% less exposure
 category = Exposure and brightness fix
-condition = $isCustom == 1
+condition = $custom == 1
 $exposure:float = 0.32
 
 [Preset]
