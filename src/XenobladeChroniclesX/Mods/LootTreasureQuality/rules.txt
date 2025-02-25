@@ -1,25 +1,26 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Treasure Quality" 
+name = "Treasure Quality"
 path = "Xenoblade Chronicles X/Mods/Loot/Treasure Quality"
 description = Select preferred treasure quality.|(if forced = no, then only overwrite if enemy drops no loot).||**FORCED = YES, CAN PERMANENTLY SOFTLOCK YOUR SAVE**|Key items come from silver treasures, so if the story enemy fails to drop a silver then you don't get the key item.
+#Credits: lasyan3
 version = 6
 
 [Default]
-$treasure:int = 0
-$forced:int = 0
+$treasure = 0
+$forced = 0
 
 [Preset]
 name = "Gold quality"
-$treasure:int = 1
+$treasure = 1
 
 [Preset]
 name = "Silver quality"
-$treasure:int = 2
+$treasure = 2
 
 [Preset]
 name = "Bronze quality"
-$treasure:int = 3
+$treasure = 3
 
 [Preset]
 name = "No treasure"
@@ -31,4 +32,4 @@ category = Forced
 [Preset]
 name = "Yes"
 category = Forced
-$forced:int = 1
+$forced = 1

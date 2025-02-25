@@ -3,13 +3,18 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "FrontierNav - Money quantity mod"
 path = "Xenoblade Chronicles X/Mods/FrontierNav/Money quantity mod"
 description = Affect the quantity of the FrontierNav income for the Money.
+#Credits: lasyan3
 version = 6
 
 [Default]
-$mod = 2
+$mod = 1
+
+[Preset]
+name = "x1"
 
 [Preset]
 name = "x2"
+$mod = 2
 
 [Preset]
 name = "x3"
