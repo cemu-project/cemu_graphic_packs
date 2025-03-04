@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
+name = Unlock Characters!
+path = "Mario Kart 8/Cheats/Unlock Characters"
+description = Unlock Every Character!
+#Credits: Intra
+version = 7
