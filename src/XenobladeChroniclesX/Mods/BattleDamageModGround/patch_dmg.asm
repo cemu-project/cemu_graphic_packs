@@ -8,9 +8,8 @@ divw r4, r31, r4
 blr
 
 _mult_or_divide:
-li r4, $multOrDivision
-cmpwi r4, 0
-bne _divide_dmg
+cmpwi r0, $multOrDivision
+bne- _divide_dmg
 mulli r4, r31, $mult
 blr
 
