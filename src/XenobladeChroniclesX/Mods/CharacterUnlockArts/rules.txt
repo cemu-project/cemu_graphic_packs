@@ -207,24 +207,24 @@ category = "Combine with other mods?"
 name = "No"
 condition = ($characterID != 1)
 
-#[Preset]
-#category = "Combine with other mods?"
-#name = "Combine with Force Weapons mod"
-#condition = ($characterID != 1)
-#$combweapmod = 1
+[Preset]
+category = "Combine with other mods?"
+name = "Combine with Equip Any Weapon Mod"
+condition = ($characterID != 1)
+$combweapmod = 1
 
 [Preset]
 category = "Combine with other mods?"
-name = "Combine with Change Class mod"
+name = "Combine with Change Class Mod"
 condition = ($characterID != 1)
 $combclassmod = 1
 
-#[Preset]
-#category = "Combine with other mods?"
-#name = "Combine with both Change Class and Force Weapons"
-#condition = ($characterID != 1)
-#$combweapmod = 1
-#$combclassmod = 1
+[Preset]
+category = "Combine with other mods?"
+name = "Combine with both Change Class and Equip Any Weapon Mods"
+condition = ($characterID != 1)
+$combweapmod = 1
+$combclassmod = 1
 
 
 
