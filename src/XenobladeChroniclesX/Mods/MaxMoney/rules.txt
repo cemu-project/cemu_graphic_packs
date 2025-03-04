@@ -2,5 +2,41 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Max Money"
 path = "Xenoblade Chronicles X/Mods/Maximus/Max Money"
-description = "Increase maximum money to 999 999 999."
+description = "Increase (or decrease) the maximum money you can hold."
 version = 6
+
+[Default]
+$maxAmount = 0x3B9AC9FF #999999999
+
+[Preset]
+name = 0
+$maxAmount = 0
+
+[Preset]
+name = 9,999
+$maxAmount = 0x270F
+
+[Preset]
+name = 99,999
+$maxAmount = 0x1869F
+
+[Preset]
+name = 999,999
+$maxAmount = 0xF423F
+
+[Preset]
+name = 9,999,999
+$maxAmount = 0x98967F
+
+[Preset]
+name = 99,999,999 (Default)
+$maxAmount = 0x5F5E0FF
+
+[Preset]
+name = 999,999,999 (Recommended)
+$maxAmount = 0x3B9AC9FF
+default = 1
+
+[Preset]
+name = 2,140,000,000     #2147483647 risk negative money
+$maxAmount = 0x7F8DCF00
