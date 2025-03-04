@@ -86,6 +86,7 @@ b _unlockIndividualArts
 
 
 _whileLoopUseSpecificCharactersArts:
+addi r31, r31, $memoffset+0x9B
 stbu r12, 1(r17)
 cmpw r17, r31
 blt+ _whileLoopUseSpecificCharactersArts
