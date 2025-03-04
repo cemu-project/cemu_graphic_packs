@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Anti-Aliasing Pack
 path = "Xenoblade Chronicles X/Enhancements/Anti-Aliasing"
 description = Allows you to modify the game's existing anti-aliasing solution or replace it with the universally supported Nvidia FXAA solution. This changes how the games gets rid of jagged edges to make sharp edges look better.||Made by SkalFate, modified by Intra.
+#Credits: SkalFate, Intra
 version = 6
 
 [Default]
@@ -276,5 +277,3 @@ $FXAADISCARD:int = 0
 # Pure red and blue or combination of only R and B, will get no AA.
 # 1 = On.
 # 0 = Off.
-
-# Credits: Made by SkalFate, updated by Intra
