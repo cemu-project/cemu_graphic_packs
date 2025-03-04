@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Gain Reward Tickets from Time Attack or DLC missions"
 path = "Xenoblade Chronicles X/Mods/BLADE/Gain Reward Tickets from Time Attack or DLC missions"
 description = Adds Exchange Tickets in reward of completing Blade missions.|This mod will not work if More Reward Tickets is enabled.
+#Credits: lasyan3
 version = 6
 
 [Default]

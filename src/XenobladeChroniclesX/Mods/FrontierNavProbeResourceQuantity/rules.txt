@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "FrontierNav - Resources quantity mod"
 path = "Xenoblade Chronicles X/Mods/FrontierNav/Resources quantity mod"
 description = Affect the quantity of the FrontierNav income for the resources.
+#Credits: lasyan3
 version = 6
 
 [Default]
