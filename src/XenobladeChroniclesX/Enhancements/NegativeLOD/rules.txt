@@ -3,24 +3,14 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Negative texture LOD bias
 path = "Xenoblade Chronicles X/Enhancements/Negative Texture LOD" 
 description = Texture LOD override, possible shimmer but sharper textures.
-version = 6
+version = 4
 
-[Default]
+[Preset]
+name = LOD Default
 $0x031 = 0
 $0x033 = 0
 $0x034 = 0
 $0x035 = 0
-
-[Preset]
-name = LOD +4 (Funny - Makes the game low poly)
-$0x031 = 16
-$0x033 = 16
-$0x034 = 16
-$0x035 = 16
-
-[Preset]
-name = LOD Default
-default = 1
 
 [Preset]
 name = LOD -0.5 (Sharper)
