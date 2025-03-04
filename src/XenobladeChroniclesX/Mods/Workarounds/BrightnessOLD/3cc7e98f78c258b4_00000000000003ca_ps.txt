@@ -1,0 +1,141 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define SET_POSITION(_v) gl_Position = _v; gl_Position.z = (gl_Position.z + gl_Position.w) / 2.0
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.zw)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+// This shaders was auto-converted from OpenGL to Cemu.
+
+// shader 3cc7e98f78c258b4 // brightness workaround.
+// To-do, .5 is daylight and 1.0 night is wiiu "correct" for nvidia
+// changes here in turn "breaks" bloom as they over or under expose depending on day/night
+
+//old contrasty, or just copy paste clarity
+const float gamma = $gamma; // 1.0 is neutral
+const float exposure = $exposure; // 1.0 is neutral, first lessen to avoid truncation prob around .25 for radeon.
+const float vibrance = $vibrance;  // 0.0 is neutral
+const float lift = $lift; // 0.0 is neutral. loss of shadow detail
+const float postExposure = $postExposure; // 1.0 is neutral, then slightly raise exposure back up.
+
+vec3 contrasty(vec3 colour){
+	vec3 fColour = (colour.xyz);
+
+	fColour = clamp(exposure * fColour, 0.0, 1.0);
+	fColour = pow(fColour, vec3(1.0 / gamma));
+	float luminance = fColour.r*0.299 + fColour.g*0.587 + fColour.b*0.114;
+	float mn = min(min(fColour.r, fColour.g), fColour.b);
+	float mx = max(max(fColour.r, fColour.g), fColour.b);
+	float sat = (1.0 - (mx - mn)) * (1.0 - mx) * luminance * 5.0;
+	vec3 lightness = vec3((mn + mx) / 2.0);
+// vibrance
+	fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
+	fColour = max(vec3(0.0), fColour + vec3(lift));
+	return fColour;
+}
+
+
+#ifdef VULKAN
+layout(set = 1, binding = 2) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[1];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[1];
+uniform vec2 uf_fragCoordScale;
+#endif
+
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler3D textureUnitPS1;
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 0) out vec4 passPixelColor0;
+// uf_fragCoordScale was moved to the ufBlock
+float lineRand(vec2 co)
+{
+	float a = 12.9898;
+	float b = 78.233;
+	float c = 43758.5453;
+	float dt = dot(co.xy, vec2(a, b));
+	float sn = mod(dt, 3.14);
+	return fract(sin(sn) * c);
+}
+
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ return min(a*b,min(abs(a)*3.40282347E+38F,abs(b)*3.40282347E+38F)); }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+vec4 PV0f = vec4(0.0), PV1f = vec4(0.0);
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+vec3 cubeMapSTM;
+int cubeMapFaceId;
+R0f = passParameterSem0;
+
+R0f.xyz = (texture(textureUnitPS0, R0f.xy).xyz) * (0.985 -(lineRand(gl_FragCoord.xy)*0.015));
+//R0f.xyz = R0f.xyz - (lineRand(gl_FragCoord.xy)*0.1);
+// 0
+R0f.xyz = contrasty(R0f.xyz);
+R127f.x = R0f.z * intBitsToFloat(uf_remappedPS[0].x);
+R127f.x = clamp(R127f.x, 0.0, 1.0);
+R127f.y = R0f.y * intBitsToFloat(uf_remappedPS[0].x);
+R127f.y = clamp(R127f.y, 0.0, 1.0);
+PV0f.z = R0f.x * intBitsToFloat(uf_remappedPS[0].x);
+PV0f.z = clamp(PV0f.z, 0.0, 1.0);
+R1f.w = 1.0;
+// 1
+tempResultf = log2(PV0f.z);
+if( isinf(tempResultf) == true ) tempResultf = -3.40282347E+38F;
+PS1f = tempResultf;
+// 2
+R127f.z = PS1f * intBitsToFloat(0x3ee8ba2e);
+tempResultf = log2(R127f.y);
+if( isinf(tempResultf) == true ) tempResultf = -3.40282347E+38F;
+PS0f = tempResultf;
+// 3
+R127f.w = PS0f * intBitsToFloat(0x3ee8ba2e);
+tempResultf = log2(R127f.x);
+if( isinf(tempResultf) == true ) tempResultf = -3.40282347E+38F;
+PS1f = tempResultf;
+// 4
+R127f.x = PS1f * intBitsToFloat(0x3ee8ba2e);
+PS0f = exp2(R127f.z);
+// 5
+R0f.x = (PS0f * intBitsToFloat(uf_remappedPS[0].z) + intBitsToFloat(uf_remappedPS[0].w));
+PS1f = exp2(R127f.w);
+// 6
+R0f.y = (PS1f * intBitsToFloat(uf_remappedPS[0].z) + intBitsToFloat(uf_remappedPS[0].w));
+PS0f = exp2(R127f.x);
+// 7
+R0f.z = (PS0f * intBitsToFloat(uf_remappedPS[0].z) + intBitsToFloat(uf_remappedPS[0].w));
+R1f.xyz = (texture(textureUnitPS1, vec3(R0f.x,R0f.y,R0f.z)).xyz);
+// export
+//R1f = vec4(pow(R1f.xyz, vec3(1. / gammaPostExposure)), 1.0);
+
+passPixelColor0 = vec4(R1f.x, R1f.y, R1f.z, R1f.w)*postExposure;
+}
