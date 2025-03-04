@@ -1,15 +1,24 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Class Exp Points X"
+name = "Class Exp Points Multiplier"
 path = "Xenoblade Chronicles X/Mods/Experience/Class Exp Points"
 description = Change the amount of Class Exp points gained in battle, missions, quests and exploration.
 version = 6
 
 [Default]
-$mod = 2
+$mod = 1
+
+[Preset]
+name = "x0"
+$mod = 0
+
+[Preset]
+name = "x1"
+default = 1
 
 [Preset]
 name = "x2"
+$mod = 2
 
 [Preset]
 name = "x3"

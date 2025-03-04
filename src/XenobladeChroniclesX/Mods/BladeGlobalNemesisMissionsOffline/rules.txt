@@ -8,6 +8,7 @@ version = 6
 [Default]
 $ygg = 0x4EED
 $teli = 0x4EE9
+$RPAmmount = 2250000
 $nemesiscost = 1
 $minmedals = 0
 
@@ -19,6 +20,15 @@ name = "Monday Telethia (energy mist - 0:00)"
 category = "Telethia Bossfight Version"
 name = "Friday Telethia (thunderstorms - 15:00)"
 $teli = 0x4EE8
+
+[Preset]
+category = "RP Ammount"
+name = 2250000 (default)
+
+[Preset]
+category = "RP Ammount"
+name = 1
+$RPAmmount = 1
 
 [Preset]
 category = "CHEAT - BLADE Medals not needed"

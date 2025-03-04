@@ -1,8 +1,8 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Friends Points X"
-path = "Xenoblade Chronicles X/Mods/Experience/Friends Points"
-description = More Friends points gained when activating a Soul Voice Link during battle.
+name = "More Affinity Points From Soul Voices"
+path = "Xenoblade Chronicles X/Mods/Experience/Affinity Points"
+description = More Affinity points gained when activating a Soul Voice during battle.
 version = 6
 
 [Default]
