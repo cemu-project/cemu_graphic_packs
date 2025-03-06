@@ -8,9 +8,9 @@ version = 6
 [Default]
 $Preset:int = 0
 
-$subPix:float = 0.75
-$edgeThreshold:float = 0.166
-$edgeThresholdMin:float = 0.0833
+$subPix:double = 0.75
+$edgeThreshold:double = 0.166
+$edgeThresholdMin:double = 0.0833
 $FXAAQUALITYPRESET:int = 12
 $FXAAGREENASLUMA:int = 0
 $FXAADISCARD:int = 0
@@ -27,197 +27,197 @@ $Preset:int = 0
 
 
 [Preset]
-category = "FXAA sub-pixel aliasing removal:"
+category = "FXAA sub-pixel aliasing removal"
 condition = $Preset == 2
 name = "1.00 (upper limit, softer) (recommended)"
 default = 1
-$subPix:float = 1.00
+$subPix:double = 1.00
 
 [Preset]
-category = "FXAA sub-pixel aliasing removal:"
+category = "FXAA sub-pixel aliasing removal"
 condition = $Preset == 2
 name = "0.75 (default)"
-$subPix:float = 0.75
+$subPix:double = 0.75
 
 [Preset]
-category = "FXAA sub-pixel aliasing removal:"
+category = "FXAA sub-pixel aliasing removal"
 condition = $Preset == 2
 name = "0.50 (lower limit, sharper, less sub-pixel aliasing removal)"
-$subPix:float = 0.50
+$subPix:double = 0.50
 
 [Preset]
-category = "FXAA sub-pixel aliasing removal:"
+category = "FXAA sub-pixel aliasing removal"
 condition = $Preset == 2
 name = "0.25 (almost off)"
-$subPix:float = 0.25
+$subPix:double = 0.25
 
 [Preset]
-category = "FXAA sub-pixel aliasing removal:"
+category = "FXAA sub-pixel aliasing removal"
 condition = $Preset == 2
 name = "0.00 (completely off)"
-$subPix:float = 0.00
+$subPix:double = 0.00
 
 [Preset]
-category = "FXAA Edge detection threshold:"
+category = "FXAA Edge detection threshold"
 condition = $Preset == 2
 name = "0.333 (too little, faster)"
-$edgeThreshold:float = 0.333
+$edgeThreshold:double = 0.333
 
 [Preset]
-category = "FXAA Edge detection threshold:"
+category = "FXAA Edge detection threshold"
 condition = $Preset == 2
 name = "0.250 (low quality)"
-$edgeThreshold:float = 0.250
+$edgeThreshold:double = 0.250
 
 [Preset]
-category = "FXAA Edge detection threshold:"
+category = "FXAA Edge detection threshold"
 condition = $Preset == 2
 name = "0.166 (default)"
-$edgeThreshold:float = 0.166
+$edgeThreshold:double = 0.166
 
 [Preset]
-category = "FXAA Edge detection threshold:"
+category = "FXAA Edge detection threshold"
 condition = $Preset == 2
 name = "0.125 (high quality) (recommended)"
 default = 1
-$edgeThreshold:float = 0.125
+$edgeThreshold:double = 0.125
 
 [Preset]
-category = "FXAA Edge detection threshold:"
+category = "FXAA Edge detection threshold"
 condition = $Preset == 2
 name = "0.063 (overkill, slower)"
-$edgeThreshold:float = 0.063
+$edgeThreshold:double = 0.063
 
 [Preset]
-category = "FXAA Darkness threshold:"
+category = "FXAA Darkness threshold"
 condition = $Preset == 2
 name = "0.0833 (upper limit, the start of visible unfiltered edges) (default)"
-$edgeThresholdMin:float = 0.0833
+$edgeThresholdMin:double = 0.0833
 
 [Preset]
-category = "FXAA Darkness threshold:"
+category = "FXAA Darkness threshold"
 condition = $Preset == 2
 name = "0.0625 (high quality, faster)"
-$edgeThresholdMin:float = 0.0625
+$edgeThresholdMin:double = 0.0625
 
 [Preset]
-category = "FXAA Darkness threshold:"
+category = "FXAA Darkness threshold"
 condition = $Preset == 2
 name = "0.0312 (visible limit, slower)"
-$edgeThresholdMin:float = 0.0312
+$edgeThresholdMin:double = 0.0312
 
 [Preset]
-category = "FXAA Darkness threshold:"
+category = "FXAA Darkness threshold"
 condition = $Preset == 2
 name = "0.0156 (overkill) (recommended)"
 default = 1
-$edgeThresholdMin:float = 0.0156
+$edgeThresholdMin:double = 0.0156
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "10 (default medium dither) (10=fastest)"
 $FXAAQUALITYPRESET:int = 10
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "11 (default medium dither)"
 $FXAAQUALITYPRESET:int = 11
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "12 (default medium dither) (default)"
 $FXAAQUALITYPRESET:int = 12
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "13 (default medium dither)"
 $FXAAQUALITYPRESET:int = 13
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "14 (default medium dither) (recommended)"
 default = 1
 $FXAAQUALITYPRESET:int = 14
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "15 (default medium dither) (15=highest quality)"
 $FXAAQUALITYPRESET:int = 15
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "20 (less dither, more expensive) (20=fastest)"
 $FXAAQUALITYPRESET:int = 20
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "21 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 21
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "22 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 22
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "23 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 23
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "24 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 24
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "25 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 25
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "26 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 26
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "27 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 27
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "28 (less dither, more expensive)"
 $FXAAQUALITYPRESET:int = 28
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "29 (less dither, more expensive) (29=highest quality)"
 $FXAAQUALITYPRESET:int = 29
 
 [Preset]
-category = "FXAA Quality Preset:"
+category = "FXAA Quality Preset"
 condition = $Preset == 2
 name = "39 (no dither, very expensive)"
 $FXAAQUALITYPRESET:int = 39
 
 [Preset]
-category = "FXAA Green As Luma:"
+category = "FXAA Green As Luma"
 condition = $Preset == 2
 name = "On (will turn off AA on anything which lacks some amount of green)"
 default = 1
@@ -225,19 +225,19 @@ $FXAAGREENASLUMA:int = 1
 $FXAADISCARD:int = 0
 
 [Preset]
-category = "FXAA Green As Luma:"
+category = "FXAA Green As Luma"
 condition = $Preset == 2
 name = "Off"
 $FXAAGREENASLUMA:int = 0
 
 [Preset]
-category = "FXAA discard on pixels which don't need AA:"
+category = "FXAA discard on pixels which don't need AA"
 condition = ($Preset == 2)*($FXAAGREENASLUMA == 0) == 1
-name = "On (not compatable with Green As Luma)"
+name = "On (not compatible with Green As Luma)"
 $FXAADISCARD:int = 1
 
 [Preset]
-category = "FXAA discard on pixels which don't need AA:"
+category = "FXAA discard on pixels which don't need AA"
 condition = ($Preset == 2)*($FXAAGREENASLUMA == 0) == 1
 name = "Off"
 default = 1
