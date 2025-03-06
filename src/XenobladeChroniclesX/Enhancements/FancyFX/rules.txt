@@ -3,9 +3,10 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Fancy GFX
 path = "Xenoblade Chronicles X/Enhancements/Fancy FX"
 description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia.|Made by getdls.
-version = 6
+version = 4
 
-[Default]
+[Preset]
+name = 1080 -> 1440
 $width = 2560
 $height = 1440
 $gameWidth = 1280
@@ -14,9 +15,6 @@ $internalRes = 0.75
 $dither = 0.15
 $scaleShader = (1440.0/1080.0)
 $scaleBlur = 0.5
-
-[Preset]
-name = 1080 -> 1440
 
 [Preset]
 name = 1440 -> 2880
