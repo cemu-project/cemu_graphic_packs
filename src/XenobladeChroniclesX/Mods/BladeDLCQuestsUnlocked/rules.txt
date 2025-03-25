@@ -3,4 +3,5 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "DLC Quests unlocked"
 path = "Xenoblade Chronicles X/Mods/BLADE/DLC Quests unlocked"
 description = DLC Support quests are unlocked and accessible right after you are a BLADE member.
+#Credits: lasyan3
 version = 6
