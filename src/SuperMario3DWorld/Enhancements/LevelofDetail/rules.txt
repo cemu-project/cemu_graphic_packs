@@ -1,16 +1,19 @@
 [Definition]
 titleIds = 0005000010145D00,0005000010145C00,0005000010106100
 name = Negative texture LOD bias
-path = "Super Mario 3D World/Enhancements/Texture LOD" 
-description = Texture LOD override, possible shimmer but sharper textures. Made by Ryce-Fast.
-version = 4
+path = "Super Mario 3D World/Enhancements/Texture LOD"
+description = Texture LOD override, possible shimmer but sharper textures.|Made by Ryce-Fast.
+#Credits: Ryce-Fast
+version = 6
 
-[Preset]
-name = Default LOD
+[Default]
 $0x431 = 0
 $0x432 = 0
 $0x433 = 0
 $0x434 = 0
+
+[Preset]
+name = Default LOD
 
 [Preset]
 name = Slightly higher LOD
