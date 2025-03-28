@@ -1,0 +1,115 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+
+
+// shader d80a321ea97e9415: text shadow
+
+
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.z, 1.0/gl_FragCoord.w)
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+#ifdef VULKAN
+layout(set = 1, binding = 1) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[2];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[2];
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem2;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){return mix(0.0, a*b, (a != 0.0) && (b != 0.0));}
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0, PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+R0f = passParameterSem0;
+R1f = passParameterSem2;
+R1f.xyzw = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).xyzw);
+// 0
+PV0fx = intBitsToFloat(uf_remappedPS[0].w) * 0.99609375;
+PV0fy = intBitsToFloat(uf_remappedPS[0].z) * 0.99609375;
+PV0fz = intBitsToFloat(uf_remappedPS[0].y) * 0.99609375;
+PV0fw = intBitsToFloat(uf_remappedPS[0].x) * 0.99609375;
+// 1
+PV1fx = fract(PV0fw);
+R127f.y = fract(PV0fx);
+R127f.z = fract(PV0fy);
+PV1fw = fract(PV0fz);
+R127f.w = intBitsToFloat(uf_remappedPS[1].x) * 0.99609375;
+// 2
+R127f.x = intBitsToFloat(uf_remappedPS[1].w) * 0.99609375;
+PV0fy = intBitsToFloat(uf_remappedPS[1].z) * 0.99609375;
+PV0fz = intBitsToFloat(uf_remappedPS[1].y) * 0.99609375;
+R126f.w = PV1fx * intBitsToFloat(0x3f808081);
+R126f.x = PV1fw * intBitsToFloat(0x3f808081);
+// 3
+R125f.x = R127f.y * intBitsToFloat(0x3f808081);
+PV1fy = fract(R127f.w);
+PV1fz = fract(PV0fz);
+R127f.w = R127f.z * intBitsToFloat(0x3f808081);
+PS1f = fract(PV0fy);
+// 4
+PV0fx = fract(R127f.x);
+R123f.y = PS1f * intBitsToFloat(0x3f808081) + -(R127f.w);
+R123f.z = PV1fz * intBitsToFloat(0x3f808081) + -(R126f.x);
+R123f.w = PV1fy * intBitsToFloat(0x3f808081) + -(R126f.w);
+// 5
+backupReg0f = R123f.y;
+backupReg1f = R123f.z;
+R123f.x = mul_nonIEEE(R123f.w,R1f.x) + R126f.w;
+R123f.x = clamp(R123f.x, 0.0, 1.0);
+R123f.y = PV0fx * intBitsToFloat(0x3f808081) + -(R125f.x);
+R123f.z = mul_nonIEEE(backupReg0f,R1f.z) + R127f.w;
+R123f.z = clamp(R123f.z, 0.0, 1.0);
+R123f.w = mul_nonIEEE(backupReg1f,R1f.y) + R126f.x;
+R123f.w = clamp(R123f.w, 0.0, 1.0);
+// 6
+backupReg0f = R123f.x;
+R123f.x = mul_nonIEEE(R123f.y,R1f.w) + R125f.x;
+R123f.x = clamp(R123f.x, 0.0, 1.0);
+R1f.y = mul_nonIEEE(R0f.y, R123f.w);
+R1f.y = clamp(R1f.y, 0.0, 1.0);
+R1f.z = mul_nonIEEE(R0f.z, R123f.z);
+R1f.z = clamp(R1f.z, 0.0, 1.0);
+R1f.x = mul_nonIEEE(R0f.x, backupReg0f);
+R1f.x = clamp(R1f.x, 0.0, 1.0);
+// 7
+R1f.w = mul_nonIEEE(R0f.w, R123f.x);
+R1f.w = clamp(R1f.w, 0.0, 1.0);
+// export
+passPixelColor0 = vec4(R1f.x, R1f.y, R1f.z, 0.0);
+}
