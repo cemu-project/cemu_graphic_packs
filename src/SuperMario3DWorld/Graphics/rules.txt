@@ -1,99 +1,179 @@
 [Definition]
 titleIds = 0005000010145D00,0005000010145C00,0005000010106100
-name = Resolution
-path = "Super Mario 3D World/Graphics/Resolution"
-description = Changes the resolution of the game. Made by Crementif and getdls.
-version = 4
+name = Graphics Settings
+path = "Super Mario 3D World/Graphics"
+description = Changes the resolution of the game and the quality of shadows.|Made by Crementif and getdls.
+#Credits: Crementif, getdls, Ryce-Fast
+version = 6
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$shadowRes = 1
+$anisoLevel = 1
+$AAEnable:int = 1
 
 # Performance
 
 [Preset]
+category = Resolution
 name = 640x360
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 960x540
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+default = 1
 
 # Common HD Resolutions
 
 [Preset]
+category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
 
 # Common Ultrawide Resolutions
 
 [Preset]
+category = Resolution
 name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
+
+
+
+[Preset]
+category = Shadows
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadows
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadows
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadows
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadows
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+[Preset]
+category = Anisotropic Filtering
+name = 1x (Default)
+
+[Preset]
+category = Anisotropic Filtering
+name = 2x
+$anisoLevel = 2
+
+[Preset]
+category = Anisotropic Filtering
+name = 4x
+$anisoLevel = 4
+
+[Preset]
+category = Anisotropic Filtering
+name = 8x
+$anisoLevel = 8
+
+[Preset]
+category = Anisotropic Filtering
+name = 16x (Recommended)
+$anisoLevel = 16
+
+[Preset]
+category = Anisotropic Filtering
+name = 32x (Overkill)
+$anisoLevel = 32
+
+[Preset]
+category = Anti-Aliasing
+name = Enable
+$AAEnable:int = 1
+
+[Preset]
+category = Anti-Aliasing
+name = Disable
+$AAEnable:int = 0
+
+#ansio
+
+[TextureRedefine]
+formats = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteAnisotropy = $anisoLevel
+
+#Shadows
+
+[TextureRedefine]
+width = 1024
+height = 1024
+formats = 0x005
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024
+
+#Resolution
 
 [TextureRedefine]
 width = 1280
@@ -2111,7 +2191,7 @@ overwriteHeight = ($height/$gameHeight) * 360
 [TextureRedefine] # circus
 width = 512
 height = 360
-formatsExcluded = 0x034,0x033,0x031 # rain vulkan									 
+formatsExcluded = 0x034,0x033,0x031 # rain vulkan
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 360
 
