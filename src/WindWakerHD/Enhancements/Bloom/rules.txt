@@ -1,0 +1,40 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143500,0005000010143600,000500010185400
+name = Bloom
+path = "The Legend of Zelda: The Wind Waker HD/Enhancements/Bloom"
+description = Modify the amount of bloom. Bloom is used to make bright things emit a glow effect to make them look bright.
+#Credits: Crementif
+version = 6
+
+[Default]
+$targetBloom = 1.0
+
+[Preset]
+category = Bloom
+name = Extra Bloom (150%)
+$targetBloom = 1.5
+
+[Preset]
+category = Bloom
+name = Normal Bloom (100%, Default)
+default = 1
+
+[Preset]
+category = Bloom
+name = Slightly Reduced Bloom (75%)
+$targetBloom = 0.75
+
+[Preset]
+category = Bloom
+name = Reduced Bloom (50%)
+$targetBloom = 0.5
+
+[Preset]
+category = Bloom
+name = Heavily Reduced Bloom (25%)
+$targetBloom = 0.25
+
+[Preset]
+category = Bloom
+name = No Bloom
+$targetBloom = 0.0
