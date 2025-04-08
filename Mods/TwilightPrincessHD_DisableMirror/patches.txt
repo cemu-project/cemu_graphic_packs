@@ -1,0 +1,6 @@
+[zelda-tp-disable-mirroring]
+moduleMatches = 0x1A03E108, 0xA3175EEA
+
+0x02941064 = stb r0, 0x667d(r12)
+0x0294819c = li  r0, 32
+0x029481ac = stb r0, 0x667d(r11)

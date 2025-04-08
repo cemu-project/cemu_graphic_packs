@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010142D00
+name = Bloom removal
+path = "Skylanders: Spyro's Adventure/Enhancements/Bloom removal"
+description = Removes the bloom when playing the game||Made by Flextape05
+version = 6

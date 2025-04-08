@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = Disable Mirroring
+path = "The Legend of Zelda: Twilight Princess HD/Mods/Disable Mirroring (Hero Mode)"
+description = Hero Mode will no longer be mirrored.|Made by EitchKeii.
+version = 4

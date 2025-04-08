@@ -1,0 +1,197 @@
+[Definition]
+titleIds = 5000010101a00, 5000010101b00
+name = "Resolution"
+path = "Lego City Undercover/Graphics"
+description = Changes the resolution of the game. Made by Ryce-Fast.
+version = 5
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$0x031 = 0
+$0x033 = 0
+$0x034 = 0
+$0x035 = 0
+$0x431 = 0
+$0x432 = 0
+$0x433 = 0
+$0x434 = 0
+
+
+# Resolutions
+
+[Preset]
+name = 640x360
+category = Resolution
+$width = 640
+$height = 360
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 960x540
+category = Resolution
+$width = 960
+$height = 540
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1280x720 (HD, Default)
+category = Resolution
+default = 1
+
+[Preset]
+name = 1600x900 (HD+)
+category = Resolution
+$width = 1600
+$height = 900
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 1920x1080 (Full HD)
+category = Resolution
+$width = 1920
+$height = 1080
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 2560x1440 (2K)
+category = Resolution
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3200x1800
+category = Resolution
+$width = 3200
+$height = 1800
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 3840x2160 (4K)
+category = Resolution
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 5120x2880
+category = Resolution
+$width = 5120
+$height = 2880
+$gameWidth = 1280
+$gameHeight = 720
+
+[Preset]
+name = 7680x4320 (8K)
+category = Resolution
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+
+
+# Texture Sharpness
+
+[Preset]
+name = Normal Sharpness
+category = Texture Quality
+default = 1
+
+[Preset]
+name = Medium Sharpness
+category = Texture Quality
+$0x031 = -.5
+$0x033 = -.5
+$0x034 = -.5
+$0x035 = -.5
+$0x431 = -.5
+$0x432 = -.5
+$0x433 = -.5
+$0x434 = -.5
+
+[Preset]
+name = High Sharpness
+category = Texture Quality
+$0x031 = -1
+$0x033 = -1
+$0x034 = -1
+$0x035 = -1
+$0x431 = -1
+$0x432 = -1
+$0x433 = -1
+$0x434 = -1
+
+[Preset]
+name = Ultra Sharpness
+category = Texture Quality
+$0x031 = -4
+$0x033 = -4
+$0x034 = -4
+$0x035 = -4
+$0x431 = -4
+$0x432 = -4
+$0x433 = -4
+$0x434 = -4
+
+
+[TextureRedefine]
+width = 1280
+height = 720
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight  = ($height/$gameHeight) * 720
+
+#[TextureRedefine]
+#width = 864
+#height = 480
+#formats = 0x01a
+#overwriteWidth = ($width/$gameWidth) * 864
+#overwriteHeight  = ($height/$gameHeight) * 480
+
+[TextureRedefine]
+width = 640
+height = 368
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight  = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+formats = 0x031
+overwriteRelativeLodBias = $0x031 
+
+[TextureRedefine]
+formats = 0x033 
+overwriteRelativeLodBias = $0x033 
+
+[TextureRedefine]
+formats = 0x034
+overwriteRelativeLodBias = $0x034 
+
+[TextureRedefine]
+formats = 0x035
+overwriteRelativeLodBias = $0x035
+
+[TextureRedefine]
+formats = 0x431
+overwriteRelativeLodBias = $0x431
+
+[TextureRedefine]
+formats = 0x432
+overwriteRelativeLodBias = $0x432
+
+[TextureRedefine]
+formats = 0x433
+overwriteRelativeLodBias = $0x433
+
+[TextureRedefine]
+formats = 0x434
+overwriteRelativeLodBias = $0x434

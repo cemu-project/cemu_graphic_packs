@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Fancy GFX
 path = "Xenoblade Chronicles X/Enhancements/Fancy FX"
 description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia. Made by getdls.
+#Credits: getdls
 version = 4
 
 #Disabled, causes gfx errors on 1.15.x  Enable if fixed.

@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = FPS++ For Xenoblade Chronicles X
 path = "Xenoblade Chronicles X/Mods/FPS++ For XCX"
 description = Allows you to change the FPS and the speed that most things run at.|Some bugs might still occur if you run games at 60FPS.|Only supports the latest update!
+#Credits: Crementif, M&&M, lasyan3
 version = 6
 
 [Default]

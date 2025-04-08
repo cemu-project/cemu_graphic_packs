@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = DPADJump
+path = "Splatoon/Mods/Superjump With The DPAD"
+description = Hold A + D-Pad in any direction to super jump to a teammate or the spawn point during a match or Recon, similar to SwapDRC patches.|Made by primaviera.
+version = 7

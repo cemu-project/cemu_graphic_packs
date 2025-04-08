@@ -3,6 +3,7 @@ titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Character Size and Invisible Chest
 path = "Xenoblade Chronicles X/Mods/Character/Character Size"
 description = "You can change the height of any character and also make the chest of some characters not render.||Recommended to be combined with the 'No Fading When Close-up' mod (in Graphics).||***Activate by pressing START(+), then Party->Active Members->Confirm Changes."
+#Credits: Intra
 version = 7
 
 [Default]

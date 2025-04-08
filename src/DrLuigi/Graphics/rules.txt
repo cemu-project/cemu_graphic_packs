@@ -1,0 +1,94 @@
+[Definition]
+titleIds = 0005000010150300,0005000010152A00,0005000010152B00
+name = Graphics Settings
+path = "Dr. Luigi/Graphics"
+description = Changes the resolution of the game and Enable/Disable the game's Anti-Aliasing.|Made by M&&M.
+#Credits: M&&M
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+$AAEnable:int = 1
+
+# Performance
+
+[Preset]
+category = Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+default = 1
+
+# Common HD Resolutions
+
+[Preset]
+category = Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+[Preset]
+category = Anti-Aliasing
+name = Enable
+$AAEnable:int = 1
+
+[Preset]
+category = Anti-Aliasing
+name = Disable
+$AAEnable:int = 0
+
+[TextureRedefine]
+width = 1280
+height = 720
+formatsExcluded = 0x31
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight  = ($height/$gameHeight) * 720

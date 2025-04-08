@@ -1,0 +1,51 @@
+#version 460
+
+// Vulkan specific layout for texture and uniform binding
+#ifdef VULKAN
+    layout(set = 1, binding = 2, std140) uniform ufBlock {
+        vec4 uf_fragCoordScale;
+    };
+    layout(set = 1, binding = 1) uniform sampler2D textureUnitPS1;
+    layout(set = 1, binding = 0) uniform sampler2D textureUnitPS0;
+#else
+    // OpenGL bindings for uniform and textures
+    uniform ufBlock {
+        vec4 uf_fragCoordScale;
+    };
+    uniform sampler2D textureUnitPS1;
+    uniform sampler2D textureUnitPS0;
+#endif
+
+layout(location = 0) in vec4 passParameterSem133;
+layout(location = 0) out vec4 passPixelColor0;
+
+void main() {
+    ivec4 R0i = floatBitsToInt(passParameterSem133);
+    ivec4 R1i = ivec4(0);
+
+    // Sample textureUnitPS1
+    vec4 tex1Sample = texture(textureUnitPS1, vec2(intBitsToFloat(R0i.z), intBitsToFloat(R0i.w)));
+    R1i.x = floatBitsToInt(tex1Sample.z);
+
+    // Sample textureUnitPS0
+    vec3 tex0Sample = texture(textureUnitPS0, vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y))).xyz;
+    R0i.xyz = floatBitsToInt(tex0Sample);
+
+    // Apply adjustment to R0i.w
+    R0i.w = floatBitsToInt(clamp(-intBitsToFloat(R1i.x) * 7.0 + 0.5, 0.0, 1.0));
+
+    // Conditional discard
+    if (intBitsToFloat(R0i.w) < 0.0) {
+        discard;
+    }
+
+    // Final dot product calculation
+    float dotResult = dot(
+        vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), -1.0),
+        vec4(0.5, 0.67, 0.41, 0.0)
+    );
+    R0i.w = floatBitsToInt(dotResult);
+
+    // Output final color
+    passPixelColor0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+}

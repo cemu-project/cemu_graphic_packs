@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001017C600,0005000010181F00
+name = Allow Portals From Other Skylanders Games
+path = "Skylanders Trap Team/Mods/Allow Portals From Other Skylanders Games"
+description = Allows any (non-Xbox!) Portal of Power to be used instead of the Traptanium Portal.||Created by OddLittlePumpkin.|Special Thanks to NefariousTechSupport and Maff.
+version = 7

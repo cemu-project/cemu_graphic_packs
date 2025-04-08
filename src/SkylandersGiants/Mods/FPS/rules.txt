@@ -2,7 +2,7 @@
 titleIds = 000500001010D700,0005000010116000
 name = FPS
 path = "Skylanders: Giants/Mods/FPS"
-description = Changes the game's FPS limit.|Running the game with a high FPS limit can result in glitches.||Made by DigitNetics and Mew00.
+description = Changes the game's FPS limit. The speed of some things is tied to the frame rate.||Made by DigitNetics and Mew00. Fix for speed-up above 120 FPS by SuperSamus and Winner Nombre.
 version = 7
 
 [Default]

@@ -3,6 +3,7 @@ titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Graphic Options
 path = "Mario Kart 8/Graphics"
 description = Allows you to change the game's TV resolution, gamepad resolution, shadow quality, anti-aliasing, bloom intensity, motion blur quality, level of detail and anisotropic filtering quality.|Made by Crementif, theboy181 and M&&M.
+#Credits: Crementif, theboy181, M&&M
 version = 6
 
 [Default]

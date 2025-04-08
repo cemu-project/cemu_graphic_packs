@@ -2,7 +2,7 @@
 titleIds = 00050000101F4D00,00050000101FB100
 name = FPS
 path = "Skylanders Imaginators/Mods/FPS"
-description = Changes the game's dynamic FPS target. Might have bugs, especially when going above 120 FPS.||Made by Mew00.
+description = Changes the game's FPS limit.||Needs to be disabled during certain sections, as it makes them impossible to complete:|- Sky Fortress: wrecking ball minigame (enemies are barely pushed)|- Golden Arcade: target shooting minigame (projectiles despawn before being able to reach some targets)|- Enchanted Elven Forest: water cannon near end of level (the splash is unable to put out the most distant fire)||Other minor issues:|- General: jump height is a little shorter, making some vertical jumps inconsistent|-Selfie mode: camera controls are too fast|- Cradle of Creation: hamster wheel rotates too fast||Made by Mew00. Fall respawn fix by SuperSamus and Winner Nombre.
 version = 6
 
 [Default]

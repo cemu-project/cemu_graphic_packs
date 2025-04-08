@@ -3,6 +3,7 @@ titleIds = 000500001010ec00,000500001010ed00,000500001010eb00
 name = Multiplayer network port
 path = "Mario Kart 8/Workarounds/Multiplayer network port"
 description = Forces peer-to-peer multiplayer to use a certain network port number, so that you can port forward it in your router.||This might help with connecting to online services, or with some 118-XXXX errors.
+#Credits: ashquarky
 version = 6
 
 [Default]
