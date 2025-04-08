@@ -70,6 +70,7 @@
     >Tip: Press and hold the R stick button to speed up even more
 - **No Model Fade**: Makes it so that character and skell models don't fade out when the camera gets too close.
 - **Remove Overdrive Blur**: Removes the blur that happens around the screen when you are in Overdrive.
+- **Lib.ini Edit**: Allows easy editing of the lib.ini file which contains various graphical settings.
 - **Fix Camera Bug**: Fixes the bug where if your character ever goes under a ceiling, the game forgets all your settings.
 
 ### HUD mods

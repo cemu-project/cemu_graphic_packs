@@ -1,0 +1,2559 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = lib.ini edit
+path = "Xenoblade Chronicles X/Mods/Graphics/lib.ini"
+description = Edit the game's lib.ini file that contains various graphical settings.|Some of these are usefull, such as sRGBMode, and some have no effect on the game.|Brightness fix doesn't work with sRGBmode = off.
+#Credits: Intra
+version = 7
+
+#if you find any interesting non-default values
+#or think a setting should be show in Basic or Advanced
+#or want to add any comments about what a setting does
+#please either make a PR on the cemugfx github or
+#@_intra_ on the cemu discord
+#will be greatly appreciated
+#the non-default values and options shown were just quickly made tf up
+#there are just too many to test and prove which ones procude a noticable affect
+
+[Default]
+$tonemap = 0x6F6E0000 #on
+$ssao = 0x6F6E0000 #on
+$bloom = 0x6F6E0000 #on
+$godray = 0x6F6E0000 #on
+$AntiAliasing = 0x6F6E0000 #on
+$ColReduction = 0x6F666600 #off
+$dof = 0x6F666600 #off
+$lensFlare = 0x6F6E0000 #on
+
+$lut = 0x6F6E0000 #on
+$luttex1_s1 = 0x6C757462 #lutb
+$luttex1_s2 = 0x61000000 #a
+
+$cube_s1 = 0x63756265 #cube
+
+$tonemax = 2.5
+$tonemax_DecimalPlaces = 1 #0.0
+$tonemin = 1.0
+$tonemin_DecimalPlaces = 1 #0.0
+$tonemul = 1.0
+$tonemul_DecimalPlaces = 1 #0.0
+$toneLastmul = 1.00
+$toneLastmul_DecimalPlaces = 2 #0.00
+$toneBlmmax = 1.3
+$toneBlmmax_DecimalPlaces = 1 #0.0
+$toneBlmmin = 1.0
+$toneBlmmin_DecimalPlaces = 1 #0.0
+$toneBlmmul = 1.0
+$toneBlmmul_DecimalPlaces = 1 #0.0
+$toneBlmLastmul = 0.8
+$toneBlmLastmul_DecimalPlaces = 1 #0.0
+
+$godray_inival = 0.95
+$godray_inival_DecimalPlaces = 2 #0.00
+$godray_decay = 0.99
+$godray_decay_DecimalPlaces = 2 #0.00
+$godray_scale = 1.235
+$godray_scale_DecimalPlaces = 3 #0.000
+
+$blm_border_sub = 0.20
+$blm_border_sub_DecimalPlaces = 2 #0.00
+$blm_border_mul = 0.45
+$blm_border_mul_DecimalPlaces = 2 #0.00
+$blm_border_sub2 = 3.0
+$blm_border_sub2_DecimalPlaces = 1 #0.0
+$blm_border_mul2 = 1.5
+$blm_border_mul2_DecimalPlaces = 1 #0.0
+$blm_border_max = 3.5
+$blm_border_max_DecimalPlaces = 1 #0.0
+$blm_tex_mul = 3.0
+$blm_tex_mul_DecimalPlaces = 1 #0.0
+$blm_blurscale1 = 1.0
+$blm_blurscale1_DecimalPlaces = 1 #0.0
+$blm_blurscale2 = 0.7
+$blm_blurscale2_DecimalPlaces = 1 #0.0
+$blm_blurscale3 = 1.5
+$blm_blurscale3_DecimalPlaces = 1 #0.0
+$blm_blurRange1 = 0.9
+$blm_blurRange1_DecimalPlaces = 1 #0.0
+$blm_blurRange2 = 0.8
+$blm_blurRange2_DecimalPlaces = 1 #0.0
+$blm_blurRange3 = 0.8
+$blm_blurRange3_DecimalPlaces = 1 #0.0
+$blm_scale1 = 0.2
+$blm_scale1_DecimalPlaces = 1 #0.0
+$blm_scale2 = 0.1
+$blm_scale2_DecimalPlaces = 1 #0.0
+$blm_scale3 = 0.1
+$blm_scale3_DecimalPlaces = 1 #0.0
+
+$lens_max = 1
+$lens_max_DecimalPlaces = 0 #0
+$lens_rot = 0
+$lens_rot_DecimalPlaces = 0 #0
+$lens_sub = 1.5
+$lens_sub_DecimalPlaces = 1 #0.0
+$lens_mul = 3.5
+$lens_mul_DecimalPlaces = 1 #0.0
+$lens_weight = 0.1
+$lens_weight_DecimalPlaces = 1 #0.0
+$lens_decay = 1.0
+$lens_decay_DecimalPlaces = 1 #0.0
+$lens_str = 1.5
+$lens_str_DecimalPlaces = 1 #0.0
+$lens_paMax = 4.0
+$lens_paMax_DecimalPlaces = 1 #0.0
+$lens_UVDecay = 0.290
+$lens_UVDecay_DecimalPlaces = 3 #0.000
+
+$AA_Sharpness = 8.0
+$AA_Sharpness_DecimalPlaces = 1 #0.0
+$AA_Range = 0.5
+$AA_Range_DecimalPlaces = 1 #0.0
+$AA_Threshold = 0.17
+$AA_Threshold_DecimalPlaces = 2 #0.00
+$AA_ThresholdMin = 0.05
+$AA_ThresholdMin_DecimalPlaces = 2 #0.00
+
+$red_sclX = 0.96
+$red_sclX_DecimalPlaces = 2 #0.00
+$red_sclY = 1.0
+$red_sclY_DecimalPlaces = 1 #0.0
+
+$red_Auto = 0x6F6E0000 #on
+$red_AtMaxX = 0.96
+$red_AtMaxX_DecimalPlaces = 2 #0.00
+$red_AtMaxY = 1.0
+$red_AtMaxY_DecimalPlaces = 1 #0.0
+$red_AtMinX = 0.6
+$red_AtMinX_DecimalPlaces = 1 #0.0
+$red_AtMinY = 0.86
+$red_AtMinY_DecimalPlaces = 2 #0.00
+$red_AtRate = 100.0
+$red_AtRate_DecimalPlaces = 1 #0.0
+
+$ao_Lengs = 0.1
+$ao_Lengs_DecimalPlaces = 1 #0.0
+$ao_LengsRatio = 1.98
+$ao_LengsRatio_DecimalPlaces = 2 #0.00
+$ao_range = 5.7
+$ao_range_DecimalPlaces = 1 #0.0
+$ao_rangeRatio = 1.000
+$ao_rangeRatio_DecimalPlaces = 3 #0.000
+$ao_sub = 0.02
+$ao_sub_DecimalPlaces = 2 #0.00
+$ao_subRatio = 0.150
+$ao_subRatio_DecimalPlaces = 3 #0.000
+$ao_Mul = 2.0
+$ao_Mul_DecimalPlaces = 1 #0.0
+$ao_blurRange = 0.720
+$ao_blurRange_DecimalPlaces = 3 #0.000
+$ao_blurScale = 0.75
+$ao_blurScale_DecimalPlaces = 2 #0.00
+
+$blur = 0x6F666600 #off
+$blurStr = 0.2
+$blurStr_DecimalPlaces = 1 #0.0
+$blurSub = 0.05
+$blurSub_DecimalPlaces = 2 #0.00
+
+$shadowStr = 1.0
+$shadowStr_DecimalPlaces = 1 #0.0
+$shadowHalf = 0x6F666600 #off
+
+$simShwStr = 1.6
+$simShwStr_DecimalPlaces = 1 #0.0
+$simShwIn = 0.7
+$simShwIn_DecimalPlaces = 1 #0.0
+$simShwMin = 0.15
+$simShwMin_DecimalPlaces = 2 #0.00
+
+$sRGBMode = 0x6F6E0000 #on
+$gamma = 6
+$gamma_DecimalPlaces = 0 #0
+
+$ao_av_CenterWeight = 1.090
+$ao_av_CenterWeight_DecimalPlaces = 3 #0.000
+$ao_av_MaxDistance = 0.15
+$ao_av_MaxDistance_DecimalPlaces = 2 #0.00
+$ao_av_MaxRadius = 0.2
+$ao_av_MaxRadius_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutStart = 70000.0
+$ao_av_FadeOutStart_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutDistance = 10000.0
+$ao_av_FadeOutDistance_DecimalPlaces = 1 #0.0
+$ao_av_BlurFallOff = 0.050
+$ao_av_BlurFallOff_DecimalPlaces = 3 #0.000
+$ao_av_BlurScale = 1.6
+$ao_av_BlurScale_DecimalPlaces = 1 #0.0
+$ao_av_Shwstr = 0.5
+$ao_av_Shwstr_DecimalPlaces = 1 #0.0
+
+$cam_near = 0.1
+$cam_near_DecimalPlaces = 1 #0.0
+$cam_far = 80000.0
+$cam_far_DecimalPlaces = 1 #0.0
+
+$avmp0101 = 0.5
+$avmp0102 = 0.5
+$avmp0103 = 0.5
+$avmp01_DecimalPlaces = 1 #0.0
+$avmp0201 = 0.5
+$avmp0202 = 0.5
+$avmp0203 = 0.5
+$avmp02_DecimalPlaces = 1 #0.0
+$avmp0301 = 0.5
+$avmp0302 = 0.5
+$avmp0303 = 0.5
+$avmp03_DecimalPlaces = 1 #0.0
+$avmp0401 = 0.5
+$avmp0402 = 0.5
+$avmp0403 = 0.5
+$avmp04_DecimalPlaces = 1 #0.0
+$avmp0501 = 0.5
+$avmp0502 = 0.5
+$avmp0503 = 0.5
+$avmp05_DecimalPlaces = 1 #0.0
+$avmp0601 = 0.5
+$avmp0602 = 0.5
+$avmp0603 = 0.5
+$avmp06_DecimalPlaces = 1 #0.0
+$avmp0701 = 0.5
+$avmp0702 = 0.5
+$avmp0703 = 0.5
+$avmp07_DecimalPlaces = 1 #0.0
+$avmp0801 = 0.5
+$avmp0802 = 0.5
+$avmp0803 = 0.5
+$avmp08_DecimalPlaces = 1 #0.0
+$avmp0901 = 0.5
+$avmp0902 = 0.5
+$avmp0903 = 0.5
+$avmp09_DecimalPlaces = 1 #0.0
+$avmp1001 = 0.5
+$avmp1002 = 0.5
+$avmp1003 = 0.5
+$avmp10_DecimalPlaces = 1 #0.0
+$avmp1101 = 0.5
+$avmp1102 = 0.5
+$avmp1103 = 0.5
+$avmp11_DecimalPlaces = 1 #0.0
+$avmp1201 = 0.5
+$avmp1202 = 0.5
+$avmp1203 = 0.5
+$avmp12_DecimalPlaces = 1 #0.0
+$avmp1301 = 0.5
+$avmp1302 = 0.5
+$avmp1303 = 0.5
+$avmp13_DecimalPlaces = 1 #0.0
+$avmp1401 = 0.5
+$avmp1402 = 0.5
+$avmp1403 = 0.5
+$avmp14_DecimalPlaces = 1 #0.0
+$avmp1501 = 0.5
+$avmp1502 = 0.5
+$avmp1503 = 0.5
+$avmp15_DecimalPlaces = 1 #0.0
+$avmp1601 = 0.5
+$avmp1602 = 0.5
+$avmp1603 = 0.5
+$avmp16_DecimalPlaces = 1 #0.0
+
+$cloud_h_min = 1000.0
+$cloud_h_min_DecimalPlaces = 1 #0.0
+$cloud_h_max = 1100.0
+$cloud_h_max_DecimalPlaces = 1 #0.0
+
+$optionsshown = 3 #<- can replace with 4 if using your own preset
+
+[Preset]
+category = "Options Shown"
+name = Basic Options
+$optionsshown = 3
+
+[Preset]
+category = "Options Shown"
+name = Advanced Options
+$optionsshown = 2
+
+#Make your own preset to help with the so many options
+#below are 2 examples of how to make your own preset
+
+#[Preset]
+#category = "Options Shown"
+#name = User Created Preset Example 1 (AA off, sRGB off, etc.)
+#$optionsshown = 4
+#$AntiAliasing = 0x6F666600 #off
+#$sRGBMode = 0x6F666600 #off
+
+#[Preset]
+#category = "Options Shown"
+#name = User Created Preset Example 2 (sRGB, title screen clouds, etc.)
+#$optionsshown = 4
+#$bloom = 0x6F666600 #off
+#$sRGBMode = 0x6F666600 #off
+#$red_sclX = 4.0
+#$red_sclY = 4.0
+#$red_Auto = 0x6F666600 #off
+#$red_AtMaxX = 4.0
+#$red_AtMaxY = 4.0
+#$red_AtMinX = 4.0
+#$red_AtMinY = 4.0
+#$cloud_h_min = 200.0
+#$cloud_h_max = 1500.0
+
+[Preset]
+category = "Options Shown"
+name = ALL Options (will lag cemu if before 2.4)
+$optionsshown = 1
+
+#be careful when increasing decimal point precision
+#there is only enough room in ram for 1988 letters/numbers
+#the file by default has 1950 characters, so you can safely add ~38 extra decimal places
+#if you need more decimal places for a few settings you can reduce the amount for other settings
+
+[Preset]
+category = "tonemap"
+condition = $optionsshown <= 2
+name = on (default)
+default = 1
+$tonemap = 0x6F6E0000 #on
+
+[Preset]
+category = "tonemap"
+condition = $optionsshown <= 2
+name = off
+$tonemap = 0x6F666600 #off
+
+[Preset]
+category = "ssao"
+condition = $optionsshown <= 2
+name = on (default)
+default = 1
+$ssao = 0x6F6E0000 #on
+
+[Preset]
+category = "ssao"
+condition = $optionsshown <= 2
+name = off
+$ssao = 0x6F666600 #off
+
+[Preset] #produces a swishy effect in the back of pharsis's room, probably has other effects
+category = "bloom"
+condition = $optionsshown <= 3
+name = on (default)
+default = 1
+$bloom = 0x6F6E0000 #on
+
+[Preset] #make pharsis's room much darker, probably has other effects
+category = "bloom"
+condition = $optionsshown <= 3
+name = off
+$bloom = 0x6F666600 #off
+
+[Preset]
+category = "godray"
+condition = $optionsshown <= 2
+name = on (default)
+default = 1
+$godray = 0x6F6E0000 #on
+
+[Preset]
+category = "godray"
+condition = $optionsshown <= 2
+name = off
+$godray = 0x6F666600 #off
+
+[Preset] #enable the game's anti-aliasing
+category = "AntiAliasing"
+condition = $optionsshown <= 3
+name = on (default)
+default = 1
+$AntiAliasing = 0x6F6E0000 #on
+
+[Preset] #disable the game's anti-aliasing
+category = "AntiAliasing"
+condition = $optionsshown <= 3
+name = off
+$AntiAliasing = 0x6F666600 #off
+
+[Preset]
+category = "ColReduction"
+condition = $optionsshown <= 2
+name = on
+$ColReduction = 0x6F6E0000 #on
+
+[Preset]
+category = "ColReduction"
+condition = $optionsshown <= 2
+name = off (default)
+default = 1
+$ColReduction = 0x6F666600 #off
+
+[Preset]
+category = "dof"
+condition = $optionsshown <= 2
+name = on
+$dof = 0x6F6E0000 #on
+
+[Preset]
+category = "dof"
+condition = $optionsshown <= 2
+name = off (default)
+default = 1
+$dof = 0x6F666600 #off
+
+[Preset]
+category = "lensFlare"
+condition = $optionsshown <= 2
+name = on (default)
+default = 1
+$lensFlare = 0x6F6E0000 #on
+
+[Preset]
+category = "lensFlare"
+condition = $optionsshown <= 2
+name = off
+$lensFlare = 0x6F666600 #off
+
+[Preset]
+category = "lut"
+condition = $optionsshown <= 2
+name = on (default)
+default = 1
+$lut = 0x6F6E0000 #on
+
+[Preset]
+category = "lut"
+condition = $optionsshown <= 2
+name = off
+$lut = 0x6F666600 #off
+
+[Preset]
+category = "luttex1"
+condition = $optionsshown <= 1
+name = lutba (default)
+default = 1
+$luttex1_s1 = 0x6C757462 #lutb
+$luttex1_s2 = 0x61000000 #a
+
+[Preset]
+category = "cube"
+condition = $optionsshown <= 1
+name = cube (default)
+default = 1
+$cube_s1 = 0x63756265 #cube
+
+[Preset]
+category = "tonemax"
+condition = $optionsshown <= 1
+name = 0.5
+$tonemax_DecimalPlaces = 1 #0.0
+$tonemax = 0.5
+
+[Preset]
+category = "tonemax"
+condition = $optionsshown <= 1
+name = 2.5 (default)
+default = 1
+$tonemax_DecimalPlaces = 1 #0.0
+$tonemax = 2.5
+
+[Preset]
+category = "tonemax"
+condition = $optionsshown <= 1
+name = 4.0
+$tonemax_DecimalPlaces = 1 #0.0
+$tonemax = 4.0
+
+[Preset]
+category = "tonemin"
+condition = $optionsshown <= 1
+name = 0.1
+$tonemin_DecimalPlaces = 1 #0.0
+$tonemin = 0.1
+
+[Preset]
+category = "tonemin"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$tonemin_DecimalPlaces = 1 #0.0
+$tonemin = 1.0
+
+[Preset]
+category = "tonemin"
+condition = $optionsshown <= 1
+name = 3.0
+$tonemin_DecimalPlaces = 1 #0.0
+$tonemin = 3.0
+
+[Preset]
+category = "tonemul"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$tonemul_DecimalPlaces = 1 #0.0
+$tonemul = 1.0
+
+[Preset]
+category = "tonemul"
+condition = $optionsshown <= 1
+name = 2.0
+$tonemul_DecimalPlaces = 1 #0.0
+$tonemul = 2.0
+
+[Preset]
+category = "toneLastmul"
+condition = $optionsshown <= 1
+name = 0.5
+$toneLastmul_DecimalPlaces = 1 #0.0
+$toneLastmul = 0.5
+
+[Preset]
+category = "toneLastmul"
+condition = $optionsshown <= 1
+name = 1.00 (default)
+default = 1
+$toneLastmul_DecimalPlaces = 2 #0.00
+$toneLastmul = 1.00
+
+[Preset]
+category = "toneLastmul"
+condition = $optionsshown <= 1
+name = 2.0
+$toneLastmul_DecimalPlaces = 1 #0.0
+$toneLastmul = 2.0
+
+[Preset]
+category = "toneBlmmax"
+condition = $optionsshown <= 1
+name = 0.3
+$toneBlmmax_DecimalPlaces = 1 #0.0
+$toneBlmmax = 0.3
+
+[Preset]
+category = "toneBlmmax"
+condition = $optionsshown <= 1
+name = 1.3 (default)
+default = 1
+$toneBlmmax_DecimalPlaces = 1 #0.0
+$toneBlmmax = 1.3
+
+[Preset]
+category = "toneBlmmax"
+condition = $optionsshown <= 1
+name = 2.3
+$toneBlmmax_DecimalPlaces = 1 #0.0
+$toneBlmmax = 2.3
+
+[Preset]
+category = "toneBlmmin"
+condition = $optionsshown <= 1
+name = 0.1
+$toneBlmmin_DecimalPlaces = 1 #0.0
+$toneBlmmin = 0.1
+
+[Preset]
+category = "toneBlmmin"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$toneBlmmin_DecimalPlaces = 1 #0.0
+$toneBlmmin = 1.0
+
+[Preset]
+category = "toneBlmmin"
+condition = $optionsshown <= 1
+name = 2.0
+$toneBlmmin_DecimalPlaces = 1 #0.0
+$toneBlmmin = 2.0
+
+[Preset]
+category = "toneBlmmul"
+condition = $optionsshown <= 1
+name = 0.2
+$toneBlmmul_DecimalPlaces = 1 #0.0
+$toneBlmmul = 0.2
+
+[Preset]
+category = "toneBlmmul"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$toneBlmmul_DecimalPlaces = 1 #0.0
+$toneBlmmul = 1.0
+
+[Preset]
+category = "toneBlmmul"
+condition = $optionsshown <= 1
+name = 2.5
+$toneBlmmul_DecimalPlaces = 1 #0.0
+$toneBlmmul = 2.5
+
+[Preset]
+category = "toneBlmLastmul"
+condition = $optionsshown <= 1
+name = 0.2
+$toneBlmLastmul_DecimalPlaces = 1 #0.0
+$toneBlmLastmul = 0.2
+
+[Preset]
+category = "toneBlmLastmul"
+condition = $optionsshown <= 1
+name = 0.8 (default)
+default = 1
+$toneBlmLastmul_DecimalPlaces = 1 #0.0
+$toneBlmLastmul = 0.8
+
+[Preset]
+category = "toneBlmLastmul"
+condition = $optionsshown <= 1
+name = 3.0
+$toneBlmLastmul_DecimalPlaces = 1 #0.0
+$toneBlmLastmul = 3.0
+
+[Preset]
+category = "godray_inival"
+condition = $optionsshown <= 1
+name = 0.8
+$godray_inival_DecimalPlaces = 1 #0.0
+$godray_inival = 0.8
+
+[Preset]
+category = "godray_inival"
+condition = $optionsshown <= 1
+name = 0.95 (default)
+default = 1
+$godray_inival_DecimalPlaces = 2 #0.00
+$godray_inival = 0.95
+
+[Preset]
+category = "godray_inival"
+condition = $optionsshown <= 1
+name = 1.2
+$godray_inival_DecimalPlaces = 1 #0.0
+$godray_inival = 1.2
+
+[Preset]
+category = "godray_decay"
+condition = $optionsshown <= 1
+name = 0.33
+$godray_decay_DecimalPlaces = 2 #0.00
+$godray_decay = 0.33
+
+[Preset]
+category = "godray_decay"
+condition = $optionsshown <= 1
+name = 0.99 (default)
+default = 1
+$godray_decay_DecimalPlaces = 2 #0.00
+$godray_decay = 0.99
+
+[Preset]
+category = "godray_decay"
+condition = $optionsshown <= 1
+name = 1.66
+$godray_decay_DecimalPlaces = 2 #0.00
+$godray_decay = 1.66
+
+[Preset]
+category = "godray_scale"
+condition = $optionsshown <= 1
+name = 0.95
+$godray_scale_DecimalPlaces = 2 #0.00
+$godray_scale = 0.95
+
+[Preset]
+category = "godray_scale"
+condition = $optionsshown <= 1
+name = 1.235 (default)
+default = 1
+$godray_scale_DecimalPlaces = 3 #0.000
+$godray_scale = 1.235
+
+[Preset]
+category = "godray_scale"
+condition = $optionsshown <= 1
+name = 2.0
+$godray_scale_DecimalPlaces = 1 #0.0
+$godray_scale = 2.0
+
+[Preset]
+category = "blm_border_sub"
+condition = $optionsshown <= 1
+name = 0.01
+$blm_border_sub_DecimalPlaces = 2 #0.00
+$blm_border_sub = 0.01
+
+[Preset]
+category = "blm_border_sub"
+condition = $optionsshown <= 1
+name = 0.20 (default)
+default = 1
+$blm_border_sub_DecimalPlaces = 2 #0.00
+$blm_border_sub = 0.20
+
+[Preset]
+category = "blm_border_sub"
+condition = $optionsshown <= 1
+name = 0.99
+$blm_border_sub_DecimalPlaces = 2 #0.00
+$blm_border_sub = 0.99
+
+[Preset]
+category = "blm_border_mul"
+condition = $optionsshown <= 1
+name = 0.05
+$blm_border_mul_DecimalPlaces = 2 #0.00
+$blm_border_mul = 0.05
+
+[Preset]
+category = "blm_border_mul"
+condition = $optionsshown <= 1
+name = 0.45 (default)
+default = 1
+$blm_border_mul_DecimalPlaces = 2 #0.00
+$blm_border_mul = 0.45
+
+[Preset]
+category = "blm_border_mul"
+condition = $optionsshown <= 1
+name = 2.0
+$blm_border_mul_DecimalPlaces = 1 #0.0
+$blm_border_mul = 2.0
+
+[Preset]
+category = "blm_border_sub2"
+condition = $optionsshown <= 1
+name = 0.5
+$blm_border_sub2_DecimalPlaces = 1 #0.0
+$blm_border_sub2 = 0.5
+
+[Preset]
+category = "blm_border_sub2"
+condition = $optionsshown <= 1
+name = 3.0 (default)
+default = 1
+$blm_border_sub2_DecimalPlaces = 1 #0.0
+$blm_border_sub2 = 3.0
+
+[Preset]
+category = "blm_border_sub2"
+condition = $optionsshown <= 1
+name = 6.0
+$blm_border_sub2_DecimalPlaces = 1 #0.0
+$blm_border_sub2 = 6.0
+
+[Preset]
+category = "blm_border_mul2"
+condition = $optionsshown <= 1
+name = 0.5
+$blm_border_mul2_DecimalPlaces = 1 #0.0
+$blm_border_mul2 = 0.5
+
+[Preset]
+category = "blm_border_mul2"
+condition = $optionsshown <= 1
+name = 1.5 (default)
+default = 1
+$blm_border_mul2_DecimalPlaces = 1 #0.0
+$blm_border_mul2 = 1.5
+
+[Preset]
+category = "blm_border_mul2"
+condition = $optionsshown <= 1
+name = 2.5
+$blm_border_mul2_DecimalPlaces = 1 #0.0
+$blm_border_mul2 = 2.5
+
+[Preset]
+category = "blm_border_max"
+condition = $optionsshown <= 1
+name = 0.5
+$blm_border_max_DecimalPlaces = 1 #0.0
+$blm_border_max = 0.5
+
+[Preset]
+category = "blm_border_max"
+condition = $optionsshown <= 1
+name = 3.5 (default)
+default = 1
+$blm_border_max_DecimalPlaces = 1 #0.0
+$blm_border_max = 3.5
+
+[Preset]
+category = "blm_border_max"
+condition = $optionsshown <= 1
+name = 7.5
+$blm_border_max_DecimalPlaces = 1 #0.0
+$blm_border_max = 7.5
+
+[Preset]
+category = "blm_tex_mul"
+condition = $optionsshown <= 1
+name = 0.5
+$blm_tex_mul_DecimalPlaces = 1 #0.0
+$blm_tex_mul = 0.5
+
+[Preset]
+category = "blm_tex_mul"
+condition = $optionsshown <= 1
+name = 3.0 (default)
+default = 1
+$blm_tex_mul_DecimalPlaces = 1 #0.0
+$blm_tex_mul = 3.0
+
+[Preset]
+category = "blm_tex_mul"
+condition = $optionsshown <= 1
+name = 9.0
+$blm_tex_mul_DecimalPlaces = 1 #0.0
+$blm_tex_mul = 9.0
+
+[Preset]
+category = "blm_blurscale1"
+condition = $optionsshown <= 1
+name = 0.1
+$blm_blurscale1_DecimalPlaces = 1 #0.0
+$blm_blurscale1 = 0.1
+
+[Preset]
+category = "blm_blurscale1"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$blm_blurscale1_DecimalPlaces = 1 #0.0
+$blm_blurscale1 = 1.0
+
+[Preset]
+category = "blm_blurscale1"
+condition = $optionsshown <= 1
+name = 3.0
+$blm_blurscale1_DecimalPlaces = 1 #0.0
+$blm_blurscale1 = 3.0
+
+[Preset]
+category = "blm_blurscale2"
+condition = $optionsshown <= 1
+name = 0.1
+$blm_blurscale2_DecimalPlaces = 1 #0.0
+$blm_blurscale2 = 0.1
+
+[Preset]
+category = "blm_blurscale2"
+condition = $optionsshown <= 1
+name = 0.7 (default)
+default = 1
+$blm_blurscale2_DecimalPlaces = 1 #0.0
+$blm_blurscale2 = 0.7
+
+[Preset]
+category = "blm_blurscale2"
+condition = $optionsshown <= 1
+name = 3.1
+$blm_blurscale2_DecimalPlaces = 1 #0.0
+$blm_blurscale2 = 3.1
+
+[Preset]
+category = "blm_blurscale3"
+condition = $optionsshown <= 1
+name = 0.5
+$blm_blurscale3_DecimalPlaces = 1 #0.0
+$blm_blurscale3 = 0.5
+
+[Preset]
+category = "blm_blurscale3"
+condition = $optionsshown <= 1
+name = 1.5 (default)
+default = 1
+$blm_blurscale3_DecimalPlaces = 1 #0.0
+$blm_blurscale3 = 1.5
+
+[Preset]
+category = "blm_blurscale3"
+condition = $optionsshown <= 1
+name = 3.5
+$blm_blurscale3_DecimalPlaces = 1 #0.0
+$blm_blurscale3 = 3.5
+
+[Preset]
+category = "blm_blurRange1"
+condition = $optionsshown <= 1
+name = 0.1
+$blm_blurRange1_DecimalPlaces = 1 #0.0
+$blm_blurRange1 = 0.1
+
+[Preset]
+category = "blm_blurRange1"
+condition = $optionsshown <= 1
+name = 0.9 (default)
+default = 1
+$blm_blurRange1_DecimalPlaces = 1 #0.0
+$blm_blurRange1 = 0.9
+
+[Preset]
+category = "blm_blurRange1"
+condition = $optionsshown <= 1
+name = 10.0
+$blm_blurRange1_DecimalPlaces = 1 #0.0
+$blm_blurRange1 = 10.0
+
+[Preset]
+category = "blm_blurRange2"
+condition = $optionsshown <= 1
+name = 0.1
+$blm_blurRange2_DecimalPlaces = 1 #0.0
+$blm_blurRange2 = 0.1
+
+[Preset]
+category = "blm_blurRange2"
+condition = $optionsshown <= 1
+name = 0.8 (default)
+default = 1
+$blm_blurRange2_DecimalPlaces = 1 #0.0
+$blm_blurRange2 = 0.8
+
+[Preset]
+category = "blm_blurRange2"
+condition = $optionsshown <= 1
+name = 9.0
+$blm_blurRange2_DecimalPlaces = 1 #0.0
+$blm_blurRange2 = 9.0
+
+[Preset]
+category = "blm_blurRange3"
+condition = $optionsshown <= 1
+name = 0.1
+$blm_blurRange3_DecimalPlaces = 1 #0.0
+$blm_blurRange3 = 0.1
+
+[Preset]
+category = "blm_blurRange3"
+condition = $optionsshown <= 1
+name = 0.8 (default)
+default = 1
+$blm_blurRange3_DecimalPlaces = 1 #0.0
+$blm_blurRange3 = 0.8
+
+[Preset]
+category = "blm_blurRange3"
+condition = $optionsshown <= 1
+name = 9.0
+$blm_blurRange3_DecimalPlaces = 1 #0.0
+$blm_blurRange3 = 9.0
+
+[Preset]
+category = "blm_scale1"
+condition = $optionsshown <= 1
+name = 0.02
+$blm_scale1_DecimalPlaces = 2 #0.00
+$blm_scale1 = 0.02
+
+[Preset]
+category = "blm_scale1"
+condition = $optionsshown <= 1
+name = 0.2 (default)
+default = 1
+$blm_scale1_DecimalPlaces = 1 #0.0
+$blm_scale1 = 0.2
+
+[Preset]
+category = "blm_scale1"
+condition = $optionsshown <= 1
+name = 2.0
+$blm_scale1_DecimalPlaces = 1 #0.0
+$blm_scale1 = 2.0
+
+[Preset]
+category = "blm_scale2"
+condition = $optionsshown <= 1
+name = 0.01
+$blm_scale2_DecimalPlaces = 2 #0.00
+$blm_scale2 = 0.01
+
+[Preset]
+category = "blm_scale2"
+condition = $optionsshown <= 1
+name = 0.1 (default)
+default = 1
+$blm_scale2_DecimalPlaces = 1 #0.0
+$blm_scale2 = 0.1
+
+[Preset]
+category = "blm_scale2"
+condition = $optionsshown <= 1
+name = 2.0
+$blm_scale2_DecimalPlaces = 1 #0.0
+$blm_scale2 = 2.0
+
+[Preset]
+category = "blm_scale3"
+condition = $optionsshown <= 1
+name = 0.01
+$blm_scale3_DecimalPlaces = 2 #0.00
+$blm_scale3 = 0.01
+
+[Preset]
+category = "blm_scale3"
+condition = $optionsshown <= 1
+name = 0.1 (default)
+default = 1
+$blm_scale3_DecimalPlaces = 1 #0.0
+$blm_scale3 = 0.1
+
+[Preset]
+category = "blm_scale3"
+condition = $optionsshown <= 1
+name = 2.0
+$blm_scale3_DecimalPlaces = 1 #0.0
+$blm_scale3 = 2.0
+
+[Preset]
+category = "lens_max"
+condition = $optionsshown <= 1
+name = 0
+$lens_max_DecimalPlaces = 0 #0
+$lens_max = 0
+
+[Preset]
+category = "lens_max"
+condition = $optionsshown <= 1
+name = 1 (default)
+default = 1
+$lens_max_DecimalPlaces = 0 #0
+$lens_max = 1
+
+[Preset]
+category = "lens_rot"
+condition = $optionsshown <= 1
+name = 0 (default)
+default = 1
+$lens_rot_DecimalPlaces = 0 #0
+$lens_rot = 0
+
+[Preset]
+category = "lens_rot"
+condition = $optionsshown <= 1
+name = 1
+$lens_rot_DecimalPlaces = 0 #0
+$lens_rot = 1
+
+[Preset]
+category = "lens_sub"
+condition = $optionsshown <= 1
+name = 0.5
+$lens_sub_DecimalPlaces = 1 #0.0
+$lens_sub = 0.5
+
+[Preset]
+category = "lens_sub"
+condition = $optionsshown <= 1
+name = 1.5 (default)
+default = 1
+$lens_sub_DecimalPlaces = 1 #0.0
+$lens_sub = 1.5
+
+[Preset]
+category = "lens_sub"
+condition = $optionsshown <= 1
+name = 2.5
+$lens_sub_DecimalPlaces = 1 #0.0
+$lens_sub = 2.5
+
+[Preset]
+category = "lens_mul"
+condition = $optionsshown <= 1
+name = 0.5
+$lens_mul_DecimalPlaces = 1 #0.0
+$lens_mul = 0.5
+
+[Preset]
+category = "lens_mul"
+condition = $optionsshown <= 1
+name = 3.5 (default)
+default = 1
+$lens_mul_DecimalPlaces = 1 #0.0
+$lens_mul = 3.5
+
+[Preset]
+category = "lens_mul"
+condition = $optionsshown <= 1
+name = 9.5
+$lens_mul_DecimalPlaces = 1 #0.0
+$lens_mul = 9.5
+
+[Preset]
+category = "lens_weight"
+condition = $optionsshown <= 1
+name = 0.002
+$lens_weight_DecimalPlaces = 3 #0.000
+$lens_weight = 0.002
+
+[Preset]
+category = "lens_weight"
+condition = $optionsshown <= 1
+name = 0.1 (default)
+default = 1
+$lens_weight_DecimalPlaces = 1 #0.0
+$lens_weight = 0.1
+
+[Preset]
+category = "lens_weight"
+condition = $optionsshown <= 1
+name = 9.0
+$lens_weight_DecimalPlaces = 1 #0.0
+$lens_weight = 9.0
+
+[Preset]
+category = "lens_decay"
+condition = $optionsshown <= 1
+name = 0.1
+$lens_decay_DecimalPlaces = 1 #0.0
+$lens_decay = 0.1
+
+[Preset]
+category = "lens_decay"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$lens_decay_DecimalPlaces = 1 #0.0
+$lens_decay = 1.0
+
+[Preset]
+category = "lens_decay"
+condition = $optionsshown <= 1
+name = 5.0
+$lens_decay_DecimalPlaces = 1 #0.0
+$lens_decay = 5.0
+
+[Preset]
+category = "lens_str"
+condition = $optionsshown <= 1
+name = 0.2
+$lens_str_DecimalPlaces = 1 #0.0
+$lens_str = 0.2
+
+[Preset]
+category = "lens_str"
+condition = $optionsshown <= 1
+name = 1.5 (default)
+default = 1
+$lens_str_DecimalPlaces = 1 #0.0
+$lens_str = 1.5
+
+[Preset]
+category = "lens_str"
+condition = $optionsshown <= 1
+name = 5.0
+$lens_str_DecimalPlaces = 1 #0.0
+$lens_str = 5.0
+
+[Preset]
+category = "lens_paMax"
+condition = $optionsshown <= 1
+name = 0.5
+$lens_paMax_DecimalPlaces = 1 #0.0
+$lens_paMax = 0.5
+
+[Preset]
+category = "lens_paMax"
+condition = $optionsshown <= 1
+name = 4.0 (default)
+default = 1
+$lens_paMax_DecimalPlaces = 1 #0.0
+$lens_paMax = 4.0
+
+[Preset]
+category = "lens_paMax"
+condition = $optionsshown <= 1
+name = 12.0
+$lens_paMax_DecimalPlaces = 1 #0.0
+$lens_paMax = 12.0
+
+[Preset]
+category = "lens_UVDecay"
+condition = $optionsshown <= 1
+name = 0.01
+$lens_UVDecay_DecimalPlaces = 2 #0.00
+$lens_UVDecay = 0.01
+
+[Preset]
+category = "lens_UVDecay"
+condition = $optionsshown <= 1
+name = 0.290 (default)
+default = 1
+$lens_UVDecay_DecimalPlaces = 3 #0.000
+$lens_UVDecay = 0.290
+
+[Preset]
+category = "lens_UVDecay"
+condition = $optionsshown <= 1
+name = 0.99
+$lens_UVDecay_DecimalPlaces = 2 #0.00
+$lens_UVDecay = 0.99
+
+[Preset] #currently has no affect on cemu
+category = "AA_Sharpness"
+condition = $optionsshown <= 1
+name = 1.0
+$AA_Sharpness_DecimalPlaces = 1 #0.0
+$AA_Sharpness = 1.0
+
+[Preset] #currently has no affect on cemu
+category = "AA_Sharpness"
+condition = $optionsshown <= 1
+name = 8.0 (default)
+default = 1
+$AA_Sharpness_DecimalPlaces = 1 #0.0
+$AA_Sharpness = 8.0
+
+[Preset] #currently has no affect on cemu
+category = "AA_Sharpness"
+condition = $optionsshown <= 1
+name = 32.0
+$AA_Sharpness_DecimalPlaces = 1 #0.0
+$AA_Sharpness = 32.0
+
+[Preset] #currently has no affect on cemu
+category = "AA_Range"
+condition = $optionsshown <= 1
+name = 0.1
+$AA_Range_DecimalPlaces = 1 #0.0
+$AA_Range = 0.1
+
+[Preset] #currently has no affect on cemu
+category = "AA_Range"
+condition = $optionsshown <= 1
+name = 0.5 (default)
+default = 1
+$AA_Range_DecimalPlaces = 1 #0.0
+$AA_Range = 0.5
+
+[Preset] #currently has no affect on cemu
+category = "AA_Range"
+condition = $optionsshown <= 1
+name = 2.0
+$AA_Range_DecimalPlaces = 1 #0.0
+$AA_Range = 2.0
+
+[Preset] #currently has no affect on cemu
+category = "AA_Threshold"
+condition = $optionsshown <= 1
+name = 0.01
+$AA_Threshold_DecimalPlaces = 2 #0.00
+$AA_Threshold = 0.01
+
+[Preset] #currently has no affect on cemu
+category = "AA_Threshold"
+condition = $optionsshown <= 1
+name = 0.17 (default)
+default = 1
+$AA_Threshold_DecimalPlaces = 2 #0.00
+$AA_Threshold = 0.17
+
+[Preset] #currently has no affect on cemu
+category = "AA_Threshold"
+condition = $optionsshown <= 1
+name = 0.99
+$AA_Threshold_DecimalPlaces = 2 #0.00
+$AA_Threshold = 0.99
+
+[Preset] #currently has no affect on cemu
+category = "AA_ThresholdMin"
+condition = $optionsshown <= 1
+name = 0.005
+$AA_ThresholdMin_DecimalPlaces = 3 #0.000
+$AA_ThresholdMin = 0.005
+
+[Preset] #currently has no affect on cemu
+category = "AA_ThresholdMin"
+condition = $optionsshown <= 1
+name = 0.05 (default)
+default = 1
+$AA_ThresholdMin_DecimalPlaces = 2 #0.00
+$AA_ThresholdMin = 0.05
+
+[Preset] #currently has no affect on cemu
+category = "AA_ThresholdMin"
+condition = $optionsshown <= 1
+name = 0.9
+$AA_ThresholdMin_DecimalPlaces = 1 #0.0
+$AA_ThresholdMin = 0.9
+
+[Preset]
+category = "red_sclX"
+condition = $optionsshown <= 1
+name = 0.06
+$red_sclX_DecimalPlaces = 2 #0.00
+$red_sclX = 0.06
+
+[Preset]
+category = "red_sclX"
+condition = $optionsshown <= 1
+name = 0.96 (default)
+default = 1
+$red_sclX_DecimalPlaces = 2 #0.00
+$red_sclX = 0.96
+
+[Preset]
+category = "red_sclX"
+condition = $optionsshown <= 1
+name = 4.0
+$red_sclX_DecimalPlaces = 1 #0.0
+$red_sclX = 4.0
+
+[Preset]
+category = "red_sclY"
+condition = $optionsshown <= 1
+name = 0.1
+$red_sclY_DecimalPlaces = 1 #0.0
+$red_sclY = 0.1
+
+[Preset]
+category = "red_sclY"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$red_sclY_DecimalPlaces = 1 #0.0
+$red_sclY = 1.0
+
+[Preset]
+category = "red_sclY"
+condition = $optionsshown <= 1
+name = 4.0
+$red_sclY_DecimalPlaces = 1 #0.0
+$red_sclY = 4.0
+
+[Preset]
+category = "red_Auto"
+condition = $optionsshown <= 2
+name = on (default)
+default = 1
+$red_Auto = 0x6F6E0000 #on
+
+[Preset]
+category = "red_Auto"
+condition = $optionsshown <= 2
+name = off
+$red_Auto = 0x6F666600 #off
+
+[Preset]
+category = "red_AtMaxX"
+condition = $optionsshown <= 1
+name = 0.06
+$red_AtMaxX_DecimalPlaces = 2 #0.00
+$red_AtMaxX = 0.06
+
+[Preset]
+category = "red_AtMaxX"
+condition = $optionsshown <= 1
+name = 0.96 (default)
+default = 1
+$red_AtMaxX_DecimalPlaces = 2 #0.00
+$red_AtMaxX = 0.96
+
+[Preset]
+category = "red_AtMaxX"
+condition = $optionsshown <= 1
+name = 4.0
+$red_AtMaxX_DecimalPlaces = 1 #0.0
+$red_AtMaxX = 4.0
+
+[Preset]
+category = "red_AtMaxY"
+condition = $optionsshown <= 1
+name = 0.1
+$red_AtMaxY_DecimalPlaces = 1 #0.0
+$red_AtMaxY = 0.1
+
+[Preset]
+category = "red_AtMaxY"
+condition = $optionsshown <= 1
+name = 1.0 (default)
+default = 1
+$red_AtMaxY_DecimalPlaces = 1 #0.0
+$red_AtMaxY = 1.0
+
+[Preset]
+category = "red_AtMaxY"
+condition = $optionsshown <= 1
+name = 4.0
+$red_AtMaxY_DecimalPlaces = 1 #0.0
+$red_AtMaxY = 4.0
+
+[Preset]
+category = "red_AtMinX"
+condition = $optionsshown <= 1
+name = 0.1
+$red_AtMinX_DecimalPlaces = 1 #0.0
+$red_AtMinX = 0.1
+
+[Preset]
+category = "red_AtMinX"
+condition = $optionsshown <= 1
+name = 0.6 (default)
+default = 1
+$red_AtMinX_DecimalPlaces = 1 #0.0
+$red_AtMinX = 0.6
+
+[Preset]
+category = "red_AtMinX"
+condition = $optionsshown <= 1
+name = 4.0
+$red_AtMinX_DecimalPlaces = 1 #0.0
+$red_AtMinX = 4.0
+
+[Preset]
+category = "red_AtMinY"
+condition = $optionsshown <= 1
+name = 0.06
+$red_AtMinY_DecimalPlaces = 2 #0.00
+$red_AtMinY = 0.06
+
+[Preset]
+category = "red_AtMinY"
+condition = $optionsshown <= 1
+name = 0.86 (default)
+default = 1
+$red_AtMinY_DecimalPlaces = 2 #0.00
+$red_AtMinY = 0.86
+
+[Preset]
+category = "red_AtMinY"
+condition = $optionsshown <= 1
+name = 4.0
+$red_AtMinY_DecimalPlaces = 1 #0.0
+$red_AtMinY = 4.0
+
+[Preset]
+category = "red_AtRate"
+condition = $optionsshown <= 1
+name = 10.0
+$red_AtRate_DecimalPlaces = 1 #0.0
+$red_AtRate = 10.0
+
+[Preset]
+category = "red_AtRate"
+condition = $optionsshown <= 1
+name = 100.0 (default)
+default = 1
+$red_AtRate_DecimalPlaces = 1 #0.0
+$red_AtRate = 100.0
+
+[Preset]
+category = "red_AtRate"
+condition = $optionsshown <= 1
+name = 1000.0
+$red_AtRate_DecimalPlaces = 1 #0.0
+$red_AtRate = 1000.0
+
+[Preset]
+category = "ao_Lengs"
+condition = $optionsshown <= 1
+name = 0.01
+$ao_Lengs_DecimalPlaces = 2 #0.00
+$ao_Lengs = 0.01
+
+[Preset]
+category = "ao_Lengs"
+condition = $optionsshown <= 1
+name = 0.1 (default)
+default = 1
+$ao_Lengs_DecimalPlaces = 1 #0.0
+$ao_Lengs = 0.1
+
+[Preset]
+category = "ao_Lengs"
+condition = $optionsshown <= 1
+name = 1.1
+$ao_Lengs_DecimalPlaces = 1 #0.0
+$ao_Lengs = 1.1
+
+[Preset]
+category = "ao_LengsRatio"
+condition = $optionsshown <= 1
+name = 0.5
+$ao_LengsRatio_DecimalPlaces = 1 #0.0
+$ao_LengsRatio = 0.5
+
+[Preset]
+category = "ao_LengsRatio"
+condition = $optionsshown <= 1
+name = 1.98 (default)
+default = 1
+$ao_LengsRatio_DecimalPlaces = 2 #0.00
+$ao_LengsRatio = 1.98
+
+[Preset]
+category = "ao_LengsRatio"
+condition = $optionsshown <= 1
+name = 5.0
+$ao_LengsRatio_DecimalPlaces = 1 #0.0
+$ao_LengsRatio = 5.0
+
+[Preset]
+category = "ao_range"
+condition = $optionsshown <= 1
+name = 0.7
+$ao_range_DecimalPlaces = 1 #0.0
+$ao_range = 0.7
+
+[Preset]
+category = "ao_range"
+condition = $optionsshown <= 1
+name = 5.7 (default)
+default = 1
+$ao_range_DecimalPlaces = 1 #0.0
+$ao_range = 5.7
+
+[Preset]
+category = "ao_range"
+condition = $optionsshown <= 1
+name = 12.0
+$ao_range_DecimalPlaces = 1 #0.0
+$ao_range = 12.0
+
+[Preset]
+category = "ao_rangeRatio"
+condition = $optionsshown <= 1
+name = 0.1
+$ao_rangeRatio_DecimalPlaces = 1 #0.0
+$ao_rangeRatio = 0.1
+
+[Preset]
+category = "ao_rangeRatio"
+condition = $optionsshown <= 1
+name = 1.000 (default)
+default = 1
+$ao_rangeRatio_DecimalPlaces = 3 #0.000
+$ao_rangeRatio = 1.000
+
+[Preset]
+category = "ao_rangeRatio"
+condition = $optionsshown <= 1
+name = 6.0
+$ao_rangeRatio_DecimalPlaces = 1 #0.0
+$ao_rangeRatio = 6.0
+
+[Preset]
+category = "ao_sub"
+condition = $optionsshown <= 1
+name = 0.01
+$ao_sub_DecimalPlaces = 2 #0.00
+$ao_sub = 0.01
+
+[Preset]
+category = "ao_sub"
+condition = $optionsshown <= 1
+name = 0.02 (default)
+default = 1
+$ao_sub_DecimalPlaces = 2 #0.00
+$ao_sub = 0.02
+
+[Preset]
+category = "ao_sub"
+condition = $optionsshown <= 1
+name = 0.5
+$ao_sub_DecimalPlaces = 1 #0.0
+$ao_sub = 0.5
+
+[Preset]
+category = "ao_subRatio"
+condition = $optionsshown <= 1
+name = 0.001
+$ao_subRatio_DecimalPlaces = 3 #0.000
+$ao_subRatio = 0.001
+
+[Preset]
+category = "ao_subRatio"
+condition = $optionsshown <= 1
+name = 0.150 (default)
+default = 1
+$ao_subRatio_DecimalPlaces = 3 #0.000
+$ao_subRatio = 0.150
+
+[Preset]
+category = "ao_subRatio"
+condition = $optionsshown <= 1
+name = 0.99
+$ao_subRatio_DecimalPlaces = 2 #0.00
+$ao_subRatio = 0.99
+
+[Preset]
+category = "ao_Mul"
+condition = $optionsshown <= 1
+name = 0.5
+$ao_Mul_DecimalPlaces = 1 #0.0
+$ao_Mul = 0.5
+
+[Preset]
+category = "ao_Mul"
+condition = $optionsshown <= 1
+name = 2.0 (default)
+default = 1
+$ao_Mul_DecimalPlaces = 1 #0.0
+$ao_Mul = 2.0
+
+[Preset]
+category = "ao_Mul"
+condition = $optionsshown <= 1
+name = 8.0
+$ao_Mul_DecimalPlaces = 1 #0.0
+$ao_Mul = 8.0
+
+[Preset]
+category = "ao_blurRange"
+condition = $optionsshown <= 1
+name = 0.02
+$ao_blurRange_DecimalPlaces = 2 #0.00
+$ao_blurRange = 0.02
+
+[Preset]
+category = "ao_blurRange"
+condition = $optionsshown <= 1
+name = 0.720 (default)
+default = 1
+$ao_blurRange_DecimalPlaces = 3 #0.000
+$ao_blurRange = 0.720
+
+[Preset]
+category = "ao_blurRange"
+condition = $optionsshown <= 1
+name = 1.7
+$ao_blurRange_DecimalPlaces = 1 #0.0
+$ao_blurRange = 1.7
+
+[Preset]
+category = "ao_blurScale"
+condition = $optionsshown <= 1
+name = 0.01
+$ao_blurScale_DecimalPlaces = 2 #0.00
+$ao_blurScale = 0.01
+
+[Preset]
+category = "ao_blurScale"
+condition = $optionsshown <= 1
+name = 0.75 (default)
+default = 1
+$ao_blurScale_DecimalPlaces = 2 #0.00
+$ao_blurScale = 0.75
+
+[Preset]
+category = "ao_blurScale"
+condition = $optionsshown <= 1
+name = 3.0
+$ao_blurScale_DecimalPlaces = 1 #0.0
+$ao_blurScale = 3.0
+
+[Preset]
+category = "blur"
+condition = $optionsshown <= 2
+name = on
+$blur = 0x6F6E0000 #on
+
+[Preset]
+category = "blur"
+condition = $optionsshown <= 2
+name = off (default)
+default = 1
+$blur = 0x6F666600 #off
+
+[Preset]
+category = "blurStr"
+condition = $optionsshown <= 1
+name = 0.02
+$blurStr_DecimalPlaces = 2 #0.00
+$blurStr = 0.02
+
+[Preset]
+category = "blurStr"
+condition = $optionsshown <= 1
+name = 0.2 (default)
+default = 1
+$blurStr_DecimalPlaces = 1 #0.0
+$blurStr = 0.2
+
+[Preset]
+category = "blurStr"
+condition = $optionsshown <= 1
+name = 2.0
+$blurStr_DecimalPlaces = 1 #0.0
+$blurStr = 2.0
+
+[Preset]
+category = "blurSub"
+condition = $optionsshown <= 1
+name = 0.01
+$blurSub_DecimalPlaces = 2 #0.00
+$blurSub = 0.01
+
+[Preset]
+category = "blurSub"
+condition = $optionsshown <= 1
+name = 0.05 (default)
+default = 1
+$blurSub_DecimalPlaces = 2 #0.00
+$blurSub = 0.05
+
+[Preset]
+category = "blurSub"
+condition = $optionsshown <= 1
+name = 0.9
+$blurSub_DecimalPlaces = 1 #0.0
+$blurSub = 0.9
+
+[Preset]
+category = "shadowStr"
+condition = $optionsshown <= 2
+name = 0.1
+$shadowStr_DecimalPlaces = 1 #0.0
+$shadowStr = 0.1
+
+[Preset]
+category = "shadowStr"
+condition = $optionsshown <= 2
+name = 1.0 (default)
+default = 1
+$shadowStr_DecimalPlaces = 1 #0.0
+$shadowStr = 1.0
+
+[Preset]
+category = "shadowStr"
+condition = $optionsshown <= 2
+name = 4.0
+$shadowStr_DecimalPlaces = 1 #0.0
+$shadowStr = 4.0
+
+[Preset]
+category = "shadowHalf"
+condition = $optionsshown <= 2
+name = on
+$shadowHalf = 0x6F6E0000 #on
+
+[Preset]
+category = "shadowHalf"
+condition = $optionsshown <= 2
+name = off (default)
+default = 1
+$shadowHalf = 0x6F666600 #off
+
+[Preset]
+category = "simShwStr"
+condition = $optionsshown <= 1
+name = 0.1
+$simShwStr_DecimalPlaces = 1 #0.0
+$simShwStr = 0.1
+
+[Preset]
+category = "simShwStr"
+condition = $optionsshown <= 1
+name = 1.6 (default)
+default = 1
+$simShwStr_DecimalPlaces = 1 #0.0
+$simShwStr = 1.6
+
+[Preset]
+category = "simShwStr"
+condition = $optionsshown <= 1
+name = 5.6
+$simShwStr_DecimalPlaces = 1 #0.0
+$simShwStr = 5.6
+
+[Preset]
+category = "simShwIn"
+condition = $optionsshown <= 1
+name = 0.1
+$simShwIn_DecimalPlaces = 1 #0.0
+$simShwIn = 0.1
+
+[Preset]
+category = "simShwIn"
+condition = $optionsshown <= 1
+name = 0.7 (default)
+default = 1
+$simShwIn_DecimalPlaces = 1 #0.0
+$simShwIn = 0.7
+
+[Preset]
+category = "simShwIn"
+condition = $optionsshown <= 1
+name = 3.5
+$simShwIn_DecimalPlaces = 1 #0.0
+$simShwIn = 3.5
+
+[Preset]
+category = "simShwMin"
+condition = $optionsshown <= 1
+name = 0.01
+$simShwMin_DecimalPlaces = 2 #0.00
+$simShwMin = 0.01
+
+[Preset]
+category = "simShwMin"
+condition = $optionsshown <= 1
+name = 0.15 (default)
+default = 1
+$simShwMin_DecimalPlaces = 2 #0.00
+$simShwMin = 0.15
+
+[Preset]
+category = "simShwMin"
+condition = $optionsshown <= 1
+name = 2.0
+$simShwMin_DecimalPlaces = 1 #0.0
+$simShwMin = 2.0
+
+[Preset] #makes the game run in standard RGB mode
+category = "sRGBMode"
+condition = $optionsshown <= 3
+name = on (default)
+default = 1
+$sRGBMode = 0x6F6E0000 #on
+
+[Preset] #makes the game run in some high dynamic range mode
+category = "sRGBMode"
+condition = $optionsshown <= 3
+name = off
+$sRGBMode = 0x6F666600 #off
+
+[Preset]
+category = "gamma"
+condition = $optionsshown <= 2
+name = 0
+$gamma_DecimalPlaces = 0 #0
+$gamma = 0
+
+[Preset]
+category = "gamma"
+condition = $optionsshown <= 2
+name = 1
+$gamma_DecimalPlaces = 0 #0
+$gamma = 1
+
+[Preset]
+category = "gamma"
+condition = $optionsshown <= 2
+name = 6 (default)
+default = 1
+$gamma_DecimalPlaces = 0 #0
+$gamma = 6
+
+[Preset]
+category = "gamma"
+condition = $optionsshown <= 2
+name = 12
+$gamma_DecimalPlaces = 0 #0
+$gamma = 12
+
+[Preset]
+category = "ao_av_CenterWeight"
+condition = $optionsshown <= 1
+name = 0.1
+$ao_av_CenterWeight_DecimalPlaces = 1 #0.0
+$ao_av_CenterWeight = 0.1
+
+[Preset]
+category = "ao_av_CenterWeight"
+condition = $optionsshown <= 1
+name = 1.090 (default)
+default = 1
+$ao_av_CenterWeight_DecimalPlaces = 3 #0.000
+$ao_av_CenterWeight = 1.090
+
+[Preset]
+category = "ao_av_CenterWeight"
+condition = $optionsshown <= 1
+name = 3.0
+$ao_av_CenterWeight_DecimalPlaces = 1 #0.0
+$ao_av_CenterWeight = 3.0
+
+[Preset]
+category = "ao_av_MaxDistance"
+condition = $optionsshown <= 1
+name = 0.01
+$ao_av_MaxDistance_DecimalPlaces = 2 #0.00
+$ao_av_MaxDistance = 0.01
+
+[Preset]
+category = "ao_av_MaxDistance"
+condition = $optionsshown <= 1
+name = 0.15 (default)
+default = 1
+$ao_av_MaxDistance_DecimalPlaces = 2 #0.00
+$ao_av_MaxDistance = 0.15
+
+[Preset]
+category = "ao_av_MaxDistance"
+condition = $optionsshown <= 1
+name = 0.99
+$ao_av_MaxDistance_DecimalPlaces = 2 #0.00
+$ao_av_MaxDistance = 0.99
+
+[Preset]
+category = "ao_av_MaxRadius"
+condition = $optionsshown <= 1
+name = 0.1
+$ao_av_MaxRadius_DecimalPlaces = 1 #0.0
+$ao_av_MaxRadius = 0.1
+
+[Preset]
+category = "ao_av_MaxRadius"
+condition = $optionsshown <= 1
+name = 0.2 (default)
+default = 1
+$ao_av_MaxRadius_DecimalPlaces = 1 #0.0
+$ao_av_MaxRadius = 0.2
+
+[Preset]
+category = "ao_av_MaxRadius"
+condition = $optionsshown <= 1
+name = 0.4
+$ao_av_MaxRadius_DecimalPlaces = 1 #0.0
+$ao_av_MaxRadius = 0.4
+
+[Preset]
+category = "ao_av_FadeOutStart"
+condition = $optionsshown <= 1
+name = 5.0
+$ao_av_FadeOutStart_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutStart = 5.0
+
+[Preset]
+category = "ao_av_FadeOutStart"
+condition = $optionsshown <= 1
+name = 70000.0 (default)
+default = 1
+$ao_av_FadeOutStart_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutStart = 70000.0
+
+[Preset]
+category = "ao_av_FadeOutStart"
+condition = $optionsshown <= 1
+name = 990000.0
+$ao_av_FadeOutStart_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutStart = 990000.0
+
+[Preset]
+category = "ao_av_FadeOutDistance"
+condition = $optionsshown <= 1
+name = 10.0
+$ao_av_FadeOutDistance_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutDistance = 10.0
+
+[Preset]
+category = "ao_av_FadeOutDistance"
+condition = $optionsshown <= 1
+name = 10000.0 (default)
+default = 1
+$ao_av_FadeOutDistance_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutDistance = 10000.0
+
+[Preset]
+category = "ao_av_FadeOutDistance"
+condition = $optionsshown <= 1
+name = 990000.0
+$ao_av_FadeOutDistance_DecimalPlaces = 1 #0.0
+$ao_av_FadeOutDistance = 990000.0
+
+[Preset]
+category = "ao_av_BlurFallOff"
+condition = $optionsshown <= 1
+name = 0.005
+$ao_av_BlurFallOff_DecimalPlaces = 3 #0.000
+$ao_av_BlurFallOff = 0.005
+
+[Preset]
+category = "ao_av_BlurFallOff"
+condition = $optionsshown <= 1
+name = 0.050 (default)
+default = 1
+$ao_av_BlurFallOff_DecimalPlaces = 3 #0.000
+$ao_av_BlurFallOff = 0.050
+
+[Preset]
+category = "ao_av_BlurFallOff"
+condition = $optionsshown <= 1
+name = 0.99
+$ao_av_BlurFallOff_DecimalPlaces = 2 #0.00
+$ao_av_BlurFallOff = 0.99
+
+[Preset]
+category = "ao_av_BlurScale"
+condition = $optionsshown <= 1
+name = 0.1
+$ao_av_BlurScale_DecimalPlaces = 1 #0.0
+$ao_av_BlurScale = 0.1
+
+[Preset]
+category = "ao_av_BlurScale"
+condition = $optionsshown <= 1
+name = 1.6 (default)
+default = 1
+$ao_av_BlurScale_DecimalPlaces = 1 #0.0
+$ao_av_BlurScale = 1.6
+
+[Preset]
+category = "ao_av_BlurScale"
+condition = $optionsshown <= 1
+name = 6.7
+$ao_av_BlurScale_DecimalPlaces = 1 #0.0
+$ao_av_BlurScale = 6.7
+
+[Preset]
+category = "ao_av_Shwstr"
+condition = $optionsshown <= 1
+name = 0.1
+$ao_av_Shwstr_DecimalPlaces = 1 #0.0
+$ao_av_Shwstr = 0.1
+
+[Preset]
+category = "ao_av_Shwstr"
+condition = $optionsshown <= 1
+name = 0.5 (default)
+default = 1
+$ao_av_Shwstr_DecimalPlaces = 1 #0.0
+$ao_av_Shwstr = 0.5
+
+[Preset]
+category = "ao_av_Shwstr"
+condition = $optionsshown <= 1
+name = 2.0
+$ao_av_Shwstr_DecimalPlaces = 1 #0.0
+$ao_av_Shwstr = 2.0
+
+[Preset]
+category = "cam_near"
+condition = $optionsshown <= 1
+name = -2000.0
+$cam_near_DecimalPlaces = 1 #0.0
+$cam_near = -2000.0
+
+[Preset]
+category = "cam_near"
+condition = $optionsshown <= 1
+name = 0.1 (default)
+default = 1
+$cam_near_DecimalPlaces = 1 #0.0
+$cam_near = 0.1
+
+[Preset]
+category = "cam_near"
+condition = $optionsshown <= 1
+name = 2000.0
+$cam_near_DecimalPlaces = 1 #0.0
+$cam_near = 2000.0
+
+[Preset]
+category = "cam_near"
+condition = $optionsshown <= 1
+name = 40000.0
+$cam_near_DecimalPlaces = 1 #0.0
+$cam_near = 40000.0
+
+[Preset]
+category = "cam_far"
+condition = $optionsshown <= 1
+name = 20.0
+$cam_far_DecimalPlaces = 1 #0.0
+$cam_far = 20.0
+
+[Preset]
+category = "cam_far"
+condition = $optionsshown <= 1
+name = 40000.0
+$cam_far_DecimalPlaces = 1 #0.0
+$cam_far = 40000.0
+
+[Preset]
+category = "cam_far"
+condition = $optionsshown <= 1
+name = 80000.0 (default)
+default = 1
+$cam_far_DecimalPlaces = 1 #0.0
+$cam_far = 80000.0
+
+[Preset]
+category = "cam_far"
+condition = $optionsshown <= 1
+name = 160000.0
+$cam_far_DecimalPlaces = 1 #0.0
+$cam_far = 160000.0
+
+[Preset]
+category = "avmp01"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp01_DecimalPlaces = 1 #0.0
+$avmp0101 = 0.1
+$avmp0102 = 0.1
+$avmp0103 = 0.1
+
+[Preset]
+category = "avmp01"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp01_DecimalPlaces = 1 #0.0
+$avmp0101 = 0.5
+$avmp0102 = 0.5
+$avmp0103 = 0.5
+
+[Preset]
+category = "avmp01"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp01_DecimalPlaces = 1 #0.0
+$avmp0101 = 1.5
+$avmp0102 = 1.5
+$avmp0103 = 1.5
+
+[Preset]
+category = "avmp02"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp02_DecimalPlaces = 1 #0.0
+$avmp0201 = 0.1
+$avmp0202 = 0.1
+$avmp0203 = 0.1
+
+[Preset]
+category = "avmp02"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp02_DecimalPlaces = 1 #0.0
+$avmp0201 = 0.5
+$avmp0202 = 0.5
+$avmp0203 = 0.5
+
+[Preset]
+category = "avmp02"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp02_DecimalPlaces = 1 #0.0
+$avmp0201 = 1.5
+$avmp0202 = 1.5
+$avmp0203 = 1.5
+
+[Preset]
+category = "avmp03"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp03_DecimalPlaces = 1 #0.0
+$avmp0301 = 0.1
+$avmp0302 = 0.1
+$avmp0303 = 0.1
+
+[Preset]
+category = "avmp03"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp03_DecimalPlaces = 1 #0.0
+$avmp0301 = 0.5
+$avmp0302 = 0.5
+$avmp0303 = 0.5
+
+[Preset]
+category = "avmp03"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp03_DecimalPlaces = 1 #0.0
+$avmp0301 = 1.5
+$avmp0302 = 1.5
+$avmp0303 = 1.5
+
+[Preset]
+category = "avmp04"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp04_DecimalPlaces = 1 #0.0
+$avmp0401 = 0.1
+$avmp0402 = 0.1
+$avmp0403 = 0.1
+
+[Preset]
+category = "avmp04"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp04_DecimalPlaces = 1 #0.0
+$avmp0401 = 0.5
+$avmp0402 = 0.5
+$avmp0403 = 0.5
+
+[Preset]
+category = "avmp04"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp04_DecimalPlaces = 1 #0.0
+$avmp0401 = 1.5
+$avmp0402 = 1.5
+$avmp0403 = 1.5
+
+[Preset]
+category = "avmp05"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp05_DecimalPlaces = 1 #0.0
+$avmp0501 = 0.1
+$avmp0502 = 0.1
+$avmp0503 = 0.1
+
+[Preset]
+category = "avmp05"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp05_DecimalPlaces = 1 #0.0
+$avmp0501 = 0.5
+$avmp0502 = 0.5
+$avmp0503 = 0.5
+
+[Preset]
+category = "avmp05"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp05_DecimalPlaces = 1 #0.0
+$avmp0501 = 1.5
+$avmp0502 = 1.5
+$avmp0503 = 1.5
+
+[Preset]
+category = "avmp06"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp06_DecimalPlaces = 1 #0.0
+$avmp0601 = 0.1
+$avmp0602 = 0.1
+$avmp0603 = 0.1
+
+[Preset]
+category = "avmp06"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp06_DecimalPlaces = 1 #0.0
+$avmp0601 = 0.5
+$avmp0602 = 0.5
+$avmp0603 = 0.5
+
+[Preset]
+category = "avmp06"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp06_DecimalPlaces = 1 #0.0
+$avmp0601 = 1.5
+$avmp0602 = 1.5
+$avmp0603 = 1.5
+
+[Preset]
+category = "avmp07"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp07_DecimalPlaces = 1 #0.0
+$avmp0701 = 0.1
+$avmp0702 = 0.1
+$avmp0703 = 0.1
+
+[Preset]
+category = "avmp07"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp07_DecimalPlaces = 1 #0.0
+$avmp0701 = 0.5
+$avmp0702 = 0.5
+$avmp0703 = 0.5
+
+[Preset]
+category = "avmp07"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp07_DecimalPlaces = 1 #0.0
+$avmp0701 = 1.5
+$avmp0702 = 1.5
+$avmp0703 = 1.5
+
+[Preset]
+category = "avmp08"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp08_DecimalPlaces = 1 #0.0
+$avmp0801 = 0.1
+$avmp0802 = 0.1
+$avmp0803 = 0.1
+
+[Preset]
+category = "avmp08"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp08_DecimalPlaces = 1 #0.0
+$avmp0801 = 0.5
+$avmp0802 = 0.5
+$avmp0803 = 0.5
+
+[Preset]
+category = "avmp08"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp08_DecimalPlaces = 1 #0.0
+$avmp0801 = 1.5
+$avmp0802 = 1.5
+$avmp0803 = 1.5
+
+[Preset]
+category = "avmp09"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp09_DecimalPlaces = 1 #0.0
+$avmp0901 = 0.1
+$avmp0902 = 0.1
+$avmp0903 = 0.1
+
+[Preset]
+category = "avmp09"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp09_DecimalPlaces = 1 #0.0
+$avmp0901 = 0.5
+$avmp0902 = 0.5
+$avmp0903 = 0.5
+
+[Preset]
+category = "avmp09"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp09_DecimalPlaces = 1 #0.0
+$avmp0901 = 1.5
+$avmp0902 = 1.5
+$avmp0903 = 1.5
+
+[Preset]
+category = "avmp10"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp10_DecimalPlaces = 1 #0.0
+$avmp1001 = 0.1
+$avmp1002 = 0.1
+$avmp1003 = 0.1
+
+[Preset]
+category = "avmp10"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp10_DecimalPlaces = 1 #0.0
+$avmp1001 = 0.5
+$avmp1002 = 0.5
+$avmp1003 = 0.5
+
+[Preset]
+category = "avmp10"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp10_DecimalPlaces = 1 #0.0
+$avmp1001 = 1.5
+$avmp1002 = 1.5
+$avmp1003 = 1.5
+
+[Preset]
+category = "avmp11"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp11_DecimalPlaces = 1 #0.0
+$avmp1101 = 0.1
+$avmp1102 = 0.1
+$avmp1103 = 0.1
+
+[Preset]
+category = "avmp11"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp11_DecimalPlaces = 1 #0.0
+$avmp1101 = 0.5
+$avmp1102 = 0.5
+$avmp1103 = 0.5
+
+[Preset]
+category = "avmp11"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp11_DecimalPlaces = 1 #0.0
+$avmp1101 = 1.5
+$avmp1102 = 1.5
+$avmp1103 = 1.5
+
+[Preset]
+category = "avmp12"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp12_DecimalPlaces = 1 #0.0
+$avmp1201 = 0.1
+$avmp1202 = 0.1
+$avmp1203 = 0.1
+
+[Preset]
+category = "avmp12"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp12_DecimalPlaces = 1 #0.0
+$avmp1201 = 0.5
+$avmp1202 = 0.5
+$avmp1203 = 0.5
+
+
+[Preset]
+category = "avmp12"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp12_DecimalPlaces = 1 #0.0
+$avmp1201 = 1.5
+$avmp1202 = 1.5
+$avmp1203 = 1.5
+
+[Preset]
+category = "avmp13"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp13_DecimalPlaces = 1 #0.0
+$avmp1301 = 0.1
+$avmp1302 = 0.1
+$avmp1303 = 0.1
+
+[Preset]
+category = "avmp13"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp13_DecimalPlaces = 1 #0.0
+$avmp1301 = 0.5
+$avmp1302 = 0.5
+$avmp1303 = 0.5
+
+[Preset]
+category = "avmp13"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp13_DecimalPlaces = 1 #0.0
+$avmp1301 = 1.5
+$avmp1302 = 1.5
+$avmp1303 = 1.5
+
+[Preset]
+category = "avmp14"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp14_DecimalPlaces = 1 #0.0
+$avmp1401 = 0.1
+$avmp1402 = 0.1
+$avmp1403 = 0.1
+
+[Preset]
+category = "avmp14"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp14_DecimalPlaces = 1 #0.0
+$avmp1401 = 0.5
+$avmp1402 = 0.5
+$avmp1403 = 0.5
+
+[Preset]
+category = "avmp14"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp14_DecimalPlaces = 1 #0.0
+$avmp1401 = 1.5
+$avmp1402 = 1.5
+$avmp1403 = 1.5
+
+[Preset]
+category = "avmp15"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp15_DecimalPlaces = 1 #0.0
+$avmp1501 = 0.1
+$avmp1502 = 0.1
+$avmp1503 = 0.1
+
+[Preset]
+category = "avmp15"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp15_DecimalPlaces = 1 #0.0
+$avmp1501 = 0.5
+$avmp1502 = 0.5
+$avmp1503 = 0.5
+
+[Preset]
+category = "avmp15"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp15_DecimalPlaces = 1 #0.0
+$avmp1501 = 1.5
+$avmp1502 = 1.5
+$avmp1503 = 1.5
+
+[Preset]
+category = "avmp16"
+condition = $optionsshown <= 1
+name = 0.1, 0.1, 0.1
+$avmp16_DecimalPlaces = 1 #0.0
+$avmp1601 = 0.1
+$avmp1602 = 0.1
+$avmp1603 = 0.1
+
+[Preset]
+category = "avmp16"
+condition = $optionsshown <= 1
+name = 0.5, 0.5, 0.5 (default)
+default = 1
+$avmp16_DecimalPlaces = 1 #0.0
+$avmp1601 = 0.5
+$avmp1602 = 0.5
+$avmp1603 = 0.5
+
+[Preset]
+category = "avmp16"
+condition = $optionsshown <= 1
+name = 1.5, 1.5, 1.5
+$avmp16_DecimalPlaces = 1 #0.0
+$avmp1601 = 1.5
+$avmp1602 = 1.5
+$avmp1603 = 1.5
+
+[Preset] #minimum cloud spawning height on title screen
+category = "cloud_h_min"
+condition = $optionsshown <= 2
+name = 200.0
+$cloud_h_min_DecimalPlaces = 1 #0.0
+$cloud_h_min = 200.0
+
+[Preset] #minimum cloud spawning height on title screen
+category = "cloud_h_min"
+condition = $optionsshown <= 2
+name = 1000.0 (default)
+default = 1
+$cloud_h_min_DecimalPlaces = 1 #0.0
+$cloud_h_min = 1000.0
+
+[Preset] #max cloud spawning height on title screen
+category = "cloud_h_max"
+condition = $optionsshown <= 2
+name = 250.0
+$cloud_h_max_DecimalPlaces = 1 #0.0
+$cloud_h_max = 250.0
+
+[Preset] #max cloud spawning height on title screen
+category = "cloud_h_max"
+condition = $optionsshown <= 2
+name = 1100.0 (default)
+default = 1
+$cloud_h_max_DecimalPlaces = 1 #0.0
+$cloud_h_max = 1100.0
