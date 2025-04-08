@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Equip Any Weapon - Use any level of gear at any time"
+path = "Xenoblade Chronicles X/Mods/Character/Equip Any Weapon"
+description = Allows any character to equip any weapon and also removes the level check on gear so you can equip it even if under leveled. (Does not affect skells).
+#Credits: Intra
+version = 6

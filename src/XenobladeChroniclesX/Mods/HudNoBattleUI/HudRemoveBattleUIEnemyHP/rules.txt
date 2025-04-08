@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Remove Battle UI Enemy HP"
+path = "Xenoblade Chronicles X/Mods/HUD/Remove Battle UI/Remove Enemy HP UI"
+description = Removes The Enemy HP bar from the battle UI.
+#Credits: Blingblong
+version = 6

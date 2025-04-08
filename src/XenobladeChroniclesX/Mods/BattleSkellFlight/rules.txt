@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Enable/Disable Skell Flight"
+path = "Xenoblade Chronicles X/Mods/Battle/Skell Flight Unlocked"
+description = Fly with your Skell before A Girl's Wings, or Disable the flight module after A Girl's Wings.
+#Credits: Intra
+version = 6
+
+[Default]
+$mod = 1
+
+[Preset]
+name = Force Enable
+
+[Preset]
+name = Force Disable
+$mod = 0
