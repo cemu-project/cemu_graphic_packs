@@ -1,16 +1,17 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Camera distance mod"
-path = "Xenoblade Chronicles X/Mods/Graphics/Camera distance mod"
+name = "Default Camera Distance Mod"
+path = "Xenoblade Chronicles X/Mods/Graphics/Default Camera Distance"
 description = Affect the default distance of the camera (Vanilla zoom is 0).|Does not affect max zoom possible.
 #Credits: lasyan3
 version = 6
 
 [Default]
-$mod = 2.0
+$mod = 0.0
 
 [Preset]
 name = "Zoom 2"
+$mod = 2.0
 
 [Preset]
 name = "Zoom 5"

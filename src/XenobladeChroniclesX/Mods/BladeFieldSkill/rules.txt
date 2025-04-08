@@ -4,7 +4,7 @@ name = Field Skill Level
 path = "Xenoblade Chronicles X/Mods/BLADE/Field Skill Level"
 description = "You can change your Mechanical, Archaeological and Biological field skill level."
 #Credits: Intra
-version = 7
+version = 6
 
 [Default]
 $meclevel = 5
