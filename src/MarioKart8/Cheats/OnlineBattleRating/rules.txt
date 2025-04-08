@@ -10,26 +10,26 @@ version = 7
 $battlevr = 1000
 
 [Preset]
-category = Battle Rating:
+category = Battle Rating
 name = 1
 $battlevr = 1
 
 [Preset]
-category = Battle Rating:
+category = Battle Rating
 name = 1000
 Default = 1
 
 [Preset]
-category = Battle Rating:
+category = Battle Rating
 name = 2000
 $battlevr = 2000
 
 [Preset]
-category = Battle Rating:
+category = Battle Rating
 name = 3000
 $battlevr = 3000
 
 [Preset]
-category = Battle Rating:
+category = Battle Rating
 name = 4000
 $battlevr = 4000
