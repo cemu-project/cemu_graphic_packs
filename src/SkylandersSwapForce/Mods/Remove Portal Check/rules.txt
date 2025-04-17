@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010139200,0005000010140400
 name = Allow Portals From Other Skylanders Games
-path = "Skylanders SWAP-Force/Mods/Allow Portals From Other Skylanders Games"
+path = "Skylanders Swap Force/Mods/Allow Portals From Other Skylanders Games"
 description = Allows any (non-Xbox!) Portal of Power to be used.||Made by Winner Nombre.
 version = 7
