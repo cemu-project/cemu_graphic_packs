@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010176900,0005000010176A00,0005000010162B00
+name = Disable Autorotate
+path = "Splatoon/Mods/Disable Autorotate"
+description = Prevents the camera from automatically rotating when the player moves left or right.
+version = 7
