@@ -1,99 +1,133 @@
 [Definition]
 titleIds = 0005000010180600,0005000010180700,0005000010180500
-name = Resolution
-path = "Captain Toad: Treasure Tracker/Graphics/Resolution"
-description = Changes the resolution of the game. Made by getdls.
-version = 4
+name = Graphics Settings
+path = "Captain Toad: Treasure Tracker/Graphics"
+description = Changes the resolution of the game and the quality of shadows.|Made by getdls and Ryce-Fast.
+#Credits: getdls, Ryce-Fast
+version = 6
 
-[Preset]
-name = 1280x720 (Default)
+[Default]
 $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$shadowRes = 1.0
+$AAEnable:int = 1
 
 # Performance
 
 [Preset]
+category = Resolution
 name = 640x360
 $width = 640
 $height = 360
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 960x540
 $width = 960
 $height = 540
-$gameWidth = 1280
-$gameHeight = 720
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+default = 1
 
 # Common HD Resolutions
 
 [Preset]
+category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
-$gameWidth = 1280
-$gameHeight = 720
 
 # Common Ultrawide Resolutions
 
 [Preset]
+category = Resolution
 name = 2560x1080 (Ultrawide)
 $width = 2560
 $height = 1080
-$gameWidth = 1280
-$gameHeight = 720
 
 [Preset]
+category = Resolution
 name = 3440x1440 (Ultrawide)
 $width = 3440
 $height = 1440
-$gameWidth = 1280
-$gameHeight = 720
+
+
+[Preset]
+category = Shadows
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadows
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadows
+name = High (200%)
+$shadowRes = 2.0
+
+[Preset]
+category = Shadows
+name = Ultra (300%)
+$shadowRes = 3.0
+
+[Preset]
+category = Shadows
+name = Extreme (400%, Unstable)
+$shadowRes = 4.0
+
+
+[Preset]
+category = Anti-Aliasing
+name = Enable
+$AAEnable:int = 1
+
+[Preset]
+category = Anti-Aliasing
+name = Disable
+$AAEnable:int = 0
+
 
 [TextureRedefine]
 width = 1280
@@ -120,8 +154,8 @@ overwriteHeight = ($height/$gameHeight) * 720
 width = 1024
 height = 1024
 formats = 0x005
-overwriteWidth = ($width/$gameWidth) * 1024
-overwriteHeight = ($height/$gameHeight) * 1024
+overwriteWidth =  $shadowRes * 1024
+overwriteHeight =  $shadowRes * 1024
 
 [TextureRedefine] #Zoom
 width = 1024
