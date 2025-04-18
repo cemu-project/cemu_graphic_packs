@@ -1,0 +1,17 @@
+[Definition]
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
+name = Unlock Vehicle Parts!
+path = "Mario Kart 8/Cheats/Unlock Vehicle Parts"
+description = Unlock Every Vehicle Part!
+#Credits: Intra
+version = 7
+
+[Default]
+$goldpartscheat = 0
+
+[Preset]
+name = Unlock All Non-Golden Parts
+
+[Preset]
+name = Unlock All Parts + Golden Parts
+$goldpartscheat = 1
