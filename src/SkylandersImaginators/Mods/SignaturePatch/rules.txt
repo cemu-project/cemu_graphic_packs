@@ -1,0 +1,6 @@
+[Definition]
+titleIds =  00050000101F4D00,00050000101FB100,0005000010205E00
+name = Signature Patch
+path = "Skylanders Imaginators/Mods/Signature Patch"
+description = This patch removes the check for a factory's signature on dumps of characters released for Skylanders Imaginators, allowing for unique UIDs and unreleased characters to be generated.||Made by Winner Nombre with help from MusicDisc, MoltenLavaCore, and NefariousTechSupport.
+version = 7
