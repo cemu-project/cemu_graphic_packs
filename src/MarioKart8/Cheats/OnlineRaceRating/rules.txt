@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
+name = Change Online Race Rating
+path = "Mario Kart 8/Cheats/Online Race Rating"
+description = Change Your Online Race Rating to 5000vr!|150cc lobbies start happening at 5000vr.
+#Credits: Intra
+version = 7

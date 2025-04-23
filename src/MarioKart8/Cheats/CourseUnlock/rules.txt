@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 000500001010EC00,000500001010ED00,000500001010EB00
+name = Course Unlock
+path = "Mario Kart 8/Cheats/Course Unlock"
+description = Unlock Every Course + Mirror Mode!
+#Credits: Intra
+version = 7
