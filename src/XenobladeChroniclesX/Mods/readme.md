@@ -35,6 +35,7 @@
 - **Character Size**: Can change any characters size, and even has some glitch size values.
 - **Change Character Name**: Can change any characters name and can rename your avatar.
 - **Unlock Character Arts**: Can unlock any or all arts and can force arts to be equiped, even multiple of the same art.
+- **Equip Any Weapon**: Allows any character to equip any weapon and also removes the level check on gear.
     
 ### Collectibles mods
 - **Catch range mod**: Increase the distance from which you catch a collectible.
@@ -51,7 +52,7 @@
 - **Battle Points X**: Increase the battle points gained.
 - **BLADE Points X**: Increase the Blade points gained.
 - **Class Exp Points X**: Increase the class experience points gained.
-- **Friend Points X**: Increase the friend points gained during Soul Voice activation in battles.
+- **Affinity Points X**: Increase the friend points gained during Soul Voice activation in battles.
 - **Inner Exp Points X**: Increase the experience points gained.
 
 ### FrontierNav Probes mods
@@ -61,7 +62,7 @@
 - **Resources income frequency/quantity**: same as Miranium, but for resources obtained using FrontierNav Probes.
 
 ### Graphics mods
-- **Camera distance mod**: Change the default zoom.
+- **Default Camera Distance**: Change the default zoom.
 - **Freecam**: Look around the world with the monolith soft developer freecam.
     >Hold 'R' button to move camera up |
     >Hold 'L' button to move camera down |
@@ -114,6 +115,7 @@
 	> Horizontal velocity is the distance you reach when jumping.
 	> Vertical Velocity is the height of the jump (works while idle, walking and sprinting)
 - **Run Forrest, run!**: Increases the speed of sprinting.
+- **We're going to plad!**: Increase the speed of Skell Flight.
 
 ### Weather mods
 - **Force weather**: Force selected weather. Just select a preset and unload/reload the pack.
