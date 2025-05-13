@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Green Overlay Fix
+path = "Disney Epic Mickey 2/Fixes/Green Overlay Fix"
+description = Removes the green overlay bug found specifically with emulation. Made by abso1utezer0.
+version = 7
