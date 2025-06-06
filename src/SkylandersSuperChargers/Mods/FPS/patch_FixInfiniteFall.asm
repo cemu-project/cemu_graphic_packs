@@ -6,13 +6,13 @@ const_stuckFallingDistanceThreshold:
 .float 20*30/$targetFPS
 
 _getStuckFallingDistanceThreshold_f13:
-    lis r0, const_stuckFallingDistanceThreshold@ha
-    lfs f13, const_stuckFallingDistanceThreshold@l(r0)
+    lis r3, const_stuckFallingDistanceThreshold@ha
+    lfs f13, const_stuckFallingDistanceThreshold@l(r3)
 blr
 
 _getStuckFallingDistanceThreshold_f0:
-    lis r0, const_stuckFallingDistanceThreshold@ha
-    lfs f0, const_stuckFallingDistanceThreshold@l(r0)
+    lis r3, const_stuckFallingDistanceThreshold@ha
+    lfs f0, const_stuckFallingDistanceThreshold@l(r3)
 blr
 
 [SSC_FixInfiniteFall_V1]
