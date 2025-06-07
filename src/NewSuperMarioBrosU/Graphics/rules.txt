@@ -200,6 +200,7 @@ width = 1280
 height = 720
 formats = 0x001
 overwriteFormat = 0x005
+tileModesExcluded = 0x001
 
 [TextureRedefine]
 width = 1280
