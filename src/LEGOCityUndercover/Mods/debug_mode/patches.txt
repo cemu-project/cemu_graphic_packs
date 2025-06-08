@@ -1,0 +1,8 @@
+[LCU_EU_US_Ver0]
+moduleMatches = 0x01d048b1, 0xc81c2e05
+0x101ef7c8 = .int $debug_mode
+
+[LCU_EU_Ver16_JP_Ver0]
+moduleMatches = 0xd20260c6, 0xe14d53e8
+0x101efa38 = .int $debug_mode
+
