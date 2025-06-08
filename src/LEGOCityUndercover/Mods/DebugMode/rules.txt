@@ -1,0 +1,25 @@
+[Definition]
+titleIds = 0005000010101A00, 0005000010101B00, 0005000010142f00
+name = "Debug Mode"
+path = "Lego City Undercover/Debug Mode"
+description = "Activates debug mode in Lego City Undercover"
+version = 7
+
+[Default]
+$debug_mode = 1
+
+[Preset]
+name = "debug mode 1"
+$debug_mode = 1
+
+[Preset]
+name = "debug mode 2"
+$debug_mode = 2
+
+[Preset]
+name = "debug mode 3"
+$debug_mode = 3
+
+[Preset]
+name = "debug mode 4"
+$debug_mode = 4
