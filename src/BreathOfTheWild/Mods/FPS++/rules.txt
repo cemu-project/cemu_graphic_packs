@@ -174,7 +174,7 @@ $fpsLimitAdvanced = 120
 $keepVsync:int = 0
 
 [Preset]
-name = 90FPS (ideal for 90/180/360Hz displays)
+name = 90FPS (ideal for 360/180/90Hz displays)
 category = Framerate Limit
 condition = $advancedMode == 1
 $fpsLimitAdvanced = 90
