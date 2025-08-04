@@ -19,6 +19,7 @@ $0x432 = 0
 $0x433 = 0
 $0x434 = 0
 $shadowRes = 1
+$anisoLevel = 1
 
 # Resolutions
 
@@ -169,6 +170,35 @@ $shadowRes = 3
 name = Extreme (400%)
 category = Shadow Quality
 $shadowRes = 4
+
+[Preset]
+name = 1x (Default)
+category = Anisotropic Filtering
+$anisoLevel = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering
+$anisoLevel = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering
+$anisoLevel = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering
+$anisoLevel = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering
+$anisoLevel = 16
+
+[TextureRedefine]
+formats = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteAnisotropy = $anisoLevel
 
 [TextureRedefine]
 width = 1280
