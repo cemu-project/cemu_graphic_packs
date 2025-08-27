@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010145C00,0005000010145D00,0005000010106100
+name = Infinite Time
+path = "Super Mario 3D World/Cheats/Infinite Time"
+description = Freezes the level timer at 200 seconds. Made by GoD-Tony.
+version = 7
