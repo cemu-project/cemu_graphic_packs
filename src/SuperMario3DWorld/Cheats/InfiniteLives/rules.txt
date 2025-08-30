@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010145C00,0005000010145D00,0005000010106100
+name = Infinite Lives
+path = "Super Mario 3D World/Cheats/Infinite Lives"
+description = Lives never decrease or increase. Made by GoD-Tony.
+version = 7
