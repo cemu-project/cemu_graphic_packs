@@ -1,0 +1,408 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = Cheats
+path = "The Legend of Zelda: Twilight Princess HD/Cheats/Mega Cheats"
+description = Cheats for Twilight Princess HD by n0ted.
+version = 7
+
+[Default]
+$gravity = 0.0
+$always_spin1 = 0x41820014
+$always_spin2 = 0x41820020
+$rup_mult = 1
+$rup_inc = 0
+$heart_dec = 0
+$heart_dec_mult = 1.0
+$arrow_dec = 0
+$bomb_dec = 0
+$oil_dec = 0
+$seed_dec = 0
+$climb_fast = 0
+$climb_speed = 1.5
+$roll_asm = 0x40810010
+$roll_speed = 32.9
+$drop1 = 240
+$drop2 = 60
+$controller = 0x12748630
+$moon_jmp_btn_combo = 0x14
+$climbspeed_custom = 0
+$spin_enabled = 0
+$never_decrease_custom = 0
+$controller_custom = 0
+
+
+#########
+#Moon jump
+#########
+[Preset]
+category = Moonjump ZR+A
+name = Off
+$gravity = 0.0
+$controller_custom = 0
+
+[Preset]
+category = Moonjump ZR+A
+name = On
+$gravity = 55.0
+$controller_custom = 1
+
+#########
+#Controller Type
+#########
+
+[Preset]
+category = Controller Type
+name = Gamepad
+condition = $controller_custom
+$controller = 0x1274803C
+$moon_jmp_btn_combo = 0x8040
+
+[Preset]
+category = Controller Type
+name = Pro
+condition = $controller_custom
+$controller = 0x12748630
+$moon_jmp_btn_combo = 0x14
+
+
+#########
+#Always Great-Spin Attack
+#########
+[Preset]
+category = Always Great-Spin Attack
+name = Off
+$always_spin2 = 0x41820020
+$spin_enabled = 0
+
+
+[Preset]
+category = Always Great-Spin Attack
+name = On
+$always_spin2 = 0x48000020
+$spin_enabled = 1
+
+[Preset]
+category = Always Great-Spin Attack Activation Type
+name = Skill required
+condition = $spin_enabled
+$always_spin1 = 0x41820014
+
+[Preset]
+category = Always Great-Spin Attack Activation Type
+name = Skill not required
+condition = $spin_enabled
+$always_spin1 = 0x40820014
+
+#########
+#Rupee Multiplier
+#########
+[Preset]
+category = Rupee Multiplier
+name = Default
+$rup_mult = 1
+
+[Preset]
+category = Rupee Multiplier
+name = 2x
+$rup_mult = 2
+
+[Preset]
+category = Rupee Multiplier
+name = 3x
+$rup_mult = 3
+
+[Preset]
+category = Rupee Multiplier
+name = 4x
+$rup_mult = 4
+
+[Preset]
+category = Rupee Multiplier
+name = 5x
+$rup_mult = 4
+
+[Preset]
+category = Rupee Multiplier
+name = 10x
+$rup_mult = 10
+
+
+#########
+#Rupees Only Increase
+#########
+[Preset]
+category = Rupees Only Increase
+name = Off
+$rup_inc = 0
+
+[Preset]
+category = Rupees Only Increase
+name = On
+$rup_inc = 1
+
+
+#########
+#Damage Received Multiplier
+#########
+[Preset]
+category = Damage Received Multiplier
+name = Default
+$heart_dec_mult = 1.0
+
+[Preset]
+category = Damage Received Multiplier
+name = 2x
+$heart_dec_mult = 2.0
+
+[Preset]
+category = Damage Received Multiplier
+name = 3x
+$heart_dec_mult = 3.0
+
+[Preset]
+category = Damage Received Multiplier
+name = 4x
+$heart_dec_mult = 4.0
+
+[Preset]
+category = Damage Received Multiplier
+name = 5x
+$heart_dec_mult = 5.0
+
+[Preset]
+category = Damage Received Multiplier
+name = 10x
+$heart_dec_mult = 10.0
+
+[Preset]
+category = Damage Received Multiplier
+name = INSTANT DEATH
+$heart_dec_mult = 80.0
+
+[Preset]
+category = Everything Never Decreases
+name = Off
+$heart_dec = 0
+$arrow_dec = 0
+$bomb_dec = 0
+$oil_dec = 0
+$seed_dec = 0
+$never_decrease_custom = 0
+
+[Preset]
+category = Everything Never Decreases
+name = On
+$heart_dec = 1
+$arrow_dec = 1
+$bomb_dec = 1
+$oil_dec = 1
+$seed_dec = 1
+$never_decrease_custom = 0
+
+[Preset]
+category = Everything Never Decreases
+name = Custom
+$never_decrease_custom = 1
+
+
+#########
+#Hearts Never Decrease
+#########
+[Preset]
+category = Hearts Never Decrease
+name = Off
+condition = $never_decrease_custom
+$heart_dec = 0
+
+[Preset]
+category = Hearts Never Decrease
+name = On
+condition = $never_decrease_custom
+$heart_dec = 1
+
+
+##########
+#Arrows Never Decrease
+##########
+[Preset]
+category = Arrows Never Decrease
+name = Off
+condition = $never_decrease_custom
+$arrow_dec = 0
+
+[Preset]
+category = Arrows Never Decrease
+name = On
+condition = $never_decrease_custom
+$arrow_dec = 1
+
+
+##########
+#Bombs Never Decrease
+##########
+[Preset]
+category = Bombs Never Decrease
+name = Off
+condition = $never_decrease_custom
+$bomb_dec = 0
+
+[Preset]
+category = Bombs Never Decrease
+name = On
+condition = $never_decrease_custom
+$bomb_dec = 1
+
+
+##########
+#Lantern Oil Never Decrease
+##########
+[Preset]
+category = Lantern Oil Never Decreases
+name = Off
+condition = $never_decrease_custom
+$oil_dec = 0
+
+[Preset]
+category = Lantern Oil Never Decreases
+name = On
+condition = $never_decrease_custom
+$oil_dec = 1
+
+
+##########
+#Slingshot Seeds Never Decrease
+##########
+[Preset]
+category = Slingshot Seeds Never Decrease
+name = Off
+condition = $never_decrease_custom
+$seed_dec = 0
+
+[Preset]
+category = Slingshot Seeds Never Decrease
+name = On
+condition = $never_decrease_custom
+$seed_dec = 1
+
+
+##########
+#Climb really fast
+##########
+[Preset]
+category = Climb/Crawl Really Fast
+name = Off
+$climb_fast = 0
+$climb_speed = 1.5
+$climbspeed_custom = 0
+
+[Preset]
+category = Climb/Crawl Really Fast
+name = On
+$climb_fast = 1
+$climbspeed_custom = 1
+
+[Preset]
+category = Climb/Crawl Really Fast Multiplier
+name = 1x
+condition = $climbspeed_custom
+$climb_speed = 1.5
+
+[Preset]
+category = Climb/Crawl Really Fast Multiplier
+name = 2x
+condition = $climbspeed_custom
+$climb_speed = 3
+
+[Preset]
+category = Climb/Crawl Really Fast Multiplier
+name = 3x
+condition = $climbspeed_custom
+$climb_speed = 4.5
+
+[Preset]
+category = Climb/Crawl Really Fast Multiplier
+name = 4x
+condition = $climbspeed_custom
+$climb_speed = 6
+
+[Preset]
+category = Climb/Crawl Really Fast Multiplier
+name = 5x
+condition = $climbspeed_custom
+$climb_speed = 7.5
+
+[Preset]
+category = Climb/Crawl Really Fast Multiplier
+name = 6x
+condition = $climbspeed_custom
+$climb_speed = 9
+
+
+
+##########
+#Roll Fast
+##########
+[Preset]
+category = Roll Fast
+name = Off
+$roll_asm = 0x40810010
+$roll_speed = 32.9
+
+[Preset]
+category = Roll Fast
+name = 1.1x
+$roll_asm = 0x60000000
+$roll_speed = 36.2
+
+[Preset]
+category = Roll Fast
+name = 1.25x
+$roll_asm = 0x60000000
+$roll_speed = 41.1
+
+[Preset]
+category = Roll Fast
+name = 1.5x
+$roll_asm = 0x60000000
+$roll_speed = 50
+
+[Preset]
+category = Roll Fast
+name = 2x
+$roll_asm = 0x60000000
+$roll_speed = 64
+
+
+
+##########
+#Infinite Drop Duration
+##########
+[Preset]
+category = Drop Duration
+name = Default
+$drop1 = 240
+$drop2 = 60
+
+[Preset]
+category = Drop Duration
+name = 1.5x
+$drop1 = 360
+$drop2 = 90
+
+[Preset]
+category = Drop Duration
+name = 2x
+$drop1 = 480
+$drop2 = 120
+
+[Preset]
+category = Drop Duration
+name = 4x
+$drop1 = 960
+$drop2 = 240
+
+[Preset]
+category = Drop Duration
+name = Infinite
+$drop1 = 65520
+$drop2 = 65520
