@@ -1,4 +1,4 @@
-[ScreenOrientation]
+[ScreenMirroring]
 moduleMatches = 0x1A03E108, 0xA3175EEA
 
 .origin = codecave

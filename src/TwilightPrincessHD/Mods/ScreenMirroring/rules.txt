@@ -3,7 +3,7 @@ titleIds = 000500001019C800,000500001019E600,000500001019E500
 name = Screen Mirroring
 path = "The Legend of Zelda: Twilight Princess HD/Graphics/Screen Mirroring"
 description = Changes the orientation of the game (Mirrored or Normal) by n0ted.
-version = 4
+version = 7
 
 [Default]
 $orientation = 1
