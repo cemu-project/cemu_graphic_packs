@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010b500,000500001010f400
+name = Anti-aliasing Removal
+path = "Transformers Prime/Enhancements/Anti-aliasing Removal"
+description = Removes the game's anti-aliasing blur effect.||Made by FrankyBuster and Flextape05
+version = 6
