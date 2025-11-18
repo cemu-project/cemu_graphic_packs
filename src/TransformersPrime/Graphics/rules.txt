@@ -1,7 +1,7 @@
 [Definition]
 titleIds = 000500001010b500,000500001010f400
-name = Resolution
-path = "Transformers Prime/Graphics/Resolution"
+name = Graphic Options
+path = "Transformers Prime/Graphics"
 description = Changes the resolution and shadow quality, and you can also add anisotropic filtering.||Made by FrankyBuster
 version = 6
 
