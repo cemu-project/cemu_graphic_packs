@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101F4D00,00050000101FB100,0005000010205E00
+name = Background Blur Removal
+path = "Skylanders Imaginators/Enhancements/DOF removal"
+description = Disables the games backbground blur||Made by Flextape05 and OddLittlePumpkin
+version = 6
