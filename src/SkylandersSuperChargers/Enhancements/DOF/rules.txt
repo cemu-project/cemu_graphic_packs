@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101BFC00,00050000101B8500
+name = Background Blur Removal
+path = "Skylanders: Superchargers/Enhancements/DOF removal"
+description = Disables the games backbground blur||Made by Flextape05 and OddLittlePumpkin
+version = 6
