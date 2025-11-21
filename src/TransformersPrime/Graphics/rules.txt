@@ -144,11 +144,39 @@ overwriteAnisotropy = $anisotropy
 [TextureRedefine] # Game Resolution
 width = 1280
 height = 720
-formatsExcluded = 0x431
+formats = 0x1a,0x11,0x08,0x80e,0x41a
 tileModesExcluded = 0x1
-overwriteFormat = 0x1f
+overwriteFormat= 0x1f
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Bloom/Blur
+width = 640
+height = 368
+formats = 0x1a,0x11
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine] # Bloom/Blur
+width = 640
+height = 360
+formats = 0x1a,0x11
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine] # Bloom/Blur
+width = 320
+height = 192
+formats = 0x1a,0x11
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine] # Bloom/Blur
+width = 320
+height = 180
+formats = 0x1a,0x11
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
 
 [TextureRedefine] # Shadows
 width = 1024
