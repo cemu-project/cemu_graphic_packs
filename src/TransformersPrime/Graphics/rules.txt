@@ -2,7 +2,7 @@
 titleIds = 000500001010b500,000500001010f400
 name = Graphic Options
 path = "Transformers Prime/Graphics"
-description = Changes the resolution and shadow quality, and you can also add anisotropic filtering.||Made by FrankyBuster
+description = Allows you to change the game's resolution, anti-aliasing, motion blur, shadows, and also add anisotropic filtering.||Made by FrankyBuster
 version = 6
 
 [Default]
@@ -10,16 +10,13 @@ $width = 1280
 $height = 720
 $gameWidth = 1280
 $gameHeight = 720
+$antialias = 1
+$motionblur = 1
 $shadowRes = 1
 $anisotropy = 1
 
 # Resolution
 
-[Preset]
-category = Resolution
-name = 1280x720 (Default)
-$width = 1280
-$height = 720
 
 [Preset]
 category = Resolution
@@ -32,6 +29,19 @@ category = Resolution
 name = 960x540
 $width = 960
 $height = 540
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+default = 1
+
+[Preset]
+category = Resolution
+name = 1360x768
+$width = 1360
+$height = 768
 
 [Preset]
 category = Resolution
@@ -75,17 +85,46 @@ name = 7680x4320
 $width = 7680
 $height = 4320
 
+# Anti-Aliasing
+
+
+[Preset]
+name = Off
+category = Anti-Aliasing
+$antialias = 0
+
+[Preset]
+name = On (Default)
+category = Anti-Aliasing
+default = 1
+
+
+# Motion Blur
+
+
+[Preset]
+name = Off
+category = Motion Blur
+$motionblur = 0
+
+[Preset]
+name = On (Default)
+category = Motion Blur
+default = 1
+
 
 # Shadow Quality
 
-[Preset]
-category = Shadow Quality
-name = Medium (100%, Default)
 
 [Preset]
 category = Shadow Quality
 name = Low (50%)
 $shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+default = 1
 
 [Preset]
 category = Shadow Quality
@@ -136,7 +175,7 @@ $anisotropy = 16
 
 [TextureRedefine]
 tileModesExcluded = 0x1 # ignore cpu processed textures
-formatsExcluded = 0x005 # ignore shadows
+formatsExcluded = 0x005,0x1a,0x11 # ignore shadows
 overwriteAnisotropy = $anisotropy
 
 # Texture Redefines
