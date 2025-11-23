@@ -1,6 +1,0 @@
-[Definition]
-titleIds = 000500001010b500,000500001010f400
-name = Motion Blur Removal
-path = "Transformers Prime/Enhancements/Motion Blur Removal"
-description = Removes the game's motion blur effect.||Made by FrankyBuster and Flextape05
-version = 6
