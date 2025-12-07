@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Force Level Select
+path = "Disney Epic Mickey 2/Debug/Force Level Select"
+description = Forces the game to show the developer level select menu even if disabled by config. Made by abso1utezer0.
+version = 7

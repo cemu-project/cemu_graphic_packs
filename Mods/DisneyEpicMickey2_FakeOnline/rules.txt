@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Fake Online
+path = "Disney Epic Mickey 2/Misc/Fake Online"
+description = Tricks the game into thinking it supports the scrapped online functionality. Pretty much just for show. Made by abso1utezer0.
+version = 7
