@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Restore Lua Print
+path = "Disney Epic Mickey 2/Debug/Restore Lua Print"
+description = Restores the Lua Print() function back to its intended functionality. Made by abso1utezer0.
+version = 7
