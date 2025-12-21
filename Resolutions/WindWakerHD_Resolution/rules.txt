@@ -229,7 +229,7 @@ $gameWidth = 1920
 $gameHeight = 1080
 $lightSource = 1.0
 $scaleShader = 1.0
-$aspectRatio = (8.0/5.0)
+$aspectRatio = (16.0/9.0)
 
 [Preset]
 name = 1920x1080 AO fix - Light res x2
