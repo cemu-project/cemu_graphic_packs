@@ -3,8 +3,8 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader 565f6b7e7ef2f441
 // Used for: Antialias scaling and opacity
-float resScaleX = float($width)/float($gameWidth);
-float resScaleY = float($height)/float($gameHeight);
+float resScaleX = float($width)/float(1280);
+float resScaleY = float($height)/float(720);
 float aaOpacity = $antialias;
 
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
@@ -73,13 +73,13 @@ PV0ix = 0;
 PV0iy = uf_remappedPS[0].y;
 PV0iz = uf_remappedPS[0].x;
 PV0iw = 0;
-R2i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[0].x)*resScaleX);
+R2i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(uf_remappedPS[0].x)/resScaleX);
 // 1
 R1i.x = floatBitsToInt(intBitsToFloat(R0i.z) + intBitsToFloat(PV0iz));
 R1i.y = floatBitsToInt(intBitsToFloat(R0i.w) + intBitsToFloat(PV0iw));
 R1i.z = floatBitsToInt(intBitsToFloat(PV0ix) + intBitsToFloat(R0i.z));
 R1i.w = floatBitsToInt(intBitsToFloat(PV0iy) + intBitsToFloat(R0i.w));
-R2i.y = floatBitsToInt(intBitsToFloat(R0i.w) + intBitsToFloat(uf_remappedPS[0].y)*resScaleY);
+R2i.y = floatBitsToInt(intBitsToFloat(R0i.w) + intBitsToFloat(uf_remappedPS[0].y)/resScaleY);
 R4i.xyz = floatBitsToInt(texture(textureUnitPS0, vec2(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y))).xyz);
 R1i.xyz = floatBitsToInt(texture(textureUnitPS0, vec2(intBitsToFloat(R1i.z),intBitsToFloat(R1i.w))).xyz);
 R2i.xyz = floatBitsToInt(texture(textureUnitPS0, vec2(intBitsToFloat(R2i.x),intBitsToFloat(R2i.y))).xyz);
@@ -155,8 +155,8 @@ PV1iw = floatBitsToInt(max(intBitsToFloat(PV0iy), -8.0));
 PV0iy = floatBitsToInt(min(intBitsToFloat(PV1iw), 8.0));
 PV0iw = floatBitsToInt(min(intBitsToFloat(PV1iz), 8.0));
 // 13
-R127i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0iy), intBitsToFloat(uf_remappedPS[0].x)*aaOpacity));
-R126i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0iw), intBitsToFloat(uf_remappedPS[0].y)*aaOpacity));
+R127i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0iy), intBitsToFloat(uf_remappedPS[0].x)/resScaleX*aaOpacity));
+R126i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV0iw), intBitsToFloat(uf_remappedPS[0].y)/resScaleY*aaOpacity));
 // 14
 R5i.x = floatBitsToInt(intBitsToFloat(R127i.z) * intBitsToFloat(0x3e2aaaac) + intBitsToFloat(R0i.x));
 R5i.y = floatBitsToInt(intBitsToFloat(R126i.w) * intBitsToFloat(0x3e2aaaac) + intBitsToFloat(R0i.y));
