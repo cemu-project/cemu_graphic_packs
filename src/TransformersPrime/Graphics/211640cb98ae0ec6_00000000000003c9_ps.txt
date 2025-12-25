@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader 211640cb98ae0ec6
 // Usage: Motion blur removal
-float opacity = float($motionblur);
+float motionblurbgone = float($motionblur);
 
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
@@ -66,15 +66,15 @@ bool predResult = true;
 R0f = passParameterSem128;
 R1f.xy = (texture(textureUnitPS2, vec2(R0f.x,R0f.y)).xy);
 // 0
-PV0fx = R1f.x + -(intBitsToFloat(0x3efefeff)/);
-PV0fw = R1f.y + -(intBitsToFloat(0x3efefeff)/);
+PV0fx = R1f.x + -(intBitsToFloat(0x3efefeff)*motionblurbgone);
+PV0fw = R1f.y + -(intBitsToFloat(0x3efefeff));
 R8f.w = 0.125;
 // 1
 PV1fz = PV0fx * 0.03125;
 PV1fw = PV0fw * 0.03125;
 // 2
-R127f.z = PV1fz * intBitsToFloat(0x3e124925);
-R127f.w = PV1fw * intBitsToFloat(0x3e124925);
+R127f.z = PV1fz * intBitsToFloat(0x3e124925)*motionblurbgone;
+R127f.w = PV1fw * intBitsToFloat(0x3e124925)*motionblurbgone;
 // 3
 R0f.x = -(R127f.z) * 4.0 + R0f.x;
 R0f.y = -(R127f.w) * 4.0 + R0f.y;
@@ -144,9 +144,10 @@ PV0fx = -(R7f.y) + PV1fw;
 PV0fy = -(R7f.x) + PV1fx;
 PV0fw = -(R7f.z) + PV1fz;
 // 9
-R8f.x = R7f.x + PV0fy*opacity;
-R8f.y = R7f.y + PV0fx*opacity;
-R8f.z = R7f.z + PV0fw*opacity;
+R8f.x = R7f.x + PV0fy;
+R8f.y = R7f.y + PV0fx;
+R8f.z = R7f.z + PV0fw;
 // export
 passPixelColor0 = vec4(R8f.x, R8f.y, R8f.z, R8f.w);
 }
+
