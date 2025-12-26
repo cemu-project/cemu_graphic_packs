@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader 6a24c6e860d7e4f2
 // Usage: Bloom/blur scaling
-float resScale = float(320)/float($width);
+float resScale = float($width)/float(1280);
 
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
@@ -62,9 +62,9 @@ R0f = passParameterSem128;
 R3f.xyz = (texture(textureUnitPS0, vec2(R0f.x,R0f.y)).xyz);
 // 0
 PV0fx = 0.0;
-PV0fy = intBitsToFloat(uf_remappedPS[0].y)*resScale;
+PV0fy = intBitsToFloat(uf_remappedPS[0].y)/resScale;
 PV0fz = 0.0;
-PV0fw = intBitsToFloat(uf_remappedPS[0].x)*resScale;
+PV0fw = intBitsToFloat(uf_remappedPS[0].x)/resScale;
 R1f.x = R0f.x + intBitsToFloat(uf_remappedPS[0].x);
 // 1
 backupReg0f = R0f.x;
@@ -73,7 +73,7 @@ R0f.x = backupReg0f + PV0fw;
 R0f.y = backupReg1f + PV0fx;
 R0f.z = PV0fz + backupReg0f;
 R0f.w = PV0fy + backupReg1f;
-R1f.y = backupReg1f + intBitsToFloat(uf_remappedPS[0].y)*resScale;
+R1f.y = backupReg1f + intBitsToFloat(uf_remappedPS[0].y)/resScale;
 R2f.xyz = (texture(textureUnitPS0, vec2(R0f.x,R0f.y)).xyz);
 R0f.xyz = (texture(textureUnitPS0, vec2(R0f.z,R0f.w)).xyz);
 R1f.xyz = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).xyz);
