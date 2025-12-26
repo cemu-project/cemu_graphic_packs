@@ -2,10 +2,9 @@
 #extension GL_ARB_texture_gather : enable
 #extension GL_ARB_separate_shader_objects : enable
 // shader 3f4cca2a5debdf10
-// Usage: Bloom scaling
-float resScale = float(320)/float($width);
+// Usage: Bloom blur scaling
+float resScale = float($width)/float(1280);
 
-// start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
 #define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
@@ -34,7 +33,6 @@ uniform vec2 uf_fragCoordScale;
 TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
 layout(location = 0) in vec4 passParameterSem128;
 layout(location = 0) out vec4 passPixelColor0;
-// end of shader inputs/outputs
 int clampFI32(int v)
 {
 if( v == 0x7FFFFFFF )
@@ -75,25 +73,25 @@ bool predResult = true;
 R0f = passParameterSem128;
 R13f.xyz = (texture(textureUnitPS0, vec2(R0f.x,R0f.y)).xyz);
 // 0
-PV0fx = intBitsToFloat(uf_remappedPS[0].y);
-R9f.y = intBitsToFloat(uf_remappedPS[0].y);
+PV0fx = intBitsToFloat(uf_remappedPS[0].y)/resScale;
+R9f.y = intBitsToFloat(uf_remappedPS[0].y)/resScale;
 R9f.y *= 2.0;
-R9f.z = intBitsToFloat(uf_remappedPS[0].x);
+R9f.z = intBitsToFloat(uf_remappedPS[0].x)/resScale;
 R9f.z *= 2.0;
 R1f.w = 0.0;
-PS0f = -(intBitsToFloat(uf_remappedPS[0].y));
+PS0f = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
 // 1
 R1f.x = R1f.w + R0f.x;
 R1f.y = PV0fx + R0f.y;
 R0f.z = R1f.w + R0f.x;
 R0f.w = PS0f + R0f.y;
-R8f.x = intBitsToFloat(uf_remappedPS[0].x)*resScale;
+R8f.x = intBitsToFloat(uf_remappedPS[0].x)/resScale;
 // 2
 R2f.x = R0f.x + R8f.x;
 PV0fy = 0.0;
-R8f.z = -(intBitsToFloat(uf_remappedPS[0].x)*resScale);
+R8f.z = -(intBitsToFloat(uf_remappedPS[0].x)/resScale);
 PV0fw = 0.0;
-PS0f = intBitsToFloat(uf_remappedPS[0].y)*resScale;
+PS0f = intBitsToFloat(uf_remappedPS[0].y)/resScale;
 // 3
 R3f.x = R0f.x + R8f.z;
 R2f.y = R0f.y + PV0fw;
@@ -105,11 +103,11 @@ R1f.xyz = (texture(textureUnitPS0, vec2(R0f.z,R0f.w)).xyz);
 R2f.xyz = (texture(textureUnitPS0, vec2(R2f.x,R2f.y)).xyz);
 R3f.xyz = (texture(textureUnitPS0, vec2(R3f.x,R3f.z)).xyz);
 // 0
-PV0fx = -(intBitsToFloat(uf_remappedPS[0].y)*scaleY);
+PV0fx = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
 PV0fy = R2f.z + R3f.z;
 PV0fz = R2f.y + R3f.y;
 PV0fw = R2f.x + R3f.x;
-R2f.x = R0f.x + intBitsToFloat(uf_remappedPS[0].x)*resScale;
+R2f.x = R0f.x + intBitsToFloat(uf_remappedPS[0].x)/resScale;
 // 1
 backupReg0f = R1f.y;
 PV1fx = R1f.x + PV0fw;
@@ -119,14 +117,14 @@ PV1fw = backupReg0f + PV0fz;
 R1f.x = R0f.x + R8f.x;
 // 2
 R9f.x = R4f.z + PV1fz;
-R2f.y = R0f.y + intBitsToFloat(uf_remappedPS[0].y)*resScale;
+R2f.y = R0f.y + intBitsToFloat(uf_remappedPS[0].y)/resScale;
 R0f.z = R4f.y + PV1fw;
 R0f.w = R4f.x + PV1fx;
-R4f.x = R0f.x + -(intBitsToFloat(uf_remappedPS[0].x)*resScale);
+R4f.x = R0f.x + -(intBitsToFloat(uf_remappedPS[0].x)/resScale);
 // 3
 backupReg0f = R1f.w;
 R6f.x = backupReg0f + R0f.x;
-R4f.y = R0f.y + -(intBitsToFloat(uf_remappedPS[0].y)*scaleY);
+R4f.y = R0f.y + -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
 R1f.z = -(R9f.y);
 R1f.w = R9f.y;
 R7f.x = backupReg0f + R0f.x;
@@ -154,15 +152,15 @@ R2f.w = R3f.y + PV1fz;
 R5f.w = -(R9f.z);
 // 3
 R3f.x = R0f.x + R5f.w;
-PV1fy = intBitsToFloat(uf_remappedPS[0].y);
+PV1fy = intBitsToFloat(uf_remappedPS[0].y)/resScale;
 R1f.z = R0f.x + R9f.z;
 PV1fw = 0.0;
-PS1f = intBitsToFloat(uf_remappedPS[0].y);
+PS1f = intBitsToFloat(uf_remappedPS[0].y)/resScale;
 // 4
 R2f.x = R0f.x + R5f.w;
 R3f.y = R0f.y + PV1fw;
 R2f.z = R0f.y + PS1f;
-R1f.w = -(intBitsToFloat(uf_remappedPS[0].y));
+R1f.w = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
 R1f.y = R0f.y + PV1fy;
 R6f.xyz = (texture(textureUnitPS0, vec2(R6f.x,R6f.w)).xyz);
 R7f.xyz = (texture(textureUnitPS0, vec2(R7f.x,R7f.y)).xyz);
@@ -176,7 +174,7 @@ R3f.w = R0f.x + R9f.z;
 R3f.y = R0f.y + R1f.w;
 // 1
 PV1fx = R7f.z + PV0fx;
-PV1fy = -(intBitsToFloat(uf_remappedPS[0].y));
+PV1fy = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
 PV1fz = R7f.y + PV0fy;
 PV1fw = R7f.x + PV0fz;
 R7f.x = R0f.x + R5f.w;
