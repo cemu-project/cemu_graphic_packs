@@ -4,3 +4,4 @@ name = Reduce input lag
 path = "Tekken Tag Tournament 2/Mods/Reduce input lag"
 description = "Reduce the delay of your button presses by 2 frames in all offline modes. |This works by completely disabling the forced 'Input Delay' system listed in Practice Mode. |Made by WAZAAAAA."
 version = 7
+default = 1
