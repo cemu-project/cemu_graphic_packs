@@ -1,7 +1,7 @@
 [Definition]
-titleIds = 000500001010D700, 0005000010116000
+titleIds = 0005000010142D00
 name = "Enable Debug Menu/Mode"
-path = "Skylanders: Giants/Cheats/Enable Debug Menu"
+path = "Skylanders: Spyro's Adventure/Cheats/Enable Debug Menu"
 description = Enables the game to look through the debug folder. If debug files are present, it will load them (unless Game Configuration is set to Golden, which is the regular configuration).||Made by SuperSamus and Winner Nombre.|Special thanks to Hydos, NefariousTechSupport and maff.
 version = 7
 
@@ -17,17 +17,17 @@ category = Game Configuration
 $game_config_value:int = 0
 
 [Preset]
-name= Development (most debugging features)
+name= Development (has the most features)
 category = Game Configuration
 $game_config_value:int = 1
 
 [Preset]
-name = QA (some debugging features)
+name = QA
 category = Game Configuration
 $game_config_value:int = 2
 default = 1
 
 [Preset]
-name = Golden (production, Default)
+name = Golden (production)
 category = Game Configuration
 $game_config_value:int = 3
