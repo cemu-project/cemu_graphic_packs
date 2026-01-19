@@ -1,0 +1,183 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader ac3473462e963299
+// Used for: DOF Removal
+float removal = float($dof);
+
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.z, 1.0/gl_FragCoord.w)
+#extension GL_EXT_spirv_intrinsics: enable
+spirv_execution_mode(4462, 16);
+spirv_execution_mode(4462, 32);
+spirv_execution_mode(4462, 64);
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+#ifdef VULKAN
+layout(set = 1, binding = 4) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[3];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[3];
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
+TEXTURE_LAYOUT(2, 1, 2) uniform sampler2D textureUnitPS2;
+TEXTURE_LAYOUT(3, 1, 3) uniform sampler2D textureUnitPS3;
+layout(location = 0) in vec4 passParameterSem129;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+ivec4 R127i = ivec4(0);
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+int PV0ix = 0, PV0iy = 0, PV0iz = 0, PV0iw = 0, PV1ix = 0, PV1iy = 0, PV1iz = 0, PV1iw = 0;
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+bool activeMaskStack[5];
+bool activeMaskStackC[6];
+activeMaskStack[0] = false;
+activeMaskStack[1] = false;
+activeMaskStack[2] = false;
+activeMaskStack[3] = false;
+activeMaskStackC[0] = false;
+activeMaskStackC[1] = false;
+activeMaskStackC[2] = false;
+activeMaskStackC[3] = false;
+activeMaskStackC[4] = false;
+activeMaskStack[0] = true;
+activeMaskStackC[0] = true;
+activeMaskStackC[1] = true;
+R0i = floatBitsToInt(passParameterSem129);
+if( activeMaskStackC[1] == true ) {
+R1i.x = floatBitsToInt(texture(textureUnitPS2, vec2(intBitsToFloat(R0i.x),intBitsToFloat(R0i.y))).x);
+R2i.xyzw = floatBitsToInt(texture(textureUnitPS0, vec2(intBitsToFloat(R0i.x),intBitsToFloat(R0i.y))).xyzw);
+R0i.xyzw = floatBitsToInt(texture(textureUnitPS1, vec2(intBitsToFloat(R0i.x),intBitsToFloat(R0i.y))).xyzw);
+}
+if( activeMaskStackC[1] == true ) {
+activeMaskStack[1] = activeMaskStack[0];
+activeMaskStackC[2] = activeMaskStackC[1];
+// 0
+PV0ix = floatBitsToInt(-(intBitsToFloat(R1i.x)) + intBitsToFloat(uf_remappedPS[0].y)*removal);
+R127i.x = floatBitsToInt(1.0 / intBitsToFloat(uf_remappedPS[0].z)*removal);
+// 1
+PS1i = floatBitsToInt(1.0 / intBitsToFloat(PV0ix));
+// 2
+PV0iw = floatBitsToInt(intBitsToFloat(PS1i) * intBitsToFloat(uf_remappedPS[0].x));
+// 3
+PV1iz = floatBitsToInt(intBitsToFloat(PV0iw) + -(intBitsToFloat(uf_remappedPS[1].z)));
+// 4
+R1i.y = floatBitsToInt(intBitsToFloat(PV1iz) * intBitsToFloat(R127i.x));
+// 5
+predResult = (intBitsToFloat(uf_remappedPS[1].x) > intBitsToFloat(R1i.y));
+activeMaskStack[1] = predResult;
+activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+}
+else {
+activeMaskStack[1] = false;
+activeMaskStackC[2] = false;
+}
+if( activeMaskStackC[2] == true ) {
+// 0
+R0i.x = ((uf_remappedPS[2].x == 0)?(R2i.x):(R0i.x));
+R0i.y = ((uf_remappedPS[2].x == 0)?(R2i.y):(R0i.y));
+R0i.z = ((uf_remappedPS[2].x == 0)?(R2i.z):(R0i.z));
+R0i.w = ((uf_remappedPS[2].x == 0)?(R2i.w):(R0i.w));
+}
+activeMaskStack[1] = activeMaskStack[1] == false;
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+R1i.z = ((intBitsToFloat(R1i.y) > intBitsToFloat(uf_remappedPS[1].y))?-1:0);
+// 1
+predResult = (R1i.z == 0);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+activeMaskStack[3] = activeMaskStack[2];
+activeMaskStackC[4] = activeMaskStackC[3];
+// 0
+PV0iw = floatBitsToInt(intBitsToFloat(R1i.y) + -(intBitsToFloat(uf_remappedPS[1].x)));
+PS0i = floatBitsToInt(1.0 / intBitsToFloat(uf_remappedPS[0].w));
+// 1
+R1i.x = floatBitsToInt(intBitsToFloat(PV0iw) * intBitsToFloat(PS0i));
+R1i.y = (uf_remappedPS[2].x == 0)?-1:0;
+// 2
+predResult = (R1i.y == 0);
+activeMaskStack[3] = predResult;
+activeMaskStackC[4] = predResult == true && activeMaskStackC[3] == true;
+}
+else {
+activeMaskStack[3] = false;
+activeMaskStackC[4] = false;
+}
+if( activeMaskStackC[4] == true ) {
+activeMaskStack[4] = activeMaskStack[3];
+activeMaskStackC[5] = activeMaskStackC[4];
+// 0
+predResult = (uf_remappedPS[2].x == int(1));
+activeMaskStack[4] = predResult;
+activeMaskStackC[5] = predResult == true && activeMaskStackC[4] == true;
+}
+else {
+activeMaskStack[4] = false;
+activeMaskStackC[5] = false;
+}
+if( activeMaskStackC[5] == true ) {
+R1i.x = floatBitsToInt(texture(textureUnitPS3, vec2(intBitsToFloat(R1i.x),intBitsToFloat(R1i.x))).x);
+}
+activeMaskStack[4] = activeMaskStack[4] == false;
+activeMaskStackC[5] = activeMaskStack[4] == true && activeMaskStackC[4] == true;
+if( activeMaskStackC[5] == true ) {
+// 0
+R1i.x = 0;
+}
+activeMaskStackC[4] = activeMaskStack[3] == true && activeMaskStackC[3] == true;
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+PV0ix = floatBitsToInt(-(intBitsToFloat(R2i.w)) + intBitsToFloat(R0i.w));
+PV0iy = floatBitsToInt(-(intBitsToFloat(R2i.z)) + intBitsToFloat(R0i.z));
+PV0iz = floatBitsToInt(-(intBitsToFloat(R2i.y)) + intBitsToFloat(R0i.y));
+PV0iw = floatBitsToInt(-(intBitsToFloat(R2i.x)) + intBitsToFloat(R0i.x));
+// 1
+R0i.x = floatBitsToInt(intBitsToFloat(PV0iw) * intBitsToFloat(R1i.x) + intBitsToFloat(R2i.x));
+R0i.y = floatBitsToInt(intBitsToFloat(PV0iz) * intBitsToFloat(R1i.x) + intBitsToFloat(R2i.y));
+R0i.z = floatBitsToInt(intBitsToFloat(PV0iy) * intBitsToFloat(R1i.x) + intBitsToFloat(R2i.z));
+R0i.w = floatBitsToInt(intBitsToFloat(PV0ix) * intBitsToFloat(R1i.x) + intBitsToFloat(R2i.w));
+}
+activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
+// export
+passPixelColor0 = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+}
