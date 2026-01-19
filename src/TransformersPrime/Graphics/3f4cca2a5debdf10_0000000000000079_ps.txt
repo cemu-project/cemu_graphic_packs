@@ -1,0 +1,300 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 3f4cca2a5debdf10
+// Usage: Bloom blur scaling
+float resScale = float($width)/float(1280);
+
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale.xy,gl_FragCoord.z, 1.0/gl_FragCoord.w)
+#extension GL_EXT_spirv_intrinsics: enable
+spirv_execution_mode(4462, 16);
+spirv_execution_mode(4462, 32);
+spirv_execution_mode(4462, 64);
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy*uf_fragCoordScale,gl_FragCoord.zw)
+#endif
+#ifdef VULKAN
+layout(set = 1, binding = 1) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[2];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[2];
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+layout(location = 0) in vec4 passParameterSem128;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R5f = vec4(0.0);
+vec4 R6f = vec4(0.0);
+vec4 R7f = vec4(0.0);
+vec4 R8f = vec4(0.0);
+vec4 R9f = vec4(0.0);
+vec4 R10f = vec4(0.0);
+vec4 R11f = vec4(0.0);
+vec4 R12f = vec4(0.0);
+vec4 R13f = vec4(0.0);
+vec4 R14f = vec4(0.0);
+vec4 R122f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0, PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+R0f = passParameterSem128;
+R13f.xyz = (texture(textureUnitPS0, vec2(R0f.x,R0f.y)).xyz);
+// 0
+PV0fx = intBitsToFloat(uf_remappedPS[0].y)/resScale;
+R9f.y = intBitsToFloat(uf_remappedPS[0].y)/resScale;
+R9f.y *= 2.0;
+R9f.z = intBitsToFloat(uf_remappedPS[0].x)/resScale;
+R9f.z *= 2.0;
+R1f.w = 0.0;
+PS0f = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
+// 1
+R1f.x = R1f.w + R0f.x;
+R1f.y = PV0fx + R0f.y;
+R0f.z = R1f.w + R0f.x;
+R0f.w = PS0f + R0f.y;
+R8f.x = intBitsToFloat(uf_remappedPS[0].x)/resScale;
+// 2
+R2f.x = R0f.x + R8f.x;
+PV0fy = 0.0;
+R8f.z = -(intBitsToFloat(uf_remappedPS[0].x)/resScale);
+PV0fw = 0.0;
+PS0f = intBitsToFloat(uf_remappedPS[0].y)/resScale;
+// 3
+R3f.x = R0f.x + R8f.z;
+R2f.y = R0f.y + PV0fw;
+R3f.z = R0f.y + PV0fy;
+R5f.w = R0f.x + R8f.z;
+R5f.y = R0f.y + PS0f;
+R4f.xyz = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).xyz);
+R1f.xyz = (texture(textureUnitPS0, vec2(R0f.z,R0f.w)).xyz);
+R2f.xyz = (texture(textureUnitPS0, vec2(R2f.x,R2f.y)).xyz);
+R3f.xyz = (texture(textureUnitPS0, vec2(R3f.x,R3f.z)).xyz);
+// 0
+PV0fx = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
+PV0fy = R2f.z + R3f.z;
+PV0fz = R2f.y + R3f.y;
+PV0fw = R2f.x + R3f.x;
+R2f.x = R0f.x + intBitsToFloat(uf_remappedPS[0].x)/resScale;
+// 1
+backupReg0f = R1f.y;
+PV1fx = R1f.x + PV0fw;
+R1f.y = R0f.y + PV0fx;
+PV1fz = R1f.z + PV0fy;
+PV1fw = backupReg0f + PV0fz;
+R1f.x = R0f.x + R8f.x;
+// 2
+R9f.x = R4f.z + PV1fz;
+R2f.y = R0f.y + intBitsToFloat(uf_remappedPS[0].y)/resScale;
+R0f.z = R4f.y + PV1fw;
+R0f.w = R4f.x + PV1fx;
+R4f.x = R0f.x + -(intBitsToFloat(uf_remappedPS[0].x)/resScale);
+// 3
+backupReg0f = R1f.w;
+R6f.x = backupReg0f + R0f.x;
+R4f.y = R0f.y + -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
+R1f.z = -(R9f.y);
+R1f.w = R9f.y;
+R7f.x = backupReg0f + R0f.x;
+R3f.xyz = (texture(textureUnitPS0, vec2(R5f.w,R5f.y)).xyz);
+R5f.xyz = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).xyz);
+R2f.xyz = (texture(textureUnitPS0, vec2(R2f.x,R2f.y)).xyz);
+R4f.xyz = (texture(textureUnitPS0, vec2(R4f.x,R4f.y)).xyz);
+// 0
+PV0fx = R2f.z + R4f.z;
+PV0fy = R2f.y + R4f.y;
+PV0fz = R2f.x + R4f.x;
+R6f.w = R1f.w + R0f.y;
+R7f.y = R1f.z + R0f.y;
+// 1
+PV1fx = 0.0;
+PV1fy = R5f.z + PV0fx;
+PV1fz = R5f.y + PV0fy;
+PV1fw = R5f.x + PV0fz;
+R5f.x = R0f.x + R9f.z;
+// 2
+R1f.x = R3f.x + PV1fw;
+R5f.y = R0f.y + PV1fx;
+R14f.z = R3f.z + PV1fy;
+R2f.w = R3f.y + PV1fz;
+R5f.w = -(R9f.z);
+// 3
+R3f.x = R0f.x + R5f.w;
+PV1fy = intBitsToFloat(uf_remappedPS[0].y)/resScale;
+R1f.z = R0f.x + R9f.z;
+PV1fw = 0.0;
+PS1f = intBitsToFloat(uf_remappedPS[0].y)/resScale;
+// 4
+R2f.x = R0f.x + R5f.w;
+R3f.y = R0f.y + PV1fw;
+R2f.z = R0f.y + PS1f;
+R1f.w = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
+R1f.y = R0f.y + PV1fy;
+R6f.xyz = (texture(textureUnitPS0, vec2(R6f.x,R6f.w)).xyz);
+R7f.xyz = (texture(textureUnitPS0, vec2(R7f.x,R7f.y)).xyz);
+R5f.xyz = (texture(textureUnitPS0, vec2(R5f.x,R5f.y)).xyz);
+R3f.xyz = (texture(textureUnitPS0, vec2(R3f.x,R3f.y)).xyz);
+// 0
+PV0fx = R5f.z + R3f.z;
+PV0fy = R5f.y + R3f.y;
+PV0fz = R5f.x + R3f.x;
+R3f.w = R0f.x + R9f.z;
+R3f.y = R0f.y + R1f.w;
+// 1
+PV1fx = R7f.z + PV0fx;
+PV1fy = -(intBitsToFloat(uf_remappedPS[0].y)/resScale);
+PV1fz = R7f.y + PV0fy;
+PV1fw = R7f.x + PV0fz;
+R7f.x = R0f.x + R5f.w;
+// 2
+R14f.x = R6f.z + PV1fx;
+R7f.y = R0f.y + PV1fy;
+R12f.z = R6f.x + PV1fw;
+R6f.w = R6f.y + PV1fz;
+R1f.w = R9f.y;
+R10f.xyz = (texture(textureUnitPS0, vec2(R1f.z,R1f.y)).xyz);
+R4f.xyz = (texture(textureUnitPS0, vec2(R2f.x,R2f.z)).xyz);
+R5f.xyz = (texture(textureUnitPS0, vec2(R3f.w,R3f.y)).xyz);
+R6f.xyz = (texture(textureUnitPS0, vec2(R7f.x,R7f.y)).xyz);
+// 0
+R7f.x = R0f.x + R8f.x;
+R7f.y = R0f.y + R1f.w;
+R3f.z = R0f.x + R8f.z;
+PV0fw = R9f.y;
+PS0f = -(R9f.y);
+// 1
+backupReg0f = R8f.z;
+R8f.x = R0f.x + R8f.x;
+R3f.y = R0f.y + PV0fw;
+R8f.z = R0f.y + PS0f;
+PV1fw = -(R9f.y);
+R2f.x = R0f.x + backupReg0f;
+// 2
+R11f.x = R0f.x + R5f.w;
+R2f.y = R0f.y + PV1fw;
+R1f.z = R9f.y;
+R1f.w = -(R9f.y);
+R12f.x = R0f.x + R9f.z;
+R7f.xyz = (texture(textureUnitPS0, vec2(R7f.x,R7f.y)).xyz);
+R3f.xyz = (texture(textureUnitPS0, vec2(R3f.z,R3f.y)).xyz);
+R8f.xyz = (texture(textureUnitPS0, vec2(R8f.x,R8f.z)).xyz);
+R2f.xyz = (texture(textureUnitPS0, vec2(R2f.x,R2f.y)).xyz);
+// 0
+PV0fx = R8f.y + R2f.y;
+PV0fy = R8f.x + R2f.x;
+R11f.z = R0f.y + R1f.z;
+PV0fw = R8f.z + R2f.z;
+R12f.y = R0f.y + R1f.w;
+// 1
+PV1fx = R3f.z + PV0fw;
+PV1fy = R3f.y + PV0fx;
+PV1fz = R3f.x + PV0fy;
+PV1fw = R9f.y;
+R3f.x = R0f.x + R9f.z;
+// 2
+PV0fx = -(R9f.y);
+PV0fy = R7f.z + PV1fx;
+PV0fz = R7f.y + PV1fy;
+PV0fw = R7f.x + PV1fz;
+R3f.y = R0f.y + PV1fw;
+// 3
+PV1fx = R6f.x + PV0fw;
+R0f.y = R0f.y + PV0fx;
+PV1fz = R6f.z + PV0fy;
+PV1fw = R6f.y + PV0fz;
+R0f.x = R0f.x + R5f.w;
+// 4
+PV0fx = R5f.y + PV1fw;
+PV0fy = R5f.x + PV1fx;
+PV0fz = R13f.x * intBitsToFloat(0x3f5aede0);
+PV0fw = R5f.z + PV1fz;
+PS0f = R13f.y * intBitsToFloat(0x3f5aede0);
+// 5
+PV1fx = R4f.z + PV0fw;
+PV1fy = R4f.y + PV0fx;
+PV1fz = R4f.x + PV0fy;
+R123f.w = R0f.w * intBitsToFloat(0x3f401442) + PV0fz;
+R122f.x = R0f.z * intBitsToFloat(0x3f401442) + PS0f;
+// 6
+backupReg0f = R10f.y;
+backupReg1f = R10f.x;
+backupReg2f = R2f.w;
+R10f.x = R10f.z + PV1fx;
+R10f.y = R1f.x * intBitsToFloat(0x3f295c2f) + R123f.w;
+R4f.z = backupReg0f + PV1fy;
+R2f.w = backupReg1f + PV1fz;
+R10f.z = backupReg2f * intBitsToFloat(0x3f295c2f) + R122f.x;
+R1f.xyz = (texture(textureUnitPS0, vec2(R11f.x,R11f.z)).xyz);
+R11f.xyz = (texture(textureUnitPS0, vec2(R12f.x,R12f.y)).xyz);
+R3f.xyz = (texture(textureUnitPS0, vec2(R3f.x,R3f.y)).xyz);
+R0f.xyz = (texture(textureUnitPS0, vec2(R0f.x,R0f.y)).xyz);
+// 0
+PV0fx = R3f.z + R0f.z;
+PV0fy = R3f.y + R0f.y;
+PV0fz = R3f.x + R0f.x;
+R123f.w = R12f.z * intBitsToFloat(0x3f03d6da) + R10f.y;
+R0f.w = 1.0;
+// 1
+R123f.x = R6f.w * intBitsToFloat(0x3f03d6da) + R10f.z;
+PV1fy = R11f.z + PV0fx;
+PV1fz = R11f.y + PV0fy;
+PV1fw = R11f.x + PV0fz;
+R127f.y = R2f.w * intBitsToFloat(0x3ee8b2b0) + R123f.w;
+// 2
+PV0fx = R1f.x + PV1fw;
+R123f.y = R4f.z * intBitsToFloat(0x3ee8b2b0) + R123f.x;
+R127f.z = R1f.z + PV1fy;
+PV0fw = R1f.y + PV1fz;
+PS0f = R13f.z * intBitsToFloat(0x3f5aede0);
+// 3
+R123f.x = R9f.x * intBitsToFloat(0x3f401442) + PS0f;
+R123f.y = PV0fw * intBitsToFloat(0x3e9fb8c2) + R123f.y;
+R123f.z = PV0fx * intBitsToFloat(0x3e9fb8c2) + R127f.y;
+// 4
+backupReg0f = R123f.y;
+R0f.x = mul_nonIEEE(R123f.z, intBitsToFloat(uf_remappedPS[1].w));
+R123f.y = R14f.z * intBitsToFloat(0x3f295c2f) + R123f.x;
+R0f.y = mul_nonIEEE(backupReg0f, intBitsToFloat(uf_remappedPS[1].w));
+// 5
+R123f.z = R14f.x * intBitsToFloat(0x3f03d6da) + R123f.y;
+// 6
+R123f.w = R10f.x * intBitsToFloat(0x3ee8b2b0) + R123f.z;
+// 7
+R123f.x = R127f.z * intBitsToFloat(0x3e9fb8c2) + R123f.w;
+// 8
+R0f.z = mul_nonIEEE(R123f.x, intBitsToFloat(uf_remappedPS[1].w));
+// export
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+}

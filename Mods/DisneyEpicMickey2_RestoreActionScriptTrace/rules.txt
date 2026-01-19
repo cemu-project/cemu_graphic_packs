@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Restore ActionScript Trace
+path = "Disney Epic Mickey 2/Debug/Restore ActionScript Trace"
+description = Restores the ActionScript Trace() function. Made by abso1utezer0.
+version = 7

@@ -18,7 +18,8 @@ $0x431 = 0
 $0x432 = 0
 $0x433 = 0
 $0x434 = 0
-
+$shadowRes = 1
+$anisoLevel = 1
 
 # Resolutions
 
@@ -143,6 +144,61 @@ $0x432 = -4
 $0x433 = -4
 $0x434 = -4
 
+# Shadow Resolution
+
+[Preset]
+name = Low (50%)
+category = Shadow Quality
+$shadowRes = 0.5
+
+[Preset]
+name = Medium (100%, Default)
+category = Shadow Quality
+$shadowRes = 1
+
+[Preset]
+name = High (200%)
+category = Shadow Quality
+$shadowRes = 2
+
+[Preset]
+name = Ultra (300%)
+category = Shadow Quality
+$shadowRes = 3
+
+[Preset]
+name = Extreme (400%)
+category = Shadow Quality
+$shadowRes = 4
+
+[Preset]
+name = 1x (Default)
+category = Anisotropic Filtering
+$anisoLevel = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering
+$anisoLevel = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering
+$anisoLevel = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering
+$anisoLevel = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering
+$anisoLevel = 16
+
+[TextureRedefine]
+formats = 0x31,0x32,0x33,0x34,0x35,0x431,0x432,0x433,0x434,0x435
+overwriteAnisotropy = $anisoLevel
 
 [TextureRedefine]
 width = 1280
@@ -166,15 +222,15 @@ overwriteHeight  = ($height/$gameHeight) * 368
 
 [TextureRedefine]
 formats = 0x031
-overwriteRelativeLodBias = $0x031 
+overwriteRelativeLodBias = $0x031
 
 [TextureRedefine]
-formats = 0x033 
-overwriteRelativeLodBias = $0x033 
+formats = 0x033
+overwriteRelativeLodBias = $0x033
 
 [TextureRedefine]
 formats = 0x034
-overwriteRelativeLodBias = $0x034 
+overwriteRelativeLodBias = $0x034
 
 [TextureRedefine]
 formats = 0x035
@@ -195,3 +251,17 @@ overwriteRelativeLodBias = $0x433
 [TextureRedefine]
 formats = 0x434
 overwriteRelativeLodBias = $0x434
+
+[TextureRedefine]
+width = 960
+height = 960
+formats = 0x080e
+overwriteWidth = 960 * $shadowRes
+overwriteHeight = 960 * $shadowRes
+
+[TextureRedefine]
+width = 960
+height = 3840
+formats = 0x080e
+overwriteWidth = 960 * $shadowRes
+overwriteHeight = 3840 * $shadowRes

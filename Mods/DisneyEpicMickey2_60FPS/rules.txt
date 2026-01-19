@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = 60FPS
+path = "Disney Epic Mickey 2/Graphics/60FPS"
+description = Increases the max framerate to 60FPS. Made by abso1utezer0.
+version = 7

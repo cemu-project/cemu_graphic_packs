@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Restore Dev Menu
+path = "Disney Epic Mickey 2/Debug/Restore Dev Menu"
+description = Restores the radial debug menu, replaces the pause menu. Made by abso1utezer0.
+version = 7

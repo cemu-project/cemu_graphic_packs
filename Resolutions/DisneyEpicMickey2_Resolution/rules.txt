@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010db00
+name = Resolution
+path = "Disney Epic Mickey 2/Graphics/Resolution"
+description = Change the game's resolution to 1080p. Made by abso1utezer0.
+version = 7

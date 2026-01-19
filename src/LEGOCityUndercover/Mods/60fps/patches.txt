@@ -1,0 +1,3 @@
+[LCU60FPSEUv16]
+moduleMatches = 0xd20260c6
+0x025d0d9c = addi r11, r12, 1
