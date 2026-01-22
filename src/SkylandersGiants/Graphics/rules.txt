@@ -1,243 +1,381 @@
 [Definition]
 titleIds = 000500001010D700,0005000010116000
-name = Resolution
+name = Graphics Options
 path = "Skylanders: Giants/Graphics"
-description = Changes the resolution of the game.||Aspect ratio patch Made by Flextape05
-
+description = Allows you to change the game's resolution and turn off anti-aliasing.||Made by Flextape05 and Frankybuster.
 version = 7
 
 [Default]
 $width = 1280
 $height = 720
+$postWidth = 1280
+$postHeight = 720
 $gameWidth = 1280
 $gameHeight = 720
-$padWidth = 854
-$padHeight = 480
-$shadowRes = 1
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
 $hudY = 720
 $hudX = 1280
 $fov = 57.29578
+$antialias = 1
+
+# Aspect Ratio
+
+[Preset]
+name = 16:9 (Default)
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+
+[Preset]
+name = 16:10
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 10
+
+[Preset]
+name = 21:9
+category = Aspect Ratio
+$aspectRatioWidth = 21
+$aspectRatioHeight = 9
+
+[Preset]
+name = 32:9
+category = Aspect Ratio
+$aspectRatioWidth = 32
+$aspectRatioHeight = 9
+
+[Preset]
+name = 48:9
+category = Aspect Ratio
+$aspectRatioWidth = 48
+$aspectRatioHeight = 9
+
+[Preset]
+name = 4:3
+category = Aspect Ratio
+$aspectRatioWidth = 4
+$aspectRatioHeight = 3
 
 # Resolution
-[Preset]
-category = Resolution
-name = 1280x720 (Default)
-$width = 1280
-$height = 720
+
+# 16:9 Resolutions
 
 [Preset]
 category = Resolution
 name = 640x360
 $width = 640
 $height = 360
+$postWidth = 640
+$postHeight = 360
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 960x540
 $width = 960
 $height = 540
+$postWidth = 960
+$postHeight = 540
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 1024x576
 $width = 1024
 $height = 576
+$postWidth = 1024
+$postHeight = 576
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+$postWidth = 1280
+$postHeight = 720
+default = 1
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+[Preset]
+category = Resolution
+name = 1360x768
+$width = 1360
+$height = 768
+$postWidth = 1360
+$postHeight = 768
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
+$postWidth = 1600
+$postHeight = 900
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
+$postWidth = 1920
+$postHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
+$postWidth = 1920
+$postHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
+$postWidth = 1920
+$postHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
+$postWidth = 1920
+$postHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
+$postWidth = 1920
+$postHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
+$postWidth = 1920
+$postHeight = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 21:9 Resolutions
 
 [Preset]
 category = Resolution
-name = 2560x1080(21:9)
+name = 2560x1080
 $width = 2560
 $height = 1080
+$postWidth = 2560
+$postHeight = 1080
 $hudY = 720
 $hudX = 1720
-$fov = 48.29578
+$fov = 0.0159
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 3440x1440(21:9)
+name = 3440x1440
 $width = 3440
 $height = 1440
+$postWidth = 2560
+$postHeight = 1080
 $hudY = 720
 $hudX = 1720
-$fov = 48.29578
+$fov = 45.29578
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 5120x2160(21:9)
+name = 5120x2160
 $width = 5120
 $height = 2160
+$postWidth = 2560
+$postHeight = 1080
 $hudY = 720
 $hudX = 1720
-$fov = 48.29578
+$fov = 45.29578
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 32:9 Resolutions
 
 [Preset]
 category = Resolution
-name = 3840x1080(32:9)
+name = 3840x1080
 $width = 3840
 $height = 1080
+$postWidth = 3840
+$postHeight = 1080
 $hudY = 720
 $hudX = 2560
-$fov = 36.19578
+$fov = 38.89578
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 5120x1440(32:9)
+name = 5120x1440
 $width = 5120
 $height = 1440
+$postWidth = 3840
+$postHeight = 1080
 $hudY = 720
 $hudX = 2560
-$fov = 36.19578
+$fov = 38.89578
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 48:9 Resolutions
 
 [Preset]
 category = Resolution
-name = 5760x1080(48:9)
+name = 5760x1080
 $width = 5760
 $height = 1080
+$postWidth = 5760
+$postHeight = 1080
 $hudY = 720
 $hudX = 3840
-$fov = 42.39578
+$fov = 44.39578
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 7680x1440(48:9)
+name = 7680x1440
 $width = 7680
 $height = 1440
+$postWidth = 5760
+$postHeight = 1080
 $hudY = 720
 $hudX = 3840
-$fov = 42.39578
+$fov = 44.39578
+condition = ((($aspectRatioWidth - 48) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 4:3 Resolutions
 
 [Preset]
 category = Resolution
-name = 640x480(4:3)
+name = 640x480
 $width = 640
 $height = 480
+$postWidth = 640
+$postHeight = 480
 $hudY = 768
 $hudX = 1024
 $fov = 0.0039215689
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 1024x768(4:3)
+name = 1024x768
 $width = 1024
 $height = 768
+$postWidth = 1024
+$postHeight = 768
 $hudY = 768
 $hudX = 1024
 $fov = 0.0039215689
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 1600x1200(4:3)
+name = 1600x1200
 $width = 1600
 $height = 1200
+$width = 1440
+$height = 1080
 $hudY = 768
 $hudX = 1024
 $fov = 0.0039215689
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+# 16:10 Resolutions
 
 [Preset]
 category = Resolution
-name = 1280x800(16:10)
+name = 1280x800
 $width = 1280
 $height = 800
+$postWidth = 1280
+$postHeight = 800
 $hudY = 800
 $hudX = 1280
-$fov = 59.39578
+$fov = 60.89578
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 1680x1050(16:10)
+name = 1680x1050
 $width = 1680
 $height = 1050
+$postWidth = 1680
+$postHeight = 1050
 $hudY = 800
 $hudX = 1280
-$fov = 59.39578
+$fov = 60.89578
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 1920x1200(16:10)
+name = 1920x1200
 $width = 1920
 $height = 1200
+$postWidth = 1920
+$postHeight = 1200
 $hudY = 800
 $hudX = 1280
-$fov = 59.39578
+$fov = 60.89578
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
 [Preset]
 category = Resolution
-name = 2560x1600(16:10)
+name = 2560x1600
 $width = 2560
 $height = 1600
+$postWidth = 1920
+$postHeight = 1200
 $hudY = 800
 $hudX = 1280
-$fov = 59.39578
+$fov = 60.89578
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
-[TextureRedefine]
+# Anti-Aliasing
+
+[Preset]
+category = Anti-Aliasing
+name = Off
+$antialias = 0
+
+[Preset]
+category = Anti-Aliasing
+name = On (Default)
+default = 1
+
+# Texture Redefines
+
+[TextureRedefine] # Game output
 width = 1280
 height = 720
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
-[TextureRedefine]
-width = 864
-height = 480
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight  = ($height/$gameHeight) * 480
-
-[TextureRedefine]
-width = 854
-height = 480
-formatsExcluded = 0x031
-overwriteWidth = ($width/$gameWidth) * 854
-overwriteHeight  = ($height/$gameHeight) * 480
+[TextureRedefine] # Bloom, DOF
+width = 640
+height = 368
+overwriteWidth = ($postWidth/$gameWidth) * 640
+overwriteHeight = ($postHeight/$gameHeight) * 368
 
 [TextureRedefine]
 width = 640
 height = 360
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight  = ($height/$gameHeight) * 360
-
-[TextureRedefine]
-width = 640
-height = 368
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight  = ($height/$gameHeight) * 368
+overwriteWidth = ($postWidth/$gameWidth) * 640
+overwriteHeight = ($postHeight/$gameHeight) * 360

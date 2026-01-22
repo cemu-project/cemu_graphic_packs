@@ -1,0 +1,163 @@
+[Definition]
+titleIds = 000500001014C300,0005000010171F00,0005000010172000
+name = Graphic Options
+path = "Pullblox World/Graphics"
+description = Allows you to change the game's resolution.||Made by FrankyBuster
+version = 6
+
+[Default]
+$width = 1280
+$height = 720
+$gameWidth = 1280
+$gameHeight = 720
+
+# Resolution
+
+
+[Preset]
+category = Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution
+name = 1280x720 (Default)
+$width = 1280
+$height = 720
+default = 1
+
+[Preset]
+category = Resolution
+name = 1360x768
+$width = 1360
+$height = 768
+
+[Preset]
+category = Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution
+name = 1920x1080
+$width = 1920
+$height = 1080
+
+[Preset]
+category = Resolution
+name = 2560x1440
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution
+name = 3840x2160
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution
+name = 7680x4320
+$width = 7680
+$height = 4320
+
+
+# Texture Redefines
+
+[TextureRedefine] # Game Resolution
+width = 1280
+height = 720
+formats = 0x816,0x11
+tileModesExcluded = 0x1
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+[TextureRedefine] # Bloom/Blur
+width = 640
+height = 368
+formats = 0x816,0x11
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 368
+
+[TextureRedefine]
+width = 640
+height = 360
+formats = 0x816,0x11
+overwriteWidth = ($width/$gameWidth) * 640
+overwriteHeight = ($height/$gameHeight) * 360
+
+[TextureRedefine]
+width = 320
+height = 192
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 192
+
+[TextureRedefine]
+width = 320
+height = 180
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 320
+overwriteHeight = ($height/$gameHeight) * 180
+
+[TextureRedefine]
+width = 160
+height = 96
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 96
+
+[TextureRedefine]
+width = 160
+height = 90
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 160
+overwriteHeight = ($height/$gameHeight) * 90
+
+[TextureRedefine]
+width = 96
+height = 48
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 96
+overwriteHeight = ($height/$gameHeight) * 48
+
+[TextureRedefine]
+width = 80
+height = 45
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 80
+overwriteHeight = ($height/$gameHeight) * 45
+
+[TextureRedefine]
+width = 64
+height = 32
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 64
+overwriteHeight = ($height/$gameHeight) * 32
+
+[TextureRedefine]
+width = 40
+height = 22
+formats = 0x816
+overwriteWidth = ($width/$gameWidth) * 40
+overwriteHeight = ($height/$gameHeight) * 22

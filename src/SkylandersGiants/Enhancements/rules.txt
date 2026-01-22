@@ -1,0 +1,50 @@
+[Definition]
+titleIds = 000500001010D700,0005000010116000
+name = Enhancements
+path = "Skylanders: Giants/Enhancements"
+description = Allows you to change the game's depth of field and bloom intensity.|(no performane gains) ||Made by FrankyBuster.
+version = 6
+
+[Default]
+$dof = 1
+$bloom = 1
+
+# Depth of Field
+
+[Preset]
+category = Depth of Field
+name = Off
+$dof = 0
+
+[Preset]
+category = Depth of Field
+name = On (Default)
+default = 1
+
+
+# Bloom Intensity
+
+[Preset]
+name = 0%
+category = Bloom Intensity
+$bloom = 0
+
+[Preset]
+name = 50%
+category = Bloom Intensity
+$bloom = 0.5
+
+[Preset]
+name = 100% (Default)
+category = Bloom Intensity
+default = 1
+
+[Preset]
+name = 125%
+category = Bloom Intensity
+$bloom = 1.25
+
+[Preset]
+name = 150%
+category = Bloom Intensity
+$bloom = 1.5

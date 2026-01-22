@@ -1,6 +1,6 @@
 [Definition]
-titleIds = 0005000010142D00
+titleIds = 000500001010D700,0005000010116000
 name = No HUD
-path = "Skylanders: Spyro's Adventure/Enhancements/No HUD"
+path = "Skylanders: Giants/Mods/No HUD"
 description = Removes the HUD from the game (breaks the menus)||Made by Flextape05
 version = 6
