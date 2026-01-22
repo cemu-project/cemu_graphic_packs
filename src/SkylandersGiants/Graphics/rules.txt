@@ -368,13 +368,6 @@ height = 720
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
 
-[TextureRedefine] # Gamepad
-width = 864
-height = 480
-formatsExcluded = 0x031
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight  = ($height/$gameHeight) * 480
-
 [TextureRedefine] # Bloom, DOF
 width = 640
 height = 368
