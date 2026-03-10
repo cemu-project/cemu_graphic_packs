@@ -13,6 +13,7 @@ $gameHeight = 720
 $aspectRatioWidth = 16
 $aspectRatioHeight = 9
 $showUltrawideOptions:int = 0
+$showSquareHUDOption:int = 0
 $ultrawideHUDMode:int = 0
 $fxaa:int = 1
 $shadowRes = 1
@@ -79,23 +80,21 @@ name = 4:3
 category = Aspect Ratio
 $aspectRatioWidth = 4
 $aspectRatioHeight = 3
-$showUltrawideOptions:int = 0
-$ultrawideHUDMode:int = 0
+$showSquareHUDOption:int = 1
 
 [Preset]
 name = 5:4
 category = Aspect Ratio
 $aspectRatioWidth = 5
 $aspectRatioHeight = 4
-$showUltrawideOptions:int = 0
-$ultrawideHUDMode:int = 0
+$showSquareHUDOption:int = 1
 
 [Preset]
 name = 3:2
 category = Aspect Ratio
 $aspectRatioWidth = 3
 $aspectRatioHeight = 2
-$showUltrawideOptions:int = 1
+$showSquareHUDOption:int = 1
 
 # 16:9 Resolutions
 
@@ -505,6 +504,21 @@ name = No HUD Fixes (stretched HUD)
 condition = $showUltrawideOptions == 1
 category = Ultrawide HUD Mode
 $ultrawideHUDMode:int = 0
+
+# Square HUD Mode Options
+
+[Preset]
+name = Disabled (Default)
+category = Square HUD Mode
+condition = $showSquareHUDOption == 1
+$ultrawideHUDMode:int = 0
+default = 1
+
+[Preset]
+name = Enabled (Experimental, Will Have Some Issues)
+category = Square HUD Mode
+condition = $showSquareHUDOption == 1
+$ultrawideHUDMode:int = 1
 
 # Anti-Aliasing
 
