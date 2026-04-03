@@ -666,7 +666,7 @@ height = 368
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x806,0x816,0x820,0x41a
 # formatsExcluded = 0x431 # Exclude 0x431 which is used for adventure log images
 overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = (($height/$gameHeight) * 368) + 0.49
+overwriteHeight = ($height/$gameHeight) * 360 + 8
 
 # Required 1/2 resolutions
 [TextureRedefine]
@@ -684,7 +684,7 @@ width = 384
 height = 192
 formats = 0x001 # World lighting - Red
 overwriteWidth = ($width/$gameWidth) * 384
-overwriteHeight = ($height/$gameHeight) * 192
+overwriteHeight = ($height/$gameHeight) * 180 + 12
 
 # Required 1/4 resolutions
 [TextureRedefine]
@@ -692,7 +692,7 @@ width = 320
 height = 192
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x816,0x806,0x820,0x41a
 overwriteWidth = ($width/$gameWidth) * 320
-overwriteHeight = ($height/$gameHeight) * 192
+overwriteHeight = ($height/$gameHeight) * 180 + 12
 
 # Required 1/4 resolutions
 [TextureRedefine]
@@ -708,7 +708,7 @@ width = 192
 height = 96
 formats = 0x007,0x806 # Used for Fog
 overwriteWidth = ($width/$gameWidth) * 192
-overwriteHeight = ($height/$gameHeight) * 96
+overwriteHeight = ($height/$gameHeight) * 90 + 6
 
 # Required 1/8 resolution
 [TextureRedefine]
@@ -716,7 +716,7 @@ width = 160
 height = 96
 formats = 0x001,0x005,0x007,0x806,0x80e,0x816 # Used for Fog/Depth/Bloom
 overwriteWidth = ($width/$gameWidth) * 160
-overwriteHeight = ($height/$gameHeight) * 96
+overwriteHeight = ($height/$gameHeight) * 90 + 6
 
 # Required 1/8 resolution
 [TextureRedefine]
@@ -748,7 +748,7 @@ width = 128
 height = 48
 formats = 0x806,0x816,0x005,0x007,0x820
 overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 48
+overwriteHeight = ($height/$gameHeight) * 45 + 3
 
 # Required 1/13 resolution
 [TextureRedefine]
@@ -756,7 +756,7 @@ width = 96
 height = 48
 formats = 0x816,0x80e # Used for bloom/depth
 overwriteWidth = ($width/$gameWidth) * 96
-overwriteHeight = ($height/$gameHeight) * 48
+overwriteHeight = ($height/$gameHeight) * 45 + 3
 
 # Required 1/16 resolution
 [TextureRedefine]
@@ -772,7 +772,7 @@ width = 64
 height = 64
 formats = 0x80e # Used for depth
 overwriteWidth = ($width/$gameWidth) * 64
-overwriteHeight = ($height/$gameHeight) * 64
+overwriteHeight = ($width/$gameWidth) * 64
 
 # 0x019 - GUI Requirements
 
@@ -923,7 +923,7 @@ height = 512
 depth = 1
 formats = 0x816
 overwriteWidth = ($width/$gameWidth) * 512
-overwriteHeight = ($height/$gameHeight) * 512
+overwriteHeight = ($width/$gameWidth) * 512
 
 # Select-Menu Map
 [TextureRedefine]
@@ -963,7 +963,7 @@ width = 192
 height = 192
 formats = 0x019
 overwriteWidth = ($width/$gameWidth) * 192
-overwriteHeight = ($height/$gameHeight) * 192
+overwriteHeight = ($width/$gameWidth) * 192
 
 # Red Viewport
 [TextureRedefine]
@@ -998,7 +998,7 @@ height = 368
 formats = 0x019
 overwriteFormat = 0x01f
 overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = (($height/$gameHeight) * 368) + 0.49
+overwriteHeight = ($height/$gameHeight) * 360 + 8
 
 [TextureRedefine]
 width = 640
@@ -1014,7 +1014,7 @@ height = 192
 formats = 0x019
 overwriteFormat = 0x01f
 overwriteWidth = ($width/$gameWidth) * 320
-overwriteHeight = ($height/$gameHeight) * 192
+overwriteHeight = ($height/$gameHeight) * 180 + 12
 
 [TextureRedefine]
 width = 320
