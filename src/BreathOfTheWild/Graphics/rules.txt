@@ -37,6 +37,17 @@ $betterVRRecommendedEyeHeight = 1584
 # VR Resolution Multiplier (BetterVR)
 
 [Preset]
+name = 0.5x (Only For 8K VR headsets)
+category = VR Resolution Multiplier
+condition = $betterVRExposeVROptions == 1
+$betterVRRecommendedEyeWidth = 1440
+$betterVRRecommendedEyeHeight = 1584
+$width = $betterVRRecommendedEyeWidth * 0.5
+$height = $betterVRRecommendedEyeHeight * 0.5
+$showUltrawideOptions:int = 0
+$ultrawideHUDMode:int = 0
+
+[Preset]
 name = 1x (Native Headset Resolution, Default)
 category = VR Resolution Multiplier
 condition = $betterVRExposeVROptions == 1
