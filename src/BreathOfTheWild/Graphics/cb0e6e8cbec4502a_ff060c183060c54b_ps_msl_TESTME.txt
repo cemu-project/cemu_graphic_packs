@@ -1,0 +1,43 @@
+#include <metal_stdlib>
+using namespace metal;
+
+// shader cb0e6e8cbec4502a 
+// Used for: 1 pass Battle, Camera and Scope Depth of Field Blur
+// Converted to MSL from cb0e6e8cbec4502a_0000000000000079_ps.txt using Sonnet 4.6
+
+struct VertexOut {
+    float4 position [[position]];
+    float4 passParameterSem3 [[user(locn0)]];
+};
+
+struct FragmentUniforms {
+    float2 uf_fragCoordScale;
+};
+
+fragment float4 fragmentShader(
+    VertexOut in [[stage_in]],
+    texture2d<float> textureUnitPS0 [[texture(0)]],
+    constant FragmentUniforms& uniforms [[buffer(0)]])
+{
+    constexpr sampler texSampler(mag_filter::linear, min_filter::linear);
+
+    int radius = int(round(2.0 / uniforms.uf_fragCoordScale.y));
+    float2 resolution = float2(textureUnitPS0.get_width(), textureUnitPS0.get_height());
+
+    float2 center = (in.passParameterSem3.xy + in.passParameterSem3.zw) / 2.0;
+
+    float3 result = float3(0.0);
+    float count = 0.0;
+
+    for (int x = 1 - radius; x <= radius - 1; x += 2) {
+        for (int y = 1 - radius; y <= radius - 1; y += 2) {
+            if (length(float2(x, y)) <= float(radius)) {
+                float2 uv = center + float2(x, y) / resolution;
+                result += textureUnitPS0.sample(texSampler, uv).xyz;
+                count += 1.0;
+            }
+        }
+    }
+
+    return float4(result / count, 0.0);
+}
