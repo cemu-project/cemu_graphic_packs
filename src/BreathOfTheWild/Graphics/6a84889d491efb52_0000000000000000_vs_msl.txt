@@ -4,7 +4,7 @@ using namespace metal;
 // shader 6a84889d491efb52
 // Shader dumped from BotW 208, using Cemu 2193a8c
 // Based on 4721609a424e9a1f_0000000000000000_vs.txt
-// Used for: Vertical Bloom or Reflection Blur
+// Used for: Restoring the native BotW Anti-Aliasing implementation
 
 constant float resXScale = float($width)/float($gameWidth);
 constant float resYScale = float($height)/float($gameHeight);
