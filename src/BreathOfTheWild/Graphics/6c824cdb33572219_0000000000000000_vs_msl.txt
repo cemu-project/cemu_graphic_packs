@@ -4,7 +4,7 @@ using namespace metal;
 // shader 3d7aeadf35ccf970
 // Shader dumped from BotW 208, using Cemu 2193a8c
 // Based on 44b73ce02e05c2e6_0000000000000000_vs.txt
-// Used for: Vertical Self-Shadowing Mask Fix 
+// Used for: Vertical Self-Shadowing Mask Fix Blur
 
 constant float resYScale = float($height)/float($gameHeight);
 

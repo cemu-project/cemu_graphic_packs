@@ -4,7 +4,7 @@ using namespace metal;
 // shader b4a729584b6188ea
 // Shader dumped from BotW 208, using Cemu 2193a8c
 // Based on b4a729584b6188ea_0000000000001e49_ps.txt
-// Used for: Vertical Self-Shadowing Mask Fix Blur
+// Used for: Restoring the native BotW Anti-Aliasing implementation for distant trees
 
 constant float resXScale = float($width)/float($gameWidth);
 constant float resYScale = float($height)/float($gameHeight);
