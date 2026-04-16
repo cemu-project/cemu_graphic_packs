@@ -2,7 +2,8 @@
 using namespace metal;
 
 // shader 88133ee405eaae28
-// shader dumped from BotW 208, using Cemu 2193a8c
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on 88133ee405eaae28_000003c000009269_ps.txt
 // Shadow 2x2 box blur fix
 
 constant float resScale = $shadowRes;
