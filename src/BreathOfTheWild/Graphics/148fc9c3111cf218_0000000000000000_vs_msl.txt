@@ -1,28 +1,30 @@
 #include <metal_stdlib>
 using namespace metal;
 
-// shader 1e69944c6036cda3
+// shader 148fc9c3111cf218
 // Shader dumped from BotW 208, using Cemu 2193a8c
-// Based on f69e84515ae56e70_0000000000000000_vs.txt or 771e24915acbb074_0000000000000000_vs.txt
-// Used for: Vertical Bloom or Reflection Blur
+// Based on ea9a49a6185cf1e5_0000000000000000_vs.txt
+// Used for: Fix Reflection
 
+constant float resXScale = float($width)/float($gameWidth);
 constant float resYScale = float($height)/float($gameHeight);
 
 #define SET_POSITION(_v) out.position = _v; out.position.z = (out.position.z + out.position.w) / 2.0
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 struct SupportBuffer {
-int4 remapped[1];
+int4 remapped[2];
 };
 
 struct VertexIn {
 uint4 attrDataSem0 [[attribute(0)]];
-uint4 attrDataSem1 [[attribute(1)]];
 };
 
 struct VertexOut {
 float4 position [[position]] [[invariant]];
-float4 passParameterSem0 [[user(locn0)]];
-float4 passParameterSem1 [[user(locn1)]];
+float4 passParameterSem0 [[user(locn0)]] [[center_no_perspective]];
+float4 passParameterSem1 [[user(locn1)]] [[center_no_perspective]];
+float4 passParameterSem2 [[user(locn2)]] [[center_no_perspective]];
+float4 passParameterSem3 [[user(locn3)]] [[center_no_perspective]];
 };
 
 // end of shader inputs/outputs
@@ -49,6 +51,9 @@ VertexOut out;
 float4 R0f = float4(0.0);
 float4 R1f = float4(0.0);
 float4 R2f = float4(0.0);
+float4 R3f = float4(0.0);
+float4 R123f = float4(0.0);
+float4 R126f = float4(0.0);
 float4 R127f = float4(0.0);
 uint4 attrDecoder;
 float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
@@ -64,38 +69,47 @@ attrDecoder.xyz = in.attrDataSem0.xyz;
 attrDecoder.xyz = (attrDecoder.xyz>>24)|((attrDecoder.xyz>>8)&0xFF00)|((attrDecoder.xyz<<8)&0xFF0000)|((attrDecoder.xyz<<24));
 attrDecoder.w = 0;
 R1f = float4(as_type<float>(int(attrDecoder.x)), as_type<float>(int(attrDecoder.y)), as_type<float>(int(attrDecoder.z)), as_type<float>(0x3f800000));
-attrDecoder.xy = in.attrDataSem1.xy;
-attrDecoder.xy = (attrDecoder.xy>>24)|((attrDecoder.xy>>8)&0xFF00)|((attrDecoder.xy<<8)&0xFF0000)|((attrDecoder.xy<<24));
-attrDecoder.z = 0;
-attrDecoder.w = 0;
-R2f = float4(as_type<float>(int(attrDecoder.x)), as_type<float>(int(attrDecoder.y)), as_type<float>(0), as_type<float>(0x3f800000));
 // 0
-R1f.x = R1f.x;
-R1f.x *= 2.0;
-R1f.y = R1f.y;
-R1f.y *= 2.0;
+PV0fx = (0.0 > R1f.y)?1.0:0.0;
+PV0fy = (0.0 > R1f.x)?1.0:0.0;
+PV0fz = (R1f.y > 0.0)?1.0:0.0;
+PV0fw = (R1f.x > 0.0)?1.0:0.0;
 R1f.z = 0.0;
-R1f.w = 1.0;
-PS0f = as_type<float>(supportBuffer.remapped[0].y) / resYScale * as_type<float>(0x3fb13a93);
 // 1
-R127f.x = as_type<float>(supportBuffer.remapped[0].y) / resYScale * as_type<float>(0x404ec4f0);
-R0f.y = R2f.y + -(PS0f);
-R2f.z = R2f.y + PS0f;
-R2f.w = R2f.y;
-R0f.x = R2f.x;
+R1f.x = PV0fw + -(PV0fy);
+R1f.y = PV0fz + -(PV0fx);
+R1f.w = 1.0;
 // 2
-R0f.z = R2f.z;
-R0f.w = R2f.w;
-R2f.z = R2f.y + R127f.x;
+PV0fx = R1f.x;
+PV0fx /= 2.0;
+R127f.y = R1f.x * 1.0;
+PV0fz = -(R1f.y);
+PV0fz /= 2.0;
+R127f.w = R1f.y * -(1.0);
+R127f.x = R1f.x * 1.0;
 // 3
-backupReg0f = R2f.y;
-R2f.y = backupReg0f + -(R127f.x);
-R2f.w = backupReg0f;
+R126f.x = as_type<float>(supportBuffer.remapped[0].y) * 2.0 / resYScale + R127f.w;
+R0f.y = PV0fz + 0.5;
+R123f.z = as_type<float>(supportBuffer.remapped[0].x) * 2.0 / resXScale + R127f.y;
+PV1fw = R127f.w;
+R0f.x = PV0fx + 0.5;
+// 4
+R2f.x = mul_nonIEEE(R127f.x,-(as_type<float>(supportBuffer.remapped[1].x))) + -(as_type<float>(supportBuffer.remapped[1].z));
+R2f.y = mul_nonIEEE(R127f.w,-(as_type<float>(supportBuffer.remapped[1].y))) + -(as_type<float>(supportBuffer.remapped[1].w));
+R0f.z = mul_nonIEEE(-(as_type<float>(supportBuffer.remapped[1].x)),R123f.z) + -(as_type<float>(supportBuffer.remapped[1].z));
+R0f.w = mul_nonIEEE(-(as_type<float>(supportBuffer.remapped[1].y)),PV1fw) + -(as_type<float>(supportBuffer.remapped[1].w));
+R3f.x = mul_nonIEEE(R127f.y,-(as_type<float>(supportBuffer.remapped[1].x))) + -(as_type<float>(supportBuffer.remapped[1].z));
+// 5
+R3f.y = mul_nonIEEE(R126f.x,-(as_type<float>(supportBuffer.remapped[1].y))) + -(as_type<float>(supportBuffer.remapped[1].w));
 // export
 SET_POSITION(float4(R1f.x, R1f.y, R1f.z, R1f.w));
 // export
-out.passParameterSem0 = float4(R0f.x, R0f.y, R0f.z, R0f.w);
+out.passParameterSem0 = float4(R0f.x, R0f.y, R0f.z, R0f.z);
 // export
-out.passParameterSem1 = float4(R2f.x, R2f.y, R2f.z, R2f.w);
+out.passParameterSem1 = float4(R2f.x, R2f.y, R2f.z, R2f.z);
+// export
+out.passParameterSem2 = float4(R0f.z, R0f.w, R0f.z, R0f.z);
+// export
+out.passParameterSem3 = float4(R3f.x, R3f.y, R3f.z, R3f.z);
 return out;
 }

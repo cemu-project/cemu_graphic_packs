@@ -1,11 +1,12 @@
 #include <metal_stdlib>
 using namespace metal;
 
-// shader 1e69944c6036cda3
+// shader 83e271cc453e2d32
 // Shader dumped from BotW 208, using Cemu 2193a8c
-// Based on f69e84515ae56e70_0000000000000000_vs.txt or 771e24915acbb074_0000000000000000_vs.txt
-// Used for: Vertical Bloom or Reflection Blur
+// Based on 5c1761d13feccdff_0000000000000000_vs.txt
+// Used for: Vertical+Horizontal Fullscreen Blur
 
+constant float resXScale = float($width)/float($gameWidth);
 constant float resYScale = float($height)/float($gameHeight);
 
 #define SET_POSITION(_v) out.position = _v; out.position.z = (out.position.z + out.position.w) / 2.0
@@ -21,8 +22,7 @@ uint4 attrDataSem1 [[attribute(1)]];
 
 struct VertexOut {
 float4 position [[position]] [[invariant]];
-float4 passParameterSem0 [[user(locn0)]];
-float4 passParameterSem1 [[user(locn1)]];
+float4 passParameterSem3 [[user(locn0)]];
 };
 
 // end of shader inputs/outputs
@@ -49,7 +49,6 @@ VertexOut out;
 float4 R0f = float4(0.0);
 float4 R1f = float4(0.0);
 float4 R2f = float4(0.0);
-float4 R127f = float4(0.0);
 uint4 attrDecoder;
 float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
 float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0, PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
@@ -74,28 +73,19 @@ R1f.x = R1f.x;
 R1f.x *= 2.0;
 R1f.y = R1f.y;
 R1f.y *= 2.0;
-R1f.z = 0.0;
+R1f.z = -1.0;
 R1f.w = 1.0;
-PS0f = as_type<float>(supportBuffer.remapped[0].y) / resYScale * as_type<float>(0x3fb13a93);
+PS0f = R2f.x + -(as_type<float>(supportBuffer.remapped[0].x) / resXScale);
 // 1
-R127f.x = as_type<float>(supportBuffer.remapped[0].y) / resYScale * as_type<float>(0x404ec4f0);
-R0f.y = R2f.y + -(PS0f);
-R2f.z = R2f.y + PS0f;
-R2f.w = R2f.y;
-R0f.x = R2f.x;
+PV1fx = R2f.y + -(as_type<float>(supportBuffer.remapped[0].y) / resYScale);
+R2f.y = R2f.y + as_type<float>(supportBuffer.remapped[0].y) / resYScale;
+R2f.z = PS0f;
+R2f.x = R2f.x + as_type<float>(supportBuffer.remapped[0].x) / resXScale;
 // 2
-R0f.z = R2f.z;
-R0f.w = R2f.w;
-R2f.z = R2f.y + R127f.x;
-// 3
-backupReg0f = R2f.y;
-R2f.y = backupReg0f + -(R127f.x);
-R2f.w = backupReg0f;
+R2f.w = PV1fx;
 // export
 SET_POSITION(float4(R1f.x, R1f.y, R1f.z, R1f.w));
 // export
-out.passParameterSem0 = float4(R0f.x, R0f.y, R0f.z, R0f.w);
-// export
-out.passParameterSem1 = float4(R2f.x, R2f.y, R2f.z, R2f.w);
+out.passParameterSem3 = float4(R2f.x, R2f.y, R2f.z, R2f.w);
 return out;
 }

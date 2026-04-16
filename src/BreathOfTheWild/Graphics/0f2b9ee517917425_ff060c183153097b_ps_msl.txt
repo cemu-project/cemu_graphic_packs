@@ -2,11 +2,12 @@
 using namespace metal;
 
 // shader 0f2b9ee517917425
-// shader dumped from BotW 208, using Cemu 2193a8c
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on 0f2b9ee517917425_00000000000003c9_ps.txt
 // Used for: Restoring the native BotW Anti-Aliasing implementation in inventory screen
 
-constant float resX = float($width) / float($gameWidth);
-constant float resY = float($height) / float($gameHeight);
+constant float resX = float($width)/float($gameWidth);
+constant float resY = float($height)/float($gameHeight);
 
 #define SET_POSITION(_v) out.position = _v; out.position.z = (out.position.z + out.position.w) / 2.0
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch

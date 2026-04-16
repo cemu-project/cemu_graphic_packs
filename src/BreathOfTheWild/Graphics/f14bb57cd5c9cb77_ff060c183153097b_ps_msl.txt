@@ -2,11 +2,13 @@
 using namespace metal;
 
 // shader f14bb57cd5c9cb77
-// shader dumped from BotW 208, using Cemu 2193a8c
-// Used for: Restoring the native BotW World Anti-Aliasing implementation
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on f14bb57cd5c9cb77_00000000000003c9_ps.txt
+// Used for: Removing/Restoring the native BotW World Anti-Aliasing implementation
 
-constant float resX = float($width) / float($gameWidth);
-constant float resY = float($height) / float($gameHeight);
+constant float resX = float($width)/float($gameWidth);
+constant float resY = float($height)/float($gameHeight);
+#define fxaa $fxaa
 
 #define SET_POSITION(_v) out.position = _v; out.position.z = (out.position.z + out.position.w) / 2.0
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
@@ -84,7 +86,7 @@ PV0fz = mul_nonIEEE(R2f.x, as_type<float>(supportBuffer.remapped[0].x));
 R127f.w = min(R1f.z, R1f.x);
 R127f.x = min(R1f.w, R1f.y);
 // 1
-R123f.x = mul_nonIEEE(R2f.y, ((as_type < float > (supportBuffer.remapped[0].y)) * resX)) + PV0fz;
+R123f.x = mul_nonIEEE(R2f.y,as_type<float>(supportBuffer.remapped[0].y) * resX) + PV0fz;
 PV1fy = max(R1f.z, R1f.x);
 R127f.z = PV0fy + -(PV0fx);
 R126f.w = PV0fy + PV0fx;
@@ -125,11 +127,11 @@ activeMaskStackC[2] = false;
 if( activeMaskStackC[2] == true ) {
 // 0
 backupReg0f = R3f.x;
-R3f.x = mul_nonIEEE(backupReg0f, (as_type < float > (supportBuffer.remapped[3].x)) / resX) + R0f.x;
-R3f.y = mul_nonIEEE(R1f.y, (as_type < float > (supportBuffer.remapped[3].y)) / resY) + R0f.y;
-R1f.x = mul_nonIEEE(backupReg0f, -((as_type < float > (supportBuffer.remapped[3].x)) / resX)) + R0f.x;
+R3f.x = mul_nonIEEE(backupReg0f,as_type<float>(supportBuffer.remapped[3].x) / resX) + R0f.x;
+R3f.y = mul_nonIEEE(R1f.y,as_type<float>(supportBuffer.remapped[3].y) / resY) + R0f.y;
+R1f.x = mul_nonIEEE(backupReg0f,-(as_type<float>(supportBuffer.remapped[3].x) / resX)) + R0f.x;
 // 1
-R1f.y = mul_nonIEEE(R1f.y, -((as_type < float > (supportBuffer.remapped[3].y)) / resY)) + R0f.y;
+R1f.y = mul_nonIEEE(R1f.y,-(as_type<float>(supportBuffer.remapped[3].y) / resY)) + R0f.y;
 }
 if( activeMaskStackC[2] == true ) {
 R0f.xyzw = (tex0.sample(samplr0, float2(R3f.x,R3f.y)).xyzw);

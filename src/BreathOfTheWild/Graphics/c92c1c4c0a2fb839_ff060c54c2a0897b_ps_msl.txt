@@ -2,12 +2,12 @@
 using namespace metal;
 
 // shader c92c1c4c0a2fb839
-// shader dumped from BotW 208, using Cemu 2193a8c
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on c92c1c4c0a2fb839_0000000000001e49_ps.txt
 // Used for: Camera Depth of Field Blur
 
 constant float resXScale = float($width)/float($gameWidth);
 constant float resYScale = float($height)/float($gameHeight);
-
 #define SET_POSITION(_v) out.position = _v; out.position.z = (out.position.z + out.position.w) / 2.0
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 struct SupportBuffer {
@@ -120,7 +120,7 @@ R4i.w = R127i.x;
 backupReg0i = R127i.x;
 R127i.x = as_type<int>(mul_nonIEEE(as_type<float>(PV1iz), as_type<float>(supportBuffer.remapped[4].y)));
 PV0iy = as_type<int>(mul_nonIEEE(as_type<float>(PV1iz), as_type<float>(supportBuffer.remapped[4].x) / resXScale));
-R127i.z = as_type<int>(mul_nonIEEE(as_type<float>(PV1iz), as_type<float>(supportBuffer.remapped[4].w) / resYScale));
+R127i.z = as_type<int>(mul_nonIEEE(as_type<float>(PV1iz), as_type<float>(supportBuffer.remapped[4].w) /resYScale));
 R127i.w = as_type<int>(mul_nonIEEE(as_type<float>(PV1iz), as_type<float>(supportBuffer.remapped[4].z)));
 R2i.w = as_type<int>(as_type<float>(backupReg0i) + 1.0);
 R2i.w = clampFI32(R2i.w);
