@@ -2,7 +2,8 @@
 using namespace metal;
 
 // shader 84626b0942fd6495
-// shader dumped from BotW 208, using Cemu 2193a8c
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on 5c975b0e3dac0562_0000000000000000_vs.txt
 // Used for: Horizontal Bloom Blur
 
 constant float resXScale = float($width)/float($gameWidth);

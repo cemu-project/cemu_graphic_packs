@@ -2,8 +2,9 @@
 using namespace metal;
 
 // shader 1e69944c6036cda3
-// shader dumped from BotW 208, using Cemu 2193a8c
-// Used for: Vertical Bloom Blur
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on f69e84515ae56e70_0000000000000000_vs.txt
+// Used for: Vertical Bloom Blur (1)
 
 constant float resYScale = float($height)/float($gameHeight);
 

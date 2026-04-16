@@ -2,7 +2,8 @@
 using namespace metal;
 
 // shader 2633e3bef936262b
-// shader dumped from BotW 208, using Cemu 2193a8c
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on fc3e63a2007625f8_0000000000000000_vs.txt
 // Used For: Vertical Menu Blur
 
 constant float resYScale = float($height)/float($gameHeight);

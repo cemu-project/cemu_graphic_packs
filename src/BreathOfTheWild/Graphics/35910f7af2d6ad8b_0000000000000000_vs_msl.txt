@@ -2,7 +2,8 @@
 using namespace metal;
 
 // shader 35910f7af2d6ad8b
-// shader dumped from BotW 208, using Cemu 2193a8c
+// Shader dumped from BotW 208, using Cemu 2193a8c
+// Based on 0b9b8f5dfa16ad58_0000000000000000_vs.txt
 // Used For: Horizontal Menu Blur
 
 constant float resXScale = float($width) / float($gameWidth);
