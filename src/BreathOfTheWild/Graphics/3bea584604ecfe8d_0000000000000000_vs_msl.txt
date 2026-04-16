@@ -8,7 +8,6 @@ using namespace metal;
 
 constant float resXScale = float($width) / float($gameWidth);
 constant float resYScale = float($height) / float($gameHeight);
-#define fxaa $fxaa
 
 #define SET_POSITION(_v)                                                       \
     out.position = _v;                                                         \

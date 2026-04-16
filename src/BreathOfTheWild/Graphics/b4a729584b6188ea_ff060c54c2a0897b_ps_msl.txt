@@ -62,10 +62,10 @@ main0(FragmentIn in [[stage_in]], float2 pointCoord [[point_coord]],
       texture2d<float> tex0 [[texture(0)]], sampler samplr0 [[sampler(0)]],
       texture2d<float> tex1 [[texture(1)]], sampler samplr1 [[sampler(1)]],
       texture2d<float> tex2 [[texture(2)]], sampler samplr2 [[sampler(2)]]) {
-#if fxaa == 0
-    return tex0.sample(samplr0, in.passParameterSem0.xy);
-#else
     FragmentOut out;
+#if fxaa == 0
+    out.passPixelColor0 = tex0.sample(samplr0, in.passParameterSem0.xy);
+#else
     float4 R0f = float4(0.0);
     float4 R1f = float4(0.0);
     float4 R2f = float4(0.0);
@@ -123,6 +123,6 @@ main0(FragmentIn in [[stage_in]], float2 pointCoord [[point_coord]],
     R0f.xyzw = (tex0.sample(samplr0, float2(R0f.x, R0f.y)).xyzw);
     // export
     out.passPixelColor0 = as_type<float4>(float4(R0f.x, R0f.y, R0f.z, R0f.w));
-    return out;
 #endif
+    return out;
 }

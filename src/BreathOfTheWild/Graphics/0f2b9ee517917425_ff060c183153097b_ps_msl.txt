@@ -64,10 +64,10 @@ fragment FragmentOut main0(FragmentIn in [[stage_in]],
                            sampler samplr0 [[sampler(0)]],
                            texture2d<float> tex1 [[texture(1)]],
                            sampler samplr1 [[sampler(1)]]) {
-#if fxaa == 0
-    return tex0.sample(samplr0, in.passParameterSem2.xy);
-#else
     FragmentOut out;
+#if fxaa == 0
+    out.passPixelColor0 = tex0.sample(samplr0, in.passParameterSem2.xy);
+#else
     int4 R0i = int4(0);
     int4 R1i = int4(0);
     int4 R2i = int4(0);
@@ -853,6 +853,6 @@ fragment FragmentOut main0(FragmentIn in [[stage_in]],
     out.passPixelColor0 =
         as_type<float4>(float4(as_type<float>(R3i.x), as_type<float>(R3i.y),
                                as_type<float>(R3i.z), as_type<float>(R3i.w)));
-    return out;
 #endif
+    return out;
 }
