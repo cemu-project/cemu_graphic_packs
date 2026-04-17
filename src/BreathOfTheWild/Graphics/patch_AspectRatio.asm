@@ -6,10 +6,6 @@ moduleMatches = 0xD91A406D,0x0F748D9C,0x9A61FF4C,0x8E3324A9,0xD71D859D,0x6FD41A6
 aspectRatio:
 .float ($width/$height)
 
-; Use 16:9 for the inventory preview in BetterVR mode, otherwise use the active graphics-pack aspect ratio.
-aspectRatio_Inventory:
-.float (($betterVRExposeVROptions != 0)*(16.0/9.0)) + (($betterVRExposeVROptions == 0)*($width/$height))
-
 grassCulling: ; The grass is calculated in a weird way, but this fix seems to work. So for safety, only enable it for ultrawide resolutions.
 .float (($ultrawideHUDMode != 0)*(($gameWidth/$gameHeight) / ($width/$height))) + (($ultrawideHUDMode == 0)*1.0)
 
@@ -23,8 +19,8 @@ moduleMatches = 0x6267BFD0
 0x1036DD4C = .float ($width/$height)
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02E2C564 = lis r9, aspectRatio_Inventory@ha
-0x02E2C578 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02E2C564 = lis r9, aspectRatio@ha
+0x02E2C578 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x0386D01C = lis r28, aspectRatio@ha
@@ -48,8 +44,8 @@ moduleMatches = 0xFD091F9F,0xD472D8A5
 0x1036DBDC = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02E2BFC8 = lis r9, aspectRatio_Inventory@ha
-0x02E2BFDC = lfs f4, aspectRatio_Inventory@l(r9)
+0x02E2BFC8 = lis r9, aspectRatio@ha
+0x02E2BFDC = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x0386C314 = lis r28, aspectRatio@ha
@@ -64,8 +60,8 @@ moduleMatches = 0x9A2CA0C7
 0x1034F684 = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02D53CF4 = lis r9, aspectRatio_Inventory@ha
-0x02D53D08 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02D53CF4 = lis r9, aspectRatio@ha
+0x02D53D08 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x0375AFF4 = lis r28, aspectRatio@ha
@@ -80,8 +76,8 @@ moduleMatches = 0x9A2CA0C7
 0x1034F6CC = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02D53CF4 = lis r9, aspectRatio_Inventory@ha
-0x02D53D08 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02D53CF4 = lis r9, aspectRatio@ha
+0x02D53D08 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x0375B128 = lis r28, aspectRatio@ha
@@ -96,8 +92,8 @@ moduleMatches = 0x6FD41A61
 0x103414D4 = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02D2F404 = lis r9, aspectRatio_Inventory@ha
-0x02D2F418 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02D2F404 = lis r9, aspectRatio@ha
+0x02D2F418 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x03726E18 = lis r28, aspectRatio@ha
@@ -112,8 +108,8 @@ moduleMatches = 0xD71D859D
 0x1034122C = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02D2E65C = lis r9, aspectRatio_Inventory@ha
-0x02D2E670 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02D2E65C = lis r9, aspectRatio@ha
+0x02D2E670 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x03725CE8 = lis r28, aspectRatio@ha
@@ -128,8 +124,8 @@ moduleMatches = 0x8E3324A9
 0x103391B4 = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02D056C8 = lis r9, aspectRatio_Inventory@ha
-0x02D056DC = lfs f4, aspectRatio_Inventory@l(r9)
+0x02D056C8 = lis r9, aspectRatio@ha
+0x02D056DC = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x036D0324 = lis r28, aspectRatio@ha
@@ -144,8 +140,8 @@ moduleMatches = 0x9A61FF4C
 0x1033182C = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02CFD900 = lis r9, aspectRatio_Inventory@ha
-0x02CFD914 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02CFD900 = lis r9, aspectRatio@ha
+0x02CFD914 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x036AEF04 = lis r28, aspectRatio@ha
@@ -160,8 +156,8 @@ moduleMatches = 0x0F748D9C
 0x103313A4 = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02CFC2CC = lis r9, aspectRatio_Inventory@ha
-0x02CFC2E0 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02CFC2CC = lis r9, aspectRatio@ha
+0x02CFC2E0 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x036AD81C = lis r28, aspectRatio@ha
@@ -176,8 +172,8 @@ moduleMatches = 0xD91A406D
 0x10331374 = .float $width/$height
 
 ; 3D Rendering In Inventory (calculated every load)
-0x02CFC260 = lis r9, aspectRatio_Inventory@ha
-0x02CFC274 = lfs f4, aspectRatio_Inventory@l(r9)
+0x02CFC260 = lis r9, aspectRatio@ha
+0x02CFC274 = lfs f4, aspectRatio@l(r9)
 
 ; 3D Rendering (calculated every frame)
 0x036AD410 = lis r28, aspectRatio@ha
