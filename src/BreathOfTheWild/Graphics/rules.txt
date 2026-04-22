@@ -666,7 +666,7 @@ height = 368
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x806,0x816,0x820,0x41a
 # formatsExcluded = 0x431 # Exclude 0x431 which is used for adventure log images
 overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = (($height/$gameHeight) * 368) + 0.49
+overwriteHeight = ($height/$gameHeight) * 368
 
 # Required 1/2 resolutions
 [TextureRedefine]
@@ -998,7 +998,7 @@ height = 368
 formats = 0x019
 overwriteFormat = 0x01f
 overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = (($height/$gameHeight) * 368) + 0.49
+overwriteHeight = ($height/$gameHeight) * 368
 
 [TextureRedefine]
 width = 640
