@@ -1,0 +1,308 @@
+[Definition]
+titleIds = 0005000010143400,0005000010143600,0005000010143500
+name = Cheats
+path = "The Legend of Zelda: The Wind Waker HD/Cheats/Mega Cheats"
+description = "A collection of cheats, made by n0ted"
+version = 7
+
+[Default]
+$gravity = 0.0
+$sailSpeed = 55.0
+$linkSwimSpeed = 18.0
+$rupeeMultiplier = 1
+$rupeesNeverDecrease = 0
+$infiniteHearts = 0
+$linkDamageMultiplier = 0
+$infiniteMagic = 0
+$infiniteBombs = 0
+$infiniteArrows = 0
+$infiniteCheatsCustom = 0
+$saveLoadCoords = 0
+$windDirection = 0
+$swimStaminaNeverDecrease = 0x39080000
+
+[Preset]
+
+category= Moon Jump (Hold L3)
+name = Off
+$gravity = 0.0
+
+[Preset]
+category= Moon Jump (Hold L3)
+name = On
+$gravity = 36.0
+
+[Preset]
+category = Sail Speed Boost (Hold A)
+name = Normal
+$sailSpeed = 55.0
+
+[Preset]
+category = Sail Speed Boost (Hold A)
+name = 1.5x
+$sailSpeed = 82.5
+
+[Preset]
+category = Sail Speed Boost (Hold A)
+name = 2x
+$sailSpeed = 110.0
+
+[Preset]
+category = Sail Speed Boost (Hold A)
+name = 3x
+$sailSpeed = 165.0
+
+[Preset]
+category = Sail Speed Boost (Hold A)
+name = 4x
+$sailSpeed = 220.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = Normal
+$linkSwimSpeed = 18.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 1.5x
+$linkSwimSpeed = 27.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 2x
+$linkSwimSpeed = 36.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 3x
+$linkSwimSpeed = 54.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 4x
+$linkSwimSpeed = 72.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 5x
+$linkSwimSpeed = 90.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 6x
+$linkSwimSpeed = 108.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 7x
+$linkSwimSpeed = 126.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 8x
+$linkSwimSpeed = 144.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 9x
+$linkSwimSpeed = 162.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 10x
+$linkSwimSpeed = 180.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 15x
+$linkSwimSpeed = 270.0
+
+[Preset]
+category = Save/Load Coordinates (Save: D-Left + A, Load: D-Right + A)
+name = Off
+$saveLoadCoords = 0
+
+[Preset]
+category = Save/Load Coordinates (Save: D-Left + A, Load: D-Right + A)
+name = On
+$saveLoadCoords = 1
+
+[Preset]
+category = Automatic Wind Direction
+name = Off
+$windDirection = 0
+
+[Preset]
+category = Automatic Wind Direction
+name = On
+$windDirection = 1
+
+[Preset]
+category = Rupee Multiplier
+name = 1x
+$rupeeMultiplier = 1
+
+[Preset]
+category = Rupee Multiplier
+name = 2x
+$rupeeMultiplier = 2
+
+[Preset]
+category = Rupee Multiplier
+name = 3x
+$rupeeMultiplier = 3
+
+[Preset]
+category = Rupee Multiplier
+name = 4x
+$rupeeMultiplier = 4
+
+[Preset]
+category = Rupee Multiplier
+name = 5x
+$rupeeMultiplier = 5
+
+[Preset]
+category = Rupees Never Decrease
+name = Off
+$rupeesNeverDecrease = 0
+
+[Preset]
+category = Rupees Never Decrease
+name = On
+$rupeesNeverDecrease = 1
+
+[Preset]
+category = Infinite Cheats
+name = Off
+$infiniteHearts = 0
+$infiniteMagic = 0
+$infiniteBombs = 0
+$infiniteArrows = 0
+$swimStaminaNeverDecrease = 0x39080000
+$infiniteCheatsCustom = 0
+
+[Preset]
+category = Infinite Cheats
+name = Infinite Everything
+$infiniteHearts = 1
+$infiniteMagic = 1
+$infiniteBombs = 1
+$infiniteArrows = 1
+$swimStaminaNeverDecrease = 0x60000000
+$infiniteCheatsCustom = 0
+
+[Preset]
+category = Infinite Cheats
+name = Infinite Ammo
+$infiniteHearts = 0
+$infiniteMagic = 0
+$infiniteBombs = 1
+$infiniteArrows = 1
+$swimStaminaNeverDecrease = 0x39080000
+$infiniteCheatsCustom = 0
+
+[Preset]
+category = Infinite Cheats
+name = Vitals (Health, Magic, Stamina)
+$infiniteHearts = 1
+$infiniteMagic = 1
+$infiniteBombs = 0
+$infiniteArrows = 0
+$swimStaminaNeverDecrease = 0x60000000
+$infiniteCheatsCustom = 0
+
+[Preset]
+category = Infinite Cheats
+name = Custom
+$infiniteCheatsCustom = 1
+
+[Preset]
+category = Infinite Hearts
+name = Off
+condition = $infiniteCheatsCustom
+$infiniteHearts = 0
+
+[Preset]
+category = Infinite Hearts
+name = On
+condition = $infiniteCheatsCustom
+$infiniteHearts = 1
+
+[Preset]
+category = Link Damage Multiplier
+name = Off
+$linkDamageMultiplier = 0
+
+[Preset]
+category = Link Damage Multiplier
+name = 2x
+$linkDamageMultiplier = 2
+
+[Preset]
+category = Link Damage Multiplier
+name = 3x
+$linkDamageMultiplier = 3
+
+[Preset]
+category = Link Damage Multiplier
+name = 4x
+$linkDamageMultiplier = 4
+
+[Preset]
+category = Link Damage Multiplier
+name = 5x
+$linkDamageMultiplier = 5
+
+[Preset]
+category = Link Damage Multiplier
+name = Instant Death
+$linkDamageMultiplier = 80
+
+[Preset]
+category = Infinite Magic
+name = Off
+condition = $infiniteCheatsCustom
+$infiniteMagic = 0
+
+[Preset]
+category = Infinite Magic
+name = On
+condition = $infiniteCheatsCustom
+$infiniteMagic = 1
+
+[Preset]
+category = Infinite Bombs
+name = Off
+condition = $infiniteCheatsCustom
+$infiniteBombs = 0
+
+[Preset]
+category = Infinite Bombs
+name = On
+condition = $infiniteCheatsCustom
+$infiniteBombs = 1
+
+[Preset]
+category = Infinite Arrows
+name = Off
+condition = $infiniteCheatsCustom
+$infiniteArrows = 0
+
+[Preset]
+category = Infinite Arrows
+name = On
+condition = $infiniteCheatsCustom
+$infiniteArrows = 1
+
+[Preset]
+category = Infinite Swim Stamina
+name = Off
+condition = $infiniteCheatsCustom
+$swimStaminaNeverDecrease = 0x39080000
+
+[Preset]
+category = Infinite Swim Stamina
+name = On
+condition = $infiniteCheatsCustom
+$swimStaminaNeverDecrease = 0x60000000
