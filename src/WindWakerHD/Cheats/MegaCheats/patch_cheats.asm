@@ -3,10 +3,13 @@ moduleMatches = 0x475BD29F
 
 .origin = codecave
 
-_controlleraddy:
-    .int 0x4422e078 
-;for some reason, cemu 1.26.6f has a +500 byte offset, so if playing on there
-;increase this by 500 bytes -> 0x4422e578
+;output: r18 = controller address
+getcontrolleraddress:
+    lis r18, 0x101f
+    ori r18, r18, 0x5088
+    lwz r18, +0x00(r18)
+    addi r18, r18, 0x124
+    blr
 
 _gravity:
     .float $gravity
@@ -84,12 +87,13 @@ _savedDirection:
 ;input: r16 = button mask, r17 = allow other pressed buttons
 ;output: r17 = 1 if detected, 0 if not detected
 buttonpressedlogic:
-    stwu r1, -0x10(r1)
+    stwu r1, -0x20(r1)
     stw r18, +0x08(r1)
     stw r19, +0x0C(r1)
+    mflr r18
+    stw r18, +0x10(r1)
 
-    lis r18, _controlleraddy@ha
-    lwz r18, _controlleraddy@l(r18)
+    bl getcontrolleraddress
     lwz r19, +0x00(r18)
     cmpwi cr1, r17, 0
     beq cr1, buttonexact
@@ -111,9 +115,11 @@ buttonpressed:
     li r17, 1
 
 buttonfinish:
+    lwz r18, +0x10(r1)
+    mtlr r18
     lwz r18, +0x08(r1)
     lwz r19, +0x0C(r1)
-    addi r1, r1, 0x10
+    addi r1, r1, 0x20
     blr
 
 moonjumplogic:
