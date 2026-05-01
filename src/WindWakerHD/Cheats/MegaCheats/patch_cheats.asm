@@ -1,4 +1,4 @@
-[MoonJump]
+[MegaCheats]
 moduleMatches = 0x475BD29F
 
 .origin = codecave
@@ -36,6 +36,14 @@ _linkDamageMultiplier:
     .byte $linkDamageMultiplier
     .align 2
 
+_linkDamageGivenMultiplier:
+    .float $linkDamageGivenMultiplier
+
+    .align 3
+_intToFloatMagic:
+    .int 0x43300000
+    .int 0x80000000
+
 _infiniteMagic:
     .byte $infiniteMagic
     .align 2
@@ -46,6 +54,14 @@ _infiniteBombs:
 
 _infiniteArrows:
     .byte $infiniteArrows
+    .align 2
+
+_invincibility:
+    .byte $invincibility
+    .align 2
+
+_remoteBombs:
+    .byte $remoteBombs
     .align 2
 
 _allowButtonCombos:
@@ -211,6 +227,53 @@ linkswimfinish:
     lwz r17, +0x0C(r1)
     lwz r18, +0x10(r1)
     addi r1, r1, 0x20
+    blr
+
+linkdamagegivenlogic:
+    lbz r12, +0x08(r28)
+    cmpwi cr1, r12, 0
+    beq cr1, linkdamagegivenreturn
+    stwu r1, -0x20(r1)
+    stw r16, +0x08(r1)
+    stw r17, +0x0C(r1)
+
+    lis r16, _linkDamageGivenMultiplier@ha
+    lwz r16, _linkDamageGivenMultiplier@l(r16)
+    lis r17, 0x3F80
+    cmpw cr1, r16, r17
+    beq cr1, linkdamagegivenfinish
+
+    xoris r16, r12, 0x8000
+    lis r17, 0x4330
+    stw r17, +0x10(r1)
+    stw r16, +0x14(r1)
+    lfd f14, +0x10(r1)
+    lis r16, _intToFloatMagic@ha
+    lfd f15, _intToFloatMagic@l(r16)
+    fsubs f14, f14, f15
+
+    lis r16, _linkDamageGivenMultiplier@ha
+    lfs f15, _linkDamageGivenMultiplier@l(r16)
+    fmuls f14, f14, f15
+    fctiwz f14, f14
+    stfd f14, +0x10(r1)
+    lwz r12, +0x14(r1)
+
+    cmpwi cr1, r12, 1
+    bge cr1, linkdamagecapmax
+    li r12, 1
+    b linkdamagegivenfinish
+
+linkdamagecapmax:
+    cmpwi cr1, r12, 255
+    ble cr1, linkdamagegivenfinish
+    li r12, 255
+
+linkdamagegivenfinish:
+    lwz r16, +0x08(r1)
+    lwz r17, +0x0C(r1)
+    addi r1, r1, 0x20
+linkdamagegivenreturn:
     blr
 
 winddirectionlogic:
@@ -479,11 +542,65 @@ arrowsreturn:
     add r31, r6, r7
     blr
 
+invincibilitylogic:
+    lis r10, _invincibility@ha
+    lbz r10, _invincibility@l(r10)
+    cmpwi cr1, r10, 1
+    bne cr1, invincibilityreturn
+    li r10, 2
+    sth r10, +0x3B0(r30)
+
+invincibilityreturn:
+    lha r10, +0x3B0(r30)
+    blr
+
+remotebombslogic:
+    stwu r1, -0x20(r1)
+    stw r16, +0x08(r1)
+    stw r17, +0x0C(r1)
+    stw r18, +0x10(r1)
+    mflr r18
+    stw r18, +0x14(r1)
+
+    lis r16, _remoteBombs@ha
+    lbz r17, _remoteBombs@l(r16)
+    cmpwi cr1, r17, 1
+    bne cr1, remotebombsfinish
+
+    li r16, 0x2000 ;L button
+    lis r17, _allowButtonCombos@ha
+    lbz r17, _allowButtonCombos@l(r17)
+    bl buttonpressedlogic
+    cmpwi cr1, r17, 1
+    bne cr1, remotebombsreset
+
+    li r10, 1
+    sth r10, +0xA7C(r30)
+    b remotebombsfinish
+
+remotebombsreset:
+    li r10, 0x95
+    sth r10, +0xA7C(r30)
+
+remotebombsfinish:
+    lwz r18, +0x14(r1)
+    mtlr r18
+    lwz r16, +0x08(r1)
+    lwz r17, +0x0C(r1)
+    lwz r18, +0x10(r1)
+    addi r1, r1, 0x20
+    lha r10, +0xA7C(r30)
+    blr
+
 
 0x023FD368 = bla moonjumplogic
+0x023FA5A4 = bla invincibilitylogic
+0x023DA330 = .int $invincibilityFlash
+0x020C6D04 = bla remotebombslogic
 0x0240EB44  = bla saveloadcoordslogic
 0x0242ED4C = bla linkswimspeedlogic
 0x0247E994 = bla sailspeedlogic
+0x025193F4 = bla linkdamagegivenlogic
 0x0259C4D4 = bla rupeelogic
 0x02594584 = bla infiniteheartslogic
 0x02599810 = bla infinitearrowslogic
