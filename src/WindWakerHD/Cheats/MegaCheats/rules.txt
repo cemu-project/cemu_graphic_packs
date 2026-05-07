@@ -22,6 +22,7 @@ $invincibility = 0
 $invincibilityFlash = 0xA89D03B0
 $remoteBombs = 0
 $saveLoadCoords = 0
+$teleportToBoat = 0
 $windDirection = 0
 $swimStaminaNeverDecrease = 0x39080000
 
@@ -122,6 +123,21 @@ name = 15x
 $linkSwimSpeed = 270.0
 
 [Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 20x
+$linkSwimSpeed = 360.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 25x
+$linkSwimSpeed = 450.0
+
+[Preset]
+category = Link Swim Speed Boost (Hold A)
+name = 50x
+$linkSwimSpeed = 900.0
+
+[Preset]
 category = Save/Load Coordinates (Save: D-Left + A, Load: D-Right + A)
 name = Off
 $saveLoadCoords = 0
@@ -130,6 +146,16 @@ $saveLoadCoords = 0
 category = Save/Load Coordinates (Save: D-Left + A, Load: D-Right + A)
 name = On
 $saveLoadCoords = 1
+
+[Preset]
+category = Teleport to Boat (L+A+D-pad Down)
+name = Off
+$teleportToBoat = 0
+
+[Preset]
+category = Teleport to Boat (L+A+D-pad Down)
+name = On
+$teleportToBoat = 1
 
 [Preset]
 category = Automatic Wind Direction
@@ -154,12 +180,12 @@ $invincibility = 1
 $invincibilityFlash = 0x38800000
 
 [Preset]
-category = Remote Bombs (Hold L)
+category = Remote Bombs (Press L)
 name = Off
 $remoteBombs = 0
 
 [Preset]
-category = Remote Bombs (Hold L)
+category = Remote Bombs (Press L)
 name = On
 $remoteBombs = 1
 
@@ -256,81 +282,6 @@ condition = $infiniteCheatsCustom
 $infiniteHearts = 1
 
 [Preset]
-category = Link Damage Taken Multiplier
-name = Off
-$linkDamageMultiplier = 0
-
-[Preset]
-category = Link Damage Taken Multiplier
-name = 2x
-$linkDamageMultiplier = 2
-
-[Preset]
-category = Link Damage Taken Multiplier
-name = 3x
-$linkDamageMultiplier = 3
-
-[Preset]
-category = Link Damage Taken Multiplier
-name = 4x
-$linkDamageMultiplier = 4
-
-[Preset]
-category = Link Damage Taken Multiplier
-name = 5x
-$linkDamageMultiplier = 5
-
-[Preset]
-category = Link Damage Taken Multiplier
-name = Instant Death
-$linkDamageMultiplier = 80
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 0.25x
-$linkDamageGivenMultiplier = 0.25
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 0.5x
-$linkDamageGivenMultiplier = 0.5
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 1x
-$linkDamageGivenMultiplier = 1.0
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 1.5x
-$linkDamageGivenMultiplier = 1.5
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 2x
-$linkDamageGivenMultiplier = 2.0
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 3x
-$linkDamageGivenMultiplier = 3.0
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 4x
-$linkDamageGivenMultiplier = 4.0
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 5x
-$linkDamageGivenMultiplier = 5.0
-
-[Preset]
-category = Link Damage Given Multiplier
-name = 10x
-$linkDamageGivenMultiplier = 10.0
-
-[Preset]
 category = Infinite Magic
 name = Off
 condition = $infiniteCheatsCustom
@@ -377,3 +328,78 @@ category = Infinite Swim Stamina
 name = On
 condition = $infiniteCheatsCustom
 $swimStaminaNeverDecrease = 0x60000000
+
+[Preset]
+category = Link Damage Taken Multiplier
+name = Off
+$linkDamageMultiplier = 0
+
+[Preset]
+category = Link Damage Taken Multiplier
+name = 2x
+$linkDamageMultiplier = 2
+
+[Preset]
+category = Link Damage Taken Multiplier
+name = 3x
+$linkDamageMultiplier = 3
+
+[Preset]
+category = Link Damage Taken Multiplier
+name = 4x
+$linkDamageMultiplier = 4
+
+[Preset]
+category = Link Damage Taken Multiplier
+name = 5x
+$linkDamageMultiplier = 5
+
+[Preset]
+category = Link Damage Taken Multiplier
+name = Instant Death
+$linkDamageMultiplier = 80
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 0.25x
+$linkDamageGivenMultiplier = 0.25
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 0.5x
+$linkDamageGivenMultiplier = 0.5
+
+[Preset]
+category = Link Damage Given Multiplier
+name = Off
+$linkDamageGivenMultiplier = 1.0
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 1.5x
+$linkDamageGivenMultiplier = 1.5
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 2x
+$linkDamageGivenMultiplier = 2.0
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 3x
+$linkDamageGivenMultiplier = 3.0
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 4x
+$linkDamageGivenMultiplier = 4.0
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 5x
+$linkDamageGivenMultiplier = 5.0
+
+[Preset]
+category = Link Damage Given Multiplier
+name = 10x
+$linkDamageGivenMultiplier = 10.0

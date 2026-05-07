@@ -11,6 +11,18 @@ getcontrolleraddress:
     addi r18, r18, 0x124
     blr
 
+;output: r18 = boat xyz/facing address, or 0 if boat is not instantiated
+getboatxyz:
+    lis r18, 0x1046
+    ori r18, r18, 0x438c
+    lwz r18, +0x00(r18)
+    cmpwi cr1, r18, 0
+    beq cr1, getboatxyzfinish
+    addi r18, r18, 0x314
+
+getboatxyzfinish:
+    blr
+
 _gravity:
     .float $gravity
 
@@ -19,6 +31,9 @@ _sailSpeed:
 
 _linkSwimSpeed:
     .float $linkSwimSpeed
+
+_boatTeleportYOffset:
+    .float 50.0
 
 _rupeeMultiplier:
     .int $rupeeMultiplier
@@ -72,6 +87,10 @@ _saveLoadCoords:
     .byte $saveLoadCoords
     .align 2
 
+_teleportToBoat:
+    .byte $teleportToBoat
+    .align 2
+
 _windDirection:
     .byte $windDirection
     .align 2
@@ -87,6 +106,9 @@ _coordsSaved:
     .byte 0
     .align 2
 
+_freezeState:
+    .int 0x10474342
+
 _savedX:
     .int 0
 
@@ -99,6 +121,87 @@ _savedZ:
 _savedDirection:
     .short 0
     .align 2
+
+_savedRoomName:
+    .int 0
+    .int 0
+
+_currentRoom:
+    .int 0x104741F0
+
+;copies the current room name into _savedRoomName
+copycurrentroomname:
+    lis r16, _savedRoomName@ha
+    addi r16, r16, _savedRoomName@l
+    lis r17, _currentRoom@ha
+    lwz r17, _currentRoom@l(r17)
+    li r20, 8
+
+copycurrentroomloop:
+    lbz r18, +0x00(r17)
+    stb r18, +0x00(r16)
+    cmpwi cr1, r18, 0
+    beq cr1, copycurrentroomfinish
+    addi r16, r16, 1
+    addi r17, r17, 1
+    addi r20, r20, -1
+    cmpwi cr1, r20, 0
+    bne cr1, copycurrentroomloop
+
+copycurrentroomfinish:
+    blr
+
+;output: r17 = 1 if current room matches saved room, 0 if not
+currentroommatches:
+    lis r16, _savedRoomName@ha
+    addi r16, r16, _savedRoomName@l
+    lis r17, _currentRoom@ha
+    lwz r17, _currentRoom@l(r17)
+    li r20, 8
+
+currentroommatchloop:
+    lbz r18, +0x00(r17)
+    lbz r19, +0x00(r16)
+    cmpw cr1, r18, r19
+    bne cr1, currentroomnomatch
+    cmpwi cr1, r18, 0
+    beq cr1, currentroommatch
+    addi r16, r16, 1
+    addi r17, r17, 1
+    addi r20, r20, -1
+    cmpwi cr1, r20, 0
+    bne cr1, currentroommatchloop
+
+currentroommatch:
+    li r17, 1
+    blr
+
+currentroomnomatch:
+    li r17, 0
+    blr
+
+;output: r17 = 1 if current room is "sea", 0 if not
+currentroomissea:
+    lis r16, _currentRoom@ha
+    lwz r16, _currentRoom@l(r16)
+    lbz r17, +0x00(r16)
+    cmpwi cr1, r17, 0x73 ;s
+    bne cr1, currentroomisnotsea
+    lbz r17, +0x01(r16)
+    cmpwi cr1, r17, 0x65 ;e
+    bne cr1, currentroomisnotsea
+    lbz r17, +0x02(r16)
+    cmpwi cr1, r17, 0x61 ;a
+    bne cr1, currentroomisnotsea
+    lbz r17, +0x03(r16)
+    cmpwi cr1, r17, 0
+    bne cr1, currentroomisnotsea
+    li r17, 1
+    blr
+
+currentroomisnotsea:
+    li r17, 0
+    blr
 
 ;input: r16 = button mask, r17 = allow other pressed buttons
 ;output: r17 = 1 if detected, 0 if not detected
@@ -375,6 +478,25 @@ saveloadcoordslogic:
     mflr r18
     stw r18, +0x1C(r1)
 
+    lis r16, _freezeState@ha
+    lwz r16, _freezeState@l(r16)
+    lbz r17, +0x00(r16)
+    cmpwi cr1, r17, 0
+    bne cr1, coordfinish
+
+    lis r16, _teleportToBoat@ha
+    lbz r17, _teleportToBoat@l(r16)
+    cmpwi cr1, r17, 1
+    bne cr1, checksaveLoadCoords
+    lis r16, 0x0002 ;D-Pad Down + L + A
+    ori r16, r16, 0x2001
+    lis r17, _buttonExactOnly@ha
+    lbz r17, _buttonExactOnly@l(r17)
+    bl buttonpressedlogic
+    cmpwi cr1, r17, 1
+    beq cr1, teleporttoboat
+
+checksaveLoadCoords:
     lis r16, _saveLoadCoords@ha
     lbz r17, _saveLoadCoords@l(r16)
     cmpwi cr1, r17, 1
@@ -399,17 +521,16 @@ saveloadcoordslogic:
 
 savecoords:
     lis r16, _savedX@ha
+    addi r16, r16, _savedX@l
     lwz r17, +0x00(r28)
-    stw r17, _savedX@l(r16)
-    lis r16, _savedY@ha
+    stw r17, +0x00(r16)
     lwz r17, +0x04(r28)
-    stw r17, _savedY@l(r16)
-    lis r16, _savedZ@ha
+    stw r17, +0x04(r16)
     lwz r17, +0x08(r28)
-    stw r17, _savedZ@l(r16)
-    lis r16, _savedDirection@ha
+    stw r17, +0x08(r16)
     lhz r17, -0x36(r28)
-    sth r17, _savedDirection@l(r16)
+    sth r17, +0x0C(r16)
+    bl copycurrentroomname
     lis r16, _coordsSaved@ha
     li r17, 1
     stb r17, _coordsSaved@l(r16)
@@ -420,18 +541,50 @@ loadcoords:
     lbz r17, _coordsSaved@l(r16)
     cmpwi cr1, r17, 1
     bne cr1, coordfinish
+    bl currentroommatches
+    cmpwi cr1, r17, 1
+    bne cr1, coordfinish
     lis r16, _savedX@ha
-    lwz r17, _savedX@l(r16)
+    addi r16, r16, _savedX@l
+    lwz r17, +0x00(r16)
     stw r17, +0x00(r28)
-    lis r16, _savedY@ha
-    lwz r17, _savedY@l(r16)
+    stw r17, +0x314(r31)
+    lwz r17, +0x04(r16)
     stw r17, +0x04(r28)
-    lis r16, _savedZ@ha
-    lwz r17, _savedZ@l(r16)
+    stw r17, +0x318(r31)
+    lwz r17, +0x08(r16)
     stw r17, +0x08(r28)
-    lis r16, _savedDirection@ha
-    lhz r17, _savedDirection@l(r16)
+    stw r17, +0x31C(r31)
+    lhz r17, +0x0C(r16)
     sth r17, -0x36(r28)
+    b coordfinish
+
+teleporttoboat:
+    bl currentroomissea
+    cmpwi cr1, r17, 1
+    bne cr1, coordfinish
+    bl getboatxyz
+    cmpwi cr1, r18, 0
+    beq cr1, coordfinish
+
+    stfd f0, +0x20(r1)
+    stfd f1, +0x28(r1)
+    lwz r17, +0x00(r18)
+    stw r17, +0x00(r28)
+    stw r17, +0x314(r31)
+    lfs f0, +0x04(r18)
+    lis r16, _boatTeleportYOffset@ha
+    lfs f1, _boatTeleportYOffset@l(r16)
+    fadds f0, f0, f1
+    stfs f0, +0x04(r28)
+    stfs f0, +0x318(r31)
+    lwz r17, +0x08(r18)
+    stw r17, +0x08(r28)
+    stw r17, +0x31C(r31)
+    lhz r17, +0x0C(r18)
+    sth r17, -0x36(r28)
+    lfd f0, +0x20(r1)
+    lfd f1, +0x28(r1)
 
 coordfinish:
     li r3, 1
