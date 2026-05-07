@@ -5,16 +5,16 @@ moduleMatches = 0x475BD29F
 
 ;output: r18 = controller address
 getcontrolleraddress:
-    lis r18, 0x101f
-    ori r18, r18, 0x5088
+    lis r18, _controlleroffset@hi
+    ori r18, r18, _controlleroffset@lo
     lwz r18, +0x00(r18)
     addi r18, r18, 0x124
     blr
 
 ;output: r18 = boat xyz/facing address, or 0 if boat is not instantiated
 getboatxyz:
-    lis r18, 0x1046
-    ori r18, r18, 0x438c
+    lis r18, _boatXYZ@hi
+    ori r18, r18, _boatXYZ@lo
     lwz r18, +0x00(r18)
     cmpwi cr1, r18, 0
     beq cr1, getboatxyzfinish
@@ -95,9 +95,6 @@ _windDirection:
     .byte $windDirection
     .align 2
 
-_linkFacingAddress:
-    .int 0x1046CD12
-
 _buttonExactOnly:
     .byte 0
     .align 2
@@ -105,9 +102,6 @@ _buttonExactOnly:
 _coordsSaved:
     .byte 0
     .align 2
-
-_freezeState:
-    .int 0x10474342
 
 _savedX:
     .int 0
@@ -126,15 +120,12 @@ _savedRoomName:
     .int 0
     .int 0
 
-_currentRoom:
-    .int 0x104741F0
-
 ;copies the current room name into _savedRoomName
 copycurrentroomname:
     lis r16, _savedRoomName@ha
     addi r16, r16, _savedRoomName@l
     lis r17, _currentRoom@ha
-    lwz r17, _currentRoom@l(r17)
+    addi r17, r17, _currentRoom@l
     li r20, 8
 
 copycurrentroomloop:
@@ -156,7 +147,7 @@ currentroommatches:
     lis r16, _savedRoomName@ha
     addi r16, r16, _savedRoomName@l
     lis r17, _currentRoom@ha
-    lwz r17, _currentRoom@l(r17)
+    addi r17, r17, _currentRoom@l
     li r20, 8
 
 currentroommatchloop:
@@ -183,7 +174,7 @@ currentroomnomatch:
 ;output: r17 = 1 if current room is "sea", 0 if not
 currentroomissea:
     lis r16, _currentRoom@ha
-    lwz r16, _currentRoom@l(r16)
+    addi r16, r16, _currentRoom@l
     lbz r17, +0x00(r16)
     cmpwi cr1, r17, 0x73 ;s
     bne cr1, currentroomisnotsea
@@ -397,8 +388,7 @@ winddirectionlogic:
 
 windauto:
     lis r16, _linkFacingAddress@ha
-    lwz r16, _linkFacingAddress@l(r16)
-    lhz r17, +0x00(r16)
+    lhz r17, _linkFacingAddress@l(r16)
     rlwinm r17, r17, 20, 28, 31
     cmpwi cr1, r17, 1
     blt cr1, setwindsouth
@@ -479,8 +469,7 @@ saveloadcoordslogic:
     stw r18, +0x1C(r1)
 
     lis r16, _freezeState@ha
-    lwz r16, _freezeState@l(r16)
-    lbz r17, +0x00(r16)
+    lbz r17, _freezeState@l(r16)
     cmpwi cr1, r17, 0
     bne cr1, coordfinish
 
@@ -761,3 +750,8 @@ remotebombsfinish:
 0x0259B9F0 = bla infinitemagiclogic
 0x0257D58C = bla winddirectionlogic
 0x026E6C94 = .int $swimStaminaNeverDecrease
+0x101f5088 = _controlleroffset:
+0x1046438c = _boatXYZ:
+0x1046CD12 = _linkFacingAddress:
+0x10474342 = _freezeState:
+0x104741F0 = _currentRoom:
