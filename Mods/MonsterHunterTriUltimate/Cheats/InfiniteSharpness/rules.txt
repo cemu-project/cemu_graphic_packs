@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010118300
+name = Infinite Stamina
+path = "Monster Hunter 3 Ultimate/Cheats/Infinite Sharpness"
+description = Gives you infinite Sharpness. Verified for v32.
+version = 6
