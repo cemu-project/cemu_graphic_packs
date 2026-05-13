@@ -22,7 +22,7 @@ jobs:
     steps:
     # Clone latest copy of repository
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
       with:
         fetch-depth: 1
     - name: Zip all packs
@@ -44,7 +44,7 @@ jobs:
         RELEASE_ID=$(curl -X POST -H 'Content-Type:application/json' -H "Authorization: Bearer $GITHUB_TOKEN" "https://api.github.com/repos/$GITHUB_REPOSITORY/releases" -d "@releaseBody.json" | jq -r ".id") ;
         curl -X POST -H 'Content-Type:application/json' -H "Authorization: Bearer $GITHUB_TOKEN" "https://uploads.github.com/repos/$GITHUB_REPOSITORY/releases/$RELEASE_ID/assets?name=graphicPacks$RELEASE_NUMBER.zip" --upload-file "graphicPacks.zip"
     - name: Upload artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v5
       with:
         name: graphicPacks
         path: "graphicPacks.zip"
