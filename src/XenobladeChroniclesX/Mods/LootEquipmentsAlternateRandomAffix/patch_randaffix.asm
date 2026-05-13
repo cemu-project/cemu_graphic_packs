@@ -1,9 +1,6 @@
 [XCX_LOOT_RANDOM_AFFIX]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x676EB33E, 0x785CA8A9 ; 1.0.1E, 1.0.2U, 1.0.2J, 1.0.0E, 1.0.1U, 1.0.0U, 1.0.0J
 .origin = codecave
-.int $var1 ; 80
-.int $var2 ; 80
-.int $var3 ; 20
 ; ----------------------------------------------------------------------------
 ; WHO  : calcAffix__Q2_8ItemDrop16CItemDropManagerFUsRQ2_3mtl32fixed_vector__tm__12_UsXCUiL_1_3
 ; WHAT : Affix random truly

@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
+name = "Disable music"
+path = "Xenoblade Chronicles X/Mods/Music/Disable music"
+description = Disable all area and battle music.
+#Credits: Intra
+version = 6
