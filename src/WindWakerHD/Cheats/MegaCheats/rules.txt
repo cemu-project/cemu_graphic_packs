@@ -361,6 +361,11 @@ $linkDamageMultiplier = 80
 
 [Preset]
 category = Link Damage Given Multiplier
+name = Off
+$linkDamageGivenMultiplier = 1.0
+
+[Preset]
+category = Link Damage Given Multiplier
 name = 0.25x
 $linkDamageGivenMultiplier = 0.25
 
@@ -368,11 +373,6 @@ $linkDamageGivenMultiplier = 0.25
 category = Link Damage Given Multiplier
 name = 0.5x
 $linkDamageGivenMultiplier = 0.5
-
-[Preset]
-category = Link Damage Given Multiplier
-name = Off
-$linkDamageGivenMultiplier = 1.0
 
 [Preset]
 category = Link Damage Given Multiplier
