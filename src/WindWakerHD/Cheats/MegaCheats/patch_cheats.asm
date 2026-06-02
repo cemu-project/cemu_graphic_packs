@@ -1,5 +1,5 @@
-[MegaCheats]
-moduleMatches = 0x475BD29F
+[MegaCheatsShared]
+moduleMatches = 0x475BD29F,0xB7E748DE
 
 .origin = codecave
 
@@ -445,18 +445,7 @@ setwindnorth:
 setwindnortheast:
     li r0, 0
     ori r0, r0, 0xE000
-
-windfinish:
-    addi r9, r9, 0x44f8
-    lwz r18, +0x1C(r1)
-    mtlr r18
-    lwz r16, +0x08(r1)
-    lwz r17, +0x0C(r1)
-    lwz r18, +0x10(r1)
-    lwz r19, +0x14(r1)
-    lwz r20, +0x18(r1)
-    addi r1, r1, 0x30
-    blr
+    b windfinish
 
 saveloadcoordslogic:
     stwu r1, -0x30(r1)
@@ -617,15 +606,6 @@ rupeefinish:
     addi r1, r1, 0x10
     blr
 
-infiniteheartslogic:
-    lis r27, _infiniteHearts@ha
-    lbz r27, _infiniteHearts@l(r27)
-    cmpwi cr1, r27, 1
-    bne cr1, heartdamagecheck
-    lhz r27, +0x20(r10)
-    rlwinm r27, r27, 0, 0, 29
-    blr
-
 heartdamagecheck:
     cmpwi cr1, r7, 0
     bge cr1, heartsreturn
@@ -734,6 +714,31 @@ remotebombsfinish:
     lha r10, +0xA7C(r30)
     blr
 
+[MegaCheatsUS]
+moduleMatches = 0x475BD29F
+
+.origin = codecave
+
+windfinish:
+    addi r9, r9, 0x44f8
+    lwz r18, +0x1C(r1)
+    mtlr r18
+    lwz r16, +0x08(r1)
+    lwz r17, +0x0C(r1)
+    lwz r18, +0x10(r1)
+    lwz r19, +0x14(r1)
+    lwz r20, +0x18(r1)
+    addi r1, r1, 0x30
+    blr
+
+infiniteheartslogic:
+    lis r27, _infiniteHearts@ha
+    lbz r27, _infiniteHearts@l(r27)
+    cmpwi cr1, r27, 1
+    bne cr1, heartdamagecheck
+    lhz r27, +0x20(r10)
+    rlwinm r27, r27, 0, 0, 29
+    blr
 
 0x023FD368 = bla moonjumplogic
 0x023FA5A4 = bla invincibilitylogic
@@ -751,6 +756,57 @@ remotebombsfinish:
 0x0257D58C = bla winddirectionlogic
 0x026E6C94 = .int $swimStaminaNeverDecrease
 0x101f5088 = _controlleroffset:
+0x1046438c = _boatXYZ:
+0x1046CD12 = _linkFacingAddress:
+0x10474342 = _freezeState:
+0x104741F0 = _currentRoom:
+
+
+
+[MegaCheatsEU]
+moduleMatches = 0xb7e748de
+
+.origin = codecave
+
+windfinish:
+    addi r9, r9, 0x4510
+    lwz r18, +0x1C(r1)
+    mtlr r18
+    lwz r16, +0x08(r1)
+    lwz r17, +0x0C(r1)
+    lwz r18, +0x10(r1)
+    lwz r19, +0x14(r1)
+    lwz r20, +0x18(r1)
+    addi r1, r1, 0x30
+    blr
+
+infiniteheartslogic:
+    lis r31, _infiniteHearts@ha
+    lbz r31, _infiniteHearts@l(r31)
+    cmpwi cr1, r31, 1
+    bne cr1, heartdamagecheck
+    lhz r31, +0x20(r10)
+    rlwinm r31, r31, 0, 0, 29
+    blr
+
+
+
+0x023FD36C = bla moonjumplogic
+0x023FA5A8 = bla invincibilitylogic
+0x023DA334 = .int $invincibilityFlash
+0x020C6D04 = bla remotebombslogic
+0x0240EB48  = bla saveloadcoordslogic
+0x0242ED50 = bla linkswimspeedlogic
+0x0247E998 = bla sailspeedlogic
+0x025193F8 = bla linkdamagegivenlogic
+0x0259C494 = bla rupeelogic
+0x02594588 = bla infiniteheartslogic
+0x025997E4 = bla infinitearrowslogic
+0x0259988C = bla infinitebombslogic
+0x0259B9B0 = bla infinitemagiclogic
+0x0257d590 = bla winddirectionlogic
+0x026E74D8 = .int $swimStaminaNeverDecrease
+0x101f50A0 = _controlleroffset:
 0x1046438c = _boatXYZ:
 0x1046CD12 = _linkFacingAddress:
 0x10474342 = _freezeState:

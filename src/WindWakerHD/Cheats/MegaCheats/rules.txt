@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010143500
+titleIds = 0005000010143600,0005000010143500
 name = Cheats
 path = "The Legend of Zelda: The Wind Waker HD/Cheats/Mega Cheats"
 description = "A collection of cheats, made by n0ted"
@@ -24,7 +24,7 @@ $remoteBombs = 0
 $saveLoadCoords = 0
 $teleportToBoat = 0
 $windDirection = 0
-$swimStaminaNeverDecrease = 0x39080000
+$swimStaminaNeverDecrease = 0x3908FFFF
 
 [Preset]
 
@@ -321,13 +321,13 @@ $infiniteArrows = 1
 category = Infinite Swim Stamina
 name = Off
 condition = $infiniteCheatsCustom
-$swimStaminaNeverDecrease = 0x39080000
+$swimStaminaNeverDecrease = 0x3908FFFF
 
 [Preset]
 category = Infinite Swim Stamina
 name = On
 condition = $infiniteCheatsCustom
-$swimStaminaNeverDecrease = 0x60000000
+$swimStaminaNeverDecrease = 0x39080000
 
 [Preset]
 category = Link Damage Taken Multiplier
