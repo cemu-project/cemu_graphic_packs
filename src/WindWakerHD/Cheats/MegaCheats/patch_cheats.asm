@@ -1,5 +1,5 @@
 [MegaCheatsShared]
-moduleMatches = 0x475BD29F,0xB7E748DE
+moduleMatches = 0x475BD29F,0x74BD3F6A,0xB7E748DE
 
 .origin = codecave
 
@@ -755,8 +755,8 @@ infiniteheartslogic:
 0x0259B9F0 = bla infinitemagiclogic
 0x0257D58C = bla winddirectionlogic
 0x026E6C94 = .int $swimStaminaNeverDecrease
-0x101f5088 = _controlleroffset:
-0x1046438c = _boatXYZ:
+0x101F5088 = _controlleroffset:
+0x1046438C = _boatXYZ:
 0x1046CD12 = _linkFacingAddress:
 0x10474342 = _freezeState:
 0x104741F0 = _currentRoom:
@@ -806,8 +806,57 @@ infiniteheartslogic:
 0x0259B9B0 = bla infinitemagiclogic
 0x0257d590 = bla winddirectionlogic
 0x026E74D8 = .int $swimStaminaNeverDecrease
-0x101f50A0 = _controlleroffset:
-0x1046438c = _boatXYZ:
+0x101F50A0 = _controlleroffset:
+0x1046438C = _boatXYZ:
+0x1046CD12 = _linkFacingAddress:
+0x10474342 = _freezeState:
+0x104741F0 = _currentRoom:
+
+[MegaCheatsJP]
+moduleMatches = 0x74BD3F6A
+
+.origin = codecave
+
+windfinish:
+    addi r9, r9, 0x4640
+    lwz r18, +0x1C(r1)
+    mtlr r18
+    lwz r16, +0x08(r1)
+    lwz r17, +0x0C(r1)
+    lwz r18, +0x10(r1)
+    lwz r19, +0x14(r1)
+    lwz r20, +0x18(r1)
+    addi r1, r1, 0x30
+    blr
+
+infiniteheartslogic:
+    lis r27, _infiniteHearts@ha
+    lbz r27, _infiniteHearts@l(r27)
+    cmpwi cr1, r27, 1
+    bne cr1, heartdamagecheck
+    lhz r27, +0x20(r10)
+    rlwinm r27, r27, 0, 0, 29
+    blr
+
+
+
+0x023FD370 = bla moonjumplogic
+0x023FA5AC = bla invincibilitylogic
+0x023DA338 = .int $invincibilityFlash
+0x020C6D08 = bla remotebombslogic
+0x0240EB4C  = bla saveloadcoordslogic
+0x0242ED54 = bla linkswimspeedlogic
+0x0247E99c = bla sailspeedlogic
+0x025193FC = bla linkdamagegivenlogic
+0x0259C4D8 = bla rupeelogic
+0x02594588 = bla infiniteheartslogic
+0x02599814 = bla infinitearrowslogic
+0x025998BC = bla infinitebombslogic
+0x0259B9F4 = bla infinitemagiclogic
+0x0257D590 = bla winddirectionlogic
+0x026E7758 = .int $swimStaminaNeverDecrease
+0x101F50D0 = _controlleroffset:
+0x1046438C = _boatXYZ:
 0x1046CD12 = _linkFacingAddress:
 0x10474342 = _freezeState:
 0x104741F0 = _currentRoom:
