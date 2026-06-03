@@ -2,9 +2,42 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = Fancy GFX
 path = "Xenoblade Chronicles X/Enhancements/Fancy FX"
-description = Pretty blur, de-band sky, re-align cinematic etc, maintained on Nvidia. Made by getdls.
+description = Pretty blur, de-band sky, re-align cinematic etc.|Made by getdls.
 #Credits: getdls
 version = 4
+
+[Preset]
+name = 1080 -> 1440
+$width = 2560
+$height = 1440
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.75
+$dither = 0.15
+$scaleShader = (1440.0/1080.0)
+$scaleBlur = 0.5
+
+[Preset]
+name = 1440 -> 2880
+$width = 3840
+$height = 2160
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = (1440.0/2160.0)
+$dither = 0.25
+$scaleShader = 1.0 #round 1.5 shadow to 2.0
+$scaleBlur = 0.75
+
+[Preset]
+name = 2880+ (probably won't look good)
+$width = 7680
+$height = 4320
+$gameWidth = 1280
+$gameHeight = 720
+$internalRes = 0.5
+$dither = 0.25
+$scaleShader = 1.0
+$scaleBlur = 1.0
 
 #Disabled, causes gfx errors on 1.15.x  Enable if fixed.
 #[TextureRedefine]
@@ -144,36 +177,3 @@ width = 80
 height = 46
 formats = 0x816
 overwriteFormat = 0x820
-
-[Preset]
-name = 1080 -> 1440
-$width = 2560
-$height = 1440
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 0.75
-$dither = 0.15
-$scaleShader = (1440.0/1080.0)
-$scaleBlur = 0.5
-
-[Preset]
-name = 1440 -> 2880
-$width = 3840
-$height = 2160
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = (1440.0/2160.0)
-$dither = 0.25
-$scaleShader = 1.0 #round 1.5 shadow to 2.0
-$scaleBlur = 0.75
-
-[Preset]
-name = 2880+ (probably won't look good)
-$width = 7680
-$height = 4320
-$gameWidth = 1280
-$gameHeight = 720
-$internalRes = 0.5
-$dither = 0.25
-$scaleShader = 1.0
-$scaleBlur = 1.0
