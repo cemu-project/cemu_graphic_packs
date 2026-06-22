@@ -1,0 +1,317 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 78b47a912f869ddb
+// Used for: ambient occlusion scaling
+float newResWidth = float($width);
+float newResHeight = float($height);
+float origResWidth = float(1024);
+float origResHeight = float(576);
+
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy,gl_FragCoord.z, 1.0/gl_FragCoord.w)
+#extension GL_EXT_spirv_intrinsics: enable
+spirv_execution_mode(4462, 16);
+spirv_execution_mode(4462, 32);
+spirv_execution_mode(4462, 64);
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy,gl_FragCoord.zw)
+#endif
+#ifdef VULKAN
+layout(set = 1, binding = 3) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[8];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[8];
+uniform vec2 uf_fragCoordScale;
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+TEXTURE_LAYOUT(1, 1, 1) uniform sampler2D textureUnitPS1;
+TEXTURE_LAYOUT(2, 1, 2) uniform sampler2D textureUnitPS2;
+layout(location = 1) in vec4 passParameterSem133;
+layout(location = 2) in vec4 passParameterSem134;
+layout(location = 3) in vec4 passParameterSem135;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R4f = vec4(0.0);
+vec4 R5f = vec4(0.0);
+vec4 R6f = vec4(0.0);
+vec4 R7f = vec4(0.0);
+vec4 R8f = vec4(0.0);
+vec4 R122f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R124f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0, PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+R0f = GET_FRAGCOORD();
+R1f = passParameterSem133;
+
+//// note: scale dithering texture to be smaller for the right resolution
+R1f.z *= (newResWidth/origResWidth);
+R1f.w *= (newResHeight/origResHeight);
+
+R2f = passParameterSem134;
+R3f = passParameterSem135;
+R8f.x = (texture(textureUnitPS0, vec2(R1f.x, R1f.y)).x);
+R4f.xyzw = (texture(textureUnitPS1, vec2(R1f.z, R1f.w)).xyzw);
+R1f.xyz = (texture(textureUnitPS2, vec2(R1f.x,R1f.y)).xyz);
+// 0
+R127f.x = R4f.x * (2.0) + -(1.0);
+R127f.y = R4f.w * (2.0) + -(1.0);
+R127f.z = R4f.y * (2.0) + -(1.0);
+R127f.w = R4f.z * (2.0) + -(1.0);
+PS0f = 1.0 / -(R8f.x);
+// 1
+PV1fx = PS0f * intBitsToFloat(uf_remappedPS[0].z);
+R123f.z = R1f.z * 2.0 + -(1.0);
+R125f.w = R1f.y * 2.0 + -(1.0);
+R126f.y = floor(R0f.y);
+R126f.w = floor(R0f.x);
+
+//// note: scale bad fragcoords again after rounding has occurred
+R126f.y = R126f.y * (origResHeight / newResHeight);
+R126f.w = R126f.w * (origResWidth / newResWidth);
+
+// 2
+PV0fx = mul_nonIEEE(R123f.z, intBitsToFloat(uf_remappedPS[1].x));
+PV0fy = min(PV1fx, 30.0);
+R126f.z = mul_nonIEEE(R123f.z, intBitsToFloat(uf_remappedPS[1].y));
+R124f.w = mul_nonIEEE(R123f.z, intBitsToFloat(uf_remappedPS[1].z));
+R5f.y = R1f.x * 2.0 + -(1.0);
+// 3
+PV1fx = mul_nonIEEE(R127f.w, PV0fy);
+PV1fy = mul_nonIEEE(R127f.y, PV0fy);
+PV1fz = mul_nonIEEE(R127f.z, PV0fy);
+PV1fw = mul_nonIEEE(R127f.x, PV0fy);
+R4f.z = mul_nonIEEE(R125f.w,intBitsToFloat(uf_remappedPS[2].x)) + PV0fx;
+// 4
+backupReg0f = R126f.z;
+PV0fx = roundEven(PV1fx);
+PV0fy = roundEven(PV1fy);
+R126f.z = roundEven(PV1fz);
+R127f.w = roundEven(PV1fw);
+R5f.x = mul_nonIEEE(R125f.w,intBitsToFloat(uf_remappedPS[2].y)) + backupReg0f;
+// 5
+R6f.x = R126f.w + PV0fx;
+R6f.y = R126f.y + PV0fy;
+R0f.z = R126f.y + -(PV0fy);
+R0f.w = R126f.w + -(PV0fx);
+R2f.w = R126f.w + R127f.w;
+// 6
+R7f.x = R126f.y + -(R126f.z);
+R1f.y = mul_nonIEEE(R6f.y,intBitsToFloat(uf_remappedPS[3].w)) + R3f.y;
+R3f.z = R126f.y + R126f.z;
+R3f.w = R126f.w + -(R127f.w);
+R1f.x = mul_nonIEEE(R6f.x,intBitsToFloat(uf_remappedPS[3].z)) + R3f.x;
+// 7
+R0f.x = mul_nonIEEE(R0f.w,intBitsToFloat(uf_remappedPS[3].z)) + R3f.x;
+R0f.y = mul_nonIEEE(R0f.z,intBitsToFloat(uf_remappedPS[3].w)) + R3f.y;
+R1f.z = mul_nonIEEE(R2f.w,intBitsToFloat(uf_remappedPS[3].z)) + R3f.x;
+R1f.w = mul_nonIEEE(R3f.z,intBitsToFloat(uf_remappedPS[3].w)) + R3f.y;
+R4f.x = mul_nonIEEE(R3f.w,intBitsToFloat(uf_remappedPS[3].z)) + R3f.x;
+// 8
+backupReg0f = R2f.z;
+R3f.x = mul_nonIEEE(R2f.y, -(R8f.x));
+R4f.y = mul_nonIEEE(R7f.x,intBitsToFloat(uf_remappedPS[3].w)) + R3f.y;
+R2f.z = mul_nonIEEE(R2f.x, -(R8f.x));
+R4f.w = mul_nonIEEE(R125f.w,intBitsToFloat(uf_remappedPS[2].z)) + R124f.w;
+R5f.w = mul_nonIEEE(backupReg0f, -(R8f.x));
+R1f.x = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).x);
+R2f.x = (texture(textureUnitPS0, vec2(R0f.x,R0f.y)).x);
+R0f.x = (texture(textureUnitPS0, vec2(R1f.z,R1f.w)).x);
+R4f.x = (texture(textureUnitPS0, vec2(R4f.x,R4f.y)).x);
+// 0
+R124f.x = mul_nonIEEE(R5f.y,intBitsToFloat(uf_remappedPS[4].x)) + R4f.z;
+R124f.y = mul_nonIEEE(R5f.y,intBitsToFloat(uf_remappedPS[4].y)) + R5f.x;
+R4f.z = mul_nonIEEE(R5f.y,intBitsToFloat(uf_remappedPS[4].z)) + R4f.w;
+R125f.w = -(R1f.x);
+R126f.z = -(R2f.x);
+// 1
+R127f.x = mul_nonIEEE(R0f.w,intBitsToFloat(uf_remappedPS[5].x)) + intBitsToFloat(uf_remappedPS[5].z);
+R126f.y = mul_nonIEEE(R6f.x,intBitsToFloat(uf_remappedPS[5].x)) + intBitsToFloat(uf_remappedPS[5].z);
+R127f.z = mul_nonIEEE(R0f.z,intBitsToFloat(uf_remappedPS[5].y)) + intBitsToFloat(uf_remappedPS[5].w);
+R124f.w = mul_nonIEEE(R6f.y,intBitsToFloat(uf_remappedPS[5].y)) + intBitsToFloat(uf_remappedPS[5].w);
+R125f.y = -(R0f.x);
+// 2
+tempf.x = dot(vec4(R124f.x,R124f.y,R4f.z,intBitsToFloat(0x80000000)),vec4(R124f.x,R124f.y,R4f.z,0.0));
+PV0fx = tempf.x;
+R127f.y = tempf.x;
+PV0fz = tempf.x;
+PV0fw = tempf.x;
+R125f.z = mul_nonIEEE(R2f.w,intBitsToFloat(uf_remappedPS[5].x)) + intBitsToFloat(uf_remappedPS[5].z);
+// 3
+R126f.x = mul_nonIEEE(R3f.z,intBitsToFloat(uf_remappedPS[5].y)) + intBitsToFloat(uf_remappedPS[5].w);
+R126f.y = mul_nonIEEE(R125f.w, R126f.y);
+R124f.z = -(R4f.x);
+R125f.w = mul_nonIEEE(R125f.w, R124f.w);
+R125f.x = mul_nonIEEE(R3f.w,intBitsToFloat(uf_remappedPS[5].x)) + intBitsToFloat(uf_remappedPS[5].z);
+// 4
+backupReg0f = R127f.x;
+backupReg1f = R127f.y;
+R127f.x = mul_nonIEEE(R125f.y, R125f.z);
+R127f.y = mul_nonIEEE(R7f.x,intBitsToFloat(uf_remappedPS[5].y)) + intBitsToFloat(uf_remappedPS[5].w);
+R127f.z = mul_nonIEEE(R126f.z, R127f.z);
+R124f.w = mul_nonIEEE(R126f.z, backupReg0f);
+tempResultf = 1.0 / sqrt(backupReg1f);
+R127f.w = tempResultf;
+// 5
+R126f.x = mul_nonIEEE(R125f.y, R126f.x);
+R126f.y = R126f.y;
+R126f.z = R0f.x;
+R125f.w = R125f.w;
+R125f.z = R1f.x;
+// 6
+backupReg0f = R127f.z;
+R125f.x = mul_nonIEEE(R124f.z, R125f.x);
+R127f.y = mul_nonIEEE(R124f.z, R127f.y);
+R127f.z = R4f.x;
+R124f.w = R124f.w;
+R126f.w = backupReg0f;
+// 7
+backupReg0f = R127f.x;
+R127f.x = mul_nonIEEE(R124f.x, R127f.w);
+R124f.y = mul_nonIEEE(R124f.y, R127f.w);
+R124f.z = mul_nonIEEE(R4f.z, R127f.w);
+R127f.w = R2f.x;
+R124f.x = -(R2f.z) + backupReg0f;
+// 8
+backupReg0f = R126f.x;
+R126f.x = -(R2f.z) + R126f.y;
+R126f.y = -(R3f.x) + backupReg0f;
+R126f.z = -(R5f.w) + R126f.z;
+R125f.w = -(R3f.x) + R125f.w;
+R125f.z = -(R5f.w) + R125f.z;
+// 9
+backupReg0f = R3f.x;
+backupReg1f = R126f.w;
+R3f.x = -(R2f.z) + R125f.x;
+R125f.y = -(backupReg0f) + R127f.y;
+R127f.z = -(R5f.w) + R127f.z;
+R126f.w = -(R2f.z) + R124f.w;
+R6f.y = -(backupReg0f) + backupReg1f;
+// 10
+R125f.x = mul_nonIEEE(R8f.x, -(intBitsToFloat(uf_remappedPS[6].z)));
+R127f.y = mul_nonIEEE(R8f.x, -(intBitsToFloat(uf_remappedPS[6].w)));
+R2f.z = -(R5f.w) + R127f.w;
+PV0fw = mul_nonIEEE(R124f.z, R125f.z);
+PS0f = mul_nonIEEE(R124f.z, R126f.z);
+// 11
+tempf.x = dot(vec4(R127f.x,R124f.y,PS0f,intBitsToFloat(0x80000000)),vec4(R124f.x,R126f.y,1.0,0.0));
+PV1fx = tempf.x;
+PV1fy = tempf.x;
+PV1fz = tempf.x;
+PV1fw = tempf.x;
+R122f.x = mul_nonIEEE(R124f.y,R125f.w) + PV0fw;
+// 12
+R8f.x = fract(R127f.y);
+R127f.y = fract(R125f.x);
+R123f.z = mul_nonIEEE(R127f.x,R126f.x) + R122f.x;
+R127f.w = PV1fx + -(intBitsToFloat(uf_remappedPS[7].y));
+PS0f = mul_nonIEEE(R124f.z, R127f.z);
+// 13
+tempf.x = dot(vec4(R127f.x,R124f.y,PS0f,intBitsToFloat(0x80000000)),vec4(R3f.x,R125f.y,1.0,0.0));
+PV1fx = tempf.x;
+PV1fy = tempf.x;
+PV1fz = tempf.x;
+PV1fw = tempf.x;
+R4f.z = R123f.z + -(intBitsToFloat(uf_remappedPS[7].y));
+// 14
+tempf.x = dot(vec4(R127f.x,R124f.y,R124f.z,intBitsToFloat(0x80000000)),vec4(R126f.w,R6f.y,R2f.z,0.0));
+PV0fx = tempf.x;
+PV0fy = tempf.x;
+PV0fz = tempf.x;
+PV0fw = tempf.x;
+R127f.x = PV1fx + -(intBitsToFloat(uf_remappedPS[7].y));
+// 15
+tempf.x = dot(vec4(R124f.x,R126f.y,R126f.z,intBitsToFloat(0x80000000)),vec4(R124f.x,R126f.y,R126f.z,0.0));
+PV1fx = tempf.x;
+PV1fy = tempf.x;
+PV1fz = tempf.x;
+PV1fw = tempf.x;
+R126f.y = PV0fx + -(intBitsToFloat(uf_remappedPS[7].y));
+// 16
+tempf.x = dot(vec4(R126f.x,R125f.w,R125f.z,intBitsToFloat(0x80000000)),vec4(R126f.x,R125f.w,R125f.z,0.0));
+PV0fx = tempf.x;
+PV0fy = tempf.x;
+PV0fz = tempf.x;
+PV0fw = tempf.x;
+R125f.w = -(PV1fx) + intBitsToFloat(uf_remappedPS[0].y);
+// 17
+tempf.x = dot(vec4(R3f.x,R125f.y,R127f.z,intBitsToFloat(0x80000000)),vec4(R3f.x,R125f.y,R127f.z,0.0));
+PV1fx = tempf.x;
+PV1fy = tempf.x;
+PV1fz = tempf.x;
+PV1fw = tempf.x;
+R127f.z = -(PV0fx) + intBitsToFloat(uf_remappedPS[0].y);
+// 18
+tempf.x = dot(vec4(R126f.w,R6f.y,R2f.z,intBitsToFloat(0x80000000)),vec4(R126f.w,R6f.y,R2f.z,0.0));
+PV0fx = tempf.x;
+PV0fy = tempf.x;
+PV0fz = tempf.x;
+PV0fw = tempf.x;
+R126f.x = -(PV1fx) + intBitsToFloat(uf_remappedPS[0].y);
+// 19
+R127f.x = max(R127f.x, 0.0);
+PV1fy = -(PV0fx) + intBitsToFloat(uf_remappedPS[0].y);
+R125f.z = max(R4f.z, 0.0);
+R127f.w = max(R127f.w, 0.0);
+R126f.y = max(R126f.y, 0.0);
+// 20
+PV0fx = max(R126f.x, 0.0);
+PV0fy = max(PV1fy, 0.0);
+PV0fz = max(R127f.z, 0.0);
+PV0fw = max(R125f.w, 0.0);
+PS0f = R8f.x * intBitsToFloat(0x3b808081);
+// 21
+PV1fx = mul_nonIEEE(R127f.w, PV0fw);
+PV1fy = mul_nonIEEE(R125f.z, PV0fz);
+PV1fz = mul_nonIEEE(R127f.x, PV0fx);
+PV1fw = mul_nonIEEE(R126f.y, PV0fy);
+PS1f = R127f.y + -(PS0f);
+// 22
+tempf.x = dot(vec4(PV1fx,PV1fy,PV1fz,PV1fw),vec4(intBitsToFloat(uf_remappedPS[0].w),intBitsToFloat(uf_remappedPS[0].w),intBitsToFloat(uf_remappedPS[0].w),intBitsToFloat(uf_remappedPS[0].w)));
+PV0fx = tempf.x;
+PV0fy = tempf.x;
+PV0fz = tempf.x;
+R5f.w = tempf.x;
+R4f.z = PS1f;
+// 23
+PV1fz = -(R5f.w) + 1.0;
+PV1fz = clamp(PV1fz, 0.0, 1.0);
+R4f.w = R8f.x;
+// 24
+R4f.x = mul_nonIEEE(PV1fz, PV1fz);
+// export
+passPixelColor0 = vec4(R4f.x, R4f.x, R4f.z, R4f.w);
+}

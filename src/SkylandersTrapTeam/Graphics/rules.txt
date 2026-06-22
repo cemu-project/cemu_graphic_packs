@@ -2,203 +2,474 @@
 titleIds = 000500001017C600,0005000010181F00
 name = Game Resolution and Shadow Quality
 path = "Skylanders Trap Team/Graphics"
-description = Changes the resolution of the game and the quality of the shadows.||Made by Crementif.||Aspect ratio patch and fixes made by Flextape05
+description = Allows you to change game's resolution, aspect ratio and shadow quality. Additionally you can change the anti-aliasing and motion blur.||Made by Crementif and FrankyBuster. Aspect ratio patch by Flextape05.
 version = 5
 
 [Default]
-$width = 1280
-$height = 720
-$gameWidth = 1280
-$gameHeight = 720
+$width = 1024
+$height = 576
+$gameWidth = 1024
+$gameHeight = 576
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
+$padWidth = 427
+$padHeight = 240
+$gamePadWidth = 427
+$gamePadHeight = 240
 $shadowRes = 1
+$antialias = 1
+$motionblur = 1
 $hudY = 720
 $hudX = 1280
 $fov = 0.017453292
 
-# Resolution
+
+# Aspect Ratio
 
 [Preset]
-category = Resolution
-name = 1024x576 (Default)
-$width = 1024
-$height = 576
+name = 16:9 (Default)
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 9
 
 [Preset]
-category = Resolution
+name = 16:10
+category = Aspect Ratio
+$aspectRatioWidth = 16
+$aspectRatioHeight = 10
+
+[Preset]
+name = 21:9
+category = Aspect Ratio
+$aspectRatioWidth = 21
+$aspectRatioHeight = 9
+
+[Preset]
+name = 32:9
+category = Aspect Ratio
+$aspectRatioWidth = 32
+$aspectRatioHeight = 9
+
+[Preset]
+name = 4:3
+category = Aspect Ratio
+$aspectRatioWidth = 4
+$aspectRatioHeight = 3
+
+
+# TV Resolution
+
+# 16:9 Resolutions
+
+[Preset]
+category = TV Resolution
 name = 640x360
 $width = 640
 $height = 360
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 960x540
 $width = 960
 $height = 540
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
+name = 1024x576 (Default)
+default = 1
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+[Preset]
+category = TV Resolution
 name = 1280x720 
 $width = 1280
 $height = 720
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
+name = 1360x768 
+$width = 1360
+$height = 768
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+[Preset]
+category = TV Resolution
 name = 1600x900
 $width = 1600
 $height = 900
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 1920x1080
 $width = 1920
 $height = 1080
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 2560x1440
 $width = 2560
 $height = 1440
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 3840x2160
 $width = 3840
 $height = 2160
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
+category = TV Resolution
 name = 7680x4320
 $width = 7680
 $height = 4320
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 21:9 Resolutions
 
 [Preset]
-category = Resolution
-name = 2560x1080(21:9)
+category = TV Resolution
+name = 2560x1080
 $width = 2560
 $height = 1080
 $hudY = 720
 $hudX = 1720
 $fov = 0.0159
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 3440x1440(21:9)
+category = TV Resolution
+name = 3440x1440
 $width = 3440
 $height = 1440
 $hudY = 720
 $hudX = 1720
 $fov = 0.0159
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 5120x2160(21:9)
+category = TV Resolution
+name = 5120x2160
 $width = 5120
 $height = 2160
 $hudY = 720
 $hudX = 1720
 $fov = 0.0159
+condition = ((($aspectRatioWidth - 21) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 32:9 Resolutions
 
 [Preset]
-category = Resolution
-name = 3840x1080(32:9)(broken shadows)
+category = TV Resolution
+name = 3840x1080(broken shadows)
 $width = 3840
 $height = 1080
 $hudY = 720
 $hudX = 2560
 $fov = 0.013
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 5120x1440(32:9)(broken shadows)
+category = TV Resolution
+name = 5120x1440(broken shadows)
 $width = 5120
 $height = 1440
 $hudY = 720
 $hudX = 2560
 $fov = 0.013
+condition = ((($aspectRatioWidth - 32) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
+
+# 4:3 Resolutions
 
 [Preset]
-category = Resolution
-name = 640x480(4:3)
+category = TV Resolution
+name = 640x480
 $width = 640
 $height = 480
 $hudY = 768
 $hudX = 1024
 $fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 1024x768(4:3)
+category = TV Resolution
+name = 768x576
+$width = 768
+$height = 576
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 800x600
+$width = 800
+$height = 600
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 1024x768
 $width = 1024
 $height = 768
 $hudY = 768
 $hudX = 1024
 $fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 1600x1200(4:3)
+category = TV Resolution
+name = 1280x960
+$width = 1280
+$height = 960
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 1600x1200
 $width = 1600
 $height = 1200
 $hudY = 768
 $hudX = 1024
 $fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 1280x800(16:10)
+category = TV Resolution
+name = 1920x1440
+$width = 1920
+$height = 1440
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 2560x1920
+$width = 2560
+$height = 1920
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 3840x2880
+$width = 3840
+$height = 2880
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 5120x3840
+$width = 5120
+$height = 3840
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+[Preset]
+category = TV Resolution
+name = 7680x5760
+$width = 7680
+$height = 5760
+$hudY = 768
+$hudX = 1024
+$fov = 0.019053293
+condition = ((($aspectRatioWidth - 4) == 0) + (($aspectRatioHeight - 3) == 0)) == 2
+
+# 16:10 Resolutions
+
+[Preset]
+category = TV Resolution
+name = 1280x800
 $width = 1280
 $height = 800
 $hudY = 800
 $hudX = 1280
 $fov = 0.018353293
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 1680x1050(16:10)
+category = TV Resolution
+name = 1680x1050
 $width = 1680
 $height = 1050
 $hudY = 800
 $hudX = 1280
 $fov = 0.018353293
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 1920x1200(16:10)
+category = TV Resolution
+name = 1920x1200
 $width = 1920
 $height = 1200
 $hudY = 800
 $hudX = 1280
 $fov = 0.018353293
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
 
 [Preset]
-category = Resolution
-name = 2560x1600(16:10)
+category = TV Resolution
+name = 2560x1600
 $width = 2560
 $height = 1600
 $hudY = 800
 $hudX = 1280
 $fov = 0.018353293
+condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 10) == 0)) == 2
+
+
+# Gamepad Resolution
 
 [Preset]
-category = Shadow Quality
-name = Medium (100%, Default)
+name = 320x180
+category = Gamepad Resolution
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+name = 427x240 (Default)
+category = Gamepad Resolution
+default = 1
+
+[Preset]
+name = 640x360
+category = Gamepad Resolution
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+name = 854x480
+category = Gamepad Resolution
+$padWidth = 854
+$padHeight = 480
+
+[Preset]
+name = 960x540
+category = Gamepad Resolution
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+name = 1280x720
+category = Gamepad Resolution
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+name = 1600x900
+category = Gamepad Resolution
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+name = 1920x1080
+category = Gamepad Resolution
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+name = 2560x1440
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+name = 3200x1800
+category = Gamepad Resolution
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+name = 3840x2160
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+name = 5120x2880
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+name = 7680x4320
+category = Gamepad Resolution
+$padWidth = 7680
+$padHeight = 4320
+
+
+# Anti-Aliasing
+
+[Preset]
+category = Anti-Aliasing
+name = Off
+$antialias = 0
+
+[Preset]
+category = Anti-Aliasing
+name = On (FXAA, Default)
+default = 1
+
+# Motion Blur
+
+[Preset]
+category = Motion Blur
+name = Off
+$motionblur = 0
+
+[Preset]
+category = Motion Blur
+name = On (Default)
+default = 1
+
+
+# Shadow Quality
+
 
 [Preset]
 category = Shadow Quality
 name = Low (50%)
 $shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+default = 1
 
 [Preset]
 category = Shadow Quality
@@ -215,111 +486,38 @@ category = Shadow Quality
 name = Extreme (400%, Unstable)
 $shadowRes = 4
 
+
 # Texture Redefines
 
 [TextureRedefine] # Game output and hud resolution
-width = 1280
-height = 720
-formats = 0x01a,0x011
-overwriteWidth = ($width/$gameWidth) * 1280
-overwriteHeight = ($height/$gameHeight) * 720
-
-[TextureRedefine] # Gamepad resolution
-width = 864
-height = 480
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight = ($height/$gameHeight) * 480
-
-[TextureRedefine] # Stage rendering
 width = 1024
 height = 576
+tileModesExcluded = 1
 formats = 0x01a,0x011,0x80e,0x820
-overwriteWidth = ($width/$gameWidth) * 1280
-overwriteHeight = ($height/$gameHeight) * 720
+overwriteWidth = ($width/$gameWidth) * 1024
+overwriteHeight = ($height/$gameHeight) * 576
 
-[TextureRedefine] # Squashed/bloom alt viewport
+[TextureRedefine] # DOF
 width = 512
 height = 576
-formats = 0x01a,0x80e,0x011
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 576
 
-[TextureRedefine] # Half-res viewport depth, blur and bloom
+[TextureRedefine] # DOF, Bloom
 width = 512
 height = 288
-formats = 0x01a,0x80e,0x011
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 512
 overwriteHeight = ($height/$gameHeight) * 288
 
-# Ambient occlusion
-
-[TextureRedefine]
-width = 128
-height = 576
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 576
-
-[TextureRedefine]
-width = 102
-height = 576
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 102
-overwriteHeight = ($height/$gameHeight) * 576
-
-[TextureRedefine]
-width = 128
-height = 64
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 128
-overwriteHeight = ($height/$gameHeight) * 64
-
-[TextureRedefine]
-width = 102
-height = 57
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 102
-overwriteHeight = ($height/$gameHeight) * 57
-
-# Bloom blur
-
-[TextureRedefine] # Squashed bloom
-width = 256
-height = 256
-formats = 0x01a
-overwriteWidth = ($width/$gameWidth) * 256
-overwriteHeight = ($height/$gameHeight) * 256
-
-[TextureRedefine]
+[TextureRedefine] # Bloom
 width = 256
 height = 144
 formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 144
 
-# Gamepad figure rendering
-
-[TextureRedefine]
-width = 448
-height = 256
-formats = 0x01a,0x011
-overwriteWidth = ($width/$gameWidth) * 448
-overwriteHeight = ($height/$gameHeight) * 256
-
-[TextureRedefine]
-width = 448
-height = 240
-formats = 0x01a,0x011
-overwriteWidth = ($width/$gameWidth) * 448
-overwriteHeight = ($height/$gameHeight) * 240
-
-[TextureRedefine]
-width = 427
-height = 240
-formats = 0x01a,0x011
-overwriteWidth = ($width/$gameWidth) * 427
-overwriteHeight = ($height/$gameHeight) * 240
 
 # Shadows
 
@@ -329,3 +527,27 @@ height = 2048
 formats = 0x011
 overwriteWidth = $shadowRes * 512
 overwriteHeight = $shadowRes * 2048
+
+# Gamepad
+
+[TextureRedefine] # Output Resolution
+width = 427
+height = 240
+formats = 0x01a
+tileModesExcluded = 1
+overwriteWidth = ($padWidth/$gamePadWidth) * 427
+overwriteHeight = ($padHeight/$gamePadHeight) * 240
+
+[TextureRedefine]
+width = 448
+height = 240
+formats = 0x01a
+overwriteWidth = ($padWidth/$gamePadWidth) * 448
+overwriteHeight = ($padHeight/$gamePadHeight) * 240
+
+[TextureRedefine] # Internal Resolution
+width = 448
+height = 256
+formats = 0x01a,0x011
+overwriteWidth = ($padWidth/$gamePadWidth) * 448
+overwriteHeight = ($padHeight/$gamePadHeight) * 256
