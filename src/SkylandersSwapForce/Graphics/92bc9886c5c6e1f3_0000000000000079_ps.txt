@@ -71,13 +71,10 @@ uf_remappedPSNew[1] = uf_remappedPS[1];
 uf_remappedPSNew[2] = uf_remappedPS[2];
 uf_remappedPSNew[3] = uf_remappedPS[3];
 
-float bestWidth = (newResWidth);
-float bestHeight = (newResHeight);
-
-uf_remappedPSNew[1].x = floatBitsToInt(bestWidth);
-uf_remappedPSNew[1].y = floatBitsToInt(bestHeight);
-uf_remappedPSNew[1].z = floatBitsToInt(1.0f/bestWidth);
-uf_remappedPSNew[1].w = floatBitsToInt(1.0f/bestHeight);
+uf_remappedPSNew[1].x = floatBitsToInt(newResWidth);
+uf_remappedPSNew[1].y = floatBitsToInt(newResHeight);
+uf_remappedPSNew[1].z = floatBitsToInt(1.0f/newResWidth);
+uf_remappedPSNew[1].w = floatBitsToInt(1.0f/newResHeight);
 
 R0i = floatBitsToInt(GET_FRAGCOORD());
 R1i = floatBitsToInt(passParameterSem139);

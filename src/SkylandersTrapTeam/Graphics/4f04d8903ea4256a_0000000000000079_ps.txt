@@ -3,7 +3,7 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader 4f04d8903ea4256a
 // Used for: Bloom horizontal blur
-float resScaleX = float($width)/float($gameWidth);
+float resScaleX = float($width)/float(1024);
 
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)

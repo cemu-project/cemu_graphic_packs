@@ -202,13 +202,10 @@ uf_remappedPSNew[15] = uf_remappedPS[15];
 uf_remappedPSNew[16] = uf_remappedPS[16];
 uf_remappedPSNew[17] = uf_remappedPS[17];
 
-float bestWidth = (newResWidth);
-float bestHeight = (newResHeight);
-
-uf_remappedPSNew[4].x = floatBitsToInt(bestWidth);
-uf_remappedPSNew[4].y = floatBitsToInt(bestHeight);
-uf_remappedPSNew[4].z = floatBitsToInt(1.0f/bestWidth);
-uf_remappedPSNew[4].w = floatBitsToInt(1.0f/bestHeight);
+uf_remappedPSNew[4].x = floatBitsToInt(newResWidth);
+uf_remappedPSNew[4].y = floatBitsToInt(newResHeight);
+uf_remappedPSNew[4].z = floatBitsToInt(1.0f/newResWidth);
+uf_remappedPSNew[4].w = floatBitsToInt(1.0f/newResHeight);
 
 bool activeMaskStack[2];
 bool activeMaskStackC[3];

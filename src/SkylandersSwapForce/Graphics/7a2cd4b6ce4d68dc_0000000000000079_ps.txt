@@ -65,13 +65,10 @@ bool predResult = true;
 ivec4 uf_remappedPSNew[1];
 uf_remappedPSNew[0] = uf_remappedPS[0];
 
-float bestWidth = (newResWidth);
-float bestHeight = (newResHeight);
-
-uf_remappedPSNew[0].x = floatBitsToInt(bestWidth);
-uf_remappedPSNew[0].y = floatBitsToInt(bestHeight);
-uf_remappedPSNew[0].z = floatBitsToInt(1.0f/bestWidth);
-uf_remappedPSNew[0].w = floatBitsToInt(1.0f/bestHeight);
+uf_remappedPSNew[0].x = floatBitsToInt(newResWidth);
+uf_remappedPSNew[0].y = floatBitsToInt(newResHeight);
+uf_remappedPSNew[0].z = floatBitsToInt(1.0f/newResWidth);
+uf_remappedPSNew[0].w = floatBitsToInt(1.0f/newResHeight);
 
 bool activeMaskStack[2];
 bool activeMaskStackC[3];
