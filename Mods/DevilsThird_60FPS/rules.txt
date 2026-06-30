@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 0005000010177600
+name = 60FPS
+path = "Devil's Third/Mods/60FPS"
+description = Makes the game run at 60FPS. |Made by Jao.
+version = 7
+
+[Control]
+vsyncFrequency = 60
