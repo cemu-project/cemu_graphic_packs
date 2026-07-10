@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010145D00,0005000010145C00,0005000010106100
+titleIds = 0005000010145D00,0005000010145C00,0005000010106100,0005000210159b00
 name = Resolution
 path = "Super Mario 3D World/Graphics/Resolution"
 description = Changes the resolution of the game. Made by Crementif and getdls.

@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001018DB00,000500001018DC00,000500001018DD00
+titleIds = 000500001018DB00,000500001018DC00,000500001018DD00,00050002101db400
 name = Resolution
 path = "Super Mario Maker/Graphics/Resolution"
 description = Changes the resolution of the game. Made by Crementif.
