@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 000500001010B300,0005000010111F00,00050000-10111f00
+titleIds = 000500001010B300,0005000010111F00,00050000-10111f00,0005000210116b00
 name = Resolution
 path = "Sonic & All-Stars Racing Transformed/Graphics/Resolution"
 description = Changes the resolution of the game. Made by DragonZord & Niko

@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 00050000101ABC00,00050000101B5100
+titleIds = 00050000101ABC00,00050000101B5100,00050002101bac00,00050002101bad00
 name = Resolution
 path = "Kirby and the Rainbow Curse & Paintbrush/Graphics/Resolution"
 description = Changes the resolution of the game. Made by Crementif.
