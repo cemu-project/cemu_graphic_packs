@@ -37,13 +37,13 @@ $height = 540
 
 [Preset]
 category = TV Resolution
-name = 1024x576
+name = 1024x576 (Native Res)
 $width = 1024
 $height = 576
 
 [Preset]
 category = TV Resolution
-name = 1280x720 (Default)
+name = 1280x720 (HD, Default)
 default = 1
 
 [Preset]
@@ -60,13 +60,13 @@ $height = 900
 
 [Preset]
 category = TV Resolution
-name = 1920x1080
+name = 1920x1080 (Full HD)
 $width = 1920
 $height = 1080
 
 [Preset]
 category = TV Resolution
-name = 2560x1440
+name = 2560x1440 (2K)
 $width = 2560
 $height = 1440
 
@@ -78,7 +78,7 @@ $height = 1800
 
 [Preset]
 category = TV Resolution
-name = 3840x2160
+name = 3840x2160 (4K)
 $width = 3840
 $height = 2160
 
@@ -90,7 +90,7 @@ $height = 2880
 
 [Preset]
 category = TV Resolution
-name = 7680x4320
+name = 7680x4320 (8K)
 $width = 7680
 $height = 4320
 
@@ -127,10 +127,22 @@ $padWidth = 960
 $padHeight = 540
 
 [Preset]
-name = 1280x720
+name = 1024x576
+category = Gamepad Resolution
+$padWidth = 1024
+$padHeight = 576
+
+[Preset]
+name = 1280x720 (HD)
 category = Gamepad Resolution
 $padWidth = 1280
 $padHeight = 720
+
+[Preset]
+category = Gamepad Resolution
+name = 1360x768
+$padWidth = 1360
+$padHeight = 768
 
 [Preset]
 name = 1600x900
@@ -139,13 +151,13 @@ $padWidth = 1600
 $padHeight = 900
 
 [Preset]
-name = 1920x1080
+name = 1920x1080 (Full HD)
 category = Gamepad Resolution
 $padWidth = 1920
 $padHeight = 1080
 
 [Preset]
-name = 2560x1440
+name = 2560x1440 (2K)
 category = Gamepad Resolution
 $padWidth = 2560
 $padHeight = 1440
@@ -157,7 +169,7 @@ $padWidth = 3200
 $padHeight = 1800
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 (4K)
 category = Gamepad Resolution
 $padWidth = 3840
 $padHeight = 2160
@@ -169,7 +181,7 @@ $padWidth = 5120
 $padHeight = 2880
 
 [Preset]
-name = 7680x4320
+name = 7680x4320 (8K)
 category = Gamepad Resolution
 $padWidth = 7680
 $padHeight = 4320
@@ -253,7 +265,7 @@ formats = 0x01a
 overwriteWidth = ($width/$stageWidth) * 512
 overwriteHeight = ($height/$stageHeight) * 576
 
-[TextureRedefine] # DOF, Bloom, AO
+[TextureRedefine] # DOF, Bloom
 width = 512
 height = 288
 formats = 0x01a,0x80e,0x011

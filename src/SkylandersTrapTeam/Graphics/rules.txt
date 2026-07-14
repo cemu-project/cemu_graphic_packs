@@ -83,7 +83,7 @@ condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) 
 
 [Preset]
 category = TV Resolution
-name = 1280x720 
+name = 1280x720 (HD)
 $width = 1280
 $height = 720
 condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
@@ -104,14 +104,14 @@ condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) 
 
 [Preset]
 category = TV Resolution
-name = 1920x1080
+name = 1920x1080 (Full HD)
 $width = 1920
 $height = 1080
 condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
 
 [Preset]
 category = TV Resolution
-name = 2560x1440
+name = 2560x1440 (2K)
 $width = 2560
 $height = 1440
 condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
@@ -125,7 +125,7 @@ condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) 
 
 [Preset]
 category = TV Resolution
-name = 3840x2160
+name = 3840x2160 (4K)
 $width = 3840
 $height = 2160
 condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
@@ -139,7 +139,7 @@ condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) 
 
 [Preset]
 category = TV Resolution
-name = 7680x4320
+name = 7680x4320 (8K)
 $width = 7680
 $height = 4320
 condition = ((($aspectRatioWidth - 16) == 0) + (($aspectRatioHeight - 9) == 0)) == 2
@@ -385,10 +385,16 @@ $padWidth = 960
 $padHeight = 540
 
 [Preset]
-name = 1280x720
+name = 1280x720 (HD)
 category = Gamepad Resolution
 $padWidth = 1280
 $padHeight = 720
+
+[Preset]
+name = 1360x768 (HD)
+category = Gamepad Resolution
+$padWidth = 1360
+$padHeight = 768
 
 [Preset]
 name = 1600x900
@@ -397,13 +403,13 @@ $padWidth = 1600
 $padHeight = 900
 
 [Preset]
-name = 1920x1080
+name = 1920x1080 (Full HD)
 category = Gamepad Resolution
 $padWidth = 1920
 $padHeight = 1080
 
 [Preset]
-name = 2560x1440
+name = 2560x1440 (2K)
 category = Gamepad Resolution
 $padWidth = 2560
 $padHeight = 1440
@@ -415,7 +421,7 @@ $padWidth = 3200
 $padHeight = 1800
 
 [Preset]
-name = 3840x2160
+name = 3840x2160 (4K)
 category = Gamepad Resolution
 $padWidth = 3840
 $padHeight = 2160
@@ -427,7 +433,7 @@ $padWidth = 5120
 $padHeight = 2880
 
 [Preset]
-name = 7680x4320
+name = 7680x4320 (8K)
 category = Gamepad Resolution
 $padWidth = 7680
 $padHeight = 4320
@@ -517,7 +523,6 @@ height = 144
 formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 256
 overwriteHeight = ($height/$gameHeight) * 144
-
 
 # Shadows
 
