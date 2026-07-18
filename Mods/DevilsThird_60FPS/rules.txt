@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010177600,0005000010177700,0005000010197d00
+name = 60FPS
+path = "Devil's Third/Mods/60FPS"
+description = Removes the 50 FPS cap on menus and gameplay raising them to 60. Leaves the 30 FPS cap on cinematics and loading screens untouched. Made by AbbieDoobie.
+version = 4
