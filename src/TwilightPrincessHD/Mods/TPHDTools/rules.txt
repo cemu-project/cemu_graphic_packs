@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001019C800,000500001019E600,000500001019E500
+name = "TPHD Tools"
+path = "The Legend of Zelda: Twilight Princess HD/Mods/TPHD Tools"
+description = TPHD Tools. Adds an in-game tools menu which allows for many game modifications and tools for practicing speedrunning techniques.
+version = 7
