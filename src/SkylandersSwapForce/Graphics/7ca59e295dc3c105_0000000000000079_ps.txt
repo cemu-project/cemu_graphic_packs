@@ -144,9 +144,9 @@ PS0i = floatBitsToInt(tempResultf);
 R127i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.y), intBitsToFloat(PS0i)));
 R127i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.x), intBitsToFloat(PS0i)));
 // 4
-PV0ix = floatBitsToInt(max(intBitsToFloat(R127i.z), -(intBitsToFloat(R127i.z)))*resScaleX);
-PV0iy = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.z), intBitsToFloat(uf_remappedPS[2].z)*resScaleY )); // blur opacity
-PV0iz = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.y), intBitsToFloat(uf_remappedPS[2].w)*resScaleX )); //
+PV0ix = floatBitsToInt(max(intBitsToFloat(R127i.z), -(intBitsToFloat(R127i.z))));
+PV0iy = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.z), intBitsToFloat(uf_remappedPS[2].z)*resScaleY));
+PV0iz = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.y), intBitsToFloat(uf_remappedPS[2].w)*resScaleX));
 PV0iw = floatBitsToInt(max(intBitsToFloat(R127i.y), -(intBitsToFloat(R127i.y))));
 // 5
 R1i.x = floatBitsToInt(intBitsToFloat(R0i.x) + -(intBitsToFloat(PV0iy)));

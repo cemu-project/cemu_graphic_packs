@@ -142,7 +142,7 @@ PS0i = floatBitsToInt(tempResultf);
 R127i.y = floatBitsToInt(intBitsToFloat(R127i.y) * intBitsToFloat(PS0i));
 R127i.z = floatBitsToInt(intBitsToFloat(R127i.x) * intBitsToFloat(PS0i));
 // 4
-PV0ix = floatBitsToInt(max(intBitsToFloat(R127i.z), -(intBitsToFloat(R127i.z)))*resScaleX);
+PV0ix = floatBitsToInt(max(intBitsToFloat(R127i.z), -(intBitsToFloat(R127i.z))));
 PV0iy = floatBitsToInt(intBitsToFloat(R127i.z) * intBitsToFloat(uf_remappedPS[2].z)*resScaleY);
 PV0iz = floatBitsToInt(intBitsToFloat(R127i.y) * intBitsToFloat(uf_remappedPS[2].w)*resScaleX);
 PV0iw = floatBitsToInt(max(intBitsToFloat(R127i.y), -(intBitsToFloat(R127i.y))));
