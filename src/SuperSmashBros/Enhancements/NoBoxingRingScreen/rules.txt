@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010110E00,0005000010145000,0005000010144F00
+titleIds = 0005000010110E00,0005000010145000,0005000010144F00,00050002101aa700,00050002101aa600
 name = No Boxing Ring Screen
 path = "Super Smash Bros. for Wii U/Enhancements/No Boxing Ring Screen"
 description = Disables the screen in the Boxing Ring stage.|This can be used for aesthetic or performance reasons.|Made by M&&M.

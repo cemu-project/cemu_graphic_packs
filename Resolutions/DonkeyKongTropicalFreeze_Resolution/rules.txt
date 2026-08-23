@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010137F00,0005000010138300,0005000010144800
+titleIds = 0005000010137F00,0005000010138300,0005000010144800,0005000210159f00
 name = Resolution
 path = "Donkey Kong Country: Tropical Freeze/Graphics/Resolution"
 description = Changes the resolution of the game. Made by getdls and Skalfate.
