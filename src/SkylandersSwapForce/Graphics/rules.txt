@@ -2,7 +2,7 @@
 titleIds = 0005000010139200,0005000010140400
 name = Graphic Options
 path = "Skylanders Swap Force/Graphics"
-description = Allows you to change the game's resolution and shadow quality. Additionally you can change the anti-aliasing and motion blur.||Made by Crementif, and FrankyBuster.
+description = Allows you to change the game's resolution and shadow quality. Additionally you can change the anti-aliasing and motion blur.||Made by Crementif and FrankyBuster.
 version = 6
 
 [Default]

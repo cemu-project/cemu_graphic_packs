@@ -2,7 +2,7 @@
 titleIds = 0005000010139200,0005000010140400
 name = Enhancements
 path = "Skylanders Swap Force/Enhancements"
-description = Allows you to change the game's depth of field, bloom intensity and anisotropic filtering.|(no performane gains)||Made by FrankyBuster.
+description = Allows you to change the game's depth of field, bloom intensity and anisotropic filtering.|(no performance gains)||Made by FrankyBuster.
 version = 6
 
 [Default]

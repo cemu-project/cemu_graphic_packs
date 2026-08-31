@@ -2,7 +2,7 @@
 titleIds = 000500001017C600,0005000010181F00
 name = Enhancements
 path = "Skylanders Trap Team/Enhancements"
-description = Allows you to change the game's depth of field, bloom intensity and anisotropic filtering.|(no performane gains)||Made by FrankyBuster.
+description = Allows you to change the game's depth of field, bloom intensity and anisotropic filtering.|(no performance gains)||Made by FrankyBuster.
 version = 6
 
 [Default]
