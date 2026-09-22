@@ -4,7 +4,7 @@ name = Brightness fix with colour and contrast
 path = "Xenoblade Chronicles X/Workarounds/Brightness"
 description = Fixes overbright day and too dark night. Optionally tweaks colour and contrast.
 #Credits: getdls
-version = 7
+version = 6
 default = 1
 
 [Default]
@@ -15,7 +15,7 @@ $vibrance:float = 0.0 # 0.0 no extra vibrance
 $mixBalance:float = 1.0 # FXAA, bicubic sharpen or smooth pass -> Reserved for FX / Contrasty rework
 $glare:float = 0.95 # Reflection shader raise/lower to balance clipping -> Reserved for FX / Contrasty rework
 $lift:float = 0.002 # Raise shadows -> Reserved for FX / Contrasty rework
-$isCustom:int = 0
+$isCustom = 0
 
 ##Pre packed settings
 [Preset]
@@ -61,7 +61,7 @@ $vibrance:float = 0.45
 [Preset]
 name = Custom
 category = Standard presets
-$isCustom:int = 1
+$isCustom = 1
 
 
 ##exposure
