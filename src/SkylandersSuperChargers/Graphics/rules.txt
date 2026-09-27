@@ -2,7 +2,7 @@
 titleIds = 00050000101BFC00,00050000101B8500
 name = Resolution, Gamepad Resolution and Shadow Quality
 path = "Skylanders: Superchargers/Graphics"
-description = Allows you to change the game's resolution, ambient occlusion and shadow quality. Additionally you can change the anti-aliasing and motion blur.||Made by FrankyBuster and Crementif.
+description = Allows you to change the game's resolution and shadow quality. Additionally you can change the anti-aliasing and motion blur.||Made by FrankyBuster and Crementif.
 version = 6
 
 [Default]

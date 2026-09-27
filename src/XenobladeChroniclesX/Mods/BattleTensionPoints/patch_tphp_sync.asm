@@ -13,6 +13,10 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 
 ;list of know bugs:
 
+;when the infinite TP setting is set, when Telethia the Endbringer uses her aura in the 2nd phase of the fight, the game crashes.
+;this is because that is a very rare instance of an enemy using TP, and the tp section of the code is not player specific.
+;the fix is to find a new entrance point for the tp section of the mod, and recode that entire section for the new entrance point.
+
 ;the current hp is bound the position in the character list
 ;so with the no heal on skip travel if you swap party members, the new party member will have the current hp of the party member who used to be in that slot (minor bug)
 
@@ -30,7 +34,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 
 
 
-;storage space to conditionally back up registers r3-r31
+;storage space to conditionally back up registers r14-r31
 RegistersBackUpTPHP:
 .uint 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31
 ;storeage space to back up link register
@@ -60,7 +64,7 @@ stmw r14, RegistersBackUpTPHP@l(r31)
 li r23, 1
 lis r31, BoolIsInnerOrDoll@ha
 stw r23, BoolIsInnerOrDoll@l(r31)
-lis r31, LookupTableforDoll@hi
+lis r31, LookupTableforDoll@ha
 addi r31, r31, LookupTableforDoll@l-4
 GetModDataHPTP:
 lwzu r23, 4(r31) ; CheatSettingsArray
