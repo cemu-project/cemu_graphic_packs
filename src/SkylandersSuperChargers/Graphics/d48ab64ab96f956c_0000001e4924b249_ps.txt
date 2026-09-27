@@ -3,8 +3,8 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader d48ab64ab96f956c
 // Used for: Fixing final AO/Shadow pass
-float resScaleX = float(1920.000000)/float(1024);
-float resScaleY = float(1080.000000)/float(576);
+float resScaleX = float($width)/float(1024);
+float resScaleY = float($height)/float(576);
 
 #ifdef VULKAN
 #define ATTR_LAYOUT(__location) layout(location = __location)
