@@ -3,8 +3,10 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader 71aa018bd94a60c2
 // Used for: Motion blur scaling and removal
-float resScaleX = float(1024) / float($width) * float($motionblur);
-float resScaleY = float(576) / float($height) * float($motionblur);
+// The min "1.875" cap makes it so that the blur effect doesn't get further reduced past 1080p.
+float resScaleX = min(float($width) / float(1024.000000), 1.875);
+float resScaleY = min(float($height) / float(576.000000), 1.875);
+float removal = float($motionblur);
 
 // start of shader inputs/outputs, predetermined by Cemu. Do not touch
 #ifdef VULKAN
@@ -101,9 +103,9 @@ PV1iw = tempi.x;
 R127i.z = floatBitsToInt(intBitsToFloat(R1i.y) * 2.0 + -(1.0));
 // 2
 R1i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.w), intBitsToFloat(R2i.z)));
-R126i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R126i.w), intBitsToFloat(uf_remappedPS[0].z)*resScaleX));
+R126i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R126i.w), intBitsToFloat(uf_remappedPS[0].z) / resScaleX * removal));
 R10i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.w), intBitsToFloat(R2i.y)));
-R125i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.z), intBitsToFloat(uf_remappedPS[0].w)*resScaleY));
+R125i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.z), intBitsToFloat(uf_remappedPS[0].w) / resScaleY * removal));
 tempResultf = 1.0 / sqrt(intBitsToFloat(PV1ix));
 PS0i = floatBitsToInt(tempResultf);
 // 3
@@ -135,8 +137,8 @@ R15i.xyz = floatBitsToInt(textureLod(textureUnitPS0, vec2(intBitsToFloat(R3i.x),
 R16i.xyz = floatBitsToInt(textureLod(textureUnitPS0, vec2(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y)),0.0).xyz);
 // 0
 R2i.x = uf_remappedPS[1].x;
-PV0iy = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R2i.z), intBitsToFloat(uf_remappedPS[0].w)*resScaleY));
-PV0iz = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R2i.w), intBitsToFloat(uf_remappedPS[0].z)*resScaleX));
+PV0iy = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R2i.z), intBitsToFloat(uf_remappedPS[0].w) / resScaleY * removal));
+PV0iz = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R2i.w), intBitsToFloat(uf_remappedPS[0].z) / resScaleX * removal));
 R2i.w = floatBitsToInt(intBitsToFloat(R6i.x) * 14.0 + -(7.0));
 R1i.y = uf_remappedPS[1].y;
 // 1
