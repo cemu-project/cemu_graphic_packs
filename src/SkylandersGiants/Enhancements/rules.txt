@@ -8,6 +8,7 @@ version = 6
 [Default]
 $dof = 1
 $bloom = 1
+$anisotropy = 1
 
 # Depth of Field
 
@@ -48,3 +49,37 @@ $bloom = 1.25
 name = 150%
 category = Bloom Intensity
 $bloom = 1.5
+
+# Anisotropic Filtering
+
+[Preset]
+name = 1x (Default)
+category = Anisotropic Filtering
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering
+$anisotropy = 16
+
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+formatsExcluded = 0x1a,0x11,0x80e,0x820 # ignore viewports
+overwriteAnisotropy = $anisotropy
