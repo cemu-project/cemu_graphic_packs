@@ -3,8 +3,10 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader be57147f7aa37c90
 // Used for: Motion blur scaling and removal
-float resScaleX = float(1024) / float($width) * ($motionblur);
-float resScaleY = float(576) / float($height) * ($motionblur);
+// The min "1.875" cap makes it so that the blur effect doesn't get further reduced past 1080p.
+float resScaleX = min(float($width) / float(1024), 1.875);
+float resScaleY = min(float($height) / float(576), 1.875);
+float removal = float($motionblur);
 
 #ifdef VULKAN
 #define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
@@ -133,14 +135,14 @@ R9i.w = floatBitsToInt(1.0 / intBitsToFloat(R16i.z));
 backupReg0i = R123i.x;
 R123i.x = ((R127i.x == 0)?(R127i.z):(R123i.w));
 R123i.y = ((R127i.x == 0)?(R125i.w):(backupReg0i));
-R1i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(backupReg0i), intBitsToFloat(uf_remappedPS[1].z)*resScaleX));
-R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.w), intBitsToFloat(uf_remappedPS[1].w)*resScaleY));
+R1i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(backupReg0i), intBitsToFloat(uf_remappedPS[1].z) / resScaleX * removal));
+R3i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.w), intBitsToFloat(uf_remappedPS[1].w) / resScaleY * removal));
 R11i.z = 0;
 // 7
-R3i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.y), intBitsToFloat(uf_remappedPS[1].z)*resScaleX));
+R3i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.y), intBitsToFloat(uf_remappedPS[1].z) / resScaleX * removal));
 R2i.y = floatBitsToInt(mul_nonIEEE(-(intBitsToFloat(R16i.z)),intBitsToFloat(R3i.w)) + intBitsToFloat(R0i.y));
 R2i.z = floatBitsToInt(mul_nonIEEE(-(intBitsToFloat(R16i.z)),intBitsToFloat(R1i.z)) + intBitsToFloat(R0i.x));
-R1i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.x), intBitsToFloat(uf_remappedPS[1].w)*resScaleY));
+R1i.w = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.x), intBitsToFloat(uf_remappedPS[1].w) / resScaleY * removal));
 R2i.x = floatBitsToInt(mul_nonIEEE(-(intBitsToFloat(R4i.x)),intBitsToFloat(R1i.z)) + intBitsToFloat(R0i.x));
 // 8
 R1i.x = floatBitsToInt(mul_nonIEEE(-(intBitsToFloat(R7i.w)),intBitsToFloat(R3i.x)) + intBitsToFloat(R0i.x));

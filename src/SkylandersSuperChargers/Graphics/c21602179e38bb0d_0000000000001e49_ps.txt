@@ -3,8 +3,10 @@
 #extension GL_ARB_separate_shader_objects : enable
 // shader c21602179e38bb0d
 // Used for: Motion blur scaling and removal
-float resScaleX = float(1024) / float($width) * ($motionblur);
-float resScaleY = float(576) / float($height) * ($motionblur);
+// The min "1.875" cap makes it so that the blur effect doesn't get further reduced past 1080p.
+float resScaleX = min(float($width) / float(1024), 1.875);
+float resScaleY = min(float($height) / float(576), 1.875);
+float removal = float($motionblur);
 
 #ifdef VULKAN
 #define ATTR_LAYOUT(__location) layout(location = __location)
@@ -73,8 +75,8 @@ R123i.w = floatBitsToInt(intBitsToFloat(R1i.y) * 2.0 + -(1.0));
 R2i.w = 0;
 // 1
 PV1ix = floatBitsToInt(-(intBitsToFloat(R127i.z)) + intBitsToFloat(PV0iy));
-R1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.x), intBitsToFloat(uf_remappedPS[0].z)*resScaleX));
-R2i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.w), intBitsToFloat(uf_remappedPS[0].w)*resScaleY));
+R1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.x), intBitsToFloat(uf_remappedPS[0].z) / resScaleX * removal));
+R2i.z = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R123i.w), intBitsToFloat(uf_remappedPS[0].w) / resScaleY * removal));
 PV1iw = ((0.5 > intBitsToFloat(R127i.z))?-1:0);
 // 2
 if(  (-(intBitsToFloat(PV1ix)) > 1.0)) discard;
