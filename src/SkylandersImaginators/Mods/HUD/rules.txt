@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101F4D00,00050000101FB100
+name = HUD Removal
+path = "Skylanders Imaginators/Mods/HUD Removal"
+description = Removes the game's HUD (also affects menus).||Made by Frankybuster
+version = 6

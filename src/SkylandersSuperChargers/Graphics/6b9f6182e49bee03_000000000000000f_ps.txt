@@ -1,0 +1,108 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader 6b9f6182e49bee03
+// Used for: Transparency dither scaling
+
+#ifdef VULKAN
+#define ATTR_LAYOUT(__location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy,gl_FragCoord.z, 1.0/gl_FragCoord.w)
+#extension GL_EXT_spirv_intrinsics: enable
+spirv_execution_mode(capabilities = [4467], extensions = ["SPV_KHR_float_controls"], 4462, 16);
+spirv_execution_mode(capabilities = [4467], extensions = ["SPV_KHR_float_controls"], 4462, 32);
+spirv_execution_mode(capabilities = [4467], extensions = ["SPV_KHR_float_controls"], 4462, 64);
+#else
+#define ATTR_LAYOUT(__location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define GET_FRAGCOORD() vec4(gl_FragCoord.xy,gl_FragCoord.zw)
+#endif
+#ifdef VULKAN
+layout(set = 1, binding = 0) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[4];
+uniform vec4 uf_fragCoordScale;
+};
+#else
+uniform ivec4 uf_remappedPS[4];
+uniform vec2 uf_fragCoordScale;
+#endif
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0, PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+R0f = GET_FRAGCOORD();
+// 0
+PV0fx = floor(R0f.x);
+PV0fy = floor(R0f.y);
+PV0fz = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].x), intBitsToFloat(uf_remappedPS[0].x));
+R127f.w = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].y), intBitsToFloat(uf_remappedPS[0].y));
+R127f.z = mul_nonIEEE(intBitsToFloat(uf_remappedPS[0].z), intBitsToFloat(uf_remappedPS[0].z));
+// 1
+tempf.x = dot(vec4(PV0fx,PV0fy,PV0fy,intBitsToFloat(0x80000000)),vec4(intBitsToFloat(0x3d897143),intBitsToFloat(0x3bbf4590),0.0,0.0));
+PV1fx = tempf.x;
+PV1fy = tempf.x;
+PV1fz = tempf.x;
+PV1fw = tempf.x;
+R127f.y = mul_nonIEEE(PV0fz, intBitsToFloat(uf_remappedPS[1].x));
+// 2
+PV0fx = mul_nonIEEE(R127f.w, intBitsToFloat(uf_remappedPS[1].y));
+PV0fy = mul_nonIEEE(R127f.z, intBitsToFloat(uf_remappedPS[1].z));
+PV0fw = fract(PV1fx);
+R2f.w = 0.0;
+// 3
+PV1fx = mul_nonIEEE(R127f.y, intBitsToFloat(uf_remappedPS[2].x));
+R127f.y = mul_nonIEEE(PV0fx, intBitsToFloat(uf_remappedPS[2].x));
+PV1fz = PV0fw * intBitsToFloat(0x4253ee82);
+R0f.w = mul_nonIEEE(PV0fy, intBitsToFloat(uf_remappedPS[2].x));
+// 4
+PV0fx = max(R0f.w, -(R0f.w));
+PV0fy = fract(PV1fz);
+PV0fz = max(R127f.y, -(R127f.y));
+PV0fw = max(PV1fx, -(PV1fx));
+R1f.y = PV1fx * intBitsToFloat(0x3f83851f);
+// 5
+if(  (PV0fy > intBitsToFloat(uf_remappedPS[3].x))) discard;
+R0f.y = PV0fw + intBitsToFloat(0x3e6147ae);
+R0f.z = PV0fx + intBitsToFloat(0x3e6147ae);
+R1f.w = PV0fz + intBitsToFloat(0x3e6147ae);
+R0f.x = R127f.y * intBitsToFloat(0x3f83851f);
+// 0
+R127f.w = R0f.w * intBitsToFloat(0x3f83851f);
+PS0f = 1.0 / R0f.y;
+// 1
+R2f.x = R1f.y * PS0f;
+R2f.x = clamp(R2f.x, 0.0, 1.0);
+PS1f = 1.0 / R1f.w;
+// 2
+R2f.y = R0f.x * PS1f;
+R2f.y = clamp(R2f.y, 0.0, 1.0);
+PS0f = 1.0 / R0f.z;
+// 3
+R2f.z = R127f.w * PS0f;
+R2f.z = clamp(R2f.z, 0.0, 1.0);
+// export
+passPixelColor0 = vec4(R2f.x, R2f.y, R2f.z, R2f.w);
+}

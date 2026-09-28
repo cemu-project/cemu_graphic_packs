@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 00050000101BFC00,00050000101B8500
+name = HUD Removal
+path = "Skylanders: Superchargers/Mods/HUD Removal"
+description = Removes the game's HUD (also affects menus).||Made by Frankybuster
+version = 6
