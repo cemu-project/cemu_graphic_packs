@@ -606,20 +606,31 @@ rupeefinish:
     addi r1, r1, 0x10
     blr
 
+;input: r6 = player status, r7 = health delta, r8 = current health
+;output: r12 = new health, moved into the region's destination register by heartsfinish
+infiniteheartslogic:
+    lis r12, _infiniteHearts@ha
+    lbz r12, _infiniteHearts@l(r12)
+    cmpwi cr1, r12, 1
+    bne cr1, heartdamagecheck
+    lhz r12, +0x20(r6)
+    rlwinm r12, r12, 0, 0, 29
+    b heartsfinish
+
 heartdamagecheck:
     cmpwi cr1, r7, 0
     bge cr1, heartsreturn
-    lis r27, _linkDamageMultiplier@ha
-    lbz r27, _linkDamageMultiplier@l(r27)
-    cmpwi cr1, r27, 0
+    lis r12, _linkDamageMultiplier@ha
+    lbz r12, _linkDamageMultiplier@l(r12)
+    cmpwi cr1, r12, 0
     beq cr1, heartsreturn
-    mullw r27, r7, r27
-    add r27, r8, r27
-    blr
+    mullw r12, r7, r12
+    add r12, r8, r12
+    b heartsfinish
 
 heartsreturn:
-    add r27, r8, r7
-    blr
+    add r12, r8, r7
+    b heartsfinish
 
 infinitemagiclogic:
     stwu r1, -0x10(r1)
@@ -731,13 +742,8 @@ windfinish:
     addi r1, r1, 0x30
     blr
 
-infiniteheartslogic:
-    lis r27, _infiniteHearts@ha
-    lbz r27, _infiniteHearts@l(r27)
-    cmpwi cr1, r27, 1
-    bne cr1, heartdamagecheck
-    lhz r27, +0x20(r10)
-    rlwinm r27, r27, 0, 0, 29
+heartsfinish:
+    mr r27, r12
     blr
 
 0x023FD368 = bla moonjumplogic
@@ -780,16 +786,9 @@ windfinish:
     addi r1, r1, 0x30
     blr
 
-infiniteheartslogic:
-    lis r31, _infiniteHearts@ha
-    lbz r31, _infiniteHearts@l(r31)
-    cmpwi cr1, r31, 1
-    bne cr1, heartdamagecheck
-    lhz r31, +0x20(r10)
-    rlwinm r31, r31, 0, 0, 29
+heartsfinish:
+    mr r31, r12
     blr
-
-
 
 0x023FD36C = bla moonjumplogic
 0x023FA5A8 = bla invincibilitylogic
@@ -829,16 +828,9 @@ windfinish:
     addi r1, r1, 0x30
     blr
 
-infiniteheartslogic:
-    lis r27, _infiniteHearts@ha
-    lbz r27, _infiniteHearts@l(r27)
-    cmpwi cr1, r27, 1
-    bne cr1, heartdamagecheck
-    lhz r27, +0x20(r10)
-    rlwinm r27, r27, 0, 0, 29
+heartsfinish:
+    mr r27, r12
     blr
-
-
 
 0x023FD370 = bla moonjumplogic
 0x023FA5AC = bla invincibilitylogic

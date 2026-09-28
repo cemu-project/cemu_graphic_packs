@@ -231,7 +231,7 @@ $infiniteHearts = 0
 $infiniteMagic = 0
 $infiniteBombs = 0
 $infiniteArrows = 0
-$swimStaminaNeverDecrease = 0x39080000
+$swimStaminaNeverDecrease = 0x3908FFFF
 $infiniteCheatsCustom = 0
 
 [Preset]
@@ -251,7 +251,7 @@ $infiniteHearts = 0
 $infiniteMagic = 0
 $infiniteBombs = 1
 $infiniteArrows = 1
-$swimStaminaNeverDecrease = 0x39080000
+$swimStaminaNeverDecrease = 0x3908FFFF
 $infiniteCheatsCustom = 0
 
 [Preset]
