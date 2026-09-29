@@ -37,6 +37,7 @@ _setDestructionGoodExit:
     mtlr r0             ; restore LR pointer
     addi r1, r1, 0x10   ; delete extra space in the stack
     mr r3, r31          ; restore r3 from r31 saved in the stack
+    lwz r0, 0x14(r1)    ; restore original instruction
     blr
 
 
