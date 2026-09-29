@@ -1,0 +1,365 @@
+[Definition]
+titleIds = 0005000010118300,0005000010117200,0005000010104D00
+name = "Graphics options"
+path = "Monster Hunter 3 Ultimate/Graphics"
+description = Allows you to change the resolution and shadow quality of the game. Additionally you can change the anisotropic filtering and bloom. Made by Skalfate and FrankyBuster.
+version = 6
+
+
+[Default]
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$padWidth = 854
+$padHeight = 480
+$gamePadWidth = 854
+$gamePadHeight = 480
+$shadowRes = 1
+$anisotropy = 1
+$bloom = 1
+
+
+# TV Resolution
+
+[Preset]
+category = TV Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = TV Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = TV Resolution
+name = 1280x720 (HD)
+$width = 1280
+$height = 720
+
+[Preset]
+category = TV Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = TV Resolution
+name = 1920x1080 (Full HD, Default)
+default = 1
+
+[Preset]
+category = TV Resolution
+name = 2560x1440 (2K)
+$width = 2560
+$height = 1440
+
+[Preset]
+category = TV Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = TV Resolution
+name = 3840x2160 (4K)
+$width = 3840
+$height = 2160
+
+[Preset]
+category = TV Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = TV Resolution
+name = 7680x4320 (8K)
+$width = 7680
+$height = 4320
+
+
+# Gamepad Resolution
+
+[Preset]
+name = 320x180
+category = Gamepad Resolution
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+name = 427x240
+category = Gamepad Resolution
+$padWidth = 427
+$padHeight = 240
+
+[Preset]
+name = 640x360
+category = Gamepad Resolution
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+name = 854x480 (Default)
+category = Gamepad Resolution
+default = 1
+
+[Preset]
+name = 960x540
+category = Gamepad Resolution
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+name = 1024x576
+category = Gamepad Resolution
+$padWidth = 1024
+$padHeight = 576
+
+[Preset]
+name = 1280x720 (HD)
+category = Gamepad Resolution
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+name = 1600x900
+category = Gamepad Resolution
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+name = 1920x1080 (Full HD)
+category = Gamepad Resolution
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+name = 2560x1440 (2K)
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+name = 3200x1800
+category = Gamepad Resolution
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+name = 3840x2160 (4K)
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+name = 5120x2880
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+name = 7680x4320 (8K)
+category = Gamepad Resolution
+$padWidth = 7680
+$padHeight = 4320
+
+
+# Anisotropic Filtering
+
+[Preset]
+name = 1x (Default)
+category = Anisotropic Filtering
+default = 1
+
+[Preset]
+name = 2x
+category = Anisotropic Filtering
+$anisotropy = 2
+
+[Preset]
+name = 4x
+category = Anisotropic Filtering
+$anisotropy = 4
+
+[Preset]
+name = 8x
+category = Anisotropic Filtering
+$anisotropy = 8
+
+[Preset]
+name = 16x
+category = Anisotropic Filtering
+$anisotropy = 16
+
+
+# Shadow Quality
+
+[Preset]
+category = Shadow Quality
+name = Low (50%)
+$shadowRes = 0.5
+
+[Preset]
+category = Shadow Quality
+name = Medium (100%, Default)
+default = 1
+
+[Preset]
+category = Shadow Quality
+name = High (200%)
+$shadowRes = 2
+
+[Preset]
+category = Shadow Quality
+name = Ultra (300%)
+$shadowRes = 3
+
+[Preset]
+category = Shadow Quality
+name = Extreme (400%, Unstable)
+$shadowRes = 4
+
+
+# Bloom Intensity
+
+[Preset]
+name = 0%
+category = Bloom Intensity
+$bloom = 0
+
+[Preset]
+name = 50%
+category = Bloom Intensity
+$bloom = 0.5
+
+[Preset]
+name = 100% (Default)
+category = Bloom Intensity
+default = 1
+
+[Preset]
+name = 125%
+category = Bloom Intensity
+$bloom = 1.25
+
+[Preset]
+name = 150%
+category = Bloom Intensity
+$bloom = 1.5
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------
+
+# All 1080p Textures - 0x001,0x011,0x01a
+# 0x001=(Video Playback)
+# 0x011=(Depth Stencil 24 bit)
+# 0x01a=(Game Renderer)
+
+[TextureRedefine]
+width = 1920
+height = 1088
+formats = 0x01a,0x011
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width / $gameWidth) * 1920
+overwriteHeight = ($height / $gameHeight) * 1088
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formats = 0x01a,0x011
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width / $gameWidth) * 1920
+overwriteHeight = ($height / $gameHeight) * 1080
+
+[TextureRedefine] # GamePad
+width = 864
+height = 480
+formats = 0x01a,0x011,0x41a
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+[TextureRedefine]
+width = 854
+height = 480
+formats = 0x01a,0x011,0x41a
+overwriteWidth = ($padWidth/$gamePadWidth) * 854
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
+
+# -----------------------------------------------------------------------------------------------------------------------------------------------
+
+[TextureRedefine] # Shadows
+width = 1024
+height = 1024
+formats = 0x80e,0x011
+overwriteWidth = $shadowRes * 1024
+overwriteHeight = $shadowRes * 1024
+
+[TextureRedefine] # Half Res
+width = 960
+height = 544
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 960
+overwriteHeight = ($height / $gameHeight) * 544
+
+[TextureRedefine]
+width = 960
+height = 540
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 960
+overwriteHeight = ($height / $gameHeight) * 540
+
+[TextureRedefine] # 1/4 Scale
+width = 480
+height = 272
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 480
+overwriteHeight = ($height / $gameHeight) * 272
+
+[TextureRedefine]
+width = 480
+height = 270
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 480
+overwriteHeight = ($height / $gameHeight) * 270
+
+[TextureRedefine] # 1/8 Scale
+width = 256
+height = 144
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 256
+overwriteHeight = ($height / $gameHeight) * 144
+
+[TextureRedefine]
+width = 240
+height = 135
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 240
+overwriteHeight = ($height / $gameHeight) * 135
+
+[TextureRedefine] # 1/16 Scale
+width = 128
+height = 80
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 128
+overwriteHeight = ($height / $gameHeight) * 80
+
+[TextureRedefine]
+width = 120
+height = 67
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 120
+overwriteHeight = ($height / $gameHeight) * 67
+
+
+# Anisotropic Filtering
+
+[TextureRedefine]
+formatsExcluded = 0x1a,0x11,0x80e,0x41a # ignore viewports
+overwriteAnisotropy = $anisotropy

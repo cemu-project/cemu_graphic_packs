@@ -1,0 +1,122 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+// shader abbb8afaf7e22ff9
+// Usage: Vertical shadow blur scaling
+float resScaleY = float($shadowRes);
+
+#ifdef VULKAN
+#define ATTR_LAYOUT(__location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#extension GL_EXT_spirv_intrinsics: enable
+spirv_execution_mode(capabilities = [4467], extensions = ["SPV_KHR_float_controls"], 4462, 16);
+spirv_execution_mode(capabilities = [4467], extensions = ["SPV_KHR_float_controls"], 4462, 32);
+spirv_execution_mode(capabilities = [4467], extensions = ["SPV_KHR_float_controls"], 4462, 64);
+#else
+#define ATTR_LAYOUT(__location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#endif
+#ifdef VULKAN
+layout(set = 1, binding = 1) uniform ufBlock
+{
+uniform ivec4 uf_remappedPS[1];
+};
+#else
+uniform ivec4 uf_remappedPS[1];
+#endif
+TEXTURE_LAYOUT(0, 1, 0) uniform sampler2D textureUnitPS0;
+layout(location = 0) in vec4 passParameterSem0;
+layout(location = 1) in vec4 passParameterSem1;
+layout(location = 0) out vec4 passPixelColor0;
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+vec4 R0f = vec4(0.0);
+vec4 R1f = vec4(0.0);
+vec4 R2f = vec4(0.0);
+vec4 R3f = vec4(0.0);
+vec4 R123f = vec4(0.0);
+vec4 R125f = vec4(0.0);
+vec4 R126f = vec4(0.0);
+vec4 R127f = vec4(0.0);
+float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0, PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+float PS0f = 0.0, PS1f = 0.0;
+vec4 tempf = vec4(0.0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+R0f = passParameterSem0;
+R1f = passParameterSem1;
+R2f.xyzw = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).xyzw);
+// 0
+PV0fy = intBitsToFloat(uf_remappedPS[0].y)/resScaleY * 2.5;
+PV0fz = intBitsToFloat(uf_remappedPS[0].y)/resScaleY * 1.5;
+PV0fw = 0.0;
+// 1
+backupReg0f = R1f.x;
+backupReg1f = R1f.y;
+R1f.x = PV0fw + backupReg0f;
+R1f.y = PV0fy + backupReg1f;
+R1f.z = PV0fw + backupReg0f;
+R1f.w = PV0fz + backupReg1f;
+R3f.xyzw = (texture(textureUnitPS0, vec2(R1f.x,R1f.y)).xyzw);
+R1f.xyzw = (texture(textureUnitPS0, vec2(R1f.z,R1f.w)).xyzw);
+// 0
+PV0fx = R3f.x * intBitsToFloat(0x3d5f2f87);
+R127f.y = R1f.x * intBitsToFloat(0x3e7a0feb);
+R127f.z = R3f.z * intBitsToFloat(0x3d5f2f87);
+PV0fw = R3f.y * intBitsToFloat(0x3d5f2f87);
+R126f.y = R1f.y * intBitsToFloat(0x3e7a0feb);
+// 1
+R127f.x = R1f.z * intBitsToFloat(0x3e7a0feb);
+R125f.y = R1f.w * intBitsToFloat(0x3e7a0feb);
+PV1fz = PV0fx + R127f.y;
+PV1fw = R3f.w * intBitsToFloat(0x3d5f2f87);
+PS1f = PV0fw + R126f.y;
+// 2
+PV0fx = R127f.z + R127f.x;
+R123f.y = R2f.y * intBitsToFloat(0x3ece2434) + PS1f;
+R123f.z = R2f.x * intBitsToFloat(0x3ece2434) + PV1fz;
+PV0fw = PV1fw + R125f.y;
+// 3
+R123f.x = R2f.z * intBitsToFloat(0x3ece2434) + PV0fx;
+PV1fy = R126f.y + R123f.y;
+PV1fz = R127f.y + R123f.z;
+R123f.w = R2f.w * intBitsToFloat(0x3ece2434) + PV0fw;
+// 4
+PV0fx = R127f.x + R123f.x;
+R123f.y = R3f.y * intBitsToFloat(0x3d5f2f87) + PV1fy;
+R123f.z = R3f.x * intBitsToFloat(0x3d5f2f87) + PV1fz;
+PV0fw = R125f.y + R123f.w;
+// 5
+R123f.x = R3f.z * intBitsToFloat(0x3d5f2f87) + PV0fx;
+PV1fy = mul_nonIEEE(R0f.y, R123f.y);
+PV1fz = mul_nonIEEE(R0f.x, R123f.z);
+R123f.w = R3f.w * intBitsToFloat(0x3d5f2f87) + PV0fw;
+// 6
+PV0fx = mul_nonIEEE(R0f.z, R123f.x);
+PV0fy = max(R123f.w, 0.0);
+PV0fz = max(PV1fy, 0.0);
+PV0fw = max(PV1fz, 0.0);
+// 7
+R0f.x = min(PV0fw, 1.0);
+PV1fy = max(PV0fx, 0.0);
+R0f.w = min(PV0fy, 1.0);
+R0f.y = min(PV0fz, 1.0);
+// 8
+R0f.z = min(PV1fy, 1.0);
+// export
+passPixelColor0 = vec4(R0f.x, R0f.y, R0f.z, R0f.w);
+}
