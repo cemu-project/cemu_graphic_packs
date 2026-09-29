@@ -1,0 +1,112 @@
+[Definition]
+titleIds = 0005000010176800,0005000010179700
+name = Resolution
+path = "Guacamelee! Super Turbo Championship Edition/Graphics/Resolution"
+description = Allows you to change the game's resolution.||Made by FrankyBuster.
+version = 6
+
+[Default]
+$width = 1920
+$height = 1080
+$gameWidth = 1920
+$gameHeight = 1080
+$stageWidth = 1280
+$stageHeight = 720
+
+
+# Resolution
+
+[Preset]
+category = Resolution
+name = 320x180
+$width = 320
+$height = 180
+
+[Preset]
+category = Resolution
+name = 640x360
+$width = 640
+$height = 360
+
+[Preset]
+category = Resolution
+name = 960x540
+$width = 960
+$height = 540
+
+[Preset]
+category = Resolution
+name = 1280x720 (HD)
+$width = 1280
+$height = 720
+
+[Preset]
+category = Resolution
+name = 1360x768
+$width = 1360
+$height = 768
+
+[Preset]
+category = Resolution
+name = 1600x900
+$width = 1600
+$height = 900
+
+[Preset]
+category = Resolution
+name = 1920x1080 (Full HD, Default)
+default = 1
+
+[Preset]
+category = Resolution
+name = 2560x1440 (2K)
+$width = 2560
+$height = 1440
+
+[Preset]
+category = Resolution
+name = 3200x1800
+$width = 3200
+$height = 1800
+
+[Preset]
+category = Resolution
+name = 3840x2160 (4K)
+$width = 3840
+$height = 2160
+
+[Preset]
+category = Resolution
+name = 5120x2880
+$width = 5120
+$height = 2880
+
+[Preset]
+category = Resolution
+name = 7680x4320 (8K)
+$width = 7680
+$height = 4320
+
+
+# Texture Redefines
+
+[TextureRedefine] # Game output
+width = 1920
+height = 1080
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1080
+
+[TextureRedefine]
+width = 1920
+height = 1088
+formats = 0x01a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 1088
+
+[TextureRedefine] # Stage Rendering
+width = 1280
+height = 720
+formats = 0x80e,0x01a,0x011
+overwriteWidth = ($width/$stageWidth) * 1280
+overwriteHeight = ($height/$stageHeight) * 720

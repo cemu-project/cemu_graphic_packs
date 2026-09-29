@@ -1,163 +1,254 @@
 [Definition]
-titleIds = 000500001010B100,0005000010111400,0005000010112600,0005000010138E00,0005000010139500,000500021010B101,0005000210111401,0005000210115c00
+titleIds = 000500001010B100,0005000010111400,0005000010112600,0005000010138E00,0005000010139500,000500021010B101,0005000210111401
 name = Resolution
 path = "Rayman Legends/Graphics/Resolution"
-description = Changes the resolution of the game. Made by ICUP321.
-version = 4
+description = Changes the resolution of the game. Made by ICUP321 and FrankyBuster
+version = 6
 
-[Preset]
-name = 1920x1080 (Default)
+[Default]
 $width = 1920
 $height = 1080
 $gameWidth = 1920
 $gameHeight = 1080
+$padWidth = 854
+$padHeight = 480
+$gamePadWidth = 854
+$gamePadHeight = 480
 
-// Performance
-
-[Preset]
-name = 320x180
-$width = 320
-$height = 180
-$gameWidth = 1920
-$gameHeight = 1080
+# Resolution
 
 [Preset]
+category = Resolution
 name = 640x360
 $width = 640
 $height = 360
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
+category = Resolution
 name = 960x540
 $width = 960
 $height = 540
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
-name = 1280x720
+category = Resolution
+name = 1280x720 (HD)
 $width = 1280
 $height = 720
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
+category = Resolution
+name = 1360x768
+$width = 1360
+$height = 768
+
+[Preset]
+category = Resolution
 name = 1600x900
 $width = 1600
 $height = 900
-$gameWidth = 1920
-$gameHeight = 1080
-
-// Common HD Resolutions
 
 [Preset]
-name = 2560x1440
+category = Resolution
+name = 1920x1080 (Full HD, Default)
+$width = 1920
+$height = 1080
+default = 1
+
+[Preset]
+category = Resolution
+name = 2560x1440 (2K)
 $width = 2560
 $height = 1440
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
+category = Resolution
 name = 3200x1800
 $width = 3200
 $height = 1800
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
-name = 3840x2160
+category = Resolution
+name = 3840x2160 (4K)
 $width = 3840
 $height = 2160
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
+category = Resolution
 name = 5120x2880
 $width = 5120
 $height = 2880
-$gameWidth = 1920
-$gameHeight = 1080
 
 [Preset]
-name = 7680x4320
+category = Resolution
+name = 7680x4320 (8K)
 $width = 7680
 $height = 4320
-$gameWidth = 1920
-$gameHeight = 1080
 
-[TextureRedefine] # TV Resolution
+
+# Gamepad Resolution
+
+[Preset]
+name = 320x180
+category = Gamepad Resolution
+$padWidth = 320
+$padHeight = 180
+
+[Preset]
+name = 427x240
+category = Gamepad Resolution
+$padWidth = 427
+$padHeight = 240
+
+[Preset]
+name = 640x360
+category = Gamepad Resolution
+$padWidth = 640
+$padHeight = 360
+
+[Preset]
+name = 854x480 (Default)
+category = Gamepad Resolution
+default = 1
+
+[Preset]
+name = 960x540
+category = Gamepad Resolution
+$padWidth = 960
+$padHeight = 540
+
+[Preset]
+name = 1024x576
+category = Gamepad Resolution
+$padWidth = 1024
+$padHeight = 576
+
+[Preset]
+name = 1280x720 (HD)
+category = Gamepad Resolution
+$padWidth = 1280
+$padHeight = 720
+
+[Preset]
+category = Gamepad Resolution
+name = 1360x768
+$padWidth = 1360
+$padHeight = 768
+
+[Preset]
+name = 1600x900
+category = Gamepad Resolution
+$padWidth = 1600
+$padHeight = 900
+
+[Preset]
+name = 1920x1080 (Full HD)
+category = Gamepad Resolution
+$padWidth = 1920
+$padHeight = 1080
+
+[Preset]
+name = 2560x1440 (2K)
+category = Gamepad Resolution
+$padWidth = 2560
+$padHeight = 1440
+
+[Preset]
+name = 3200x1800
+category = Gamepad Resolution
+$padWidth = 3200
+$padHeight = 1800
+
+[Preset]
+name = 3840x2160 (4K)
+category = Gamepad Resolution
+$padWidth = 3840
+$padHeight = 2160
+
+[Preset]
+name = 5120x2880
+category = Gamepad Resolution
+$padWidth = 5120
+$padHeight = 2880
+
+[Preset]
+name = 7680x4320 (8K)
+category = Gamepad Resolution
+$padWidth = 7680
+$padHeight = 4320
+
+
+# Texture Redefines
+
+[TextureRedefine] # Output resolution
 width = 1920
 height = 1088
-tileModesExcluded = 0x001
+formats = 0x1a,0x011
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1088
 
-[TextureRedefine]
+[TextureRedefine] 
 width = 1920
 height = 1080
+formats = 0x1a,0x011
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1920
 overwriteHeight = ($height/$gameHeight) * 1080
 
-[TextureRedefine] # Gamepad Resolution
-width = 864
-height = 480
-overwriteWidth = ($width/$gameWidth) * 864
-overwriteHeight = ($height/$gameHeight) * 480
+[TextureRedefine] # Interlaced rendering
+width = 1920
+height = 704
+formats = 0x1a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 704
 
 [TextureRedefine]
-width = 856
-height = 480
-overwriteWidth = ($width/$gameWidth) * 856
-overwriteHeight = ($height/$gameHeight) * 480
+width = 1920
+height = 697
+formats = 0x1a
+overwriteWidth = ($width/$gameWidth) * 1920
+overwriteHeight = ($height/$gameHeight) * 697
 
-[TextureRedefine] # Half-Res
+[TextureRedefine] # Bloom, DOF
 width = 960
 height = 544
-tileModesExcluded = 0x001
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 960
 overwriteHeight = ($height/$gameHeight) * 544
 
 [TextureRedefine]
 width = 960
 height = 540
-tileModesExcluded = 0x001
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 960
 overwriteHeight = ($height/$gameHeight) * 540
 
-[TextureRedefine] # Screen Gradient
+[TextureRedefine] # Gradients
 width = 640
 height = 368
+formats = 0x1a
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 368
 
 [TextureRedefine]
 width = 640
 height = 360
+formats = 0x01a
 overwriteWidth = ($width/$gameWidth) * 640
 overwriteHeight = ($height/$gameHeight) * 360
 
-[TextureRedefine]
-width = 448
-height = 240
-overwriteWidth = ($width/$gameWidth) * 448
-overwriteHeight = ($height/$gameHeight) * 240
+# Gamepad
+
+[TextureRedefine] # Output Resolution
+width = 856
+height = 480
+formats = 0x01a
+tileModesExcluded = 1
+overwriteWidth = ($padWidth/$gamePadWidth) * 856
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
 
 [TextureRedefine]
-width = 428
-height = 240
-overwriteWidth = ($width/$gameWidth) * 428
-overwriteHeight = ($height/$gameHeight) * 240
-
-[TextureRedefine]
-width = 288
-height = 160
-overwriteWidth = ($width/$gameWidth) * 288
-overwriteHeight = ($height/$gameHeight) * 160
-
-[TextureRedefine]
-width = 285
-height = 160
-overwriteWidth = ($width/$gameWidth) * 285
-overwriteHeight = ($height/$gameHeight) * 160
+width = 864
+height = 480
+formats = 0x01a
+overwriteWidth = ($padWidth/$gamePadWidth) * 864
+overwriteHeight = ($padHeight/$gamePadHeight) * 480
