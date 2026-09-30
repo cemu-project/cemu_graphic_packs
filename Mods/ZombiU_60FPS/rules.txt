@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001011a700, 000500001010dd00
+version = 7
+name = 60FPS
+path = "ZombiU/Mods/60FPS"
+description = Makes the game run at 60FPS. |Made by Jao.

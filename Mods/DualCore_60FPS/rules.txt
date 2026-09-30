@@ -1,0 +1,9 @@
+[Definition]
+titleIds = 00050000101e3800
+version = 7
+name = 60FPS
+path = "DualCore/Mod/60FPS"
+description = Makes the game run at 60FPS. |Made by Jao.
+
+[Control]
+vsyncFrequency = 60

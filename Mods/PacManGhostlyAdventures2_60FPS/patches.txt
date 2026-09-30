@@ -1,0 +1,5 @@
+[PACMAN2_60FPS]
+moduleMatches = 0xd1176671
+
+0x020356CC = li r3,1
+
