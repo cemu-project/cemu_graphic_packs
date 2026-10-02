@@ -1,0 +1,204 @@
+#include <metal_stdlib>
+using namespace metal;
+
+// shader be99d80628d31127
+// Shader dumped from Mario Kart 8 v81, using Cemu 2193a8c
+// Based on be99d80628d31127_00000000000003c9_ps.txt
+// Used for: FXAA in-game (with mod)
+
+constant float resXScale = float($width) / float($gameWidth);
+constant float resYScale = float($height) / float($gameHeight);
+
+#define SET_POSITION(_v)                                                       \
+    out.position = _v;                                                         \
+    out.position.z = (out.position.z + out.position.w) / 2.0
+// start of shader inputs/outputs, predetermined by Cemu. Do not touch
+struct SupportBuffer {
+    int4 remapped[4];
+    float2 fragCoordScale;
+};
+
+#define GET_FRAGCOORD()                                                        \
+    float4(in.position.xy *supportBuffer.fragCoordScale.xy, in.position.z,     \
+           1.0 / in.position.w)
+struct FragmentIn {
+    float4 position [[position]];
+    float4 passParameterSem2 [[user(locn0)]];
+};
+
+struct FragmentOut {
+    float4 passPixelColor0 [[color(0)]];
+};
+
+// end of shader inputs/outputs
+template <typename TextureT, typename CoordT>
+float sampleCompareEmulate(TextureT tex, sampler samplr, CoordT coord,
+                           float compareValue) {
+    return compareValue < tex.sample(samplr, coord).x ? 1.0 : 0.0;
+}
+template <typename TextureT, typename CoordT>
+float2 textureCalculateLod(TextureT tex, sampler samplr, CoordT coord) {
+    float lod = tex.calculate_unclamped_lod(samplr, coord);
+    return float2(floor(lod), fract(lod));
+}
+int clampFI32(int v) {
+    if (v == 0x7FFFFFFF)
+        return as_type<int>(1.0);
+    else if (v == 0xFFFFFFFF)
+        return as_type<int>(0.0);
+    return as_type<int>(clamp(as_type<float>(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b) {
+    if (a == 0.0 || b == 0.0)
+        return 0.0;
+    return a * b;
+}
+fragment FragmentOut main0(FragmentIn in [[stage_in]],
+                           float2 pointCoord [[point_coord]],
+                           bool frontFacing [[front_facing]],
+                           constant SupportBuffer &supportBuffer [[buffer(0)]],
+                           texture2d<float> tex0 [[texture(0)]],
+                           sampler samplr0 [[sampler(0)]],
+                           texture2d<float> tex1 [[texture(1)]],
+                           sampler samplr1 [[sampler(1)]]) {
+    FragmentOut out;
+    float4 R0f = float4(0.0);
+    float4 R1f = float4(0.0);
+    float4 R2f = float4(0.0);
+    float4 R3f = float4(0.0);
+    float4 R4f = float4(0.0);
+    float4 R5f = float4(0.0);
+    float4 R123f = float4(0.0);
+    float4 R126f = float4(0.0);
+    float4 R127f = float4(0.0);
+    float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+    float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0,
+          PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+    float PS0f = 0.0, PS1f = 0.0;
+    float4 tempf = float4(0.0);
+    float tempResultf;
+    int tempResulti;
+    int4 ARi = int4(0);
+    bool predResult = true;
+    bool activeMaskStack[2];
+    bool activeMaskStackC[3];
+    activeMaskStack[0] = false;
+    activeMaskStackC[0] = false;
+    activeMaskStackC[1] = false;
+    activeMaskStack[0] = true;
+    activeMaskStackC[0] = true;
+    activeMaskStackC[1] = true;
+    R0f = in.passParameterSem2;
+    if (activeMaskStackC[1] == true) {
+        R4f.xyzw = (tex0.sample(samplr0, float2(R0f.x, R0f.y)).xyzw);
+        R2f.xyzw =
+            (tex1.gather(samplr1, float2(0.0001) + float2(R0f.x, R0f.y)).wzxy);
+    }
+    if (activeMaskStackC[1] == true) {
+        activeMaskStack[1] = activeMaskStack[0];
+        activeMaskStackC[2] = activeMaskStackC[1];
+        // 0
+        PV0fx = min(R2f.z, R2f.x);
+        PV0fy = max(R2f.z, R2f.x);
+        PV0fz = mul_nonIEEE(R4f.x, as_type<float>(supportBuffer.remapped[0].x));
+        PV0fw = min(R2f.w, R2f.y);
+        PS0f = max(R2f.w, R2f.y);
+        // 1
+        PV1fx = min(PV0fx, PV0fw);
+        R123f.y =
+            mul_nonIEEE(R4f.y, as_type<float>(supportBuffer.remapped[0].y)) +
+            PV0fz;
+        R127f.z = R2f.z + -(R2f.y);
+        PV1fw = max(PV0fy, PS0f);
+        R126f.z = R2f.w + -(R2f.x);
+        // 2
+        PV0fx = mul_nonIEEE(PV1fw, as_type<float>(supportBuffer.remapped[1].x));
+        PV0fy = max(R123f.y, PV1fw);
+        PV0fz = min(R123f.y, PV1fx);
+        R3f.x = R127f.z + R126f.z;
+        // 3
+        R1f.x = max(PV0fx, as_type<float>(supportBuffer.remapped[1].y));
+        R3f.y = -(PV0fz) + PV0fy;
+        R1f.y = R127f.z + -(R126f.z);
+        // 4
+        predResult = (R3f.y > R1f.x);
+        activeMaskStack[1] = predResult;
+        activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+    } else {
+        activeMaskStack[1] = false;
+        activeMaskStackC[2] = false;
+    }
+    if (activeMaskStackC[2] == true) {
+        // 0
+        R1f.x = max(R3f.x, -(R3f.x));
+        R2f.y = R2f.y + R2f.x;
+        R0f.z = as_type<float>(supportBuffer.remapped[2].z) / resXScale * 0.25;
+        R0f.w = max(R1f.y, -(R1f.y));
+        R2f.x = -(as_type<float>(supportBuffer.remapped[3].x) / resXScale);
+        // 1
+        R3f.y = R2f.z + R2f.y;
+        R2f.y = min(R1f.x, R0f.w);
+        // 2
+        R3f.y = R2f.w + R3f.y;
+        R1f.z = as_type<float>(supportBuffer.remapped[3].x) / resXScale;
+        R0f.w = as_type<float>(supportBuffer.remapped[3].y) / resYScale;
+        R5f.y = -(as_type<float>(supportBuffer.remapped[3].y) / resXScale);
+        // 3
+        R0f.z = mul_nonIEEE(R0f.z, R3f.y) +
+                as_type<float>(supportBuffer.remapped[2].w);
+        // 4
+        R2f.y = max(R0f.z, R2f.y);
+        // 5
+        R2f.y = 1.0 / R2f.y;
+        // 6
+        R1f.x = mul_nonIEEE(R3f.x, R2f.y);
+        R1f.y = mul_nonIEEE(R1f.y, R2f.y);
+        // 7
+        R1f.x = max(R1f.x,
+                    -(as_type<float>(supportBuffer.remapped[2].y) / resXScale));
+        R1f.y = max(R1f.y,
+                    -(as_type<float>(supportBuffer.remapped[2].y) / resYScale));
+        // 8
+        R1f.x =
+            min(R1f.x, as_type<float>(supportBuffer.remapped[2].y) / resXScale);
+        R1f.y =
+            min(R1f.y, as_type<float>(supportBuffer.remapped[2].y) / resYScale);
+        // 9
+        backupReg0f = R0f.x;
+        backupReg1f = R0f.y;
+        R0f.x = mul_nonIEEE(R1f.x, R2f.x) + backupReg0f;
+        R0f.y = mul_nonIEEE(R1f.y, R5f.y) + backupReg1f;
+        R0f.z = mul_nonIEEE(R1f.x, R1f.z) + backupReg0f;
+        R0f.w = mul_nonIEEE(R1f.y, R0f.w) + backupReg1f;
+    }
+    if (activeMaskStackC[2] == true) {
+        R1f.xyzw = (tex0.sample(samplr0, float2(R0f.z, R0f.w)).xyzw);
+        R0f.xyzw = (tex0.sample(samplr0, float2(R0f.x, R0f.y)).xyzw);
+    }
+    if (activeMaskStackC[2] == true) {
+        // 0
+        PV0fx = R0f.w + R1f.w;
+        PV0fx /= 2.0;
+        PV0fy = R0f.z + R1f.z;
+        PV0fy /= 2.0;
+        PV0fz = R0f.y + R1f.y;
+        PV0fz /= 2.0;
+        PV0fw = R0f.x + R1f.x;
+        PV0fw /= 2.0;
+        // 1
+        PV1fx = -(R4f.w) + PV0fx;
+        PV1fy = -(R4f.z) + PV0fy;
+        PV1fz = -(R4f.y) + PV0fz;
+        PV1fw = -(R4f.x) + PV0fw;
+        // 2
+        R4f.x = PV1fw * as_type<float>(0x3f4ccccd) + R4f.x;
+        R4f.y = PV1fz * as_type<float>(0x3f4ccccd) + R4f.y;
+        R4f.z = PV1fy * as_type<float>(0x3f4ccccd) + R4f.z;
+        R4f.w = PV1fx * as_type<float>(0x3f4ccccd) + R4f.w;
+    }
+    activeMaskStackC[1] =
+        activeMaskStack[0] == true && activeMaskStackC[0] == true;
+    // export
+    out.passPixelColor0 = as_type<float4>(float4(R4f.x, R4f.y, R4f.z, R4f.w));
+    return out;
+}
