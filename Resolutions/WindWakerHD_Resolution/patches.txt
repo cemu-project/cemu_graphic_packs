@@ -1,17 +1,17 @@
 [WWHDAspectEUR]
 moduleMatches = 0xB7E748DE
-0x1004AAF0 = .float ($aspectRatio)
-0x101417E0 = .float ($aspectRatio)
-0x101658A8 = .float ($aspectRatio)
+0x1004AAF0 = .float ($aspectRatioWorld) # 3D world
+0x101417E0 = .float ($aspectRatioUI)    # HUD / UI
+0x101658A8 = .float ($aspectRatioWorld) # Effects
 
 [WWHDAspectJAP]
 moduleMatches = 0x74BD3F6A
-0x1004AAF0 = .float ($aspectRatio)
-0x101417F8 = .float ($aspectRatio)
-0x101658C0 = .float ($aspectRatio)
+0x1004AAF0 = .float ($aspectRatioWorld) # 3D world
+0x101417F8 = .float ($aspectRatioUI)    # HUD / UI
+0x101658C0 = .float ($aspectRatioWorld) # Effects
 
 [WWHDAspectUSA]
 moduleMatches = 0x475BD29F
-0x1004AAF0 = .float ($aspectRatio)
-0x101417D0 = .float ($aspectRatio)
-0x10165898 = .float ($aspectRatio)
+0x1004AAF0 = .float ($aspectRatioWorld) # 3D world
+0x101417D0 = .float ($aspectRatioUI)    # HUD / UI
+0x10165898 = .float ($aspectRatioWorld) # Effects
