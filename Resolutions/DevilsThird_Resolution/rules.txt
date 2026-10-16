@@ -1,5 +1,5 @@
 [Definition]
-titleIds = 0005000010177600,0005000010177700,0005000010197d00
+titleIds = 0005000010177600,0005000010177700,0005000010138f00
 name = Resolution
 path = "Devil's Third/Graphics/Resolution"
 description = Changes the resolution of the game. Made by Crementif.
