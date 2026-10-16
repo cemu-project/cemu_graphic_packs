@@ -2686,6 +2686,67 @@ blr
 
 
 ; ------------------------------------------------------------------------------------------
+; MainScreen_00_Dungeon animates the sensor parents from X=392 to X=566.
+; Their children are positioned relative to the initial X=392 above, so scale
+; only the animated displacement. This preserves the outdoor position and
+; works for both Edge and Centered HUD at the selected aspect ratio.
+;
+; v208 FLPA transform write: r30 = Pane*, r27 = transform component,
+; r7 = component * 4, r29 = &pane.translation, f1 = evaluated animation value.
+; The original loop overwrites r0/r8/r11/CR0 next; r5/r9/r10/r12/f0/f9 are
+; dead at this site. Preserve r7 and r26-r31 (loop state), f31 (frame), and LR.
+_scaleSensorAnimationX:
+mflr r0
+li r10, $ultrawideHUDMode
+cmpwi r10, 0
+beq storeSensorAnimationValue
+cmpwi r27, 0 ; X translation only; leave Y/Z/rotation/scale tracks untouched
+bne storeSensorAnimationValue
+
+addi r5, r30, 0x80
+lis r10, str_Pa_TempMeter_00@ha
+addi r10, r10, str_Pa_TempMeter_00@l
+bla _compareString
+beq checkSensorAnimationParent
+lis r10, str_Pa_SoundGauge_00@ha
+addi r10, r10, str_Pa_SoundGauge_00@l
+bla _compareString
+beq checkSensorAnimationParent
+lis r10, str_Pa_Sensor_00@ha
+addi r10, r10, str_Pa_Sensor_00@l
+bla _compareString
+bne storeSensorAnimationValue
+
+checkSensorAnimationParent:
+; Main HUD sensors belong directly to N_All_00. The inventory temperature
+; pane has the same name but a different parent and must not be corrected.
+; Pane::AppendChild/RemoveChild store the parent pointer at +0x0C in v208.
+lwz r5, 0x0C(r30)
+cmpwi r5, 0
+beq storeSensorAnimationValue
+addi r5, r5, 0x80
+lis r10, str_N_All_00@ha
+addi r10, r10, str_N_All_00@l
+bla _compareString
+bne storeSensorAnimationValue
+
+lis r10, const_SensorsOffset@ha
+lfs f0, const_SensorsOffset@l(r10)
+fsubs f1, f1, f0
+lis r10, const_AspectRatio@ha
+lfs f9, const_AspectRatio@l(r10)
+fmuls f1, f1, f9
+fadds f1, f1, f0
+
+storeSensorAnimationValue:
+stfsx f1, r7, r29 ; original instruction
+mtlr r0
+blr
+
+0x03C46298 = bla _scaleSensorAnimationX
+
+
+; ------------------------------------------------------------------------------------------
 ; Specific code required for switching the positions of the minimap and the AppMap
 
 const_0:
