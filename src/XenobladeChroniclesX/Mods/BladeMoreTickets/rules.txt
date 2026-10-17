@@ -7,11 +7,15 @@ description = Increase the Tickets gained with Squad tasks and missions.|Uncappe
 version = 6
 
 [Default]
-$mult = 2
+$mult = 1
 $uncap = 0
 
 [Preset]
+name = "Gain more Tickets (x1)"
+
+[Preset]
 name = "Gain more Tickets (x2)"
+$mult = 2
 
 [Preset]
 name = "Gain more Tickets (x3)"
@@ -38,8 +42,8 @@ name = "Gain more Tickets (x1000)"
 $mult = 1000
 
 [Preset]
-name = "Respawn Global Nemesis Yggralith Zero (x500000)"
-$mult = 500000
+name = "Respawn Global Nemesis Yggralith Zero (x-1)"
+$mult = -1
 
 [Preset]
 name = Yes
