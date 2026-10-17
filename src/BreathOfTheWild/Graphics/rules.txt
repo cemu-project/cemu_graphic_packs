@@ -26,6 +26,10 @@ $shadowNearbyEnd = 1.0
 $shadowFarStart = 1.0
 $shadowFarEnd = 1.0
 
+# 16:10 fix: skip half-res buffer upscale at non-16:9 aspects to prevent
+# rain particle strip and shadow cascade seam. Set by aspect ratio preset.
+$sixteenByTenFix = 0
+
 # Should be set to 1 or 2 (changes verbosity of loggin) when trying to log the layout of panes while they're getting loaded for debugging purposes
 $enableUltrawideDebugLogging:int = 0
 
@@ -46,6 +50,7 @@ $aspectRatioWidth = 16
 $aspectRatioHeight = 10
 $showUltrawideOptions:int = 0
 $ultrawideHUDMode:int = 0
+$sixteenByTenFix = 1
 
 [Preset]
 name = 21:9
@@ -53,6 +58,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 21
 $aspectRatioHeight = 9
 $showUltrawideOptions:int = 1
+$sixteenByTenFix = 1
 
 [Preset]
 name = 32:9
@@ -60,6 +66,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 9
 $showUltrawideOptions:int = 1
+$sixteenByTenFix = 1
 
 [Preset]
 name = 32:10
@@ -67,6 +74,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 32
 $aspectRatioHeight = 10
 $showUltrawideOptions:int = 1
+$sixteenByTenFix = 1
 
 [Preset]
 name = 48:9
@@ -74,6 +82,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 48
 $aspectRatioHeight = 9
 $showUltrawideOptions:int = 1
+$sixteenByTenFix = 1
 
 [Preset]
 name = 4:3
@@ -81,6 +90,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 4
 $aspectRatioHeight = 3
 $showSquareHUDOption:int = 1
+$sixteenByTenFix = 1
 
 [Preset]
 name = 5:4
@@ -88,6 +98,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 5
 $aspectRatioHeight = 4
 $showSquareHUDOption:int = 1
+$sixteenByTenFix = 1
 
 [Preset]
 name = 3:2
@@ -95,6 +106,7 @@ category = Aspect Ratio
 $aspectRatioWidth = 3
 $aspectRatioHeight = 2
 $showSquareHUDOption:int = 1
+$sixteenByTenFix = 1
 
 # 16:9 Resolutions
 
@@ -659,24 +671,24 @@ overwriteHeight = ($height/$gameHeight) * 480
 # - 0x816=World & Weapon Bloom
 # - 0x820=Fog
 
-# Required 1/2 resolutions
+# Required 1/2 resolutions (gated: non-16:9 aspects keep native size to avoid rain/shadow artifacts)
 [TextureRedefine]
 width = 640
 height = 368
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x806,0x816,0x820,0x41a
 # formatsExcluded = 0x431 # Exclude 0x431 which is used for adventure log images
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = (($height/$gameHeight) * 368) + 0.49
+overwriteWidth = $sixteenByTenFix * 640 + (1 - $sixteenByTenFix) * (($width/$gameWidth) * 640)
+overwriteHeight = $sixteenByTenFix * 368 + (1 - $sixteenByTenFix) * (($height/$gameHeight) * 368)
 
-# Required 1/2 resolutions
+# Required 1/2 resolutions (gated: non-16:9 aspects keep native size to avoid rain/shadow artifacts)
 [TextureRedefine]
 width = 640
 height = 360
 formats = 0x001,0x005,0x007,0x019,0x01a,0x80e,0x806,0x816,0x820,0x41a
 # formatsExcluded = 0x431
 tileModesExcluded = 0x001 # For Video Playback
-overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = ($height/$gameHeight) * 360
+overwriteWidth = $sixteenByTenFix * 640 + (1 - $sixteenByTenFix) * (($width/$gameWidth) * 640)
+overwriteHeight = $sixteenByTenFix * 360 + (1 - $sixteenByTenFix) * (($height/$gameHeight) * 360)
 
 # Required 1/3 resolutions
 [TextureRedefine]
@@ -998,7 +1010,7 @@ height = 368
 formats = 0x019
 overwriteFormat = 0x01f
 overwriteWidth = ($width/$gameWidth) * 640
-overwriteHeight = (($height/$gameHeight) * 368) + 0.49
+overwriteHeight = ($height/$gameHeight) * 368
 
 [TextureRedefine]
 width = 640
