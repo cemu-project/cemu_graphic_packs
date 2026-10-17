@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001017e500,000500001017e600,0005000010182300
+name = 60FPS
+path = "PAC-MAN & the Ghostly Adventures 2/Mods/60FPS"
+description = Makes the game run at 60FPS. May cause bugs. |Made by Jao.
+version = 7
