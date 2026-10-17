@@ -1,0 +1,246 @@
+#include <metal_stdlib>
+using namespace metal;
+
+// shader 998a9f67e353657b
+// Shader dumped from Mario Kart 8 v81, using Cemu 2193a8c
+// Based on 998a9f67e353657b_0000000000001e51_ps.txt
+// Contrasty
+
+#define SET_POSITION(_v)                                                       \
+    out.position = _v;                                                         \
+    out.position.z = (out.position.z + out.position.w) / 2.0
+
+// start of shader inputs/outputs, predetermined by Cemu. Do not touch
+struct SupportBuffer {
+    int4 remapped[1];
+    float2 fragCoordScale;
+};
+
+#define GET_FRAGCOORD()                                                        \
+    float4(in.position.xy *supportBuffer.fragCoordScale.xy, in.position.z,     \
+           1.0 / in.position.w)
+
+struct FragmentIn {
+    float4 position [[position]];
+    float4 passParameterSem0 [[user(locn0)]];
+    float4 passParameterSem1 [[user(locn1)]];
+};
+
+struct FragmentOut {
+    float4 passPixelColor0 [[color(0)]];
+};
+
+// end of shader inputs/outputs
+
+constant float hazeFactor = 0.1;
+
+constant float gamma =
+    $gamma; // 1.0 is neutral  Botw is already colour graded at this stage
+constant float exposure = $exposure; // 1.0 is neutral
+constant float vibrance = $vibrance; // 0.0 is neutral
+constant float crushContrast =
+    $crushContrast; // 0.0 is neutral. Use small increments, loss of shadow
+                    // detail
+constant float contrastCurve = $contrastCurve;
+
+constant float3 RGB_Lift = float3(
+    $redShadows, $greenShadows,
+    $blueSadows); // [0.000 to 2.000] Adjust shadows for Red, Green and Blue.
+constant float3 RGB_Gamma = float3(
+    $redMid, $greenMid,
+    $blueMid); // [0.000 to 2.000] Adjust midtones for Red, Green and Blue
+constant float3 RGB_Gain = float3(
+    $redHilight, $greenHilight,
+    $blueHilight); // [0.000 to 2.000] Adjust highlights for Red, Green and Blue
+
+// lumasharpen
+constant float sharp_mix = $sharp_mix;
+constant float sharp_strength = 2.0;
+constant float sharp_clamp = 0.75;
+constant float offset_bias = 1.0;
+constant float3 CoefLuma = float3(0.2126, 0.7152, 0.0722);
+
+float Sigmoid(float x) { return 1.0 / (1.0 + (exp(-(x - 0.5) * 5.5))); }
+
+// --- Luma sharpening ---
+float lumasharping(texture2d<float> tex, sampler samp, float2 pos,
+                   float2 fragCoordScale) {
+    float4 colorInput = tex.sample(samp, pos);
+    float3 ori = colorInput.rgb;
+
+    // -- Combining the strength and luma multipliers --
+    float3 sharp_strength_luma = CoefLuma * sharp_strength;
+
+    // -- Gaussian filter --
+    //   [ .25, .50, .25]     [ 1 , 2 , 1 ]
+    //   [ .50,   1, .50]  =  [ 2 , 4 , 2 ]
+    //   [ .25, .50, .25]     [ 1 , 2 , 1 ]
+
+    float px = (1.0 / 1920.0) * fragCoordScale.x;
+    float py = (1.0 / 1080.0) * fragCoordScale.y;
+
+    float3 blur_ori =
+        tex.sample(samp, pos + float2(px, -py) * 0.5 * offset_bias)
+            .rgb; // South East
+    blur_ori += tex.sample(samp, pos + float2(-px, -py) * 0.5 * offset_bias)
+                    .rgb; // South West
+    blur_ori += tex.sample(samp, pos + float2(px, py) * 0.5 * offset_bias)
+                    .rgb; // North East
+    blur_ori += tex.sample(samp, pos + float2(-px, py) * 0.5 * offset_bias)
+                    .rgb; // North West
+
+    blur_ori *= 0.25; // ( /= 4) Divide by the number of texture fetches
+
+    // -- Calculate the sharpening --
+    float3 sharp =
+        ori - blur_ori; // Subtracting the blurred image from the original image
+
+    // -- Adjust strength of the sharpening and clamp it--
+    float4 sharp_strength_luma_clamp =
+        float4(sharp_strength_luma * (0.5 / sharp_clamp),
+               0.5); // Roll part of the clamp into the dot
+
+    float sharp_luma = clamp(
+        dot(float4(sharp, 1.0), sharp_strength_luma_clamp), 0.0,
+        1.0); // Calculate the luma, adjust the strength, scale up and clamp
+
+    sharp_luma = (sharp_clamp * 2.0) * sharp_luma - sharp_clamp; // scale down
+
+    return sharp_luma;
+}
+
+// --- Lift / Gamma / Gain ---
+float3 LiftGammaGainPass(
+    float3 colorInput) { // reshade BSD https://reshade.me ,  Alexkiri port
+    float3 color = colorInput;
+
+    color = color * (1.5 - 0.5 * RGB_Lift) + 0.5 * RGB_Lift - 0.5;
+    color = clamp(color, 0.0, 1.0);
+
+    color *= RGB_Gain;
+    color = pow(color, 1.0 / RGB_Gamma);
+
+    return clamp(color, 0.0, 1.0);
+}
+
+// --- Main colour function ---
+float3 contrasty(float3 colour) {
+    float3 fColour = colour;
+    // fColour = LiftGammaGainPass(fColour);
+
+    fColour = clamp(exposure * fColour, 0.0, 1.0);
+    fColour = pow(fColour, float3(1.0 / max(gamma, 1e-5)));
+
+    float luminance = fColour.r * 0.299 + fColour.g * 0.587 + fColour.b * 0.114;
+
+    float mn = min(min(fColour.r, fColour.g), fColour.b);
+    float mx = max(max(fColour.r, fColour.g), fColour.b);
+
+    float sat = (1.0 - (mx - mn)) * (1.0 - mx) * luminance * 5.0;
+
+    float3 lightness = float3((mn + mx) / 2.0);
+
+    fColour = LiftGammaGainPass(fColour);
+
+    // vibrance
+    fColour = mix(fColour, mix(fColour, lightness, -vibrance), sat);
+    fColour = max(float3(0.0), fColour - float3(crushContrast));
+
+    return fColour;
+}
+
+template <typename TextureT, typename CoordT>
+float sampleCompareEmulate(TextureT tex, sampler samplr, CoordT coord,
+                           float compareValue) {
+    return compareValue < tex.sample(samplr, coord).x ? 1.0 : 0.0;
+}
+
+template <typename TextureT, typename CoordT>
+float2 textureCalculateLod(TextureT tex, sampler samplr, CoordT coord) {
+    float lod = tex.calculate_unclamped_lod(samplr, coord);
+    return float2(floor(lod), fract(lod));
+}
+
+int clampFI32(int v) {
+    if (v == 0x7FFFFFFF)
+        return as_type<int>(1.0);
+    else if (v == 0xFFFFFFFF)
+        return as_type<int>(0.0);
+    return as_type<int>(clamp(as_type<float>(v), 0.0, 1.0));
+}
+
+float mul_nonIEEE(float a, float b) {
+    if (a == 0.0 || b == 0.0)
+        return 0.0;
+    return a * b;
+}
+
+fragment FragmentOut
+main0(FragmentIn in [[stage_in]], float2 pointCoord [[point_coord]],
+      bool frontFacing [[front_facing]],
+      constant SupportBuffer &supportBuffer [[buffer(0)]],
+      texture2d<float> tex0 [[texture(0)]], sampler samplr0 [[sampler(0)]],
+      texture3d<float> tex1 [[texture(1)]], sampler samplr1 [[sampler(1)]],
+      texture2d<float> tex2 [[texture(2)]], sampler samplr2 [[sampler(2)]]) {
+    FragmentOut out;
+    float4 R0f = float4(0.0);
+    float4 R1f = float4(0.0);
+    float4 R2f = float4(0.0);
+    float4 R123f = float4(0.0);
+    float4 R127f = float4(0.0);
+    float backupReg0f, backupReg1f, backupReg2f, backupReg3f, backupReg4f;
+    float PV0fx = 0.0, PV0fy = 0.0, PV0fz = 0.0, PV0fw = 0.0, PV1fx = 0.0,
+          PV1fy = 0.0, PV1fz = 0.0, PV1fw = 0.0;
+    float PS0f = 0.0, PS1f = 0.0;
+    float4 tempf = float4(0.0);
+    float tempResultf;
+    int tempResulti;
+    int4 ARi = int4(0);
+    bool predResult = true;
+    R0f = in.passParameterSem0;
+    R1f = in.passParameterSem1;
+    R2f.xyzw = (tex2.sample(samplr2, float2(R1f.x, R1f.y)).xyzw);
+    R1f.xyz = (tex0.sample(samplr0, float2(R1f.x, R1f.y)).xyz);
+    // 0
+    R127f.x = mul_nonIEEE(R0f.w, R2f.x);
+    R127f.y = mul_nonIEEE(R0f.w, R2f.y);
+    R127f.z = mul_nonIEEE(R0f.w, R2f.z);
+    R0f.w = R2f.w;
+    // 1
+    tempf.x = dot(float4(R127f.x, R127f.y, R127f.z, as_type<float>(0x80000000)),
+                  float4(as_type<float>(0x3e990afe), as_type<float>(0x3f162c23),
+                         as_type<float>(0x3dea7371), 0.0));
+    tempf.x = clamp(tempf.x, 0.0, 1.0);
+    PV1fx = tempf.x;
+    PV1fy = tempf.x;
+    PV1fz = tempf.x;
+    PV1fw = tempf.x;
+    // 2
+    R123f.x = mul_nonIEEE(R1f.x, -(PV1fx)) + R1f.x;
+    R123f.z = mul_nonIEEE(R1f.z, -(PV1fx)) + R1f.z;
+    R123f.w = mul_nonIEEE(R1f.y, -(PV1fx)) + R1f.y;
+    // 3
+    PV1fx = R127f.y + R123f.w;
+    PV1fy = R127f.x + R123f.x;
+    PV1fw = R127f.z + R123f.z;
+    // 4
+    R1f.x = mul_nonIEEE(PV1fy, as_type<float>(supportBuffer.remapped[0].x)) +
+            as_type<float>(supportBuffer.remapped[0].y);
+    R1f.y = mul_nonIEEE(PV1fx, as_type<float>(supportBuffer.remapped[0].x)) +
+            as_type<float>(supportBuffer.remapped[0].y);
+    R1f.z = mul_nonIEEE(PV1fw, as_type<float>(supportBuffer.remapped[0].x)) +
+            as_type<float>(supportBuffer.remapped[0].y);
+    R0f.xyz = (tex1.sample(samplr1, float3(R1f.x, R1f.y, R1f.z)).xyz);
+    // export
+
+    R0f.xyz = contrasty(R0f.xyz);
+    R0f.xyz = mix(R0f.xyz, smoothstep(0.0, 1.0, R0f.xyz), contrastCurve);
+    float smask = lumasharping(tex2, samplr2, in.passParameterSem1.xy,
+                               supportBuffer.fragCoordScale);
+    float3 temp3 = R0f.xyz;
+    temp3 += smask;
+    R0f.xyz = mix(R0f.xyz, temp3, sharp_mix);
+
+    out.passPixelColor0 = float4(R0f.xyz, R0f.w);
+    return out;
+}
