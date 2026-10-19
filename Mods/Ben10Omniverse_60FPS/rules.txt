@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 000500001010ac00,0005000010111000
+version = 7
+name = 60FPS
+path = "Ben 10 Omniverse/Mods/60FPS"
+description = Makes the game run at 60FPS. May cause bugs. Will slow down the game if you can't maintain 60FPS.
