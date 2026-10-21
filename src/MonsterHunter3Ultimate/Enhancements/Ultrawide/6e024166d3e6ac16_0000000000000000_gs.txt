@@ -1,0 +1,1148 @@
+#version 430
+#extension GL_ARB_texture_gather : enable
+#extension GL_ARB_separate_shader_objects : enable
+#extension GL_ARB_enhanced_layouts : enable
+// shader 6e024166d3e6ac16
+// Ultrawide: HUD drawn by this shader is squeezed back to 16:9 in the middle of the screen.
+float hudScale = (16.0 / 9.0) / (float($width) / float($height));
+// start of shader inputs/outputs, predetermined by Cemu. Do not touch
+#ifdef VULKAN
+#define ATTR_LAYOUT(__vkSet, __location) layout(set = __vkSet, location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation, std140)
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(set = __vkSet, binding = __vkLocation)
+#define gl_VertexID gl_VertexIndex
+#define gl_InstanceID gl_InstanceIndex
+#define SET_POSITION(_v) gl_Position = _v
+#define V2G_LAYOUT layout(location = 0)
+#extension GL_EXT_spirv_intrinsics: enable
+spirv_execution_mode(4462, 16);
+spirv_execution_mode(4462, 32);
+spirv_execution_mode(4462, 64);
+#else
+#define ATTR_LAYOUT(__vkSet, __location) layout(location = __location)
+#define UNIFORM_BUFFER_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation, std140) 
+#define TEXTURE_LAYOUT(__glLocation, __vkSet, __vkLocation) layout(binding = __glLocation)
+#define SET_POSITION(_v) gl_Position = _v
+#define V2G_LAYOUT
+#endif
+layout(points) in;
+layout (triangle_strip, max_vertices=4) out;
+#ifdef VULKAN
+layout(set = 2, binding = 0) uniform ufBlock
+{
+uniform int uf_verticesPerInstance;
+};
+#else
+uniform int uf_verticesPerInstance;
+#endif
+out gl_PerVertex
+{
+	vec4 gl_Position;
+};
+V2G_LAYOUT in Vertex
+{
+ ivec4 passV2GParameter0;
+ ivec4 passV2GParameter1;
+ ivec4 passV2GParameter2;
+ ivec4 passV2GParameter3;
+ ivec4 passV2GParameter4;
+ ivec4 passV2GParameter5;
+ ivec4 passV2GParameter6;
+ ivec4 passV2GParameter7;
+ ivec4 passV2GParameter8;
+ ivec4 passV2GParameter9;
+ ivec4 passV2GParameter10;
+ ivec4 passV2GParameter11;
+}v2g[];
+layout(location = 0) out vec4 passG2PParameter0;
+layout(location = 1) out vec4 passG2PParameter1;
+layout(location = 2) out vec4 passG2PParameter2;
+layout(location = 3) out vec4 passG2PParameter3;
+layout(location = 4) out vec4 passG2PParameter4;
+layout(location = 5) out vec4 passG2PParameter5;
+layout(location = 6) out vec4 passG2PParameter6;
+layout(location = 7) out vec4 passG2PParameter7;
+layout(location = 8) out vec4 passG2PParameter8;
+layout(location = 9) out vec4 passG2PParameter9;
+// end of shader inputs/outputs
+int clampFI32(int v)
+{
+if( v == 0x7FFFFFFF )
+	return floatBitsToInt(1.0);
+else if( v == 0xFFFFFFFF )
+	return floatBitsToInt(0.0);
+return floatBitsToInt(clamp(intBitsToFloat(v), 0.0, 1.0));
+}
+float mul_nonIEEE(float a, float b){ if( a == 0.0 || b == 0.0 ) return 0.0; return a*b; }
+void main()
+{
+ivec4 R0i = ivec4(0);
+ivec4 R1i = ivec4(0);
+ivec4 R2i = ivec4(0);
+ivec4 R3i = ivec4(0);
+ivec4 R4i = ivec4(0);
+ivec4 R5i = ivec4(0);
+ivec4 R6i = ivec4(0);
+ivec4 R7i = ivec4(0);
+ivec4 R8i = ivec4(0);
+ivec4 R9i = ivec4(0);
+ivec4 R10i = ivec4(0);
+ivec4 R11i = ivec4(0);
+ivec4 R12i = ivec4(0);
+ivec4 R13i = ivec4(0);
+ivec4 R14i = ivec4(0);
+ivec4 R15i = ivec4(0);
+ivec4 R16i = ivec4(0);
+ivec4 R17i = ivec4(0);
+ivec4 R18i = ivec4(0);
+ivec4 R19i = ivec4(0);
+ivec4 R20i = ivec4(0);
+ivec4 R125i = ivec4(0);
+ivec4 R126i = ivec4(0);
+ivec4 R127i = ivec4(0);
+int backupReg0i, backupReg1i, backupReg2i, backupReg3i, backupReg4i;
+int PV0ix = 0, PV0iy = 0, PV0iz = 0, PV0iw = 0, PV1ix = 0, PV1iy = 0, PV1iz = 0, PV1iw = 0;
+int PS0i = 0, PS1i = 0;
+ivec4 tempi = ivec4(0);
+float tempResultf;
+int tempResulti;
+ivec4 ARi = ivec4(0);
+bool predResult = true;
+bool activeMaskStack[3];
+bool activeMaskStackC[4];
+activeMaskStack[0] = false;
+activeMaskStack[1] = false;
+activeMaskStackC[0] = false;
+activeMaskStackC[1] = false;
+activeMaskStackC[2] = false;
+activeMaskStack[0] = true;
+activeMaskStackC[0] = true;
+activeMaskStackC[1] = true;
+if( activeMaskStackC[1] == true ) {
+R1i.xyzw = (v2g[0].passV2GParameter0.xyzw);
+R10i.xyzw = (v2g[0].passV2GParameter1.xyzw);
+R9i.xyzw = (v2g[0].passV2GParameter2.xyzw);
+R11i.xyzw = (v2g[0].passV2GParameter3.xyzw);
+}
+if( activeMaskStackC[1] == true ) {
+// 0
+R13i.x = 0;
+R0i.y = R1i.y;
+R2i.z = 0;
+R8i.w = floatBitsToInt(1.0);
+R2i.x = R1i.z;
+}
+if( activeMaskStackC[1] == true ) {
+R12i.xyzw = (v2g[0].passV2GParameter4.xyzw);
+R14i.xyzw = (v2g[0].passV2GParameter5.xyzw);
+R3i.xyzw = (v2g[0].passV2GParameter6.xyzw);
+R6i.xyzw = (v2g[0].passV2GParameter7.xyzw);
+R4i.xyzw = (v2g[0].passV2GParameter8.xyzw);
+R15i.xyzw = (v2g[0].passV2GParameter9.xyzw);
+R5i.xyzw = (v2g[0].passV2GParameter10.xyzw);
+}
+if( activeMaskStackC[1] == true ) {
+activeMaskStack[1] = activeMaskStack[0];
+activeMaskStackC[2] = activeMaskStackC[1];
+// 0
+PV0ix = ((intBitsToFloat(R3i.y) == 1.0)?-1:0);
+PV0iy = ((intBitsToFloat(R3i.x) == 0.0)?-1:0);
+R16i.z = 0;
+R7i.w = floatBitsToInt(1.0);
+R17i.x = R1i.x;
+// 1
+R0i.x = R1i.z;
+R7i.y = ((PV0ix == 0)?(0):(int(1)));
+R1i.z = 0;
+R0i.w = ((PV0iy == 0)?(0):(int(1)));
+R3i.y = R1i.w;
+// 2
+R2i.y = R1i.w;
+R17i.z = 0;
+R1i.w = floatBitsToInt(1.0);
+R2i.w = floatBitsToInt(1.0);
+// 3
+predResult = (R7i.y == 0);
+activeMaskStack[1] = predResult;
+activeMaskStackC[2] = predResult == true && activeMaskStackC[1] == true;
+}
+else {
+activeMaskStack[1] = false;
+activeMaskStackC[2] = false;
+}
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R2i.z),intBitsToFloat(R8i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV0ix = tempi.x;
+PV0iy = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+// 1
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R0i.y),intBitsToFloat(R16i.z),intBitsToFloat(R7i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+PV1iw = tempi.x;
+R5i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.x), intBitsToFloat(PV0ix)));
+// 2
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R17i.x),intBitsToFloat(R3i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV0ix = tempi.x;
+PV0iy = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+R3i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.x), intBitsToFloat(PV1ix)));
+// 3
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(R2i.y),intBitsToFloat(R17i.z),intBitsToFloat(R2i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+PV1iw = tempi.x;
+R19i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.x), intBitsToFloat(PV0ix)));
+// 4
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R2i.z),intBitsToFloat(R8i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV0ix = tempi.x;
+PV0iy = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+R16i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.x), intBitsToFloat(PV1ix)));
+// 5
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R0i.y),intBitsToFloat(R16i.z),intBitsToFloat(R7i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+PV1iw = tempi.x;
+R1i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.y), intBitsToFloat(PV0ix)));
+// 6
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R17i.x),intBitsToFloat(R3i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV0ix = tempi.x;
+PV0iy = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+R0i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.y), intBitsToFloat(PV1ix)));
+// 7
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(R2i.y),intBitsToFloat(R17i.z),intBitsToFloat(R2i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+PV1iw = tempi.x;
+R2i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.y), intBitsToFloat(PV0ix)));
+// 8
+R3i.y = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R15i.y), intBitsToFloat(PV1ix)));
+R1i.y = floatBitsToInt(intBitsToFloat(R3i.w) + intBitsToFloat(R1i.y));
+// 9
+R0i.y = floatBitsToInt(intBitsToFloat(R3i.w) + intBitsToFloat(R0i.y));
+R16i.y = floatBitsToInt(intBitsToFloat(R3i.w) + intBitsToFloat(R2i.y));
+// 10
+R19i.y = floatBitsToInt(intBitsToFloat(R3i.w) + intBitsToFloat(R3i.y));
+// 11
+predResult = (R0i.w == 0);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+R6i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R5i.x));
+R6i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R1i.y));
+R6i.z = floatBitsToInt(-(intBitsToFloat(R3i.z)));
+R6i.w = floatBitsToInt(1.0);
+R1i.x = R14i.z;
+// 1
+R15i.x = R14i.x;
+R1i.y = R14i.y;
+R15i.y = R14i.w;
+// 2
+R18i.x = floatBitsToInt(-(1.0));
+R18i.y = 0;
+R18i.z = 0;
+R20i.y = floatBitsToInt(-(1.0));
+// 3
+R17i.x = 0;
+R13i.y = 0;
+R13i.z = 0;
+R5i.z = floatBitsToInt(1.0);
+// 4
+R5i.x = R14i.z;
+R17i.y = 0;
+R17i.z = 0;
+R5i.y = R14i.w;
+// 5
+R2i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R3i.x));
+R2i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R0i.y));
+R2i.z = floatBitsToInt(-(intBitsToFloat(R3i.z)));
+R2i.w = R6i.w;
+R4i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R19i.x));
+// 6
+R0i.x = R2i.x;
+R4i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R16i.y));
+R4i.z = floatBitsToInt(-(intBitsToFloat(R3i.z)));
+R4i.w = R6i.w;
+R0i.y = R2i.y;
+// 7
+R3i.x = R4i.x;
+R3i.y = R4i.y;
+R0i.z = R2i.z;
+R0i.w = R2i.w;
+R3i.w = R4i.w;
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R7i.x = R18i.x;
+R7i.y = R18i.y;
+R7i.z = R18i.z;
+// 1
+R8i.x = R13i.x;
+R8i.y = R20i.y;
+R8i.z = R13i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R7i.x = R13i.x;
+R7i.y = R13i.y;
+R7i.z = R5i.z;
+// 1
+R8i.x = R17i.x;
+R8i.y = R17i.y;
+R8i.z = R17i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R10i.x), intBitsToFloat(R10i.y), intBitsToFloat(R10i.z), intBitsToFloat(R10i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R14i.x), intBitsToFloat(R14i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z), intBitsToFloat(R0i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R18i.x), intBitsToFloat(R18i.y), intBitsToFloat(R18i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R7i.x = R13i.x;
+R7i.y = R20i.y;
+R7i.z = R13i.z;
+// 1
+R8i.x = R13i.x;
+R8i.y = R13i.y;
+R8i.z = R5i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R17i.x), intBitsToFloat(R17i.y), intBitsToFloat(R17i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R9i.x), intBitsToFloat(R9i.y), intBitsToFloat(R9i.z), intBitsToFloat(R9i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z), intBitsToFloat(R2i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+backupReg0i = R3i.z;
+R6i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R16i.x));
+R6i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R19i.y));
+R3i.z = R4i.z;
+R6i.z = floatBitsToInt(-(intBitsToFloat(backupReg0i)));
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z), intBitsToFloat(R3i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R18i.x;
+R0i.y = R18i.y;
+R0i.z = R18i.z;
+// 1
+R1i.x = R13i.x;
+R1i.y = R20i.y;
+R1i.z = R13i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+R0i.z = R5i.z;
+// 1
+R1i.x = R17i.x;
+R1i.y = R17i.y;
+R1i.z = R17i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R11i.x), intBitsToFloat(R11i.y), intBitsToFloat(R11i.z), intBitsToFloat(R11i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R15i.x), intBitsToFloat(R15i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z), intBitsToFloat(R4i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R18i.x), intBitsToFloat(R18i.y), intBitsToFloat(R18i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R20i.y;
+R0i.z = R13i.z;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+R1i.z = R5i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R17i.x), intBitsToFloat(R17i.y), intBitsToFloat(R17i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R12i.x), intBitsToFloat(R12i.y), intBitsToFloat(R12i.z), intBitsToFloat(R12i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+activeMaskStack[2] = activeMaskStack[2] == false;
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+R6i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R3i.x));
+R6i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R0i.y));
+R6i.z = floatBitsToInt(-(intBitsToFloat(R3i.z)));
+R6i.w = floatBitsToInt(1.0);
+R0i.x = R14i.z;
+// 1
+R4i.x = R14i.z;
+R0i.y = R14i.y;
+R4i.y = R14i.w;
+// 2
+R18i.x = floatBitsToInt(-(1.0));
+R18i.y = 0;
+R18i.z = 0;
+R20i.y = floatBitsToInt(-(1.0));
+// 3
+R17i.x = 0;
+R13i.y = 0;
+R13i.z = 0;
+R4i.z = floatBitsToInt(1.0);
+// 4
+R15i.x = R14i.x;
+R17i.y = 0;
+R17i.z = 0;
+R15i.y = R14i.w;
+// 5
+R2i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R5i.x));
+R2i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R1i.y));
+R2i.z = floatBitsToInt(-(intBitsToFloat(R3i.z)));
+R2i.w = R6i.w;
+R5i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R16i.x));
+// 6
+R1i.x = R2i.x;
+R5i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R19i.y));
+R5i.z = floatBitsToInt(-(intBitsToFloat(R3i.z)));
+R5i.w = R6i.w;
+R1i.y = R2i.y;
+// 7
+R3i.x = R5i.x;
+R3i.y = R5i.y;
+R1i.z = R2i.z;
+R1i.w = R2i.w;
+R3i.w = R5i.w;
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R7i.x = R18i.x;
+R7i.y = R18i.y;
+R7i.z = R18i.z;
+// 1
+R8i.x = R13i.x;
+R8i.y = R20i.y;
+R8i.z = R13i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R7i.x = R13i.x;
+R7i.y = R13i.y;
+R7i.z = R4i.z;
+// 1
+R8i.x = R17i.x;
+R8i.y = R17i.y;
+R8i.z = R17i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R9i.x), intBitsToFloat(R9i.y), intBitsToFloat(R9i.z), intBitsToFloat(R9i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z), intBitsToFloat(R1i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R18i.x), intBitsToFloat(R18i.y), intBitsToFloat(R18i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R20i.y;
+R0i.z = R13i.z;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+R1i.z = R4i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R17i.x), intBitsToFloat(R17i.y), intBitsToFloat(R17i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R10i.x), intBitsToFloat(R10i.y), intBitsToFloat(R10i.z), intBitsToFloat(R10i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R14i.x), intBitsToFloat(R14i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z), intBitsToFloat(R2i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+backupReg0i = R3i.z;
+R6i.x = floatBitsToInt(intBitsToFloat(R15i.z) + intBitsToFloat(R19i.x));
+R6i.y = floatBitsToInt(intBitsToFloat(R15i.w) + intBitsToFloat(R16i.y));
+R3i.z = R5i.z;
+R6i.z = floatBitsToInt(-(intBitsToFloat(backupReg0i)));
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z), intBitsToFloat(R3i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R18i.x;
+R0i.y = R18i.y;
+R0i.z = R18i.z;
+// 1
+R1i.x = R13i.x;
+R1i.y = R20i.y;
+R1i.z = R13i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+R0i.z = R4i.z;
+// 1
+R1i.x = R17i.x;
+R1i.y = R17i.y;
+R1i.z = R17i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R12i.x), intBitsToFloat(R12i.y), intBitsToFloat(R12i.z), intBitsToFloat(R12i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z), intBitsToFloat(R5i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R18i.x), intBitsToFloat(R18i.y), intBitsToFloat(R18i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R20i.y;
+R0i.z = R13i.z;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+R1i.z = R4i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R17i.x), intBitsToFloat(R17i.y), intBitsToFloat(R17i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R11i.x), intBitsToFloat(R11i.y), intBitsToFloat(R11i.z), intBitsToFloat(R11i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R15i.x), intBitsToFloat(R15i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+activeMaskStack[1] = activeMaskStack[1] == false;
+activeMaskStackC[2] = activeMaskStack[1] == true && activeMaskStackC[1] == true;
+if( activeMaskStackC[2] == true ) {
+activeMaskStack[2] = activeMaskStack[1];
+activeMaskStackC[3] = activeMaskStackC[2];
+// 0
+R127i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R2i.z),intBitsToFloat(R8i.w)),vec4(-(intBitsToFloat(R15i.x)),-(intBitsToFloat(R15i.y)),-(intBitsToFloat(R15i.z)),-(intBitsToFloat(R15i.w)))));
+PV0iy = R127i.x;
+PV0iz = R127i.x;
+PV0iw = R127i.x;
+R127i.y = floatBitsToInt(intBitsToFloat(R3i.z) * intBitsToFloat(0x38d1b717));
+// 1
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R0i.y),intBitsToFloat(R16i.z),intBitsToFloat(R7i.w)),vec4(-(intBitsToFloat(R15i.x)),-(intBitsToFloat(R15i.y)),-(intBitsToFloat(R15i.z)),-(intBitsToFloat(R15i.w)))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+R127i.z = tempi.x;
+PV1iw = tempi.x;
+R126i.x = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R127i.x), intBitsToFloat(R127i.y)));
+// 2
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R17i.x),intBitsToFloat(R3i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(-(intBitsToFloat(R15i.x)),-(intBitsToFloat(R15i.y)),-(intBitsToFloat(R15i.z)),-(intBitsToFloat(R15i.w)))));
+PV0ix = tempi.x;
+R126i.y = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+PS0i = floatBitsToInt(mul_nonIEEE(intBitsToFloat(PV1ix), intBitsToFloat(R127i.y)));
+// 3
+R125i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(R2i.y),intBitsToFloat(R17i.z),intBitsToFloat(R2i.w)),vec4(-(intBitsToFloat(R15i.x)),-(intBitsToFloat(R15i.y)),-(intBitsToFloat(R15i.z)),-(intBitsToFloat(R15i.w)))));
+PV1iy = R125i.x;
+PV1iz = R125i.x;
+PV1iw = R125i.x;
+R8i.z = floatBitsToInt(intBitsToFloat(R127i.z) + intBitsToFloat(PS0i));
+// 4
+PV0ix = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R125i.x), intBitsToFloat(R127i.y)));
+PV0iy = floatBitsToInt(mul_nonIEEE(intBitsToFloat(R126i.y), intBitsToFloat(R127i.y)));
+R13i.z = floatBitsToInt(intBitsToFloat(R127i.x) + intBitsToFloat(R126i.x));
+// 5
+R7i.z = floatBitsToInt(intBitsToFloat(R126i.y) + intBitsToFloat(PV0iy));
+R0i.z = floatBitsToInt(intBitsToFloat(R125i.x) + intBitsToFloat(PV0ix));
+// 6
+R16i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R2i.z),intBitsToFloat(R8i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV0iy = R16i.x;
+PV0iz = R16i.x;
+PV0iw = R16i.x;
+// 7
+R8i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R0i.y),intBitsToFloat(R16i.z),intBitsToFloat(R7i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV1iy = R8i.x;
+PV1iz = R8i.x;
+PV1iw = R8i.x;
+// 8
+R7i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R17i.x),intBitsToFloat(R3i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV0iy = R7i.x;
+PV0iz = R7i.x;
+PV0iw = R7i.x;
+// 9
+R6i.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(R2i.y),intBitsToFloat(R17i.z),intBitsToFloat(R2i.w)),vec4(intBitsToFloat(R6i.x),intBitsToFloat(R6i.y),intBitsToFloat(R6i.z),intBitsToFloat(R6i.w))));
+PV1iy = R6i.x;
+PV1iz = R6i.x;
+PV1iw = R6i.x;
+// 10
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R2i.z),intBitsToFloat(R8i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV0ix = tempi.x;
+R16i.y = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+// 11
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R1i.x),intBitsToFloat(R1i.y),intBitsToFloat(R2i.z),intBitsToFloat(R8i.w)),vec4(intBitsToFloat(R5i.x),intBitsToFloat(R5i.y),intBitsToFloat(R5i.z),intBitsToFloat(R5i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+R16i.w = tempi.x;
+// 12
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R0i.y),intBitsToFloat(R16i.z),intBitsToFloat(R7i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV0ix = tempi.x;
+R8i.y = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+// 13
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R2i.x),intBitsToFloat(R0i.y),intBitsToFloat(R16i.z),intBitsToFloat(R7i.w)),vec4(intBitsToFloat(R5i.x),intBitsToFloat(R5i.y),intBitsToFloat(R5i.z),intBitsToFloat(R5i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+R8i.w = tempi.x;
+// 14
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R17i.x),intBitsToFloat(R3i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV0ix = tempi.x;
+R7i.y = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+// 15
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R17i.x),intBitsToFloat(R3i.y),intBitsToFloat(R1i.z),intBitsToFloat(R1i.w)),vec4(intBitsToFloat(R5i.x),intBitsToFloat(R5i.y),intBitsToFloat(R5i.z),intBitsToFloat(R5i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+R7i.w = tempi.x;
+// 16
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(R2i.y),intBitsToFloat(R17i.z),intBitsToFloat(R2i.w)),vec4(intBitsToFloat(R4i.x),intBitsToFloat(R4i.y),intBitsToFloat(R4i.z),intBitsToFloat(R4i.w))));
+PV0ix = tempi.x;
+R6i.y = tempi.x;
+PV0iz = tempi.x;
+PV0iw = tempi.x;
+// 17
+tempi.x = floatBitsToInt(dot(vec4(intBitsToFloat(R0i.x),intBitsToFloat(R2i.y),intBitsToFloat(R17i.z),intBitsToFloat(R2i.w)),vec4(intBitsToFloat(R5i.x),intBitsToFloat(R5i.y),intBitsToFloat(R5i.z),intBitsToFloat(R5i.w))));
+PV1ix = tempi.x;
+PV1iy = tempi.x;
+PV1iz = tempi.x;
+R6i.w = tempi.x;
+// 18
+predResult = (R0i.w == 0);
+activeMaskStack[2] = predResult;
+activeMaskStackC[3] = predResult == true && activeMaskStackC[2] == true;
+}
+else {
+activeMaskStack[2] = false;
+activeMaskStackC[3] = false;
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R14i.z;
+R0i.y = R14i.y;
+R16i.z = floatBitsToInt(-(intBitsToFloat(R13i.z)));
+R17i.x = R14i.x;
+// 1
+R4i.x = floatBitsToInt(-(1.0));
+R17i.y = R14i.w;
+R4i.z = 0;
+R4i.y = 0;
+// 2
+R5i.x = 0;
+R15i.y = floatBitsToInt(-(1.0));
+R1i.z = 0;
+R13i.y = 0;
+// 3
+R1i.x = R14i.z;
+R5i.y = 0;
+R13i.z = floatBitsToInt(1.0);
+R5i.z = 0;
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R16i.x), intBitsToFloat(R16i.y), intBitsToFloat(R16i.z), intBitsToFloat(R16i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R4i.x;
+R2i.y = R4i.y;
+R2i.z = R4i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R15i.y;
+R3i.z = R1i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R13i.y;
+R2i.z = R13i.z;
+// 1
+R3i.x = R5i.x;
+R3i.y = R5i.y;
+R3i.z = R5i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R10i.x), intBitsToFloat(R10i.y), intBitsToFloat(R10i.z), intBitsToFloat(R10i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R14i.x), intBitsToFloat(R14i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R16i.x), intBitsToFloat(R16i.y), intBitsToFloat(R16i.z), intBitsToFloat(R16i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+R1i.y = R14i.w;
+R8i.z = floatBitsToInt(-(intBitsToFloat(R8i.z)));
+R7i.z = floatBitsToInt(-(intBitsToFloat(R7i.z)));
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z), intBitsToFloat(R8i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R15i.y;
+R2i.z = R1i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R13i.y;
+R3i.z = R13i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R9i.x), intBitsToFloat(R9i.y), intBitsToFloat(R9i.z), intBitsToFloat(R9i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R13i.y;
+// 1
+R3i.x = R13i.x;
+R3i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z), intBitsToFloat(R8i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z), intBitsToFloat(R7i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R4i.x;
+R2i.y = R4i.y;
+R2i.z = R4i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R15i.y;
+R3i.z = R1i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R13i.y;
+R2i.z = R13i.z;
+// 1
+R3i.x = R5i.x;
+R3i.y = R5i.y;
+R3i.z = R5i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R11i.x), intBitsToFloat(R11i.y), intBitsToFloat(R11i.z), intBitsToFloat(R11i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R17i.x), intBitsToFloat(R17i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z), intBitsToFloat(R7i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+R6i.z = floatBitsToInt(-(intBitsToFloat(R0i.z)));
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y), intBitsToFloat(R4i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R15i.y;
+R2i.z = R1i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R13i.y;
+R3i.z = R13i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R12i.x), intBitsToFloat(R12i.y), intBitsToFloat(R12i.z), intBitsToFloat(R12i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+activeMaskStack[2] = activeMaskStack[2] == false;
+activeMaskStackC[3] = activeMaskStack[2] == true && activeMaskStackC[2] == true;
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R14i.z;
+R0i.y = R14i.y;
+R8i.z = floatBitsToInt(-(intBitsToFloat(R8i.z)));
+R1i.x = R14i.z;
+// 1
+R15i.x = floatBitsToInt(-(1.0));
+R1i.y = R14i.w;
+R15i.z = 0;
+R15i.y = 0;
+// 2
+R5i.x = 0;
+R17i.y = floatBitsToInt(-(1.0));
+R1i.z = 0;
+R13i.y = 0;
+// 3
+R4i.x = R14i.x;
+R5i.y = 0;
+R4i.z = floatBitsToInt(1.0);
+R5i.z = 0;
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z), intBitsToFloat(R8i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R15i.x;
+R2i.y = R15i.y;
+R2i.z = R15i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R17i.y;
+R3i.z = R1i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R13i.y;
+R2i.z = R4i.z;
+// 1
+R3i.x = R5i.x;
+R3i.y = R5i.y;
+R3i.z = R5i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R9i.x), intBitsToFloat(R9i.y), intBitsToFloat(R9i.z), intBitsToFloat(R9i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R8i.x), intBitsToFloat(R8i.y), intBitsToFloat(R8i.z), intBitsToFloat(R8i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+R4i.y = R14i.w;
+R16i.z = floatBitsToInt(-(intBitsToFloat(R13i.z)));
+R6i.z = floatBitsToInt(-(intBitsToFloat(R0i.z)));
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R16i.x), intBitsToFloat(R16i.y), intBitsToFloat(R16i.z), intBitsToFloat(R16i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R15i.x), intBitsToFloat(R15i.y), intBitsToFloat(R15i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R17i.y;
+R2i.z = R1i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R13i.y;
+R3i.z = R4i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R10i.x), intBitsToFloat(R10i.y), intBitsToFloat(R10i.z), intBitsToFloat(R10i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R14i.x), intBitsToFloat(R14i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R13i.y;
+// 1
+R3i.x = R13i.x;
+R3i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R16i.x), intBitsToFloat(R16i.y), intBitsToFloat(R16i.z), intBitsToFloat(R16i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R15i.x;
+R2i.y = R15i.y;
+R2i.z = R15i.z;
+// 1
+R3i.x = R13i.x;
+R3i.y = R17i.y;
+R3i.z = R1i.z;
+}
+passG2PParameter1.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter2.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R2i.x = R13i.x;
+R2i.y = R13i.y;
+R2i.z = R4i.z;
+// 1
+R3i.x = R5i.x;
+R3i.y = R5i.y;
+R3i.z = R5i.z;
+}
+passG2PParameter3.xyz = vec3(intBitsToFloat(R2i.x), intBitsToFloat(R2i.y), intBitsToFloat(R2i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R3i.x), intBitsToFloat(R3i.y), intBitsToFloat(R3i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R12i.x), intBitsToFloat(R12i.y), intBitsToFloat(R12i.z), intBitsToFloat(R12i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+passG2PParameter8.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R13i.x), intBitsToFloat(R13i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R6i.x), intBitsToFloat(R6i.y), intBitsToFloat(R6i.z), intBitsToFloat(R6i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+if( activeMaskStackC[3] == true ) {
+// 0
+R7i.z = floatBitsToInt(-(intBitsToFloat(R7i.z)));
+}
+passG2PParameter0.xyzw = vec4(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z), intBitsToFloat(R7i.w));
+passG2PParameter1.xyz = vec3(intBitsToFloat(R15i.x), intBitsToFloat(R15i.y), intBitsToFloat(R15i.z));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R17i.y;
+R0i.z = R1i.z;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+R1i.z = R4i.z;
+}
+passG2PParameter2.xyz = vec3(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y), intBitsToFloat(R0i.z));
+passG2PParameter3.xyz = vec3(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y), intBitsToFloat(R1i.z));
+passG2PParameter4.xyz = vec3(intBitsToFloat(R5i.x), intBitsToFloat(R5i.y), intBitsToFloat(R5i.z));
+passG2PParameter5.xyzw = vec4(intBitsToFloat(R11i.x), intBitsToFloat(R11i.y), intBitsToFloat(R11i.z), intBitsToFloat(R11i.w));
+passG2PParameter6.xy = vec2(intBitsToFloat(R4i.x), intBitsToFloat(R4i.y));
+passG2PParameter7.x = float(intBitsToFloat(R13i.x));
+if( activeMaskStackC[3] == true ) {
+// 0
+R0i.x = R13i.x;
+R0i.y = R13i.y;
+// 1
+R1i.x = R13i.x;
+R1i.y = R13i.y;
+}
+passG2PParameter8.xy = vec2(intBitsToFloat(R0i.x), intBitsToFloat(R0i.y));
+passG2PParameter9.xy = vec2(intBitsToFloat(R1i.x), intBitsToFloat(R1i.y));
+{
+vec4 pos = vec4(0.0,0.0,0.0,1.0);
+pos.xyzw = vec4(intBitsToFloat(R7i.x), intBitsToFloat(R7i.y), intBitsToFloat(R7i.z), intBitsToFloat(R7i.w));
+if (pos.w == 1.0 && abs(pos.x) != 1.0) pos.x *= hudScale;
+SET_POSITION(pos);
+}
+if( activeMaskStackC[3] == true ) {
+EmitVertex();
+}
+activeMaskStackC[1] = activeMaskStack[0] == true && activeMaskStackC[0] == true;
+EndPrimitive();
+}
