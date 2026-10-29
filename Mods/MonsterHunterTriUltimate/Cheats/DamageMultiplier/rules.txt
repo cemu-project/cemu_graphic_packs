@@ -1,0 +1,29 @@
+[Definition]
+titleIds = 0005000010118300
+name = Damage Multiplier
+path = "Monster Hunter 3 Ultimate/Cheats/Damage Multiplier"
+description = Multiplies the damage monsters take (HP, flinch and part damage) to play multiplayer-scaled quests solo. Damage to the hunter is unchanged. Verified for v32. Made by Juan Pablo Barrientos.
+version = 7
+
+[Default]
+$mult:int = 25
+
+[Preset]
+name = 2.5x
+$mult:int = 25
+
+[Preset]
+name = 1x (off)
+$mult:int = 10
+
+[Preset]
+name = 1.5x
+$mult:int = 15
+
+[Preset]
+name = 2x
+$mult:int = 20
+
+[Preset]
+name = 3x
+$mult:int = 30
