@@ -1,0 +1,46 @@
+[Definition]
+titleIds = 000500001010B500
+name = Unlimited Upgrade Mode (L Toggle)
+path = "Transformers Prime/Mods/Unlimited Upgrade Mode"
+description = Configurable unlimited Upgrade Mode for human players in Story Mode and Multiplayer. Optional Full Upgrade Mayhem for multiplayer CPU fighters. Vehicle-only stages retain their normal restrictions. US v0, Cemu 2.6.
+version = 6
+
+[Default]
+$humanScope:int = 3
+$cpuMayhem:int = 0
+
+# Human Upgrade Mode
+
+[Preset]
+name = Story + Multiplayer (Default)
+category = Human Upgrade Mode
+default = 1
+$humanScope:int = 3
+
+[Preset]
+name = Story Mode Only
+category = Human Upgrade Mode
+$humanScope:int = 1
+
+[Preset]
+name = Multiplayer Only
+category = Human Upgrade Mode
+$humanScope:int = 2
+
+[Preset]
+name = Off (Normal Human Abilities)
+category = Human Upgrade Mode
+$humanScope:int = 0
+
+# Multiplayer CPU Rules
+
+[Preset]
+name = Squash Match (Normal CPU)
+category = Multiplayer CPU Rules
+default = 1
+$cpuMayhem:int = 0
+
+[Preset]
+name = Full Upgrade Mayhem
+category = Multiplayer CPU Rules
+$cpuMayhem:int = 1
