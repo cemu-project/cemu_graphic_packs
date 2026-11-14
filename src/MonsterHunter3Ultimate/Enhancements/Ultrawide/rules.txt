@@ -1,0 +1,134 @@
+[Definition]
+titleIds = 0005000010118300
+name = Ultrawide
+path = "Monster Hunter 3 Ultimate/Enhancements/Ultrawide"
+description = Renders the game at an ultrawide resolution and widens the camera so you see more to the sides instead of a stretched picture. The HUD keeps its shape in the middle 16:9 of the screen. Made for the US v32 update. Don't use it together with the "Graphics options" resolution pack. Render target list and blur shader from the Graphics pack by Skalfate and FrankyBuster.
+version = 7
+
+
+[Default]
+$width = 3440
+$height = 1440
+$gameWidth = 1920
+$gameHeight = 1080
+
+
+[Preset]
+category = Resolution
+name = 2560x1080 (21:9)
+$width = 2560
+$height = 1080
+
+[Preset]
+category = Resolution
+name = 3440x1440 (21:9)
+default = 1
+
+[Preset]
+category = Resolution
+name = 3840x1600 (24:10)
+$width = 3840
+$height = 1600
+
+[Preset]
+category = Resolution
+name = 5120x2160 (21:9)
+$width = 5120
+$height = 2160
+
+[Preset]
+category = Resolution
+name = 3840x1080 (32:9)
+$width = 3840
+$height = 1080
+
+[Preset]
+category = Resolution
+name = 5120x1440 (32:9)
+$width = 5120
+$height = 1440
+
+[Preset]
+category = Resolution
+name = 1920x1080 (16:9, vanilla)
+$width = 1920
+$height = 1080
+
+
+# TV render targets. Width and height scale separately, which is what widens the picture.
+
+[TextureRedefine]
+width = 1920
+height = 1088
+formats = 0x01a,0x011
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width / $gameWidth) * 1920
+overwriteHeight = ($height / $gameHeight) * 1088
+
+[TextureRedefine]
+width = 1920
+height = 1080
+formats = 0x01a,0x011
+tileModesExcluded = 0x001 # For Video Playback
+overwriteWidth = ($width / $gameWidth) * 1920
+overwriteHeight = ($height / $gameHeight) * 1080
+
+[TextureRedefine] # Half Res
+width = 960
+height = 544
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 960
+overwriteHeight = ($height / $gameHeight) * 544
+
+[TextureRedefine]
+width = 960
+height = 540
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 960
+overwriteHeight = ($height / $gameHeight) * 540
+
+[TextureRedefine] # 1/4 Scale
+width = 480
+height = 272
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 480
+overwriteHeight = ($height / $gameHeight) * 272
+
+[TextureRedefine]
+width = 480
+height = 270
+formats = 0x01a
+overwriteWidth = ($width / $gameWidth) * 480
+overwriteHeight = ($height / $gameHeight) * 270
+
+[TextureRedefine] # 1/8 Scale
+width = 256
+height = 144
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 256
+overwriteHeight = ($height / $gameHeight) * 144
+
+[TextureRedefine]
+width = 240
+height = 135
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 240
+overwriteHeight = ($height / $gameHeight) * 135
+
+[TextureRedefine] # 1/16 Scale
+width = 128
+height = 80
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 128
+overwriteHeight = ($height / $gameHeight) * 80
+
+[TextureRedefine]
+width = 120
+height = 67
+formats = 0x01a
+tilemodes = 4
+overwriteWidth = ($width / $gameWidth) * 120
+overwriteHeight = ($height / $gameHeight) * 67
