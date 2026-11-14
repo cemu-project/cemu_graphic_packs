@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010157E00
+name = Cutscene Fix
+path = "Bayonetta/Workarounds/Cutscene Fix"
+description = Fixes FMV cutscenes and the opening movie staying on a white screen (US v1 only). CRI Mana can skip registering its sound server with CRI Atom when it initializes first; this re-registers it whenever a movie player is created.
+version = 4
