@@ -1,0 +1,89 @@
+[Definition]
+titleIds = 0005000010128800,0005000010128400,000500001012b700,0005000e10128400,0005000e10128800,0005000e1012b700
+name = Exposure and Foliage Fix
+path = "Need for Speed Most Wanted U/Workaround/Exposure and Foliage Fix"
+description = Fixes the washed-out, far too bright daylight image and the white, pink or striped foliage.|Exposure: the game adapts its exposure on the CPU from a small luminance image that Cemu does not read back, so the adaptation never happens. This pack measures the brightness in the tone mapping shader instead and scales scene, bloom and lens dirt accordingly. The default was tuned with screenshots from a real Wii U as reference.|Foliage: the deferred lighting shaders ignore the undefined glow and specular data at foliage pixels.|Replaces the "Bloom Fix" pack, keep that one disabled. Changes take effect after restarting the game.|Made by TR2N.
+version = 6
+
+[Default]
+$target = 0.18
+$response = 0.8
+$ceiling = 1.3
+$outlierCap = 4.0
+$minFactor = 0.01
+$maxFactor = 1.0
+$highlights = 0.0
+$knee = 0.35
+
+# Exposure: image brightness in daylight
+
+[Preset]
+name = Wii U Default
+category = Exposure
+default = 1
+
+[Preset]
+name = Darker
+category = Exposure
+$target = 0.14
+
+[Preset]
+name = Much darker
+category = Exposure
+$target = 0.11
+
+[Preset]
+name = Brighter
+category = Exposure
+$target = 0.22
+
+[Preset]
+name = Much brighter
+category = Exposure
+$target = 0.27
+
+[Preset]
+name = Fixed, 20 percent of game exposure
+category = Exposure
+$minFactor = 0.20
+$maxFactor = 0.20
+
+[Preset]
+name = Off (game exposure)
+category = Exposure
+$minFactor = 1.0
+$maxFactor = 1.0
+
+# Adaptation: how strongly the exposure follows brightness changes in the image
+
+[Preset]
+name = Standard
+category = Adaptation
+default = 1
+
+[Preset]
+name = Calmer
+category = Adaptation
+$response = 0.5
+
+[Preset]
+name = Full
+category = Adaptation
+$response = 1.0
+
+# Highlights: darken very bright parts such as the sky, midtones stay unchanged
+
+[Preset]
+name = Highlights original
+category = Highlights
+default = 1
+
+[Preset]
+name = Highlights slightly reduced
+category = Highlights
+$highlights = 0.75
+
+[Preset]
+name = Highlights strongly reduced
+category = Highlights
+$highlights = 1.5
