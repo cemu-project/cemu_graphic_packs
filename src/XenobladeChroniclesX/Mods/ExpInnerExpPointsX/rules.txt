@@ -1,6 +1,6 @@
 [Definition]
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
-name = "Lv Exp Points"
+name = "Lv Exp Points Multiplier"
 path = "Xenoblade Chronicles X/Mods/Experience/Lv Exp Points"
 description = Change the amount of Level Exp points gained in battle, missions, quests and exploration.|Ignores the 9999 exp cap.
 #Credits: lasyan3
@@ -10,7 +10,12 @@ version = 6
 $mod = 1
 
 [Preset]
+name = "x0"
+$mod = 0
+
+[Preset]
 name = "x1"
+default = 1
 
 [Preset]
 name = "x2"

@@ -3,6 +3,7 @@ moduleMatches = 0xF882D5CF, 0x30B6E091, 0x7672271D, 0x218F6E07, 0xAB97DE6B, 0x67
 .origin = codecave
 
 ; get lv 027e14f ; get exp 027e1504 ; set lv 027e1510 ; set exp 027e151c
+; 1b77a520
 
 _levelMemorJP100:
 ;reads from the static address that stores the address for the start of character info memory section
@@ -31,24 +32,29 @@ _charLevelCheat:
 ; Character Level
 li r4, $level
 stb r4, $memoffset (r3)
+; Character exp
+exp = $exp
+lis r4, exp@ha
+addi r4, r4, exp@l
+stw r4, $memoffset+2 (r3)
 
 ;fixes the line we over wrote
 addi r3,r1,0x8
 blr
 
-[XCX_Level_V101E_V102U]
+[XCX_Level_v101E_v102U]
 moduleMatches = 0xF882D5CF, 0x30B6E091, 0x218F6E07 ; 1.0.1E, 1.0.2U, 1.0.0E
 ; Our code applies when the reqMenuCreateParty function is used
 0x023429F0 = bla _levelMemorEU101US102
 
-[XCX_Level_V102J]
+[XCX_Level_v102J]
 moduleMatches = 0x7672271D ; 1.0.2J
 0x02342224 = bla _levelMemorJP102
 
-[XCX_Level_V100U]
+[XCX_Level_v100U]
 moduleMatches = 0xAB97DE6B, 0x676EB33E ; 1.0.1U, 1.0.0U
 0x02342980 = bla _levelMemorUS100
 
-[XCX_Level_V100J]
+[XCX_Level_v100J]
 moduleMatches = 0x785CA8A9 ; 1.0.0J
 0x023420B0 = bla _levelMemorJP100

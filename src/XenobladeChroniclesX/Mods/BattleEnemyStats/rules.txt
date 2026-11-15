@@ -2,45 +2,563 @@
 titleIds = 0005000010116100,00050000101C4C00,00050000101C4D00
 name = "Enemy Statistics modificator"
 path = "Xenoblade Chronicles X/Mods/Battle/Enemy Statistics modificator"
-description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary menu.
-#Credits: lasyan3
+description = Apply a percent modificator on enemies stats (HP, Melee Attack, Melee Accuracy, Ranged Attack, Ranged Accuracy, Potential and Evasion).|You can consult the new values in the Bestiary Menu.
+#Credits: lanyas3, Intra
 version = 6
 
 [Default]
-$mod = 0.001
+$meleeatk = 0.001
+$rangedatk = 0.001
+$potential = 0.001
+$evasion = 0.001
+$meleeacc = 0.001
+$rangedacc = 0.001
+$hp = 0.001
+$other = 0.001
+$custom = 0
+
+# 100% = 0.001 - default value
+#  70% = 0.0007
+#  50% = 0.0005
+#   1% = 0.00001 ; GAME CRASH (enemies are too weak)
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 25%"
-$mod = 0.00025
+$meleeatk = 0.00025
+$rangedatk = 0.00025
+$potential = 0.00025
+$evasion = 0.00025
+$meleeacc = 0.00025
+$rangedacc = 0.00025
+$hp = 0.00025
+$other = 0.00025
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 50%"
-$mod = 0.0005
+$meleeatk = 0.0005
+$rangedatk = 0.0005
+$potential = 0.0005
+$evasion = 0.0005
+$meleeacc = 0.0005
+$rangedacc = 0.0005
+$hp = 0.0005
+$other = 0.0005
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 75%"
-$mod = 0.00075
+$meleeatk = 0.00075
+$rangedatk = 0.00075
+$potential = 0.00075
+$evasion = 0.00075
+$meleeacc = 0.00075
+$rangedacc = 0.00075
+$hp = 0.00075
+$other = 0.00075
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 100% (default)"
 default = 1
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 125%"
-$mod = 0.00125
+$meleeatk = 0.00125
+$rangedatk = 0.00125
+$potential = 0.00125
+$evasion = 0.00125
+$meleeacc = 0.00125
+$rangedacc = 0.00125
+$hp = 0.00125
+$other = 0.00125
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 150%"
-$mod = 0.0015
+$meleeatk = 0.0015
+$rangedatk = 0.0015
+$potential = 0.0015
+$evasion = 0.0015
+$meleeacc = 0.0015
+$rangedacc = 0.0015
+$hp = 0.0015
+$other = 0.0015
 
 [Preset]
+category = All Enemy Stats
 name = "Set at 200%"
-$mod = 0.002
+$meleeatk = 0.002
+$rangedatk = 0.002
+$potential = 0.002
+$evasion = 0.002
+$meleeacc = 0.002
+$rangedacc = 0.002
+$hp = 0.002
+$other = 0.002
 
 [Preset]
+category = All Enemy Stats
 name = "Hell: Set at 300%"
-$mod = 0.003
+$meleeatk = 0.003
+$rangedatk = 0.003
+$potential = 0.003
+$evasion = 0.003
+$meleeacc = 0.003
+$rangedacc = 0.003
+$hp = 0.003
+$other = 0.003
 
 [Preset]
+category = All Enemy Stats
 name = "Impossible: Set at 1000%"
-$mod = 0.01
+$meleeatk = 0.01
+$rangedatk = 0.01
+$potential = 0.01
+$evasion = 0.003 #setting the evasion too high would actually make it impossible
+$meleeacc = 0.01
+$rangedacc = 0.01
+$hp = 0.01
+$other = 0.01
+
+[Preset]
+category = All Enemy Stats
+name = "Custom"
+$custom = 1
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 25% "
+$hp = 0.00025
+$other = 0.00025
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 50% "
+$hp = 0.0005
+$other = 0.0005
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 75% "
+$hp = 0.00075
+$other = 0.00075
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 100% (default) "
+default = 1
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 125% "
+$hp = 0.00125
+$other = 0.00125
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 150% "
+$hp = 0.0015
+$other = 0.0015
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Set at 200% "
+$hp = 0.002
+$other = 0.002
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Hell: Set at 300% "
+$hp = 0.003
+$other = 0.003
+
+[Preset]
+category = Enemy HP Stat
+condition = $custom == 1
+name = "Impossible: Set at 1000% "
+$hp = 0.01
+$other = 0.01
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 25%  "
+$meleeatk = 0.00025
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 50%  "
+$meleeatk = 0.0005
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 75%  "
+$meleeatk = 0.00075
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 100% (default)  "
+default = 1
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 125%  "
+$meleeatk = 0.00125
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 150%  "
+$meleeatk = 0.0015
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Set at 200%  "
+$meleeatk = 0.002
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Hell: Set at 300%  "
+$meleeatk = 0.003
+
+[Preset]
+category = Enemy Melee Attack Stat
+condition = $custom == 1
+name = "Impossible: Set at 1000%  "
+$meleeatk = 0.01
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 25%   "
+$meleeacc = 0.00025
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 50%   "
+$meleeacc = 0.0005
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 75%   "
+$meleeacc = 0.00075
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 100% (default)   "
+default = 1
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 125%   "
+$meleeacc = 0.00125
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 150%   "
+$meleeacc = 0.0015
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Set at 200%   "
+$meleeacc = 0.002
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Hell: Set at 300%   "
+$meleeacc = 0.003
+
+[Preset]
+category = Enemy Melee Accuracy Stat
+condition = $custom == 1
+name = "Impossible: Set at 1000%   "
+$meleeacc = 0.01
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 25%    "
+$rangedatk = 0.00025
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 50%    "
+$rangedatk = 0.0005
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 75%    "
+$rangedatk = 0.00075
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 100% (default)    "
+default = 1
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 125%    "
+$rangedatk = 0.00125
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 150%    "
+$rangedatk = 0.0015
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Set at 200%    "
+$rangedatk = 0.002
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Hell: Set at 300%    "
+$rangedatk = 0.003
+
+[Preset]
+category = Enemy Ranged Attack Stat
+condition = $custom == 1
+name = "Impossible: Set at 1000%    "
+$rangedatk = 0.01
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 25%     "
+$rangedacc = 0.00025
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 50%     "
+$rangedacc = 0.0005
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 75%     "
+$rangedacc = 0.00075
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 100% (default)     "
+default = 1
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 125%     "
+$rangedacc = 0.00125
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 150%     "
+$rangedacc = 0.0015
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Set at 200%     "
+$rangedacc = 0.002
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Hell: Set at 300%     "
+$rangedacc = 0.003
+
+[Preset]
+category = Enemy Ranged Accuracy Stat
+condition = $custom == 1
+name = "Impossible: Set at 1000%     "
+$rangedacc = 0.01
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 25%      "
+$potential = 0.00025
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 50%      "
+$potential = 0.0005
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 75%      "
+$potential = 0.00075
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 100% (default)      "
+default = 1
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 125%      "
+$potential = 0.00125
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 150%      "
+$potential = 0.0015
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Set at 200%      "
+$potential = 0.002
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Hell: Set at 300%      "
+$potential = 0.003
+
+[Preset]
+category = Enemy Potential Stat
+condition = $custom == 1
+name = "Impossible: Set at 1000%      "
+$potential = 0.01
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 25%       "
+$evasion = 0.00025
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 50%       "
+$evasion = 0.0005
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 75%       "
+$evasion = 0.00075
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 100% (default)       "
+default = 1
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 125%       "
+$evasion = 0.00125
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 150%       "
+$evasion = 0.0015
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Set at 200%       "
+$evasion = 0.002
+
+[Preset]
+category = Enemy Evasion Stat
+condition = $custom == 1
+name = "Hell: Set at 300%       "
+$evasion = 0.003
+
+#remember to remove the $other from Enemy HP Stats when uncommenting
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 25%        "
+#$other = 0.00025
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 50%        "
+#$other = 0.0005
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 75%        "
+#$other = 0.00075
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 100% (default)        "
+#default = 1
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 125%        "
+#$other = 0.00125
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 150%        "
+#$other = 0.0015
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Set at 200%        "
+#$other = 0.002
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Hell: Set at 300%        "
+#$other = 0.003
+#
+#[Preset]
+#category = Enemy Other Stats
+#condition = $custom == 1
+#name = "Impossible: Set at 1000%        "
+#$other = 0.01
