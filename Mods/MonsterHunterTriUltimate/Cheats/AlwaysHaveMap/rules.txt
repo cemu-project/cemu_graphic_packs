@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010118300
+name = Always Have Map
+path = "Monster Hunter 3 Ultimate/Cheats/Always Have Map"
+description = Shows the full map in quests without carrying the Map item, like in Moga Woods. Verified for v32. Made by Juan Pablo Barrientos.
+version = 7
