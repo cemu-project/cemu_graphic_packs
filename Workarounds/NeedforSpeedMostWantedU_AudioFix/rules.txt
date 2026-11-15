@@ -1,0 +1,6 @@
+[Definition]
+titleIds = 0005000010128800,0005000010128400,000500001012b700,0005000e10128400,0005000e10128800,0005000e1012b700
+name = Audio Fix
+path = "Need for Speed Most Wanted U/Workaround/Audio Fix"
+description = Fixes the distorted buzzing and hissing noise during gear shifts and braking. The game unpacks part of its sound effects with the system function AXDecodeAdpcmData, which Cemu 2.6 does not provide, so the game plays whatever is left in its buffer. This pack supplies the missing decoder.|Only for the EU version with update v32 (module checksum 0xfc370b5b). On other versions the pack does nothing. Changes take effect after restarting the game.|Made by TR2N.
+version = 6
