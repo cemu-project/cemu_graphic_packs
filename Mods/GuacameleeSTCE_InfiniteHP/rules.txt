@@ -1,1 +1,7 @@
+[Definition]
+titleIds = 0005000010176800
+name = Infinite HP
+path = "Guacamelee! Super Turbo Championship Edition/Mods/Infinite HP"
+description = Prevents the player from taking HP damage while enemies, elites, and bosses take normal damage (requires current HP between 250 and 420).
+version = 6
 
