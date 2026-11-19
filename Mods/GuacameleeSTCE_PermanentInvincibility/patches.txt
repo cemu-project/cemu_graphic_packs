@@ -1,1 +1,17 @@
+[GuacameleeSTCE_PermanentInvincibility]
+moduleMatches = 0xc50a3513
+
+# 1. Safety fallback: prevent accidental execution if printf is called
+0x02A95BEC = blr
+
+# 2. Code cave inside printf (0x02A95C30, non-overlapping with InfiniteHP)
+# Writes an ultra-long invincibility duration (999999.0s ≈ 11 days) upon triggering flash
+0x02A95C30 = lis r12, 0x4974           # Load upper 16 bits of 999999.0 (0x497423F0)
+0x02A95C34 = ori r12, r12, 0x23F0      # Combine into 999999.0 seconds
+0x02A95C38 = stw r12, 0xC88(r3)        # Write to player invincibility flash timer (+0xC88)
+0x02A95C3C = mflr r0                   # Restore original instruction overwritten at 0x02845878
+0x02A95C40 = b 0x0284587C              # Return to StartInvincibleFlash to play flash animation
+
+# 3. Hook StartInvincibleFlash__13StdPlatformerFv entry (0x02845878)
+0x02845878 = b 0x02A95C30
 
