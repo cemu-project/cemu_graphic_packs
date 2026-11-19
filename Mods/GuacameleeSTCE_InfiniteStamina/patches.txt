@@ -1,0 +1,6 @@
+[GuacameleeSTCE_InfiniteStamina]
+moduleMatches = 0xc50a3513
+
+# Return immediately to skip stamina deduction
+0x022B663C = blr
+

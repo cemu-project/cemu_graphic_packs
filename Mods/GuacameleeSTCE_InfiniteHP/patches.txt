@@ -1,0 +1,34 @@
+[GuacameleeSTCE_InfiniteHP]
+moduleMatches = 0xc50a3513
+
+# 1. Safety fallback: prevent accidental execution if printf is called
+0x02A95BEC = blr
+
+# 2. Code cave inside printf (0x02A95BF0) to filter player entity for Infinite HP
+0x02A95BF0 = lwz r11, 0x08(r27)
+0x02A95BF4 = lis r12, 0x1001
+0x02A95BF8 = ori r12, r12, 0xAD2C
+0x02A95BFC = cmpw r11, r12
+0x02A95C00 = bne 0x02A95C24
+
+# Check if current HP (+0x1AC) >= 250.0 (0x437A0000)
+0x02A95C04 = lwz r11, 0x1AC(r27)
+0x02A95C08 = lis r12, 0x437A
+0x02A95C0C = cmplw r11, r12
+0x02A95C10 = blt 0x02A95C24
+
+# Check if current HP (+0x1AC) <= 420.0 (0x43D20000)
+0x02A95C14 = lis r12, 0x43D2
+0x02A95C18 = cmplw r11, r12
+0x02A95C1C = bgt 0x02A95C24
+
+# Validation passed! Skip HP subtraction (0x02803B4C ~ 0x02803B5C) and jump to 0x02803B60
+0x02A95C20 = b 0x02803B60
+
+# Normal damage branch for enemies (execute original stfs at 0x02803B4C and return to 0x02803B50)
+0x02A95C24 = stfs f1, 0x1AC(r27)
+0x02A95C28 = b 0x02803B50
+
+# 3. Hook the HP write instruction at 0x02803B4C to jump to the code cave at 0x02A95BF0
+0x02803B4C = b 0x02A95BF0
+

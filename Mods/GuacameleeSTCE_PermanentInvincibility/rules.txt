@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010176800
+name = Permanent Invincibility
+path = "Guacamelee! Super Turbo Championship Edition/Mods/Permanent Invincibility"
+description = Keeps the player permanently in the post-hit invincible state after taking damage once (pass through enemies, immune to stagger, traps, and damage).
+version = 6
+

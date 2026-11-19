@@ -1,0 +1,7 @@
+[Definition]
+titleIds = 0005000010176800
+name = Infinite Stamina
+path = "Guacamelee! Super Turbo Championship Edition/Mods/Infinite Stamina"
+description = Disables stamina consumption for special moves, allowing infinite aerial combos.
+version = 6
+
