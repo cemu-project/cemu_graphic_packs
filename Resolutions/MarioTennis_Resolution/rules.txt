@@ -2,7 +2,7 @@
 titleIds = 00050000101A3500,00050000101A3600,0005000010199000,00050002101e2b00
 name = Resolution
 path = "Mario Tennis: Ultra Smash/Graphics/Resolution"
-description = Changes the resolution of the game. Made by M&&M.
+description = Changes the resolution of the game. Made by M&&M. MEM1 fix by Immersion95.
 version = 4
 
 [Preset]
@@ -91,7 +91,17 @@ $gameHeight = 720
 [TextureRedefine]
 width = 1280
 height = 720
-formatsExcluded = 0x431 # Format 0x41a fixes main menu backgrounds but breaks in-game graphics
+formatsExcluded = 0x431,0x41a
+tileModesExcluded = 0x001
+overwriteWidth = ($width/$gameWidth) * 1280
+overwriteHeight = ($height/$gameHeight) * 720
+
+// Scale 0x41a only in MEM1 to preserve both menu backgrounds and gameplay.
+[TextureRedefine]
+width = 1280
+height = 720
+formats = 0x41a
+inMEM1 = 1
 tileModesExcluded = 0x001
 overwriteWidth = ($width/$gameWidth) * 1280
 overwriteHeight = ($height/$gameHeight) * 720
